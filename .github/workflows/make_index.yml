@@ -1,0 +1,51 @@
+# Relies on the standard GitHub action setup to deploy to GitHub Pages
+# The really specific details are in the steps that generates the index files
+# (and the deployment of deno as an underling tool).
+name: Publish to Github Pages
+on:
+  push:
+    branches: [main]
+  # Allows workflow to be triggered manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout/@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: Generate the index files
+        # Details depend on where the script is located
+        run: |
+          (cd script; deno run -A main.ts)
+          rm script/deno.lock
+          cp script/index.html minutes/index.html
+          cp script/resolutions.html minutes/resolutions.html
+      - name: Setup Github Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

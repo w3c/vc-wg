@@ -1,0 +1,79 @@
+name: Minutes 2 Github
+
+env:
+  # customize the env variables below
+  MINUTES_URL_BASE: "https://w3c.github.io/vc-wg/minutes"  # without trailing slash
+  MINUTES_REPO_PATH: "minutes"                             # without trailing slash
+  M2G_CHANNEL: pmwg
+  M2G_GROUP: wg/pm        
+
+  # IMPORTANT: you must also set up the secret M2G_TOKEN with a token authorized to comment on issues
+  M2G_TOKEN: ${{ secrets.M2G_TOKEN }}
+
+  # season to your taste
+  M2G_LOG_LEVEL: trace
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+      # NB: the path above could be constrained to the directory containing the minutes
+      # but the environment variable MINUTES_REPO_PATH is not available here...
+      # (env variables are only available in the jobs' steps).
+      # So to keep this script DRY, we do not filter on the subdirectory.
+      # Anyway, the script will stop at the 2nd step of no minutes were added.
+
+jobs:
+  minutes_to_gh:
+    runs-on: ubuntu-latest
+
+
+    steps:
+    - name: Checkout this repository
+      uses: actions/checkout@v4
+      with:
+        path: ./repo
+        fetch-depth: 0
+
+    - name: Add list of new files to env
+      working-directory: ${{ format('./repo/{0}', env.MINUTES_REPO_PATH) }}
+      run: |
+          {
+            echo "NEW_FILES<<.EOF"
+
+            git diff --name-status ${{ github.event.before }} ${{ github.event.after }} \
+            | grep  '^[AM]\s\+${{ env.MINUTES_REPO_PATH }}/.*\.html$' \
+            | sed 's!^[AM]\s\+${{ env.MINUTES_REPO_PATH }}/!!' \
+            | tee /dev/stderr
+
+            echo ".EOF"
+          } >> "$GITHUB_ENV"
+
+    - name: Set up Rust
+      if: ${{ env.NEW_FILES }}
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Checkout minutes_to_gh
+      if: ${{ env.NEW_FILES }}
+      uses: actions/checkout@v4
+      with:
+        repository: pchampin/minutes_to_gh
+        path: ./m2g
+
+    - name: Build minutes_to_gh
+      if: ${{ env.NEW_FILES }}
+      working-directory: ./m2g
+      run: cargo build --verbose
+
+    - name: Run minutes_to_gh for each new file
+      if: ${{ env.NEW_FILES }}
+      working-directory: ./m2g
+      run: |
+        for FILE in $NEW_FILES; do
+          echo -------- $FILE
+          cargo run -- manual --file ../repo/$MINUTES_REPO_PATH/$FILE --url $MINUTES_URL_BASE/$FILE --transcript
+        done
+        
+
