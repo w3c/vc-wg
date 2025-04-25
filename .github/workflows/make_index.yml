@@ -37,8 +37,11 @@ jobs:
         run: |
           (cd script; deno run -A main.ts)
           rm script/deno.lock
+          echo "Moving index file"
           cp script/index.html minutes/index.html
+          echo "Moving resolution file"
           cp script/resolutions.html minutes/resolutions.html
+          
       - name: Setup Github Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
