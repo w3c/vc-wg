@@ -13,7 +13,12 @@ import * as fs                                          from 'node:fs/promises';
  * @param parent 
  * @param data 
  */
-function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): void {
+function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): boolean {
+    if (data.size === 0) {
+        // No data to show, so we skip this taskforce
+        return false;
+    }
+    // We need to add a section for each taskforce
     const section = document.addChild(parent, 'section');
     section.setAttribute('id', tf);
     const tfName = taskForces[tf] ?? `Unknown taskforce ${tf}`;
@@ -50,6 +55,7 @@ function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: stri
     if (slot) {
         document.addChild(slot, 'li', `<a href="#${tf}">${sectionTitle}</a>`);
     }
+    return true;
 }
 
 /**
@@ -59,7 +65,7 @@ function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: stri
  * @param parent 
  * @param data 
  */
-function resolutionHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): void {
+function resolutionHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): boolean {
     const section = document.addChild(parent, 'section');
     section.setAttribute('id', tf);
     const sectionTitle = taskForces[tf] ?? `Unknown taskforce ${tf}`;
@@ -81,6 +87,9 @@ function resolutionHTML(document: MiniDOM, parent: Element, data: GroupedData, t
     if (noResolutions) {
         // It was all for nothing... Oh well
         section.parentElement?.removeChild(section);
+        return false;
+    } else {    
+        return true;
     }
 }
 
@@ -98,7 +107,8 @@ async function generateContent(
         template_file: string, 
         id: string, 
         output_file: string, 
-        generationFunction: (document: MiniDOM, parent: Element, data: GroupedData, tf: string) => void): Promise<void> {
+        emptyMessage: string = "No data available",
+        generationFunction: (document: MiniDOM, parent: Element, data: GroupedData, tf: string) => boolean): Promise<void> {
     // get hold of the template file as a JSDOM
     const template = await fs.readFile(template_file, 'utf-8');
 
@@ -112,10 +122,11 @@ async function generateContent(
     }
 
     const tfList = Object.keys(taskForces).filter(tf => tf !== "default" && tf !== "f2f").sort();
+    let contentAdded = false;
     for (const tf of ["default", "f2f", ...tfList]) {
         const tfData = data.get(tf);
         if (tfData !== undefined) {
-            generationFunction(document, slot, tfData, tf);
+            contentAdded = contentAdded || generationFunction(document, slot, tfData, tf);
         }
     }
 
@@ -123,6 +134,10 @@ async function generateContent(
     const cc = document.getElementById('year');
     if (cc) {
         cc.innerHTML = (new Date()).toISOString().split('-')[0];
+    }
+
+    if (!contentAdded) {
+        document.addChild(slot, 'p', emptyMessage);
     }
 
     // That is it: serialize the DOM back to a string
@@ -148,16 +163,18 @@ async function main(dir: string = directory) {
             {
                 template           : "./templates/index_template.html", 
                 id                 : "list-of-calls", 
-                output             : "index.html", 
+                output             : "index.html",
+                emptyMessage       : "There has been no meeting yet.",
                 generationFunction : tocHTML,
             },
             {
                 template           : "./templates/resolutions_template.html", 
                 id                 : "list-of-resolutions", 
                 output             : "resolutions.html", 
+                emptyMessage       : "There has been no resolutions yet.",
                 generationFunction : resolutionHTML,
             },
-        ].map((entry) => generateContent(tfData, entry.template, entry.id, entry.output, entry.generationFunction));
+        ].map((entry) => generateContent(tfData, entry.template, entry.id, entry.output, entry.emptyMessage, entry.generationFunction));
     await Promise.allSettled(promises);
 }
 

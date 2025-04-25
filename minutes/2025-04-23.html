@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 23 April 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>&ndash; DRAFT &ndash;<br>
+Verifiable Credentials Working Group Telco</h1>
+<h2>23 April 2025</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d03d7ee5-c761-4c67-825e-b483138033c7/20250423T110000/#agenda"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/04/23-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, DavidC, denkeni, dlongley, dmitriz, hsano, ivan, jennie, JennieM, joe, JoeAndrieu, kevin, KevinDean, manu, pdl-asu, selfissued, TallTed</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>manu, bigbluehat</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#41df">Recommendation next steps</a>
+<ol>
+<li><a href="#6590">VCDM comments</a></li>
+<li><a href="#48b4">Data Integrity comments</a></li>
+<li><a href="#6ba0">VC JOSE COSE</a></li>
+<li><a href="#5e2f">CID</a></li>
+<li><a href="#3320">BSL</a></li>
+<li><a href="#c295">further steps towards REC</a></li>
+</ol>
+</li>
+<li><a href="#8bfa">Press Release</a></li>
+<li><a href="#a06b">Security Reviews</a></li>
+<li><a href="#b8b9">Meeting Cadence moving forward</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<p id=7425 class="phone s01"><cite>brent:</cite> Let's get started -- today we have our agenda, talk through next steps for REC, press release, security reviews, decision on meeting cadence moving forward. Any additional items to cover today?</p>
+<p id=af62 class="phone s02"><cite>selfissued:</cite> Fix to VC JOSE COSE?</p>
+</section>
+
+<section>
+<h3 id=41df>Recommendation next steps</h3>
+<p id=6af9 class="phone s01"><cite>brent:</cite> We have a set of comments that were made as a part of the AC review during Proposed Rec, process requires us to have a response to the comments.</p>
+<p id=99c5 class="phone s01"><cite>brent:</cite> The plan for the next bit is to share the comments and indicate what the response is planned to be to make sure we're on the same page.</p>
+<p id=10000 class="phone s03"><cite>ivan:</cite> As a general rule, we should know that (in theory) we're not supposed to change the specifications beyond the administrative items beyond PR and REC, except when it's explicitly asked for by a commenter. For those cases, it's better to postpone changes to the next minor release than make changes. If we make changes on the documents, we have to go back to the AC to ask for a second approval on changes to be made. We have to go back to AC reps to see if it would change their vote, we would prefer to not do that at this point.</p>
+<h4 id=6590>VCDM comments</h4>
+<p id=3b7e class=irc><cite>&lt;brent&gt;</cite> <a
+        href="https://github.com/w3c/vc-data-model/issues/1593">w3c/<wbr>vc-data-model#1593</a></p>
+<p id=ca75 class=irc><cite>&lt;brent&gt;</cite> &quot;§5.11 Ecosystem Compatibility should explicitly list SD-JWT and SD-JWT-VC to paragraph 1 which lists digital credential formats that do not natively use the VCDM. SD-JWT-VC even explicitly specifies it does not use the VCDM v1.0, v1.1, or v2.0. As SD-JWT(-VC) is a popular VC format for eIDAS it should be explicitly stated like the others.&quot;</p>
+<p id=58bd class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html">comment source</a></p>
+<p id=eb1a class="phone s01"><cite>brent:</cite> For each of these comments, I will provide text and link to source of comment.</p>
+<p id=b544 class="phone s01"><cite>brent:</cite> comment on VCDM, text suggests say we list SD-JWT-VC to the ecosystem compatibility section. The suggested response will be that we plan to address comment in future version of specification.</p>
+<p id=36c3 class="phone s03"><cite>ivan:</cite> Any response we make is better to send via email.</p>
+<p id=562c class="phone s01"><cite>brent:</cite> I will do that.</p>
+<p id=ad01 class="phone s04"><cite>KevinDean:</cite> Is there something we can add to the response to provide reasoning? Out of scope for current scope of work?</p>
+<p id=60ec class="phone s01"><cite>brent:</cite> This is an editorial change, we can address it under our current charter, seeing how ideally we shouldn't change text of REC, we can address this later.</p>
+<p id=59a6 class="phone s02"><cite>selfissued:</cite> That's fine.</p>
+<h4 id=48b4>Data Integrity comments</h4>
+<p id=bf75 class=irc><cite>&lt;brent&gt;</cite> &quot;In our opinion, one of the lessons learned from XML Signatures was that complex canonicalization tied to a signature mechanism tends to lead to complex implementations and a higher likelihood of security vulnerabilities. Those lessons learned lead to the design of simpler signature mechanisms like those in JWT/CWT to avoid the complexity of canonicalization at least when doing cryptographic operations. We understand the general appeal of the ideas behind Data Integrity Proofs but fear that it will lead to overly complex and insecure implementations by forcing implementations to perform rather complex RDF Dataset Canonicalization before any basic signature operation (sign, prove, verify) as is the case for some of the DI Cryptosuites, e.g., the ECDSA one. Semantics and signature mechanisms should be in their own respective layers to facilitate robust and secure implementations.&quot;</p>
+<p id=5fb5 class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-ac-forum/2025AprJun/0020.html">comment source</a></p>
+<p id=b706 class="phone s01"><cite>brent:</cite> The one comment on data integrity made by Torsten of SPRIND, they do not support the specification but are not formally objecting.</p>
+<p id=2012 class="phone s01"><cite>brent:</cite> This should be familiar to everyone in the meeting, we had long conversations about this as we were developing data integrity.</p>
+<p id=f5bc class="phone s01"><cite>brent:</cite> At this point it's probably appropriate to note that while RDFC is more complex, JCS is also possible, there is the option to use JWS and CWS, we can point them to issue 272 where the group discussed this extensively.</p>
+<h4 id=6ba0>VC JOSE COSE</h4>
+<p id=a4b3 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-jose-cose/pull/341">w3c/<wbr>vc-jose-cose#341</a>, <a
+        href="https://github.com/w3c/vc-jose-cose/issues/340">w3c/<wbr>vc-jose-cose#340</a></p>
+</p>
+<p id=e65f class=irc><cite>&lt;brent&gt;</cite> &quot;Since it is not a normative portion in this specification, it may not be a particular issue to change, but I would like to confirm one thing for the correctness of spec before publishing. I understand that all examples of COSE Sign1 within the CR (for example, EX-7) are protected by ES384. However, it appears that the signature is only 64 bytes, rather than the typical 96 bytes for P-384 signature. I am not an expert in COSE, so if such pruning or bit truncation is correct in the viewpoint of COSE, there should be no problem.&quot;</p>
+<p id=cd0c class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0444.html">comment source</a></p>
+<p id=3979 class="phone s01"><cite>brent:</cite> We have two comments, both suggest publication... one comment is about COSE examples being incorrect -- we have fixed this issue.</p>
+<p id=d476 class="phone s03"><cite>ivan:</cite> This is waiting in a PR, correct?</p>
+<p id=acc3 class="phone s01"><cite>brent:</cite> We plan to merge that PR after the call today.</p>
+<p id=2ebb class=irc><cite>&lt;brent&gt;</cite> &quot;The way this specification utilizes SD-JWT is sub-optimal as it double base64 encodes credentials in order to present them and it is more complex than needed as it uses SD-JWT as container for the presentation where there is no need for the SD-JWT capabilities.&quot;</p>
+<p id=83c0 class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-ac-forum/2025AprJun/0020.html">comment source</a></p>
+<p id=b691 class="phone s01"><cite>brent:</cite> We could respond by pointing to issue 340, there is a point here, closer examination on SD-JWT interacts w/ VCDM and presentations, we could explore this further. At this point, we plan to address this in future versions of the specification.</p>
+<p id=ee1c class="phone s03"><cite>ivan:</cite> In the previous case, future versions are editorial... any change for this case is normative, not chartered to make this change (class 4). &quot;Future version&quot; would be next major version.</p>
+<p id=00dc class="phone s02"><cite>selfissued:</cite> We will consider addressing this concern, consensus might not result in a change.</p>
+<p id=31b9 class="phone s01"><cite>brent:</cite> Any other comments on VC JOSE COSE before we move on?</p>
+<h4 id=5e2f>CID</h4>
+<p id=387b class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/cid/issues/154">w3c/<wbr>cid#154</a>, <a href="https://github.com/w3c/cid/issues/155">w3c/<wbr>cid#155</a></p>
+<p id=309d class="phone s02"><cite>selfissued:</cite> I registered the media type.</p>
+<p id=6307 class="phone s01"><cite>brent:</cite> We had a number of comments on this one.</p>
+<p id=bfe9 class=irc><cite>&lt;brent&gt;</cite> &quot;Too similar to the code did specification.  I wish it were presented as a clear extension of the did core specification that was clear about what’s different&quot;</p>
+<p id=eb47 class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0401.html">comment source</a>, <a href="https://lists.w3.org/Archives/Team/team-vc-review/2025Apr/0009.html">answered by team contact</a></p>
+<p id=cbf2 class="phone s01"><cite>brent:</cite> Ivan has responded to this comment, it is a superset of DIDs.</p>
+<p id=41ae class=irc><cite>&lt;brent&gt;</cite> &quot;§1 Introduction should note why the CID specification is necessary as those with less experience might see it as a recommendation over Decentralized Identifiers (DIDs) v1.0 rather than providing an abstraction to further make the case of DIDs.&quot;</p>
+<p id=8bef class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html">comment source</a></p>
+<p id=94c9 class="phone s01"><cite>brent:</cite> They've asked for justification of the technology.</p>
+<p id=b082 class="phone s01"><cite>brent:</cite> We thank the commenter, we will try to address the concern in a future version of the specification.</p>
+<p id=cb64 class="phone s03"><cite>ivan:</cite> Can we make a minor change to address this issue?</p>
+<p id=f653 class="phone s05"><cite>manu:</cite> We should take our time to pick wording that's not controversial.</p>
+<p id=9c2e class="phone s01"><cite>brent:</cite> Agree with that approach.</p>
+<p id=cfe0 class=irc><cite>&lt;brent&gt;</cite> &quot;As stated in the Revision History section, this specification was created &quot;to use non-decentralized identifiers and systems&quot;.  Those are already inclusively supported in DIDs, which chose a federated approach. If the editors wish to propose any other reason for this specification's existence, they should add a Motivation section in the Introduction explaining the reason.&quot;</p>
+<p id=79f5 class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0579.html">comment source</a></p>
+<p id=24cd class="phone s01"><cite>brent:</cite> The commenter here has pointed out that DIDs support this already -- we should add a motivation section. This is similar to the previous comment, but again, we should take our time to address this in the next version of the spec to make sure we pick language carefully.</p>
+<p id=d61d class="phone s01"><cite>brent:</cite> Any other comments on this one?</p>
+<h4 id=3320>BSL</h4>
+<p id=cf1b class=irc><cite>&lt;brent&gt;</cite> <a
+        href="https://github.com/w3c/vc-bitstring-status-list/issues/203">w3c/<wbr>vc-bitstring-status-list#203</a>, <a href="https://github.com/w3c/vc-bitstring-status-list/issues/204">w3c/<wbr>vc-bitstring-status-list#204</a></p>
+<p id=acef class="phone s01"><cite>brent:</cite> First comment is about usefulness, but privacy section is useful. We don't need to respond to this because there are no changes requested.</p>
+<p id=d110 class=irc><cite>&lt;brent&gt;</cite> &quot;§2 Data Model has a table that is not titled/labeled. Additionally, it should consider the factor of a scheme that proves status without revealing correlatable global identifiers. The authors do indirectly acknowledge this later in §6 but it is a very desirable trait and should be mentioned upfront in the overview.  §6 Privacy Considerations should also discuss the ability/inability of using Zero-knowledge proofs for proving status.&quot;</p>
+<p id=9656 class=irc><cite>&lt;brent&gt;</cite> <a href="https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html">comment source</a></p>
+<p id=ff9e class="phone s01"><cite>brent:</cite> There is a table without a title, raised issue 204 to track that.</p>
+<p id=c875 class="phone s01"><cite>brent:</cite> The second comment was about ZKPs and anti-correlation and if we could figure out a way to do this using a ZKPs.</p>
+<p id=b48b class="phone s01"><cite>brent:</cite> proposed response is to acknowledge that this would be useful and we will continue to explore this in a future version of the spec.</p>
+<p id=bba3 class="phone s03"><cite>ivan:</cite> can we add the title and get rid of issue 204?</p>
+<p id=d6c1 class="phone s05"><cite>manu:</cite> yes</p>
+<p id=bf16 class="phone s01"><cite>brent:</cite> I will convey that to the commenter.</p>
+<h4 id=c295>further steps towards REC</h4>
+<p id=e150 class="phone s01"><cite>brent:</cite> I think we have actions for manu, mike, and me -- we'll get those items done.</p>
+<p id=4d16 class="phone s03"><cite>ivan:</cite> We need a date for the final version -- what is it going to be?</p>
+<p id=c7dd class="phone s03"><cite>ivan:</cite> Manu, before you create final versions, final redirections need to be in place, right?</p>
+<p id=ad72 class="phone s05"><cite>manu:</cite> yes. put the final redirections in place<br>
+<span id=ac09>… hopefully the hashes won't change</span></p>
+<p id=a90e class="phone s03"><cite>ivan:</cite> there may be a new line feed…</p>
+<p id=3b5a class="phone s05"><cite>manu:</cite> ok.</p>
+<p id=fed3 class="phone s03"><cite>ivan:</cite> it will be done by the end of the week</p>
+<p id=73f7 class="phone s05"><cite>manu:</cite> for the date: May 15th? May 22nd?</p>
+<p id=88ab class="phone s03"><cite>ivan:</cite> how much time do you need to make the final versions?</p>
+<p id=3f26 class="phone s05"><cite>manu:</cite> a weekend? maybe?</p>
+<p id=d87e class="phone s03"><cite>ivan:</cite> so, we could get the transition request in on the 2nd<br>
+<span id=af25>… they'll likely take some time, so the 15th is a safe bet</span><br>
+<span id=860e>… let's start with May 15th</span></p>
+<p id=67e0 class="phone s01"><cite>brent:</cite> ok, anything else on recommendation next steps before we move on?</p>
+<p id=1485 class="phone s01"><cite>brent:</cite> anything more on recommendations next steps topic?</p>
+</section>
+
+<section>
+<h3 id=8bfa>Press Release</h3>
+<p id=e967 class="phone s03"><cite>ivan:</cite> I talked to Coralie, gave her all the material that the press release might have in it -- overview, slides, etc. She will pick that up and make a first version of press release. Thought maybe 15th for press release, that's it.</p>
+<p id=b8ee class="phone s05"><cite>manu:</cite> usually there are testimonials<br>
+<span id=6f04>… are you looking for those too?</span></p>
+<p id=abce class="phone s05"><cite>manu:</cite> usually there are testimonials -- are we looking for that?</p>
+<p id=bd5d class="phone s03"><cite>ivan:</cite> Yes, we usually ask the group members for testimonials -- let's try to collect them in one place.</p>
+<p id=2c97 class="phone s05"><cite>manu:</cite> Why don't we cast a wide net, asking WG members, CCG members, etc?</p>
+<p id=28a5 class="phone s03"><cite>ivan:</cite> Let's start with WG Members first, just personal opinion. I would hope several testimonials in from WG Members.</p>
+<p id=d128 class=irc><cite>&lt;brent&gt;</cite> <a href="https://docs.google.com/document/d/1Iyd69-6aI0k3O79c8lAvc3FR6cVpYkWepNR39fVCooU/edit?usp=sharing">Collection point on GDoc for testimonials</a></p>
+<p id=ad30 class="phone s01"><cite>brent:</cite> There is the Google doc, shared to member mailing list to invite people to add things and then pass things on to Coralie -- we need these within a week.</p>
+</section>
+
+<section>
+<h3 id=a06b>Security Reviews</h3>
+<p id=e952 class="phone s01"><cite>brent:</cite> Good news is we got security reviews... timing wise, they came in during Proposed Rec.</p>
+<p id=604f class="phone s01"><cite>brent:</cite> If you look in VCDI, ecdsa, plan with these is to take these issues as we take issues with maintenance mode, whether issue can be addressed non-normatively, or in security (if there is a vuln that needs to be addressed), do the triage as a part of our normal process moving forward. That's the plan as I see it -- happy to take comments on proceeding differently. We are grateful that they came in, but will be processing based on our maintenance charter.</p>
+<p id=33c3 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=6118 class="phone s05"><cite>manu:</cite> +1 to the proposed approach, fwiw.</p>
+</section>
+
+<section>
+<h3 id=b8b9>Meeting Cadence moving forward</h3>
+<p id=777b class="phone s01"><cite>brent:</cite> would love to hear proposals on how often we should meet.</p>
+<p id=f3fb class="phone s01"><cite>brent:</cite> We can always change the cadence.</p>
+<p id=05ed class="phone s05"><cite>manu:</cite> we should meet at least once a month for maintenance items<br>
+<span id=5231>… the other thing happening now is the CCG work item promotion call</span><br>
+<span id=46a7>… happens at the same time as this call -- while we were on our break</span><br>
+<span id=1c7e>… we're discussing things like Confidence Method, Render Method, VC API, etc.</span><br>
+<span id=e82b>… some of those are already in our charter, others are not yet.</span><br>
+<span id=ada0>… a few of those need a couple more months to be ready to bring in</span><br>
+<span id=a90d>… we could also choose to spend a bit more time on them in the CCG</span><br>
+<span id=3912>… the suggestion is that VCWG meet once a month, and the CCG meets more often to finish off those specs a bit more</span><br>
+<span id=783a>… just a proposal</span></p>
+<p id=4939 class="phone s03"><cite>ivan:</cite> Two things, I would propose we keep current timing until we publish RECs, let's not take a break now... maintenance, publish working notes, etc.</p>
+<p id=64d0 class="phone s05"><cite>manu:</cite> my recollection was that we were chartered for at least Render Method and Confidence Method<br>
+<span id=ff7d>… I believe there's also a number of specs heading into production like Verifiable Credential Barcodes and the like</span><br>
+<span id=aeb1>… which are nearing production deployments</span><br>
+<span id=dfee>… and official standardization hasn't even formally started</span><br>
+<span id=4029>… we've mostly been focused on maintaining things, but I think we need a pathway for what new work might be and how we charter for it</span><br>
+<span id=ddf7>… it's all stuff that's been in the CCG for awhile</span></p>
+<p id=b2e7 class=irc><cite>&lt;brent&gt;</cite> <a href="https://www.w3.org/2024/10/vc-wg-charter.html">https://<wbr>www.w3.org/<wbr>2024/<wbr>10/<wbr>vc-wg-charter.html</a></p>
+<p id=aa83 class="phone s03"><cite>ivan:</cite> Unfortunately, that's not that simple -- scope of the charter says that we maintain, no class 4, security issues -- then there is a separate section that says non-normative documents -- test suites, presentation requests, storage sharing, etc...</p>
+<p id=b44b class="phone s03"><cite>ivan:</cite> You are referring to thing that are much heavier work -- new cryptosuites, for example.</p>
+<p id=f932 class="phone s05"><cite>manu:</cite> right. I'm talking about changing the charter<br>
+<span id=cd2d>… I'm saying there's a small amount of work we can continue doing</span><br>
+<span id=95bc>… Confidence Method and Render Method</span><br>
+<span id=ecf0>… but that we also have new work for which we should recharter</span></p>
+<p id=50f4 class="phone s03"><cite>ivan:</cite> ah. that wasn't clear earlier</p>
+<p id=9a66 class="phone s01"><cite>brent:</cite> One nuance to this -- even for render method and confidence method, our current charter allows us to add those sections and add normative language in that sections in VCDM spec, but scope says &quot;no new RECs&quot; are planned. We could put stuff in VCDM, but not new Render Method spec.</p>
+<p id=a853 class="phone s01"><cite>brent:</cite> Something to be aware of.</p>
+<p id=37f8 class="phone s06"><cite>JoeAndrieu:</cite> I think Ivan mentioned that as long as work is chartered, we can put it in other specs -- we might be able to create separate document.</p>
+<p id=aba8 class="phone s03"><cite>ivan:</cite> Scope in charter specifically says &quot;in VCDM&quot;</p>
+<p id=d9ba class="phone s05"><cite>manu:</cite> my fear is that we'd do a short term thing, with long term negative consequences</p>
+<p id=7187 class=irc><cite>&lt;dlongley&gt;</cite> +1 that rechartering can also allow confidenceMethod/renderMethod to be moved to its own spec if the consensus is that current charter interpretation requires different organization</p>
+<p id=c72c class="phone s05"><cite>manu:</cite> like stuffing Render Method content into the VCDM and then later needing to extract it</p>
+<p id=882a class=irc><cite>&lt;dlongley&gt;</cite> +1 to brent, we can do the rechartering when its time to reorganize and fold these things in with the other items we might take on.</p>
+<p id=52bb class="phone s01"><cite>brent:</cite> I'm bringing it up to inform the group that the charter language is explicit, maybe the group should recharter to more appropriately handle it. Our current charter can be rechartered before Oct 2026... I was remembering our charter as not being this constrained. When those things are ready to move on, maybe we have a serious conversation around rechartering.</p>
+<p id=733f class="phone s01"><cite>brent:</cite> We will keep meeting until we get through REC -- once we get through May 15th, you should see a whole new invitation for a monthly meeting -- 2nd Wednesday of the month (to just pick something). That will work until we have more work than a monthly meeting will handle.</p>
+<p id=57a5 class="phone s03"><cite>ivan:</cite> When should the responses go out?</p>
+<p id=e323 class="phone s01"><cite>brent:</cite> The aim is by the end of the week.</p>
+<p id=6b50 class="phone s01"><cite>brent:</cite> Thanks everyone, good to be with everyone again, see you soon!</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>

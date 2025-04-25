@@ -93,7 +93,7 @@ async function getAllData(minutes: FileName[]): Promise<DisplayedData[]> {
             fname    : fname,
             location : path.join(location, path.basename(fname)),
             date     : date,
-            toc      : extractListEntries(fname, content, "#toc ol li"),  
+            toc      : extractListEntries(fname, content, "#toc > ol > li"),  
             res      : extractListEntries(fname, content, "#ResolutionSummary ol li"), 
         };
     }
