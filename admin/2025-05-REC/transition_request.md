@@ -116,7 +116,7 @@ None
 - *Suggests changes but supports publication:*
     - "Since it is not a normative portion in this specification, it may not be a particular issue to change, but I would like to confirm one thing for the correctness of spec before publishing. I understand that all examples of COSE Sign1 within the CR (for example, EX-7) are protected by ES384. However, it appears that the signature is only 64 bytes, rather than the typical 96 bytes for P-384 signature. I am not an expert in COSE, so if such pruning or bit truncation is correct in the viewpoint of COSE, there should be no problem."
   
-        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0444.html)
+        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0444.html), handled via [the GitHub PR](https://github.com/w3c/vc-jose-cose/pull/341)
 
     - "The way this specification utilizes SD-JWT is sub-optimal as it double base64 encodes credentials in order to present them and it is more complex than needed as it uses SD-JWT as container for the presentation where there is no need for the SD-JWT capabilities."
   
@@ -145,7 +145,7 @@ None
 - *Suggests changes but supports publication:*
     - "§2 Data Model has a table that is not titled/labeled. Additionally, it should consider the factor of a scheme that proves status without revealing correlatable global identifiers. The authors do indirectly acknowledge this later in §6 but it is a very desirable trait and should be mentioned upfront in the overview.  §6 Privacy Considerations should also discuss the ability/inability of using Zero-knowledge proofs for proving status."
   
-        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html); the label issue has been settled via an [issue](https://github.com/w3c/vc-bitstring-status-list/issues/204)
+        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html); the label issue has been settled via an [issue](https://github.com/w3c/vc-bitstring-status-list/issues/204). See also [answer to the more detailed issue](https://github.com/w3c/vc-bitstring-status-list/issues/203#issuecomment-2833621565)
 
 
 # Link to internal AC Review results
