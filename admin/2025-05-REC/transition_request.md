@@ -23,7 +23,7 @@ All publications are currently set to a publication date of 15th of May; to be f
   - current PR snapshot: https://w3c.github.io/vc-di-ecdsa/transitions/2025/REC/
   - editors' draft: https://w3c.github.io/vc-di-ecdsa/
 
-- Securing Verifiable Credentials using JOSE and COSE
+- Securing Verifiable Credentials using JOSE and COSE (see note below)
   - short name: vc-jose-cose
   - current PR snapshot: https://w3c.github.io/vc-jose-cose/transitions/REC/
   - editors' draft: https://w3c.github.io/vc-jose-cose/
@@ -37,6 +37,9 @@ All publications are currently set to a publication date of 15th of May; to be f
   - short name: vc-bitstring-status-list
   - current PR snapshot: https://w3c.github.io/vc-bitstring-status-list/transitions/2025/REC/
   - editors' draft: https://w3c.github.io/vc-bitstring-status-list/
+
+
+> Note that there is a pending WBS form for some last minutes changes on the "Securing Verifiable Credentials using JOSE and COSE" specification at https://www.w3.org/wbs/33280/PRVCJC_Changes/. The WBS form is open until 23:59, Boston time on 2025-05-04. 
 
 
 # Abstract
@@ -142,7 +145,7 @@ None
 - *Suggests changes but supports publication:*
     - "§2 Data Model has a table that is not titled/labeled. Additionally, it should consider the factor of a scheme that proves status without revealing correlatable global identifiers. The authors do indirectly acknowledge this later in §6 but it is a very desirable trait and should be mentioned upfront in the overview.  §6 Privacy Considerations should also discuss the ability/inability of using Zero-knowledge proofs for proving status."
   
-        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html)
+        [comment source](https://lists.w3.org/Archives/Member/w3c-archive/2025Apr/0606.html); the label issue has been settled via an [issue](https://github.com/w3c/vc-bitstring-status-list/issues/204)
 
 
 # Link to internal AC Review results
