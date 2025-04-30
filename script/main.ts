@@ -15,10 +15,9 @@ import * as fs                                          from 'node:fs/promises';
  */
 function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): boolean {
     if (data.size === 0) {
-        // No data to show, so we skip this taskforce
+        // No data for this taskforce, so we skip it
         return false;
     }
-    // We need to add a section for each taskforce
     const section = document.addChild(parent, 'section');
     section.setAttribute('id', tf);
     const tfName = taskForces[tf] ?? `Unknown taskforce ${tf}`;
@@ -55,7 +54,7 @@ function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: stri
     if (slot) {
         document.addChild(slot, 'li', `<a href="#${tf}">${sectionTitle}</a>`);
     }
-    return true;
+    return true
 }
 
 /**
@@ -66,6 +65,10 @@ function tocHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: stri
  * @param data 
  */
 function resolutionHTML(document: MiniDOM, parent: Element, data: GroupedData, tf: string): boolean {
+    if (data.size === 0) {
+        // No data for this taskforce, so we skip it
+        return false;
+    }
     const section = document.addChild(parent, 'section');
     section.setAttribute('id', tf);
     const sectionTitle = taskForces[tf] ?? `Unknown taskforce ${tf}`;
@@ -88,7 +91,7 @@ function resolutionHTML(document: MiniDOM, parent: Element, data: GroupedData, t
         // It was all for nothing... Oh well
         section.parentElement?.removeChild(section);
         return false;
-    } else {    
+    } else {
         return true;
     }
 }
@@ -106,7 +109,7 @@ async function generateContent(
         data: GroupedTFData, 
         template_file: string, 
         id: string, 
-        output_file: string, 
+        output_file: string,
         emptyMessage: string = "No data available",
         generationFunction: (document: MiniDOM, parent: Element, data: GroupedData, tf: string) => boolean): Promise<void> {
     // get hold of the template file as a JSDOM
@@ -121,23 +124,27 @@ async function generateContent(
         throw new Error(`Could not find the right slot ${id} in the template`);
     }
 
+    // Go through the taskforces and generate the content for each. Note the sorting of the task force names
+    // to get a consistent order. The default and f2f are always first, the rest is sorted alphabetically.
     const tfList = Object.keys(taskForces).filter(tf => tf !== "default" && tf !== "f2f").sort();
-    let contentAdded = false;
-    for (const tf of ["default", "f2f", ...tfList]) {
+    const results: boolean[] = ["default", "f2f", ...tfList].map((tf): boolean =>  {
         const tfData = data.get(tf);
         if (tfData !== undefined) {
-            contentAdded = contentAdded || generationFunction(document, slot, tfData, tf);
+            return generationFunction(document, slot, tfData, tf);
+        } else {
+            return false;
         }
+    });
+
+    // Display the empty message if no data was found for any of the taskforces
+    if (!results.includes(true)) {
+        document.addChild(slot, 'p', emptyMessage);
     }
 
-    // Additional minor thing: set the copyright statement to the correct year
+    // Additional minor thing: set the copyright statement to the current year
     const cc = document.getElementById('year');
     if (cc) {
         cc.innerHTML = (new Date()).toISOString().split('-')[0];
-    }
-
-    if (!contentAdded) {
-        document.addChild(slot, 'p', emptyMessage);
     }
 
     // That is it: serialize the DOM back to a string
@@ -164,14 +171,14 @@ async function main(dir: string = directory) {
                 template           : "./templates/index_template.html", 
                 id                 : "list-of-calls", 
                 output             : "index.html",
-                emptyMessage       : "There has been no meeting yet.",
+                emptyMessage       : "No meeting records available.", 
                 generationFunction : tocHTML,
             },
             {
                 template           : "./templates/resolutions_template.html", 
                 id                 : "list-of-resolutions", 
-                output             : "resolutions.html", 
-                emptyMessage       : "There has been no resolutions yet.",
+                output             : "resolutions.html",
+                emptyMessage       : "No resolutions have been taken.",  
                 generationFunction : resolutionHTML,
             },
         ].map((entry) => generateContent(tfData, entry.template, entry.id, entry.output, entry.emptyMessage, entry.generationFunction));
