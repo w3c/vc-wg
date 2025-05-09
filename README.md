@@ -30,6 +30,8 @@ with their respective table of contents, as well as a [resolution
 page](./minutes/resolutions.html) listing the formal resolutions passed
 by the Working Group, are generated automatically.
 
+Note, however, that this repository contains the minutes starting from 23 April, 2025 only. Earlier minutes are available on the [previous version](https://www.w3.org/2017/vc/WG/Meetings/Minutes/) of the Working Group home page.
+
 ## Contributing to the Verifiable Credentials Working Group Repositories
 
 Use the standard fork, branch, and pull request workflow to propose
