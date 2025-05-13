@@ -1,10 +1,12 @@
 # Relies on the standard GitHub action setup to deploy to GitHub Pages
 # The really specific details are in the steps that generates the index files
 # (and the deployment of deno as an underling tool).
+# See https://github.com/iherman/display_minutes for more details
 name: Publish to Github Pages
 on:
   push:
     branches: [main]
+    paths: ['minutes/**']
   # Allows workflow to be triggered manually from the Actions tab
   workflow_dispatch:
 
@@ -35,12 +37,11 @@ jobs:
       - name: Generate the index files
         # Details depend on where the script is located
         run: |
-          (cd script; deno run -A main.ts)
-          rm script/deno.lock
+          (cd script;  deno run --allow-sys --allow-read --allow-write --allow-env jsr:@iherman/display-minutes)
           echo "Moving index file"
-          cp script/index.html minutes/index.html
+          mv script/index.html minutes/index.html
           echo "Moving resolution file"
-          cp script/resolutions.html minutes/resolutions.html
+          mv script/resolutions.html minutes/resolutions.html
           
       - name: Setup Github Pages
         uses: actions/configure-pages@v5
