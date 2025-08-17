@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 13 August 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>13 August 2025</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/2025/04/23-vcwg-minutes.html"><img alt="Previous meeting." title="Previous meeting" src="https://www.w3.org/StyleSheets/scribe2/go-previous.png"></a>
+<a href="https://www.w3.org/events/meetings/21809461-ceae-40a9-9393-b528e4d78c9c/20250813T110000/#agenda"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/08/13-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+<a href="https://www.w3.org/2025/09/10-vcwg-minutes.html"><img alt="Next meeting." title="Next meeting" src="https://www.w3.org/StyleSheets/scribe2/go-next.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>brent, dlongley, hsano, JennieM, JoeAndrieu, KevinDean, manu, smccown, TallTed, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>Brent Zundel</dd>
+<dt>Scribe</dt><dd>KevinDean, manu</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#5b77">work mode</a></li>
+<li><a href="#9d6f">Incubated Items Update</a></li>
+<li><a href="#4a92">TPAC</a></li>
+<li><a href="#9661">Issues - VCDM</a></li>
+<li><a href="#8a23">VC Use Cases</a>
+<ol>
+<li><a href="#eb21">w3c/<wbr>vc-use-cases#161</a></li>
+</ol>
+</li>
+<li><a href="#8474">Issues - VCDM</a>
+<ol>
+<li><a href="#523d">w3c/<wbr>vc-data-model#1480</a></li>
+<li><a href="#e810">w3c/<wbr>vc-data-model#1467</a></li>
+<li><a href="#01c6">w3c/<wbr>vc-data-model#1360</a></li>
+<li><a href="#7823">w3c/<wbr>vc-data-model#1583</a></li>
+<li><a href="#b7e6">w3c/<wbr>vc-data-model#1591</a></li>
+<li><a href="#d8a3">w3c/<wbr>vc-data-model#1592</a></li>
+<li><a href="#9b18">w3c/<wbr>vc-data-model#1593</a></li>
+</ol>
+</li>
+<li class=app><a href="#ActionSummary">Summary of action items</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<p id=2995 class=irc><cite>&lt;brent&gt;</cite> date: 2025-08-13</p>
+<p id=c56d class="phone s01"><cite>Brent:</cite> Now monthly meeting, coming back from hibernation. Now in maintenance mode with a raft of recommendations.<br>
+<span id=2def>… Need to talk about TPAC as we have time booked during that week then dive straight into issues.</span><br>
+<span id=d628>… Any other items/</span></p>
+<p id=a0cc class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to provide updates on incubated items.</p>
+<p id=ea2a class="phone s01"><cite>Brent:</cite> I don't think our work mode is going to take 10 minutes.</p>
+</section>
+
+<section>
+<h3 id=5b77>work mode</h3>
+<p id=c7d9 class="phone s01"><cite>Brent:</cite> If I forget to talk about it before TPAC, feel free to publicly shame me.<br>
+<span id=854b>… Chair hat on, this maintenance group will only make progress and move forward if people are actively engaged and not relying on workgroups to spur them to action.</span><br>
+<span id=6cd6>… We are of necessity needing to operate as a duocracy, and we need to keep that in mind as we do our triage. I think a monthly meeting is probably sufficient as it will allow us to move things forward.</span><br>
+<span id=bbbd>… And we can leave open the conversation of do we need to meet more often.</span></p>
+<p id=eb0c class="phone s02"><cite>manu:</cite> +1 to that plan, certainly in the beginning.I will continue to volunteer to edit the minor releases of the specs I was editor on previously if the group is OK with that.<br>
+<span id=6a39>… I would love more help around some of the issues and PRs.</span><br>
+<span id=f004>… I am wondering what our merge criteria is going to be. I'm fine if we review and merge if there is consensus before the next weekend. As we're meeting less often, we can extend the merge window from one week to two.</span><br>
+<span id=5e51>… The other thing we need to pay attention to is that because we're in maintenance mode there are some caveats that we can only make class 1-3 changes, no class 4 changes unless we're fixing something serious.</span><br>
+<span id=e9b5>… Happy to raise PRs, +1 to others willing to raise PRs.</span></p>
+<p id=6368 class="phone s01"><cite>Brent:</cite> Looking for folks in the group to let their opinions be known.</p>
+<p id=ff54 class="phone s03"><cite>KevinDean:</cite> +1 to two-week merge window.</p>
+<p id=f62c class="phone s04"><cite>JoeAndrieu:</cite> I want to align with the cadence of meetings. I want to suggest if you miss something in a meeting that you need a longer merge window, so +1 to a longer merge window.</p>
+<p id=bc6f class=irc><cite>&lt;dlongley&gt;</cite> +1 two-week merge window seems fine to me, if something comes up at a meeting we can revise afterwards (probably) if really needed.</p>
+<p id=9434 class="phone s01"><cite>Brent:</cite> The way I imagine it working, if we discuss an issue in a meeting, then we use consensus as a basis for a PR. In an issue we haven't discussed in a meeting, it could be appropriate to create a PR and discuss in the next meeting.</p>
+<p id=ffff class=irc><cite>&lt;manu&gt;</cite> +1 to what Brent just suggested.</p>
+<p id=0100 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to the meeting alignment</p>
+<p id=3dee class=irc><cite>&lt;dlongley&gt;</cite> brent's suggestion also sounds fine to me and happy to go with it and we can change that if we need to</p>
+<p id=7ea9 class="phone s01"><cite>Brent:</cite> I think the two-week merge window should be at either end of a scheduled meeting.</p>
+<p id=14ae class="phone s02"><cite>manu:</cite> +1 to that. It sounds good, and it addresses Joe's concern.<br>
+<span id=a9c0>… In theory, there's little damage we can do this time around as we can't make major changes.</span></p>
+<p id=55ac class="phone s01"><cite>Brent:</cite> I'm not hearing anyone out of alignment, so let's proceed in that direction.<br>
+<span id=a2a9>… Anything else about the work mode?</span></p>
+</section>
+
+<section>
+<h3 id=9d6f>Incubated Items Update</h3>
+<p id=229f class="phone s02"><cite>manu:</cite> Over the summer, the CCG has been meeting to incubate some items that some folks want to move into the VCWG.</p>
+<p id=ab06 class=irc><cite>&lt;manu&gt;</cite> Incubation link: <a href="https://github.com/w3c-ccg/community/issues/250">w3c-ccg/<wbr>community#250</a></p>
+<p id=e745 class="phone s02"><cite>manu:</cite> This is an issue that's tracking all the incubation items. There are multiple items. There's the VC-API group that's been meeting for a while now. There's the data integrity group and the ???.<br>
+<span id=383d>… The groups have listed items to be promoted to VCWG. Some of them are in scope for the current charter, some of them are out of scope, and we may need to recharter to deal with them.</span><br>
+<span id=318a>… The groups continue to refine scope and work on language, but it needs broader group refinement and feedback.</span><br>
+<span id=be1e>… There are some specifications that are not quite ready yet, where the group needs to do more work before moving over.</span><br>
+<span id=07ce>… I think we should have a discussion about expectations. We really need to set priorities on these specs.</span></p>
+<p id=89b8 class="phone s01"><cite>Brent:</cite> I think a necessary indication of something from the CCG being done with incubation is that CCG has published it.<br>
+<span id=9d51>… I think publishing is a necessary step before we can take it on.</span></p>
+<p id=afaf class="phone s02"><cite>manu:</cite> +1 to that.<br>
+<span id=4a35>… I think we were holding back doing the publication until we got the nod from the CCG that they're ready.</span><br>
+<span id=63d6>… Maybe they want to push these out ahead of other specs, maybe further incubation could be done in parallel.</span></p>
+<p id=ae4b class="phone s02"><cite>manu:</cite> +1 to the idea that we need to publish them as community group recommendations before we take them on.</p>
+<p id=61d4 class=irc><cite>&lt;dlongley&gt;</cite> +1 to publish final community group specs when the VCWG is ready to accept them</p>
+<p id=c4b5 class=irc><cite>&lt;dlongley&gt;</cite> +1 people in VCWG have to say and be ready to take on the work</p>
+<p id=10000 class="phone s01"><cite>Brent:</cite> Another thing that I think is necessary for us to accept the specifications for incubation is a critical mass of people in the VCWG willing to take it on. We're looking for people who are willing to be editors and contributors.<br>
+<span id=9a69>… I welcome moving things forward but I don't want to get into a situation where we've taken on a lot of stuff and don't have anyone to do it.</span></p>
+<p id=3304 class="phone s02"><cite>manu:</cite> I agree, we can't move stuff forward unless people volunteer to do it. The only concern I have with rechartering is that it takes a long time.<br>
+<span id=8dbc>… I wonder if we can say that we can take these incubation items on if there's interest. I don't want to recharter to take on two items then have to recharter next year with others.</span><br>
+<span id=3151>… That said, there's not a super downside except people committing to doing the work and not doing it.</span></p>
+<p id=2368 class=irc><cite>&lt;dlongley&gt;</cite> +1 to manu, good to list the specific optional items, even if we don't get to them</p>
+<p id=1c6b class="phone s02"><cite>manu:</cite> For example, our last charter said we would work on a crypto suite if we get around to it, and we didn't. That doesn't count as a mark against us.</p>
+<p id=8145 class="phone s01"><cite>Brent:</cite> I think we're willing to recharter, but we don't want to recharter.<br>
+<span id=ebbf>… We should leave it until there are items that absolutely require it.</span><br>
+<span id=fb09>… Because our current charter does allow us to work on the confidence method and the render method, we should encourage the CCG to publish them so we can work on them.</span></p>
+<p id=7381 class="phone s01"><cite>Brent:</cite> The DID WG and VC-API WGs are going strong, and there's only so much people can do.</p>
+<p id=10001 class="phone s02"><cite>manu:</cite> Two things. I would like us to prioritize specs as a group rather than work on them in a serial order. Last time around we had so much going on in parallel. It would be nice to see if we can focus and crank through the issues. I'd like to understand as a working group what the top three things that we want to get done are.<br>
+<span id=2464>… There may be other specs that are a lot more work, and maybe the group wants to focus on those. I want us to have a prioritization discussion.</span><br>
+<span id=8820>… Let's pull in the things that are in our charter first.</span></p>
+<p id=18f1 class=irc><cite>&lt;dlongley&gt;</cite> +1 to floating the next charter and one reason to recharter earlier is to allow the group to more freely prioritize from a fuller list of specs</p>
+<p id=8dbd class="phone s02"><cite>manu:</cite> We're going to get through those, but it's going to take months to do so. I would like for us to flow to the next charter as well and get feedback so that we can be ready with it when those items come up in the queue.</p>
+<p id=969f class="phone s01"><cite>Brent:</cite> I agree with that. To that end, beginning with prioritization, is it right to discuss in the meeting or raise issues in the GitHub repo?</p>
+<p id=fda9 class="phone s02"><cite>manu:</cite> I think that's a VCWG decision, not a CCG decision. We can also raise prioritization in the chartering repository. I think you can raise issues on specific charters.</p>
+<p id=e5a5 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/verifiable-credentials/issues">https://<wbr>github.com/<wbr>w3c/<wbr>verifiable-credentials/<wbr>issues</a></p>
+<p id=0f6d class=irc><cite>&lt;manu&gt;</cite> +1 to use that repo ^</p>
+<p id=10002 class="phone s01"><cite>Brent:</cite> I think this is where we should raise an issue and capture the conversation.<br>
+<span id=334a>… We need to have the prioritization conversation first.</span><br>
+<span id=76c9>… That's the wrong repo. I'll find the right one.</span><br>
+<span id=2245>… I need to talk to Ivan to find out why that repo is archived.</span></p>
+<p id=256d class=irc><cite>&lt;manu&gt;</cite> <a href="https://github.com/w3c/vc-wg">w3c/<wbr>vc-wg</a></p>
+<p id=275a class="phone s02"><cite>manu:</cite> I think that's the right repo.</p>
+<p id=c9cf class="phone s01"><cite>Brent:</cite> That's the one.<br>
+<span id=fe8c>… I need to talk to Ivan, because I think this is the base repository for our work.</span><br>
+<span id=0ffc>… Do we want to raise new issues or transfer the existing ones?</span></p>
+<p id=591d class="phone s02"><cite>manu:</cite> We should raise new ones.</p>
+<p id=0334 class=action><strong>ACTION:</strong> brent open an issue</p>
+</section>
+
+<section>
+<h3 id=4a92>TPAC</h3>
+<p id=4a33 class="phone s01"><cite>Brent:</cite> We have a meeting scheduled for Friday morning in Kobe. At this point I'm anticipating having charter conversations.<br>
+<span id=e28a>… Also possibly having a larger issue or two that we need to work through. I'm open to whatever else people would like to discuss.</span></p>
+<p id=936e class="phone s01"><cite>Brent:</cite> Do folks agree that we'll have enough to talk about?</p>
+<p id=b7a4 class="phone s02"><cite>manu:</cite> +1 that we'll have enough to meet on.<br>
+<span id=e006>… We will need to remember that we're in maintenance mode and there will be plenty to talk about in a one-day meeting.</span><br>
+<span id=f474>… There's lots on confidence and render method, data model, and charter discussions.</span><br>
+<span id=f5df>… We could also do a round robin on deployments.</span><br>
+<span id=8d7d>… There's always something interesting to hear about.</span></p>
+<p id=6675 class="phone s01"><cite>Brent:</cite> As we get closer, I'll have a draft agenda that people can contribute to.</p>
+</section>
+
+<section>
+<h3 id=9661>Issues - VCDM</h3>
+<p id=7d99 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc</a></p>
+<p id=e6fa class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note something we need to do across all specs.</p>
+<p id=ba36 class="phone s01"><cite>Brent:</cite> The goal here is to know if this is something the group can work on or not.</p>
+<p id=fc0c class="phone s02"><cite>manu:</cite> Now that we're in the maintenance mode, we need to do the work of publishing the interim versions. It's administrative stuff that editors can do in the background, but it can take some time.</p>
+<p id=caea class="phone s01"><cite>Brent:</cite> We're meeting as a group to maintain these specs and we anticipate having to publish them.</p>
+<p id=8b58 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to check in about use cases and echidna</p>
+<p id=78f8 class="phone s01"><cite>Brent:</cite> I think FPWD needs to be a resolution by the group. We can have a working draft before we have a first published working draft.</p>
+</section>
+
+<section>
+<h3 id=8a23>VC Use Cases</h3>
+<h4 id=eb21><a href="https://github.com/w3c/vc-use-cases/pull/161">w3c/<wbr>vc-use-cases#161</a></h4>
+<p id=3333 class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a
+        href="https://github.com/w3c/vc-use-cases/pull/161">w3c/<wbr>vc-use-cases#161</a></p>
+<p id=6935 class="phone s04"><cite>JoeAndrieu:</cite> I want to check in regarding echidna in the use cases
+    document.<br>
+    <span id=f3d2>… I want to be sure that if we need help from the group we have a chance to chat about it.</span>
+</p>
+<p id=f7bd class="phone s01"><cite>Brent:</cite> I think we should talk about this, but I want to setup a topic for it.</p>
+<p id=356e class="phone s04"><cite>JoeAndrieu:</cite> KevinDean has been deepest into the code. Apparently none of the browsers or headless engines that we've checked correctly save the embedded namespace when dealing with the &lt;br&gt; tags.<br>
+<span id=6466>… We're running into problems with validator.nu that is generating errors.</span></p>
+<p id=70f1 class="phone s03"><cite>KevinDean:</cite> I've been through multiple layers of this with mermaid, respec-mermaid, fixing the br tag gets undone by whatever render engine is being used. That said, I have a full workflow set up, but need to get back to error that triggered the whole discussion, error logs are gone, need to create new PR to re-run everything.</p>
+<p id=d596 class="phone s03"><cite>KevinDean:</cite> That's on my plate at the moment.</p>
+<p id=6118 class="phone s01"><cite>brent:</cite> Months of effort have gone into trying to fix this problem, seems to be a respec problem, do we want to move to bikeshed?</p>
+<p id=ff9c class="phone s03"><cite>KevinDean:</cite> I don't know, will have a better answer once I'm able to do end-to-end, most recent tests was accepted, br tag w/o slash, don't know what's different, need to re-run everything to see where things stand to decide on path forward.</p>
+<p id=cdb3 class="phone s02"><cite>manu:</cite> Switching to Bikeshed won't fix this particular problem. It's not a ReSpec bug, it's a problem mixing XML and HTML. Moving to Bikeshed would cost us the ability to use Mermaid directly in the specification.<br>
+<span id=b069>… I expect it to be a problem given the incompatibilities between HTML5 and XHTML.</span></p>
+<p id=81ba class="phone s01"><cite>Brent:</cite> Kevin and Joe, see Manu as a resource to help with this.<br>
+<span id=749f>… Let me know what you need as soon as you need it so we can continue to move this forward.</span><br>
+<span id=9d9b>… Anything else on this or the use cases before we jump back into the data model?</span></p>
+</section>
+
+<section>
+<h3 id=8474>Issues - VCDM</h3>
+<p id=ac81 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc</a></p>
+<h4 id=523d><a href="https://github.com/w3c/vc-data-model/issues/1480">w3c/<wbr>vc-data-model#1480</a></h4>
+<p id=e750 class="phone s01"><cite>Brent:</cite> We're going to start by looking at 1480.<br>
+<span id=3c70>… Example use of render method. I think that this is clearly editorial and can be worked on by the group.</span><br>
+<span id=479d>… I suggest that we create a label for things we're going to work on for this stretch of the group.</span></p>
+<p id=3a82 class="phone s02"><cite>manu:</cite> We need labels to mark changes as class 1, 2, 3 so we know what we're working on and what change it is.</p>
+<p id=f74d class=irc><cite>&lt;dlongley&gt;</cite> &quot;class 1-3&quot; could be a single tag :)</p>
+<p id=2f6d class=irc><cite>&lt;dlongley&gt;</cite> or we could be super precise now</p>
+<p id=687c class="phone s02"><cite>manu:</cite> Class 1 is e.g., a spelling error, class 2 is e.g., a new example, class 3 is e.g., fixing a feature, class 4 is e.g., adding a feature.<br>
+<span id=2adc>… If it's an open issue, we're working on it one way or another. Just having a class label and being open tells us we're working on it.</span></p>
+<p id=7eeb class="phone s01"><cite>Brent:</cite> I will remove &quot;defer&quot; and add &quot;class 2&quot;.</p>
+<h4 id=e810><a href="https://github.com/w3c/vc-data-model/issues/1467">w3c/<wbr>vc-data-model#1467</a></h4>
+<p id=d251 class=irc><cite>&lt;dlongley&gt;</cite> +1 class 4</p>
+<p id=80f7 class="phone s01"><cite>Brent:</cite> I think this is clearly a class 4 change and something we need to defer.</p>
+<h4 id=01c6><a href="https://github.com/w3c/vc-data-model/issues/1360">w3c/<wbr>vc-data-model#1360</a></h4>
+<p id=e4ca class="phone s01"><cite>Brent:</cite> Add mechanism to cryptographically secure non-credential VP properties (contexts etc)<br>
+<span id=fd65>… This also feels class 4.</span></p>
+<p id=4e3c class="phone s02"><cite>manu:</cite> You could probably argue that it's a new feature as we don't have this currently, I don't think, so it's a class 4.</p>
+<p id=60d7 class="phone s01"><cite>Brent:</cite> I'll add class 4 label.</p>
+<h4 id=7823><a href="https://github.com/w3c/vc-data-model/issues/1583">w3c/<wbr>vc-data-model#1583</a></h4>
+<p id=c5d0 class="phone s01"><cite>Brent:</cite> Structuring the security considerations section<br>
+<span id=0c8d>… We've got feedback from the security group about how they would prefer security considerations to be structured.</span><br>
+<span id=3fb5>… I think this is in scope for what we want to do.</span></p>
+<p id=0fb2 class="phone s04"><cite>JoeAndrieu:</cite> I don't know what class this is, I don't think it's class 4, because we're not changing what it needs to be conformant.<br>
+<span id=369b>… We need to discuss with Simone when he is expecting specifications to include a threat model.</span><br>
+<span id=f0c9>… We already have the VCDM, so we have some leeway, and we're not going to create a threat model for everything that is out there.</span></p>
+<p id=cd6b class="phone s01"><cite>Brent:</cite> We can add this as a topic for TPAC.<br>
+<span id=17ac>… There's nothing normative in there.</span></p>
+<p id=5a07 class=summary><a href="https://www.w3.org/policies/process/#correction-classes">https://<wbr>www.w3.org/<wbr>policies/<wbr>process/#correction-classes</a></p>
+<p id=232a class="phone s05"><cite>dlongley:</cite> I am thinking this is class 3 or less.</p>
+<p id=ba51 class="phone s01"><cite>Brent:</cite> I'm making it class 2.</p>
+<h4 id=b7e6><a href="https://github.com/w3c/vc-data-model/issues/1591">w3c/<wbr>vc-data-model#1591</a></h4>
+<p id=f56f class="phone s01"><cite>Brent:</cite> Incorrect Statement in Section 3.1<br>
+<span id=c222>… It sounds like an editorial change so unless folks disagree I'm going to add class 2.</span><br>
+<span id=2dac>… If anyone would like to raise a PR for this one, that would be great.</span></p>
+<h4 id=d8a3><a href="https://github.com/w3c/vc-data-model/issues/1592">w3c/<wbr>vc-data-model#1592</a></h4>
+<p id=fb4f class="phone s01"><cite>Brent:</cite> multiple comments on the introduction section</p>
+<p id=77cf class=irc><cite>&lt;dlongley&gt;</cite> +1 to class 2</p>
+<p id=32b3 class="phone s01"><cite>Brent:</cite> Basically a review of the introduction.<br>
+<span id=ed94>… Should be class 2.</span></p>
+<h4 id=9b18><a href="https://github.com/w3c/vc-data-model/issues/1593">w3c/<wbr>vc-data-model#1593</a></h4>
+<p id=12f5 class="phone s01"><cite>Brent:</cite> Add SD-JWT-VC to Ecosystem Compatibility section</p>
+<p id=e786 class=irc><cite>&lt;JoeAndrieu&gt;</cite> FYI, I just closed <a href="https://github.com/w3c/vc-data-model/issues/1599">#1599</a></p>
+<p id=7b54 class="phone s01"><cite>Brent:</cite> We had a conversation about this, believe it's a class 2 as it's a list of examples.</p>
+</section>
+</main>
+
+<div id=ActionSummary>
+<h2>Summary of action items</h2>
+<ol>
+<li><a href="#0334">brent open an issue</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
