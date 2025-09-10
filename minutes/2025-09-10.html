@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 10 September 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>10 September 2025</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Sep/0001.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/09/10-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, DavidC, denkeni, dlongley, dmitriz, hsano, ivan, kevin, manu, melissa, parth, pdl0, tallted</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>dmitriz</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1856">SD-JWT media types update</a></li>
+<li><a href="#d48a">render method and confidence method</a></li>
+<li><a href="#32c3">FPWD Resolutions</a></li>
+<li><a href="#8bac">VC issues</a>
+<ol>
+<li><a href="#85c0">w3c/<wbr>vc-data-model#1614</a></li>
+</ol>
+</li>
+<li><a href="#3a52">CID issues</a>
+<ol>
+<li><a href="#0984">w3c/<wbr>cid#141</a></li>
+<li><a href="#b09e">procedural issue on the changes</a></li>
+<li><a href="#871b">w3c/<wbr>cid#152</a></li>
+<li><a href="#7235">w3c/<wbr>cid#154</a></li>
+</ol>
+</li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=6dd4 class=irc><cite>&lt;ivan&gt;</cite> Date: 2025-09-10</p>
+<p id=1916 class="phone s01"><cite>brent:</cite> welcome everyone, this is the monthly VC WG call (in maintenance mode)<br>
+<span id=0fbf>… we'll take a look at some issues, hopefully make some resolutions</span><br>
+<span id=b6a8>… any changes/additions to the agenda?</span></p>
+</section>
+
+<section>
+<h3 id=1856>SD-JWT media types update</h3>
+<p id=a567 class="phone s01"><cite>brent:</cite> ok, let's jump into SD-JWT Media Types</p>
+<p id=249e class="phone s01"><cite>brent:</cite> just to give an update - we've requested registration of application/vc+sd-jwt  (and vp+...) in IANA<br>
+<span id=701b>… the vc+ application is proceeding (Mike Jones had a couple of questions), the vp+ media type has been contested</span><br>
+<span id=cecf>… Mike Jones and I have been in conversation with the person who has contested it</span><br>
+<span id=5981>… there is slight potential that this can lead to the SDO equivalent of an international incident</span><br>
+<span id=d9e5>… we're waiting on word with the designated expert at the IETF</span></p>
+<p id=4635 class="phone s02"><cite>manu:</cite> I love how just about everything we do results in that :)<br>
+<span id=9391>… I saw the objector's response. I think they said there was no use cases for sd-jwt for presentations?</span><br>
+<span id=703b>… I think the reason we asked for registration before -- one, it's helpful if you're using a certain cryptographic envelope format to be consistent</span><br>
+<span id=f04e>… the other one - there were some use cases related to (one of the counter arguments was - there is no need to selectively disclose a presentation -- that's not correct)</span><br>
+<span id=00ad>… sometimes, when you want to do a proof of existence</span><br>
+<span id=cd58>… like, I'm presenting something, and I want to prove that I have the info, doing a selecting disclosure in a VP is one way of doing that</span><br>
+<span id=8b50>… which establishes a legal anchor that you had the info at a particular point in time (but did not want to reveal it)</span><br>
+<span id=c2b4>… so I want to make sure that at least those two use cases can be added to the record (and brought up at IETF if needed)</span></p>
+<p id=0c04 class="phone s03"><cite>ivan:</cite> practical question - I get emails from Amanda B. (Bieber?) -- is there something I should do about those?</p>
+<p id=3e12 class="phone s01"><cite>brent:</cite> if you could forward those emails to me and Mike Jones</p>
+<p id=a3ad class="phone s03"><cite>ivan:</cite> will do</p>
+</section>
+
+<section>
+<h3 id=d48a>render method and confidence method</h3>
+<p id=c9c4 class="phone s01"><cite>brent:</cite> Render Method and Confidence Method has recently become final community draft status documents<br>
+<span id=d0b4>… the time has come for us to begin considering adopting them as work items for this group</span></p>
+<p id=0c7d class=irc><cite>&lt;manu&gt;</cite>  Confidence Method v0.9 - <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-confidence-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-confidence-method-20250831/</a></p>
+<p id=9e08 class="phone s01"><cite>brent:</cite> our charter has no problem with this, we wouldn't have to recharter</p>
+<p id=9db3 class=irc><cite>&lt;manu&gt;</cite> Verifiable Credential Rendering Methods v0.9 - <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-render-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-render-method-20250831/</a></p>
+<p id=3b98 class="phone s01"><cite>brent:</cite> however, before making such a resolution, I would want us as a group to be sure that there's at least 2 people willing to be Editors<br>
+<span id=ffff>… and enough orgs / participants in the group intersted, to make it worthwhile</span><br>
+<span id=34c9>… I have concerns about our capacity (not our willingness)</span><br>
+<span id=10000>… we can talk about other specs we could pull in (with a recharter)</span></p>
+<p id=ba17 class="phone s02"><cite>manu:</cite> we sent a poll out to the CCG and the VC WG<br>
+<span id=10001>… we've gotten 28 responses. each spec (including renderMethod) includes -- the spec, how important it is for the ecosystem, whether or not the org is going to use the spec,</span><br>
+<span id=28e6>… and whether or not people are willing to be active Editors on the spec</span><br>
+<span id=100d>… so, we're collecting email addresses of potential editors / implementers</span><br>
+<span id=5269>… for render method and confidence method, we had 5 editor volunteers, plus 9 maybe</span><br>
+<span id=9a6c>… for confidence method - 2 people and 10 people maybe</span></p>
+<p id=5bbb class="phone s02"><cite>manu:</cite> it's clear people want render method a bit more than confidence method, but people think confidence is important</p>
+<p id=54bf class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about granularity of responses</p>
+<p id=8000 class="phone s01"><cite>brent:</cite> I notice one of the question is 'will implement'? what's the granularity -- if more than one person in an org voted, would that show up as more than one?</p>
+<p id=0116 class="phone s02"><cite>manu:</cite> yes. we should change it to one per org, we can do that</p>
+<p id=b164 class="phone s01"><cite>brent:</cite> also, any of the volunteers here on this call?</p>
+<p id=d82d class="phone s02"><cite>manu:</cite> Parth would be interested</p>
+<p id=2122 class="phone s04"><cite>dmitriz:</cite> I would be interested in being editor of the Render Method spec</p>
+<p id=78a2 class="phone s02"><cite>manu:</cite> also, some people in Singapore / apac are very intersted, but this time slot is awkward for them</p>
+<p id=dab6 class="phone s03"><cite>ivan:</cite> do any of the editors that you listed belong to w3c / working group?</p>
+<p id=faa5 class="phone s02"><cite>manu:</cite> yes, a fair number of them are, I need to go back over it. (we don't have that data right now)<br>
+<span id=c5a7>… but we can get at that data</span></p>
+<p id=91c9 class="phone s01"><cite>brent:</cite> chair hat firmly on, here's how I would like us to proceed<br>
+<span id=1bc0>… I would like first step - to get at that additional info (people vs org, membership). following that,</span><br>
+<span id=83ad>… if the additional views are consistent with what we're seeing, I believe it would be appropriate for this WG to adopt Confidence Method and Render Method</span></p>
+<p id=cb81 class=irc><cite>&lt;manu&gt;</cite> Here's the poll results (hopefully folks can see them): <a href="https://docs.google.com/forms/d/1jenKflxUsE-T-Y3zjEh3JBhXDr-M_kY5X0snQCx-Bo0/edit#responses">https://<wbr>docs.google.com/<wbr>forms/<wbr>d/<wbr>1jenKflxUsE-T-Y3zjEh3JBhXDr-M_kY5X0snQCx-Bo0/<wbr>edit#responses</a></p>
+<p id=c207 class="phone s01"><cite>brent:</cite> as we do so, I believe we should explore a Task Force style work mode<br>
+<span id=e3bc>… where the group continues on its monthly cadence, but a TF would be created for each spec that would proceed with their own call cadence, and would report on progress</span></p>
+<p id=076e class=irc><cite>&lt;dlongley&gt;</cite> +1 to task force approach</p>
+<p id=0722 class="phone s01"><cite>brent:</cite> my recommendation is - we try out this mode as an experiment, to judge capacity for additional work. will inform our rechartering discussions</p>
+<p id=ae0b class="phone s03"><cite>ivan:</cite> is the intention to incorporate the CCG document into the VC spec?<br>
+<span id=38b1>… in a VC 2.1 version? or to publish as separate recs / docs?</span><br>
+<span id=e540>… we already have a large number of documents, and we know more docs have management costs</span></p>
+<p id=0f41 class="phone s02"><cite>manu:</cite> the plan would be to publish as separate. I don't know how we could easily fold it into the current spec</p>
+<p id=c761 class=irc><cite>&lt;brent&gt;</cite> +1 to them being separate documents</p>
+<p id=0e1f class="phone s02"><cite>manu:</cite> Render Method itself would add like 30 pages to the spec</p>
+<p id=0423 class="phone s03"><cite>ivan:</cite> ok, just something we need to make a decision on<br>
+<span id=640a>… if we have separate docs, we need separate repos, first public working draft calls, etc</span></p>
+<p id=d003 class=irc><cite>&lt;hsano&gt;</cite> +1 to separate document</p>
+<p id=604c class=irc><cite>&lt;dmitriz&gt;</cite> +1 to separate</p>
+<p id=6bbe class="phone s02"><cite>manu:</cite> copy that, +1. Brent, I put myself on the queue to respond to your TF based plan<br>
+<span id=141b>… the only downside (not saying we shouldn't do it) is -- we do, at some point, want broader WG focus and attention on this</span><br>
+<span id=0c10>… my concern would be - main group members might not see things they might have issue at</span><br>
+<span id=95b6>… so we'd need to find points through the process to sync with larger group</span></p>
+<p id=5719 class="phone s01"><cite>brent:</cite> any time there'd be a resolution on the document, the WG would review it (such as, transition to a rec, etc)<br>
+<span id=aa14>… my hope is also - whenever there's sticky issues, those would be brought to the larger group</span></p>
+<p id=da0e class="phone s03"><cite>ivan:</cite> just to understand the procedure -- so for the time being, we'd meet once a month. Does that mean that concrete actions (transfering to repos etc) should wait till Mid-October?</p>
+<p id=b1aa class="phone s01"><cite>brent:</cite> this group could decide, today, to adopt them. but we're hoping to get more data. (so, yes, mid-october)</p>
+<p id=960a class="phone s02"><cite>manu:</cite> my concern with that approach is - we just published FCGSs, so we shouldn't be updating spec, ... though this may not be true for render and confidence method</p>
+<p id=2931 class="phone s01"><cite>brent:</cite> yes, FPWDs we'll do those today</p>
+<p id=f3d6 class="phone s02"><cite>manu:</cite> should we go through til the next of the specs?</p>
+<p id=92f4 class="phone s03"><cite>ivan:</cite> I'd prefer to combine that with the general rechartering discussion</p>
+<p id=389a class="phone s01"><cite>brent:</cite> I'll make sure it's on the agenda next month<br>
+<span id=360d>… by then, the IPR sign-off should be done for Render and Confidence method</span><br>
+<span id=7278>… and we can have that conversation on other specs etc, to see if it makes sense to recharter</span><br>
+<span id=55fb>… we'll meet at TPAC (this time, not a super long meeting, refreshing)</span><br>
+<span id=0a30>… but I suspect the bulk of the TPAC meeting time will be a re-charter conversation</span></p>
+<p id=e502 class="phone s02"><cite>manu:</cite> how long should we keep the poll open?</p>
+<p id=8163 class="phone s01"><cite>brent:</cite> let's do one more push, and close it up next week</p>
+<p id=7250 class="phone s02"><cite>manu:</cite> sounds good, I'll send another reminder, and close it off next Friday</p>
+<p id=fa33 class="phone s01"><cite>brent:</cite> ok, I think that was everything on that topic</p>
+<p id=a2bc class=irc><cite>&lt;pdl0&gt;</cite> +1 to another week  - meeting with two institutions friday to brief them on the poll.</p>
+</section>
+
+<section>
+<h3 id=32c3>FPWD Resolutions</h3>
+<p id=d5bb class="phone s01"><cite>brent:</cite> ivan, how granular do we need to be here? can we cover it with a single resolution?<br>
+<span id=8038>… like, 'For each spec we're maintaining, if there are changes we need to make, we'll resolve to make a First Public Working Draft'?</span></p>
+<p id=ed1b class="phone s03"><cite>ivan:</cite> you should talk to the person who's responsible for the process these days</p>
+<p id=91c5 class="phone s01"><cite>brent:</cite> I've been talking to that guy, and he's fine with it</p>
+<p id=5ae9 class="phone s03"><cite>ivan:</cite> let's try</p>
+<p id=a3b2 class="phone s03"><cite>ivan:</cite> that phrasing might be slightly too vague</p>
+<p id=8bef class="phone s01"><cite>brent:</cite> (wordsmiths some potential proposals)</p>
+<p id=cec3 class="phone s02"><cite>manu:</cite> just to be clear. if this proposal passes -- I update anything that has changes (which is all the docs, as this point), bump a minor semver version, then we'll do an FPWD<br>
+<span id=4057>… it'll get a new URL in TR space</span><br>
+<span id=5d5c>… we'll use Echidna to publish updated working drafts for it. then transition to CR, then (using new process) go to Rec?</span></p>
+<p id=ae7a class="phone s01"><cite>brent:</cite> yes, that matches my understanding</p>
+<p id=e7fb class="phone s03"><cite>ivan:</cite> just to be clear, that means we have to ask for a transition request (for an FPWD), publish it by hand old-school style, then once that's done, we'll do Echidna etc</p>
+<p id=e88d class="phone s03"><cite>ivan:</cite> other thing we'll have to do is - when we publish the FPWD, we'll make sure the history goes back to the current REC version</p>
+<p id=8fd0 class="phone s01"><cite>brent:</cite> so far I'm hearing alignment, on process details?</p>
+<p id=f5dd class=irc><cite>&lt;brent&gt;</cite> PROPOSAL: As the WG maintains the Recommendations under its purview, we will create a First Public Working Draft for a new version of each document as necessary.</p>
+<p id=f3c1 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=73c1 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=b3c1 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=b3c2 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b3c3 class=irc><cite>&lt;pdl0&gt;</cite> +1</p>
+<p id=f3c2 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=73c2 class=irc><cite>&lt;DavidC&gt;</cite> +1</p>
+<p id=f3c3 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=33c2 class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=a9a9 class=resolution><strong>RESOLUTION:</strong> As the WG maintains the Recommendations under its purview, we will create a First Public Working Draft for a new version of each document as necessary.</p>
+<p id=a045 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note process change request for transition request</p>
+<p id=24b3 class="phone s02"><cite>manu:</cite> i think it's weird to ask for a transition request, for a point-release of a doc we're chartered to work with?<br>
+<span id=2895>… is there any way we can modify the process to require less overhead?</span></p>
+<p id=7025 class="phone s03"><cite>ivan:</cite> so by coincidence, there were some discussions (chartering) on json-ld / rdf -- when you start a new version number,<br>
+<span id=106c>… then officially you start a new line of recommendations in terms of IPR. hence the formalism</span><br>
+<span id=63af>… I don't like it as much as you. so, 2.1 has its own IPR regime</span><br>
+<span id=8f26>… and whatever happened with 2.0 has no reflection</span></p>
+<p id=7ba3 class="phone s01"><cite>brent:</cite> ok, with Process CG hat on, to answer Manu's question. the short answer is - yes, the process can certainly be changed</p>
+<p id=ba0a class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/process/issues">https://<wbr>github.com/<wbr>w3c/<wbr>process/<wbr>issues</a></p>
+<p id=f47b class="phone s01"><cite>brent:</cite> I'll drop a link into the chat. anyone who would like to see changes, please open an issue<br>
+<span id=514b>… additionally, the process CG, under the AB, is planning on interrupting as many WG meetings as possible during TPAC, with questions and conversations about the process, to get feedback from the source</span></p>
+</section>
+
+<section>
+<h3 id=8bac><a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc">VC Issues</a></h3>
+<p id=60a3 class="phone s01"><cite>brent:</cite> I think there's only one issue here that's not Class 4 (those are marked Future)<br>
+<span id=fd23>… everything else, Class 2, has been triaged</span></p>
+<h4 id=85c0><a href="https://github.com/w3c/vc-data-model/issues/1614">w3c/<wbr>vc-data-model#1614</a></h4>
+<p id=cf69 class=irc><cite>&lt;manu&gt;</cite> +1 to what brent said -- mark as class 2</p>
+</section>
+
+<section>
+<h3 id=3a52><a href="https://github.com/w3c/cid/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc">CID issues</a></h3>
+<p id=4475 class="phone s01"><cite>brent:</cite> ok, here's some CID issues, a couple marked as Editorial, some Class 3</p>
+<h4 id=0984><a href="https://github.com/w3c/cid/issues/141">w3c/<wbr>cid#141</a></h4>
+<p id=4ef7 class="phone s01"><cite>brent:</cite> manu, you've labeled this as Editorial. but it's recommending substantive changes. can you give us a summary?</p>
+<p id=61ac class="phone s02"><cite>manu:</cite> the 'Editorial' tag might have been just leftover<br>
+<span id=d140>… debatably Class 3?</span></p>
+<p id=8359 class="phone s01"><cite>brent:</cite> it's removing a normative statement</p>
+<p id=5f58 class="phone s02"><cite>manu:</cite> yes, I think you can do that in a Class 3</p>
+<p id=5ef3 class="phone s01"><cite>brent:</cite> so existing impls won't be affected</p>
+<p id=c4e0 class=irc><cite>&lt;Zakim&gt;</cite> ivan, you wanted to ask about our processing on these?</p>
+<p id=22a1 class="phone s02"><cite>manu:</cite> yes</p>
+<p id=c88a class="phone s03"><cite>ivan:</cite> this is about processing of these<br>
+<span id=ee5c>… so if there's more content, go ahead</span></p>
+<p id=2686 class="phone s01"><cite>brent:</cite> for this issue, I'm hearing Class 3, so I'll add that as a label, will remove Editorial and Future labels</p>
+<p id=cfb0 class=irc><cite>&lt;manu&gt;</cite> +1 to getting rid of editorial/future for all of these.</p>
+<h4 id=b09e>procedural issue on the changes</h4>
+<p id=d586 class="phone s03"><cite>ivan:</cite> how do we want to proceed? I hear about Editorial / Class 3 changes etc,<br>
+<span id=c2c9>… in practice, do we want to change the RECs as they are now? or just reflect them in the new working draft?</span></p>
+<p id=04ee class="phone s01"><cite>brent:</cite> are you asking, should we publish FPWDs as they are, or do we add these changes?</p>
+<p id=aab5 class=irc><cite>&lt;brent&gt;</cite> +1 to manu's -1</p>
+<p id=2104 class="phone s02"><cite>manu:</cite> no, I'd be -1 to changing the current docs, that'll be harder procedurally</p>
+<p id=b953 class=irc><cite>&lt;dlongley&gt;</cite> +1 to manu, sounds much simpler</p>
+<p id=aed9 class="phone s03"><cite>ivan:</cite> that makes me happy</p>
+<p id=b7f2 class="phone s01"><cite>brent:</cite> agree, let's make review as simple as possible</p>
+<h4 id=871b><a href="https://github.com/w3c/cid/issues/152">w3c/<wbr>cid#152</a></h4>
+<p id=f0e0 class="phone s01"><cite>brent:</cite> question is, is this truly editorial?</p>
+<p id=0d6a class="phone s04"><cite>dmitriz:</cite> if you say 'during these cases, the Verifier's business logic takes over',<br>
+<span id=09f1>… is that normative? is that editorial?</span></p>
+<p id=3056 class="phone s02"><cite>manu:</cite> this modification specifically is Class 2, since it's not in a normative statement<br>
+<span id=43df>… it is modifying / suggesting a change to the Business Logic, which is almost always out of scope</span></p>
+<p id=70ec class="phone s01"><cite>brent:</cite> so, Class 2 says &quot;describes changes that do not functionally affect the interpretation of the document&quot;. does that apply here?</p>
+<p id=90dc class="phone s02"><cite>manu:</cite> I get what you're saying. my concern about taking a broader view -- meaning, if we anchor the classes to<br>
+<span id=0c8b>… normative statements in the spec</span><br>
+<span id=2cce>… in theory, the only statements we make in the spec that affect implementation are the normative ones.</span><br>
+<span id=2f91>… that's why I'm suggesting Class 2</span></p>
+<p id=d057 class="phone s01"><cite>brent:</cite> ok, just want to be clear that, at times, there are substantive changes we're making that are not normative, so we're walking a fine line between Class 2 and Class 3<br>
+<span id=bc27>… which I'm ok with, as long as we have clear reasons for our decisions</span></p>
+<p id=5612 class=irc><cite>&lt;manu&gt;</cite> +1 to what brent said our strategy should be</p>
+<p id=e04c class=irc><cite>&lt;pdl0&gt;</cite> +1 for Class 2</p>
+<p id=c493 class="phone s01"><cite>brent:</cite> anyone opposed to me marking this as Class 2?</p>
+<p id=4554 class=irc><cite>&lt;manu&gt;</cite> +1 for class 2</p>
+<p id=004d class=irc><cite>&lt;dmitriz&gt;</cite> +1 for Class 2</p>
+<p id=0577 class="phone s01"><cite>brent:</cite> ok, I'll get rid of 'Future', keep 'Editorial'</p>
+<h4 id=7235><a href="https://github.com/w3c/cid/issues/154">w3c/<wbr>cid#154</a></h4>
+<p id=7e44 class="phone s01"><cite>brent:</cite> clarify relationship to DID<br>
+<span id=28ec>… there was a comment made during review of CID - Introduction should clarify why CID is necessary (when DID exists)</span><br>
+<span id=9500>… So, in my view, this is Editorial / Class 2 change</span></p>
+<p id=9ed1 class=irc><cite>&lt;manu&gt;</cite> +1 to this being class 2</p>
+<p id=b118 class=irc><cite>&lt;pdl0&gt;</cite> +1 as an editorial class 2</p>
+<p id=83fc class="phone s01"><cite>brent:</cite> ok, not seeing any opposition</p>
+<p id=bbfa class="phone s01"><cite>brent:</cite> all right, keep an eye on the mailing list. If you're assigned on an issue currently, feel free to raise PRs _after_ the FPWDs are processed</p>
+<p id=7f29 class="phone s01"><cite>brent:</cite> thank you all, good bye</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#a9a9">As the WG maintains the Recommendations under its purview, we will create a First Public Working Draft for a new version of each document as necessary.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+
+</body>
+</html>
