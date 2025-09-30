@@ -35,9 +35,8 @@ jobs:
         with:
           deno-version: v2.x
       - name: Generate the index files
-        # Details depend on where the script is located
         run: |
-          (cd script;  deno run --allow-sys --allow-read --allow-write --allow-env jsr:@iherman/display-minutes)
+          (cd script;  deno run --allow-sys --allow-read --allow-write --allow-env jsr:@iherman/display-minutes/full)
           echo "Moving index file"
           mv script/index.html minutes/index.html
           echo "Moving resolution file"

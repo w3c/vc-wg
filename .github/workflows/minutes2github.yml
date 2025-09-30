@@ -14,11 +14,14 @@ env:
   M2G_LOG_LEVEL: trace
 
 on:
-  push:
+  workflow_run:
+    workflows: [Publish to Github Pages]
+    types:
+      - completed
     branches:
       - main
-    paths:
-      - '**.html'
+    # paths:
+    #   - '**.html'
       # NB: the path above could be constrained to the directory containing the minutes
       # but the environment variable MINUTES_REPO_PATH is not available here...
       # (env variables are only available in the jobs' steps).
