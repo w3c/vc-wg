@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 08 October 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>08 October 2025</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, DavidC, denkeni, dlongley, dmitriz, identitywoman, ivan, jandrieu, JennieM, JoeAndrieu, KevinDean, msporny, parth, PDL-ASU, phila, selfissued, smccown, tallted</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f9f3">Community Updates</a></li>
+<li><a href="#3ff1">render method and confidence method</a></li>
+<li><a href="#003a">VCDM Issues</a></li>
+<li><a href="#dbf8">CID Issues</a>
+<ol>
+<li><a href="#1c78">w3c/<wbr>cid#157</a></li>
+<li><a href="#7a9c">w3c/<wbr>cid#161</a></li>
+<li><a href="#8444">w3c/<wbr>cid#160</a></li>
+</ol>
+</li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+
+
+<section>
+<h3 id=f9f3>Community Updates</h3>
+<p id=ffff class="phone s01"><cite>Phil:</cite> I'm formerly with W3C on the team for about 8 years, now with GS1 for about 8 years, lots of W3C experience, looking forward to being chair.</p>
+<p id=b90f class="phone s02"><cite>manu:</cite> Great news, CA DMV has made an announcement that they are putting W3C VCs every single physical driver's license and identification cards.</p>
+<p id=d2fd class="phone s02"><cite>manu:</cite> Every single one of these new cards going forward will have a W3C compliant VC embedded into the barcode on the back of the driver's license. There are verifiers that are out there that can check these already.</p>
+<p id=eb21 class="phone s02"><cite>manu:</cite> It uses the ecdsa-di-2023 cryptosuite and the VC barcode spec that has been incubated in the CCG.</p>
+<p id=6fbb class="phone s02"><cite>manu:</cite> CA DMV also issues digital W3C VCs and ISO mdoc mDLs.</p>
+<p id=a5e1 class=summary>Link - <a href="https://www.dmv.ca.gov/portal/news-and-media/dmv-to-release-new-california-drivers-license-and-identification-card-design-with-advanced-security-features/">https://<wbr>www.dmv.ca.gov/<wbr>portal/<wbr>news-and-media/<wbr>dmv-to-release-new-california-drivers-license-and-identification-card-design-with-advanced-security-features/</a></p>
+<p id=29e2 class="phone s02"><cite>manu:</cite> Another update is from MOSIP. MOSIP creates an opensource digital identity government platform. They released some new numbers, they deployed a long time ago with VC 1.1. Over the last year they now issued over 100 million W3C VCs.</p>
+<p id=47bd class="phone s02"><cite>manu:</cite> In the Philippines, India, Uganda, some other countries, will have more data at TPAC. By the end of this year there will be around 200 million W3C VCs just through their platform.</p>
+<p id=f68b class=irc><cite>&lt;JoeAndrieu&gt;</cite> Is there a URL for the Mosip #s?</p>
+<p id=9d86 class=irc><cite>&lt;PDL-ASU&gt;</cite> MOSIF is the acronym?</p>
+<p id=5cc8 class="phone s02"><cite>manu:</cite> So great news for W3C VCs over the past couple of months.</p>
+</section>
+
+<section>
+<h3 id=3ff1>render method and confidence method</h3>
+<p id=cd79 class="phone s03"><cite>brent:</cite> We've received word that the CCG has published these specs as final community group drafts.</p>
+<p id=c6ee class="phone s03"><cite>brent:</cite> That means they have been through the process of IPR releases and that important step. That means that we as a WG can consider working on them.</p>
+<p id=8b5a class="phone s03"><cite>brent:</cite> Our charter allows us to adopt and bring those in without any need to recharter.</p>
+<p id=7272 class="phone s03"><cite>brent:</cite> I've said in the past that I think how we handle those specs should be an indication of whether adding even more items through a new charter is feasible.</p>
+<p id=bd9a class="phone s03"><cite>brent:</cite> Given that, let's have a conversation about who will become editors for these specs. We're not changing our meeting cadence at this time and the plan is to have task forces for working on these specs and moving them forward and then bringing things back to this group.</p>
+<p id=6d65 class="phone s03"><cite>brent:</cite> We need editors other than our good friend, Manu, who has been carrying the burden.</p>
+<p id=674a class=irc><cite>&lt;phila&gt;</cite> Is there a more up to date link than <a href="https://w3c-ccg.github.io/vc-render-method/?">https://<wbr>w3c-ccg.github.io/<wbr>vc-render-method/?</a></p>
+<p id=d7d6 class="phone s03"><cite>brent:</cite> That is the conversation I'd like to have, who will do the editing work and who will do the talking work -- showing up to the task force meetings?</p>
+<p id=b4ef class="phone s03"><cite>brent:</cite> Please jump on the queue.</p>
+<p id=4d9a class="phone s02"><cite>manu:</cite> I agree, your not my Mom, you're much taller than that.</p>
+<p id=388e class="phone s03"><cite>brent:</cite> Other than that, we're the same.</p>
+<p id=eea8 class="phone s02"><cite>manu:</cite> I agree.</p>
+<p id=c968 class="phone s02"><cite>manu:</cite> People filled out a poll and volunteered to be editors.</p>
+<p id=6762 class="phone s02"><cite>manu:</cite> I passed that list to you, Brent, and Ivan.</p>
+<p id=10000 class="phone s02"><cite>manu:</cite> We have people that have volunteered to do that work, some are not on this call or might not be part of the WG, so wanted to provide that as data. For render method and confidence method and almost every other spec, except the post quantum suites, we have 2-3 editors that aren't me that have volunteered.</p>
+<p id=1a66 class="phone s03"><cite>brent:</cite> Thank you, Manu.</p>
+<p id=9e63 class="phone s04"><cite>phila:</cite> Wearing a co-chair hat, editors are a crucial thing and we need to make clear who those people will be. If we will take it on, I will want to know whether test suites exist, whether there is the capacity in the group to create them.</p>
+<p id=7e04 class="phone s04"><cite>phila:</cite> I imagine that's a &quot;yes&quot; and I know there are good implementations of render method at least.</p>
+<p id=d489 class="phone s04"><cite>phila:</cite> I'd like to know how far away we are from candidate rec at this stage and I'd like to know what we need to do to get there.</p>
+<p id=8ee6 class="phone s04"><cite>phila:</cite> I know there are 9 open issues on render method, 4 on the confidence method -- a more recent issue on render method, no new issues from confidence method since May.</p>
+<p id=1452 class="phone s04"><cite>phila:</cite> I am less confidence about the confidence method, render method looks great, I'd like to know if I'm wrong about any of this.</p>
+<p id=c9b0 class="phone s02"><cite>manu:</cite> We've had regular incubation meetings in the CCG. For render method, it has 4 different implementations and 6-7 if you count some in asia -- and confidence method has 1-2 and we need test suites to know. So for render methods we need test suites to figure out what's being tested, visual output or data model.</p>
+<p id=0a52 class="phone s02"><cite>manu:</cite> I know our company has committed to do an implementation.</p>
+<p id=5cd8 class="phone s02"><cite>manu:</cite> As far as how far along render method is -- it's been incubated for 3 years now, there's the US/EU/decentralized approach and the asia approach, both participants on both sides looking to move things forward as well.</p>
+<p id=13d3 class="phone s02"><cite>manu:</cite> A number of education institutions want the decentralized PDF/SVG approach as well.</p>
+<p id=60d4 class="phone s02"><cite>manu:</cite> The spec is really over-incubated at this point, we've got maybe 3-4 months of spec to get to CR, that's my expectation. The core architecture and design is done but we have to work through details.</p>
+<p id=85db class="phone s02"><cite>manu:</cite> Confidence method -- the reason for not a lot of activity is that there isn't a lot to the spec. There are actually zero interoperable implementations -- the unknown things are not the data structure or the data model, getting a test suite is easy -- it's the protocol stuff that is hard to get to interop and test suites.</p>
+<p id=9a48 class="phone s02"><cite>manu:</cite> There's some stuff in the VC API work to define what that looks like -- do we put it into a protocol and test it or do we test the data model?</p>
+<p id=6d43 class="phone s02"><cite>manu:</cite> The other thing with confidence method, people have been pushing biometric confidence methods -- like a picture of a person -- there are privacy questions.</p>
+<p id=0abf class="phone s02"><cite>manu:</cite> Faces, fingerprints, other biometric things -- the WG will need to make some decisions on what we think is appropriate to standardize.</p>
+<p id=77bd class="phone s02"><cite>manu:</cite> Those are the remaining big rocks that need to be worked through in a WG. I have some thoughts on how we meet to move these things forward.</p>
+<p id=0375 class="phone s04"><cite>phila:</cite> Yes, that more or less confirms my view, thank you.</p>
+<p id=3c24 class="phone s05"><cite>ivan:</cite> Two things, one is a very formal one. Which goes back to editorship.</p>
+<p id=f18e class="phone s05"><cite>ivan:</cite> After resolving that -- then we need to officially publish a FPWD for both docs or for render method to start.</p>
+<p id=e220 class="phone s05"><cite>ivan:</cite> In both cases it's required to have an editor who has signed on and given their name to the document.</p>
+<p id=7fbd class="phone s05"><cite>ivan:</cite> If we need invited expert status for an editor we have to get that behind us before we can get to formal publication.</p>
+<p id=2ca8 class="phone s05"><cite>ivan:</cite> Less administration -- Manu you said that we may want to check visually -- and that raises one flag for me. Which we may not be able to avoid, as soon as we are having anything that is related to user-facing things then the accessibility and i18n review will be much more complicated.</p>
+<p id=f5fe class="phone s05"><cite>ivan:</cite> So far we have been lucky with those being easier -- in this case -- who knows how it will work. If we stop at SVG and say nothing about what will be in the SVG we might get by, but let's be ready.</p>
+
+<p id=b2da class="phone s04"><cite>phila:</cite> I was also thinking about a11y and i18n, I was thinking of render method -- and we need to render to all users. I would expect that at the same time, assuming we've got one or both of them to FPWD either today or the next time we meet in Kobe, we would immediately seek horizontal review to get those communities onboard asap.</p>
+<p id=1355 class=irc><cite>&lt;manu&gt;</cite> agree w/ phila -- immediate HR for renderMethod</p>
+<p id=daf2 class="phone s06"><cite>JoeAndrieu:</cite> I agree with Manu about confidence method. The spec is straightforward and the work is in the different types. Manu, which types do you think are easier and low-hanging fruit. But proof of control over private keys is an easy one. Could you paint a picture... could we pick one and get it in there without solving all of them?</p>
+<p id=5274 class="phone s02"><cite>manu:</cite> It's exactly what you said, Joe, proof of possession of a key is super easy and straightfoward.</p>
+<p id=da24 class="phone s02"><cite>manu:</cite> There are orgs that will roll out biometrics whether we get there or not.</p>
+<p id=1926 class="phone s03"><cite>brent:</cite> I am happy to propose publishing FPWD for both of these today. But we need to name editors.</p>
+<p id=4ee1 class="phone s05"><cite>ivan:</cite> I think, formally, and administratively, it's perfectly fine to pass a resolution which says to have FPWD provided that we get one or more editors for each spec.</p>
+<p id=330d class="phone s05"><cite>ivan:</cite> The only thing I'm worried about is ... because we have one meeting a month and we have everything lined up, then we have to wait 3 weeks for a formal resolution and that's a bit silly.</p>
+<p id=50b9 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to suggest meeting cadence for work items and note editors.</p>
+<p id=0f92 class="phone s03"><cite>brent:</cite> I'm happy with that as a path forward, next meeting is TPAC.</p>
+<p id=9ed8 class="phone s02"><cite>manu:</cite> +1 to that.</p>
+<p id=4b67 class="phone s02"><cite>manu:</cite> +1 to saying we're going to publish FPWD based on editors signing up. There are 7 people who said they want to be editors of render method and we have 2 for confidence method. That's the data we have.</p>
+<p id=4374 class="phone s03"><cite>brent:</cite> Good data. How many are members of the group?</p>
+<p id=d1d5 class="phone s02"><cite>manu:</cite> Two are here today -- in addition to those two another that's a member of the group and me.</p>
+<p id=afb3 class="phone s06"><cite>JoeAndrieu:</cite> I may have said I'd be an editor of the confidence method.</p>
+<p id=6381 class="phone s02"><cite>manu:</cite> You did not.</p>
+<p id=09b7 class="phone s06"><cite>JoeAndrieu:</cite> Ok, but I will now.</p>
+<p id=ed6c class="phone s02"><cite>manu:</cite> Dmitri has said he wants to be editor as well for render method.</p>
+<p id=6c79 class="phone s03"><cite>brent:</cite> Ok, we have one editor for at least each document.</p>
+<p id=e940 class="phone s03"><cite>brent:</cite> So that's enough to make a proposal.</p>
+<p id=f3b3 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=f3b4 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=33b4 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=72e4 class=irc><cite>&lt;brent&gt;</cite> PROPOSED: We will publish a First Public Working Draft of Render Method, with a shortname of vc-render-method, with initial content from <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-render-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-render-method-20250831/</a></p>
+<p id=73b5 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=73b6 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=73b7 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=73b8 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=b3b5 class="phone s07"><cite>dlongley:</cite> +1</p>
+<p id=b3b6 class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=b3b7 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=f3b5 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=73b9 class=irc><cite>&lt;Parth&gt;</cite> +1</p>
+<p id=73ba class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=f3b6 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=b3b8 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b3b9 class=irc><cite>&lt;DavidC&gt;</cite> +1</p>
+<p id=d882 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=073b class=resolution><strong>RESOLUTION:</strong> We will publish a First Public Working Draft of Render Method, with a shortname of vc-render-method, with initial content from <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-render-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-render-method-20250831/</a></p>
+<p id=744f class=irc><cite>&lt;brent&gt;</cite> PROPOSED: We will publish a First Public Working Draft of Confidence Method, with a shortname of vc-confidence-method, with initial content from <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-confidence-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-confidence-method-20250831/</a></p>
+<p id=33bb class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=73bb class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=b3bb class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=33bc class="phone s07"><cite>dlongley:</cite> +1</p>
+<p id=73bc class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=b3bc class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=f3bc class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=33bd class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b3bd class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=b3be class=irc><cite>&lt;Parth&gt;</cite> +1</p>
+<p id=f3bd class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=f3be class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=33be class=irc><cite>&lt;DavidC&gt;</cite> +1</p>
+<p id=d883 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=d884 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=d9dd class=resolution><strong>RESOLUTION:</strong> We will publish a First Public Working Draft of Confidence Method, with a shortname of vc-confidence-method, with initial content from <a href="https://www.w3.org/community/reports/credentials/CG-FINAL-vc-confidence-method-20250831/">https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-confidence-method-20250831/</a></p>
+
+<p id=547a class="phone s02"><cite>manu:</cite> I'll propose something, but I don't think we should discuss today -- food for thought. I was wondering if we could get a new charter proposal in front of the group to talk about it at TPAC, that's our next meeting. I wanted to hear what the plan might be.</p>
+<p id=458d class="phone s02"><cite>manu:</cite> We have been meeting -- we have 3 weekly standing calls for different calls in CCG. We could shift those times over to work on these specs, is that the expectation or will we just get into a weekly cadence with this call -- Brent you had mentioned parallelizing the work but I'm worried about doing too much of that.</p>
+<p id=a4f7 class="phone s02"><cite>manu:</cite> The question is -- do we want to have standing calls for these and alternate between render method and confidence method, that's one proposal. We have a new meeting infrastructure in the CCG, it auto-scribes, it records video, it does everything automatically and then emails the list with minutes, topics, summary, etc.</p>
+<p id=c6c0 class="phone s02"><cite>manu:</cite> The downside here is that it IS recorded and it doesn't follow PA/Ivan's tooling. I'm suggesting that if we're going to massively parallelize that we use more automated tooling and that could get controversial.</p>
+<p id=16f2 class="phone s05"><cite>ivan:</cite> First, before I forget about the tooling -- personally I don't care if we use my tooling or not, but a longer discussion would be need and could be discussed in Kobe or something. Not an easy thing to do, there has been experimentation with automated tools and the results were iffy at best.</p>
+<p id=6e22 class="phone s05"><cite>ivan:</cite> Totally different thing: the group had a special slot for special calls -- the slots are there we could use those.</p>
+<p id=608e class="phone s05"><cite>ivan:</cite> We can call the calls whatever we want.</p>
+<p id=5e01 class="phone s05"><cite>ivan:</cite> The practicalities that I don't know -- I presume if I follow that your intention is to have each of these documents in its own github repository -- then I will need all the usual things to transfer to W3C to set them up as WG repos.</p>
+<p id=eb16 class="phone s05"><cite>ivan:</cite> We can discuss that offline next.</p>
+<p id=a941 class="phone s02"><cite>manu:</cite> Yes.</p>
+<p id=ea0a class="phone s04"><cite>phila:</cite> Can I get a sense, please, what is the overlap in personnel -- is it the same people? If so you can't parallelize, if it's the same people we would alternate. If they are distinct groups you could parallelize.</p>
+<p id=9478 class="phone s03"><cite>brent:</cite> Yup good point. We could meet every week and talk about those two specs and the maintenance stuff as well. Alternatively, if there are more dedicated groups and smaller groups of people whether they alternate or not -- I think that's the second option.</p>
+<p id=9b13 class="phone s03"><cite>brent:</cite> My inclination is to allow the render method and confidence method folks to each self-organize. You are welcome to use this meeting slot when this meeting isn't happening obviously -- and if people going to both meetings find we talk about the same things then that conversation can grow organically about of that. I don't want to say top down what must be done.</p>
+<p id=9bca class="phone s03"><cite>brent:</cite> I want to allow you guys to work it out -- Dmitri for example has said he's only working on render method.</p>
+<p id=6bed class="phone s03"><cite>brent:</cite> Feel empowered to start meeting if you care about these things and make sure that Phil and I are invited to those meetings.</p>
+<p id=b913 class="phone s03"><cite>brent:</cite> Editors should run those calls. Any decisions in those decisions are proposed decisions until the WG gets to look at them.</p>
+<p id=53d7 class="phone s02"><cite>manu:</cite> Just some feedback: Ivan I'll work with you to move the repos over to the WG.</p>
+<p id=d523 class=irc><cite>&lt;dmitriz&gt;</cite> +1 I'm fine with alternating / sharing a call</p>
+<p id=b7ca class="phone s02"><cite>manu:</cite> Phil, the overlap is like 60% -- that is working on all these specs. I would suggest, even with what Dmitri said, that we just have one call to work on these two specs. Or we'll alternative if folks really don't like it. I'd rather start with just one call and just see how we do until we split further.</p>
+<p id=cfdd class="phone s02"><cite>manu:</cite> We already hold the incubation calls during this exact time and we could just say that we're going to move those calls over to render and confidence method and they will be WG calls.</p>
+<p id=fb81 class="phone s02"><cite>manu:</cite> We'll need help setting up a time for that -- a W3C calendar thing for that, but that's the proposal for that. The only thing for that is do we use this tooling or that -- I was anti the automation stuff for years and it reached a point where it now is great.</p>
+<p id=e371 class="phone s02"><cite>manu:</cite> The machine does not get tired and it largely captures every word but messes up the acronyms -- you can't tell it not to scribe stuff, it doesn't auto-link like your tooling, Ivan, but we can modify its output to generate an HTML page with links and stuff, but no auto-resolution stuff.</p>
+<p id=9022 class=irc><cite>&lt;denkeni&gt;</cite> +1 for starting with one unified call for both methods</p>
+<p id=52cb class="phone s02"><cite>manu:</cite> We don't have to start with it, but it has made meetings so much easier, and all the minutes and scribing is taken care of.</p>
+<p id=7c46 class="phone s05"><cite>ivan:</cite> I don't want to get into the tooling issue right now -- that's a separate issue, but at to the rechartering. Do we go there now or do we discuss on the two documents still?</p>
+<p id=7626 class="phone s03"><cite>brent:</cite> No plans to talk about chartering today.</p>
+<p id=a5d5 class="phone s05"><cite>ivan:</cite> Manu raised it.</p>
+<p id=6334 class="phone s08"><cite>dmitriz:</cite> Just to weigh in, I think I'd love to start with the CCG auto-scribe infrastructure for the render method calls until someone complains and would be happy to establish one call and alternate calls between render and confidence.</p>
+<p id=7cc9 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to Dmitri's suggestion</p>
+<p id=fad4 class="phone s03"><cite>brent:</cite> Ok, either Ivan or I can set up the calendar stuff in the W3C WG page, so as you determine meeting times and links, we can assist, reach out to us.</p>
+<p id=f096 class=irc><cite>&lt;manu&gt;</cite> +1 to what Dmitri said.</p>
+<p id=80ab class="phone s03"><cite>brent:</cite> I'd like to spend the last bit of time we have looking at issues.</p>
+<p id=f228 class="phone s03"><cite>brent:</cite> I do want to say that, in the VCDM, we have 8 open issues and they are already triaged, nothing new there.</p>
+<p id=3cef class="phone s03"><cite>brent:</cite> Which is fantastic.</p>
+</section>
+
+<section>
+<h3 id=003a>VCDM Issues</h3>
+<p id=5d61 class=irc><cite>&lt;TallTed&gt;</cite> it will be worthwhile investigating a way to `pause/restart recorder`</p>
+<p id=6028 class=irc><cite>&lt;brent&gt;</cite> +1 Ted</p>
+<p id=10001 class="phone s02"><cite>manu:</cite> Yes, they have been triaged. I did look through all of them, I don't know what to write for some of them, the WG might need to weigh in. It's just editorial text, but do we want to add that text or what are we trying to accomplish.</p>
+<p id=7fb0 class="phone s02"><cite>manu:</cite> I'm not saying we need to go through them in this call, nothing time sensitive -- fine to just say ... we'll need to put some effort into processing them, maybe we do it at TPAC, maybe another call.</p>
+<p id=0773 class="phone s03"><cite>brent:</cite> Thank you, Manu.</p>
+<p id=b212 class="phone s03"><cite>brent:</cite> I am noting that Manu -- I'm seeing you added the class 2 determination on a number of these.</p>
+<p id=3d7f class="phone s02"><cite>manu:</cite> Yeah, maybe.</p>
+<p id=ff14 class="phone s03"><cite>brent:</cite> I'm looking at the VC-JOSE-COSE repo.</p>
+<p id=d79d class="phone s02"><cite>manu:</cite> Oh, yes.</p>
+<p id=bef0 class="phone s03"><cite>brent:</cite> That's fine, glad you did that, I think that's a difference between editor/team of editors did an initial pass vs. group did it.</p>
+<p id=614a class="phone s03"><cite>brent:</cite> I am glad that you did that (categorized some issues on VC-JOSE-COSE).</p>
+<p id=feeb class="phone s03"><cite>brent:</cite> I think it's important as a group that we say we agree, it speeds up processing, so thank you for that!</p>
+<p id=33f9 class="phone s02"><cite>manu:</cite> +1</p>
+</section>
+
+<section>
+<h3 id=dbf8>CID Issues</h3>
+<p id=3d4f class="phone s03"><cite>brent:</cite> Unfortunately, I don't remember where we were at with the VCDM, I don't think we got to controlled identifiers at all, so let's spend a couple minutes there.</p>
+<p id=10002 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/cid/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc">https://<wbr>github.com/<wbr>w3c/<wbr>cid/<wbr>issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-asc</a></p>
+<h4 id=1c78><a href="https://github.com/w3c/cid/issues/157">w3c/<wbr>cid#157</a></h4>
+<p id=a51d class="phone s03"><cite>brent:</cite> This is labeled &quot;Possible erratum / enhancement&quot;. This was back in July.</p>
+<p id=a397 class="phone s03"><cite>brent:</cite> I think it fits in with our ... I think this is clearly something that we can address.</p>
+<p id=594d class="phone s03"><cite>brent:</cite> But what's the extent to which this is a class 4 change -- we don't have a class on it.</p>
+<p id=98db class="phone s02"><cite>manu:</cite> I think you can argue it either way, the IANA consideration section is non-normative, could be class 2, but a new named information hash entry request ... sounds class 4 to me.</p>
+<p id=b14e class="phone s02"><cite>manu:</cite> Someone would have to write the spec on the IETF side or we'd have to write something in our spec. I didn't necessarily see it as an errata, I think.</p>
+<p id=7713 class="phone s03"><cite>brent:</cite> Any other input from folks with IANA experience?</p>
+<p id=2060 class="phone s03"><cite>brent:</cite> I agree, technically with Manu -- it's a non-normative section, but it does feel somewhat substantive.</p>
+<p id=af0c class="phone s03"><cite>brent:</cite> So any objections to labeling this class 2?</p>
+<p id=c8a8 class="phone s03"><cite>brent:</cite> I'm hearing no objections, so this is a class 2 change.</p>
+<p id=193a class="phone s02"><cite>Manu:</cite> Eh... ah ... ew ... I don't think it's appropriate to add something of this magnitude to our spec and someone needs to write the IETF doc for us to link to.</p>
+<p id=972f class="phone s05"><cite>ivan:</cite> We are just classifying right now.</p>
+<p id=153a class="phone s03"><cite>brent:</cite> Ok, I'm writing class 4. Which means we'll do it in the future.</p>
+<p id=69ed class="phone s03"><cite>brent:</cite> I don't think it's an errata, it's not an error in the spec.</p>
+<p id=672e class="phone s02"><cite>manu:</cite> Correct.</p>
+<h4 id=7a9c><a href="https://github.com/w3c/cid/issues/161">w3c/<wbr>cid#161</a></h4>
+<p id=cae2 class="phone s03"><cite>brent:</cite> Fix assertion narrative ... etc. Labeled class 2 ready for PR. I agree.</p>
+<p id=0573 class="phone s03"><cite>brent:</cite> This was moved over from the DID spec originally, I believe. This is from 2022.</p>
+<p id=cdb0 class="phone s03"><cite>brent:</cite> Any objections to keeping this class 2?</p>
+<p id=10ac class="phone s03"><cite>brent:</cite> Ok, no objections.</p>
+<p id=e405 class="phone s03"><cite>brent:</cite> One more.</p>
+<h4 id=8444><a href="https://github.com/w3c/cid/issues/160">w3c/<wbr>cid#160</a></h4>
+<p id=0489 class="phone s03"><cite>brent:</cite> Service ID required or optional, number 160.</p>
+<p id=f247 class="phone s03"><cite>brent:</cite> This is marked class 3 with a discuss label. I should remember deep in my bones what class 3 means ... but it's ... what?</p>
+<p id=b739 class="phone s02"><cite>manu:</cite> You are clarifying or modifying conformance of existing implementations. Either making something previously non-conformant =&gt; conformant or vice versa. Here this is clearly contradictory and we need to clarify. I recommend we make this property optional.</p>
+<p id=aef1 class="phone s02"><cite>manu:</cite> We just need to strike the &quot;id&quot; bit that says each service needs to contain these properties.</p>
+<p id=0dbb class="phone s03"><cite>brent:</cite> Ok, I will label this as errata in addition to the class 3 label and we can and will address it.</p>
+<p id=f49a class="phone s03"><cite>brent:</cite> Any objections?</p>
+<p id=e6a3 class="phone s03"><cite>brent:</cite> Not hearing any objections. We're at time.</p>
+<p id=a23e class="phone s03"><cite>brent:</cite> Thank you everyone for being here, thanks Dave for scribing and I look forward to seeing task force meeting invites, reach out if you need any help getting things on the official calendar, you are all fantastic, it's a pleasure working with you.</p>
+<p id=316d class="phone s07"><cite>dlongley:</cite> You're welcome!</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#073b">We will publish a First Public Working Draft of Render Method, with a shortname of vc-render-method, with initial content from https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-render-method-20250831/</a></li>
+<li><a href="#d9dd">We will publish a First Public Working Draft of Confidence Method, with a shortname of vc-confidence-method, with initial content from https://<wbr>www.w3.org/<wbr>community/<wbr>reports/<wbr>credentials/<wbr>CG-FINAL-vc-confidence-method-20250831/</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 246 (Wed Oct  1 15:02:24 2025 UTC).</address>
+
+</body>
+</html>
