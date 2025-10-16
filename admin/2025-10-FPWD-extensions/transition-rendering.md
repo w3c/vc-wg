@@ -3,10 +3,10 @@
 - Verifiable Credential Rendering Methods v1.0
 - Editors' draft: https://w3c.github.io/vc-render-method/
 - Requested short name: vc-render-method
-- Expected publication date: 2025@DATE@
+- Expected publication date: 2025-10-30
 - Final Draft: 
   - https://www.w3.org/TR/vc-render-method/
-  - https://www.w3.org/TR/2025/WD-vc-render-method-2025@DATE@/
+  - https://www.w3.org/TR/2025/WD-vc-render-method-20251030/
 
 # Abstract
 

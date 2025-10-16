@@ -3,10 +3,10 @@
 - Verifiable Credential Confidence Method v1.0
 - Editors' draft: https://w3c.github.io/vc-confidence-method/
 - Requested short name: vc-confidence-method
-- Expected publication date: 2025@DATE@
+- Expected publication date: 2025-10-30
 - Final Draft: 
   - https://www.w3.org/TR/vc-confidence-method/
-  - https://www.w3.org/TR/2025/WD-vc-confidence-method-2025@DATE@/
+  - https://www.w3.org/TR/2025/WD-vc-confidence-method-20251030/
 
 # Abstract
 
