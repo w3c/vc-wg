@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2025-10-16</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Dave Longley, Dmitri Zagidulin, Ivan Herman, Joe Andrieu, Kevin Dean, Manu Sporny, Phil Archer, Ted Thibodeau Jr, Will Abramson</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic_1">Organizing Work Mode and Process</a></li>
+<li><a href="#topic_2">First Public Working Draft (FPWD) Preparation</a></li>
+<li><a href="#topic_3">Specification Titles and Names</a></li>
+<li><a href="#topic_4">Goals for Next Several Months</a></li>
+<li><a href="#topic_5">Scope, Engagement, and Editorial Clarity</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic_1">Organizing Work Mode and Process</h3>
+<p id="p_1" class="phone s01"><cite>Phil Archer:</cite> Just for clarity, I believe this meeting is being led by Manu particularly.</p>
+<p id="p_2" class="phone s01"><cite>Phil Archer:</cite> I believe it's not being led by me. Is that right?</p>
+<p id="p_3" class="phone s01"><cite>Manu Sporny:</cite> maybe it is technically led by the editors of the specs …</p>
+<p id="p_4" class="phone s01"><cite>Manu Sporny:</cite> who are currently Joe Andrew and Dmitri I can provide some front matter I'm happy to run the call just because we're just organizing ourselves But, I think in the future it would be the editors and then with chair oversight. So, Phil,…</p>
+<p id="p_5" class="phone s01"><cite>Phil Archer:</cite> Okay, I'll use my gavel very lightly. Thanks.</p>
+<p id="p_6" class="phone s01"><cite>Manu Sporny:</cite> I think you always have the gavel if you need to come in and change a direction or remind people that we can't do certain things that the group's talking about. That was my expectation. Okay. Appreciate that. we'll get started in another minute.</p>
+<p id="p_7" class="phone s01"><cite>Manu Sporny:</cite> we usually hold until four past the hour and then we get started.</p>
+<p id="p_8" class="phone s01"><cite>Manu Sporny:</cite> All right, let's go ahead and get started. There's a decent chunk of us here. this is the, first, verifiable credential working group specification refinement call. we have two specifications that the verifiable credential working group has ad the verifiable credential render method and the verifiable credential confidence method. these calls are meant to refine those specifications so that we can move them through the W3C standards track process. So that's the purpose of these calls.</p>
+<p id="p_9" class="phone s01"><cite>Manu Sporny:</cite> I think the expectation is that run The editors of the specs and really it's any editor of the spec can run the calls with the W3C BCWG chairs u Brent and Phil and W3C staff Avon providing input, guidance and whatever along the way. my recollection is that we don't make permanent decisions in this group. We make preliminary ones. We raise PRs. we put them through the PR process and ultimately if there is a decision or resolution that is made in the verifiable credential working group. and I think that as far as I understand it is our operating mode. we would have discussions in this call.</p>
+<p id="p_10" class="phone s01"><cite>Manu Sporny:</cite> We would update issues, we could discuss PRs, we can, even merge PRs. but the idea here is that we discuss issues, refine PRs in this call and then the ultimate decision on whether or not to publish documents as candidate wreck or whatever is onto the working group. let me stop there and see if my summary is accurate. Avon, I'll get into kind of meeting times because that's another thing we need to discuss today. but at a high level, does that operating mode sound right to everyone?</p>
+<p id="p_11" class="phone s01"><cite>Phil Archer:</cite> Sounds right to me, man.</p>
+<p id="p_12" class="phone s01"><cite>Ivan Herman:</cite> Yes, works for me.</p>
+<p id="p_13" class="phone s01"><cite>Manu Sporny:</cite> Okay, great.</p>
+<p id="p_14" class="phone s01"><cite>Manu Sporny:</cite> okay. Thumbs up from Demetri. the other expectation I have is that we would let PRs sit for the standard 7-day period. So, we don't just raise PRs and merge them immediately. unless the editors are convinced that it's really a non controversial change. the typical work mode we have in VCWG is 7 days. We let 7 days lapse until people have had enough time to review it. we do not emerge things that don't have at least one other PR from an independent voice in the group. And ideally we shoot for at least two full reviews of a PR before we merge it after a 7-day waiting period. does that also sound right to everyone?</p>
+<p id="p_15" class="phone s01"><cite>Manu Sporny:</cite> Are there any objections to that work mode? Okay, seeing thumbs ups. All with that, we do have an agenda today. organizing ourselves in our work mode. We can talk about any details in that topic. we will also identify additional editors for each spec. anyone that wants to edit is more the marrier. we, probably need to establish some goals for the next several months with these two specifications. and I think maybe today we spend most of our time raising issues on the specifications, identifying things we really need to kind of discuss and clarify.</p>
+<p id="p_16" class="phone s01"><cite>Manu Sporny:</cite> talk about our timeline before we get the candidate recommendation in many months from now. go ahead Phil</p>
+<p id="p_17" class="phone s01"><cite>Phil Archer:</cite> Thanks just couple of things from my side. I was looking at the GitHub issues that Ivan has kindly raised ready to get these documents to go to first public work in draft which the group approved should happen when we met last week. There are a couple of issues that need addressing. I'm hoping the editors will be able to do that because that's kind of the first thing to do on my list. And just in terms of what you're saying, Manu, Brent and I met, I think it was yesterday, something certainly I'm very keen that we do either during TAC or between now and then, but I think be ready to do at TAC. is to put in the request for the horizontal reviews. I pushed that for two reasons.</p>
+<p id="p_18" class="phone s01"><cite>Phil Archer:</cite> the first one being that it kind of asks some awkward questions and it makes you think of that? have we actually got this? And that would I think expose any gaps that may exist in the existing work which I know is substantial and very close to being done and I'm well aware of that. But I think that highlights some of the process issues and also then gives us all an idea of just how much work there is to do. Having got to the state that these two documents have got to within their incubation period, it's easy to think it's all done. Maybe That would be fantastic if it is, but putting yourself through that ringer of kicking off the horizontal review process has a habit of highlighting stuff. So that's kind of where I would hope we can get to between now and TAC and certainly during TAC. that's what I hope we can do. Thanks.</p>
+<p id="p_19" class="phone s01"><cite>Manu Sporny:</cite> Yes, certainly. Plus one to all of that.</p>
+<p id="p_20" class="phone s01"><cite>Ivan Herman:</cite> Yeah. …</p>
+<p id="p_21" class="phone s01"><cite>Ivan Herman:</cite> a bit additional to what Phil said, I agree with what he said, but I think, going through the first public working job should be a priority. it makes our life easier if we are in the regular structure of W3C with the draft. We can set up a kid now. we can get all the usual things rolling. So I think we should really try to make the minimal changes in the document that are necessary to put it through the first public draft thing. Not going into technical issues right now because then we will easily get delayed and get into the very enjoyable technical discussions but we have to go through the boring admin to do that.</p>
+<p id="p_22" class="phone s01"><cite>Ivan Herman:</cite> So minimal changes to the two documents. I have scanned through them this afternoon. apart from the header changes and the editorial things. As far as the first public working draft goes, I think the document is ready. I think there are lots of things to be done for rec track. But that's why we are here. But there is no need to go through technical changes too much right now.</p>
+<p id="p_23" class="phone s01"><cite>Ivan Herman:</cite> And indeed I don't know where I should put the pointer to the request that I created. I put it in the message of I hope that's fine.</p>
+<p id="p_24" class="phone s01"><cite>Manu Sporny:</cite> Yeah. All right.</p>
+<p id="p_25" class="phone s01"><cite>Ivan Herman:</cite> And there are some specific questions that I need before I can go there. I see that on the screen. So I need those things done to be able to start the process once the documents are ready.</p>
+<p id="p_26" class="phone s01"><cite>Manu Sporny:</cite> Plus one to all of that as well, Avon.</p>
+<p id="p_27" class="phone s01"><cite>Manu Sporny:</cite> I think it would be good if we focused on FPWD first and then we can get into kind of issues and other things like the technical stuff after that. So I think that's an agenda modification which is totally fine to kind of pick up the FPWD discussion first so we can get that going. then plus one to trying to kick off horizontal review shortly after That will require us to do some work. All right. let's see. let me cover one more thing on our work mode. so the way this is set up is an experiment. We're using Google Meet. we're using auto transcription. we're using video recording.</p>
+<p id="p_28" class="phone s01"><cite>Manu Sporny:</cite> and there's some benefits and drawbacks to that. The benefit is that, our scribe is tireless. It's a robot. So, it will capture absolutely every word it does it pretty well except when we use W3C specific acronyms that it gets tripped up. there is also no such thing as off the record. so please remember that if you say something, it will go into the transcription and it takes an enormous amount of effort to try and delete that. and in some cases, because publication is automated, this is a fully automated publication. So at 6 p.m. Eastern, the bot will fire up and it will send out a transcript and generate all the things.</p>
+<p id="p_29" class="phone s01"><cite>Manu Sporny:</cite> So, there's a bit of a delay if for whatever reason somebody says something that really needs to be struck from the record. but, we need to know before 6 p.m. Eastern. and that's when all the bots take over and send everything out. so what that means is that if you're running one of these calls, all you need to do is show up and run the call. Everything else is automated. the downside is the things I mentioned we also don't have yet autolinking of issues into the GitHub tracker. So whoever is running the call if you are processing an issue you need to go into GitHub and you need to type out kind of the resolution that the group made.</p>
+<p id="p_30" class="phone s01"><cite>Manu Sporny:</cite> That's a pretty, big negative with the new system, but Von and I are going to try and fix that somehow. I think that's largely it for kind of the recording infrastructure. any questions on any of that before we move on to talking about FPWD?</p>
+<p id="p_31" class="phone s01"><cite>Manu Sporny:</cite> Go ahead, Dave. It does not.</p>
+<p id="p_32" class="phone s01"><cite>Dave Longley:</cite> Quick question is whether the Google chat still gets captured in the minutes or…</p>
+<p id="p_33" class="phone s01"><cite>Dave Longley:</cite> if it does not.</p>
+<p id="p_34" class="phone s01"><cite>Manu Sporny:</cite> So if you want to say something off the record for now, say it in the Google chat. but we are probably going to fix that in the next couple of weeks to months so that the Google chat is also preserved.</p>
+<p id="p_35" class="phone s01"><cite>Ivan Herman:</cite> maybe don't do that. It's good to have that</p>
+<p id="p_36" class="phone s01"><cite>Manu Sporny:</cite> Yeah. Yeah. Potentially. Okay. something for us to discuss offline, right?</p>
+<p id="p_37" class="phone s01"><cite>Manu Sporny:</cite> we will have to figure out think through all those details. but for now, yeah, if you want to share links, if you want to say something off the record, the Google chat is one way to do that. but of course, you have to also make sure that nobody else responds in voice to what you just typed out. so it might be a bit weird. thats Any other questions, concerns about call infrastructure?</p>
+<p id="p_38" class="phone s01"><cite>Phil Archer:</cite> Is there a pause button?</p>
+<p id="p_39" class="phone s01"><cite>Manu Sporny:</cite> No. Mhm.</p>
+<p id="p_40" class="phone s01"><cite>Phil Archer:</cite> Is there? No, I'm just thinking because if you put a link in the chat, that's really useful. But we do need a way to say something to each other that isn't recorded. So maybe everything you're saying makes sense here, but I think we kind of need a side channel somewhere. It could be a Slack channel. It could be an IC channel. I don't care. But something where we could potentially communicate in some way that wasn't recorded.</p>
+<p id="p_41" class="phone s01"><cite>Phil Archer:</cite> Because knowing that everything you say, even a sides will restrict some people more than that's one.</p>
+<p id="p_42" class="phone s01"><cite>Manu Sporny:</cite> Yep. Yeah,…</p>
+<p id="p_43" class="phone s01"><cite>Manu Sporny:</cite> I agree. it hasn't been an issue in the CCG calls for the last couple of years. but again, I think people self censor and that can be problematic as you mentioned, Phil. So, that's kind of where we are right now and we'll continue to try and work on things to see if this experiment is a positive one and if we want to keep going or if we want to go back to the old way of meeting. all right. yeah, an IRC is a totally fine thing. I've tried to look into the pause recording thing. I have not found a way to pause Google Meet transcription and recording.</p>
+<p id="p_44" class="phone s01"><cite>Manu Sporny:</cite> It's an on onoff thing and if you turn it off and turn it back on then the bots get thoroughly confused because you have two transcripts. they don't know how to stitch them together. all right let's talk about FPWD.</p>
+</section>
+<section>
+<h3 id="topic_2">First Public Working Draft (FPWD) Preparation</h3>
+<p id="p_45" class="phone s01"><cite>Manu Sporny:</cite> Avon, do you want to take us through this issue?</p>
+<p id="p_46" class="phone s01"><cite>Ivan Herman:</cite> Sure,…</p>
+<p id="p_47" class="phone s01"><cite>Ivan Herman:</cite> but it's all there. you can open it if you want, but I had to prepare essentially the issues that you No, that forget about this one. Roll down. this is just administrative. So this one is the typical thing that I have to fill to get a transition request. obviously I need the date but the first thing is that the documents as they are now are labeled as 0.9 if I remember I presume that's fine for a CCG document. but I think it should be 1.0</p>
+<p id="p_48" class="phone s01"><cite>Ivan Herman:</cite> zero for both of them. And there is also a harmonization of the title. The rendering one officially has the title verifiable credential render method and the confidence method one doesn't have the verifiable credentials. So in this submission I have already modified the title that I propose to use and we will have to do that in the document as well. then there are two other things which are important. If you go down IPR commitment because this comes from CCG. I presume that the CCG has conducted the usual thing of releasing the IPR if there is any.</p>
+<p id="p_49" class="phone s01"><cite>Ivan Herman:</cite> The only thing I need is you can edit the PR monies to put there the pointer to whatever you have. And the other thing is that the submission requires information about implementations. That's just information. There is no requirement for any number quality whatever anything that you think makes the case. or both someone should put their two or three lines of some typical implementations and from that point of view that is all I need. Once the documents are ready to go and I take them over and I do my thing then I can submit this to the management to approve the transition. Nothing really dangerous and problematic I guess.</p>
+<p id="p_50" class="phone s01"><cite>Manu Sporny:</cite> Yeah. bless one to all that, to answer your question about IPR commitments, we did a final community group specification publication in the CCG and we have received IPR releases from anyone that contributed any amount of significant content to the specification. single. Yes.</p>
+<p id="p_51" class="phone s01"><cite>Ivan Herman:</cite> You have some sort of a record of a call for IPR or…</p>
+<p id="p_52" class="phone s01"><cite>Ivan Herman:</cite> something of that sort? Yeah.</p>
+<p id="p_53" class="phone s01"><cite>Manu Sporny:</cite> Yeah, there's a link to IPR commitments through the community group FCGS finalization report thingy.</p>
+<p id="p_54" class="phone s01"><cite>Manu Sporny:</cite> So, yes, we can dump both of those links in here. and then on top of it, the standard just general com, you are in a community group, IPR commitments stand as well.</p>
+<p id="p_55" class="phone s01"><cite>Manu Sporny:</cite> It's kind of like two layers of an onion, so we've got both of those. We're in good shape, I think, from an IPR commitment standpoint.</p>
+<p id="p_56" class="phone s01"><cite>Ivan Herman:</cite> No. Wait,…</p>
+<p id="p_57" class="phone s01"><cite>Manu Sporny:</cite> And then the titles, we can update them. I was going to stay away from version 10 my suggestion is we stay away from 10 until we're actually where we are at 0.9. We next one would be 11,2 whatever.</p>
+<p id="p_58" class="phone s01"><cite>Manu Sporny:</cite> Yes,…</p>
+<p id="p_59" class="phone s01"><cite>Ivan Herman:</cite> wait. you want to change the title as we go along.</p>
+<p id="p_60" class="phone s01"><cite>Manu Sporny:</cite> I think we can do that, can't we?</p>
+<p id="p_61" class="phone s01"><cite>Ivan Herman:</cite> Nobody likes that. No, I mean,…</p>
+<p id="p_62" class="phone s01"><cite>Manu Sporny:</cite> Okay. If okay,…</p>
+<p id="p_63" class="phone s01"><cite>Ivan Herman:</cite> and I don't see any reason. Usually what we do with all the specification we had before, this is a draft. Of course, it's a draft. So, it can be 1.0. It will become a non-draft 1.0 zero eventually. I see no reason why doing it that way. Honestly,</p>
+<p id="p_64" class="phone s01"><cite>Manu Sporny:</cite> that's fine. A Phil, you have your hand up.</p>
+<p id="p_65" class="phone s01"><cite>Phil Archer:</cite> Do we need a version number at all on these things?</p>
+<p id="p_66" class="phone s01"><cite>Manu Sporny:</cite> It's required per pub rules.</p>
+<p id="p_67" class="phone s01"><cite>Phil Archer:</cite> That's a change since I last looked. My apologies.</p>
+<p id="p_68" class="phone s01"><cite>Manu Sporny:</cite> is so I again ub rules change pub process is changing so I might have outdated information…</p>
+<p id="p_69" class="phone s01"><cite>Phil Archer:</cite> I Sorry.</p>
+<p id="p_70" class="phone s01"><cite>Manu Sporny:</cite> but I remember we got dinged for that on a spec and I ended up putting them on all the specs I don't think it's enforced but it's Yep.</p>
+<p id="p_71" class="phone s01"><cite>Phil Archer:</cite> Yeah, I thank Richard. Thanks, M. All right.</p>
+<p id="p_72" class="phone s01"><cite>Manu Sporny:</cite> And again I looked six months ago so it might have changed since then. yeah.</p>
+<p id="p_73" class="phone s01"><cite>Ivan Herman:</cite> So one thing we don't want to change in any case is the short name…</p>
+<p id="p_74" class="phone s01"><cite>Ivan Herman:</cite> because that's always a problem. the question is whether you want the version number in the short name. That's something that we will have to define. But remember that any change of the short name can be done I mean on the bing dropper can be done…</p>
+<p id="p_75" class="phone s01"><cite>Ivan Herman:</cite> but it's a pain in the backside for the editors for the staff contact and for the web master so we don't want to do</p>
+<p id="p_76" class="phone s01"><cite>Manu Sporny:</cite> Yeah. …</p>
+<p id="p_77" class="phone s01"><cite>Manu Sporny:</cite> yeah, plus one to that and I am going to be annoying and pedantic. I am concerned about it's fine. We can go with these short names and certainly not going to stand in the way. There is an issue talking about the name of this spec. this spec is really about authentication not necessarily about confidence methods and so it may be avon that we publish as VC confidence method and…</p>
+<p id="p_78" class="phone s01"><cite>Ivan Herman:</cite> But why don't we do it now?</p>
+<p id="p_79" class="phone s01"><cite>Manu Sporny:</cite> then we might change to authentication I think Joe's got his hand up to maybe say why we don't do it now go ahead</p>
+<p id="p_80" class="phone s01"><cite>Manu Sporny:</cite> Okay,…</p>
+<p id="p_81" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I disagree that it's about authentication.</p>
+<p id="p_82" class="phone s01"><cite>Joe Andrieu:</cite> Authentication is about verifying that you're in some identification architecture that can link you to an account or something like that. But this is actually about identity assurance and having confidence that the person on the other side of the credential is the person. So it opens up the aperture significantly and I think calling out authentication would be problematic.</p>
+<p id="p_83" class="phone s01"><cite>Manu Sporny:</cite> that's fine. And I'm fine to, kind of kick that. There's nuances there that I'd like the group to talk about. but Avon,…</p>
+<p id="p_84" class="phone s01"><cite>Ivan Herman:</cite> then you will owe me something.</p>
+<p id="p_85" class="phone s01"><cite>Manu Sporny:</cite> this is just a heads up that more than likely it's not going to change, but if it does change, we know how to change it. it's a pain for you. We apologize, but I just added to the very long list of things. So, I just wanted to raise that.</p>
+<p id="p_86" class="phone s01"><cite>Manu Sporny:</cite> The other thing I wanted to mention here and again this is pedantic but these specifications contain multiple of these things. So these are rendering methods plural because we have at least two of them in that specification today and these are confidence methods plural because we have I think three to four of them in the specification. So as long as everyone's okay with that I think we should pluralize this.</p>
+<p id="p_87" class="phone s01"><cite>Manu Sporny:</cite> And then there's a question on do we pluralize the short name? I don't feel strongly one way or the other.</p>
+<p id="p_88" class="phone s01"><cite>Ivan Herman:</cite> I don't care in a sense from my point of view.</p>
+<p id="p_89" class="phone s01"><cite>Ivan Herman:</cite> Whatever you guys decide is fine.</p>
+<p id="p_90" class="phone s01"><cite>Manu Sporny:</cite> Go ahead Dave. You're on the queue.</p>
+<p id="p_91" class="phone s01"><cite>Dave Longley:</cite> And so I kind of see the specs as defining the baseline for what a confidence method or a render method is. the fact that the spec might have concrete examples who actually implement of that or for those does I don't know that that means that the name of the spec should be pluralized and it also seems to imply that if you don't have one that's in the spec you can't extend the spec and…</p>
+<p id="p_92" class="phone s01"><cite>Manu Sporny:</cite> Okay, looks like he's Avon here on the queue.</p>
+<p id="p_93" class="phone s01"><cite>Dave Longley:</cite> do something and then eventually bring that to another spec.</p>
+<p id="p_94" class="phone s01"><cite>Joe Andrieu:</cite> Sorry, meant I didn't mean to party. Just thumbs up.</p>
+<p id="p_95" class="phone s01"><cite>Ivan Herman:</cite> Yeah, but I mean I looked at the render method document an hour ago and…</p>
+<p id="p_96" class="phone s01"><cite>Ivan Herman:</cite> I presume that it does define normatively several method. though it is plural. So it's more than what you say Dave unless those that are in the document are there for example only and they are not formally standard that I can't see for that from the document.</p>
+<p id="p_97" class="phone s01"><cite>Manu Sporny:</cite> All right.</p>
+<p id="p_98" class="phone s01"><cite>Manu Sporny:</cite> Thanks, Savon. Phil, you're on the queue.</p>
+<p id="p_99" class="phone s01"><cite>Phil Archer:</cite> As always,…</p>
+<p id="p_100" class="phone s01"><cite>Phil Archer:</cite> I'm very conscious of being playing catch up with everybody here. But if there are already multiple defined methods, but we think that there may be a future one, I call that an extension mechanism.</p>
+<p id="p_101" class="phone s01"><cite>Phil Archer:</cite> In other words, here are three or four we've done already. If you want to define your own, then here's how you do it. And that would be perfectly valid I would say.</p>
+<p id="p_102" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one to that.</p>
+<p id="p_103" class="phone s01"><cite>Manu Sporny:</cite> I think we have consensus on that. but the ramification I think is what Dave was kind of talking about. So, I think Dave is Sorry, I'm jumping here. Go ahead, Dmitri.</p>
+<p id="p_104" class="phone s01"><cite>Dmitri Zagidulin:</cite> No. not that important. Go ahead. I was just saying to me the singular of the title reads just like the no plurals JSLD convention.</p>
+<p id="p_105" class="phone s01"><cite>Manu Sporny:</cite> Dave.</p>
+<p id="p_106" class="phone s01"><cite>Dmitri Zagidulin:</cite> It assumes multiple random methods. That's it.</p>
+<p id="p_107" class="phone s01"><cite>Dave Longley:</cite> Yeah, I perhaps should not have used the word just examples. that it seems to me that the title or the purpose of the spec is to It's sort of genative define a class of things. We do define concrete instances of the class in the spec in this version. And that's also been something that's been requested for any of these things that any of these specs we put out that we have at least one concrete version of it. But I don't think that that means I wouldn't want the title to imply that this is the whole set as opposed to this is the class or genative spec for these types of things. and then here are some that we will have interop on when 1.0 My nails done.</p>
+<p id="p_108" class="phone s01"><cite>Manu Sporny:</cite> Okay, seeing a thumbs up from Avon. so let's say the proposal here is we're going to use singular form in both the title and the short name. Would anyone object to that? great. No objections. so that means I think we're good to go for FPWD, meaning the title and…</p>
+<p id="p_109" class="phone s01"><cite>Manu Sporny:</cite> the short name. what do we want the publication date to Noting that. go ahead. Right.</p>
+<p id="p_110" class="phone s01"><cite>Ivan Herman:</cite> First before we decide on the date we have to understand…</p>
+<p id="p_111" class="phone s01"><cite>Ivan Herman:</cite> what has to be done with the documents themselves. I didn't say that as they are today they are ready for first public working draft.</p>
+<p id="p_112" class="phone s01"><cite>Manu Sporny:</cite> So let me kind of hi outline that. So what we have been doing which seems to have been working fairly well over the last year or so is we create a directory called transitions in each repository. We would create a directory called fpwd all caps. sorry we'd create a year a directory like 2025 and then in there we would create an FPWD directory. So this is the FPWD published in 2025. and then we would change the header information for the s generate a static copy, HTM CSS link check it, make sure everything's fine.</p>
+<p id="p_113" class="phone s01"><cite>Manu Sporny:</cite> And then we would notify von that the document is ready to go. So, typically it's the editors that do that work. an example is Are you saying, can I put up an example?</p>
+<p id="p_114" class="phone s01"><cite>Ivan Herman:</cite> Can you put up one of the documents?</p>
+<p id="p_115" class="phone s01"><cite>Ivan Herman:</cite> No, no, no, no. Let's say the render method dropped as it is today.</p>
+<p id="p_116" class="phone s01"><cite>Manu Sporny:</cite> Yeah. Yes. Here it is.</p>
+<p id="p_117" class="phone s01"><cite>Ivan Herman:</cite> So, first of all, it has to be renamed. And then I have to go through. So you have made a version that is newer than what I looked at which is So all these editors have already joined the working group.</p>
+<p id="p_118" class="phone s01"><cite>Manu Sporny:</cite> No, this is old list of editors. but Patrick I think Dmitri I will be the last editor just as a backup.</p>
+<p id="p_119" class="phone s01"><cite>Manu Sporny:</cite> And then we've got someone from Singapore that's not Calvin or Kyle Hendry Poe who's going to be an editor. </p>
+<p id="p_120" class="phone s01"><cite>Manu Sporny:</cite> And I think MOSIP's trying to figure out their W3C, but we don't need all of them, I mean, this is just FWD.</p>
+<p id="p_121" class="phone s01"><cite>Ivan Herman:</cite> No, we don't need all of them,…</p>
+<p id="p_122" class="phone s01"><cite>Ivan Herman:</cite> which is fine. But you said Patrick, we gave him a green light to join, but he hasn't joined the Perkin group.</p>
+<p id="p_123" class="phone s01"><cite>Manu Sporny:</cite> Okay. Do you want me to just not list them? We can just got it.</p>
+<p id="p_124" class="phone s01"><cite>Ivan Herman:</cite> These things can change in today. but at that time when I get the documents all editors must be member of the working group. That's the point.</p>
+<p id="p_125" class="phone s01"><cite>Manu Sporny:</cite> Okay. All right.</p>
+<p id="p_126" class="phone s01"><cite>Ivan Herman:</cite> So let's move down a little bit. But the headers seem be To be Status of the document.</p>
+<p id="p_127" class="phone s01"><cite>Ivan Herman:</cite> So that's the usual respect generated thing where everything is settled. Things have been done that I didn't realize have been done. that's perfect.</p>
+<p id="p_128" class="phone s01"><cite>Manu Sporny:</cite> Okay.</p>
+<p id="p_129" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I did an update when I set up the publication.</p>
+<p id="p_130" class="phone s01"><cite>Ivan Herman:</cite> That's perfect.</p>
+<p id="p_131" class="phone s01"><cite>Manu Sporny:</cite> Yep. And…</p>
+<p id="p_132" class="phone s01"><cite>Ivan Herman:</cite> And the same the other one.</p>
+<p id="p_133" class="phone s01"><cite>Manu Sporny:</cite> then Yes, that's right. we Yep,…</p>
+<p id="p_134" class="phone s01"><cite>Ivan Herman:</cite> So the titles have to be changed to what we agreed upon.</p>
+<p id="p_135" class="phone s01"><cite>Manu Sporny:</cite> that's Okay. So,…</p>
+<p id="p_136" class="phone s01"><cite>Ivan Herman:</cite> Then which we are fine.</p>
+<p id="p_137" class="phone s01"><cite>Manu Sporny:</cite> as far as action items, Dmitri, I can help, do you want to put the FPWD together for render method and…</p>
+<p id="p_138" class="phone s01"><cite>Manu Sporny:</cite> then Joe, you for confidence method?</p>
+<p id="p_139" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yes, I'll need some handholding on…</p>
+<p id="p_140" class="phone s01"><cite>Dmitri Zagidulin:</cite> how to do that.</p>
+<p id="p_141" class="phone s01"><cite>Manu Sporny:</cite> I'm happy to help.</p>
+<p id="p_142" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, me too. That the checklist would be helpful just what you walk through today, I think I've done that once or…</p>
+<p id="p_143" class="phone s01"><cite>Manu Sporny:</cite> Yep.</p>
+<p id="p_144" class="phone s01"><cite>Joe Andrieu:</cite> twice before, but it's always What's the next step?</p>
+<p id="p_145" class="phone s01"><cite>Manu Sporny:</cite> No problem. Happy to help. fail your hand was up briefly.</p>
+<p id="p_146" class="phone s01"><cite>Phil Archer:</cite> Yeah, just quickly I think the rules on affiliation is different for a rec track document. So Pat St. Louis for example, I know his company is called security identity but in the context of the working group isn't he's an invited expert.</p>
+<p id="p_147" class="phone s01"><cite>Ivan Herman:</cite> That's correct.</p>
+<p id="p_148" class="phone s01"><cite>Manu Sporny:</cite> Yep. we'll get that updated. All right. I will work offline with Dmitri and Joe to get those FPWDs ready as quickly as we can. Avon, does that cover the front matter content you wanted to address?</p>
+<p id="p_149" class="phone s01"><cite>Ivan Herman:</cite></p>
+<p id="p_150" class="phone s01"><cite>Ivan Herman:</cite> Yeah. Yeah. Yeah. I felt the document were in a worse state than I realized.</p>
+<p id="p_151" class="phone s01"><cite>Manu Sporny:</cite> Yep. No. Yeah. No. Yeah.</p>
+<p id="p_152" class="phone s01"><cite>Manu Sporny:</cite> I updated it to try and get it igned. publication date. remember that TAC's coming up and we have a publishing mortoriia. do we want to get this out before or after TAC? Ivon, what do you feel about like the publishing schedule?</p>
+<p id="p_153" class="phone s01"><cite>Ivan Herman:</cite> So, I think we could. The only problem is that next week between Wednesday and the weekend I am essentially out for family visit reasons. So I don't want to take up anything. if you can finalize all the documents by Tuesday, then on Tuesday I can put them up on the website and I can raise the transition request. That means with a bit of luck, we get an agreement. I mean it's a easy thing. I hope to get an approval on Friday 24.</p>
+<p id="p_154" class="phone s01"><cite>Ivan Herman:</cite> That means the publication can happen either on the Tuesday 28th or Thursday 30 and that is still within the limit. if something goes wrong we have one more week before the moratorum now…</p>
+<p id="p_155" class="phone s01"><cite>Ivan Herman:</cite> because as me Phil has an uglier word for that but I am very cautious. So, I would propose the 30th of October to be sure.</p>
+<p id="p_156" class="phone s01"><cite>Manu Sporny:</cite> Plus one.</p>
+<p id="p_157" class="phone s01"><cite>Manu Sporny:</cite> I was thinking the same date. Okay. So,…</p>
+<p id="p_158" class="phone s01"><cite>Ivan Herman:</cite> Okay. Yes.</p>
+<p id="p_159" class="phone s01"><cite>Manu Sporny:</cite> we'll target October 30th, which is a Thursday. That means Dmitri Joe, we've got to get all of this done by the end of the weekend or next Monday, which is doable. this is not a difficult thing.</p>
+<p id="p_160" class="phone s01"><cite>Ivan Herman:</cite> It's a proper big</p>
+<p id="p_161" class="phone s01"><cite>Manu Sporny:</cite> Okay. Is that IPR commitments? we have something for that implementations. We have something for that for both specs. I think that's it for FPWD stuff.</p>
+<p id="p_162" class="phone s01"><cite>Manu Sporny:</cite> Any other Okay.</p>
+<p id="p_163" class="phone s01"><cite>Ivan Herman:</cite> just looking at the requation requests that I was sent to the date have to be adjusted there as well…</p>
+<p id="p_164" class="phone s01"><cite>Ivan Herman:</cite> but that I can do that don't worry about that that's for later than when we get the approval Ready?</p>
+<p id="p_165" class="phone s01"><cite>Manu Sporny:</cite> All Sounds good. All right. does that wrap up our FPWD business? Do we have anything else to discuss around FPWD?</p>
+<p id="p_166" class="phone s01"><cite>Ivan Herman:</cite> And…</p>
+<p id="p_167" class="phone s01"><cite>Ivan Herman:</cite> we will set up a kidna after that, right? Once and…</p>
+<p id="p_168" class="phone s01"><cite>Manu Sporny:</cite> Yes. Yep.</p>
+<p id="p_169" class="phone s01"><cite>Joe Andrieu:</cite> Let's hope so.</p>
+<p id="p_170" class="phone s01"><cite>Ivan Herman:</cite> you want a kid not to work in the other. So you will do it.</p>
+<p id="p_171" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I can do that or I'll work with Demetri and Joe to get it configured. yeah,…</p>
+<p id="p_172" class="phone s01"><cite>Ivan Herman:</cite> Joe had bad experience with a kid now. So he</p>
+<p id="p_173" class="phone s01"><cite>Manu Sporny:</cite> I know. we'll avoid it in this one, I'm sure.</p>
+</section>
+<section>
+<h3 id="topic_3">Specification Titles and Names</h3>
+<p id="p_174" class="phone s01"><cite>Manu Sporny:</cite> okay, that's noting the time, we could move on, to talking about goals for the next several months. so let's jump into that discussion. I think that the suggested goals here, Phil, to go back to something you said earlier in the meeting, how close are we with each specification?</p>
+<p id="p_175" class="phone s01"><cite>Phil Archer:</cite> Yeah.</p>
+<p id="p_176" class="phone s01"><cite>Manu Sporny:</cite> I believe what we're trying to do is get these to CR as quickly as we can because we all know that there's this giant mountain of other specifications that have been incubated and are kind of ready to go into the BCWG and these two specs are going to kind of determine how quickly we can move on those other specifications. but we also want to do a very good job with render method and confidence method. and so I think the general goal is to work as quickly as we can towards a version 10 that we feel is complete enough. There may be features that we decide to put in version 11 or version 20. and I'm sure we're going to have discussions about it, but I think the goal here is to get these to as quickly as we can. figure out what the test suites are going to do, that sort of thing.</p>
+<p id="p_177" class="phone s01"><cite>Manu Sporny:</cite> Not yet.</p>
+<p id="p_178" class="phone s01"><cite>Phil Archer:</cite> …</p>
+<p id="p_179" class="phone s01"><cite>Phil Archer:</cite> So can I just respond to that? I know Demetri has his hand up. Forgive me, Demetri. so, test suites exist for both of these documents, So that's going to be one of the determining factors. and so it sounds to me from what the sense I'm getting is that the earliest we could get to is probably going to be January.</p>
+<p id="p_180" class="phone s01"><cite>Manu Sporny:</cite> Yeah. After that, I think there's some significant issues that we might want that might slow us down. So, yes,…</p>
+<p id="p_181" class="phone s01"><cite>Phil Archer:</cite> So let's be realistic. As soon as possible means northern hemisphere spring. Okay. Thank you.</p>
+<p id="p_182" class="phone s01"><cite>Manu Sporny:</cite> I think that's realistic. go ahead, Demetri.</p>
+<p id="p_183" class="phone s01"><cite>Dmitri Zagidulin:</cite> So just to refresh my memory with the render method spec is the idea that the VC working group document will just be for the extension mechanism and then we'll have separate repos for the individual extensions let's take an HTML template would that be an example render method in the main spec or would it have its own repo? So in the ECG</p>
+<p id="p_184" class="phone s01"><cite>Manu Sporny:</cite> Good question.</p>
+<p id="p_185" class="phone s01"><cite>Manu Sporny:</cite> Avon, you're up next.</p>
+<p id="p_186" class="phone s01"><cite>Ivan Herman:</cite> Yeah, that's actually related to…</p>
+<p id="p_187" class="phone s01"><cite>Ivan Herman:</cite> what Dmitri asked because the text as of today opens up something which is exciting but dangerous because it goes to the accessibility thing. You talk about braille, you talk about sound and whatever, which is of course something that you need for a render method, but the document itself doesn't have any of those. It has PDF, SVG, and essentially HTML.</p>
+<p id="p_188" class="phone s01"><cite>Ivan Herman:</cite> And now HTML can cover a lot of things but if this document goes to the accessibility review and you open up the door with referring to braille then the question will be okay why don't you define a render suit for braille right away why do you talk about it and not having anything else about it so the amount of work might be big…</p>
+<p id="p_189" class="phone s01"><cite>Ivan Herman:</cite> because of these things. And I have to I have no idea what it would mean to make a render suit in braille.</p>
+<p id="p_190" class="phone s01"><cite>Manu Sporny:</cite> Yes. Yes.</p>
+<p id="p_191" class="phone s01"><cite>Manu Sporny:</cite> I think that's an excellent point, and Demetri, the one you raised is an excellent point. It's going to determine whether render method's going to be a quick turnaround or it's going to take a year, we are probably going to have to have some difficult discussions about what's in scope and what's out of scope. but that's a part of the work that needs to be done. So one could make an argument that these specifications have enough in them for a minimal viable implementation in an extension mechanism. That's one approach we could take.</p>
+<p id="p_192" class="phone s01"><cite>Manu Sporny:</cite> Or the other approach we could take is what braille rendering is really important and we all believe that that is something we should do as a part of the version 10 spec and we're going to commit to doing that even if it extends the timeline a bit. So we are going to have to make that decision as a group.</p>
+<p id="p_193" class="phone s01"><cite>Manu Sporny:</cite> Nope no one in the queue.</p>
+<p id="p_194" class="phone s01"><cite>Ivan Herman:</cite> And another I'm sorry is there anyone on the queue?</p>
+<p id="p_195" class="phone s01"><cite>Ivan Herman:</cite> And another slightly adjacent question…</p>
+<p id="p_196" class="phone s01"><cite>Ivan Herman:</cite> which goes back to what Mitri asked. Do we want to set up some sort of a registry or whatever for render suit or we leave it completely out to the wide. Okay.</p>
+<p id="p_197" class="phone s01"><cite>Manu Sporny:</cite> So, the good news there is we already have a VC extensions thing and…</p>
+<p id="p_198" class="phone s01"><cite>Manu Sporny:</cite> we could put the extensions into that quote unquote registry.</p>
+<p id="p_199" class="phone s01"><cite>Manu Sporny:</cite> Thumbs up from Dmitri. But the overall goal going back to kind of what's the goal here, I think we're trying to get to CR on a reasonable time frame. I think, and reasonable it's going to be affected by what we say is in scope. And what's in scope is going to highly depend on what people are going to if somebody wants a, certain type of render method, then they're going to have to put the effort into it to prepare everything. for that, meaning normative spec text, testable statements, test suite, implementations, as we all know, there's a lot that goes into that.</p>
+<p id="p_200" class="phone s01"><cite>Manu Sporny:</cite> Okay. Are there any other goals we're trying to achieve other than getting these specs, in a functional enough form into candidate wreck by the end of spring? does that seem like a reasonable goal? Set of goals.</p>
+<p id="p_201" class="phone s01"><cite>Phil Archer:</cite> My mind's mulling on that question. I'm thinking of do we need to engage wallet people?</p>
+<p id="p_202" class="phone s01"><cite>Phil Archer:</cite> Because these things are relevant to wallets and is that an important thing and does that just triple the amount of time this is going to take or can we just do it? t know. I don't have an answer for that. But those are the kind of things going through my head and I think some of those things are going to come up as we go forward.</p>
+<p id="p_203" class="phone s01"><cite>Manu Sporny:</cite> Plus one to that.</p>
+<p id="p_204" class="phone s01"><cite>Manu Sporny:</cite> Dmitri</p>
+<p id="p_205" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I can answer that partially. So yes, we definitely want to engage wallet people in the sense that wallet implementers are going to be the main contributors to the group, They're the ones who care about it the most. So we can't help but engage wallet people. there aren't separate W3C wallet groups as far as I know, but there are couple of organizations that we should reach out to and at least give them a heads up that we're working on this stuff that in invite them over but not as a separate thing.</p>
+<p id="p_206" class="phone s01"><cite>Phil Archer:</cite> Thank you.</p>
+<p id="p_207" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one to that.</p>
+<p id="p_208" class="phone s01"><cite>Manu Sporny:</cite> For example, Phil, the wallet folks that are doing implementations, one of them is MOSIP, and MOSIP has, hundreds of millions of VCs issued,…</p>
+<p id="p_209" class="phone s01"><cite>Phil Archer:</cite> Yeah.</p>
+<p id="p_210" class="phone s01"><cite>Manu Sporny:</cite> and I've seen this, it's on their public repo, but I've seen their render method stuff, and it is advanced they're doing multilingual rendering of visual, farmworker credentials for the purposes of getting loans.</p>
+<p id="p_211" class="phone s01"><cite>Manu Sporny:</cite> these are high stakes credentials they've got a population this is mostly in India large population many different languages many different scripts when they issue something they need to issue it in a minimum of four different languages that sort of thing so that pulls in internationalization…</p>
+<p id="p_212" class="phone s01"><cite>Phil Archer:</cite> Which</p>
+<p id="p_213" class="phone s01"><cite>Manu Sporny:</cite> which we've already started engaging on this it pulls in them as a wallet implement the rendering of these things happens outside wallets as well just on a website, right? So it goes beyond just wallets, but it is true we need to pull, wallet implementers in. we Digital Bazaar have an interest in this because we have a wallet and we want the stuff rendered within the wallet to look nicer without having to handcustomize what every single credential, looks like. so issuers also really care about what their credentials look like.</p>
+<p id="p_214" class="phone s01"><cite>Manu Sporny:</cite> So it's not just the wallet vendors, it's also the issuers of these credentials. so I can say that for example the state of California has an interest in what these things look like.</p>
+<p id="p_215" class="phone s01"><cite>Manu Sporny:</cite> They're used to picking …</p>
+<p id="p_216" class="phone s01"><cite>Phil Archer:</cite> Yeah,</p>
+<p id="p_217" class="phone s01"><cite>Manu Sporny:</cite> what these things look like on paper and they'd like to have the same kind of choices in digital form as well. go ahead Ivon. You're on the queue.</p>
+<p id="p_218" class="phone s01"><cite>Ivan Herman:</cite> So this raises for me a kind of an editorial thing that we should keep in mind.</p>
+<p id="p_219" class="phone s01"><cite>Ivan Herman:</cite> If I read through the document or I read through the document, it was not crystal clear that this document is really doing what they've said that defines the framework for individual so getting into concrete render methods like we have here with the SVG and the others gives the impression that our goal is to define specific render methods and editorially it should be well separated and make it absolutely crystal clear that this is not the goal of the work and SVG and PDF might</p>
+<p id="p_220" class="phone s01"><cite>Ivan Herman:</cite> normative but only as examples of things that can be done. Somehow this has to the me I am thinking about the messaging about this spec. So what do we really define? And it is not absolutely clear at first reading.</p>
+<p id="p_221" class="phone s01"><cite>Manu Sporny:</cite> Demetri, you're on the queue.</p>
+<p id="p_222" class="phone s01"><cite>Dmitri Zagidulin:</cite> So that's a really good point, Ivonne. would it help to make that point clear in the very first sections of the introduction just have a subsection that says this is an extension mechanism and…</p>
+<p id="p_223" class="phone s01"><cite>Ivan Herman:</cite> Absolutely. Absolutely.</p>
+<p id="p_224" class="phone s01"><cite>Dmitri Zagidulin:</cite> and go into that. Okay. can do …</p>
+<p id="p_225" class="phone s01"><cite>Ivan Herman:</cite> Absolutely. Don't even try to compete with the speed of money.</p>
+<p id="p_226" class="phone s01"><cite>Dmitri Zagidulin:</cite> I was going to say I'll open an issue for it, but Manu is very kindly doing it. Thank you, Mano. Amazing.</p>
+<p id="p_227" class="phone s01"><cite>Phil Archer:</cite> And he's going to assign it to you as well, Demetri. So it's, committed to you,…</p>
+<p id="p_228" class="phone s01"><cite>Dmitri Zagidulin:</cite> Excellent.</p>
+<p id="p_229" class="phone s01"><cite>Phil Archer:</cite> done. Next</p>
+<p id="p_230" class="phone s01"><cite>Ivan Herman:</cite> If we make that clear, that might make for example the accessibility review easier.</p>
+<p id="p_231" class="phone s01"><cite>Dmitri Zagidulin:</cite> The call.</p>
+<p id="p_232" class="phone s01"><cite>Phil Archer:</cite> Yeah, I know this is a topic for later, but I must admit I kind of assumed that a VC could be rendered in whatever language you want and would be in the language of the user.</p>
+<p id="p_233" class="phone s01"><cite>Phil Archer:</cite> So a multilingual credential I would just assume as possible. didn't occur to me that Yeah.</p>
+<p id="p_234" class="phone s01"><cite>Dmitri Zagidulin:</cite> You would think that and…</p>
+<p id="p_235" class="phone s01"><cite>Dmitri Zagidulin:</cite> and we have an internationalization spec section under the VC spec and everything in practice it has been difficult. Exactly.</p>
+<p id="p_236" class="phone s01"><cite>Phil Archer:</cite> Yeah. That's often the way, isn't it? Great in theory and it turned out to do it and it turns out to be blooming hard. Yeah. I know.</p>
+<p id="p_237" class="phone s01"><cite>Ivan Herman:</cite> Honey, are you still around? Yes.</p>
+<p id="p_238" class="phone s01"><cite>Dmitri Zagidulin:</cite> No, we lost mano.</p>
+<p id="p_239" class="phone s01"><cite>Phil Archer:</cite> You're still presenting.</p>
+<p id="p_240" class="phone s01"><cite>Phil Archer:</cite> That's confusing.</p>
+<p id="p_241" class="phone s01"><cite>Manu Sporny:</cite> Sorry, I was talking. Okay, Apologies. Can you hear me All right. so we weren't able to get to issue processing today, which is fine. this was a super productive meeting. let's talk about kind of the next meeting. next week is IW, so we're not going to have a call, because most though they're going to be a lot of people at IW. but we've talked to the CCG incubation group which has their call on the weeks that the VCWG call doesn't happen, we have gotten them to move to this time slot, the one we're in currently.</p>
+<p id="p_242" class="phone s01"><cite>Manu Sporny:</cite> So that means that we're going to move this time this spec refinement call to the same time slot as the VCWG call which then hopefully make it so that everyone that can make the VCWG call can make these spec refinement calls. So, we'll just have weekly meetings now where one meeting a month will be the official VCWG big meeting and then 3 weeks out of the month we will have this specification refinement call. It will be Wednesdays at 11:00 a.m. Eastern. okay. So, just to note that we're going to switch the time block.</p>
+<p id="p_243" class="phone s01"><cite>Manu Sporny:</cite> So we're going to this meeting, one, we're having right now, will meet at the same time as VCWG weekly meetings.</p>
+<p id="p_244" class="phone s01"><cite>Phil Archer:</cite> Thank you.</p>
+<p id="p_245" class="phone s01"><cite>Manu Sporny:</cite> No problem. I need to make those updates. the call next week I think is cancelled because of IW and so we will meet the week after. okay. I think that's it for the call today. Is there anything else we need to discuss? All right, with that, thank you everyone. Really appreciate all the great engagement and discussion. I think we're off to a really good start here. We will get those FPWDs, prepped for you, Avon, and get them over to you next week.</p>
+<p id="p_246" class="phone s01"><cite>Ivan Herman:</cite> Okay, beginning of next week as I in the IRC or…</p>
+<p id="p_247" class="phone s01"><cite>Manu Sporny:</cite> With the publication, beginning of next week. Yep.</p>
+<p id="p_248" class="phone s01"><cite>Phil Archer:</cite> Thanks everyone. Byebye.</p>
+<p id="p_249" class="phone s01"><cite>Manu Sporny:</cite> which always…</p>
+<p id="p_250" class="phone s01"><cite>Ivan Herman:</cite> whatever the message I have grandfather duties starting Wednesday and…</p>
+<p id="p_251" class="phone s01"><cite>Manu Sporny:</cite> which always take precedence over anything else.</p>
+<p id="p_252" class="phone s01"><cite>Ivan Herman:</cite> this always takes precedence.</p>
+<p id="p_253" class="phone s01"><cite>Manu Sporny:</cite> That's of course. All right. thanks everyone. Have a wonderful rest of your week and weekend and we will chat again in two weeks. Take care. Bye.</p>
+</section>
+<section>
+<h3 id="topic_4">Goals for Next Several Months</h3>
+<p id="p_254" class="phone s01"><cite>Manu Sporny:</cite> okay, that's noting the time, we could move on, to talking about goals for the next several months. so let's jump into that discussion. I think that the suggested goals here, Phil, to go back to something you said earlier in the meeting, how close are we with each specification?</p>
+<p id="p_255" class="phone s01"><cite>Phil Archer:</cite> Yeah.</p>
+<p id="p_256" class="phone s01"><cite>Manu Sporny:</cite> I believe what we're trying to do is get these to CR as quickly as we can because we all know that there's this giant mountain of other specifications that have been incubated and are kind of ready to go into the BCWG and these two specs are going to kind of determine how quickly we can move on those other specifications. but we also want to do a very good job with render method and confidence method. and so I think the general goal is to work as quickly as we can towards a version 10 that we feel is complete enough. There may be features that we decide to put in version 11 or version 20. and I'm sure we're going to have discussions about it, but I think the goal here is to get these to as quickly as we can. figure out what the test suites are going to do, that sort of thing.</p>
+<p id="p_257" class="phone s01"><cite>Manu Sporny:</cite> Not yet.</p>
+<p id="p_258" class="phone s01"><cite>Phil Archer:</cite> …</p>
+<p id="p_259" class="phone s01"><cite>Phil Archer:</cite> So can I just respond to that? I know Demetri has his hand up. Forgive me, Demetri. so, test suites exist for both of these documents, So that's going to be one of the determining factors. and so it sounds to me from what the sense I'm getting is that the earliest we could get to is probably going to be January.</p>
+<p id="p_260" class="phone s01"><cite>Manu Sporny:</cite> Yeah. After that, I think there's some significant issues that we might want that might slow us down. So, yes,…</p>
+<p id="p_261" class="phone s01"><cite>Phil Archer:</cite> So let's be realistic. As soon as possible means northern hemisphere spring. Okay. Thank you.</p>
+<p id="p_262" class="phone s01"><cite>Manu Sporny:</cite> I think that's realistic. go ahead, Demetri.</p>
+<p id="p_263" class="phone s01"><cite>Dmitri Zagidulin:</cite> So just to refresh my memory with the render method spec is the idea that the VC working group document will just be for the extension mechanism and then we'll have separate repos for the individual extensions let's take an HTML template would that be an example render method in the main spec or would it have its own repo? So in the ECG</p>
+<p id="p_264" class="phone s01"><cite>Manu Sporny:</cite> Good question.</p>
+<p id="p_265" class="phone s01"><cite>Manu Sporny:</cite> Avon, you're up next.</p>
+<p id="p_266" class="phone s01"><cite>Ivan Herman:</cite> Yeah, that's actually related to…</p>
+<p id="p_267" class="phone s01"><cite>Ivan Herman:</cite> what Dmitri asked because the text as of today opens up something which is exciting but dangerous because it goes to the accessibility thing. You talk about braille, you talk about sound and whatever, which is of course something that you need for a render method, but the document itself doesn't have any of those. It has PDF, SVG, and essentially HTML.</p>
+<p id="p_268" class="phone s01"><cite>Ivan Herman:</cite> And now HTML can cover a lot of things but if this document goes to the accessibility review and you open up the door with referring to braille then the question will be okay why don't you define a render suit for braille right away why do you talk about it and not having anything else about it so the amount of work might be big…</p>
+<p id="p_269" class="phone s01"><cite>Ivan Herman:</cite> because of these things. And I have to I have no idea what it would mean to make a render suit in braille.</p>
+<p id="p_270" class="phone s01"><cite>Manu Sporny:</cite> Yes. Yes.</p>
+<p id="p_271" class="phone s01"><cite>Manu Sporny:</cite> I think that's an excellent point, and Demetri, the one you raised is an excellent point. It's going to determine whether render method's going to be a quick turnaround or it's going to take a year, we are probably going to have to have some difficult discussions about what's in scope and what's out of scope. but that's a part of the work that needs to be done. So one could make an argument that these specifications have enough in them for a minimal viable implementation in an extension mechanism. That's one approach we could take.</p>
+<p id="p_272" class="phone s01"><cite>Manu Sporny:</cite> Or the other approach we could take is what braille rendering is really important and we all believe that that is something we should do as a part of the version 10 spec and we're going to commit to doing that even if it extends the timeline a bit. So we are going to have to make that decision as a group.</p>
+<p id="p_273" class="phone s01"><cite>Manu Sporny:</cite> Nope no one in the queue.</p>
+<p id="p_274" class="phone s01"><cite>Ivan Herman:</cite> And another I'm sorry is there anyone on the queue?</p>
+<p id="p_275" class="phone s01"><cite>Ivan Herman:</cite> And another slightly adjacent question…</p>
+<p id="p_276" class="phone s01"><cite>Ivan Herman:</cite> which goes back to what Mitri asked. Do we want to set up some sort of a registry or whatever for render suit or we leave it completely out to the wide. Okay.</p>
+<p id="p_277" class="phone s01"><cite>Manu Sporny:</cite> So, the good news there is we already have a VC extensions thing and…</p>
+<p id="p_278" class="phone s01"><cite>Manu Sporny:</cite> we could put the extensions into that quote unquote registry.</p>
+<p id="p_279" class="phone s01"><cite>Manu Sporny:</cite> Thumbs up from Dmitri. But the overall goal going back to kind of what's the goal here, I think we're trying to get to CR on a reasonable time frame. I think, and reasonable it's going to be affected by what we say is in scope. And what's in scope is going to highly depend on what people are going to if somebody wants a, certain type of render method, then they're going to have to put the effort into it to prepare everything. for that, meaning normative spec text, testable statements, test suite, implementations, as we all know, there's a lot that goes into that.</p>
+<p id="p_280" class="phone s01"><cite>Manu Sporny:</cite> Okay. Are there any other goals we're trying to achieve other than getting these specs, in a functional enough form into candidate wreck by the end of spring? does that seem like a reasonable goal? Set of goals.</p>
+<p id="p_281" class="phone s01"><cite>Phil Archer:</cite> My mind's mulling on that question. I'm thinking of do we need to engage wallet people?</p>
+<p id="p_282" class="phone s01"><cite>Phil Archer:</cite> Because these things are relevant to wallets and is that an important thing and does that just triple the amount of time this is going to take or can we just do it? t know. I don't have an answer for that. But those are the kind of things going through my head and I think some of those things are going to come up as we go forward.</p>
+<p id="p_283" class="phone s01"><cite>Manu Sporny:</cite> Plus one to that.</p>
+<p id="p_284" class="phone s01"><cite>Manu Sporny:</cite> Dmitri</p>
+<p id="p_285" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I can answer that partially. So yes, we definitely want to engage wallet people in the sense that wallet implementers are going to be the main contributors to the group, They're the ones who care about it the most. So we can't help but engage wallet people. there aren't separate W3C wallet groups as far as I know, but there are couple of organizations that we should reach out to and at least give them a heads up that we're working on this stuff that in invite them over but not as a separate thing.</p>
+<p id="p_286" class="phone s01"><cite>Phil Archer:</cite> Thank you.</p>
+<p id="p_287" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one to that.</p>
+<p id="p_288" class="phone s01"><cite>Manu Sporny:</cite> For example, Phil, the wallet folks that are doing implementations, one of them is MOSIP, and MOSIP has, hundreds of millions of VCs issued,…</p>
+<p id="p_289" class="phone s01"><cite>Phil Archer:</cite> Yeah.</p>
+<p id="p_290" class="phone s01"><cite>Manu Sporny:</cite> and I've seen this, it's on their public repo, but I've seen their render method stuff, and it is advanced they're doing multilingual rendering of visual, farmworker credentials for the purposes of getting loans.</p>
+<p id="p_291" class="phone s01"><cite>Manu Sporny:</cite> these are high stakes credentials they've got a population this is mostly in India large population many different languages many different scripts when they issue something they need to issue it in a minimum of four different languages that sort of thing so that pulls in internationalization…</p>
+<p id="p_292" class="phone s01"><cite>Phil Archer:</cite> Which</p>
+<p id="p_293" class="phone s01"><cite>Manu Sporny:</cite> which we've already started engaging on this it pulls in them as a wallet implement the rendering of these things happens outside wallets as well just on a website, right? So it goes beyond just wallets, but it is true we need to pull, wallet implementers in. we Digital Bazaar have an interest in this because we have a wallet and we want the stuff rendered within the wallet to look nicer without having to handcustomize what every single credential, looks like. so issuers also really care about what their credentials look like.</p>
+<p id="p_294" class="phone s01"><cite>Manu Sporny:</cite> So it's not just the wallet vendors, it's also the issuers of these credentials. so I can say that for example the state of California has an interest in what these things look like.</p>
+<p id="p_295" class="phone s01"><cite>Manu Sporny:</cite> They're used to picking …</p>
+<p id="p_296" class="phone s01"><cite>Phil Archer:</cite> Yeah,</p>
+<p id="p_297" class="phone s01"><cite>Manu Sporny:</cite> what these things look like on paper and they'd like to have the same kind of choices in digital form as well. go ahead Ivon. You're on the queue.</p>
+<p id="p_298" class="phone s01"><cite>Ivan Herman:</cite> So this raises for me a kind of an editorial thing that we should keep in mind.</p>
+<p id="p_299" class="phone s01"><cite>Ivan Herman:</cite> If I read through the document or I read through the document, it was not crystal clear that this document is really doing what they've said that defines the framework for individual so getting into concrete render methods like we have here with the SVG and the others gives the impression that our goal is to define specific render methods and editorially it should be well separated and make it absolutely crystal clear that this is not the goal of the work and SVG and PDF might</p>
+<p id="p_300" class="phone s01"><cite>Ivan Herman:</cite> normative but only as examples of things that can be done. Somehow this has to the me I am thinking about the messaging about this spec. So what do we really define? And it is not absolutely clear at first reading.</p>
+<p id="p_301" class="phone s01"><cite>Manu Sporny:</cite> Demetri, you're on the queue.</p>
+<p id="p_302" class="phone s01"><cite>Dmitri Zagidulin:</cite> So that's a really good point, Ivonne. would it help to make that point clear in the very first sections of the introduction just have a subsection that says this is an extension mechanism and…</p>
+<p id="p_303" class="phone s01"><cite>Ivan Herman:</cite> Absolutely. Absolutely.</p>
+<p id="p_304" class="phone s01"><cite>Dmitri Zagidulin:</cite> and go into that. Okay. can do …</p>
+<p id="p_305" class="phone s01"><cite>Ivan Herman:</cite> Absolutely. Don't even try to compete with the speed of money.</p>
+<p id="p_306" class="phone s01"><cite>Dmitri Zagidulin:</cite> I was going to say I'll open an issue for it, but Manu is very kindly doing it. Thank you, Mano. Amazing.</p>
+<p id="p_307" class="phone s01"><cite>Phil Archer:</cite> And he's going to assign it to you as well, Demetri. So it's, committed to you,…</p>
+<p id="p_308" class="phone s01"><cite>Dmitri Zagidulin:</cite> Excellent.</p>
+<p id="p_309" class="phone s01"><cite>Phil Archer:</cite> done. Next</p>
+<p id="p_310" class="phone s01"><cite>Ivan Herman:</cite> If we make that clear, that might make for example the accessibility review easier.</p>
+<p id="p_311" class="phone s01"><cite>Dmitri Zagidulin:</cite> The call.</p>
+<p id="p_312" class="phone s01"><cite>Phil Archer:</cite> Yeah, I know this is a topic for later, but I must admit I kind of assumed that a VC could be rendered in whatever language you want and would be in the language of the user.</p>
+<p id="p_313" class="phone s01"><cite>Phil Archer:</cite> So a multilingual credential I would just assume as possible. didn't occur to me that Yeah.</p>
+<p id="p_314" class="phone s01"><cite>Dmitri Zagidulin:</cite> You would think that and…</p>
+<p id="p_315" class="phone s01"><cite>Dmitri Zagidulin:</cite> and we have an internationalization spec section under the VC spec and everything in practice it has been difficult. Exactly.</p>
+<p id="p_316" class="phone s01"><cite>Phil Archer:</cite> Yeah. That's often the way, isn't it? Great in theory and it turned out to do it and it turns out to be blooming hard. Yeah. I know.</p>
+<p id="p_317" class="phone s01"><cite>Ivan Herman:</cite> Honey, are you still around? Yes.</p>
+<p id="p_318" class="phone s01"><cite>Dmitri Zagidulin:</cite> No, we lost mano.</p>
+<p id="p_319" class="phone s01"><cite>Phil Archer:</cite> You're still presenting.</p>
+<p id="p_320" class="phone s01"><cite>Phil Archer:</cite> That's confusing.</p>
+</section>
+<section>
+<h3 id="topic_5">Scope, Engagement, and Editorial Clarity</h3>
+<p id="p_321" class="phone s01"><cite>Manu Sporny:</cite> Sorry, I was talking. Okay, Apologies. Can you hear me All right. so we weren't able to get to issue processing today, which is fine. this was a super productive meeting. let's talk about kind of the next meeting. next week is IW, so we're not going to have a call, because most though they're going to be a lot of people at IW. but we've talked to the CCG incubation group which has their call on the weeks that the VCWG call doesn't happen, we have gotten them to move to this time slot, the one we're in currently.</p>
+<p id="p_322" class="phone s01"><cite>Manu Sporny:</cite> So that means that we're going to move this time this spec refinement call to the same time slot as the VCWG call which then hopefully make it so that everyone that can make the VCWG call can make these spec refinement calls. So, we'll just have weekly meetings now where one meeting a month will be the official VCWG big meeting and then 3 weeks out of the month we will have this specification refinement call. It will be Wednesdays at 11:00 a.m. Eastern. okay. So, just to note that we're going to switch the time block.</p>
+<p id="p_323" class="phone s01"><cite>Manu Sporny:</cite> So we're going to this meeting, one, we're having right now, will meet at the same time as VCWG weekly meetings.</p>
+<p id="p_324" class="phone s01"><cite>Phil Archer:</cite> Thank you.</p>
+<p id="p_325" class="phone s01"><cite>Manu Sporny:</cite> No problem. I need to make those updates. the call next week I think is cancelled because of IW and so we will meet the week after. okay. I think that's it for the call today. Is there anything else we need to discuss? All right, with that, thank you everyone. Really appreciate all the great engagement and discussion. I think we're off to a really good start here. We will get those FPWDs, prepped for you, Avon, and get them over to you next week.</p>
+<p id="p_326" class="phone s01"><cite>Ivan Herman:</cite> Okay, beginning of next week as I in the IRC or…</p>
+<p id="p_327" class="phone s01"><cite>Manu Sporny:</cite> With the publication, beginning of next week. Yep.</p>
+<p id="p_328" class="phone s01"><cite>Phil Archer:</cite> Thanks everyone. Byebye.</p>
+<p id="p_329" class="phone s01"><cite>Manu Sporny:</cite> which always…</p>
+<p id="p_330" class="phone s01"><cite>Ivan Herman:</cite> whatever the message I have grandfather duties starting Wednesday and…</p>
+<p id="p_331" class="phone s01"><cite>Manu Sporny:</cite> which always take precedence over anything else.</p>
+<p id="p_332" class="phone s01"><cite>Ivan Herman:</cite> this always takes precedence.</p>
+<p id="p_333" class="phone s01"><cite>Manu Sporny:</cite> That's of course. All right. thanks everyone. Have a wonderful rest of your week and weekend and we will chat again in two weeks. Take care. Bye.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
