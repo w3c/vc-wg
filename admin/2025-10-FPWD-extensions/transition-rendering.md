@@ -41,4 +41,4 @@ There are no known implementations at this time, but at least four implementers 
 
 The Working Group is currently in Maintenance mode; this usually means that the WG is not chartered to bring new features to Recommendation. ***HOWEVER***, in the case of this Working Group, the charter explicitly made an exception for a few cases, including this one. See bullet item on reserved extensions in [the scope section of the charter](https://www.w3.org/2024/10/vc-wg-charter.html#scope).
 
-cc @brentzundel @philarcher @jandrieu @dmitrizagidulin @msporny 
+cc @brentzundel @philarcher @PatStLouis @dmitrizagidulin @msporny 
