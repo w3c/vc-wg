@@ -26,7 +26,8 @@ https://w3c.github.io/vc-wg/minutes/2025-10-08.html#073b
 
 # IPR commitments
 
-@@@@
+* https://www.w3.org/community/credentials/spec/286/commitments
+* https://www.w3.org/groups/wg/vc/ipr/
 
 # Issues
 
@@ -34,7 +35,7 @@ https://w3c.github.io/vc-wg/minutes/2025-10-08.html#073b
 
 # Information about implementations known to the Working Group
 
-@@@@
+There are no known implementations at this time, but at least four implementers exist that have signaled that they will implement the specification, with a focus on interoperability, once a test suite is ready.
 
 # Note
 

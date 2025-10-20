@@ -26,7 +26,8 @@ https://w3c.github.io/vc-wg/minutes/2025-10-08.html#d9dd
 
 # IPR commitments
 
-@@@@
+* https://www.w3.org/community/credentials/spec/287/commitments
+* https://www.w3.org/groups/wg/vc/ipr/
 
 # Issues
 
@@ -34,7 +35,7 @@ https://w3c.github.io/vc-wg/minutes/2025-10-08.html#d9dd
 
 # Information about implementations known to the Working Group
 
-@@@@
+There are four implementations known to the Working Group at this time (MIT Digital Credentials Consortium, Digital Bazaar, MOSIP, and Government of Singapore) with a commitment to achieve interoperability once the test suite has been created.
 
 # Note
 
