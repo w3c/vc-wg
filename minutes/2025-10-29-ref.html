@@ -1,0 +1,354 @@
+
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2025-10-29</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Beckett Zundel, Benjamin Young, Brent Zundel, Dave Lehn, Dave Longley, Dmitri Zagidulin, Hendry Poh, Hiroyuki Sano, Isaac Koh, Ivan Herman, Manu Sporny, Phil Archer, Phillip Long, Ted Thibodeau Jr, Will Abramson</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#intro-admin">Meeting Admin and Boilerplate</a></li>
+<li><a href="#pr-and-issues-overview">PRs and Issues Overview</a></li>
+<li><a href="#render-method-context-discussion">Render Method Context Discussion</a></li>
+<li><a href="#pr- OCA-bundle-render-method">PR: OCA Bundle Render Method</a></li>
+<li><a href="#rendering-compound-credentials">Rendering Compound Credentials</a></li>
+<li><a href="#functional-operations-and-templating">Functional Operations and Templating</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><h3 id="intro-admin">Meeting Admin and Boilerplate</h3>
+<p id="p0" class="phone s01"><cite>Ivan Herman:</cite> That's why it's only the two of us.</p>
+<p id="p1" class="phone s01"><cite>Beckett Zundel:</cite> Apparently, I'm logged in as my son.</p>
+<p id="p2" class="phone s01"><cite>Beckett Zundel:</cite> Let me log out and log back in. See if I can change that. Be right back.</p>
+<p id="p3" class="phone s01"><cite>Hendry Poh:</cite> Hey there. Hi</p>
+<p id="p4" class="phone s01"><cite>Manu Sporny:</cite> Hey Dmitri, I think you are up to run the meeting today because it's on render method. I put our agenda on the screen. but over to</p>
+<p id="p5" class="phone s01"><cite>Dmitri Zagidulin:</cite> All give me just a second. you get to a computer and we'll, …</p>
+<p id="p6" class="phone s01"><cite>Ivan Herman:</cite> Thank you.</p>
+<p id="p7" class="phone s01"><cite>Dmitri Zagidulin:</cite> I'll get to it.</p>
+<p id="p8" class="phone s01"><cite>Ivan Herman:</cite> Thank you.</p>
+<p id="p9" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right. So, welcome everyone to the weekly render method all. So, let's see, Mon, do we usually go through the W3C boiler plate on these calls?</p>
+<p id="p10" class="phone s01"><cite>Brent Zundel:</cite> Yes, please.</p>
+<p id="p11" class="phone s01"><cite>Manu Sporny:</cite> It's up to you. I don't think we need to …</p>
+<p id="p12" class="phone s01"><cite>Brent Zundel:</cite> I would like that it be done, please.</p>
+<p id="p13" class="phone s01"><cite>Manu Sporny:</cite> since we're Okay. All right.</p>
+<p id="p14" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right.</p>
+<p id="p15" class="phone s01"><cite>Dmitri Zagidulin:</cite> These hold on. So this is part of the working group, so these call we are under the W3C code of conduct. calls are open to anyone. But in order to contribute you must be a member of the W3C and the verifiable credentials working group.</p>
+<p id="p16" class="phone s01"><cite>Dmitri Zagidulin:</cite> If you are not a member of the working group, please raise your hand. we'll help you join and sort out the IP requirement details and I believe transcript of these meetings will be available at the usual places on GitHub. All right. So, let's open up the render method specification and let's first call let's go through pull request if any and issues to get an overview get a sense of what's going to be on our plate in the coming weeks.</p>
+<p id="p17" class="phone s01"><cite>Dmitri Zagidulin:</cite> So, I'm going to share screen.</p>
+<p id="p18" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yes, I go ahead.</p>
+<p id="p19" class="phone s01"><cite>Ivan Herman:</cite> Yeah, maybe before we go into the details just to report back the first public working draft will be published tomorrow.</p>
+<p id="p20" class="phone s01"><cite>Ivan Herman:</cite> All the procedure etc. I want thank you for being involved.</p>
+<p id="p21" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it. All right,…</p>
+<p id="p22" class="phone s01"><cite>Ivan Herman:</cite> and sometime during the day our web master is on essentially European timeline.</p>
+<p id="p23" class="phone s01"><cite>Ivan Herman:</cite> So I presume for many of you when you wake up then it will be already published.</p>
+<p id="p24" class="phone s01"><cite>Dmitri Zagidulin:</cite> sounds good. I pasted the link to the spec repo here in Zoom chat and I forget. So, I know that the transcription is done automatically. Do we still use IRC for these calls or just Zoom Go ahead, Mono. Got it.</p>
+<p id="p25" class="phone s01"><cite>Manu Sporny:</cite> No, just this meeting. and anything put in the chat will be lost. but it's useful to share things. full transcription, full video recording will exist. so if you screen share,…</p>
+<p id="p26" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it.</p>
+<p id="p27" class="phone s01"><cite>Manu Sporny:</cite> all of that stuff will be there. We don't have the capability to link to issues yet. So if we discuss an issue and…</p>
+<p id="p28" class="phone s01"><cite>Manu Sporny:</cite> we decide to go a particular path we will have to make sure that we put…</p>
+<p id="p29" class="phone s01"><cite>Ivan Herman:</cite> That is Thank you.</p>
+<p id="p30" class="phone s01"><cite>Manu Sporny:</cite> what we like just notes about what we discussed into the issue.</p>
+<p id="p31" class="phone s01"><cite>Dmitri Zagidulin:</cite> Understood.</p>
+<p id="p32" class="phone s01"><cite>Dmitri Zagidulin:</cite> That sounds good. All right. So, …</p>
+<p id="p33" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Sorry, just quickly the chat says that messages are being recorded with the call.</p>
+<p id="p34" class="phone s01"><cite>Dmitri Zagidulin:</cite> yeah, go ahead.</p>
+<p id="p35" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Does that mean it will be seen when you review the video or…</p>
+<p id="p36" class="phone s01"><cite>Ted Thibodeau Jr:</cite> they're completely lost.</p>
+<p id="p37" class="phone s01"><cite>Manu Sporny:</cite> they're completely lost.</p>
+<p id="p38" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Okay.</p>
+<p id="p39" class="phone s01"><cite>Manu Sporny:</cite> They will exist on Google Meet for 30 days and then they will be deleted. It is a software, if someone wants to volunteer to write the software to copy them over it,…</p>
+<p id="p40" class="phone s01"><cite>Manu Sporny:</cite> inter leave that's where we are.</p>
+<p id="p41" class="phone s01"><cite>Ted Thibodeau Jr:</cite> That's fair.</p>
+<p id="p42" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I will suggest adding a note for future calls that are handled this way to pin a message in the chat that says they're not being recorded with the call even…</p>
+<p id="p43" class="phone s01"><cite>Ted Thibodeau Jr:</cite> though it said so or that they are being recorded but they'll be gone after 30 days. Whatever makes sense just…</p>
+<p id="p44" class="phone s01"><cite>Brent Zundel:</cite> I think that's interesting.</p>
+<p id="p45" class="phone s01"><cite>Ted Thibodeau Jr:</cite> because people reading this are going to get the wrong message.</p>
+<p id="p46" class="phone s01"><cite>Brent Zundel:</cite> Mike Mine says messages are deleted when the call ends.</p>
+<p id="p47" class="phone s01"><cite>Brent Zundel:</cite> So I think it's interesting we have different messages in the chat.</p>
+<p id="p48" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Fascinating. Okay.</p>
+<p id="p49" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I</p>
+<p id="p50" class="phone s01"><cite>Manu Sporny:</cite> can't do that, because Google Meet doesn't allow me to pin messages across meetings. We can restate it at the beginning of every call, but the easier thing might be to just write the software to copy the chat transcript over. I would imagine it would only take about four hours to do, but …</p>
+<p id="p51" class="phone s01"><cite>Ivan Herman:</cite> create this funny feedback loop here.</p>
+<p id="p52" class="phone s01"><cite>Manu Sporny:</cite> everyone's busy.</p>
+<p id="p53" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I hear you.</p>
+<p id="p54" class="phone s01"><cite>Ted Thibodeau Jr:</cite> It's all right. Thanks,</p>
+</section>
+<section><h3 id="pr-and-issues-overview">PRs and Issues Overview</h3>
+<p id="p55" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right.</p>
+<p id="p56" class="phone s01"><cite>Dmitri Zagidulin:</cite> So, yeah. apologies for infinite screen here. All right. So, let's switch over to if there's no other sort of administrative items, let's switch over to the poll requests and go through them and then we'll do the issues afterwards. So, first up, the oldest one, we've got fix leftover render property to be render method. So, it's just a fairly old typo. Back when it was called render, this should be a fairly uncontroversial pull request. So, I approved it. Go ahead and add your approvals and we'll merge it after the usual approval period. Okay.</p>
+<p id="p57" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, looks like we've got three approvals there.</p>
+<p id="p58" class="phone s01"><cite>Ivan Herman:</cite> If I sorry.</p>
+<p id="p59" class="phone s01"><cite>Dmitri Zagidulin:</cite> And remind me in the VC working group, it's a 7-day or 14-day approval period waiting period.</p>
+<p id="p60" class="phone s01"><cite>Manu Sporny:</cite> It's at seven.</p>
+<p id="p61" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead. All right. So, we should be able to pull to approve it to merge it rather by the time the next weekly call rolls around. So, next up we have a PR by Isaac about the open at a station embedded renderer. We even have diagrams and everything. It's very exciting. I'm assuming that the diagrams name. So this one should be fairly straightforward. It's just a straight rename.</p>
+<p id="p62" class="phone s01"><cite>Dmitri Zagidulin:</cite> so this does bring up the I see. So the render method property itself is part of the VC data model version two context. But the additional properties of the individual render method those will be at that context URL and I assume we don't have any ambitions to roll up the commonly used fields into a main render method context.</p>
+<p id="p63" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead.</p>
+<p id="p64" class="phone s01"><cite>Manu Sporny:</cite> I think we do. it's one of the things we need to discuss in the group.</p>
+<p id="p65" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Okay.</p>
+<p id="p66" class="phone s01"><cite>Manu Sporny:</cite> I will get into this in issue processing but I think my expectations are which I expect to be not aligned with others quite yet is that we would fold all the render method properties and classes and all that kind of stuff into a v2.1 JSON LD context so that people don't have to pull in other contexts to be able to use the render method and…</p>
+<p id="p67" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="p68" class="phone s01"><cite>Manu Sporny:</cite> confidence method and any of the other extensions that we're going to do. so I think my review comments on this it's totally fine.</p>
+<p id="p69" class="phone s01"><cite>Manu Sporny:</cite> And we can definitely let's merge this in because it has been changed. The implementation has been changed but we need to chat with Henry who's on the call today and some of the other folks that are using the embedded renderer to see if they would be okay with that. So I think we should add an issue marker saying that it's a conversation we need to have.</p>
+<p id="p70" class="phone s01"><cite>Manu Sporny:</cite> I think we should open an issue saying that to make sure we don't forget about the conversation. And then other than that, the PR looks good to me.</p>
+<p id="p71" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right,…</p>
+<p id="p72" class="phone s01"><cite>Dmitri Zagidulin:</cite> let's do that. So, let's open an issue. I'm assuming Publish context file for render method. So, I wonder if do we want to reuse this one? Okay. Okay.</p>
+<p id="p73" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I think that'll this one about folding it in or a different context. We would need to do both. or I think so this one is about creating a new one just for render methods in case somebody wants to mix in render method stuff with a V1.1,…</p>
+<p id="p74" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay. Yep. Got it.</p>
+<p id="p75" class="phone s01"><cite>Manu Sporny:</cite> thing. again that's an open issue should we allow that or…</p>
+<p id="p76" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it. Yeah. and…</p>
+<p id="p77" class="phone s01"><cite>Manu Sporny:</cite> or should we just nudge everyone to just upgrade? or should we basically be like, if you have something if you're using 111 and can't move off of 11 one but want to use render method, here's how you do it.</p>
+<p id="p78" class="phone s01"><cite>Dmitri Zagidulin:</cite> and we could Got it.</p>
+<p id="p79" class="phone s01"><cite>Manu Sporny:</cite> I think it'll be a part of this conversation,…</p>
+<p id="p80" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. All right.</p>
+<p id="p81" class="phone s01"><cite>Manu Sporny:</cite> but it'll make the issue kind of, …</p>
+<p id="p82" class="phone s01"><cite>Manu Sporny:</cite> a big issue to discuss.</p>
+<p id="p83" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it.</p>
+<p id="p84" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it. So let's open a new issue for All and how would you recommend we phrase it?</p>
+<p id="p85" class="phone s01"><cite>Dmitri Zagidulin:</cite> So sort of roll up integrate the…</p>
+<p id="p86" class="phone s01"><cite>Manu Sporny:</cite> in integrate.</p>
+<p id="p87" class="phone s01"><cite>Manu Sporny:</cite> Yeah. Or Go ahead, Dmitri. render method property and…</p>
+<p id="p88" class="phone s01"><cite>Dmitri Zagidulin:</cite> what though the known.</p>
+<p id="p89" class="phone s01"><cite>Manu Sporny:</cite> classes into vcdm 2.1 context. Yep.</p>
+<p id="p90" class="phone s01"><cite>Dmitri Zagidulin:</cite> So wait, so to the main context. Got it. All right. into the VCVM2.1 context.</p>
+<p id="p91" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead.</p>
+<p id="p92" class="phone s01"><cite>Ivan Herman:</cite> I am always there to annoy people with this.</p>
+<p id="p93" class="phone s01"><cite>Ivan Herman:</cite> It's not only the context, it's the whole vocabulary I presume. So there are number of terms that are in the vocabulary under that name space and…</p>
+<p id="p94" class="phone s01"><cite>Ivan Herman:</cite> we are talking about extending the vocabulary. The context is just a transformation engine. story to be pedantic.</p>
+<p id="p95" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it.</p>
+<p id="p96" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right. so we've mentioned several different things. one is to address compatibility with the VC data model 1.1 which probably the easiest thing will be to do a standalone context. We could even mark it as render method VC1 or VC1.1 so that hopefully causes less confusion with implementers.</p>
+<p id="p97" class="phone s01"><cite>Dmitri Zagidulin:</cite> At the same time, we always want to encourage people to upgrade, but I recognize there's a number of implementations out there that are still going to be at 1.1, right? So, ensure render method compatibility with the VCDM 1.1.</p>
+<p id="p98" class="phone s01"><cite>Dmitri Zagidulin:</cite> So is the property itself in the context.</p>
+<p id="p99" class="phone s01"><cite>Manu Sporny:</cite> Yeah, in and…</p>
+<p id="p100" class="phone s01"><cite>Manu Sporny:</cite> 2.0. I forgot 2.0's doesn't have it. Yes, but all the other stuff is not and so you wouldn't be able to use</p>
+<p id="p101" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see. So all right I'll make those two separate issues. Easiest thing to do would be to publish a standalone context file for the VCDM 1.1 includes the render method property itself as well as the known classes and their properties for use with one. Okay.</p>
+<p id="p102" class="phone s01"><cite>Dmitri Zagidulin:</cite> Secondly, create a combined render method context or VCDM 2.0.</p>
+<p id="p103" class="phone s01"><cite>Dmitri Zagidulin:</cite> Wait,…</p>
+<p id="p104" class="phone s01"><cite>Ivan Herman:</cite> to number one render method is already the…</p>
+<p id="p105" class="phone s01"><cite>Dmitri Zagidulin:</cite> So render method I think Manu also mentioned 2.0. So render method property itself isn't go ahead.</p>
+<p id="p106" class="phone s01"><cite>Ivan Herman:</cite> how should I say the term itself and the class itself is part of the DCDM 2.0 zero as of now that we had a separate subsection in the vocabulary for the reserved terms and this is there what we are talking about is the additional properties and possibly additional classes that we will define for specific render methods or…</p>
+<p id="p107" class="phone s01"><cite>Ivan Herman:</cite> or what is common in specific render methods those will go to VCDM 2.1 I presume not 2.0</p>
+<p id="p108" class="phone s01"><cite>Ivan Herman:</cite> It always is closed.</p>
+<p id="p109" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. So 2.0 is closed.</p>
+<p id="p110" class="phone s01"><cite>Dmitri Zagidulin:</cite> But just with 1.1, we could define an external standalone context that people can just drop in and…</p>
+<p id="p111" class="phone s01"><cite>Ivan Herman:</cite> We can define external property but we should not do that because Yeah.</p>
+<p id="p112" class="phone s01"><cite>Dmitri Zagidulin:</cite> use with 1.1 and 2.0. Okay. Yeah.</p>
+<p id="p113" class="phone s01"><cite>Ivan Herman:</cite> What…</p>
+<p id="p114" class="phone s01"><cite>Dmitri Zagidulin:</cite> Is over the top.</p>
+<p id="p115" class="phone s01"><cite>Ivan Herman:</cite> I'm always worried when we concentrate on the context in this respect because we are talking about a namespace that we populate with properties and that's what we have done with 2.0.</p>
+<p id="p116" class="phone s01"><cite>Ivan Herman:</cite> We are of course fine extending the property so sorry the name space with new things but the extension for all those is part of the 2.1 work but I have the impression that going to all these details right now in the issue description is a bit over the top I mean we are not solving all the issues we are just raising</p>
+<p id="p117" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, very good point. let's see include the render method property and all classes in the future vCDM2.1. Okay. Let's start with there. yeah, and I wanted to do a C also. So,</p>
+<p id="p118" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, go back to</p>
+<p id="p119" class="phone s01"><cite>Phil Archer:</cite> So Dmitri just say here on this kind of thing is there is value in having stable context files or anything else that you can refer to and they immutable. but I think that this work and other work that the group is doing is likely over time to add new terms whether it's about random method or anything else. and so we can use the method that I pinched entirely from W3C when I set this up at our reference repository to have a stable URL that always points to the latest version of whatever it is and…</p>
+<p id="p120" class="phone s01"><cite>Phil Archer:</cite> then versioned or dated URLs that point to immutable things.</p>
+<p id="p121" class="phone s01"><cite>Phil Archer:</cite> So that I'll add this in future, but some kind of super combined single context file if that's what you want or if you need the breakdown if you need the immutable versions that refer to 1.1 or whatever is the URL for that. Yeah.</p>
+<p id="p122" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. So right with of course the caveat that so I know traditionally in the RDF world version has been frowned upon…</p>
+<p id="p123" class="phone s01"><cite>Dmitri Zagidulin:</cite> but these days specifically with the advent of data integrity the recommendation flips you whenever making breaking changes or…</p>
+<p id="p124" class="phone s01"><cite>Phil Archer:</cite> Yeah.</p>
+<p id="p125" class="phone s01"><cite>Dmitri Zagidulin:</cite> really any changes you must version the updating the context messes with the signatures and leads to developer unfriendly errors that are really difficult to diagnose. so go ahead whoever's on the queue.</p>
+<p id="p126" class="phone s01"><cite>Manu Sporny:</cite> Plus one to what Dmitri said. the problem, Phil, with links to the latest thing is people ship it into production and then blame us that we change the context when they should have known better, but they don't know better and we have given up on them ever knowing better, It keeps happening. And so what we tend to I think the current strategy is we do release candidates. So we'll do 1 RC1. So version one release candidate one and then if we need to add anything inevitably that happens then we do a V1 RC3.</p>
+<p id="p127" class="phone s01"><cite>Manu Sporny:</cite> and we just go up in number until we get to candidate wreck where we're pretty sure or really towards the end of candidate wreck and that's when we lock in v1 and so I would suggest we follow that approach meaning the vocabulary this is a different debate right whether the vocabulary should be versioned or not but I think we have not been versioning the vocabulary we've just been like helping people like this is the hash for the vocabulary at the point of time that this spec was published. If you really care go back and get history and find the right hash for the vocabulary at that time if you're doing some kind of reasoning stuff which I don't think hardly anybody's doing right now with the stuff we're doing.</p>
+<p id="p128" class="phone s01"><cite>Manu Sporny:</cite> So vocabulary stuff aside, if we're just talking about JSONLDD context, I think the suggestion is do release candidates throughout this entire development process until pretty much the end of candidate wreck and then we lock it in and we never change it,…</p>
+<p id="p129" class="phone s01"><cite>Manu Sporny:</cite> And the same thing with release We never change release candidates because what we have found is someone will inevitably ship it to production and then make a huge stink about how could we change it and…</p>
+<p id="p130" class="phone s01"><cite>Manu Sporny:</cite> it's kind of like we were in development that's why it changed. so,</p>
+<p id="p131" class="phone s01"><cite>Phil Archer:</cite> No, I'm not going to argue against people…</p>
+<p id="p132" class="phone s01"><cite>Phil Archer:</cite> who know better than me. And I tell you what you're saying, And Dmitri, thank you. I suppose I'm just thinking I know that if you therefore have to put in three or four or five links to different context files, that's a pain if you're starting from scratch.</p>
+<p id="p133" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right.</p>
+<p id="p134" class="phone s01"><cite>Dmitri Zagidulin:</cite> Don't forget though that now especially with the digest mechanism being part of the VC data model itself the immutability gets machine enforced right so for those verifiable credentials that do include the digest hash of the context files which I believe is recommended by the spec the moment you change anything in the context that digest is going to fail.</p>
+<p id="p135" class="phone s01"><cite>Phil Archer:</cite> Yeah, of course.</p>
+<p id="p136" class="phone s01"><cite>Dmitri Zagidulin:</cite> So yeah.</p>
+<p id="p137" class="phone s01"><cite>Phil Archer:</cite> Of course.</p>
+<p id="p138" class="phone s01"><cite>Dmitri Zagidulin:</cite> So basically now we cannot mess with it too much. All Going back to the queue. go ahead.</p>
+<p id="p139" class="phone s01"><cite>Manu Sporny:</cite> No, I just took myself off the queue.</p>
+<p id="p140" class="phone s01"><cite>Dmitri Zagidulin:</cite> No. Q's So going back to the open edation embedded renderer rename. we opened a tracking issue to deal itself. I don't know if you still want the blocking requested changes there or…</p>
+<p id="p141" class="phone s01"><cite>Dmitri Zagidulin:</cite> we should approve it so that we can merge this thing meanwhile and then come back to it. Go ahead.</p>
+<p id="p142" class="phone s01"><cite>Manu Sporny:</cite> Yeah. No,…</p>
+<p id="p143" class="phone s01"><cite>Manu Sporny:</cite> let's not merge it. we should open an issue marker that refers to the new issue that was raised.</p>
+<p id="p144" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="p145" class="phone s01"><cite>Manu Sporny:</cite> And let's this has a very complex picture in it. We need to start doing accessible descriptions of the images.</p>
+<p id="p146" class="phone s01"><cite>Dmitri Zagidulin:</cite> …</p>
+<p id="p147" class="phone s01"><cite>Manu Sporny:</cite> the…</p>
+<p id="p148" class="phone s01"><cite>Dmitri Zagidulin:</cite> I got it.</p>
+<p id="p149" class="phone s01"><cite>Manu Sporny:</cite> because it always falls to somebody else at the end. So if you're going to put a picture in the spec, you need to describe it in detail. The good news here is that LLMs are really good at describing pictures in accessible ways if you give them enough context. I've started doing it and the output's pretty good. so that can get folks, started on it.</p>
+<p id="p150" class="phone s01"><cite>Manu Sporny:</cite> So Henry, I think just some guidance to Isaac is just to,…</p>
+<p id="p151" class="phone s01"><cite>Manu Sporny:</cite> address those two issues. hopefully it's not a lot of work to do either one of</p>
+<p id="p152" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed. Ivan,…</p>
+<p id="p153" class="phone s01"><cite>Dmitri Zagidulin:</cite> go ahead.</p>
+<p id="p154" class="phone s01"><cite>Ivan Herman:</cite> Yeah, just a side issue here.</p>
+<p id="p155" class="phone s01"><cite>Ivan Herman:</cite> Let's not merge anything until we are not published. Then we have not set up a echidna. Now publishing will be done tomorrow morning.</p>
+<p id="p156" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right,…</p>
+<p id="p157" class="phone s01"><cite>Ivan Herman:</cite> I think I have seen that money you have already created the Akidna file but I presume you have to activate it and then we can do all these things but until then let's hold off the merge buttons sorry that's just an administrative thing</p>
+<p id="p158" class="phone s01"><cite>Dmitri Zagidulin:</cite> copy that. agreed. Yeah. All right. So, won't copy until a echidna.</p>
+<p id="p159" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p160" class="phone s01"><cite>Ivan Herman:</cite> until tomorrow.</p>
+<p id="p161" class="phone s01"><cite>Dmitri Zagidulin:</cite> Won't merge until got All so, we're good with this issue. going back to the PRs, we have the first publish working draft archival. I don't think we need to do anything with that.</p>
+<p id="p162" class="phone s01"><cite>Ivan Herman:</cite> That's just an administrative thing. There is this habit in the group that we set up a separate folder with subfolders on the archival on the first public draft etc.</p>
+<p id="p163" class="phone s01"><cite>Ivan Herman:</cite> that was not done for this repository when I created the first public working draft.</p>
+<p id="p164" class="phone s01"><cite>Ivan Herman:</cite> I have copied that. So we have the same structure as in all the others. I haven't touched the core file.</p>
+<p id="p165" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see all of the Got it.</p>
+<p id="p166" class="phone s01"><cite>Ivan Herman:</cite> So it's just copies. So this one actually could be merged right away. It doesn't bother anything.</p>
+<p id="p167" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p168" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it. the only other thing is do you mind resolving the conflict?</p>
+<p id="p169" class="phone s01"><cite>Ivan Herman:</cite> I have no idea what happened. I just copied whatever you guys gave me.</p>
+<p id="p170" class="phone s01"><cite>Dmitri Zagidulin:</cite> There could have been some sort of activity since just rebase it basically.</p>
+<p id="p171" class="phone s01"><cite>Ivan Herman:</cite> I'm always scared to death by rebases.</p>
+<p id="p172" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p173" class="phone s01"><cite>Dmitri Zagidulin:</cite> No, don't be scared. it's especially on this kind of spec work, right? it's not like we have five different teams working on simultaneous features that Yeah.</p>
+<p id="p174" class="phone s01"><cite>Ivan Herman:</cite> I have very bad experiences with rebasing.</p>
+<p id="p175" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. understood.</p>
+<p id="p176" class="phone s01"><cite>Ivan Herman:</cite> I will try but</p>
+<p id="p177" class="phone s01"><cite>Dmitri Zagidulin:</cite> Understood. I'm happy to hop on a screen share call with you if anything goes wrong. help debug, etc. Okay, so this thing's ready to go. Just needs rebased. next up we have PR from Patrick about the OCA bundle render method. That's very exciting. Patrick adds his W3C ID as well. That's good. We have go ahead.</p>
+<p id="p178" class="phone s01"><cite>Manu Sporny:</cite> This is part of a longer conversation. I think it's great that Patrick added we need to discuss this. We are seeing an explosion of render methods that are incompatible with one another and we are getting ready to ship what five six different ways of doing effectively the same thing. So I want to make sure that we have a discussion around what the scope of this spec should be for version 10 before we start just providing a bunch of alternatives.</p>
+<p id="p179" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay. So, does that capture what you said as a review comment?</p>
+<p id="p180" class="phone s01"><cite>Manu Sporny:</cite> Yes, thanks. I put that as a review comment as well. So yeah,…</p>
+<p id="p181" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, Great. So, I don't need to add Fantastic.</p>
+<p id="p182" class="phone s01"><cite>Manu Sporny:</cite> there you go. Yep.</p>
+<p id="p183" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yep, I see it. go ahead, Benjamin. I've approached</p>
+<p id="p184" class="phone s01"><cite>Benjamin Young:</cite> Yeah, mono is the concern that the feature set is redundant because that's going to be true of every render method suite or whatever we're calling them now. they're all going to do the same thing. So I don't know if this spec is ultimately going to just frame an extension model or not. Go ahead.</p>
+<p id="p185" class="phone s01"><cite>Manu Sporny:</cite> couple of things that you mentioned. So one the spec has to frame an extension model as the base. That's the core thing the spec needs to do.</p>
+<p id="p186" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go.</p>
+<p id="p187" class="phone s01"><cite>Manu Sporny:</cite> And then on top of it, we need to specify potentially a couple of concrete things because we always get our hand slapped by the tag if we don't have at least one concrete thing. Yes, Brent as a part of this it could be a render method registry. which brings tears to my eyes and not in a good way.</p>
+<p id="p188" class="phone s01"><cite>Manu Sporny:</cite> and then the other part of this is that we have things so not every render method is going to duplicate the other one. So we still have to talk about render to wireless, render to braille, render to audio, render to those things. Those things are not duplicative of each other, right? the render to a visual format might be duplicative, but then there's render to HTML, and now we've got two different render to HTML mechanisms. that's the thing I'm concerned about is that, I don't quite understand what the differences are between and this is I'm ignorant of. I have not had a chance to understand the differences between OCA bundle and the embedded renderer in the PDF version and the SVG version.</p>
+<p id="p189" class="phone s01"><cite>Manu Sporny:</cite> So I think we need to understand what are we scoping for version 10 because OCA nor embedded nor the PDF renderer stuff. Each one of those is a massive amount of work because we need test suites, we need multiple implementers, we need to explore every single nook and cranny of the space and we need to as a group I think figure out what are we trying to do in version 10? because this could turn into everybody wanting to bring their renderer method into the spec and we've get tons of duplication and that results in tons of duplicated work. that's my concern is that I think we need to talk about this. This should have started out as an issue. I appreciate Patrick doing a PR. I know he's very involved with this work. …</p>
+<p id="p190" class="phone s01"><cite>Manu Sporny:</cite> but we need to talk about it.</p>
+<p id="p191" class="phone s01"><cite>Manu Sporny:</cite> I don't want us to just merge without a discussion.</p>
+<p id="p192" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I agree with you mono the other thing that strikes me is that some of these fields right pretty much all the methods will want something like these will every method is going to need a name every method is going to need a digest optionally version all this stuff right So in addition to reconciling incompatible methods, I think we can just go a long way towards making render methods similar to…</p>
+<p id="p193" class="phone s01"><cite>Dmitri Zagidulin:</cite> how our data integrity suites are just parameterized, So that we have just one suite structure and then the differences. Ivan, go ahead.</p>
+<p id="p194" class="phone s01"><cite>Ivan Herman:</cite> Yeah, I think that's the way I understood the earlier discussion about the vocabulary extension is that these terms and…</p>
+<p id="p195" class="phone s01"><cite>Ivan Herman:</cite> there might be some others are expected to be used by almost all rendering methods or most of them let's say and they should be standardized. there should be part of our core vocabulary. It's our job to find those five, six, 10, 15, god knows how many, hopefully not 15, terms that we think are important and standardize them.</p>
+<p id="p196" class="phone s01"><cite>Ivan Herman:</cite> and then render methods can compete on additional things and the way they create their user interface or god knows but this should be standardized in my and…</p>
+<p id="p197" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed.</p>
+<p id="p198" class="phone s01"><cite>Ivan Herman:</cite> to be clear I am here talking about myself and…</p>
+<p id="p199" class="phone s01"><cite>Dmitri Zagidulin:</cite> Understood.</p>
+<p id="p200" class="phone s01"><cite>Ivan Herman:</cite> not at W3C. Yeah.</p>
+<p id="p201" class="phone s01"><cite>Dmitri Zagidulin:</cite> Understood. Phil, go ahead.</p>
+<p id="p202" class="phone s01"><cite>Phil Archer:</cite> I'm concerned and…</p>
+<p id="p203" class="phone s01"><cite>Phil Archer:</cite> again I'm always being careful when I speak in these meetings but I can't help it. I'm concerned that this idea of a high level medium type that somehow is different from whether it's actually the media type and then going down and down. the web is based on a well set of media types that gets extended by a definfined method. And if I have a client that understands SVG, I can ingest the SVG. If I understand HTML, I can do that. I shouldn't need to worry about whether it's that kind of ST SVG or that kind of HTML. I agree with Ivan that really it's about the content that goes in it.</p>
+<p id="p204" class="phone s01"><cite>Phil Archer:</cite> Yes, but I could provide my own HTML that renders those particular terms.</p>
+<p id="p205" class="phone s01"><cite>Phil Archer:</cite> And I really don't think we should have a separate medium type that says visual or audio or tactile. that's what the media type does.</p>
+<p id="p206" class="phone s01"><cite>Dmitri Zagidulin:</cite> Wait,…</p>
+<p id="p207" class="phone s01"><cite>Dmitri Zagidulin:</cite> so we were talking about slightly different things, right? I'm not sure anybody's proposing a separate media type.</p>
+<p id="p208" class="phone s01"><cite>Phil Archer:</cite> Sorry, I was looking at being in the chat. Sorry, Demetri. I was looking at his</p>
+<p id="p209" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p210" class="phone s01"><cite>Dmitri Zagidulin:</cite> No, no, that totally okay. But I think it's more that we have categories. we have a broad categories for the kind of render method specs we're going to have. we have a broad category of we need to be able to use render method as a cross modality mechanism right so from text to visual to audio etc. secondly, we need to be able to use render method as part of the internationalization mechanism. issuers will want to lay out their credential displayed differently for different languages. And then thirdly, we have just straight up different these are the codes. </p>
+<p id="p211" class="phone s01"><cite>Dmitri Zagidulin:</cite> how to translate it to PDF. This is specifically for the overlay project this number 30 which has specific semantic concerns. So there are going to be differences. I think the main point is just first we'll want to unify the common fields parameterize…</p>
+<p id="p212" class="phone s01"><cite>Dmitri Zagidulin:</cite> if possible and then leave the remainder and hopefully there won't be much of a remainder to the individual methods. So, I think we're all in violent agreement. Go ahead, Ivan.</p>
+<p id="p213" class="phone s01"><cite>Ivan Herman:</cite> Yeah, I think the only point is I very much sympathize with…</p>
+<p id="p214" class="phone s01"><cite>Ivan Herman:</cite> what Phil is saying that I think we will have modalities that I don't think have a media type like haptic braille. I mean, that doesn't work with the media type model, I'm afraid.</p>
+<p id="p215" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it. So I know that I think CSS but anyways go ahead.</p>
+<p id="p216" class="phone s01"><cite>Dave Longley:</cite> Yeah, I think we're just going to have to figure out this tension between…</p>
+<p id="p217" class="phone s01"><cite>Dmitri Zagidulin:</cite> Next one you</p>
+<p id="p218" class="phone s01"><cite>Dave Longley:</cite> if you have, for example, an HTML renderer, ideally that HTML renderer can handle these different types of medium, visual, audio, haptic, whatever it might be, based on, whatever's in that HTML. So there's a tension in knowing what kind of rendering you're going to get out of something that renders to HTML versus going to some other format and So it's sort of like these two things are happening in parallel.</p>
+<p id="p219" class="phone s01"><cite>Dave Longley:</cite> We've got these different media types, but some of them may support accessibility better in different ways or render in different ways and we've got to sort that out.</p>
+<p id="p220" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got it.</p>
+<p id="p221" class="phone s01"><cite>Dmitri Zagidulin:</cite> And in fact, Yeah. So, from the W3C page on tactile versus braille, we could possibly reuse, this notion of CSS media groups, which straight up have, four sensory types of visual, audio, speech, and tactile. I do wonder how audio and speech are different, but it's not the point. so right, so there is an existing mechanism in CSS to handle this distinction that we could possibly reuse. All a quick time check. We got 17 minutes left. right.</p>
+<p id="p222" class="phone s01"><cite>Dmitri Zagidulin:</cite> So we're going to leave this PR to start the discussion on how to unify and parameterize these different extensions classes whatever the term we end up using these different extension methods. This seems like a good topic to dive into in our next call in two All lastly, Yeah. So, those are the four pull requests. let's take a quick look at the issues while we're here. Again, going in reverse chrono. we have the overlay capture bundle which is different. no.</p>
+<p id="p223" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah yeah yeah yeah yeah yeah yeah yeah yeah.</p>
+<p id="p224" class="phone s01"><cite>Manu Sporny:</cite> No, it is. I totally did not realize he opened an issue on it. So, that's good.</p>
+<p id="p225" class="phone s01"><cite>Dmitri Zagidulin:</cite> Primarily so here we go. References issue 15. Okay. Yeah. So, that's good. We can continue the discussion on that issue 15, and I see Patrick is even All right. Publish context file. We briefly talked about that. specify usage type and display preference for a list view credential. Yes.</p>
+<p id="p226" class="phone s01"><cite>Dmitri Zagidulin:</cite> So yeah, so that's actually a further category and this came up as part of an IW a couple of sessions ago where not only do we want to be able to specify how to render a credential in full detail mode, a lot of use cases might want to specify how to display the credential as part of a list.</p>
+<p id="p227" class="phone s01"><cite>Dmitri Zagidulin:</cite> so either a small card or this has a similar mechanism in the digital credential API where it's the browser or the operating system itself that renders the credential and I believe it has something like name and the icon for the issuer or something like that basically standardized fields. We're gonna need to be able to offer a similar mechanism that says whenever you're doing a minimal rendering as part of a list or part of a browser Chrome, this is how you want it to look. These are the fields that you want to use and on. comment by Manu hand over. Yep. Yep. Yep. Yeah.</p>
+</section>
+<section><h3 id="render-method-context-discussion">Render Method Context Discussion</h3>
+<p id="p228" class="phone s01"><cite>Dmitri Zagidulin:</cite> So, I'm definitely interested in continuing this. So, we'll come back to this one section on phone hall mitigation. So one of the things that has been brought up as a sort of not criticism but a concern of render method is of course our old friend the phone home concern which is shared by the status method shared by revocation schema and others. Right?</p>
+<p id="p229" class="phone s01"><cite>Dmitri Zagidulin:</cite> So, we do want to be able to add a security concerns section to the render method spec where we mention it we mention the mitigations and so on.</p>
+<p id="p230" class="phone s01"><cite>Dmitri Zagidulin:</cite> Come on.</p>
+<p id="p231" class="phone s01"><cite>Manu Sporny:</cite> plus one did this.</p>
+<p id="p232" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead.</p>
+<p id="p233" class="phone s01"><cite>Manu Sporny:</cite> I'm wondering if it's ready for PR. it just for someone to attempt</p>
+<p id="p234" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I think and I realize I should probably break this out into two different issues. let's see let's see I think that this should be at least two different sections and two different PRs. we should have a section on embedding versus linking and then separately the phone home section, right? Because there are other reasons to embed aside from phone home mitigation such as if you want your credential to work offline. so I agreed about ready for PR. Let's see.</p>
+<p id="p235" class="phone s01"><cite>Dmitri Zagidulin:</cite> we have a ready for PR label? We do. This is exciting. So, discuss on call. this is ready for initial PRs would likely be helpful to separate into at least two to linking versus embedding effect on offline accessibility and separately phone all medications. Okay. Excellent.</p>
+</section>
+<section><h3 id="pr- OCA-bundle-render-method">PR: OCA Bundle Render Method</h3>
+<p id="p236" class="phone s01"><cite>Dmitri Zagidulin:</cite> rendering of compound linked credentials. So in the VC world we have a category of these compound credentials again modeled either as embedding or linking in the embedding camp we have CLRV2 in the education space which stands for comprehensive learner record version two and it's basically a way to use a verifiable credential as a big container in which multiple other standalone VCs are stuffed. and then of course wallet and ver verifier and other software implementers need to be able to display these monstrosities. so that's the case with CLRV2. it's also something that my team is encountering in the resume standard. these résumés being big compound documents that include other verifiable credentials skill assertions, employment VCs and so on and so forth. And so this compounds the display problem.</p>
+<p id="p237" class="phone s01"><cite>Dmitri Zagidulin:</cite> So it would be great to be able to say whether this adds any additional considerations to the render method because on the one hand you absolutely can lay out the whole thing in create an HTML render template from it and just use that but it might also be interesting to have a composable template. Go ahead, Phil. I am about it.</p>
+<p id="p238" class="phone s01"><cite>Phil Archer:</cite> Sorry, I was clicking buttons and trying to find something and I clicked So, this is interesting because it actually touches on another conversation I've been having offline because I'm preparing for TAC in a Sidebar, none of these meetings in two weeks time because it's TAC. and it's interesting that it's my colleague Paul that's brought this up. So, in our case at GS1, our credentials are linked one to other cases around international trade and so on where one credential on its own really doesn't amount to a hill of beans it needs to be part of a set and…</p>
+<p id="p239" class="phone s01"><cite>Dmitri Zagidulin:</cite> Mhm. Right.</p>
+<p id="p240" class="phone s01"><cite>Phil Archer:</cite> often you need them to be linked together so I think this is going to come up this kind of issue that you're discussing here in terms of how to present them there's lated issue which is how to verify a set rather than one and that I think is going to come up in the verified issue work that we may or may not be doing in a possible new charter. so there are lots of things going on here besides simple ren or simple isn't the word, sorry. Besides just rendering,…</p>
+<p id="p241" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. and I suspect rendering will be also affect So all right.</p>
+<p id="p242" class="phone s01"><cite>Phil Archer:</cite> Of course. Yes. Absolutely. Yes. Yes.</p>
+<p id="p243" class="phone s01"><cite>Dmitri Zagidulin:</cite> So good issue. We'll come back to next up, right? So this one I think could be ready for PR.</p>
+<p id="p244" class="phone s01"><cite>Dmitri Zagidulin:</cite> So this is my request of if we're going to use render method as an additional aid to our internationalization mechanism which I think we should or we straight up have a use case in the education world where one diploma is used by a multilingual university and they want to lay it out differently in the language in addition to just string translation right the layout is affected by the language so we could provide an example for that mon go ahead …</p>
+<p id="p245" class="phone s01"><cite>Manu Sporny:</cite> Yes, plus one to this. there is another issue 26. That's a dupe. I would like to close this issue in favor of issue 26 primarily…</p>
+<p id="p246" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay. Yeah.</p>
+<p id="p247" class="phone s01"><cite>Manu Sporny:</cite> because issue 26 was raised by MOSIP. And for those that don't know, they have issued a 100 million verifiable credentials over the last year, and they're on track to do the same amount, if not more this year. and they issue their credentials using render method in English Hindi Tamil and a variety of different things. So they're at the tip of the spear trying to get this stuff done.</p>
+<p id="p248" class="phone s01"><cite>Manu Sporny:</cite> So this to me feels like one of the things we definitely have to tackle and we've pulled the internationalization folks into issue 26 as well and given them a heads up like help we need to make sure we do this the right way.</p>
+<p id="p249" class="phone s01"><cite>Manu Sporny:</cite> It's got all kinds of ramifications for accessibility of yeah, plus this is one of those things we've got to solve and ideally sooner than later because they deploy first and ask questions later and when they deploy it's, tens of millions of things. that's it.</p>
+<p id="p250" class="phone s01"><cite>Dmitri Zagidulin:</cite> Excellent. Okay.</p>
+<p id="p251" class="phone s01"><cite>Dmitri Zagidulin:</cite> Closing this one. and Since I'm fully open, I feel impunity to do this. and we'll discuss it in issue 26. Functional operation. that's a tricky topic. so this is a topic that every templating language has to deal with at some point or another, right? So if any of you have done web application that template templating language like handlebar, erb mustache and a number of work alikes. The first step is you embed rendering of variable substitutions and then inevitably operations come into mind.</p>
+<p id="p252" class="phone s01"><cite>Dmitri Zagidulin:</cite> We want to be able to call to do arithmetic to be able to call functions inside the template and it always leads to security considerations complexity. So this is that but for our render method for example having to convert ISO format. Go ahead.</p>
+</section>
+<section><h3 id="rendering-compound-credentials">Rendering Compound Credentials</h3>
+<p id="p253" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one. I've got an issue also in here about is MVP? what is the minimum we can do and feel good about it. and this is one of the things that I think needs to be in there. We hit this issue regularly and you hit it way sooner than you think. dates that's the very first thing and…</p>
+<p id="p254" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right. Excuse.</p>
+<p id="p255" class="phone s01"><cite>Manu Sporny:</cite> we're like, Many people do not know how to read an ISO8 88 8601 or XML datetime right so we need to convert those into readable values and that's where you need a language like this there are challenges here ideally we pick one templating language across as many different textbased formats as we can muster ideally the scripting language that we adopt is the same as</p>
+<p id="p256" class="phone s01"><cite>Manu Sporny:</cite> across all of those things so people don't have to have multiple different script execution environments and then of course as you mentioned Dmitri the whole security part of it is really really difficult I</p>
+<p id="p257" class="phone s01"><cite>Dmitri Zagidulin:</cite> So as a brief sort of lightly hopeful push back is I don't suppose there's any chance we can postpone dealing with this for as long as possible specifically right all of these operations can be done in soft code rather how to put it no I suppose even with dates I take that back. We will have to tackle this especially for dates. So that's an MVP I think date display and localizing it is something that everybody understands. Everybody's come into the pain point. So okay.</p>
+<p id="p258" class="phone s01"><cite>Dmitri Zagidulin:</cite> So next steps do an overview of the popular templating languages and list there capabilities with the hope of choosing a popular one. that's a super set. All right. we are almost out of time. web- based render suite. That's interesting.</p>
+<p id="p259" class="phone s01"><cite>Manu Sporny:</cite> We've got oaks on the queue.</p>
+<p id="p260" class="phone s01"><cite>Dmitri Zagidulin:</cite> We got folks on the queue. go ahead, Ivan.</p>
+<p id="p261" class="phone s01"><cite>Ivan Herman:</cite> So here is the point where I have to put on my W3C hat. Unfortunately, we have to be very careful that whatever we refer to here as a language and a template language should be how should I say stable enough and there are more formal description…</p>
+<p id="p262" class="phone s01"><cite>Ivan Herman:</cite> what that means to be able to refer to it normatively. that kind of thing can become very difficult because when you say popular that might mean it's popular today and maybe next year and…</p>
+<p id="p263" class="phone s01"><cite>Dmitri Zagidulin:</cite> You're right.</p>
+<p id="p264" class="phone s01"><cite>Ivan Herman:</cite> in two years it disappears. So it is not only popular it is stable and really stable so that we can refer it from a former specification and that's not obvious that these things may be in contradiction with one another.</p>
+<p id="p265" class="phone s01"><cite>Dmitri Zagidulin:</cite> You're right.</p>
+<p id="p266" class="phone s01"><cite>Ivan Herman:</cite> From my top of my head,…</p>
+<p id="p267" class="phone s01"><cite>Dmitri Zagidulin:</cite> I'm sorry. my net cut out for just a second. Do you know of any templating language that is a standard? I don't know of any.</p>
+<p id="p268" class="phone s01"><cite>Ivan Herman:</cite> it would be too easy to be three if I had a response. No, I don't.</p>
+<p id="p269" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Right. Right.</p>
+<p id="p270" class="phone s01"><cite>Ivan Herman:</cite> I mean I know that we have used mustache in I don't remember which spec in the past. So that seemed to be at that point relatively stable but I don't remember how powerful it is for example in terms of this operation and functions there I don't remember simply I know I think it was from the CSV to RDF standard or…</p>
+<p id="p271" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, I see.</p>
+<p id="p272" class="phone s01"><cite>Ivan Herman:</cite> somewhere someplace like that we used</p>
+<p id="p273" class="phone s01"><cite>Ivan Herman:</cite> Eight. Yeah.</p>
+<p id="p274" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see.</p>
+<p id="p275" class="phone s01"><cite>Dmitri Zagidulin:</cite> Benjamin and then, we should wrap up because we're at the top of the hour.</p>
+<p id="p276" class="phone s01"><cite>Benjamin Young:</cite> Yeah. …</p>
+<p id="p277" class="phone s01"><cite>Benjamin Young:</cite> mustache is great for what it is, but it's super limited.</p>
+<p id="p278" class="phone s01"><cite>Benjamin Young:</cite> So, I think a big part of the conversation is about finding something more powerful, but not too powerful. That's it.</p>
+<p id="p279" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yep.</p>
+<p id="p280" class="phone s01"><cite>Dmitri Zagidulin:</cite> So here we might need to stretch the concept of what's stable or not because I don't think any templating language is in W3C and ITF and the usual SDOS's. So may have to be generous with what's stable or not.</p>
+</section>
+<section><h3 id="functional-operations-and-templating">Functional Operations and Templating</h3>
+<p id="p281" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, excellent discussions everyone. Thank you. see you again in two weeks for more rendering methods.</p>
+<p id="p282" class="phone s01"><cite>Phil Archer:</cite> Dmitri, two weeks is TAC.</p>
+<p id="p283" class="phone s01"><cite>Dmitri Zagidulin:</cite> Excitement. good point.</p>
+<p id="p284" class="phone s01"><cite>Phil Archer:</cite> Are you going to have this call in the middle of the night in Japan Right.</p>
+<p id="p285" class="phone s01"><cite>Dmitri Zagidulin:</cite> Two weeks is TAC. no, I would rather not honestly. I mean I do want to participate in TAC sessions but we should probably u call in four weeks which gives us plenty of time to do async work on issues.</p>
+<p id="p286" class="phone s01"><cite>Brent Zundel:</cite> We also do have on the agenda for TPAC a working session that includes render methods. So, excellent</p>
+<p id="p287" class="phone s01"><cite>Dmitri Zagidulin:</cite> Then I take it back. So I will see you in two weeks on that session right there.</p>
+<p id="p288" class="phone s01"><cite>Ivan Herman:</cite> Right.</p>
+<p id="p289" class="phone s01"><cite>Phil Archer:</cite> And with the time zone is the same time anyway.</p>
+<p id="p290" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thanks everyone.</p>
+<p id="p291" class="phone s01"><cite>Phil Archer:</cite> It's always the middle of someone's night, right?</p>
+<p id="p292" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right, right, right. Yeah, sadly. all right. Thanks everyone. Cheers. See you in two weeks at Tback. Bye.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
