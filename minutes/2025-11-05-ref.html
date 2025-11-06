@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2025-11-05</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Dave Longley, Denken Chen, Hiroyuki Sano, Joe Andrieu, Patrick St-Louis, Ted Thibodeau Jr</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic-1">Cancelling Meetings and Scheduling</a></li>
+<li><a href="#topic-2">Processing Spec Refinement Issues</a></li>
+<li><a href="#topic-3">Confidence Method: DID Off and Duplicates</a></li>
+<li><a href="#topic-4">Confidence Levels from Issuer Discussion</a></li>
+<li><a href="#topic-5">Multi-factor Authentication and DID Confidence</a></li>
+<li><a href="#topic-6">Adding New Confidence Methods</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic-1">Cancelling Meetings and Scheduling</h3>
+<p id="p001" class="phone s01"><cite>Benjamin Young:</cite> So Joe, was this one supposed to be cancelled?</p>
+<p id="p002" class="phone s01"><cite>Joe Andrieu:</cite> I don't know that was that your take.</p>
+<p id="p003" class="phone s01"><cite>Benjamin Young:</cite> Yeah, that was the impression I got. I reached out to Monu about it and he's like, " let Brent and Joe and whoever else be I'm traveling." So,…</p>
+<p id="p004" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, we should cancel.</p>
+<p id="p005" class="phone s01"><cite>Joe Andrieu:</cite> I don't know who can delete the event.</p>
+<p id="p006" class="phone s01"><cite>Benjamin Young:</cite> yeah, I tried to and that's when I reached out to Monu and said, "I don't have access to it." And he was like,…</p>
+<p id="p007" class="phone s01"><cite>Benjamin Young:</cite> "Yeah, let it be somebody else's problem. so it looks like you probably can. You're listed as an organizer if you use the event link and log into your W3C account. it looks like Patrick here can as well.</p>
+<p id="p008" class="phone s01"><cite>Patrick St-Louis:</cite> I think it's too late can for me it's grayed out.</p>
+<p id="p009" class="phone s01"><cite>Benjamin Young:</cite> Yeah, you don't Yeah,…</p>
+<p id="p010" class="phone s01"><cite>Joe Andrieu:</cite> I mean through the W3. Interesting.</p>
+<p id="p011" class="phone s01"><cite>Benjamin Young:</cite> through the link that's at the top of the invite. And you don't have to delete Just, mark it as cancel. the edit button.</p>
+<p id="p012" class="phone s01"><cite>Patrick St-Louis:</cite> So I can edit on the page the confirm cancelled is grayed out.</p>
+<p id="p013" class="phone s01"><cite>Benjamin Young:</cite> Yeah. I think you're probably …</p>
+<p id="p014" class="phone s01"><cite>Joe Andrieu:</cite> It is letting me for what?</p>
+<p id="p015" class="phone s01"><cite>Patrick St-Louis:</cite> Okay.</p>
+<p id="p016" class="phone s01"><cite>Benjamin Young:</cite> is it?</p>
+<p id="p017" class="phone s01"><cite>Patrick St-Louis:</cite> So I listed as organizer but yeah.</p>
+<p id="p018" class="phone s01"><cite>Benjamin Young:</cite> Yeah. useful,…</p>
+<p id="p019" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I'd never seen that interface. So, if that's all we learned today, that's some progress.</p>
+<p id="p020" class="phone s01"><cite>Benjamin Young:</cite> right? What I cancelled the whole series.</p>
+<p id="p021" class="phone s01"><cite>Patrick St-Louis:</cite> Okay. …</p>
+<p id="p022" class="phone s01"><cite>Joe Andrieu:</cite> It just canceled everything.</p>
+<p id="p023" class="phone s01"><cite>Patrick St-Louis:</cite> because to me it says this event is part of a big meeting and…</p>
+<p id="p024" class="phone s01"><cite>Joe Andrieu:</cite> Yeah,…</p>
+<p id="p025" class="phone s01"><cite>Patrick St-Louis:</cite> some of its field can only be edited by the events team.</p>
+<p id="p026" class="phone s01"><cite>Benjamin Young:</cite> Weird.</p>
+<p id="p027" class="phone s01"><cite>Patrick St-Louis:</cite> So that's like a note.</p>
+<p id="p028" class="phone s01"><cite>Benjamin Young:</cite> Which are you on the November 5th specific event?</p>
+<p id="p029" class="phone s01"><cite>Patrick St-Louis:</cite> Yeah.</p>
+<p id="p030" class="phone s01"><cite>Benjamin Young:</cite> Because there is a series I'm never too late to cancel.</p>
+<p id="p031" class="phone s01"><cite>Joe Andrieu:</cite> I edited the series. So, that was my mistake. So, I'm just going to update that one. so here's specifically this next event.</p>
+<p id="p032" class="phone s01"><cite>Patrick St-Louis:</cite> Might be too late to cancel because it's started.</p>
+<p id="p033" class="phone s01"><cite>Benjamin Young:</cite> No, I don't know.</p>
+<p id="p034" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, that might be why.</p>
+<p id="p035" class="phone s01"><cite>Joe Andrieu:</cite> But I'm also not seeing how I can cancel a future event. I see. you have to click through to the events. So, if I click through to today's events,…</p>
+<p id="p036" class="phone s01"><cite>Benjamin Young:</cite> Yeah, that sounds right.</p>
+<p id="p037" class="phone s01"><cite>Joe Andrieu:</cite> edit this events, and I think, yeah, now they're grayed out. I'm up to speed with where you were, Patrick. I found the UX…</p>
+<p id="p038" class="phone s01"><cite>Patrick St-Louis:</cite> Okay. okay.</p>
+<p id="p039" class="phone s01"><cite>Joe Andrieu:</cite> where it's all grayed out. Probably because it started. So,</p>
+<p id="p040" class="phone s01"><cite>Benjamin Young:</cite> There we go. So now I see it as in progress tentative for today and next week is cancelled and then the rest are tentative which is fine.</p>
+<p id="p041" class="phone s01"><cite>Patrick St-Louis:</cite> So next week cancel and then the weeks after we will see until at least December is</p>
+<p id="p042" class="phone s01"><cite>Benjamin Young:</cite> I know the immediate week after TAC a lot of people are also cancelling those but it's kind of on each of the organizing groups to decide.</p>
+<p id="p043" class="phone s01"><cite>Patrick St-Louis:</cite> All right.</p>
+<p id="p044" class="phone s01"><cite>Joe Andrieu:</cite> So we could make that decision now.</p>
+<p id="p045" class="phone s01"><cite>Joe Andrieu:</cite> Was anyone on this call last week when it was the render method.</p>
+<p id="p046" class="phone s01"><cite>Benjamin Young:</cite> last week. Yeah, I was there and…</p>
+<p id="p047" class="phone s01"><cite>Joe Andrieu:</cite> So…</p>
+<p id="p048" class="phone s01"><cite>Benjamin Young:</cite> thank you that</p>
+<p id="p049" class="phone s01"><cite>Joe Andrieu:</cite> if we keep to the rhythm then we would be the next meeting in the cycle. If we did we're skipping tack which is render method we're skipping post tack because we went to a face to face we'll skip the next meeting. If we do that…</p>
+<p id="p050" class="phone s01"><cite>Patrick St-Louis:</cite> 36.</p>
+<p id="p051" class="phone s01"><cite>Joe Andrieu:</cite> then am I doing that math right? Dimmitri would be the next one meeting on the 27th, but the 27th is in the middle of Thanksgiving. 26 for Wednesday, But also the same problem. not as bad as Thursday. so I think I should round the circle with Dimmitri and figure out…</p>
+<p id="p052" class="phone s01"><cite>Joe Andrieu:</cite> what we want to do post EPAC in terms of coordinating our two groups. seems like the right thing to do.</p>
+<p id="p053" class="phone s01"><cite>Patrick St-Louis:</cite> Yeah, as long as we can update the meetings accordingly.</p>
+<p id="p054" class="phone s01"><cite>Patrick St-Louis:</cite> The meeting status for the coming week, that'd be great. if…</p>
+<p id="p055" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Yes,…</p>
+<p id="p056" class="phone s01"><cite>Patrick St-Louis:</cite> if they're canceled to cancel it and so on.</p>
+<p id="p057" class="phone s01"><cite>Joe Andrieu:</cite> I will close the loop with Dimmitri and update the calendar. and my understanding is it the spec refinement call is always just either week it's render method or…</p>
+<p id="p058" class="phone s01"><cite>Benjamin Young:</cite> Yeah, the main WG calls are on their own</p>
+<p id="p059" class="phone s01"><cite>Joe Andrieu:</cite> confidence method and if there's any VCWG meetings, Brent's scheduling that in a different rhythm. Is that All right. then I will deal with that scheduling logistics with Dimmitri. we could talk a little bit about what's next. I'm not sure who's familiar with the process. sort of where we're at.</p>
+</section>
+<section>
+<h3 id="topic-2">Processing Spec Refinement Issues</h3>
+<p id="p060" class="phone s01"><cite>Joe Andrieu:</cite> I understand we published the FPWD, and that is out in the world and I think we need to queue up probably issues for what we're going to do next. and then we should start processing those issues. the one issue I know of, although I have to go find the repo because I don't have that handy, we need to put at least one confidence method in the confidence method. Dave, do you know what's the shortest route to getting spec text for a confidence method?</p>
+<p id="p061" class="phone s01"><cite>Joe Andrieu:</cite> because it's probably something like proof of control,…</p>
+<p id="p062" class="phone s01"><cite>Joe Andrieu:</cite> proof of access, whatever we're calling that.</p>
+<p id="p063" class="phone s01"><cite>Dave Longley:</cite> Yeah, I thought we had some of that.</p>
+<p id="p064" class="phone s01"><cite>Dave Longley:</cite> Maybe we didn't in the CCG final report for did off. If we don't, it seems to me that's the shortest path to having a implementable confidence method.</p>
+<p id="p065" class="phone s01"><cite>Joe Andrieu:</cite> I am going to add that as an issue if we don't already have one. And I did find the repo from what that's worth. I'll put that in my bookmark so it's faster. I'll also share it in chat for folks who are curious.</p>
+<p id="p066" class="phone s01"><cite>Joe Andrieu:</cite> And then the issues we have there levels adding more confidence method types with multifactor. most should it be name That's an interesting question. I guess the did confidence method issue number 10. Is that the same thing? Okay. So, I'm going to create a new issue for this.</p>
+<p id="p067" class="phone s01"><cite>Joe Andrieu:</cite> And I'll just call it Go ahead, Dave.</p>
+<p id="p068" class="phone s01"><cite>Dave Longley:</cite> Yeah, we definitely have an example in the spec today.</p>
+<p id="p069" class="phone s01"><cite>Dave Longley:</cite> It probably is lacking sufficient spec text, but we have an example in the spec today. It shows a biometric portrait image as the first one, but it's got several others. It's got a JSON webkey, a multi key, and a decentralized identifier document. Each of those is listed but we need spec text on if you have these types of competence methods what would you do to prove the confidence proof of use whatever proof of control I put a link in the chat here to the example we have spec</p>
+<p id="p070" class="phone s01"><cite>Joe Andrieu:</cite> I'll include that link in my issue here. So, we do have an example. We just don't describe what you do with it. do we have any more detailed discussion of did off anywhere? I agree. It feels like we have talked about it more…</p>
+<p id="p071" class="phone s01"><cite>Joe Andrieu:</cite> but it probably got excised as the spec matured.</p>
+<p id="p072" class="phone s01"><cite>Dave Longley:</cite> Yeah, I mean…</p>
+<p id="p073" class="phone s01"><cite>Dave Longley:</cite> where we talk about it is in the VCOM spec. here is a link to that other specification. That's the response format that talks about what you would provide and then above that is the did authentication query format.</p>
+<p id="p074" class="phone s01"><cite>Patrick St-Louis:</cite> Okay.</p>
+<p id="p075" class="phone s01"><cite>Dave Longley:</cite> So we have a query format and response format over in the VCOM spec. So we might need to figure out how to best reference these and with the rechartering and process that might become a lot easier. There would also be in the oid forvp spec in the oid for vci spec I believe there are sections where you provide a proof that is based on a did and those could also be referenced as ways to do proof of control with did oid for vp yeah that's Yes,…</p>
+<p id="p076" class="phone s01"><cite>Joe Andrieu:</cite> What were the two oid for VC and okay so for VP and for VC and VP basically LVC is a VCI Yeah,…</p>
+<p id="p077" class="phone s01"><cite>Dave Longley:</cite> There's three letters for that one. Yep. The distinction between those two protocols is the VCI one is for issuance which is what the I for is for and the VP is for presentation.</p>
+<p id="p078" class="phone s01"><cite>Joe Andrieu:</cite> I'll withhold comment. So, I'm putting those into the issue and I will track that down to try and create some spec text.</p>
+<p id="p079" class="phone s01"><cite>Joe Andrieu:</cite> do we know of any other issues that are not currently in issues like people on this call? do we know of things we should be adding to this list? I just knew about that one because that was something we had already talked about.</p>
+<p id="p080" class="phone s01"><cite>Dave Longley:</cite> Nothing jumps to mind, but I don't know if you intend to go through the issues list after this,…</p>
+<p id="p081" class="phone s01"><cite>Dave Longley:</cite> that might jog people's memories if there's anything that's left out. I don't know if we wanted to go one by one. it's up to you obviously.</p>
+<p id="p082" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I'm torn.</p>
+<p id="p083" class="phone s01"><cite>Joe Andrieu:</cite> 10 minutes ago I had been expecting we were just going to cancel because I think a lot of us thought this was cancelled. but we figured out how to start up the meeting and now I feel like we're being productive. what's the sense of the folks who aren't me? What do you guys think? there were only 10 issues, eight issues, something on the order of half a dozen issues. we could go through them real quickly.</p>
+<p id="p084" class="phone s01"><cite>Dave Longley:</cite> Something that is minimally done sometimes is marking the issues as a level of effort even if we don't want to dig into them. I don't know if we have the tags for that low effort high or whatever just as something to mark as we don't do full triage or anything but just something to flag them so that we have an outcome from looking at them.</p>
+<p id="p085" class="phone s01"><cite>Dave Longley:</cite> is a suggestion.</p>
+<p id="p086" class="phone s01"><cite>Joe Andrieu:</cite> Okay. Yeah,…</p>
+<p id="p087" class="phone s01"><cite>Joe Andrieu:</cite> it's a good idea. I'm checking the labels that we have. So, I don't think we quite have what you were suggesting. yet. So as a class 1 2 3 4. We can flag future ready for question but we don't have any other traction. So I guess what triage makes sense. Dave, you seem to have an idea.</p>
+<p id="p088" class="phone s01"><cite>Joe Andrieu:</cite> It could be accepted or assigned. You were thinking level of effort.</p>
+<p id="p089" class="phone s01"><cite>Dave Longley:</cite> Yeah. …</p>
+<p id="p090" class="phone s01"><cite>Dave Longley:</cite> how much freedom do we have to create these labels? I mean you are the first editor on the spec. We can always delete the labels later if that's a problem. I don't think it's a huge issue. Do you have the permission to create a low effort or…</p>
+<p id="p091" class="phone s01"><cite>Joe Andrieu:</cite> Yeah. Is it mechanically?</p>
+<p id="p092" class="phone s01"><cite>Dave Longley:</cite> a high effort label? Seems useful to me.</p>
+<p id="p093" class="phone s01"><cite>Joe Andrieu:</cite> That's interesting. Can I create a level? edit labels. Yeah, I think I can. So, technically I do have the capacity. So, low effort.</p>
+<p id="p094" class="phone s01"><cite>Joe Andrieu:</cite> I guess ready for peers in a different dimension. although do we have a needs discussion? Nope. So I will add that.</p>
+<p id="p095" class="phone s01"><cite>Dave Longley:</cite> Yeah, that's always a good one.</p>
+<p id="p096" class="phone s01"><cite>Joe Andrieu:</cite> So, I think some of these we may not know what the effort is because we don't know how we want to treat it. Let me add these real quick</p>
+<p id="p097" class="phone s01"><cite>Joe Andrieu:</cite> And then maybe I'll just share my screen and we talk through the issues.</p>
+<p id="p098" class="phone s01"><cite>Dave Longley:</cite> Sounds</p>
+</section>
+<section>
+<h3 id="topic-3">Confidence Method: DID Off and Duplicates</h3>
+<p id="p099" class="phone s01"><cite>Joe Andrieu:</cite> Thanks, ve. And I will go through them in reverse order. So the oldest one here is confidence method 10. The issuer adds a confidence method that allows a set of DIDs who are authorized to present the VC. Stankin mentioned three weeks ago.</p>
+<p id="p100" class="phone s01"><cite>Dave Longley:</cite> So, this dimension is a little bit different. just reading what's on the screen there, they're talking about who is authorized to present a VC, which doesn't really match the VC model.</p>
+<p id="p101" class="phone s01"><cite>Dave Longley:</cite> An issuer doesn't get to decide who's authorized. they can certainly put a confidence method in a VC and a verifier could decide that you must use that if they want to accept your VC. But this is not an authorization model.</p>
+<p id="p102" class="phone s01"><cite>Joe Andrieu:</cite> That's right.</p>
+<p id="p103" class="phone s01"><cite>Dave Longley:</cite> So you could approximate this. but it seems like hey there I am. I said that. you could approximate that but I think either way what's missing here is putting more spec text to a particular conference method. this isn't quite a duplicate of the issue that was just filed …</p>
+<p id="p104" class="phone s01"><cite>Dave Longley:</cite> because there is some discussion here about how people are looking at it from an authorization perspective. I don't know how much we need to dig into the issue.</p>
+<p id="p105" class="phone s01"><cite>Joe Andrieu:</cite> Yeah no that's good rehydration.</p>
+<p id="p106" class="phone s01"><cite>Joe Andrieu:</cite> So now we have two issues that we are talking about. but what tag? So if we're doing a triage Dave this just needs discussion</p>
+<p id="p107" class="phone s01"><cite>Joe Andrieu:</cite> clearly. Okay,…</p>
+<p id="p108" class="phone s01"><cite>Dave Longley:</cite> Yeah, let's put this one down for needs discussion and…</p>
+<p id="p109" class="phone s01"><cite>Dave Longley:</cite> maybe link it to the one that was just filed.</p>
+<p id="p110" class="phone s01"><cite>Joe Andrieu:</cite> I think that makes sense. So he had linked it here by the way.</p>
+<p id="p111" class="phone s01"><cite>Dave Longley:</cite> I meant the one you just filed. I think might also cover this one. If we just add to the spec a confidence method that I wonder if we want to instead of calling it possible duplicate why don't we just this is related to issue whatever was just filed that one issue 20 could possibly be solved by addressing in the same</p>
+<p id="p112" class="phone s01"><cite>Joe Andrieu:</cite> Okay.</p>
+<p id="p113" class="phone s01"><cite>Dave Longley:</cite> I mean my personal view on it is if somebody I think it's ill advised to build a authorization model on top of ECS but if somebody wanted to do that and model something out then they would be able to use this spec which would show how you could model at least one type of confidence method and put it wherever you wanted and they could build some model around that, but I would not have this spec say here's how you do authorization with VCs. So, in light of that, I think a PR to solve the issue you just raised would enable someone to go off and make an authorization model if they really wanted to.</p>
+<p id="p114" class="phone s01"><cite>Dave Longley:</cite> But the verifier's business rules don't go in the issuers's statement.</p>
+<p id="p115" class="phone s01"><cite>Dave Longley:</cite> primarily because they're not the same party.</p>
+<p id="p116" class="phone s01"><cite>Joe Andrieu:</cite> Yeah. Yeah,…</p>
+<p id="p117" class="phone s01"><cite>Joe Andrieu:</cite> I'm with you on that. So, we flagged this as needs discussion. does it now that we've moved it over to 20? I think we just put on a needs discussion tag…</p>
+<p id="p118" class="phone s01"><cite>Dave Longley:</cite> Does it</p>
+<p id="p119" class="phone s01"><cite>Joe Andrieu:</cite> but then I think we discuss it such that we're moving the momentum of this question over to the new issue number 20 and then when we resolve 20 we will come back to this issue and say hey did this also fix 12…</p>
+<p id="p120" class="phone s01"><cite>Dave Longley:</cite> That seems right to me.</p>
+<p id="p121" class="phone s01"><cite>Joe Andrieu:</cite> then I'm going to remove the needs discussion oops that's not how I remove</p>
+<p id="p122" class="phone s01"><cite>Joe Andrieu:</cite> And is there a way we would describe this as needs Ready for PR?</p>
+<p id="p123" class="phone s01"><cite>Joe Andrieu:</cite> It's not quite ready.</p>
+<p id="p124" class="phone s01"><cite>Dave Longley:</cite> Yeah, let's put it as ready.</p>
+<p id="p125" class="phone s01"><cite>Dave Longley:</cite> Ready for PR.</p>
+<p id="p126" class="phone s01"><cite>Joe Andrieu:</cite> All that's one issue addressed. Let's go back to the did confidence method. so this predated what we just put in, right, about creating a did off, but it seems like it's similar. Okay.</p>
+<p id="p127" class="phone s01"><cite>Dave Longley:</cite> Yeah, I think it's the same thing. I think this is just a duplicate of the one that was just filed.</p>
+<p id="p128" class="phone s01"><cite>Joe Andrieu:</cite> And then this one also ready for PR. Is that still the right tag? Okay.</p>
+<p id="p129" class="phone s01"><cite>Dave Longley:</cite> If we're going to mark a duplicate, we would normally close this one and go mark the other one as ready for PR. So, we'll keep the issue open that spawned this one cuz it's sort of like we had two. we in effect had three different issues all doing the same thing.</p>
+<p id="p130" class="phone s01"><cite>Dave Longley:</cite> But we'll keep the one that spawned it Close that intermediate one and put this one ready for PR.</p>
+<p id="p131" class="phone s01"><cite>Joe Andrieu:</cite> It's not quite.</p>
+<p id="p132" class="phone s01"><cite>Joe Andrieu:</cite> Arguably the one we just closed was the first one, but I don't think that's relevant.</p>
+<p id="p133" class="phone s01"><cite>Dave Longley:</cite> Yeah, that might be true.</p>
+<p id="p134" class="phone s01"><cite>Joe Andrieu:</cite> All So, that's 11 and 12. we didn't talk about 12, but I think that's going to be I guess the question on this one is what do we call this? I see these are two different.</p>
+<p id="p135" class="phone s01"><cite>Joe Andrieu:</cite> Does a spec have a verification key confirmation?</p>
+<p id="p136" class="phone s01"><cite>Dave Longley:</cite> It does. I don't think it's called that anymore. I think this is probably out of date with what is that example I linked to. Let's see. The types that were listed in there were just keys and decentralized identifier document were listed. So, they weren't listed as a confidence method type. Yeah. there's some inconsistency clearly. Yeah.</p>
+<p id="p137" class="phone s01"><cite>Joe Andrieu:</cite> It's an example is the issue, Not a description of what the method is. so I think this one</p>
+<p id="p138" class="phone s01"><cite>Dave Longley:</cite> It's really a duplicate of the one we just filed as well.</p>
+<p id="p139" class="phone s01"><cite>Joe Andrieu:</cite> So, we're going to close this.</p>
+<p id="p140" class="phone s01"><cite>Dave Longley:</cite> That seems right to me.</p>
+<p id="p141" class="phone s01"><cite>Joe Andrieu:</cite> Giving a pause in case anyone wants to chime in with an alternative. this one's easy because it's needs discussion. My view this is confidence method to authentication.</p>
+<p id="p142" class="phone s01"><cite>Joe Andrieu:</cite> Manda was a fan of this and when it came up maybe two weeks ago, I spoke up and said, I think it's importantly different." so we can just flag it for discussion. And as much as it would be fun to discuss it now, I think I want to go look at rest of the comments. But I do see we have good comments both ways. Thanks for your comment, Ted. Thanks. thank you. Align with motive claim 169.</p>
+<p id="p143" class="phone s01"><cite>Dave Longley:</cite> I would say if nothing else this probably needs discussion and ideally some engagement from some res representatives. I don't know how easily that can be accomplished but the time zone so it might need to be done asynchronously but I would just leave it at needs discussion.</p>
+<p id="p144" class="phone s01"><cite>Joe Andrieu:</cite> So, yeah, I think we should cue that up and hopefully get some of the most guys to show up if we can. this should be fixed maybe not.</p>
+<p id="p145" class="phone s01"><cite>Dave Longley:</cite> I saw an email thread somewhere with that. It must have been this. There's the ID number. So, yeah.</p>
+<p id="p146" class="phone s01"><cite>Joe Andrieu:</cite> It's a different number than I put in there.</p>
+<p id="p147" class="phone s01"><cite>Dave Longley:</cite> And they just joined the meeting. So, the question's there. should they open a poll request? How do we get the number in</p>
+<p id="p148" class="phone s01"><cite>Joe Andrieu:</cite> Very good. Yes. Denin, can we say you joined us?</p>
+<p id="p149" class="phone s01"><cite>Denken Chen:</cite> Yes.</p>
+<p id="p150" class="phone s01"><cite>Joe Andrieu:</cite> All right, we were just going over the W3C ID value and we saw you commented on it. So yeah, just put in a pull request. it is an edits right on that index file. So you could just change that one line and we will get it accepted.</p>
+<p id="p151" class="phone s01"><cite>Denken Chen:</cite> Sure.</p>
+<p id="p152" class="phone s01"><cite>Joe Andrieu:</cite> So I'll just note here yes please and we'll mark this as ready for PR.</p>
+</section>
+<section>
+<h3 id="topic-4">Confidence Levels from Issuer Discussion</h3>
+<p id="p153" class="phone s01"><cite>Joe Andrieu:</cite> confidence levels from the issuer. So, Denin, we are right now just hydrating through the issues that we have on the confidence method. spec and labeling them as low effort or needs discussion or ready for PR. we haven't come up with other ratings but the next one that we want to talk about is one that you raised. So could you tell us about this confidence levels from the shorter question?</p>
+<p id="p154" class="phone s01"><cite>Denken Chen:</cite> Yes So this is one of our internal research when we receive some requirement from the banking service and the re reason is that there are lots of different banking functions that requires different kind of levels of confidence methods. For example, when they are open opening a bank account, they need very high assurance level of the certificate credentials. however, when there are only just to make sure you approve some transactions from the foreign countries, they could just need some low level of the assurance levels to make sure that you are indeed the person that approved that transitions.</p>
+<p id="p155" class="phone s01"><cite>Denken Chen:</cite> So I think that's one of the overall trust framework that could suit different needs of different behaviors. so that we put the frameworks here. but we are open to discussion to see that whether there's any real application scenarios that would be helpful for them. Guest.</p>
+<p id="p156" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thanks go ahead Dave. I also tell Ted we probably want you to chime in,…</p>
+<p id="p157" class="phone s01"><cite>Joe Andrieu:</cite> but go ahead Dave.</p>
+<p id="p158" class="phone s01"><cite>Dave Longley:</cite> Yeah,…</p>
+<p id="p159" class="phone s01"><cite>Dave Longley:</cite> just real quick I wanted to say another area there's a true age program that uses something similar to this. and the way that that program went about implementing it is by issuing a level of assurance credential that included within it a confidence method. And so it might be that this is clearly a valuable use case, but it might be that the way to go about solving it is if a particular party has done performed authentication themselves on a particular subject, they could issue such a credential and they could include in it a confidence method that could potentially be checked again somewhere else…</p>
+<p id="p160" class="phone s01"><cite>Dave Longley:</cite> if desired used during presentation of that level of assurance. Trans credential.</p>
+<p id="p161" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thanks.</p>
+<p id="p162" class="phone s01"><cite>Joe Andrieu:</cite> There 10 Canadian.</p>
+<p id="p163" class="phone s01"><cite>Ted Thibodeau Jr:</cite> most of what I had to say is already written there which is primarily that level does not make sense to me when applied to a method. your confidence may be high if you checked the passport but that's not a confidence level checking a passport. really that's it.</p>
+<p id="p164" class="phone s01"><cite>Dave Longley:</cite> And I think that kind of speaks to the alternative way to do this, which is if you issue a level of assurance credential, it's bound to a specific level from one of these NIST documents or so on. You say the level that you performed, which if you follow those documents, it says what was required for you to do And then you list a confidence method optionally in that VC that someone could use to provide along with the presentation of the level of assurance credential they received from someone else.</p>
+<p id="p165" class="phone s01"><cite>Joe Andrieu:</cite> Okay, I'm calling on myself. yeah. to me it feels like because if I understand where you're coming from, Denin, what the verifier is looking for are sort of externalized signals that have been vetted by an external authority to say, "Hey, this satisfies my government compliance requirements like it it meets NIST LOA3 or whatever."</p>
+<p id="p166" class="phone s01"><cite>Joe Andrieu:</cite> that makes sense to me but I think it is a function of the method not of this credential itself. which is to say I think if we had a specific confidence method that for example the verification key method that we touched on earlier that has the example in the spec. I believe that method will provide an LOA. I don't know that it provides different LOAs in different situations. I think that we could probably address it there if the type in fact maps that way to Go ahead, Dave.</p>
+<p id="p167" class="phone s01"><cite>Dave Longley:</cite> Yeah, I think that's true. And I think sometimes there might be requirements to provide multiple methods of authentication and I think we might find in order to achieve a particular level you might need to provide multiple methods and so we might find it difficult to represent that in the competence method itself rather than something that wraps one or…</p>
+<p id="p168" class="phone s01"><cite>Dave Longley:</cite> more confidence methods as needed or just something else that declares. I did indeed check this to this level because that level might have required the person to be in person, present two pieces of documentation, whatever else.</p>
+<p id="p169" class="phone s01"><cite>Denken Chen:</cite> It probably started from our special cases that in Taiwan we try to issue different credentials. in most country they started with driving license, right? but in Taiwan we have lots of different credentials already and even the most common one including the driving license and the health insurance card and student card. And for some scenarios for example, we are building a merchant pickup at a convenience store. They don't really cares about your assurance level is pretty high.</p>
+<p id="p170" class="phone s01"><cite>Denken Chen:</cite> they just even a student card with pretty low assurance level will be good enough. so I think this whole assurance level is for different kinds of credentials to suit different kinds of verifier scenarios to make the whole ecosystem broader. Yeah.</p>
+<p id="p171" class="phone s01"><cite>Joe Andrieu:</cite> what did you think about I guess Dave also disagreed with it but in my head maybe this was a little bit simplistic or over oversimplifying that a particular confidence method in its execution established a particular LOA. and it's not clear to me that a particular confidence method would be usable for different LOAs. In other words, if you wanted a different LOA, you would probably use a different confidence method.</p>
+<p id="p172" class="phone s01"><cite>Joe Andrieu:</cite> Please go ahead.</p>
+<p id="p173" class="phone s01"><cite>Dave Longley:</cite> And just a jump. No one's on Q. It's not clear to me that I agree with some of what you're saying, but it's not clear to me that it would be useful to mark certain confidence methods with a certain level, especially when you provide the two of them together, you get to a third level potentially. or if you provided them in a particular setting, for example, in person, if you use this in person, it changes the level of assurance. And so, it seems to me like it would be a challenge or less useful to put that marker on the confidence method itself, which then you're also trusting that the issuers stated that properly.</p>
+<p id="p174" class="phone s01"><cite>Dave Longley:</cite> It's really going to be verifier is going to analyze what the thing is that is being used and put that into their workflow and say you've got to do this this and that establishes a level of assurance three for example. So it seems to me like there's some external thing that has to wrap these confidence methods or put them together or reference them as opposed to each confidence method being able to declare something like that and have it be useful and…</p>
+<p id="p175" class="phone s01"><cite>Dave Longley:</cite> be composable.</p>
+<p id="p176" class="phone s01"><cite>Joe Andrieu:</cite> Okay, that sounds right to me.</p>
+<p id="p177" class="phone s01"><cite>Joe Andrieu:</cite> Dankin, does that feel aligned with the use cases you're trying to resolve here or…</p>
+<p id="p178" class="phone s01"><cite>Denken Chen:</cite> Yeah, I need to digest a little bit. Yeah.</p>
+<p id="p179" class="phone s01"><cite>Joe Andrieu:</cite> So, I'm going to make my comments here. Happy to adjust it. I'll leave it on screen as I can't scroll up. I was gonna go just mark it as needs discussion. and we can come back to this, Denin, after you've had a chance to see how that addresses doesn't address where you're coming from. All right. Let's look at our next issue.</p>
+</section>
+<section>
+<h3 id="topic-5">Multi-factor Authentication and DID Confidence</h3>
+<p id="p180" class="phone s01"><cite>Joe Andrieu:</cite> adding more confidence method based on multifactor authentication. I see Ted made a comment on 16. That was basically your same note that you just raised, right Ted? That confidence level seems a little weird.</p>
+<p id="p181" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Yep.</p>
+<p id="p182" class="phone s01"><cite>Joe Andrieu:</cite> So this feels like just a proposal to include more confidence method types which I think is we're open to. I think it's just a matter of timing. I'm not sure what our timing threshold is especially with the new BC charter process going through.</p>
+<p id="p183" class="phone s01"><cite>Joe Andrieu:</cite> but my hope is that we're going to get a minimalist something through with this cycle. does anyone else understand more what the time frame on quote unquote this cycle is? I guess I'll bring that up at TAC next week and just try and get a sense of, when do we need to get to what deadline and we can review that next week because I think, there's one version of this spec we can do that has it just has some form of did off or some form of crypto use, proof of access, proof of control. and that's it. And we ship that and publish it.</p>
+<p id="p184" class="phone s01"><cite>Joe Andrieu:</cite> and then deal with adding more confidence methods when we have a little bit more time. But I don't know what those horizons are. so I think here maybe needs discussion. Does that label make sense?</p>
+<p id="p185" class="phone s01"><cite>Dave Longley:</cite> Yeah, I think</p>
+<p id="p186" class="phone s01"><cite>Joe Andrieu:</cite> Thanks Dave and All And I think we're getting close. I think there's just one more we already talked about we haven't assigned these. So, I'm going to go I think did that's me. I will take that on. and then I think the one that we just tagged for confidence levels from the issuer. I'm going to tag you for that, Dan, if that works for you.</p>
+<p id="p187" class="phone s01"><cite>Joe Andrieu:</cite> So you can come back and let us know how this discussion landed with your team.</p>
+<p id="p188" class="phone s01"><cite>Denken Chen:</cite> Sure.</p>
+<p id="p189" class="phone s01"><cite>Joe Andrieu:</cite> We have a ready and also this one. that is assigned to you already. Confidence level is not sufficient on its own. Go ahead Patrick.</p>
+</section>
+<section>
+<h3 id="topic-6">Adding New Confidence Methods</h3>
+<p id="p190" class="phone s01"><cite>Patrick St-Louis:</cite> Sorry, I might have zoned out and missed that part. I want to talk about did as initial confidence method. so how exactly did a confidence method and how would that look like?</p>
+<p id="p191" class="phone s01"><cite>Joe Andrieu:</cite> Okay. …</p>
+<p id="p192" class="phone s01"><cite>Joe Andrieu:</cite> that is a great question. what you triggered for me is that maybe it did to me was a shorthand for you've got a public key and we're going to do a challenge exchange. but to…</p>
+<p id="p193" class="phone s01"><cite>Patrick St-Louis:</cite> Okay.</p>
+<p id="p194" class="phone s01"><cite>Joe Andrieu:</cite> but to your point, maybe we don't need to entangle in this confidence method. We could just do the public key proof of control. Dave</p>
+<p id="p195" class="phone s01"><cite>Patrick St-Louis:</cite> I'm trying to think cuz for me, data is a presentation exchange basically like you it's a very simple presentation with no credential that a verifier ask from a holder. and when I think about confidence meta that's a property on a credential that has a type and an ID. I'm just curious how does the confidence method what does it have to do with it did not what would it signal or how would this work?</p>
+<p id="p196" class="phone s01"><cite>Patrick St-Louis:</cite> because for me did the main use case I think the most common use case is the credential subject is of the ID that's going to did right it's did of the holder that will do the odd so it's kind of just implicitly a verifiable credential feature just curious how does that relate to a</p>
+<p id="p197" class="phone s01"><cite>Patrick St-Louis:</cite> which confidence method for me currently as I understand it is whatever means can add a little bit more legitimate to the presentation of that credential to the use case that the credential is presented to add a little bit of confidence in…</p>
+<p id="p198" class="phone s01"><cite>Patrick St-Louis:</cite> whichever goal the verifier wants to achieve.</p>
+<p id="p199" class="phone s01"><cite>Joe Andrieu:</cite> Yep. let me respond.</p>
+<p id="p200" class="phone s01"><cite>Joe Andrieu:</cite> I see you on the queue. my sense of this is that a confidence method that might be of a type did off or did something would indicate that here is the did for which you can did off ceremony to get confidence that this person is the person who is represented by the ID. so the property in the VC is just an indicator of other processes you might go through. for example I imagine a confidence method eventually will have some sort of biometric template or a hash of a biometric template or that kind of thing and the way that you actually get the confidence is you go through an independent execution of that same protocol but you have the template.</p>
+<p id="p201" class="phone s01"><cite>Joe Andrieu:</cite> So the verifier would say step up to my biometric scanning device and I'm going to perform that ceremony. And I think in the same way…</p>
+<p id="p202" class="phone s01"><cite>Patrick St-Louis:</cite></p>
+<p id="p203" class="phone s01"><cite>Joe Andrieu:</cite> if there's a dead off confidence method then we're expecting the verifier is then going to go perform that ceremony.</p>
+<p id="p204" class="phone s01"><cite>Dave Longley:</cite> Yeah, I wanted to add something vital to that which is around the privacy preserving aspect of this. So it's one thing to say a person in a VC is identified by this did and it's another thing to say there's a person in this VC they don't have a global identifier associated with them but they have these confidence methods that can be used biometrics may it something that might be considered like a device or just it's just a confidence method that has a date associated with it.</p>
+<p id="p205" class="phone s01"><cite>Dave Longley:</cite> You could use any of these things to establish additional confidence that the person that is presenting this VC is indeed that person. And that also allows you to selectively disclose those confidence methods as that person deciding which one you might want to use to help establish confidence at that verifier. So there are important privacy car characteristics around it and it's also important to coup Not everybody wants to use a DID to identify a person. it doesn't always make sense to do so. it frequently does not. and you might want to use it instead to identify a competence method that you could use to establish confidence that you are a particular person.</p>
+<p id="p206" class="phone s01"><cite>Patrick St-Louis:</cite> Okay. That's interesting. So then the first thing I think about when you mention that is the topic of pseudonyms, So from how I understand it is it's a way that a holder can generate a unique public key for a specific verifier. so is that an example of something that could be enabled with this did confidence method is that it's a way there's a mechanism by…</p>
+<p id="p207" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead, David.</p>
+<p id="p208" class="phone s01"><cite>Patrick St-Louis:</cite> which by interacting with this confidence method the user could generate a pseudonym of some sort.</p>
+<p id="p209" class="phone s01"><cite>Dave Longley:</cite> Yes, I think that is another way it could be done. Certainly, that is an option. I don't know if we'll get to specking something like that out. the simplest version is just there you can choose to reveal a did associated with this person in some way or associated with a device they control. but it is certainly the case that if we had enough time and interest and implementers that you could implement what you just said as</p>
+<p id="p210" class="phone s01"><cite>Patrick St-Louis:</cite> Okay, think I understand it. So for use case that there's not necessarily a credential subject id did value that can be used for whichever reason they can include did in a confidence method that can be used for did odd.</p>
+<p id="p211" class="phone s01"><cite>Joe Andrieu:</cite> Correct.</p>
+<p id="p212" class="phone s01"><cite>Patrick St-Louis:</cite> Okay that makes sense. So I guess it could be for some things that the credential subject is not the person itself but the confidence method would show the did of the person owning what is depicted by the credential subject. Could it be used if I have a health card, I don't have a dead on my health card. but it's in my wallet.</p>
+<p id="p213" class="phone s01"><cite>Patrick St-Louis:</cite> So if you would have the health card as the credential subject and you had a confidence method that kind of maybe bound that health card to the holder's wallet.</p>
+<p id="p214" class="phone s01"><cite>Dave Longley:</cite> So without getting too deep into the data modeling there, the short answer of that is you could model a card in some way and also express a confidence method in the same VC.</p>
+<p id="p215" class="phone s01"><cite>Dave Longley:</cite> Don't want to deep dive into how exactly that would look, but yes, that use case would be supported.</p>
+<p id="p216" class="phone s01"><cite>Patrick St-Louis:</cite> But the conference method could be used as a wallet binding component that happened during issuance that doesn't necessarily go in the I guess it is a credential…</p>
+<p id="p217" class="phone s01"><cite>Dave Longley:</cite> Yes. Yeah,…</p>
+<p id="p218" class="phone s01"><cite>Patrick St-Louis:</cite> but doesn't go in the credential subject but is kind of just adjacent to it.</p>
+<p id="p219" class="phone s01"><cite>Joe Andrieu:</cite> So yeah,…</p>
+<p id="p220" class="phone s01"><cite>Dave Longley:</cite> just quickly you might want to think of it instead as a confidence method for presenting the card as opposed to making it into a person every time.</p>
+<p id="p221" class="phone s01"><cite>Patrick St-Louis:</cite> Yeah. Yeah.</p>
+<p id="p222" class="phone s01"><cite>Dave Longley:</cite> So that was one reason I didn't want to dive into data modeling</p>
+<p id="p223" class="phone s01"><cite>Joe Andrieu:</cite> we should wrap. my quick comment on that is I think of it as this is a confirmation to establish that the presenter is the And so it is about the subject. it is a mechanism by…</p>
+<p id="p224" class="phone s01"><cite>Patrick St-Louis:</cite> Right. That confused me.</p>
+<p id="p225" class="phone s01"><cite>Joe Andrieu:</cite> which you have confidence that the current presenter is that subject. So it cannot depend on having already figured out who the subject is if that makes sense.</p>
+<p id="p226" class="phone s01"><cite>Patrick St-Louis:</cite> But okay,…</p>
+<p id="p227" class="phone s01"><cite>Dave Longley:</cite> Yeah.</p>
+<p id="p228" class="phone s01"><cite>Joe Andrieu:</cite> Very good.</p>
+<p id="p229" class="phone s01"><cite>Patrick St-Louis:</cite> maybe we can resume the conversation because I would say in this case, why not just have just use a subject ID?</p>
+<p id="p230" class="phone s01"><cite>Patrick St-Louis:</cite> interesting.</p>
+<p id="p231" class="phone s01"><cite>Joe Andrieu:</cite> …</p>
+<p id="p232" class="phone s01"><cite>Joe Andrieu:</cite> I think this then is back to needs discussion, which is fine. And I'm going to keep the ready for PR because I think it is also ready for PR. all right. I think that's a wrap for our first confidence method focused meeting and thank you all for showing up and surviving through our technical questions about how do we get this started and what are we doing together. So I will sync up with Dimmitri who's running the counterprogrammed confidence method or render method meeting and we will let everyone know when we resume after TEC. So thank you all. Appreciate your input.</p>
+<p id="p233" class="phone s01"><cite>Patrick St-Louis:</cite> Thank you. Have a good day.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
