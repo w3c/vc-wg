@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VC WG Face to Face meeting, TPAC 2025 &ndash; 14 November 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group F2F meeting, TPAC 2025</h1>
+<h2>14 November 2025</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/2025/11/13-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>benoit, brent, csarven, David_Ezell, denkeni, dmitriz, Elaine, fershad, Haruki, hiroki, jay, JennieM, JoeAndrieu, Kazue, KevinDean, kmoon, manu_, pchampin, phila, shigeya, TallTed, Ugur9, Wip, elaine</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>Brent</dd>
+<dt>Scribe</dt><dd>Wip, phila, brent, pchampin</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#429b">recharter</a></li>
+<li><a href="#3c38">Render method</a>
+<ol>
+<li><a href="#0f1f">w3c/<wbr>vc-render-method#24</a></li>
+<li><a href="#bebd">w3c/<wbr>vc-render-method#35</a></li>
+<li><a href="#d0cb">w3c/<wbr>vc-render-method#25 and w3c/<wbr>vc-render-method#30</a></li>
+<li><a href="#25f3">w3c/<wbr>vc-render-method#36</a></li>
+<li><a href="#f2dd">w3c/<wbr>vc-render-method#26</a></li>
+</ol>
+</li>
+<li><a href="#fa0a">Confidence methods</a>
+<ol>
+<li><a href="#51e8">w3c/<wbr>vc-confidence-method#13</a></li>
+<li><a href="#6584">w3c/<wbr>vc-confidence-method#12</a></li>
+<li><a href="#b7d0">w3c/<wbr>vc-confidence-method#16</a></li>
+<li><a href="#1a24">Horizontal review</a></li>
+<li><a href="#bb17">w3c/<wbr>vc-confidence-method#14</a></li>
+<li><a href="#7cad">back to w3c/<wbr>vc-confidence-method#16</a></li>
+<li><a href="#66af">w3c/<wbr>vc-confidence-method#21</a></li>
+</ol>
+</li>
+<li><a href="#c71d">Wrapping up</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=86fa class="phone s01"><cite>phila:</cite> Lets get started<br>
+<span id=2109>… I am Phil Archer, I work for GS1. Brent has been chairing this group for a while. I am joining him.</span><br>
+<span id=893e>… The first thing we will be talking about is the conversation on rechartering</span><br>
+<span id=48c7>… The current charter ends at some point</span><br>
+<span id=8e5f>… We need to discuss what we want to work on in our charter</span><br>
+<span id=d3da>… After the break we will talk about confidence method and render method</span></p>
+<p id=b457 class=irc><cite>&lt;JoeAndrieu&gt;</cite> charter end date: 2026 October 11</p>
+<p id=9fd6 class="phone s02"><cite>brent:</cite> Explains that there will be a 10 min discussion about the process just before the break</p>
+<p id=525e class="phone s02"><cite>brent:</cite> We'll talk about the proposed new charter</p>
+<p id=03ea class="phone s01"><cite>phila:</cite> There is a list of possible work items at <a href="https://docs.google.com/spreadsheets/d/1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/edit?gid=1778386372#gid=1778386372">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/<wbr>edit?gid=1778386372#gid=1778386372</a></p>
+</section>
+
+<section>
+<h3 id=429b>recharter</h3>
+<p id=d79f class="phone s01"><cite>phila:</cite> <a href="https://docs.google.com/spreadsheets/d/1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/edit?gid=1778386372#gid=1778386372">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/<wbr>edit?gid=1778386372#gid=1778386372</a></p>
+<p id=6808 class="phone s03"><cite>manu_:</cite> I have 2 other links. The CCG has bene incubating a number of specs over years<br>
+<span id=535b>… some over 5 years+</span><br>
+<span id=0fa9>… so we may want to bring those into the charter</span></p>
+<p id=3845 class="phone s03"><cite>manu_:</cite> We ran a poll in August to get feedback to see who thought what was important</p>
+<p id=38da class="phone s03"><cite>manu_:</cite> We have results from that poll (39)</p>
+<p id=682c class=irc><cite>&lt;manu_&gt;</cite> Results of community poll: <a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Sep/0005.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Public/<wbr>public-vc-wg/<wbr>2025Sep/<wbr>0005.html</a></p>
+<p id=401d class="phone s03"><cite>manu_:</cite> Good number of people said they wanted to be in the VCWG</p>
+<p id=150e class="phone s03"><cite>manu_:</cite> Shows graph of results</p>
+<p id=36e3 class="phone s02"><cite>brent:</cite> The results for the top two - render and confidence - have already been adopted and are being worked on. So the question is how much more do we want to adopt</p>
+<p id=3c79 class="phone s03"><cite>manu_:</cite> Render method is about how do you visualize a VC. You can also render to audio, an image, braille, NFC etc.<br>
+<span id=1c6a>… Convert a cred into some form. It's about giving issuers control over what their cred looks like in a wallet. A gov ID card, for example, will want their logo etc.</span></p>
+<p id=4841 class=irc><cite>&lt;brent&gt;</cite> render method will be of interest to the Accessibility folks</p>
+<p id=e8dd class="phone s03"><cite>manu_:</cite> Confidence method helps you as a verifier understand who originally received the cred.</p>
+<p id=62db class="phone s03"><cite>manu_:</cite> You want confidence that the person showing you the cred is the right person. A crypto challenge might be one way. I'm sending you a challenge, you send a reply</p>
+<p id=8e69 class="phone s03"><cite>manu_:</cite> But a confidence method might be a biometric match, account access etc.</p>
+<p id=c5cc class="phone s04"><cite>JoeAndrieu:</cite> I'm an editor working on this now. The current charter limits us to one method. I want us to have the freedom to have separate docs for each type of confidence method</p>
+<p id=9653 class="phone s03"><cite>manu_:</cite> +1 to that</p>
+<p id=125a class="phone s03"><cite>manu_:</cite> Next one if the VCALM - Life Cycle Management</p>
+<p id=ddb5 class="phone s03"><cite>manu_:</cite> if you're an issuer, what API do I call, revoke, etc</p>
+<p id=9f0a class=irc><cite>&lt;JoeAndrieu&gt;</cite> btw, the &quot;limit&quot; on confidence methods is about timing not scope</p>
+<p id=2cf1 class="phone s03"><cite>manu_:</cite> We find vendors doing a lot of proprietary APIs for this. So we want to avoid vendor-lock</p>
+<p id=4659 class="phone s03"><cite>manu_:</cite> Basically, this is all about HTTP APIs for VCs</p>
+<p id=0c13 class="phone s03"><cite>manu_:</cite> VC barcodes. This is about taking a VC and putting it into a QR Code or PDF417<br>
+<span id=9f04>… California currently putting a VC on the back of every physical licence they're printing</span></p>
+<p id=7ab4 class="phone s03"><cite>manu_:</cite> So this is already in production. We can still change the spec but they're being used on paper docs to help make them more trustworthy</p>
+<p id=1d29 class="phone s03"><cite>manu_:</cite> Birth certs in the US is another use case</p>
+<p id=860e class=summary>phila q+</p>
+<p id=d67d class="phone s03"><cite>manu_:</cite> So VC barcodes are about compressing them and putting in a doc and printing</p>
+<p id=2fff class="phone s02"><cite>brent:</cite> It concerns me that this has been deployed but hasn't been specified yet. Even in the CCG it hasn't had much attention<br>
+<span id=7210>… That's a concern</span></p>
+<p id=b035 class="phone s01"><cite>phila:</cite> for me the use case is conformance certificates, waybills, etc.<br>
+<span id=e7e6>… however, in the realm of conformance testing, there are folks who say, even a barcode isn't enough.</span><br>
+<span id=e3da>… wish someone from singapore was here as well</span></p>
+<p id=15c7 class="phone s04"><cite>JoeAndrieu:</cite> A modest push back on Brent's concern. Implementation is an important aspect of standardization</p>
+<p id=7e39 class="phone s03"><cite>manu_:</cite> I hear what Brent says. It didn't get a lot of attention in the CCG. It's come mostly from the SVIP/DHS in the US</p>
+<p id=0338 class="phone s03"><cite>manu_:</cite> The California DMV saw the value and knows it's not yet standardized and that this group may change it and they'll be able to adapt accordingly</p>
+<p id=5815 class="phone s03"><cite>manu_:</cite> Yes, it would have been ideal to standardize before adoption in some ways but we are where we are</p>
+<p id=b97e class="phone s05"><cite>denkeni:</cite> Printed cards can't be bound to holder</p>
+<p id=7202 class="phone s05"><cite>denkeni:</cite> Is it reasonable to keep an image on a physical card?</p>
+<p id=20fe class="phone s02"><cite>brent:</cite> Now that we're looking at specs not yet in our charter - shall we go through the spreadsheet now or go back later</p>
+<p id=9212 class="phone s02"><cite>brent:</cite> VCALM - string indication of importance. Some people saying they'd be happy to be editors</p>
+<p id=8a93 class="phone s03"><cite>manu_:</cite> Gives names of two people who are not currently here for VCALM</p>
+<p id=e64c class="phone s03"><cite>manu_:</cite> We already have 11 config files in the test suite</p>
+<p id=6ed7 class="phone s05"><cite>denkeni:</cite> Was asking about why the DMV was so interested in the barcode stuff</p>
+<p id=5396 class="phone s03"><cite>manu_:</cite> It's fairly trivial to create a fraudulent licence today. Including a barcode that can provide an illusion of veracity.</p>
+<p id=3622 class="phone s03"><cite>manu_:</cite> You can verify it but a lot of people don't. California DMV wanted to try and avoid that kind of fraud. There's an active illegal market for them.</p>
+<p id=9f3b class="phone s06"><cite>Elaine:</cite> I'm an IE. I retired at the end of March from the DHS. Expert in fighting counterfeiting. Something digitally signed, printed on the doc is important</p>
+<p id=2474 class="phone s06"><cite>Elaine:</cite> Original plan was secure printing. But now the forgeries are as good. So we want something cryptopgraphic</p>
+<p id=5c85 class="phone s05"><cite>denkeni:</cite> Is the portait included?</p>
+<p id=2ee0 class="phone s06"><cite>Elaine:</cite> There are some clones that just swap the photo. [Talks more about the problem, details missed]</p>
+<p id=ffff class="phone s06"><cite>Elaine:</cite> Possible to include low-res image<br>
+<span id=491a>… Not 100% but better than nothing</span></p>
+<p id=0eb0 class="phone s02"><cite>brent:</cite> Jumping back to VCALM</p>
+<p id=7e0a class="phone s02"><cite>brent:</cite> Who *in the WG* is likely to be an editor from the WG membership</p>
+<p id=06b0 class="phone s03"><cite>manu_:</cite> </p>
+<p id=bb0e class=irc><cite>&lt;kmoon&gt;</cite> When we would like a thing, e.g. product, to have a sort of information, it kind of makes sense to using verifiable credentials in the barcode format. (Though I understand it is not the best way to do so.) We actually did some PoCs with some companies like that.</p>
+<p id=a04e class="phone s02"><cite>Brent:</cite> Goes through needs for VCALM and fills in the spreadhseet</p>
+<p id=2809 class=summary>[Discussion of filling in the spreadsheet for barcodes]</p>
+<p id=da06 class="phone s02"><cite>brent:</cite> Back to the poll - VC over wireless</p>
+<p id=f04e class="phone s07"><cite>kmoon:</cite> From NTT. Talked about an insect-based snack. Looking for proof of certification</p>
+<p id=b60c class="phone s07"><cite>kmoon:</cite> It's a use case</p>
+<p id=6320 class="phone s01"><cite>phila:</cite> I'll put you in touch with GS1 Japan</p>
+<p id=8695 class="phone s03"><cite>manu_:</cite> VC over wireless - use case is first responders<br>
+<span id=0f72>… Want to be able to tap into a secure zone. Keep people not supposed to be in the zone out.</span><br>
+<span id=c1ed>… need to be able to transmit VCs without internet connection</span></p>
+<p id=2818 class="phone s03"><cite>manu_:</cite> Some challenges to the spec. Not much incubation, but there's not a lot to do. NFC tap will do it. Bluetooth looks fairly easy<br>
+<span id=cb67>… There is Web NFC as a W3C spec</span><br>
+<span id=1c5e>… some implementation but not all browsers</span><br>
+<span id=8429>… so there would be work to go beyond pure NFC. Use case is important</span></p>
+<p id=f71a class="phone s02"><cite>brent:</cite> How does this work relate to OID4VP over bluetooth.</p>
+<p id=157b class="phone s03"><cite>manu_:</cite> AFAIK, it hasn't made much progress in the last few years<br>
+<span id=35ba>… The NFC portion is very different from the Bluetooth</span></p>
+<p id=ff79 class="phone s03"><cite>manu_:</cite> NFC max payload is limited to under 1K, Bluetooth can be MB</p>
+<p id=94e6 class="phone s02"><cite>brent:</cite> But the Bluetooth part - is it approx the same capabilities?</p>
+<p id=bd7d class="phone s03"><cite>manu_:</cite> Theory is that the protocol will be based on VCALM<br>
+<span id=7a16>… but there's a question about the params in Bluetooth</span></p>
+<p id=658d class="phone s02"><cite>brent:</cite> This spec in particular - the family - looks like a departure from what the WG has done. We've done data models, not protocols. Exciting but it might create pushback</p>
+<p id=769c class="phone s02"><cite>brent:</cite> This would be a biggish shift and we need the right people</p>
+<p id=df02 class="phone s03"><cite>manu_:</cite> We have some volunteers but will have to check if they're WG members</p>
+<p id=2cb3 class="phone s03"><cite>manu_:</cite> VC Refresh<br>
+<span id=82c2>… What does the wallet do if the VC is approaching expiry.</span><br>
+<span id=1f26>… Want to avoid manual process if it's not necessary. Hope is that the wallet can do the entire refresh process itself</span></p>
+<p id=5091 class="phone s03"><cite>manu_:</cite> Demand fairly high. Decent number of people saying they'd implement but no volunteers to edit</p>
+<p id=2c0a class="phone s03"><cite>manu_:</cite> It's not a difficult spec. Would be a good training ground for new editors!<br>
+<span id=d3c5>… This is what TruAge uses today and California DMV uses</span></p>
+<p id=5285 class="phone s03"><cite>manu_:</cite> So we have good experience and implementations</p>
+<p id=f341 class="phone s03"><cite>manu_:</cite> It's really Connexxus and truAge who have the experience</p>
+<p id=fadd class=summary>[Discussion about TruAge/Connexxus being editors]</p>
+<p id=d578 class="phone s03"><cite>manu_:</cite> Quantum-safe DI Suite</p>
+<p id=34ea class="phone s03"><cite>manu_:</cite> How do we create crypto that is resistant to quantum computing</p>
+<p id=2819 class="phone s03"><cite>manu_:</cite> We are a good way towards this with existing work [Names some]</p>
+<p id=10000 class="phone s03"><cite>manu_:</cite> Some post-quantum signatures are thousands of times larger than current ones. Some work on a small-footprint (Ski-Sign?) looks promising</p>
+<p id=80b2 class="phone s03"><cite>manu_:</cite> I don't think we'll get there in the next charter. We could poss do a FIPs/Two FIPs.<br>
+<span id=6ee8>… There is draft spec and some editors but they're not in the WG. At least three implementers</span></p>
+<p id=9e85 class=summary>[Some details added to spreadsheet]</p>
+<p id=070a class="phone s03"><cite>manu_:</cite> It's important to us to get that work done. We get asked about it by our customers.</p>
+<p id=9f8a class="phone s02"><cite>brent:</cite> The JOSE capabilities that are already a Rec will automatically make use of the IETF specs so we're already covered (it can be argued)</p>
+<p id=2c1f class="phone s03"><cite>manu_:</cite> Verifiable issuers and verifiers is about verifiers being able to check issuers of credentials against some authority<br>
+<span id=eec4>… For example in the US there are 56 jurisdictions able to issue drivers licence. As a verifier of licences in the US you would be able to refer to some list and check the issuer against that list</span><br>
+<span id=5405>… There are many other such examples of known entities able to make specific attestations</span><br>
+<span id=7341>… This spec is about how you make these lists, how you publish them</span></p>
+<p id=02bc class="phone s03"><cite>manu_:</cite> In the EU there is going to be lists of organisations able to ask specific info from issuers</p>
+<p id=ec35 class="phone s04"><cite>JoeAndrieu:</cite> We need to be able to layer on other authorities. E.g. for the driving licence case, it wont just be the US jurisdictions but it might include international entities too</p>
+<p id=7af9 class="phone s04"><cite>JoeAndrieu:</cite> We need a mechanism to layer this on</p>
+<p id=fad3 class="phone s02"><cite>brent:</cite> I wanted to ask if folks in the group are following the ToIP and the trust framework work going on there</p>
+<p id=7c31 class="phone s03"><cite>manu_:</cite> I dont think we are tracking that well at all. DavidC and Dimitri is working on this</p>
+<p id=a233 class="phone s03"><cite>manu_:</cite> +1 we should look into this</p>
+<p id=47af class="phone s02"><cite>brent:</cite> A lot of work went into this, lots of consensus and diagrams in that group. We should learn from them</p>
+<p id=7a49 class=irc><cite>&lt;kmoon&gt;</cite> I've working on verifiable issuers with some research institute and organization. I think this one is especially important for cross ecosystem use cases.</p>
+<p id=512d class="phone s03"><cite>manu_:</cite> dmitriz you have a set of use cases about verifiable issuers and verifiers. Brent mentioned the TOIP folks have been working on similar stuff for a while<br>
+<span id=4655>… Have you had any contact with TOIP</span></p>
+<p id=d7a2 class="phone s08"><cite>dmitriz:</cite> I have a bit. There was a join project around comparing issuer registries that looked at the TOIP spec<br>
+<span id=9e40>… We can reach out specifically and coordinate with those groups to see where the intersections are</span></p>
+<p id=f45a class="phone s01"><cite>phila:</cite> That sounds positive<br>
+<span id=49d6>… Yesterday we had a conversation around trusted verifiers and issuers</span><br>
+<span id=d6de>… I think this is not enough on its own. It does not scale</span><br>
+<span id=4765>… The talk yesterday about cross border trade includes millions of credentials a day. There isn't always a list of issuers, but many entities can add evidence to your claim</span><br>
+<span id=b58f>… One VC is often not enough</span><br>
+<span id=984e>… You want to present a bundle of VCs together from different issuers.</span><br>
+<span id=51d0>… The ask from me is to possibly add a class 4 change to the data model so a generic verification model could check multiple VCs</span><br>
+<span id=35da>… This spec looks like the closest thing we have on the list to doing that. Maybe it fits in here</span></p>
+<p id=a67a class="phone s09"><cite>KevinDean:</cite> Expanding on phila, we looked at the verifiable issuer through the lens of the issuer having a specific credential<br>
+<span id=1be3>… Because I have this credential, I am authorized to issue these other types of credential</span><br>
+<span id=7bea>… E.g. in the case of a diploma from a university, this implies that you know who the university is. This is not scalable. You don't always know all the universities that exist</span><br>
+<span id=f240>… But, an accreditation body could issue credentials to universities. This could be included in the diploma credentials they issue. Creating a chain back to the source accreditation body</span><br>
+<span id=1ef3>… Allowing verifiers to tell that a diploma was issued by an authorized education body</span></p>
+<p id=7ddf class="phone s08"><cite>dmitriz:</cite> phila, your description sounds like a verifiable presentation to me</p>
+<p id=729f class="phone s02"><cite>brent:</cite> Lets not get too into the details in relation to the verifiable issuers and verifiers spec</p>
+<p id=dfe7 class="phone s01"><cite>phila:</cite> I understand your point dmitriz, but I think there are potential issues</p>
+<p id=8ab1 class="phone s10"><cite>shigeya:</cite> We are working on the originator profile. One part of this is securing documents from the originator, which is the signer<br>
+<span id=2713>… The other side of this is annotating about originator attributes from certified parties</span><br>
+<span id=e5c3>… We use this related to news. Some newspaper organisation belongs to a specific group</span><br>
+<span id=55b4>… We are looking into the use case of applying this technology into banking</span><br>
+<span id=d832>… In this case, end users want to verify that a issuer is a bank.</span><br>
+<span id=dd7b>… Multiple third party providers can issue credentials to attest to specific issuers</span><br>
+<span id=7d53>… We have open source the code for this. It is based on Verifiable Credentials</span><br>
+<span id=4d3d>… We have a conceptual document defining how multiple third parties can annotate issuers</span></p>
+<p id=412a class=irc><cite>&lt;shigeya&gt;</cite> <a href="https://originator-profile.org/en-US/">https://<wbr>originator-profile.org/<wbr>en-US/</a></p>
+<p id=d354 class="phone s04"><cite>JoeAndrieu:</cite> phila mentioned that we are likely to want class 4 changes to the VCDM. I am wondering if there are any other changes that might be required by other specs</p>
+<p id=8714 class="phone s03"><cite>manu_:</cite> Yes, we should leave the door open for class 4 changes</p>
+<p id=acca class=irc><cite>&lt;shigeya&gt;</cite> Code; <a href="https://github.com/originator-profile/originator-profile">originator-profile/<wbr>originator-profile</a></p>
+<p id=7ca1 class="phone s04"><cite>JoeAndrieu:</cite> Are there any other specs with obvious areas we might require a change</p>
+<p id=38ff class="phone s03"><cite>manu_:</cite> no</p>
+<p id=0a18 class="phone s02"><cite>brent:</cite> I think potentially</p>
+<p id=3a43 class="phone s03"><cite>manu_:</cite> Yes it is definitely possible, but chances are low for the other specs we have talked about today. The verifiable issuers and verifiers has a high chance of requiring changes to the data model</p>
+<p id=352e class="phone s02"><cite>brent:</cite> There are three implementations of the verifiable issuers and verifiers spec, with broad interest in this area</p>
+<p id=9930 class="phone s03"><cite>manu_:</cite> It would be very interesting to pull in the originators work</p>
+<p id=8e46 class="phone s02"><cite>brent:</cite> Editors?</p>
+<p id=4c13 class="phone s03"><cite>manu_:</cite> David Chadwick will, dmitriz can you&gt;?</p>
+<p id=c86c class="phone s08"><cite>dmitriz:</cite> I am happy to contribute, not sure I have the bandwidth to coeditor</p>
+<p id=e2b5 class="phone s01"><cite>phila:</cite> You can put down GS1 and PYZ</p>
+<p id=1e8c class="phone s01"><cite>phila:</cite> Thanks Wip</p>
+<p id=cf67 class="phone s02"><cite>brent:</cite> We have had interest from a possible Chinese (SM3/SM4) Data Integrity securing mechanism</p>
+<p id=81f6 class="phone s02"><cite>brent:</cite> They received the usual call for editors, commitments etc. Might happen in the Chinese WG sperate from VCWG</p>
+<p id=462b class="phone s02"><cite>brent:</cite> [Talks about how we can advance the charter]</p>
+<p id=e619 class="phone s02"><cite>brent:</cite> Would like to see an order of action in the charter</p>
+<p id=ea13 class="phone s02"><cite>brent:</cite> We need some rough agreement on how to run the WG</p>
+<p id=2763 class="phone s10"><cite>shigeya:</cite> I have previously proposed multilingual text outside the VC<br>
+<span id=900c>… We saw that the developers really don't want to use JSON-LD-style encoding inside the VC for multilingual text</span><br>
+<span id=74cf>… maybe have two separate VCs, each in a single language</span><br>
+<span id=77ae>… these could be linked and shown as equivalent</span><br>
+<span id=5862>… Need to find a better way to make developers happy</span><br>
+<span id=7751>… I din't have specific proposal just yet but want to look into it</span><br>
+<span id=8267>… I'd like to discuss this if possible in the WG</span></p>
+<p id=0584 class="phone s04"><cite>JoeAndrieu:</cite> Support for multilingual, sure</p>
+<p id=27f3 class="phone s04"><cite>JoeAndrieu:</cite> Are we talking about the charter or immediate adoption?</p>
+<p id=013b class="phone s02"><cite>brent:</cite> We can't adopt any of these under the current charter</p>
+<p id=aefa class="phone s04"><cite>JoeAndrieu:</cite> Can we extend an existing test suite rather than set up separate test suites</p>
+<p id=10001 class="phone s03"><cite>manu_:</cite> MOSIP, in India, has issued 100M VCs. They have an OS platform. Multiligualism is an issue, especially for render methods<br>
+<span id=bf6d>… They have to render in English, Tamil and more</span></p>
+<p id=21aa class="phone s03"><cite>manu_:</cite> Hopefully i18n wil come out of the render method work</p>
+<p id=17fa class="phone s03"><cite>manu_:</cite> Yes, we could extend the existing test suite but we can't/shouldn't get ourslelves mixed up with protocols<br>
+<span id=e733>… may or may not need a separate test suite</span></p>
+<p id=c91f class="phone s03"><cite>manu_:</cite> I'd also like to propose an order.</p>
+<p id=3b4f class="phone s03"><cite>manu_:</cite> VCALM already has a lot of implementations so it's probably on the top.<br>
+<span id=d8c6>… VC over wireless needs more editors and time. Important use case but we might not have the people</span></p>
+<p id=3ca8 class="phone s03"><cite>manu_:</cite> I wish we had more people to work on the post-quantum, so maybe that goes into the optional section</p>
+<p id=1a97 class="phone s03"><cite>manu_:</cite> Barcodes - we're late. Let's get on with that</p>
+<p id=123f class="phone s03"><cite>manu_:</cite> Verified issuers and verifiers - looks like we should work on that.</p>
+<p id=d98a class="phone s03"><cite>manu_:</cite> refresh - it's out there but we need more people</p>
+<p id=b7f3 class="phone s02"><cite>brent:</cite> So we have a proposed prioritization</p>
+<p id=6a12 class=summary>[recorded in the spreadsheet]</p>
+<p id=3af0 class="phone s02"><cite>brent:</cite> No one is saying that we should not recharter. So let's move forward with that.</p>
+<p id=2214 class="phone s02"><cite>brent:</cite> We have a proposed division of work. Three are prioritized. Three if we have the capacity</p>
+<p id=b71c class="phone s02"><cite>brent:</cite> So the question is: do you agree with this division. It works for me</p>
+<p id=49cc class="phone s02"><cite>brent:</cite> I can see refresh as the top of the tentative list</p>
+<p id=2667 class="phone s02"><cite>brent:</cite> Speak up if you;d like to propose a different order</p>
+<p id=91a8 class="phone s10"><cite>shigeya:</cite> Manu mentioned MOSIP. I know they can handle multilingualism.</p>
+<p id=a678 class="phone s03"><cite>manu_:</cite> +1 to that</p>
+<p id=3614 class="phone s03"><cite>manu_:</cite> Working on render method will force us to work on multilingual. But, as shigeya says, it can't be the only way</p>
+<p id=961c class="phone s10"><cite>shigeya:</cite> We need a way to select which language will appear - could be field by field</p>
+<p id=fe93 class="phone s02"><cite>brent:</cite> I'm not hearing anyone speak out against the proritization.</p>
+<p id=a5b1 class=irc><cite>&lt;KevinDean&gt;</cite> <a href="https://w3c.github.io/scribe2/scribedoc.html">https://<wbr>w3c.github.io/<wbr>scribe2/<wbr>scribedoc.html</a></p>
+</section>
+
+<section>
+<h3 id=3c38>Render method</h3>
+<p id=4210 class="phone s01"><cite>phila:</cite> we have 5 open PRs</p>
+<p id=139a class=summary>PRs <a href="https://github.com/w3c/vc-render-method/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>vc-render-method/<wbr>pulls</a></p>
+<h4 id=0f1f><a href="https://github.com/w3c/vc-render-method/pull/24">w3c/<wbr>vc-render-method#24</a></h4>
+<p id=5f6e class="phone s08"><cite>dmitriz:</cite> it's a minor typos, has approves no comments<br>
+<span id=af69>… propose to merge that</span></p>
+<p id=222c class="phone s01"><cite>phila:</cite> hearing no objection, do it</p>
+<h4 id=bebd><a href="https://github.com/w3c/vc-render-method/pull/35">w3c/<wbr>vc-render-method#35</a></h4>
+<p id=82a8 class="phone s08"><cite>dmitriz:</cite> unless there is an objection, I suggest to merge</p>
+<p id=c35d class=summary>[no objection]</p>
+<h4 id=d0cb><a href="https://github.com/w3c/vc-render-method/pull/25">w3c/<wbr>vc-render-method#25</a> and <a href="https://github.com/w3c/vc-render-method/pull/30">w3c/<wbr>vc-render-method#30</a></h4>
+<p id=e113 class="phone s08"><cite>dmitriz:</cite> those were discussed previously<br>
+<span id=865d>… a proposal was to introduce in the core spec itself</span></p>
+<p id=f0b6 class="phone s02"><cite>brent:</cite> do you mean the core data model?</p>
+<p id=3154 class="phone s08"><cite>dmitriz:</cite> no, the render spec<br>
+<span id=c048>… that will describe a generic render method, then we would have additional specs for specific methods</span><br>
+<span id=980c>… let's look at <a href="https://github.com/w3c/vc-render-method/pull/30">w3c/<wbr>vc-render-method#30</a></span><br>
+<span id=7854>… the properties it introduces are general purpose (name, digest multibase, version)</span><br>
+<span id=8d84>… any method will need those</span><br>
+<span id=10002>… So I suggest to wait on this one, as well as PR 25</span></p>
+<p id=cc16 class="phone s02"><cite>brent:</cite> to clarify: this method is introducing things for a specific render method<br>
+<span id=667a>… what you propose is to create a separate PR introducing them on the generic render method</span></p>
+<p id=8503 class="phone s08"><cite>dmitriz:</cite> correct</p>
+<p id=ad3b class="phone s01"><cite>phila:</cite> reminds me of a discussion I had a long time ago with Mark Nottingham<br>
+<span id=a6c9>… about registering a link relation type; Mark pointed out that the link relation type does not give you the media type</span><br>
+<span id=2023>… a given VC may have several render method</span><br>
+<span id=503c>… having an specific OCA method feels wrong</span></p>
+<p id=ea7c class="phone s08"><cite>dmitriz:</cite> my understanding of the PR is that it proposes a &quot;super class&quot; of OCABundle</p>
+<p id=bc62 class="phone s01"><cite>phila:</cite> that feels right</p>
+<p id=6fcf class="phone s03"><cite>manu_:</cite> the current way the specification is structured is: we have an extension mechanism, called render method<br>
+<span id=db20>… we are going to define the generic mechanism, and propose a few concrete ways to use it (PDF, SVG...)</span><br>
+<span id=3509>… this is an enormous amount of work</span><br>
+<span id=7adc>… can we at least prioritize the order in which we go into these things?</span></p>
+<p id=8bad class="phone s03"><cite>manu_:</cite> I don't want us to take 2 years to get Render Methods 1.0 published</p>
+<p id=e86c class="phone s01"><cite>phila:</cite> difference between linking to a render method and embedding</p>
+<p id=c386 class="phone s04"><cite>JoeAndrieu:</cite> we want to get one, to be able to go to CR<br>
+<span id=0871>… knowing which one is the 1st one is important</span></p>
+<p id=0fd2 class="phone s08"><cite>dmitriz:</cite> this is a good segway to look at PR 36, which emphasized that the spec is an extension mechanism (as manu_ and JoeAndrieu said)<br>
+<span id=b1dd>… I love the idea of &quot;let's take one&quot;; agree with JoeAndrieu that this is going to be a difficult conversation</span></p>
+<p id=3246 class=irc><cite>&lt;dmitriz&gt;</cite> we've implemented the HTML template, at MIT DCC. (we started with SVG, but ran into line wrapping probems, and switched to HTML)</p>
+<p id=56de class="phone s08"><cite>dmitriz:</cite> SVG and HTML are widely applicable, but maybe not the ones with the most implementations</p>
+<p id=10003 class="phone s01"><cite>phila:</cite> as GS1, we use SVG and would like SVG to be in there<br>
+<span id=9021>… any opinion across the room?</span></p>
+<p id=bdd7 class="phone s08"><cite>dmitriz:</cite> dare we bring up the dreaded word &quot;registry&quot;?<br>
+<span id=cd7a>… We should not prioritize now, but this discussion is related to deciding what to do with those PRs.</span><br>
+<span id=99d7>… Let's leave 20 and 35 open for the moment.</span></p>
+<h4 id=25f3><a href="https://github.com/w3c/vc-render-method/pull/36">w3c/<wbr>vc-render-method#36</a></h4>
+<p id=d2c5 class="phone s08"><cite>dmitriz:</cite> I made a pass on it, please have a look and tell if you think more is needed</p>
+<p id=cc2a class="phone s01"><cite>phila:</cite> I strikes me as straightforward. I think we should merge, and anybody with a problem can suggest further edits.</p>
+<p id=62a1 class="phone s03"><cite>manu_:</cite> It is not only an extension mechanism.</p>
+<p id=82c3 class="phone s01"><cite>phila:</cite> it is an extension of VCDM.</p>
+<p id=2b38 class="phone s08"><cite>dmitriz:</cite> question to manu_ and the group: could specific render methods (PDF, other...) be separate specifications, just like for DI?</p>
+<p id=fc4b class="phone s03"><cite>manu_:</cite> let's not do that, this will give us too many specs to publish</p>
+<p id=4990 class="phone s02"><cite>brent:</cite> note that we have the freedom to break out a spec listed in our charter into separate documents</p>
+<p id=3b55 class="phone s04"><cite>JoeAndrieu:</cite> +1, let's start with one spec; creating new documents creates overhead</p>
+<p id=8894 class="phone s08"><cite>dmitriz:</cite> agreed</p>
+<p id=381e class="phone s01"><cite>phila:</cite> proposal &quot;this document is an extension of VCDM, and here is how you can extend it yourself&quot;</p>
+<p id=db1e class="phone s08"><cite>dmitriz:</cite> that seems reasonable</p>
+<p id=d2fc class="phone s04"><cite>JoeAndrieu:</cite> this is also defining not just an extension of VCDM but an extension mechanism for render methods itself</p>
+<p id=76b7 class="phone s01"><cite>phila:</cite> with that in mind, I have no problem with merging this<br>
+<span id=a55c>… we may want to extend it further</span></p>
+<p id=baba class="phone s08"><cite>dmitriz:</cite> should I merge now, or do we have to pass the 7 days review perdio</p>
+<p id=b3bc class="phone s03"><cite>manu_:</cite> seems editorial</p>
+<p id=d5d8 class="phone s01"><cite>phila:</cite> let's move on to the issues</p>
+<h4 id=f2dd><a href="https://github.com/w3c/vc-render-method/issues/26">w3c/<wbr>vc-render-method#26</a></h4>
+<p id=f5a3 class=irc><cite>&lt;dmitriz&gt;</cite> <a href="https://github.com/w3c/vc-render-method/issues/26">w3c/<wbr>vc-render-method#26</a></p>
+<p id=72f6 class="phone s08"><cite>dmitriz:</cite> I don't think this is a class 4 change<br>
+<span id=d6d1>… it just reuses @@</span><br>
+<span id=dd12>… it defines a kind of &quot;mixin&quot;</span></p>
+<p id=531e class="phone s03"><cite>manu_:</cite> you might be concerned about the class-4 change, but we are allowed to do that, as this is a new spec<br>
+<span id=b6f4>… and it *is* a new feature</span></p>
+<p id=c11d class="phone s02"><cite>brent:</cite> +1 to manu_, class 4 only matters for specs we are maintaining</p>
+<p id=5e69 class="phone s01"><cite>phila:</cite> it feels to me likely that we are heading towards a possible solution in which each VC is monolingual, pointing to equivalent VCs in other languages</p>
+<p id=ded7 class="phone s08"><cite>dmitriz:</cite> that's interesting</p>
+<p id=82c1 class="phone s10"><cite>shigeya:</cite> it is possible to have different VCs coexist, that differ only in language of the text<br>
+<span id=6655>… this is what we do in Originator Profile</span></p>
+<p id=3c76 class=summary>sounds like property names in other languages are a Render Method thing, but property values in each language would need to be different VCs?</p>
+<p id=18ce class="phone s10"><cite>shigeya:</cite> we need to look into the use-cases to determine the best solution</p>
+<p id=b704 class="phone s01"><cite>phila:</cite> this is a complex issue, you need to think about the field names, not just the field values</p>
+<p id=54b3 class="phone s03"><cite>manu_:</cite> +1 to studying use-cases first<br>
+<span id=5338>… especially use-cases that have been deployed largely</span><br>
+<span id=0a91>… I would push against multiple VCs differing only in languages, this would not scale up</span><br>
+<span id=c519>… I would like to step back and have the discussion on what we want to prioritize</span></p>
+<p id=0ffc class="phone s04"><cite>JoeAndrieu:</cite> I want to suggest a different mechanism<br>
+<span id=10004>… the RDF claims are mostly language independant</span><br>
+<span id=7021>… we could have a lookup table that would allow us to deal with locale, not just language</span><br>
+<span id=7432>… it could even specify different render methods</span></p>
+<p id=b5fb class=irc><cite>&lt;shigeya&gt;</cite> +1 to needs to consider locale</p>
+<p id=805b class="phone s08"><cite>dmitriz:</cite> JoeAndrieu, hold on to that thought, we are going to come back to it<br>
+<span id=e550>… yes, we need to prioritize</span><br>
+<span id=00f5>… +1 also to start with use-cases, but how do we do that procedurally?</span></p>
+<p id=b3dd class="phone s11"><cite>benoit:</cite> about language: my drivers license is in French, but any value is in fact an enumerate<br>
+<span id=099e>… is there a way to have translation for each value of these enumerates somewhere?</span></p>
+<p id=492d class="phone s01"><cite>phila:</cite> this is exactly what JoeAndrieu was proposing</p>
+<p id=be58 class="phone s11"><cite>benoit:</cite> then +1 :)</p>
+<p id=6097 class="phone s03"><cite>manu_:</cite> we need the i18n WG to discuss those topics, we are not the experts</p>
+<p id=8ecf class=irc><cite>&lt;shigeya&gt;</cite> +1 on A11y</p>
+<p id=10005 class="phone s02"><cite>brent:</cite> throw a couple use-cases in the spec, that's easy<br>
+<span id=4cd3>… also, we need to talk to the i18n, but also to the accessibility people</span><br>
+<span id=659b>… they are expert in communicating information to many people</span></p>
+<p id=efe4 class="phone s01"><cite>phila:</cite> I don't think we are ready for full horizontal review, but that does not prevent us from inviting those experts to one of our calls</p>
+<p id=e784 class="phone s08"><cite>dmitriz:</cite> very good point!<br>
+<span id=8779>… Another point: we focus on templated render methods,</span><br>
+<span id=a1d4>… and parameterized method, where one parameter specifies the media-type, and another specifies the templating mechanism (handlebar, etc...)</span></p>
+<p id=c0a2 class="phone s03"><cite>manu_:</cite> +1 to that as a basis<br>
+<span id=4eb5>… I'm concerned about HTML, because of security/privacy issues</span><br>
+<span id=fa4d>… someone could include a tracker img tag in the template, so that someone knows everytime you display your drivers license</span><br>
+<span id=9ffa>… or some javascript code</span><br>
+<span id=c7be>… sandboxing might be a solution, but not sure it is an option</span><br>
+<span id=567c>… PDF, SVG are other safer options</span></p>
+<p id=81f1 class="phone s08"><cite>dmitriz:</cite> I don't think PDF is an option<br>
+<span id=81db>… we can generate it from HTML or SVG, but can we template a binary format directly?</span><br>
+<span id=9340>… also it is turing complete</span></p>
+<p id=3576 class="phone s02"><cite>brent:</cite> could we just simply define a subset of HTML that has no img or JS?</p>
+<p id=1050 class="phone s01"><cite>phila:</cite> we can not prevent people from doing things.<br>
+<span id=3d05>… Possibly we can limit it.</span><br>
+<span id=464b>… A sensible thing would be to just say &quot;you should not do these things in HTML&quot;</span></p>
+<p id=9b06 class="phone s03"><cite>manu_:</cite> to brent, if an HTML method has to be done, we should do it<br>
+<span id=c324>… rather than let people do it who are less careful about security</span></p>
+<p id=f95a class=irc><cite>&lt;dmitriz&gt;</cite> @manu - haha, very valid concern</p>
+<p id=5c6e class="phone s03"><cite>manu_:</cite> there will be great impacts on the whole ecosystem<br>
+<span id=cdd4>… ok to start by saying &quot;do not do that&quot;</span></p>
+<p id=c97c class="phone s03"><cite>manu_:</cite> then maybe talk to the browser people what solutions they have</p>
+<p id=83ad class=irc><cite>&lt;dmitriz&gt;</cite> @manu - even if PDF is sandbox-able, I don't think it lends itself well to templating. -1 to starting with it</p>
+<p id=b9e0 class="phone s03"><cite>manu_:</cite> to dmitriz: yes PDF is turing complete but it is sandboxable. So is SVG. AFAIK, HTML is not.</p>
+<p id=cf08 class="phone s04"><cite>JoeAndrieu:</cite> HTML has too much of an attack surface<br>
+<span id=bc5b>… we can restrict the SVG render method, in particular by telling to disable JS</span></p>
+<p id=4e85 class="phone s01"><cite>phila:</cite> we need to move on. dmitriz, any last word?</p>
+<p id=7619 class="phone s08"><cite>dmitriz:</cite> thank you everyone.<br>
+<span id=f9dd>… It sounds like we should open an issue &quot;propose method we should include&quot;.</span></p>
+</section>
+
+<section>
+<h3 id=fa0a>Confidence methods</h3>
+<p id=b83e class="phone s12"><cite>subissue:</cite> <a href="https://github.com/w3c/vc-confidence-method/issues/20">w3c/<wbr>vc-confidence-method#20</a></p>
+<p id=c781 class="phone s04"><cite>JoeAndrieu:</cite> I think did-auth is a good candidate as a first authentication method</p>
+<p id=dd41 class="phone s03"><cite>manu_:</cite> +1 to some variation of did-auth<br>
+<span id=cef6>… If I understand what you are saying: presentations today amount to do a signature</span><br>
+<span id=4759>… you propose to add a public key that people should use when presenting</span><br>
+<span id=8e6f>… to denkeni: there are other methods, e.g. challenge via email address, MFA</span><br>
+<span id=5731>… biometrics base</span><br>
+<span id=1b8b>… we want to get this first one done, but I would like to see a list of other methods that people are interested in</span></p>
+<p id=10006 class="phone s04"><cite>JoeAndrieu:</cite> +1; let's finish one and discuss the others<br>
+<span id=997a>… I think what you described 2 types of methods</span><br>
+<span id=2fc6>… one is embedding something in the VP establishing confidence</span><br>
+<span id=ffbb>… another is going through another channel; I want to enable that</span><br>
+<span id=2797>… what we have is not how issuer establish confidence, but hints to help the verifier establish confidence</span></p>
+<p id=1ddc class="phone s01"><cite>phila:</cite> I'm wondering what the crossover is between this idea of establishing confidence in a VP, and what we discussed yesterday and briefly this morning?<br>
+<span id=bd05>… Am I wrong?</span></p>
+<p id=e071 class="phone s04"><cite>JoeAndrieu:</cite> that's brilliant. That's a good case of that attribute.</p>
+<p id=4ee9 class="phone s05"><cite>denkeni:</cite> we have something similar in Taiwan.<br>
+<span id=ccf8>… We require 2 credentials (e.g. banking and telecom). That's one way to improve confidence.</span><br>
+<span id=8934>… Not sure it is a good place to talk about that, it is verifier's logic.</span></p>
+<p id=4d39 class="phone s13"><cite>Kazue:</cite> one part is confidence in the holder, the other part is confidence in the issuer.</p>
+<p id=ee16 class="phone s01"><cite>phila:</cite> yes, but both are about what you need beyond/around the main credential to establish confidence</p>
+<p id=17be class="phone s04"><cite>JoeAndrieu:</cite> do we still have the &quot;evidence&quot; property? it was at risk at some time...</p>
+<p id=5f47 class="phone s03"><cite>manu_:</cite> yes, we do</p>
+<p id=7552 class="phone s01"><cite>phila:</cite> in our own case, I have been talking to our legal team, asking how we find out if someone is authorized to talk in the name of the organization.<br>
+<span id=6780>… I would use the &quot;evidence&quot; property to point such a document. Not exactly the same thing, but related.</span></p>
+<p id=a98c class="phone s14"><cite>Wip:</cite> I think it is good to separate the confidence in the presenter and the confidence in the issuer.</p>
+<p id=f227 class="phone s03"><cite>manu_:</cite> the confidence method can be attached to any subject. You can have 20 subjects, each with their own confidence method.<br>
+<span id=170f>… In a parent-child relationship, you may have one confidence method about the parent, and another one about the child.</span><br>
+<span id=4ace>… It is not just about the presenter.</span></p>
+<h4 id=51e8><a href="https://github.com/w3c/vc-confidence-method/issues/13">w3c/<wbr>vc-confidence-method#13</a></h4>
+<p id=f127 class="phone s04"><cite>JoeAndrieu:</cite> This isabout &quot;should confidenceMethod be renamed to authentication&quot;<br>
+<span id=e40c>… I don't think that we should</span><br>
+<span id=dc64>… difference between identifying vs. linking to a given account</span><br>
+<span id=0efc>… I suggest to close it.</span></p>
+<h4 id=6584><a href="https://github.com/w3c/vc-confidence-method/issues/12">w3c/<wbr>vc-confidence-method#12</a></h4>
+<p id=a1a9 class="phone s05"><cite>denkeni:</cite> difference between confidence that the holder is the subject, or the holder is authorized to present that VC<br>
+<span id=7c0a>… e.g. parent of the subject, spouse of the subject</span><br>
+<span id=bd57>… other example: someone buying medicine for an elder relative</span></p>
+<p id=c383 class="phone s04"><cite>JoeAndrieu:</cite> I think this is a data modeling issue<br>
+<span id=5026>… Assumes that the VC for a dog only has the dog as the subject.</span><br>
+<span id=71f4>… This is not how we usually do things. The owner of the doc would also be a subject of the VC.</span><br>
+<span id=67c2>… So the information required to assess this would be in the VC.</span></p>
+<p id=5bff class="phone s03"><cite>manu_:</cite> +1, the place to put that data is not in the confidence data, it is in the credentials</p>
+<p id=ed4c class="phone s04"><cite>JoeAndrieu:</cite> people are not yet fully apprehending the multi-subject nature of VCs</p>
+<h4 id=b7d0><a href="https://github.com/w3c/vc-confidence-method/issues/16">w3c/<wbr>vc-confidence-method#16</a></h4>
+<p id=28ca class="phone s05"><cite>denkeni:</cite> this one is about levels of confidence<br>
+<span id=259d>… there was a comment by TallTed that it was unclear. I agree, it is very high level.</span><br>
+<span id=2bfb>… In the last meeting we talked about where to put that confidence level.</span><br>
+<span id=7526>… We can make it clear that every issuance should have exactly one confidence level, on which confidence methods will be based.</span></p>
+<p id=ee63 class="phone s05"><cite>denkeni:</cite> E.g. higher level if I show up IRL in front of the issuer to respond with my email address, than if I respond remotely</p>
+<p id=9e38 class="phone s03"><cite>manu_:</cite> I think that should go into the evidence field.<br>
+<span id=5b49>… [discussion about what should go in &quot;evidence&quot; vs. &quot;confidence level&quot;]</span></p>
+<p id=7611 class="phone s04"><cite>JoeAndrieu:</cite> +1 to that framing, I think there are two different things here<br>
+<span id=a8d0>… that the issuer had a certain confidence level when issuing the credential is a valuable information that we should keep; not sure the term &quot;evidence&quot; is appropriate</span><br>
+<span id=bc37>… I believe that eventually, assurance level will be defined in terms of confidence methods</span></p>
+<p id=0520 class="phone s02"><cite>brent:</cite> note that OpenID4VP has &quot;Hight Assurance&quot; profile<br>
+<span id=3fa8>… might be interesting to look at</span></p>
+<p id=029e class=summary><a href="https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0.html">https://<wbr>openid.net/<wbr>specs/<wbr>openid4vc-high-assurance-interoperability-profile-1_0.html</a></p>
+<p id=ad16 class="phone s05"><cite>denkeni:</cite> there is little guidance in the VCDM spec about the &quot;evidence&quot; field<br>
+<span id=ec87>… But otherwise supportive of the suggestions made here.</span></p>
+<p id=819c class="phone s03"><cite>manu_:</cite> +1 to look at the HIPE spec; we have met with OpenID Foundation about that and were deeply disappointed that W3C VC were excluded from it.<br>
+<span id=0469>… They only cover mDoc and SD-JWT-VC</span></p>
+<p id=bf3d class="phone s02"><cite>brent:</cite> despite SD-JWT-VC not being a standard...</p>
+<p id=307f class="phone s04"><cite>JoeAndrieu:</cite> I'm sad that none of our specs have any evidence method, this conceptual idea we are talking about.<br>
+<span id=b64b>… A method to put something in the &quot;evidence&quot; property.</span><br>
+<span id=7cb5>… But I think the separation btw &quot;evidence&quot; and &quot;confidence method&quot; is: &quot;evidence&quot; is what the issuer has done, while &quot;confidence method&quot; is what the verifier might do</span></p>
+<p id=fa1e class="phone s01"><cite>phila:</cite> what should we do about this issue?</p>
+<p id=155a class="phone s04"><cite>JoeAndrieu:</cite> I'm not sure what we can do in terms of spec text.<br>
+<span id=d90a>… TallTed's comment shows that we need to better frame this in the text.</span></p>
+<h4 id=1a24>Horizontal review</h4>
+<p id=6e79 class="phone s01"><cite>phila:</cite> I understand we are not ready for HR, but how long before we get there?</p>
+<p id=ebc1 class="phone s04"><cite>JoeAndrieu:</cite> I would say Q1</p>
+<h4 id=bb17><a href="https://github.com/w3c/vc-confidence-method/issues/14">w3c/<wbr>vc-confidence-method#14</a></h4>
+<p id=ad5a class="phone s03"><cite>manu_:</cite> use-case is VCs for farmers, no mobile phones, just QR-Codes<br>
+<span id=bf24>… the would like to move it to a VC barcode</span><br>
+<span id=9143>… the farmer's credential contains their ID and biometrics, allows them to claim some seeds</span><br>
+<span id=d693>… I just wanted that in this group's radar</span></p>
+<p id=4d3e class="phone s04"><cite>JoeAndrieu:</cite> yes, this is important<br>
+<span id=7dc3>… it is in our scope, I don't know how long it is going to take</span></p>
+<h4 id=7cad>back to <a href="https://github.com/w3c/vc-confidence-method/issues/16">w3c/<wbr>vc-confidence-method#16</a></h4>
+<p id=4a51 class="phone s05"><cite>denkeni:</cite> I am not sure what class of change this issue introduce in the core spec<br>
+<span id=fd8e>… and if it has impact on the charter</span></p>
+<p id=118d class="phone s03"><cite>manu_:</cite> this is a good question<br>
+<span id=cff3>… one way is to define it as an extension</span></p>
+<p id=10007 class="phone s04"><cite>JoeAndrieu:</cite> isn't that already an extension point?<br>
+<span id=7077>… in this case, I don't think that it is a class-4 change</span><br>
+<span id=2e92>… we could put that in the Confidence Methods spec.</span></p>
+<p id=9dd8 class="phone s02"><cite>brent:</cite> it is up to you guys, editors of the Confidence Methods specs, if it is in scope for you</p>
+<p id=04b1 class="phone s04"><cite>JoeAndrieu:</cite> maybe we could get through an evidence method after we address the rest<br>
+<span id=a581>… this should not prevent us from going to CR</span></p>
+<h4 id=66af><a href="https://github.com/w3c/vc-confidence-method/issues/21">w3c/<wbr>vc-confidence-method#21</a></h4>
+<p id=66aa class="phone s05"><cite>denkeni:</cite> one must be very careful whenever biometric data is presented, because verifiers may need to keep them for a while<br>
+<span id=5bf4>… this issue suggest that some prompting should be implemented before presenting such VCs</span></p>
+<p id=09af class="phone s03"><cite>manu_:</cite> +1 to that</p>
+<p id=87fa class="phone s04"><cite>JoeAndrieu:</cite> +1 with the nuance that it is about biometrics claims</p>
+</section>
+
+<section>
+<h3 id=c71d>Wrapping up</h3>
+<p id=a90a class="phone s01"><cite>phila:</cite> this concludes this meeting<br>
+<span id=30c5>… thank you for the discussion on the rechartering</span><br>
+<span id=643c>… we made good progress on the ongoing documents</span><br>
+<span id=c3ed>… I'm keen to start the conversation with i18n and a11y</span><br>
+<span id=92e5>… Thanks to all for being here.</span></p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
