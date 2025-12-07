@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2025-12-03</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Brent Zundel, Dave Longley, Denken Chen, Dmitri Zagidulin, Isaiah Inuwa, Kevin Dean, Manu Sporny, Patrick St-Louis, Phillip Long, Steven McCown, Ted Thibodeau Jr</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic-0">Rechartering Outcome</a></li>
+<li><a href="#topic-1">Render Method PR Discussion</a></li>
+<li><a href="#topic-2">Naming and Base Class Considerations</a></li>
+<li><a href="#topic-3">Payload vs. Template Clarification</a></li>
+<li><a href="#topic-4">PDF and SVG Template Discussion</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic-0">Rechartering Outcome</h3>
+<p id="line-0" class="phone s01"><cite>Dmitri Zagidulin:</cite> Welcome everyone. As usual, we're going to give it another few minutes for people to connect and we'll get started.</p>
+<p id="line-1" class="phone s01"><cite>Patrick St-Louis:</cite> I finally made it.</p>
+<p id="line-2" class="phone s01"><cite>Dmitri Zagidulin:</cite> Give it one more minute and get started.</p>
+<p id="line-3" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right, it's three minutes past the hour. welcome everyone to the weekly spec refinement task force call. We're a task force of the W3C verifiable credentials working group. this call is being recorded and transcribed. if you're not a member of the working group, please us know. we will get you set up as you need to be in order to make any substantive changes to the specs. And as always, we abide by the W3C code of conduct. so let's get started. We have a couple things to talk about. so this is specifically the render method part of it.</p>
+<p id="line-4" class="phone s01"><cite>Dmitri Zagidulin:</cite> the next call is going to be confidence method call and alternating after that. So I'm going to share screen before we dive to discussing poll requests and issues. do we have any announcements go ahead.</p>
+<p id="line-5" class="phone s01"><cite>Manu Sporny:</cite> Hey Demetri, I'm wondering if we should briefly cover the rechartering outcome from TPAC.</p>
+<p id="line-6" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, that's kind of…</p>
+<p id="line-7" class="phone s01"><cite>Manu Sporny:</cite> I don't know if you all have already met Sure.</p>
+<p id="line-8" class="phone s01"><cite>Dmitri Zagidulin:</cite> what I was prompting. Yeah. Yeah. Let's do that.</p>
+<p id="line-9" class="phone s01"><cite>Dmitri Zagidulin:</cite> if you could speak to that.</p>
+<p id="line-10" class="phone s01"><cite>Manu Sporny:</cite> Yeah. Yeah. Happy to do it briefly. with respect to render method and confidence method, as most of us know, that's already in our charter. so we can continue to work on these things. Everything's fine there. and in the new recharter, they will be included as work items that we're going to work on. So, nothing changes with kind of what we've been doing in this group. the other discussions around all of the different credentials, community group specifications that we wanted to put into the new charter. we had a big long discussion about each one in some amount of highlevel kind of detail. that includes things like M VC the verifiable credential API for life cycle management.</p>
+<p id="line-11" class="phone s01"><cite>Manu Sporny:</cite> it includes things like u verifiable issuers and verifiable verifiers and a series of specifications there as well. So the end result just to summarize really quickly is that all of those specs were accepted as things that we could work on. there was concern around the number of editors we have and the big set of specifications that we have.</p>
+<p id="line-12" class="phone s01"><cite>Manu Sporny:</cite> there I think was general agreement that we would prioritize the specifications that have lots of implementations like the VC API has a lot of implementations right now and is fairly mature. we'd prioritize things like that before some of the other specs that might not have editors for example the postquantum crypto suite stuff was being worked on by a group of editors that don't quite know if they're going to be able to continue that work.</p>
+<p id="line-13" class="phone s01"><cite>Manu Sporny:</cite> And as a result, it'll just be dep prioritized, right, until we get enough editors and momentum to kind of push those things over the line. but other than that, fairly good news. nothing out of unexpected happened. the new charter will be kind of updated based on the discussions at W3CTPAC. and will then be put forward to a member vote and we'll see if there's any push back on the content in the charter.</p>
+<p id="line-14" class="phone s01"><cite>Manu Sporny:</cite> So that's kind of where the conversations went with rechartering at W3CTPAC. and I think that's it for the summary.</p>
+<p id="line-15" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thank you so much,…</p>
+<p id="line-16" class="phone s01"><cite>Dmitri Zagidulin:</cite> That sounds exciting. So, looks like for the most part, good news for us, in that we get to address the life cycle stuff which I think we all agree is very necessary. All so let's dive into first pull request and then so first of all let's see is Ted on the call.</p>
+</section>
+<section>
+<h3 id="topic-1">Render Method PR Discussion</h3>
+<p id="line-17" class="phone s01"><cite>Dmitri Zagidulin:</cite> Ted thank you so much for opening the poll request which we're about to discuss. Here we go. All right. So first up let's talk about PR38 which introduces again to sort of use or misuse the oriented analogy you introduces the superass render method and then introduce some subasses such as template render method and NFC. here's the link to it in chat. so those of you who haven't had a chance to review it, please review it now. on my end it looks good.</p>
+<p id="line-18" class="phone s01"><cite>Dmitri Zagidulin:</cite> I had a couple questions about naming of the fields and a suggestion to take out the PDF mustache template method. But let's go over the comments. So, Bara left comment, saying looks good, but for the NFC render suite, the PR should replace the payload field with template field, which I also agree. Go ahead. Does somebody raise there?</p>
+<p id="line-19" class="phone s01"><cite>Benjamin Young:</cite> Yeah. Hey, sorry I was double me.</p>
+<p id="line-20" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Yep.</p>
+<p id="line-21" class="phone s01"><cite>Benjamin Young:</cite> Yeah,…</p>
+<p id="line-22" class="phone s01"><cite>Benjamin Young:</cite> I can maybe catch you up to speed because if you go through these one at a time, they're not going to make sense. there's been some churn.</p>
+<p id="line-23" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="line-24" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="line-25" class="phone s01"><cite>Benjamin Young:</cite> So where this has ended up is this introduction of a render method class is for untlated renderings but through the conversation we had on the issue became a base class for other render methods and…</p>
+<p id="line-26" class="phone s01"><cite>Benjamin Young:</cite> the template word so far has been changed to payload as you'll find farther down the last few commits should do that and then template render method builds on top of that. and I hadn't seen your comment from 30 minutes ago. So maybe we can dig into some of the word smithing there. the tinch.</p>
+<p id="line-27" class="phone s01"><cite>Dmitri Zagidulin:</cite> …</p>
+<p id="line-28" class="phone s01"><cite>Dmitri Zagidulin:</cite> you're saying the top level</p>
+<p id="line-29" class="phone s01"><cite>Dmitri Zagidulin:</cite> Sure.</p>
+<p id="line-30" class="phone s01"><cite>Benjamin Young:</cite> Yeah. Can you go to the preview? It'll make more sense in the preview. So what this ultimately has done is create section 2.2 that is a new render method class without any words in front of it and it's essentially is acting right now as a base class that also introduces a modality word.</p>
+<p id="line-31" class="phone s01"><cite>Benjamin Young:</cite> the new things in this PR. modality is an expression of intended operation of the payload that you would send the payload over NFC or show it as a QR code or play it as audio. It's something that cannot easily be expressed with a media type just because your media type might be image SVG, it doesn't mean you're going to turn it into a QR code. it could be braille or it could be any number of other things as an SVG could be intended for download as a PDF potentially. so in an effort to consolidate terminology also uses the word payload and then farther down in template render method is then expressed as an extension of that base class.</p>
+<p id="line-32" class="phone s01"><cite>Benjamin Young:</cite> Go up a little bit to the top section. There you go. So, template render method adds render suite which currently there's two expressed there that essentially say do something with the payload value before you do anything else. So don't just use the raw payload, process it with render properties through whatever the render suite is.</p>
+<p id="line-33" class="phone s01"><cite>Benjamin Young:</cite> In this case, we have two mustache ones. And there's a whole other discussion about other templating engines and things, but this was done mainly to have a single place to look for where you put the content. and a way to signal that U content is not a template as in you can and should run it through some code to inject data from the credential in it. and to do that only when a render suite is present and not all the time and then to try and clean up confusion around calling something a template that's So payload was a word we'd used previously. So I reused that.</p>
+<p id="line-34" class="phone s01"><cite>Benjamin Young:</cite> but it's certainly open for discussion to try and find something that makes it clear that this value is either the thing you're going to directly act on show or send over NFC or play through some speakers or you're going to in the context of a render suite run it through a templating system and feed that templating system data from the verifiable credential</p>
+<p id="line-35" class="phone s01"><cite>Benjamin Young:</cite> And I did it this way because I felt like those two worlds also imply security implications, processing implications like there's overhead around expecting that you would template something and there might be many reasons like NFC where you can't and so it's just clearer to say this is the payload and send it that Right. So that's the reasoning which is maybe faster than watching the whole thing play out in chat.</p>
+<p id="line-36" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thank you.</p>
+<p id="line-37" class="phone s01"><cite>Dmitri Zagidulin:</cite> That makes a lot of sense. Manu, go ahead.</p>
+<p id="line-38" class="phone s01"><cite>Manu Sporny:</cite> Yeah, thanks for the background super helpful. I'm just coming back from vacation so I haven't had a chance to look at the PR. but a couple of things popped out to me. One of them is that we have already defined render method in the vocabulary. I don't know if that's an issue or not. So remember that we created superclasses for confidence method, render method and a bunch of other things in the core VC data model in this section here. So we already have super classes defined for credential evidence, status, confidence method, refresh service, render method which is one of them.</p>
+<p id="line-39" class="phone s01"><cite>Manu Sporny:</cite> and they were defined in the vocabulary as pure abstract superclasses which conflict with kind of what we're doing in this PR. so I think there's more considerations there if we're going to end up using the superclass. I don't know from an RDF perspective what that means. so there's just one consideration. I haven't had a chance to think about it at all. but just noting that we already have that class allocated and defined in the vocabulary and that matters because we lock the hashes in for the vocabularies for VC data model 20 which means we can't easily change that stuff. and again maybe we can figure out some way of making the argument for kind of keeping it. So that's item one.</p>
+<p id="line-40" class="phone s01"><cite>Manu Sporny:</cite> The second one is that we did use payload for a long while and we moved away from using payload because it was as effective as calling the field data, Which is not a very semantically useful thing to do. so I'm concerned about the name. It's bike shedding, But we had a discussion around payload and payload it just was too generic. and that's why we moved to template. I understand that what we're trying to define now is just kind of like a static payload here's data that needs to be just rendered without any processing.</p>
+<p id="line-41" class="phone s01"><cite>Manu Sporny:</cite> so I kind of understand what we're trying to go for and why we shifted back to payload but I'll bring up all the old arguments against payload that we had discussed previously. I do like the modality part of this I do think the structure it is probably fine meaning we've got some base class that is for static things and then we've got some super derived class for things that are templated.</p>
+<p id="line-42" class="phone s01"><cite>Manu Sporny:</cite> But I'm wondering instead of having a base class and a derived class, we can just have two classes. One for static rendering and one for template rendering. And then maybe we have a different one for HTML …</p>
+<p id="line-43" class="phone s01"><cite>Manu Sporny:</cite> rendering or something like that. that's it. just some feedback on the PR.</p>
+<p id="line-44" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thanks, Manu.</p>
+<p id="line-45" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay. So, the feedback makes sense. let's go over the items that you mentioned. So, right, we have a locked vocabulary, but we do also have an issue open on this spec that there's some terms and some subclasses that we're going to need to put into a separate context anyways.</p>
+<p id="line-46" class="phone s01"><cite>Dmitri Zagidulin:</cite> or when it comes time to do context for BC what is it 2.1 whatever version we're doing in the next charter we're going to have to consolidate the terms that we added or changed for the render spec into there right so long-winded way of saying we're going to need to change stuff anyways right so maybe that's not as much of a concern unless I'm missing an RDF binary here. Go ahead.</p>
+<p id="line-47" class="phone s01"><cite>Manu Sporny:</cite> Yeah, it's an RDF thingy. it's not a we can update the context. It's the vocabulary that we've already defined what the render method superclass means. we can make a decision to change that. Of course, I don't know if that's the best thing to do. Benjamin, were you aware that we already had a render method superclass?</p>
+<p id="line-48" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Right.</p>
+<p id="line-49" class="phone s01"><cite>Manu Sporny:</cite> I guess that's the first question.</p>
+<p id="line-50" class="phone s01"><cite>Benjamin Young:</cite> No, I wasn't. But in RDF, I don't think there's anything special that makes it a super class other than if you were to add owl entailments and RDFs and stuff, which we don't typically define.</p>
+<p id="line-51" class="phone s01"><cite>Benjamin Young:</cite> So, it's a class in RDF terms. but I wasn't aware that it existed elsewhere. No.</p>
+<p id="line-52" class="phone s01"><cite>Manu Sporny:</cite> Yeah, noted.</p>
+<p id="line-53" class="phone s01"><cite>Manu Sporny:</cite> I think we just need to understand what we meant then when the discussion before in the BC data model was we're going to define these superclasses and you're never going to instantiate them directly and now we're deciding ne never mind we're not going to do that right so we need to make that decision consciously is what I'm saying or just avoid the RDF rat hole and just create a</p>
+<p id="line-54" class="phone s01"><cite>Manu Sporny:</cite> different class for static versus templated rendering. that's all I'm drawing attention to. we need to consciously make a decision about what these super classes mean because we decided that we weren't going to directly instantiate them before and now we're deciding that we are going to directly instantiate at least one of them.</p>
+<p id="line-55" class="phone s01"><cite>Manu Sporny:</cite> That's the only point I'm kind of bringing</p>
+<p id="line-56" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right, that makes sense.</p>
+<p id="line-57" class="phone s01"><cite>Dmitri Zagidulin:</cite> And if we decide to stick by that decision and not directly instantiate we can just tweak this and add you said mono a templated versus an untlated class. Dave has a comment. Go ahead.</p>
+</section>
+<section>
+<h3 id="topic-2">Naming and Base Class Considerations</h3>
+<p id="line-58" class="phone s01"><cite>Dave Longley:</cite> Just to throw this out there as another path we could take. we could fold this all under a template renderer where one of the types of template renderers is just essentially an identity function that just takes whatever the template does no processing on it and just produces an output. And so I think there's multiple ways we could look at how to model this. U so it'd be good to get people's feedback. there's pros and cons to the different ways we could approach it.</p>
+<p id="line-59" class="phone s01"><cite>Dmitri Zagidulin:</cite> Great. Mona Yeah,…</p>
+<p id="line-60" class="phone s01"><cite>Manu Sporny:</cite> I'm wondering yeah plus being another way that we could do this. I'm wondering if we could use what is that property that you list the properties you want to render and…</p>
+<p id="line-61" class="phone s01"><cite>Dave Longley:</cite> re render property.</p>
+<p id="line-62" class="phone s01"><cite>Manu Sporny:</cite> if that All right.</p>
+<p id="line-63" class="phone s01"><cite>Dave Longley:</cite> This what that's called.</p>
+<p id="line-64" class="phone s01"><cite>Dmitri Zagidulin:</cite> I think it's literally called that. Yeah.</p>
+<p id="line-65" class="phone s01"><cite>Manu Sporny:</cite> So we use ren if render property doesn't exist then what you have is a static template that you must not do any kind of template processing on it is one approach there. it's a bit kg because it's kind of like anyway I</p>
+<p id="line-66" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. I think having a separate Yeah.</p>
+<p id="line-67" class="phone s01"><cite>Dave Longley:</cite> I could speak against that right away. I think the render property has value on its own whether you're producing a static or…</p>
+<p id="line-68" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Please. Yes.</p>
+<p id="line-69" class="phone s01"><cite>Dave Longley:</cite> dynamic processed payload template whatever we want to call this having that property can be used to one of the use cases is display to users that the information that is expected to be rendered or going into whatever it is you're like if you were going to use this for example you would still probably want to know what's going to be transmitted when I use NFC and that's what this property would express. and so I think and s even if it's a static payload that's in, some static set of binary NFC bytes that you're going to send. So I think it's a valuable property and I would even say it sort of fits the same level as modality. if we're going to go with a sort of base class approach, I would expect to see that property on all the render methods. I would want to know what information is going to go in is going to be rendered from the source VC and…</p>
+<p id="line-70" class="phone s01"><cite>Dave Longley:</cite> I would want to know what the modality is for any of the render methods regardless of how they operate.</p>
+<p id="line-71" class="phone s01"><cite>Dmitri Zagidulin:</cite> plus one.</p>
+<p id="line-72" class="phone s01"><cite>Dmitri Zagidulin:</cite> And I have a comment about the modality part, but Benjamin, you're on the queue.</p>
+<p id="line-73" class="phone s01"><cite>Benjamin Young:</cite> Yeah, just to confirm that it is on the base class as proposed here and…</p>
+<p id="line-74" class="phone s01"><cite>Benjamin Young:</cite> agree with Duke.</p>
+<p id="line-75" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Yeah. Yeah. Yeah. Great. Go ahead.</p>
+<p id="line-76" class="phone s01"><cite>Dave Longley:</cite> Sorry I can go back on queue.</p>
+<p id="line-77" class="phone s01"><cite>Dmitri Zagidulin:</cite> No, I like that approach better, Benjamin.</p>
+<p id="line-78" class="phone s01"><cite>Dave Longley:</cite> The other thing I mean it might make sense to have render suite always be on the base class and one of the types of render suites is you don't process the payload and then we just have a bike shedding discussion about what's to name payload. That's another way to consolidate things.</p>
+<p id="line-79" class="phone s01"><cite>Benjamin Young:</cite> Yeah, the tension there was that it's template render method.</p>
+<p id="line-80" class="phone s01"><cite>Benjamin Young:</cite> So the expectation is that you're passing something that's not finished and you're going to run it through some software to finish it up.</p>
+<p id="line-81" class="phone s01"><cite>Benjamin Young:</cite> So that's ultimately how it got extracted into a base class. Go ahead.</p>
+<p id="line-82" class="phone s01"><cite>Dmitri Zagidulin:</cite> So that's a good point.</p>
+<p id="line-83" class="phone s01"><cite>Dmitri Zagidulin:</cite> But if I remember correctly changes the top class to just render method not template.</p>
+<p id="line-84" class="phone s01"><cite>Benjamin Young:</cite> Yeah, because what I was saying was in response to we just can bike shed about payload,…</p>
+<p id="line-85" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see.</p>
+<p id="line-86" class="phone s01"><cite>Benjamin Young:</cite> but it's within a class called template render method. It's a little more than just where you put the value of the thing. it's how you're signaling what you're going to do. And I'm seeing it as much from an author's perspective from a code that's going to run on it perspective that I want as an author to say this is my intended use of this. Please don't do more with it. I just want you to play this audio file. don't send it through any other code. It's not a template, it's a file. that sort of thing which was coming up in the NFC space which doesn't have templates.</p>
+<p id="line-87" class="phone s01"><cite>Dave Longley:</cite> Seeing as I mean maybe we want to go the opposite direction from generating a base class and then having a derived template class. It seems like maybe there's tension over calling having something be typed as a template render method. Maybe we need a different name for the type of this thing. And every one of these payload thingies it can have a render sweep that might not do any processing on the tob named payload value or it could and that would cover template processing but it would also cover the static case and…</p>
+<p id="line-88" class="phone s01"><cite>Dmitri Zagidulin:</cite> What?</p>
+<p id="line-89" class="phone s01"><cite>Dave Longley:</cite> some other things. So there might be other ways to consolidate what it is without using the template naming for the type.</p>
+<p id="line-90" class="phone s01"><cite>Benjamin Young:</cite> Pretty sure that's all there ever is.</p>
+<p id="line-91" class="phone s01"><cite>Dave Longley:</cite> Maybe this is all just a naming problem.</p>
+<p id="line-92" class="phone s01"><cite>Benjamin Young:</cite> Yeah. I'm wondering if Ted or one of our more RDF wonky people can dig into the base class question whether or not we tied our shoelaces together on that a while ago or not.</p>
+<p id="line-93" class="phone s01"><cite>Dmitri Zagidulin:</cite> Ted, any comments on it?</p>
+<p id="line-94" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I'm trying to come up with one. the thing about RDF is that it's very loose and sort of with intent. as somebody said earlier, until Owl and other pieces get involved, a class statement is just another statement. And How much it binds you is sort of up to you.</p>
+<p id="line-95" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right, right, right, right, Mon. Go ahead.</p>
+<p id="line-96" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I mean I guess let me just go to the concrete statement that I thought we had consensus in the VC working group which we are never going to instantiate any of these base superclasses that was my understanding of what we did and that was the previous agreement if we want to change that we would now be saying we are going to directly instantiate some of these</p>
+<p id="line-97" class="phone s01"><cite>Manu Sporny:</cite> base super classes but not others and some of them are going to have properties but the other ones aren't and I think that's where I'm kind of like I would rather not go down that path like it just feels like why are we doing that when we can just pick a different name the base classes were largely created so that Avon could do some proper for, modeling on this stuff. They were never intended to be directly instantiated. And it feels like it would be kind of dirty from a data modeling perspective to change that at this point.</p>
+<p id="line-98" class="phone s01"><cite>Manu Sporny:</cite> When what we could just as easily do is just create two separate classes, one for static, one for templated, and just do that,…</p>
+<p id="line-99" class="phone s01"><cite>Manu Sporny:</cite> right? that's it.</p>
+<p id="line-100" class="phone s01"><cite>Dmitri Zagidulin:</cite> Does anybody have …</p>
+<p id="line-101" class="phone s01"><cite>Dave Longley:</cite> So yeah,…</p>
+<p id="line-102" class="phone s01"><cite>Dmitri Zagidulin:</cite> god. Dave</p>
+<p id="line-103" class="phone s01"><cite>Dave Longley:</cite> I'm on the queue to say I mean maybe we don't need two new classes and maybe we don't necessarily need a base class though what we create might later become a base class for something else. But it seems like we've sort of drawn a circle around a set of properties that seem like they're useful to be in a single class. And I put them into chat here. name, description, modality, render property, whatever we might call this payload template thing and what render suite or whatever we might call that. It seems like there's some circle we can draw around all those and that's a thing and it's a useful thing and using those properties you could implement a static payload render method or you could implement a template render method and you don't need to distinguish those necessarily by type.</p>
+<p id="line-104" class="phone s01"><cite>Dave Longley:</cite> There could just be one type that has those and the render suite or whatever else we call that thing w would tell you what you do with the top named payload thing. And then we're not changing the render method abstract class. We're saying there's this other type of thing where you do want to always express modality and render property and optionally express a name description etc. And you always have a render suite for then we're just inventing one thing. Other things could extend that if they want to. We don't mess with the abstract render method base class that might go off and do something else that we're not thinking about.</p>
+<p id="line-105" class="phone s01"><cite>Dave Longley:</cite> And I think it covers our use cases. We've just got a naming problem.</p>
+<p id="line-106" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right.</p>
+<p id="line-107" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed. So, wait, but how does that relate to the superclass …</p>
+<p id="line-108" class="phone s01"><cite>Dmitri Zagidulin:</cite> question of the we have</p>
+<p id="line-109" class="phone s01"><cite>Dave Longley:</cite> We don't have to mess with it.</p>
+<p id="line-110" class="phone s01"><cite>Dave Longley:</cite> We don't have to change the superclass render method. We can just say it can stay as it is without anything defined. There might be some future innovation that does not include modality and render property that also is a type of render method that we're not thinking of today. And so we're just inventing some other subclass that may end up being for years and in the future the only thing that anyone uses, but we don't know yet. And so we don't need to mess with the core render method.</p>
+<p id="line-111" class="phone s01"><cite>Dave Longley:</cite> We just need to come up with a good name for this new thing that we know is going to have these properties.</p>
+<p id="line-112" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="line-113" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead, Benjamin.</p>
+<p id="line-114" class="phone s01"><cite>Benjamin Young:</cite> Yeah, for…</p>
+<p id="line-115" class="phone s01"><cite>Benjamin Young:</cite> what it's worth, I'm fine with that approach, but I think it leaves the hardest thing on the table, which is naming stuff. I just quoted this section in the VC data model about in the vocabularies appendix where this comes up. and it basically says if care. And then here's our list. And it doesn't actually describe any of these as super classes.</p>
+<p id="line-116" class="phone s01"><cite>Benjamin Young:</cite> I wasn't around for the discussion about, the handshakes that might have been had and issues or calls about not instantiating them. They are defined as superclasses, but I don't think that forces them to be abstracts. as in I don't think we need to overly constrain ourselves in that regard especially given we didn't teach any tools to slap our hands…</p>
+<p id="line-117" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yes. I mean,…</p>
+<p id="line-118" class="phone s01"><cite>Benjamin Young:</cite> if we use the words. So I don know I don't think we need more constraints if those aren't constraints and…
+</section>
+<section>
+<h3 id="topic-3">Payload vs. Template Clarification</h3>
+<p id="line-119" class="phone s01"><cite>Dmitri Zagidulin:</cite> Is it… name naming the new thing is going to be tricky. Go ahead.</p>
+<p id="line-120" class="phone s01"><cite>Dmitri Zagidulin:</cite> though I want to sort of push back on that.</p>
+<p id="line-121" class="phone s01"><cite>Dmitri Zagidulin:</cite> Is it going to be that tricky?</p>
+<p id="line-122" class="phone s01"><cite>Benjamin Young:</cite> time will tell. I don't know.</p>
+<p id="line-123" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead, man.</p>
+<p id="line-124" class="phone s01"><cite>Manu Sporny:</cite> I do agree with Benjamin that we're back to the naming thing, but I think that's a better problem to have than I mean we do need to pick a name, right? I mean I think that's where we are, I mean it's really just a naming thing. I don't think we should further confuse the naming thing with a discussion about what these base classes mean. I'll point out that it does exist elsewhere. It exists here. the render method thing, right? That's where the base class is kind of defined and then Avon uses it somewhere else in his tooling to generate the diagrams. I think it's in the vocabulary where he defines it.</p>
+<p id="line-125" class="phone s01"><cite>Manu Sporny:</cite> So he autogenerates this thing here and you'll see that render method is let's see what is it yeah it's just specified as reserved anyway I'm let me kind of restate what I'm saying trying to say more strongly I would be a minus one on using render method in this way we can revisit</p>
+<p id="line-126" class="phone s01"><cite>Manu Sporny:</cite> that discussion but I don't think it's really useful to do that. I think we are talking about a very specific instantiation of this thing with very specific properties and I will assert that render method is not that thing and render method refresh service all these superclasses have zero properties on them by design. and I really don't want to go back and…</p>
+<p id="line-127" class="phone s01"><cite>Manu Sporny:</cite> reopen that whole discussion. but if folks want to do that that's fine. And I just think it's just going to be a big long discussion much bigger than we need it to just get these properties in place so we can do a static render method. that's it.</p>
+<p id="line-128" class="phone s01"><cite>Dmitri Zagidulin:</cite> Does anybody object to leaving render method as the sort of abstract superclass and…</p>
+<p id="line-129" class="phone s01"><cite>Dmitri Zagidulin:</cite> defining templated</p>
+<p id="line-130" class="phone s01"><cite>Dmitri Zagidulin:</cite> and unrelated whatever to defining two concrete classes. Did anybody object to that? Patrick and…</p>
+<p id="line-131" class="phone s01"><cite>Patrick St-Louis:</cite> Not an objection.</p>
+<p id="line-132" class="phone s01"><cite>Patrick St-Louis:</cite> I couldn't have a notice. It says BC render method. Is there a reason or it's a typo? It says base class.</p>
+<p id="line-133" class="phone s01"><cite>Dmitri Zagidulin:</cite> I think it's base class.</p>
+<p id="line-134" class="phone s01"><cite>Patrick St-Louis:</cite> Okay. Okay.</p>
+<p id="line-135" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Yeah. I see what you mean though. It is confusing. Dave</p>
+<p id="line-136" class="phone s01"><cite>Dave Longley:</cite> So I don't have an immediate objection. I wouldn't want us to create more types than we need. I think that just creates a burden on implementers. So if we're able to generalize this so one of the render suites is just static. then we don't need another type. So I'm not going to die on that hill. But I think if we're creating extra types for one very special case,…</p>
+<p id="line-137" class="phone s01"><cite>Dave Longley:</cite> I don't know that we're doing anyone any favors.</p>
+<p id="line-138" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see.</p>
+<p id="line-139" class="phone s01"><cite>Dmitri Zagidulin:</cite> And specifically the thing in question is the NFC one, right? the sort of untlated static Yeah.</p>
+<p id="line-140" class="phone s01"><cite>Dave Longley:</cite> I wouldn't say It's any anytime you want to just have some static payload. I mean NFC is it is a use case. that other one's not coming to mind at the moment, but I could imagine could be other maybe there's no templated audio and you just want to play an audio file, So, it seems like there's a case of I want to express a render method. Here's the data for it. Don't process it.</p>
+<p id="line-141" class="phone s01"><cite>Dave Longley:</cite> And the don't process it is potentially just another way of it saying is a way of processing. So your processing either do a bunch of complicated stuff or do nothing to it. And mathematically to me that it's like running the identity function on something. And I wouldn't necessarily want to create an entirely different class just for that. And I could imagine people also putting things into a templated render method that ends up, doesn't actually producing it. It doesn't actually change the data in any way.</p>
+<p id="line-142" class="phone s01"><cite>Dmitri Zagidulin:</cite> So that almost suggests a transform field…</p>
+<p id="line-143" class="phone s01"><cite>Dmitri Zagidulin:</cite> where we can be transform none or transform template substitution or something like that,…</p>
+<p id="line-144" class="phone s01"><cite>Dave Longley:</cite> Yeah, I think that's kind of…</p>
+<p id="line-145" class="phone s01"><cite>Dave Longley:</cite> what render suite is doing in some sense. and maybe we need a better name for that.</p>
+<p id="line-146" class="phone s01"><cite>Dmitri Zagidulin:</cite> right? All right.</p>
+<p id="line-147" class="phone s01"><cite>Dave Longley:</cite> I don't know. But it just seems like it could all be generalized in one place and we don't need to have forking code for the fork is Do you process this that way? One of those ways is the identity function. And you do nothing.</p>
+<p id="line-148" class="phone s01"><cite>Dmitri Zagidulin:</cite> But I see you man on the queue. One second. but I think what you're saying that at very least we can create one subclass. Leave the abstract class as is.</p>
+<p id="line-149" class="phone s01"><cite>Dmitri Zagidulin:</cite> create one subclass that says let's say templated and either have a suite named static or add another field like transform and indicate identity function. Go ahead.</p>
+<p id="line-150" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I think you said more or less what I thought we were or the direction we seem to be headed in, which is we're just trying to decide now whether we're doing one concrete subclass or two concrete subasses. Is that kind of where we are? Count.</p>
+<p id="line-151" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yes. Yes. And I think Dave is making an argument for just one.</p>
+<p id="line-152" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I guess the question is does anybody feel very strongly in the opposite direction that presenting developers with templated…</p>
+<p id="line-153" class="phone s01"><cite>Dmitri Zagidulin:</cite> but it's not actually a template it's static might be too confusing Benjamin a what path I don't think that's the goal,…</p>
+<p id="line-154" class="phone s01"><cite>Benjamin Young:</cite> I think you're still going to have a switching path on your render suite. where you're saying I'm just going to return the value versus run it through a template. So it consolidates some things which is fine but I think if you're trying to alleviate conditional code existing I'm not sure it does that.</p>
+<p id="line-155" class="phone s01"><cite>Dmitri Zagidulin:</cite> though. I think we're going to end up with conditional code regardless. Go ahead, Dave.</p>
+<p id="line-156" class="phone s01"><cite>Dave Longley:</cite> And I think you'll have it at two different layers. So you're going to have it for the different types of renderers you support. but the way that you handle them might be all exactly the same with the exception of this processing field. So you either going to have sort of a top level bit of code that says what's the type of renderer now go use this other package which might do things with render property and modality and whatever else. and all of that can go in one place or you're going to have two different packages that will do the same things with modality render property whatever else but it will do something different based on whether the processing field is present or not.</p>
+<p id="line-157" class="phone s01"><cite>Dave Longley:</cite> and you have two code paths that do that same thing in effect. It seems like we're splitting it up a little bit more than we need to split it up. and so simp the simpler way to do that is if the type is whatever we decide to name this, you go into that one area, you render property, handle modality, and then either the processing field says you do more stuff or you don't. And that keeps it all in one place.</p>
+<p id="line-158" class="phone s01"><cite>Dmitri Zagidulin:</cite> So, that's a thumbs up from Benjamin Monog. Go ahead.</p>
+<p id="line-159" class="phone s01"><cite>Manu Sporny:</cite> Yeah, that sounds fine to me. I'm wondering if we just include the name the word late in render template and…</p>
+<p id="line-160" class="phone s01"><cite>Manu Sporny:</cite> then if we don't have that in there then that kind of tells you that it's not a template or we can add static in there. I think the problem here is that I think we're trying to provide instructions through both the type and…</p>
+<p id="line-161" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Yeah,…</p>
+<p id="line-162" class="phone s01"><cite>Dmitri Zagidulin:</cite> that makes sense.</p>
+<p id="line-163" class="phone s01"><cite>Manu Sporny:</cite> the render suite and we should pro maybe just decide that no we're going to provide the instructions on how you use the rest of the data here purely through the render suite property or whatever we end up calling it. and then continue to have one type. I mean, that would kind of be an argument for just use render method, Except for the arguments against it being an abstract class that's not supposed to have any properties on it and all that kind of stuff. So, we still have a naming problem for type. But I'm wondering, to get to Benjamin's point, how does a developer make it very clear that they don't want template processing done on this thing? in the render suite, they will not use a suite that has the word template in it.</p>
+<p id="line-164" class="phone s01"><cite>Manu Sporny:</cite> as an example. I'm not saying we definitely do that, but I'm wondering if we just consolidate the base processing instruction into render suite and…</p>
+<p id="line-165" class="phone s01"><cite>Manu Sporny:</cite> use the word template to make it very clear that this is a templated render method.</p>
+<p id="line-166" class="phone s01"><cite>Dmitri Zagidulin:</cite> I like that approach,…</p>
+<p id="line-167" class="phone s01"><cite>Dmitri Zagidulin:</cite> Mean it doesn't hurt to have a static render suite as opposed to the absence.</p>
+<p id="line-168" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I think that's consolid putting things in the right buckets.</p>
+<p id="line-169" class="phone s01"><cite>Benjamin Young:</cite> Because we've had lots of levers and things scattered through all kinds of values and keys and things and I think sticking it all in render suite makes a lot more sense. maybe just the absence of render suite signals that it's static and then you lean on modality for how you're going to move the thing. and the expectation I mean again I think it's bike shedding but yeah those are options for sure.</p>
+<p id="line-170" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Right.</p>
+<p id="line-171" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thanks, Dave.</p>
+<p id="line-172" class="phone s01"><cite>Dave Longley:</cite> Yeah, it is bike shedding. I do think it's better to be explicit and we could just say we don't have to use the word static. We can come up with whatever name for that which is more bike shedding. but I think the suite should say what the processing is. and I think that makes it simpler on implementers. One name to throw out here is sweet render method and then it has a render suite and that it can have these other properties modality name description render property etc.</p>
+<p id="line-173" class="phone s01"><cite>Dmitri Zagidulin:</cite> All Makes sense. So, does anybody All right. so let's summarize what we've got so far. We're leaving the abstract random method class alone. We're declaring for the moment a single subclass. We're switching the logic through the sweet method. which all sounds good so far. does anybody object or did I miss anything major there?</p>
+<p id="line-174" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead, Benjamin. Which part?</p>
+<p id="line-175" class="phone s01"><cite>Benjamin Young:</cite> Gotcha. No,…</p>
+<p id="line-176" class="phone s01"><cite>Benjamin Young:</cite> not to object. I think the naming super clumsy. but I can sweet render method with a render suite is super sweet.</p>
+<p id="line-177" class="phone s01"><cite>Dmitri Zagidulin:</cite> A Agreed. Yeah. I'm not sure I'm at board with that part.</p>
+<p id="line-178" class="phone s01"><cite>Benjamin Young:</cite> Yeah, but it's in technologically I think we're narrowing in on the …</p>
+<p id="line-179" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay.</p>
+<p id="line-180" class="phone s01"><cite>Benjamin Young:</cite> how we're walking through the code path and I think this is better than where we have been. again the naming part's going to be the hard part</p>
+<p id="line-181" class="phone s01"><cite>Dmitri Zagidulin:</cite> I think we're moving in the right direction. I think this is a good place. we'll see if we can get initial consensus on the name here on the call. Dave says that would lead to some confusion. Run method suite would be right.</p>
+<p id="line-182" class="phone s01"><cite>Dave Longley:</cite> Yeah, I was sorry in chat I was just responding if we called it render method suite camelc case as the type I think that would lead to some confusion with the property also being render suite or close to render method suite and so</p>
+<p id="line-183" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Agreed.</p>
+<p id="line-184" class="phone s01"><cite>Dmitri Zagidulin:</cite> Patrick suggests render method. What would be an example of an implicit? Mon, go ahead.</p>
+<p id="line-185" class="phone s01"><cite>Manu Sporny:</cite> I wanted to go back to Benjamin noted render method suite. I was going in that direction as well. noting Dave's a kind of push back against that might be confusing. so yeah, I don't know. Render method suite seems fine enough for the time meaning if we want to put a PR in and just say, "Hey, we haven't really finalized the names yet, but we think maybe something in this area." I think I'd be fine with that. the versus explicit is I think that's just a variation on static render method and templated render method.</p>
+<p id="line-186" class="phone s01"><cite>Manu Sporny:</cite> So, if we decide that we're going to do two things, then we're just back to having two different types and having type kind of provide some of the instructions.</p>
+<p id="line-187" class="phone s01"><cite>Manu Sporny:</cite> So you have to consider both the type and the render suite, which I think was the direction we were not going in. yeah.</p>
+<p id="line-188" class="phone s01"><cite>Dmitri Zagidulin:</cite> And we can still switch it just off the render suite,…</p>
+<p id="line-189" class="phone s01"><cite>Dmitri Zagidulin:</cite> there's no Okay.</p>
+<p id="line-190" class="phone s01"><cite>Manu Sporny:</cite> Yeah. I mean, I think still strong plus one to keep the type as a single type and then render and then all the switching logic is done off of render suite. I think we're in a good place there. that's all I'm saying. so yeah, that's it.</p>
+<p id="line-191" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right. So, one side comment I think this R makes the modality field as required. I think we should make it optional.</p>
+<p id="line-192" class="phone s01"><cite>Dmitri Zagidulin:</cite> Because I think especially to start with people won't know what modality they'll be used in. We need to have some sort of default modality that people go ahead Benjamin and…</p>
+<p id="line-193" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I think Mono was There's</p>
+<p id="line-194" class="phone s01"><cite>Dmitri Zagidulin:</cite> then Mona first. Yeah. No,…</p>
+<p id="line-195" class="phone s01"><cite>Manu Sporny:</cite> I don't know about making modality optional.</p>
+<p id="line-196" class="phone s01"><cite>Manu Sporny:</cite> I like modality. and in some cases I think again we need to just be explicit about it. we probably need to go through use cases where you wouldn't use modality. I don't know what use cases those might be. So Demetri, I don't know if you were thinking of a specific use case where you're like, "No, this thing doesn't need a modality to it." I see…</p>
+<p id="line-197" class="phone s01"><cite>Dmitri Zagidulin:</cite> it's that more like the modalities we have in the PR</p>
+<p id="line-198" class="phone s01"><cite>Dmitri Zagidulin:</cite> Don't include the most common one which is visuals.</p>
+<p id="line-199" class="phone s01"><cite>Manu Sporny:</cite> what you're saying. yep,…</p>
+<p id="line-200" class="phone s01"><cite>Dmitri Zagidulin:</cite> So we either should add that value or…</p>
+<p id="line-201" class="phone s01"><cite>Manu Sporny:</cite> that's a good point.</p>
+<p id="line-202" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I Yeah,…</p>
+<p id="line-203" class="phone s01"><cite>Dmitri Zagidulin:</cite> make it optional. Go ahead.</p>
+<p id="line-204" class="phone s01"><cite>Benjamin Young:</cite> I take your point. I think I was trying to say with render suite, if you have a default, then you don't need to set it. So in so far as you have a default here that's visual or display or whatever the right word is then yeah that's fine. I can see making it optional…</p>
+<p id="line-205" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Right.</p>
+<p id="line-206" class="phone s01"><cite>Benjamin Young:</cite> but Dave is also being pythonic in chat again saying he wants us to state it. which is also fine. there's value to that ending up in the graph or whatever too,</p>
+<p id="line-207" class="phone s01"><cite>Dave Longley:</cite> Yeah, even if we said there was a default, we'd have to say what the default was.</p>
+<p id="line-208" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. Okay, sounds good. So, yeah, that's just we can open a separate issue for that. let's see what else the other thing that I wanted to mention optional. yeah, I wanted to say we should remove the PDF mustache template section since I don't think that's actually a valid example. go ahead, Mona.</p>
+</section>
+<section>
+<h3 id="topic-4">PDF and SVG Template Discussion</h3>
+<p id="line-209" class="phone s01"><cite>Manu Sporny:</cite> I know you noted that PDF is a format. It is a binary format but if you look into the format it is all expressed in ASI and the binary components of it are base encoded variations of so PDF is a subset of Postcript is pure text. the thing that differentiates PDF from postcript is that PDF does not allow you to have an arbitrary execution environment like postcript does.</p>
+<p id="line-210" class="phone s01"><cite>Manu Sporny:</cite> Postcript is a Turing compete complete language. PDF unrolls loops and all that kind of stuff. So I think the me and I may be misunderstanding what you're saying Demetri but</p>
+<p id="line-211" class="phone s01"><cite>Dmitri Zagidulin:</cite> Wait,…</p>
+<p id="line-212" class="phone s01"><cite>Dmitri Zagidulin:</cite> wait. no no I think you're understanding correctly but I want to add one more consideration which is so you're right that technically under the hood it's text but think of it from the issuer standpoint right for us for example it's hard enough already to ask people to create HTML templates and HTML is a wellsupported right there's editors and all</p>
+<p id="line-213" class="phone s01"><cite>Dmitri Zagidulin:</cite> that stuff. do you really picture issuer I don't know secretaries hacking PDF text manually to create those templates think of it on the template creation part.</p>
+<p id="line-214" class="phone s01"><cite>Benjamin Young:</cite> That's mainly…</p>
+<p id="line-215" class="phone s01"><cite>Benjamin Young:</cite> what I was going to point to. It is theoretically possible that somebody could, as Manu stated, use the guts of a PDF file that they designed and saved and go in and hack mustache thingies in there. But it's not likely that would ever get processed healthfully. nor that any designer who is working to for any of our companies would know what the heck that was going to be. And even just doing SVG files with mustache templates in them is a nightmare because every time you want to use it in the href value, it gets escaped. And so then you have to go edit by hand the SVG file to unescape it so the mustache thing can do it.</p>
+<p id="line-216" class="phone s01"><cite>Dmitri Zagidulin:</cite> Item.</p>
+<p id="line-217" class="phone s01"><cite>Benjamin Young:</cite> And it's something that even the techsavvy designers I work with at Digital Bizaarre are like, "I don't know, here's the file, you do it." or I typically write a script to go clean them up. and if you, muck around in CMS land for templating PDFs or rendering PDFs or whatever, they all route you through XML or HTML and that's been going on for decades. So, I don't know of any Adobe product or…</p>
+<p id="line-218" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, I have similar experience. Morning.</p>
+<p id="line-219" class="phone s01"><cite>Benjamin Young:</cite> something where you can have a PDF and then populate it with data. I mean, their form system does that, but it requires their server. So, yeah, I was of the same mind Demetri is, but either way, I feel like PDF in the render suite is in the wrong place. same with SVG and that there would be a different handle and that some of these are subject to the thing rendering whether it's a PDF or an image or it depends on the objective</p>
+<p id="line-220" class="phone s01"><cite>Manu Sporny:</cite> So we did have Leonard Rosenthol from Adobe come in and speak directly to whether or not we should use the double squiggly bracket, in PDF. And he said that was a totally fine approach. and he said that there are tools that will allow you to do that. We can go back and maybe chat with him about it, but I'm not quite understanding…</p>
+<p id="line-221" class="phone s01"><cite>Manu Sporny:</cite> what the alternative is if we're going to take SVG and PDF out completely.</p>
+<p id="line-222" class="phone s01"><cite>Dmitri Zagidulin:</cite> Wait.</p>
+<p id="line-223" class="phone s01"><cite>Dmitri Zagidulin:</cite> Though. We're just talking about PDF SVG.</p>
+<p id="line-224" class="phone s01"><cite>Manu Sporny:</cite> I heard SVG doesn't work either. it's a pain to</p>
+<p id="line-225" class="phone s01"><cite>Benjamin Young:</cite> No, no,…</p>
+<p id="line-226" class="phone s01"><cite>Benjamin Young:</cite> no. Yeah. No, it's not easy, So, that doesn't mean we're taking them out. it's the case that I was making with removing it wasn't just about PDFs, although it surfaces in the same way Dimmitri expressed, but that render suites shouldn't be this overly specific because really the only thing that one needs to know is what template engine this is going to go through. That's what you're declaring in the render suite. what you do with it. After that, you would lean on a modality or the media type that you're given for the template or payload or whatever. And then potentially there is a third thing that is like, no, I really want you to make it a PDF download from this SVG file, but sticking that in the render suite is overloading.</p>
+<p id="line-227" class="phone s01"><cite>Benjamin Young:</cite> And you can read the mustache and the mustache and they say the same thing like you run it through mustache and the result is a media type which again should go in a different hole. So if somebody wants to make the case that they'll provide a PDF template that's mustache compatible and won't die that's great. It shouldn't be a unique media, a unique render suite is the main thing I was gonna say. And really, I'd love to see somebody implement it and then come back and say, "We're going to do this." because it's,…</p>
+<p id="line-228" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed. Ma,…</p>
+<p id="line-229" class="phone s01"><cite>Benjamin Young:</cite> in my experience, way more likely to use an SVG HTML to create a PDF.</p>
+<p id="line-230" class="phone s01"><cite>Dmitri Zagidulin:</cite> go ahead.</p>
+<p id="line-231" class="phone s01"><cite>Manu Sporny:</cite> Maybe so I'm getting a bit lost into what the solution we're talking about is I'm not seeing it in the PR Benjamin. So maybe what we need is what would this thing look like? So here let me kind of go back to use cases. What I'm concerned about is us removing PDF entirely because it is the most useful, or I will argue that if we don't include that, it is going to not be a good thing. So, I want us to understand what are we going to go back to Adobe and tell them we're doing? and are they going to respond, to that? Ideally, we include Adobe in the conversation about, what would be the best way to do templated PDFs. and they will definitely have opinions and guidance, on that.</p>
+<p id="line-232" class="phone s01"><cite>Manu Sporny:</cite> Not to say that they're the only opinion that matters, but I think it would be highly problematic for us to kind of come up with a solution for doing PDFs that, maybe it's not the best thing to use. the concern I have is we have heard universities and Demetri this is your world like universities and education institutions saying we produce our diplomas and…</p>
+<p id="line-233" class="phone s01"><cite>Dmitri Zagidulin:</cite> Wait, wait.</p>
+<p id="line-234" class="phone s01"><cite>Dmitri Zagidulin:</cite> Just to clarify,…</p>
+<p id="line-235" class="phone s01"><cite>Manu Sporny:</cite> what we use some of them do.</p>
+<p id="line-236" class="phone s01"><cite>Manu Sporny:</cite> have PDF templates for them that's… what we use some of them do.</p>
+<p id="line-237" class="phone s01"><cite>Dmitri Zagidulin:</cite> they produce HTML templates which get rendered to PDF which get printed to PDF which is a single function call. Way better UX for them than hacking PDF manually.</p>
+<p id="line-238" class="phone s01"><cite>Manu Sporny:</cite> the others have PDF templates I don't want to name customers but we are working with at least two that use Adobe products that have templated PDFs that go through Adobe processing systems to produce this thing and us asking them to produce a different template from templating mechanism from…</p>
+<p id="line-239" class="phone s01"><cite>Manu Sporny:</cite> what they use today I think would be problematic that that's the main point I'm trying to make is …</p>
+<p id="line-240" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see.</p>
+<p id="line-241" class="phone s01"><cite>Dmitri Zagidulin:</cite> So this is for a particular existing customer. Okay. that's slightly different.</p>
+<p id="line-242" class="phone s01"><cite>Manu Sporny:</cite> yeah, I don't know the details.</p>
+<p id="line-243" class="phone s01"><cite>Dmitri Zagidulin:</cite> And they literally open up the PDF ask me</p>
+<p id="line-244" class="phone s01"><cite>Benjamin Young:</cite> No, they Yeah.</p>
+<p id="line-245" class="phone s01"><cite>Manu Sporny:</cite> They said they have PDFs for that they issue for, K through 12 and they use the Adobe tooling to do that. so that's the</p>
+<p id="line-246" class="phone s01"><cite>Benjamin Young:</cite> But we can dig into this privately, Manu, but typically that means that they're generating a whole bunch of inert PDFs that are populated from a data source through an Adobe template engine thing. And the keyword there is Adobe that it's not something that us wallet implementers are going to hoist into a wallet certainly not on a phone to take a PDF file and inject live data from a verifiable credential to then show the PDF. So anyway, this is the whole can of worms that we can and should open.</p>
+<p id="line-247" class="phone s01"><cite>Benjamin Young:</cite> But definitely a side quest from what this PR was intending to do. and in so far as we have the shape of this single class with the name of some kind and we're going to lean on render suite then I think we can start to refactor a lot of this stuff. and one of which are the two current existing suites.</p>
+<p id="line-248" class="phone s01"><cite>Manu Sporny:</cite> Plus one of the I guess I'd like to understand what's being proposed, So let's say we do want something output as a PDF. what are we proposing that we can kind of put in front of Adobe and see what they think and put in front of some of these people generating these PDF certificates for education and…</p>
+<p id="line-249" class="phone s01"><cite>Manu Sporny:</cite> and get some feedback from them on how much this would</p>
+<p id="line-250" class="phone s01"><cite>Benjamin Young:</cite> Yeah, as the number of hands flying up shows we're past time.</p>
+<p id="line-251" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, we are past time…</p>
+<p id="line-252" class="phone s01"><cite>Dmitri Zagidulin:</cite> but go ahead. Yeah.</p>
+<p id="line-253" class="phone s01"><cite>Benjamin Young:</cite> There's loads of options to answer that question. If we want to signal the letters PDF in the document so Adobe doesn't scamper off, that's also possible. the render sweep value is, I think, just the wrong place to put it. It doesn't mean there's not a way to say I want this to result in a PDF. There's a whole host of questions about who does that, when they do it, how do they do it through, and as long as the levers are there to express each one of these scenarios of I have HTML or SVG and I want you to download it as a PDF and we're okay with the wallet doing that or I have a PDF template and I want you the wallet to populate it with the VC data and then give the customer a PDF to download. those are the scenarios.</p>
+<p id="line-254" class="phone s01"><cite>Benjamin Young:</cite> I think we have most of the handles in the data already, accordances. it's a whole other PR and a much bigger conversation, but we can continue to signal to Adobe that their three favorite letters are still okay.</p>
+<p id="line-255" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed to Dave real quick. You had a question or…</p>
+<p id="line-256" class="phone s01"><cite>Dmitri Zagidulin:</cite> comment. Right.</p>
+<p id="line-257" class="phone s01"><cite>Dave Longley:</cite> I was just going to say let's make the PDF thing a new issue.</p>
+<p id="line-258" class="phone s01"><cite>Dave Longley:</cite> And I was also going to briefly mention digital wallets won't necessarily be the only renderers. You could present somewhere and then some other tooling on the verification side could render something and maybe they hand you a PDF as a download. So there's a lot of options.</p>
+<p id="line-259" class="phone s01"><cite>Dmitri Zagidulin:</cite> Plus one to making it a separate issue and letting Adobe weigh in. All right. thank you so I think we're at a good place. Benjamin, thank you so much for opening the PDF the PR and sounds like we have the next direction to move in. Thanks all. see you in a handful of weeks post holidays.</p>
+<p id="line-260" class="phone s01"><cite>Dmitri Zagidulin:</cite> Cheers.</p>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
