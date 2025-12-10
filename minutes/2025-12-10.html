@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 10 December 2025</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>10 December 2025</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/21809461-ceae-40a9-9393-b528e4d78c9c/20251210T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/12/10-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, denkeni, dlongley, dmitriz, hiroyuki, hsano, isaiah_inuwa, ivan, jandrieu, JennieM, JoeAndrieu, KevinDean, manu, Phil-ASU, phila, TallTed</dd>
+<dt>Regrets</dt><dd>brentz</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>KevinDean, JoeAndrieu</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4e87">Recap the discussion from TPAC and outline the plans for further developing the new charter.</a></li>
+<li><a href="#e831">Render and Confidence methods</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+
+<section>
+<h3 id=4e87>Recap the discussion from TPAC and outline the plans for further developing the new charter.</h3>
+<p id=207a class=irc><cite>&lt;phila&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/edit?gid=1778386372#gid=1778386372">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1Wpm0oz56VuSGEmQ51HwZAO9zqM5tSYVNJME2O907eRQ/<wbr>edit?gid=1778386372#gid=1778386372</a></p>
+<p id=b8a3 class="phone s01"><cite>Phila:</cite> When we were in Kobe, we spent a good chunk of our F2F looking at our draft charter, talking about the various pieces of work we wanted included and categorized them.<br>
+<span id=d1ea>… It was that discussion at TPAC that put down names for editor, test suites, etc., assessing what the level of interest in each of the six work items was.</span><br>
+<span id=9f02>… We assigned them as &quot;yes, definitely&quot; and &quot;yes, if we can&quot;.</span></p>
+<p id=adef class=irc><cite>&lt;ivan&gt;</cite> <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a></p>
+<p id=d7f9 class=irc><cite>&lt;phila&gt;</cite> draft charter doc <a href="https://pr-preview.s3.amazonaws.com/iherman/vc-charter-2026/pull/9.html">https://<wbr>pr-preview.s3.amazonaws.com/<wbr>iherman/<wbr>vc-charter-2026/<wbr>pull/<wbr>9.html</a></p>
+<p id=f84a class="phone s01"><cite>Phila:</cite> Based on that discussion, we ended up with the current version of the charter.<br>
+<span id=1a7d>… That, as far as I'm aware, is the draft charter to push to the next stage if that's what the group wants to happen.</span></p>
+<p id=2b82 class="phone s02"><cite>Ivan:</cite> For the time being, it's a private copy in my private GitHub area.<br>
+<span id=0247>… We need to put it into W3C. I can transfer the repository to W3C.</span></p>
+<p id=eca0 class="phone s02"><cite>ivan:</cite> once this group approves the move we can move it through process<br>
+<span id=3490>… in ~6 weeks we could then move to AC review, maybe in February</span><br>
+<span id=8d8e>… Be good to start ASAP</span></p>
+<p id=ffff class="phone s01"><cite>phila:</cite> the result of PR #9 is what we are discussing<br>
+<span id=16d9>… starting in April 2026 and running 2 years</span><br>
+<span id=25ac>… There's a list of deliverables</span><br>
+<span id=f841>… many are already in flight: renderMethod is at FPWD</span><br>
+<span id=2e75>… same is true for confidence method document</span><br>
+<span id=3943>… For the stuff we discussed at TPAC, the VCALM spec</span><br>
+<span id=5790>… is already well advanced</span><br>
+<span id=03fb>… We would be chartered to create that as a W3C Recommendation</span><br>
+<span id=5d2c>… Similar for VC Barcodes</span><br>
+<span id=b81b>… and the Verifiable Issuers and Verifiers Work, which may not be as advanced as others in the list</span><br>
+<span id=51a9>… However, we did discuss that work in Kobe.</span><br>
+<span id=3fb6>… We had a workshop the day before. Kevin presented some of his work at GS1</span><br>
+<span id=19e9>… and Steve [Kappel] and [ivan Merrin?] also presented</span><br>
+<span id=a320>… A VP can present multiple credentials.</span><br>
+<span id=e100>… There's a desire to link credentials independent of a VP</span></p>
+<p id=6725 class=irc><cite>&lt;ivan&gt;</cite> s/\[Kappel\]/Capell/</p>
+<p id=4b45 class="phone s01"><cite>phila:</cite> As well as accompanying credentials that establish an issuers authority wrt to issuing accompanying credentials<br>
+<span id=e28d>… So that's the current plan.</span><br>
+<span id=0668>… Any comment regarding what might be missing?</span></p>
+<p id=f5cd class="phone s02"><cite>ivan:</cite> it's not on there, but there were discussions in Chinese community to bring in cryptosuite based on SM2?<br>
+<span id=9bc2>… at this moment, we should decide if we are fine with taking that on, assuming we hit the rest of requirements</span></p>
+<p id=852a class="phone s01"><cite>phila:</cite> if we're going to here about it, that would be during refinement.</p>
+<p id=f6f7 class="phone s02"><cite>ivan:</cite> the AC review is too late.</p>
+<p id=5c37 class="phone s01"><cite>phila:</cite> so let's reach out to those folks</p>
+<p id=dbdd class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note SM2 cryptosuites (would be fine) and to note full review showed no issues.</p>
+<p id=90d4 class="phone s02"><cite>ivan:</cite> I'll talk with the Chinese tomorrow</p>
+<p id=5862 class="phone s03"><cite>manu:</cite> yes, let's include this work. Is there a draft?</p>
+<p id=3eee class=irc><cite>&lt;dlongley&gt;</cite> +1 to put it under tentative deliverables</p>
+<p id=9d77 class="phone s02"><cite>ivan:</cite> I have nothing I can put there. I need a dorcument reference, title, etc. Which I don't have.<br>
+<span id=8d21>… If it comes, I'll put it in the list depending on how mature the document is.</span></p>
+<p id=3826 class="phone s03"><cite>manu:</cite> I'm just voicing that we should figure out how to put that in scope</p>
+<p id=be8c class=irc><cite>&lt;dlongley&gt;</cite> (assuming their draft will be provided by the potential editors)</p>
+<p id=e9ad class="phone s02"><cite>ivan:</cite> do you have references?  But even then, we can't add it without explicit agreement</p>
+<p id=4230 class="phone s03"><cite>manu:</cite> I recall seeing something</p>
+<p id=d450 class="phone s02"><cite>ivan:</cite> we have a global team meeting tomorrow. I'll talk about the FPWD and expand to new charter.<br>
+<span id=b3df>… I'll bring this to them</span></p>
+<p id=fa47 class="phone s03"><cite>manu:</cite> I did do a top-to-bottom read of the charter and it reflects what I thought we'd agreed to in TPAC. No suggested changes yet<br>
+<span id=ed11>… We do list the threat model in other deliverables. That is significant work that needs to be done.</span><br>
+<span id=e64d>… I'm currently talking with another external body that isn't on the list. Do we need to add that? I'm trying to get them to join as W3C members.</span></p>
+<p id=0c83 class="phone s02"><cite>ivan:</cite> the problem is if we significantly change charter during AC review, then we have to make another review cycle.<br>
+<span id=63e8>… I'd prefer to get all of these things done by end of Jan/Feb before we go to AC</span></p>
+<p id=5849 class="phone s03"><cite>manu:</cite> Ok. I have a meeting with them today and I'll get an answer</p>
+<p id=4174 class="phone s01"><cite>phila:</cite> Sounds like Ivan is going to talk to our Chinese candidate and if they are on board, we'll include it. Anyone opposed to that?</p>
+<p id=e54c class=summary>[crickets]</p>
+<p id=938b class="phone s01"><cite>phila:</cite> Hearing no opposition, we are good with including the SM2 work in the charter on those terms<br>
+<span id=f19c>… Reviewing more in the charter. We will maintain the existing recommendation.</span></p>
+<p id=8fe1 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say I thought we were clear on Class 4</p>
+<p id=ff1b class="phone s04"><cite>JoeAndrieu:</cite> I thought that at TPAC we had accepted that we were making class 4 changes.<br>
+<span id=5429>… In particular, there are class 4 changes I've been arguing for in GitHub. I don't know if there's a misunderstanding.</span></p>
+<p id=3e05 class="phone s01"><cite>phila:</cite> There are notes I will put in the chat.</p>
+<p id=4fd3 class=irc><cite>&lt;phila&gt;</cite> From the charter &quot;No new normative features will be introduced for the following specifications, except as needed to address any serious privacy or security issues that arise, or to support the new Recommendations produced by the group.&quot;</p>
+<p id=2fe6 class="phone s01"><cite>phila:</cite> ... The charter at the moment does not allow Class 4 change<br>
+<span id=c506>… That doesn't allow us to say, &quot;I've got a good idea, I would like to see VCDM adjusted thus...&quot;.</span><br>
+<span id=eb91>… Is that a problem, Joe?</span></p>
+<p id=edff class="phone s04"><cite>JoeAndrieu:</cite> Yes, there's a phone home problem we need to address. This is a privacy problem.</p>
+<p id=1152 class="phone s02"><cite>Ivan:</cite> I added to the potential privacy problems a few weeks ago. There are changes in the PRs we're looking at that should address these issues.<br>
+<span id=8bfe>… I thought these would cover your concerns.</span></p>
+<p id=6437 class=irc><cite>&lt;dlongley&gt;</cite> +1 that the &quot;privacy&quot; clause in the charter covers phone home considerations</p>
+<p id=26e2 class="phone s02"><cite>Ivan:</cite> More generally, I had an issue and a problem with explaining what had happened. The text previously referred to the class 4 changes in the process document, but the whole class 4 change is about changing an existing recommendation.</p>
+<p id=7ecb class=irc><cite>&lt;manu&gt;</cite> My understanding of the new text is the same as Ivan and Dave Longley's -- which is that Joe's concern is addressed by it being a &quot;serious privacy issue&quot;.</p>
+<p id=10000 class="phone s02"><cite>Ivan:</cite> I added a list of all documents to be changed in the new version. In the latest PR, I removed the reference to the process document regarding class 4 changes.<br>
+<span id=9dca>… The question is, is it really what we want, or do we want to have all seven recommendations going through the working draft? Or do we do it only for the documents we change?</span><br>
+<span id=2f7d>… It is not clear to me from the VC meetings at TPAC and unfortunately I wasn't there.</span></p>
+<p id=f280 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to acknowledge the inclusion of privacy does address my concerns</p>
+<p id=0cac class="phone s02"><cite>Ivan:</cite> Is it OK as it stands today or not?</p>
+<p id=375d class="phone s04"><cite>JoeAndrieu:</cite> I think you're right, Ivan, I had heard something different at TPAC but I'm OK with what's there now with the notes about privacy.<br>
+<span id=6351>… You raised a separate issue, do we want all seven recommendations going through the working draft. I'm not clear on what that means.</span></p>
+<p id=ad96 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to suggest expectations w/ &quot;Maintenance Specifications&quot;.</p>
+<p id=d762 class="phone s01"><cite>PhilA:</cite> If we make any changes to a recommendation, we have a high bar to get through.</p>
+<p id=bd16 class="phone s03"><cite>manu:</cite> The whole reason that we wanted to limit the working group from doing massive changes was because we had people in the group who would participate in, say, 2.0, but not later, and they didn't want people coming in later to undo everything.</p>
+<p id=b431 class="phone s03"><cite>manu:</cite> The current language captures that as well. If there is a serious issue we can act on it, but we can prevent folks from radical breaking changes</p>
+<p id=151f class=irc><cite>&lt;dlongley&gt;</cite> +1 to Manu, current language captures that the specs are stable, only serious privacy or security issues need to be addressed</p>
+<p id=070d class="phone s03"><cite>manu:</cite> unless they can convince us its a serious issue (privacy/security)<br>
+<span id=f77f>… So, yes, we have to go through the whole process.</span><br>
+<span id=db73>… +1 for going through the entire process again.</span><br>
+<span id=b754>… My only concern there is that since we are doing a point release, we really don't need to go through the massive amount of work that goes into a horizontal review. Let's focus on the changes during review</span></p>
+<p id=68e8 class="phone s02"><cite>ivan:</cite> here's a specific Q. Let's say that during the 2 years we only do minor editorial changes to ECDSA suite. Do we still go through a republishing process? Or we don't do it.</p>
+<p id=380b class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to say &quot;yes&quot; :)</p>
+<p id=ab77 class="phone s02"><cite>ivan:</cite> In other words, there are 7 recommendations, will we go from FPWD to REC regardless of the level of change</p>
+<p id=a38c class="phone s03"><cite>manu:</cite> I think the answer is yes, as much as I don't want to say that.<br>
+<span id=2f28>… Let's talk about control identifier</span></p>
+<p id=e4e9 class="phone s03"><cite>manu:</cite> unfortunately, we will likely need to republish everything</p>
+<p id=253e class="phone s02"><cite>ivan:</cite> Ok. then we'll start with FPWD for each. That makes the charter good as it stands.</p>
+<p id=9ac3 class="phone s01"><cite>phila:</cite> be careful what you wish for.<br>
+<span id=0b15>… The stability of diligence is why people build on our standards.</span></p>
+<p id=92da class="phone s01"><cite>phila:</cite> Anything else about the issue of expecting to make changes only if security/privacy concerns come to the fore?</p>
+<p id=a6c2 class="phone s05"><cite>Phil-ASU:</cite> what about advancing quantum-safe work?</p>
+<p id=58f7 class="phone s02"><cite>ivan:</cite> next section</p>
+<p id=c0b3 class="phone s01"><cite>phila:</cite> at TPAC there were other documents we discussed and there wasn't the same level of participation (editors, implementations, etc.)<br>
+<span id=7eef>… that does not mean that quantum, wireless, or refresh work can't be done. These are listed as tentative deliverables.</span><br>
+<span id=e0a8>… So should we have capacity and willingness, then we can.</span><br>
+<span id=eb0a>… Apart from the SM2 work mentioned earlier, anything else the group wants?</span></p>
+<p id=98d8 class=summary>[crickets]</p>
+<p id=22d2 class="phone s01"><cite>phila:</cite> That's the right answer.<br>
+<span id=1478>… Threat Model for VCs</span></p>
+<p id=1bef class="phone s04"><cite>JoeAndrieu:</cite> We're going to need a threat model whether it's a separate deliverable or not.</p>
+<p id=fec7 class=irc><cite>&lt;Phil-ASU&gt;</cite> Thanks - I was concerned in the current discussion as to whether that uncertainty impacts the recharter but you've addressed this.</p>
+<p id=10001 class="phone s04"><cite>JoeAndrieu:</cite> The security considerations that Simone is leading requires one.<br>
+<span id=cfd2>… It may be a single threat model for all threats or it might be a shared diagram if the threats are different for each document.</span><br>
+<span id=8cb2>… For each of those specs, we have identify the threats specific to each, which is a lot of work.</span><br>
+<span id=10002>… We'll have a draft of the threat modeling guide from the SING that we can use for this.</span><br>
+<span id=0524>… I don't think there's any impact on the charter.</span></p>
+<p id=b814 class="phone s01"><cite>phila:</cite> we have plenty of agency if we have the capacity</p>
+<p id=5739 class="phone s03"><cite>manu:</cite> +1 to that. I'll note the implementation interoperability dashboard exists as CanIVC.com?<br>
+<span id=c645>… we talking with W3C about donating that</span><br>
+<span id=4439>… probably not a change to the charter</span></p>
+<p id=5180 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about scope of that work?</p>
+<p id=5529 class="phone s04"><cite>JoeAndrieu:</cite> This is giving CanIVC to W3C. If the working group were running that site, that's the working group doing something I haven't seen it do before.</p>
+<p id=6110 class="phone s03"><cite>manu:</cite> the web platform test is similar to this<br>
+<span id=ad1c>… but it shouldn't be a major focus of the WG. We don't have firmer answers about how we run it.</span></p>
+<p id=7859 class="phone s06"><cite>bigbluehat:</cite> I think the governance model questions are still being sorted out with W3C. Code is not something they've done a tone of. But there is interest in continuing this work.<br>
+<span id=66d8>… Having it on the charter is a signal of support to handle it here. Otherwise, we could take it to CCG.</span><br>
+<span id=a972>… Worth considering.</span></p>
+<p id=f784 class="phone s01"><cite>phila:</cite> These are things the group may do. Not required. Good work. Good will to date.<br>
+<span id=d8c6>… on to Render Method and Confidence Method</span><br>
+<span id=da96>… Before that, we do have collaborators (formerly liasons) do we need to reach out to any of these?</span></p>
+<p id=a2ab class="phone s02"><cite>ivan:</cite> i think that list is fairly mature.</p>
+<p id=8ba9 class="phone s02"><cite>ivan:</cite> we can reach out once the group is chartered.</p>
+<p id=ffb7 class="phone s01"><cite>phila:</cite> Formally, we HAVE to contact each of these groups.<br>
+<span id=c3f5>… Do we need to reach out to ALL of them? Are these all here for a reason?</span></p>
+<p id=3953 class="phone s03"><cite>manu:</cite> Yes. They are there for a reason.<br>
+<span id=b225>… we reach out to them via updates from github.</span><br>
+<span id=7b80>… They are getting the feed of what issues we are dealing with, with links.</span><br>
+<span id=c11d>… We don't have a direct liason, but we have an automated mechanism that reduces the burden.</span><br>
+<span id=013d>… if what we did with 2.0 is good enough, we're ready on this score</span></p>
+<p id=4c09 class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG would like the current draft charter at <a href="https://pr-preview.s3.amazonaws.com/iherman/vc-charter-2026/pull/9.html">https://<wbr>pr-preview.s3.amazonaws.com/<wbr>iherman/<wbr>vc-charter-2026/<wbr>pull/<wbr>9.html</a> for Charter refinement</p>
+<p id=718d class="phone s02"><cite>ivan:</cite> can I merge the PR and use a proper URL (instead of Preview)</p>
+<p id=0b20 class="phone s01"><cite>phila:</cite> Anyone not want to merge?</p>
+<p id=23e1 class="phone s02"><cite>ivan:</cite> [crickets] MERGED<br>
+<span id=d3c9>… new URL pending</span></p>
+<p id=e635 class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG would like the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> for formal Charter refinement</p>
+<p id=2e70 class="phone s03"><cite>manu:</cite> I'm trying to propose a rewording</p>
+<p id=b471 class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG would like the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> to be put forward for formal Charter refinement</p>
+<p id=e160 class="phone s03"><cite>manu:</cite> The VCWG approves for review</p>
+<p id=0aa9 class=summary>ack</p>
+<p id=6aac class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG approves the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> to be put forward for formal Charter refinement, noting the possible addition of the SM2 cryptosuite as a tentative work item addition</p>
+<p id=d248 class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG approves the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> to be put forward for formal Charter refinement, noting the possible addition of the SM2 cryptosuite as a tentative work item</p>
+<p id=82c4 class="phone s02"><cite>ivan:</cite> not yet clear to me</p>
+<p id=c3ee class=irc><cite>&lt;dlongley&gt;</cite> +1 to Ivan's proposal</p>
+<p id=92ce class="phone s02"><cite>ivan:</cite> can I put the document NOW or do I have to wait for SM2. I propose we put it in right away.</p>
+<p id=814a class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: The VCWG approves the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> to be put forward for formal Charter refinement</p>
+<p id=e80c class=irc><cite>&lt;Phil-ASU&gt;</cite> +1 to Ivan's proposal as well</p>
+<p id=f02a class="phone s01"><cite>phila:</cite> Ok.</p>
+<p id=b5d7 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=35d7 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=b5d8 class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=f5d7 class=irc><cite>&lt;Phil-ASU&gt;</cite> +1</p>
+<p id=f5d8 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=35d8 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=35d9 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=f5d9 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=35da class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=f5da class=irc><cite>&lt;KevinDean&gt;</cite> +1</p>
+<p id=75d9 class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=6389 class=resolution><strong>RESOLUTION:</strong> The VCWG approves the current draft charter at <a href="https://iherman.github.io/vc-charter-2026/">https://<wbr>iherman.github.io/<wbr>vc-charter-2026/</a> to be put forward for formal Charter refinement</p>
+<p id=e10c class="phone s01"><cite>phila:</cite> thank you. That's a great milestone to get to.<br>
+<span id=dde7>… last minute for renderMethod and confidenceMethod</span></p>
+</section>
+
+<section>
+<h3 id=e831>Render and Confidence methods</h3>
+<p id=bba3 class=irc><cite>&lt;manu&gt;</cite> JoeAndrieu: I need access to the Spec Refinement meeting infrastructure to start meetings.</p>
+<p id=1771 class=irc><cite>&lt;manu&gt;</cite> Manu: I can fix that for you, Joe.</p>
+<p id=698d class=irc><cite>&lt;manu&gt;</cite> JoeAndrieu: We are making progress on Confidence Method... and also Render Method, no blockers.</p>
+<p id=a633 class=irc><cite>&lt;TallTed&gt;</cite> i/what i usually see /&lt;TallTed&gt; +1</p>
+<p id=d756 class="phone s01"><cite>phila:</cite> we've reach the next phase with Charter.<br>
+<span id=e641>… next meeting Jan 14.</span><br>
+<span id=7cae>… Leave it to editors of rendermethod and confidence method next week</span><br>
+<span id=5dd0>… Dmitri and Joe, is one of you meeting this time next week</span></p>
+<p id=edcf class=summary>next wednesday we'll do confidenceMethod. Then renderMethod in January.</p>
+<p id=f80c class="phone s02"><cite>ivan:</cite> please try to annunciate subclass and superclass well.</p>
+<p id=61d0 class="phone s01"><cite>phila:</cite> thanks everyone</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#6389">The VCWG approves the current draft charter at https://<wbr>iherman.github.io/<wbr>vc-charter-2026/ to be put forward for formal Charter refinement</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
