@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2026-01-21</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Dave Longley, Denken Chen, Dmitri Zagidulin, Elaine Wooton, Hiroyuki Sano, Ivan Herman, Joe Andrieu, Kevin Dean, Manu Sporny, Michael Jones, Patrick St-Louis, Phil Archer, Phillip Long, Ted Thibodeau Jr, Will Abramson</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic-recording-infrastructure">Recording Infrastructure Updates</a></li>
+<li><a href="#topic-confidence-levels-vcdm">Confidence Levels and VCDM</a></li>
+<li><a href="#topic-biometric-portraits-pr">Biometric Portraits PR</a></li>
+<li><a href="#topic-confidence-levels-evidence">Confidence Levels in Evidence Field</a></li>
+<li><a href="#topic-biometric-facial-picture-pr">Facial Picture Biometric PR</a></li>
+<li><a href="#topic-privacy-concerns-biometrics">Biometric Privacy Concerns</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic-recording-infrastructure">Recording Infrastructure Updates</h3>
+<p id="fragment-0" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I did not see that as I was looking in other chat channels. we can go get started. our plan was to just go through our issues together. go to any final decisions on labels we might need. specifically, to the version of the first that's going to go to CR. so let me pull that up and share screen. Does anyone else have anything to add to the agenda other than reviewing issues?</p>
+<p id="fragment-1" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead, Manu</p>
+<p id="fragment-2" class="phone s01"><cite>Manu Sporny:</cite> I have one thing on a request from Ivan about the recording infrastructure.</p>
+<p id="fragment-3" class="phone s01"><cite>Manu Sporny:</cite> Just a very quick three minute update on that.</p>
+<p id="fragment-4" class="phone s01"><cite>Manu Sporny:</cite> So, that was the first thing. when you join the meeting, it asks you if you're okay with recording or not. I don't know if that replaces or does anyone object to recording the meeting thing. that's a question for Brent probably or one of the Phil W3C process is not clear on what exactly is acceptable does you clicking on a button saying that the meeting's being clicking okay mean that you're okay with it? would imagine so but that's the first question.</p>
+<p id="fragment-5" class="phone s01"><cite>Manu Sporny:</cite> but Joe, I'd just probably do the standard, is until we have an answer, just ask if anybody objects to the recording. the other update is that one of the things that was a challenge was not being able to say things off the record. I found out that if the chairs create a breakout room, you can say things off the record. So, you go into the breakout room, the breakout room is not recorded. it does not show up. In fact, all of us can jump into the breakout room. Someone can say, we can have a whole discussion off the record and then once we're done with the discussion, we can come back into the main room. that is not nearly as nice as just telling the scribe to stop scribing, but it is possible. So, I don't know if that meets your saying things off thereord concern.</p>
+<p id="fragment-6" class="phone s01"><cite>Manu Sporny:</cite> and then the final concern is getting the issues and the minutes linked together with topics. I'm still thinking about the best way to do that. the only option I can think of is that as people drop issues into the chat channel, they are timestamped. we can have the bot scan through the links that people posted and inject them into the minutes. and at that point, I think the issue the script that we have might be able to pick up on that and do the appropriate linking.</p>
+<p id="fragment-7" class="phone s01"><cite>Manu Sporny:</cite> So I think those are the proposed upgrades to the infrastructure that would hopefully meet upon your remaining concerns about using the infrastructure and…</p>
+<p id="fragment-8" class="phone s01"><cite>Manu Sporny:</cite> everyone else's, I mean, it's not just with the concerns. so I'll stop there. people yeah that would be just the chat channel in Google Meet,…</p>
+<p id="fragment-9" class="phone s01"><cite>Joe Andrieu:</cite> I have a question about the last bit you said I heard you say there's a mechanism whereby someone on the call could list an issue in some chat channel and…</p>
+<p id="fragment-10" class="phone s01"><cite>Joe Andrieu:</cite> that would be processed. Could you just walk through what that flow is again? Yeah.</p>
+<p id="fragment-11" class="phone s01"><cite>Manu Sporny:</cite> so we're meeting right now and then there's a little text box in the bottom right of the screen. You click that, you paste the link in there and that goes into a separate file for whatever reason. It goes into a separate file. We would have to update. Currently, we totally ignore that file. it's just dropped on the floor, And then deleted after 30 days. and nobody has access to it but the meeting organizers. we can modify the process so that the bot retrieves that file and it only looks for GitHub links or it just looks for URLs and if it finds a URL it'll inject that URL at the appropriate timestamp in the transcript.</p>
+<p id="fragment-12" class="phone s01"><cite>Manu Sporny:</cite> So it will show up in the transcript and then if it shows up in the transcript I think Avo PA's tool can then do the appropriate linking to the GitHub issue for example. Yep.</p>
+<p id="fragment-13" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Thanks,…</p>
+<p id="fragment-14" class="phone s01"><cite>Joe Andrieu:</cite> Okay.</p>
+<p id="fragment-15" class="phone s01"><cite>Phil Archer:</cite> Just very briefly,…</p>
+<p id="fragment-16" class="phone s01"><cite>Phil Archer:</cite> I think what Brent said about this was as long as you say at the start of the meeting, this is what we're doing. This is how we're recording Any objections? and if there are no objections, you're good to Carry on. I think it's as simple as that. But I think you do need to say it out loud every time.</p>
+<p id="fragment-17" class="phone s01"><cite>Joe Andrieu:</cite> Appreciate that, Phil.</p>
+<p id="fragment-18" class="phone s01"><cite>Ivan Herman:</cite> Yeah. …</p>
+<p id="fragment-19" class="phone s01"><cite>Ivan Herman:</cite> two questions. So, I try to answer both. I don't really know what it means to go to another room. I mean, maybe we will find some time to test it. Not necessarily today, but at some point. I mean it sounds very convoluted. does it mean that some people will leave this chat and going to another one so we don't hear them anymore or I don't know what it means. but it sounds extremely convoluted in any case. The other thing with the URL that's not necessarily enough because we need two things. one is in some way or other control the sectioning and then the adding of the links.</p>
+<p id="fragment-20" class="phone s01"><cite>Ivan Herman:</cite> the adding of the links okay you can do that and that's great and that's part of the answer but what Pant one script does is at the moment I think that he picks the link at the very beginning of a section either in the section title or in the first line of that section and then he copies the section itself into the GitHub. at the moment, the sectioning is a bit Yeah, I see Dave Longlin do that. So, that we could use the topic like we do it in the usual IRC channel and add the URL into the topic or right after the topic.</p>
+<p id="fragment-21" class="phone s01"><cite>Ivan Herman:</cite> If you can pick these two things together and pull it into the generated minutes, then I think that Panton's script will roll.</p>
+<p id="fragment-22" class="phone s01"><cite>Ivan Herman:</cite> And I haven't written that one, so he is the final arbiter on that, but I think it would work.</p>
+<p id="fragment-23" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thanks Ivon.</p>
+<p id="fragment-24" class="phone s01"><cite>Joe Andrieu:</cite> I should have done this as soon as you recommended it, Phil. I do think we're recording this. So, this is notice that we are recording this and your continued participation is acceptance of that fact. So, thank you for being on the call and Phil, thanks for mentioning that and saying that's what we should do. back to you, You're next.</p>
+<p id="fragment-25" class="phone s01"><cite>Manu Sporny:</cite> Yes. So, what Dave said is what we could do. I think that would address the concern or, it would address that. Right now, the topics are autogenerated by the LLM. So the LLM reads the entire transcript and then it breaks it into four to six topics and then bunches stuff as it sees fit. we can get that back into a manual mode so that if somebody explicitly puts topic subtopic colon in a GitHub issue, it'll have the same function as it does today.</p>
+<p id="fragment-26" class="phone s01"><cite>Manu Sporny:</cite> As far as the meeting,…</p>
+<p id="fragment-27" class="phone s01"><cite>Ivan Herman:</cite> The you said GitHub issue.</p>
+<p id="fragment-28" class="phone s01"><cite>Ivan Herman:</cite> You mean put the topic into the meeting chat?</p>
+<p id="fragment-29" class="phone s01"><cite>Manu Sporny:</cite> that's correct. Yeah, but I think…</p>
+<p id="fragment-30" class="phone s01"><cite>Ivan Herman:</cite> That's not…</p>
+<p id="fragment-31" class="phone s01"><cite>Manu Sporny:</cite> if you put subtopic colon in the GitHub link,…</p>
+<p id="fragment-32" class="phone s01"><cite>Ivan Herman:</cite> what you said.</p>
+<p id="fragment-33" class="phone s01"><cite>Manu Sporny:</cite> it will go and create a subtopic and title it appropriately and all that kind of stuff. I think that works with one of the tools. I don't know which one. sure.</p>
+<p id="fragment-34" class="phone s01"><cite>Ivan Herman:</cite> That works only the old one. that's the whole script which I put aside. so you cannot get the title back from the issue and generate the normal title or you have to somehow compromise P want to do the work for that because he took that over yeah of</p>
+<p id="fragment-35" class="phone s01"><cite>Manu Sporny:</cite> I mean, it's all software.</p>
+<p id="fragment-36" class="phone s01"><cite>Manu Sporny:</cite> we can add the feature where right it's clear how to do the technical implementation we just need to find out who gets to carry that ball. the other thing about breakout rooms it's not really that complicated that the chair there's a little button in the bottom right see all those little dots right by the padlock icon.</p>
+<p id="fragment-37" class="phone s01"><cite>Ivan Herman:</cite> Come on.</p>
+<p id="fragment-38" class="phone s01"><cite>Manu Sporny:</cite> the chair would click meeting tools, they would click breakout room, and they would force all of us into the room if somebody wants to say something off the record. it is more involved. but, I don't think it's complicated. It's just, the chairs push, someone says, "I want to say something off the record." they type that into the chat, the chairs see it.</p>
+<p id="fragment-39" class="phone s01"><cite>Manu Sporny:</cite> the chairs force everyone into a breakout room or even a subset you can pick a subset of people and then once the conversation's over the chairs close the breakout room and…</p>
+<p id="fragment-40" class="phone s01"><cite>Ivan Herman:</cite> Okay.</p>
+<p id="fragment-41" class="phone s01"><cite>Manu Sporny:</cite> we're all pushed back into this room. So it's just the chairs clicking two buttons that does that process.</p>
+<p id="fragment-42" class="phone s01"><cite>Manu Sporny:</cite> That's it.</p>
+<p id="fragment-43" class="phone s01"><cite>Joe Andrieu:</cite> Okay. …</p>
+<p id="fragment-44" class="phone s01"><cite>Joe Andrieu:</cite> I wanted to add two things. one, I agree with most of what you just said, Manu, about the breakout rooms. It's not as complicated as it sounds, but I do think it's a really high threshold compared to, hey, I need to say something that's off the record. and so that's just unfortunate. but if we have a topic that we're getting heated about, we could say, "Hey, let's move this to off the record so we have that option at least. it's just not ideal." But it sounds like we have some general consensus towards let's mine the chat log and we'll figure out how to leverage some of the tools and techniques in that we've been using in IRC over there. But my question is how do we prioritize and resource that work?</p>
+<p id="fragment-45" class="phone s01"><cite>Joe Andrieu:</cite> as Ivon mentioned, we have to get PA to help or someone else to help. Someone's got to actually write some code.</p>
+<p id="fragment-46" class="phone s01"><cite>Phillip Long:</cite> Oops.</p>
+<p id="fragment-47" class="phone s01"><cite>Manu Sporny:</cite> I can always do it in my spare time which is how we're currently using the system we have now that doesn't mean that I can commit to a timeline would love some help if somebody else wanted to jump in but if not it'll just happen when it happens especially, I just need to know that, if I go to the effort of building this thing that we're actually going to end up using it.</p>
+<p id="fragment-48" class="phone s01"><cite>Manu Sporny:</cite> I don't want to spend a bunch of time building something and then find out that someone's going to object to, the upgrades. That's it.</p>
+<p id="fragment-49" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, that makes sense.</p>
+<p id="fragment-50" class="phone s01"><cite>Joe Andrieu:</cite> So, let me ask the group. is there anyone…</p>
+<p id="fragment-51" class="phone s01"><cite>Ivan Herman:</cite> Sorry I wanted to answer money.</p>
+<p id="fragment-52" class="phone s01"><cite>Joe Andrieu:</cite> who has any concerns about using the chat in this way? I see Ivon's on the queue. Go ahead, Ivon.</p>
+<p id="fragment-53" class="phone s01"><cite>Ivan Herman:</cite> So I would propose with you or you and I as you prefer money talk to Kanttoan because he does maintain that script which is also an action which is used on various different working groups and some of the changes that he did was because so he is answering to pushes in some sense.</p>
+<p id="fragment-54" class="phone s01"><cite>Ivan Herman:</cite> So if we talk to him and he will tell us the whole thing is written in rust. I don't know whether that's a problem.</p>
+<p id="fragment-55" class="phone s01"><cite>Joe Andrieu:</cite> That's great.</p>
+<p id="fragment-56" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thanks Ivon. So this feels like we have a direction.</p>
+<p id="fragment-57" class="phone s01"><cite>Phillip Long:</cite> Okay.</p>
+<p id="fragment-58" class="phone s01"><cite>Joe Andrieu:</cite> We have folks who are interested in making it happen in Manu and we have resource constraints issues. So we'll put it on the queue but not expect it tomorrow. Manu I know it'll take Any other thoughts on that? All right. Let's move on to the issues. we have cherry picked a few of them although we don't have them flagged for that. But the first one is 12. confidence levels not sufficient on its own.</p>
+</section>
+<section>
+<h3 id="topic-confidence-levels-vcdm">Confidence Levels and VCDM</h3>
+<p id="fragment-59" class="phone s01"><cite>Joe Andrieu:</cite> Dan, why did we choose this one to talk about today? He said blocked by charter.</p>
+<p id="fragment-60" class="phone s01"><cite>Denken Chen:</cite> Yeah, let me take the look at this. So we had a agreement to add multiple subjects in the VCDN for more example description about the possibility of delegating mechanism or any relationship between the different subjects within the VC. So for example, I could add my family members to my medical pre prescriptions. So any of my family could hold that VC and present it to the drugstore to help me to get a drugs medicine.</p>
+<p id="fragment-61" class="phone s01"><cite>Denken Chen:</cite> So I think it's blocked by we need a next VC charter to have some modification within BCDM.</p>
+<p id="fragment-62" class="phone s01"><cite>Denken Chen:</cite> Yeah, that's it.</p>
+<p id="fragment-63" class="phone s01"><cite>Joe Andrieu:</cite> …</p>
+<p id="fragment-64" class="phone s01"><cite>Joe Andrieu:</cite> I thought we were just going to add some examples in our document. And it seems to me, at least as I am understanding how we're going to tackle this, we are not changing anything that's conformant. just giving an example. So, where did we get into trouble with the charter? I see Evvon. Are you still on the queue? Or is that old? Ivon, you're both muted and you have your hand raised, but I'm assuming that's old.</p>
+<p id="fragment-65" class="phone s01"><cite>Joe Andrieu:</cite> they can do I'm not sure why there would be a charter conflict if we're just adding an example into the confidence method spec.</p>
+<p id="fragment-66" class="phone s01"><cite>Denken Chen:</cite> Is it reasonable to lead in the competence method because it probably …</p>
+<p id="fragment-67" class="phone s01"><cite>Denken Chen:</cite> how do we describe the mechanism in the competence method about different credential subjects.</p>
+<p id="fragment-68" class="phone s01"><cite>Joe Andrieu:</cite> So today the VCDM has support for multiple credential subjects.</p>
+<p id="fragment-69" class="phone s01"><cite>Joe Andrieu:</cite> It's not usually led with.</p>
+<p id="fragment-70" class="phone s01"><cite>Denken Chen:</cite> Yes. Okay.</p>
+<p id="fragment-71" class="phone s01"><cite>Joe Andrieu:</cite> So some people don't understand that and are like, " how do I do these complex use cases that have different subjects involved? so the mechanism is already there as I understand it in VCDM. What do you think would need to be changed? Thank you.</p>
+<p id="fragment-72" class="phone s01"><cite>Denken Chen:</cite> So I'm thinking about what to describe for this confidence method. So for example, we already have spouse description in the credential subject in example 10 of VCDN. So we could take that example and describe more use cases in the compet in a new competence method. Right? Is that your visioning?</p>
+<p id="fragment-73" class="phone s01"><cite>Joe Andrieu:</cite> So, right, we could build an example based off of example 10. So, I agree with that.</p>
+<p id="fragment-74" class="phone s01"><cite>Joe Andrieu:</cite> Not sure yet where the charter is getting involved. Ivonne, I see that you're off mute and you reactivated your raised hand, so please go ahead.</p>
+<p id="fragment-75" class="phone s01"><cite>Ivan Herman:</cite> Yeah, I am sorry for the previous step.</p>
+<p id="fragment-76" class="phone s01"><cite>Ivan Herman:</cite> I was looking for the charter and got messed up with the windows.</p>
+<p id="fragment-77" class="phone s01"><cite>Phillip Long:</cite> Okay.</p>
+<p id="fragment-78" class="phone s01"><cite>Ivan Herman:</cite> So, there was a recent change on the charter proposal. I don't remember exactly when and that recent change allows us to change the already published recommendations. so I will read out loud. no, put it in the chat to make it clear. This is what the charter says about in this case VCDM.</p>
+<p id="fragment-79" class="phone s01"><cite>Ivan Herman:</cite> And I draw your attention to the point that if to support the new recommendations produced by the group. So put it clearly we have the right under the new charter to modify in this case the VCDM…</p>
+<p id="fragment-80" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead, man.</p>
+<p id="fragment-81" class="phone s01"><cite>Ivan Herman:</cite> if the new recommendations which is the one they are discussing require that convoluted way to say that we don't have to do anything with the chartered proposal in my view.</p>
+<p id="fragment-82" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one. I don't think there are any charter issues. with addressing this, I think we are ready for R in looking at the example on the screen. I think if we wanted to add a confidence method and associated with each spouse or sorry we just put it in each object the Jaden do would have a confidence method that would allow them to assert that they're that subject and then you'd have a confidence method for Morgan Doe as well.</p>
+<p id="fragment-83" class="phone s01"><cite>Manu Sporny:</cite> and it would allow either one of those people to say that they're the holder and then assert, that they're also that particular credential subject. so I hope this is a fairly straightforward thing. I think we have everything that we need to create an example here. That's it.</p>
+<p id="fragment-84" class="phone s01"><cite>Joe Andrieu:</cite> Thanks, V. I wrote down something that doesn't make any sense to me. my question was for you, ne. obviously if I looked at the charter text, I might be able to figure it out, but this says no new normative feature for those specifications. are render method and competence method in the set of those or are the things that really we haven't even quite gotten to a full 1.0 still open to normative changes?</p>
+<p id="fragment-85" class="phone s01"><cite>Joe Andrieu:</cite> I no that's a good point.</p>
+<p id="fragment-86" class="phone s01"><cite>Ivan Herman:</cite> Phil was in the queue or…</p>
+<p id="fragment-87" class="phone s01"><cite>Ivan Herman:</cite> do you want to answer me right now? so no those refer to we are maintaining a bunch of recommendations the ones that we had published about a year ago and…</p>
+<p id="fragment-88" class="phone s01"><cite>Phil Archer:</cite> Go forever.</p>
+<p id="fragment-89" class="phone s01"><cite>Joe Andrieu:</cite> Okay go ahead.</p>
+<p id="fragment-90" class="phone s01"><cite>Phil Archer:</cite> Don't worry.</p>
+<p id="fragment-91" class="phone s01"><cite>Joe Andrieu:</cite> Thanks. Okay.</p>
+<p id="fragment-92" class="phone s01"><cite>Ivan Herman:</cite> there are those original restriction that no new normative features will be introduced for the VCDM. So in this case the one that we are allowed to modify for these things is the VCDM.</p>
+<p id="fragment-93" class="phone s01"><cite>Phil Archer:</cite> So the confidence method or any of the other ones that are already in flight or planned we have the ability to update VCDM if we need to. but there will be screams around the room if we do that because if we need to update this BCDM and let's be honest we might but you've got to go through the whole process again with all the candidate w implementation reports and everything else. So yes, if we're working on a new specification which includes the confidence method, we can make it changes to the VCDM, but you got to be really sure you need to before you do that.</p>
+<p id="fragment-94" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thank you, Phil.</p>
+</section>
+<section>
+<h3 id="topic-biometric-portraits-pr">Biometric Portraits PR</h3>
+<p id="fragment-95" class="phone s01"><cite>Joe Andrieu:</cite> Okay, I think that's a great closure on this. I think I captured it on screen. Thanks, Phil. Any other thoughts on this issue? Otherwise, we'll move on to the thanks folks. Next one is 14 which we have as ready for PR and needs discussion.</p>
+<p id="fragment-96" class="phone s01"><cite>Joe Andrieu:</cite> Dacon, did you want to talk about this today or just review its status as we need to set up a deeper call? Thank you.</p>
+<p id="fragment-97" class="phone s01"><cite>Denken Chen:</cite> Okay, sorry. Okay. So, I'm just want to make sure the status like wait make it ready for today or do I need to prepare some early example for the spec before label it into ready for PR.</p>
+<p id="fragment-98" class="phone s01"><cite>Joe Andrieu:</cite> That is a great question. I'll give you my first blush response and people can chime in. I think if you see a clear path that makes sense to you that doesn't feel controversial, you can go and do a PR and my sense of it. But if you want feedback because there are choices you have to make and you'd like to get some input from the group before you commit to specex then we can talk about it some more. Manu go ahead.</p>
+<p id="fragment-99" class="phone s01"><cite>Manu Sporny:</cite> Yes, plus one to that. I don't think we should raise a PR before we talk to MOSIP about this because they have work in flight, that they are deploying in production. and if this doesn't work for them, then we're not doing the right thing, in my opinion. So we really need most engagement on this. I will also note that the biometric stuff is not as simple as it seems on the surface. There are all kinds of privacy concerns that It is probably going to be one of the most difficult features that we would do for confidence method. So I don't think we should underestimate how difficult this thing is going to be.</p>
+<p id="fragment-100" class="phone s01"><cite>Manu Sporny:</cite> for example, if we look at the MOSEP thing, there's a choice that you need to make around biometric templates. Which ones are you going to use? They are including things like iris template, all fingerprints, facial template, that makes me nervous. but it's the only way that they can identify some of the people that are in rural areas because those individuals have no other legitimate or government issued ID and they're not going to right yet they need to receive aid from the government to plant crops and raise livestock and things of that nature.</p>
+<p id="fragment-101" class="phone s01"><cite>Manu Sporny:</cite> So, all that to say, this is not a simple PR. and we should talk to MOSIP and we should try to see if we can align with them. And ideally, they would be the one proposing it. and ideally we start out with something easier. I don't know what an easy biometric is. I mean even the template formats there are multiple different template formats for everything Iris has three different standards facial templates have 50 different standards then so on and so forth.</p>
+<p id="fragment-102" class="phone s01"><cite>Manu Sporny:</cite> So just some feedback on this. this is not an easy thing. and it may be something that we want to wait until we pick some super simple thing and…</p>
+<p id="fragment-103" class="phone s01"><cite>Joe Andrieu:</cite> I want to plus one that last thought you had and…</p>
+<p id="fragment-104" class="phone s01"><cite>Manu Sporny:</cite> then wait for all the other complicated things in a next revision. that's it.</p>
+<p id="fragment-105" class="phone s01"><cite>Joe Andrieu:</cite> I think it moderates what I was expecting you might do. Denin I think with the Taiwan's digital ministry you are working on digital biometrics and so it may be that the incorporating MOSIP in that work may be too early but we can go to PR on your proposal for what would work for you in that context as a starting point and that feels like what you just said man let's do a simple one and…</p>
+<p id="fragment-106" class="phone s01"><cite>Joe Andrieu:</cite> then we can tease out how we might plug in MOSIP because they are dealing</p>
+<p id="fragment-107" class="phone s01"><cite>Joe Andrieu:</cite> with far more complexity than most of us have had exposure in this space. Thank you.</p>
+</section>
+<section>
+<h3 id="topic-biometric-facial-picture-pr">Facial Picture Biometric PR</h3>
+<p id="fragment-108" class="phone s01"><cite>Denken Chen:</cite> So I think today I will try to limit the scope to face portrait.</p>
+<p id="fragment-109" class="phone s01"><cite>Denken Chen:</cite> I mean in this draft we already have a biometric portrait image encoding the image in base 64 and most has a type of biometric for person's face biometrics.</p>
+<p id="fragment-110" class="phone s01"><cite>Denken Chen:</cite> So I think that's one I will look at as a first example to incorporate into our competence method. in our case we are mostly concerned about using the face portrait image.</p>
+<p id="fragment-111" class="phone s01"><cite>Joe Andrieu:</cite> does it make sense to create another PR that is this first pass at a biometric method and…</p>
+<p id="fragment-112" class="phone s01"><cite>Joe Andrieu:</cite> and have it be distinct from this let's reach out to MOSIP let's get a deeper sort of engagement and support that because that seems like a simpler PR to work with. Thank you.</p>
+<p id="fragment-113" class="phone s01"><cite>Denken Chen:</cite> I think it's also available in most of the government issued credentials and I have a regular meeting with most now so I will reach out to them for advice or comments.</p>
+<p id="fragment-114" class="phone s01"><cite>Joe Andrieu:</cite> Okay. go ahead, man.</p>
+<p id="fragment-115" class="phone s01"><cite>Manu Sporny:</cite> Yeah, a plus one to what you said, Joe, plus one to what Denin said. I do think facial biometric is the easiest one. and a picture is it definitely makes it much easier. things to avoid there are biometric facial vector templates that are a patent minefield. anytime you get into biometric, templates, it's like patent minefield, right? So we would have to do some pretty good due diligence to pull those in. but a picture of a person fairly easy, to Denin, one of the other things plus one to splitting it and working in two different PRs and just focusing ultra focusing on just facial picture.</p>
+<p id="fragment-116" class="phone s01"><cite>Manu Sporny:</cite> Denin, one of the other things that I'm hoping that you would put in there is I'm wondering if we should put some kind of mandate that you should make it selectively disclosable. Meaning you should not have to just hand over a picture of yourself whenever you're disclosing these things. And we should really start pushing the industry towards selectively disclosable confidence methods in general. I might maybe that that's a general confidence method thing like all confidence methods should be selectively disclosable. we'd love to go The only reason I think we might not want to go to must is because some people are just using technologies where you just don't have the selectively disclosable option.</p>
+<p id="fragment-117" class="phone s01"><cite>Manu Sporny:</cite> …</p>
+<p id="fragment-118" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Thanks,…</p>
+<p id="fragment-119" class="phone s01"><cite>Manu Sporny:</cite> but maybe we should do a little bit of lecturing in the specification of you really should be making these selectively disclosable if you can. That's it.</p>
+<p id="fragment-120" class="phone s01"><cite>Joe Andrieu:</cite> Okay, this sounds straightforward. thanking that suggests we're going to create a new issuer PR for the simple version.</p>
+<p id="fragment-121" class="phone s01"><cite>Joe Andrieu:</cite> Do you want to take that on or would you like me to? One of us should.</p>
+<p id="fragment-122" class="phone s01"><cite>Denken Chen:</cite> Yeah. Yeah.</p>
+<p id="fragment-123" class="phone s01"><cite>Denken Chen:</cite> Just take that.</p>
+<p id="fragment-124" class="phone s01"><cite>Joe Andrieu:</cite> Okay, And I'm not closing the issue, but we'll close this stage of the agenda and move on to the next issue.</p>
+</section>
+<section>
+<h3 id="topic-confidence-levels-evidence">Confidence Levels in Evidence Field</h3>
+<p id="fragment-125" class="phone s01"><cite>Joe Andrieu:</cite> Okay, the next one was 16 and Dan, you had also thought this was blocked by recharter. and your notes that you sent me charter PR to change from confidence methods to confidence. I think this is on me so you have charter PR to change from confidence methods to confidence. I remember having that discussion and then adding assurance le level as an evidence field in the VCDM.</p>
+<p id="fragment-126" class="phone s01"><cite>Joe Andrieu:</cite> Okay, I'm remembering that now. Thank Anyone speak to</p>
+<p id="fragment-127" class="phone s01"><cite>Denken Chen:</cite> So we had a discussion about whether to put this confidence levels.</p>
+<p id="fragment-128" class="phone s01"><cite>Denken Chen:</cite> So in the discuss discussion we agreed that this should be one confidence level or one assurance level corresponding to one VC. So that would be VC level of things and the most appropriate way to express that is in the evidence field in BCDN. So I think the most proper way is to describe how we could use the field evidence property to express that level of assurance. Yes.</p>
+<p id="fragment-129" class="phone s01"><cite>Denken Chen:</cite> So we should make it clear that whether we should wait for the recharter of the VC</p>
+<p id="fragment-130" class="phone s01"><cite>Joe Andrieu:</cite> I feel like this should have been assigned to me.</p>
+<p id="fragment-131" class="phone s01"><cite>Joe Andrieu:</cite> I think I verbally said I would take care of that. Ivonne, go ahead. in this case we wanted to change the title of the spec from confidence methods to confidence…</p>
+<p id="fragment-132" class="phone s01"><cite>Ivan Herman:</cite> Before I don't fully understand…</p>
+<p id="fragment-133" class="phone s01"><cite>Ivan Herman:</cite> what is the charter issue here. I have two reactions on that.</p>
+<p id="fragment-134" class="phone s01"><cite>Joe Andrieu:</cite> which lets us open the scope a little bit. So it's just that one word</p>
+<p id="fragment-135" class="phone s01"><cite>Ivan Herman:</cite> It's not strictly necessary because the working group has the right to change the specification title at any time.</p>
+<p id="fragment-136" class="phone s01"><cite>Joe Andrieu:</cite> okay.</p>
+<p id="fragment-137" class="phone s01"><cite>Ivan Herman:</cite> This is not a chartering issue and the document has already been published in the first public draft with the current title. So that would be necessary anymore. the second answer independently of the previous one. if you want to change something in the charter proposal then you have about a week because I have gathered all the green light to move on to the AC vote and…</p>
+<p id="fragment-138" class="phone s01"><cite>Ivan Herman:</cite> I plan we will have to discuss with the chairs to Friday but I plan to move on to the AC sometimes next week but as far as I am concerned I don't think that you need to change distractor.</p>
+<p id="fragment-139" class="phone s01"><cite>Joe Andrieu:</cite> Okay, great.</p>
+<p id="fragment-140" class="phone s01"><cite>Joe Andrieu:</cite> I think I'm keen to just close this then. anyone think that's crazy? Go ahead, Manner.</p>
+<p id="fragment-141" class="phone s01"><cite>Manu Sporny:</cite> not crazy and I certainly won't stand in the way. it's good to have the charter is going to stick around for a long time and we sometimes refer other people to the charter and it's good to align as much as possible before the thing set in stone and we definitely can't change it, So, we have an opportunity here to change some words to make it easier for people to kind of understand what we're working on.</p>
+<p id="fragment-142" class="phone s01"><cite>Manu Sporny:</cite> I suggest we do that since we have a week to do it</p>
+<p id="fragment-143" class="phone s01"><cite>Joe Andrieu:</cite> Okay, I'll assign this to me.</p>
+<p id="fragment-144" class="phone s01"><cite>Joe Andrieu:</cite> Whoops. That was not how I do that. and I think this is something I can probably do today now that I'm on the other side of the threat modeling Any other thoughts? I think we can move on. go ahead, Will. Correct.</p>
+<p id="fragment-145" class="phone s01"><cite>Will Abramson:</cite> Yeah, just something You said you're going to rename it to confidence. I think there's another issue linked here maybe verifiable credential confidence.</p>
+<p id="fragment-146" class="phone s01"><cite>Will Abramson:</cite> I think just having a spec called confidence feels a bit strange to me.</p>
+<p id="fragment-147" class="phone s01"><cite>Joe Andrieu:</cite> Yeah that's a valid point.</p>
+<p id="fragment-148" class="phone s01"><cite>Joe Andrieu:</cite> My thought is this is much broader than VCs. right I can see confidence levels is simply being part of how you do authentication with a DID right independent of a VC. that said the spec is called VC confidence method as a short title. maybe the long title should also have it. Manny</p>
+<p id="fragment-149" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I thought we were just going to remove the word method and then we would expand it to say defines mechanisms. So it's strike the word meth from the charter strike the word method and make mechanisms plural.</p>
+<p id="fragment-150" class="phone s01"><cite>Manu Sporny:</cite> And that was the change we were talking about.</p>
+<p id="fragment-151" class="phone s01"><cite>Joe Andrieu:</cite> Hey, Could you restate that?</p>
+<p id="fragment-152" class="phone s01"><cite>Ivan Herman:</cite> Yeah. Getting to follow up to one…</p>
+<p id="fragment-153" class="phone s01"><cite>Ivan Herman:</cite> what money said if getting to the way of saying that this goes beyond the verifiable credentials etc. that would raise a lot of eyebrows. I would not go there even if it's on long term your intention but let's not go that way because then it becomes a totally different ball game.</p>
+<p id="fragment-154" class="phone s01"><cite>Joe Andrieu:</cite> I didn't follow what you were.</p>
+<p id="fragment-155" class="phone s01"><cite>Ivan Herman:</cite> You said that this is something that goes beyond the verifiable credentials. I would not put anything into the charter that would suggest that because that would raise lots of eyebrows.</p>
+<p id="fragment-156" class="phone s01"><cite>Joe Andrieu:</cite> Plus one. I appreciate that, Dave.</p>
+<p id="fragment-157" class="phone s01"><cite>Dave Longley:</cite> Yeah, I was about to put my hand back down. I think it's been covered now. but I'll just reiterate. I think changing the singular a mechanism that's in the current charter text to mechanisms would be sufficient because then it would read that this spec defines mechanisms that can be used with the BCDM to increase a verifier's confidence about a particular subject identified in a verifiable credential.</p>
+<p id="fragment-158" class="phone s01"><cite>Dave Longley:</cite> I think that includes defining new evidence mechanisms or evidence extensions which there's already an extension point in the VCDM for evidence. We can define evidence types in this new spec that would have whatever is needed.</p>
+<p id="fragment-159" class="phone s01"><cite>Joe Andrieu:</cite> Okay, cool.</p>
+<p id="fragment-160" class="phone s01"><cite>Joe Andrieu:</cite> All right, I'm going to go and comment on this and we can move on to the next issue and I will make an effort to subtopic before we start typing. Sorry about that. so the 17 is next and I'll let you introduce it Dan. It seems like you mostly just wanted to have a conversation.</p>
+</section>
+<section>
+<h3 id="topic-privacy-concerns-biometrics">Biometric Privacy Concerns</h3>
+<p id="fragment-161" class="phone s01"><cite>Denken Chen:</cite> Yeah, I would like to keep this as the open discussion. I'm probably not going too deep today. but one thing I would like to highlight is in the last meeting Brent mentioned he would love to in include pass key support for this or at least do some early research on it and so we can keep human eye on it. And so for now today we try to understand our first draft. The scope will probably limited to the first one is a facial image and the second one we will talk about it later. Yeah.</p>
+<p id="fragment-162" class="phone s01"><cite>Denken Chen:</cite> So that's why I would like to share and so I suggest that we today should really go through all of the issues and…</p>
+<p id="fragment-163" class="phone s01"><cite>Denken Chen:</cite> make final decision for our first draft. Yeah. this one just keep it or…</p>
+<p id="fragment-164" class="phone s01"><cite>Joe Andrieu:</cite> Okay. I'm not sure…</p>
+<p id="fragment-165" class="phone s01"><cite>Joe Andrieu:</cite> what the decision is you're looking for on this one.</p>
+<p id="fragment-166" class="phone s01"><cite>Denken Chen:</cite> need discussion as is.</p>
+<p id="fragment-167" class="phone s01"><cite>Denken Chen:</cite> So I think if there is anything that people would like to talk about this issue please raise your hand or I suggest we go through all the issues today.</p>
+<p id="fragment-168" class="phone s01"><cite>Joe Andrieu:</cite> All right.</p>
+<p id="fragment-169" class="phone s01"><cite>Joe Andrieu:</cite> So, this is a heads up for folks to dive into this if you care about these items and we will be revisiting this discussion likely in the future. All right. We'll move on to the next one.</p>
+<p id="fragment-170" class="phone s01"><cite>Joe Andrieu:</cite> Okay. 20.</p>
+<p id="fragment-171" class="phone s01"><cite>Joe Andrieu:</cite> You want to introduce this one? Thank you.</p>
+<p id="fragment-172" class="phone s01"><cite>Denken Chen:</cite> Yeah, I think we talked about this to added also a initial competence method example and…</p>
+<p id="fragment-173" class="phone s01"><cite>Denken Chen:</cite> Joe you will be drafting the first PR. So we could remove the need discussion and…</p>
+<p id="fragment-174" class="phone s01"><cite>Joe Andrieu:</cite> Excellent. …</p>
+<p id="fragment-175" class="phone s01"><cite>Denken Chen:</cite> just make it ready for unless there's other concerns.</p>
+<p id="fragment-176" class="phone s01"><cite>Joe Andrieu:</cite> I think this is ready for PR. let me see if the conversation suggests otherwise. And I see Manny raised his hand. Go ahead, Manny.</p>
+<p id="fragment-177" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I mean plus one. I'm looking at Denin's proposal down at the bottom and it looks good. the only thing that I was wondering about was the last part of your example Denin where we use a decentralized identifier document. that might need to be just decentralized identifier and then the question becomes which one of the verification methods are you going to use I would presume it's authentication and maybe that's what we say in both of these cases the expectation is that it is used in some kind of authentication process the other thing about specifying a multi</p>
+<p id="fragment-178" class="phone s01"><cite>Manu Sporny:</cite> key is you have to run it over a protocol and we should probably talk about the protocols where you can utilize these confidence methods. So we have one protocol that is in scope for our next charter VCOM it does specify how you do a D off in it. so we should at least reference that. other things to consider are JSON web keys and the DOP stuff that you can do over OOTH. I don't know if we're going to say anything about that either.</p>
+<p id="fragment-179" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead. I</p>
+<p id="fragment-180" class="phone s01"><cite>Manu Sporny:</cite> And I would expect we would have to say that at some point for people to be able to actually use confidence method within a protocol.</p>
+<p id="fragment-181" class="phone s01"><cite>Manu Sporny:</cite> That's it.</p>
+<p id="fragment-182" class="phone s01"><cite>Ivan Herman:</cite> So I'm looking at that example and…</p>
+<p id="fragment-183" class="phone s01"><cite>Ivan Herman:</cite> that rings a more generic bell for me. It uses in this case Who defines that type? Where is it defined? Is it an example this definition or just it come out of the blue air? remember that I am the one who is always shouting about the proper vocabulary and this is in the vocabulary area where does it come from and this is not only on this example in general both documents that we are working on have this kind of examples…</p>
+<p id="fragment-184" class="phone s01"><cite>Ivan Herman:</cite> where I don't know what is formally defined I don't know is there for the purpose of an example or it comes from elsewhere and that always bothers me.</p>
+<p id="fragment-185" class="phone s01"><cite>Joe Andrieu:</cite> cool. Thanks,…</p>
+<p id="fragment-186" class="phone s01"><cite>Joe Andrieu:</cite> Ivon. I agree that, yes, we are going to have to create a new type. We're going to have to do all the work that entails. and we have not yet done this. I actually think this type probably did or it's u verification method. and I think that's one of the things that's missing here, Denin, is that I think the identifier for the confidence method in example the second layer here doesn't have the details to get to a specific verification method.</p>
+<p id="fragment-187" class="phone s01"><cite>Joe Andrieu:</cite> to Manu's point what are we supposed to just use any authentication method in that did document I think that's probably not as appropriate as the first one which points to a specific key although I want something in here that says this is a did off confidence method so that's my feedback go ahead manu</p>
+<p id="fragment-188" class="phone s01"><cite>Manu Sporny:</cite> Plus one to what you just said, we probably do want it to speak to I guess a protocol more than I mean although the verification method thing sounded fine to me as well which is not necessarily protocol. So that's interesting. we can try and sort it out in the PR, but I don't want Denin to put in the time to put in a, that, is going to be pushed back against. So maybe more discussion As for, Ivon, yes, we need a new type. My expectation is that it would go in the security vocabulary.</p>
+<p id="fragment-189" class="phone s01"><cite>Manu Sporny:</cite> I don't think we should have a separate confidence method vocabulary. That feels like it would be kind of ick. security vocabulary and then if we can't fit it in security vocabulary, the verifiable credential vocabulary, but again, I think that's the second option. and then we would need to include it in the next the VC21 context or the 20 context or whatever we end up doing. but I think there's a semi clear path there. The we'll work out the details, but I think we can go in that general direction with the vocabulary</p>
+<p id="fragment-190" class="phone s01"><cite>Manu Sporny:</cite></p>
+<p id="fragment-191" class="phone s01"><cite>Joe Andrieu:</cite> Plus one for that.</p>
+<p id="fragment-192" class="phone s01"><cite>Joe Andrieu:</cite> That seems to make sense. I wanted to add that I think that the way I'm approaching this particular one I think this should be assigned to me. so I think I'm the one stuck with the PR man. is at least for did o I'm approaching that as conceptually free but I will mention two protocols as examples and one is hey you may have gotten this in a VP and the signature on the VP is one way to have that confidence and then separately you have this verification method you can engage in any protocol you want and I think at that stage it's also appropriate to pull in BCOM to the extent that</p>
+<p id="fragment-193" class="phone s01"><cite>Joe Andrieu:</cite> that's mature enough to reference. but I think in essence the verification method itself is like an atomic element that however you manage to interact around it is sort of at another layer in my thinking. So I saw a thumbs up from so maybe that's So this seems straightforward for me. I just need to wrap my head around what all do I need to write for the did off but otherwise I think it's on me and I think the issue labels I don't know that we need any more discussion. Does anyone feel we need to keep talking about this? We can revisit in a future call but feels like I could remove that label and the roaring science endorses my executive decision.</p>
+<p id="fragment-194" class="phone s01"><cite>Joe Andrieu:</cite> So, let me go and get rid of the needs discussion. Thanks, next up then 21. And I see Danken that you queued up for that.</p>
+<p id="fragment-195" class="phone s01"><cite>Denken Chen:</cite> Yeah, I will address privacy concern including suggesting that all competence methods should be selective disclosable. I think it's a good reminder from Ted and also Manuel mentioned it as well. Yes. So I think if there's anything others we would like to be included please have a discussion here or…</p>
+<p id="fragment-196" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead, man.</p>
+<p id="fragment-197" class="phone s01"><cite>Denken Chen:</cite> we can just take it as ready for PR.</p>
+<p id="fragment-198" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus the selectively disclosable thing. I think we should also maybe speak to what happens if you don't selectively disclose this, I mean, it is a tracking vector. for example just because an MDL portrait image is selectively disclosable the second you disclose those unique bytes are a unique token which can be used to track you globally right so the next time you present that same thing the identifier is the same even if the signature is different even if it's a totally different thing unless there's some fuzzing that's done on the biometric image which we are not talking</p>
+<p id="fragment-199" class="phone s01"><cite>Manu Sporny:</cite> about doing that creates a unique thing. so there is I think future R&D to be done around verifiable fuzzing of biometric portraits so that when you do show it over and over again it's not the exact same bite sequence. but even if we are successful in doing that and get there it doesn't matter. LLMs are way good enough at recognizing faces now that no amount of fuzzing that we do is going to probably protect an individual once they've shown their biometric photo through the credential.</p>
+<p id="fragment-200" class="phone s01"><cite>Manu Sporny:</cite> So, we should talk about, what happens when you do share, images of yourself. and maybe focus on some of the less known kind of dangers, global tracking and again I mean the harms are different than you just going to the grocery store and using a selfch checkckout kiosk you don't necessarily know what they're doing with those images or your face so we should say a lot about using biometric portraits and photos in these credentials and I think the general position of</p>
+<p id="fragment-201" class="phone s01"><cite>Manu Sporny:</cite> the specification should be don't share it by default don't share it right and then if you do share it you should really understand what the policy on the other side is clearly like the general population can't do that and so understanding something like retention policy right lambd has we promise we're not going to retain this thing although I don't know necessarily how that sort of thing becomes important right intent to retain intent to use that sort of thing.</p>
+<p id="fragment-202" class="phone s01"><cite>Manu Sporny:</cite> we should also probably mention what hap you can have an entity where its intent to retain is they don't intend to retain it but they pass it to an upstream vendor who may not follow that same policy right to do the betting these biometric things go through third party vendors not every single one of them has the same privacy policy so we should speak to</p>
+<p id="fragment-203" class="phone s01"><cite>Manu Sporny:</cite> those dangers as we should probably also refer to the EFF's latest response on online age verification and the things to look out for. they specifically mention a company and their policies that are concerning and problematic. That's it.</p>
+<p id="fragment-204" class="phone s01"><cite>Joe Andrieu:</cite> Do you have a URL for that That would be great.</p>
+<p id="fragment-205" class="phone s01"><cite>Manu Sporny:</cite> I will find it.</p>
+<p id="fragment-206" class="phone s01"><cite>Joe Andrieu:</cite> Okay. I think I captured all that. I one of the things I want to honor is trying to wrap up five minutes before the end because that Zoom insanity that happens when you're back to back. but before we actually wrap, Denin, did you have anything else you wanted us to discuss before we do that?</p>
+<p id="fragment-207" class="phone s01"><cite>Denken Chen:</cite> Yeah. No, the remaining issues are minors. So, okay.</p>
+<p id="fragment-208" class="phone s01"><cite>Joe Andrieu:</cite> Anyone else have anything to add to the agenda or we will yield the last few minutes of the hour. I do manage link so I will get that into the comment. Thanks I think that's a wrap then. Thank you all very much. Danken, thanks for the prep work and…</p>
+<p id="fragment-209" class="phone s01"><cite>Joe Andrieu:</cite> the help running this. And we will see folks. When's our next one, Danken? I guess that's a good question.</p>
+<p id="fragment-210" class="phone s01"><cite>Denken Chen:</cite> I think next week is for rendering method and…</p>
+<p id="fragment-211" class="phone s01"><cite>Denken Chen:</cite> we will be the week after next week.</p>
+<p id="fragment-212" class="phone s01"><cite>Phil Archer:</cite> the fourth.</p>
+<p id="fragment-213" class="phone s01"><cite>Joe Andrieu:</cite> So, the 4th of February,…</p>
+<p id="fragment-214" class="phone s01"><cite>Phil Archer:</cite> Yeah. Yeah.</p>
+<p id="fragment-215" class="phone s01"><cite>Joe Andrieu:</cite> Phil, is that right with regard to the rest of the ECWG meetings?</p>
+<p id="fragment-216" class="phone s01"><cite>Phil Archer:</cite> And then 11th is full working group meeting that I can't attend for reasons I won't bore you with. so I guess then it'll be render method on the 18th and…</p>
+<p id="fragment-217" class="phone s01"><cite>Phil Archer:</cite> then confidence again on the 25th. I think that's the way it'll be.</p>
+<p id="fragment-218" class="phone s01"><cite>Joe Andrieu:</cite> Okay, excellent.</p>
+<p id="fragment-219" class="phone s01"><cite>Joe Andrieu:</cite> Thank you all very much. That's a wrap and we will see you on those dates, I hope. Cheers, folks.</p>
+<p id="fragment-220" class="phone s01"><cite>Phil Archer:</cite> Thanks. Thanks everyone.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
