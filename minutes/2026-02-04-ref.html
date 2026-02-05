@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2026-02-04</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Dave Longley, Denken Chen, Dmitri Zagidulin, Elaine Wooton, Isaiah Inuwa, Ivan Herman, Joe Andrieu, Kevin Dean, Manu Sporny, Nathan Rao, Parth Bhatt, Phillip Long, Ted Thibodeau Jr</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic_1">Biometrics in Confidence Methods</a></li>
+<li><a href="#topic_2">Accessibility Input for Specifications</a></li>
+<li><a href="#topic_3">Holder Binding vs. Confidence Methods</a></li>
+<li><a href="#topic_4">Threat Modeling and Vulnerabilities</a></li>
+<li><a href="#topic_5">Next Steps and Meeting Schedule</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic_1">Biometrics in Confidence Methods</h3>
+<p id="p1" class="phone s01"><cite>Joe Andrieu:</cite> Howdy folks. Appreciate those of you who are on time. We'll give stragglers another minute or two.</p>
+<p id="p2" class="phone s01"><cite>Joe Andrieu:</cite> Okay, it looks like folks have filled Thank you all for attending. Denin, glad you could make it. Are we just going to go over issues today or did you have something else you wanted to bring up first? I think I should bring up we are recording this call and this is your notice of that fact. if you would like us not to record it, I believe we're technically capable of turning that off if we want to get a scribe. So, please speak up if you would like to choose that option and we can figure it out. Otherwise, we will continue with the automated recording and transcription.</p>
+<p id="p3" class="phone s01"><cite>Joe Andrieu:</cite> Okay, let's get started.</p>
+<p id="p4" class="phone s01"><cite>Manu Sporny:</cite> I just wanted to add an agenda item. I mean it is confidence method related about the presentation yesterday on biometrics at the CCG.</p>
+<p id="p5" class="phone s01"><cite>Manu Sporny:</cite> I thought we should take a little bit maybe five 10 minutes to discuss that and how it might integrate.</p>
+<p id="p6" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I think that'd be great.</p>
+<p id="p7" class="phone s01"><cite>Joe Andrieu:</cite> Denin, were you able to attend that? I think let's just talk about it first, man. …</p>
+<p id="p8" class="phone s01"><cite>Denken Chen:</cite> and…</p>
+<p id="p9" class="phone s01"><cite>Joe Andrieu:</cite> it was an interesting talk. I only got the beginning of it, though. Go ahead. Thank you.</p>
+<p id="p10" class="phone s01"><cite>Denken Chen:</cite> okay I shall review that talk I didn't attend that talk so I will watch it and…</p>
+<p id="p11" class="phone s01"><cite>Joe Andrieu:</cite> Okay, go ahead, man.</p>
+<p id="p12" class="phone s01"><cite>Denken Chen:</cite> try to incorporate the concerns There.</p>
+<p id="p13" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I think more specifically it was a refreshing take on biometrics, I mean I think there was a part of it that really focused on kind of client side privacy protecting biometric verification. I mean, of course, it was a bit of a handwave. It was like using the magic of ZKPs and Longfellow, we will do biometric matching on purely the client side. but I think that is the type of stuff we should be suggesting is the right path forward.</p>
+<p id="p14" class="phone s01"><cite>Manu Sporny:</cite> because what it's not doing is what the vast majority of biometric schemes do today, which is they take your biometrics and send them to some server in the cloud and you have no idea where your video stream's going, right? what is it? Realize R E A L E S was the company they wanted to engage with to enable some privacy preserving ways to do biometric verification. They're already GDPR compliant though I don't think it means anything when it comes to biometrics. It's still fantastically invasive.</p>
+<p id="p15" class="phone s01"><cite>Manu Sporny:</cite> but it's better than nothing, meaning you send your video stream up and then they promise to delete and it's a European company which is good. at least comply with GDPR. There were a lot of good things that I heard on the call yesterday and they want to engage and they specialize in biometrics and they've been around since 2007. I think if we're going to do anything with biometrics and again Joe, I think that the plan was like let's not do something rash and rush this. Let's take our time. And so 10 may not have any biometricy things.</p>
+<p id="p16" class="phone s01"><cite>Manu Sporny:</cite> but I would really like this group to get them directly engaged to see if we can just start sketching out what are the actual guard rails around biometrics as confidence methods right can we get it done fully client side in zero knowledge because that's kind of I think the holy grail of being able to achieve what they want to achieve. That's</p>
+<p id="p17" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, plus one. All that. Go ahead, There isn't quite I was looking for that Ivon as Manny was debriefing.</p>
+<p id="p18" class="phone s01"><cite>Ivan Herman:</cite> Can you send around on the mailing list some references to their presentation if there is anything online and etc.</p>
+<p id="p19" class="phone s01"><cite>Joe Andrieu:</cite> Here's the link to the CCG call, but it doesn't have a link to minutes yet. and it doesn't have the presentation. and I'll just note the name of the talk, which could get you to some of this.</p>
+<p id="p20" class="phone s01"><cite>Joe Andrieu:</cite> It was Scott Jones and he's also got a video interview that's about an hour long. that's not this talk, but I agree with everything you said, Manu. I think they are trying to do the right thing. I think the devil's in the details, and I'm not sure they're getting all of them but certainly moving biometric to the edge device has always felt better and more secure and more privacy respecting for me. so understanding how we can leverage that I think is going to be really important. Den, we've adopted between you and I think we have some consensus in this group to do a biometric confidence method. And I'm curious, you're representing on some level the interest of Taiwan in trying to figure out this approach,…</p>
+<p id="p21" class="phone s01"><cite>Joe Andrieu:</cite> and I'm curious how you were approaching these privacy issues. Not to put you on the spot, but I am. Sorry.</p>
+<p id="p22" class="phone s01"><cite>Denken Chen:</cite> Yeah. Yeah.</p>
+<p id="p23" class="phone s01"><cite>Denken Chen:</cite> Definitely a important issue particularly from the privacy considerations point of view. we haven't take any credentials with photos into our VC yet but we are still in early research about how to do it securely and privately and so this is a talk I definitely will look into and I'm also the coach of the CC CCG and we have the slides</p>
+<p id="p24" class="phone s01"><cite>Denken Chen:</cite> So I will coordinate with the other chairs to send out the STS too and hopefully we can build on their foundation to improve this part that I am responsible for the biometric information for VC confidence here. Okay.</p>
+<p id="p25" class="phone s01"><cite>Joe Andrieu:</cite> So, back to my opening question earlier before we adopt it. let me ask does anyone else want to talk about biometrics? Especially if you saw the CCG call and had something to contribute from it. I'm hoping we're going to have a much more robust conversation once we get some specs about the biometric approach that we're going to try out based on what Taiwan is doing. Many, I see your hand.</p>
+<p id="p26" class="phone s01"><cite>Manu Sporny:</cite> Yeah, just real quick, I'll note that this is a need in the convenience retail sector. meaning we want to do this the right way in that sector and realize was the first time I saw hope in being able to do it the right way. so I don't think this is certainly Taiwan. It's certainly not academic for the convenience retail sector. just wanted to note that on the</p>
+<p id="p27" class="phone s01"><cite>Joe Andrieu:</cite> Thank you Elaine.</p>
+<p id="p28" class="phone s01"><cite>Joe Andrieu:</cite> Go ahead.</p>
+<p id="p29" class="phone s01"><cite>Elaine Wooton:</cite> Yeah, I just want to plus one also.</p>
+<p id="p30" class="phone s01"><cite>Elaine Wooton:</cite> I think we're going to have to address the need to put biometric info into the verifiable credential barcodes.</p>
+<p id="p31" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Thanks a lot.</p>
+<p id="p32" class="phone s01"><cite>Elaine Wooton:</cite> So yeah, we definitely need to look at it. I'm glad Denkins kind of got the lead on that.</p>
+</section>
+<section>
+<h3 id="topic_2">Accessibility Input for Specifications</h3>
+<p id="p33" class="phone s01"><cite>Joe Andrieu:</cite> Okay, then turning back to my opening question earlier before we adopt it. let me ask does anyone else want to talk about biometrics? Especially if you saw the CCG call and had something to contribute from it. I'm hoping we're going to have a much more robust conversation once we get some specs about the biometric approach that we're going to try out based on what Taiwan is doing. Many, I see your hand.</p>
+<p id="p34" class="phone s01"><cite>Denken Chen:</cite> Yeah, I think we have one or two issues remain. We can go through them and then come back to what will be included in the future. most of the discussion we had with I think Brent and Ted and we can continue the discussion later.</p>
+<p id="p35" class="phone s01"><cite>Joe Andrieu:</cite> Okay, And so the two you're talking about are the two that are flagged for needs discussion.</p>
+<p id="p36" class="phone s01"><cite>Denken Chen:</cite> I think we haven't got the issue 24 seek accessibility input. it's dressed by you.</p>
+<p id="p37" class="phone s01"><cite>Joe Andrieu:</cite> So this is on me and I'm assigned it. my question is how do I reach out to these access I don't know the accessibility atw3.org.</p>
+<p id="p38" class="phone s01"><cite>Joe Andrieu:</cite> But I'm sure someone knows who I should reach out to. Thank you, Manny. Go ahead.</p>
+<p id="p39" class="phone s01"><cite>Manu Sporny:</cite> Yeah, I'm wondering if I forget what we said. we can do it through horizontal review. That might be the best way because that's just got a standard process and it kind of requires a response. barring that, you could just send an email to their mailing list. that's typically, a good light way to engage. I think we should probably be focused in the questions that we ask them.</p>
+<p id="p40" class="phone s01"><cite>Manu Sporny:</cite> So we should go in with a set of things like that we really want answers from them for so that they are able to kind of concretely give us feedback and they don't just end up coming up in horizontal review I guess is the other thing.</p>
+<p id="p41" class="phone s01"><cite>Manu Sporny:</cite> So mailing list would be best to start the engagement and then I think we would ideally get to horizontal review sooner than later.</p>
+<p id="p42" class="phone s01"><cite>Joe Andrieu:</cite> Okay, cool.</p>
+<p id="p43" class="phone s01"><cite>Joe Andrieu:</cite> I like the advice about a clear set of questions. That definitely will help. Ivon, go ahead. Yes.</p>
+<p id="p44" class="phone s01"><cite>Ivan Herman:</cite> Do you hear me? Yeah. so this is never too early to start a horizontal review. the public working draft is there. So I think that's one thing to do. in parallel there are some labels I don't know whether it was officially added to this repository but there are some labels which are explicitly made for the purpose of drawing attention on horizontal issue I say accessibility issues as I said one doesn't exclude the other there is somewhere a list of all the sort of preserve the labels.</p>
+<p id="p45" class="phone s01"><cite>Ivan Herman:</cite> Yeah. There they are. Don't no, don't go back and…</p>
+<p id="p46" class="phone s01"><cite>Joe Andrieu:</cite> the accessibility tracker.</p>
+<p id="p47" class="phone s01"><cite>Ivan Herman:</cite> the second one. Yes.</p>
+<p id="p48" class="phone s01"><cite>Joe Andrieu:</cite> So I'll track this as that and then we can also reach out to him.</p>
+<p id="p49" class="phone s01"><cite>Ivan Herman:</cite> but excuse me Joe but I agree with money. It's much more efficient if you have some specific question and not kind of a general thing of seek accessibility input that's not specific enough.</p>
+<p id="p50" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, understood and agreed. so I'll take this on to come up with some questions and get that out to their mailing list and I'll reference this issue.</p>
+<p id="p51" class="phone s01"><cite>Joe Andrieu:</cite> What does it take? So that seems clear and I thank you for that input and guidance. one question I have is what is triggering a horizontal review entail?</p>
+<p id="p52" class="phone s01"><cite>Joe Andrieu:</cite> Like Ivan, I take your point. We've got a FPWD. we could theoretically ask for it already. but what would we do to trigger a horizontal review?</p>
+<p id="p53" class="phone s01"><cite>Ivan Herman:</cite> to be very …</p>
+<p id="p54" class="phone s01"><cite>Ivan Herman:</cite> how should I say administrative that puts you on the The queue is long and it's slowly moving but it puts you on the queue. that's essentially what it means. that's the problem that I don't hide that there are lots of groups and the accessibility people have their hands full with other things and…</p>
+<p id="p55" class="phone s01"><cite>Joe Andrieu:</cite> Okay, my Okay, thanks.</p>
+<p id="p56" class="phone s01"><cite>Ivan Herman:</cite> so there is a bottleneck there but that's why it's never too early to start and if you have specific questions we could try to locate the persons within the accessibility cloud because it's really a large cloud of people who are much more close to this problem area than others and contact them directly.</p>
+<p id="p57" class="phone s01"><cite>Joe Andrieu:</cite> Sure.</p>
+<p id="p58" class="phone s01"><cite>Manu Sporny:</cite> And more on the mechanics. Here's the link. And if I could steal screen sharing for half a second, here is their queue.</p>
+<p id="p59" class="phone s01"><cite>Ivan Herman:</cite> Yeah.</p>
+<p id="p60" class="phone s01"><cite>Manu Sporny:</cite> Poor poor people. so it's a pretty deep cue but this new issue here we have to do a self-re I think first of all no matter what that usually is a good thing to do. So, Joe, I think we would have to do a self-review, right, before we contacted them and that might be the questions that, we can put the questions that we want to ask, in the self-re issue to request review of an FPWD. So, they have a template for that and then this is the information that they ask, right?</p>
+<p id="p61" class="phone s01"><cite>Manu Sporny:</cite> So do you need a reply by date? Ideally, we'd say within 3 months would be great if you can get to it. And then we have to provide the self-review and they provide a checklist here that we can fill out. and I've done this for other things where there's a GitHub issue, Joe, so you could copy and…</p>
+<p id="p62" class="phone s01"><cite>Manu Sporny:</cite> paste that and just delete the content …</p>
+<p id="p63" class="phone s01"><cite>Ivan Herman:</cite> Let's start.</p>
+<p id="p64" class="phone s01"><cite>Manu Sporny:</cite> to avoid having to reformat everything into their format.</p>
+<p id="p65" class="phone s01"><cite>Joe Andrieu:</cite> Yeah. …</p>
+<p id="p66" class="phone s01"><cite>Manu Sporny:</cite> And then how they file issues. We point to our issue tracker and then explainer for the spec. read the spec. so it shouldn't be a heavy lift and you can ask them directly you don't have to ask everyone for horizontal review. You can ask each one at a different time. just because we asked an HR for accessibility doesn't mean we have to ask one for CAG yet.</p>
+<p id="p67" class="phone s01"><cite>Joe Andrieu:</cite> Okay, that makes sense. a couple of the logistical questions about horizontal review. this was an accessibility repo to go and get their input.</p>
+<p id="p68" class="phone s01"><cite>Joe Andrieu:</cite> Who else needs to be included in a horizontal review? Is it …</p>
+<p id="p69" class="phone s01"><cite>Ivan Herman:</cite> all of the internationalization security,…</p>
+<p id="p70" class="phone s01"><cite>Ivan Herman:</cite> privacy and Sorry to have interrupted you, John. No,…</p>
+<p id="p71" class="phone s01"><cite>Joe Andrieu:</cite> that's great. that was exactly the answer I was looking for. Just a list so that I could understand if we were to. So really all starting horizontal review means is going to those five groups and asking for feedback and probably if we have any leons in our chat charter I'm not familiar I don't remember if we have any others but okay thanks Manny</p>
+<p id="p72" class="phone s01"><cite>Ivan Herman:</cite> That's enough.</p>
+<p id="p73" class="phone s01"><cite>Manu Sporny:</cite> I have found this link to be really helpful for horizontal reviews because it spells out exactly what each group expects. Specifically, there's this section, how to get horizontal review. And so it lists the group and then it tells you you have to fill this questionnaire out, you have to request a review through their GitHub issue tracker and then here's some useful links and that's for each group and that's because each group has a slightly different process.</p>
+<p id="p74" class="phone s01"><cite>Manu Sporny:</cite> And this thing is supposed to be the latest up-to-date thing that you have to fill out for everyone, right? …</p>
+<p id="p75" class="phone s01"><cite>Ivan Herman:</cite> Except that the tag is not there. architecture.</p>
+<p id="p76" class="phone s01"><cite>Ivan Herman:</cite></p>
+<p id="p77" class="phone s01"><cite>Manu Sporny:</cite> architecture. Yeah. Yeah. Yeah.</p>
+<p id="p78" class="phone s01"><cite>Joe Andrieu:</cite> Okay. Right.</p>
+<p id="p79" class="phone s01"><cite>Ivan Herman:</cite> Yeah. Heat.</p>
+<p id="p80" class="phone s01"><cite>Manu Sporny:</cite> Yeah. Yeah. this is the thing I always follow because when they inevitably complain that we didn't follow process, I point back to this and followed exactly what you wrote here, so please update it. Right.</p>
+<p id="p81" class="phone s01"><cite>Joe Andrieu:</cite> I got that URL into there. This has been very helpful as a new editor. I haven't really been through all this stuff. so based on that, I guess I need to come up with questions. Maybe I should trigger those questions by going through that review. and so maybe that's a good next step is for me to do a self-reubble that up for propagation out to clear questions for the accessibility group for this issue.</p>
+<p id="p82" class="phone s01"><cite>Joe Andrieu:</cite> does that make sense to folks?</p>
+<p id="p83" class="phone s01"><cite>Manu Sporny:</cite> Yes, plus one to that. I think the questions at least in my mind that hopefully help a bit with drafting questions. accessibility means you have people with vision cognitive challenges, things of that nature. And so, how does that mix in with biometrics, I think, is where it really comes in. but there's also key key management, right?</p>
+<p id="p84" class="phone s01"><cite>Manu Sporny:</cite> if somebody has cognitive impairments, they're not going to understand the whole key management and digital signature and that kind of thing. In fact, the vast majority of the population probably doesn't understand that. so there may be questions around accessibility and how is a cryptographic,…</p>
+<p id="p85" class="phone s01"><cite>Ivan Herman:</cite> I wanted to say</p>
+<p id="p86" class="phone s01"><cite>Manu Sporny:</cite> a proof of possession going to be done on a mobile device? What's the expected, thing there? I think Avon you might say we're only working on a data model so we get out of jail free card. but I don't know so there is a way to kind of get out of that having to answer that and Avon's absolutely right. so I think it'll be up to you Joe to figure out how deep down that rabbit hole you want to go with accessibility.</p>
+<p id="p87" class="phone s01"><cite>Manu Sporny:</cite> There's so okay so how do you do proof of possession? I think there's a question around do people understand that and…</p>
+<p id="p88" class="phone s01"><cite>Joe Andrieu:</cite> We are describing proof of use in the and…</p>
+<p id="p89" class="phone s01"><cite>Joe Andrieu:</cite> in the verification method approach.</p>
+<p id="p90" class="phone s01"><cite>Manu Sporny:</cite> So this is what we're proposing and this is how it would work for someone with sight challenges someone with cognitive impairments. I think those are the two major categories where proof of possession would and then if we do any kind of a fingerprint what happens if the person doesn't have fingers or their fingerprints are damaged things like that or if we do a picture of the person what happens if the person that is doing the verification doesn't have sight right so</p>
+<p id="p91" class="phone s01"><cite>Manu Sporny:</cite> Those are the types of I think we have to have answers to those questions for the accessibility folks around proof possession and…</p>
+<p id="p92" class="phone s01"><cite>Joe Andrieu:</cite> Okay. Hey</p>
+<p id="p93" class="phone s01"><cite>Manu Sporny:</cite> and just the types of biometrics that we might see used. That's it.</p>
+<p id="p94" class="phone s01"><cite>Ivan Herman:</cite> Yeah. …</p>
+<p id="p95" class="phone s01"><cite>Ivan Herman:</cite> man actually partially referred to that. But I think one of the first question they will ask you is whether for any method you would define is there a fallback for another method. because not even such dramatic thing that missing fingers like what you said money but I know people in my family who for whatever genetic reasons have a very smooth finger and…</p>
+<p id="p96" class="phone s01"><cite>Ivan Herman:</cite> taking fingerprinting is always a problem and they can't use the fingerprinting facility on their MacBook for example. so these kind of fallback situations will become very important for accessibility and I don't know whether we are prepared for that.</p>
+<p id="p97" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, it's an interesting challenge.</p>
+<p id="p98" class="phone s01"><cite>Joe Andrieu:</cite> I just give you my initial take is that I think my sense is the issuer may be able to provide additional fallbacks to say by just providing an additional confidence method hey, you could use this for a face you could use this for a fingerprint you could use this for cryptographic proof of use but I don't know that we know what the fallback would be</p>
+<p id="p99" class="phone s01"><cite>Joe Andrieu:</cite> Which I think is part of what you're getting at. it was one of the challenges with the DID work is that what's the default DID method for a resolver? what are we guaranteed to have support for? And I don't know that we have anything that we would want to require. I'm curious if anyone else sees that differently. Thanks, this was good chat about this issue. as I'm talking, feel free to raise a hand or holler if you want to continue. Otherwise, we can move on to the next one and I will take this on and the next week I should be able to get some progress. Okay, what other issue do you want to deal within? We have two flag for discussion.</p>
+<p id="p100" class="phone s01"><cite>Joe Andrieu:</cite> Not sure those flags, those labels are current.</p>
+</section>
+<section>
+<h3 id="topic_3">Holder Binding vs. Confidence Methods</h3>
+<p id="p101" class="phone s01"><cite>Denken Chen:</cite> I can share my screen here.</p>
+<p id="p102" class="phone s01"><cite>Denken Chen:</cite> So this question is it's a broader discussion across different issues we had and let me start it by expressing why I'm interested in being involved in this VC confidence standardizations.</p>
+<p id="p103" class="phone s01"><cite>Denken Chen:</cite> we know that verifiable credentials can be just a cleanse some clans and that can be verifiable. So it'll be like some piece of papers or documentations and anyone can copy that to present to anyone. So that's pretty easy to do. So but from our point of view is that we study our digital identity valid policy from studying what EU has been doing and they incorporate the device user binding concept to making sure that the presenter or say the holder has to be proved that do some authentication stuff or to prove that</p>
+<p id="p104" class="phone s01"><cite>Denken Chen:</cite> the holder is the subject or representing anyone on the Cs. those kind of things to avoid fraud to avoid to prove that the presenter is authorized to present that VCs. So that's why I'm interested in the confidence and even though in the beginning I didn't really understand why we are calling it confidence because usually we see user binding or device binding this kind of terms elsewhere and later I found that it's reasonable to call it confidence because the binding doesn't mean anything you need multiple evidence to improve</p>
+<p id="p105" class="phone s01"><cite>Denken Chen:</cite> prove your confidence about the fact that subject the presenter the holder is the one you are caring you cares about for example is the subject of the VC so that's why I'm trying to raise the possibility of a more multifactor authentication</p>
+<p id="p106" class="phone s01"><cite>Denken Chen:</cite> authentications because it's already being widely deployed in many identity systems that were including emails and not just pass keys. I believe there are also biometric identity systems there and so for our case we would like to use the VC for a broader digital identity systems. This will be a important one to add more confidence that the identity is indeed the one that is sure recognized. Yeah. So that may really make things more complicated than I'm not sure the community would think.</p>
+<p id="p107" class="phone s01"><cite>Denken Chen:</cite> probably at least Ted mentioned he thinks it shouldn't be part of the puzzle…</p>
+<p id="p108" class="phone s01"><cite>Denken Chen:</cite> but I'm just expressing why we are concerning about this and trying to move this forward that's</p>
+<p id="p109" class="phone s01"><cite>Joe Andrieu:</cite> Okay, thanks.</p>
+<p id="p110" class="phone s01"><cite>Joe Andrieu:</cite> taken. s***.</p>
+<p id="p111" class="phone s01"><cite>Manu Sporny:</cite> Yeah, just a reaction to a couple of those comments. the first one on holder binding. recent as recently as this week, were discussing, this concept of holder binding with, a couple of state governments and it was clear that they were thoroughly confused about what it doesn't give them. there was a lot of confusion. They were like, we've done holder binding.</p>
+<p id="p112" class="phone s01"><cite>Manu Sporny:</cite> We did the holder binding when we issued the credential into the digital wallet and therefore the person that's using the digital wallet because of that we have security from there on out right meaning it's bound to the device we can trust the device the person can just use the device and do a presentation and we don't have to do any further kind of verification u me meaning there was a lot of confusion around what does the biometric give when should you use it versus what does proof of possession when should you use it, and when is it not actually providing the protection that you think it does.</p>
+<p id="p113" class="phone s01"><cite>Manu Sporny:</cite> So for whatever reason, there is this belief, in the holder binding community that doing a proof of possession allows you to bypass, certain types of biometric checks at certain times. So I think we should try to spend a bit of time in the confidence method specification talking about the fact that use cases have different kind of requirements when it comes to proof of possession versus a biometric check versus when you use one or the other. Right.</p>
+<p id="p114" class="phone s01"><cite>Manu Sporny:</cite> I think it's and there's nothing that we could point that, these state agencies that explains to them hey, just because you did a cryptographic binding doesn't mean you should just let that person walk around without checking them, at all in high-risk use cases. so that was kind of I think we should do a better job. The holder binding thing has confused people and unfortunately it's language that continues to be used and continues to further confuse people. So that's on the holder binding thing. I think we did do the right thing by selecting confidence method. How do you raise confidence that this is the person in front of The person presenting the credential is who appeared in front of the issuer.</p>
+<p id="p115" class="phone s01"><cite>Manu Sporny:</cite> the second part Denan of what you said should we add email address and phone number ta I think we're going to have to right because those are ways to raise confidence that the individual presenting the credential to you is the same one that showed up at the issuer. I think we've said this before. We should probably say that confidence methods should be selectively disclosable. I'd go as far as saying they must be selectively disclosable because sometimes you don't want to express all the different ways that you want to raise confidence to the verifier.</p>
+<p id="p116" class="phone s01"><cite>Manu Sporny:</cite> I might want to use my credential where I really don't want to tell verifier my email address and phone number if I don't have to, It's only when they absolutely require it where I might think about doing that. So, we may have a slew of different confidence methods that an issuer knows of and…</p>
+<p id="p117" class="phone s01"><cite>Manu Sporny:</cite> will put in the credential that we do not want to expose to the verifier. That's it.</p>
+<p id="p118" class="phone s01"><cite>Joe Andrieu:</cite> Yeah, I just want to tag on to that before I go over to Dave.</p>
+<p id="p119" class="phone s01"><cite>Joe Andrieu:</cite> That selectively disclosure thing is weird because we don't have any properties that require that feature of a crypto suite. and yet I totally agree with you because one of the fundamental problems is I give my driver's license to the bouncer at the bar and they have my home address, right? that's been one of the anchors for this conversation for years. so if we're using my name or address or email or whatever for or confidence method, but maybe it's particular maybe we could say if it involves PII. which maybe you could argue the cryptographic ones don't. but those are really good points to bring up. Dave, please.</p>
+<p id="p120" class="phone s01"><cite>Dave Longley:</cite> Yeah, I did want to draw people's attention to an article I put in that chat that was published on the diff blog that does touch on some of the things we're discussing around holder binding and what you get from it and what you don't and it's makes a distinction between first and third party fraud. we might want to lift some of text. I'm a author of that. I'm totally fine with us lifting some of the text that's written there when we talk about this in the competence method spec I'm not the only author so the bits I authored didn't…</p>
+<p id="p121" class="phone s01"><cite>Joe Andrieu:</cite> Does that build on the RWAT paper? Is that another URL I should drop in here?</p>
+<p id="p122" class="phone s01"><cite>Dave Longley:</cite> but that might be a good link</p>
+<p id="p123" class="phone s01"><cite>Joe Andrieu:</cite> I'll try and find that too. So, I've created a new issue on this which is to add a section on holder binding. I think people are going to come into confidence method and they are either going to think it's older binding or they're going to be confused by isn't this just older binding. So I think all the things that we just talked about here would be good things to put in a paragraph to explain how this is different that there's a nuance here that it gives slightly different features.</p>
+<p id="p124" class="phone s01"><cite>Joe Andrieu:</cite> And so I'm adding that as an issue and I will assign myself to it.</p>
+<p id="p125" class="phone s01"><cite>Joe Andrieu:</cite> Please.</p>
+<p id="p126" class="phone s01"><cite>Denken Chen:</cite> And I would like to add a little bit to it.</p>
+<p id="p127" class="phone s01"><cite>Denken Chen:</cite> For our case we started by using the open ID for for device binding features and it gets device binding but not binding to any specific person. that means my wife can use my phone to present my VCs. It's possible and it can be done right. the phone is not limited to any specific person because we can add our biometric to the device locking systems and I can g give my pass password to my wife.</p>
+<p id="p128" class="phone s01"><cite>Denken Chen:</cite> So the device is not real name based or tied to any specific user. And then we still got questions for this. And one of the terrible solution is calling it is building a real name based wit which I think is awful but we really had discussions around that internally and so that's why we are pushing into the biometric information particularly from the photo portrait because for any onsite</p>
+<p id="p129" class="phone s01"><cite>Denken Chen:</cite> onsite not for online scenario I can directly check your photo and you personally to match the face right so it's a low hanging fruit for us to persuade for the authority like the biometric has been checked on site and that's it you can</p>
+<p id="p130" class="phone s01"><cite>Denken Chen:</cite> after your checking you can delete all the information after that right so that's for our use case but obviously we still need to add more constraints including the selective disclosure things or more explain about when to use the device feature and say when you do not require that you shouldn't use that because there are many other cases for example when I go into a club I may need to present a age verification I can do it with just zero knowledge proof because he doesn't need to know who I am right yeah so that should be broadly described not just in our specifications…</p>
+<p id="p131" class="phone s01"><cite>Denken Chen:</cite> but also I think for many governments they need to pay attention to all of this yeah It's</p>
+<p id="p132" class="phone s01"><cite>Joe Andrieu:</cite> Great. Thanks,…</p>
+<p id="p133" class="phone s01"><cite>Joe Andrieu:</cite> I see two on the queue, but there was a question from Phil, do you want to speak to Your risk assessment question. if you want to put yourself in the queue.</p>
+<p id="p134" class="phone s01"><cite>Joe Andrieu:</cite> We will go to the cues since we're having not hearing from you. Go ahead, Ted.</p>
+<p id="p135" class="phone s01"><cite>Ted Thibodeau Jr:</cite> Yeah,…</p>
+<p id="p136" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I'm a little concerned about adding any discussion of user binding of anything because it implies more security than it deliver holder binding was first raised as a way to ensure that only some limited number of entities were authorized to present a credential.</p>
+<p id="p137" class="phone s01"><cite>Ted Thibodeau Jr:</cite> And the test for it started out already in biometrics talking about pictures of the authorized holder. you just have to watch a week's worth of television to see a lot of the ways that these things get spoofed and the security feeling is not good. you shouldn't feel secure because you're not the thing that you're enabling, the feature that you're building does not actually deliver security.</p>
+<p id="p138" class="phone s01"><cite>Ted Thibodeau Jr:</cite> It makes things a little harder to do maybe, but a lot of these things you put a mask on and you can spoof some photo checkers or that there's just too many ways to break it. device binding is a little bit more technically feasible and viable. But again, what people feel about security is not the real security that it delivers.</p>
+<p id="p139" class="phone s01"><cite>Ted Thibodeau Jr:</cite> or as others were talking about with you give your wife your password and your phone that means that she can pretend to be you and do anything that your phone is authorized to do and that that's not people understand to be getting from that device binding I think a lot of this stuff may belong in security considerations</p>
+<p id="p140" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I'm feeling that that might needed a title change to include and possible vulnerabilities because that is really what most people are concerned about and if they look to a security considerations and it doesn't say this is a potential vulnerability, they're going to think,…</p>
+<p id="p141" class="phone s01"><cite>Ted Thibodeau Jr:</cite> I'm fine." And that's not the case. I'll leave it at that for now.</p>
+<p id="p142" class="phone s01"><cite>Joe Andrieu:</cite> Thank you,…</p>
+<p id="p143" class="phone s01"><cite>Joe Andrieu:</cite> Ted. Phil, I see you mentioned you got your Bluetooth. Yeah, go ahead.</p>
+<p id="p144" class="phone s01"><cite>Phillip Long:</cite> I'm back.</p>
+<p id="p145" class="phone s01"><cite>Phillip Long:</cite> Can you hear me now?</p>
+<p id="p146" class="phone s01"><cite>Joe Andrieu:</cite> Yes, we can.</p>
+<p id="p147" class="phone s01"><cite>Phillip Long:</cite></p>
+<p id="p148" class="phone s01"><cite>Phillip Long:</cite> Yeah. I was just getting to the point and I think you're generally talking about it and that is I think what we're trying to say is in the description of the spec we need to give some ry categories that pull together the degree to which the particular confidence method does or does not protect against party more or less extensive ways of damage and that might be a useful way for people to look at this in order to say, okay, this family of confidence methods is useful when there's high risk. when it's le that's important, but I still don't want to make it clear. and I think that's what we're talking about. And just a collect comment about handing the phone to your spouse or something.</p>
+<p id="p149" class="phone s01"><cite>Phillip Long:</cite> Most phones these days have some sort of device based authorization because you either have to do a fingerprint or face recognition or something to get into it. So I'm not sure how we would take into account devices that don't have that versus devices that do in order to…</p>
+<p id="p150" class="phone s01"><cite>Phillip Long:</cite> then execute whatever the next step of the confidence method might be. That's it.</p>
+<p id="p151" class="phone s01"><cite>Joe Andrieu:</cite> Thank you,…</p>
+<p id="p152" class="phone s01"><cite>Joe Andrieu:</cite> Phil. man, go ahead.</p>
+<p id="p153" class="phone s01"><cite>Manu Sporny:</cite> Yeah, plus one of that. This is at least to me increasingly sounding like stuff for the threat model. we should probably highlight plus one to I think multiple people said for every confidence method that we have we should talk about how it can be defeated right because they can all be defeated phone number SMS hijacking biometric portrait realistic face mask multikey</p>
+<p id="p154" class="phone s01"><cite>Manu Sporny:</cite> sorry proof of possession, proxied attacks and then what Denin said was absolutely true I can set up any fingerprint to access my account right including my spouses partners whatever right and so that's not just finger print but face as well I do I think ety blank binding is definitely the wrong term. I don't know how much we should bang that drum in the specification, but that is the wrong, we care about language and nuance and getting to the right words. We may want to say, hey, people are saying things like device binding and holder binding.</p>
+<p id="p155" class="phone s01"><cite>Manu Sporny:</cite> that probably does not give you the security that you think you have. Please look at the ways that these can be defeated, because people are using these words, we probably want to at least say, " yeah, we know people are using these words, but we don't use them, right?" Just like we chose not to use relying party and instead rifier. We made a conscious decision to pick that. the same thing we don't talk about trust lists in this case I don't think we should talk about holder binding and device binding as the words that we use.</p>
+<p id="p156" class="phone s01"><cite>Manu Sporny:</cite> plus one to what Denin said all of these systems all of the confidence methods and all of the colder binding the binding methods can be defeated and we need to be very clear about that plus one to putting it in the threat model in talking about it I think really what we should focus on for confidence method and…</p>
+<p id="p157" class="phone s01"><cite>Manu Sporny:</cite> and that's</p>
+<p id="p158" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Thanks,…</p>
+<p id="p159" class="phone s01"><cite>Joe Andrieu:</cite> Thank you.</p>
+<p id="p160" class="phone s01"><cite>Denken Chen:</cite> So first we still need to describe what holder inding user binding is in our understanding because we already have UDW architecture and reference framework using that term and it's a way for us to communicate with other governments like</p>
+<p id="p161" class="phone s01"><cite>Denken Chen:</cite> that's how EU has been doing and here's what we are doing it by using the same term but we can just site the term but use confidence elsewhere or across the spec specifications that be more appropriate and I agree with Ted that we shouldn't make people feel that the whole binding things is a security feature And we all know that and we should make it clear but on the other case is how to say about this?</p>
+<p id="p162" class="phone s01"><cite>Denken Chen:</cite> we are trying to understand what is the best way to describe the relation between the holder and the VC subject. So we have some issues discussing about it can be a simple one like the holder is the subject right the most simple one at least it's the same device and you can improve the confidence by checking the portrait right and then we have some other authorization or delegate mechanism is possible</p>
+<p id="p163" class="phone s01"><cite>Denken Chen:</cite> for example taking medicine for my parents right so we actually started to looking at another specification we have a movie forward the Zcap things yeah so those are really important in when we are developing our real world use cases and yeah hopefully we will see which one is how should we organize all of application scenarios based on the assumption for example we started by making sure the holder is the subject then we build up more authorization mechanism delegating systems based on other specifications.</p>
+<p id="p164" class="phone s01"><cite>Denken Chen:</cite> Okay.</p>
+</section>
+<section>
+<h3 id="topic_4">Threat Modeling and Vulnerabilities</h3>
+<p id="p165" class="phone s01"><cite>Joe Andrieu:</cite> Cool. Thanks,…</p>
+<p id="p166" class="phone s01"><cite>Joe Andrieu:</cite> I put myself on the queue just at plus one to the notion that we are bumping into threat model issues. So, I created a issue on GitHub to start a threat model. and I assigned it to myself since I'm the threat model whisperer for this community right now. So I do think the one not only do we need threat models for the specific methods we're creating the biometrics and the verification method and the other if we do an email pin kind of loop then we would want to threat model that but also hopefully we can create a anchor to that threat model in a diagram and a dictionary that any confidence method could build on.</p>
+<p id="p167" class="phone s01"><cite>Joe Andrieu:</cite> and they can say, " here's my diagram with maybe one or two more components in it, and here's a threat model for our particular thing." And that would give us a framework for any given confidence method to say, okay, how does that line up against the known threats that other confidence methods are also being evaluated against? so I will work on that. okay, I do want to anchor that.</p>
+<p id="p168" class="phone s01"><cite>Joe Andrieu:</cite> I want to try and wrap up at the five minute before the hour as a habit for us. So we are at the tail end of the call. I see Elaine just jumped on the queue. So go ahead Elaine.</p>
+<p id="p169" class="phone s01"><cite>Elaine Wooton:</cite> Yeah, just real quick,…</p>
+<p id="p170" class="phone s01"><cite>Elaine Wooton:</cite> just as a reference, the American Association of Motor Vehicle Administrators has a car design standard for driver's licenses and…</p>
+<p id="p171" class="phone s01"><cite>Elaine Wooton:</cite> they have a lot of threat information in there. I'll send you a link to it, but I just want to I mean there's some good resources out there we can tap into.</p>
+<p id="p172" class="phone s01"><cite>Joe Andrieu:</cite> Okay, let me give you the issue for the threat model and…</p>
+<p id="p173" class="phone s01"><cite>Joe Andrieu:</cite> if you can drop URLs into that issue that would make it easy for me to find them.</p>
+<p id="p174" class="phone s01"><cite>Elaine Wooton:</cite> Sounds great.</p>
+<p id="p175" class="phone s01"><cite>Joe Andrieu:</cite> Thanks. Okay.</p>
+<p id="p176" class="phone s01"><cite>Elaine Wooton:</cite> Do it.</p>
+</section>
+<section>
+<h3 id="topic_5">Next Steps and Meeting Schedule</h3>
+<p id="p177" class="phone s01"><cite>Joe Andrieu:</cite> So, I think with that,…</p>
+<p id="p178" class="phone s01"><cite>Joe Andrieu:</cite> rather than opening a new issue, I think we can move to wrapping up. Den, did you have anything else that you'd like to discuss today?</p>
+<p id="p179" class="phone s01"><cite>Denken Chen:</cite> Yeah. No,…</p>
+<p id="p180" class="phone s01"><cite>Denken Chen:</cite> at this moment. Thank you.</p>
+<p id="p181" class="phone s01"><cite>Joe Andrieu:</cite> Then last call for any remaining comments. I will talk a little bit to give folks a chance to chime in, but thank you. This was great.</p>
+<p id="p182" class="phone s01"><cite>Joe Andrieu:</cite> We appreciate the input. these felt two very productive conversations on these two issues that we pulled up. So thank you for that. And are we back in two weeks? I still don't quite understand our rhythm is every other week except occasionally the VCWG has its main call at this time. Is that right?</p>
+<p id="p183" class="phone s01"><cite>Manu Sporny:</cite> Yep. …</p>
+<p id="p184" class="phone s01"><cite>Manu Sporny:</cite> next week is I'm checking the calendar.</p>
+<p id="p185" class="phone s01"><cite>Joe Andrieu:</cite> Okay.</p>
+<p id="p186" class="phone s01"><cite>Manu Sporny:</cite> Next week is the VCWG call. So, we should cancel the spec refinement call for next week. And then the week after that is going to be render method which means that the 25th. Yep.</p>
+<p id="p187" class="phone s01"><cite>Joe Andrieu:</cite> We're the 25th. Very cool.</p>
+<p id="p188" class="phone s01"><cite>Joe Andrieu:</cite> So we will see each other on the 25th for those of you who can join us there. Yes. Go ahead,…</p>
+<p id="p189" class="phone s01"><cite>Ivan Herman:</cite> something related to that though.</p>
+<p id="p190" class="phone s01"><cite>Ivan Herman:</cite> All this timing might change…</p>
+<p id="p191" class="phone s01"><cite>Joe Andrieu:</cite> Yes,…</p>
+<p id="p192" class="phone s01"><cite>Ivan Herman:</cite> if we get the new charter approved. which is a way to say guys if you haven't voted for the new charter yet then please do</p>
+<p id="p193" class="phone s01"><cite>Joe Andrieu:</cite> plus one to that. I haven't done it myself and I need to go over there and do it. So, thank you for that reminder. And for all of you, reach out to your AC reps if you haven't voted yet. that would be appreciated. Thanks, Ivan. And with that, I think we can adjourn. Thanks, everyone. Cheers.</p>
+<p id="p194" class="phone s01"><cite>Denken Chen:</cite> Thank you.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
