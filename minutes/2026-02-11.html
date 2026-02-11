@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 11 February 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>&ndash; DRAFT &ndash;<br>
+Verifiable Credentials Working Group Telco</h1>
+<h2>11 February 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/2026/01/14-vcwg-minutes.html"><img alt="Previous meeting." title="Previous meeting" src="https://www.w3.org/StyleSheets/scribe2/go-previous.png"></a>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Feb/0002.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/02/11-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+<a href="https://www.w3.org/2026/03/11-vcwg-minutes.html"><img alt="Next meeting." title="Next meeting" src="https://www.w3.org/StyleSheets/scribe2/go-next.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, dlongley, dmitriz, elaine, hsano, isaac, ivan, jennie, JennieM, kevin, KevinDean, manu, PDL_ASU, pohhendrydex, TallTed</dd>
+<dt>Regrets</dt><dd>PhilA</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>PDL_ASU</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#0d1e">Transcription tool</a></li>
+<li><a href="#88c4">Possible F2F</a></li>
+<li><a href="#30d2">Charter update</a></li>
+<li><a href="#7b2b">VC Data Model Issues</a>
+<ol>
+<li><a href="#3cd1">w3c/<wbr>vc-data-model#1480</a></li>
+<li><a href="#451b">w3c/<wbr>vc-data-model#1593</a></li>
+<li><a href="#21f1">w3c/<wbr>vc-data-model#1603</a></li>
+<li><a href="#23b2">w3c/<wbr>vc-data-model#1617</a></li>
+<li><a href="#d98d">w3c/<wbr>vc-data-model#1592</a></li>
+<li><a href="#67d1">w3c/<wbr>vc-data-model#1583</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=25ac class="phone s01"><cite>Brent:</cite> bulk of meeting on VCDM issues.</p>
+<p id=11c9 class="phone s01"><cite>Brent:</cite> Agenda updates?</p>
+<p id=9c52 class="phone s02"><cite>Manu:</cite> plan for an transcription tool for meetings (perhaps)?</p>
+<p id=96f2 class="phone s01"><cite>Brent:</cite> intros?</p>
+</section>
+
+<section>
+<h3 id=0d1e>Transcription tool</h3>
+<p id=4ade class="phone s02"><cite>Manu:</cite> transcription tool ---</p>
+<p id=28b3 class="phone s02"><cite>Manu:</cite> current shortcomings of transcription system - hard to say off record comments; URLs not shared in minutes; proposals and resolutions don't get saved hence not shared</p>
+<p id=b266 class="phone s02"><cite>Manu:</cite> subtopic: any URL or is detected as a 'special thing', will be pulled into the minutes automatically.</p>
+<p id=ffff class="phone s02"><cite>Manu:</cite> saying things off the record - only easy way to do that is going into a breakout room, but high friction.  Or say things without colon in the chat channel.</p>
+<p id=f3a6 class="phone s02"><cite>Manu:</cite> put &quot;off the record&quot; in the chat window&quot; but AI likely get it wrong at times. Shouldn't depend on the AI accuracy</p>
+<p id=c46a class="phone s02"><cite>Manu:</cite> concerns?</p>
+<p id=3408 class="phone s01"><cite>Brent:</cite> discussed topic last week during advisory bd f2f meeting. Part of session on open source software dev in W3C.  Came up with simple requirements toward a transcription system. Outlined in a way the community might be able to do this work</p>
+<p id=7fd7 class="phone s03"><cite>Ivan:</cite> may want to check with Otto from DID working group. May be approaching this differently. Considering speech to text engine it inject them into IRC, making current tools usable.</p>
+<p id=10000 class="phone s02"><cite>Manu:</cite> talking with Otto. Goal is to move to a transcription system ASAP. In discovery phase so many options being explored. Previous attempts (3 prior iterations) all of which generated issues, complaints.</p>
+<p id=faac class="phone s02"><cite>Manu:</cite> ideal outcome is moving to a new system sooner rather than later</p>
+<p id=260d class="phone s01"><cite>Brent:</cite> if the earlier problems can be solved there is great interest in adopting it,. Anything based on Google Meet is not usable in China, hence is a non-starter.</p>
+<p id=3950 class="phone s03"><cite>Ivan:</cite> China problem is on issue re: Google Meet. But there are other concerns around Meet, including the AI use of Meet by Google.</p>
+</section>
+
+<section>
+<h3 id=88c4>Possible F2F</h3>
+<p id=ba55 class="phone s01"><cite>Brent:</cite> agrees with many flowers blooming approach. There is encouragement by W3C</p>
+<p id=ace1 class="phone s01"><cite>Brent:</cite> F2F in Brussels in June, June 2 to 4, 2026.  But don't make travel arrangements yet . But have room arranged by GS1</p>
+</section>
+
+<section>
+<h3 id=30d2>Charter update</h3>
+<p id=4aed class="phone s01"><cite>Brent:</cite> As before this meeting, Charter voting results 18 responses supporting charter as written . Voting open through 27th of Feb. Objections at last minute are common. So stay tuned</p>
+<p id=0e72 class="phone s03"><cite>Ivan:</cite> not public yet but Ivan and the Chinese team haven't given up on a cryptosuite SM2 and SM3 into the charter. Might get comments from members in China to get it into the charter and members found later to do it. Heads up this might happen when voting closes</p>
+<p id=15dd class="phone s01"><cite>Brent:</cite> urges encouraging Chinese members to make this change.</p>
+<p id=751e class="phone s01"><cite>Brent:</cite> encourage voting members to do so.</p>
+</section>
+
+<section>
+<h3 id=7b2b>VC Data Model Issues</h3>
+<p id=bc58 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue%20state%3Aopen%20-label%3Afuture%20sort%3Aupdated-asc">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues?q=is%3Aissue%20state%3Aopen%20-label%3Afuture%20sort%3Aupdated-asc</a></p>
+<p id=b9ad class="phone s01"><cite>Brent:</cite> VCDM issues  looked at yesterday and everything has been triaged.</p>
+<h4 id=3cd1><a href="https://github.com/w3c/vc-data-model/issues/1480">w3c/<wbr>vc-data-model#1480</a></h4>
+<p id=8f43 class="phone s01"><cite>Brent:</cite> First is Example of use of renderMethod</p>
+<p id=18fe class="phone s01"><cite>Brent:</cite> assigned person isn't on the call. May not match current plans for the renderMethod</p>
+<p id=0620 class="phone s02"><cite>Manu:</cite> Issue may be overtaken by events.</p>
+<p id=88af class="phone s02"><cite>Manu:</cite> core of issue is the EU wants to have something to say about the renderMethod. There displayParameter is being used. Significant number of needs being met in education sector are met by current HTML renderMethod approach.</p>
+<p id=7bd3 class="phone s02"><cite>Manu:</cite> Patrick creates PRs but this may have fallen off his list. Manu offers to do it so.</p>
+<p id=0e62 class="phone s03"><cite>Ivan:</cite> If we do that we should do with confidenceMethod.</p>
+<p id=ffb7 class=irc><cite>&lt;dmitriz&gt;</cite> +1 to what Manu said, we should just point to the Render Method spec</p>
+<p id=6cca class="phone s03"><cite>Ivan:</cite> but a reference to both</p>
+<h4 id=451b><a href="https://github.com/w3c/vc-data-model/issues/1593">w3c/<wbr>vc-data-model#1593</a></h4>
+<p id=a5f2 class="phone s01"><cite>Brent:</cite> Add SD-JWT-VC to Ecosystem Compatibility section - minor change. Just adding another line to the list in the spec. Anyone willing to be assigned to it? Find a link to JD-JWT-VC and adding a line to it.</p>
+<p id=97a0 class="phone s02"><cite>Manu:</cite> Concerned that the word VC is use in the SD-JWT-VC spec incompatible about the way W3C uses Verifiable Credential. This has no relation to the W3C VC work. No mapping to VCs in general so would have to do this individually per data model</p>
+<p id=7a50 class="phone s01"><cite>Brent:</cite> understanding this request w</p>
+<p id=4d5c class=irc><cite>&lt;dlongley&gt;</cite> perhaps we should add a line that says: &quot;Despite the use of the term 'verifiable credentials' in the SD-JWT-VC specifications, these specifications explicitly state they are incompatible with W3C Verifiable Credentials&quot;</p>
+<p id=dabe class=summary>Understanding of the request would go into the ecosystem 5.11 ecosystem compatibility section.</p>
+<p id=6bc0 class="phone s02"><cite>Manu:</cite> supports adding that text and clarifies it is not directly related to the W3C VCDM workgroup activity</p>
+<p id=bf33 class="phone s01"><cite>Brent:</cite> may be worthwhile to point out that we don't know all the things the transformation section  items will result in successful transformations.</p>
+<p id=43df class="phone s01"><cite>Brent:</cite> anyone willing to be assigned to add this to the incompatibility section.</p>
+<p id=c82a class="phone s02"><cite>Manu:</cite> willing to give this a shot</p>
+<h4 id=21f1><a href="https://github.com/w3c/vc-data-model/issues/1603">w3c/<wbr>vc-data-model#1603</a></h4>
+<p id=a9f3 class=summary>Manu willing to address this</p>
+<h4 id=23b2><a href="https://github.com/w3c/vc-data-model/issues/1617">w3c/<wbr>vc-data-model#1617</a></h4>
+<p id=b83c class="phone s01"><cite>Brent:</cite> Manu raised this in Oct. haven't yet discussed it.</p>
+<p id=6549 class="phone s02"><cite>Manu:</cite> way back in another universe thought the best thing to do would be issuing one credential claim.  A driver's license would be split into 35 different credentials, for example. Now we have selective disclosure so atomic credentials may not be the best approach.</p>
+<p id=07da class="phone s02"><cite>Manu:</cite> if you want to selectively disclose use it not  individual credentials</p>
+<p id=3b09 class=irc><cite>&lt;manu&gt;</cite> I'd be fine w/ removing the section, too.</p>
+<p id=7315 class="phone s03"><cite>Ivan:</cite> is that a normative section?</p>
+<p id=5ef0 class="phone s01"><cite>Brent:</cite> no it's not</p>
+<p id=701a class="phone s04"><cite>Dmitri:</cite> hasn't come in a while - is a VC implementation Guide a responsibility of this group.</p>
+<p id=6826 class="phone s04"><cite>Dmitri:</cite> minimize the amount of claims, kitchen sink credentials done with selective disclosure - belongs in implementation Guide</p>
+<p id=b929 class="phone s04"><cite>Dmitri:</cite> Have had the conversation about composite verifiable credentials. I.e., credentials which contain credentials.</p>
+<p id=81e6 class="phone s04"><cite>Dmitri:</cite> CLRv2 from 1Edtech - expresses school transcript as a VC. It is compound as a credential for each class is then wrapped by an outer credential</p>
+<p id=1e53 class="phone s04"><cite>Dmitri:</cite> technically  this is correct vis-a-vis VCDM but awkward.</p>
+<p id=1522 class="phone s04"><cite>Dmitri:</cite> should instead of representing compound credentials in compound form use id digest hash to link to them</p>
+<p id=db81 class="phone s04"><cite>Dmitri:</cite> do we want to repurpose dependent claims to address this concept?&gt;</p>
+<p id=8a99 class=irc><cite>&lt;dmitriz&gt;</cite> agreed, we don't want to make removi8ng the section dependent</p>
+<p id=41ae class=irc><cite>&lt;dmitriz&gt;</cite> let's remove</p>
+<p id=287d class=irc><cite>&lt;manu&gt;</cite> +1 to that ^</p>
+<p id=915f class="phone s01"><cite>Brent:</cite> if anyone is volunteering to become an editor of the implementation guide (not revised since 2019)? Bundling dependent claims fits well into the revised implementation guide. But doesn't want to close this issue dependent on revising the implementation guide.</p>
+<p id=c986 class=irc><cite>&lt;dmitriz&gt;</cite> so, +1 from me to removing this current section &amp; closing this issue</p>
+<p id=a7bf class=irc><cite>&lt;dlongley&gt;</cite> +1 to remove the section and let the future take whatever direction wrt. linked VCs</p>
+<p id=952a class=irc><cite>&lt;dmitriz&gt;</cite> I can do that.</p>
+<p id=f721 class="phone s01"><cite>Brent:</cite> will open an issue in the implementation guide repo addressing this issue, link to it and remove the section PR.</p>
+<p id=e5fe class="phone s01"><cite>Brent:</cite> Dmitri has volunteered</p>
+<p id=8702 class="phone s01"><cite>Brent:</cite> would raise the issue in the implementation guide or Dmitri would you like to?</p>
+<p id=7ac5 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-imp-guide/">w3c/<wbr>vc-imp-guide</a></p>
+<p id=7a8a class="phone s04"><cite>Dmitri:</cite> willing to take this on. Close this one after PR re: implementation Guide</p>
+<h4 id=d98d><a href="https://github.com/w3c/vc-data-model/issues/1592">w3c/<wbr>vc-data-model#1592</a></h4>
+<p id=a51c class="phone s01"><cite>Brent:</cite> Multiple comments on intro section. Manu assigned to himself a year ago.</p>
+<p id=769b class="phone s02"><cite>Manu:</cite> happy for someone else to take this one. Maybe history of why it is what is  would be something Manu has knowledge about.</p>
+<p id=bfd3 class="phone s01"><cite>Brent:</cite> neglected to ask Manu in last conversation - apologies</p>
+<p id=00c5 class="phone s01"><cite>Brent:</cite> not opposed to having a conversation about it. More productive to discuss with concrete changes in a PR</p>
+<p id=3035 class="phone s02"><cite>Manu:</cite> to make it easier for someone else to raise a PR....</p>
+<p id=c4e8 class="phone s02"><cite>Manu:</cite> Paragraph 1 doesn't define what VC and link to said definition should be made.</p>
+<p id=338e class="phone s02"><cite>Manu:</cite> physical equivalence understood by average user by not for other part isn't.</p>
+<p id=e0e5 class=irc><cite>&lt;dlongley&gt;</cite> note: various physical &quot;watermarks&quot;/other security mechanisms, etc. ... aren't necessarily very intuitive either</p>
+<p id=8a4b class="phone s02"><cite>Manu:</cite> unclear if mentioning business rules would help. The process a verifier runs is helpful to understand this.</p>
+<p id=b8a7 class="phone s02"><cite>Manu:</cite> examples of  holders is provided. Concern is might cause confusion but was added because leaving it out did cause confusion</p>
+<p id=6d1f class="phone s02"><cite>Manu:</cite> Should we link to something about subject being the holder and point to that implementation guide section</p>
+<p id=d50c class="phone s02"><cite>Manu:</cite> Examples of verifying VC are confusing. Have a section on what is processed in the document and should repeat that.</p>
+<p id=5fab class=irc><cite>&lt;dlongley&gt;</cite> &quot;Does the role 'verifier' not include the process of 'verifying' the correctness ... of a claim&quot; &lt;-- definitely not, this is specifically avoided through the use of trust in the issuer instead</p>
+<p id=4c97 class="phone s02"><cite>Manu:</cite> bullet 4 - confusing and definitions missing. Have to take a look and see what can be done.</p>
+<p id=15d5 class="phone s02"><cite>Manu:</cite> figure 1 how do you identify identifiers?  See proof of possession orypto key, might be useful</p>
+<p id=7f2f class=irc><cite>&lt;dlongley&gt;</cite> ecosystem is not used as a proper noun</p>
+<p id=d3a7 class="phone s05"><cite>Many:</cite> why are we using ecosystem? Is it not also a protected environment or proprietary system? Ecosystems come in many forms. Can do it multiple ways. Shouldn't remove the language as request isn't clear.</p>
+<p id=b7b3 class="phone s02"><cite>Manu:</cite> federated ID model and what we're presenting is not clear. We aren't clear about federated ID and what we are doing Federated ID is 2-party model, W3C is a 3-party model. May need to explain the differences.  Ask for clarification</p>
+<p id=5aa0 class="phone s01"><cite>Brent:</cite> currently Manu is assigned to this issue and wishes not to be.</p>
+<p id=76fa class="phone s01"><cite>Brent:</cite> who else can take this on and make one or more PRs to address the concerns</p>
+<p id=222c class="phone s01"><cite>Brent:</cite> long pause.....</p>
+<p id=c32e class=summary>lost my audio  can some take this while i fix it?</p>
+<p id=fd1a class=irc><cite>&lt;manu&gt;</cite> dmitriz: Maybe we can come back to this</p>
+<p id=bbc9 class="phone s04"><cite>Dmitri:</cite> should we address another time?</p>
+<p id=0852 class="phone s01"><cite>Brent:</cite> yes come back to it later</p>
+<h4 id=67d1><a href="https://github.com/w3c/vc-data-model/issues/1583">w3c/<wbr>vc-data-model#1583</a></h4>
+<p id=98dd class="phone s01"><cite>Brent:</cite> security review recommended the security considerations should be modified. Didn't tackle it then and said it would be future work</p>
+<p id=3092 class="phone s02"><cite>Manu:</cite> threat modeling guide has been written and its comprehensive an well written. Working groups should include threat modeling in each of the groups.</p>
+<p id=89c3 class="phone s01"><cite>Brent:</cite> expects a request for threat model for the W3C ecosystem.</p>
+<p id=8b34 class="phone s02"><cite>Manu:</cite> every spec should have a threat modeling guide. But that's wishful thinking as they are significant piece of work</p>
+<p id=dbb5 class="phone s02"><cite>Manu:</cite> Threat modeling might become a web of guides pointing to each other anchored to the VCDM threat model - may become the future state. Likely need to do one for VCDM v1.1 - SHould close this and agree to do one for VCDM</p>
+<p id=0288 class="phone s03"><cite>Ivan:</cite> is uneasy because many of these are for specs in document mode.  This could be an issue for existing specs which are more complicated. Should do this going forward, not retrospectively.</p>
+<p id=00e1 class="phone s03"><cite>Ivan:</cite> these re in document maintenance mode.</p>
+<p id=05a4 class="phone s02"><cite>Manu:</cite> lets talk to Joe and Simone for suggestions</p>
+<p id=4614 class="phone s01"><cite>Brent:</cite> At time.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+<div class=diagnostics>
+<h2>Diagnostics</h2>
+<p class=warning>Succeeded: s/- bulk/: bulk/</p>
+<p class=warning>Succeeded: s/Many: subtopic/Manu: subtopic/</p>
+<p class=warning>Succeeded: i/Manu: transcription tool ---/Topic: Transcription tool/</p>
+<p class=warning>Succeeded: s/fallen of his/fallen off his/</p>
+<p class=warning>Succeeded: s/SD-JWT specifications/SD-JWT-VC specifications/</p>
+<p class=warning>Maybe present: Dmitri, Many</p>
+<p class=warning>All speakers: Brent, Dmitri, Ivan, Manu, Many</p>
+<p class=warning>Active on IRC: brent, dlongley, dmitriz, hsano, ivan, JennieM, KevinDean, manu, PDL_ASU, TallTed</p>
+</div>
+</body>
+</html>
