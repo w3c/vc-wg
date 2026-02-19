@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+<h1>VCWG Spec Refinement</h1>
+<h2>2026-02-18</h2>
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2025Oct/0000.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2025/10/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin Young, Brent Zundel, Dave Longley, Dmitri Zagidulin, Elaine Wooton, Hiroyuki Sano, Ivan Herman, Kevin Dean, Nathan Rao, Parth Bhatt, Patrick St-Louis, Phil Archer, Ted Thibodeau Jr, Vasilis Konstantinou</dd>
+<dt>Scribe</dt><dd>Your Robot Overlords</dd>
+</dl>
+</div>
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#topic-1">PR Processing and IPR Concerns</a></li>
+<li><a href="#topic-2">Preview in Code Spaces PR</a></li>
+<li><a href="#topic-3">HTML Render Method PR Updates</a></li>
+<li><a href="#topic-4">Renaming the HTML Render Method</a></li>
+<li><a href="#topic-5">AI and Credential Comprehension</a></li>
+</ol>
+</nav>
+</div>
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section>
+<h3 id="topic-1">PR Processing and IPR Concerns</h3>
+<p id="p1" class="phone s01"><cite>Phil Archer:</cite> It's all very quiet. I'm guessing that is it from memory I might have this wrong.</p>
+<p id="p2" class="phone s01"><cite>Phil Archer:</cite> Is it random method this week?</p>
+<p id="p3" class="phone s01"><cite>Benjamin Young:</cite> Yeah, that's…</p>
+<p id="p4" class="phone s01"><cite>Benjamin Young:</cite> what Brent had said on another call.</p>
+<p id="p5" class="phone s01"><cite>Phil Archer:</cite> Yeah. Right.</p>
+<p id="p6" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right, sounds good. Shall we jump into it then?</p>
+<p id="p7" class="phone s01"><cite>Phil Archer:</cite> Yeah. Sounds like it.</p>
+<p id="p8" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right, welcome everyone to the weekly etc render method task for as usual, we're gonna process some of the outstanding poll requests first and then go through issue processing. Before we start, does anybody else have pressing concerns, things to add to the agenda? All right. In that case, I'm going to share my screen.</p>
+<p id="p9" class="phone s01"><cite>Ivan Herman:</cite> So sorry I think we have to go through the pans of recording.</p>
+<p id="p10" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah. yeah. That's So, this meeting is recorded, I believe. we are as always under the W3C code of conduct and, under the W3C IPR agreement. If you haven't signed it and you're not a member of the group, please raise your hand, say something in chat, and we'll sort it out. I don't mean to press record or anything like that, right? It's handled automatically. Yeah. All right. Okay.</p>
+<p id="p11" class="phone s01"><cite>Dmitri Zagidulin:</cite> So couple of things. let's start with the lowhanging fruit. We have this R by executive. I'm not sure what call name is, but it's fairly minor PR. Just references mustache instead of sort of spelling out the algorithm. it has two approvals. This is 41. Here it is in chat. Folks want to take a look. But essentially it's got app No objections. Does anybody have any objection currently? Otherwise we'll merge it.</p>
+<p id="p12" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yes. Go ahead.</p>
+<p id="p13" class="phone s01"><cite>Dave Longley:</cite> I don't have any objection to merging it,…</p>
+<p id="p14" class="phone s01"><cite>Dave Longley:</cite> but I do note that I expect the other PRs on the HTML rendering method to sort of u supersede it, but that's totally fine.</p>
+<p id="p15" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I guess my process question is what is there any preferred method?</p>
+<p id="p16" class="phone s01"><cite>Dmitri Zagidulin:</cite> Do we merge this one now and then just it'll be superseded by Do we say overtaken by events? what Phil or others what do you think</p>
+<p id="p17" class="phone s01"><cite>Phil Archer:</cite> I just want to give you some background on…</p>
+<p id="p18" class="phone s01"><cite>Phil Archer:</cite> who Executive is. I know him he's from a company called EECC. which is part owned by GS1 Germany. and his company is actually the one building our issuance wallet and solution. so I do know him. when I'm trying to work out wearing my chair hat whether he's signed the IP agreement, the contributor agreement because that's important in terms of accepting PR requests from people so pull requests from people who haven't. I think in this case for the reasons already discussed I don't think it's an issue.</p>
+<p id="p19" class="phone s01"><cite>Phil Archer:</cite> but we should in general be careful about accepting pull requests from people who are not usually on these calls. And I don't think he's technically a member of the group. I could be wrong on that, so yes, the fact that I know him isn't enough.</p>
+<p id="p20" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Understood. that's a very good point. I see Ivan's on the queue.</p>
+<p id="p21" class="phone s01"><cite>Dmitri Zagidulin:</cite> Go ahead.</p>
+<p id="p22" class="phone s01"><cite>Ivan Herman:</cite> So my feeling is that there has been this claim several times that the HTML rendering method will make this one and…</p>
+<p id="p23" class="phone s01"><cite>Ivan Herman:</cite> some others oate. I think we should give credit to the authors of the HTML render method in the sense that let's work on that. Let's see whether it can be merged and when it can be merged then we will have to prove that their statement is correct and…</p>
+<p id="p24" class="phone s01"><cite>Ivan Herman:</cite> then we can decide on this one and then we can decide on the rendering methods which are already in the docume Just adding to the document with the sort of feeling and knowledge that in two weeks we will take it out looks funny to me.</p>
+<p id="p25" class="phone s01"><cite>Dmitri Zagidulin:</cite> I do have a process question,…</p>
+<p id="p26" class="phone s01"><cite>Dmitri Zagidulin:</cite> but Benjamin's on the queue. Go ahead, Benjamin.</p>
+<p id="p27" class="phone s01"><cite>Benjamin Young:</cite> Yeah, if this one passes the RPI IPR muster, I would merge it. and I don't think we should assume that just because there's a possible displacing thing in the HTML renderer method that this shouldn't go in the meantime because people are clearly already implementing it, etc. and until we're certain that the two do displace each other and that there's consent in the market to go this direction being the HTML render method that it's best to leave them both in process.</p>
+<p id="p28" class="phone s01"><cite>Benjamin Young:</cite> Having worked on both of them I don't want to just throw the mustache one out until we're certain the group is ready. That's it.</p>
+<p id="p29" class="phone s01"><cite>Dmitri Zagidulin:</cite> And…</p>
+<p id="p30" class="phone s01"><cite>Dmitri Zagidulin:</cite> I agree with you that I don't think there's clear consensus that the framebased method, the sandbox iframe necessarily supersedes this one. I think the two can coexist side by side. okay, Patrick, go ahead.</p>
+<p id="p31" class="phone s01"><cite>Patrick St-Louis:</cite> Yeah, I just wanted to maybe share my opinion about the very simple question of do we merge this if there's subsequent change. I would probably treat PRs in chronological order and whichever ones are ready first have precedence on what comes after because otherwise if someone has worked on a PR and then someone else started a new PR after you don't want to invalidate the work previously and it should be always sort of taken into account and if it so happens that it gets overwritten at a later stage that's another</p>
+<p id="p32" class="phone s01"><cite>Patrick St-Louis:</cite> discussion to be had, but I think chronological order, whichever one is ready for it should be merged. otherwise, you're kind of going back and forth between maybe the evolution of the project and you want to keep it consistently chronological.</p>
+<p id="p33" class="phone s01"><cite>Dmitri Zagidulin:</cite> That's a very good point. this is a spec under active work. There's going to be a lot of changes. I do think that trying to guess which supersedes what is going to invite chaos. So I'm inclined to say yes,…</p>
+<p id="p34" class="phone s01"><cite>Dmitri Zagidulin:</cite> let's merge it barring the IPR question. But Benjamin, go ahead. You're on the queue.</p>
+<p id="p35" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I just want to double down on that …</p>
+<p id="p36" class="phone s01"><cite>Benjamin Young:</cite> if we are removing any of the ones already in the spec, those need to have their own discussions, need to be proposed as issues, etc. So, I don't ever want us to see …</p>
+<p id="p37" class="phone s01"><cite>Benjamin Young:</cite> there's a PR pending, so we can chuck out all the past work because it might displace it like we should push forward on HTML render method.</p>
+<p id="p38" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed.</p>
+<p id="p39" class="phone s01"><cite>Benjamin Young:</cite> I'm likely going to be the one to do the work that says this is how you would do the mustache stuff, etc. and then we discuss it. If there's consensus, we take out the mustache one or not. Right? that's what consensus is about.</p>
+<p id="p40" class="phone s01"><cite>Benjamin Young:</cite> That's all. Thanks.</p>
+<p id="p41" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thank you so much. Wholly agreed. All right. Phil and Ivan, if you can confirm that, Sebastian is part of the working group.</p>
+<p id="p42" class="phone s01"><cite>Phil Archer:</cite> No, he's not a member of the working group.</p>
+<p id="p43" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p44" class="phone s01"><cite>Dmitri Zagidulin:</cite> Not a member.</p>
+<p id="p45" class="phone s01"><cite>Phil Archer:</cite> But I think there is a way to say or…</p>
+<p id="p46" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p47" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, great. Ivan or…</p>
+<p id="p48" class="phone s01"><cite>Phil Archer:</cite> is there a disclaimer somewhere that says if you contribute then you are subject to the IP? I should know this. I don't. Ivan. Yeah. Help help us out here.</p>
+<p id="p49" class="phone s01"><cite>Ivan Herman:</cite> I don't know.</p>
+<p id="p50" class="phone s01"><cite>Dmitri Zagidulin:</cite> Iv Yeah. Sorry.</p>
+<p id="p51" class="phone s01"><cite>Ivan Herman:</cite> I don't know either. there is something…</p>
+<p id="p52" class="phone s01"><cite>Ivan Herman:</cite> but I don't know from the top of my head. But isn't it simpler if we contact them or you contact them if them feel whether they simply join the working group? Sure.</p>
+<p id="p53" class="phone s01"><cite>Phil Archer:</cite> Yeah. …</p>
+<p id="p54" class="phone s01"><cite>Phil Archer:</cite> I've got a conflict of interest here because if I say he's GS1, which he's not quite, then I'm breaking the GS1 rules, which I don't want to do.</p>
+<p id="p55" class="phone s01"><cite>Phil Archer:</cite> I'm certainly convinced of his expertise. Crank it. We're spending money with him to build our system for God's sake. So, yeah, we got faith in, But I'm trying to be neutral about this and if we received an invited expert application from him,…</p>
+<p id="p56" class="phone s01"><cite>Phil Archer:</cite> then I would have to recuse myself from that because Right.</p>
+<p id="p57" class="phone s01"><cite>Ivan Herman:</cite> that's fine…</p>
+<p id="p58" class="phone s01"><cite>Ivan Herman:</cite> but Brent and I can make a decision on the invited experty position if he comes in and I understand that you will be outside of that decision that's fine but at least that should happen I think it creates a unclear precedent if we take people from outside the working group and the invited expert is there for the cases…</p>
+<p id="p59" class="phone s01"><cite>Ivan Herman:</cite> where the person or the company for some reason cannot join W3C as a member that's exactly why we have a number of invited experts on this group already so that's not unheard Yeah,</p>
+<p id="p60" class="phone s01"><cite>Phil Archer:</cite> …</p>
+<p id="p61" class="phone s01"><cite>Phil Archer:</cite> for clarity, the request to me is I write to Sebastian and say bit of a problem merging your PR. simply because your status is not clear with respect to IPR. basically please join the working group. here's the invited expert route if you want to but please understand that I will not be involved in processing this as I would be for other people.</p>
+<p id="p62" class="phone s01"><cite>Ivan Herman:</cite> That sounds perfect to me.</p>
+<p id="p63" class="phone s01"><cite>Phil Archer:</cite> Okay then I'll do that. Thank you.</p>
+<p id="p64" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right, sounds good. And okay and just for my own education the general policy is only members of the group can contribute right because that means they signed the IPR agreement and so on we don't see Understood.</p>
+<p id="p65" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p66" class="phone s01"><cite>Ivan Herman:</cite> That's the preferred way, mean there is some complicated way if somebody comes in and contribute then they have to go out and sign some papers etc which is administratively almost the same thing as joining the group as invited expert but don't mean sorry it's minuted anyway anyway so yeah the preferred route is that the person joins in some way or</p>
+<p id="p67" class="phone s01"><cite>Dmitri Zagidulin:</cite> Got And Kevin, you're on the queue.</p>
+<p id="p68" class="phone s01"><cite>Kevin Dean:</cite> I would certainly support the idea or say that the preference is that a contributor should be a member of the group. But if there is a change that either is so simple and obvious that it should be made or…</p>
+<p id="p69" class="phone s01"><cite>Dmitri Zagidulin:</cite> great question, Ivan.</p>
+<p id="p70" class="phone s01"><cite>Kevin Dean:</cite> has the support of somebody else who is a member of the group. Would it be sufficient for somebody…</p>
+<p id="p71" class="phone s01"><cite>Kevin Dean:</cite> who is a member to add a comment essentially sponsoring the change and allowing the change to go through?</p>
+<p id="p72" class="phone s01"><cite>Ivan Herman:</cite> So the mechanism at the moment is…</p>
+<p id="p73" class="phone s01"><cite>Ivan Herman:</cite> if somebody puts in a PR or some substantive thing into the system by GitHub, then I get a notification and I get a request on telling the system that it is not a substantial addition and therefore it's not So if somebody comes in with a comment as you say Kevin and this is clearly not something that is IPR problematic then I automatically acknowledge the PR and it goes through and no problem there.</p>
+<p id="p74" class="phone s01"><cite>Ivan Herman:</cite> To be honest, I don't remember having seen this PR.</p>
+<p id="p75" class="phone s01"><cite>Ivan Herman:</cite> I was wondering When was that submitted?</p>
+<p id="p76" class="phone s01"><cite>Dmitri Zagidulin:</cite> on early January.</p>
+<p id="p77" class="phone s01"><cite>Dmitri Zagidulin:</cite> So this is January 2nd. Devin</p>
+<p id="p78" class="phone s01"><cite>Kevin Dean:</cite> as some of you may have seen in the Slack channel, there has been a recent change to GitHub where it's possible now to restrict pull requests to contributors only. So it may be worth considering that we add as contributors anybody who is a member of the group and that will automatically block and therefore encourage people to join if they wish to submit a change. so then we can come into these discussions knowing that everybody who has submitted a PR is a full member…</p>
+<p id="p79" class="phone s01"><cite>Kevin Dean:</cite> because they are a contributor. It's the new setting in GitHub.</p>
+<p id="p80" class="phone s01"><cite>Dmitri Zagidulin:</cite> That would be pretty amazing and…</p>
+<p id="p81" class="phone s01"><cite>Dmitri Zagidulin:</cite> helpful. Ivan, is that something that you might be able to do?</p>
+<p id="p82" class="phone s01"><cite>Ivan Herman:</cite> The problem I have is that we have a very high number of members in the working group.</p>
+<p id="p83" class="phone s01"><cite>Ivan Herman:</cite> Many of whom are there as lurkers so to say and I have to do that manually for each of them. I believe I cannot make a kind of an overall general statement.</p>
+<p id="p84" class="phone s01"><cite>Ivan Herman:</cite> I believe</p>
+<p id="p85" class="phone s01"><cite>Kevin Dean:</cite> I don't think it would be necessary to add everybody…</p>
+<p id="p86" class="phone s01"><cite>Dmitri Zagidulin:</cite> It does seem</p>
+<p id="p87" class="phone s01"><cite>Kevin Dean:</cite> because as we all know there are a number of us and I certainly have been guilty of it who are just listeners in a group and don't actively participate. so if somebody wishes to submit a PR then it simply becomes a request to Yvon whoever else to add as a contributor and…</p>
+<p id="p88" class="phone s01"><cite>Kevin Dean:</cite> then the checks can be made so we can still enforce the restriction and keep the workload on Avon as light as possible.</p>
+<p id="p89" class="phone s01"><cite>Ivan Herman:</cite> To be a little bit administrative,…</p>
+<p id="p90" class="phone s01"><cite>Ivan Herman:</cite> I think this is something that the working group has to decide and that's something that I would prefer first to discuss with F and Brent and then it's a working group decision. It's not here.</p>
+<p id="p91" class="phone s01"><cite>Dmitri Zagidulin:</cite> Agreed. And in fact,…</p>
+<p id="p92" class="phone s01"><cite>Dmitri Zagidulin:</cite> this sounds like something that's a great candidate for W3C in general, a high leverage thing since the MV ship application has a GitHub field. This seems eminently automatable. but is a little bit out outside of our u scope especially of this working group and task force. So that's the objections. I'm going to let's just take the easiest next step which is Phil will reach out to Sebastian.</p>
+<p id="p93" class="phone s01"><cite>Dmitri Zagidulin:</cite> hopefully we can just get him as invited expert otherwise we'll proceed with the other mechanism mentioned which is somebody will sponsor or…</p>
+<p id="p94" class="phone s01"><cite>Dmitri Zagidulin:</cite> something such okay so Benjamin go ahead</p>
+<p id="p95" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I'm fine with your plan for the PR,…</p>
+<p id="p96" class="phone s01"><cite>Benjamin Young:</cite> but I wanted to counter the proposal of limiting poll requests. I think it's putting up fences where we should have gates. I think folks putting in PRs expresses that there's interest and desire to participate in the working group. or they're doing it on behalf of folks like GS1. and that only keeping it to our little enclave of people who are already members prevents us from ever knowing that there are other people who are interested in participating in a working group. So, I think it's the wrong way around.</p>
+<p id="p97" class="phone s01"><cite>Benjamin Young:</cite> We should leave it open. I think we should have a better understanding of what's required clearly this last 15 minutes of discussions about IPR agreements and stuff shows that we as a working group don't understand it and it could be streamlined. and likely these kind of things should be handled outside of call time. but I would push super hard against putting up more fences.</p>
+<p id="p98" class="phone s01"><cite>Benjamin Young:</cite> I don't think the world needs more fences and I think a gate here this one is working just fine to say thank you for the PR here's one more thing you have to click please do that and by the way we'd love you to join the working group and contribute in more ways so that thanks</p>
+<p id="p99" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thank you so much in that case we'll move on because it is a broader discussion than just this test course. All right. So I'm going to leave this comment us So we'll come back to the ongoing discussion of the HTML render method. Another one that we can hopefully resolve quickly is from Benjamin Ben about the preview in code spaces.</p>
+</section>
+<section>
+<h3 id="topic-2">Preview in Code Spaces PR</h3>
+<p id="p100" class="phone s01"><cite>Dmitri Zagidulin:</cite> So advice from the group about this. This seems good to me. I don't know, Benjamin, if you want to show us what this actually looks like the code space create or what? Yeah,…</p>
+<p id="p101" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I'm happy to do a demo…</p>
+<p id="p102" class="phone s01"><cite>Benjamin Young:</cite> if we want, but I can explain where it comes from. we Yeah,…</p>
+<p id="p103" class="phone s01"><cite>Dmitri Zagidulin:</cite> please at least give us some background.</p>
+<p id="p104" class="phone s01"><cite>Benjamin Young:</cite> So, there's another PR that's kind of related. I don't know if I connected them. it's in the CCG repo, I think, on the website. Let me see if I can find it. that one just sort of got automerged because it's a website page. give me a second. I'm getting a link for it.</p>
+<p id="p105" class="phone s01"><cite>Benjamin Young:</cite> Essentially, I created a contributing page that talks about how to do in browser editing of the specifications using GitHub code spaces. And a good third of the description of how to do that was the steps to add the necessary things to preview the port forwarding and this live server add-on and whatever that were needed to wire up previews into code spaces after you started a code space. So this devcontainer.json just streamlines that. Nobody has to use it.</p>
+<p id="p106" class="phone s01"><cite>Benjamin Young:</cite> but once it's there, if you start a code space, you already get the live preview stuff turned on and you can just click the go live button in the bottom right corner and you get a preview of the respect HTML fully rendered. so you end up basically with VS Code running in your browser in one tab and the live preview that auto refreshes as you change stuff in another tab. So it's super useful for folks wanting to contribute who don't want to download VS code or node or whatever we might have in the repository that they can just essentially go to the code button and create a code space and then they get a more advanced editing environment with a preview and things like that. So that's the story line.</p>
+<p id="p107" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. …</p>
+<p id="p108" class="phone s01"><cite>Benjamin Young:</cite> I can click through what that looks like. if you all want to see</p>
+<p id="p109" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p110" class="phone s01"><cite>Dmitri Zagidulin:</cite> thanks Benjamin. So, I'm given that this is a pretty harmless and out of the way that doesn't require anything of anyone. I'm inclined to just merge any other objections from the group and do folks want to see what the psych this preview actually looks like with this live editing otherwise we'll move on. Not hearing Contributing detail link in chat. All right. Sounds good. so let's merge this. If we have time at the end of the call, we can circle back on this and</p>
+</section>
+<section>
+<h3 id="topic-3">HTML Render Method PR Updates</h3>
+<p id="p111" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay, let us come back to the saga of our HTML render method which I'm actually would like to propose that we rename to sandbox iframe method because that's the important load code bearing part of this,…</p>
+<p id="p112" class="phone s01"><cite>Ivan Herman:</cite> Everything to</p>
+<p id="p113" class="phone s01"><cite>Dmitri Zagidulin:</cite> not the fact that it's HTML.</p>
+<p id="p114" class="phone s01"><cite>Dmitri Zagidulin:</cite> But Ivan Benjamin, do you want to walk us through the sort of the latest in the conversation? All right, Benjamin.</p>
+<p id="p115" class="phone s01"><cite>Benjamin Young:</cite> Yeah. Yeah.</p>
+<p id="p116" class="phone s01"><cite>Benjamin Young:</cite> I continue to process all the different threads and I may not have gotten them all. but I made some changes last night which I think addresses the bulk of them. this current draft does incorporate the algorithm approach and spells that out more. clarifies some language about the different components at use. I stopped saying shim code and now it says wrapper code and we can bike shed that if folks want to.</p>
+<p id="p117" class="phone s01"><cite>Benjamin Young:</cite> and large the functionality is identical. I haven't seen this response from Avon and this one and probably any of the other ones that I've missed. It'd be great to have them as separate issues and to get the bulk of this merged so that we can move on because it's already getting hairy because essentially each person that comments has a whole new thread of issues and they're intermixed and out of sync and it's just long lived PRs or some circle of hell. so it would be great to merge it and move forward. it's 2.2.4. Yep.</p>
+<p id="p118" class="phone s01"><cite>Benjamin Young:</cite> So, the bulk of it hasn't changed meaningfully. It's just been corrected language. I can talk through this weird looking chart if people want to see it.</p>
+<p id="p119" class="phone s01"><cite>Dmitri Zagidulin:</cite> First of all,…</p>
+<p id="p120" class="phone s01"><cite>Dmitri Zagidulin:</cite> thank you for adding the chart. I think that was one of the requests earlier. Looks great. before asking you to talk through it do first of all here's the preview link in chat. I completely agree with you that we do not want to encourage longunning PRs good feedback on the comments should be opened as separate issues. So any objections to us proceeding in this direction in general? So merging the PR continuing to refine it. So I'm seeing a plus one from Dave in chat. Anyone else?</p>
+<p id="p121" class="phone s01"><cite>Dmitri Zagidulin:</cite> A glad film.</p>
+<p id="p122" class="phone s01"><cite>Phil Archer:</cite> I have no objection at all. I think that's the right thing to do. but I wonder is there a way to merge it without triggering echidna to immediately publish it in space because I think that as Benjamin set out there's a lot of changes here and…</p>
+<p id="p123" class="phone s01"><cite>Phil Archer:</cite> we do need to sort of review it in bite-sized chunks. and part of me thinks, yeah, do you know what? It would be good not necessarily to immediately make the next public working draft.</p>
+<p id="p124" class="phone s01"><cite>Ivan Herman:</cite> The only way to do it is to explicitly switch off in the repository the Akidna script.</p>
+<p id="p125" class="phone s01"><cite>Ivan Herman:</cite> But I am tempted to say I would prefer not.</p>
+<p id="p126" class="phone s01"><cite>Phil Archer:</cite> Then it was just a suggestion. Okay. Thanks,</p>
+<p id="p127" class="phone s01"><cite>Dmitri Zagidulin:</cite> So just for my own education, currently it's set up that with every PR akid updates it updates the public working draft link.</p>
+<p id="p128" class="phone s01"><cite>Ivan Herman:</cite> Yes. …</p>
+<p id="p129" class="phone s01"><cite>Dmitri Zagidulin:</cite> Did I understand correctly?</p>
+<p id="p130" class="phone s01"><cite>Ivan Herman:</cite> every merge of a PR triggers the kidnap publication.</p>
+<p id="p131" class="phone s01"><cite>Dmitri Zagidulin:</cite> That seems fine…</p>
+<p id="p132" class="phone s01"><cite>Ivan Herman:</cite> So yes, the official working draft on PR will become the one that you merge.</p>
+<p id="p133" class="phone s01"><cite>Dmitri Zagidulin:</cite> since it's exactly like looking at Maine. So I'm seems fine to me. Benjamin, go ahead.</p>
+<p id="p134" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I was just wondering if Phil could speak more to the concern there of it being on TR space.</p>
+<p id="p135" class="phone s01"><cite>Benjamin Young:</cite> I'm happy to give it more time to be discussed as a concept or…</p>
+<p id="p136" class="phone s01"><cite>Dmitri Zagidulin:</cite> Okay. Okay.</p>
+<p id="p137" class="phone s01"><cite>Benjamin Young:</cite> approach. I just didn't want to keep having issues as Okay.</p>
+<p id="p138" class="phone s01"><cite>Phil Archer:</cite> I don't want to hold this up.</p>
+<p id="p139" class="phone s01"><cite>Phil Archer:</cite> I don't want to ask whether No, no, not at all. it is clearly right to merge this as soon as possible. Absolutely. Total out of support. It was just that I think there is at least a perceived difference between what's published on the w3.org/TR space which is and then there's the latest editor's draft and the way it's set up is they are in sync every day I think if you make multiple merges in one day…</p>
+<p id="p140" class="phone s01"><cite>Ivan Herman:</cite> No, no, no.</p>
+<p id="p141" class="phone s01"><cite>Phil Archer:</cite> then only the document only then it only gets updated once a day something like that but no it gets it every time but it's the same date so it gets overwritten or whatever anyway it doesn't matter the important thing is that it's set up</p>
+<p id="p142" class="phone s01"><cite>Phil Archer:</cite> There is no distinction between the latest editor's draft and what's in TR space. And I was just raising the question,…</p>
+<p id="p143" class="phone s01"><cite>Phil Archer:</cite> I'm happy to shut up and stop wasting everyone's time, whether there is actually a distinction that we could keep, but let's not worry about it.</p>
+<p id="p144" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right,…</p>
+<p id="p145" class="phone s01"><cite>Dmitri Zagidulin:</cite> sounds good. and again, much with the other conversation, this seems like a broader group policy not just for the task force. All right. any other comments, questions, objections before we merge this? Going once, goes twice. Thank you everyone and thank you so much Benjamin for all your hard work on this. this is great. so I haven't opened an issue proposing the Okay, so merging this PR. I haven't opened an issue proposing a rename, but just as an informal straw poll, I'm curious what people on the call think.</p>
+<p id="p146" class="phone s01"><cite>Dmitri Zagidulin:</cite> is there any objections or other are people happy with the current HTML render method Would there be any support to renaming this to sandbox iframe render suite? Go ahead, Ivon.</p>
+<p id="p147" class="phone s01"><cite>Ivan Herman:</cite> So the question for me is do we expect to have other render methods which are HTML based because if the answer is yes then obviously this has to be renamed and I don't know the answer to that. But the previous discussion with mustache being used seems to say that there might be other render methods…</p>
+<p id="p148" class="phone s01"><cite>Ivan Herman:</cite> which are essentially HTML based in which case I agree with you would be treated and the name would be changed.</p>
+<p id="p149" class="phone s01"><cite>Dmitri Zagidulin:</cite> So this is an excellent question in general whether any other HTML based rendering methods are needed from sort of task force lead hat off as an implement.</p>
+</section>
+<section>
+<h3 id="topic-4">Renaming the HTML Render Method</h3>
+<p id="p150" class="phone s01"><cite>Dmitri Zagidulin:</cite> I do think that this iframe approach is a fantastic idea and I will be implementing it but it also doesn't address the export to use case that we have in our mobile app. and so I foresee implementing both a template based HTML and then an iframe based one and Benjamin not from the browser from a mobile app. So specifically while the I frame method allows the wrapper authors to put up their own controls buttons such as export to PDF.</p>
+<p id="p151" class="phone s01"><cite>Dmitri Zagidulin:</cite> What it doesn't allow is for the application designers to provide those buttons and trigger the interplay between exporting printing and so between the iframe and the outer wrapping application. All comment from Dave in chat that if we have other HTML methods then that would be the time to rename such as to HTML sandbox. and again I do think we should underline the fact that we are specifically relying on the I frame mechanism to sandbox this rather than anything else.</p>
+<p id="p152" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I see several people in the queue. Phil and then Benjamin. Go ahead. Right.</p>
+<p id="p153" class="phone s01"><cite>Phil Archer:</cite> I think you're absolutely right,…</p>
+<p id="p154" class="phone s01"><cite>Phil Archer:</cite> Dimmitri, to raise this. I think just calling it the HTML method because everybody else, I'm lazy. I don't read stuff unless I have to. I would think, great. I can just do it in HTML." and I wouldn't get to the point that I've got to put it in an iframe and use the sandbox and everything else. And we know that until very recently there was a strong push against talking about HTML rendering for all the security reasons. So the application of the iframe sandbox is actually crucial to unlocking this.</p>
+<p id="p155" class="phone s01"><cite>Phil Archer:</cite> And so I think it's useful for the naming as exactly as you say Demetri specify we mean sandbox iframe…</p>
+<p id="p156" class="phone s01"><cite>Phil Archer:</cite> then it's okay general HTML we don't want to see. So I think you're right.</p>
+<p id="p157" class="phone s01"><cite>Dmitri Zagidulin:</cite> Thanks. Makes sense. Benjamin and…</p>
+<p id="p158" class="phone s01"><cite>Benjamin Young:</cite> Yeah, I'm not a huge fan of the hyphenation in the name.</p>
+<p id="p159" class="phone s01"><cite>Dmitri Zagidulin:</cite> then Patrick.</p>
+<p id="p160" class="phone s01"><cite>Benjamin Young:</cite> But I would support something like an iframe render method versus sandbox iframe, but I also get what's desired to be signaled there. but thank you for raising the concern. I think it's worth doing.</p>
+<p id="p161" class="phone s01"><cite>Benjamin Young:</cite> I think one of the things those that I've discussed this approach with have not been certain about is whether or not especially as you mentioned Demetri in a mobile app with a web view what is the sort of I framing experience in those environments are they a bunch of little web views that are acting like iframes or…</p>
+<p id="p162" class="phone s01"><cite>Dmitri Zagidulin:</cite> right?</p>
+<p id="p163" class="phone s01"><cite>Benjamin Young:</cite> the language of the spec Are they a host page in a web view that then has iframes? and I frankly don't know enough about the strategies available there to speak to that, but I think I frame render method at present would send the right signals.</p>
+<p id="p164" class="phone s01"><cite>Benjamin Young:</cite> I think maybe the concern there is that the word I frame is a pariah and people freak out about it. because they feel like it's a security vortex. but this is 2026 and we have all these extra little words we can stick on the word iframe and suddenly it's a bit safer. which is I think…</p>
+<p id="p165" class="phone s01"><cite>Dmitri Zagidulin:</cite> Let's see.</p>
+<p id="p166" class="phone s01"><cite>Benjamin Young:</cite> why you were saying rename it the sandbox I frame to dispel the spooks that go with the word iframe. so I think we can bike s*** it and come up with another name. I agree that HTML is probably too broad but I the thinking behind saying that way was that it was targeted at template authors like what they would provide is HTML.</p>
+<p id="p167" class="phone s01"><cite>Benjamin Young:</cite> So calling it the JavaScript render method would not be clear because you're still using the holy trinity of the web JavaScript and CSS in concert. not just HTML, but if you lead with HTML,…</p>
+<p id="p168" class="phone s01"><cite>Benjamin Young:</cite> they know the other two go along. So I don't know, it's tangled. I think I would vote for just iframe personally. but again, I paint my bike shed orange, so that's it.</p>
+<p id="p169" class="phone s01"><cite>Dmitri Zagidulin:</cite> Excellent.</p>
+<p id="p170" class="phone s01"><cite>Dmitri Zagidulin:</cite> Yeah, we can definitely back share the details on a separate issue, Patrick. And then Dave.</p>
+<p id="p171" class="phone s01"><cite>Patrick St-Louis:</cite> Yeah. Right. Just I'm not fully convinced in putting I frame as the forefront of a render method. I frame for me is just a strong recommendation of how to render this in your app securely. because at the end of the day this is a HTMLbased template right that's meant to be rendered with HTML code and we can decide that it's the most secure way we thought to do this and highly recommend this but this seems to me like it's not really part of the render method it's just how you would display this on a website</p>
+<p id="p172" class="phone s01"><cite>Patrick St-Louis:</cite> And as far as I know, the I frame component is not in the template is what goes in the I frame or…</p>
+<p id="p173" class="phone s01"><cite>Patrick St-Louis:</cite> could go in the iframe, but if someone wants to render this as a standalone web page, it's also their possibility. so that would be my contribution</p>
+<p id="p174" class="phone s01"><cite>Dmitri Zagidulin:</cite> That's really interesting.</p>
+<p id="p175" class="phone s01"><cite>Dmitri Zagidulin:</cite> I think I didn't understand it as such from my reading. I frame is the only way this method works. So I need to come back to it. Dave, you're up next.</p>
+<p id="p176" class="phone s01"><cite>Dave Longley:</cite> Yeah, I agree a lot with Patrick's perspective. I wouldn't want us to be too hasty. I wouldn't want us to pin it to iframes. The fact that our spec might end up saying here is a way to do this securely is different from and this is a fundamental part of how you might ever use an HTML template and the other bits that we specify. there might be other elements for which There might be other elements for which this might work in the future and a spec update would be simpler than having to rename everything.</p>
+<p id="p177" class="phone s01"><cite>Dave Longley:</cite> So I would be worried that we would go a little bit too far. it's clearly an HTML template render method. The one other component that makes sense to me is talking about it as a sandbox. that's a useful signal to someone who would be interested in using the method or implementing it is that it's about HTML templates that are going to be rendered in a sandbox environment. I think getting into the really specific details that we might put in our spec that and where the language around that might be open to you can do it this way or this other way but this way will work if you can come up with something equivalent that's also okay which might work in different mobile environments or with different tools. I think that's a better direction to</p>
+<p id="p178" class="phone s01"><cite>Dmitri Zagidulin:</cite> Just to be very pedantic, there is no actual template involved like this is a live full-on HTML page that you're passing a verifiable credential to,…</p>
+<p id="p179" class="phone s01"><cite>Dmitri Zagidulin:</cite> this is not a classical mustache type template. But go ahead,…</p>
+<p id="p180" class="phone s01"><cite>Benjamin Young:</cite> I yeah,…</p>
+<p id="p181" class="phone s01"><cite>Dmitri Zagidulin:</cite> Benjamin.</p>
+<p id="p182" class="phone s01"><cite>Benjamin Young:</cite> I can speak to that. you're technically passing in an HTML fragment that you could just pass in HTML and CSS and show that you could just have an H1 tag that says this could be a credential and some CSS that makes that blue that's obviously pointless and doesn't have any functionality.</p>
+<p id="p183" class="phone s01"><cite>Benjamin Young:</cite> So you would also then ship a script tag inside that HTML fragment which the browser will render when the wrapper code formerly known as the shim code is run in the iframe. Then that JavaScript has access to the data block that contains the VC. if you want to bring up that wonky looking chart, I'm happy to say things about it. so the template author is providing HTML in which there is a script tag that then does stuff with the data it has access to by manipulating that HTML DOM inside the iframe and the iframe is sandboxed so that the JavaScript provided by the template author cannot do anything else.</p>
+<p id="p184" class="phone s01"><cite>Benjamin Young:</cite> it can play in that DOM that it has but it cannot communicate with the network. It cannot show alert popups. It whatever. Can't poke at the wallet or figure out what wallet it's inside of and since it cannot disrupt the UX of outside the cannot communicate to the network, the belief is that it's safe to use, hence the sandbox terminology. so yeah on the left the rectangle the HTML CSS and JavaScript template that is all contained in essentially an HTML fragment. And if you're all at all familiar with Vue.js's single file component approach to the world,…</p>
+<p id="p185" class="phone s01"><cite>Dmitri Zagidulin:</cite> Oops. Thanks, Dave.</p>
+<p id="p186" class="phone s01"><cite>Benjamin Young:</cite> it feels very similar to that.</p>
+<p id="p187" class="phone s01"><cite>Benjamin Young:</cite> you're writing, a div or whatever that has a script tag inside of it that has a style tag inside of it. And then that is injected into the wrapper code that sets up other CSP metatags inside of the iframe which is itself restricted. and we can look at code if that would help but that's it.</p>
+<p id="p188" class="phone s01"><cite>Dave Longley:</cite> So, I put this in the chat, but I just wanted to say it out loud. There's every expect whatever template language you want will be used within the HTML fragment. So the expectation is for a lot of use cases you will build an HTML fragment that has for example mustache and a mustache renderer inside of your fragment and that will get built and do essentially what was done with the mustache rendering method before but it will execute inside of the sandbox instead.</p>
+<p id="p189" class="phone s01"><cite>Dmitri Zagidulin:</cite> I see.</p>
+<p id="p190" class="phone s01"><cite>Benjamin Young:</cite> And the biggest distinction there with what Dave's talking about is that you're going to ship your template engine with your template in this approach. So the HTML CSS JavaScript template would not only contain your mustache template curly braces,…</p>
+<p id="p191" class="phone s01"><cite>Dmitri Zagidulin:</cite> Right. Right.</p>
+<p id="p192" class="phone s01"><cite>Benjamin Young:</cite> it's also going to contain mustache.js full stop embedded into that HTML so that it can be rendered which then lets you do whatever the heck you want.</p>
+<p id="p193" class="phone s01"><cite>Benjamin Young:</cite> You can do liquid, you can do nunchucks, you can do anything you can run in JavaScript inside a sandbox iframe you can then do here. It does mean that your template code that is the HTML JavaScript and CSS is going to grow as you do that. So if you're going to ship liquid JS it's be one size. If you ship mustache it's going to be another size. if you decide you're going to bring in all of Tailwind's CSS capabilities, you're going to have to Tailwind into that. but it then also means you've got everything you need to render the way you want to render in that space. So, great power and responsibility and all that.</p>
+<p id="p194" class="phone s01"><cite>Dmitri Zagidulin:</cite> The other thing Ivon, I see you in the queue. The next thing after this thread wraps up that I want to talk about is this notion of including the full VC versus a key value map of just JSON properties. But go ahead. Go on.</p>
+<p id="p195" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p196" class="phone s01"><cite>Ivan Herman:</cite> Yeah, I am a little bit bothered by the discussion the way it goes…</p>
+<p id="p197" class="phone s01"><cite>Ivan Herman:</cite> because some way or other the specification has to normatively say what the requirements are in terms of security etc. So by saying yeah it can be done in an frame but it can be done outside an frame etc. we get into a very loose situation which is not what you expect from a specification.</p>
+<p id="p198" class="phone s01"><cite>Ivan Herman:</cite> So if we say you can do it outside an frame, it's fine with me. But then we have to normatively define what must happen, what protections must occur, what are the things that must not be done,…</p>
+<p id="p199" class="phone s01"><cite>Ivan Herman:</cite> etc. That's a way to go, but it's not the way it is written now.</p>
+<p id="p200" class="phone s01"><cite>Dmitri Zagidulin:</cite> I agree.</p>
+<p id="p201" class="phone s01"><cite>Dmitri Zagidulin:</cite> Patrick and then Benjamin</p>
+<p id="p202" class="phone s01"><cite>Patrick St-Louis:</cite> So related to that,…</p>
+<p id="p203" class="phone s01"><cite>Patrick St-Louis:</cite> I was going to mention something else, but related to that, for me, when I see the spec, there's always the line between what we want, the spec to talk about the credentials, how to use them, what to do with them. And then there's I want to call it just a general web security. we're talking here about a script that's going to inject data in a web page. There are already plenty of security resource on how to do this securely.</p>
+<p id="p204" class="phone s01"><cite>Patrick St-Louis:</cite> because if we want to cover every single scenario how people should and should not do I think that's a slippery slope and to hover being over normative for a lot of things and there should be a line where it's being cut of how to safely handle the credential the data the privacy aspect but this doesn't trump on just general security best practice, right?</p>
+<p id="p205" class="phone s01"><cite>Patrick St-Louis:</cite> script injection is something that every website needs to take care of regardless of if its this credential rendering aspect doesn't take precedence over the foundations for a secure internet right I'm thinking about the OWAS for example they have plenty of things that you will need to be taken into account when building software so I'm just wondering how far should the normative text go around handling what your web application does with the features being put forward? and something like this like a template that you will generate and inject in a website.</p>
+<p id="p206" class="phone s01"><cite>Patrick St-Louis:</cite> if we want to be very normative and set strict guidelines I think then we should include iframe and close the box at that say we have very strict guidelines about using secured sandboxed iframe and this is that if you do something outside of this it's at your own risk the spec told you normatively not to do this but whether we do that or not that's I think a decision that needs to be actively taken</p>
+<p id="p207" class="phone s01"><cite>Patrick St-Louis:</cite> because in the VC API we had many discussion around that we're talking about API web exchange requests the rest of the web security that exists today still applies to that right it's not because we defined a new protocol for exchanging credentials that you can all of a sudden forget about web best practices and for me injecting right a script that there's data that you push you potentially not know in advance what it's going to be that falls into just when security at this point. So that's kind of what I wanted to highlight.</p>
+<p id="p208" class="phone s01"><cite>Patrick St-Louis:</cite> and my second point, if we have time, probably not because we're running late, but there is a render method that's been on my mind for some time, and I just realized I never mentioned it to this group, and I wanted to initiate a discussion about AI and credential analysis and credential comprehension and so on.</p>
+<p id="p209" class="phone s01"><cite>Dmitri Zagidulin:</cite> Interesting. Yeah,…</p>
+<p id="p210" class="phone s01"><cite>Dmitri Zagidulin:</cite> I'd love to hear your thoughts there. if we have a couple minutes. Benjamin, you're up next.</p>
+<p id="p211" class="phone s01"><cite>Benjamin Young:</cite> So I think practically speaking for …</p>
+<p id="p212" class="phone s01"><cite>Benjamin Young:</cite> what is in the specification right now currently called HTML render method I would like to lean 100% on this is a sandboxed iframe approach and that's it spec it that way. You're going to need an iframe and you're going to need this wrapping code and this is how it's going to work.</p>
+<p id="p213" class="phone s01"><cite>Benjamin Young:</cite> Longlay's mentioned, or do it like an iframe, right? I don't know that I don't know specwise how to do that. other than in a call out of node of some kind of like if you can provide all of what a sandbox iframe provides in terms of a safe space to put some HTML, JavaScript, and CSS and let it do what it's going to do, then great, do that. But I don't know how to specify that and would need assistance from anybody who has access to other environments where they can provide something exactly matching a sandbox iframe which might be a web view but I don't know how performant that's going to be.</p>
+<p id="p214" class="phone s01"><cite>Benjamin Young:</cite> I don't know how restrictive web views can be when used in an Android app or whatever. so somebody building mobile apps that is willing to juggle one or more web views for these credentials would need to come alongside and say this is how we're going to do it this way. but I can specify the iframe side with the CSB bits and those seem fraught enough. but if that's okay with the group, I would like to proceed that direction. probably provide more explanatory code about templating engines and what that would look like if you were to pro provide those. we also have a couple playgrounds in process for testing this stuff out and I can put more examples in those so we can look at them together.</p>
+<p id="p215" class="phone s01"><cite>Benjamin Young:</cite> but again, if the scope's going to just widen to do it like an iframe, then somebody who knows what that would even be. I could use help from that person because I'm not certain that we can just say do it like an iframe and the tag or anybody else is going to be satisfied. That's it.</p>
+<p id="p216" class="phone s01"><cite>Dmitri Zagidulin:</cite> So I agree with you and…</p>
+<p id="p217" class="phone s01"><cite>Dmitri Zagidulin:</cite></p>
+<p id="p218" class="phone s01"><cite>Dmitri Zagidulin:</cite> I would certainly like to see it move in that direction. But let's hear from Dave, who I think has concerns about that.</p>
+<p id="p219" class="phone s01"><cite>Dave Longley:</cite> My first comment would be let's not get too far ahead of ourselves.</p>
+<p id="p220" class="phone s01"><cite>Dave Longley:</cite> So we've just got the baseline for this render method. let's iterate on it. Let's see where it goes. we should definitely fully specify exactly how to do it with an iframe. but there are a lot of other specs that have been worked on that that provide detailed normative algorithms that also have the statement as long as your outputs are the same, you can use a different algorithm and we should give ourselves time and space to explore having that kind of language in the spec. especially if as Benjamin says other people show up and they say hey I was able to do this with a web view and I did it in this other way. we don't want to close the door to that kind of innovation but we do want to say this is one way to do it. It will work this way. We're going to get interoperable implementations on that and test on that.</p>
+<p id="p221" class="phone s01"><cite>Dave Longley:</cite> but we also don't want to make this method so restrictive so that if somebody comes in while that work is going on or after that work is coming on, we can't do a 1.1 that maybe provides more details on this other method but doesn't prevent them from using the other method in the near term. We also don't want everyone to have to go make entirely new render methods with different types on them when everything will potentially work the same way in the future just with different implementations.</p>
+<p id="p222" class="phone s01"><cite>Dmitri Zagidulin:</cite> All right. So, we are nearing the top of the hour. Our next steps are okay. We've merged this pull request. had a good discussion about possible renaming. I agree with you, Dave, that we should continue working on this and see how far we can take it. for the next call in two weeks or whatever, I'd love to So, please make sure to reopen the issues you had in the PR as separate issues, the comments that you had in the PR as separate issues. I'll open a possible renaming discussion so we can continue that conversation there.</p>
+<p id="p223" class="phone s01"><cite>Dmitri Zagidulin:</cite> I also want to on the next call come back to the OCA bundle render method and see if there's any then overlap between the two such as in the way that we specify which fields are being passed to the template. So I want to come back to OCA bundle because I do think it's an important method as well and not necessarily superseded by the HTML one. I'm also really curious about I think it was Patrick what you said about AI if you want to say a few words about it in the next couple of minutes just so that we can start thinking about it.</p>
+</section>
+<section>
+<h3 id="topic-5">AI and Credential Comprehension</h3>
+<p id="p224" class="phone s01"><cite>Patrick St-Louis:</cite> For sure I can share my thoughts. So this initially something I thought in the context. So for those who are aware about the work item. It's a sort of international European led supply chain framework based on W3C verifiable credentials. So it's like an extension of verifiable credential. and the broad the larger I don't know how I call it for this is international right so the amount of different jurisdiction that going to be involved and work with the same thing the more information will get lost in translation.</p>
+<p id="p225" class="phone s01"><cite>Patrick St-Louis:</cite> my initial thought was this idea of having something called an AI comprehension render method which is a way to provide a credential I don't want to get into privacy discussion for now but let's assume a credential that has public information in it such as a public mining permit and with out external context provided</p>
+<p id="p226" class="phone s01"><cite>Patrick St-Louis:</cite> head and see if we can get meaningful information from that credential in a human text format such as what is this how can it be used and how could it benefit me as an individual right and it's been very interesting to see just based on these UNP credential how much information can be derived from a wellformed credential semantically and this goes really well with JSON LD and just the way that with W3C credential all different nodes in the credential can relate to others. There's some very interesting things that can be discovered. The second part which is something I an idea later which is maybe a more advanced feature but in the same vein is a credential analysis.</p>
+<p id="p227" class="phone s01"><cite>Patrick St-Louis:</cite> so you take a credential and you want to get an output whether it's a text or something to display that focus on specific patterns of the credentials right so there's many ways that you could interpret a credential so that the first way is sort of a generic is how can I use it is this a semantically sound credential the second one is now that I know what this is a bit how can I interact with this credential and basically ask questions to this credential, right? And get some answers back. So, these are kind of the two veins of my idea here.</p>
+<p id="p228" class="phone s01"><cite>Dmitri Zagidulin:</cite> All And we are at the top of the hour. thank you everyone. Patrick, this sounds intriguing. I'd love to hear more either as an issue or if you want to put together a quick slide deck and do a presentation to the group. I think others might be interested in that as All right. Thanks everyone. Cheers.</p>
+<p id="p229" class="phone s01"><cite>Phil Archer:</cite> Cheers everyone. Bye-bye.</p>
+</section>
+</main>
+<address>Minutes automatically generated by a Large Language Model (LLM), transcription errors are expected and might not represent what was said during the meeting. When in doubt, check the associated recording.</address>
+</body>
+</html>
