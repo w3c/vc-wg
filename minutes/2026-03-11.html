@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 11 March 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>11 March 2026</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Mar/0001.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/03/11-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, dmitriz, elaine, hsano, isaac, ivan, jandrieu, KevinDean, manu, PDL, phila, TallTed, will, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz, phila</dd>
+<dt>Scribe</dt><dd>bigbluehat</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1aa8">new charter</a></li>
+<li><a href="#de9a">VCDM</a></li>
+<li><a href="#955d">VC specifications published with ISO</a></li>
+<li><a href="#f527">Face to Face in June</a></li>
+<li><a href="#f0b7">CCG Reports</a></li>
+<li><a href="#c89f">Confidence Method</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=086c class="phone s01"><cite>phila:</cite> thanks bigbluehat for scribing<br>
+<span id=503e>… we'll be covering the new charter which was approved today</span><br>
+<span id=d484>… I've got an update on the VCDM</span><br>
+<span id=c7e7>… and we'll talk about the F2F in June</span></p>
+</section>
+
+<section>
+<h3 id=1aa8>new charter</h3>
+<p id=6672 class="phone s01"><cite>phila:</cite> ivan can you tell us about the new charter</p>
+<p id=6ccd class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/2026/03/vc-wg-charter.html">https://<wbr>www.w3.org/<wbr>2026/<wbr>03/<wbr>vc-wg-charter.html</a></p>
+<p id=f852 class="phone s02"><cite>ivan:</cite> just announced about an hour ago<br>
+<span id=bacc>… we made it!</span><br>
+<span id=57fc>… there were some minor changes at the last round with the management</span><br>
+<span id=ffff>… stuff we added to the tentative deliverable list</span><br>
+<span id=b809>… we made explicit what was implicitly there--that there must be IPR agreements before the WG can accept them</span><br>
+<span id=b1cb>… there are three documents from &quot;outside&quot;</span><br>
+<span id=8790>… so we had to add some text about monitoring the IPR</span><br>
+<span id=c9c2>… that's the most important change that we've done</span><br>
+<span id=9d21>… one of the titles did have &quot;European&quot; in it--which we removed to make it clear that these are global standards</span><br>
+<span id=ca76>… you also likely got emails about being kicked out of the WG</span><br>
+<span id=fdd9>… but you will also be invited to rejoin</span><br>
+<span id=dc39>… that's about it.</span></p>
+<p id=6aab class="phone s01"><cite>phila:</cite> great work everyone. congrats!<br>
+<span id=6255>… please reapply for the jobs you were just fired from</span><br>
+<span id=4e1b>… I do hope everyone will</span><br>
+<span id=7527>… if you've been debating about joining, I hope you do</span><br>
+<span id=9c7c>… I'll be syncing up with Brent soon, so we can plan how we'll do all this work</span><br>
+<span id=4ebe>… if we focus on just what we MUST do--which was discussed at TPAC last year</span><br>
+<span id=8d20>… VCALM, Bar Codes, etc. all need to be done</span></p>
+<p id=6fd5 class="phone s01"><cite>phila:</cite> and VCDMv2 PRs<br>
+<span id=a40d>… even if we don't get to the tentative deliverables, there's still loads to do</span><br>
+<span id=a0a2>… if you put your hand up as an editor, it's time to start</span><br>
+<span id=2d23>… we'll likely be doing more frequent calls</span><br>
+<span id=89c9>… how often these &quot;everybody&quot; calls should be?</span></p>
+<p id=e4c4 class="phone s03"><cite>manu:</cite> I think the big group call at once of month is fine</p>
+<p id=bbc1 class="phone s03"><cite>manu:</cite> we used to do them weekly and some concurrent special topic calls<br>
+<span id=ae27>… we do have existing meetings happening under the CCG</span><br>
+<span id=7413>… we can shift those to WG meetings, but folks will need to change their status</span><br>
+<span id=a4bf>… and we'll have to deal with attendance as we go</span><br>
+<span id=6cce>… but we do already have existing meetings for most of these work items</span><br>
+<span id=b1b2>… the good news is that I don't think it will take a tremendous amount of reshuffling</span><br>
+<span id=9ddd>… as long as it's OK to shift those existing meetings</span></p>
+<p id=d04d class="phone s02"><cite>ivan:</cite> just to be legalistic<br>
+<span id=666c>… I'd prefer we have weekly meetings</span><br>
+<span id=57ac>… we could still pick specific topics occasionally, like Render Method</span><br>
+<span id=202a>… mainly, because the small group meetings are not allowed to make binding decisions</span><br>
+<span id=1615>… so if any resolution is needed, it would have to happen in the &quot;big&quot; call</span><br>
+<span id=0dcd>… so, I'd suggest a &quot;big call&quot; once a week, but also continue the small group meetings</span></p>
+<p id=646d class="phone s01"><cite>phila:</cite> so...no one likes to go to meetings they don't feel needed at<br>
+<span id=b067>… so, here's an idea</span></p>
+<p id=56d8 class=irc><cite>&lt;KevinDean&gt;</cite> 30/30?</p>
+<p id=f2b6 class="phone s01"><cite>phila:</cite> what if we did a 90 minute call, and a 60 minute calls on the smaller topics</p>
+<p id=8df0 class=irc><cite>&lt;TallTed&gt;</cite> +1 weekly timeslot which can be cancelled if there's nothing to do. All lower frequencies fall off people's mental if not other calendars.</p>
+<p id=53f4 class="phone s02"><cite>ivan:</cite> many of us have conflicts afterward</p>
+<p id=8f52 class="phone s03"><cite>manu:</cite> same problem here<br>
+<span id=543e>… I think what we've been doing has been working well</span></p>
+<p id=3215 class=irc><cite>&lt;dlongley&gt;</cite> frequent cancellations can be confusing -- bringing any resolutions to the monthly meeting might be the way to go -- for all specs</p>
+<p id=170e class="phone s03"><cite>manu:</cite> I do think we should meet more often for Render Method and Confidence Method<br>
+<span id=c5a8>… which currently trade off, so there's often 2 weeks between</span></p>
+<p id=58f4 class=irc><cite>&lt;dlongley&gt;</cite> (my &quot;cancellations&quot; comment is in response to ted)</p>
+<p id=ee85 class="phone s03"><cite>manu:</cite> and folks are getting confused about which topic is the current call topic<br>
+<span id=aff2>… to be clear, we're already talking about 7 hours of calls a week</span><br>
+<span id=322c>… which is insane</span><br>
+<span id=72fa>… we're already doing 5 hours of calls</span></p>
+<p id=b37b class=irc><cite>&lt;TallTed&gt;</cite> (I don't expect frequent cancellations, as I think we pretty much always have stuff to do.)</p>
+<p id=4ddf class="phone s03"><cite>manu:</cite> the current cadence seems fine to move things forward<br>
+<span id=73e5>… but we should really lean on the editors to ask for more call time</span><br>
+<span id=2710>… and the group that is meeting can inform the schedule</span></p>
+<p id=b505 class="phone s01"><cite>phila:</cite> so I know we've got 3 meetings in conflict on this current call time<br>
+<span id=8a9d>… but VCALM is at a different time</span><br>
+<span id=87ba>… folks on that will have to resign and rejoin</span><br>
+<span id=fbf2>… Elaine, is the Bar Code group meeting happening?</span></p>
+<p id=1cbf class="phone s04"><cite>Elaine:</cite> we were waiting on the recharter<br>
+<span id=252e>… manu, what was the call schedule before?</span></p>
+<p id=733b class="phone s03"><cite>manu:</cite> we haven't met for awhile, I would suggest, though, that we keep it separate<br>
+<span id=c8fe>… really the editors should inform it</span></p>
+<p id=3514 class="phone s01"><cite>phila:</cite> to get to CR in 18 months...<br>
+<span id=22ea>… some of these will be easy, some specs will not be</span><br>
+<span id=6d0c>… so, let's move on</span></p>
+</section>
+
+<section>
+<h3 id=de9a>VCDM</h3>
+<p id=46da class="phone s03"><cite>manu:</cite> just drawing people's attention to some PRs</p>
+<p id=df7a class=irc><cite>&lt;phila&gt;</cite> <a href="https://github.com/w3c/vc-data-model/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pulls</a></p>
+<p id=b20f class="phone s03"><cite>manu:</cite> Lehn sent a PR about referencing Render Method<br>
+<span id=6c75>… there are some suggested changes</span><br>
+<span id=b0ad>… then a few more PRs raised yesterday about some class # changes</span><br>
+<span id=593f>… but we'll give those the usual &quot;week&quot; review time</span></p>
+<p id=219b class="phone s01"><cite>phila:</cite> how far are we from VCDM v2.1?</p>
+<p id=a075 class="phone s03"><cite>manu:</cite> v2.1 is supposed to be a refresh, no new features, that sort of thing<br>
+<span id=ddf9>… we could do it today, but I don't think we should</span><br>
+<span id=13c6>… I think we should let the other specs mature a bit more before we rev VCDM</span><br>
+<span id=cad0>… because they, like Confidence Method, may effect what goes into VCDMv2.1.</span></p>
+<p id=10000 class=irc><cite>&lt;dlongley&gt;</cite> +1 to let the other specs mature to see if we need new features, but hopefully not as it saves us more work</p>
+<p id=4a92 class=irc><cite>&lt;ivan&gt;</cite> q+</p>
+<p id=53ec class="phone s03"><cite>manu:</cite> at minimum, we're likely to make changes to the context<br>
+<span id=5aff>… and the process around CR can be pretty heavy</span><br>
+<span id=a323>… so I'd suggest we attempt Rec for VCDMv2.1 in a year</span></p>
+<p id=3844 class="phone s02"><cite>ivan:</cite> have we published it as a FPWD yet?</p>
+<p id=11fc class="phone s03"><cite>manu:</cite> no</p>
+<p id=dadd class="phone s02"><cite>ivan:</cite> so to make it official, we should at least do that<br>
+<span id=6eec>… which will start the IPR process, etc.</span></p>
+<p id=97c8 class="phone s03"><cite>manu:</cite> +1 to that<br>
+<span id=e9ad>… I'm happy to move that forward</span><br>
+<span id=7032>… I think what we said was that we were not going to publish a FPWD until we're sure it's needed</span><br>
+<span id=7ca7>… like Bitstring Status List doesn't look like it needs any changes, so we wouldn't rev it's version</span></p>
+<p id=33b4 class="phone s02"><cite>ivan:</cite> correct. I was only talking about VCDMv2.1</p>
+<p id=bb2f class="phone s03"><cite>manu:</cite> great. Just wanted to clarify that scope</p>
+<p id=5df5 class="phone s01"><cite>phila:</cite> if this group exists for anything, it's for the maintenance of the VCDMv2.1<br>
+<span id=746a>… we do need a resolution</span><br>
+<span id=c534>… but I would like to check in with Brent first</span><br>
+<span id=c901>… during the lifetime of this charter--which started today--if we don't think we'll be to CR for a year, then we should plan the rest of the process</span><br>
+<span id=b453>… clearly, the VCDM is the core specification for this group</span></p>
+</section>
+
+<section>
+<h3 id=955d>VC specifications published with ISO</h3>
+<p id=63ea class="phone s01"><cite>phila:</cite> and a question has been raised around whether we should push it through the ISO process<br>
+<span id=1d30>… Rigo wants to make it happen</span><br>
+<span id=fa75>… I and Brent are in favor of it</span></p>
+<p id=ea62 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note that 90 minutes are a bit rough. and to  and to support publication of W3C VC specs via ISO PAS. and to</p>
+<p id=cd3e class="phone s03"><cite>manu:</cite> +1 to doing that<br>
+<span id=df63>… I think we should use the process to get ISO equivalence</span></p>
+<p id=e7e4 class="phone s02"><cite>ivan:</cite> we're working on a tool that can be used for this process<br>
+<span id=c11d>… so wait a bit phila but there are some good things coming, hopefully</span><br>
+<span id=ca6e>… we're also hearing conflicting things from ISO</span><br>
+<span id=2153>… do we need to produce a PDF or a Word file?</span><br>
+<span id=c064>… do we need to match the ISO style?</span><br>
+<span id=1bc5>… we're fighting to get permission to avoid that kind of a revision</span><br>
+<span id=a890>… I don't want to get into all those details</span><br>
+<span id=80d7>… we mainly need to know if this group supports it at ISO</span></p>
+<p id=ccea class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to ask &quot;which specs&quot;?</p>
+<p id=47ef class="phone s03"><cite>manu:</cite> which one of our specs should we do?</p>
+<p id=145c class=irc><cite>&lt;dlongley&gt;</cite> +1 to doing all the specs</p>
+<p id=b72a class="phone s03"><cite>manu:</cite> my suggestion is as many as possible<br>
+<span id=0f4b>… especially, whichever ones provide the foundation for an interoperable ecosystem</span><br>
+<span id=5356>… also, I have seen ISO spec's published that are 2 page PDFs which point to other specs</span><br>
+<span id=c575>… and people buy the PDF that contains the link...</span><br>
+<span id=36b5>… I don't know what the process for that is, but we should at least ask about it</span></p>
+<p id=3c24 class="phone s02"><cite>ivan:</cite> for the which document question: it comes back to this WG<br>
+<span id=8919>… the idea from management is to start with the VCDM to learn the process</span><br>
+<span id=56e3>… and once we understand the process, we try to do all the others</span></p>
+<p id=61f5 class="phone s02"><cite>ivan:</cite> for the second question, they have made the process harder in recent years<br>
+<span id=2acc>… WCAG has just gone to ISO and published their work</span><br>
+<span id=aa23>… and it had to be converted to Word</span><br>
+<span id=5b18>… but he did make the case that the text could stay the same</span><br>
+<span id=05ce>… but the format changed</span><br>
+<span id=10001>… if anyone can help change things at ISO, please do</span></p>
+<p id=f9f8 class="phone s01"><cite>phila:</cite> if we just do VCDM, does that create an ecosystem on it's own?<br>
+<span id=5327>… or does it need Data Integrity, Bitstring Status List, etc?</span></p>
+<p id=7b63 class="phone s03"><cite>manu:</cite> yes +1 to that<br>
+<span id=9e66>… we should look into</span><br>
+<span id=457f>… I know ISO standards do reference other specs, so maybe we only need to ISO VCDM</span><br>
+<span id=86c1>… I'd be minus one on bundling everything together</span><br>
+<span id=3861>… then the excuse can become, we followed the ISO bundled version published 10 years ago</span><br>
+<span id=1e8c>… my hope is that wouldn't happen</span><br>
+<span id=a7a1>… but it is why I'd prefer VCDM be the primary one and reference the others</span><br>
+<span id=c5f9>… however, I don't think VCDM does not reference all the related parts</span></p>
+<p id=d2dd class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/TR/vc-data-model-2.0/#normative-references">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model-2.0/#normative-references</a></p>
+<p id=2365 class="phone s03"><cite>manu:</cite> it may reference Data Integrity, but not the cryptosuites<br>
+<span id=39ec>… but I agree starting with VCDM makes sense</span><br>
+<span id=9db2>… so, a long term option may be to help Respec make Word docs</span><br>
+<span id=2d30>… there's an open XML format for Word from a decade ago</span><br>
+<span id=8bcb>… but we'd need to be clear that it's auto-generated</span><br>
+<span id=6f5e>… the danger is that the changes would end up in the W3C spec...which would not be wanted</span></p>
+<p id=41e5 class="phone s02"><cite>ivan:</cite> yeah, that should be prevented. W3C is in charge of it's specs.<br>
+<span id=c3b6>… we keep the IPR. We keep it free.</span><br>
+<span id=f271>… and W3C standards MUST keep it's same weight as before</span></p>
+<p id=b765 class="phone s01"><cite>phila:</cite> there are others who have views on getting VCDM v2.0 into the ISO?<br>
+<span id=c955>… it would be the only spec at ISO for at least at year</span></p>
+<p id=26bd class="phone s05"><cite>PDL:</cite> I'd support getting the VCDM in makes sense<br>
+<span id=423c>… and we've got too much other work to do before trying to get the others there</span></p>
+<p id=9f4f class="phone s06"><cite>dlongley:</cite> we do need to check the normative references<br>
+<span id=f85d>… not sure we can update the VCDM without having to rev the spec when we add them</span><br>
+<span id=89c2>… but we do need to make sure the links are there</span></p>
+<p id=f526 class="phone s03"><cite>manu:</cite> +1 to the idea<br>
+<span id=1465>… we do point to Data Integrity and VC JOSE Cose, but neither of those point to the cryptosuites</span><br>
+<span id=ba59>… so, when we do the ISO thing, we should provide a list of normative things in the ISO spec</span></p>
+<p id=edc8 class=irc><cite>&lt;PDL&gt;</cite> +1 to Manu's suggestion</p>
+<p id=6aa6 class="phone s01"><cite>phila:</cite> I do have a limited experience with ISO<br>
+<span id=d4ea>… I know from that experience and others that they worry a lot about normative references</span><br>
+<span id=298a>… recently there was a big deal made about &quot;informative references&quot; being taken out--what they call a bibliography</span><br>
+<span id=c4b3>… so if we really feel the cryptosuites and things need to be an ISO standard, we will need to discuss that</span><br>
+<span id=47a4>… but at minimum, we need to get the VCDM into ISO so it can be pointed to by regulators and those who only do that</span></p>
+<p id=4742 class=irc><cite>&lt;PDL&gt;</cite> It also matters in some instances when procurements are being done by some organizations</p>
+<p id=8f64 class="phone s02"><cite>ivan:</cite> I am not sure the indirect reference will work in terms of ISO</p>
+<p id=b38c class="phone s01"><cite>phila:</cite> it's that normative references to other things become normative for the ISO spec<br>
+<span id=99f8>… so when I wrote a standard that pointed to the URI spec at the IETF, that spec became part of the other one</span></p>
+<p id=d8a9 class="phone s03"><cite>manu:</cite> I think the thing we want to do can be worked out as we take the journey</p>
+<p id=0a10 class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: The WG would like to submit VCDM 2.0 (<a href="https://www.w3.org/TR/vc-data-model-2.0/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model-2.0/</a>) to the ISO PAS process</p>
+<p id=130c class="phone s02"><cite>ivan:</cite> do we want to go with VCDMv2.0 vs. v2.1?</p>
+<p id=8725 class="phone s03"><cite>manu:</cite> v2.0</p>
+<p id=8697 class="phone s01"><cite>phila:</cite> agreed<br>
+<span id=8434>… it's because v2.1 is a long way out</span></p>
+<p id=cfbb class="phone s02"><cite>ivan:</cite> won't the ISO process take the same amount of time?</p>
+<p id=a598 class="phone s01"><cite>phila:</cite> yes, but what gets published is what's sent in at the start of the process</p>
+<p id=78d1 class=irc><cite>&lt;PDL&gt;</cite> This is being played out in the mDL server verification recommendation dispute (aka &quot;no phone home&quot;)</p>
+<p id=0aa3 class="phone s01"><cite>phila:</cite> so we have to start with something that's complete<br>
+<span id=d63f>… I wasn't sure at the beginning of the call, but if v2.1 will take a year (as it sounds), then we'd be delaying the whole thing</span></p>
+<p id=0a70 class="phone s03"><cite>manu:</cite> I think we should do 2.0<br>
+<span id=c2b1>… there is an upgrade process</span><br>
+<span id=a420>… so you'd get an ISO # like ISO####:YYYY version</span></p>
+<p id=b18b class=irc><cite>&lt;dlongley&gt;</cite> +1 to do 2.0 and use the upgrade process</p>
+<p id=bd1a class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: The WG would like to submit VCDM 2.0 (<a href="https://www.w3.org/TR/vc-data-model-2.0/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model-2.0/</a>) to the ISO PAS process</p>
+<p id=9156 class="phone s03"><cite>manu:</cite> so, I definitely think we should start with v2.0</p>
+<p id=29e7 class=irc><cite>&lt;PDL&gt;</cite> +1 to submitting 2.0 and use the update process that ISO uses</p>
+<p id=3ada class="phone s02"><cite>ivan:</cite> can we put that in the resolution?<br>
+<span id=2a4c>… state that we plan to update it?</span><br>
+<span id=8786>… I just don't want us to be stuck</span></p>
+<p id=537d class="phone s01"><cite>phila:</cite> let's try that one then</p>
+<p id=bf49 class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: The WG would like to submit VCDM 2 (<a href="https://www.w3.org/TR/vc-data-model/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model/</a>) to the ISO PAS process.</p>
+<p id=73de class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=f3de class=irc><cite>&lt;PDL&gt;</cite> +1</p>
+<p id=33de class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=33df class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=33e0 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=73df class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=f3df class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=73e0 class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=c89e class=resolution><strong>RESOLUTION:</strong> The WG would like to submit VCDM 2 (<a href="https://www.w3.org/TR/vc-data-model/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model/</a>) to the ISO PAS process.</p>
+</section>
+
+<section>
+<h3 id=f527>Face to Face in June</h3>
+<p id=86b4 class="phone s01"><cite>phila:</cite> face-to-face in June. Charter is up and running, so I believe this is happening.<br>
+<span id=a06b>… we hope to host you in Brussels at the GS1 offices there</span><br>
+<span id=2b39>… we plan to do a social event</span><br>
+<span id=ac09>… fries with mayonnaise will be a thing</span><br>
+<span id=dedc>… also beer and chocolate</span></p>
+<p id=3c59 class=irc><cite>&lt;PDL&gt;</cite> +1 to both - fallback if not beer</p>
+<p id=0d82 class="phone s01"><cite>phila:</cite> we'd do the tour in the afternoon, most likely</p>
+<p id=9b1d class=irc><cite>&lt;JoeAndrieu&gt;</cite> what are the dates?</p>
+<p id=677b class="phone s01"><cite>phila:</cite> the room we'll have holds up to 30 people</p>
+<p id=0e73 class=irc><cite>&lt;JoeAndrieu&gt;</cite> thahnks</p>
+<p id=dc5c class="phone s01"><cite>phila:</cite> and good telecon setup, so remote folks can join<br>
+<span id=5d29>… we also have additional meeting rooms for breakouts</span><br>
+<span id=ac7b>… so, if you are working on a specific deliverable and want a breakout, that can be accomodated</span></p>
+<p id=7535 class="phone s02"><cite>ivan:</cite> so, Brussels is pretty big<br>
+<span id=db24>… the meeting place is not in the historical center</span><br>
+<span id=4ef5>… do you have a list of hotels near the office?</span></p>
+<p id=faac class="phone s01"><cite>phila:</cite> there are not hotels near the office...well, one, but I don't like it<br>
+<span id=2c7e>… I'll send out more info soon</span><br>
+<span id=75e3>… the one I recommend is a bit of a trek</span><br>
+<span id=e06f>… the Moxy is great for breakfasts and stuff</span></p>
+<p id=b6f6 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to ask about CCG publishing Final Community Group Specifications for New Normative Specifications.</p>
+</section>
+
+<section>
+<h3 id=f0b7>CCG Reports</h3>
+<p id=96b6 class="phone s03"><cite>manu:</cite> we have work in our charter that we now need to migrate into the WG<br>
+<span id=19b1>… I'm not suggesting we do this all at once</span><br>
+<span id=fa61>… we have new normative specs</span><br>
+<span id=7a8b>… they have normative work put into them and continue to be developed</span><br>
+<span id=9869>… we should ask the CCG to publish them as Final Community Group Reports</span><br>
+<span id=e8fe>… that will get the IPR stuff done</span><br>
+<span id=f434>… and then we can adopt them here in the WG</span><br>
+<span id=3208>… so I'd like us to resolve to pull in the spec Drafts listed in our charter</span></p>
+<p id=10b2 class="phone s01"><cite>phila:</cite> do we need a resolution for that?</p>
+<p id=a33e class="phone s03"><cite>manu:</cite> it would make it easier to do, yes.</p>
+<p id=369b class="phone s01"><cite>phila:</cite> it does mean that folks who want to stay involved<br>
+<span id=c0ad>… is there anyone who we know cannot make that transition?</span></p>
+<p id=3a86 class="phone s03"><cite>manu:</cite> we have tried throughout the process in the CCG to make sure Invited Expert processes were done for anyone making significant contributions<br>
+<span id=edeb>… we will have to check again to be sure</span><br>
+<span id=c46c>… and that will really fall to the editors</span></p>
+<p id=172f class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: Adopt all draft specifications listed in the New Normative Specifications section of the 2026 W3C VCWG Charter (<a href="https://w3c.github.io/vc-charter-2026/">https://<wbr>w3c.github.io/<wbr>vc-charter-2026/</a>). Request that the Credentials Community Group publish Final Community Group Reports for each document.</p>
+<p id=cc1f class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: Adopt all draft specifications listed in the New Normative Specifications section of the 2026 W3C VCWG Charter (<a href="https://w3c.github.io/vc-charter-2026/">https://<wbr>w3c.github.io/<wbr>vc-charter-2026/</a>). Request that the Credentials Community Group publish Final Community Group Reports for each document.</p>
+<p id=b486 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=b487 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f486 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=f487 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=f488 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=7486 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=b488 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=f489 class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=3487 class=irc><cite>&lt;PDL&gt;</cite> +1</p>
+<p id=b489 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=2f47 class=resolution><strong>RESOLUTION:</strong> Adopt all draft specifications listed in the New Normative Specifications section of the 2026 W3C VCWG Charter (<a href="https://w3c.github.io/vc-charter-2026/">https://<wbr>w3c.github.io/<wbr>vc-charter-2026/</a>). Request that the Credentials Community Group publish Final Community Group Reports for each document.</p>
+<p id=09a0 class="phone s01"><cite>phila:</cite> yes, we will need to re-explain much of this if/when the technology changes to auto-scribing<br>
+<span id=7885>… the thing we did not get to today are the two specs currently in flight: Confidence and Resolution</span></p>
+</section>
+
+<section>
+<h3 id=c89f>Confidence Method</h3>
+<p id=e57d class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://github.com/w3c/vc-confidence-method/pull/29">w3c/<wbr>vc-confidence-method#29</a></p>
+<p id=331f class="phone s07"><cite>JoeAndrieu:</cite> we need to get into the nitty gritty<br>
+<span id=1b35>… but that PR shows more about the status</span><br>
+<span id=6711>… we're meeting next week</span><br>
+<span id=43ee>… so please look at that if you hope to attend</span></p>
+<p id=bd86 class="phone s01"><cite>phila:</cite> thanks bigbluehat for scribing<br>
+<span id=abb1>… and everyone for coming</span><br>
+<span id=3e2a>… talk soon</span></p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#c89e">The WG would like to submit VCDM 2 (https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-data-model/) to the ISO PAS process.</a></li>
+<li><a href="#2f47">Adopt all draft specifications listed in the New Normative Specifications section of the 2026 W3C VCWG Charter (https://<wbr>w3c.github.io/<wbr>vc-charter-2026/). Request that the Credentials Community Group publish Final Community Group Reports for each document.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
