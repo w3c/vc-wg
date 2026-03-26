@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Spec Refinement &ndash; 25 March 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Spec Refinement</h1>
+<h2>25 March 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Amir_Hameed, Benjamin_Young, Brent_Zundel, Dave_Longley, Dmitri_Zagidulin, Henrique_Xavier, Ivan_Herman, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phil_Archer, Ted_Thibodeau_Jr, Will_Abramson</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ac75">Update Document Publication Schedule</a></li>
+<li><a href="#e6c9">Echidna Setup For Publications</a></li>
+<li><a href="#877a">Process Open Pull Requests</a></li>
+<li><a href="#2851">Merge Open Attestation Renderer PR</a></li>
+<li><a href="#5069">Discuss OCA Bundle Renderer Method</a></li>
+<li><a href="#9042">Introduce Render Method For Static Renderings</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=52e1 class="phone s01"><cite>Phil_Archer:</cite> Six minutes past. is someone going to start the meeting?</p>
+<p id=1986 class="phone s02"><cite>Manu_Sporny:</cite> I was waiting for Dimmitri. I am second to editor on the spec, so I can run the meeting. does that work for the chairs?</p>
+<p id=f250 class="phone s01"><cite>Phil_Archer:</cite> Works for me. Certainly. I speak for no one but myself. Manu Sporny:</p>
+<p id=bad4 class="phone s02"><cite>Manu_Sporny:</cite> All someone object if they're not okay with me running the meeting. since I was not planning to run a meeting today, I'm suggesting that our agenda is going to be going through the poll requests that are open on the spec currently and then going through issue processing and triage. before we start,…</p>
+<p id=b933 class="phone s02"><cite>Manu_Sporny:</cite> are there any other updates or changes to the agenda or anything else that we should discuss today?</p>
+</section>
+
+<section>
+<h3 id=ac75>Update Document Publication Schedule</h3>
+<p id=48a0 class="phone s01"><cite>Phil_Archer:</cite> The only thing I was going to raise I'm actually not meant to be on the call today so I'm going to drop off fairly shortly.</p>
+<p id=db10 class="phone s01"><cite>Phil_Archer:</cite> But I forget who it was but I was talking to someone this week about the random method and I said it's all changed. There's a whole new section about secure iframes and it's really cool. It's really come a long way. You really want to have a look at it. it hasn't been updated since The last time there was an acceptable pull request was October and I know that this group has done a huge amount of work since then and made a very significant and important and welcome change. Great. But the outside world doesn't know that. So with</p>
+<p id=6c52 class="phone s01"><cite>Phil_Archer:</cite> Obviously, you don't push a pull request until it's right, but it would be very helpful in future conversations if there could be an update to the document as soon as this group is able to do it. Please</p>
+<p id=c101 class="phone s02"><cite>Manu_Sporny:</cite> Yes, on that I am guessing that the static date for the FPWD was set and it was never unset. so the new spec the updates have been flowing out. but it is probably the publish date just didn't get unstuck.</p>
+<p id=759b class="phone s01"><cite>Phil_Archer:</cite> Yeah. Great.  Thanks.</p>
+<p id=a4f8 class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, Benjamin.</p>
+<p id=4d13 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, just confirming that there's all kinds of PRs that have gone in since that date. And you're right, line 25 in the index html has cursed us all to the fate Phil just described.</p>
+<p id=5dcc class=irc><cite>&lt;Benjamin_Young&gt;</cite> that's a bug </p>
+<p id=c96f class=irc><cite>&lt;Benjamin_Young&gt;</cite> <a href="https://github.com/w3c/vc-render-method/pulls?q=is%3Apr+is%3Aclosed">Pull requests · w3c/vc-render-method · GitHub</a> </p>
+<p id=9f2f class="phone s03"><cite>Benjamin_Young:</cite> It's a super annoying respec sharp edge that cut me recently as well. Go ahead, Ivon.</p>
+<p id=6cb5 class="phone s04"><cite>Ivan_Herman:</cite> Are you hear me?</p>
+</section>
+
+<section>
+<h3 id=e6c9>Echidna Setup For Publications</h3>
+<p id=0d34 class="phone s01"><cite>Phil_Archer:</cite> Yes.</p>
+<p id=bfd5 class="phone s04"><cite>Ivan_Herman:</cite> There is something wrong then because if Echidna is set up then Echidna overrides the explicit date in respect or at least should. So are we sure that this went out to TR as it should?</p>
+<p id=43fe class=irc><cite>&lt;Benjamin_Young&gt;</cite> grr... <a href="https://github.com/w3c/vc-render-method/blob/main/index.html#L25">vc-render-method/index.html at main · w3c/vc-render-method · GitHub</a> </p>
+<p id=e3f5 class="phone s02"><cite>Manu_Sporny:</cite> You are correct. It works like that for a echidna, but for the editor's draft that GitHub publishes, it does not work that way. …</p>
+<p id=2e2b class="phone s04"><cite>Ivan_Herman:</cite> I understood F's point and that would be my point that this should go out to TR. That's why we have Echidna. It doesn't make sense to have this duplication. So, Echidna hasn't been set up.</p>
+<p id=b1cd class="phone s02"><cite>Manu_Sporny:</cite> Echidna is set up. but we still publish the editor's drafts at the GitHub URL, right, for all of our specs. so just to be clear, I fixed it on main. It is fixed now. So, we shouldn't hit that issue again. Phil of the, I think Akida is set up and we're auto publishing.</p>
+<p id=eb11 class="phone s02"><cite>Manu_Sporny:</cite> Actually, no, you're right. Echidna is not set up.</p>
+<p id=4576 class="phone s04"><cite>Ivan_Herman:</cite> Ah.</p>
+<p id=5917 class="phone s04"><cite>Ivan_Herman:</cite> Did I miss something? Manu Sporny:</p>
+<p id=05c6 class="phone s02"><cite>Manu_Sporny:</cite> There we go. That's the other problem.</p>
+<p id=f979 class=irc><cite>&lt;Benjamin_Young&gt;</cite> <a href="https://www.w3.org/TR/vc-render-method/">Verifiable Credential Rendering Methods v1.0</a> still has the old date... </p>
+<p id=d472 class="phone s04"><cite>Ivan_Herman:</cite> Did you miss something, Or Okay.</p>
+<p id=1690 class="phone s02"><cite>Manu_Sporny:</cite> I just don't think we set up a kidna. So, we should do that. do we need a proposal to do that?</p>
+<p id=543e class="phone s04"><cite>Ivan_Herman:</cite> No no we have an agreement I think way back…</p>
+<p id=ccf6 class="phone s02"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=c9af class="phone s04"><cite>Ivan_Herman:</cite> which says that the VC working group uses Echidna for all publications or something like that of course let's not do it right now…</p>
+<p id=b031 class="phone s02"><cite>Manu_Sporny:</cite> So, let's work Avon to Yeah.</p>
+<p id=0a2d class="phone s04"><cite>Ivan_Herman:</cite> but I will set up whatever is needed and…</p>
+<p id=48d6 class="phone s02"><cite>Manu_Sporny:</cite> And then I'm just going to check right now.</p>
+<p id=32ea class="phone s04"><cite>Ivan_Herman:</cite> do we know what is the status for the confidence method while I am at</p>
+<p id=e77e class="phone s02"><cite>Manu_Sporny:</cite> Might as confidence method is it's stuck in the same state in the editor's draft and…</p>
+<p id=086a class="phone s04"><cite>Ivan_Herman:</cite> Okay. I certainly think</p>
+<p id=6a98 class="phone s02"><cite>Manu_Sporny:</cite> in TR. So, confidence method needs to be updated to use a kidna as well. Yep. Okay.</p>
+<p id=f8a4 class="phone s01"><cite>Phil_Archer:</cite> Thank you,…</p>
+<p id=ffff class="phone s01"><cite>Phil_Archer:</cite> M. Thanks everyone. I really appreciate you attending to that. Thank you.</p>
+<p id=44e1 class="phone s02"><cite>Manu_Sporny:</cite> Appreciate that. Thanks for bringing it to our attention, Phil. I think we all thought that all that was set up, but it was not. let's see order publications. I'm also making sure that it says an editor's draft in the GitHub published version. that is addressed. Thank you very much, Phil. at least for VC render method, we'll have to address that for confidence method.</p>
+<p id=9ee9 class="phone s02"><cite>Manu_Sporny:</cite> I don't think I see Joe or Denin, so we'll have to communicate that to them. All right. let's, any other updates or changes to the agenda? Anything else we need to cover today? reminder to everyone that this call is recorded and autosourced. if you object to that, please moving on, to the main agenda, let me go ahead and pull up the latest set of poll requests and we're just going to process them as we normally do.</p>
+</section>
+
+<section>
+<h3 id=877a>Process Open Pull Requests</h3>
+<p id=d22e class="phone s02"><cite>Manu_Sporny:</cite> So, we've got six pull requests. we have one for the open at a stationation embedded renderer. I don't know if Isaac is on the call today or if we've got anyone from IMDA on the call today. I'm not seeing anyone. So, we're probably going to have to skip this. Although this has been open since September of last year. …</p>
+<p id=e9e9 class="phone s02"><cite>Manu_Sporny:</cite> let's see. We could probably process it. Go ahead, Benjamin.</p>
+<p id=91d6 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, I noticed on the main branch there were two direct merges.</p>
+<p id=f910 class="phone s03"><cite>Benjamin_Young:</cite> I didn't see because we do a flat history there's no connection to PRs, but there's two commits on Maine about open attestation changes. so I'm not sure what the state is of the PR versus main, but the last two commits look like had review from Tall Ted and were merged by Dimmitri. if you want to take a look at those again, I don't know the relationship between this PR and Maine, but there is work happening directly on Maine.</p>
+<p id=c7e4 class="phone s03"><cite>Benjamin_Young:</cite> Maybe like I said it's impossible to know because we don't do emerge.</p>
+<p id=8912 class="phone s02"><cite>Manu_Sporny:</cite> What were the dates on those?</p>
+<p id=b559 class="phone s02"><cite>Manu_Sporny:</cite> Do you know?</p>
+<p id=3f3c class="phone s03"><cite>Benjamin_Young:</cite> You'd have to go to the main branch and look at the history. they're recent.</p>
+<p id=dd58 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean we shouldn't be working directly on Maine. where these are and…</p>
+<p id=c43b class="phone s03"><cite>Benjamin_Young:</cite> And I said they're go back up to the top like you did the two right now and then the two right below that. So March 4th and I don't know that they are going into main. I'm just saying there's no way to know because we don't have merge commit.</p>
+<p id=444d class="phone s02"><cite>Manu_Sporny:</cite> I thought GitHub usually Sebastian Schmidner Yeah.</p>
+<p id=5199 class="phone s03"><cite>Benjamin_Young:</cite> There's 40 41 on the left. PR41.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> You're saying this was open out of state? I don't think it was.</p>
+<p id=10001 class="phone s03"><cite>Benjamin_Young:</cite> It's only touching that section as far as I can tell.</p>
+<p id=b934 class="phone s03"><cite>Benjamin_Young:</cite> If you use the up arrow, the blue Yeah,…</p>
+<p id=1638 class="phone s03"><cite>Benjamin_Young:</cite> you can where it says line 1000, whatever. the first line there's a blue arrow above it right under the word index html and click that three or four times and it eventually gets to it's really okay.</p>
+<p id=b5ec class="phone s02"><cite>Manu_Sporny:</cite> Sorry, Benjamin.</p>
+<p id=d1cc class="phone s02"><cite>Manu_Sporny:</cite> I've had my password managers going absolutely nuts and crashing and popping up a bunch of stuff on my screen. I missed your instructions. this one.</p>
+<p id=e5e3 class="phone s03"><cite>Benjamin_Young:</cite> So under the word index html there's this up arrow that you can click no sorry that one. Yep.</p>
+<p id=425f class="phone s03"><cite>Benjamin_Young:</cite> down one for that blue box. Nope, too many arrows.</p>
+<p id=1c1f class="phone s02"><cite>Manu_Sporny:</cite> God. Gotcha.</p>
+<p id=9945 class="phone s03"><cite>Benjamin_Young:</cite> And then do that three more times. and as far as I recall, it was in the open attestation chunk of code. Maybe five more times. I don't know. It took a minute, because it's not clear from the diff where things are at.</p>
+<p id=f436 class="phone s03"><cite>Benjamin_Young:</cite> You're at the top of the dock. yeah,…</p>
+<p id=7665 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, it usually shows all the changes,…</p>
+<p id=2ef0 class="phone s02"><cite>Manu_Sporny:</cite> right? Yeah,…</p>
+<p id=3889 class="phone s03"><cite>Benjamin_Young:</cite> but it only changed one section…</p>
+<p id=e996 class="phone s02"><cite>Manu_Sporny:</cite> it's just this bit.</p>
+<p id=f062 class="phone s03"><cite>Benjamin_Young:</cite> but right and the change was related I thought to open attestation specifically…</p>
+<p id=16f5 class="phone s02"><cite>Manu_Sporny:</cite> No, this is for mustache.</p>
+<p id=fc62 class="phone s03"><cite>Benjamin_Young:</cite> but it's just more broadly.</p>
+<p id=55bf class="phone s02"><cite>Manu_Sporny:</cite> This one's for mustache.</p>
+<p id=864d class="phone s03"><cite>Benjamin_Young:</cite> Okay. Yeah,…</p>
+<p id=2106 class="phone s02"><cite>Manu_Sporny:</cite> And then this one is for mustache. This might have been gener.</p>
+<p id=810e class="phone s03"><cite>Benjamin_Young:</cite> that's the one I'm thinking, I think.</p>
+<p id=bc42 class="phone s02"><cite>Manu_Sporny:</cite> I think this one was for the SVG stuff. I don't think these are OA related.</p>
+<p id=ce86 class="phone s03"><cite>Benjamin_Young:</cite> Okay. My bad.</p>
+<p id=2cd9 class="phone s02"><cite>Manu_Sporny:</cite> As far as I understand it. algorithms template render method. Yeah, I don't think these are related to Benjamin. unless something Okay.</p>
+<p id=f013 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, my bad. I probably just crossed wires.</p>
+<p id=8371 class="phone s02"><cite>Manu_Sporny:</cite> Going back up the stack then. Thanks for at least, pointing that  These are not super great commit messages, but we'll try to be care more careful merging things in the future. Okay, so going back up the stack to embedded renderer. I think this was just renaming this pull request just renames open attestation embedded render to make it more generic to just be a decentralized renderer. I think they're agreeing with the changes. There have been an updates suggested that they need some accessible descriptions for the images.</p>
+<p id=4023 class="phone s02"><cite>Manu_Sporny:</cite> And Dmitri is saying we can merge this.</p>
+</section>
+
+<section>
+<h3 id=2851>Merge Open Attestation Renderer PR</h3>
+<p id=1605 class="phone s02"><cite>Manu_Sporny:</cite> Which I'm fine with doing because it's been out there for a while. would anyone object since this has been open for months?</p>
+<p id=d7fd class="phone s04"><cite>Ivan_Herman:</cite> Can I say something?</p>
+<p id=54d9 class="phone s02"><cite>Manu_Sporny:</cite> Please Yes,…</p>
+<p id=5baa class="phone s04"><cite>Ivan_Herman:</cite> It can be a good test. I have realized in the meantime that Echidna has been set up. The secret has been generated and the script is there. It just hasn't been enabled. So I can enable it right now and then if you merge this PR that you are talking about then we get a live. Should I?</p>
+<p id=45c6 class="phone s02"><cite>Manu_Sporny:</cite> please do. Yes, please do. And just let me know when it's ready and then I'll do Okay.</p>
+<p id=6eba class="phone s04"><cite>Ivan_Herman:</cite> in theory it is now enabled.</p>
+<p id=9d2d class="phone s02"><cite>Manu_Sporny:</cite> So, no objections on this one. we'll go ahead and rebase and merge. let's see changes requested paging. All right.</p>
+<p id=45c5 class="phone s04"><cite>Ivan_Herman:</cite> I think it will take a while to see whether the experiment works.</p>
+</section>
+
+<section>
+<h3 id=5069>Discuss OCA Bundle Renderer Method</h3>
+<p id=774c class="phone s02"><cite>Manu_Sporny:</cite> That is now rebased and merged. Hooray.  Thank you everyone. That the next Oops, Say that again, Yeah, we'll let it run in the background and check in on it a bit later in the call. all right. OCA bundle render method. this was, proposed by Patrick St. Louis. He's been doing some work on the OCA bundle.</p>
+<p id=ea6d class="phone s02"><cite>Manu_Sporny:</cite> stuff. this was raised last October. we mentioned we would try to unify the approaches. there was suggestion to merge. this is still back in November. Patrick mentioned he might work on this  but it has not been moving for months now. I guess let's ask Patrick if he plans to pursue this if not we would like to mark it as pending close.</p>
+<p id=2363 class="phone s02"><cite>Manu_Sporny:</cite> I'll just suggest that we do need to start processing forward movement on this spec a bit more aggressively. go ahead Dave.</p>
+<p id=51c4 class="phone s05"><cite>Dave_Longley:</cite> Just wanted to make a comment on this one. since it will come up again, I think when we hit the car JSON card one, I think this one's doing something very similar to that other one. if I put this link in chat if you look at that there's at least a section that you can see in some JSON that's describing attribute labels multilingual things for highlighting things to be displayed by a renderer and I think this is in another example of a render method that's u transforming data into something that's a display document And it's up to the software to decide…</p>
+<p id=739f class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://github.com/w3c/vc-render-method/pull/30/changes#diff-0eb547304658805aad788d320f10bf1f292797b5e6d745a3bf617584da017051R1114-R1181">Add OCABundle render method by PatStLouis · Pull Request #30 · w3c/vc-render-method · GitHub</a> </p>
+<p id=b2f3 class="phone s05"><cite>Dave_Longley:</cite> how to actually render all that. But the data is all formatted in a way that's preferential to rendering and displays. And I think we're going to see that again when we get to the JSON card ones. So I think there's commonality there.</p>
+<p id=eb3a class="phone s02"><cite>Manu_Sporny:</cite> Okay, thank you for pointing that out.</p>
+<p id=e679 class="phone s02"><cite>Manu_Sporny:</cite> Yes, this does look and I guess the other thing to mention is that the HTML rendering method can use arbitrary overlays and templating languages and things like that. go ahead Dave</p>
+<p id=5b4c class="phone s05"><cite>Dave_Longley:</cite> Yeah, that's true. But I think the thing that I have noticed in terms of it seems like there's two categories of renderers that would be very helpful to people who want to render.  There's one where you're handing over more or less the entire display to whomever's crafted some HTML template to do whatever they want.  And then there is the style of rendering where the renderer will reconfigure the data in a way that is highly preferential to displaying information in common UI elements and then whoever is rendering that will decide how to use that data based on their own theme for their own software and other considerations for a consistent user experience.</p>
+<p id=5170 class="phone s05"><cite>Dave_Longley:</cite> and they're just looking for the data to be expressed in a really specific way that either highlights the information that the issuer thinks is important that should surface to the top and separates it from summary and other details and…</p>
+<p id=65d0 class="phone s05"><cite>Dave_Longley:</cite> that sort of thing or they highlight particular images and things for a card style display that sort of thing. It seems like there are two categories that the things split into.</p>
+<p id=4b46 class="phone s02"><cite>Manu_Sporny:</cite> Okay. All right.</p>
+<p id=e661 class="phone s02"><cite>Manu_Sporny:</cite> And you're saying this is more in the card category,…</p>
+<p id=0f83 class="phone s02"><cite>Manu_Sporny:</cite> card display.</p>
+<p id=5262 class="phone s05"><cite>Dave_Longley:</cite> Yeah, this yeah,…</p>
+<p id=a44b class="phone s05"><cite>Dave_Longley:</cite> you decide how you want to put this into your user interface, but we've highlighted and…</p>
+<p id=26da class="phone s05"><cite>Dave_Longley:</cite> given you more, display style information about this PC.</p>
+<p id=dec6 class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=762b class="phone s02"><cite>Manu_Sporny:</cite> So we'll wait for Patrick to respond to this and then ask him to align with the card thing and Nate's proposal and that sort of thing. Okay, so that is OCA bundle.</p>
+</section>
+
+<section>
+<h3 id=9042>Introduce Render Method For Static Renderings</h3>
+<p id=2a79 class="phone s02"><cite>Manu_Sporny:</cite> Next one is introduce render method for untlated renderings.</p>
+<p id=a3b3 class="phone s02"><cite>Manu_Sporny:</cite> Benjamin this is your raised in November. can you take us through this one?</p>
+<p id=2b3c class="phone s03"><cite>Benjamin_Young:</cite> Yeah, sure.</p>
+<p id=8542 class="phone s03"><cite>Benjamin_Young:</cite> This was before the HTML rendering stuff and it was focused on essentially inert renderers where we have just a raw image or raw NFC data or any other thing that essentially doesn't need processing and is just a value.</p>
+<p id=d38e class="phone s03"><cite>Benjamin_Young:</cite> the idea was because it isn't actually an expression of a template and it's just a raw value that should be stuffed in a source value or passed along some particular pipe in the case of NFC that calling it a template render method was confusing and sort of set developers up to go down the wrong path and arbitrarily process and waste energy and time  and whatever else processing values in which there was no template. so that was the intention of it. We ran into conflicts around the superclassing name and whatever else but I think it's up for the group to redisuss this one if anyone's interested.</p>
+<p id=1e54 class="phone s02"><cite>Manu_Sporny:</cite> Thank you for the background. and then I think what this PR does is it splits template render method into kind of a base class for render method.</p>
+<p id=7113 class="phone s02"><cite>Manu_Sporny:</cite> And then a template render method is a specialization of render method. and HTML would probably go down here and NFC would probably go up here since NFC is static and…</p>
+<p id=0113 class="phone s03"><cite>Benjamin_Young:</cite> Yeah. Yeah.</p>
+<p id=892f class="phone s02"><cite>Manu_Sporny:</cite> HTML is dynamic. Mhm.</p>
+<p id=d9d2 class="phone s03"><cite>Benjamin_Young:</cite> And we could potentially have an image render method or some other thing or just a raw media type one to go under the render method one again if that was of interest of a fully hydrated image of your VC. So not an SVG file.</p>
+<p id=8d50 class="phone s02"><cite>Manu_Sporny:</cite> And then the alternate being a static thing is just a template render method with no inputs.</p>
+<p id=6fe7 class="phone s03"><cite>Benjamin_Young:</cite> Right. the alternate is you would still state this is an iframe sandbox render method or one of these two that are still here. and that you'd say template ID or template and then here's a data URL that's image PNG or and then something would have to know essentially not to touch it or it would inject it in an iframe anyway or whatever. But if we lean on the newer iframes sandbox thing, there's additional processing and decision- making about what the media type is and then what the HTML thing being determined.</p>
+<p id=512c class="phone s03"><cite>Benjamin_Young:</cite> Essentially you still have to provide a JavaScript render to be run to properly take the data URL out of the image PNG thing and inject it into the image tag. You essentially have to hoist up a template space environment. even though ultimately it's just going to be an image.</p>
+<p id=56b6 class="phone s04"><cite>Ivan_Herman:</cite> Interesting.</p>
+<p id=cea2 class="phone s03"><cite>Benjamin_Young:</cite> So that was a lot of the driving behind this is the amount of development and…</p>
+<p id=f4af class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=7288 class="phone s03"><cite>Benjamin_Young:</cite> precautions and whatever else being taken when you then don't need to have done all</p>
+<p id=96d2 class=irc><cite>&lt;Ivan_Herman&gt;</cite> Echidna failed, because the html is invalid... :-( </p>
+<p id=1e68 class="phone s02"><cite>Manu_Sporny:</cite> So I guess the question two questions then. is the group wanting to pursue static versus template classes in the spec in general? is in general do we want to move that kind of conversation forward and then the other question I think is this the PR that's going to do that or do we want to close this PR and then open a new PR to attempt that? go ahead Dave.</p>
+<p id=93bb class="phone s05"><cite>Dave_Longley:</cite> I'm not sure what the group wants.  I did want to note that I think even if we represented this information as just a static template I don't think if we wanted to support the image case you wouldn't have to do that as HTML and create that bootstrapping environment we would just express it in the template render method in the modality is an image and that I think there's other ways to do it and so I think we're just trying to decide  IDE exactly how to represent that use case and figure out what it would mean to developers one way or the other.</p>
+<p id=6104 class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, Benjamin.</p>
+<p id=6108 class=irc><cite>&lt;Benjamin_Young&gt;</cite> &lt;em&gt;sad...&lt;/b&gt; </p>
+<p id=94d9 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, I think there's another shape that this could take rather than the superass thing…</p>
+<p id=0d0d class="phone s03"><cite>Benjamin_Young:</cite> where we stick with just template render method and then now that we have render suite or whatever that's still</p>
+<p id=6999 class="phone s03"><cite>Benjamin_Young:</cite> you set it to none or inert or whatever display is terrible but in some other way say there's essentially not a template nder suite here. Yeah, that line there. so you would still say this is a template render method, but then you would say just kidding, it's not actually a template. just show it. or we make a bunch of things that are use an image tag, use an NFC thingy, use a whatever and those suites know that they are essentially not suites. They're like this is where you stick it in the HTML or JavaScript or whatever. I don't know if that makes sense, but the data in the template value in the case of whatever this thing would be is not a template.</p>
+<p id=1c7a class="phone s03"><cite>Benjamin_Young:</cite> It's just data and I can work up examples down both lanes if that would be helpful to see the difference. I think both accomplish the same thing.</p>
+<p id=bcdf class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I think that would be helpful kind of for the group to compare contrast the two approaches. let me ask something a bit more concrete.  Do we think this PR is the thing that's going to accomplish that or should we try a separate PR or should we try to work through things in the issue and then raise a PR after that? I think I'd rather close this issue and then close this PR work through in the issue what the compare contrast is and then once we come to an understanding of this is how we would do static things at that point we raise a R interested in your thoughts on that Benjamin but before that Avon you're on the queue</p>
+<p id=0f25 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> ERR_Invalid_Benjamin *sad_trombone* </p>
+<p id=864c class="phone s04"><cite>Ivan_Herman:</cite> How do you put a plus one into the meeting?</p>
+<p id=9711 class="phone s02"><cite>Manu_Sporny:</cite> You can …</p>
+<p id=b2ac class="phone s02"><cite>Manu_Sporny:</cite> you can type plus one in the and it'll pick it up.</p>
+<p id=ccf7 class="phone s04"><cite>Ivan_Herman:</cite> Yeah. No, I mean,…</p>
+<p id=d2c0 class=irc><cite>&lt;Ivan_Herman&gt;</cite> It complains about aria stuffs, which is usually generated by respec, which suggests that there is something problematic in the structuring (sections, lists, etc) </p>
+<p id=43c3 class="phone s02"><cite>Manu_Sporny:</cite> Or you can do a thumbs up.</p>
+<p id=dcdf class="phone s04"><cite>Ivan_Herman:</cite> okay, but jokes aside,…</p>
+<p id=edc9 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, that's fine.</p>
+<p id=8c27 class="phone s04"><cite>Ivan_Herman:</cite> yeah, I agree with what you said.  it should be closed and too many things have happened since November</p>
+<p id=7585 class="phone s02"><cite>Manu_Sporny:</cite> Okay, Benjamin, would you be okay with closing and then taking back to the issue and trying to propose Any objections to closing this?</p>
+<p id=d6a7 class="phone s06"><cite>Dmitri_Zagidulin:</cite> objections. I mean, we still want to revisit it like you said, but yeah,…</p>
+<p id=3306 class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=2b46 class="phone s06"><cite>Dmitri_Zagidulin:</cite> this is</p>
+<p id=146b class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> +1 </p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> And let's So, this was overtaken by events. So, we're going to go back to the issue and discuss alternate paths forward. all right. So, that that's Why is it That's very interesting. okay, next one.</p>
+<p id=603b class="phone s02"><cite>Manu_Sporny:</cite> are cardlike displays. This is something that Nate proposed. so this is the thing I think Dave you were talking about. there are complex render mechanisms such as the HTML one. and then there are other ones that are not prescriptive about how layout happens. but you still want to hint, about the things you want to show up on the screen and potentially the order that they show up in. go ahead, Dave.</p>
+<p id=479f class="phone s05"><cite>Dave_Longley:</cite> Yeah, one way I'm trying to figure out a good way to describe the difference. I'm going to take a stab at it and fail, but I think this type of render method renders It renders to a different data format, which in this particular case is one that's highly amendable to display information.  So you can just take it and use it to build a display.  And then other render methods actually render to some kind of image or could even be a sound a video or HTML that displays a bunch of stuff where as the host application you're not in control of what's being displayed and this type of render method gives reorganizes the information in VCs for things like here's</p>
+<p id=e76b class="phone s05"><cite>Dave_Longley:</cite> a bunch of data that would be good for a card display for consistently expressing all VCs for example your wallet interface in the same way where as the issuer we've highlighted the fields that the user is more likely to want to see up at the top and…</p>
+<p id=f360 class="phone s05"><cite>Dave_Longley:</cite> put advanced or something else somewhere else which has pros and cons but I think that's the general idea</p>
+<p id=8b6f class="phone s02"><cite>Manu_Sporny:</cite> Great. Thanks,…</p>
+<p id=aaa4 class="phone s02"><cite>Manu_Sporny:</cite> Dimmitri</p>
+<p id=4bde class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah, plus one to what Dave said. And I want to remind everybody that essentially all of our template methods need the render to data part.  meaning this includes the sandbox iframe method and this one and the others they all have this thing in common where the host application passes in the fields and the data to be rendered I want to keep everybody in mind that that's a potential mechanism in common that we can refactor</p>
+<p id=dfe7 class="phone s02"><cite>Manu_Sporny:</cite> Thank you, Avon, you're next.</p>
+<p id=4482 class="phone s04"><cite>Ivan_Herman:</cite> So is this a slightly more general thing in fact…</p>
+<p id=e69b class="phone s04"><cite>Ivan_Herman:</cite> because it's sort of a transformation engine of the data.</p>
+<p id=4c08 class="phone s04"><cite>Ivan_Herman:</cite> which may include filtering but can be transformed and produce some data information somehow. I'm wondering whether this can be used to connect to agents or…</p>
+<p id=eba9 class="phone s04"><cite>Ivan_Herman:</cite> other processing entries or whatever they do. So it sounds to be more general than a render method in a way.</p>
+<p id=cf6e class="phone s02"><cite>Manu_Sporny:</cite> Good question. Dimmitri, you're on the queue.  I don't know if that was a old hand or Manu Sporny:</p>
+<p id=d50d class=irc><cite>&lt;Dave_Longley&gt;</cite> i don't know that the html render method necessarily needs that ... there is certainly &quot;filtering&quot; though. </p>
+<p id=ea31 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah. No, that was intentional. So, yeah. So, I understand what you're saying, Ivon, about the filtering. I think we should try and avoid filtering as long as possible until we run into a use case where it really needs it.  And I wanted to address Dave's comment on the sandbox iframe method. Dave expressed that not sure that we need the essentially pass in a set of fields.  If you remember during a couple of calls ago when we were discussing the Benjamin's pull request on the iframe method several people pointed out that we don't want to and can't pass in the entire credential from the host app into the rendering app even using selective disclosure.</p>
+<p id=0a35 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> it does tho </p>
+<p id=521f class="phone s06"><cite>Dmitri_Zagidulin:</cite> because then what instead we should do is just pass in the fields that the app is allowing to be rendered that the host app is allowing to be rendered by the rendering app.  So I think the mechanism is still the</p>
+<p id=4641 class="phone s02"><cite>Manu_Sporny:</cite> All Thank you, Dave, you're up</p>
+<p id=10003 class="phone s05"><cite>Dave_Longley:</cite> So I think there are similar concepts in the mechanism.</p>
+<p id=a87f class="phone s05"><cite>Dave_Longley:</cite> I think the way the HTML renderer works today is so in all of these cases we have a field that says these are the fields that will be used by the renderer. it's like render property or something and that is a list of JSON pointers to fields in the data. I do think that we have that information and I think that probably all of the render methods should process the VC to only send that information through. One way to do that is through running selective disclosure algorithms over it to create a VC that will just have those fields in it.</p>
+<p id=d683 class="phone s05"><cite>Dave_Longley:</cite> I think that's a little bit different though from additional reorganization of the data to have specific labels and values and things as data like what's on the screen right here. If we look at the second field that's on the screen, it says degree type and then this is an example nine on the page and it has a JSON pointer that deep dives into credential subject degree type to go grab the value for that field.  And I think that's a little bit different from just saying we're going to selectively disclose or filter out just the fields that the renderer needs and then hand it to You don't know inside of that type of renderer how or where they're going to use those fields and what they're going to do. And they might need to do things for loops and so on. They don't want to necessarily flatten data.</p>
+<p id=4f1b class="phone s05"><cite>Dave_Longley:</cite> and that's different from this JSON card template where it's going to literally pluck out the specific data and put it in literally tell you as the renderer of this data where to get specific fields to put on a specific card display.  And so I think those are doing similar things, but they're also quite</p>
+<p id=97a4 class="phone s02"><cite>Manu_Sporny:</cite> Thank you all right. general question of the group is, are we supportive of having something like this in the specification? if so, let's ask that question first. Are we supportive of having something like this in the specification?</p>
+<p id=486d class="phone s02"><cite>Manu_Sporny:</cite> Thumbs up from Go ahead, Benjamin.</p>
+<p id=b042 class="phone s03"><cite>Benjamin_Young:</cite> I think generally speaking,…</p>
+<p id=f7dc class="phone s03"><cite>Benjamin_Young:</cite> this sort of approach is the one most commonly seen in the wild across most wallets. This tell us how you want to be displayed in the small if that makes sense. I referenced a Microsoft one and there's a bunch of other ones as well.</p>
+<p id=26a4 class="phone s02"><cite>Manu_Sporny:</cite> All Thank you, couple of plus ones. would anyone object to this feature going into the specification?  I'm not hearing anyone push back on the feature. so maybe what we do next is we ask Nate to clean it up as much as he wants to. other folks definitely should get in here and comment on the entire PR. U make sure that it's covering the things you wanted to cover and doing things in the way that you're okay with it. doing it.</p>
+<p id=4a30 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> are you sure it's different? </p>
+<p id=6ef9 class="phone s02"><cite>Manu_Sporny:</cite> I really want to change the name away from Jason Card to something else, but I'll leave that comment in there. I think that's as much as we can do for this any last thoughts on the PR before we move on to the next one. Okay, that was PR39. render method to enable cardlike displays and wallets and displayers.  All right. next, R PR, 48. opened, just an hour ago. this is about oblivious HTTP. Benjamin, could you take us through this PR,  You might be double muted.</p>
+<p id=3977 class=irc><cite>&lt;Dave_Longley&gt;</cite> can anyone ever really be sure? :P ... but, yeah, i think it's pretty different. </p>
+<p id=c080 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> the only difference that i see is - in the html iframe case, the render app is free to ignore the labels </p>
+<p id=8568 class="phone s04"><cite>Ivan_Herman:</cite> It seems to be three times muted.</p>
+<p id=3c38 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> but &quot;a list of json pointers with values&quot; is the same </p>
+<p id=96e9 class="phone s02"><cite>Manu_Sporny:</cite> All right, while Benjamin does battle with his computer, I think let's see, this is about issue 47. and we're trying to basically say you should perform all fetches over ottp or similar to ensure that you're doing it in a way that is not tracking the individual or attempts really hard to avoid individual tracking. it looks like it does exactly that.</p>
+<p id=78bd class=irc><cite>&lt;Benjamin_Young&gt;</cite> `card` </p>
+<p id=1d04 class=irc><cite>&lt;Dave_Longley&gt;</cite> i don't know that &quot;card&quot; is even right, but maybe </p>
+<p id=c6a8 class="phone s02"><cite>Manu_Sporny:</cite> Yep. I mean, looks pretty straightforward. any other thoughts, concerns, changes to this All right. we'll give it the normal time frame since it was just opened an hour ago. moving on to the next, PR. I did just raise this right before the call. this PR deprecates SVG mustache and PDF mustache. Those render suites, they have been overtaken by events, meaning the HTML render method can address both use cases that those other render suites do. So, all this does is it just deletes that text. go ahead, Dmitri.</p>
+<p id=5731 class="phone s06"><cite>Dmitri_Zagidulin:</cite> So, I agree on the PDF mustache sense. I think the SVG one still addresses use cases that the HTML render method cannot. So, I think we should leave it in.</p>
+<p id=19ea class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> i agree, we probably dont need the card part </p>
+<p id=dfe8 class=irc><cite>&lt;Benjamin_Young&gt;</cite> yep...fighting the machine </p>
+<p id=dcda class=irc><cite>&lt;Dave_Longley&gt;</cite> you don't even render to a card, rather, you are given the data in a way that makes it easy to render to a card-like thing or some other widget you like. </p>
+<p id=5561 class="phone s02"><cite>Manu_Sporny:</cite> I guess my question is which use cases because SVG is fully supported in the HTML rendering entrance, right?</p>
+<p id=1e18 class=irc><cite>&lt;Benjamin_Young&gt;</cite> it's remuting me... </p>
+<p id=7b86 class="phone s06"><cite>Dmitri_Zagidulin:</cite> It's the iframe requirement that differentiates the two. it's the sandbox run HTML environment in a lot of cases. for example, mobile app list of card in a lot of cases, it's a lot more convenient to render those card displays, the list versions of the verifiable credentials as SVG rather than a list of individual iframes, each with its own rendering</p>
+<p id=2aba class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, Dave.</p>
+<p id=a824 class="phone s05"><cite>Dave_Longley:</cite> Could we better formalize that specific case so it could be understood so we would know what the differences are and whether it's worth the trade-off of having an entirely different way of doing things. struggling to understand whether the problem there is there's a concern about I don't know exactly…</p>
+<p id=8ea8 class="phone s03"><cite>Benjamin_Young:</cite> Come on. Okay.</p>
+<p id=c1a6 class="phone s05"><cite>Dave_Longley:</cite> what the concern there is. There are two different ways to do it. They're not going to be exactly the same. so I want to know if we're comparing some amount of processing power, battery usage because I hear the word mobile. I don't know.</p>
+<p id=10004 class="phone s05"><cite>Dave_Longley:</cite> and do we have data on that? I think there would be considerable effort to have everyone have to implement multiple different ways of implementing this. And so we would really need to understand the trade-offs if we can do them both in the same way.  It would be really good to understand what the actual benefit would be to have this other way of doing it.</p>
+<p id=987b class="phone s02"><cite>Manu_Sporny:</cite> All right. Any other I guess input on this? Do we I guess Dimmitri whatever's in the spec are you saying is good and we should continue to use that or are you saying there's another SVG based approach that we might want to use that is not the SVG mustache thing because this thing is sandboxed as well right at least the one that we have in the spec today is supposed it's no SVG offline mode purely …</p>
+<p id=487c class="phone s06"><cite>Dmitri_Zagidulin:</cite> I frame sandbox.</p>
+<p id=c577 class="phone s02"><cite>Manu_Sporny:</cite> it's the version of SVG that is sandboxed. So, you can't do network traffic and…</p>
+<p id=9672 class="phone s06"><cite>Dmitri_Zagidulin:</cite> So that seems Yeah.</p>
+<p id=3a89 class="phone s02"><cite>Manu_Sporny:</cite> and that sort of thing.</p>
+<p id=5306 class="phone s06"><cite>Dmitri_Zagidulin:</cite> I mean, would you be opposed to splitting it out or rather just removing the PDF one and keeping what we have as the SVG template and continue some discussion? I can write up the use case for it.</p>
+<p id=2db5 class="phone s02"><cite>Manu_Sporny:</cite> Yes, I can make that update. just this is with my personal hat on, I'm also hesitant to I would really like us to get down to just the bare minimums at even if there are optimizations that we could do. to try to get the version 10 of this thing out. I think we've got some hard decisions that we need to make around open at astation a renderer and the card one and all that kind of stuff. but with that yeah I can modify it and just take the PDF one out and leave the SVG one in.</p>
+<p id=8dd2 class="phone s02"><cite>Manu_Sporny:</cite> go ahead, Still muted in some capacity. Maybe if you type it out, it'll definitely show up in the minutes if you type it out. All right. so this is R49. let's see. reenable SVG mustache mache as a approach. Dimmitri, would you be opposed if I said we are looking for implement feedback on this and it may be removed in a future version. Okay.</p>
+<p id=31cf class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah, that sounds fine to  Yeah.</p>
+<p id=04c7 class="phone s02"><cite>Manu_Sporny:</cite> as an approach but mark it as needing implement feedback. PDF. I need to make sure that remove PDF list dash support as I want to make sure we do not upset Adobe by saying we're removing PDF support…</p>
+<p id=dbc0 class=irc><cite>&lt;Benjamin_Young&gt;</cite> in theory I can talk...but looks like we've mode on. &gt;_&gt; I hate Chrome... </p>
+<p id=ad13 class="phone s02"><cite>Manu_Sporny:</cite> which we are not. okay I can make that update to the PR. Those are all of our poll requests. Thank you everyone for your thoughts as we went through those. I'll note we've got about 4 minutes left in the call. go ahead.</p>
+<p id=a2ca class="phone s04"><cite>Ivan_Herman:</cite> Yeah, just come back to our experiment.</p>
+<p id=0787 class="phone s04"><cite>Ivan_Herman:</cite> I put it into the chat that you were busy probably. So, unfortunately, Echidna failed because there are some HTML problems.</p>
+<p id=9eab class="phone s02"><cite>Manu_Sporny:</cite> Okay. I Yeah,…</p>
+<p id=dc33 class="phone s04"><cite>Ivan_Herman:</cite> Good news to the editors. They have to work it out.</p>
+<p id=707b class="phone s02"><cite>Manu_Sporny:</cite> we'll do an HTML check and try to fix whatever issues there.</p>
+<p id=23cb class="phone s04"><cite>Ivan_Herman:</cite> But the mechanism is there. So, it did what it is expected to do.</p>
+<p id=338d class=irc><cite>&lt;Benjamin_Young&gt;</cite> Just wanted to sync with Dmitiri about the SVG Mustache thing </p>
+<p id=a3e8 class=irc><cite>&lt;Benjamin_Young&gt;</cite> can do that elsewhere </p>
+<p id=fb4b class="phone s04"><cite>Ivan_Herman:</cite> Money there is a way to suppress HTML checking in Echidna if we are very busy but I think it's better to try to find it because eventually we will have to solve them anyway. Manu Sporny:</p>
+<p id=1dab class="phone s02"><cite>Manu_Sporny:</cite> I agree completely. It's awful to go through that when you're trying to get a CR or an FBWD or,…</p>
+<p id=1e3e class="phone s04"><cite>Ivan_Herman:</cite> Yes. Exactly.</p>
+<p id=5af9 class="phone s02"><cite>Manu_Sporny:</cite> something out.</p>
+<p id=1e4a class="phone s04"><cite>Ivan_Herman:</cite> Exactly.</p>
+<p id=bc0a class="phone s02"><cite>Manu_Sporny:</cite> So it's best to keep the spec in good healthy shape. Looks like Okay.</p>
+<p id=a0ac class="phone s04"><cite>Ivan_Herman:</cite> Then I did what I could do.</p>
+<p id=03e1 class="phone s02"><cite>Manu_Sporny:</cite> In the three minutes left, does anyone have any high priority issue they wanted to cover or anything they want to introduce the group to? then let's talk about real quick. overlay capture bundle and the IMDA one the embedded renderer. I think as a group we need to make some decisions on this stuff.</p>
+<p id=4b75 class="phone s02"><cite>Manu_Sporny:</cite> Are we going to continue trying to put this into the specification? who else is supporting this? I think we probably should go through and see how many people are actually actually planning to implement these features. and so what I would love the group to do over the next month is decide on the feature set for render method and draw a line there.</p>
+<p id=01cc class="phone s02"><cite>Manu_Sporny:</cite> so that we can start moving towards candidate wreck for the specification. any other highlevel thoughts on that before we adjourn. Go ahead.</p>
+<p id=2c22 class="phone s04"><cite>Ivan_Herman:</cite> I will be a broken record.</p>
+<p id=5a98 class="phone s04"><cite>Ivan_Herman:</cite> Horizontal reviews. I think the spec is in the stage when it can be done and in this case we will have to work on issues that we are not used to in the BC up so far which is horizontal review on accessibility and on internationalization</p>
+<p id=3adb class="phone s02"><cite>Manu_Sporny:</cite> Yes, that is an excellent point, I had a question to the privacy and security group around the threat modeling work. as everyone knows, we're moving some of the CGCG specs over to the verifiable credential working group and we started working on the privacy and security consideration section and then we're like, are we wasting our time doing this?</p>
+<p id=7308 class="phone s02"><cite>Manu_Sporny:</cite> Should we be doing a threat model instead? I don't know if we have any clarity and I don't see anyone from privacy or security on the call today. go ahead Ivon.</p>
+<p id=41c4 class="phone s04"><cite>Ivan_Herman:</cite> just I am not in the privacy group so I am not an expert…</p>
+<p id=ee91 class="phone s04"><cite>Ivan_Herman:</cite> but as far as I could understand and see the whole threat model thing is still in the making. and so as of today I don't think that we should do that because it would hold up the spec evolution. that's the worry I have.</p>
+<p id=01b0 class="phone s04"><cite>Ivan_Herman:</cite> maybe in a year from now the threat model will be well understood so that all working groups can take it up and use it but we are not at that point and we have gone through many situations where we were the guinea pigs.  Let's not do it for this</p>
+<p id=b1d2 class="phone s02"><cite>Manu_Sporny:</cite> I'm happy with that response of we are definitely being blocked in the did working group for not having a threat model.  we are not allowed to proceed to through without a threat model which means that we are now in a position where we're having to do a privacy a security consideration section and a threat model that largely duplicates the privacy and security consideration section. So I've asked that group like what's the plan here?</p>
+<p id=b34f class="phone s02"><cite>Manu_Sporny:</cite> because I am pretty sure they're going to assert the same thing for all of the new VC working group specs which is you need to have a threat model…</p>
+<p id=fca3 class="phone s02"><cite>Manu_Sporny:</cite> if you are going to ask for horizontal review that is my understanding of where things are based on kind of some of the things Joe has said and some of the things security has said based on horizontal reviews so Ivon,…</p>
+<p id=51fc class="phone s04"><cite>Ivan_Herman:</cite> Okay. No,…</p>
+<p id=8bc9 class="phone s04"><cite>Ivan_Herman:</cite> no, no comment.</p>
+<p id=4d63 class="phone s02"><cite>Manu_Sporny:</cite> I think we're go ahead.</p>
+<p id=f5d3 class="phone s02"><cite>Manu_Sporny:</cite> Sorry, Ivon. I missed what you said.</p>
+<p id=4a68 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I said no comment.</p>
+<p id=da91 class="phone s02"><cite>Manu_Sporny:</cite> All So, we can ask for, horizontal review, but I guess it would be nice to know…</p>
+<p id=e718 class="phone s04"><cite>Ivan_Herman:</cite> but… Manu Sporny:</p>
+<p id=bf3f class="phone s02"><cite>Manu_Sporny:</cite> which one of these things Mhm.</p>
+<p id=ce45 class="phone s04"><cite>Ivan_Herman:</cite> but what I said before there are tons of people in this working group who are security and privacy experts. So even with a threat model thing it can be handled do not have people who are internationalization or accessibility experts. So that will be much tougher in my view for this working group than security and privacy.</p>
+<p id=cd3d class="phone s02"><cite>Manu_Sporny:</cite> Certainly. Yeah. Yeah. Yeah. We need all of those horizontal reviews.  I'm just trying to, before we do the horizontal review, we have to have certain things in the spec. And it is unclear to me whether or not we should have a threat model in the spec or a privacy and security consideration section in the spec. And I really hope they're not do all three because again it's duplicative. and they may say no it's not and I think I strongly disagree with that. statement. yes. So, let's try to get to a horizontal review with these specs once we get the feature set completely locked in. and I think that's it for the call today. Thank you everyone very much.</p>
+<p id=3652 class="phone s02"><cite>Manu_Sporny:</cite> next week is the verifiable credentials main meeting. at which point, we'll be discussing what the meeting cadence is for the main meeting and then all of the groups as Have a wonderful rest of your week and we will see everyone this time next week on the main call. Thanks all. Bye. Meeting ended after 01:00:53 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=dc76 class=irc><cite>&lt;Dave_Longley&gt;</cite> my preferences for the main required features: render to &quot;static&quot; (image, NFC, etc.), or to &quot;display data&quot; (card like information where the host decides the widget/visual/other elements), or render to HTML where the render method/template does it all in an iframe. </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
