@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 7 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>7 April 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, Henrique_Xavier, James_Easter, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f60d">Introductions</a></li>
+<li><a href="#9dcf">VCWG Transition To Specification Path</a></li>
+<li><a href="#7db9">Community Introductions</a></li>
+<li><a href="#7c07">Administrative Items</a></li>
+<li><a href="#8666">First Public Working Draft Process</a></li>
+<li><a href="#d51d">Pull Request Processing and Work Mode</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=f60d>Introductions</h3>
+<p id=a076 class="phone s01"><cite>Kevin_Dean:</cite> Welcome</p>
+<p id=ac74 class="phone s02"><cite>Patrick_St-Louis:</cite> Welcome to the call everyone. We'll get started in a couple minutes.</p>
+</section>
+
+<section>
+<h3 id=9dcf>VCWG Transition To Specification Path</h3>
+<p id=e30f class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, I'm going to get started with the call. So, welcome everyone to the first W3C verifiable credential working group VC call meeting.</p>
+<p id=3d14 class="phone s01"><cite>Kevin_Dean:</cite> It's good.</p>
+<p id=19a3 class="phone s02"><cite>Patrick_St-Louis:</cite> So today is a very important day for those who have been following the credential community group version of this call in the previous years. as previously known as the VC API has been many years in the making and we are finally transitioning towards a specification recommendation path. so today is 7th of April 2026. this is a W3C meeting so all W3C policies are into effect and let's get started.</p>
+</section>
+
+<section>
+<h3 id=7db9>Community Introductions</h3>
+<p id=160e class="phone s02"><cite>Patrick_St-Louis:</cite> So since this is the first edition of the verifiable credential community group version of this call I'm going to go ahead and let people introduce themselves. If there's people who are joining for the first time or people would like to reintroduce themselves please go ahead and let us know if you want to a bit about yourself what interests you in this call and if you have any interesting projects you're working on where you would like to leverage the VC API. Yes, Nate.</p>
+<p id=4c0b class="phone s03"><cite>Nate_Otto:</cite> Hello. I can introduce myself. I've been on the CCG variant of this call for a little while and now my organization Skybridge Skills is a new W3C member. So, I'll be continuing with this work. I have been involved in verifiable credentials and sort of precursors to that for quite a while. specifically I work a lot on open badges at 1D tech. I'm the chair of the open badges and comprehensive learner record task force there a working group where we standardize open badges and CLR as well as a couple other one tech extensions. I do work specifically with VCOM in a few different ways. One I implement them in products.</p>
+<p id=42aa class="phone s03"><cite>Nate_Otto:</cite> So I have a platform called the Skybridge skills platform that implements VCOM for issuance and very soon for verification using exchanges. I have a platform called Orca that's an open-source piece of software for self-claiming and peer endorsement of learning credentials and that will very soon use VCOM as well. and I contribute to the digital credentials consortium's open- source software such as their dcc transaction service and I'm currently in the process of upgrading that to use the latest version of VCOM. So a lot of different work care about this a lot and I really like how VCOM can be a wrapper for some of these other protocols.</p>
+<p id=d8bf class="phone s02"><cite>Patrick_St-Louis:</cite> Thank you This was a great introduction to see which real world example of where these types of protocols and API definition can be used. it's really really good to hear.</p>
+<p id=7179 class="phone s03"><cite>Nate_Otto:</cite> And other consulting through other organizations where I also continue to push ecom into more and more products.</p>
+<p id=87aa class="phone s02"><cite>Patrick_St-Louis:</cite> I suppose I could go. so myself Patrick I've been in the VCOM or VCAPI called for quite a few years now. I want to just roughly say maybe four years something like that more or less.</p>
+<p id=6aab class="phone s02"><cite>Patrick_St-Louis:</cite> I was brought into the space working in Canada with the government of British Columbia and I've been sort of looking at making sure that the software we use or that BC use is somewhat conformant or not too far away from the principles discussed in VCOM. So we use the acupited foundation. So I've been trying to ensure that some of the primitives there they get a little bit closer to vcom to enable some interoperability layer if the requirements arise. so this group has been very interesting to me.</p>
+<p id=ccc5 class="phone s02"><cite>Patrick_St-Louis:</cite> We discuss a lot of different topics mostly centered around verifiable credential but since this is about the life cycle of verifiable credential we touch a lot of things as not only the credentials themselves but how to manage them how to exchange them from different parties and what is possible with all this so I see the VCOM maybe a way as the glue that puts together whether status list or credential issuance and how to put it into action. So, it's been very interesting for me. and that's it for me. anyone else would like to introduce themselves?</p>
+<p id=806b class="phone s01"><cite>Kevin_Dean:</cite> Kevin Dean with Legendary Requirements. I'm co-editor of the VC use cases document along with Joe Andrew also with Legendary Requirements.</p>
+<p id=002a class="phone s01"><cite>Kevin_Dean:</cite> Formerly I was with GS1 and was the chief architect behind the credentials data model that GS1 developed for their licensing system.</p>
+<p id=50bf class="phone s02"><cite>Patrick_St-Louis:</cite> very interesting Kevin.</p>
+<p id=7721 class="phone s02"><cite>Patrick_St-Louis:</cite> Thank you for the introduction. I'll leave one more minute if anyone wants to raise their hand.</p>
+<p id=d35b class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, Manu.</p>
+<p id=e690 class="phone s04"><cite>Manu_Sporny:</cite> I guess I'll go real quick to mention…</p>
+<p id=b8f1 class="phone s04"><cite>Manu_Sporny:</cite> why we're interested in this stuff. hi, my name is Manu Spornney. I've been working with many of you on this specification for many years now. I think it's been 5 years, which is insane to say that it's been that long. I'm with a company called Digital Bazaar. There are a number of people from Digital Bazaar here. VCOM powers, all of our issuance, holding verification software. it's built into it. as many of we also work with, organizations like True Age and Knack who use VCOM for all of the production deployments. We work with, California DMV, and a couple of other California agencies, again, all using VCOM in production.</p>
+<p id=6c19 class="phone s04"><cite>Manu_Sporny:</cite> We are very interested in getting this thing to a global standard because people are adopting it faster than we're able to get it down the standards track which is a great signal. but really looking forward to making a global standard. That's it.</p>
+<p id=1b76 class="phone s02"><cite>Patrick_St-Louis:</cite> Thank you Manu for providing this context. thank you for these introductions. very nice to see interest in the call. so I want to give the space maybe for any community updates or if there's any words that wants to be officialized for this new page of the VCOM group if someone wants to put a introduction word about where this will lead us and u I host this call but there's people that are a bit more familiar than me</p>
+<p id=e335 class="phone s02"><cite>Patrick_St-Louis:</cite> with all the standardization process. so we'd be happy to hear what there's to say. Manuel</p>
+</section>
+
+<section>
+<h3 id=7c07>Administrative Items</h3>
+<p id=e489 class="phone s04"><cite>Manu_Sporny:</cite> Sure thing. I will try to cover all the administrative items and apologies for those of you that were in a previous call where we covered all of this stuff. It's going to very much be a repeat. so as Patrick mentioned, this is an official W3C verifiable credential task force call. anyone that joins has to be a member of the working group as an invited expert or whatever. I think I've checked everyone and you're all good. any contributions that you make during the call, fall under the agreement. if you know of any patents of any kind, you need to let the group know.</p>
+<p id=8dd0 class="phone s04"><cite>Manu_Sporny:</cite> because we are building a specification that is meant to be patent and royalty free anyone can implement it in the world without asking us for permission. the call is transcribed and recorded and that is going to hold true for every single meeting. if you object to that you need to let the group know especially the people that are facilitating the call. that's Patrick. and I think Benjamin you as well. I'm getting confused with my task forces, but I think you're the backup for this. No, I'm totally wrong. Coyote, it's My apologies. So, the facilitators for this call are Patrick and Coyote. so the general process here we're basically going to keep doing the same thing.</p>
+<p id=68c2 class="phone s04"><cite>Manu_Sporny:</cite> We do pull request issue processing, assign issues to people get that stuff done. we are officially under W3C process at this point. So it might be good to review the W3C process document. Let me get a link to that. If you're ever wondering where we are in the process or what the requirements are to get to the next process, the W3C process document is a fantastic document. it is very detailed. It is really well written, over 25 years of W3C's operations.</p>
+<p id=51f7 class="phone s04"><cite>Manu_Sporny:</cite> So, especially Patrick Coyote, that is your friend when you need to figure out where we are, what we need to do next. I think that's largely it again, as Patrick mentioned, we operate under the W3C code of conduct. that is also another excellent document. that is let me try and find the conduct con I can't spell conduct here. that is this document that I'll put in the chat channel. again a very good document about how we are expected to behave.</p>
+<p id=ba18 class="phone s04"><cite>Manu_Sporny:</cite> Not that we've ever had any issue with that in this group. I think a high level that's it. We do need to talk about work mode when we raise a PR, how long should it sit out before it gets merged? what do we do if we don't get to consensus in anything in particular that we're, talking about? But again, we've been doing pretty well in this group and I don't expect there to be, any issues there. I'll pause there, I guess, see if there are any questions or things I missed. and then we may want to talk about the first order of business, which is the publication of a first public working draft for the specification. and we can go into what that means and what the process there is and all that kind of stuff in a bit. let me pause and see if there are any questions, concerns, any of</p>
+<p id=d540 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://www.w3.org/policies/process/">W3C Process Document</a> </p>
+<p id=452b class="phone s02"><cite>Patrick_St-Louis:</cite> Eric. …</p>
+<p id=4dfa class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=685a class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://www.w3.org/policies/code-of-conduct/">Positive Work Environment at W3C: Code of Conduct</a> </p>
+<p id=7341 class="phone s05"><cite>Eric_Schuh:</cite> mine's somewhat unrelated, but just some more front matter stuff. so Mono, I think wrap up with whatever you're doing and then I'll chime in.</p>
+<p id=0bec class="phone s04"><cite>Manu_Sporny:</cite> I think any other questions, concerns?</p>
+</section>
+
+<section>
+<h3 id=8666>First Public Working Draft Process</h3>
+<p id=4b29 class="phone s02"><cite>Patrick_St-Louis:</cite> so just to go back what you meant. So we are at the moment starting to progress to what's called the WTC recommendation track if I understand. And you mentioned very specifically that our first goal is to reach this publishing step. Correct. So that's…</p>
+<p id=b334 class="phone s04"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=aef0 class="phone s02"><cite>Patrick_St-Louis:</cite> that's where we want to be not necessarily as fast as possible fairly quickly. and could you expand a bit like that part is so important and what this will do for us? Manu Sporny:</p>
+<p id=143c class="phone s04"><cite>Manu_Sporny:</cite> Yes, I can. But Eric, I don't know if you wanted to do your thing before we got into those details because that'll probably be the next, 15 minute chunk of the</p>
+<p id=e964 class="phone s05"><cite>Eric_Schuh:</cite> Yeah. Yeah.</p>
+<p id=a7ac class="phone s05"><cite>Eric_Schuh:</cite> I just wanted to speak a bit on our use cases repo that it has been somewhat languishing for the last bit. the group hasn't spent too much time looking at the use cases since probably about a year ago I think was the last time we really turned our attention to it. so I did just want to let the group know that kind of in the latter half of this week I do plan on publishing a series of PRs for that repo. one of them is going to mostly be structural and language updates because we've changed terminology quite a bit since the last time we looked at the use cases.</p>
+<p id=873f class="phone s05"><cite>Eric_Schuh:</cite> But then I'm also going to be putting in a series of PRs that updates the sequence diagrams to make use of workflows which I don't believe any of our sequence diagrams in the use cases currently use the workflow mechanism at all. so Patrick I'm not sure when scheduling wise it would make sense to start look at that chunk of work as well. I don't think it's super urgent, but just wanted to let everyone know that that's going to be showing up.</p>
+<p id=58cd class="phone s05"><cite>Eric_Schuh:</cite> And if anyone has time in the next week or two to start taking a look at some of those PRs, it would be appreciated.</p>
+<p id=86ae class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah,…</p>
+<p id=4fd3 class="phone s02"><cite>Patrick_St-Louis:</cite> that sounds really good. just so are you talking about a separate report? It's kind of a use case section within VCOM.</p>
+<p id=3ac5 class="phone s05"><cite>Eric_Schuh:</cite> No, it is a separate repo. I'll go grab the link and…</p>
+<p id=3f62 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=1f27 class="phone s05"><cite>Eric_Schuh:</cite> put it in chat.</p>
+<p id=1e82 class="phone s02"><cite>Patrick_St-Louis:</cite> VC API use cases.</p>
+<p id=8f81 class="phone s02"><cite>Patrick_St-Louis:</cite> I think Manuel put it here. and that is going to remain at the CCG, but we want to just make sure it's being updated with what we do at the VCOM here. Is that the EV version of it? All right, that sounds really good.</p>
+<p id=9136 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://w3c-ccg.github.io/vc-api-use-cases/index.html">VC API Use Cases</a> </p>
+<p id=d2ee class="phone s05"><cite>Eric_Schuh:</cite> Yes. Yep.</p>
+<p id=e1ec class="phone s05"><cite>Eric_Schuh:</cite> That sounds right.</p>
+<p id=c692 class="phone s02"><cite>Patrick_St-Louis:</cite> Thank you, Manu.</p>
+<p id=2d7d class="phone s04"><cite>Manu_Sporny:</cite> And I'm sorry I'm going to be annoying about, process stuff because I don't see other Ivonne Phil might have said this if they were here. I don't know. So typically the working group works on working group things and the community group owns that document, the use cases document, which totally slipped my mind. We should have asked for that to also be published as a CG final so that we could move it into this group. I think we have to do some kind of official handoff process. we will probably have to ask Avon or Phil Brent if it's really required. the reason it might not be required is there's no IPR in the use cases document.</p>
+<p id=9970 class="phone s04"><cite>Manu_Sporny:</cite> I don't think anyone's going to assert a patent on it or copyright assertion on it but Avon will probably want us to just go through the appropriate process which means final published then it moved over to this group. I don't know if it is okay for a working group to work on CG documents. I personally don't think there's any issue but again we're going to have to ask about it. I think the sooner we get that thing over into this group the better off it's just going to be easier to continue to work on it. so just we might flag that as a question for the call tomorrow.</p>
+<p id=5f4e class="phone s02"><cite>Patrick_St-Louis:</cite> Sounds good.</p>
+<p id=e09f class="phone s02"><cite>Patrick_St-Louis:</cite> Eric</p>
+<p id=b51a class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=ce7c class="phone s05"><cite>Eric_Schuh:</cite> I guess Monu, if there's anything you need me to do since I've been kind of overseeing the use cases, I also forgot the last few weeks, so my bad as well. but if there's anything you need me to do in terms of process, let me know. yeah.</p>
+<p id=8104 class="phone s04"><cite>Manu_Sporny:</cite> Okay, I think the first thing is we just need to ask them tomorrow what do they almost certainly will be like yes go through the process final get it moved over to the working group it's probably…</p>
+<p id=5bcc class="phone s02"><cite>Patrick_St-Louis:</cite> Perfect.</p>
+<p id=5446 class="phone s05"><cite>Eric_Schuh:</cite> I guess just from a process perspective,… Manu Sporny:</p>
+<p id=c975 class="phone s04"><cite>Manu_Sporny:</cite> what they're going to Nah.</p>
+<p id=9f20 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> yes, best to dot our Ts and cross our Is </p>
+<p id=be0e class="phone s05"><cite>Eric_Schuh:</cite> is there any reason for me to hold off on PRs or should I push forward as planned? Okay, perfect.</p>
+<p id=b025 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. The only question I'd have is can we even talk about it in this group? I don't have an objection to doing that,…</p>
+<p id=d43f class="phone s05"><cite>Eric_Schuh:</cite> Yeah. Yeah, sure. …</p>
+<p id=b5cc class="phone s04"><cite>Manu_Sporny:</cite> but again, there might be some weird IPR thing that the lawyers, would get cranky over.</p>
+<p id=2b3d class="phone s05"><cite>Eric_Schuh:</cite> I guess the one other thing, that comes to mind is that we have updated the name of this group. It is still called the VC API use cases. I don't know if it' be worth migrating to a VCOM use cases if we're doing this at the same time, but I also don't know that that matters all that much.</p>
+<p id=efb3 class="phone s04"><cite>Manu_Sporny:</cite> We would probably want to be consistent in the CG final that we publish.</p>
+<p id=6987 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, this would sounds like some legacy thing that …</p>
+<p id=30a3 class="phone s02"><cite>Patrick_St-Louis:</cite> might as well just update it to make sure that the VC API is not a different thing than VCOM…</p>
+<p id=836f class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I can do that.</p>
+<p id=c5e6 class="phone s02"><cite>Patrick_St-Louis:</cite> because it's the same thing. are you okay with putting that in your list, Eric, of PR and updates? Okay, sounds good. Okay. yes, I do.</p>
+<p id=5ac6 class="phone s04"><cite>Manu_Sporny:</cite> So, now I was going to suggest we kind of start talking about the first public working draft and what it does and what it means and…</p>
+<p id=7d51 class="phone s04"><cite>Manu_Sporny:</cite> all that kind of stuff. Are we good to go into that topic?</p>
+<p id=1ef9 class="phone s02"><cite>Patrick_St-Louis:</cite> If…</p>
+<p id=c4b9 class="phone s02"><cite>Patrick_St-Louis:</cite> unless someone else has an objection and would like to ask a question, I'm in favor of jumping to that topic. Yes, let's go ahead.</p>
+<p id=69e0 class="phone s04"><cite>Manu_Sporny:</cite> All So, first public working draft is basically, let me cover another process thing. We can't officially make any resolutions in this group. we can say that we want the main group to make a resolution but if we for example decide to publish as a first public working draft all of us get together and we're like we all want to do it and we do a proposal plus ones and a resolution but that is not binding we have to then take that resolution over to the main working group and the main working group has to pass it we can have some discussions with the chairs about I think that may become a bit</p>
+<p id=7563 class="phone s04"><cite>Manu_Sporny:</cite> unwieldy as things go on, but for the FPWD, it's probably So, what is a first public working draft? It is the first official publication of a document that a working group is working on. Right? So, right now there's a URL at W3C called the technical report kind of path. slashtr all official W3C documents that are either in process or published as standards sit in the technical report space so VCOM isn't there right now right we have a GitHub pages URL but we haven't announced to the world that we're</p>
+<p id=259f class="phone s04"><cite>Manu_Sporny:</cite> we're going to start working on this stuff and by the way here's the first version of it here's the first draft of it so that's why it's called the first public working draft it's us taking the VCOM spec and publishing it in a way that communicates to the world that this is the first public working draft you should probably start reading it after we do that so there's a process there you have to request it from the W3C management they have to approve it the W3C staff have to create this thing we're looking at, the W3C staff have to do some things to make sure that it shows up on that big W3C standards page. and then once that's set up, everything kind of becomes a little more automatic, meaning at that point, every new PR we merge results in an automated publication of a new working draft.</p>
+<p id=bced class="phone s04"><cite>Manu_Sporny:</cite> And so it's like every time you make changes and merge a new version of the specification is published. so that's kind of what the FBWD is. it also kickstarts the intellectual property release process meaning like we basically say okay this is where we are right now. and to be clear a publishing a first public working draft doesn't mean we all agree on what's in the document. It doesn't mean that the working group agrees with it and it definitely does not mean that the W3C agrees with it. Right? So, it's just like a here you go, first public version, we're going to keep working on this. that's what it's supposed to signal. it kickstarts the intellectual property release process and sets a date.</p>
+<p id=7930 class="phone s04"><cite>Manu_Sporny:</cite> And I think it's within six months any organization that is within the working group and ideally it's preferred that any organization within the W3C say that they have patents associated with whatever we're doing. and if you don't make the announcement, I think by default you release all your patents. which is why big companies care about this process. there's a burden on them to assert that they have patents and they're not going to release the patents for stuff that's in the spec. And this is how we get to a patented royalty-free standard global specification. okay.</p>
+<p id=f374 class="phone s04"><cite>Manu_Sporny:</cite> So, all of that stuff is wrapped up and NW3C also makes an announcement on their web page that says, &quot;Hey, we just released the first public working draft of this.&quot; okay. So, that's kind of everything that's kicked off with Patrick, you said, &quot; maybe we want to wait, it's not a super rush. maybe we wait a couple of weeks.&quot; I'm going to suggest we do it today. mainly because, we've been working on this for five years. it's kind of been out there. my opinion is it's certainly good enough for just a first public working draft. and if we want to do that, we'd have to make a proposal and a bunch of plus ones. But let me stop there to see if there are any questions on the first public working draft process or what it means or anything else related to that.</p>
+<p id=45ed class="phone s06"><cite>Joe_Andrieu:</cite> I had a question with regard so maybe I didn't hear the connecting thread between we can't make resolutions and…</p>
+<p id=d48f class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=b02b class="phone s04"><cite>Manu_Sporny:</cite> Yeah, case.</p>
+<p id=0dfc class="phone s06"><cite>Joe_Andrieu:</cite> we need to make a resolution so this would be a resolution that would go to the main working group for consideration for the FPWD. Okay.</p>
+<p id=3f41 class="phone s04"><cite>Manu_Sporny:</cite> It's a bit of a bummer. I wish they would have done it. So, it's like you had seven days to object to resolutions, but since the meeting's tomorrow, I don't think it's a big deal. So we would make a proposal and a resolution that would get recorded that would give us a link at the end of today that we can link to. Then we go to the call tomorrow and we're like, &quot;Hey, we made a resolution yesterday. This is what the resolution was. We would like to make the same resolution on the working group.&quot; And then it becomes a binding resolution and then that allows us to actually do the official request.</p>
+<p id=5992 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, there's the bad news. at that point It becomes provisional and the working group as a whole has a week to object to it because we didn't announce the vote in advance.</p>
+<p id=07b6 class="phone s04"><cite>Manu_Sporny:</cite> Ted is absolutely correct. Sorry, I was sloppy with my explanation. Yes, that is…</p>
+<p id=58a6 class="phone s04"><cite>Manu_Sporny:</cite> how it works.</p>
+<p id=d68f class="phone s02"><cite>Patrick_St-Louis:</cite> What…</p>
+<p id=39b4 class="phone s02"><cite>Patrick_St-Louis:</cite> how does that affect the timeline to</p>
+<p id=4cd2 class="phone s04"><cite>Manu_Sporny:</cite> It doesn't because usually the publication if we decided that this is what we want to do we would set the publication date to the 16th of April and that is more than seven days from now. and if the proposal is made tomorrow or if the resolution passes tomorrow,…</p>
+<p id=6dde class="phone s04"><cite>Manu_Sporny:</cite> 7 days from that is the next Wednesday and the publication would happen on the 16th and if somebody objected to it between before the end of the 15th then they would stop the publication highly unlikely for that to happen. but that's kind of how it would go if somebody were to object.</p>
+<p id=8c0e class="phone s02"><cite>Patrick_St-Louis:</cite> I personally don't have any objection to that.</p>
+<p id=8fe3 class="phone s02"><cite>Patrick_St-Louis:</cite> Again not super familiar with this whole process. I understand I've seen specification make it through as an observant right that's just looking what it goes through but I've never been really directly involved.</p>
+<p id=3766 class="phone s02"><cite>Patrick_St-Louis:</cite> So I will trust those who has been on this path before to make recommendation about the pace that we should adopt. my question is so you mentioned we might want to make a decision today. So what do we need to concretely do with the rest reminder of our 30 minutes to arrive to that decision?</p>
+<p id=a0a5 class="phone s04"><cite>Manu_Sporny:</cite> We typically say, would anyone object to the publication of, a first public working draft for VCOM? and then if there are no objections, you would type in a proposal in the chat channel. And I've got an example proposed that you could base it that then we just do + one minus one plus 0 based on what we think. typic not typically it is one vote per organization.</p>
+<p id=470f class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=f1d8 class="phone s04"><cite>Manu_Sporny:</cite> But you can have multiple people from the same organization do a plus one. that's fine. But if it really came down to it, and you really needed to count the votes, it's just like one vote per invited expert, So all that to say, feel free to plus one plus 0 minus one. but we make sure it's just one vote, one company or one organization or one IE to make sure that companies don't pack the votes. the text in meet as coyote mentioned we have fixed that. everything that is being typed is recorded in the chat channel. It will be in the minutes. you will see it at the end of the day.</p>
+<p id=7bc9 class="phone s04"><cite>Manu_Sporny:</cite> the proposals and resolutions all will show up. So whatever we do this to record it via the chat channel. So that should work. Coyot that's been fixed. So the next step I think Patrick Coyote is asking if anyone would object to a first public working draft. and if not the proposal is basically going to say something like publish the BC API for life cycle management specification.</p>
+<p id=679b class=irc><cite>&lt;Kayode_Ezike&gt;</cite> Don’t know if this matters, but the votes in Meet are not recorded </p>
+<p id=4a58 class="phone s04"><cite>Manu_Sporny:</cite> Then we need to put in a URL as a first public working graph using VCOM as The short name is important because that's the thing that shows up in R space. so that's the process and the next step.</p>
+<p id=c22f class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=e071 class="phone s02"><cite>Patrick_St-Louis:</cite> so if we think about a lot of the efforts lately were around I think fine-tuning some details about the response body and request body for mostly the workflows and even more specifically the presentation requests.</p>
+<p id=22e6 class="phone s02"><cite>Patrick_St-Louis:</cite> So these are very kind of detail oriented efforts that were meant to support additional use case. I think as far as the overall specification goes like there I haven't noticed any substantial changes since we sort of introduced the interaction scheme and we merged in the verifiable presentation request.</p>
+<p id=e13a class="phone s02"><cite>Patrick_St-Louis:</cite> There's also on average maybe one or two issues open a week and again these are some fairly detail oriented suggestion for the spec. so with this being considered I think it's in a pretty good spot to suggest proposing for a initial publication. So I would like to pass the vote. Does anyone object to making our current public working draft? knowing that we have pending thing to put in which are as I mentioned pretty detail oriented so far there's not been how can I say strong disagreements lately.</p>
+<p id=b2ce class="phone s02"><cite>Patrick_St-Louis:</cite> I think the group is pretty unified on the state of the spec and the direction. So I'm going to open the floor for anyone who would like to object to making our, official first public working draft. So I see no objection. So we can use the Okay.</p>
+<p id=f5f2 class="phone s04"><cite>Manu_Sporny:</cite> Not yet. Part don't vote. Go ahead, Patrick. we will need to generate one…</p>
+<p id=d976 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=2e5c class="phone s02"><cite>Patrick_St-Louis:</cite> So I officially propose the version we have standing as of the 4th of April 2026 as our first public working graph and we will see what comes Next thing.</p>
+<p id=edf8 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Do we need a date stamped URL?</p>
+<p id=1533 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> +1 </p>
+<p id=4b1f class="phone s04"><cite>Manu_Sporny:</cite> if we pass this proposal. So, we have not passed a proposal yet. Patrick's just asking to see if anyone would object if we tried to pass the proposal. in the chat channel, Patrick is the literal text you're going to need to copy and paste. because the proposal needs to come from either you Coyote usually. everything after the slashme proposal colon is the thing and once you paste that in there then we + one minus one plus z there we go. So at this point now power can feel free to</p>
+<p id=efb9 class="phone s02"><cite>Patrick_St-Louis:</cite> or do we need a unanimous plus one here or</p>
+<p id=8cf0 class="phone s04"><cite>Manu_Sporny:</cite> a after you look and you've got Joe with his hand up so don't do the resolution yet. okay.</p>
+<p id=bebd class="phone s06"><cite>Joe_Andrieu:</cite> Yeah. Yeah.</p>
+<p id=5a6a class="phone s06"><cite>Joe_Andrieu:</cite> Mine is not about the voting. It's a meta logistical question.</p>
+<p id=fec7 class="phone s04"><cite>Manu_Sporny:</cite> So next step Patrick would be to do instead of proposal you put type in all caps resolution colon and the exact same text and you paste that in there and…</p>
+<p id=46bf class="phone s04"><cite>Manu_Sporny:</cite> then that will be the thing that gets into the minutes and shows up and that sort of thing.</p>
+<p id=06f0 class=irc><cite>&lt;Patrick_St-Louis&gt;</cite> PROPOSAL: Publish the VC API for Lifecycle Management specification (<a href="https://w3c.github.io/vcalm/">https://<wbr>w3c.github.io/<wbr>vcalm/</a>) as a First Public Working Draft using 'vcalm' as the shortname. </p>
+<p id=c30d class="phone s06"><cite>Joe_Andrieu:</cite> So that is in fact my question.</p>
+<p id=1973 class=irc><cite>&lt;Patrick_St-Louis&gt;</cite> +1 </p>
+<p id=1a13 class=irc><cite>&lt;Manu_Sporny&gt;</cite> +1 </p>
+<p id=1a33 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 </p>
+<p id=1abe class="phone s06"><cite>Joe_Andrieu:</cite> Coyote mentioned that the chat doesn't get logged into the minutes.</p>
+<p id=1a53 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> +1 </p>
+<p id=1a73 class=irc><cite>&lt;Eric_Schuh&gt;</cite> +1 </p>
+<p id=1391 class="phone s02"><cite>Patrick_St-Louis:</cite> or do we need plus one that as well</p>
+<p id=1b0b class=irc><cite>&lt;Kayode_Ezike&gt;</cite> +1 </p>
+<p id=1b33 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> +1 </p>
+<p id=de1d class="phone s04"><cite>Manu_Sporny:</cite> It does now.</p>
+<p id=1b53 class=irc><cite>&lt;Elaine_Wooton&gt;</cite> +1 </p>
+<p id=1c03 class=irc><cite>&lt;Joe_Andrieu&gt;</cite> +1 </p>
+<p id=42ca class="phone s04"><cite>Manu_Sporny:</cite> So, we fixed that a couple of weeks ago.</p>
+<p id=1c1b class=irc><cite>&lt;Benjamin_Young&gt;</cite> +1 </p>
+<p id=1c4b class=irc><cite>&lt;James_Easter&gt;</cite> +1 </p>
+<p id=52f8 class="phone s06"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=dc6c class="phone s04"><cite>Manu_Sporny:</cite> So, all of this will show up and you can use all the same commands that you use in IRC.</p>
+<p id=1d2b class=irc><cite>&lt;Nate_Otto&gt;</cite> +1 </p>
+<p id=61ac class="phone s06"><cite>Joe_Andrieu:</cite> Cool. Thanks.</p>
+<p id=99ca class="phone s04"><cite>Manu_Sporny:</cite> Okay. Nope. Nope. that's the full resolution. if you don't want something to show up in the minutes, you can preface it with slashme as Dave mentioned and this is a new feature of colon for off list off you just don't want it mentioned. everything else that you type in there will get we'll see if that feature works. you'll be the first one testing it live, Dave. But the resolution.</p>
+<p id=31b0 class="phone s02"><cite>Patrick_St-Louis:</cite> Fantastic. Yeah.</p>
+<p id=1f33 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> +1 </p>
+<p id=fde3 class="phone s04"><cite>Manu_Sporny:</cite> So the second you paste that in there, Patrick, that's the resolution. We're good to go.</p>
+<p id=fdc1 class=resolution><strong>RESOLUTION:</strong> Publish the VC API for Lifecycle Management specification (<a href="https://w3c.github.io/vcalm/">https://<wbr>w3c.github.io/<wbr>vcalm/</a>) as a First Public Working Draft using 'vcalm' as the shortname.</p>
+<p id=b253 class="phone s02"><cite>Patrick_St-Louis:</cite> So, I think we had a pretty unanimous decision and pretty in support of this. What do I do now?</p>
+<p id=119b class="phone s04"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=205b class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> +1 </p>
+<p id=5173 class="phone s04"><cite>Manu_Sporny:</cite> We're done. Yay. yeah,…</p>
+<p id=bec2 class="phone s02"><cite>Patrick_St-Louis:</cite> Thats that.</p>
+<p id=42b6 class="phone s02"><cite>Patrick_St-Louis:</cite> All right.</p>
+<p id=5a28 class="phone s04"><cite>Manu_Sporny:</cite> that's that topic. So, we just published the first public working graph, which is great. and now it's like we'll need to send an email Patrick to the chairs and request that hey I want to pass this resolution tomorrow. we want to run the same resolution on the main call tomorrow. so the timing around that's a bit annoying because we have to wait until 6 PM Eastern for all of the minutes to autopublish.</p>
+<p id=199f class="phone s04"><cite>Manu_Sporny:</cite> When that happens, there will be an HTML file created with an anchor that points to the resolution and you can use that as a link to tell them here's the resolution that we passed. You can also copy paste the text and email it to them. either one would work. and if I…</p>
+<p id=5426 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=dc50 class="phone s04"><cite>Manu_Sporny:</cite> if I notice that it hasn't happened by tomorrow, I'll try to also send something to them. But Patrick, the action for you is send an email to the chairs, Brent Zundell and, Phil Archer, that, we would like to run a proposal tomorrow.</p>
+<p id=778f class="phone s02"><cite>Patrick_St-Louis:</cite> Swearing down. Okay. Kyote, do you want to</p>
+<p id=ffff class="phone s08"><cite>Kayode_Ezike:</cite> Yeah, sorry if you mentioned it so much, but will we need to run the proposal tomorrow as well and have them get consensus too or is it just telling them? Okay.</p>
+<p id=e81b class="phone s04"><cite>Manu_Sporny:</cite> Yes. Unfortunately, yes. we might ask them is there a different way we can operate cuz or…</p>
+<p id=7306 class="phone s04"><cite>Manu_Sporny:</cite> what that's going to basically result in is that we are probably just not going to pass a lot of resolutions here and just operate based on a expectation of consensus without record really other than the discussion.</p>
+<p id=0830 class="phone s02"><cite>Patrick_St-Louis:</cite> Who's this?</p>
+<p id=337c class="phone s02"><cite>Patrick_St-Louis:</cite> So, I'm going to go on a limb and assume that we don't want to merge any more PRs since we got the resolution here. merging PR might invalidate this resolution at least until we have this first working graph published.</p>
+<p id=d836 class="phone s04"><cite>Manu_Sporny:</cite> I wouldn't worry about it too much…</p>
+<p id=5538 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=54a0 class="phone s04"><cite>Manu_Sporny:</cite> because if someone objects again a FPWD publication means nothing about the consensus on the document and…</p>
+<p id=4e0f class="phone s02"><cite>Patrick_St-Louis:</cite> Yep. Ted. Yeah.</p>
+<p id=248e class="phone s04"><cite>Manu_Sporny:</cite> and if we publish an FPWD the very next edit can just delete all of the content in the spec and that's a totally valid I mean surely people would object Jack, but just because you publish the FPWD doesn't mean it's going to keep looking the same way. We can change everything and anything within there. that's it.</p>
+<p id=70fa class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> It's usually better not and we're fine with what it is.</p>
+<p id=5675 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=be95 class="phone s02"><cite>Patrick_St-Louis:</cite> But as long as we demonstrate that we have a group of people and we are making decisions and we are attending the meetings and we want to move this forward. Perfect. that reassures me. so I would like to take the time that's left maybe to go over these two PRs that are open. before we do that, just want to make sure is there anything else we need to discuss in relation to our resolution or are we happy to move on? Yeah, now's the time.</p>
+</section>
+
+<section>
+<h3 id=d51d>Pull Request Processing and Work Mode</h3>
+<p id=064e class="phone s04"><cite>Manu_Sporny:</cite> happy to move on. I might mention something about PRs and processing and work mode before we get into the PR. So, let me know when we head there. All right. So, typically working groups have a working mode. things get a little more official when you're in a working group. it's usually frowned upon to raise PRs and then merge them two two hours, two days, whatever later. Usually you want PRs to hang out there for a week. We have been kind of working like that. anything substantive what we don't want to do is we don't want to merge something into the specification that doesn't have consensus because it's just going to come back and bite us later, right?</p>
+<p id=a770 class="phone s04"><cite>Manu_Sporny:</cite> So we have to make sure that we have consensus on the things we merge into the specification. we have to ideally give people plenty of time to review it. So 7 days is a pretty decent review period. and then when we merge it we have to make it very clear things like is it substantive or normative? have there been multiple reviews on it? Has anyone objected to it? that sort of thing. basically, do you have consensus on the thing that you're merging? and the more we keep to that the smoother the transition to candidate direct will be.</p>
+<p id=6c57 class="phone s02"><cite>Patrick_St-Louis:</cite> So I think I wouldn't say it's 100% of the case here, but for the most part our process has been that an issue is raised usually either following an idea that had during the week or following a discussion we had during the call. and then we triage this issue using tags. And this is where probably we can triage based of what you said if it's substantive or the type of issue it is we assign someone and then this person is responsible for raising a PR depending on their availability and then these PRs are reviewed as part of this call.</p>
+<p id=84f2 class="phone s02"><cite>Patrick_St-Louis:</cite> There have been some very exceptional circumstances that we almost came to a resolution during the call and we have agreed that if there was a small change that the small train could be put in and sort of merged in and approved outside out of ban. But most of the time we do the merge here. and we let plenty of time for people to object. and if there's things missing we usually just wait to the week after. we have been closing on average anywhere from two to five PRs per call. probably closer to three or four usually.</p>
+<p id=dd29 class="phone s02"><cite>Patrick_St-Louis:</cite> What I did here is a bad example. So, I opened a while ago and then got sidetracked and this has been sitting here since the 16th of December. I think that's a very bad example. but it's the situation it is right now relating to my commitment to this PR. usually very rarely P stay open more than two weeks. unless someone has a conflict and they can't make a meeting and these kind of decisions. so I think we can continue like this from what I understood man I think that's a sufficient work and we make sure the PR links to the issue so we can know the scope of the PR if it's substantive and whatnot.</p>
+<p id=154c class="phone s02"><cite>Patrick_St-Louis:</cite> Yep.</p>
+<p id=4f4b class="phone s02"><cite>Patrick_St-Louis:</cite> Not enough.</p>
+<p id=75f4 class="phone s04"><cite>Manu_Sporny:</cite> Yes. yeah,…</p>
+<p id=f712 class="phone s04"><cite>Manu_Sporny:</cite> I think the way that we've been operating is pretty good. But to give use a concrete example today Parth has a new PR which is 620 add the redirect URL to step options and step data. He raised it an hour ago. we can discuss it on the call and we will discuss it on the call. but we should not merge that today. that's an example of we need to let it hang out there for a week…</p>
+<p id=c011 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=5166 class="phone s04"><cite>Manu_Sporny:</cite> because They might not be paying attention and they may have an objection to it. And if we miss it and we put it in the spec, then all of a sudden we've got to back it out and it's just a pain, right?</p>
+<p id=d1ca class="phone s02"><cite>Patrick_St-Louis:</cite> So maybe that's something we'll need to pay attention because I think it has been a pattern that a few PRs get open within a day before the call sometime we merge them.</p>
+<p id=f4a0 class="phone s02"><cite>Patrick_St-Louis:</cite> So maybe if that's the case, we want to leave a comment that we've discussed it and there was consensus, but we're leaving it open for the next call and then the next call should be very very quick to kind of merge and that should be good. there's edge case when it comes to rebates and merge conflicts, but that's just things we'll have to deal with in time. so let's at least review one of them and again we probably won't merge these because they've been recently open but at least we can discuss them maybe see if there's any objection or any improvement that needs to be done and then we can on the next hall kind of merge them. so part do you want to take us over this PR here about the number 618</p>
+<p id=1b75 class="phone s09"><cite>Parth_Bhatt:</cite> Last week I think I missed to add a result property in the OSML file and…</p>
+<p id=292a class="phone s02"><cite>Patrick_St-Louis:</cite> team.</p>
+<p id=a90f class="phone s09"><cite>Parth_Bhatt:</cite> rest of the thing was approved and reviewed. the issue is about adding an optional result in the issue request. So I have added the pros to the index html as well as the property into the os.mml file and…</p>
+<p id=9ea2 class="phone s09"><cite>Parth_Bhatt:</cite> that's pretty much it.</p>
+<p id=af2f class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, that's very good.</p>
+<p id=10000 class="phone s02"><cite>Patrick_St-Louis:</cite> So I think that's an example. This was open last week. It's already gone through one round of review that was discussed last week and we can now make sure that this has been approved. I'm seeing a lot of thumbs up in the spec and in the call. so this looks clean to me. It's a very small PR. is there any objection to us merging this PR and closing this issue? can you confirm? So this will address this issue in its totality part.</p>
+<p id=054e class="phone s09"><cite>Parth_Bhatt:</cite> Yes.</p>
+<p id=ac98 class="phone s02"><cite>Patrick_St-Louis:</cite> We'll be able to close this after. Perfect.</p>
+<p id=c575 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, Ted.</p>
+<p id=f93e class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> It would be helpful to share the link to that in the chat.</p>
+<p id=498b class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> I don't know</p>
+<p id=17d1 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, I have a very large monitor.</p>
+<p id=d014 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> what it looks like to other people. I have a very small text. Yeah, that helps.</p>
+<p id=0464 class="phone s02"><cite>Patrick_St-Louis:</cite> So, we are on the opposite side. yeah, usually when someone shares a monitor with high resolution, the text can look very very small. So, thank you. and if anyone has any problem with readability,…</p>
+<p id=96f8 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> That 618 is getting a 404.</p>
+<p id=e3c6 class="phone s02"><cite>Patrick_St-Louis:</cite> just let me know and I can just zoom in. that should be fine. are you should have access like this.</p>
+<p id=f6f3 class="phone s02"><cite>Patrick_St-Louis:</cite> This is public menu. Okay. …</p>
+<p id=95ca class="phone s04"><cite>Manu_Sporny:</cite> it. GitHub bug like I can see it.</p>
+<p id=5b99 class="phone s04"><cite>Manu_Sporny:</cite> Try refreshing,…</p>
+<p id=7895 class="phone s02"><cite>Patrick_St-Louis:</cite> I know sometime like private repo you'll see it…</p>
+<p id=a404 class="phone s04"><cite>Manu_Sporny:</cite> Ted. …</p>
+<p id=a2cf class="phone s02"><cite>Patrick_St-Louis:</cite> if you're on the organization.</p>
+<p id=5d08 class="phone s06"><cite>Joe_Andrieu:</cite> Weirdly for me,…</p>
+<p id=eefe class="phone s02"><cite>Patrick_St-Louis:</cite> There's no issue 618.</p>
+<p id=e5d0 class="phone s06"><cite>Joe_Andrieu:</cite> it redirected to issue 618, which that does seem like a GitHub bug.</p>
+<p id=13ac class=irc><cite>&lt;Patrick_St-Louis&gt;</cite> <a href="https://github.com/w3c/vcalm/pull/618">Add optional result property to issueRequests and clarify variable name string format. by bparth24 · Pull Request #618 · w3c/vcalm · GitHub</a> </p>
+<p id=56a2 class="phone s04"><cite>Manu_Sporny:</cite> weird. GitHub might be having a bad hour. Amen.</p>
+<p id=76aa class=irc><cite>&lt;Parth_Bhatt&gt;</cite> Issue - <a href="https://github.com/w3c-ccg/vcalm/issues/583">w3c-ccg/<wbr>vcalm#583</a> </p>
+<p id=4947 class="phone s02"><cite>Patrick_St-Louis:</cite> There's been a lot of things we get out of the still.</p>
+<p id=99c6 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> That makes all the difference.</p>
+<p id=a3d4 class="phone s06"><cite>Joe_Andrieu:</cite> And Nates worked.</p>
+<p id=0d74 class="phone s10"><cite>Dave_Longley:</cite> Some of the links in the chat that are being shared are the older links before this moved to the W3C space. They were in W3C CCG space. So make sure if the link says W3C-CG, you got the wrong link. You can manually edit out the - CCG or…</p>
+<p id=ad4f class="phone s02"><cite>Patrick_St-Louis:</cite> Yes.</p>
+<p id=7e0e class="phone s10"><cite>Dave_Longley:</cite> you can grab one of the links that doesn't have</p>
+<p id=7d81 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> <a href="https://github.com/w3c/vcalm/pull/618">Add optional result property to issueRequests and clarify variable name string format. by bparth24 · Pull Request #618 · w3c/vcalm · GitHub</a> </p>
+<p id=8200 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes. Yes.</p>
+<p id=c773 class=irc><cite>&lt;Dave_Longley&gt;</cite> ^ the links from Parth need to be changed to say &quot;w3c&quot; not &quot;w3c-ccg&quot; </p>
+<p id=5978 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, you click on the link that part pasted Ted the W3CCCG one that was the Okay.</p>
+<p id=c1b5 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, that was the one I was clicking on, of course, because that's the one that was there.</p>
+<p id=0ca4 class=irc><cite>&lt;Nate_Otto&gt;</cite> <a href="https://github.com/w3c/vcalm/pull/618">Add optional result property to issueRequests and clarify variable name string format. by bparth24 · Pull Request #618 · w3c/vcalm · GitHub</a> It moved to w3c organization now </p>
+<p id=8130 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. So, yeah,…</p>
+<p id=4e37 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, that is the solution.</p>
+<p id=e424 class="phone s02"><cite>Patrick_St-Louis:</cite> it's been migrated. So, the just WTC should work. Can you confirm it works for So, there's no objection. So, let's go ahead and merge this. I will just have a look quickly to I think the commit history is pretty good description. So, we're just going to go ahead and replace and merge. There we go. The branch has been deleted. This has been closed.</p>
+<p id=a23a class="phone s02"><cite>Patrick_St-Louis:</cite> And I think it should also close the issue which it has not. but I'll close any objection to closing this issue here. There we go. Easy. yes. Man,</p>
+<p id=7843 class=irc><cite>&lt;Joe_Andrieu&gt;</cite> the latest link worked </p>
+<p id=066f class="phone s10"><cite>Dave_Longley:</cite> You are muted, Mona.</p>
+<p id=83fb class="phone s04"><cite>Manu_Sporny:</cite> Thank you very much. I was muted. there is a point at which you have to provide W3C management with what is called a disposition of comments. You have to prove to them that during the course of the working group, you addressed every single comment that came in.</p>
+<p id=939c class="phone s04"><cite>Manu_Sporny:</cite> Doesn't matter where it comes in It could be from a raccoon in South America,…</p>
+<p id=5cb1 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=79e6 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> Sorry about the old links </p>
+<p id=10001 class="phone s04"><cite>Manu_Sporny:</cite> you have to respond to it. You have to say these are the things that we did as a result of your comment. it doesn't mean you have to make a change. you just have to say we took a look at it and this was the result. So you want to be very clear in these things when you close it that you either addressed the issue or you decided not to address the issue. We may want to start picking some labels for that.</p>
+<p id=ecd2 class="phone s04"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=262a class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, that sounds good. that's more about issues more than pull requests. we want to</p>
+<p id=a4ed class="phone s02"><cite>Patrick_St-Louis:</cite> reply in the issue what was done and why we think it's addressed.</p>
+<p id=ef55 class="phone s04"><cite>Manu_Sporny:</cite> And you end up linking to the pull request in the issue. they should be birectional links. the pull request,…</p>
+<p id=dc5e class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, they are Yeah,…</p>
+<p id=d3fe class="phone s04"><cite>Manu_Sporny:</cite> The issue should point to the pull request. You don't want to autoc close issues because sometimes one pull request isn't enough. You need one or two or three. it's basically if at any point W3C management is like what did you do about this comment? You should be able to very quickly say yeah it looks like we raised an issue and the issue made these changes and…</p>
+<p id=5a1a class="phone s04"><cite>Manu_Sporny:</cite> we waited the seven days and there were no objections and we merged and we closed it like that. You have to be able to answer things quickly like that.</p>
+<p id=708a class="phone s02"><cite>Patrick_St-Louis:</cite> that sounds reasonable.</p>
+<p id=5275 class="phone s02"><cite>Patrick_St-Louis:</cite> Joe. Yeah.</p>
+<p id=58f0 class="phone s06"><cite>Joe_Andrieu:</cite> Plus one to all that.</p>
+<p id=df12 class="phone s06"><cite>Joe_Andrieu:</cite> I just want to say we got to figure out how to moderate this statement, Vanoo, because I don't know if we have policy yet about the raccoons, but we are developing policy about AI and we have to be very careful about not accepting the burden of having to respond to AI generated things even though we don't yet have a way to know if it's from AI or not. that's its own problem.</p>
+<p id=aaba class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. I think that's a good comment.</p>
+<p id=8fb6 class="phone s06"><cite>Joe_Andrieu:</cite> But Agreed. Yeah.</p>
+<p id=442a class="phone s02"><cite>Patrick_St-Louis:</cite> My initial reaction is let's wait until it's a problem to make it a problem if that makes sense. I don't think at least in this group, right, there's not been much of that issue. I've definitely seen it. I think we all saw the public mailing list recently and what's going on there.</p>
+<p id=ea47 class="phone s02"><cite>Patrick_St-Louis:</cite> But yeah, I think this is a good thing to consider because we can get spammed with bogus kind of requests and issue. I think so far it's mostly been us raising issues here. But now that we are on the W3C VC working group, this might garner some more attention. So something definitely worth monitoring. yes, raccoons are also just trying to help. So, need to be kind. coyote.</p>
+<p id=4677 class="phone s08"><cite>Kayode_Ezike:</cite> Yeah, could we regarding the decision comments? So how exhaustive does Could it be something where we just use one comment to respond to all of them and while we're closing or we have to respond to every single comment whenever we close the video for example?</p>
+<p id=dbe5 class="phone s02"><cite>Patrick_St-Louis:</cite> I can let Manu answer or I can propose an answer to this.</p>
+<p id=446a class="phone s02"><cite>Patrick_St-Louis:</cite> B. Okay.</p>
+<p id=d968 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I mean it's a judgment call, so Joe's raises a very good point like we don't have to respond to bots or spam or people that are abusive like all of these things happen in these public repositories. but we do need to talk about it as a group and look at the issue and go like this is AI generated slop or this person thinks there's an issue but there clearly isn't an issue and we talked about it and so we're not going to change the spec because there's no issue and we need to document that right that's typically how you address these things so coyote it's kind of on a case by case basis but you just</p>
+<p id=4d29 class="phone s04"><cite>Manu_Sporny:</cite> want to document as you go along because what you don't want is W3C management to come back at the very end of the process and…</p>
+<p id=6f0c class="phone s04"><cite>Manu_Sporny:</cite> go there are 28 issues here where we have no idea…</p>
+<p id=01a6 class="phone s02"><cite>Patrick_St-Louis:</cite> I'm here.</p>
+<p id=4d2a class="phone s04"><cite>Manu_Sporny:</cite> what you did and there's no record of what you did and so you need to go back and look at all those things. it doesn't happen like we'll stay on top of it but specifically as facilitators Patrick and Coyote both of you need to make sure that you're recording these things appropriately so that it is very easy for you to defend every issue that we closed</p>
+<p id=c558 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I think sometime also we put a comment like this was discussed here what this person had to say and this was the resolution.</p>
+<p id=10002 class="phone s02"><cite>Patrick_St-Louis:</cite> So I think these types of comments are good and I also think this going to be highly dependent on if we have an issue that there's 50 replies right there's been a long discussion maybe we'll need to put a little bit more text there to capture this if it's an issue that there's been one reply and it was to add a word somewhere I think you probably don't need to write a paragraph to say that this was addressed it's like a bit simpler so I think going based on the size right of the issue. If it was a very complicated issue and there's been many participant, we might want to add a bit more text. If it's very simple, I think just a simple line could do. so with that being said, we won't have time to go over this today. however, this was also open one hour ago.</p>
+<p id=fb95 class="phone s02"><cite>Patrick_St-Louis:</cite> So I invite anyone to if they want to comment on this poll request during the week to do so. this will be probably first thing on our agenda next week. after probably we talk about the public draft updates. I will take it upon myself to send that email today to Brent and Phil with our resolution and we will discuss this tomorrow at the working group. and that's it. We're going to conclude. So we try usually to end the call five minutes before the hour. Now we're flat at the hour. we had quite a few things to discuss today. and that will be thank you everyone for attending and I will see you next week and have a good rest of your week. Meeting ended after 01:00:00 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=aa6e class=irc><cite>&lt;Benjamin_Young&gt;</cite> off: ...hence the bandit mask </p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#fdc1">Publish the VC API for Lifecycle Management specification (https://<wbr>w3c.github.io/<wbr>vcalm/) as a First Public Working Draft using 'vcalm' as the shortname.</a></li>
+</ol>
+</div>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
