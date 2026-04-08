@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 08 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>08 April 2026</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Apr/0021.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/04/08-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, denkeni, dlongley, dmitriz, elaine, elnar, ivan, JennieM, joe, KevinDean, kezike, msporny, parth, PatStLouis, PDL-ASU, phila, scott_jones, smccown, susanne, TallTed, wes-smith, wesley, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz, phila</dd>
+<dt>Scribe</dt><dd>dmitriz, manu</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#6998">Task Forces</a>
+<ol>
+<li><a href="#6031">Confidence Method</a></li>
+<li><a href="#a855">render Method</a></li>
+<li><a href="#fcfd">VCALM</a></li>
+<li><a href="#ad9c">Barcodes and Data Integrity</a></li>
+<li><a href="#6d08">Entity Recognition</a></li>
+<li><a href="#ddd4">Vocabulary</a></li>
+</ol>
+</li>
+<li><a href="#31d1">GDC 2026</a></li>
+<li><a href="#9584">Resolutions</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0940 class="phone s01"><cite>phila:</cite> ok, lets get underway<br>
+<span id=2287>… we're still kind of in a rebooting (rechartering) of the group</span><br>
+<span id=ba42>… and this is the first time I've chaired a meeting under a new charter</span><br>
+<span id=4722>… I'd like to ask people who we haven't heard from before to introduce themselves</span><br>
+<span id=07cf>… I'll also introduce myself</span><br>
+<span id=963b>… I've been at GS1 for over 9 years. before that, I was at W3C over 8 years,</span><br>
+<span id=149d>… I worked on mobile web, other data standards, looked after the Semantic Web suite and some other things</span><br>
+<span id=bb69>… I've chaired various groups, most recently RDF Canonicalization group I cochaired with Markus Sabadello</span><br>
+<span id=a345>… when I chair like this, I will do my best to be a neutral independent chair</span><br>
+<span id=46eb>… if I need to switch my hat to a GS1 representative, I will say so</span><br>
+<span id=1feb>… but will do my best to stay neutral</span><br>
+<span id=2abf>… are there any others in the group who want to introduce or re-introduce themselves?</span></p>
+<p id=2db2 class="phone s02"><cite>Elnar:</cite> (no irc nick I think) hi everyone, this is my first time joining this call<br>
+<span id=a4f1>… I come from a company called Realize (sp?), we work on biometric solutions</span><br>
+<span id=c962>… we recently became members of the VC WG, in order to work on VC Confidence Method, specifically related to biometrics</span><br>
+<span id=a512>… hopefully we'll be able to help out there and push the topic forward</span><br>
+<span id=f380>… since we have natural interest in that area</span></p>
+<p id=1743 class="phone s03"><cite>Scott:</cite> (no irc nick) Hi, I'm a colleague of Elnar,<br>
+<span id=9ab4>… collaborating on privacy preserving client side biometrics</span><br>
+<span id=8906>… excited to be part of this group</span></p>
+<p id=c804 class="phone s01"><cite>phila:</cite> ok, lot to get through<br>
+<span id=4916>… I'd like to go through the Task Forces</span><br>
+<span id=718a>… lets start with -- Scott and Elnar mentioned they're interested in Confidence Method, lets start with that</span></p>
+</section>
+
+<section>
+<h3 id=6998>Task Forces</h3>
+<h4 id=6031>Confidence Method</h4>
+<p id=d1ed class="phone s04"><cite>JoeAndrieu1:</cite> main think we did at the Confidence Method Task Force is to choose a meeting cadence<br>
+<span id=2952>… every other week, starting next week</span><br>
+<span id=ae1c>… on Weds</span></p>
+<p id=a3f5 class=irc><cite>&lt;DPPSusanne&gt;</cite> Yes, sorry, was not able to unmute fast enough. I introduced myself last time. I am here to work on the DPP vocabulary.</p>
+<p id=3a4b class="phone s05"><cite>ivan:</cite> I added it to the calendar, made it every week by accident. should we change it to every other week?</p>
+<p id=9248 class="phone s04"><cite>JoeAndrieu1:</cite> let's change it, make sure people don't show up by accident</p>
+<p id=1999 class="phone s01"><cite>phila:</cite> thanks Joe. One question -<br>
+<span id=fa27>… how far are you away from seeking wide review, for the Confidence Method?</span></p>
+<p id=a0a9 class="phone s04"><cite>JoeAndrieu1:</cite> pretty far. we don't have yet the spec text the meat of the spec of various methods. we still need to write up the biometrics method, etc. we have the framework<br>
+<span id=c07d>… and we do have the question of -- evidence vs Assurance Level vs Confidence Method</span><br>
+<span id=e6ed>… so that the group can help decide terminology</span></p>
+<p id=043d class="phone s01"><cite>phila:</cite> should we set aside one of these meetings to decide on that?</p>
+<p id=28d8 class="phone s04"><cite>JoeAndrieu1:</cite> yes? I'm not sure how much time it will take</p>
+<p id=2264 class="phone s01"><cite>phila:</cite> it's making good use of the time, allowing the meeting to be genuinely useful to everyone<br>
+<span id=383e>… like, today is for generally orienting everyone</span><br>
+<span id=b7ad>… but like you said, we should specifically add it to an agenda</span></p>
+<h4 id=a855>render Method</h4>
+<p id=2307 class="phone s06"><cite>dmitriz:</cite> Regarding VC Render Method</p>
+<p id=d6ef class="phone s06"><cite>dmitriz:</cite> I'm not sure we've set new meeting cadence, we're working on the broad categories of the render methods.</p>
+<p id=d2e1 class="phone s06"><cite>dmitriz:</cite> We have an iframe/sandbox method, talking about general purpose template substitution method is useful or not, or if iframe supercedes it.</p>
+<p id=f2ea class=irc><cite>&lt;PatStLouis&gt;</cite> +1</p>
+<p id=ffff class="phone s06"><cite>dmitriz:</cite> Discussing what to do with OCA proposed method and one other existing one. Ongoing work, not sure how close we're to asking for broad review. Would like to do it sooner than later...</p>
+<p id=0113 class="phone s01"><cite>phila:</cite> Don't have to ask all the groups at the same time.</p>
+<p id=2bb4 class="phone s01"><cite>phila:</cite> You could ask groups sooner rather than later.</p>
+<p id=ca5b class="phone s01"><cite>phila:</cite> one issue that came up yesterday in one of the TFs is the security issue<br>
+<span id=670c>… whether every one of our specs needs a regular Security Considerations section</span><br>
+<span id=dc98>… OR if we can write one Thread Modeling document, and point to it</span><br>
+<span id=c8a4>… I'm hoping we can do that latter one</span><br>
+<span id=4fdf>… I've already sent an email to Simone, Security Lead at W3C staff, let's see what happens</span><br>
+<span id=b3a1>… I'd like to invite him to one of these future meetings to possibly answer that</span></p>
+<p id=e501 class=irc><cite>&lt;PatStLouis&gt;</cite> how do I get on the queue?</p>
+<p id=1379 class="phone s01"><cite>phila:</cite> that raises the question - who's going to write the Threat Model?<br>
+<span id=e397>… I'm initially thinking Joe, but he's busy with Confidence Method</span></p>
+<p id=fd9a class="phone s05"><cite>ivan:</cite> one step at a time...</p>
+<p id=7803 class="phone s07"><cite>PatStLouis:</cite> just wanted to chime in, Dmitri mentioned an OCA render method, that was my one proposal,<br>
+<span id=731b>… last thing to discuss was - do we want to define an OCA specific thing in Render Method, or whether it fits into a broader method category</span><br>
+<span id=df82>… so we still would need to discuss that</span></p>
+<p id=68c3 class="phone s01"><cite>phila:</cite> should that be a full WG discussion, or start with the TF?</p>
+<p id=bda3 class="phone s07"><cite>patStLouis:</cite> we can start in the task force, yes</p>
+<p id=1d25 class="phone s04"><cite>JoeAndrieu1:</cite> I'm happy to help out with the Threat Modeling stuff<br>
+<span id=ca0f>… however I will at least need a domain lead on each of the specs. since they each need their own threat model</span><br>
+<span id=61b4>… what Simone and I have been trying to figure out (this and the DID work are tough litmus tests) -- within a set of related specs, how do you reconcile that</span><br>
+<span id=784f>… individual threat models vs a monolithic threat model</span><br>
+<span id=d2c5>… so, I'm happy to be an overall editor, but will need individual domain experts</span></p>
+<p id=38f5 class="phone s05"><cite>ivan:</cite> that worries me slightly, as a general problem (and I'm not sure if it's something you can comment on)<br>
+<span id=a1ec>… it looks like the Threat Modeling approach, for security, it's still in the process of forming</span><br>
+<span id=627a>… (like, you mentioned you're still working with Simone on it)</span><br>
+<span id=109b>… and we have 12 or 13 docs in this WG to go through</span></p>
+<p id=fb83 class=irc><cite>&lt;JoeAndrieu1&gt;</cite> <a href="https://w3.org/tr/threat-modeling-guide">https://<wbr>w3.org/<wbr>tr/<wbr>threat-modeling-guide</a></p>
+<p id=0774 class="phone s05"><cite>ivan:</cite> so I feel a little bit uneasy for this WG being the experimental subject, for this new process<br>
+<span id=edde>… we already have our hands full as it is</span><br>
+<span id=1aa2>… could we get away with just using the old method, of Security Consideration sections?</span><br>
+<span id=419a>… while the Threat Modeling approach is being worked out?</span></p>
+<p id=039e class="phone s04"><cite>JoeAndrieu1:</cite> I know change is hard, and every transition is going to feel like this<br>
+<span id=0f46>… I have to endorse Simone's perspective and experience -- seeing these Security Consideration sections, it's hard for reviewers to fully overview</span><br>
+<span id=72ff>… that's what we're trying to address, to have it be a higher value security review</span></p>
+<p id=c7dc class="phone s04"><cite>JoeAndrieu1:</cite> if we at all can, we shouldn't refuse this opportunity</p>
+<p id=6acf class="phone s08"><cite>manu:</cite> I agree, we should transition to the Threat Modeling approach<br>
+<span id=c34d>… Joe, I'm not sure if you saw my email to the security mailing list, asking -- if we're doing a Threat Modeling doc, do we ALSO need a Security Considerations section?</span><br>
+<span id=3e92>… does a Threat Model meet the horizontal review reqs?</span><br>
+<span id=6856>… Simone responded, but it's unclear.</span><br>
+<span id=10001>… so, I'd like to assert -- I want us to write a Threat Model, and when we go to horiz review, neither Security nor PING should also ask for a Security Considerations</span></p>
+<p id=eb7d class="phone s01"><cite>phila:</cite> that's my concern too<br>
+<span id=dea4>… with so many docs in flight (which is a good thing) -- if we have to write one or more Threat Model docs before we write other ones, that's a lot of work</span><br>
+<span id=404a>… but on the other hand we want to avoid copying and pasting</span><br>
+<span id=fcb0>… so, we do need that answer for Simone</span></p>
+<p id=5611 class="phone s04"><cite>JoeAndrieu1:</cite> haha yes sometimes it's confusing<br>
+<span id=8328>… my understanding is -- from SING's perspective, you COULD simply have a Security Consideration section &quot;go read the Threat Model&quot;</span><br>
+<span id=e202>… I think it's more readable, for people reading the spec, if we contextualize that &quot;go over there and read&quot; a bit, with some paragraphs</span><br>
+<span id=0907>… like, mention tamper evidence with VCs, etc</span><br>
+<span id=8b6c>… I don't think there's a bottleneck, with the Threat Model docs</span><br>
+<span id=529a>… that's how we're dealing with it in the DID WG</span><br>
+<span id=7f96>… so that will hopefully provide an example</span><br>
+<span id=a91d>… other thing to add - I have JSON-ified the presentation layer in our DID Resolution Threat Model,</span><br>
+<span id=b2e8>… and we'll have a repo of that, which we can use as template</span><br>
+<span id=f0bd>… for consistent look and feel</span><br>
+<span id=7509>… what we DON'T know is whether or not PING will accept privacy considerations in the format of a Threat Model</span><br>
+<span id=264b>… we think that the Threat Modeling guide can encompass privacy threats, but I haven't confirmed with PING yet</span><br>
+<span id=bf3c>… I'm hoping that if we go into the Threat Modeling doc with both Security and Privacy in mind, we can cover both</span></p>
+<p id=f841 class="phone s01"><cite>phila:</cite> SING is the Security Interest Group, PING is Privacy Interest Group</p>
+<p id=e766 class="phone s08"><cite>manu:</cite> the other question is - can we put the Privacy Threat Model as an appendix?<br>
+<span id=b350>… or do we need like 20 different separate documents (which could get out of control)</span></p>
+<p id=a06b class="phone s04"><cite>JoeAndrieu1:</cite> yes, absolutely. (when I made a sample Threat Model for the web as an example, I was shocked how long it became). But, an Appendix is a reasonable approach, it does not need to be a standalone note</p>
+<p id=6a17 class="phone s08"><cite>manu:</cite> I think we should, in the threat model, tag some threats as Privacy Threats, and then treat that as our Privacy Considerations section</p>
+<p id=fb11 class=irc><cite>&lt;JoeAndrieu1&gt;</cite> +1 to advance that proposal to PING</p>
+<p id=3ee4 class="phone s01"><cite>phila:</cite> I think you're right<br>
+<span id=ff55>… that's partly why I'm constantly asking for wide review -- because it takes so long, to get the ball rolling</span><br>
+<span id=0ac2>… thank you. I will follow up with Simone</span></p>
+<p id=a796 class="phone s01"><cite>phila:</cite> ok, let's move on, I want to hear from other Task Forces</p>
+<h4 id=fcfd>VCALM</h4>
+<p id=796a class="phone s07"><cite>PatStLouis:</cite> I want to preface this by -- this is my first time being actively involved in W3C VC WG standard process. I've observed from outside, but welcome guidance and tips</p>
+<p id=6872 class="phone s01"><cite>phila:</cite> guidance: RUN WHILE YOU CAN</p>
+<p id=acfe class="phone s07"><cite>PatStLouis:</cite> ok, we had a good discussion yesterday<br>
+<span id=c31e>… about the state of VCALM</span><br>
+<span id=30e7>… a review of how the spec has been progressing</span><br>
+<span id=621b>… we voted on presenting a First Public Working Draft (and it was unanimous), but we want to vote here on the wider group</span></p>
+<p id=efb1 class="phone s01"><cite>phila:</cite> do you prefer Patrick or Pat?</p>
+<p id=2f90 class="phone s07"><cite>PatStLouis:</cite> Patrick</p>
+<p id=016c class="phone s01"><cite>phila:</cite> thanks Patrick. Next one: Barcodes</p>
+<h4 id=ad9c>Barcodes and Data Integrity</h4>
+<p id=d887 class="phone s01"><cite>phila:</cite> would that be you, Elaine?</p>
+<p id=a574 class="phone s09"><cite>Elaine:</cite> that is me -- yes, that's me and Wes<br>
+<span id=cfbe>… we'll do a poll on whether a different meeting day might be better</span><br>
+<span id=64f9>… the draft is in good shape.</span></p>
+<p id=b134 class="phone s01"><cite>phila:</cite> to come back to what Patrick was just saying -- I'm well aware that both VCALM, Barcode and Data INtegrity task forces want to publish FPWDs<br>
+<span id=e643>… for input documents</span><br>
+<span id=540f>… ideally, what would happen now is that the full group would have a week at least to take a look at those documents</span></p>
+<p id=01e3 class="phone s10"><cite>wes-smith:</cite> wrt readiness of wide review of the Barcode Spec -- the majority of the doc is ready for wide review, but there is one significant feature that the group needs to decide on,<br>
+<span id=a61c>… and that's whether (and how) to add a Quantum-Resistant feature to the spec</span><br>
+<span id=c01a>… the rest is just polish</span></p>
+<p id=10002 class="phone s01"><cite>phila:</cite> you should submit for wider review anyway. (once you submit, you won't hear for 8-12 weeks, so it might make sense to kick it off early)</p>
+<p id=a718 class="phone s10"><cite>wes-smith:</cite> ok, that's good to know. I'm not sure about right now, but we'll kick it off when the end is in sight</p>
+<p id=10003 class="phone s01"><cite>phila:</cite> right, so, there's various TF resolutions to public input docs from the CCG as FPWDs<br>
+<span id=f6ff>… generally speaking, what would happen in such a transition is - this group would have at least a week to look at the docs,</span><br>
+<span id=dc76>… these publications, although they're driven by a relatively small group of people working on the doc, they're made in the name of the full group</span><br>
+<span id=3c87>… so whether or not your name is explicitly on the doc, as a participant of the WG, you're tied to the documents</span><br>
+<span id=88ef>… so I think it's particularly important on various transition milestones (FPWD, CRs, etc) -- it needs to be a full WG decision</span><br>
+<span id=b388>… the reason I'm happy to shortcut this, in this particular case -- the docs we're talking about have been public for a very long time</span><br>
+<span id=e3b2>… they've been published by the CCG, they've been in the charter, etc, for a long time</span><br>
+<span id=3380>… so it's not like it's new text that just came into being</span><br>
+<span id=7060>… so, if we don't decide to publish FPWD, it'll be May before it happens</span><br>
+<span id=2e72>… I'm well aware that if you're in a group like this, it's easy to be intimidated (lots of middle aged men, native speakers, strong opinions)</span><br>
+<span id=035e>… especially if you're a person who's naturally client. you may be wondering &quot;can I argue with people?&quot;. Answer: yes, you can, please do</span><br>
+<span id=50df>… we will do everything we can to make you feel comfortable</span><br>
+<span id=d3a1>… the person with the loudest voice does not necessarily know more than you</span><br>
+<span id=10004>… please know that it's safe to make your opinion known, nobody is going to laugh or denigrate you. that's absolutely not how we work, and we wouldn't put up with it</span></p>
+<p id=6875 class="phone s07"><cite>PatStLouis:</cite> thank you for saying that. as somebody who's used to be very quiet in social settings, it's hard to voice your question, but many people will benefit from it<br>
+<span id=6dce>… so, it resonates a lot</span></p>
+<p id=edb4 class="phone s01"><cite>phila:</cite> thanks. So yes, whatever your background, if you have a question, just q plus in the chat<br>
+<span id=7fb3>… we want to hear from you</span><br>
+<span id=6b94>… the Code of Conduct is there, but it's also deeper than that. your view is important.</span><br>
+<span id=fbc1>… ok, so, by publishing these docs as First Public Working Draft, that's a statement from everyone, from the whole group</span><br>
+<span id=7a9a>… my proposal (due to the fact that these docs have been out there for a long while now) is to accept these as input docs</span><br>
+<span id=fae5>… any comments?</span></p>
+<p id=7234 class="phone s08"><cite>manu:</cite> thanks Phil, I'm very much aligned with everything<br>
+<span id=7a72>… the other thing I want to make clear -- we don't have to agree with everything in FPWDs</span><br>
+<span id=b334>… it's just a statement &quot;hey this is the general direction we're going with, what does the wider world think?&quot;</span><br>
+<span id=5a80>… but doesn't mean we agree with every word or sentence in there</span></p>
+<p id=45c6 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1 to the working draft being a statement of intent, not formal agreement</p>
+<p id=740a class="phone s05"><cite>ivan:</cite> to go into details on FPWD publication thing<br>
+<span id=9e4f>… for the Barcode doc, the title says &quot;v.0.8&quot;</span><br>
+<span id=823c>… I think we should publish it as v1.0</span><br>
+<span id=7497>… in my view</span><br>
+<span id=7718>… VCALM is fine, it's already 1.0</span><br>
+<span id=c868>… in both docs, we have to decide on the &quot;shortname&quot;</span><br>
+<span id=e6a0>… we have already shortnames &quot;vc-barcode&quot; and &quot;vc-vcalm&quot;</span></p>
+<p id=2389 class=irc><cite>&lt;manu&gt;</cite> not vc-vcalm -- just vcalm</p>
+<p id=440b class="phone s05"><cite>ivan:</cite> er sorry, just &quot;vcalm&quot;<br>
+<span id=a424>… but I wonder if we should include the version number in the shortname</span></p>
+<p id=7a7b class=irc><cite>&lt;manu&gt;</cite> not &quot;vc-barcode&quot; ... &quot;vc-barcodes&quot; :)</p>
+<p id=883b class="phone s05"><cite>ivan:</cite> I realize that previously, for 1.0, we had version-less shortname. and I want to avoid that</p>
+<p id=d276 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to agree with ivan (probably)</p>
+<p id=080a class="phone s08"><cite>manu:</cite> +1 to ivan's suggestions, we should have a dash version number in the shortname</p>
+<p id=d039 class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: The WG endorses the resolutions passed by the barcodes and data integrity task force, and the VCALM task force (see <a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Apr/0028.html)">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Public/<wbr>public-vc-wg/<wbr>2026Apr/<wbr>0028.html)</a></p>
+<p id=c201 class="phone s08"><cite>manu:</cite> I want to make sure we get the shortnames right. it's &quot;vc-barcodes&quot; with an s, and &quot;vcalm&quot;</p>
+<p id=68ee class="phone s01"><cite>phila:</cite> given what you just said, do you want to amend the text of the resolution?<br>
+<span id=35dd>… ok, manu or ivan, please create the text for the resolution that includes the shortnames</span><br>
+<span id=6392>… next, I want to talk about a new subgroup/task force, about Vocabularies</span></p>
+<h4 id=6d08>Entity Recognition</h4>
+<p id=11d6 class="phone s01"><cite>phila:</cite> oh but first let's talk about Entity Recognition TF<br>
+<span id=1b88>… there was a long discussion about the task force name itself. (and the document title, and the Shortname)</span><br>
+<span id=7c5d>… we're not quite ready, still discussing</span></p>
+<p id=22b5 class="phone s05"><cite>ivan:</cite> just reminding - we have a resolution from the Barcode Group, about the DI and Cryptosuite publishing<br>
+<span id=3b54>… we have to have separate explicit resolutions for each doc</span></p>
+<p id=5c09 class="phone s01"><cite>phila:</cite> right, that's the bit manu is working on</p>
+<h4 id=ddd4>Vocabulary</h4>
+<p id=e722 class="phone s01"><cite>phila:</cite> ok, so I want to talk about the yet-to-be-formed Vocab TF<br>
+<span id=10e3>… several people joined W3C to work on that</span><br>
+<span id=2eaf>… Susanne, plus some other people not on the call currently,</span><br>
+<span id=38a8>… Susanne, do you want to say a few words?</span></p>
+<p id=6ece class="phone s11"><cite>Susanne:</cite> thank you. what we need is to put together a base Passport vocabulary<br>
+<span id=c0cb>… for various products, certificates</span><br>
+<span id=84c6>… Digital Product passport</span><br>
+<span id=bcf3>… and conformative credentials</span><br>
+<span id=0b9d>… derived from Digital Product Passport</span><br>
+<span id=35f2>… we have restrictions from all over the world</span><br>
+<span id=ea64>… VCs luckily became one of the formats that Digital Passports can be issued in, so we need to work out the vocab / semantics</span></p>
+<p id=f8a8 class="phone s01"><cite>phila:</cite> one of the people in the Entity Recognition TF was Steve Capell, who was the leader in the UN protocol work</p>
+<p id=1f84 class="phone s07"><cite>PatStLouis:</cite> so the UNTP spec already has some terms / vocab for related things<br>
+<span id=c36b>… is this something we want to redefine at W3C, or can we reuse UNTP? Or give to UNTP to publish?</span><br>
+<span id=d854>… basically, I don't want to split the work</span><br>
+<span id=c7f6>… or step on toes</span></p>
+<p id=a8cc class="phone s11"><cite>Susanne:</cite> I've also been working with UNTP for the past few years. The only home we had for VCs for Digital Passports was UNTP for a while,<br>
+<span id=95e7>… of course we don't want any divergence between us here and UNTP</span></p>
+<p id=a179 class="phone s01"><cite>phila:</cite> agreed. I want to point to an example of your concern being addressed (the thing you're worried about DIDN'T happen)<br>
+<span id=0e51>… and that's the <a href="https://www.w3.org/TR/vocab-dcat/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vocab-dcat/</a> spec</span><br>
+<span id=1750>… what it says is &quot;use Dublin Core&quot; or similar existing vocabularies, and only define new things</span><br>
+<span id=f677>… so that's my expectation here too. what the W3C work will say is &quot;you see the existing UNTP work, use that&quot;</span></p>
+<p id=1cb5 class="phone s01"><cite>phila:</cite> the other thing I want to ask people about is --</p>
+</section>
+
+<section>
+<h3 id=31d1>GDC 2026</h3>
+<p id=5b32 class=irc><cite>&lt;phila&gt;</cite> <a href="https://globaldigitalcollaboration.org">https://<wbr>globaldigitalcollaboration.org</a></p>
+<p id=09ff class=irc><cite>&lt;JoeAndrieu1&gt;</cite> maybe</p>
+<p id=5e51 class="phone s01"><cite>phila:</cite> is anyone going to GDC 2026 in Geneva in Sept?</p>
+<p id=2ef1 class="phone s11"><cite>Susanne:</cite> is that the Identity Conference?</p>
+<p id=0848 class="phone s01"><cite>phila:</cite> it's the Global Digital Collaboration conf, lots of work on wallets, credentials, etc</p>
+<p id=9fbb class=irc><cite>&lt;PDL-ASU&gt;</cite> Maybe - I went to the first. Still determining if I can make the next.</p>
+<p id=0e48 class="phone s01"><cite>phila:</cite> it was in July last year</p>
+<p id=5662 class=irc><cite>&lt;Elaine&gt;</cite> I may or may not.</p>
+<p id=c439 class="phone s11"><cite>Susanne:</cite> I'm not sure, I will look</p>
+<p id=d906 class="phone s01"><cite>phila:</cite> ok, just wanted to mention it, it looks important</p>
+<p id=d996 class="phone s04"><cite>JoeAndrieu1:</cite> it was pretty amazing last years, lot of perspectives from parties around the world<br>
+<span id=e420>… I have a potential conflict, so I'm a 'maybe' right now</span></p>
+</section>
+
+<section>
+<h3 id=9584>Resolutions</h3>
+<p id=5e7a class="phone s01"><cite>phila:</cite> ok, let's talk about the resolutions, over to ivan and manu</p>
+<p id=3484 class=irc><cite>&lt;PatStLouis&gt;</cite> +1</p>
+<p id=0e92 class=irc><cite>&lt;manu&gt;</cite> PROPOSAL: Publish the VC API for Lifecycle Management v1.0 specification (<a href="https://w3c.github.io/vcalm/">https://<wbr>w3c.github.io/<wbr>vcalm/</a>) as a First Public Working Draft using 'vcalm-1.0' as the shortname.</p>
+<p id=b484 class=irc><cite>&lt;KevinDean&gt;</cite> +1</p>
+<p id=174d class="phone s01"><cite>phila:</cite> these are the things that were passed by the relevant Task Forces yesterday, so this is to ratify</p>
+<p id=b485 class=irc><cite>&lt;PatStLouis&gt;</cite> +1</p>
+<p id=b486 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=f484 class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=f485 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=3485 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=7484 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=7485 class=irc><cite>&lt;smccown&gt;</cite> +1</p>
+<p id=7486 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=7487 class=irc><cite>&lt;DPPSusanne&gt;</cite> +1</p>
+<p id=b487 class=irc><cite>&lt;JoeAndrieu1&gt;</cite> +1</p>
+<p id=3486 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=f486 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=3487 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=b488 class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=3488 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=3489 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=cfa4 class="phone s01"><cite>phila:</cite> thank you, manu, consider that one done!</p>
+<p id=88be class=resolution><strong>RESOLUTION:</strong> Publish the VC API for Lifecycle Management v1.0 specification (<a href="https://w3c.github.io/vcalm/">https://<wbr>w3c.github.io/<wbr>vcalm/</a>) as a First Public Working Draft using 'vcalm-1.0' as the shortname.</p>
+<p id=958f class=irc><cite>&lt;manu&gt;</cite> PROPOSAL: Move the Verifiable Credential Barcodes v1.0 specification <a href="https://w3c.github.io/vc-barcodes/">https://<wbr>w3c.github.io/<wbr>vc-barcodes/</a> to First Public Working Draft, with short name &quot;vc-barcodes-1.0&quot;.</p>
+<p id=b489 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=f487 class=irc><cite>&lt;DPPSusanne&gt;</cite> +1</p>
+<p id=348a class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=348b class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=7488 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=7489 class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=748a class=irc><cite>&lt;smccown&gt;</cite> +1</p>
+<p id=748b class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b48a class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=b48b class=irc><cite>&lt;JoeAndrieu1&gt;</cite> +1</p>
+<p id=b48c class=irc><cite>&lt;PatStLouis&gt;</cite> +1</p>
+<p id=f488 class=irc><cite>&lt;Parth&gt;</cite> +1</p>
+<p id=f489 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=f48a class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=748c class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=748d class=irc><cite>&lt;KevinDean&gt;</cite> +1</p>
+<p id=b48d class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=348c class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=2289 class="phone s01"><cite>phila:</cite> as always, don't feel pressured on this, speak up if dont agree</p>
+<p id=e15f class=resolution><strong>RESOLUTION:</strong> Move the Verifiable Credential Barcodes v1.0 specification <a href="https://w3c.github.io/vc-barcodes/">https://<wbr>w3c.github.io/<wbr>vc-barcodes/</a> to First Public Working Draft, with short name &quot;vc-barcodes-1.0&quot;.</p>
+<p id=aec3 class=irc><cite>&lt;manu&gt;</cite> PROPOSAL: Publish the Verifiable Credential Data Integrity v1.1 specification (<a href="https://w3c.github.io/vc-data-integrity/">https://<wbr>w3c.github.io/<wbr>vc-data-integrity/</a>), Data Integrity ECDSA Cryptosuites v1.1 (<a href="https://w3c.github.io/vc-di-ecdsa/">https://<wbr>w3c.github.io/<wbr>vc-di-ecdsa/</a>), and Data Integrity EdDSA Cryptosuites v1.1 (<a href="https://w3c.github.io/vc-di-eddsa/">https://<wbr>w3c.github.io/<wbr>vc-di-eddsa/</a>) specifications as v1.1 First Public Working Drafts with short names &quot;vc-data-integrity-1.1&quot;, &quot;vc-di-ecdsa-1.1&quot;, and &quot;vc-di-eddsa-1.1&quot; respectively.</p>
+<p id=748e class=irc><cite>&lt;PatStLouis&gt;</cite> +1</p>
+<p id=748f class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=b48e class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=b48f class=irc><cite>&lt;smccown&gt;</cite> +1</p>
+<p id=f48b class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=348d class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=7490 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1</p>
+<p id=7491 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=7492 class=irc><cite>&lt;Parth&gt;</cite> +1</p>
+<p id=b490 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=b491 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=b492 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=f48c class=irc><cite>&lt;JoeAndrieu1&gt;</cite> +1</p>
+<p id=348e class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=348f class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=7493 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=3490 class=irc><cite>&lt;DPPSusanne&gt;</cite> +1</p>
+<p id=db6e class=resolution><strong>RESOLUTION:</strong> Publish the Verifiable Credential Data Integrity v1.1 specification (<a href="https://w3c.github.io/vc-data-integrity/">https://<wbr>w3c.github.io/<wbr>vc-data-integrity/</a>), Data Integrity ECDSA Cryptosuites v1.1 (<a href="https://w3c.github.io/vc-di-ecdsa/">https://<wbr>w3c.github.io/<wbr>vc-di-ecdsa/</a>), and Data Integrity EdDSA Cryptosuites v1.1 (<a href="https://w3c.github.io/vc-di-eddsa/">https://<wbr>w3c.github.io/<wbr>vc-di-eddsa/</a>) specifications as v1.1 First Public Working Drafts with short names &quot;vc-data-integrity-1.1&quot;, &quot;vc-di-ecdsa-1.1&quot;, and &quot;vc-di-eddsa-1.1&quot; respectively.</p>
+<p id=ca5c class="phone s01"><cite>phila:</cite> thank you, that's unanimous votes for all those.</p>
+<p id=dce1 class=irc><cite>&lt;PDL-ASU&gt;</cite> wohoo!</p>
+<p id=668f class="phone s01"><cite>phila:</cite> one more thing - on the vocabulary work, GS1 does have a position on that, and a colleague will join to work on that (so that I can remain neutral)</p>
+<p id=3826 class="phone s01"><cite>phila:</cite> ok, we have just resolved to publish a whole lot of FPWDs, thank you all!<br>
+<span id=4386>… new publications, based on the new charter. we've hit the ground running</span><br>
+<span id=78cd>… thanks everyone!</span></p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#88be">Publish the VC API for Lifecycle Management v1.0 specification (https://<wbr>w3c.github.io/<wbr>vcalm/) as a First Public Working Draft using 'vcalm-1.0' as the shortname.</a></li>
+<li><a href="#e15f">Move the Verifiable Credential Barcodes v1.0 specification https://<wbr>w3c.github.io/<wbr>vc-barcodes/ to First Public Working Draft, with short name &quot;vc-barcodes-1.0&quot;.</a></li>
+<li><a href="#db6e">Publish the Verifiable Credential Data Integrity v1.1 specification (https://<wbr>w3c.github.io/<wbr>vc-data-integrity/), Data Integrity ECDSA Cryptosuites v1.1 (https://<wbr>w3c.github.io/<wbr>vc-di-ecdsa/), and Data Integrity EdDSA Cryptosuites v1.1 (https://<wbr>w3c.github.io/<wbr>vc-di-eddsa/) specifications as v1.1 First Public Working Drafts with short names &quot;vc-data-integrity-1.1&quot;, &quot;vc-di-ecdsa-1.1&quot;, and &quot;vc-di-eddsa-1.1&quot; respectively.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+
+</body>
+</html>
