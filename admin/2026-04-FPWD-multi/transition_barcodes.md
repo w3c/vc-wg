@@ -14,7 +14,7 @@
 No
 
 # Link to group's decision to request transition
-- See https://w3c.github.io/vc-wg/minutes/2026-04-08.html#@@@@
+- See https://w3c.github.io/vc-wg/minutes/2026-04-08.html#e15f
 
 # IPR commitments
 n/a
@@ -23,4 +23,8 @@ n/a
 - See https://github.com/w3c/vc-barcodes/issues/
 
 # Information about implementations known to the Working Group
+
+/Cc @msporny, @w3c-group-98922-chairs
+
+Submitted in https://github.com/w3c/transitions/issues/794 2026-04-10
 

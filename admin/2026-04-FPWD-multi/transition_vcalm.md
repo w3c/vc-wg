@@ -8,13 +8,13 @@
 - See https://w3c.github.io/vcalm//transitions/2026/FPWD/#abstract
 
 # Status
-- See https://w3c.github.io/vcalm/transitions/2026/FPWD//#sotd
+- See https://w3c.github.io/vcalm/transitions/2026/FPWD/#sotd
 
 # Is it a delta specification intended to become a W3C Recommendation?
 No
 
 # Link to group's decision to request transition
-- See https://w3c.github.io/vc-wg/minutes/2026-04-08.html#@@@@
+- See https://w3c.github.io/vc-wg/minutes/2026-04-08.html#88be
 
 # IPR commitments
 n/a
@@ -24,3 +24,5 @@ n/a
 
 # Information about implementations known to the Working Group
 
+
+Submitted in https://github.com/w3c/transitions/issues/792 2026-04-10

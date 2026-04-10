@@ -33,7 +33,7 @@ No, it is a new version of the specification, with only minor changes. See relev
 - https://www.w3.org/2026/03/vc-wg-charter.html#scope
 
 # Link to group's decision to request transition
-- See https://w3c.github.io/vc-wg/minutes/2026-04-08#@@@@
+- See https://w3c.github.io/vc-wg/minutes/2026-04-08.html#db6e
 
 # IPR commitments
 n/a
@@ -53,3 +53,6 @@ See the implementation report of version 1.0
 - https://w3c.github.io/vc-data-integrity/implementations/
 - https://w3c.github.io/vc-di-eddsa-test-suite/
 - https://w3c.github.io/vc-di-ecdsa-test-suite/
+
+
+Submitted in https://github.com/w3c/transitions/issues/793 2026-04-10
