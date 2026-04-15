@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 14 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>14 April 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, James_Easter, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#d800">Meeting Schedule Discussion</a></li>
+<li><a href="#8f78">Horizontal Review &amp; Threat Model</a></li>
+<li><a href="#adb3">FPWD Status Update</a></li>
+<li><a href="#9bfc">Redirect URL Pull Request</a></li>
+<li><a href="#ffff">Selective Disclosure Pseudo Code</a></li>
+<li><a href="#c43b">Index Allocator Definition</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=d800>Meeting Schedule Discussion</h3>
+</section>
+
+<section>
+<h3 id=8f78>Horizontal Review &amp; Threat Model</h3>
+</section>
+
+<section>
+<h3 id=adb3>FPWD Status Update</h3>
+</section>
+
+<section>
+<h3 id=9bfc>Redirect URL Pull Request</h3>
+</section>
+
+<section>
+<h3 id=ffff>Selective Disclosure Pseudo Code</h3>
+</section>
+
+<section>
+<h3 id=c43b>Index Allocator Definition</h3>
+<p id=c4c9 class="phone s01"><cite>Patrick_St-Louis:</cite> Welcome to the call everyone. We'll get started in about two minutes. Just let people come in.</p>
+<p id=438b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, let's get started with the call and as people join they will be able to catch up as we do the introduction. So, welcome everyone to the VC API for life cycle management Today is the 14th of April, 2026. This is a W3C meeting, so all W3C policies are into effect for the duration of this call and this call is also recorded. If you have any objections, please let us know. so today for the agenda, there's a few topics I was proposing.</p>
+<p id=ddf0 class="phone s01"><cite>Patrick_St-Louis:</cite> two of them are not on the list but I will introduce them before we get started. but before proposing change to the agenda I would like to leave some time for introductions and community updates. so if anyone wants to reintroduce themselves or provide an update related to the work that we do here now is the time. Please just raise your hand and take the microphone.</p>
+<p id=b2e8 class="phone s01"><cite>Patrick_St-Louis:</cite> As for the agenda today, I think we will have a quick discussion about the meeting schedule. so, yeah, I'll get into more details when we get into this. I wanted to also touch about the preview feature which I'm not seeing anymore on poll request and we can address this when we review the first PR. And another thing I'd like to discuss when we do PR review I seem to be having an IPR issue although I don't think we'll be able to do much on this call.</p>
+<p id=bca7 class="phone s01"><cite>Patrick_St-Louis:</cite> So that's the agenda. If anyone would like to propose an additional topic, please let us know. Yes, Manu.</p>
+<p id=0421 class="phone s02"><cite>Manu_Sporny:</cite> I want to briefly mention the horizontal review and threat modeling stuff. We did talk about this on a previous call, but I want to make sure we know what the plan timeline, all that kind of stuff is for that item.</p>
+<p id=44f9 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. do you mind if we just go over the meeting schedule, get this out the way, and then address your topic? Perfect. Coyote.</p>
+<p id=608d class="phone s03"><cite>Kayode_Ezike:</cite> And maybe also just a brief note on the status of the FPWD for first public working draft which was put out last week as well.</p>
+<p id=97f2 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. So, you want to take time to discuss about this? Was that a suggestion for a topic or you just letting us know?</p>
+<p id=9063 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah. No. Yeah. just to let the group know, I don't think everyone is a breast of the status of that. So it can just be added on at some point. Can touch a little bit. It's</p>
+<p id=a3dc class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, we can touch on that quickly before we do the reviews. Any other topics people would like to cover?</p>
+<p id=ce5d class="phone s01"><cite>Patrick_St-Louis:</cite> Very good. Then let's get started. If something comes to your mind, don't hesitate to raise your hand suggest the first topic meeting schedule. so we have been and when I say I'm talking here about the previous umbrella that this call was under. So it was under the CCG. This is our second meeting under the W3C. so this call has been running on a weekly basis at the same time for probably ception. I know since I joined which was about four years ago and we always had anywhere between 16 and 12 participants.</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> So I think it's a fairly good attendance rate. However, now that the group is broadening, we might have new people who want to participate. So, it would be probably advisable to send out a poll and see if we can agree to keep the meeting at the same place or adapt if there's a high amount of people that would prefer some other date. so that's what I wanted to discuss.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> I think we might even have to do it. I know there's been some discussion about some emails about people inquiring for this. So my proposal unless there's any objection is to send a poll on the public credentials mailing list about a vote for when would the preferred time I know myself I'll be voting for the same time. This is very convenient to me and I invite anyone to put their thoughts as to when they would like the meeting to be conducted. I've been on some calls before that they alternate time zone from one week to the next. I'm not sure if we need to go on to that level of adaptability.</p>
+<p id=f31a class="phone s01"><cite>Patrick_St-Louis:</cite> So yeah, manual.</p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> Plus all that. the way this is typically done is we send a doodle poll out to the mailing list and ask people to weigh in there. we usually do that because, we having a bunch of people respond to the mailing list and then you having to then collate all of that stuff can be a pain, Patrick. So, dual pole kind of gets rid of that. we can also do some analysis on the data like we might get a fair number of people from the Asia-Pacific region that want to participate.</p>
+<p id=bdc0 class="phone s02"><cite>Manu_Sporny:</cite> Usually if you get more than two the chairs will ask us to accommodate some alternate times. So that helps us collect data not spam the list with a whole bunch of times people are available at and makes it easier for you to kind of coate the stuff. We usually leave the polls open for one to usually two weeks…</p>
+<p id=6dac class="phone s02"><cite>Manu_Sporny:</cite> because sometimes people are in vacation. that's the typical approach. we're free as the organizer to run it however you'd like, though. That's it.</p>
+<p id=b6dd class="phone s01"><cite>Patrick_St-Louis:</cite> So a poll usually you want to give some option. So, could it be something like a two question poll? One is a day of the week between Monday and Friday and the other one is a time of day on the 24-hour clock. Is that kind of a good approach here?</p>
+<p id=8033 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, man.</p>
+<p id=10003 class="phone s02"><cite>Manu_Sporny:</cite> Doodle has a pick a time for a meeting option and…</p>
+<p id=8047 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=7e5f class="phone s02"><cite>Manu_Sporny:</cite> when you go to set it up, you just select you do all of the days Monday through Friday and then you can do, all of the times. typically though, most meetings hover between 10:00 a.m. Eastern to 100 p.m. Eastern and then 400 p.m. Eastern to 8:00 p.m. Eastern. you usually don't have to provide options for 6:00 a.m. Eastern whatnot. So</p>
+<p id=7507 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> picking a day, and picking a time that might be on any of those days, won't work so well. I will have conflicts, for instance, Wednesday 10am, but not most other days at 10am... so time&amp;day combination is necessary </p>
+<p id=dfd8 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I've never made a doodle for myself, so I'll just see what they have and then Probably going to send it out sometime this week. And please put in your preferred time, may not be the current time. that will be very helpful. So, any more questions on the next topic, horizontal review threat model. do you want to lead this discussion manual or</p>
+<p id=670e class="phone s02"><cite>Manu_Sporny:</cite> Yeah. just we had an initial call this morning for the barcodes and data integrity call where we talked with Ivon Herman who's the staff contact for the verifiable credential working group on how to structure the work around a threat model. so a heads up Joe and Eric, I think we got to some kind of high level agreement on general approach for documents that don't have a threat model yet. and this is going to be talked about in the verifiable credential working group call tomorrow.</p>
+<p id=3189 class="phone s02"><cite>Manu_Sporny:</cite> But the current proposal is in order to avoid having to publish 20 threat models through the W3C process which means 20 shortname approvals and 20 whatever and rather than do that we are just going to create a directmodel in the current specification repository. in the future we can choose to publish the files in that ory. So there will be a directory called model in every one of the specifications. it will contain an index.html which is a respspec file. It can have its own diagrams and all that kind of stuff. It can be marked as a note so on and so forth. in that directory will be autopublished for all the editor's drafts.</p>
+<p id=7563 class=irc><cite>&lt;Patrick_St-Louis&gt;</cite> reading this I realize my proposal is problematic yes, It needs to be a day + time </p>
+<p id=683e class=irc><cite>&lt;Patrick_St-Louis&gt;</cite> thank you </p>
+<p id=0119 class="phone s02"><cite>Manu_Sporny:</cite> So you'll have the main spec and the main spec can refer to that other file by linking to so that's kind of how we kind of get started on and then in that index.html is where we put all the contents for the threat model. if the thread model's small enough, we could probably include it in the main spec, but maybe we just start with a separate threat model.</p>
+<p id=4943 class="phone s02"><cite>Manu_Sporny:</cite> for all the documents. let me stop there.</p>
+<p id=c6b0 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> manu - can you provide a link to the recording and/or minutes for this morning's call? (My local calendar hadn't updated until too late for me to attend.) </p>
+<p id=1f3e class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, that sounds great.</p>
+<p id=284f class="phone s04"><cite>Joe_Andrieu:</cite> I mean that there are two nuances I just want you to be considering. One is I think what we are expecting to do is in the security consideration sections to have the table of contents for the threat model. and I think talking with Simone, that seemed like the right level of detail between, just putting a link to the threat model or having some paragraph that's explaining, but I think that the list of threats as a TOC it is probably right idea. And then the other thing is that long term Simone and I think that these threat models should be registries so that they can be updated over the lifetime of the spec even though the working group's not still and creating a registry is still a blackbox question. so that's just a architectural note. I don't think it changes anything that you just said.</p>
+<p id=0965 class="phone s04"><cite>Joe_Andrieu:</cite> I think deploying initially in the way that you said we could also if we care to upgrade to a registry.</p>
+<p id=c879 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, m</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, plus one to all that, Sounds good. the registry thing I clear you were not implying this, but I definitely don't want us to take that on in addition to everything else we're taking on just yet, but in the future that sounds fine. the other things for the future are things like it would be nice to have the components easily importable into a threat model. meaning I think for the VCOM's let me know what you were thinking Joe on the verifiable credential data model but to do the barcode work and the VCOM work it feels like we need a fairly complete set of components in a verifiable credential threat model something or another thing right because we don't want to have to repeat a ton of stuff in the barcode spec the VCOM spec is probably going</p>
+<p id=c697 class="phone s02"><cite>Manu_Sporny:</cite> have quite a number of components that we need to identify and kind of talk about that we have already pretty much identified in the architecture section for the BCOM spec. So I don't know what the proper ordering of operations are to get to an initial horizontal review. I think if we had all the time in the world, we would create a generalized verifiable digital credential, threat model and then maybe the VCOM spec would build on top of that and add all the coordinator components and those sorts of things.</p>
+<p id=54b8 class="phone s02"><cite>Manu_Sporny:</cite> While the barcodes thing, focused on a different part of the threat model like the issuers and the verifiers, ideally the components would be able to be pulled into the spec without us having to recreate all the diagrams. So that's a thought. One is what is the most efficient way for us to do this without putting an enormous timeline in front of us to build everything up. let me stop there.</p>
+<p id=ce14 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah,</p>
+<p id=81d2 class="phone s04"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=23c0 class="phone s04"><cite>Joe_Andrieu:</cite> I wanted to I think the right order of operations is actually pick any one of them and make the DFD that works for the hard but necessary work is going to be synchronizing the different DFDs so that the components that have the same identifier and description. but for example, render method has a very different attack surface than confidence method. And so we both have components that aren't in the other diagram. so the way I'm approaching with it did work is hey let's look at resolution as a threat model and then that will teach us something that hopefully we can reuse elsewhere but the tension is in hey I've got these different diagrams how do I reuse them and it's a refactoring computer science Tell them.</p>
+<p id=ead4 class="phone s02"><cite>Manu_Sporny:</cite> Okay, that makes sense to me. I mean it's basically how we do terminology between the multiple specs, At some point we realize that we've defined the same term multiple times and then we pick one spec to put the actual definition in, export it and then reimpport it from the other spec. So maybe there's something there that we can build into respect to because respspec has the auto terminology linking between specs thing and maybe we do an extension to it to do DFD style linking. okay so that's good. And then the other thing solves the problem of not having to wait forever for the other base specs to get a threat model. I think what that means for us here is we're going to build a threat model for VCOM.</p>
+<p id=bd0a class="phone s02"><cite>Manu_Sporny:</cite> it's going to have a tremendous number of components in it just because this is the first, we have to do it for this spec.</p>
+<p id=3204 class="phone s04"><cite>Joe_Andrieu:</cite> Yep, that sounds right.</p>
+<p id=a183 class="phone s02"><cite>Manu_Sporny:</cite> And then probably the expectation is a good chunk of that is going to be factored out in the future and put in another spec, but we don't have to let that hold us up to get started. That's</p>
+<p id=89de class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Just quickly, I threw this in the chat, but Manu, can you provide a link to the recording and our minutes for this morning? My local calendar hadn't updated until after the meeting was over.</p>
+<p id=2e7e class="phone s02"><cite>Manu_Sporny:</cite> It will autopublish at 8:00 p.m. Eastern tonight to the mailing list.</p>
+<p id=2668 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Okay, I think I'll find Fair enough. Okay.</p>
+<p id=761a class="phone s02"><cite>Manu_Sporny:</cite> I don't have it yet because, it hasn't done its thing.</p>
+<p id=4372 class="phone s01"><cite>Patrick_St-Louis:</cite> So, is there any action item I should write down out of this horizontal review? Do we want to make sure we track this with an issue? I heard something about creating a directory and the VCOM repo I think to start storing artifacts there. manual.</p>
+<p id=b3e8 class="phone s02"><cite>Manu_Sporny:</cite> I have raised two issues right when the call was starting. One of them is to do a horizontal review. So if you go to issues Patrick are just open issues the two top ones horizontal review for VCOM points to all the horizontal reviews that we need to request and then the threat model for VCOM is there as well and I'm using the blocking on the right the blocked by syntax to say which one needs to happen first and…</p>
+<p id=fb0b class="phone s02"><cite>Manu_Sporny:</cite> which one happens second. But basically, we're blocked to do a horizontal review until we get the threat model done.</p>
+<p id=61af class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, perfect.</p>
+<p id=6d29 class="phone s01"><cite>Patrick_St-Louis:</cite> So we will take a look at this and see how this can fit in our issue processing schedule. we will probably want to start at least adding a bit of comments and ideas here to move this forward. this sounds like it's something we'll want to be done at some point which is sooner than later. because I have a feeling this review process can take some time. So perfect. Yes, man.</p>
+<p id=f9cb class="phone s02"><cite>Manu_Sporny:</cite> Sorry, one last question. Joe, is Sing working on any respect extensions to auto extract the table of contents from the threat model? I'm just trying to figure out a way to just not have to keep the two things in sync and just add some respect markup that'll just the auto construct the privacy and…</p>
+<p id=f4bb class="phone s02"><cite>Manu_Sporny:</cite> security consideration sections.</p>
+<p id=deca class="phone s04"><cite>Joe_Andrieu:</cite> Yes, there is.</p>
+<p id=d33a class="phone s04"><cite>Joe_Andrieu:</cite> And the did resolution threat model. I'll drop you a URL. I think in fact the current main demonstrates it. we have a schema that both generates the threat model and a TOC and it would probably need to be teased out to do that separately because I just do it in one render call. if that makes sense. but there is a way we can get to a data driven thing that is pulling in the TOC from somewhere else. but we should talk about it.</p>
+<p id=e1b1 class=irc><cite>&lt;Joe_Andrieu&gt;</cite> <a href="https://w3c.github.io/did-resolution-threat-model/">DID Resolution Threat Model</a> </p>
+<p id=b5f7 class="phone s04"><cite>Joe_Andrieu:</cite> I think it's not well supported in how I've factored the library, but one of the things I'm still trying to do is get that library into a repo so it's standalone so that people like you and others in W3C can use it. So I would love input as to how we can make it more useful.</p>
+<p id=36e3 class="phone s01"><cite>Patrick_St-Louis:</cite> very Any further comments in that case? yes, man.</p>
+<p id=8848 class="phone s02"><cite>Manu_Sporny:</cite> Sorry, I'm asking a bazillion questions because I'm planning on trying to do something in the next couple of weeks. Joe, I'm looking at the details in the did resolution threat model and…</p>
+<p id=8519 class="phone s02"><cite>Manu_Sporny:</cite> there's the DFD for all participants or whatever. I'm looking at have you considered using mermaid to build something there? It can't do what you currently have in there, but I'm trying to figure out a way to use mermaid to do the diagram.</p>
+<p id=d364 class="phone s04"><cite>Joe_Andrieu:</cite> Yeah.</p>
+<p id=bfae class="phone s04"><cite>Joe_Andrieu:</cite> Mermaid doesn't do very good DFDs. for a different diagram, we have done mermaid integration. We've made a custom mermaid handler. that may be in my future, but it's nowhere near term so right now I am just importing this thing that part of the challenge is I have a strong motivation to follow Adam Shawstack's lead in that in your DFD you want a very limited set of different component types like you care that it's a processor you don't care that it's a database or a server or a laptop and so having the simplified view of DFD is we don't have a good tool</p>
+<p id=10005 class="phone s04"><cite>Joe_Andrieu:</cite> that links in the mermaid with that. the other thing I want to point out as you're looking at that is so these threads are kind of still just really examples of the functionality. and one of the things you'll see that is weird because they just reuse the same image and the T1 has the DFD in it again. That is just to demonstrate that you can put an image in a threat and it will show up after the description. you're looking at 2.1, but if you go down to 4.2 threat details, each threat can have its own diagram if that's useful. And if you don't have it, then we just don't show that real estate.</p>
+<p id=d3f0 class="phone s01"><cite>Patrick_St-Louis:</cite> So, do we need to output a document like this or this is what we're kind of discussing trying to figure it out? do we need a VCOM threat model spec or repo? Yes. Yes. Yes.</p>
+<p id=fe21 class="phone s01"><cite>Patrick_St-Louis:</cite> We need one or yes, we're trying to figure it out.</p>
+<p id=e2ab class="phone s02"><cite>Manu_Sporny:</cite> directory. Sorry,…</p>
+<p id=a9ef class="phone s02"><cite>Manu_Sporny:</cite> I was agreeing to the first thing and then you said something else that I disagreed with.</p>
+<p id=dc7d class="phone s02"><cite>Manu_Sporny:</cite> I think we should start out with a directory and do all the development in there until it becomes clear that we need a I'm hoping we will not need a separate repo. that's</p>
+<p id=4608 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Mhm.</p>
+<p id=a92f class="phone s01"><cite>Patrick_St-Louis:</cite> So, different directory with a new index HTML file, maybe some components and kind of mimic these sections here. yeah I think probably some decisions to be made what are the stakeholders probably going to be related to the coordinators and the different components. I think we already have a security consideration so we could pull out some threads from there and just expand on it a little bit.</p>
+<p id=cae1 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. It's</p>
+<p id=a496 class="phone s04"><cite>Joe_Andrieu:</cite> Yeah. One of the things this architecture does,…</p>
+<p id=aef1 class="phone s04"><cite>Joe_Andrieu:</cite> by the way, if you go to the files, if that's easy to click over to is there's a directory of threats and each threat is a JavaScript file. and it's JavaScript, not JSON, so that we can load in a file URL. So JS common modules and data include do not work for local files. so if you clone it and open index.html those features Data include fails. but this sort of JavaScript swizzle lets you get the JSON in as a script tag.</p>
+<p id=957d class="phone s04"><cite>Joe_Andrieu:</cite> But you just put the different threats in here and then you update your outline to say where in the document structure do those threats go. So you can categorize different kinds of threats.</p>
+<p id=314a class="phone s01"><cite>Patrick_St-Louis:</cite> Something I can definitely do is start to have a look at this and…</p>
+<p id=4cb5 class="phone s01"><cite>Patrick_St-Louis:</cite> the layout how it works to have a proposal. probably can reply here with my findings and…</p>
+<p id=f14d class="phone s01"><cite>Patrick_St-Louis:</cite> try to get this issue in a ready for PR state at some point. we will probably need some peer review before we do this.</p>
+<p id=828d class="phone s04"><cite>Joe_Andrieu:</cite> Patrick, if you have me on signal,…</p>
+<p id=2349 class="phone s04"><cite>Joe_Andrieu:</cite> I would be happy to be available if you bump into questions as you're parsing through that because we implemented this. It's gone through one refactoring. I'm sure it's not well documented, but I'm happy to help.</p>
+<p id=b042 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah,…</p>
+<p id=a2f0 class="phone s01"><cite>Patrick_St-Louis:</cite> I can definitely look into that. Can add you on Signal, Slack, whichever is the best.</p>
+<p id=a9ed class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, either would work. I prefer signal, but as long as we have a channel, I'm happy to help.</p>
+<p id=b162 class="phone s01"><cite>Patrick_St-Louis:</cite> Sounds good. I use both on a daily basis. It's not an issue. perfect. Any other comments, follow-ups on this? I think we are clear.</p>
+<p id=9730 class="phone s01"><cite>Patrick_St-Louis:</cite> Next step we got review I'm going to link this here out and create a subdirector for Okay, I will put my face there,…</p>
+<p id=baa6 class="phone s04"><cite>Joe_Andrieu:</cite> Yes, that's fine.</p>
+<p id=668d class="phone s01"><cite>Patrick_St-Louis:</cite> but for now until maybe if someone wants to help at some point, I'm going to put you as well, Joe. Is that okay? Perfect.</p>
+<p id=87cb class="phone s01"><cite>Patrick_St-Louis:</cite> So this is good big item. so I had two other topics. the best way to show them will probably be to open a PR. I don't know if these are related. so this one is a bit more of a pro of a me problem. So I have a situation with my IPR where my GitHub account was linked to a previous W3C account. So when I first got introduced to W3C, I was working for another company and since this was sort of a work related task, I had used my other company's email. this was many years ago. KDR. The GitHub account is linked to that email.</p>
+<p id=6255 class="phone s01"><cite>Patrick_St-Louis:</cite> All the emails are linked to the GitHub account. So this is something I'll probably have to resolve with someone. I will take this offline. It's really just about linking my W3C account with GitHub. yes, Manu. No,…</p>
+<p id=4452 class="phone s02"><cite>Manu_Sporny:</cite> Do you still have access to your current GitHub login is not tied to that old email address. Patrick St-Louis:</p>
+<p id=3c10 class="phone s01"><cite>Patrick_St-Louis:</cite> no, no.</p>
+<p id=9211 class="phone s02"><cite>Manu_Sporny:</cite> Is that correct?</p>
+<p id=41ed class="phone s01"><cite>Patrick_St-Louis:</cite> The GitHub my personal is the one I used.</p>
+<p id=7d29 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. can you log into your w3.org account?</p>
+<p id=e7a2 class="phone s01"><cite>Patrick_St-Louis:</cite> That employer at a GitHub organization the W3C is an email password login and I used my employers at the time email to create my account since this was my introduction. It seemed like the right thing to do at the time. in retrospective, I think using my personal email would have been a better move. but we're my new one. So, I have another one,…</p>
+<p id=f811 class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=4362 class="phone s01"><cite>Patrick_St-Louis:</cite> the one that I have the IPR.</p>
+<p id=dd71 class=irc><cite>&lt;Benjamin_Young&gt;</cite> There is only Patrick. There is no past-employer. </p>
+<p id=455c class="phone s02"><cite>Manu_Sporny:</cite> So you need to contact cisre and they will be able to probably help you.</p>
+<p id=efe0 class="phone s02"><cite>Manu_Sporny:</cite> Benjamin, I don't know if there's any other way. So, contact Avon and…</p>
+<p id=83d5 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=5545 class="phone s02"><cite>Manu_Sporny:</cite> explain what the situation is. He will probably ask you to contact a system request cis at W3 and…</p>
+<p id=9402 class="phone s02"><cite>Manu_Sporny:</cite> they will manually get your accounts sorted.</p>
+<p id=546c class="phone s01"><cite>Patrick_St-Louis:</cite> And I mean both email got my full name in them.</p>
+<p id=69b8 class="phone s01"><cite>Patrick_St-Louis:</cite> So it's not like the other email with some random name. So it should be, fairly easy to demonstrate this.</p>
+<p id=74a2 class="phone s02"><cite>Manu_Sporny:</cite> You are not the first person this has happened to.</p>
+<p id=c4f1 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm assuming it seems to Yeah.</p>
+<p id=0720 class="phone s02"><cite>Manu_Sporny:</cite> Yep. Yep.</p>
+<p id=9777 class="phone s01"><cite>Patrick_St-Louis:</cite> So this is that and then my second question. So we used to have a thing the preview that showed up here on CCG. At least I used to see it. I'm not seeing it anymore. Is this CCG versus W3C thing or it's related to my permission? Yes, Manu. Okay.</p>
+<p id=152b class="phone s02"><cite>Manu_Sporny:</cite> probably not related to your permission. I looked at the error. It looks like the spec generation tool is having a bad day. you will want to point Avon at it to see what the issue is. I did look the all W3C repositories have preview enabled on them automatically.</p>
+<p id=ffc0 class="phone s02"><cite>Manu_Sporny:</cite> So it is hitting an error with the spec generator service and so you'll want to point Avon to it. Avon will probably bring up the issue with CISRE and CISRE will deal with it.</p>
+<p id=494b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=b9db class="phone s01"><cite>Patrick_St-Louis:</cite> I can do a followup with this. yes, Joe.</p>
+<p id=aab8 class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, I have to flag there are some challenges with the PR preview in particular.</p>
+<p id=2396 class="phone s04"><cite>Joe_Andrieu:</cite> It doesn't upload other local files. so it actually breaks sort of this did resolution threat model architecture. I don't know how we fix it. we've been round and round. We've looked at converting to GitHub pages. it's a weird thing that Toby set up and it's magical, but it's also kind of limited. so that's all. Go ahead, man.</p>
+<p id=e55b class="phone s02"><cite>Manu_Sporny:</cite> Yeah, agree. we can always ping Toby like he's around and ask him what he suggests. I know that I struggled with this for respec oas and some of the other things and I think you have to put it in the processing chain …</p>
+<p id=a4e0 class="phone s02"><cite>Manu_Sporny:</cite> if you do it as a post-processing step it doesn't work but if you do it as a pre-processing step it does the right thing if I recall correctly. but you're right it is very brittle. that's</p>
+<p id=de5b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=58fc class="phone s06"><cite>Kevin_Dean:</cite> Yeah, Joe and I have had Toby involved with his distortion. It's not a trivial</p>
+<p id=10006 class="phone s01"><cite>Patrick_St-Louis:</cite> very So, unless there's any objection, we can go through these PRs. So, the first one was open last week. So, we let it a week to, get some feedback. So, we should be able to close this today unless there's objection. These ones we can quickly go over them. But obviously, first I'll have to fix my IPR situation and we'll probably want to leave them open at least a week. this is a decision We want to not close PR that have been open a couple minutes before unless it's a very small sort of typo type of If it's some kind of substantive change, we want to let people review them. so let's start by having a look at this one. Yes, Coyote.</p>
+<p id=4e68 class="phone s03"><cite>Kayode_Ezike:</cite> Just wanted to remind about the FPWD really quickly before we continue.</p>
+<p id=085a class="phone s01"><cite>Patrick_St-Louis:</cite> I'm so sorry, Coyote. I got carried away.</p>
+<p id=41cd class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, no worries.</p>
+<p id=0840 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, please. talk about the Yeah,…</p>
+<p id=7438 class="phone s03"><cite>Kayode_Ezike:</cite> I'll just be a few minutes. Won't be that long at all.</p>
+<p id=a7fd class="phone s01"><cite>Patrick_St-Louis:</cite> thank you for reminding</p>
+<p id=0718 class="phone s03"><cite>Kayode_Ezike:</cite> No worries. so if you recall last week, we made a res proposal to vote on whether we should move the VCOM to FPW first public working draft. which is essentially one of the earlier steps in W3C hosting the VCOM spec. And so after that the following day at the BCWG weekly call we ran the same vote and everybody agreed that it should move forward. And so from there basically VCOM and a number of other specs went through the process of pushing that through. so there's a bunch of process things that we don't have to get into but the upshot is that Ivon has taken it forward.</p>
+<p id=d6a4 class="phone s03"><cite>Kayode_Ezike:</cite> So we've produced a link for him which contains the first draft of the working document which is still hosted on pages but whenever the right buttons have been pressed behind the scenes it will be moved to I think a technical report in W3C space and at that point we'll have a public working draft that folks that is stable for folks to access throughout this incubation period while we have our own editor's draft that will continue to host post on the GitHub pages. So I think I'm hoping to hear more about it in the call tomorrow, but that's just I fight off for everybody who's in case you weren't in the loop with that.</p>
+<p id=d73a class="phone s01"><cite>Patrick_St-Louis:</cite> So, nothing to be done. We're just waiting on a confirmation probably tomorrow and we should have a final update next week if all goes Okay.</p>
+<p id=e7af class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, hopefully I want to</p>
+<p id=ae35 class="phone s02"><cite>Manu_Sporny:</cite> To everything Coyote said. what happens next is Avon moves the documents into place and when Thursday this Thursday hits the bunch of automation will kick in and the documents will appear in TR space at W3C. So, the update we'll hear tomorrow is probably just what Coyote said for all the specs that,…</p>
+<p id=8d05 class="phone s02"><cite>Manu_Sporny:</cite> went to FWD and then on Thursday is when they'll appear in TR space and in all the indexes and all that kind of stuff.</p>
+<p id=9465 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good.</p>
+<p id=f9fa class="phone s01"><cite>Patrick_St-Louis:</cite> Thanks a lot for giving us an insight on the timeline here. Any other comments for the FP WD document? So, let's go over the PRs. So, we'll have a look at this one which I believe we had talked about briefly last time. However, we were a bit tight on the schedule last time. do you want to tell us a part if there's any change has been done since last week and where are we at for this?</p>
+<p id=f9fe class="phone s07"><cite>Parth_Bhatt:</cite> No changes has been done last since last week and yeah it was just adding redirect URL to the step definitions in the OS file and similarly adding the text or pros for that in the index html file. That's it.</p>
+<p id=23ae class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> <a href="https://github.com/w3c/vcalm/pulls">Pull requests · w3c/vcalm · GitHub</a> </p>
+<p id=5831 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good. So it adds a bit a description to redirect Add the actual property with the type and the string. Looks good to me. it's been approved. Is there any objection to merging this today? Yes. part.</p>
+<p id=be11 class="phone s07"><cite>Parth_Bhatt:</cite> there is a new PR which basically relates to this I need to add a not diagram sorry I need to add an example with the actual redirect URL and walk through the exchange pattern just which explains the use of redirect URL as an example in the specification. So that there is a separate issue. I guess 619 I can get the link in here.</p>
+<p id=5ba5 class="phone s07"><cite>Parth_Bhatt:</cite> But this pair should be ready to go for merge.</p>
+<p id=ab1d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah,…</p>
+<p id=d45d class="phone s01"><cite>Patrick_St-Louis:</cite> I think we can probably merge this and just treat any outstanding work as another PR. so we don't drag this one around. if everyone is okay and there's no objection with this we can merge this and the related issue which is 619 will be addressed in a separate par. So to keep the small so we can move them forward and close issues. I see the description was already talking about IV but we want an actual example here. So I think this will be very useful. so I see thumbs up from Manu Dave and Ted. might as well join the gang that will also approve. any objections to merging this</p>
+<p id=a3f7 class="phone s01"><cite>Patrick_St-Louis:</cite> Good commit history is clean. So let's rebase and merge this. We will add a comment here. This has been addressed quick 620 the script x or indirect URL was added.</p>
+<p id=6245 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> <a href="https://github.com/w3c/vcalm/issues/619">Provide example of using `redirectUrl` with an interaction URL (`?iuv=1`) to demonstrate exchange &amp;quot;chaining&amp;quot; · Issue #619 · w3c/vcalm · GitHub</a> </p>
+<p id=64ff class="phone s01"><cite>Patrick_St-Louis:</cite> that with a entry put this in quote close with the comment. So we have a clean documentation of how this was addressed with the link to the code. so these three PRs so the selective disclosure I had to open a new PR. So this used to be the PR before. So I captured the PR here. all these comments has been addressed. They are included. I had a bit of a weird situation. this was dating from 2025.</p>
+<p id=c3ce class="phone s01"><cite>Patrick_St-Louis:</cite> I tried to rebase and then since the location of the repo changed, it was a bit of an issue. so I decided to close this one and just open this new one. It was not a very large PR. this is really to add a sort of pseudo code for selective disclosure. there's a issue that it reference so we don't really have pseudo codes. sorry that's not what I wanted to do. I think this is the one. Yes, sorry. I open the so at I've not seen many pseudo code in specs, but this is something we decided would be useful. this is a non-normative pseudo code to give an example that people could follow.</p>
+<p id=f543 class="phone s01"><cite>Patrick_St-Louis:</cite> So the goal of this PR is just to add this pseudo code in the relevant section. so this is the converting query example to JSON pointers section. so I preserve the text that was in the other R. improved it based on the feedback. what I would like to have is a review from Dave as if possible since you Dave had raised the issue to see if this meets the requirement or if we want a separate approach for this. we had discussed maybe adding a respspec feature to have to support pseudo code bits maybe collapsible section.</p>
+<p id=785c class="phone s01"><cite>Patrick_St-Louis:</cite> I did not do that. if we still think this is worthwhile we can look at this otherwise I think this captures the idea pretty well. is there any questions any feedback? there's been some things added by Manu here. yes, man.</p>
+<p id=78dc class="phone s02"><cite>Manu_Sporny:</cite> Yeah, sorry. I was trying to see if we could clear your IPR things. but ignore those. for typically algorithms written in W3C specifications are pretty prescriptive in that they're like this is exactly what you do but as long as you get the same result you can use any other algorithm you want right this is I think a little different in that it kind</p>
+<p id=2113 class="phone s02"><cite>Manu_Sporny:</cite> tries to suggest that something's an algorithm, but it doesn't have the specificity that you would normally expect. And then it has pseudo code under there that is very very specific. the thing at the bottom might be looks strange to people that are used to reading W3C specs. and the thing at the top is not specific enough and I think people are going to raise issues on it. I'm wondering, I mean, this is something that you could probably point an LLM at and tell them &quot;Hey, convert this stuff into something that looks like this algorithm in this other spec over here.&quot;</p>
+<p id=008e class="phone s02"><cite>Manu_Sporny:</cite> and it would probably do a pretty decent job as long as you, really read the algorithm to make sure it's actually doing the right thing. if we did that for the bottom portion, which is very explicit in what the algorithm is, then I think we could convert the top algorithm into just a highle description of what it's doing and not use class equals algorithm means there are some concrete steps here. Typically there are normative steps that you want to define.</p>
+<p id=ec23 class="phone s02"><cite>Manu_Sporny:</cite> So normally when you define things like this, you want to use normative language in the algorithm. because otherwise it's kind of like why are you defining an algorithm that people aren't required to implement other than get an idea and then it's kind of like if people just get an idea from that and they implement something differently you can't tell them that they implemented the wrong thing which is why I use normative language typically in an algorithm. So the suggestion here is to convert the bottom thing into an actual algorithm with normative statements on what the convert query by example to JSON pointer algorithm is and…</p>
+<p id=65c8 class="phone s02"><cite>Manu_Sporny:</cite> then go from there. I guess we don't have this somewhere. Okay, that's it. Sorry, that was a</p>
+<p id=4d58 class="phone s01"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=82e8 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm just going to review my own PR based on your comments. this and do we want to transform this into a class algorithm section?</p>
+<p id=985d class="phone s02"><cite>Manu_Sporny:</cite> Yeah, let's look at the data integrity spec I think has one second let me try and find an algorithm in there I'm not saying follow this exactly but like that there's an algorithm there where it says …</p>
+<p id=ac8f class="phone s01"><cite>Patrick_St-Louis:</cite> This is</p>
+<p id=3d0b class="phone s02"><cite>Manu_Sporny:</cite> inputs what the expected outputs are and then it runs through the algorithm has must and should statements.</p>
+<p id=3125 class="phone s02"><cite>Manu_Sporny:</cite> And then all the way at the top there it does say if you go to this section the algorithm section it says implementers may implement reasonable defaults and safeguards where's the thing where it says I get that you're trying to do pseudo code,…</p>
+<p id=4392 class="phone s01"><cite>Patrick_St-Louis:</cite> more like a spec algorithm rather than pseudo code. So I was trying really to yeah so maybe not Okay.</p>
+<p id=ffa6 class="phone s02"><cite>Manu_Sporny:</cite> but I like this is gonna sound strong. Yeah, don't do that because it's not normative and so people can do whatever they want. and come up with different implementations that are non-interoperable. So I think we're trying to get something interoperable here.</p>
+<p id=94e0 class="phone s02"><cite>Manu_Sporny:</cite> And so we have to very much say if you implement this algorithm exactly as it is written you will get the right result. yeah.</p>
+<p id=31a3 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://w3c.github.io/vc-data-integrity/#add-proof">Verifiable Credential Data Integrity 1.1</a> </p>
+<p id=e50c class="phone s01"><cite>Patrick_St-Louis:</cite> Kind of describe this but more in a way that we see on these algorithms here whether it's the EDDDSA or so on. So, okay.</p>
+<p id=e3e1 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, exactly.</p>
+<p id=e971 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://w3c.github.io/vc-data-integrity/#algorithms">Verifiable Credential Data Integrity 1.1</a> </p>
+<p id=9275 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I can do this. definitely this makes a lot of sense actually.</p>
+<p id=7d83 class="phone s02"><cite>Manu_Sporny:</cite> And you could probably just take that JavaScript.</p>
+<p id=0646 class="phone s01"><cite>Patrick_St-Louis:</cite> Let's see code.</p>
+<p id=3f19 class="phone s02"><cite>Manu_Sporny:</cite> I've done this on a couple of other algorithms just to see if it actually works. just take the JavaScript code, feed it into an LLM, tell it I want you to generate algorithms that look like this. And it does a pretty decent job at it. you clearly have to check to make sure it actually did the right thing, but since you've already written the pseudo code, you should be able to</p>
+<p id=10007 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, it's a bit repeating what I've just said. Oops. Repetition, but I think it covers it pretty good. And then for the top part, all right. So, kind of remove update this so that it reflects what's in this code. and then this can probably stay in here. Okay.</p>
+<p id=1d42 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. And in fact, the thing that you wrote there at the top,…</p>
+<p id=9f78 class="phone s02"><cite>Manu_Sporny:</cite> the just high level, what's the algorithm doing? that's useful, continue to talk about that. You probably don't want to list it as class algorithm unless you're very clear that this is just kind of like what this algorithm does at a high level and then detail this is exactly what it does. that makes sense.</p>
+<p id=6022 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, I'm actually going to link to this review for example with existing I'll go in and…</p>
+<p id=0848 class="phone s01"><cite>Patrick_St-Louis:</cite> So I'm just going to put this here. Perfect. I think we'll get there. it's going to be on what we're trying to do here? Any other comments related to selective disclosure? JSON pointers otherwise let's try to get the time is flying by. So this is probably what you were mentioning. So there's a bit an error.</p>
+<p id=da7c class="phone s01"><cite>Patrick_St-Louis:</cite> So I'll try to see if there's anything I can do with this. but for the PR itself, so this one was to define this term called index allocator, which we sort of had in the spec, but it's not in the bitstring status list specification. It's not really something that's defined. It's just something that's been appearing in different codes and it's the important component. So this PR is to provide a small description for this field and just make it so that when someone reads the spec and they see index allocator they can understand a little bit more what it's used for. so when they actually implement it they know what to do with it.</p>
+<p id=4c85 class="phone s01"><cite>Patrick_St-Louis:</cite> So it adds a small bit of descriptive text and a OAS field with small description field. So I will go approve this. is there any questions relating to this reminder I will be let it open for the whole week so people can have a look and make sure that this matches their implementation. Very good. the last one did I</p>
+<p id=efc4 class="phone s01"><cite>Patrick_St-Louis:</cite> put it quickly before two. So, yeah. Okay, I'll need to see what's happening here. so the same thing, we wanted a non-normative workflow processing algorithm. So, I'm going to go out on a limb and assume a lot of the feedback that was just given to me regarding the other PR will also apply here. so I will probably need to review this. but the general idea is to define an algorithm to process a step in a workflow and to process a workflow as a whole. So we define the workflows, we define the endpoints to create them and we explain a little bit how to implement them. However, there's no actual normative algorithm for them. so this is an attempt to do this.</p>
+<p id=ecbc class="phone s01"><cite>Patrick_St-Louis:</cite> So I will take the time to review this based on the feedback that was received on the other PR and try to make both this algorithm and the other one for the selector disclosure a bit consistent. any other comments I should keep in mind while reviewing this? Yes, Manu.</p>
+<p id=6f13 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, a plus one. this is a question. do we want this to be a normative algorithm? is that what the issue was about? if it's informative, it's kind of different, right? Okay.</p>
+<p id=03e7 class="phone s01"><cite>Patrick_St-Louis:</cite> It says non-normative. So, I think we probably need to Let's see if there was a bit of any experience to give people non-normative.</p>
+<p id=76c6 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, this one's a little different…</p>
+<p id=450c class="phone s02"><cite>Manu_Sporny:</cite> because it's non-normative. Do we expect the other one to be normative? what was the other issue?</p>
+<p id=6f38 class="phone s01"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=05a5 class="phone s02"><cite>Manu_Sporny:</cite> mountain. Yeah.</p>
+<p id=99b0 class="phone s01"><cite>Patrick_St-Louis:</cite> and I'm going to go hunt it down Here. What do we say? We want to add it. I feel like these are nonnormative. especially with workflows people might do proprietary operations like a step in a workflow might trigger some business action on their side. so not too sure. Yes.</p>
+<p id=10008 class="phone s02"><cite>Manu_Sporny:</cite> I guess here's my concern, Patrick. I'm concerned that you're going to put in all this work to write a very complete, concrete normative algorithm and then somebody's going to come along later and basically be like, &quot;That shouldn't be normative.&quot; I'm not going to do that in my implementation. I'm going to do something else significantly different. And then they're going to argue that both of the algorithms should be non-normative and then we have to go and update all the language to go from musts and shoulds to saying it in a different way.</p>
+<p id=bdb1 class="phone s02"><cite>Manu_Sporny:</cite> I don't have enough of this in my head to suggest whether or not what we should do here. but I am concerned about the amount of time that you're going to spend converting it into, this new language only for us to then throw it out later. potentially.</p>
+<p id=51a9 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, I think it's a valid concern. I'm not too sure. It seems if we still want to address these issues, we'll need to put something in. unless we say we decide we don't want this, we'll need to put something else. It seemed like the most guaranteed way to avoid work later is to make it non-normative. then this raised the question if there's a purpose for this. Patrick St-Louis:</p>
+<p id=8dc8 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, because I mean…</p>
+<p id=350e class="phone s02"><cite>Manu_Sporny:</cite> if it's like why are we spending all the time to write down what somebody might do in the specification when it has nothing to do with interoperability. It's just like trying to give people an idea of how they might implement it. It's language that typically goes in an implementation guide. if it is non-normative, the thing that would Yeah,…</p>
+<p id=2473 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. Yes.</p>
+<p id=52a2 class="phone s02"><cite>Manu_Sporny:</cite> We need to see if other people in the group have strong opinions on whether or not they should be normative or non-normative before you put in the work. I think Patrick, because otherwise</p>
+<p id=c146 class="phone s01"><cite>Patrick_St-Louis:</cite> Let me put this in a draft and…</p>
+<p id=6d33 class="phone s01"><cite>Patrick_St-Louis:</cite> we can so we're coming at the hour but we can review this next week and decide how we want to move forward with this. I'm also thinking I know speaking about Nate was showing an actual implementers guide for these workflows. I forgot what was the name of the organization but they had specific profile and maybe these kind of algorithms they belong more in these sort of secondary artifact. yes, Nate.</p>
+<p id=d21d class="phone s08"><cite>Nate_Otto:</cite> Yeah, sorry I didn't realize the time was so short. just briefly, we did mention as you're saying the possibility of having different performance profiles where workflow processing would be normative but would be a different layer. that is optional and that the test suites would measure them independently and…</p>
+<p id=ba74 class="phone s08"><cite>Nate_Otto:</cite> I'm fine with that option. I would certainly shy away from making them normative and required for implementers of the sort of any base certification</p>
+<p id=493c class="phone s01"><cite>Patrick_St-Louis:</cite> I think we can be normative and…</p>
+<p id=53ad class="phone s01"><cite>Patrick_St-Louis:</cite> what should be the outcome of a workflow whether it's completed or failed but processing the workflow maybe makes a bit less sense and if we are normative about the outcomes and we can test that two implementation they can go through a workflow and both implementation are in a happy state at the end. that might be sufficient to say we have interoperability.</p>
+<p id=7db4 class="phone s01"><cite>Patrick_St-Louis:</cite> for the selective disclosure one. I put the wrong one out of the draft. For the selective disclosure one, this is a bit different. I think we can discuss this a bit more. so with that being said, I think we'll have more discussion for this next time. We are at the hour, so I will end the meeting now in case people have other places to go. thank you for your time on this call and we'll see each other in a week. Meeting ended after 01:00:40 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

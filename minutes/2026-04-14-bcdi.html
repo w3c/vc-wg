@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 14 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>14 April 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Ivan_Herman, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phillip_Long, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#c785">Calendar And Meeting Time Coordination</a></li>
+<li><a href="#e2f1">Agenda For Today's Meeting</a></li>
+<li><a href="#8d08">Threat Model Discussion</a></li>
+<li><a href="#d663">Quantum Safe Crypto Suites Adoption</a></li>
+<li><a href="#35eb">VC Barcode Specification Improvements</a></li>
+<li><a href="#a3d9">High-Level Overview Of Quantum Safe</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=c785>Calendar And Meeting Time Coordination</h3>
+</section>
+
+<section>
+<h3 id=e2f1>Agenda For Today's Meeting</h3>
+<p id=aa55 class="phone s01"><cite>Elaine_Wooton:</cite> I guess we'll wait couple of minutes to see if the other organizers join us.</p>
+<p id=6027 class="phone s02"><cite>Kevin_Dean:</cite> It's a close.</p>
+<p id=5a27 class="phone s03"><cite>Manu_Sporny:</cite> Lane, we should probably get started. I've pinged some of the others. they're noting that the time changed for this call from 11:00 a.m. to 10 a.m. and they were unaware of it and late calendar invites and all that kind of stuff. so we could talk today. I don't know if you had a specific agenda. there are a number of things we need to talk about today.</p>
+<p id=3b07 class="phone s03"><cite>Manu_Sporny:</cite> in theory if the first public working graphs go out what's the next stuff we need to do we need to move over the postquantum crypto suites back into the BCWG we need to get an FPWD for that we need to talk about horizontal review for the BC barcodes thing we need to do threat model for that document we need to…</p>
+<p id=8cc4 class="phone s03"><cite>Manu_Sporny:</cite> then review issues and pull requests and that sort of thing. So, I'll suggest that as a items for the agenda today if …</p>
+<p id=ab9c class="phone s01"><cite>Elaine_Wooton:</cite> Yeah. Yeah.</p>
+<p id=a398 class="phone s03"><cite>Manu_Sporny:</cite> if needed 11 we can talk about the.</p>
+<p id=7781 class="phone s01"><cite>Elaine_Wooton:</cite> And Yeah. I thought the call wasn't it at 10 last week? Was it 11?</p>
+<p id=e165 class="phone s03"><cite>Manu_Sporny:</cite> Yep. Yeah,…</p>
+<p id=774a class="phone s01"><cite>Elaine_Wooton:</cite> Yeah. I went back</p>
+<p id=de5c class="phone s01"><cite>Elaine_Wooton:</cite> to my schedule and apparently my schedule is broken. So, …</p>
+<p id=19a4 class="phone s03"><cite>Manu_Sporny:</cite> It was 10 and then we moved it to 11 and then you probably looked at your schedule that was at 10. these are the growing pains when we move to a VCWG everyone's calendar gets misaligned and…</p>
+<p id=7387 class="phone s01"><cite>Elaine_Wooton:</cite> yeah. Right.</p>
+<p id=de5e class="phone s03"><cite>Manu_Sporny:</cite> the only way you find out is you start missing meetings Yeah.</p>
+<p id=c7ad class="phone s01"><cite>Elaine_Wooton:</cite> And certainly there are things so what we should do is go with the things that you've listed that are agenda items. Get information on the record, that other people can then look at the transcript and at least that information is known.</p>
+<p id=2132 class="phone s01"><cite>Elaine_Wooton:</cite> I think that's a good way to proceed. I think Ivon, you have your hand up.</p>
+<p id=0f87 class="phone s04"><cite>Ivan_Herman:</cite> So to finalize this calendar thing first of all you have created one calendar item for today…</p>
+<p id=5e51 class="phone s01"><cite>Elaine_Wooton:</cite> Do we need to start the recording? Mono, I don't know how to do that.</p>
+<p id=8d72 class="phone s03"><cite>Manu_Sporny:</cite> Everything's auto started. You don't need to do anything. It's auto started,…</p>
+<p id=391f class="phone s01"><cite>Elaine_Wooton:</cite> Okay.</p>
+<p id=ffff class="phone s03"><cite>Manu_Sporny:</cite> auto transcribed. And then once we leave the call, everything will happen automatically. So you don't have to worry about any of</p>
+<p id=78f9 class="phone s01"><cite>Elaine_Wooton:</cite> All right, Ivonne. Sorry about that. Go ahead.</p>
+<p id=a38c class="phone s04"><cite>Ivan_Herman:</cite> which is fine but at some point in time I would like to create a series for the task force…</p>
+<p id=ffd2 class="phone s04"><cite>Ivan_Herman:</cite> but I have to know what the timing Is it this one or…</p>
+<p id=073f class="phone s01"><cite>Elaine_Wooton:</cite> Yeah. Yeah.</p>
+<p id=6013 class="phone s04"><cite>Ivan_Herman:</cite> is it at one hour or later? I haven't seen that.</p>
+<p id=25de class="phone s01"><cite>Elaine_Wooton:</cite> So, we're in the process of doing a doodle poll in order to get community input on what the best time is, and that just didn't happen this week.</p>
+<p id=e4d2 class="phone s04"><cite>Ivan_Herman:</cite> I haven't seen that doodle.</p>
+<p id=9e71 class="phone s01"><cite>Elaine_Wooton:</cite> No, that hasn't happened yet. that just did not transpire this week. So, that will go out.</p>
+<p id=91f7 class="phone s01"><cite>Elaine_Wooton:</cite> And…</p>
+<p id=3a45 class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=c275 class="phone s01"><cite>Elaine_Wooton:</cite> then and…</p>
+<p id=6732 class="phone s04"><cite>Ivan_Herman:</cite> Okay, then that's fine.</p>
+<p id=1992 class="phone s01"><cite>Elaine_Wooton:</cite> then we'll work on that. Yeah. Yeah,…</p>
+<p id=7be1 class="phone s04"><cite>Ivan_Herman:</cite> Then I will do when that's settled. That's fine.</p>
+<p id=74fb class="phone s01"><cite>Elaine_Wooton:</cite> Should be recurring but as Manu said, a couple of times, it'd be good to get community input on what the best day and time would be. So, we're going to do that.</p>
+<p id=10000 class="phone s01"><cite>Elaine_Wooton:</cite> I should be able to send that out today. I was hoping to work with Greg and Wes to kind of do that, but I'll go ahead and get that out today and then once we get some input, then we can set that up. Okay.</p>
+</section>
+
+<section>
+<h3 id=8d08>Threat Model Discussion</h3>
+<p id=8f02 class="phone s04"><cite>Ivan_Herman:</cite> The other thing I wanted to say is an information…</p>
+<p id=f68e class="phone s04"><cite>Ivan_Herman:</cite> because money just referred to it but the fact is that the first public virtue all the hurdles that editors and staff contact have to do but it's now on its way which is a good first step and I began to read the document and I have already created some issues about the document itself. And I still have one more up my sleeve.</p>
+<p id=04db class="phone s01"><cite>Elaine_Wooton:</cite> That's excellent. Thank you, The other thing that we did get in the last couple of days is that guidance on the threat modeling and I think we should wait to really cover that probably until the next meeting when more people are here. but we did get that additional guidance about how to kind of incorporate that into what we're doing. So that's good. Yeah.</p>
+<p id=d8ec class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to discussing it when we have more people here. just to summarize what I think we could do here in some of the complexities for this group. The core verifiable credential data model doesn't have a threat model. It just has a privacy and security consideration section. what's imagined is that that thing would exist and then we would kind of borrow and build off of it. the stuff we're doing for VC barcodes should build off of that kind of base VC data threat model thing. The only issue is that it doesn't exist. And so, unfortunately, that means that we have that other threat model needs to be done before we can kind of build on top of it.</p>
+<p id=f89e class="phone s03"><cite>Manu_Sporny:</cite> And that is going to add a considerable amount of work for us to get to the next step which is just asking for horizontal re review for VC barcodes. that's not super great because someone's going to have to put in, a significant amount of time to put that thing together. that's one option. The other option is for us to put a threat model together for just VC barcodes and just ignore and then kind of backfill the bits that we have back into the core VC data model. That's another approach. That's a little less work.</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> But then more work later on when we have to tease everything apart and all that kind of stuff. So that's just the thoughts on the threat model. We should not underestimate the amount of time that's going to take. everyone sells it. It I've seen everyone saying it should be easy to put one of these things together. I don't believe that for a second. I think it's going to take months to do it which is not super great but is work that just needs to be done. so as far as the biggest chunk of work that needs to be done for the VC barcode spec it is probably the threat model at this point because without the threat model we can't get horizontal review from security and privacy. okay so that's item one.</p>
+<p id=5a66 class="phone s03"><cite>Manu_Sporny:</cite> The other item is a threat model for the data integrity specs that doesn't exist either right and so we're talking about revising the DI suites but there is an expectation I mean we passed security and privacy review before we're just doing an iteration all that kind of stuff but the postquantum suite I would not be surprised if they requested a threat model when we did the postquantum suite And again a lot of the content we do have written but we have to kind of restructure it into a threat model. we need to decide if we're just going to do privacy security consideration sections for postquantum which would be much easier than trying to do a cryp a threat model for all the documents which would be much more time time inensive.</p>
+<p id=9d22 class="phone s03"><cite>Manu_Sporny:</cite> So we don't have to talk about the details, but I think we should know that that is a significant amount of work. potentially definitely at least a month to I would expect three months for us to get that in the right shape. that's it.</p>
+<p id=5bce class="phone s01"><cite>Elaine_Wooton:</cite> Yeah, and sorry for asking things from my lack of experience here, but something should we raise an issue under each of the specs that just deals with the threat model.</p>
+<p id=492a class="phone s03"><cite>Manu_Sporny:</cite> Yeah, probably create threat model 4. it's a side effect of I mean this is all new,…</p>
+<p id=07eb class="phone s03"><cite>Manu_Sporny:</cite> The thread model stuff is like we are the canaries in the coal mine, which has repeatedly hap as von can attest repeatedly happens to this group. We end up being the first people testing new processes at W3C. So yeah sorry say that again it's very painful…</p>
+<p id=4e98 class="phone s04"><cite>Ivan_Herman:</cite> Let's be that.</p>
+<p id=6aaf class="phone s04"><cite>Ivan_Herman:</cite> Let's be proud about that.</p>
+<p id=9923 class="phone s03"><cite>Manu_Sporny:</cite> but yes we're so proud of that. we've survived so far so that's great right. I mean these canaries are still chirping. so probably two issues. One of them is the horizontal review tracking issue and the other one is the threat model creation issue.</p>
+<p id=e570 class="phone s01"><cite>Elaine_Wooton:</cite> Ivon knows his name. Go ahead.</p>
+<p id=2607 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I think the way the threat model should be handled exactly per document etc.</p>
+<p id=647c class="phone s04"><cite>Ivan_Herman:</cite> I think this is a discussion we should have on the veric group level because this is relevant for all the document and we should try to get some level of consistency how we treat the different things in the different specifications that we have. So this is something for not necessarily this week but one of these weeks we can drop a mail to the chairs.</p>
+<p id=291e class="phone s01"><cite>Elaine_Wooton:</cite> So, some do we just raise it there? Does it get on the agenda there? How does that work?</p>
+<p id=69e5 class="phone s04"><cite>Ivan_Herman:</cite> there is a ma specific chairs mailing list maybe that's the best thing and…</p>
+<p id=3ddc class="phone s01"><cite>Elaine_Wooton:</cite> Okay.</p>
+<p id=06c8 class="phone s04"><cite>Ivan_Herman:</cite> then we have a chair's called on Fridays when we define we decide the agenda for the week to come so let's do it that way</p>
+<p id=e77c class="phone s01"><cite>Elaine_Wooton:</cite> So Mana, you had other points I think on your alternative agenda to the agenda that doesn't exist.</p>
+<p id=ae8c class="phone s03"><cite>Manu_Sporny:</cite> Let's hold on one second. I'm going to try to quantum. I'm going to try to quantum. I'm trying to raise the issues now so we don't forget it, Elaine. So, give me half a second. so this is a horizontal review. this issue is to track the horizontal review process for the VC bar code specification.</p>
+<p id=6773 class="phone s03"><cite>Manu_Sporny:</cite> Okay so that's issue 40. and then create a threat model for VC barcodes. this issue the specification needs a threat model codes. before we can get a horizontal review thought you could do dependency. relationships marked as parent and then that would be horizontal.</p>
+<p id=2f23 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-barcodes/issues/40">Horizontal Review for VC Barcodes · Issue #40 · w3c/vc-barcodes · GitHub</a> </p>
+<p id=299b class="phone s03"><cite>Manu_Sporny:</cite> No. Mark is Horizontal review is blocked by this one. So that one is Mark is blocked by threat model. All right. So those are created there. And then we need the same ones. Sorry, this is taking so long. we need So that's issue 41 there.</p>
+<p id=08c6 class="phone s03"><cite>Manu_Sporny:</cite> And then we need horizontal review for safe data integrity crypto suites. And I'll note that we can't even do the horizontal review because we haven't moved this spec over yet. That's one of the things that we need to talk about today. But this issue is drag. Okay. And then oops new issue.</p>
+<p id=10002 class="phone s03"><cite>Manu_Sporny:</cite> So that's issue 18 NDI quantum safe and then create a threat model for quantum safe data integrity clip suites. there and then this is blocking the review relationships blocking horizontal review. There we go. So that's created as All right. Good. So those are created.</p>
+<p id=220c class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-barcodes/issues/41">Create a Threat Model for VC Barcodes · Issue #41 · w3c/vc-barcodes · GitHub</a> </p>
+<p id=fedb class="phone s03"><cite>Manu_Sporny:</cite> I guess a question for one of the things Simone said is that if the threat model is small enough put it in the main specification. I'm hoping for VC barcodes the thread model is small enough that we can put it in an appendix. if not, we could just put it in another I'm trying to avoid creating yet another repository and yet another publication process for the threat model of just because we have 20 specs and having a different threat model document and a different publication request for all of them feels like unnecessary work.</p>
+<p id=cf45 class="phone s03"><cite>Manu_Sporny:</cite> I am wondering if we could just create a file in each repository, call it threat-model and then refer to it from the main spec and then maybe I don't know if we can just mark it as a note and we can at least do the management in the same repository. and then in the future if we need to publish it in a different TR space and I'm hoping we not need to do that we could do some fancy stuff with Akidna to just publish different documents.</p>
+<p id=e0c6 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c-ccg/di-quantum-safe/issues/18">Horizontal Review for Quantum Safe Data Integrity Cryptosuites · Issue #18 · w3c-ccg/di-quantum-safe · GitHub</a> </p>
+<p id=d743 class="phone s03"><cite>Manu_Sporny:</cite> What are your thoughts on that?</p>
+<p id=6bef class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c-ccg/di-quantum-safe/issues/19">Create a Threat Model for Quantum Safe Data Integrity Cryptosuites · Issue #19 · w3c-ccg/di-quantum-safe · GitHub</a> </p>
+<p id=16dd class="phone s04"><cite>Ivan_Herman:</cite> So having several documents that are eventually in TR space and…</p>
+<p id=3602 class="phone s04"><cite>Ivan_Herman:</cite> handled by Akidna in the same repository is possible. The EPUB working group has all its specification exactly the opposite of PC. It has all its specifications in one single repository and giant one but still the same including recommendations and nodes. So that is by itself not a problem and we can copy paste the acid tops from there.</p>
+<p id=3a18 class="phone s04"><cite>Ivan_Herman:</cite> I think that the threat model itself eventually I expect they will ask us to publish it as a note because they need a stable URL for that and I don't think that the gith IO will be acceptable for that purpose. But I don't know we already did something in this sense not absolutely clean with the vocabulary in VCDM and DI and we might want to think that again.</p>
+<p id=e5ec class="phone s04"><cite>Ivan_Herman:</cite> we left essentially formally normative things in the repository and we refer to it from GitHubio to GitHub io not sure whether we want to do that but that can be decided later having it in the same repository is by itself not put it it's simpler…</p>
+<p id=a8e2 class="phone s03"><cite>Manu_Sporny:</cite> Okay, that sounds good. Ivonne, I guess the other so that's good. So, let's just put a document called model.html in all the repositories and that'll be our working, document. Okay.</p>
+<p id=68fc class="phone s04"><cite>Ivan_Herman:</cite> if you put it in a separate folder within the repository I believe…</p>
+<p id=8a07 class="phone s03"><cite>Manu_Sporny:</cite> And then I guess got it. Okay. So,…</p>
+<p id=0ef0 class="phone s04"><cite>Ivan_Herman:</cite> because there might be excuse me…</p>
+<p id=a552 class="phone s03"><cite>Manu_Sporny:</cite> we'll Yeah,…</p>
+<p id=7528 class="phone s04"><cite>Ivan_Herman:</cite> because there might be diagrams etc. Ivan Herman:</p>
+<p id=6514 class="phone s03"><cite>Manu_Sporny:</cite> you got it. All right. So, we'll put it in a directory called threat-model and then index.html and then diagrams if we need it. And then, we will mark those as just editor's draft notes. and then kind of use that, it'll be published via GitHub io just in the editor just for review. and then if we need to publish in a new note space, whatever, we can do that later.</p>
+<p id=0dc4 class="phone s04"><cite>Ivan_Herman:</cite> Again this is a matter for the whole working group of this task force.</p>
+<p id=d8cc class="phone s03"><cite>Manu_Sporny:</cite> That feels workable to me for every spec that the BCWGs has. So maybe if go ahead. Yeah, I guess what I'm suggesting is we walk in there with this proposal tomorrow and…</p>
+<p id=d020 class="phone s04"><cite>Ivan_Herman:</cite> Okay. yeah,…</p>
+<p id=2be1 class="phone s03"><cite>Manu_Sporny:</cite> see what people I think it's good and workable and easy to maintain. that's it for I guess the threat modeling discussion. Elaine,…</p>
+<p id=adf0 class="phone s01"><cite>Elaine_Wooton:</cite> I think we need Wes. So</p>
+<p id=8d93 class="phone s03"><cite>Manu_Sporny:</cite> maybe the next agenda could be talking about the quantum safe crypto suites. I can speak to it a bit. go ahead.</p>
+<p id=c72c class="phone s04"><cite>Ivan_Herman:</cite> I'm just wondering do we want to discuss technical things in the barcodes pack or we leave it for another call? How do you want to organize that? I have several issues that I raised in the last half an hour. One of them is more technical. The other is editorial. It no use to discuss it here. And I have one more relatively important issue that I want to raise and…</p>
+<p id=9bf2 class="phone s04"><cite>Ivan_Herman:</cite> I don't know whether we want to have that issue or we plan to discuss it or whatever. I don't know how you plan to work with all the documents.</p>
+<p id=7f79 class="phone s01"><cite>Elaine_Wooton:</cite> Yeah. …</p>
+<p id=8820 class="phone s01"><cite>Elaine_Wooton:</cite> Mono can chime in, but I think it'd be better to get your input and discuss the issues. Go ahead and discuss them, get them on the transcript than to go ahead and wait another week because let's just move ahead with things.</p>
+<p id=02d5 class="phone s04"><cite>Ivan_Herman:</cite> I will read an issue later today or tomorrow. No.</p>
+<p id=6dd1 class="phone s03"><cite>Manu_Sporny:</cite> plus one to that. just Ivon, if it's okay, I want to make sure that we talk about getting the quantum safe we have a community draft. We need to move it over D. Let's get that handled and then we can talk about the BC barcodes issues if that works for you.</p>
+<p id=c09a class="phone s04"><cite>Ivan_Herman:</cite> Yeah, sure.</p>
+<p id=2c49 class="phone s03"><cite>Manu_Sporny:</cite> And Elaine…</p>
+<p id=9ea3 class="phone s01"><cite>Elaine_Wooton:</cite> So that.</p>
+<p id=0951 class="phone s03"><cite>Manu_Sporny:</cite> if that works for you as well. I don't know.</p>
+<p id=fe6e class="phone s01"><cite>Elaine_Wooton:</cite> So that's you, right? So go for it.</p>
+</section>
+
+<section>
+<h3 id=d663>Quantum Safe Crypto Suites Adoption</h3>
+<p id=18af class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah. Yeah. so for the quantum safe spec, remember that we have not adopted the community group draft yet. Greg Bernstein's working on that. He has made a number of updates and changes. I have started implementing MLDDSA at least the quantum safe version of it. sorry MLDDSA is quantum safe. I've started implementing MLDDSA based on the spec that Greg wrote so that we get to implementation sooner than later. it's going fairly wellish.</p>
+<p id=8cd6 class="phone s03"><cite>Manu_Sporny:</cite> we need to move. and so the reason there is now a bit of a time pressure is because some recent research has theorized a way to break all of the cryptography we use today many years before we thought it was going to happen. So 2029 is now the date that Google and Cloudflare We are expecting Australia previously set 2030 before they even knew about these new breakthroughs. So we need to get this thing in place sooner than later.</p>
+<p id=a860 class="phone s03"><cite>Manu_Sporny:</cite> And in order to work on it, we have to get it moved over from the community group to this group. And so we need to request that the credentials community group publish a final community group specification so that this group can adopt it. In order to do that, I believe Avon has to resolve that we are adopting the community group specification as soon as the final community group specification has been published and has the proper IPR commitment.</p>
+<p id=595b class="phone s03"><cite>Manu_Sporny:</cite> So I think we should probably run a proposal today to do that. And then Ivonne we need to rerun the proposal again tomorrow in the full working group call and then Elena and Wes if the proposal passes today we need to request that we run that proposal tomorrow. and I can suggest what the proposal text would be. but let me pause for a second and see if folks feel like that's appropriate to do at this point and…</p>
+<p id=7a43 class="phone s03"><cite>Manu_Sporny:</cite> if it's the community group draft that we want to use as our initial draft and so on so forth.</p>
+<p id=cc4a class="phone s01"><cite>Elaine_Wooton:</cite> Yeah, Ivon.</p>
+<p id=d365 class="phone s01"><cite>Elaine_Wooton:</cite> Go ahead.</p>
+<p id=7932 class="phone s04"><cite>Ivan_Herman:</cite> Yes and…</p>
+<p id=7a00 class="phone s04"><cite>Ivan_Herman:</cite> the working group has to agree with that but these were in the charter the sort of the additional things. So we have to be absolutely sure that we have the manpower to do that. I'm looking at the community draft report now. I see who is chairing another working group. I am not sure that he will have the time to do that. I see money who doesn't have any document to edit in general but he does already a lot of things.</p>
+<p id=6649 class="phone s04"><cite>Ivan_Herman:</cite> So I am not sure we should rely on money once more and Greg has also some other things. So the question that will come tomorrow if we ask that are we sure that we have enough people to carry that document to the end and there are some names there that I do not know I don't know whether they will join or not join and what will happen there.</p>
+<p id=9893 class="phone s01"><cite>Elaine_Wooton:</cite> Yeah, man.</p>
+<p id=a44d class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to that. this is a special spec in that we don't have a choice when all of the other cryptography falls this is going to be such a massive buyer that we will drop every other spec on the floor to get this one done and…</p>
+<p id=ac8c class="phone s04"><cite>Ivan_Herman:</cite> So I understand that I understand I didn't go into the details and I</p>
+<p id=62cf class="phone s03"><cite>Manu_Sporny:</cite> across the line. Right? So that is the kind of all cryptography failing everywhere is something that is a very strong motivator for all of us. I will jump. Gg the main one. Greg Greg is the primary editor for this. He has said that he has the time and he will be pushing that forward. and then the rest of us will be supporting even though it's quantum, even though it seems like it's a big deal, it' really. It's just a different algorithm plugged into the data integrity stuff that we already have. Yep.</p>
+<p id=75b7 class=irc><cite>&lt;Phillip_Long&gt;</cite> +1 to fast tracking this community task force proposal and asking the CCG to propose the formation of the task forces </p>
+<p id=a6f4 class="phone s04"><cite>Ivan_Herman:</cite> could not understand the mathematics anyway I presume. But what happens to I see two names on the list of editors in the current situation they cannot become editors of the SP.</p>
+<p id=ab36 class="phone s03"><cite>Manu_Sporny:</cite> I don't just to really quickly answer. I don't think they're going to be a part of the working group. They're around they're just their focus is on European Union stuff.</p>
+<p id=4702 class="phone s04"><cite>Ivan_Herman:</cite> But then they will have to be dropped from the editor's list.</p>
+<p id=508f class="phone s03"><cite>Manu_Sporny:</cite> Yes, correct. Yep. Yep.</p>
+<p id=b8de class="phone s04"><cite>Ivan_Herman:</cite> If that is not a problem then it is not a problem. Sorry to be difficult but that's my job.</p>
+<p id=0413 class="phone s03"><cite>Manu_Sporny:</cite> We appreciate</p>
+<p id=25aa class="phone s01"><cite>Elaine_Wooton:</cite> Somebody has to do it.</p>
+<p id=9722 class="phone s01"><cite>Elaine_Wooton:</cite> Ivonne. Yes, we appreciate it. And I don't know. I mean, I'm not a crypto person for the most part, but if we need another editor and I'm on these calls anyway, I'm happy to take a increased role in that. also. Okay. Anything more? I know there's more. Go ahead, Manu.</p>
+<p id=941e class="phone s03"><cite>Manu_Sporny:</cite> I think let me see. This not It's a suggested proposal. If everyone's okay with that, we could run the main proposal and then just do plus one minus one plus Z. Does anyone want any changes to that? Ivon, do you see any issue there?</p>
+<p id=c801 class="phone s05"><cite>Wesley_Smith:</cite> Why is it called</p>
+<p id=8018 class="phone s04"><cite>Ivan_Herman:</cite> I'm just reading. probably put in the proposal that we would transfer that the repository to W3C space. once all the IPR dance is done on the CCG side.</p>
+<p id=47f6 class="phone s03"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=d1f9 class="phone s01"><cite>Elaine_Wooton:</cite> Sorry.</p>
+<p id=3389 class=irc><cite>&lt;Phillip_Long&gt;</cite> I have to drop for a competing meeting but will stay here to vote on the tf proposal </p>
+<p id=2f26 class="phone s03"><cite>Manu_Sporny:</cite> appropriate IP commitments have been made something like that.</p>
+<p id=24fb class="phone s04"><cite>Ivan_Herman:</cite> I don't know how we are with that. Yeah.</p>
+<p id=0240 class="phone s03"><cite>Manu_Sporny:</cite> Avon and then Wes, I think you had a question that I didn't quite hear.</p>
+<p id=aca2 class="phone s05"><cite>Wesley_Smith:</cite> It's fine. Not I'm wondering if there is a better name tople framing for the set of low-level cryptographic primitives that make up this document than quantum safe.</p>
+<p id=d84a class="phone s04"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=cba4 class="phone s05"><cite>Wesley_Smith:</cite> I agree that is something that they all have in common. but we can bike shut that later.</p>
+<p id=838e class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to that. we'll have to bike shed that before we do the FPWD, but we don't have to bike shed it before we move it over, guess is my thoughts on that. I guess would there be any objections to the proposal as written? Do there need to be any other modifications to it? And so I need a high sign from Elaine or Wes to run the proposal.</p>
+<p id=85bd class="phone s05"><cite>Wesley_Smith:</cite> Sorry. You need Ela or…</p>
+<p id=2522 class="phone s03"><cite>Manu_Sporny:</cite> Or thumbs up.</p>
+<p id=e338 class="phone s05"><cite>Wesley_Smith:</cite> the should I run it or…</p>
+<p id=1d8a class="phone s03"><cite>Manu_Sporny:</cite> Should I run the proposal or not? I can't run I can't run anything by myself.</p>
+<p id=db21 class="phone s01"><cite>Elaine_Wooton:</cite> Yes. Yes.</p>
+<p id=eef4 class="phone s03"><cite>Manu_Sporny:</cite> Okay. yeah.</p>
+<p id=e2aa class="phone s05"><cite>Wesley_Smith:</cite> Elaine given that we run?</p>
+<p id=9cde class="phone s03"><cite>Manu_Sporny:</cite> Yeah, that would be better.</p>
+<p id=ef18 class="phone s05"><cite>Wesley_Smith:</cite> Yep. …</p>
+<p id=b3ac class="phone s03"><cite>Manu_Sporny:</cite> You just cut and…</p>
+<p id=00b8 class=irc><cite>&lt;Phillip_Long&gt;</cite> no objections here </p>
+<p id=a3e1 class="phone s01"><cite>Elaine_Wooton:</cite> Yeah. Go ahead, Wes.</p>
+<p id=7abf class="phone s03"><cite>Manu_Sporny:</cite> paste. No.</p>
+<p id=ae5a class="phone s05"><cite>Wesley_Smith:</cite> and we don't need a short name specified for this. Okay.</p>
+<p id=a164 class="phone s04"><cite>Ivan_Herman:</cite> That has to be done with the working group when we do first public.</p>
+<p id=6a6d class="phone s04"><cite>Ivan_Herman:</cite> Not now.</p>
+<p id=10003 class="phone s05"><cite>Wesley_Smith:</cite> Right, I think that is just about everyone with a plus one. Thank you for voting.</p>
+<p id=a752 class=irc><cite>&lt;Wesley_Smith&gt;</cite> PROPOSAL: Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( <a href="https://w3c-ccg.github.io/di-quantum-safe/">Quantum-Safe Cryptosuites v0.3</a> ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made. </p>
+<p id=1263 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 </p>
+<p id=63d1 class="phone s03"><cite>Manu_Sporny:</cite> So, at this point, we need to run this again tomorrow in the main call. And then if that passes, we need to request that Greg create a CG final, which he knows how to do. And then we request that the CCG chairs publish it using their infrastructure. there's a process we know to follow.</p>
+<p id=1303 class=irc><cite>&lt;Manu_Sporny&gt;</cite> +1 </p>
+<p id=8445 class="phone s03"><cite>Manu_Sporny:</cite> It'll be pretty smooth. Okay. Yeah.</p>
+<p id=1323 class=irc><cite>&lt;Wesley_Smith&gt;</cite> +1 </p>
+<p id=134b class=irc><cite>&lt;Phillip_Long&gt;</cite> +1 </p>
+<p id=4e41 class="phone s04"><cite>Ivan_Herman:</cite> The IP thing takes some time,…</p>
+<p id=1373 class=irc><cite>&lt;Elaine_Wooton&gt;</cite> +1 </p>
+<p id=b04f class="phone s04"><cite>Ivan_Herman:</cite> doesn't it?</p>
+<p id=1413 class=irc><cite>&lt;Ivan_Herman&gt;</cite> +1 </p>
+<p id=9c4f class="phone s03"><cite>Manu_Sporny:</cite> As well as long as Dennis and Andre move quickly, it shouldn't. But if it does, then it'll take a week or two. All right,…</p>
+<p id=144b class=irc><cite>&lt;Dave_Lehn&gt;</cite> +1 </p>
+<p id=51bc class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=c1ac class=resolution><strong>RESOLUTION:</strong> Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( <a href="https://w3c-ccg.github.io/di-quantum-safe/">Quantum-Safe Cryptosuites v0.3</a> ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made.</p>
+<p id=348c class="phone s03"><cite>Manu_Sporny:</cite> I think that's that agenda item. I think at this point we could probably roll into your concerns, Avon.</p>
+<p id=5d8f class="phone s04"><cite>Ivan_Herman:</cite> Before I roll in my concern, as you say, I may be the only one who doesn't understand these things.</p>
+<p id=10004 class="phone s04"><cite>Ivan_Herman:</cite> I would welcome if it's one of the codes either here or on the working group level somebody gave a sort of a high level overview of what these quantum safe means mathematically or pract because I took a certain amount of time to understand what sdsa and friends do. Not that I understand all the details but I feel like okay again I think we should have some sort of a higher level message to the outside world. What we do here</p>
+<p id=d360 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to that. I think Greg is probably ideally suited to do that. the other I guess I was the main verifiable credential working group meeting probably needs to be very aware of what the subgroups are doing at least at a high level and I thought maybe the agendas there would start with 30 minutes on each work item just like a heads up this is what we're working on as starting material and I would imagine that we might do some of that at the phase face to face. clearly we can't spend all of our time there just learning about…</p>
+<p id=21bd class="phone s03"><cite>Manu_Sporny:</cite> what everybody's doing, but getting some base level understanding I think would be a good thing. It's a plus one to what you said</p>
+<p id=ed05 class="phone s05"><cite>Wesley_Smith:</cite> Is the request for a formal writeup or is the request for just a sort of highle discussion?</p>
+<p id=d0d2 class="phone s04"><cite>Ivan_Herman:</cite> in an informal presentation and…</p>
+<p id=c996 class="phone s04"><cite>Ivan_Herman:</cite> discussion to make a mini conference presentation.</p>
+<p id=f4eb class="phone s04"><cite>Ivan_Herman:</cite> on what the heck does it mean to say we do quantum s crypto because people here including myself make presentations sometimes about VC work. I have a relatively high level understanding of the current suite which we have published. But if somebody asks me okay what do you do with quantum safe then I say absolutely no idea.</p>
+<p id=8e19 class="phone s05"><cite>Wesley_Smith:</cite> Money, are you working from an agenda or something to that effects.</p>
+<p id=3483 class="phone s03"><cite>Manu_Sporny:</cite> No. I think we talked about agenda before you were able to join Wes. I think the next item on the agenda is Avon mentioned that he had a couple of FC barcode related issues that he raised and…</p>
+<p id=deb4 class="phone s03"><cite>Manu_Sporny:</cite> we could go through those and talk about them.</p>
+<p id=5737 class="phone s05"><cite>Wesley_Smith:</cite> right, let's do it. Ivon,…</p>
+<p id=4171 class="phone s04"><cite>Ivan_Herman:</cite> I Yeah,…</p>
+<p id=8c3c class="phone s05"><cite>Wesley_Smith:</cite> sorry. …</p>
+<p id=0a6a class="phone s04"><cite>Ivan_Herman:</cite> go on.</p>
+</section>
+
+<section>
+<h3 id=35eb>VC Barcode Specification Improvements</h3>
+<p id=42c0 class="phone s05"><cite>Wesley_Smith:</cite> would you like me to screen share? Would you like to drop links to</p>
+<p id=10005 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, for the time being I have actually one that I did not get to raise an issue yet because it was right before this call and that for me is the most complicated one. So maybe I just ask I am looking at the section on optical barcode credential and I see that we define a class for American blah blah driver license scannable information and it bothers me because we are talking about the W3C recommendation.</p>
+<p id=10006 class="phone s04"><cite>Ivan_Herman:</cite> I have no problem if among other things we define a special class for a special application but the general part of the specification should not be aimed at a specific American format for some credential. So I just don't understand what this section 2.1 and all the classes…</p>
+<p id=b0db class="phone s05"><cite>Wesley_Smith:</cite> Money.</p>
+<p id=efee class="phone s04"><cite>Ivan_Herman:</cite> which are there really do and how this comes into the generality of a W3C specification.</p>
+<p id=fcfd class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one. Completely agree. And I'm going to hand this over to you, Wes, here in half a second. But yes, Savvon, we should create a specification that is aligned with global standards first and then may need to, point to specific things about the US implementation of it. The reason it's written this way is because the US was the first place that implemented, this stuff in pilot and production capacities. there is an ISO, I think, and this is Wes where I'm going to quickly get out of my depth. there is an International Driver's License Standard published by ISO, which I think has some international fields. AMVA stands for the American Association of Vehicle Administrators. It's all the Department of Motor Vehicles in the United States. And they have their own standards that extend the international standard with USP specific.</p>
+<p id=d998 class="phone s03"><cite>Manu_Sporny:</cite> It's Canada, I believe, Mexico and the US specific fields that, we needed to be able to sign over. So, we are going to need to as a group figure out how we're going to address that cleanly in the specification. We were clearly going to have to, eat me. Maybe we need to add a legacy encoding appendix or a AMBA specific appendix to cover their specific things and then generalize to the ISO international drivers license standard.</p>
+<p id=0232 class="phone s03"><cite>Manu_Sporny:</cite> Wes, I don't know if you have anything else you'd like to add to</p>
+<p id=7d5e class="phone s05"><cite>Wesley_Smith:</cite> Yeah, I largely agree.</p>
+<p id=45ca class="phone s05"><cite>Wesley_Smith:</cite> So you're absolutely right, Ivon. I think an important point to make is that we are designing things like optical barcode credential to be fully generic and we need to make it clear in the spec that the support for a specific amba structure of document is not strongly coupled to any of the core technologies in the document.</p>
+<p id=557d class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=e3d5 class="phone s05"><cite>Wesley_Smith:</cite> The core technologies are generic for how to put a VC in a barcode and also we support this exact one class type of existing document and I think if we can support more and more general forms then that's great. but again as long as the specific format isn't strongly coupled to kind the main features of the technology…</p>
+<p id=ab0e class="phone s05"><cite>Wesley_Smith:</cite> which it isn't then I think that that should be okay or at least I would think. thoughts Savon. Yeah.</p>
+<p id=d258 class="phone s04"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=bcbc class="phone s04"><cite>Ivan_Herman:</cite> it should be And I have no problem That's how you pronounce it. so I have no problem if the ambass thing goes into some sort of an appendix because it's there and it has to be defined somewhere and it might be the first in a long line of similar document. The core should not depend and should not include anything which is amber related. Now one I understand thanks for the explanation.</p>
+<p id=eb9f class="phone s04"><cite>Ivan_Herman:</cite> I have one more comment on that. Changing this should have a very high priority. If this document now was published as a first public working draft the day after tomorrow, it goes out to IPR. I am almost sure that mainly I am to say that but this is the way it is in the political climate of today that will come up and we may get very nasty comments about This is something that I should have realized before we publish. So it should get a very high priority to get that updated and changed I would say even if it's not perfect but to be changed within a week or two to avoid any kind of unnecessary discussion about</p>
+<p id=2062 class="phone s04"><cite>Ivan_Herman:</cite> That</p>
+<p id=2a38 class="phone s05"><cite>Wesley_Smith:</cite> Yeah, understood.</p>
+<p id=8c91 class="phone s05"><cite>Wesley_Smith:</cite> We absolutely can do that. something that occurs to me is that what's actually happening in that type scannable, whatever. PDF47 barcodes are essentially key value pairs typically. and they have fields and then data associated with them. and that type is essentially a canonicalization scheme for a set of key values that are defined in the AMP specification.</p>
+<p id=78e4 class="phone s05"><cite>Wesley_Smith:</cite> I expect we could generalize the feature to be how to canonicalize arbitrary sets of PDF47 keys that are defined somewhere and…</p>
+<p id=8a47 class="phone s05"><cite>Wesley_Smith:</cite> then we can have the AMV one be a specific instance of that feature in an appendix or something else. All thanks for bringing that up. Did you have other topics you wanted to discuss?</p>
+<p id=a81c class="phone s04"><cite>Ivan_Herman:</cite> Sounds good to me.</p>
+</section>
+
+<section>
+<h3 id=a3d9>High-Level Overview Of Quantum Safe</h3>
+<p id=4d81 class="phone s04"><cite>Ivan_Herman:</cite> There is another one which I put into an issue but I can just explain The mental model I get from the introductory part of the spec that I have a traditional credential created somehow signed by one of the crypto suits which we have and we take the whole thing as a JSON LD stuff and go through seor and produce something which can then be turned into a barcode or a QR code or whatever the end result is.</p>
+<p id=fdec class="phone s04"><cite>Ivan_Herman:</cite> In the 2.1 as well as in the section on the crypto suite whose name I don't remember we are talking about and I quote from the first thing is just a moment I try to remember where it's in the issue. I don't find the exact content, but it says the barcode secures the original barcode information.</p>
+<p id=4ba2 class="phone s04"><cite>Ivan_Herman:</cite> And in the crypto suite, the only difference it emphasizes between the new crypto suite and let's say ACDSA that there is an additional information about barcode going there. And I just don't understand for me from the beginning the barcode is the end result and suddenly the barcode is the subject of crypto.</p>
+<p id=d9c2 class="phone s04"><cite>Ivan_Herman:</cite> That two doesn't add up for me.</p>
+<p id=4c6a class="phone s05"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=10007 class="phone s05"><cite>Wesley_Smith:</cite> good point. And if the introductory text in the specification isn't making this clear, we definitely need to fix that. So, there are two ways that you can create A VC barcode can either be a verifiable credential, as you said, encoded and stuffed into a barcode, turned into bytes that are then turned into a barcode and put on cument. A verifiable credential can also be used to digitally sign over an existing physical barcode. That's I think the point of confusion and we do that for example on PDF417s on driver's licenses. with respect to the mental model your mental model could either be that you take an existing barcode and modify it in place or you create a new barcode.</p>
+<p id=89e9 class="phone s05"><cite>Wesley_Smith:</cite> I'm not sure that it usually matters which way you view that, so you can either take a VC and stuff it in a barcode or you can take a VC and append it to an existing barcode to sign over the other data. And that's where the XI crypto suite comes in, which is that if you add a VC to an existing barcode, the digital signature needs to not only sign over the VC itself, but also the other data in the barcode. So, for example, going back to the previous point about this what one of these VCs looks like in an AMA driver's license, it's actually very simple. There's very little data in credential subject. And that's because all the data in that we would want in credential subject is already in the barcode. That's stuff like height, name, weight, address, whatever. so that data is already in the barcode.</p>
+<p id=10de class="phone s05"><cite>Wesley_Smith:</cite> we don't need it in the C credential subject as long as the VC crypto suite also signs over the rest of the barcode.</p>
+<p id=39e3 class="phone s05"><cite>Wesley_Smith:</cite> And that's basically it. So you can either put an empty VC at the end of a barcode and have the signature cover all the other data in the barcode or you can put the data in the VC and have the barcode be just a VC. Does that make sense?</p>
+<p id=b6e1 class="phone s04"><cite>Ivan_Herman:</cite> It does.</p>
+<p id=42bc class="phone s04"><cite>Ivan_Herman:</cite> I would like to see that clearly defined in the spec…</p>
+<p id=a3da class="phone s04"><cite>Ivan_Herman:</cite> because what you just said is absolutely new to me.</p>
+<p id=a5a5 class="phone s05"><cite>Wesley_Smith:</cite> Yeah, if…</p>
+<p id=c5c3 class="phone s05"><cite>Wesley_Smith:</cite> if the spec's not making that clear, 100% agree that needs to change.</p>
+<p id=7da4 class="phone s05"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=dc43 class="phone s04"><cite>Ivan_Herman:</cite> So these were the two things that I hit.</p>
+<p id=98da class="phone s04"><cite>Ivan_Herman:</cite> I put in some editorial things which are secondary.</p>
+<p id=abaa class="phone s05"><cite>Wesley_Smith:</cite> All right. Ivonne, there was nothing else that you wanted to bring up.</p>
+<p id=8ffe class="phone s04"><cite>Ivan_Herman:</cite> No, no, no. Thanks for giving me some time.</p>
+<p id=bdf7 class="phone s05"><cite>Wesley_Smith:</cite> Yeah, absolutely. Thank you for putting the time and effort in to think about these things. all right. I see we have five minutes left. was there anything else administrative that we needed to go over today? Effective process, anything like that.</p>
+<p id=3d82 class="phone s04"><cite>Ivan_Herman:</cite> That's it.</p>
+<p id=f3de class="phone s03"><cite>Manu_Sporny:</cite> So we discussed at the beginning of the call, that Elaine mentioned we need to send out a doodle poll to find a right time before we lock it in. we definitely need to put in kind of repeating calendar invites so it gets locked into people's calendars so they don't accidentally schedule over the call. so kind of those process things need to happen and then for the next call we do need to start probably triaging each one of these issues and depending figuring out what are the PRs that are going to address the issues what are we going to focus on what's our priority like what are the things we need to focus</p>
+<p id=dd40 class=irc><cite>&lt;Phillip_Long&gt;</cite> Sorry - have to drop for another meeting. </p>
+<p id=1680 class="phone s03"><cite>Manu_Sporny:</cite> on clearly we have the postquantum thing kind of looming over our heads. postquantum signatures do not fit in 143 bytes. They're way bigger. So we need to figure out ways to mitigate kind of the postquantum thing. that is a pretty concerning piece of work that we would need to do sooner than later. We also want to kick off the horizontal review pro process because it can take six to nine months to do it and the longer it takes for us to kick the process off the longer we have to wait to publish this as a global standard which means that we have to put considerable effort into the threat model for VC barcodes and data integrity as well.</p>
+<p id=641e class="phone s03"><cite>Manu_Sporny:</cite> So just some things to think about we need to start classifying processing issues and assigning people to work on those issues that address those issues. We need to work on the horizontal review process and get that pretty far down the line and so on so forth. That's it.</p>
+<p id=315f class="phone s05"><cite>Wesley_Smith:</cite> Noting that we have two minutes left, I don't think it's probably worth getting into some issue processing today, but we can definitely look to do that next week. anybody have any closing thoughts, final points they want to make? All right. thank you for your time, folks. I think that's probably it for today, and I will talk to you all next week.</p>
+<p id=2100 class="phone s01"><cite>Elaine_Wooton:</cite> Hi everyone. Thanks</p>
+<p id=fd28 class="phone s04"><cite>Ivan_Herman:</cite> Bio. Meeting ended after 00:52:28 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#c1ac">Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( Quantum-Safe Cryptosuites v0.3 ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made.</a></li>
+</ol>
+</div>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
