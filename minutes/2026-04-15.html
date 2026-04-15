@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 15 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>15 April 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d811d954-dd65-4cce-844a-53dfd95e75c7/20260415T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/04/15-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, dlongley, dmitriz, elaine, eva, ivan, JennieM, joe, JoeAndrieu7, kdean, kezike, manu, msporny, parth, patrick, Phil-ASU, phila, schmittner, susanne, TallTed, wes-smith, wip, Wip0</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz, phila</dd>
+<dt>Scribe</dt><dd>Phil-ASU</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#2d21">F2F Meeting</a></li>
+<li><a href="#2cbd">upcoming calls</a></li>
+<li><a href="#2d86">TF Leadership guidance</a></li>
+<li><a href="#55d4">Proposal to adopt vc-quantum-safe spec?</a></li>
+<li><a href="#be25">VCDM Maintenance</a>
+<ol>
+<li><a href="#2727">w3c/<wbr>vc-data-model#1624</a></li>
+<li><a href="#fd85">w3c/<wbr>vc-data-model#1603</a></li>
+<li><a href="#7e97">w3c/<wbr>vc-data-model#1583</a></li>
+</ol>
+</li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=d637 class="phone s01"><cite>brent:</cite> welcome</p>
+<p id=e3d6 class="phone s01"><cite>brent:</cite> intros welcomed</p>
+<p id=fd1a class="phone s02"><cite>Eva:</cite> recently joined WG interested vocabs re: passports</p>
+<p id=0ca1 class="phone s03"><cite>Sebastian:</cite> recently joined. Submitted a suggestion for RenderMethod and that's the path to this group. Background in software dev for a small company in Germany. Working on identity and developing a business wallet.</p>
+<p id=6624 class="phone s01"><cite>Brent:</cite> agenda, the f2f meeting. General guidelines for task for leaders and security review and consideration guidelines for today's  agenda, followed by data model maintenance</p>
+<p id=ffff class="phone s04"><cite>Manu:</cite> barcodes and data integrity group passed a proposal for quantum proof  signatures. We forgot to move the use cases for VCALM when it was moved over to pull from the CCG to to the VCDM WG</p>
+<p id=978e class="phone s05"><cite>Ivan:</cite> has questions re: one of those docs for later.</p>
+</section>
+
+<section>
+<h3 id=2d21>F2F Meeting</h3>
+<p id=8dd4 class=irc><cite>&lt;brent&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/edit?usp=sharing">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/<wbr>edit?usp=sharing</a></p>
+<p id=8403 class="phone s01"><cite>Brent:</cite> f2f scheduled for 1st week of June, June 2-4, in Brussels at GS1.  In agenda a sign up sheet for the meeting was sent out. Please let them know if you are coming, or want to participate remotely (same link). No recommended hotels but PhilA might have suggestions if asked</p>
+<p id=deb0 class="phone s05"><cite>Ivan:</cite> It's possible to have separate task force meetings before or after the main meeting in Brussels</p>
+<p id=0453 class=summary>Phil A: main meeting room has space for 30 people. Two other rooms for 8 or 11 people, but need advanced booking.  Some smaller rooms but not enough for all task forces to meet at the same time.  A VC Barcode sessino h as been requested, Monday or Thursday afternoon.</p>
+<p id=731e class=summary>Phil A: main meeting room has space for 30 people. Two other rooms for 8 or 11 people, but need advanced booking.  Some smaller rooms but not enough for all task forces to meet at the same time.  A VC Barcode sessino h as been requested, Monday or Thursday afternoon.</p>
+<p id=8fc1 class="phone s01"><cite>Brent:</cite> if anyone one wants a focused meeting please ask.</p>
+<p id=6cb4 class=summary>Joe A: do we have time for a threat modeling session? Do we have an agenda spreadsheet? No not likely until mid-May. Bu this topic is important for f2f meeting.</p>
+<p id=a44a class="phone s04"><cite>Manu:</cite> if doc is created people can contribute ideas to it.</p>
+<p id=08e5 class="phone s01"><cite>Brent:</cite> will create a doc for that purpose</p>
+</section>
+
+<section>
+<h3 id=2cbd>upcoming calls</h3>
+<p id=cad4 class="phone s01"><cite>Brent:</cite> Advisory board meeting in China next week. FYI no primary working group call next week. Task forces can meet as desired. Last week in April is IIW. Will there be enough people available to hold this call?</p>
+<p id=34e5 class="phone s01"><cite>Brent:</cite> sufficient interest to hold the meeting</p>
+<p id=a40c class="phone s01"><cite>Brent:</cite> no meeting next week, but yes there's a meeting the week after (during IIW)</p>
+</section>
+
+<section>
+<h3 id=2d86>TF Leadership guidance</h3>
+<p id=9c28 class="phone s01"><cite>brent:</cite> Task force leaders are doing appreciated work on their items. Official task force meetings are not official VC Working Group meetings themselves.</p>
+<p id=cf98 class="phone s01"><cite>brent:</cite> important for TF leadership are members of the VC Working Group, or their contributions must be non-substantive. Should have non-VC WG members can come and listen.</p>
+<p id=10000 class="phone s01"><cite>brent:</cite> TF meetings are recorded and autoscribed and give people a chance to object. If anyone does, manual scribing is required.</p>
+<p id=7289 class="phone s01"><cite>brent:</cite> useful for proposals and resolutions within the TFs but concern that this might become the norm. If there is something to present to the VC WG, that's ok but not to propose and vote of directly in the TF itself.</p>
+<p id=d2a6 class="phone s01"><cite>brent:</cite> TFs can't make resolutions which they are not authorized to do on behalf of th e VC WG</p>
+<p id=9f6e class="phone s01"><cite>brent:</cite> preference as TFs determine something needs to be done, sending that to the mailing list will give WG chairs notice and if proposed language is in the email, that's helpful</p>
+<p id=149a class=irc><cite>&lt;ivan&gt;</cite> See <a href="https://w3c.github.io/vc-wg/minutes/resolutions.html">https://<wbr>w3c.github.io/<wbr>vc-wg/<wbr>minutes/<wbr>resolutions.html</a></p>
+<p id=52fb class="phone s05"><cite>Ivan:</cite> Agree fundamentally with what Brent said.  He generates a page with a list of resolutions and separates the WG resolutions from any others as WG are formal, the others are informal notifications</p>
+<p id=de3f class="phone s01"><cite>brent:</cite> would prefer TF decisions do not look or resemble WG resolutions</p>
+<p id=ed37 class=summary>Phil A: TFs doing the work, which is necessary. But TF work is being done on behalf of everyone and everyone has a right a may question anything.</p>
+<p id=7be4 class=irc><cite>&lt;TallTed&gt;</cite> &quot;TF decisions&quot;? &quot;TF recommendations to the WG&quot;?</p>
+<p id=2c85 class=summary>Joe Andrieu: What should be the language to memorialize it's own consensus to elevate something to the WG?</p>
+<p id=b4d5 class="phone s01"><cite>brent:</cite> saying this is something the WG should attend to</p>
+<p id=8335 class="phone s04"><cite>Manu:</cite> no polling  available at present. Could say things are non-binding but that might be difficult. Could instead stop doing proposals and resolutions and proposals in the TF: and simply do POLL:  and put it the TF notes.</p>
+<p id=0fb1 class="phone s04"><cite>Manu:</cite> POLL: with language you wish. Anchors are generated for each poll  that might suffice and be misinterpreted</p>
+<p id=2324 class="phone s01"><cite>Brent:</cite> TF leadership can use POLL: and or come up with your own language to communicate that and tell VC DM chairs the TF is ready to have this topic discussed.</p>
+<p id=ac1f class="phone s01"><cite>brent:</cite> one can contact the chairs driectly.  There is a vc-github repo to put in as issues if that is preferred.</p>
+<p id=701f class="phone s04"><cite>manu:</cite> a lightweight process is preferable. Getting something published and visible, is enough to consider something on the WG calls.</p>
+<p id=e1dc class="phone s04"><cite>Manu:</cite> could say something was published and raising it is fine. This instead of a formal poll: or whatever.</p>
+<p id=316c class="phone s01"><cite>brent:</cite> having time in the WG meeting for TF leads to raise for the WG to consider is fine.  Pinging the chairs in advance still helpfu.</p>
+<p id=05da class="phone s01"><cite>brent:</cite> VC DM Maintenance now.</p>
+</section>
+
+<section>
+<h3 id=55d4>Proposal to adopt vc-quantum-safe spec?</h3>
+<p id=eb50 class="phone s04"><cite>Manu:</cite> TF has two potential proposals</p>
+<p id=806c class="phone s04"><cite>Manu:</cite> in barcode integrity call voted on the proposal affirmatively. Background: Google and Cloudflare have moved quantum safe signatures will be necessary. Have to advance the timeline on the quantum safe crypto suite. Need to move that to the WG to make it a formal work item.</p>
+<p id=bb90 class="phone s01"><cite>brent:</cite> are there folks to be editors of this quantum safe crypto suite doc?</p>
+<p id=fb77 class="phone s05"><cite>Ivan:</cite> the proposal does not say the barcode working group will take this.</p>
+<p id=3913 class="phone s04"><cite>Manu:</cite> lead editor is Greg Bernstein, and Manu as backup. Presumption is it will in fact be done in the barcode and integrity TF</p>
+<p id=3c71 class="phone s06"><cite>PhilA:</cite> shouldn't mention the barcode TF is the place it will be taken up regardless of whether that's where it will be discussed.</p>
+<p id=32c8 class="phone s04"><cite>Manu:</cite> 3 implementers so far have committed to do so.  Have test vectors for ML-DSA, SLH-DSA, FALCON (FN-DSA), SQISIGN</p>
+<p id=b565 class="phone s04"><cite>Manu:</cite> the test suites will follow the same approach as prior test suites. Just changing the function calls to generate the signatures. Should meet the deadlines and likely will be done sooner.</p>
+<p id=ce7f class=irc><cite>&lt;brent&gt;</cite> PROPOSAL: Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( <a href="https://w3c-ccg.github.io/di-quantum-safe/">https://<wbr>w3c-ccg.github.io/<wbr>di-quantum-safe/</a> ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made.</p>
+<p id=4f63 class=summary>Thanks Ivan</p>
+<p id=b3cc class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b3cd class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=33cc class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=33cd class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=33ce class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=73cd class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=b3ce class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=db0b class="phone s01"><cite>Brent:</cite> proposal is in</p>
+<p id=73ce class=irc><cite>&lt;Wip0&gt;</cite> +1</p>
+<p id=f3cd class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=bb0c class="phone s01"><cite>Brent:</cite> proposal is in</p>
+<p id=33cf class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=33d0 class=irc><cite>&lt;JoeAndrieu7&gt;</cite> +1</p>
+<p id=73cf class=irc><cite>&lt;Phil-ASU&gt;</cite> +1</p>
+<p id=73d0 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=8441 class=resolution><strong>RESOLUTION:</strong> Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( <a href="https://w3c-ccg.github.io/di-quantum-safe/">https://<wbr>w3c-ccg.github.io/<wbr>di-quantum-safe/</a> ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made.</p>
+<p id=14a7 class="phone s01"><cite>brent:</cite> no objections so we are resolved</p>
+<p id=18b8 class="phone s04"><cite>Manu:</cite> forgot to adopt to pull over VCALM use cases.  May not be needed to pull use case doc from the CCG to get it to the VC WG</p>
+<p id=c2a9 class="phone s04"><cite>Manu:</cite> have editors Eric Schuh(sp?)</p>
+<p id=70be class="phone s05"><cite>Ivan:</cite> what is the goal?</p>
+<p id=a82e class="phone s04"><cite>Manu:</cite> we have to share it for horizontal review. Will look odd if it doesn't come from the VC WG</p>
+<p id=075b class="phone s04"><cite>Manu:</cite> Probably publish as a note.  Could be under VCLAM spec or a separate pub.</p>
+<p id=2b56 class=irc><cite>&lt;Sebastian&gt;</cite> and I am all in for post quantum crypto ;) quess was late to vote</p>
+<p id=a405 class="phone s01"><cite>Brent:</cite> If there are specific changes that need to be made it doesn't need to be moved over.,</p>
+<p id=e31e class="phone s07"><cite>JoeAndrieu:</cite> should be moved over.  May be changes.</p>
+<p id=5516 class="phone s06"><cite>PhilA:</cite> Sperity is rejoining the group to be part of this</p>
+<p id=21c8 class="phone s04"><cite>Manu:</cite> would be published as CG final. This proposal is to begin that process</p>
+<p id=c82b class=irc><cite>&lt;brent&gt;</cite> PROPOSAL: Adopt the Credentials Community Group Verifiable Credentials API Use Cases document ( <a href="https://w3c-ccg.github.io/vc-api-use-cases/">https://<wbr>w3c-ccg.github.io/<wbr>vc-api-use-cases/</a> ) as a Verifiable Credential Working Group Editors Draft Note. Transfer the specification to the W3C VCWG once all the appropriate CCG processes are complete.</p>
+<p id=f3e0 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b3e0 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=b3e1 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=f3e1 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=33e0 class=irc><cite>&lt;JoeAndrieu7&gt;</cite> +1</p>
+<p id=33e1 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=73e0 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=73e1 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=f3e2 class=summary>=1</p>
+<p id=b3e2 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=f3e3 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=33e2 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b3e3 class=irc><cite>&lt;Wip0&gt;</cite> +1</p>
+<p id=f3e4 class=irc><cite>&lt;Phil-ASU&gt;</cite> +1</p>
+<p id=73e2 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f3e5 class=irc><cite>&lt;Elaine&gt;</cite> +1</p>
+<p id=764d class=summary>having keyboard issues like Brent</p>
+<p id=9023 class="phone s07"><cite>JoeAndrieu:</cite> should call it VCALM</p>
+<p id=bb25 class=resolution><strong>RESOLUTION:</strong> Adopt the Credentials Community Group Verifiable Credentials API Use Cases document ( <a href="https://w3c-ccg.github.io/vc-api-use-cases/">https://<wbr>w3c-ccg.github.io/<wbr>vc-api-use-cases/</a> ) as a Verifiable Credential Working Group Editors Draft Note. Transfer the specification to the W3C VCWG once all the appropriate CCG processes are complete.</p>
+<p id=a111 class="phone s01"><cite>brent:</cite> when it's published as a working draft the correct short name when it's published</p>
+</section>
+
+<section>
+<h3 id=be25>VCDM Maintenance</h3>
+<p id=5ce2 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model">w3c/<wbr>vc-data-model</a></p>
+<h4 id=2727><a href="https://github.com/w3c/vc-data-model/issues/1624">w3c/<wbr>vc-data-model#1624</a></h4>
+<p id=5e41 class="phone s01"><cite>brent:</cite> Issue not yet triaged <a href="https://github.com/w3c/vc-data-model/issues/1624">#1624</a></p>
+<p id=e298 class="phone s07"><cite>JoeAndrieu:</cite> this is editorial (<a href="https://github.com/w3c/vc-data-model/issues/1624">#1624</a>)</p>
+<p id=a7da class=irc><cite>&lt;manu&gt;</cite> I agree, it's editorial</p>
+<p id=a9b9 class="phone s01"><cite>brent:</cite> agrees with that label  therefore class 2</p>
+<p id=8314 class=irc><cite>&lt;ivan&gt;</cite> +1 to editorial</p>
+<h4 id=fd85><a href="https://github.com/w3c/vc-data-model/issues/1603">w3c/<wbr>vc-data-model#1603</a></h4>
+<p id=58fd class="phone s01"><cite>brent:</cite> manu was assigned to this and was discussed and willing to address it.</p>
+<p id=a939 class="phone s04"><cite>Manu:</cite> still willing to address it and it's straight forward.  Will get to it in 3 week</p>
+<p id=f533 class="phone s01"><cite>Brent:</cite> enough to move to the next</p>
+<h4 id=7e97><a href="https://github.com/w3c/vc-data-model/issues/1583">w3c/<wbr>vc-data-model#1583</a></h4>
+<p id=2c8c class="phone s01"><cite>Brent:</cite> expects <a href="https://github.com/w3c/vc-data-model/issues/1583">#1583</a> will make up part of the f2f meeting - no one yet assigned and it's a big one</p>
+<p id=af91 class="phone s01"><cite>brent:</cite> anyone willing to be assigned to it, and should it be taken up in the f2f meeting</p>
+<p id=bc80 class="phone s04"><cite>Manu:</cite> +1 to taking it up in the f2f.  Have been conversations about how to approach threat models. Probably working on other threat models before the VCDM</p>
+<p id=10002 class="phone s04"><cite>Manu:</cite> the subspecifications and their threat models will be useful to have before doing the VCDM. E.g., much of the VCALM threat model may be pulled into the VCDM threat model. A threat model dir. will be created and things put into it.</p>
+<p id=655c class="phone s04"><cite>Manu:</cite> then it will be refactored into the VCDM threat model. That's the current cunning plan...</p>
+<p id=7eda class="phone s01"><cite>brent:</cite> Simone makes clear can co-exist as part of or separate from the main doc. It can be published separately. Reviewers will be able to see the threat model makes sense. An ecosystem threat model may be sufficient for some TFs.</p>
+<p id=477a class="phone s07"><cite>JoeAndrieu:</cite> +1 for iterative method to look a simpler ones first.   We  haven't gotten approval from PING to let threat models deal with privacy considerations. We need both security and privacy sections. Have an option for TOC in an appendix or separate note, as well. Could keep text to highlight the threats but that adds complexity</p>
+<p id=77cf class="phone s06"><cite>PhilA:</cite> Has received comms for several people. Threats need to highlight dangers, or threats are avoided.</p>
+<p id=75f2 class="phone s01"><cite>brent:</cite> reminder no call next week.</p>
+<p id=8c58 class=irc><cite>&lt;Sebastian&gt;</cite> many thanks! have a good day :)</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#8441">Adopt the Credentials Community Group Quantum Safe Data Integrity Cryptosuite specification ( https://<wbr>w3c-ccg.github.io/<wbr>di-quantum-safe/ ) as a Verifiable Credential Working Group Editors Draft. Transfer the specification to the W3C VCWG once all the appropriate IPR commitments have been made.</a></li>
+<li><a href="#bb25">Adopt the Credentials Community Group Verifiable Credentials API Use Cases document ( https://<wbr>w3c-ccg.github.io/<wbr>vc-api-use-cases/ ) as a Verifiable Credential Working Group Editors Draft Note. Transfer the specification to the W3C VCWG once all the appropriate CCG processes are complete.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
