@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Entity Recognition &ndash; 28 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Entity Recognition</h1>
+<h2>28 April 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phil_Archer, Steve_Capell, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#73bc">Spec Renaming Poll Results</a></li>
+<li><a href="#6378">Update Pull Request For Renaming</a></li>
+<li><a href="#61c8">Publish Recognized Entities Specification</a></li>
+<li><a href="#842a">Digest SRI vs Digest Multibase</a></li>
+<li><a href="#511b">Add `digestSRI` property to General Properties by shigeya · Pull Request #69 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#de7c">Align With UNTP Digital Identity Anchor</a></li>
+<li><a href="#f573">Ensure compatibility with UNTP Digital Identity Anchor work · Issue #48 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#e714">Create Example For Concurrent Use</a></li>
+<li><a href="#a945">Create an example showing both `recognizedTo` and `recognizedIn` used concurrently. · Issue #52 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f0f0 class="phone s01"><cite>Manu_Sporny:</cite> Hey folks, we'll get started in about three minutes. Good to see You as well, Phil. It's late for you.</p>
+<p id=5aef class="phone s02"><cite>Phil_Archer:</cite> That's all right. Don't worry. I got to turn it to some of these calls. I can't do all of them, but I can do this one.</p>
+<p id=47de class="phone s01"><cite>Manu_Sporny:</cite> This is bedtime stories for you, right? We're going to lull you off to Dreamland.</p>
+<p id=4cc8 class="phone s02"><cite>Phil_Archer:</cite> I'm hoping you're going to be reading me the graph below and we'll look through it, please. Yes.</p>
+<p id=0759 class="phone s01"><cite>Manu_Sporny:</cite> All right, let's go ahead and get started. We have some front matter to get through. thank you Benjamin for covering this call while I was gone last week. I did read up on the minutes. so looks like y'all made some good progress on a few items. so let's go ahead and get started. reminder to everyone that the call is recorded and transcribed and an auto summary is sent out to the mailing list. please let us know if that is not okay with you. hopefully that's okay with everyone on the call.</p>
+</section>
+
+<section>
+<h3 id=73bc>Spec Renaming Poll Results</h3>
+<p id=36ee class="phone s01"><cite>Manu_Sporny:</cite> We do have kind of a high level agenda today which includes going over the results of the spec renaming poll. I think you did it last week and we have I think completion on the poll. It's closed now. so we just need to go over that I think one more time to make sure everyone's okay with the changes. There is a spec renaming pull request out there. and then we hopefully at this point have what we need to request a first public working draft. So the thing that we needed to settle was the name of the spec because that sets in the short name and it's minutia.</p>
+<p id=7ff5 class="phone s01"><cite>Manu_Sporny:</cite> But once we get that out there, we'll have a first public working draft and then we can, talk about all the other bigger work that needs to happen. we can talk about kind of the timeline on publication of that thing, who's going to get it ready to go. and then once that is in process we can talk about what it's going to take to get horizontal review on this document right the timing around that we need to do a threat model there is threat modeling work happening in other task forces that's going to help us there so reviewing a bit of that and then we can just go and process issues</p>
+<p id=554d class="phone s01"><cite>Manu_Sporny:</cite> That is the suggested agenda. does anyone have any changes or updates to that agenda or anything else that they would like to discuss today? All right. So, let's go ahead with that agenda then. I'm going to go ahead and the results here. So, one second, let me screen share. And please correct me if I missed something in the minutes. I think I read everything, but there was a concern last time of we need we should make sure we get enough ballots At this point, they're 12 ballots in. I think that's everyone that participates in the group.</p>
+<p id=5ff8 class="phone s01"><cite>Manu_Sporny:</cite> I messed up the first time I used instant runoff voting. it was supposed to be a board account. Borda is when you have small number of p people picking among a large number of choices. and then in conorset borda is a super complicated tallying mechanism that runs every single possibility against every other one and then kind of ranks them. But it's a better way to be really sure about what was picked. But it's really hard to explain it to people. because this giant matrix looks really scary to most people and most voters would run screaming if they saw this. okay.</p>
+<p id=eaf6 class="phone s01"><cite>Manu_Sporny:</cite> But even if we do instant runoff voting or rank choice voting I think we get the same result which was recognized entities winning by a pretty large margin. We can recount it using San Francisco rank choice voting which is</p>
+<p id=149a class="phone s01"><cite>Manu_Sporny:</cite> a preferred one in elections. Although this one comes out with verifiable recognition credentials, but it's kind of neck and neck, I think. actually no, it was recognized entities ends up winning in this one as well. because this gets transferred up to recognized entities. And then if we go and we do a board account, we get the same result. I think although it's really hard to see, right? But recognized entities ends up being the one with the most number of votes verifiable recognition 157. This one's got 120. And then, everything below that. And then the condorset borda is supposedly the best way to decide an election like the one that we had.</p>
+<p id=04c2 class="phone s01"><cite>Manu_Sporny:</cite> then that comes out with the same kind of result with recognized entities out on top. So the first question is do people feel like the result was fairly clear in all the different ways that we could have tallied the vote? Or does anyone have any questions about anything I just said?</p>
+<p id=09f9 class="phone s03"><cite>Steve_Capell:</cite> All good.</p>
+<p id=f9ef class="phone s01"><cite>Manu_Sporny:</cite> All So that means that the choice at least for now is recognized entities. and we should update the spec with that title and modify the short name accordingly. And with that we can finally ask for a first public working draft which should happen on the call tomorrow. any questions on any of that?</p>
+<p id=d31d class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Phil, please.</p>
+<p id=0505 class="phone s02"><cite>Phil_Archer:</cite> Do you want me to put it on the agenda for tomorrow,…</p>
+<p id=4747 class="phone s02"><cite>Phil_Archer:</cite> which I can do.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> Yes, as long as nobody objects to the poll requests that we're about to review to rename the spec. Yes. …</p>
+<p id=928a class=irc><cite>&lt;Phil_Archer&gt;</cite> LGTM </p>
+<p id=8df3 class="phone s02"><cite>Phil_Archer:</cite> It's clear from your previous conversation that no one is. So that's fine. I will do it now while we're talking.</p>
+<p id=6b9c class="phone s01"><cite>Manu_Sporny:</cite> Thank you very much. this is what this group decided. I don't know if the group is interested in getting the opinion of the broader verifiable credential working group or the really broad credentials community group to see if they would make a different choice.</p>
+<p id=24f1 class="phone s03"><cite>Steve_Capell:</cite> Let's get on with it.</p>
+</section>
+
+<section>
+<h3 id=6378>Update Pull Request For Renaming</h3>
+<p id=e386 class="phone s01"><cite>Manu_Sporny:</cite> Not having nearly as much information as we do or are we tempting fate by doing that and we should just get on with it. And then Dave's suggesting the same thing. All right. let's do that then. That's the name of the spec. we're moving with that said, here is the pull request that applies The title would be changed to entity recognition version 1.0. and the subtitle would be VCs for recognized entities and the actions they Realize the wording is different there.</p>
+<p id=18cb class="phone s01"><cite>Manu_Sporny:</cite> We can change the subtitle at any point. The main thing that sticks is this thing and then the short name which we have two choices. recognition we could do that or we could do if we wanted something really short or there are many variations in there that we could pick from. Let me start off with would anybody object if this was the short name that we picked VC entity recognition? Go ahead, Dave. …</p>
+<p id=15ba class="phone s04"><cite>Dave_Longley:</cite> Didn't the poll say recognized entities?</p>
+<p id=1f39 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, that was another choice that didn't get</p>
+<p id=24e0 class="phone s01"><cite>Manu_Sporny:</cite> did I mess up? I might have done that.</p>
+<p id=6097 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think entity recognition was some other had another problem with it. Yes.</p>
+<p id=3588 class="phone s01"><cite>Manu_Sporny:</cite> This is why we review these things. it was Recognized entities. Okay. Thank you very much.</p>
+<p id=00b9 class="phone s02"><cite>Phil_Archer:</cite> I was going to say the same thing.</p>
+<p id=03b7 class="phone s02"><cite>Phil_Archer:</cite> Thank you, David. And I mean the reason it matters is first of all we've been through a sophisticated and…</p>
+<p id=dd3d class="phone s01"><cite>Manu_Sporny:</cite> That was a complete oversight on my part.</p>
+<p id=ea9c class="phone s02"><cite>Phil_Archer:</cite> detailed voting process. So the outcome of that and as Dave said entity recognition means something else in an adjacent techn technical field.</p>
+<p id=7fe8 class="phone s01"><cite>Manu_Sporny:</cite> Yes. Thank you very much for catching that. and then I will recognize Jeez, how many of these are there in here? there's some space removal that's going on here. That is unfortunate but recognized entities. And the rest of this is there you can't see any change here because it's just this character at the end of the line was deleted.</p>
+<p id=2121 class="phone s01"><cite>Manu_Sporny:</cite> I think same thing for this thing. I'll try to clear that so with that, does anybody have any issues with the correct name, the VR? Me apply these suggestion. how can I? Yeah, there we Add suggestion to batch. It's very good to know that people are paying attention in the call. thank you.</p>
+<p id=99f6 class="phone s01"><cite>Manu_Sporny:</cite> Okay, so this recognized entities, it's the of Our short name is VC is for recognized entities and the actions they perform. Does that look right to folks? getting a thumbs No objections. All right. let's go ahead and actually can we get a couple of thumbs ups in just a positive reviews on this to make sure that we got approvals. There's a link there.</p>
+<p id=b680 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-recognition/pull/70">Applies the result of the spec renaming poll by msporny · Pull Request #70 · w3c/vc-recognized-entities · GitHub</a> </p>
+</section>
+
+<section>
+<h3 id=61c8>Publish Recognized Entities Specification</h3>
+<p id=4d57 class="phone s01"><cite>Manu_Sporny:</cite> And if you just go in there and do a positive review and then if we could get at least one more. There we go. Thank you. All that is ready. I'm going to squash it because the initial PR was All right. Hooray. It is renamed. All right.</p>
+<p id=211d class="phone s01"><cite>Manu_Sporny:</cite> I think Phil the proper process is to just pull the group for publish the recognized entities specification as a first public working draft I got to put the link in there. I'm going to change I should rename the repository.</p>
+<p id=9bfd class="phone s01"><cite>Manu_Sporny:</cite> Let me do that real quick just to make sure that let me see recognized entities and…</p>
+<p id=c707 class="phone s02"><cite>Phil_Archer:</cite> Before you do that hang on my hesitation is only that I don't know whether that will cascade through to the working group homepage and…</p>
+<p id=0645 class="phone s01"><cite>Manu_Sporny:</cite> that is going to mess up the URL. heat.</p>
+<p id=87ad class="phone s02"><cite>Phil_Archer:</cite> all the other stuff that Ivan will have to do. So I think what you're doing is right. I'm not suggesting you don't change the name, but rather you did it tomorrow on the call with Ivan there so that he could recognize that he needs then either to manually change something or check that it automatically worked or whatever.</p>
+<p id=fbc1 class="phone s01"><cite>Manu_Sporny:</cite> Unfortunately, I already hit the button to rename it.</p>
+<p id=12e7 class="phone s02"><cite>Phil_Archer:</cite> Then it's too late and…</p>
+<p id=229e class="phone s01"><cite>Manu_Sporny:</cite> But I will send that you make an excellent point,…</p>
+<p id=2980 class="phone s02"><cite>Phil_Archer:</cite> I'm looking for any reason. I'm sorry.</p>
+<p id=10000 class="phone s01"><cite>Manu_Sporny:</cite> Phil. I will send Avon an email and go, &quot;Oops. Does anything need to change?&quot; what I was trying to do is get the correct URL into the resolution text. so let me save this and…</p>
+<p id=d804 class="phone s02"><cite>Phil_Archer:</cite> Yeah. Yeah.</p>
+<p id=3831 class="phone s01"><cite>Manu_Sporny:</cite> then it will take a little bit to publish. no, it's already done. There it is. okay.</p>
+<p id=882f class="phone s01"><cite>Manu_Sporny:</cite> Publish the recognized entity specification. yeah,…</p>
+<p id=20d7 class="phone s02"><cite>Phil_Archer:</cite> Yeah. Yeah. Yeah.</p>
+<p id=bf82 class="phone s01"><cite>Manu_Sporny:</cite> apologies, That wasn't good. let's see. Publish the recognized entity specification, with a short name of VC recognized entities.</p>
+<p id=74e7 class="phone s01"><cite>Manu_Sporny:</cite> I think that's all we need. Isn't that right?</p>
+<p id=ec2e class="phone s02"><cite>Phil_Archer:</cite> Yeah, because you got to do it again tomorrow.</p>
+<p id=adcd class="phone s02"><cite>Phil_Archer:</cite> So that's right.</p>
+<p id=ba3c class="phone s01"><cite>Manu_Sporny:</cite> Okay. All right. So, there's the Yep.</p>
+<p id=10001 class="phone s02"><cite>Phil_Archer:</cite> Just so as I suspected, the repo you're working in has changed, but the working group list of task forces and tools within the task force has not changed automatically. So that's a note to the group now pointing to that dock.</p>
+<p id=7c52 class="phone s01"><cite>Manu_Sporny:</cite> We'll need to update it. All right. I'll let me open an email to Ivon right now to ask him on rename obvious recognition GitHub repo.</p>
+<p id=126c class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://github.com/w3c/vc-recognition">GitHub - w3c/vc-recognized-entities: Verifiable credentials for recognizing entities and the actions they perform. · GitHub</a> &lt;-- this redirects properly </p>
+<p id=0264 class="phone s02"><cite>Phil_Archer:</cite> So if anyone has a chance to read it before tomorrow, so much the better.</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> Thank you, So, there's the poll there. we can + one minus one plus Z to your heart's content. All right. And then Steve, Phil, Kevin, if y'all could plus one, we'll have a more complete just in the chat channel.</p>
+<p id=3fba class="phone s02"><cite>Phil_Archer:</cite> I'm</p>
+<p id=1e31 class=irc><cite>&lt;Manu_Sporny&gt;</cite> POLL: Publish the Recognized Entities specification (<a href="https://w3c.github.io/vc-recognized-entities/">https://<wbr>w3c.github.io/<wbr>vc-recognized-entities/</a>) as a FPWD with a short name of vc-recognized-entities. </p>
+<p id=b906 class="phone s02"><cite>Phil_Archer:</cite> I'm trying to be chairman and…</p>
+<p id=f687 class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://w3c.github.io/vc-recognition">https://<wbr>w3c.github.io/<wbr>vc-recognition</a> &lt;-- this does not. </p>
+<p id=c288 class="phone s03"><cite>Steve_Capell:</cite> Where do I do that?</p>
+<p id=7112 class="phone s01"><cite>Manu_Sporny:</cite> You can open up the chat on the side,…</p>
+<p id=23d8 class="phone s03"><cite>Steve_Capell:</cite> All right. Okay. Yeah.</p>
+<p id=b0ab class="phone s01"><cite>Manu_Sporny:</cite> Steve. I got you.</p>
+<p id=619a class="phone s02"><cite>Phil_Archer:</cite> so, I'm happy to see it happen, but I'm trying to be neutral.</p>
+<p id=74cc class="phone s01"><cite>Manu_Sporny:</cite> No problem.</p>
+<p id=9b7b class=irc><cite>&lt;Manu_Sporny&gt;</cite> +1 </p>
+<p id=4880 class="phone s02"><cite>Phil_Archer:</cite> Not that I have any attention.</p>
+<p id=9c13 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 </p>
+<p id=40ed class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=9c53 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> +1 </p>
+<p id=9d0b class=irc><cite>&lt;Kayode_Ezike&gt;</cite> +1 </p>
+<p id=6e0b class="phone s02"><cite>Phil_Archer:</cite> Of course, I don't.</p>
+<p id=9d2b class=irc><cite>&lt;Benjamin_Young&gt;</cite> +1 </p>
+<p id=e38a class="phone s01"><cite>Manu_Sporny:</cite> So, I think we've got the poll and then we've got the plus ones. Hopefully, that follows the new process we agreed to a couple of weeks ago in the BCWG. And that. Thank you everyone very much for sticking with that weird process we had to do. But it's good that we picked something. Okay. let's see what pull requests if any We have one open poll request. So let's go ahead and talk about that.</p>
+<p id=9f0b class=irc><cite>&lt;Kevin_Dean&gt;</cite> +1 </p>
+</section>
+
+<section>
+<h3 id=842a>Digest SRI vs Digest Multibase</h3>
+<p id=10003 class="phone s01"><cite>Manu_Sporny:</cite> I guess I'm going to topic this item. Hopefully that'll work. So, Shaga Sun opened issue 68 which basically says, &quot;Hey, you talk about digest multibase but you don't talk about digest SRRI.&quot; and then he opened a pull request that would address the issue that he raised. digest. the differences between these two items for those that might not know is that they're just different ways of expressing a cryptographic hash about a resource that exists somewhere in the world, So that usually you use it when you want to point to something like you want to point to an image and you want to make sure that that image doesn't change.</p>
+<p id=9f73 class=irc><cite>&lt;Steve_Capell&gt;</cite> +1 </p>
+<p id=cfd7 class="phone s01"><cite>Manu_Sporny:</cite> And if it does change that the person knows that the one you pointed to and the one that they're looking at are different images, So that is why we use cryptographic hashes of files online. it is very useful for other things like pointing to a way bill or an invoice or something like that that you want to be very specific about the one that you're pointing to. so that if it is changed or tampered with you you have a signal saying that that's happened. why does digest srri and digest multibase exist? Why do we have two ways to do the same thing? in the verifiable credentials 10 work or no maybe it was the one work. we couldn't agree on how to express this information.</p>
+</section>
+
+<section>
+<h3 id=511b><a href="https://github.com/w3c/vc-recognized-entities/pull/69">Add `digestSRI` property to General Properties by shigeya · Pull Request #69 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=10a6 class="phone s01"><cite>Manu_Sporny:</cite> Digest SRRI is how web browsers tend to be very limited in the cryptographic hash mechanisms that they allow. In fact, I think it's just Shawu 256, 384 and 512 that they allow. there are many other types of cryptographic hashing algorithms. Digis multibase supports a very large variety of cryptographic hash algorithms like Blake and other kind of more modern mechanisms. Digest SRRI very small set of available choices, but they're all fairly universally supported and accepted. Digest multibase is much broader in what it would allow.</p>
+<p id=10004 class="phone s01"><cite>Manu_Sporny:</cite> But we typically try to limit it to kind of the same things that are used in digests SRRI while allowing people to make different choices in communities that need to make different choices. okay so we just used digest multibase in this spec. she is suggesting we should use digest srri. I think yall took a look at it and approved I'm opposed to it but I'm not going to object. I don't think we need two different ways of doing it here.</p>
+<p id=cd00 class="phone s01"><cite>Manu_Sporny:</cite> I don't think we should repeat the same mistake that we made in the VC data model core spec. but both mech mechanisms are simple enough to implement. I guess the main question I have is why multibase covers digest SRRI and…</p>
+<p id=7c94 class="phone s01"><cite>Manu_Sporny:</cite> more I guess why do we need both ways? go ahead Benjamin.</p>
+<p id=6764 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I think the main thing to know from Shagaya is…</p>
+<p id=79b3 class="phone s05"><cite>Benjamin_Young:</cite> if somebody he knows is using digest because unfortunately it is in the foundational spec so somebody could be and Yeah, they're going to wonder like he did why it's not in here. I agree it's unfortunate that they're both in the data model. So I think just because he submitted it, is it asking him whether or not he was cleaning it up because he's aware of it and these don't match or if it's like I use this and it should be here. that would be helpful.</p>
+<p id=0934 class="phone s05"><cite>Benjamin_Young:</cite> But it is I don't know we'll face this across all the specs render method will face it as well if it isn't already</p>
+<p id=8464 class="phone s01"><cite>Manu_Sporny:</cite> Thank you, Plus one to that. go ahead, Steve.</p>
+<p id=ba6c class="phone s03"><cite>Steve_Capell:</cite> Just a quick question.</p>
+<p id=799f class="phone s03"><cite>Steve_Capell:</cite> These are self-describing hashes, right? So whether it's multibase or whether it's SRRI, you can see because it's written there in this case 6256 in the multibbase case a letter code and they're non-over overlapping in other words if I put a hash by inspection of the hash I can see that's a multibase. Is that right? So there's no collision here. It's just more than one way of doing it. Yeah.</p>
+<p id=a05c class="phone s01"><cite>Manu_Sporny:</cite> Yeah. I think the argument against having both of them is ecosystem complexity and…</p>
+<p id=af98 class="phone s01"><cite>Manu_Sporny:</cite> I think some could argue that ship already sailed and…</p>
+<p id=d604 class="phone s03"><cite>Steve_Capell:</cite> Yeah. Mhm.</p>
+<p id=a588 class="phone s01"><cite>Manu_Sporny:</cite> others could argue no we can still remove features in the future if we see that people haven't implemented it but you're right there's no collision here someone will either use digest SRRI or they'll use digest multibase or they'll use both of them and nothing bad happens other than all software systems have to be more complicated because of it because we didn't pick one</p>
+<p id=9ff6 class="phone s03"><cite>Steve_Capell:</cite> So what I don't know is how ubiquitous these two digest self-describing digest methods are in the wide world.</p>
+<p id=7552 class="phone s03"><cite>Steve_Capell:</cite> are we including something that's hardly used anywhere, in which case I'd be against, or are we including something that is very widely used somewhere, in which case there's a bit of a risk of excluding it,…</p>
+<p id=8bb0 class="phone s01"><cite>Manu_Sporny:</cite> Plus one. Those are exactly the right questions to ask. and we don't know because we haven't done a I don't know…</p>
+<p id=86a3 class="phone s03"><cite>Steve_Capell:</cite> right?</p>
+<p id=10005 class="phone s01"><cite>Manu_Sporny:</cite> if we know how to get data on that, other than maybe work with system vendors that have a tremendous amount of data in their systems and even then it's kind of like you don't know if you've got everything. The way we did this for, JasonLD is that there's a common crawl data set that,…</p>
+<p id=d781 class="phone s03"><cite>Steve_Capell:</cite> Sure.</p>
+<p id=10006 class="phone s01"><cite>Manu_Sporny:</cite> scour hundreds of millions of websites and we got very good data back on what features were used and which ones were not. But then the argument became like, yeah, but that's all the public data. You don't know anything about what the private data is. So, this kind of stuff is really difficult to figure out who's actually using these things. the only time you really find out is when you go to remove the feature and all of a sudden you get a bunch of angry emails from a community you never knew existed, turns out they depend heavily on whatever thing you're about to remove. go ahead, Phil.</p>
+<p id=cdd6 class="phone s02"><cite>Phil_Archer:</cite> Sorry, I think that is the kind of thing that it's worth bringing to the wider group. I mean, as everyone here knows, we've just been through not just the recharging process, but what happened at the end of last week was all the people who didn't renew or couldn't renew or we decided not to renew their invited expert status, whatever it may be, they've all gone. But a lot of people have joined. It's still an enormous group. and whilst whatever size the group, it's a tiny fraction, we hope, of the people using the technology, it's a bigger group than we've got here right now.</p>
+<p id=9955 class="phone s02"><cite>Phil_Archer:</cite> So it might just be worth raising it tomorrow and I think in general this kind of thing is what the whole working group call can help with that because you got a specific question for a specific feature and you're talking about either including or removing it and I think that's what the working group call can help with.</p>
+<p id=ac44 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, plus one to that. And I think it's probably, the form of the question is, do we want to deprecate digest multibase in the core verifi VC spec? we didn't make a choice before. there's some advantages of one over the other. Do we want to remove it before it gets even more out of hand or…</p>
+<p id=353d class="phone s02"><cite>Phil_Archer:</cite> Yep.</p>
+<p id=195d class="phone s01"><cite>Manu_Sporny:</cite> or do we want to keep it And I think as my prediction is we're just going to leave it the way it is because that's the easiest thing to do and it's the least controversial and so on so forth. but it doesn't mean we have to duplicate that in other specs we made the mistake in BC data model. my position is do we want to make the same mistake here? I'm arguing unless we have very good reason we shouldn't do it and…</p>
+<p id=1ac7 class="phone s01"><cite>Manu_Sporny:</cite> maybe we need to document that we made a conscious decision not to support it here. go ahead Benjamin.</p>
+<p id=f440 class="phone s05"><cite>Benjamin_Young:</cite> So I think the downstream specs…</p>
+<p id=10007 class="phone s05"><cite>Benjamin_Young:</cite> if the group decides they could pick a lane in terms of what they promote and talk about essentially in their specs u picking one of the digest formats. I don't think there's anything in the stack that's gonna prevent the use of the other ones from the upstream data model spec and I don't think we could deprecate it but we can't rip it out in a 2.1. so it's still going to be there for a while.</p>
+<p id=0832 class="phone s05"><cite>Benjamin_Young:</cite> So, it really comes down to kind of what we want to signal as the working group going forward, which may actually work best if we look like we're aware of what we're doing and say, the group has decided to deprecate digest SRRI as of 2.1 or however this shakes out. and so please don't use that. it's totally possible, but please don't. or even if it's not fully deprecated, we're aware that there's another format, certainly you could use it. This spec's only going to talk about this one because reasons</p>
+<p id=9b22 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, plus one of that. I'll go ahead and raise an issue on the core data model spec. let me see. chose to support both digest SRRI and digest multibase in the core data model. This is causing downstream specifications to attempt to support both. the features are equivalent enough that ideally only one is I shouldn't say they're really equivalent enough the features are</p>
+<p id=a729 class="phone s05"><cite>Benjamin_Young:</cite> I'd point to the fact that digest multi-base is extensible and already supports more formats. SRRI only exists in browsers and is, really restricted to what they either have done or feel like they want to do over a weekend. so multibase is mutable and updatable by this community as well as anywhere else whereas digest SRRI is a fixed thing of the path.</p>
+<p id=b725 class="phone s01"><cite>Manu_Sporny:</cite> and has a registry for new multi-ash formats as they are created. broader graphic agility when it comes to graphic mesh formats.</p>
+<p id=df55 class="phone s01"><cite>Manu_Sporny:</cite> The suggestion is to pick digest multibase going forward for downstream specifications and include a deprecation notice in v2.1 for digest SRRI and then this needs discussion and</p>
+<p id=131d class="phone s01"><cite>Manu_Sporny:</cite> This would be a class to change. we'll take this…</p>
+<p id=f3a4 class="phone s01"><cite>Manu_Sporny:</cite> if something comes of it.</p>
+<p id=dbaf class="phone s04"><cite>Dave_Longley:</cite> I was too late.</p>
+<p id=1e21 class="phone s04"><cite>Dave_Longley:</cite> I was going to say when you said restricted to browsers, do you want to say restricted to requiring two browser implementations? And that's where the spec Yeah.</p>
+<p id=8b25 class="phone s01"><cite>Manu_Sporny:</cite> Browser implementations. for four new cryptographic hash formats. So we'll put that is it eternal w Yeah.</p>
+<p id=8c82 class="phone s05"><cite>Benjamin_Young:</cite> They've reumbered it, so now there's a dash two in it. and I can't quite tell where it's happening. web app looks like… Benjamin Young:</p>
+<p id=ee7d class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=f9fc class="phone s05"><cite>Benjamin_Young:</cite> but the two is now overwriting one but if you go to the standards history it looks like there's an SRRI one which was 2016 so they rebooted the work in last April Come on.</p>
+<p id=7ae5 class="phone s01"><cite>Manu_Sporny:</cite> Yep. Yep. Yep. Yeah. And It goes to CSP3 I guess which is a working draft and as we can see the hash algorithm you can only use SHA 2 256 384 or 512 that's it no Blake no Shaw 3 no no Poseidon none of the other cryptographic hashes</p>
+<p id=d1fa class="phone s01"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=1a82 class="phone s05"><cite>Benjamin_Young:</cite> and…</p>
+<p id=078f class="phone s05"><cite>Benjamin_Young:</cite> notably there's not a way to add more.</p>
+<p id=0790 class="phone s01"><cite>Manu_Sporny:</cite> I mean you have to be a browser manufacturer and you have to implement it and the way to add more is you update the spec and publish a new recommendation, right? It's a pretty heavyweight process.</p>
+<p id=87a0 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, you have to update this spec.</p>
+<p id=6197 class="phone s01"><cite>Manu_Sporny:</cite> Literally this highlighted text. All right. raised the tracking issue here. Yes.</p>
+<p id=51a6 class="phone s01"><cite>Manu_Sporny:</cite> and good luck trying to convince them to implement Blake or Poseidon. All So, we looked at that and the digest SRRI thing. We will wait for the BCWG to decide what they're going to do before figuring out what we want to do here. And then we definitely want to hear from Shik Sunan to see if we see what he thinks. I think those are all of the PRs that we have. bouncing really quickly over to issues. this one does have a PR that exists here exists.</p>
+<p id=f008 class="phone s01"><cite>Manu_Sporny:</cite> No, we don't have that label. I want to add that. All right. are there any particular issues that people want to change document title. We'll have to modify or I mean that's taken care of now. ensure compatibility with digital identity anchor work.</p>
+<p id=5c83 class="phone s01"><cite>Manu_Sporny:</cite> Steve, I don't know if you want to chat about that today or if there are any updates there.</p>
+<p id=1e63 class="phone s03"><cite>Steve_Capell:</cite> Yeah. I…</p>
+</section>
+
+<section>
+<h3 id=de7c>Align With UNTP Digital Identity Anchor</h3>
+<p id=3d26 class=irc><cite>&lt;Steve_Capell&gt;</cite> I owe you a use case PR - will have it ready for next meeeting. </p>
+<p id=287b class="phone s03"><cite>Steve_Capell:</cite> what I'd like So it's a bit of a question to this group, UNP is just about to enter public review and in about two months or three months we'll be saying, &quot;Okay, here's 1.0.&quot; I'd kind of like to before we get into 1.0 go not have two specs and al more like UNP align with this than the other way around, but just make sure both use cases are met, And so how does the timing work with this group? We've got a fairly complete candidate spec already, right? Because people have been working on it for a while.</p>
+<p id=155e class="phone s03"><cite>Steve_Capell:</cite> I don't know how many alternative opinions and objections that might arise that might change it a bit, but do you think I'm fairly safe to map digital identity anchor to this now and say it works identify if there are any gaps or issues that we raise issues and get through them quickly so that in 3 months time when we release UNP 1.0 No, we can say the digital identity anchor is a recognized entity VC.</p>
+</section>
+
+<section>
+<h3 id=f573><a href="https://github.com/w3c/vc-recognized-entities/issues/48">Ensure compatibility with UNTP Digital Identity Anchor work · Issue #48 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=4d39 class="phone s01"><cite>Manu_Sporny:</cite> plus one for attempting that so I want to say yes absolutely let's get it done. but we know that we are just a handful of people and other people are going to have opinions, especially once we publish the first public working draft and some people might have really strong opinions and I don't think we want to destabilize your work at UNP. Steve, you and the working group's work at UNPT. long term, I think we're all on the same page.</p>
+<p id=3624 class="phone s01"><cite>Manu_Sporny:</cite> We want all of this stuff to align. and to make sure that we are doing that,…</p>
+<p id=c7f0 class="phone s02"><cite>Phil_Archer:</cite> Perfect.</p>
+<p id=18e8 class="phone s01"><cite>Manu_Sporny:</cite> I think exactly what you said, we have to make sure that we support all of your use cases. That will take time for us to go through. We can certainly prioritize that we can just say all the calls for the next couple of weeks is just going to be on alignment with UNP and digital identity chor. and the goal there is to make sure that you can say the things that you want to be able to say there and either point to this spec or at least suggest this is the direction the work's headed in. so I think philosophically we're definitely all aligned on aligning. the only challenge is that the W3C process is going to lag pretty considerably from the UNP work. So I'll stop there. go ahead.</p>
+<p id=f6c7 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 identifying gaps / issues through attempted alignment would be great </p>
+<p id=a82f class="phone s02"><cite>Phil_Archer:</cite> Yeah, just to two things. Yes. So Steve, this you'll be able to refer to it as a stable URI once the first public working draft is published,…</p>
+<p id=6b75 class="phone s03"><cite>Steve_Capell:</cite> That's all right.</p>
+<p id=120e class="phone s02"><cite>Phil_Archer:</cite> which I imagine will be in week next. but it won't be a recommendation by that time as the manager said a long time to go. but what I put my hand up for was man slightly concerned. It sounds as if you are expecting push back. is that true? And if so, is there a way that we can head that off or talk to the relevant people?</p>
+<p id=5716 class="phone s01"><cite>Manu_Sporny:</cite> No, I'm not expecting push back. sorry if it made it sound like that. we've been through this enough where every shadow scares us, so I'm concerned that once the work's out there and the FBWD is out there we are very much going to start folding this into production systems and that's the point at which I think we will have real contact with people that might have different opinions. so for example, it is very much expected that we're going to use this in the education space in the United States. it is very much expected that we're going to use it in the vital records space. they may be some work on using it in driver's licenses.</p>
+<p id=bbe6 class="phone s01"><cite>Manu_Sporny:</cite> there are fairly powerful lobbies in each one of those areas that are active in the standard space that might have very strong opinions on what else we should be doing. So for example with MDL and that sort of thing they have very much picked X509 and VCAL and those sorts of things and what I'm expecting them to do is just totally ignore this work but they might also say no we're going to come in there and we think you should change so that's the only reason like I don't want that kind of stuff to destabilize the</p>
+<p id=8b2c class="phone s01"><cite>Manu_Sporny:</cite> work that Steve's doing. I think there's a very small possibility of that, 10 to 15% chance that somebody decides to pick a fight with this spec. and I don't know if any of them are going to. I expect them to just try and ignore the work.</p>
+<p id=fe85 class="phone s01"><cite>Manu_Sporny:</cite> At least in version 10.</p>
+<p id=91b0 class="phone s02"><cite>Phil_Archer:</cite> Yeah, I mean my general view is…</p>
+<p id=e443 class="phone s02"><cite>Phil_Archer:</cite> if you're not going to implement something then keep your mouth shut because it doesn't matter to you. it's only if you are implementing it and the spec says you got to do something you don't want to do now then you got a reason to complain but if you're not actually personally using I mean there's a whole bunch of specs that my day job company doesn't like but hey we don't implement them so knock yourself out I don't care what you do we're not going to do it but that doesn't mean to say</p>
+<p id=acec class="phone s03"><cite>Steve_Capell:</cite> Talking about that,…</p>
+<p id=d586 class="phone s03"><cite>Steve_Capell:</cite> Phil, GS1 is already in pilot mode issuing sort of recognition of member prefix right soon.</p>
+<p id=986c class="phone s02"><cite>Phil_Archer:</cite> Soon next month.</p>
+<p id=838a class="phone s03"><cite>Steve_Capell:</cite> All And are you also as with your GS1 hat on now planning to use this spec for that?</p>
+<p id=db79 class="phone s02"><cite>Phil_Archer:</cite> I imagine so. I need to look at it more carefully. but yes, I mean in general terms what you've outlined to us many times…</p>
+<p id=8d16 class="phone s03"><cite>Steve_Capell:</cite> Yeah. So that's another Yeah.</p>
+<p id=3a50 class="phone s02"><cite>Phil_Archer:</cite> then yes that's where I see it going one way or…</p>
+<p id=be4c class="phone s03"><cite>Steve_Capell:</cite> That's another motivation for us to make sure DIA and this DIA ideally is just a profile of this, right? Yeah.</p>
+<p id=e144 class="phone s02"><cite>Phil_Archer:</cite> the other. Yeah. Yes.</p>
+<p id=f9bc class="phone s02"><cite>Phil_Archer:</cite> I mean ideally of course they're the same but I mean that ideal is never quite reached but yes as we've discussed this before</p>
+<p id=78ee class="phone s03"><cite>Steve_Capell:</cite> Cool.</p>
+<p id=4b79 class="phone s01"><cite>Manu_Sporny:</cite> I mean, that's great. and again, I mean, I think that underscores that philosophically we're all in alignment of the kind of the direction. So, Steve, I think what we need from you is for you to tell us what you need to refer to it and feel comfortable about referring to it, and we'll kind of figure it out over the next couple of months and if at the last second you're just like, it's just we can't do it in this version of the spec.</p>
+<p id=706c class="phone s01"><cite>Manu_Sporny:</cite> I don't think there will be any hard feelings that no, we're all trying to do the best that we can and get the most stable stuff out there. so maybe Steve, this is an action to you. Let us know what you need from us. Tell us…</p>
+<p id=cbf5 class="phone s03"><cite>Steve_Capell:</cite> Yeah, we'll do Okay,…</p>
+<p id=e85e class="phone s01"><cite>Manu_Sporny:</cite> what kind, talk with your group. Tell us the type of reference they want to make to this document. and then we will do our best to get it in the right shape and hold the line to give you the stability that you need in the work that you're doing.</p>
+<p id=136c class="phone s03"><cite>Steve_Capell:</cite> we'll take that action.</p>
+<p id=0e4a class="phone s01"><cite>Manu_Sporny:</cite> And thank you A great call out and thanks to everyone for being in philosophical alignment. that is one of the most important things to have when it comes to these kinds of alignment activities. Okay. So how about this in the next meeting please remind me Steve let's talk about the use cases that you have with digital identity anchor. let's look at the spec and make sure that it has the features to align to those use cases.</p>
+<p id=f605 class="phone s01"><cite>Manu_Sporny:</cite> And then we'll just work through that stuff and we will know that we have done our job when we get through all your use cases and we feel very certain that the spec as it stands supports them. If it doesn't we will raise issues to try and…</p>
+<p id=e4fe class="phone s03"><cite>Steve_Capell:</cite> Awesome. Thank you.</p>
+<p id=f5f8 class="phone s01"><cite>Manu_Sporny:</cite> make sure that it anything else on this issue before we move on to at least one more today? All right. If not, let's go ahead and move on. And in theory, this entire conversation we had will be added down here when the minutes are published. we got that working as well. All right, let's look at another discuss item. use cases and applications for this data model. I'm going to suggest that we're going to cover some of that with the discussion we'll have with Steve on the next call.</p>
+</section>
+
+<section>
+<h3 id=e714>Create Example For Concurrent Use</h3>
+<p id=e230 class="phone s01"><cite>Manu_Sporny:</cite> Then let me make sure that there's some other use cases stuff that we're going to want to cover, but we'll focus the next co call on use cases. and then create an example showing both recognized to and recognized in being used concurrently. we need to fill this out a bit more. Let me put a topic marker in here. I think the spec supports this today. Is that correct? and we just don't have an example for it. recognized in So, we support this in the data model today.</p>
+<p id=bbce class="phone s01"><cite>Manu_Sporny:</cite> And I think we are just looking for an example that contains both of them. So we have recognized twos in here but recognized in we don't have recognized too. So I think it's quite literally just add example four. is that what everyone else is understanding this issue to be about. All right.</p>
+<p id=4917 class="phone s01"><cite>Manu_Sporny:</cite> That includes both recognized to and recognized in. do we have a use case that would make this easier to someone will have to think about it but go ahead Dave.</p>
+<p id=e050 class="phone s04"><cite>Dave_Longley:</cite> So I don't have a specific use case, but this is just the case…</p>
+</section>
+
+<section>
+<h3 id=a945><a href="https://github.com/w3c/vc-recognized-entities/issues/52">Create an example showing both `recognizedTo` and `recognizedIn` used concurrently. · Issue #52 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=424f class="phone s04"><cite>Dave_Longley:</cite> where you're making it possible for people to bootstrap into existing systems or just read from this data model. And it's just supportive of both of those concurrently.</p>
+<p id=f431 class="phone s01"><cite>Manu_Sporny:</cite> The example bridges both worlds old trust list approach.</p>
+<p id=fbe0 class="phone s01"><cite>Manu_Sporny:</cite> And new recognized entities. So, let's say that that is ready for PR and hopefully we'll get someone raising a PR on that. with that, I think those are all of our discuss issues. we'll go ahead and I'll close this after the call. because we did pick a document title.</p>
+<p id=f9b4 class="phone s01"><cite>Manu_Sporny:</cite> We'll make another pass through the issues and then next week we will focus on use cases with a strong focus on the digital identity anchor work and just working through all of the use cases Steve that you have. and then if we find any gaps we'll raise issues and start adjusting in that way. we will also have a better handle on when the first public working graph publication's being done. and then we will probably want to start talking about threat model as well if we get through use cases. But we are probably going to spend almost all the call talking about use cases. that is the proposed agenda for the Any other last thoughts, …</p>
+<p id=456f class="phone s01"><cite>Manu_Sporny:</cite> comments, concerns before we end the call for</p>
+<p id=cedb class="phone s03"><cite>Steve_Capell:</cite> I'd ask a question about recognized in it…</p>
+<p id=5e97 class="phone s03"><cite>Steve_Capell:</cite> if I understand that right this is basically saying this entity is listed over here somewhere else and…</p>
+<p id=901b class="phone s03"><cite>Steve_Capell:</cite> it's a pointer to that other thing that list and it's saying at the moment it should be an Etsy trust service list or an X59 certificate authority list or a verifiable recognition credential …</p>
+<p id=c681 class="phone s01"><cite>Manu_Sporny:</cite> Exactly right.</p>
+<p id=de1c class="phone s03"><cite>Steve_Capell:</cite> what if the thing that the entity is recognized in is a national business register Manu Sporny:</p>
+<p id=a7e5 class="phone s01"><cite>Manu_Sporny:</cite> That is a great question. we could Are these typed things today? I forget. recognized.</p>
+<p id=4540 class="phone s04"><cite>Dave_Longley:</cite> I believe they're typed.</p>
+<p id=89e9 class=irc><cite>&lt;Kayode_Ezike&gt;</cite> Would the presence of both properties serve as a union or an intersection? </p>
+<p id=5194 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah. but the type value is defined external to the spec,…</p>
+<p id=51a3 class="phone s01"><cite>Manu_Sporny:</cite> No, it's not. Is It could be. So, this is a great question, Steve, because we need to make this decision. it would probably be a bad idea for us to elaborate on all the different external types that there could be for example we could add a national business registry as a type in here…</p>
+<p id=2020 class="phone s03"><cite>Steve_Capell:</cite> Yeah. Yeah,…</p>
+<p id=273c class="phone s01"><cite>Manu_Sporny:</cite> but that is probably not our place like if somebody wants to create a different type of authority list or business register or something like that. Mhm.</p>
+<p id=bb74 class=irc><cite>&lt;Dave_Longley&gt;</cite> a union, though a consumer would likely do choose your own adventure </p>
+<p id=8177 class="phone s03"><cite>Steve_Capell:</cite> I think the function of the register is distinct from how the register is represented, right?</p>
+<p id=a1b7 class="phone s03"><cite>Steve_Capell:</cite> So whether it's a national business register or trademark register or asset register or whatever it is, it's a register…</p>
+<p id=b04e class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Yeah.</p>
+<p id=c8c9 class="phone s03"><cite>Steve_Capell:</cite> but it's almost certainly not maintained as a certificate authority list or a verifiable credential recognition credential because it's got 2 million entries and it has 2,000 changes a day. so</p>
+<p id=40da class="phone s03"><cite>Steve_Capell:</cite> in this spec how do you say this entity is defined in by this registar then maybe there's another place to say that I don't know</p>
+<p id=608a class="phone s01"><cite>Manu_Sporny:</cite> Yeah, it's a good point.</p>
+<p id=c1b4 class="phone s01"><cite>Manu_Sporny:</cite> Do we need an issue for this? yes, we probably do. go ahead, Dave.</p>
+<p id=63e8 class="phone s04"><cite>Dave_Longley:</cite> I don't remember if we have this in the spec already, but another extension capability here would be to just express the media type of the file because this just points to external files and…</p>
+<p id=c551 class="phone s01"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=4854 class="phone s04"><cite>Dave_Longley:</cite> if those registries define their format in that way then a client Client that understands that media type can get the resource, parse it, and then learn about what type of registry it is from in there and do whatever it is they need to do.</p>
+<p id=bd26 class="phone s02"><cite>Phil_Archer:</cite> on the business register side just to note that the German business register the Bundesan Saiger Valard is in the process of joining the group and Casten Stalker who many of he works that's his biggest customer so there's a good connection coming in there and Steve the New Zealand business number will be issued as a VC. That's what they're working on. I think they can do it now…</p>
+<p id=ef2d class="phone s03"><cite>Steve_Capell:</cite> Yeah, because they use GLNs.</p>
+<p id=28d4 class="phone s02"><cite>Phil_Archer:</cite> because he use GL.</p>
+<p id=168b class="phone s02"><cite>Phil_Archer:</cite> But then there's a whole connection there between GS1 New Zealand and…</p>
+<p id=4227 class="phone s03"><cite>Steve_Capell:</cite> Yeah. Yeah.</p>
+<p id=eb97 class="phone s02"><cite>Phil_Archer:</cite> this is so the shape of a hoped for near future pilot with GS1 identifiers and the Bundesan Ziga and MB in New Zealand and…</p>
+<p id=5bd0 class="phone s02"><cite>Phil_Archer:</cite> all these business registers is something that we hope is going to happen within a matter of months. Hope not sure.</p>
+<p id=f246 class="phone s03"><cite>Steve_Capell:</cite> Yeah, and…</p>
+<p id=6869 class="phone s03"><cite>Steve_Capell:</cite> perhaps with the Spanish Business Register and the Indian Business Register as well…</p>
+<p id=721a class="phone s03"><cite>Steve_Capell:</cite> because they're coming at this from the DIA side. So, it would be nice to bring them all together. Okay.</p>
+<p id=4196 class="phone s02"><cite>Phil_Archer:</cite> Great. Yeah.</p>
+<p id=4228 class="phone s02"><cite>Phil_Archer:</cite> Yeah. Yeah.</p>
+<p id=543a class="phone s01"><cite>Manu_Sporny:</cite> Absolutely. All right.</p>
+<p id=e267 class="phone s01"><cite>Manu_Sporny:</cite> I'll raise the issue right after the call. with that we're at time. thank you everyone very much. we will meet again next week to talk about the digital identity anchor use cases and work through whether or…</p>
+<p id=3ee7 class="phone s02"><cite>Phil_Archer:</cite> Talk to you tomorrow. Bye-bye.</p>
+<p id=146c class="phone s01"><cite>Manu_Sporny:</cite> not the spec supports all those use cases. Thanks everyone. Have a good one. Take care. Bye. Meeting ended after 00:57:17 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 28 April 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>28 April 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Ivan_Herman, Kevin_Dean, Parth_Bhatt, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ef2b">VC Barcodes Spec and Data Integrity Workflow</a></li>
+<li><a href="#22c8">GitHub UI and Whitespace Issues</a></li>
+<li><a href="#dd54">Improving Specification Examples</a></li>
+<li><a href="#8860">Merging Administrative Pull Requests</a></li>
+<li><a href="#90bf">GitHub Code Spaces for Spec Editing</a></li>
+<li><a href="#53c6">PDF 417 VCBs and Multibase Encoding</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=3dc7 class="phone s01"><cite>Ivan_Herman:</cite> Good afternoon.</p>
+<p id=9542 class="phone s02"><cite>Wesley_Smith:</cite> Good morning slash afternoon folks.</p>
+<p id=fdd2 class="phone s03"><cite>Elaine_Wooton:</cite> Wanted to say good morning with my real face, but now I'll turn off the camera.</p>
+<p id=bcdb class="phone s02"><cite>Wesley_Smith:</cite> Morning folks. I'll give it a couple more minutes for people to trickle in before we get started.</p>
+<p id=789a class="phone s02"><cite>Wesley_Smith:</cite> I know we're hoping Greg Bernstein will be here to lead the DI portion of the call. Do we know of anybody else that we're expecting? I know we had quite a lot more cases the first week or two, but …</p>
+<p id=c873 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I'm not sure.</p>
+<p id=fb17 class="phone s04"><cite>Dave_Longley:</cite> This is maybe the first week since the first invite went out and maybe people have not appropriately updated calendars and that sort of thing.</p>
+<p id=7d85 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=e8bb class="phone s02"><cite>Wesley_Smith:</cite> I'll get started at 5 in just a sec here.</p>
+</section>
+
+<section>
+<h3 id=ef2b>VC Barcodes Spec and Data Integrity Workflow</h3>
+<p id=07c4 class="phone s02"><cite>Wesley_Smith:</cite> All right, let's go ahead and get started. hey everybody. Thanks for being here. This is the April 28th meeting of the barcodes and data integrity task force of the VC working group. the agenda for today is much the same as it has been the last couple weeks and probably will be for the foreseeable future. we'll go through administrative and process items briefly and then we'll spend about half the call doing PR review and issue processing on the VC barcodes spec and about half the time doing PR review and issue processing on the various</p>
+</section>
+
+<section>
+<h3 id=22c8>GitHub UI and Whitespace Issues</h3>
+<p id=ec79 class="phone s02"><cite>Wesley_Smith:</cite> inflight data integrity works. So with that in mind, I guess we'll do announcements and introductions. I don't have any announcements for the group. Does anybody want to introduce themselves or have any announcements to hearing nothing I think we can go ahead and jump right into some VC barcodes work then let me go ahead and share my screen. So there are now actually a few pull requests open on the barcode spec. A couple of them we've already discussed here.</p>
+<p id=ffff class="phone s02"><cite>Wesley_Smith:</cite> A couple of them are kind of small process style pull requests and then some of them do make more substantive changes to the specification itself. So the first thing I want to discuss with the group and that's largely because I have a question is there's something weird happening with GitHub and the GitHub UI and it's breaking something. So, this has been a PR that there's been a fair amount of discussion on, but last night when I committed a change suggestion directly from the GitHub UI,…</p>
+<p id=5923 class="phone s01"><cite>Ivan_Herman:</cite> Go ahead.</p>
+<p id=e278 class="phone s02"><cite>Wesley_Smith:</cite> it did this thing where it basically rewrites the entire file.</p>
+<p id=6494 class="phone s02"><cite>Wesley_Smith:</cite> I know Benjamin Young and I had run into something similar on a different specification and I think he said it was something to do with new line character encodings or something to that effect. but I'm curious what the group's perspective is here on this. So I can show you the actual commit that did it. It's a tiny little commit. Yeah, I guess it won't show you the detail. Basically, this commit updated one line of text. but it caused the entire index file to be sort of rewritten. So, I'm curious what people think about this. I just realized that I don't get hand notifications if I'm not tabbed in. So, feel free to jump in. Dave Lane, go ahead.</p>
+<p id=fa55 class="phone s05"><cite>Dave_Lehn:</cite> go to the little gear thing and…</p>
+<p id=b9b3 class="phone s05"><cite>Dave_Lehn:</cite> do the ignore whites space thing and see if that fixes it. next to the submit review.</p>
+<p id=963b class="phone s02"><cite>Wesley_Smith:</cite> this gear thing.</p>
+<p id=8dd6 class="phone s05"><cite>Dave_Lehn:</cite> So yeah,…</p>
+<p id=b1a1 class="phone s02"><cite>Wesley_Smith:</cite> Right.</p>
+<p id=e98e class="phone s05"><cite>Dave_Lehn:</cite> it was a white space thing.</p>
+<p id=e397 class="phone s02"><cite>Wesley_Smith:</cite> So that shows what the commit is, but does that actually solve the problem in the git history?</p>
+<p id=0132 class="phone s05"><cite>Dave_Lehn:</cite> No, no, it's just ignoring it for the diff. So the…</p>
+<p id=7f55 class="phone s05"><cite>Dave_Lehn:</cite> if you were to check it out and look at it, you can probably see that it probably changed all the line endings from whatever it was to whatever it is now.</p>
+<p id=7b18 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=3e67 class="phone s02"><cite>Wesley_Smith:</cite> what do people suggest as the way to move forward here?</p>
+<p id=4c15 class="phone s02"><cite>Wesley_Smith:</cite> Should I re redo this PR in a separate branch or something to that effect? right.</p>
+<p id=10000 class="phone s05"><cite>Dave_Lehn:</cite> You probably don't want to commit something like that intentionally,…</p>
+<p id=4f31 class="phone s05"><cite>Dave_Lehn:</cite> but I mean, you might want to check and see what it was. did it get reformatted to all the wrong thing before and…</p>
+<p id=31b9 class="phone s05"><cite>Dave_Lehn:</cite> it's just fixing it, or did it</p>
+<p id=9ba8 class="phone s02"><cite>Wesley_Smith:</cite> That was my other question.</p>
+<p id=3ccd class="phone s02"><cite>Wesley_Smith:</cite> Is this flipping a switch back on that was previously flipped off in a similar way? I don't actually know. okay, that's fine. I will maybe take some of this discussion offline, figure out what to do with this PR. regardless of that kind of technical bump, I think this PR is about ready to be …</p>
+<p id=bf9b class="phone s05"><cite>Dave_Lehn:</cite> just a note that setting that you changed may be stuck on so you may want to turn it off so you will see the differences later.</p>
+<p id=a09c class="phone s02"><cite>Wesley_Smith:</cite> sorry. Go ahead. heard that.</p>
+<p id=da84 class="phone s05"><cite>Dave_Lehn:</cite> I think it's Yeah.</p>
+<p id=1d10 class="phone s02"><cite>Wesley_Smith:</cite> Anybody else have their hand up? I'm apparently do not get notifications when I'm in a different tab. All right. So, regardless of that technical hiccup, this PR is about ready to get merged. There's been a fair amount of discussion on the topic. Ivonne, I know you had some questions but recently approved the changes.</p>
+<p id=de90 class="phone s02"><cite>Wesley_Smith:</cite> Manu made some points that I attempted to address. So I do think that the content in this PR is about ready.</p>
+<p id=7de1 class="phone s02"><cite>Wesley_Smith:</cite> So if you're a interested participant in the details in the conversation of this PR, go ahead and take one last look and then I'll try to get it merged in some form at some point soon.</p>
+</section>
+
+<section>
+<h3 id=dd54>Improving Specification Examples</h3>
+<p id=3477 class="phone s01"><cite>Ivan_Herman:</cite> I looked at it about two hours ago and it looks okay to me. Ivan Herman:</p>
+<p id=5fe2 class="phone s02"><cite>Wesley_Smith:</cite> Okay. …</p>
+<p id=b2d1 class="phone s01"><cite>Ivan_Herman:</cite> I raised a separate issue because I think that the examples should be rewarded but I put that separate issue for good reasons.</p>
+<p id=76c1 class="phone s02"><cite>Wesley_Smith:</cite> yeah. Yeah.</p>
+<p id=8fbd class="phone s02"><cite>Wesley_Smith:</cite> So, I noted that and agreed. I think that probably doesn't need to grow in scope to include example reworking.</p>
+<p id=8eed class="phone s01"><cite>Ivan_Herman:</cite> Exactly.</p>
+<p id=e7f9 class="phone s02"><cite>Wesley_Smith:</cite> While we're on the topic,…</p>
+<p id=abdb class="phone s01"><cite>Ivan_Herman:</cite> That is a separate issue.</p>
+<p id=a322 class="phone s02"><cite>Wesley_Smith:</cite> do you want to briefly give an overview of what you put in this issue? What you think the examples could benefit from?</p>
+<p id=7282 class="phone s01"><cite>Ivan_Herman:</cite> Usually is a lot of things are presumed as being known and they are not obvious. So, I gave a lot of examples here, but yeah, it's on the screen. I don't want to read up exactly what I mean. One thing is maybe that comes through is it was I think Dave Longley who on the last call when we discussed it made this point which for me was sort of clicked is that in the case of augmenting the subject is different. The subject is essentially the old barcode. that's is the case in the examples but this is something that was worth really emphasizing and in the same direction inversing the order.</p>
+<p id=f02f class="phone s01"><cite>Ivan_Herman:</cite> The example three is the obvious one and in your list in the introduction you start with the obvious case where you have a verifiable credential from somewhere and you prove it like we do with all the others and you would the in inverted comma the only thing you do is to convert it into a barcode. and that should be the first example because that the simple one and the other two are more complex.</p>
+<p id=2d0c class="phone s01"><cite>Ivan_Herman:</cite> And one other thing which permeates very many examples that are written in different documents which always bothers me is that we put in properties or classes that are application specific and not standardized by us and we mix it with those properties and classes that we do standardize and I know that in real JSON it's difficult to differentiate between the two but in our examples we could use a different color or something to make these distinctions very clear.</p>
+<p id=2359 class="phone s01"><cite>Ivan_Herman:</cite> I know that this AMV whatever it's unclear where it will be standardized and so that's still a question that we will have to discuss at some point but I see a protected component index and…</p>
+<p id=6cb6 class="phone s01"><cite>Ivan_Herman:</cite> I have not the faintest idea what the hell that is because this is not something that we defined in any of on our spec so far and you put it into an example and that sort of lead people away from the discussion.</p>
+<p id=8753 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=cd37 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead. Understood. And thanks. Much appreciated. it's useful for you to go through these in such such depth. so to speak briefly to what I understand the current state of the document to be and I think what we want to happen with respect specifically to this ammo driver's license type and the protected compone so I believe protected component index is currently defined by the specification but I believe it is also strongly coupled to this AMA driver's license type which is something that we don't want.</p>
+<p id=822b class="phone s02"><cite>Wesley_Smith:</cite> So I think the last time we discussed it the general consensus is maybe a strong word but the general lean from the group was we are probably going to want to generalize protected component index as much as we can to be an index against the barcode that is being augmented and it's an index defined somehow in some generic way maybe just as an extension point and…</p>
+<p id=c23b class="phone s02"><cite>Wesley_Smith:</cite> then we're going to want to have the amber driver's license type B part of an appendex. So that's my current understanding. Right.</p>
+<p id=3d3c class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I think that's correct.</p>
+<p id=10001 class="phone s01"><cite>Ivan_Herman:</cite> That's correct. Yes. But that's right.</p>
+<p id=57ef class="phone s02"><cite>Wesley_Smith:</cite> So I want to be clear about the nuance there that I think yeah right now these two are strongly coupled but I do think protected component index is defined. we need to decouple them make this generic so it can be used for expressions of XI cryptoeet signatures over barcode data that are not specified directly in our specification. and then in an appendix say here's how you use it for this type. All right.</p>
+<p id=d2ce class="phone s01"><cite>Ivan_Herman:</cite> That's fine.</p>
+</section>
+
+<section>
+<h3 id=8860>Merging Administrative Pull Requests</h3>
+<p id=3672 class="phone s02"><cite>Wesley_Smith:</cite> Sounds like we are on the same page there. thanks for going over your new issue as it relates to that previous PR. all right. Let's go through a couple of these PRs and get them merged down. So, this one I approved this a week ago. It's been sitting for a week. this is just adding a script.</p>
+<p id=e7ac class="phone s02"><cite>Wesley_Smith:</cite> It's adding a workflow. I'm go ahead and merge this on the call unless anybody has any objection. actually I am curious this is not an editorial PR. What would you describe this as administrative?</p>
+<p id=0afa class="phone s01"><cite>Ivan_Herman:</cite> It's an administrative PR…</p>
+<p id=1f19 class="phone s01"><cite>Ivan_Herman:</cite> if there is notable…</p>
+<p id=77e7 class="phone s02"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=aedc class="phone s01"><cite>Ivan_Herman:</cite> because it's the way we publish the document. ment automatically. And of course you merge this one and then next time we merge a real PR so to say with real changes then we will have to ch to check whether it is really published to see if this works and I have this experience with other documents that we have done it's good time time to make this check I don't say that you have to do</p>
+<p id=6d18 class="phone s01"><cite>Ivan_Herman:</cite> that you merge but once a month at least or once every two week if you do a PR then check it because I don't know which document there was a miss there was a bug somewhere and for a half a year we didn't realize that nothing was published on slashtr…</p>
+<p id=a10d class="phone s01"><cite>Ivan_Herman:</cite> because all the failed and then It's more difficult to find a problem.</p>
+<p id=b5b6 class="phone s02"><cite>Wesley_Smith:</cite> Okay, that's a good note.</p>
+<p id=e0c5 class="phone s02"><cite>Wesley_Smith:</cite> Anybody know why I can't merge this PR? Is it because this preew thing failed? So, deploy PR preview is canceled after 1500 minutes.</p>
+<p id=1449 class="phone s01"><cite>Ivan_Herman:</cite> What? I have no idea…</p>
+<p id=d397 class="phone s02"><cite>Wesley_Smith:</cite> It's a day or something, right? okay.</p>
+<p id=b7d7 class="phone s01"><cite>Ivan_Herman:</cite> what that stuff is.</p>
+<p id=31d6 class="phone s02"><cite>Wesley_Smith:</cite> I cannot merge it.</p>
+<p id=e7cb class="phone s01"><cite>Ivan_Herman:</cite> Let me try.</p>
+<p id=63ba class="phone s02"><cite>Wesley_Smith:</cite> I do. We need two reviewers to approve it. Does it need multiple approvals? Multiple reviews?</p>
+<p id=078e class="phone s01"><cite>Ivan_Herman:</cite> I have no idea. Don't let me go there. Just a minute.</p>
+<p id=3078 class="phone s02"><cite>Wesley_Smith:</cite> And…</p>
+<p id=c7b7 class="phone s02"><cite>Wesley_Smith:</cite> if we get down in the weeds, we can table this and maybe figure it out offline,…</p>
+<p id=f716 class="phone s02"><cite>Wesley_Smith:</cite> Ivon. But if possible, I'd like to get it handled on the call.</p>
+<p id=137e class="phone s01"><cite>Ivan_Herman:</cite> Can I try whether I can merge it…</p>
+<p id=d216 class="phone s01"><cite>Ivan_Herman:</cite> because I have an admin, right? I think it merged it for me.</p>
+<p id=2776 class="phone s02"><cite>Wesley_Smith:</cite> Sure, go for it. Okay. I'm a lesser being.</p>
+<p id=d5c2 class="phone s02"><cite>Wesley_Smith:</cite> That's fine. I accept this reality. All right.</p>
+<p id=7cf8 class="phone s01"><cite>Ivan_Herman:</cite> And…</p>
+<p id=671f class="phone s01"><cite>Ivan_Herman:</cite> let's not try to understand everything.</p>
+<p id=737a class="phone s02"><cite>Wesley_Smith:</cite> Better All another similar PR.</p>
+<p id=47b9 class="phone s02"><cite>Wesley_Smith:</cite> You might need to be standing by again, Ivon. I'm logged in. Okay. …</p>
+<p id=307c class="phone s02"><cite>Wesley_Smith:</cite> the preview failed after a day. and maybe that's why. Okay. I'll just type yeah, I</p>
+<p id=ad3f class="phone s01"><cite>Ivan_Herman:</cite> Can you check other PRs whether it does the same thing?</p>
+<p id=3a8c class="phone s02"><cite>Wesley_Smith:</cite> I don't think it does because I have merged.</p>
+<p id=a2f3 class="phone s01"><cite>Ivan_Herman:</cite> def container for previewing code spaces. What is this?</p>
+<p id=2112 class="phone s02"><cite>Wesley_Smith:</cite> We have the author on the call here. Give me just a second.</p>
+<p id=2e1a class="phone s01"><cite>Ivan_Herman:</cite> Because this has the same problem. it's not a matter of the spec, it's a matter of the repo.</p>
+<p id=5f22 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, that shouldn't change the spec at all.</p>
+<p id=4adc class="phone s06"><cite>Benjamin_Young:</cite> So yeah,…</p>
+<p id=3b55 class="phone s06"><cite>Benjamin_Young:</cite> so the problem is which thing in this case?</p>
+<p id=4cbe class="phone s01"><cite>Ivan_Herman:</cite> I have no idea.</p>
+<p id=4c7a class="phone s01"><cite>Ivan_Herman:</cite> I have no idea what this is about.</p>
+<p id=405d class="phone s02"><cite>Wesley_Smith:</cite> problem is that I can't click the big green merge button.</p>
+<p id=5255 class="phone s02"><cite>Wesley_Smith:</cite> Yes,…</p>
+<p id=decd class="phone s05"><cite>Dave_Lehn:</cite> You can look at the actions.</p>
+<p id=0a5e class="phone s06"><cite>Benjamin_Young:</cite> But you used to be able to.</p>
+<p id=215c class="phone s02"><cite>Wesley_Smith:</cite> I can click this one and…</p>
+<p id=f1ca class="phone s05"><cite>Dave_Lehn:</cite> You can look at the actions and see that they are failing.</p>
+<p id=afda class="phone s02"><cite>Wesley_Smith:</cite> this one doesn't have the failing. okay, so it does look the only ones I haven't been able to click are the ones that have that timeout error.</p>
+<p id=5df0 class="phone s02"><cite>Wesley_Smith:</cite> So, it's probably that to click on the actions to see which ones are failing. Yeah.</p>
+<p id=5078 class="phone s01"><cite>Ivan_Herman:</cite> There is a preview thing…</p>
+<p id=588c class="phone s06"><cite>Benjamin_Young:</cite> Yeah. It's also possible somebody set up branch protection rules that are requiring things to pass.</p>
+<p id=2063 class="phone s01"><cite>Ivan_Herman:</cite> which I don't know where it comes from. is it possible that preview failed</p>
+<p id=a5e6 class="phone s04"><cite>Dave_Longley:</cite> So, I wasn't watching the screen too closely.</p>
+<p id=f7cc class="phone s04"><cite>Dave_Longley:</cite> When you say you can't click the button, is that because it looks like you can't click it, or can you click it and it just is that color?</p>
+<p id=1589 class="phone s02"><cite>Wesley_Smith:</cite> Wow.</p>
+<p id=f391 class="phone s04"><cite>Dave_Longley:</cite> So you can click it.</p>
+<p id=b711 class="phone s02"><cite>Wesley_Smith:</cite> Okay. Thanks. That's a little silly.</p>
+</section>
+
+<section>
+<h3 id=90bf>GitHub Code Spaces for Spec Editing</h3>
+<p id=5bbc class="phone s02"><cite>Wesley_Smith:</cite> I can click it. More power than I know. My mistake. I will go ahead and merge this All right. Benjamin, do you want to briefly discuss the dev container P that you put up</p>
+<p id=9ef2 class="phone s06"><cite>Benjamin_Young:</cite> You have more power than</p>
+<p id=10002 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, we've done this on at least one other specification. It's essentially allows you to use GitHub code spaces to live in your browser. And the bigger thing that it sets because you can do that already. The bigger thing it sets up is a live server. as you can see there, so that you can preview in your browser as well. And that just makes it possible for folks who don't have VS Code installed or don't want to. and want to just edit some HTML and see what they're editing. it makes that possible. And there's instructions I think referenced if you go back to the conversations tab with and click on Yeah,…</p>
+<p id=edde class="phone s06"><cite>Benjamin_Young:</cite> go ahead and click on that. this is where we did it first was in this render methods repo and there are instructions there. yeah,…</p>
+<p id=691c class="phone s02"><cite>Wesley_Smith:</cite> I'm going to go ahead and…</p>
+<p id=e2de class="phone s02"><cite>Wesley_Smith:</cite> just copy paste this into a comment on this PR.</p>
+<p id=d683 class="phone s06"><cite>Benjamin_Young:</cite> that'd be fine. We could even put it in the readme, but it's also on the w3ccc.org website, there's a contributing page that explains all that. but the idea is that from GitHub you can click edit in code spaces</p>
+<p id=0675 class="phone s06"><cite>Benjamin_Young:</cite> what you're changing make multiple commits from there and create a PR just like somebody who has bothered to set up all the stuff locally and run command line stuff and whatever without having to do all that. So that's it.</p>
+<p id=5b74 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=caba class="phone s02"><cite>Wesley_Smith:</cite> this seems to me to be improving one specific workflow for working on the spec at no cost. so, I'm happy to merge Any other opinions?</p>
+<p id=d172 class="phone s02"><cite>Wesley_Smith:</cite> Any objections?</p>
+<p id=dfbd class="phone s05"><cite>Dave_Lehn:</cite> I tried raising my hand again, but I guess you can hear that.</p>
+<p id=a20a class="phone s02"><cite>Wesley_Smith:</cite> Yeah, thank you for speaking up.</p>
+<p id=4a56 class="phone s05"><cite>Dave_Lehn:</cite> Yeah,…</p>
+<p id=96ac class="phone s02"><cite>Wesley_Smith:</cite> I can't hear for some reason the meat hand raise noise and other tabs.</p>
+<p id=60bf class="phone s05"><cite>Dave_Lehn:</cite> that's fine. this is just that whatever extension that's there. I seem to remember looking at this before and…</p>
+<p id=376c class="phone s05"><cite>Dave_Lehn:</cite> it looked like it was completely unmaintained. I don't know if this is a security issue too, just using random people's code to do this thing. Is that an issue or is this a well understood community thing that people use or what?</p>
+<p id=6ebd class="phone s06"><cite>Benjamin_Young:</cite> There might be others out there. if you think we need to shop for one, but it's running an HTTP server inside of a dev container that's had a UU ID specific to the person who clicked the code spaces.</p>
+<p id=21bb class="phone s06"><cite>Benjamin_Young:</cite> So unless the person is going to self harm through that HTTP server, I really don't know that there's a risk.</p>
+<p id=6f47 class="phone s05"><cite>Dave_Lehn:</cite> I've never used any of this stuff,…</p>
+<p id=28f7 class="phone s05"><cite>Dave_Lehn:</cite> so I don't even know what's going on here,</p>
+<p id=d5b0 class="phone s06"><cite>Benjamin_Young:</cite> So code spaces to maybe explain it a little more code spaces is just a docker container with VS code in it by default.</p>
+<p id=f6f6 class="phone s02"><cite>Wesley_Smith:</cite> This code tab. Yep.</p>
+<p id=8f47 class="phone s06"><cite>Benjamin_Young:</cite> So if Wes you go to the code tab in ub. the default one and then where it says code in the green button and then code spaces tab right below your mouse. if you were to click that now, you don't need to, but if you create code space on main, then you get an environment that's essentially VS Code in your browser and you're by default editing on main.</p>
+<p id=df2e class="phone s06"><cite>Benjamin_Young:</cite> The instructions I wrote up talk about switching branches and whatever, but the thing that GitHub weirdly lacks is the ability to preview HTML in your browser. So, the live server thing just makes it possible within that Docker container spin up an HTTP server that…</p>
+<p id=10003 class="phone s06"><cite>Benjamin_Young:</cite> then lets you preview what's inside that Docker container. why that's not table stakes for this thing, I don't know, but So, there's a community extension there. There might be another one out there. yeah.</p>
+<p id=b95e class="phone s05"><cite>Dave_Lehn:</cite> There's 2,300 open issues on this project.</p>
+<p id=bc20 class="phone s05"><cite>Dave_Lehn:</cite> …</p>
+<p id=bae6 class="phone s06"><cite>Benjamin_Young:</cite> It's still the one suggested throughout all the blogs and…</p>
+<p id=3232 class="phone s05"><cite>Dave_Lehn:</cite> just beware.</p>
+<p id=579a class="phone s01"><cite>Ivan_Herman:</cite> I'm</p>
+<p id=6b16 class="phone s06"><cite>Benjamin_Young:</cite> therefore by AI as the thing to use for it. doesn't mean we have to use it, at all. We don't even have to merge this unless somebody wants it. But again it's just HTML in the person's browser out of a Docker container that is the contents of this repo. So the risk here is somebody running HTML in their browser which they're doing already. So I don't like I said they'd have to really be copying and pasting stuff from some other place to do more than they're doing.</p>
+<p id=9301 class="phone s02"><cite>Wesley_Smith:</cite> and Ivonne.</p>
+<p id=1c21 class="phone s02"><cite>Wesley_Smith:</cite> Does W3C have a position on this sort of thing? Do you know</p>
+<p id=9d4d class="phone s01"><cite>Ivan_Herman:</cite> I don't think that we have ever heard a discussion about it that…</p>
+<p id=45a2 class="phone s01"><cite>Ivan_Herman:</cite> but nevertheless, me as a person, I am a little bit uneasy based on what Dave said. because who knows what happens and if it destroys one or one of our documents or puts it back to I don't know where later is it really worse the trouble I mean do we really have people on this group who need this I am not convinced I don't</p>
+<p id=82ac class="phone s01"><cite>Ivan_Herman:</cite> experimenting with these kind of tools on a repo that has a lot of people working together and…</p>
+<p id=f623 class="phone s01"><cite>Ivan_Herman:</cite> has documents which have some level of timing attached to. so I'm a bit uneasy to be honest.</p>
+<p id=5ec3 class="phone s02"><cite>Wesley_Smith:</cite> heard. And really quick,…</p>
+<p id=f877 class="phone s02"><cite>Wesley_Smith:</cite> Benjamin, before you go, agreed with some of your points of one point I want to make is you said, do we have people in this group that need this glow? I don't think so.</p>
+<p id=05ab class="phone s02"><cite>Wesley_Smith:</cite> I don't think that I think the right way to look at it is accessibility improvements mean that we might get people into the group that currently are kept out of the group by the barrier to entry that we currently have from a very technical contribution process.</p>
+<p id=266c class="phone s01"><cite>Ivan_Herman:</cite> I agree with that.</p>
+<p id=dd6d class="phone s01"><cite>Ivan_Herman:</cite> Okay, I take that.</p>
+<p id=2ba1 class=irc><cite>&lt;Dave_Lehn&gt;</cite> here's the extension source; <a href="https://github.com/ritwickdey/vscode-live-server">GitHub - ritwickdey/vscode-live-server: Launch a development local Server with live reload feature for static &amp;amp; dynamic pages. · GitHub</a> </p>
+<p id=0e3c class="phone s02"><cite>Wesley_Smith:</cite> Benjamin, go ahead.</p>
+<p id=d5a1 class="phone s06"><cite>Benjamin_Young:</cite> Yeah.</p>
+<p id=9af7 class="phone s06"><cite>Benjamin_Young:</cite> So the way forward without this is folks who need this kind of environment still have it. they can still do code spaces. they just won't be able to see the effect of working in the code space until after they send in their PR at which point the W3C preview bot which is going to do the same. is going to make a URL that has HTML that one can load in one's browser. then they have to wait on all that to happen before they can see what's happened in their PR and then they can switch to that branch and continue to make changes. so it's the exact same experience. It's just glacial.</p>
+<p id=5e82 class="phone s06"><cite>Benjamin_Young:</cite> And Dave, if you again want to find something that you feel more comfortable about, please do</p>
+<p id=fe45 class="phone s02"><cite>Wesley_Smith:</cite> All So, it sounds like we should at the very least leave this PR open for a bit longer while people look into alternatives, that sort of thing. I don't get a tremendous amount of heartburn from this…</p>
+<p id=4453 class="phone s02"><cite>Wesley_Smith:</cite> although I do think that good questions to answer things like Ivon raised a concern about sorry okay yeah so Ivon made a point about damaging the specification in some way.</p>
+<p id=36fd class="phone s01"><cite>Ivan_Herman:</cite> No, sorry.</p>
+<p id=e0a9 class="phone s01"><cite>Ivan_Herman:</cite> No, no, no. Sorry. But I have remark when we finish this.</p>
+<p id=84b0 class="phone s02"><cite>Wesley_Smith:</cite> I would be curious what the potential risks would be if a super user with administrative level control over the repository went through this flow.</p>
+<p id=aa2f class="phone s02"><cite>Wesley_Smith:</cite> Does that pose a security risk? I expect that largely the things that you can do using this flow are limited by your GitHub account level powers. so I don't think that's an issue for most people, but for the corner cases, maybe that's something interesting to look into. That sort of thing. Go ahead, Ivon.</p>
+<p id=cc42 class="phone s01"><cite>Ivan_Herman:</cite> No, Benjamin,…</p>
+<p id=c504 class="phone s01"><cite>Ivan_Herman:</cite> go on because I have something different. I presume you want to answer this, Benjamin.</p>
+<p id=de9e class="phone s06"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=bbd0 class="phone s06"><cite>Benjamin_Young:</cite> I mean we can dig into all of that. again it's an HTTP server running inside the Docker container. So it would have to be escalating to a point where it's somehow got your key to commit as you to do anything else. All of which goes through the VS code UI forget and requires additional login steps and…</p>
+<p id=facb class="phone s06"><cite>Benjamin_Young:</cite> and authentication steps just like VS Code does locally. whatever. But if y'all are squeamish about it, don't worry about it.</p>
+<p id=4495 class="phone s02"><cite>Wesley_Smith:</cite> So I'm in favor of at least leaving the PR open,…</p>
+<p id=7473 class="phone s02"><cite>Wesley_Smith:</cite> give people some time to look into alternatives if they want. Again, I personally don't have a lot of Harvard and I'd be happy to merge this. but if people want to give it some more time to deliberate and look into maybe better maintained alternatives that is fine. I will note that the issue count that you mentioned Dave Lane could be interpreted multiple ways. If these are issue counts if these are issues like this is a pressing security vulnerability please fix this that's one thing but if these are issues like this is a widely used and generally liked piece of software that a lot of people want features in that sort of thing. those are very different things.</p>
+<p id=1cb4 class=irc><cite>&lt;Benjamin_Young&gt;</cite> It's already in use on Render Method, fwiw </p>
+<p id=7d01 class="phone s02"><cite>Wesley_Smith:</cite> I'm gonna go ahead and move on unless anybody has anything else they want to say on the topic. Ivon, go ahead.</p>
+<p id=d403 class="phone s01"><cite>Ivan_Herman:</cite> In the meantime I have checked and…</p>
+<p id=b82c class=irc><cite>&lt;Benjamin_Young&gt;</cite> most of those issues on that repo are bogus... </p>
+<p id=507b class=irc><cite>&lt;Benjamin_Young&gt;</cite> f </p>
+<p id=8cc7 class=irc><cite>&lt;Benjamin_Young&gt;</cite> for example <a href="https://github.com/ritwickdey/vscode-live-server/issues/3288">learn HTML · Issue #3288 · ritwickdey/vscode-live-server · GitHub</a> </p>
+<p id=d155 class="phone s01"><cite>Ivan_Herman:</cite> the latest version is on DR so the akidna stuff works.</p>
+</section>
+
+<section>
+<h3 id=53c6>PDF 417 VCBs and Multibase Encoding</h3>
+<p id=a19f class="phone s02"><cite>Wesley_Smith:</cite> That is wonderful to hear. let's see all right. We have a very small PR that I raised half an hour ago and that is directly addressing an issue and the entirety of the PR is a twoline change. It basically says that for PDF 417 so for PDF 417 VCBs we recommend that and specifically they use this type.</p>
+<p id=33df class="phone s02"><cite>Wesley_Smith:</cite> We recommend that you use B 64 URL when you encode these things before you put them into the PDF 417. This PR adds a couple of lines of text that say if you want you can also use multibase and then that's essentially it. so I think the value of that is somewhat self-explanatory. we want to be clear that you can use multibase if you want. the reason why multibase isn't essential slash super valuable here is because you need some ahead of time knowledge to understand where in the PDF 417 a VCB is anyway.</p>
+<p id=ca07 class=irc><cite>&lt;Benjamin_Young&gt;</cite> The PRs are similarly bot-junk </p>
+<p id=2b45 class="phone s02"><cite>Wesley_Smith:</cite> So the self-describing properties of multibase have limited value, but it's value. So it's good to allow it explicitly in the specification. anybody have any questions, points to All right. go ahead and take a look at this approve it if you're an approving type. I'll merge it after it's been sitting out there for a little while. And yeah. Okay, that is that small and simple. we already talked a little bit about this. I guess Benjamin, I'll ping you maybe since I know we ran into the same problem on a different specification about what to do about the whites space thing. there's this R as well. Okay, this is raised last night.</p>
+<p id=6d83 class="phone s02"><cite>Wesley_Smith:</cite> This is a PR that updates some of the test vectors. it has the same problem. it's because I built it on top of the previous PR. That's why. So, let me go ahead and hide the white space. All right. So yeah, this PR is on top of a different PR. So it looks like there's more in it than there actually is. basically this PR just updates the test vectors to use the correct seabore tag. that's it.</p>
+<p id=e20c class="phone s02"><cite>Wesley_Smith:</cite> I actually will need to go back to this PR and make sure that the generated barcode images are updated as well because I don't think this PR currently does that. so this PR is actually not ready to be merged. because I think it should include updates to the images as well. but other than that, I don't know if it needs a tremendous amount of discussion. It's really just a PR that bumps the test vectors to use the correct and modern Cboard tag. any questions, discussion points? All right. so I will make sure that that PR gets updated to bump the images of the barcodes as well and figure out what we're doing with that whites space thing.</p>
+<p id=a397 class="phone s02"><cite>Wesley_Smith:</cite> I think that's it for Rs. All right. So, there are basically three content PRs out at the moment. one of them we need to figure out a technical hiccup. The other two need a little bit of time. I think we can go ahead and move into issue Noting that Greg isn't here. I guess does anybody want to run the data integrity portion of the call in Greg Bernsteinstead because now is the time that we'd be doing the switch.</p>
+<p id=fa24 class=irc><cite>&lt;Dave_Lehn&gt;</cite> looking at that whitespace churn commit you can see it went from 0a to 0d0a. </p>
+<p id=e394 class="phone s02"><cite>Wesley_Smith:</cite> Okay, Dave Longley.</p>
+<p id=88e7 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=2cbe class="phone s04"><cite>Dave_Longley:</cite> The answer is no to that for me.</p>
+<p id=5cea class="phone s04"><cite>Dave_Longley:</cite> But we could just state the one there's at least one update from that group which is that the final report got merged. there's still a little bit more to do over there with CCG process but that's making its way.</p>
+<p id=0ad8 class="phone s04"><cite>Dave_Longley:</cite> This is for the data integrity quantum safe specification.</p>
+<p id=e1c1 class="phone s02"><cite>Wesley_Smith:</cite> Excellent. That's great news.</p>
+<p id=de40 class="phone s02"><cite>Wesley_Smith:</cite> Thanks, go ahead, Avon.</p>
+<p id=16be class="phone s01"><cite>Ivan_Herman:</cite> The question is…</p>
+<p id=7048 class="phone s01"><cite>Ivan_Herman:</cite> if the CCG finish what it has to do then am I allowed to move over the repo to this task force right away or…</p>
+<p id=99bc class="phone s01"><cite>Ivan_Herman:</cite> do we have to wait? the CCG at the CCG.</p>
+<p id=ec19 class="phone s04"><cite>Dave_Longley:</cite> I think we still have to wait for one other process thing to happen.</p>
+<p id=dae6 class="phone s04"><cite>Dave_Longley:</cite> I wouldn't want to move it prematurely. Yep. Yes,…</p>
+<p id=f417 class="phone s01"><cite>Ivan_Herman:</cite> No, what I'm saying is once that is done, is it okay if I move it over? Dave Longley:</p>
+<p id=02ff class="phone s04"><cite>Dave_Longley:</cite> I believe so. someone I think Greg's following that process and he will let you know when it's done.</p>
+<p id=4ae0 class="phone s01"><cite>Ivan_Herman:</cite> Okay, actually ping me and then I will do it.</p>
+<p id=23b0 class="phone s04"><cite>Dave_Longley:</cite> Yep. Thanks, Von.</p>
+<p id=8c6e class="phone s02"><cite>Wesley_Smith:</cite> Okay, cool.</p>
+<p id=c4ae class="phone s02"><cite>Wesley_Smith:</cite> Anybody have anything else to say about the data integrity work? All right. If not, let's do some barcode issue processing. there's a fair amount of issues open on the spec and they are completely untagged on. So, let's start from the oldest stuff from 2024.</p>
+<p id=5d82 class=irc><cite>&lt;Dave_Longley&gt;</cite> which we don't want, so we will want to not do that (changing line endings from \n to \r\n is not desirable) </p>
+<p id=10004 class="phone s02"><cite>Wesley_Smith:</cite> When implementing the specification, I came across a few minor issues with the test vectors. it looks like there has been a fair amount of discussion something relating to the check sum digit being incorrect in an MRZ. However, I think that the issue this person is pointing out is at the barcode slashMRZ conformance layer and not the VC barcode correctness layer, if that makes sense. the barcode that was augmented or the MRZ that was augmented had an incorrect check some digit something to that effect.</p>
+<p id=6cac class="phone s02"><cite>Wesley_Smith:</cite> I don't know if this has been updated. I was mentioned in a issue that's been closed. So, let's go see what happened there. Updated barcodes with the correct header information will be in slow shortly, excuse me. And that was rge That doesn't have anything to do with the MRZ example that they discussed. So, I don't think this issue can be closed without at least looking into see if that checks some well, I guess it's good for the group to discuss.</p>
+<p id=10005 class="phone s02"><cite>Wesley_Smith:</cite> If there is an incorrect check sum in the MRZs on one of these credentials, that's presumably something that we would want to fix. Although it doesn't actually impact our ability to verify the verifiable credential. it does make the underlying barcode look wonky if you're using some verification flow that also checks things like check some digits in an MRZ. folks have thoughts about thoughts about that.</p>
+<p id=18cb class="phone s02"><cite>Wesley_Smith:</cite> Go ahead, Dave Longley.</p>
+<p id=7131 class="phone s04"><cite>Dave_Longley:</cite> is this whatever version of myself replied to that two years ago. that person is gone. is this just based on an example that we have that is not matching a check sum and… Dave Longley:</p>
+<p id=8ac7 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, it looks like on one of the examples,…</p>
+<p id=42a9 class="phone s04"><cite>Dave_Longley:</cite> so yeah so it seems like we just have an example we should fix.</p>
+<p id=beef class="phone s02"><cite>Wesley_Smith:</cite> one of the numbers in the MRZ should be different to be a correct check sum,…</p>
+<p id=e160 class="phone s04"><cite>Dave_Longley:</cite> I'm sure we don't want to have an example that has an incorrect check sum.</p>
+<p id=7797 class="phone s02"><cite>Wesley_Smith:</cite> right? Yeah.</p>
+<p id=6881 class="phone s04"><cite>Dave_Longley:</cite> So we will want to do that.</p>
+<p id=7a9a class="phone s02"><cite>Wesley_Smith:</cite> And we need to check if that actually is still true or if as you say a version of myself from two years ago fixed that and then didn't say anything on this issue. that is that a bug?</p>
+<p id=1149 class="phone s01"><cite>Ivan_Herman:</cite> It's about</p>
+<p id=e558 class="phone s02"><cite>Wesley_Smith:</cite> Is that a bug?</p>
+<p id=e531 class="phone s04"><cite>Dave_Longley:</cite> Yeah.</p>
+<p id=bd9f class="phone s02"><cite>Wesley_Smith:</cite> That is a bug. Dave Longley from 2024. The same previous Dave Longley.</p>
+<p id=3d78 class="phone s04"><cite>Dave_Longley:</cite> He's not on the call.</p>
+<p id=17b4 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, right.</p>
+<p id=5d1a class="phone s02"><cite>Wesley_Smith:</cite> Can you speak to what you're saying here, Dave Long?</p>
+<p id=1413 class="phone s04"><cite>Dave_Longley:</cite> I believe at some point during the development of the contexts here,…</p>
+<p id=f717 class="phone s04"><cite>Dave_Longley:</cite> a context was produced that was a later version from what is currently in the spec. and that later version had an error in it or was doing something that the group decided not to do. and we might just want a note somewhere that says don't use version two. I think these are all marked as I hope they're all marked as RC something something anyway.</p>
+<p id=dbd9 class="phone s04"><cite>Dave_Longley:</cite> But this is my vague memory that we published something and then we were like no actually that was a bad idea. Let's just keep version one.</p>
+<p id=9d06 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. So that's for the VDL context…</p>
+<p id=1461 class="phone s02"><cite>Wesley_Smith:</cite> which is why this is linked into the Update examples to use proper tur. So I think the tur bit string stat list was the term incorrectly added to the VDL vocab when we decided this actually live in the VC barcodes space. That is my understanding. that's…</p>
+<p id=da0b class="phone s04"><cite>Dave_Longley:</cite> And that might already have been fixed.</p>
+<p id=a2d5 class="phone s02"><cite>Wesley_Smith:</cite> what I'm looking at as well.</p>
+<p id=52d4 class="phone s04"><cite>Dave_Longley:</cite> If you didn't see or hear it though, Avon's hand went</p>
+<p id=4009 class="phone s02"><cite>Wesley_Smith:</cite> Ivonne go ahead. Thank you.</p>
+<p id=61b9 class="phone s01"><cite>Ivan_Herman:</cite> For me this raises a separate issue.</p>
+<p id=f5c9 class="phone s01"><cite>Ivan_Herman:</cite> So it is related to this but finish what you started.</p>
+<p id=4068 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=059e class="phone s02"><cite>Wesley_Smith:</cite> we have a pages issue.</p>
+<p id=94c7 class="phone s01"><cite>Ivan_Herman:</cite> So that raises to me the</p>
+<p id=a267 class="phone s02"><cite>Wesley_Smith:</cite> There's an example that uses the incorrect version. Okay, there are two examples. I know that the test vectors should not do that. Yeah, so the test vectors are correct but some of the previous examples in the specification use the incorrect definition. go ahead Ivon.</p>
+<p id=b677 class="phone s01"><cite>Ivan_Herman:</cite> question which we may not want to answer right now. But in which vocabulary and which context file will the terms that we define here land?</p>
+<p id=485c class="phone s02"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=15eb class="phone s02"><cite>Wesley_Smith:</cite> they currently live at…</p>
+<p id=95ef class="phone s01"><cite>Ivan_Herman:</cite> No, but that's not My question is where it will be.</p>
+<p id=d650 class="phone s02"><cite>Wesley_Smith:</cite> where it actually didn't work. I'm not sure I totally understand the question.</p>
+<p id=4432 class="phone s01"><cite>Ivan_Herman:</cite> Will we extend the current vocabularies that we have already or not? I mean again we don't have to answer that but at some point in time we will have to answer that.</p>
+<p id=aca2 class="phone s02"><cite>Wesley_Smith:</cite> So, currently the VC barcodes spec has its own data model that includes these definitions.</p>
+<p id=ff43 class="phone s02"><cite>Wesley_Smith:</cite> Are you talking about are you suggesting that some of the terms defined in that data model such as tur bit strings tless entry would be better to live elsewhere.</p>
+<p id=4073 class="phone s01"><cite>Ivan_Herman:</cite> I question I am asking I mean we have already a vocabulary for VC we have a vocabulary for DI we can extend those things I am not sure that adding new vocabularies all the time is really good for usage so that's…</p>
+<p id=cb22 class=irc><cite>&lt;Dave_Longley&gt;</cite> `<a href="https://w3id.org/vc-barcodes#TerseBitstringStatusListEntry`">Verifiable Credential Barcodes v1.0</a> </p>
+<p id=37ad class="phone s02"><cite>Wesley_Smith:</cite> Right. Go ahead.</p>
+<p id=4bbd class="phone s01"><cite>Ivan_Herman:</cite> what I'm asking that's</p>
+<p id=a309 class="phone s04"><cite>Dave_Longley:</cite> So we do have some URLs that are defined the URL for example for the tur bitstring status list entry lives at w3id.org. This is a similar situation with some of the data integrity terms and some other ones that happened in the space that went to production systems before we had a working group that was able to handle the spec and do something with the vocabulary. So, I do expect that we're going to at least say that these URLs are at these locations where we talk about the definitions of them.</p>
+<p id=b17b class="phone s04"><cite>Dave_Longley:</cite> I don't remember exactly what we did for that Ivon, but we have similar URLs elsewhere in VC space if you understand what I'm saying. Yeah.</p>
+<p id=2223 class="phone s01"><cite>Ivan_Herman:</cite> Yeah. No,…</p>
+<p id=0e91 class="phone s01"><cite>Ivan_Herman:</cite> I understand what you say. We will have to check. I don't remember either. I remember that we had this. It's in the DI area because in the VCDM it's clear it's W3C URLs all along. But for the DI indeed we have this. We will have to check that and again I'm not saying we have to do it right now but that has to be cleanly done and in the same spirit as it is done elsewhere.</p>
+<p id=a6fc class="phone s01"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=8f9a class="phone s04"><cite>Dave_Longley:</cite> Just so we're clear, Wes, what you're typing there, you're saying it has the correct vocabulary, but the link there is to a context, not the vocabulary.</p>
+<p id=9a3b class="phone s02"><cite>Wesley_Smith:</cite> Right. Thank you.</p>
+<p id=760f class="phone s02"><cite>Wesley_Smith:</cite> Okay. this is important but not critical. That sounds good first issue. Very true.</p>
+<p id=d7ef class="phone s02"><cite>Wesley_Smith:</cite> If anybody wants to fix this, this would be, control F vdlv2 and put in VC barcodes v1. I think that is good.</p>
+<p id=be45 class="phone s02"><cite>Wesley_Smith:</cite> Priority two and good first issue.</p>
+<p id=dbcb class="phone s04"><cite>Dave_Longley:</cite> Yeah, the thing you just said …</p>
+<p id=abd9 class="phone s04"><cite>Dave_Longley:</cite> if there is someone who wants to do a first issue, if you copy and paste those two URLs in there and say that's what needs to happen, it's more likely that someone could grab it as a first issue.</p>
+<p id=9e83 class="phone s02"><cite>Wesley_Smith:</cite> As a first issue that Jason LDBC</p>
+<p id=7ae3 class="phone s02"><cite>Wesley_Smith:</cite> Easy text.</p>
+<p id=019d class="phone s02"><cite>Wesley_Smith:</cite> How's that look?</p>
+<p id=3b45 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think that's right.</p>
+<p id=c832 class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://w3id.org/vdl/v2">https://<wbr>w3id.org/<wbr>vdl/<wbr>v2</a> =&gt; <a href="https://w3id.org/vc-barcodes/v1">https://<wbr>w3id.org/<wbr>vc-barcodes/<wbr>v1</a> </p>
+<p id=46d2 class="phone s02"><cite>Wesley_Smith:</cite> for all the hundreds of people on this call desperate to get their hands dirty, that would be a great place to start. All right. next issue, outdated R to bitstring conversion. Again from 2024, the new definition of fishing status entry includes the status size and status messages that cannot be derived from Tur Manu said, &quot;Yep, that's not supported. Does this create a problem?&quot; It does create a problem so that's reiterating the issue.</p>
+<p id=096f class="phone s02"><cite>Wesley_Smith:</cite> I guess the only way to fix is either to put them back into the bitst string status list or pass them as an input of the conversion algorithm. But then the verifier needs to know those parameters in advance. there's some historical context here that I'm missing about the status, no pun intended, changes of these properties in vision set entry. anybody have context to share about those properties. Stay long.</p>
+<p id=3794 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=2aba class="phone s04"><cite>Dave_Longley:</cite> Those are some optional properties that are part of the spec for bitstring statusless entry that I think they made it into the spec. There might have been two implementers that were interested in using those properties…</p>
+<p id=7fb9 class="phone s01"><cite>Ivan_Herman:</cite> You mean the B string pack?</p>
+<p id=10006 class="phone s04"><cite>Dave_Longley:</cite> but they were kept as optional. in the bitstring status list spec they don't make any sense for bitstring statusless entry and they would definitely cause size problems for those entries defeating the purpose of having it be tur and small. I think the spec should just say that those properties aren't supported by TUR bitstring status lists. And so if you have a bitstring status list that you want to express as a TUR one and it has status size and status message then that's not supported because you'll lose that information.</p>
+<p id=9696 class="phone s02"><cite>Wesley_Smith:</cite> What's close?</p>
+<p id=86a0 class="phone s01"><cite>Ivan_Herman:</cite> In the Bitspring spec,…</p>
+<p id=42f5 class="phone s01"><cite>Ivan_Herman:</cite> the official one, the word Tur does not arise at all.</p>
+<p id=e346 class="phone s04"><cite>Dave_Longley:</cite> That's right.</p>
+<p id=963c class="phone s04"><cite>Dave_Longley:</cite> The tur bitstring status list entry is new and introduced by VC barcodes. it's a way to express status list information in a barcode in a very tur or…</p>
+<p id=bf99 class="phone s01"><cite>Ivan_Herman:</cite> Okay. But…</p>
+<p id=6954 class="phone s04"><cite>Dave_Longley:</cite> very small concise way.</p>
+<p id=5655 class="phone s01"><cite>Ivan_Herman:</cite> then the question which maybe that's what you were raising is that this should be added to the bitstring status and…</p>
+<p id=b18d class="phone s01"><cite>Ivan_Herman:</cite> not the barcode specific thing. Isn't that correct?</p>
+<p id=5c58 class="phone s04"><cite>Dave_Longley:</cite> …</p>
+<p id=2517 class="phone s04"><cite>Dave_Longley:</cite> where it lands and that might be a better place for it to land certainly. where it lands is a separate question from if you use this it must also have status size and…</p>
+<p id=b747 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=d26e class="phone s04"><cite>Dave_Longley:</cite> status message. I don't see any reason why it must have those optional properties. And it would defeat the purpose of using it if it did.</p>
+<p id=0f56 class="phone s02"><cite>Wesley_Smith:</cite> So, it sounds like we're essentially on the same page. Agreed that potentially down the line there are better places for this term to be defined than here. But right now it is defined here and that is a separate question from what the issue is asking. I think that we just need to add a sentence to the specification that says they're not supported and then close this issue. so I will add this comment to that effect and tag it similarly as a good first issue. Wow. And prior is there a priority three? no. Okay.</p>
+<p id=bee4 class="phone s02"><cite>Wesley_Smith:</cite> I'll just call it a good first issue. I don't think that's super critical. All right. anything else anyone want to say on that topic? Sorry, I'm very hyper aware that I can't hear if people have their hands up. It's stressing me out.</p>
+<p id=f2d2 class="phone s04"><cite>Dave_Longley:</cite> There are no hands up.</p>
+<p id=dc0b class="phone s02"><cite>Wesley_Smith:</cite> All right. So, let's go ahead and maybe do one more issue. this is my issue from 2024. allow multibase encoding for driver's license VCBs. yeah, this is the issue that I just raised a PR for last night. So, we don't need to talk about it. It will close when that is I lied. one more issue from 1025. It's possible to put a bare bp in a QR code.</p>
+<p id=10007 class="phone s02"><cite>Wesley_Smith:</cite> This is an issue from a time where the specification did not allow the use case where you just stick a VC in a barcode. So, it looks like Manu this PR got merged.</p>
+<p id=1d2d class="phone s01"><cite>Ivan_Herman:</cite> new kid.</p>
+<p id=761d class="phone s02"><cite>Wesley_Smith:</cite> Manu just didn't use the keyword to close this issue. I think this issue can be closed. anybody disagree or feel differently?</p>
+<p id=63fb class="phone s02"><cite>Wesley_Smith:</cite> Nuke it for more of it discussed on 28 issue is outdated and no longer applies back explicitly supports this use case in both session. All right. we are about out of time. Remind me folks, this is supposed to end at five minutes to the hour, It's not supposed to go to the hour. All right. we're about out of time. thank you everyone for the time and effort today. had some good discussion and I will see you folks next week. Meeting ended after 00:55:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
