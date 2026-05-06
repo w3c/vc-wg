@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 06 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>06 May 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d811d954-dd65-4cce-844a-53dfd95e75c7/20260506T110000/#agenda"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/05/06-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, carolynn, dlongley, dppSusan, eva, hsano, ivan, ivo, JennieM, JoeAndrieu, kezike, manu, Olvisgil, PDL-ASU, schmittner,  tallted, ted, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#a580">F2F Meeting</a></li>
+<li><a href="#ee46">PQ Data Integrity Task Force</a></li>
+<li><a href="#d0c3">What to do with Vocabularies</a>
+<ol>
+<li><a href="#b846">w3c/<wbr>vc-wg#12</a></li>
+</ol>
+</li>
+<li><a href="#75c1">VCDM Maintenance</a>
+<ol>
+<li><a href="#c2c1">http://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues/<wbr>1627</a></li>
+<li><a href="#447c">w3c/<wbr>vc-data-model#1628</a></li>
+<li><a href="#da71">ISO PAS</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=4764 class="phone s01"><cite>brent:</cite> welcome everyone to the VCWG meeting. We are meeting under the IPR agreements folks have signed as members. If you are here and are not yet a member of the WG or W3C, please let us know how we can help.<br>
+<span id=93f2>… Today we will discuss the face to face meeting, vocabularies, the Data Integrity task force, and VCDM maintenance.</span></p>
+<p id=ffff class="phone s02"><cite>jandrieu:</cite> We have the first meeting of the confidence method task force tomorrow.</p>
+<p id=ec05 class=irc><cite>&lt;manu&gt;</cite> <a href="https://lists.w3.org/Archives/Public/public-credentials/2026May/0006.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Public/<wbr>public-credentials/<wbr>2026May/<wbr>0006.html</a></p>
+<p id=04da class="phone s03"><cite>manu:</cite> The CCG has published the final CG version of the post-quantum cryptosuite.<br>
+<span id=b621>… Another general announcement on groups like VCALM, recognized entities, etc is that we are preparing to do a bunch of threat modeling work for horizontal review.</span><br>
+<span id=1343>… the VCALM work will probably have the most involved threat model.</span></p>
+</section>
+
+<section>
+<h3 id=a580>F2F Meeting</h3>
+<p id=db6d class="phone s01"><cite>brent:</cite> We are having a face to face meeting in Brussels at the beginning of next month. We are building an agenda and anticipating talking about threat modeling and each task force.<br>
+<span id=f2ae>… If there are other topics folks would like to cover please let us know.</span></p>
+<p id=4ff2 class="phone s04"><cite>carolynn:</cite> is there an agenda yet?</p>
+<p id=ec83 class="phone s01"><cite>brent:</cite> We are in the process of building the agenda.</p>
+<p id=b0b7 class="phone s04"><cite>carolynn:</cite> There was discussion of a vocabulary meeting but I would prefer to cancel that.</p>
+<p id=af69 class="phone s01"><cite>brent:</cite> There is an option to do a vocab meeting on Thursday afternoon.</p>
+<p id=83d7 class="phone s04"><cite>carolynn:</cite> That does not work for me either.</p>
+<p id=12d7 class=irc><cite>&lt;brent&gt;</cite> JoeAndrieu</p>
+<p id=b84c class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to invite folks to the after party</p>
+<p id=ad49 class="phone s05"><cite>JoeAndrieu:</cite> Friday morning some of us are playing disc golf, if you can fit that into your schedule we would love to have you.</p>
+<p id=e312 class="phone s01"><cite>brent:</cite> Let's do some introductions, if you are on the call and have not said hello we invite you to do so.<br>
+<span id=4f0d>… Let us know who you are and what you are hoping to work on.</span></p>
+<p id=4a9e class="phone s06"><cite>ted:</cite> I work for GeoTab, heavily involved in automotive standards. I used to work for W3C. We are working on vehicle specific Verifiable Credentials with COVESA.</p>
+<p id=5d0e class="phone s07"><cite>Olvisgil:</cite> Pleasure to be here. I'm an invited expert, member of ISO and do standards work in European groups, excited to be part of this work, especially related to DIDs and VCs for payments.</p>
+<p id=426f class="phone s08"><cite>ivan:</cite> If anyone would like to join any of the task forces please send me an email.</p>
+<p id=03a9 class="phone s01"><cite>brent:</cite> Currently the process to join a task force is manual and needs ivan, we are hoping to automate this.</p>
+</section>
+
+<section>
+<h3 id=ee46>PQ Data Integrity Task Force</h3>
+<p id=f1cd class="phone s01"><cite>brent:</cite> The next topic is the post-quantum Data Integrity task force.</p>
+<p id=2c3c class=irc><cite>&lt;Carolynn&gt;</cite> For Ted, DPP vocab meetings are Mondays 16h30-17h30 Paris time.</p>
+<p id=5cb8 class=irc><cite>&lt;manu&gt;</cite> <a href="https://lists.w3.org/Archives/Public/public-credentials/2026May/0006.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Public/<wbr>public-credentials/<wbr>2026May/<wbr>0006.html</a></p>
+<p id=bf03 class="phone s01"><cite>brent:</cite> The CCG release a CG final report, using the DI framework with post-quantum algorithms. This is within the charter if there is interest.<br>
+<span id=30d0>… Do we want to form another task force for this?</span></p>
+<p id=1ee5 class="phone s03"><cite>manu:</cite> The good news is that we do not have to, the VC Barcodes/Data Integrity call already contemplated including the post-quantum work.<br>
+<span id=9f9e>… There is crossover there in post-quantum security over physical barcodes.</span><br>
+<span id=f605>… It's possible that the work will expand such that we need a separate task force, but should be fine for now.</span></p>
+<p id=ca26 class="phone s01"><cite>brent:</cite> When there is something to share or a FPWD we will get that on the agenda.</p>
+<p id=a65b class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to ask when that might be</p>
+<p id=3955 class="phone s03"><cite>manu:</cite> A question is, in theory we could move the document over to FPWD, typically we want to see IPR agreements from major committers, largely right now it's Greg Bernstein and folks from Digital Bazaar. I think we're waiting for 4-5 signatures to establish the main IP, and at that point we can pull it over. Question to the group: once we get those signatures, should we work with ivan to migrate it over to the WG?<br>
+<span id=9823>… We already resolved to move it.</span></p>
+<p id=2520 class="phone s01"><cite>brent:</cite> yes, that makes sense since we have already resolved to do so.<br>
+<span id=d67b>… Next up we will discuss vocabularies.</span></p>
+</section>
+
+<section>
+<h3 id=d0c3>What to do with Vocabularies</h3>
+<h4 id=b846><a href="https://github.com/w3c/vc-wg/issues/12">w3c/<wbr>vc-wg#12</a></h4>
+<p id=c50b class="phone s01"><cite>brent:</cite> ivan raised an issue in the VCWG repository. When the VCDM 2.0 was published, the WG decided to consider the vocabulary to be normative, but the context to not be normative. As a result the vocabulary was published at a stable link where it could be retrieved and where folks could look at the normatively supplied hash value of the document.<br>
+<span id=e2d3>… There are a number of task forces that are doing their own vocabularies, with some intention of adding terms to the VCDM vocabulary. It's important that this group have a conversation about how to handle that, since the vocabulary is a normatively defined document.</span><br>
+<span id=d515>… There are some things where it would be straightforward to say additions to the VCDM make sense, where some additions might not make as much sense.</span></p>
+<p id=cb0a class=irc><cite>&lt;Zakim&gt;</cite> ivan, you wanted to react to manu</p>
+<p id=f090 class=irc><cite>&lt;Carolynn&gt;</cite> p+</p>
+<p id=12f2 class="phone s08"><cite>ivan:</cite> At the moment the vocabularies are defined in different formats. Three different formats have been copied to a stable place in W3C space. Additionally, in the VCDM spec there is a hash that is generated for the JSON-LD version of the vocabulary and normatively referred to.<br>
+<span id=b336>… The hash value is normatively defined.</span><br>
+<span id=4b12>… I have been glancing through some of the new specifications, and most of them define new vocabulary terms. VCALM may be separate, since I don't think it defines terms in the JSON-LD sense, terms for a protocol are slightly different.</span><br>
+<span id=a990>… It would be good to make a decision in advance on where these terms will go.</span><br>
+<span id=75bb>… Another question is regarding the hash, we are not supposed to change that without changing the version of the rec.</span><br>
+<span id=c8fb>… We also must make structural decisions about the vocabularies.</span></p>
+<p id=63db class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to propose a general direction</p>
+<p id=7b07 class="phone s03"><cite>manu:</cite> +1 to everything that ivan said, and we need to be careful about making them. We are probably going to have to decide on a case-by-case basis whether these vocab terms go into the core VCDM or not. A general rule is &quot;are these terms generally applicable to the ecosystem, or are they focused on a market vertical or some other vertical&quot;.</p>
+<p id=e604 class=irc><cite>&lt;dlongley&gt;</cite> +1 to keeping it decentralized</p>
+<p id=53ea class="phone s03"><cite>manu:</cite> For the things related to a specific vertical, those can exist independently and do not need to be merged into the core. The purpose behind the way we built this ecosystem is to encourage decentralized innovation, no need to recentralize here.</p>
+<p id=030b class=irc><cite>&lt;Carolynn&gt;</cite> +1 to the idea that application-specific vocabs are stand-alone (and can be used outside of VCs !)</p>
+<p id=5ab2 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 for specialized vocabulary for domain-specific terms</p>
+<p id=a57d class="phone s03"><cite>manu:</cite> The render method work is a good example of the kind of stuff that should be added to the main VCDM, things like the barcodes are less clear and the task forces should discuss individually.<br>
+<span id=168b>… The general approach is to do this on a case-by-case basis, if it's per-vertical, leave it out of the VCDM, if something crosses verticals it is a good candidate for putting in the VCDM.</span></p>
+<p id=2b27 class="phone s08"><cite>ivan:</cite> That sounds good but is only part of the problem, another issue is that we need to have some level of consistency among all the documents and vocabularies.<br>
+<span id=8040>… So far, what we did is create a GitHub folder that contains HTML, JSON-LD, and Turtle versions of the vocabularies.</span><br>
+<span id=a3eb>… We develop this as a document on GitHub without formal status in terms of W3C, then when the document goes to Rec we move it to W3C space to make it stable and provide the appropriate redirects.</span><br>
+<span id=4d2f>… And we add the JSON-LD hash into the specification. The question is, is this the approach we use for all of them?</span><br>
+<span id=706e>… It would be good if URLs for these things could be consistent and easy to find.</span><br>
+<span id=fb98>… An orthogonal question is where are the JSON-LD files and who maintains them.</span></p>
+<p id=e992 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note &quot;you say mess&quot;, I say &quot;decentralized&quot; :) -- we should have this list of decisions that need to be made somewhere.</p>
+<p id=5f5f class="phone s03"><cite>manu:</cite> Yes, we need concrete answers to those things. I feel that the way we have answered these questions in the past has been fairly successful. Some of this comes down to allowing innovation outside the group (i.e. decentralization).</p>
+<p id=a76a class=irc><cite>&lt;dlongley&gt;</cite> +1 to some extra urls being a good trade off to enable innovation and decentralization</p>
+<p id=557e class="phone s03"><cite>manu:</cite> ivan, you went through a fairly long list of items, perhaps we should have a unified place to make these decisions for all the groups.<br>
+<span id=410e>… I think the approach is unified, but we should write down the results in a single place.</span></p>
+<p id=7edd class="phone s08"><cite>ivan:</cite> I'm happy to gather all the material in one space and put it into a markdown document on the WG repo.</p>
+<p id=09e7 class=irc><cite>&lt;manu&gt;</cite> That sounds like a great path forward, thank you for taking that on, Ivan!</p>
+</section>
+
+<section>
+<h3 id=75c1>VCDM Maintenance</h3>
+<p id=da7f class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model">w3c/<wbr>vc-data-model</a></p>
+<p id=6090 class="phone s01"><cite>brent:</cite> next and final topic is VC Data Model maintenance.<br>
+<span id=cc05>… There are currently no open pull requests, so we will start with issues.</span><br>
+<span id=aa46>… There is one issue with no labels, we will look at that first.</span></p>
+<h4 id=c2c1><a href="http://github.com/w3c/vc-data-model/issues/1627">http://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues/<wbr>1627</a></h4>
+<p id=c854 class="phone s03"><cite>manu:</cite> This feels like an LLM generated issue. I don't quite know what they're asking for.<br>
+<span id=92fd>… It feels largely editorial.</span></p>
+<p id=137d class="phone s01"><cite>brent:</cite> I had the same experience. It's unclear what changes they are requesting.<br>
+<span id=7c14>… My inclination is to propose closing this, happy to hear other perspectives.</span></p>
+<p id=7c26 class=irc><cite>&lt;PDL-ASU&gt;</cite> perhaps we need a new github tag &quot;AI Slop&quot; ;-)</p>
+<p id=2c1c class="phone s05"><cite>JoeAndrieu:</cite> I also think we should close it. This is a request to have a use case added, we have a use case document, we could respond by saying they could propose this over there. If there is a human behind this, maybe there is something here that would fit the use case document.</p>
+<p id=707c class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to agree with Joe, it's more cordial.</p>
+<p id=a3a8 class=irc><cite>&lt;dlongley&gt;</cite> +1 to close with no action ... and we might need to start saying more about our requirements around AI generated issues</p>
+<p id=a4fc class="phone s03"><cite>manu:</cite> +1 to requesting they raise a use case PR.</p>
+<p id=0335 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1 to requesting they raise a PR</p>
+<p id=e6ed class="phone s08"><cite>ivan:</cite> The person's GitHub profile is inactive. I think it should be closed.</p>
+<p id=b0e9 class=irc><cite>&lt;dlongley&gt;</cite> +1 to Brent's comment and action</p>
+<p id=4f9b class=irc><cite>&lt;manu&gt;</cite> +1 to brent's suggestion.</p>
+<p id=5db0 class="phone s01"><cite>brent:</cite> ivan will close the issue, I will add a label and add the discussed comment.</p>
+<h4 id=447c><a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></h4>
+<p id=f983 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to digestSRI</p>
+<p id=6fe0 class="phone s03"><cite>manu:</cite> This was raised because in another spec, I think recognized entities, the concept of should we use digestSRI or digestMultibase keeps coming up.<br>
+<span id=94e6>… The reason we support two digest schemes is because we couldn't agree on a single one. This is impacting downstream specs that build on the core data model. My suggestion is that we deprecate digestSRI because it is the less flexible of the two. We don't need to remove it from the spec, just mark it for deprecation/removal in 3.0.</span><br>
+<span id=a7de>… If anyone really likes the feature they can add it into the vocabulary for their use case.</span><br>
+<span id=b20f>… There were companies that pushed for digestSRI, we may want to ask them where they are on it currently.</span><br>
+<span id=71e1>… The proposal is to deprecate digestSRI.</span></p>
+<p id=0c68 class="phone s08"><cite>ivan:</cite> whoever writes the PR should ping me so the term can be deprecated in the vocabulary as well.</p>
+<p id=1100 class="phone s03"><cite>manu:</cite> I'll take this PR if we have consensus.</p>
+<p id=1d8c class=irc><cite>&lt;dlongley&gt;</cite> +1 to deprecate digestSRI</p>
+<p id=c219 class=irc><cite>&lt;PDL-ASU&gt;</cite> +1  for the proposal to go forward with standardizing the use of digestMultibase and deprecate digestSRI</p>
+<p id=2e88 class="phone s01"><cite>brent:</cite> I will ping folks that are no longer members of this group that pushed for digestSRI in the past.<br>
+<span id=eea8>… I am not hearing any objection from the group here.</span></p>
+<p id=7fd5 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to ask if anyone is using digestSRI and cannot live with digestMultibase?</p>
+<p id=6840 class="phone s03"><cite>manu:</cite> I want to know if anyone in this group has implemented and is currently using digestSRI and they will not be able to use digestMultibase.<br>
+<span id=1b98>… Let me look at the implementation report, to see if it shows who is using this feature.</span><br>
+<span id=a834>… The test was to support either, we did not split them apart.</span></p>
+<p id=1004 class="phone s01"><cite>brent:</cite> If we don't hear from the people we reached out to, there is no opposition to moving forward as proposed.</p>
+<h4 id=da71>ISO PAS</h4>
+<p id=76a4 class="phone s08"><cite>ivan:</cite> We have a pattern for an explanatory document that has to be produced for the PAS process. Hopefully this conversion will become straightforward.</p>
+<p id=ee89 class="phone s03"><cite>manu:</cite> At what stage can we submit something for ISO PAS? Can we do a preliminary on a working draft that is standards track? Can we submit it as a provisional to ISO PAS, to let them know that we intend to take it through the PAS process?</p>
+<p id=837f class="phone s08"><cite>ivan:</cite> The PAS process means that it is a recommendation. Informally, depending on what contact you have with the related ISO group, there is a possibility to give them a version for pre-review (CR).<br>
+<span id=4a43>… This can shorten the PAS process.</span></p>
+<p id=ff93 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to add color</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
