@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 5 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>5 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#987c">VC Barcode PR Review</a></li>
+<li><a href="#df22">VC Barcode PR Updates</a></li>
+<li><a href="#06ad">Announcements, Introductions, and Process</a></li>
+<li><a href="#3228">VC Barcode Issue Processing</a></li>
+<li><a href="#eac6">PDF417 Barcode Support</a>
+<ol>
+<li><a href="#2adf">Allow PDF417 barcode types beyond AAMVA Driver&amp;#39;s License · Issue #22 · w3c/vc-barcodes · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#4900">Quantum Safe Document Transition</a></li>
+<li><a href="#44c0">Data Integrity Threat Modeling</a>
+<ol>
+<li><a href="#116f">Support for Selective Disclosure · Issue #22 · w3c-ccg/di-quantum-safe · GitHub</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=987c>VC Barcode PR Review</h3>
+<p id=b9bf class="phone s01"><cite>Wesley_Smith:</cite> Good morning folks. I will give others a couple more minutes to trickle in and then we'll get started.</p>
+<p id=af82 class="phone s01"><cite>Wesley_Smith:</cite> All right, I think it's been long enough. Let's go ahead and get started. hey everyone. Thanks for being here. This is the May 5th meeting of the VC barcodes and data integrity task force. I'll go ahead and topic in the first thing today announcements, introductions process items. Does anybody have anything they want to share with the group? sounds good. no, if there are no announcements, intro or process items, then we can go ahead and jump right into I suppose we should re ask for Ivonne.</p>
+<p id=9648 class="phone s01"><cite>Wesley_Smith:</cite> I just checked with the group…</p>
+<p id=e07e class="phone s02"><cite>Ivan_Herman:</cite> No.</p>
+<p id=b5ba class="phone s01"><cite>Wesley_Smith:</cite> if anybody has announcements, introductions, or process items they would like to share. Do you have anything along those lines? All right, sounds good. I think we can go ahead and jump into VC barcode, PR review and issue processing for about half the call and then I'll turn it over to Greg for the second half of the call to do similarly with data integrity. All right. So, let me go ahead and share my screen. Am I sharing the VC barcodes GitHub page?</p>
+</section>
+
+<section>
+<h3 id=df22>VC Barcode PR Updates</h3>
+<p id=2342 class="phone s03"><cite>Dave_Longley:</cite> You are.</p>
+<p id=2a4e class="phone s01"><cite>Wesley_Smith:</cite> You are.</p>
+</section>
+
+<section>
+<h3 id=06ad>Announcements, Introductions, and Process</h3>
+<p id=695a class="phone s03"><cite>Dave_Longley:</cite> It might take a minute for it to get a little less blurry, but it usually does.</p>
+<p id=ddd3 class="phone s01"><cite>Wesley_Smith:</cite> Sounds good. All right.</p>
+<p id=d1c6 class="phone s01"><cite>Wesley_Smith:</cite> So there are a handful of open PRs on VC barcodes. some of them we have already talked about, some of them we have not. so I'd like to go through merge some of these down and put a timeline out into the ether for when I'm going to merge the rest down assuming no objections, change requests, things along those lines. All right. So, first, number 51. This is a small PR. All it does is update some of the binary values in some of the examples in the verification process test vector stuff were old. That's it.</p>
+<p id=67c2 class="phone s01"><cite>Wesley_Smith:</cite> There's no real fundamental change here other than just updating to the modern and current Seabore LD structure in these kind of binary payloads. that's it. I'll note that we have multiple approvals although so I guess process question do implicit textbased approvals count as multiple approvals per W3C Right.</p>
+<p id=d462 class="phone s02"><cite>Ivan_Herman:</cite> I'm not trying to sell what you ask.</p>
+<p id=a098 class="phone s01"><cite>Wesley_Smith:</cite> So I know it's preferable to have multiple approvals on a PR before you merge So here Dave Longley has pressed the GitHub approve button and you said let's merge this PR which is sort of a implicit approval.</p>
+<p id=9b50 class="phone s01"><cite>Wesley_Smith:</cite> Does that count as multiple approvals per W3C? Does it not matter?</p>
+<p id=34c7 class="phone s02"><cite>Ivan_Herman:</cite> Yes. Yes.</p>
+<p id=b66e class="phone s02"><cite>Ivan_Herman:</cite> We We are not machines. Of course.</p>
+<p id=c0cd class="phone s01"><cite>Wesley_Smith:</cite> Okay, sounds good. All right.</p>
+<p id=159e class="phone s01"><cite>Wesley_Smith:</cite> Any objections to merging This is a very small simple PR I'd really like to get merged. All right, sounds good. I'll also note that sometimes with Google Meet I have trouble I can't hear the sounds of people raising hands…</p>
+<p id=830a class="phone s01"><cite>Wesley_Smith:</cite> if I'm in a different tab. So, please interrupt me verbally if you raise your hand.</p>
+<p id=65c7 class="phone s02"><cite>Ivan_Herman:</cite> I have just raised my hand.</p>
+<p id=053f class="phone s01"><cite>Wesley_Smith:</cite> Okay, perfect timing. Ivon, go ahead.</p>
+<p id=8e46 class="phone s02"><cite>Ivan_Herman:</cite> So just to speed up processing I believe there might be a number of PRs coming in and that one seems to be in this category which are really simple things which are mostly editorial things nothing really diverse discussing I personally would not have any problem…</p>
+<p id=fbbe class="phone s01"><cite>Wesley_Smith:</cite> Mhm. Right.</p>
+<p id=6d6f class="phone s02"><cite>Ivan_Herman:</cite> if this one would have been merged by you before the meeting and we don't need to spend time on everything on meetings. So we can streamline the process a little bit within limits and within reasonable bounds of course but we don't have to be overly formal.</p>
+<p id=8696 class="phone s01"><cite>Wesley_Smith:</cite> No, understood and thanks for the perspective. I know that there's a balance to be struck there because I don't want people to think that I'm, off doing whatever I want. I know that discussing things with the group and having group approval is good, but definitely heard that I could be a bit more selective with…</p>
+<p id=6d31 class="phone s01"><cite>Wesley_Smith:</cite> what we discuss. All right, that sounds good. I'm going to go ahead and merge this and then we will talk about some of the pathier PRs that are outstanding in the rest of our time.</p>
+<p id=143b class="phone s03"><cite>Dave_Longley:</cite> And Greg raised his hand.</p>
+<p id=8729 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=c147 class="phone s04"><cite>Greg_Bernstein:</cite> The issue in general was when we were getting those prepared,…</p>
+<p id=13ad class="phone s04"><cite>Greg_Bernstein:</cite> if it was an part of the informative text and it was an editorial thing, We would point that out in the comments before we'd merge and things like that because if it's informative not normative text,…</p>
+<p id=c461 class="phone s04"><cite>Greg_Bernstein:</cite> and if it's an editorial change, you're safer just merging those is if you point that out. That's what we were doing previously with all the U DI things up.</p>
+<p id=b324 class="phone s02"><cite>Ivan_Herman:</cite> Yeah. I mean first of all probably it helps…</p>
+<p id=ffff class="phone s02"><cite>Ivan_Herman:</cite> if we have labels which size says editorial. I don't know whether we have that but that helps in looking through the things in advance and this is something that I believe you have the freedom or the one who raises the issue has the freedom to set as editorial and you open a PR you leave it open for a while you get one or two positive approval things nobody really objects then just go</p>
+<p id=b86a class="phone s02"><cite>Ivan_Herman:</cite> merger at the end of the process before we go to CR there will be a thorough review of the whole text as a whole by a number of people because this is to be done before going to CR anyway so if there are some inconsistencies or whatn not they will resurface but spending time on these calls on all the minutia that's my personal view.</p>
+<p id=029f class="phone s02"><cite>Ivan_Herman:</cite> This is not some W3C policy. This is just my practice with working groups.</p>
+<p id=fc86 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. No,…</p>
+<p id=c50f class="phone s01"><cite>Wesley_Smith:</cite> definitely understood and appreciated. Like I said, I'll try to handle some of the really small trivial stuff off of call time from now on. I do want to air on the side generally of being conservative there just because I'm not super experienced in this area and…</p>
+<p id=55d5 class="phone s02"><cite>Ivan_Herman:</cite> Of course.</p>
+<p id=9262 class="phone s01"><cite>Wesley_Smith:</cite> I don't want to overstep my bounds and have the group suffer for it. but yeah,…</p>
+<p id=2f6d class="phone s02"><cite>Ivan_Herman:</cite> Until…</p>
+<p id=64a3 class="phone s01"><cite>Wesley_Smith:</cite> absolutely. Okay,… Ivan Herman:</p>
+<p id=6913 class="phone s02"><cite>Ivan_Herman:</cite> until we feel otherwise. Let's say that we trust you.</p>
+<p id=f433 class="phone s01"><cite>Wesley_Smith:</cite> sounds good. All right.</p>
+<p id=fb14 class="phone s01"><cite>Wesley_Smith:</cite> So next I want to briefly re revisit a PR that we've already talked about. currently the GitHub web interface for applying change suggestions is consistently breaking for me in that it is changing the end of line character in entire files. and so oneline change suggestions if I commit them at the web interface will result in the entire file being There was a fair amount of discussion on this and we made a fair amount of changes but those hidden in those changes was a commit that broke the entire index document. So what I did is I re and Ted made quite a substantial number of editorial suggestions. What I did is I rebased the PR to before the broken commit and I manually reapplied the changes that happened after.</p>
+<p id=47c8 class="phone s01"><cite>Wesley_Smith:</cite> If you are a participant on this please review it, reapprove it, make sure that I captured what you wanted to be captured given that we've lost some of the most recent commit history. in addition, as I noted here, I'm going to pull your extensive editorial feedback into other PRs just to keep this PR workable and so we can merge it. But thank you as always for being thorough going through and providing good feedback. that's it. if you're involved in this …</p>
+<p id=90b1 class="phone s01"><cite>Wesley_Smith:</cite> I'm going to leave it open for a little bit longer just because I recently changed it and pushed and so on. So take a look. make sure that it currently captures what you want it to capture. I'll try to merge that down later in the week. Sound good? Yep.</p>
+<p id=c8a8 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> hand up.</p>
+<p id=a772 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> I think it's a little bit larger than just your experience of the web interface. I have noticed in recent past and not just on the suggestion text when you click that little icon and it puts the suggestion text in, it puts an extra line feed at the end before the close of the text block.</p>
+<p id=bb49 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> That seems to be a herald of the screw up in the rest of the body. and just deleting that last tailing line feed is not enough to fix whatever it was.</p>
+<p id=e20d class="phone s01"><cite>Wesley_Smith:</cite> Right. …</p>
+<p id=58cd class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> So it may be a bigger issue thing to keep aware of and watch for. I guess I'm saying and…</p>
+<p id=ac61 class="phone s01"><cite>Wesley_Smith:</cite> that sounds good. Thanks. Appreciate the perspective. noting that in the meantime, I would say until it's resolved, don't put a ton of effort into making perfect change suggestions if you're thinking I can just click a button to have it happen because I'll have to manually go in and do it anyway. but take a peek at that if you are an involved party. I'd like to get it merged as soon as possible. yeah. sorry.</p>
+<p id=10000 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> the other thing as you're doing this manual application, if you can put in the authored by, that will help keep an eye on what's going on.</p>
+</section>
+
+<section>
+<h3 id=3228>VC Barcode Issue Processing</h3>
+<p id=0d17 class="phone s01"><cite>Wesley_Smith:</cite> Heard absolutely. Thanks. All right. this number 50 is small. I will merge this later this week offline as Ivon and I just discuss take a peek at it if you're interested. Otherwise, it'll probably give emerge in the next couple days. it's a trivially small PR. All right. Number 52. I think we can take some of the groups time to discuss. number 52 is about the introductory examples. Ivon, this is directly related to an issue that you raised. so this PR is a few things. So there are three examples in the introduction section. There is a driver's license, there's an employment authorization document, and there's a birth certificate.</p>
+<p id=10001 class="phone s01"><cite>Wesley_Smith:</cite> The driver's license and the employment authorization document are examples of our second use case where we are augmenting some optically readable data on a document. And the birth certificate is an example of the first use case where we are adding a barcode to a document to contain ABC. this PR does a few things. first of all it reorders them. Ivon pointed out that it doesn't make a tremendous amount of sense to have the more complicated and nuanced use case be the first example. So this PR puts the birth certificate example first because It also changes the actual technical content of the other two examples, the VCs for the driver's license and the authorization document. The VCs that were there before in those introductory examples were old and broken.</p>
+<p id=10002 class="phone s01"><cite>Wesley_Smith:</cite> and we have functional test vectors in the specification that are not old and broken. So this basically just takes the VCs from the test vectors and makes them also the introductory examples. and it also adds some text explaining some of the pointing to the use cases and explaining some of the nuance in the different use cases. so there's some text here describing as of requested about what is the subject of a credential in the augment use case what is this protected component index thing so on and so forth so I would say this is a mediumsiz PR hopefully it will meaningfully increase the readability of the spec for a newcomer in introductory sections as you're going through it for the first time.</p>
+<p id=6beb class="phone s01"><cite>Wesley_Smith:</cite> Ivonne, the one thing from your issue, let me go find your issue. I went into some respect issues with the birth certificate example has this nice tabbed respec feature where it shows the credential and it shows the seabore stuff. I've been into some respect issues trying to duplicate that for the driver's licenses and the EAD.</p>
+<p id=3dbd class="phone s01"><cite>Wesley_Smith:</cite> So the PR is more like what we currently have where it just shows the VC and then it shows some seabore. I think down the line it would be nice if we could figure out what that is and add that additional piece of polish. But to my mind and I want to hear if you have a different perspective, but to my mind addresses essentially everything in this issue enough to close it on merge. do you agree Ivon?</p>
+<p id=5f50 class="phone s02"><cite>Ivan_Herman:</cite> Yeah, I do. I have no idea how this steps was done by I didn't check it. I know that some of you guys did it in several different documents.</p>
+<p id=10003 class="phone s02"><cite>Ivan_Herman:</cite> So I see money is raising his hand. Maybe it's because of that.</p>
+<p id=2308 class="phone s01"><cite>Wesley_Smith:</cite> Money is here.</p>
+<p id=196a class="phone s01"><cite>Wesley_Smith:</cite> My goodness. I would have just asked him directly. Manu, go ahead.</p>
+<p id=e537 class="phone s06"><cite>Manu_Sporny:</cite> Yes.</p>
+<p id=9393 class="phone s06"><cite>Manu_Sporny:</cite> So, I wrote a good chunk of that code. we would just need to add something that would do the, PDF 417 kind of encoding process, which is, somewhat involved. that's the only change we'd need to make is we'd need to add that functionality.</p>
+<p id=427a class="phone s06"><cite>Manu_Sporny:</cite> So, it works for just like vanilla, R codebased barcodes. but it does not work for the PDF47 stuff yet. I'm sure it's just a matter of, putting in the time to write the code to get that other thing to work.</p>
+<p id=ff48 class="phone s02"><cite>Ivan_Herman:</cite> So to get back to the previous comment hearing money it's okay from my point of view…</p>
+<p id=9c2d class="phone s02"><cite>Ivan_Herman:</cite> if you merge it without tabbing things and in a time this should be done. but there is no urgency in that</p>
+<p id=b5d1 class="phone s01"><cite>Wesley_Smith:</cite> Okay, that sounds good. so, yep, go ahead and take a look at this get some reviews ideally by the end of the week, and then I will try to merge that probably sometime next week. I think that is it for open PRs. As we discussed, I will merge this multibase header PR off of call time. I think we can go ahead and we have about 5 to 10 more minutes to do some issue processing and then I'll turn it over to Greg. All right.</p>
+</section>
+
+<section>
+<h3 id=eac6>PDF417 Barcode Support</h3>
+<p id=eec7 class="phone s01"><cite>Wesley_Smith:</cite> So going from oldest to newest. number 20 is untagged but that is directly addressed by a currently existing PR. I will to add a label. All right. Allow PDF47 barcode types beyond AMA driver's licenses. Number 22 from 2025. Manu opened this one. Currently, the section on PDF417 is specific to AMBA. Should be expanded to support any sort of barcode data. we might want a more globally standardized field than a jurisdiction specific field which is currently what we do. So here we've discussed this topic a little bit in this group already.</p>
+<p id=47d7 class="phone s01"><cite>Wesley_Smith:</cite> I think we came to the conclusion that what we want to do is introduce the protected component index as a general mechanism to specify what part of a barcode the XI crypto suite signature cares about in the augmented use case and then have decouple protected component index from the AMva instance of that for AMva compliant driver's licenses and…</p>
+<p id=40a4 class="phone s02"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=b058 class="phone s01"><cite>Wesley_Smith:</cite> then push the AMA specific stuff into an appendix. is everyone on the same page there? Manu, go ahead. And by the way, Manu, I can't hear when you raise your hand, so please speak up.</p>
+<p id=f52a class="phone s01"><cite>Wesley_Smith:</cite> If Yeah.</p>
+<p id=bf83 class="phone s06"><cite>Manu_Sporny:</cite> Okay, gotcha.</p>
+<p id=62f9 class="phone s06"><cite>Manu_Sporny:</cite> Plus one to everything that you said. I think this specific one has been overtaken by events to certain degree. a couple of things. So, if you type in subtopic colon and then put in our discussion right now will be autolin to this issue and we should probably be doing that. as we go forward. just so there's an update on as we talk about it. the next item is some of this has been overtaken by events because we do have kind of examples in there. Plus if we make the changes you suggested we'll I think totally close the gap here.</p>
+<p id=ff58 class="phone s06"><cite>Manu_Sporny:</cite> That's comment two and comment three of three is we know that there are some organiza and I'm going to be vague. I'm sorry. There are some organizations that are talking about doing technology like this currently that know about the VC barcodes work and are ignoring it for some reason. and we need to get those organizations engaged. That'll happen kind of behind the scenes. but the outcome of those discussions may come back and influence the VC barcode specification. So for example, I know that there is an organization out there that is currently working on a digital signature field for PDF 417.</p>
+<h4 id=2adf><a href="https://github.com/w3c/vc-barcodes/issues/22">Allow PDF417 barcode types beyond AAMVA Driver&amp;#39;s License · Issue #22 · w3c/vc-barcodes · GitHub</a></h4>
+<p id=66f5 class="phone s06"><cite>Manu_Sporny:</cite> and for whatever reason they are either unaware of the work we're doing here or ignoring it on purpose. but regardless of what happens there if they define a standard field to fit the digital signature in we are going to have to engage with them to make sure that encompasses the solution that we're working on as well.</p>
+<p id=ebb2 class="phone s06"><cite>Manu_Sporny:</cite> So, I'll just sorry to be vague. Can't say who they are yet. but hopefully we'll be able to say it in the next month or two. So, that's just a placeholder for this. yeah.</p>
+<p id=eaf8 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, noted.</p>
+<p id=2a10 class="phone s01"><cite>Wesley_Smith:</cite> Manu, I'm curious your perspective on sort of versioning here. if our first cut of the VC barcode spec, if the next version needs to change to better interoperate with what another group is doing, is that an issue? Do we need to wait and block on learning about that when it becomes public? What do you think?</p>
+<p id=914a class="phone s06"><cite>Manu_Sporny:</cite> No, I think we can do a lot of this through feature detection, which is typically how it's a fairly good way of doing this kind of stuff. So, right now, we are not specific in the spec about where you put the signature. We don't say, for example, for PDF 417, especially in the US, the California, this is publicly known, the California driver's license puts it in something called a jurisdiction specific fields start with the letter Z. I think it's ZCE for California. other jurisdictions may pick different fields.</p>
+<p id=10004 class="phone s06"><cite>Manu_Sporny:</cite> And let's say we go to someone somewhere in the world is no for PDF47 you should put it in the QRD field right if that becomes the global standard we will be forward compatible with it because our spec will say check a jurisdiction specific field if you know which one to look for and if not check the QRD field.</p>
+<p id=d029 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=9f6d class="phone s06"><cite>Manu_Sporny:</cite> those are just three random letters I picked to extract signature information. So I don't think we need to slow down anything that we're doing. We just need to be aware that there are other groups that have seen what we're doing here and are trying to come up with their own solution. and we need to be aware of that and figure out a way to make sure that those two solutions don't clash.</p>
+<p id=f296 class="phone s01"><cite>Wesley_Smith:</cite> Sounds good. Sorry, I'm just briefly writing up where I think we landed. please speak up if you disagree with what I'm typing. And again, I can't hear Raise your hand.</p>
+<p id=005e class="phone s01"><cite>Wesley_Smith:</cite> Please.</p>
+<p id=5f86 class="phone s02"><cite>Ivan_Herman:</cite> Can I comment on process issues again?</p>
+<p id=10005 class="phone s02"><cite>Ivan_Herman:</cite> Sorry to b you with that. as far as I know, money will tell me if I am right. If we follow the style of topic column blah in the chat of the meet then the script that runs against the minutes at the end will pick that up and put it into the minutes the way we do it usually through If that is the case, then it goes through my process and that includes picking up the comments and put it into an issue as a comment.</p>
+<p id=6931 class="phone s02"><cite>Ivan_Herman:</cite> So whatever you do now as becomes unnecessary. So let's use the tools that we have at our disposals to make our own work more efficient.</p>
+<p id=d681 class="phone s01"><cite>Wesley_Smith:</cite> So you're saying I can verbally say the words that I just typed and…</p>
+<p id=38a6 class="phone s01"><cite>Wesley_Smith:</cite> it will function the same.</p>
+<p id=3cac class="phone s02"><cite>Ivan_Herman:</cite> The whole discussion that we have…</p>
+<p id=fc27 class="phone s02"><cite>Ivan_Herman:</cite> which goes into the minutes will be picked up section by section and…</p>
+<p id=f1fb class="phone s02"><cite>Ivan_Herman:</cite> spread over the issues if we follow the styles and the rules that we have established for ourselves for this to work.</p>
+<p id=39e8 class="phone s01"><cite>Wesley_Smith:</cite> heard. I will note that as a person working on the spec,…</p>
+<p id=ff82 class="phone s02"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=ae46 class="phone s01"><cite>Wesley_Smith:</cite> it is somewhat difficult to go through issues and click the view transcript and try to extract, sentiment out of the 80% accurate transcription and so on and so forth rather than just see a clear summary.</p>
+<p id=7a7c class="phone s02"><cite>Ivan_Herman:</cite> that's a matter of quality of the automatic trans.</p>
+<p id=bb0b class="phone s01"><cite>Wesley_Smith:</cite> Do you not want me to also be adding summaries or…</p>
+<p id=f65a class="phone s02"><cite>Ivan_Herman:</cite> No, no, no, no, no. Wes I far from me to say what you have to do or you don't want to do that's the point it's more a matter of efficiency…</p>
+<p id=648e class="phone s01"><cite>Wesley_Smith:</cite> just as a matter of efficiency? Right. Right.</p>
+<p id=c873 class="phone s02"><cite>Ivan_Herman:</cite> but manu is there to comment and…</p>
+<p id=5378 class="phone s02"><cite>Ivan_Herman:</cite> maybe he will shoot me down</p>
+<p id=fbe1 class="phone s06"><cite>Manu_Sporny:</cite> No, no.</p>
+<p id=10006 class="phone s06"><cite>Manu_Sporny:</cite> I mean, plus to as an editor, this is Wes taking notes so that he knows what to do on the issue or how to direct people. I think plus one to that. it is really hard to pick through the audit transcription to figure out, kind of where things ended up. It takes a lot of time. I think plus one what Ivonne said, if we're just having a kind of rambling conversation, that's fine, but if the editors want to say hey, this is what the next, step is here. I'll also note Wes Elaine, we probably need a discuss label and a ready for PR label and a PR exists label. because when we look at the issues, we don't kind of know at a high level which ones are kind of ready.</p>
+<p id=8494 class="phone s06"><cite>Manu_Sporny:</cite> when there's only, one editor, it's not really that big of an issue. But if people want to jump in and help, knowing that something is ready for PR, would be good. it's also very clear gate did we get to ready for on this issue. I think for some of it we did,…</p>
+<p id=c08e class="phone s06"><cite>Manu_Sporny:</cite> right? for some of this.</p>
+<p id=64a1 class="phone s01"><cite>Wesley_Smith:</cite> You lost me at the end there.</p>
+<p id=9189 class="phone s01"><cite>Wesley_Smith:</cite> For some of it, we did</p>
+<p id=10007 class="phone s06"><cite>Manu_Sporny:</cite> So the issue is there and we have to close the issue and so what are we going to do to close the issue? There were multiple things that were brought up in order to close the issue. Not all of them are going to be addressed by the current plan I don't think. So there's a part of this where we are, we're talking about where to put the field like ZCE or something else. So that's a separate issue that we can't actually address with the current plan if that makes sense. So we should track it right to know that hey there are other standards groups that are working on this and we may want to put it in a non-jurisdiction specific field or be quiet about it or whatever.</p>
+<p id=6a0d class="phone s06"><cite>Manu_Sporny:</cite> But if our goal here is to close this issue, we may want to split this issue up into multiple things.</p>
+<p id=aaf1 class="phone s06"><cite>Manu_Sporny:</cite> One of them is the concrete things that you talked about above, Wes. The other bit is just the raise another issue to what is the field that we put the signature in for PDF 417. And then that would allow us to basically close the other issue once It would allow very clear this thing's ready for PR is Merge Close the other issue.</p>
+<p id=5391 class="phone s01"><cite>Wesley_Smith:</cite> yes,…</p>
+<p id=3698 class="phone s01"><cite>Wesley_Smith:</cite> agreed that those labels would be useful. okay, anything else on that topic? I'm gonna poke some things behind the scenes, but I think we are about out of time for VC barcodes. anybody else have anything on that topic they want to discuss? All right. thank you for that discussion. Greg Bernstein,…</p>
+</section>
+
+<section>
+<h3 id=4900>Quantum Safe Document Transition</h3>
+<p id=2c72 class="phone s01"><cite>Wesley_Smith:</cite> over to you for data integrity.</p>
+<p id=6e05 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, on data integrity,…</p>
+<p id=43cf class="phone s04"><cite>Greg_Bernstein:</cite> sorry, I was missed the call last week. I was still getting notifications that the call was supposed to happen at 8 a.m. Pacific Daylight Time, and who knows why that was. Okay. we're trying to get Quantum Safe over from the CCG to the VC working group. I think that's the right terminology. And Benjamin helped get the part of the documentation together.</p>
+<p id=207f class="phone s02"><cite>Ivan_Herman:</cite> Come in here.</p>
+<p id=e5b7 class="phone s04"><cite>Greg_Bernstein:</cite> I put in some other stuff to get the draft or get the working group final document published. Then I sent an email hopefully people saw it. I forgot to save a copy to the CCG and the VC working group saying we wanted to transition this over and that was hopefully supposed to trigger IPR stuff and everybody was away at IIW and the CCG call did not happen last week and</p>
+<p id=005c class="phone s04"><cite>Greg_Bernstein:</cite> I don't know if that fell off the end of the earth or what. So, I haven't seen anything from the CCG chairs concerning that.</p>
+<p id=d26b class="phone s04"><cite>Greg_Bernstein:</cite> Did people see that email last week?</p>
+<p id=cb11 class="phone s02"><cite>Ivan_Herman:</cite> I saw an email passing by.</p>
+<p id=e4ab class="phone s02"><cite>Ivan_Herman:</cite> Yes. But</p>
+<p id=9e77 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, I am going to miss the CCG call today. can somebody bring that up because I think that's the last step in trying to move the document over is we've done the publishing as a final CCG document and stuff like that, but we have to do this what do we call it commitment to IPR or whatever. Okay,…</p>
+<p id=94c1 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I put myself on the queue. I just emailed I …</p>
+<p id=b5b2 class="phone s04"><cite>Greg_Bernstein:</cite> please let us know.</p>
+<p id=42a3 class="phone s06"><cite>Manu_Sporny:</cite> I just emailed the CCG chairs and asked them to please move it forward. I will be on the CCG call today. I'll push them to make a decision on it. we haven't seen any objections from anyone on the mailing list. we'll get that moving forward. And Ivon, this is just kicking off the CG final process. Greg's got everything in place. We just need the chairs to act in the CCG.</p>
+<p id=3bc4 class="phone s02"><cite>Ivan_Herman:</cite> That's kind</p>
+<p id=c6d6 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, there was some concern about chasing down missing authors,…</p>
+<p id=c280 class="phone s04"><cite>Greg_Bernstein:</cite> but I'm not sure how that works or if we have to for the IPR stuff or the CCG chairs will help us with that. Mono …</p>
+<p id=1db3 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah. we'll figure that they just need to do an IPR commitment and I don't think they really contributed much if anything. I think zero PRs for both of them. So it's not really an IPR concern.</p>
+<p id=eba7 class="phone s04"><cite>Greg_Bernstein:</cite> I should have checked. That's a good great point. Okay. …</p>
+<p id=1279 class="phone s02"><cite>Ivan_Herman:</cite> Was I having my hands up.</p>
+<p id=1160 class="phone s04"><cite>Greg_Bernstein:</cite> wait, do I have to say something?</p>
+<p id=b0ad class="phone s02"><cite>Ivan_Herman:</cite> So that's for the CCG part.</p>
+<p id=c56c class="phone s04"><cite>Greg_Bernstein:</cite> I haven't</p>
+<p id=ebc0 class="phone s02"><cite>Ivan_Herman:</cite> I think that we have to have a formal resolution from the working group that we take it over as a work item to the working group. that's something that we could try to get done tomorrow on the Berskin group meeting saying that once the CCG has finished…</p>
+<p id=92b2 class="phone s02"><cite>Ivan_Herman:</cite> what it has to finish, we can take over and take over the repository and officially consider it as a work item for us. But I think that has it been already decided?</p>
+<p id=197b class="phone s06"><cite>Manu_Sporny:</cite> Yes, it's that we already did that three weeks.</p>
+<p id=3789 class="phone s02"><cite>Ivan_Herman:</cite> I don't remember.</p>
+<p id=f81c class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, we quoted the line from the EC working group.</p>
+<p id=4566 class="phone s02"><cite>Ivan_Herman:</cite> You already did that…</p>
+<p id=ad26 class="phone s04"><cite>Greg_Bernstein:</cite> We actually quoted texts.</p>
+<p id=e80b class="phone s02"><cite>Ivan_Herman:</cite> and I should shut up. Okay.</p>
+</section>
+
+<section>
+<h3 id=44c0>Data Integrity Threat Modeling</h3>
+<p id=ce26 class="phone s04"><cite>Greg_Bernstein:</cite> Elmanu made sure before he had all the eyes dotted and the tees crossed before I sent out that email. So let's the next item really is threat modeling okay for data integrity I put down some notes this is the new approach that I guess the W3</p>
+<p id=c4a7 class="phone s04"><cite>Greg_Bernstein:</cite> 3C wants to do threat modeling rather than just have us write up security considerations and privacy considerations. this is very new. There's a threat modeling guide editor's draft from 9th of February 2026. And then there was some threat modeling for decentralized credentials. this is out of Simone's people and that came out in January. so how to try and do this without boiling the ocean as we say.</p>
+<p id=24aa class="phone s04"><cite>Greg_Bernstein:</cite> This related specifications has to do with the controlled identifiers documents. All those feed into the data integrity document. I put down some notes I could share on threat modeling via an issues post. Basically I start a more from the bottom up. I start from the CIA triangle, confidentiality, integrity, availability, and I throw in nonrepudiation under integrity. Then I go through each of the parties, issuers, holder, verifier, and look at bad things they might do by mistake or maliciously to try and put together a general threat model.</p>
+<p id=d0c4 class="phone s04"><cite>Greg_Bernstein:</cite> And so like that. I'm not quite sure how we should do this because this can be very ended and we don't want to have a super openended thing and I'm not sure how to get more participation besides myself in this process. depending on how big we're trying to do this rather than just before we had security considerations and privacy considerations and specific documents. Now we're talking about a threat model for embedded proofs is basically what data integrity is about.</p>
+<p id=2b13 class="phone s04"><cite>Greg_Bernstein:</cite> is the embedded proof form of verifiable credentials. Simony's group started about this decentralized credential threat model. that would be a more general threat model, but right now there's not enough in there to just reference to. Any thoughts on this process? Mono …</p>
+<p id=0559 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, we should take what Joe Andrews created for the did resolution threat model. He has an actual repository with respspec additions and JSONbased descriptions of each threat and response. So that's the infrastructure that we should reuse.</p>
+<p id=7d54 class="phone s04"><cite>Greg_Bernstein:</cite> I didn't see that one.</p>
+<p id=5d5a class="phone s06"><cite>Manu_Sporny:</cite> So we should reuse that infrastructure.</p>
+<p id=9c24 class="phone s04"><cite>Greg_Bernstein:</cite> Okay,…</p>
+<p id=8cc0 class="phone s06"><cite>Manu_Sporny:</cite> And the structure that he has in the document. Let me find did solution threat model.</p>
+<p id=b198 class="phone s04"><cite>Greg_Bernstein:</cite> let me So that's Joe's did.</p>
+<p id=be8a class="phone s06"><cite>Manu_Sporny:</cite> Hold on. Yeah, let me Yeah,…</p>
+<p id=af29 class="phone s04"><cite>Greg_Bernstein:</cite> is a did resolution threat model…</p>
+<p id=5b37 class="phone s06"><cite>Manu_Sporny:</cite> here it is. I put the link into the chat channel.</p>
+<p id=599c class="phone s04"><cite>Greg_Bernstein:</cite> because I'm just looking for a good …</p>
+<p id=9a99 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yep.</p>
+<p id=679b class="phone s04"><cite>Greg_Bernstein:</cite> what because the other work it was very prematurish and not something I could really Okay good Yes.</p>
+<p id=70cb class="phone s06"><cite>Manu_Sporny:</cite> So I mean basically copy this repository, right? Because this is the bleeding edge. There is also a threats directory where he's using, JavaScript to effectively mark up each threat like the name,…</p>
+<p id=8f98 class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/did-resolution-threat-model/tree/main">GitHub - w3c/did-resolution-threat-model · GitHub</a> </p>
+<p id=a135 class="phone s06"><cite>Manu_Sporny:</cite> Response, that sort of thing. this is again bleeding edge and it might change, but let's just follow Joe's lead here since he's, putting this stuff together. it will generate a document that looks like this, right? So, you've got to describe the architecture, the stakeholders, the threat list.</p>
+<p id=a8d0 class="phone s04"><cite>Greg_Bernstein:</cite> This is much better than some of the other docs.</p>
+<p id=e549 class="phone s06"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=6687 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, because this is more like if you look at the attacks framework and some of those things where they break it down into is that The RAND one that we used that breaks down into general threats and then sub threats and things like that numbers them.</p>
+<p id=5812 class="phone s04"><cite>Greg_Bernstein:</cite> And you can see, yeah, this is kind of where I was starting to go, but that's good because Yeah.</p>
+<p id=00ae class="phone s06"><cite>Manu_Sporny:</cite> Okay. Yeah.</p>
+<p id=ce31 class="phone s06"><cite>Manu_Sporny:</cite> So let's start here. And then the threat model should be for data integrity. it should not be for the postquantum thing. So we should work on a data integrity threat model, put the basics in there and then I expect in the data integrity threat model we should just talk about postquantum stuff and then have the postquantum spec just point back to the data integrity threat model.</p>
+<p id=e1cb class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, as part of the model, that aspect of, whether it's postquantum or pre-quantum, that really just gets to the narrow aspect of part of the properties of the signature scheme, even so I've been studying this beyond unforgeability and what happens when you use a credential as part of a larger system and do you want more than just existentially unfortable and we'll put that in what that means we put that those definitions some of the other specs so okay that helps resolve that now</p>
+<p id=1f4b class="phone s04"><cite>Greg_Bernstein:</cite> On the next item, okay, is getting ready we're thinking about the document restructuring and we were talking we've had an open issue for a while about moving selective disclosure into the general data integrity spec.</p>
+<p id=4107 class="phone s04"><cite>Greg_Bernstein:</cite> There's just one reason I might want to change the ordering about that is to do selective disclosure with postquantum seems important. I worked through and put in an issue which is almost more an outline of how you do it and I did sample code. We have what I call canonicalize and group after Dave's main function that allows us to do selective disclosure in both the ECDSA case and in the BBS case. These are two very very different approaches or signature schemes.</p>
+<p id=10008 class="phone s04"><cite>Greg_Bernstein:</cite> one has no notion of selective disclosure ECDSA but very short signatures. BBS has built-in selective disclosure but we use the same set of functions mostly and the core one is called canonicalize and group. The problem with postquantum right now is the signatures are very large. We can't just use the ECDSA selective disclosure approach which uses a separate 64 byt signature for each thing because we don't have 64 byt signatures in the case of postquantum. Okay.</p>
+<p id=a412 class="phone s04"><cite>Greg_Bernstein:</cite> However, there's a technique called salted hashes which would use about less than 64 bytes per statement which ends up be and use only one postquantum signature and so</p>
+<p id=0cb2 class="phone s04"><cite>Greg_Bernstein:</cite> It's pretty efficient. It's not as good as the ECDSA SD approach in the sense of what gets sent from the holder to the verifier because That's only the proof information for the disclosed information. and so this is going on a little bit under the issues section. Let me put the link in to the chat rather than trying to share my screen. if you look I just popped the link into this is SD a propo Subtopic.</p>
+<p id=7eb1 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, thank you ve. This is a proposal for doing selective disclosure with large postquantum signatures. If you have something as small as some of the potential what's not standard size sign stuff, those might not need this, but that might not work since it's in the CCG space so it shouldn't hurt. Dave go ahead.</p>
+<p id=5ecf class="phone s03"><cite>Dave_Longley:</cite> And that's just me talking in the chat about an administrative thing. You can put the prefix subtopic before an issue and the minutes that are generated will for when we're discussing this topic will get inserted into the issue that you put in the URL after subtopic.</p>
+<p id=7cb4 class=irc><cite>&lt;Greg_Bernstein&gt;</cite> <a href="https://github.com/w3c-ccg/di-quantum-safe/issues/22">Support for Selective Disclosure · Issue #22 · w3c-ccg/di-quantum-safe · GitHub</a> </p>
+<p id=744d class="phone s04"><cite>Greg_Bernstein:</cite> Okay, but we haven't moved this document over yet. So, okay.</p>
+<h4 id=116f><a href="https://github.com/w3c-ccg/di-quantum-safe/issues/22">Support for Selective Disclosure · Issue #22 · w3c-ccg/di-quantum-safe · GitHub</a></h4>
+<p id=f0b5 class="phone s03"><cite>Dave_Longley:</cite> Yeah, but apparently that doesn't matter. So keep</p>
+<p id=323a class="phone s04"><cite>Greg_Bernstein:</cite> So long story short is I'm not completely sure of all the subfunctions. with BBS selective disclosure and ECDSA SD we have a few functions that would get kept in those documents themselves because they're specific. Then we'd be moving out functions over to data integrity as if we choose to do selective disclosure proposed quantum. We just need to work through that to see which are the common functions which are specific.</p>
+<p id=4daf class="phone s04"><cite>Greg_Bernstein:</cite> And so it'd be kind of good to do that before we do this editorial thing of moving functions from ECDSASD over to data integrity and such like that. That's so there's a question. is there interest in an relatively efficient selective disclosure mechanism for data integrity.</p>
+<p id=10009 class="phone s04"><cite>Greg_Bernstein:</cite> And that issue outlines how we do it and has numbers that tell you how efficient it is versus not efficient and such like that. it's pretty good. It uses just one postquantum signature. It's a proven technique. There's papers I've cited on it. It's used by some other standards out there. Not necessarily great standards, but that doesn't imply anything about The cryptography is good opinions. Mono</p>
+<p id=f5b9 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I mean plus one I think this postquantum signature sizes are too big for us to use the same approach we use for ECDSA. there is some hope that we may get the postquantum signature that gets the signature size down to I think 60 64 bytes same as ECDSA but I don't think that's going to appear in standard form anytime in the next 3 years or…</p>
+<p id=8425 class="phone s06"><cite>Manu_Sporny:</cite> whatnot. plus one let's at least get this approach in place.</p>
+<p id=26c7 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, because that's all I was looking for.</p>
+<p id=9ba8 class="phone s04"><cite>Greg_Bernstein:</cite> We can wait till the doc document moves over to actually put it in because the documents done at the CCG, But I can start what we don't have is the formalized write up of this. I have an outline. I implemented the code to test it out. Make sure it all works the way we thought. It works with the functions we already have pretty much.</p>
+<p id=d54c class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 we should have quantum safe SD </p>
+<p id=1000a class="phone s04"><cite>Greg_Bernstein:</cite> It's just in my implementations when I was proving out all the SD stuff, sometimes I glued some of the smaller functions together and such like that. So, I'd need to do a clean spec grade up of it rather than my outline in my code. I see Dave gives a thumbs Same with Mono. Okay, so we have a path forward on that. Manu is raising his hand.</p>
+<p id=5d39 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to that. I think we know what the next step is for this issue. I wanted to since we're talking about postquantum there's an overlap between the barcodes work and the postquantum work that I don't know if we have had the discussion yet but we really need to and that is how do we put some postquantum protection on these quantum signatures.</p>
+<p id=e3c8 class="phone s06"><cite>Manu_Sporny:</cite> I think we have a potential path forward to use, the revocation. It's really the statusless mechanism to put some extra hardening on ECDSA signatures so that if there is a, cryptographically relevant, quantum computer that just appears out of nowhere that we've at least told people…</p>
+<p id=24ed class="phone s06"><cite>Manu_Sporny:</cite> how to protect existing signatures out there. So for example, the problem here is that we cannot fit a postquantum signature into a VC barcode today, right? It's the only one that we could maybe get to is a potential future version of ski sign that has a 64 byt signature and…</p>
+<p id=bbc5 class="phone s04"><cite>Greg_Bernstein:</cite> No, no,…</p>
+<p id=2bc9 class="phone s04"><cite>Greg_Bernstein:</cite> no. Yeah.</p>
+<p id=9c79 class="phone s06"><cite>Manu_Sporny:</cite> that's many years out, right?</p>
+<p id=2cac class="phone s06"><cite>Manu_Sporny:</cite> And so we need to do something in the interim because both I think everyone knows Google and Cloudflare brought their postquantum transition timeline up to 2029 which is in 3 years. It's going to take us at least another year to get this thing down done and out there. And when we do that we absolutely need a mechanism to do this kind of protection on the physical documents. we have already seen I alluded to some of these other groups the work that we're doing here, but they're doing the whole not invented here thing and they're creating their own. And the versions that they're creating are absolutely have massive security holes in them. One of them being they have absolutely no way of doing a postquantum protection on a ECDSA signature.</p>
+<p id=6fbb class="phone s06"><cite>Manu_Sporny:</cite> We have that mechanism but we need to talk through so this bridges both the VC barcodes and the postquantum work. I don't know Wes Elaine Greg if you all have talked about kind of when we're going to solve that or get to finality on the proposal.</p>
+<p id=ecb4 class="phone s07"><cite>Elaine_Wooton:</cite> Yeah.</p>
+<p id=cae3 class="phone s01"><cite>Wesley_Smith:</cite> I don't know of a strict timeline, but we've discussed it a little</p>
+<p id=7b01 class="phone s04"><cite>Greg_Bernstein:</cite> No, this is okay.</p>
+<p id=afa9 class="phone s04"><cite>Greg_Bernstein:</cite> I sorry I've missed some of these calls so I am not as aware of that. So this would be some kind of status listbased mechanism that we would say hey the crotum go ahead. Okay.</p>
+<p id=02b5 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah. It's basically what the issuer would do. It's a privacy preserving postquantum protection on traditional cryptography. So I think what this is I am not the person that should be talking about this but I think the proposal is for those that are VC barcodes today in anytime in the next 3 years if you want to protect yourself against a postquantum supercomput what you can do is if you're issuing status lists, which people are doing.</p>
+<p id=5652 class="phone s06"><cite>Manu_Sporny:</cite> for these barcodes you would add another status list for a postquantum signature so sorry kind of a postquantum status that would use a hash of the data to state that the information is valid in the status list which let's say it's a post quantum status list would be digitally signed using something like MLDDSA, So you would have a status list out there. It would have a digital signature over the hashes that were signed. and then it would just be published in parallel with the ECDSA revocation status list or whatever.</p>
+<p id=d885 class="phone s06"><cite>Manu_Sporny:</cite> in verifiers don't have to check it.</p>
+<p id=72be class="phone s04"><cite>Greg_Bernstein:</cite> Yeah. Yeah. Yep.</p>
+<p id=a73a class="phone s06"><cite>Manu_Sporny:</cite> They don't have to check it. But for some reason we're blindsided by cryptographically relevant quantum computer, there will be a mechanism that verifiers can instantly use because the ECDSA signatures will be instantly broken, there will be a backup where they can basically be like okay we can't trust the ECDSA signatures at all but what we can do is trust this postquantum status list that is a solution that I think we should really finalize and…</p>
+<p id=ede4 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah.</p>
+<p id=d377 class="phone s06"><cite>Manu_Sporny:</cite> get into the spec as soon as we can …</p>
+<p id=5ddb class="phone s04"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=9e76 class="phone s06"><cite>Manu_Sporny:</cite> because it is important for us to do that and…</p>
+<p id=0e1a class="phone s04"><cite>Greg_Bernstein:</cite> So we Elaine</p>
+<p id=36f5 class="phone s06"><cite>Manu_Sporny:</cite> to my knowledge it would be the only mechanism that is known</p>
+<p id=4b81 class="phone s06"><cite>Manu_Sporny:</cite> or published to protect physical documents using things like VC barcodes.</p>
+<p id=6c5a class="phone s07"><cite>Elaine_Wooton:</cite> So, Manu, if do we have the skill set, everything we need to write that and…</p>
+<p id=a6a8 class="phone s07"><cite>Elaine_Wooton:</cite> include it or do we want a guest to come and…</p>
+<p id=2d65 class="phone s06"><cite>Manu_Sporny:</cite> Yes. Yeah.</p>
+<p id=174f class="phone s06"><cite>Manu_Sporny:</cite> I think the experts are in the room.</p>
+<p id=2255 class="phone s07"><cite>Elaine_Wooton:</cite> Okay, This okay,…</p>
+<p id=7cf9 class="phone s06"><cite>Manu_Sporny:</cite> I don't know of anybody else where I'm kind of like, it's fairly straightforward luckily Elaine. I think I mean people can say if they think that's not true but I mean we're just publishing a set of hashes and using a postquantum signature to sign it and then we're telling people how they find the signature for the document. we already more or less solved the problem with bitstring status list. This would just be a variation of it.</p>
+<p id=19d9 class="phone s07"><cite>Elaine_Wooton:</cite> great. I just wasn't sure</p>
+<p id=e066 class="phone s06"><cite>Manu_Sporny:</cite> But if you know someone…</p>
+<p id=04f7 class="phone s07"><cite>Elaine_Wooton:</cite> Okay, great.</p>
+<p id=1bb4 class="phone s06"><cite>Manu_Sporny:</cite> if anybody knows someone that should be in that discussion please invite them. but no the experts are in the room as far as I</p>
+<p id=f2f0 class="phone s04"><cite>Greg_Bernstein:</cite> So, what would we attach it to? The bitstream status list, the postquantum doc, or the barcode dock?</p>
+<p id=0db3 class="phone s04"><cite>Greg_Bernstein:</cite> That's the other magnet.</p>
+<p id=cf16 class="phone s06"><cite>Manu_Sporny:</cite> arc code doc.</p>
+<p id=e26b class="phone s06"><cite>Manu_Sporny:</cite> In the very worst case,…</p>
+<p id=5ca5 class="phone s04"><cite>Greg_Bernstein:</cite> Okay. Okay.</p>
+<p id=6369 class="phone s06"><cite>Manu_Sporny:</cite> we would just put it in the barcode dock and be done with it. It's like, how we extended the XI crypto suite in the barcode dock. We'd do the same thing. And then in the future, if we really wanted to, we'd split it out. there's a question that Avon raised on the barcode doc where he's like, &quot;Hey, is this XI thing, general purpose?&quot; The answer to that is it is pretty general purpose and we should probably move it into the ECDSA spec, but that is just kind of an editorial thing. The important thing is we define how this thing works and we put it somewhere that is global standards track.</p>
+<p id=cdeb class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, I want to review that from the only thing I was thinking about was the privacy aspect and so I want to review it from that point of view, the tracking thing, but it sounds good. So, okay. Is any of the Yeah.</p>
+<p id=4222 class="phone s01"><cite>Wesley_Smith:</cite> Greg, just noting that time Greg Bernstein:</p>
+<p id=277b class="phone s04"><cite>Greg_Bernstein:</cite> Yeah. Yeah. We've run out of time. any other questions? I've got a bunch of action items on the U threat modeling SD for quantum and we've got this new stuff. hopefully we get some of these things in place like the threat modeling, we can get other eyes on it at least to take a look and suggest things even if I'm doing the writing. because you need more than my eyes just on a threat model. But any other questions on that mono I remind you bother the people about the document at the CCG call and that's it from my perspective. Anything else?</p>
+<p id=2982 class="phone s04"><cite>Greg_Bernstein:</cite> closing it out. Okay. U we'll see everybody in a week or…</p>
+<p id=3601 class="phone s01"><cite>Wesley_Smith:</cite> Thanks folks.</p>
+<p id=6e76 class="phone s04"><cite>Greg_Bernstein:</cite> Okay. Byebye. Meeting ended after 01:00:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

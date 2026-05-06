@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 5 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>5 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Lehn, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Ivan_Herman, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#37fd">IIW Discussion</a></li>
+<li><a href="#5a72">Key Rendering Features</a></li>
+<li><a href="#07e4">HTML Sandbox Render Method</a></li>
+<li><a href="#6433">Output Preferences For Wallets</a></li>
+<li><a href="#6468">Render Method Complexity</a></li>
+<li><a href="#a6dd">Deprecating PDF And SVG Renderers</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=37fd>IIW Discussion</h3>
+<p id=5cef class="phone s01"><cite>Dmitri_Zagidulin:</cite> Welcome everyone to the render method call. We're going to give it another minute or so and we'll get started.</p>
+<p id=5304 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, 3 minutes after the hour, let's kick things off. welcome everyone to the weekly, I think, render method this is a task force of the verified credential working group. calls are recorded. they're open to members of the working group. we're as always under W3C IPR regime and code of conduct. before we get started, is there any questions, comments, announcements, thoughts about IW, etc., etc.</p>
+<p id=1bd4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Before we dive into PR processing and issue processing.</p>
+<p id=b187 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hey, go ahead. Mano</p>
+<p id=1faa class="phone s02"><cite>Manu_Sporny:</cite> This is more of a question for the folks that were at IIW.</p>
+<p id=b481 class="phone s02"><cite>Manu_Sporny:</cite> Was there any discussion around rendering digital credentials? Anything new that we should know about?</p>
+<p id=ffff class="phone s03"><cite>Brent_Zundel:</cite> I am not aware of any conversations that happened specifically about rendering credentials. I did a session on…</p>
+<p id=e5cb class="phone s03"><cite>Brent_Zundel:</cite> what the heck the VC working group is working on now and it came up then but outside of that context I don't recall any sessions being announced where they were talking about how credentials ought to be displayed.</p>
+<p id=63f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Likewise, I also did not see any session and…</p>
+<p id=1140 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I was looking for it. I think everybody assumes that we're solving it over here. So, it's done. Yeah, it's So yeah, I mean I don't know. No news is good news.</p>
+<p id=c060 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We heads down and continue working …</p>
+<p id=7348 class="phone s01"><cite>Dmitri_Zagidulin:</cite> because it does</p>
+<p id=c278 class="phone s03"><cite>Brent_Zundel:</cite> On the topic of…</p>
+<p id=b956 class="phone s03"><cite>Brent_Zundel:</cite> what other folks are thinking of in terms of rendering credentials for users, I do want to note that phto digital credentials working group is currently working on wallet certification. which could include and previous conversations of that group have included the notion that the most appropriate thing to do is to a strict subset of credential types. That way those rendering can know exactly what they need to render.</p>
+<p id=b978 class="phone s03"><cite>Brent_Zundel:</cite> So I don't think it's a surprise that platform vendors at this point are looking to restrict user choice in order to make their lives easier.</p>
+<p id=4dd3 class="phone s03"><cite>Brent_Zundel:</cite> That seems to be a trend that will happen for the first round, but I think everyone in this room knows it's not at all sustainable, but just wanted to give folks a heads up on that.</p>
+<p id=592d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks. Yeah,…</p>
+<p id=a274 class="phone s01"><cite>Dmitri_Zagidulin:</cite> this is exactly what we formed this task force to not happen. But yeah, it's good to know that the trajectory there. if I understand the open ID and a digital credential API approach to credential display the tendency there is more to list the fields. Yeah. The tendency there is kind of like with HTML semantic versus versus visual.</p>
+<p id=7bac class="phone s01"><cite>Dmitri_Zagidulin:</cite> the old emphasis versus italics emphasis versus bold argument, but even more abstract that ecosystem is definitely sort of focusing on here are emphasized or required fields and that's about it. So hopefully we'll have methods that are able to interact with that. but in any case display logic and templates and things are still very much needed.</p>
+<p id=fc6c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Another data point is that in the new California request for proposal for the career passport platform for those of you not familiar this is an RFP that dropped recentlyish couple weeks ago and he's taking proposals for a verifiable credential wallet for the California system of colleges and universities. community colleges, I think, but with the implication that other sectors are sort of watching what happens may not adopt. But the reason I bring it up is that it explicitly mentions, hey, we need to be able to display arbitrary credentials. We need some way for the issuer to state preferences on how this thing is displayed. Exactly what we're doing.</p>
+<p id=25f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So just to sort of emphasize that the demand for this thing is still very much out there. Any other questions, comments before we proceed? Yeah, go ahead, man.</p>
+<p id=20e5 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, it's a thank you for each of you that have gone out into those other groups and are helping us understand what we need to build to address the market. I just wanted to kind of restate maybe based on all that new information. what at least I mean we have to figure out okay so based on all of that stuff what are we doing to get render method to candidate wreck. it feels to me like there are really two main features that we need.</p>
+</section>
+
+<section>
+<h3 id=5a72>Key Rendering Features</h3>
+<p id=6d64 class="phone s02"><cite>Manu_Sporny:</cite> One of them is a kind of cardlike attribute rendering feature which is really when DC API shares it shares the information here's the input to what it would display on screen here's the name of the field here's the value field here's the name of the field here's the value of the field so that's like a cardlike layout or kind of a data- layout. Nate Otto has a proposal that's been there for about two months now since December that we should take a look at for that. And then the other approach feels like it's the sandboxed HTML renderer like you want a very rich rendering display and we really don't want to get in the way of limiting whatever.</p>
+<p id=1f2b class="phone s02"><cite>Manu_Sporny:</cite> But it does it in a privacy preserving way where the entire rendering happens in a sandbox and the only thing that escapes the sandbox is the graphical display of whatever the output there is and that's required for super complex credentials like student transcripts for example right even like college degrees and certificates that you want to put on the wall that sort of thing. It feels to me like those are the two primary use cases we're trying to solve for. I want to like sanity check that statement. does that feel right to folks?</p>
+<p id=e2cb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go to heaven. Yes.</p>
+<p id=8746 class="phone s02"><cite>Manu_Sporny:</cite> If we just focused on those things and to get to candidate wreck with those two features, would that be</p>
+<p id=9637 class="phone s04"><cite>Ivan_Herman:</cite> problem with…</p>
+<p id=ffc8 class="phone s04"><cite>Ivan_Herman:</cite> what you say, But maybe we should also try to spend some energy informally to use the HTML approach and have some I would say example codes for some usage of it and not just do the HTML rendering out there with the full-blown functionality but to have I don't want to use the word registry because that opens up what</p>
+<p id=3bcc class="phone s04"><cite>Ivan_Herman:</cite> kinds of calls but a collection of simpler things that can be reused and that are based on that HTML rendering.</p>
+<p id=9f8a class="phone s05"><cite>Kevin_Dean:</cite> What the f*** is there?</p>
+<p id=5659 class="phone s04"><cite>Ivan_Herman:</cite> So to make the abstraction a little bit more palatable to end users that is not something that we must do for</p>
+<p id=1166 class="phone s04"><cite>Ivan_Herman:</cite> but it certainly helps</p>
+<p id=8c78 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=f9c3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> comment and question regarding that Ivonne. procedurally do we dare take that on?</p>
+<p id=4d31 class="phone s01"><cite>Dmitri_Zagidulin:</cite> are we because I think it's a great idea having this group or some other similar organization put together a gallery of example templates for common use cases.</p>
+<p id=032d class="phone s04"><cite>Ivan_Herman:</cite> No no no I avoided the word the gallery is the perfect word…</p>
+<p id=2f24 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think everybody wants that. do we want to take that on procedurally?</p>
+<p id=3eff class="phone s01"><cite>Dmitri_Zagidulin:</cite> I know there's very good reasons for thinking carefully before signing up anything like registries.</p>
+<p id=6a16 class="phone s04"><cite>Ivan_Herman:</cite> because it doesn't have this mission.</p>
+<p id=3d10 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=68b4 class="phone s04"><cite>Ivan_Herman:</cite> And procedurally it is not a requirement from W3C's point of view. I put my W3C head down when I say that this is something that would be useful in terms of acceptance of the standard in the general sense, not the formal sense.</p>
+<p id=8d44 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. definitely useful and definitely everybody I've ever spoken to wants that. one quick comment before we go to Benjamin.</p>
+<p id=9a79 class="phone s01"><cite>Dmitri_Zagidulin:</cite> and that is so aside from those two things the cardlike list of fields and the IFAM sandbox I do still think we need at least one general purpose templating method as in handlebars this is a apply string interpolation or string substitution using this list of fields using JSON path or JSON pointers. I always confuse the two. I do think we need that third thing. and we should discuss whether we need the fourth thing which is a baked static image.</p>
+<p id=7865 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think we all know that there is possible security and there's definitely implications for having a baked image, but there are also a couple of use cases that it does help with.</p>
+<p id=143b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Want to put that out there. let's go to the queue. Benjamin, Mano, and then Dave.</p>
+<p id=9f09 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, just wanting to plus one the gallery approach.</p>
+<p id=717d class="phone s06"><cite>Benjamin_Young:</cite> Some of that's in flight already. in terms of code people have been writing. Not sure why you're hiding a bon. yeah,…</p>
+<p id=a698 class="phone s04"><cite>Ivan_Herman:</cite> Because I see the gallery process.</p>
+<p id=c081 class="phone s04"><cite>Ivan_Herman:</cite> W3C gallery process.</p>
+<p id=68cd class="phone s06"><cite>Benjamin_Young:</cite> yeah, yeah. Let's hope we don't end up there soon. but yeah, I think folks seeing more of these credentials all smooshed together is going to help both explain the HTML render method thing and then situations where you might not want that, which Demitri maybe points to the other things you mentioned. yeah, that's it.</p>
+<p id=80fa class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, man.</p>
+<p id=f010 class="phone s02"><cite>Manu_Sporny:</cite> Couple of things. so should we create a gallery? I think that we can do that in I don't that the whole purpose of CR is to get implement feedback and I think that's part of implement feedback. I know we digital bazaar will be working on some of these templates in the interim for some customers based off of HTML render method. so I think those come in time. I don't want to put it on our timeline.</p>
+<p id=ff2c class="phone s02"><cite>Manu_Sporny:</cite> I mean, remember, we were supposed to be quickly in and out with this spec, and we are now talking about adding work, and I'm fairly unsupportive of expanding our scope beyond at least a minimum viable version one. we've got a ton of other work that we have to do in the group. others can contribute those things. The gallery, I think, are just templates that other people produce. again I don't know if it will be useful to see if people can create useful things. I don't think it is possible for us to generate broadly useful templates.</p>
+<p id=63eb class="phone s02"><cite>Manu_Sporny:</cite> I'm thinking about even the simplest thing like an ID card has a tremendous amount of jurisdiction specific branding on it that we probably don't want to reuse. we can publish them but I don't think that they're broadly useful a driver's license or a student ID or maybe transcript but even that I think is a stretch.</p>
+<p id=b29e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. If</p>
+<p id=a3c6 class="phone s02"><cite>Manu_Sporny:</cite> So the best we could do is provide some just basic examples but nobody's going to use them so that was the first point is I think gallery stuff can be done in CR. I don't want us to take on any more work. I just think it's a bridge too far. Others can contribute as we build this stuff out. that's it for that. and if people want to do the work, I'd like to see volunteers instead of we should do the work, it's absolutely. I 100% sign up to do that work for the second item Dimmitri that you mentioned is hey, maybe we should do panel bars template based approach and then we should also think about a static imagebased approach.</p>
+<p id=8b87 class="phone s02"><cite>Manu_Sporny:</cite> I'm a minus one to both of them because I think they're subsets of the based approach. I think you can do both of those things with the HTML render method and I would rather us focus on that rather than try to, it would take an enormous amount of discussion around, what's the right version of handlebars or mustache should we use? We already had that discussion and it did go it's what led to the HTML render method. so that's it on those two items. I'm pretty firmly against us adding more work.</p>
+<p id=5e19 class="phone s02"><cite>Manu_Sporny:</cite> That wheel's going to take us further away from CR. That's it.</p>
+<p id=194e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=71ca class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think it's Dave next.</p>
+</section>
+
+<section>
+<h3 id=07e4>HTML Sandbox Render Method</h3>
+<p id=1ef6 class="phone s07"><cite>Dave_Longley:</cite> So, in light of the conversation around how would you do something like mustache inside of the HTML render method just I added a very quick hack to start to show how that's done and I put link in here into chat. So, we previously had shown a very quick HTML sandbox render method example implementation that runs on GitHub pages. So just off of a bunch of static files to just show sort of how the render method works and then all can be run inside of a sandbox. I added some code that will inject into the template. This is something that the issuer side would do when they're building their template. It injects a mustache renderer into their template.</p>
+<p id=2126 class="phone s07"><cite>Dave_Longley:</cite> And then in the actual template itself there's a space where the mustache template goes and the code inside of the template runs the renderer and renders a field from the credential. You could render whatever you wanted but that just shows that you can use a mustache template. you will get the full credential or whatever fields are specified in the render method will be handed to you and then you can render it using mustache and so there's code there that shows how that's done and I put the links in there importantly you could put any render method that you can execute in JavaScript in there and you can do more than one if you wanted and get as fancy as you would like and…</p>
+<p id=7188 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Ivon.</p>
+<p id=8540 class="phone s07"><cite>Dave_Longley:</cite> we would not need to put any of that specification in our spec. But it would certainly be good to show examples for how to do things like that.</p>
+<p id=37e8 class="phone s04"><cite>Ivan_Herman:</cite> So I agree with Manu that this is something for the CR period.</p>
+<p id=e1d4 class="phone s04"><cite>Ivan_Herman:</cite> This is not before CR. I tried to emphasize it when I came up with the idea that this is not a requirement for CR. This is part of the CR process. now that I think about it, it can actually be in inverted comma sold as being really part of CR.</p>
+<p id=10000 class="phone s04"><cite>Ivan_Herman:</cite> If I look at CR in the general sense, what we have to prove in the CR is that we build a specification which not only can be implemented but can be used and is useful and what is better if we have a gallery like that which shows that it can be used for different things. this is part of the CR process and we can actually document it as such and I think that just would be a good thing to have instead of just some abstract functions although I don't think that we have a clear idea what the CR process will do with the rendering engine in any way.</p>
+<p id=f028 class="phone s04"><cite>Ivan_Herman:</cite> Another thing, a very vague analogy if you people of my age began to do HTML by copy paste. we looked at another website. We took an HTML file and we adapted to our need and that's how we learned what HTML is and how the web in a way the gallery would play the same thing. Of course, these are not readymade render engine. These are just examples that people would take and adapt it to their own user area, own jurisdiction or whatever. we don't claim that we give out some sort of a readymade templates where people can use them right away. No, of course not. But we prove that it can be done and various things can be done.</p>
+<p id=194c class="phone s04"><cite>Ivan_Herman:</cite> That's all the goal to it.</p>
+<p id=f0f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks. Thanks. Benjamin, go ahead.</p>
+<p id=480b class="phone s06"><cite>Benjamin_Young:</cite> And I think Ivonne,…</p>
+<p id=aee0 class="phone s06"><cite>Benjamin_Young:</cite> if I'm hearing what you're really wanting, is something more generic. So, it's not I think what you were concerned about, Mono, of how useful these things might be. It's more of like here's how you would use mustache inside of an HTML render method. here's how you render a PDF or here's how you ship a static image whatever.</p>
+<p id=3749 class="phone s06"><cite>Benjamin_Young:</cite> which I think is not only doable but I think it's going to be necessary in at least a minimal case or two to explain more of the power of this thing but also the overhead of it of if you're doing PDF rendering here's the amount of JavaScript you're going to have to stuff inside of a credential so that people can see that and</p>
+<p id=5509 class="phone s06"><cite>Benjamin_Young:</cite> and weigh their options. I would love to have more mobile wallet vendors, there's a couple here, weigh in on, how they would do this or if they would do this or if they need something else. it is by far the most flexible option available, but flexibility tends to be shied away from if you're wanting it to constrain your environment more for different reasons. So, it' just be good to know I think this is certainly the web wallet way to do it, but it'd be good to know where the mobile wallets run into issues if anywhere. That's it.</p>
+<p id=2371 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Phil. No, go ahead.</p>
+<p id=a4c5 class="phone s08"><cite>Phillip_Long:</cite> Yeah, I big plus one to a gallery that's intended to be simply almost just an educational example to introduce how The truth is I think that the issuers that care about this are going to create their own templates because they're going to consider it essentially a part of their brand, the representation of their credential. And as a result, they are going to be extremely careful about what is and what isn't presented and whether a logo isn't present and all the communications stuff that is typically u behind an institution's representation of itself. So all we're interested in doing here is showing how it works in different contexts and let the issuers that care about it build the templates that they need. Thanks.</p>
+<p id=f970 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, to answer both LS and Benjamin's question. So one I completely understand wanting to minimize the amount of work that we have in CR and if we don't have time for that if we don't have scope or bandwidth for the mustache transform method I understand but with my mobile wallet implement with the three wallets and</p>
+<p id=1b6e class="phone s01"><cite>Dmitri_Zagidulin:</cite> several others on the road map. I do want to say that we do need the transform method. There's one important thing that the sandbox iframe method does not do and it's not able to serve as a transformer. It displays but it doesn't offer a way to get the rendered HTML out of that iframe. And that's exactly what we need in mobile wallets for export to HTML. It's not display the HTML on screen using JavaScript. we got to get the sorry export to PDF.</p>
+<p id=c17f class="phone s01"><cite>Dmitri_Zagidulin:</cite> We got to get the transformed HTML with the template substitution out of the iframe, pass it to the native PDF library and do things with it in the wallet logic as opposed to in the iframe logic. yeah, I think that's it. And man is next.</p>
+<p id=fce5 class="phone s02"><cite>Manu_Sporny:</cite> I think that is possible to do with the HTML mechanism. we should talk about the details certainly but I mean it was designed with that in mind to be able to export anything that you wanted to we would have to build some of the interfaces but I think that's a possibility. going back to how could we achieve the gallery thing. reminder that we do have the VC playground and that has very concrete examples and is fairly easy to add to raise a PR on the credential which could include an HTML render template.</p>
+<p id=10001 class="phone s02"><cite>Manu_Sporny:</cite> I mean so we already have the mechanism there right we have a way that people could define the credential templates all that kind of stuff and then we can issue those into native or web wallets as soon as you raise a PR to it so I think we have the mechanism I don't think we have to build anything new I'll just stop there.</p>
+<p id=9a37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin, go ahead.</p>
+<p id=7345 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, I think it might be good to sort of revisit…</p>
+<p id=f8e9 class="phone s06"><cite>Benjamin_Young:</cite> how we ended up with the sandbox iframe situation. And a lot of it centered around u mustache in particular, which is kind of where we started being grossly insufficient for needs around formatting dates and times and any sort of semi-advanced logic like checking two different parts of the credential data before rendering something.</p>
+<p id=97c4 class="phone s06"><cite>Benjamin_Young:</cite> It's super tricky to do that kind of thing. And, certainly the formatting dates and things, you'd have to determine a bunch of built functions to be injected into the mustache renderer, in which case you're defining a whole spec on top of mustach's foundation, which then led the group to start discussing using handlebars or nunchucks or liquid or whatever. all of which have the power wanted by a designer of credential UI. but all of which depending on how much access they would have to the credential data could do too much in with all kinds of things.</p>
+<p id=e3cf class="phone s06"><cite>Benjamin_Young:</cite> So, I think one way or the other we bump into how to constrain the power and how to contain the data and make sure it doesn't go out the wrong way. and I think for a lot of these it's going to remain to be seen where the dragons are, but we're only going to figure that out through implementation. So that's what I think everyone's kind of pointing to is that we need more people to try this stuff and then come back with the concerns down any of these lanes.</p>
+<p id=ecaa class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. so in chat, Dave points out that we already might have a method for getting transform data out of the iframe using a post message. that the example methods already do it to say rendering is done. so that's great. So I just need to dive into the code and see how to get that to work in React Native for our implementations. In which case I do agree that a dirame sandbox could be sufficient then we don't need another transform mustache method. summarizing what Manu said and if anybody disagrees please hop on the queue.</p>
+<p id=10002 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we're looking at two sort of fundamental method sandbox iframe one and field manifest one that sort of draws inspiration from opening the digital credential presentation exchange approach and the overlay approach. and we had that OCA PR open for a bit. All unless there's any other questions, objections, we can take a look at some of the open PRs.</p>
+<p id=64b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And Ivon plus one that reminder that we're opposite of the Fed ID credential group and working group call which is really tragic because I do want to follow that group but there just wasn't another time slot that everybody was available for the usual tragedy of scheduling. I don't know if people feel strongly enough about the Fed ID working group and being in conflict with it that we want to go to an AB cadence and find another time slot. I'm open to suggestions, but otherwise we're kind of stuck.</p>
+<p id=a97e class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, while people are thinking, I'm going to share screen and let's take a look at the pull requests out there. so first I want to take a look at Manu's PR. no, Benjamin's PR from about Oblivious HTTP. which it's got it's got some sort of CI acting up. Not clear why. Unclear. Okay.</p>
+<p id=2a3e class="phone s01"><cite>Dmitri_Zagidulin:</cite> But in any case, the PR itself is short looks useful because it talks about oblivious HTTP. So please take a look at it. If there are no objections, I'd like to merge it. Mono, go ahead.</p>
+<p id=4c7b class="phone s02"><cite>Manu_Sporny:</cite> I sorry just sorry I thought the IPR thing was for a different reason.</p>
+<p id=258d class="phone s02"><cite>Manu_Sporny:</cite> God.</p>
+<p id=395c class="phone s01"><cite>Dmitri_Zagidulin:</cite> The IPR is fine.</p>
+<p id=f57f class="phone s01"><cite>Dmitri_Zagidulin:</cite> The CI rendering job is busted. Manu Sporny:</p>
+<p id=fc6d class="phone s02"><cite>Manu_Sporny:</cite> Yep. Never mind.</p>
+<p id=c632 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, any objections to us merging it's past the requisite waiting period. It's got disapprovals. going once, going twice.</p>
+<p id=f1a4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let us merge it. As always we can this is git. So we can always revert if tragedy strikes.</p>
+<p id=fa2a class="phone s01"><cite>Dmitri_Zagidulin:</cite> right. next up we have the in progress.</p>
+<p id=7780 class="phone s04"><cite>Ivan_Herman:</cite> Just a minute.</p>
+<p id=1f93 class="phone s04"><cite>Ivan_Herman:</cite> Excuse me for after the call you should check whether the akidnascript went through properly.</p>
+<p id=10003 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes. Yes. Of course. Okay.</p>
+<p id=f923 class="phone s04"><cite>Ivan_Herman:</cite> Emerge not now because later just check it and…</p>
+<p id=4acb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Yeah.</p>
+<p id=ac6b class="phone s04"><cite>Ivan_Herman:</cite> if not then we have to see with the knee what the hell is going on. It often times out on the part</p>
+<p id=60ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, I see Yeah, So, it's timing out after failing after 20 seconds. I don't know if our timeout is set to 20 seconds, but we should double check. Yeah.</p>
+<p id=9932 class="phone s02"><cite>Manu_Sporny:</cite> There's an error in the HTML.</p>
+<p id=aa25 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. okay.</p>
+<p id=9f8e class="phone s02"><cite>Manu_Sporny:</cite> That's what's going on. There's some kind of broken tag and it refuses to proceed.</p>
+<p id=866e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=02af class="phone s02"><cite>Manu_Sporny:</cite> If that's the case, we'll just need to fix it on main. Demetri, that should fix</p>
+<p id=b548 class="phone s04"><cite>Ivan_Herman:</cite> Yes.</p>
+</section>
+
+<section>
+<h3 id=6433>Output Preferences For Wallets</h3>
+<p id=0e23 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. All right. sounds good. ne next up we have PR number 51 from king input. Benjamin, can you walk us through what this is for and…</p>
+<p id=9cba class="phone s01"><cite>Dmitri_Zagidulin:</cite> more importantly what the examples of some of the values in access mode and yeah, the output reference.</p>
+<p id=d30f class="phone s06"><cite>Benjamin_Young:</cite> Yeah, sure.</p>
+<p id=606b class="phone s06"><cite>Benjamin_Young:</cite> Some of these come from a referenced specification. I'm not sure if you can easily see the link in here. You may have to go to the preview. But the goal is to provide some means for wallets to more strategically pick among different render methods that might be targeted at different uses.</p>
+<p id=17ba class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Let me</p>
+<p id=6e57 class="phone s06"><cite>Benjamin_Young:</cite> So that the output preferences try to give wallets the ability to pick essentially. so some of these terms come from an accessibility specification connected to the digital publishing group. I think you may want to use those previous buttons to find it. There you go. So if you scroll down,…</p>
+<p id=2d68 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=e91a class="phone s06"><cite>Benjamin_Young:</cite> you can read about some of them.</p>
+<p id=a999 class="phone s06"><cite>Benjamin_Young:</cite> Access mode is the one I was mentioning that's coming out of digital publishing to denote whether or…</p>
+<p id=7a79 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, I see it.</p>
+<p id=7355 class="phone s06"><cite>Benjamin_Young:</cite> not it's meant for auditory,…</p>
+<p id=6979 class="phone s06"><cite>Benjamin_Young:</cite> tactile, textual or visual. So if it's a static image, you could say, the access mode is visual. So if somebody only does auditory things,…</p>
+<p id=6691 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=6692 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=8203 class="phone s06"><cite>Benjamin_Young:</cite> then the wallet doesn't need to bother with rendering any of the visuals and vice versa. media type is in here as an output format. So the template is probably HTML…</p>
+<p id=7d01 class="phone s06"><cite>Benjamin_Young:</cite> but the output format might be an image or a PDF something more specific to again let wallets look for what they are expecting the user wants to be able to do.</p>
+<p id=5df8 class="phone s06"><cite>Benjamin_Young:</cite> and provide UI affordances that map to the render methods available so that they're not just flying blind. and then width and height are a similar sort of constraint of saying, the render method essentially says I look best at this size. It doesn't mean the wallet has to obey any of those, but …</p>
+<p id=46a1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=aaec class="phone s06"><cite>Benjamin_Young:</cite> all bets are off if you go too small or too big relative to those expectations. So they're closer to max and men width height kind of things.</p>
+<p id=a934 class="phone s01"><cite>Dmitri_Zagidulin:</cite> God, it makes sense.</p>
+<p id=60db class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mono, go ahead.</p>
+<p id=d14b class="phone s02"><cite>Manu_Sporny:</cite> plus one to the PR. Benjamin, I'm wondering if we have thought about the use cases, the visual use cases where let's take a college trans a high school transcript. and think about, there is a version of it that you want to render visually so that people can see the entire thing and all the detail. And then there's a version that you might use in theory in a future version of the DC API while you're sharing the credential that provides a visual represent representation of what's being shared. So for example the way the DC API currently works is you can't show all 800 attributes and properties in the student transcript, right?</p>
+<p id=a779 class="phone s02"><cite>Manu_Sporny:</cite> do you want to basically tell them hey, your entire student transcripts being shared or just a class is being shared.</p>
+<p id=d2f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=79ca class="phone s02"><cite>Manu_Sporny:</cite> Do you know how we would use the access mode to do that kind of selection between two alternatives? that's</p>
+<p id=b0cf class="phone s06"><cite>Benjamin_Young:</cite> Yeah, I think access mode would not be the right one for that…</p>
+<p id=827d class="phone s06"><cite>Benjamin_Young:</cite> because that's really about the capabilities of the humanoid attached to the device. that's the target audience I think that at the present there's only width and height in that list of things, but that something closer to the JSON card stuff that Nate proposed would be the kind of thing to expect a giant credential to be trimmed down with selective disclosure and then the I think Demetri called it a field manifest would be used to say these are the fields available.</p>
+<p id=a25b class="phone s06"><cite>Benjamin_Young:</cite> I think providing too many iframe sandbox render methods for every conceivable size and shape is going to run us a ground of somebody at some point's going to have to start dictating some spatial constraints we have with physical ID cards, There's ID card standards of specific sizes so they fit in wallets. and I think the Jason Card approach is probably the most likely one to be picked for a selective disclosed screen. but that certainly other things could be added here.</p>
+<p id=cb9b class="phone s06"><cite>Benjamin_Young:</cite> I think the market's going to have to decide based on what's going on beyond width and height or something we had in the past was a full CSS3 media query kind of thing which is probably overkill but that includes many more statements of use this is meant for print, this is meant to be portrait, this is meant to be landscape. so some of those things could certainly be surfaced in an output preference thing that might help somebody narrow it down. and then we also have the selected fields. Forget what that's called. that would let a wallet say okay, they're only asking for PIN fields here and the credential has a hundred. but that's a whole lot of decision- making going on by the wallet.</p>
+<p id=b83c class="phone s06"><cite>Benjamin_Young:</cite> it's going to be flying blind across a very squiffy surface. So again, I think JSON cards is probably going to be the way to go for selective disclosure environments.</p>
+<p id=9768 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Dave.</p>
+<p id=9dda class="phone s07"><cite>Dave_Longley:</cite> I took myself off the queue because Benjamin mostly said…</p>
+<p id=561a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=7969 class="phone s07"><cite>Dave_Longley:</cite> what I was gonna say.</p>
+<p id=ba88 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. …</p>
+<p id=157d class="phone s01"><cite>Dmitri_Zagidulin:</cite> from my perspective, this R looks good. Everybody, please take a look at it.</p>
+<p id=dfed class="phone s02"><cite>Manu_Sporny:</cite> Wait, hold on.</p>
+<p id=054b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yep.</p>
+<p id=64c3 class="phone s06"><cite>Benjamin_Young:</cite> M's on</p>
+<p id=da32 class="phone s02"><cite>Manu_Sporny:</cite> I'm back on the queue. Yeah. Yeah.</p>
+<p id=e6c3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=bfd1 class="phone s02"><cite>Manu_Sporny:</cite> To disagree slightly.</p>
+<p id=0aef class="phone s01"><cite>Dmitri_Zagidulin:</cite> Man, go ahead. Sorry. Aha.</p>
+<p id=64fa class="phone s02"><cite>Manu_Sporny:</cite> I think for some selective disclosure use cases where you have a minimal amount of information, yes, Jason card could be that solution, but I don't think it works at scale. not when you're sharing a large set of attributes or the entire credential. I think maybe what we can rely on is the rendering thing like you can put an orm HTML was designed for this. you can put an enormous amount of logic into the HTML rendering template and as long as the template has some idea of the actual visual size that's being rendered to height and width is probably not that's unless we allow it specifying it in M's inches or something.</p>
+<p id=4d0b class="phone s02"><cite>Manu_Sporny:</cite> Maybe that's the thing that drives it because if you can get the actual viewport size characteristics into the HTML rendering template then you can make a whole bunch of very complex decisions around I'm going to render as a summary thing or I've got 150 input properties that are being disclosed I'm going to use a different type of rendering than if I were to have one with just five. maybe that's what we tell people that it's solvable.</p>
+<p id=a7f2 class="phone s02"><cite>Manu_Sporny:</cite> We just have to make sure that it is actually solvable with media queries in the HTML nder template. That's it.</p>
+<p id=a02b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin,…</p>
+<p id=3865 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see you on the queue, but I want to jump in real quick to clarify. Mano, so is your question about we want a separate template to serve as the background for selected disclosure requests? Because the whole point about selection disclosure, right, is that the issuer doesn't know which fields the holder will allow. So you're talking about some generic blank template on which the selected fields will be displayed.</p>
+<p id=8399 class="phone s02"><cite>Manu_Sporny:</cite> No, I don't. No. that's not what I'm talking about. I'm talking about the use case where you have the possibility of extremes…</p>
+<p id=cc48 class="phone s01"><cite>Dmitri_Zagidulin:</cite> changing the way they do stuff.</p>
+<p id=cfd0 class="phone s02"><cite>Manu_Sporny:</cite> where you have and again I'm just using a student transcript supply chain bill of lighting gives the same kind of use case you've got a verifiable credential it has hundreds of claims in it some people call these compound credentials or compound claims or whatever you've got that stuff and you need to render it in how you render it is kind of dependent on kind of the use case, the DC API, show the person what they're sharing use case is very different from the verifier has received the credential and you just need to render it in a way where the person can thumb through the person's student transcript.</p>
+<p id=c717 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=00c4 class="phone s02"><cite>Manu_Sporny:</cite> And so there multiple display modes for the exact same credential which may have a hundred properties or it may have five that are being selectively disclosed. And I'm trying to figure out what the guidance is to people creating the verifiable credentials to the universities what should you do? Should you just create one very complex HTML template that can render in a CR80 card format that's the plastic cards we put in our physical wallets or a diploma size format or a multi-page student transcript with all the details thereof right where should you spend your time what is the way to solve for each one of these use cases and I think we can say it</p>
+<p id=25f3 class="phone s02"><cite>Manu_Sporny:</cite> It is possible to put all of this very complex logic into a single HTML template and because of that you can use the visual display and we don't need to make the output preference thing more complicated than it is right now.</p>
+<p id=c725 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+</section>
+
+<section>
+<h3 id=6468>Render Method Complexity</h3>
+<p id=2d18 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I certainly have opinion on this but f first let's jump to Benjamin</p>
+<p id=02cb class="phone s06"><cite>Benjamin_Young:</cite> Yeah. So the render method code itself is essentially a responsive website and…</p>
+<p id=9302 class="phone s06"><cite>Benjamin_Young:</cite> it can and do potentially with enough JavaScript and CSS all the things at all the sizes and can determine based on what amount of credential info it's given.</p>
+<p id=0ba4 class="phone s06"><cite>Benjamin_Young:</cite> or it asked for how much to display at what scale. So if squished all the way down, it could just show the issuers's icon, Or if it's massive, it could show you all 100 pages of your PDF transcript or something. But the output preference stuff is really targeted at the wallet determining which thing to run. So width and height is not necessarily meant for the HTML sandbox one if that thing is the super uber the end all render method things.</p>
+<p id=855a class="phone s06"><cite>Benjamin_Young:</cite> But if you have provided only a static image that is 300 by 600 for some reason you might want to tell the wallet and probably we also need landscape and portrait unless we're going to suggest that wallets calculate off width and height to understand the aspect ratio so that wallets can say I'm vertical right now and I'm only, 1080 wide and you wanted to display the output media type is an image J JPEG and that's 3,000 pixels wide. I don't know if I want to do that, but look, there's another one that's 300 pixels wide. So I'm going to pick that one. it's more signaling to the wallet to let the wallet pick a render method to begin with.</p>
+<p id=7b76 class="phone s06"><cite>Benjamin_Young:</cite> But again, you could stuff several static images into the HTML and then lean on the JavaScript and CSS in the render method to do the selection. it's just always going to come down to what you're optimizing for because that render method's going to get massive and slow and talented, especially if you stuff in eight different variations of a static image. It's going to be a very big credential.</p>
+<p id=ece9 class="phone s06"><cite>Benjamin_Young:</cite> So yeah, it's completely possible to do all this in the render method,…</p>
+<p id=2e6e class="phone s06"><cite>Benjamin_Young:</cite> but then I think we need to discuss what the wallet's going to want to know before it looks before it leaps.</p>
+<p id=9838 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks. Yeah,…</p>
+<p id=5c39 class="phone s01"><cite>Dmitri_Zagidulin:</cite> to add on to that, I would very much like to avoid stuffing all of that logic into the render method. that is going to lead to implementation disaster or at least I think it'd be much more understandable and easier to design if we had an affordance for this is a list view, this is a full detail view or this is the presentation view, this is full detail, and not have the design template morph into on responsive application. Go ahead, Mono.</p>
+<p id=9dc9 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. I don't know what I think about you just said, Dimmitri. I don't know where the line is, I guess, is my concern. Going back to what Benjamin said, I misunderstood what output preference was for. because it says output preference is an optional map that expresses suggested preferences for the rendering environment. I thought that meant that that is input into the HTML iframe to tell it, how big to render for, not this is what the rendering templates ideal aspect ratio is. which I guess we may want to clarify that language cuz it's confusing at least to me right</p>
+<p id=3fb3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead, Benjamin.</p>
+<p id=32b9 class="phone s06"><cite>Benjamin_Young:</cite> So the code running inside the iframe only has a chance to ask for stuff one time and…</p>
+<p id=2cae class="phone s06"><cite>Benjamin_Young:</cite> that would be the this is the environment I prefer to be rendered within because it has no way to say the iframe should be this size or this scale or this orientation whatever other than these output preferences.</p>
+<p id=0a66 class="phone s06"><cite>Benjamin_Young:</cite> So, it's not meant to be informing the render method about something the wallet is doing. It's meant to go the other way and inform the wallet about what the render method wants to exist within. because the wallet is the one providing the petri dish. So it's a chance for the render method to say upfront this is my ideal situation that they are optional and even if provided I expect some wallets to just flat ignore them. and just shove an iframe on the screen and see what happens. does that make sense? And that there's probably wording or more paragraphs we could write to explain that better.</p>
+</section>
+
+<section>
+<h3 id=a6dd>Deprecating PDF And SVG Renderers</h3>
+<p id=34b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Any other comments? All right. in that case, we have a couple minutes left till the top of the hour. Let's take a brief look at another poll request, which is poll request number 49 by Manu deprecate PDF mustache render suite and mark the SVG mustache as needing implement feedback.</p>
+<p id=727f class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I think this one takes out the SVG registry. Go ahead. Thank you.</p>
+<p id=5d54 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, this is the first attempt to start trying to winnow down the options that we have in the spec, right? we have to pick some minimal set for version 10. And so what this does is basically say, the PDF must stash one we're getting rid of because that, we can do that with the HTML render suite. We just have to kind of demonstrate that working. and then we're marking the SVG mustache render suite as needing implement feedback as we're probably going to drop this as well. the only reason I'm kind of marking it as a deprecation is because I know MOSEP has implemented it in their NG wallet.</p>
+<p id=3cda class="phone s02"><cite>Manu_Sporny:</cite> which has lots and lots and lots of deployment. So, we'd like to get feedback from them. And if anybody else wants to save the SVG mustache render suite, I would imagine I would like to delete it. I would like to just say no. Yeah, that was a nice, experiment that we did over two years, but we don't need it anymore. We have the HTML one. so this just removes PDF and…</p>
+<p id=c9d0 class="phone s02"><cite>Manu_Sporny:</cite> it removes SVG and it replaces with HTML render suite which covers both use cases. That's it.</p>
+<p id=c2fd class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, but…</p>
+<p id=535c class="phone s01"><cite>Dmitri_Zagidulin:</cite> unless I'm missing something. this doesn't mark it as deprecated. Just removes it. And Right.</p>
+<p id=719d class="phone s02"><cite>Manu_Sporny:</cite> You might be right.</p>
+<p id=045d class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, it's just removed. There's just double check…</p>
+<p id=dd8e class="phone s02"><cite>Manu_Sporny:</cite> What happened here? Where's the PDF one? I'm wondering if I've got something sitting on my Yeah.</p>
+<p id=9c66 class="phone s01"><cite>Dmitri_Zagidulin:</cite> if you've got commits.</p>
+<p id=466f class="phone s02"><cite>Manu_Sporny:</cite> Let me see if I've got something sitting on my machine.</p>
+<p id=0d4b class="phone s06"><cite>Benjamin_Young:</cite> while he's hunting for that.</p>
+<p id=2968 class="phone s06"><cite>Benjamin_Young:</cite> And because we have limited time, I would say anybody who wants to keep this or this stay around is going to have to address things like date formats and whatever because what we've found in practice, and there's still some examples on the playground that use this, is that you end up providing so many additional things to the mustache renderer that currently fall outside the scope of what's expressed in the specification.</p>
+<p id=0a16 class="phone s06"><cite>Benjamin_Young:</cite> because the designer needs to know what those are that then you end up having to define a format date function and on and on and on and that date function can't even be that talented it has to be like this is the one format date thing that I do so that kind of thing would have to be addressed…</p>
+<p id=0247 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait a second.</p>
+<p id=1f31 class="phone s06"><cite>Benjamin_Young:</cite> which is why mustache on its own gets you so far if you're not willing to augment it and specify all the various augments with it.</p>
+<p id=fd78 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, I've got to disagree with that. date formatting squarely belongs on the display client, not in the mustache just substitute the already formatted date for this field the display client knows the language, a whole lot of stuff. it can decide all of that and just pass it into the template. Go ahead. I think Mono or Yep. Mono and then Benjamin.</p>
+<p id=0d08 class="phone s02"><cite>Manu_Sporny:</cite> Apologies. we did discuss this.</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> This PR does remove both of them. I think the last time we discussed it, people were like, let's just deprecate SVG mustache and remove PDF. And I didn't go in and make the changes. So, that's the issue here.</p>
+<p id=8855 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=a857 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=a419 class="phone s02"><cite>Manu_Sporny:</cite> I'm wondering if things have moved on from there. I mean, I'm happy to go and rework the And then Ted, I think you changed the title of it.</p>
+<p id=6934 class="phone s02"><cite>Manu_Sporny:</cite> Before I was able to make those changes. So, I think that's where my confusion came from.</p>
+<p id=c764 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=1aa4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=1fd8 class="phone s02"><cite>Manu_Sporny:</cite> I'm happy to go back and…</p>
+<p id=a7f5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see. Manu Sporny:</p>
+<p id=b8f1 class="phone s02"><cite>Manu_Sporny:</cite> do that. I don't really see a future where we want to keep SVG mustache if we remove it and let tell the ING folks that we removed it. That might be a way of getting their feedback.</p>
+<p id=9f77 class="phone s02"><cite>Manu_Sporny:</cite> What do folks think? I'd rather clean the spec up and get it into the state that we can do a horizontal review on it than draw it out. But thoughts</p>
+<p id=10005 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, I'd love to get practical feedback from the NG folks like…</p>
+<p id=10006 class="phone s06"><cite>Benjamin_Young:</cite> how are they using it? What did they have to augment mustache with in terms of the view model that gets passed into mustache? because Demetri the kind of thing you're saying the template designer can't just do valid until curly brace valid and then expect that it's going to get handed the thing that it wants. I mean it could be right.</p>
+<p id=6cf4 class="phone s06"><cite>Benjamin_Young:</cite> I think that is what you're saying that the wallet is kind of right.</p>
+<p id=7f7c class="phone s01"><cite>Dmitri_Zagidulin:</cite> That is…</p>
+<p id=5b05 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what I'm saying. Yeah.</p>
+<p id=bd4b class="phone s06"><cite>Benjamin_Young:</cite> But if you wanted to instead say, and this is where it broke for me personally trying to do driver's licenses and things in display, it has birth year and birth month and birth day on separate lines and you in different fields on a form or whatever the scenario is and you're not able to do that. So what ends up happening is whomever is providing the view model has to totally make sausage out of the credential and either hand you some function that parses an input variable like a valid from and can kind of do that throughout the tree that you're given or it's providing until year valid until month valid until day in which case you have to spec all that somewhere</p>
+<p id=ebb2 class="phone s06"><cite>Benjamin_Young:</cite> because those don't exist in the credential the wallet has to provide it …</p>
+<p id=3110 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Understood.</p>
+<p id=a8e5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let me pause here…</p>
+<p id=e8d6 class="phone s06"><cite>Benjamin_Young:</cite> you're specking.</p>
+<p id=7893 class="phone s01"><cite>Dmitri_Zagidulin:</cite> because we're at the top of the hour.</p>
+<p id=905b class="phone s06"><cite>Benjamin_Young:</cite> Yeah, sure.</p>
+<p id=e28f class="phone s01"><cite>Dmitri_Zagidulin:</cite> So you're absolutely right. man, I'd still love to see just two subre. One removing the PDF and one removing the SVG. Ivonne, do you have quick comment?</p>
+<p id=a591 class="phone s04"><cite>Ivan_Herman:</cite> I am not sure…</p>
+<p id=d021 class="phone s04"><cite>Ivan_Herman:</cite> what deprecation means in this case.</p>
+<p id=e8d5 class="phone s04"><cite>Ivan_Herman:</cite> We don't have a previous specification that we deprecate from. So for me the only proper way is removing it and then that's it.</p>
+<p id=cec5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay,…</p>
+<p id=7df3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> sounds good. and with that we are at the top of the hour. thank you so much everyone. I actually look forward to the next call and continue the discussion and please as always look through the issues, look through the PRs and continue offline. Thanks all. Meeting ended after 01:01:46 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
