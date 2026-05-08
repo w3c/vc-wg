@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 7 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>7 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Denken_Chen, Elaine_Wooton, Ivan_Herman, Joe_Andrieu, Manu_Sporny, Scott_Jones</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#d606">VCWG Confidence Method Meeting</a></li>
+<li><a href="#95b9">IIW Experience Discussion</a></li>
+<li><a href="#6a44">Confidence Method Production Prioritization</a></li>
+<li><a href="#3706">Confidence Method Vocabulary And Context Files</a></li>
+<li><a href="#9742">Client-Side Biometrics For VCs</a></li>
+<li><a href="#284b">Biometric Service Endpoint Modeling</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=d606>VCWG Confidence Method Meeting</h3>
+<p id=8959 class="phone s01"><cite>Joe_Andrieu:</cite> Howdy, Scott.</p>
+<p id=aea2 class="phone s02"><cite>Scott_Jones:</cite> Hey, how are you?</p>
+<p id=8ec2 class="phone s01"><cite>Joe_Andrieu:</cite> How are you doing?</p>
+</section>
+
+<section>
+<h3 id=95b9>IIW Experience Discussion</h3>
+<p id=7e1c class="phone s02"><cite>Scott_Jones:</cite> Very well. with regailing everyone with my wild stories of IIW and how mind-blowing it was.</p>
+<p id=8ccf class="phone s01"><cite>Joe_Andrieu:</cite> I was going to ask how you enjoyed it.</p>
+<p id=1be7 class="phone s02"><cite>Scott_Jones:</cite> Yeah, it made my head hurt. Every day at 5, I was throbbing in my brain. But, I had the realization this morning.</p>
+<p id=efaa class="phone s01"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=a949 class="phone s02"><cite>Scott_Jones:</cite> I don't think I've ever learned since college probably. I've never had such compressed learning across so few days. It was really awesome.</p>
+<p id=86fc class="phone s01"><cite>Joe_Andrieu:</cite> it is really an you leave you tired and exhausted. …</p>
+<p id=cf94 class="phone s02"><cite>Scott_Jones:</cite> Sorry, you got cut off there again. Can you say that again?</p>
+<p id=4599 class="phone s01"><cite>Joe_Andrieu:</cite> I was just saying I don't know…</p>
+<p id=44be class="phone s01"><cite>Joe_Andrieu:</cite> what I was saying How it really stimulates you and leaves you completely exhausted, but it's I don't know if you run, it's like having a good run. When I'm out of shape, I don't like running. When I'm in shape, it's great. That sort of exhausted, satisfying feeling.</p>
+<p id=9d57 class="phone s02"><cite>Scott_Jones:</cite> That all resonates.</p>
+<p id=776b class="phone s02"><cite>Scott_Jones:</cite> I was like, man, I don't know if my brain can take it,…</p>
+<p id=269a class="phone s01"><cite>Joe_Andrieu:</cite> Hey Dank,…</p>
+<p id=637c class="phone s02"><cite>Scott_Jones:</cite> but I'm learning so much. Yeah, I loved it.</p>
+<p id=2bee class="phone s03"><cite>Denken_Chen:</cite> Hey there.</p>
+<p id=c6c9 class="phone s01"><cite>Joe_Andrieu:</cite> how have you been? We were just chatting about the IIW experience.</p>
+<p id=602a class="phone s03"><cite>Denken_Chen:</cite> Wow. How's that?</p>
+<p id=a090 class="phone s01"><cite>Joe_Andrieu:</cite> It was good.</p>
+<p id=ac8d class="phone s02"><cite>Scott_Jones:</cite> I've been hearing about it for about a year now and no one could really describe it.</p>
+<p id=b9c6 class="phone s02"><cite>Scott_Jones:</cite> They're just like, You should be there. Here's let me try to describe it.&quot; it doesn't quite make sense and now I get it.</p>
+<p id=074b class="phone s02"><cite>Scott_Jones:</cite> Mhm. I</p>
+<p id=f4a9 class="phone s01"><cite>Joe_Andrieu:</cite> Welcome Dave.</p>
+<p id=8d03 class="phone s03"><cite>Denken_Chen:</cite> I heard about that for a few years but I haven't got a chance to join IW always just reading the proceedings. Yeah, it's already very fruitful every single time.</p>
+<p id=a873 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I see man who also joined. Welcome, Annie.</p>
+<p id=31ca class="phone s04"><cite>Manu_Sporny:</cite> I don't</p>
+<p id=6de7 class="phone s01"><cite>Joe_Andrieu:</cite> I don't know anyone else in particular who might be showing up, so I think we could probably get started.</p>
+<p id=7701 class="phone s01"><cite>Joe_Andrieu:</cite> D because of IW last week, Dank and I I did get some edits to the PR that's outstanding to put at risk marker.</p>
+<p id=2421 class="phone s03"><cite>Denken_Chen:</cite> Right.</p>
+<p id=ff07 class="phone s01"><cite>Joe_Andrieu:</cite> So we could maybe look at that and merge it and then I'm guessing we just go through the issues today.</p>
+<p id=0d31 class="phone s02"><cite>Scott_Jones:</cite> Yes.</p>
+<p id=a643 class="phone s01"><cite>Joe_Andrieu:</cite> Does anyone else want to add something to I see man raises hand. Go ahead, man.</p>
+</section>
+
+<section>
+<h3 id=6a44>Confidence Method Production Prioritization</h3>
+<p id=996a class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I think it's more of a kind of a priority thing. We have some opportunities to take some, and this is going to sound scary, confidence method stuff into production.</p>
+<p id=6d31 class="phone s01"><cite>Joe_Andrieu:</cite> Yep.</p>
+<p id=a804 class="phone s04"><cite>Manu_Sporny:</cite> It's either we do this or something bad gets put in place. and it's really around the did off portions of confidence method. I'm trying to figure out what we can do short term to put some of these customers on a good trajectory instead of a trajectory that other vendors are trying to put them on…</p>
+<p id=d532 class="phone s02"><cite>Scott_Jones:</cite> I didn't wait. Manu Sporny:</p>
+<p id=24a1 class="phone s04"><cite>Manu_Sporny:</cite> which is very clearly bad. so I think what I'm saying is we need help getting the spec into at least a base level,…</p>
+<p id=6da2 class="phone s04"><cite>Manu_Sporny:</cite> state that we can point to. and that means getting something so we can do an FPWD and so on so forth. and at a very minimum defining that did stuff.</p>
+<p id=f500 class="phone s01"><cite>Joe_Andrieu:</cite> wait just to clarify we are in FPWD it's not meaningful…</p>
+<p id=083f class="phone s04"><cite>Manu_Sporny:</cite> I thank you.</p>
+<p id=f042 class="phone s01"><cite>Joe_Andrieu:</cite> but we are in that Okay.</p>
+<p id=63d3 class="phone s04"><cite>Manu_Sporny:</cite> Sorry, I totally forgot. That is excellent. I think then the only delta is did off stuff like getting that in there and then potentially getting a release candidate context published which we might also have. Anyway, sorry that's just an agenda plus for I'd like a little bit of time to chat about what that could look</p>
+<p id=4692 class="phone s02"><cite>Scott_Jones:</cite> Thank you.</p>
+<p id=55aa class="phone s01"><cite>Joe_Andrieu:</cite> I'm keen to just talk about that now as you brought it up. thank you Neman.</p>
+<p id=cd54 class="phone s03"><cite>Denken_Chen:</cite> Yeah, no problem. Message.</p>
+<p id=e3b5 class="phone s01"><cite>Joe_Andrieu:</cite> So I agree with you. I think right now the main thing that we need is the schemas and properties for the two types of verification methods that we have talked out that being a verification method by reference, a DI URL that points to a key in a C document or did document and the embedding directly, right? Those were the two that we talked about wanting lish. we actually used that manual to speak to the demand for this. This is in our demo that we did at IW for the fair witness ceremony and…</p>
+<p id=ebe9 class="phone s02"><cite>Scott_Jones:</cite> We don't want</p>
+<p id=3fd6 class="phone s01"><cite>Joe_Andrieu:</cite> I just juryrigged something up. I'm like, Will and I kicked it around for a bit and we made something up. And clearly that's exactly what we don't want the rest of the world doing looking at this stuff. so I can get a stab of that in the next week unless Mano, I don't think you're signed up to do a PR. but go ahead, man.</p>
+<p id=26c6 class="phone s04"><cite>Manu_Sporny:</cite> Unfortunately, I'm not. But, I'll be desperate enough to do that at midnight or 2 am within a week or two. no, I don' we're in FPWD. That's good. I think the only thing we need in that release candidate context file is the, verification method. probably by embedding we're probably going to end up using did key and that's it and the security and privacy considerations threat model could look a little better…</p>
+<p id=6593 class="phone s04"><cite>Manu_Sporny:</cite> but I think that's a much more involved thing. largely we just need a working context to Yeah,…</p>
+<p id=9a3b class="phone s01"><cite>Joe_Andrieu:</cite> By which you mean the JSON LD context?</p>
+<p id=4d51 class="phone s04"><cite>Manu_Sporny:</cite> that's right. Yep. Yeah.</p>
+<p id=2190 class="phone s01"><cite>Joe_Andrieu:</cite> That sounds right to me as well.</p>
+<p id=821b class="phone s04"><cite>Manu_Sporny:</cite> And then since Ivon's here, we can also talk about where it goes in the vocabulary, So I think we would want to put at least the verification method stuff if it's not already there into the VC data model context. So it's broadly available across all types of VCs. Yep.</p>
+<p id=1dee class="phone s01"><cite>Joe_Andrieu:</cite> I think this is a generic thing. so then that I'll hand it to you in just a second, Ivon.</p>
+<p id=a022 class="phone s01"><cite>Joe_Andrieu:</cite> I guess my question is then the context file for confidence method are we go so now I'm confused which are we creating a separate context file that someone using VC confidence method would link to or is what you just proposed man to get that into the generic VCDM context I lost a thread between the context file and…</p>
+<p id=a4f4 class="phone s01"><cite>Joe_Andrieu:</cite> the vocabulary which there's a subtle relationship Go ahead, Ivon.</p>
+<p id=26e9 class="phone s05"><cite>Ivan_Herman:</cite> two things…</p>
+<p id=49dd class="phone s05"><cite>Ivan_Herman:</cite> then I am just in the process of writing up where we are exactly with the various vocabularies as we agreed yesterday so let's postpone the decision on that once I have that fully done on the context versus vocabulary yeah the two things are In theory, we could create a separate context file for confidence methods only. I would prefer not to over complicate our lives and just use the same context file for all the vocabulary including confidence methods. The only thing that happens is that for doing someone doing only confidence method, the context file will be too big. But who cares?</p>
+<p id=bcdb class="phone s04"><cite>Manu_Sporny:</cite> right on that.</p>
+<p id=1999 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead,…</p>
+<p id=1fc4 class="phone s01"><cite>Joe_Andrieu:</cite> man. Y</p>
+<p id=b423 class="phone s04"><cite>Manu_Sporny:</cite> Ivon, I think the pattern we've been you might have missed the beginning of the call, Ivonne. We are probably going to push confidence method into production. I know that it's scary and we shouldn't be doing that, but it's either that or something much worse gets put in its place. and so we're trying to work with some of our customers on a DIDbased confidence method. we cannot in that situation depend on the VC data model 21 context like that we are having to deal with other vendors that will push back that VC data model 21 is not final and</p>
+<p id=6d0e class="phone s04"><cite>Manu_Sporny:</cite> all that stuff and for that reason it would be much easier for us to use a separate context file just for confidence method just for the release candidates so for the next year or so and then we will upgrade once VC data model 21 gets published as a wreck so going back to your question Joe the typical thing we have done is we have published a separate context file just for the extension specs, a confidence method. So if anybody wants to fold it into a VC data model 111 thing, they can do that.</p>
+<p id=3a1d class="phone s04"><cite>Manu_Sporny:</cite> And in addition we can just pull in the confidence method stuff into this customer environment while we get the full thing done in VC data model. So the first one is a very concentrated context file just for confidence method. That's one change that we can do and in parallel to that we can merge it into the VC data model 21 context file which is broader in scope as Ion was mentioning.</p>
+<p id=be7f class="phone s04"><cite>Manu_Sporny:</cite> So it's in there kind of by default the whole batteries included approach that we're trying for the base context. and then the third thing is the actual vocabular Where do we put these terms and I'm suggesting we put them in the vocabulary.</p>
+<p id=1c9f class="phone s04"><cite>Manu_Sporny:</cite> We don't have a separate vocabulary just for confidence method. we put them in the base context. So three things that we can do mostly in parallel.</p>
+<p id=3bb6 class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=becc class="phone s01"><cite>Joe_Andrieu:</cite> Before you go, Ivan M, you confused me at the end because you called the vocabulary context file. but you just described you.</p>
+<p id=6a31 class="phone s04"><cite>Manu_Sporny:</cite> Sorry, I probably misspoke. Pure vocabulary.</p>
+<p id=f3a4 class="phone s01"><cite>Joe_Andrieu:</cite> Okay. Yeah,…</p>
+<p id=3f4f class="phone s04"><cite>Manu_Sporny:</cite> So I don't know if I have a link to the vocabulary file. BC Yeah.</p>
+<p id=fc60 class="phone s01"><cite>Joe_Andrieu:</cite> that was my question. I don't know what you mean by vocabulary file. The place where we define these things normatively is in the spec.</p>
+<p id=8a7e class="phone s01"><cite>Joe_Andrieu:</cite> So I think there are now three things to keep track of, The spec where we normatively define it. You're saying there's a vocabulary file that's not a context and then that there's of course a JSON LD context file. Is that am I understanding?</p>
+<p id=d69c class="phone s04"><cite>Manu_Sporny:</cite> Yeah. The thing I'm pointing to right here is the vocabulary that defines everything.</p>
+<p id=93e0 class="phone s01"><cite>Joe_Andrieu:</cite> I see.</p>
+<p id=31dc class="phone s04"><cite>Manu_Sporny:</cite> And then if you go to each one it says the formal definition is in VC data model here right so we publish this thing…</p>
+<p id=b620 class="phone s01"><cite>Joe_Andrieu:</cite> I see.</p>
+<p id=87f0 class="phone s05"><cite>Ivan_Herman:</cite> It's not at</p>
+<p id=a530 class="phone s04"><cite>Manu_Sporny:</cite> which is the vocabulary which is nonnormative I think of okay yeah it's non-normative and then it points to the formal definition in the specs right here. So what we would do here is we would add property definitions for confidence method and things like that and then class definitions for verification method maybe and…</p>
+<p id=59bd class="phone s05"><cite>Ivan_Herman:</cite> Actually there is only one there is already a confidence method property.</p>
+<p id=69e9 class="phone s04"><cite>Manu_Sporny:</cite> then we would point to the that's correct…</p>
+<p id=a67f class="phone s05"><cite>Ivan_Herman:</cite> I'm sorry to interrupt in the reserve terms category. I</p>
+<p id=d021 class="phone s04"><cite>Manu_Sporny:</cite> where is that thing yep yep yep so here's</p>
+<p id=2833 class="phone s04"><cite>Manu_Sporny:</cite> confidence method and it still points to the CCG so we need to update that …</p>
+</section>
+
+<section>
+<h3 id=3706>Confidence Method Vocabulary And Context Files</h3>
+<p id=f5b8 class="phone s04"><cite>Manu_Sporny:</cite> but we'd have to add a couple of things to this vocabulary is all I'm saying and then the normative definition as you mentioned Joe is in the confidence method spec and…</p>
+<p id=62c0 class="phone s04"><cite>Manu_Sporny:</cite> we would point There.</p>
+<p id=04bf class="phone s01"><cite>Joe_Andrieu:</cite> Okay, thank you for that clarification.</p>
+<p id=6784 class="phone s01"><cite>Joe_Andrieu:</cite> Ivonne, your hand got auto turned off, but did you get what you wanted to say yet?</p>
+<p id=c064 class="phone s05"><cite>Ivan_Herman:</cite> Yeah. the point is that this…</p>
+<p id=ef2a class="phone s05"><cite>Ivan_Herman:</cite> how should I say dual JSON RD context file for the same vocabulary or portions of the vocabulary we already have that because there is a separate context file for the multi key as far as I know and also for the W key. so those already exist right now. So it's not an unheard of setup that we have. And as I put in the chat, I will hold my nose and do it.</p>
+<p id=fbbe class="phone s01"><cite>Joe_Andrieu:</cite> All right, we appreciate that. Ivon Dave</p>
+<p id=5596 class="phone s06"><cite>Dave_Longley:</cite> And Mono, you keep saying the verification method, but I think the simplest, quickest one to do is actually did a decentralized identifier or did document or something. One way to even model that that might even be simpler because it wouldn't take any new vocabulary terms would be if a confidence DID document. So right now in the confidence method spec we list verification methods which would be bound to specific keys which is a useful utility.</p>
+<p id=c6cf class="phone s06"><cite>Dave_Longley:</cite> But we also have sort of just as a placeholder something that says type decentralized did document. If you didn't put a type in that confidence method at all, and you just reference the ID, you wouldn't need any new vocabulary terms. I think confidence method is in the existing 20 spec. So that's something to consider.</p>
+<p id=714b class="phone s04"><cite>Manu_Sporny:</cite> Joe, you might be muted.</p>
+<p id=728f class="phone s01"><cite>Joe_Andrieu:</cite> Thanks, I didn't understand something you said there, Dave, but I thought you were talking about what I've been calling a verification method reference as opposed to an embedded verification method, which to me is just a URL that points to a verification method. And that could be in a CID or it could be in a DID and that should all work. I think that's the hook you were talking about. But I think at the end you nuanced it such that we could minimize the vocabulary bit. So maybe I didn't understand that Many of you were next on the queue.</p>
+<p id=5cc0 class="phone s04"><cite>Manu_Sporny:</cite> Plus one. I don't have a strong opinion about what we do other than let me just highlight the use case. So this is largely around a customer wants to provide a way of providing a verified email address or a verified phone number or verified mailing address, right? And this verified property email, phone or address kind of lives on its own. and we</p>
+<p id=d93b class="phone s04"><cite>Manu_Sporny:</cite> One of the proposals is let's tie it to their high assurance identity document. So every time they want to prove that they have this email address they have to submit and this is not the document but they have to submit their passport because their email address is tied to their passport and that is terrible right we do not want that happening in the ecosystem. and the argument for that is like we have strong binding to the document and the document is tied to a key on their mobile phone and for that reason if we want to do verified email address you have to provide your terrible from a privacy perspective. So instead we're trying to no just use a confidence method. You can use a key binding there if you want to.</p>
+<p id=d7c4 class="phone s04"><cite>Manu_Sporny:</cite> And that's what we're trying to establish here is what's the minimum we can do the key binding could be done did document or verification method something of that nature. it's kind of think of it the tap to pay credit cards that you have today. you have that card and when you tap there's a cryptographic authentication that happens along with kind of the account information that goes over. We're trying to do effectively the same thing in digital form. So that's the use case is we want to send over preferences and some verifiers want there to be some kind of cryptographic binding and</p>
+<p id=3c02 class="phone s04"><cite>Manu_Sporny:</cite> So, we're trying to do that in a way that doesn't require them to submit their entire identification document. Hope that made sense.</p>
+<p id=67c0 class="phone s01"><cite>Joe_Andrieu:</cite> I think it's me, Dave. Go ahead.</p>
+<p id=0370 class="phone s06"><cite>Dave_Longley:</cite> So, just trying to be responsive to what you said, sure, one of the confidence methods that could be done here is just a reference to a verification method. It would not necessarily have to be embedded, but it could be embedded. But what I was trying to get to, which is what you have highlighted on the screen there, is the only thing that's preventing us from using a did as a confidence method today is lack of specification for how it works, which would be in the spec. and a statement in the VCDM 2.0</p>
+<p id=1b61 class="phone s06"><cite>Dave_Longley:</cite> 0 spec that says that there must be a type property in the confidence method. if that were not a requirement the confidence method property is already defined and all that you would need to do is did as a value for a confidence method. So there would be no new vocabulary, no new context for a VC 2.0 VC. You could do all of those things and immediately did confidence method support mechanically.</p>
+<p id=dfff class="phone s04"><cite>Manu_Sporny:</cite> And I think I'm okay with that. It feel is that the proper long-term solution? Right. I feel like we are trying to get something working versus versus having a type. I don't know if the needing another context is that big of an ask. but maybe it is. I mean I totally get it, Dave.</p>
+<p id=abb0 class="phone s04"><cite>Manu_Sporny:</cite> The shortest path is remove this requirement for there to be a type field or say You move it from must to a should and then use a did URL as the ID for the confidence method and then you can use any what are we assertion method out of there to do the authentication like we'd write text to that effect.</p>
+<p id=07df class="phone s04"><cite>Manu_Sporny:</cite> Sorry that's right an authentication method.</p>
+<p id=78c1 class="phone s06"><cite>Dave_Longley:</cite> To be clear,…</p>
+<p id=a155 class="phone s06"><cite>Dave_Longley:</cite> you would use an authentication method out of there.</p>
+<p id=4dea class="phone s04"><cite>Manu_Sporny:</cite> But I don't know if specifying a type is, that much more. I could go either way. I, interested in your thoughts if we're taking a shortcut or if adding another context is really that big of a issue. That's it.</p>
+<p id=2a6e class="phone s01"><cite>Joe_Andrieu:</cite> I think I'm more with you, Manu, than Dave. because it seems like part of your main driver, Dave, I think you're correct, but I'm not sure it's the right driver, which is to minimize our necessary changes to these other things. if we have to change those other things then I think we should do it in the way that's the long-term architecture that we're trying to set up which doesn't feel that far away procedurally I'm not sure we're getting much by doing this different thing that isn't what we've had already been talking about just for the sake of making the paperwork easy.</p>
+<p id=0819 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, man.</p>
+<p id=b5d7 class="phone s04"><cite>Manu_Sporny:</cite> And the other thing that we might do is I mean,…</p>
+<p id=31b7 class="phone s04"><cite>Manu_Sporny:</cite> this is largely if the other vendors push back they're like, &quot; it's a new feature. It's not, standardized, yada.&quot; we can then I think fall back to Dave what you said but maybe not change the core spec and just be a willful violation temporarily while we get this thing through the standards process. Meaning digital bazaar would be a willful violation of this spec I was sharing my screen. We would be a willful violation of this specific text until the context were in place and it was through the full standardization process. If that makes sense.</p>
+<p id=3129 class="phone s06"><cite>Dave_Longley:</cite> There's also a weasel wording way to get out of that which is to avoid collisions regarding how the following properties are used. the confidence method spec could say there are no collisions when did identifier for a confidence method.</p>
+<p id=5f3e class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, man.</p>
+<p id=0bc4 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, plus one to that. So, I think we've got ideal state and we've got a couple of backup states. and, we're being very clear and public about what we, intend to do. largely it's going to be driven by other vendors pushing back or not. we clearly want to do this the right way. So I think we're good. we have multiple paths to get to where we want and it sounds like the group is okay with moving forward on a variety of these and…</p>
+<p id=0705 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, dude.</p>
+<p id=9a63 class="phone s04"><cite>Manu_Sporny:</cite> and being flexible as we bring feedback back to the group from implementations.</p>
+<p id=14dc class="phone s06"><cite>Dave_Longley:</cite> I would say the main so the thing that is missing most immediately is a description the confidence method spec for how one would use did to increase a level of confidence. perform a proof on a verifiable presentation, for example. so I think that's the main thing that's missing. And then the other dressings, having some kind of type that you could refer to a statement that says if the s there still are no collisions because did it itself eliminates the potential for collisions if there is no other type getting stuff like that.</p>
+<p id=a7aa class="phone s06"><cite>Dave_Longley:</cite> The secondary. first part saying, this is how you actually do it in that spec so it can be pointed to I think that's the more important piece.</p>
+<p id=66ae class="phone s01"><cite>Joe_Andrieu:</cite> So, I don't think this is quite the right way to do it,…</p>
+<p id=bc48 class="phone s01"><cite>Joe_Andrieu:</cite> The current thinking for me about the verification method that's leveraging the DID URL that points to a key so you can specifically say this particular verification method is the one you should use.</p>
+<p id=8dfe class="phone s01"><cite>Joe_Andrieu:</cite> It's a different beast that I haven't thought through to say we just want a did and we're going to let you choose any of the authentication methods that authentication relationships that may be specified within that did. but I think that's what you're proposing and maybe I don't know if you caught my feedback before, but my suggestion was injecting that into the architecture feels like it is chasing the paperwork reduction act rather than finding what's the ideal way to do it. but let you respond.</p>
+<p id=fdd5 class="phone s06"><cite>Dave_Longley:</cite> Should I jump Q?</p>
+<p id=6363 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=0086 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, go ahead.</p>
+<p id=07fc class="phone s04"><cite>Manu_Sporny:</cite> Yeah, go ahead.</p>
+<p id=ffff class="phone s06"><cite>Dave_Longley:</cite> I had always envisioned that you could just specify a DID to allow for key rotation and so on for whoever it was that had successfully gotten an issuer to DID somewhere to a VC that issuer saying, I did some kind of process. I'm okay with putting this confidence method here on this did and probably that would be the way I have always conceptualized that is it's really for the benefit of the holder of the credential or whoever the subject might happen to be as two-factor authentication when presenting that VC. and so it's really up to them to be in control of that did in an appropriate way to be able to manage their own keys and decide whatever authentication methods they want to put</p>
+<p id=7a90 class="phone s06"><cite>Dave_Longley:</cite> DID document associated with that</p>
+<p id=ff04 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, a plus one to that. I'm looking at the use cases here. Ultimately, it's the issuer that decides what amount of flexibility they want to give to the holder. in that case, they're going to be certain jurisdictions that are going to basically lock it down to a private to a public key that they absolutely, saw at the time of issuance. So that's I think Joe the use case you're talking about where it's locked down to a very specific verification method. but there may be other entities I'm thinking of the Utah's state endorsed digital identity stuff where some of these credentials are supposed to live beyond key crypto periods.</p>
+<p id=8a06 class="phone s04"><cite>Manu_Sporny:</cite> And in those cases for specific types of DIDs they may want to give the individual the choice. So for example let's look at like a driver's license that's issued for seven years.</p>
+<p id=d604 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah.</p>
+<p id=aa6f class="phone s04"><cite>Manu_Sporny:</cite> The likelihood that the individual is going to do a key rotation in that those seven years is I think pretty high. and you don't want to have to as the issuing jurisdiction, if you believe in this approach, you don't want to have to recall the individual to come back and get a new credential for every single key rotation that they do. you just want to basically you either trust the did and the key management, processes behind, that did and the individual you don't. so I think we do need to have both options is…</p>
+<p id=e197 class="phone s01"><cite>Joe_Andrieu:</cite> Cool. I'm convinced …</p>
+<p id=8d96 class="phone s04"><cite>Manu_Sporny:</cite> what I'm saying. that's it.</p>
+<p id=961e class="phone s01"><cite>Joe_Andrieu:</cite> what this tells me is that we actually have three different verification method sort of subtypes. it's just a DID. You will use any authentication method in there. and that allows for long-term confidence method through key rotation.</p>
+<p id=6b05 class="phone s01"><cite>Joe_Andrieu:</cite> it can be a It's pointing or really it's any URL which could be DID URL or a CID but the point is it's a reference to a veri or we can embed the verification method directly in the VC so that there's no need to get out on the network. We're basically putting a key directly in the file. So those three things that's a new discovery today Dave so I hadn't been thinking about it that way. but I appreciate that all three of those are valid and interesting use cases and I'm seeing a bunch of thumbs up. So, I think we can take that topic as resolved and we don't have an issue to attach it but it will be in our minutes. and hopefully we've socialized that there are now three different ways we're going to use verification methods and we just need to write some of them up.</p>
+<p id=49db class="phone s04"><cite>Manu_Sporny:</cite> Do you want me to raise an issue, Joe? I'm happy.</p>
+<p id=d833 class="phone s01"><cite>Joe_Andrieu:</cite> Sure.</p>
+<p id=f7e7 class="phone s04"><cite>Manu_Sporny:</cite> It feels like we should track this as it's like that is kind of the core of what we would love to see in the next, two to three weeks. like a PR that puts that in. Okay.</p>
+<p id=15cd class="phone s01"><cite>Joe_Andrieu:</cite> That would be great. And feel free to assign me to it. I think I want to take a stab at what I did with the fair witness demo. and just see how that language looks unspec, So that would be helpful. that was Any other agenda items? Otherwise, I think we can look at that and then walk through issues. hearing none. I will just share my screen real quick, assuming I can get the preview up and working.</p>
+<p id=331a class="phone s01"><cite>Joe_Andrieu:</cite> So, relatively simple adjustment since the last conversation which was simply to wrap an at risk marker. theres So, there are now two at risk issues. this is in the wrong place. It bubbled it out of this table. So, I guess that's a question for the respect folks.</p>
+<p id=0d52 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=b927 class="phone s04"><cite>Manu_Sporny:</cite> You have to,…</p>
+<p id=25f8 class="phone s04"><cite>Manu_Sporny:</cite> I think, use a span if you're going to put it in a table instead of potentially a div or it auto autoblocked it to move it out might be what's going on.</p>
+<p id=121d class="phone s01"><cite>Joe_Andrieu:</cite> I do think that's what's going on.</p>
+<p id=b0cb class="phone s01"><cite>Joe_Andrieu:</cite> What happened is it's in a paragraph in the TV and it got pulled up. Is that right? No, I see what Okay, so this is not ready. I think I can fix it but I'm not going to waste our time on the call. but let me ask This was so out of our last call we said hey if we put the at risk things in the right place then this is good to move. is there any objection to that because then I'll just fix where this is showing up and Denin and I will merge it in since I created I'll let you do Denin but I appreciate the thumbs be good to move that forward. So I'll get this today. It should be a small edit.</p>
+<p id=d153 class="phone s01"><cite>Joe_Andrieu:</cite> I was excited because I got this one working. The second one. but obviously I didn't see the first one was not quite the right place. thank you for the feedback on that. and then let's look at our issues. I think, Scott,…</p>
+<p id=8748 class="phone s01"><cite>Joe_Andrieu:</cite> did you update the issue that your input? I think it was 31 here.</p>
+<p id=fa81 class="phone s02"><cite>Scott_Jones:</cite> I did.</p>
+<p id=659a class="phone s02"><cite>Scott_Jones:</cite> Yep. Sure.</p>
+<p id=9d95 class="phone s01"><cite>Joe_Andrieu:</cite> You want to introduce us to it? Let me hand the mic over to you. And where are we in the conversation?</p>
+</section>
+
+<section>
+<h3 id=9742>Client-Side Biometrics For VCs</h3>
+<p id=e2bc class="phone s02"><cite>Scott_Jones:</cite> So, hi everyone. I'm Scott with Realize. we do privacy preserving biometrics at very large scale. we were exploring I came into the conversation here with Manu looking at opportunities for commercial needs for privacy preserving biometric holder binding in verifiable credentials. and I drafted an issue framed around that looking at if client side biometrics is possible. and there were rounds of feedback with the initial draft I put up there.</p>
+<p id=0aae class="phone s02"><cite>Scott_Jones:</cite> I heard things from the group including Dave Longley on this call. Nice to see you here. he Amir suggested something about assurance class abstraction. Joe gave feedback on use case framing. there was an ask to give more insight on open-source reference implementations rather than using any particular vendor's model. and so I drafted an updated version as the last comment that addresses many of those things. And then there's still some open questions that I believe we would get into with the R strategy.</p>
+<p id=ee53 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, this is definitely a long comment thread. I'm just making sure I got through the tail end. So, I think you are right in that it feels like this is ready for a PR. certainly it's hard to track the conversation in the issue thread at this point. has anyone else had a chance to review this update? I mean, I think we can review it in PR. So,</p>
+<p id=1548 class="phone s02"><cite>Scott_Jones:</cite> Yep.</p>
+<p id=aab1 class="phone s04"><cite>Manu_Sporny:</cite> plus one. Sorry, I'm still typing out this other issue, so my focus is split. could we take a look at the latest code looks like?</p>
+<p id=3e7b class="phone s01"><cite>Joe_Andrieu:</cite> Which code do you mean?</p>
+<p id=10000 class="phone s04"><cite>Manu_Sporny:</cite> That might help us focus on changes that you might be able to make in the PR. Scott, I don't know where I think for the input format what's on screen right now that basic structure thing just to look at for example that version I don't think we want to use that but the rest of it looks good. The IDs I don't know why we're using I forget. maybe I suggested we use a UU ID for the ID.</p>
+<p id=ccd6 class="phone s04"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=111e class="phone s01"><cite>Joe_Andrieu:</cite> So there was a suggestion to have an ID.</p>
+<p id=fd8a class="phone s01"><cite>Joe_Andrieu:</cite> I remember that going around.</p>
+<p id=ccc1 class="phone s04"><cite>Manu_Sporny:</cite> which is fine.</p>
+<p id=b02a class="phone s01"><cite>Joe_Andrieu:</cite> What about the version don't you like for the biometric matching model?</p>
+<p id=f10a class="phone s04"><cite>Manu_Sporny:</cite> It feels like it should be in the matching model realize 2026- version 3.2.0. It feels like something that the model needs to just express there. It like no need to break it out.</p>
+<p id=32e1 class="phone s01"><cite>Joe_Andrieu:</cite> Right. In the same way that it's in this URL has both of those pieces as well. Right.</p>
+<p id=24bf class="phone s04"><cite>Manu_Sporny:</cite> I don't think it does anything what's the wallet going to do with that data? Nothing. It's just going to, …</p>
+<p id=b633 class="phone s02"><cite>Scott_Jones:</cite> Yeah. Question.</p>
+<p id=ba9d class="phone s04"><cite>Manu_Sporny:</cite> I don't think Yeah. And I'm guessing the purpose of the URL, Scott, is so there's a human readable something or another identifier or globally. …</p>
+<p id=5a49 class="phone s02"><cite>Scott_Jones:</cite> I think</p>
+<p id=d04b class="phone s04"><cite>Manu_Sporny:</cite> and then it's kind of like, why do we have the matching model in the URL? because both of them kind of identify the model, And so maybe the matching model should just be a URL and then we get rid of version and URL as an example. there are three pieces of information there that are duplicative of each other. So, we should try to figure out…</p>
+<p id=fb5b class="phone s02"><cite>Scott_Jones:</cite> Mhm. Isn't that …</p>
+<p id=6e09 class="phone s04"><cite>Manu_Sporny:</cite> what we're trying to get down</p>
+<p id=35c0 class="phone s01"><cite>Joe_Andrieu:</cite> Isn't it also …</p>
+<p id=ee72 class="phone s01"><cite>Joe_Andrieu:</cite> because we have a JSONLDD context here, this type is in fact going to reduce to a fully qualified URL? Sure.</p>
+<p id=9224 class="phone s04"><cite>Manu_Sporny:</cite> Correct. yes.</p>
+<p id=2528 class="phone s02"><cite>Scott_Jones:</cite> I have Sorry, just to jump in. I had to interrogate my notes. Sorry.</p>
+<p id=6c5b class="phone s02"><cite>Scott_Jones:</cite> The URL goes back to a feedback from Manu a while back for wallets to know where to send the biometric data for server assisted verification if that's relevant. Mhm.</p>
+<p id=10001 class="phone s04"><cite>Manu_Sporny:</cite> So that's not just so sorry Scott it's just minutia on the way URL means something different in this kind of data model we're using. It's like here's my website. That's what URL means typically. what this is really is it's a service It's a service endpoint, I think, is what it is. so it may be Joe that we're, reuse the service definition stuff out of documents here as an example.</p>
+<p id=65e2 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I agree. It is shaped like a service endpoint rather it feels like but it's not yet shaped like so that's intended to say,…</p>
+<p id=7840 class="phone s02"><cite>Scott_Jones:</cite> Mhm. Yep.</p>
+<p id=7c54 class="phone s01"><cite>Joe_Andrieu:</cite> hey, this biometric model, this is a service endpoint that you might go to have it That right, I agree. URL doesn't tell that to me in a way that if you literally had service endpoint as a property, that would be more aligned with how the DID documents do it. my only hesitancy menu is do we want to pull in the whole specification of a service endpoint and in…</p>
+<p id=119a class="phone s01"><cite>Joe_Andrieu:</cite> which case it would be fine to use that property otherwise we should probably call it a service or something else if we just want a there a URL go ahead</p>
+<p id=572e class="phone s02"><cite>Scott_Jones:</cite> Thank you.</p>
+</section>
+
+<section>
+<h3 id=284b>Biometric Service Endpoint Modeling</h3>
+<p id=df05 class="phone s04"><cite>Manu_Sporny:</cite> I think we might want to pull in the full thing. I totally agree that it would be nice if we could get away with just a URL, but there may be other things that you need to bundle with the URL.</p>
+<p id=5887 class="phone s02"><cite>Scott_Jones:</cite> Thank you.</p>
+<p id=6d56 class="phone s04"><cite>Manu_Sporny:</cite> So my suggestion would be to just pull in the whole service definition. the reason I say that is because there are other things that we may want to pull service endpoints into. So for example,…</p>
+<p id=6e9d class="phone s02"><cite>Scott_Jones:</cite> Get the</p>
+<p id=73ef class="phone s04"><cite>Manu_Sporny:</cite> refresh service has nothing to do, with anything here, but refresh service would be another thing…</p>
+<p id=5802 class="phone s04"><cite>Manu_Sporny:</cite> where we might want to reuse service phone.</p>
+<p id=8d82 class="phone s01"><cite>Joe_Andrieu:</cite> And…</p>
+<p id=843e class="phone s01"><cite>Joe_Andrieu:</cite> what I think you and I both really meant here, Manu, just to clarify, because I just pulled up the actual definition from didcore. I put that URL in the chat. is to have this be a service with the ID type and service endpoint. I think I conflated things by suggesting maybe it's just service endpoint but then that doesn't give you the type and the ID.</p>
+<p id=08f4 class="phone s04"><cite>Manu_Sporny:</cite> So there are two choices here, It could be service endpoint. And the thing that Scott has in his example, if we could go back to the other tab, the biometric model could contain a service, that could be a service description,…</p>
+<p id=fb17 class="phone s01"><cite>Joe_Andrieu:</cite> All right, Dave.</p>
+<p id=10002 class="phone s04"><cite>Manu_Sporny:</cite> but I don't think that's what it is. So in biometric model is effectively the service property and then the thing inside it has an ID type and service endpoint. So the type would be a biometric mashing model serviceish thing and the service endpoint would be the URL. We could model it like that, but I don't know if that Go ahead, dude.</p>
+<p id=7d8b class="phone s06"><cite>Dave_Longley:</cite> is what we're trying to model here a set of parameters that will be sent to a service and maybe we could get some more mileage out of trying to make it seem like that is the biometric presumably so I hearing you guys talk about this I'm getting a better understanding of it it sounds like you would take what's in the URL property here and you would transmit the biometric vectors to it as a parameter of some kind to that URL Is that correct?</p>
+<p id=10003 class="phone s04"><cite>Manu_Sporny:</cite> you would Let me try and explain this Scott so that I've got how this works in my head. this thing on the screen the input types of video. So you would take a video stream and you would take the biometric vectors and you would send both of those.</p>
+<p id=314e class="phone s04"><cite>Manu_Sporny:</cite> You would send the biometric vectors and the video stream to the URL that's provided there. And that URL would let you know whether or not the video streams matching the vectors. Is that correct, Scott? Yeah.</p>
+<p id=2ae9 class="phone s02"><cite>Scott_Jones:</cite> I believe so.</p>
+<p id=91ce class="phone s02"><cite>Scott_Jones:</cite> Let me just confirm here.</p>
+<p id=caa0 class="phone s04"><cite>Manu_Sporny:</cite> I mean, in fact, it might be the biometric type as well that's transmitted. And you might take this entire object and just post it to the URL.</p>
+<p id=7863 class="phone s06"><cite>Dave_Longley:</cite> while we sort out if that's right. It seems to me like the confidence method itself is a service with parameters. and those parameters would be encoded here as data. But there's some biometric matching service and this is the service endpoint for it and these are the parameters you send to the service plus some other meta information that would tell you things like you need to also be capturing a video to because there are some other computed parameters that need to go to it.</p>
+<p id=8ae3 class="phone s01"><cite>Joe_Andrieu:</cite> A minute.</p>
+<p id=ad02 class="phone s06"><cite>Dave_Longley:</cite> So It's got parameters that are embedded here as static data. And then you have the endpoint where the information goes.</p>
+<p id=75dd class="phone s04"><cite>Manu_Sporny:</cite> Yes, in one of the use cases, So, the use case we're looking at is the individual have selected your biometric vetting service and you're okay with sending a video up there and that is an example of you sending data to an online service. But we also have a use case where nothing leaves the phone.</p>
+<p id=ca5a class="phone s04"><cite>Manu_Sporny:</cite> I mean, you could argue that the service is local in that case. but I don't know if that's the right way to model it. go ahead Yeah.</p>
+<p id=fe7b class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, one of …</p>
+<p id=e4ce class="phone s01"><cite>Joe_Andrieu:</cite> what you just said, the individual subject doesn't get to choose that service endpoint, right? This is the issuer defining the service endpoint.</p>
+<p id=ecf7 class="phone s02"><cite>Scott_Jones:</cite> I think he's recording. Perfect.</p>
+<p id=79be class="phone s04"><cite>Manu_Sporny:</cite> Yeah, that is true. I guess the theory is the individual would consent to the use of that service through their digital wallet would not open up a video stream to that service…</p>
+<p id=ce72 class="phone s01"><cite>Joe_Andrieu:</cite> Sure though that I totally agree with…</p>
+<p id=9e50 class="phone s04"><cite>Manu_Sporny:</cite> unless they ask the individual do you realize to do biometric vetting for you. yeah.</p>
+<p id=3bf8 class="phone s01"><cite>Joe_Andrieu:</cite> but you had presented a flexibility that's not quite here the issuer could have asked the user which service to use but that's not necessarily what is going to happen in practice.</p>
+<p id=6055 class="phone s04"><cite>Manu_Sporny:</cite> And I think what we actually want is the individual through their digital wallet to be able to pick the service,…</p>
+<p id=3565 class="phone s02"><cite>Scott_Jones:</cite> Mhm.</p>
+<p id=10004 class="phone s04"><cite>Manu_Sporny:</cite> I'm wondering if another way to model this is the individual is I trust realize to be my biometric provider and then the issuer would say these are the biometric providers that I'm okay with right and here are the vectors I captured and yada so in that case you could argue that you don't need a URL because it's the digital wallet that's going to make the suggestion to the individual and let them pick. the downside there being that there's logic there that goes in the wallet that's probably not good to put in the wallet.</p>
+<p id=385c class="phone s01"><cite>Joe_Andrieu:</cite> Okay, there.</p>
+<p id=5cbc class="phone s04"><cite>Manu_Sporny:</cite> I don't know. I'm very much on the fence about that part of</p>
+<p id=7f05 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I had a lot of different thoughts. there different contexts and things to respond to. I'm also thinking about what the query language is going to look like when a ier wants a biometric confidence method to be Presumably, they would say, I will take a confidence method of this type. they might not care about anything more than the type.</p>
+<p id=e4e0 class="phone s06"><cite>Dave_Longley:</cite> They'll probably care about who the model or matching provider is though or that the matching provider is on a recognized entities list that sort of thing from the other work.</p>
+<p id=637f class="phone s01"><cite>Joe_Andrieu:</cite> Attack</p>
+<p id=10005 class="phone s06"><cite>Dave_Longley:</cite> And then ideally all the wallet needs to do is present that to the user of here are your choices that would work for the verifier. Do you want to choose Pick one of these. And even if there is some kind of local service that does something,…</p>
+<p id=d7a3 class="phone s02"><cite>Scott_Jones:</cite> Listen.</p>
+<p id=87bc class="phone s06"><cite>Dave_Longley:</cite> I would imagine you would still want to identify that it is a local service in some way or another. you could still use a URL to express that information. I don't know how you would get away from that or how you would design it architecturally even if you have a wallet. Ideally, a wallet would not have to embed that functionality itself, but could call out to some service through that URL, whether it's local service or not. Hopefully, that's making sense. and I would also hope this is kind of coming from what render method does a little bit where it says these are the pointers for the properties in a VC that are going to be rendered if you hand this over to a render method.</p>
+<p id=ffd6 class="phone s06"><cite>Dave_Longley:</cite> and that render method more or less runs locally. This is a very similar model to that.</p>
+<p id=7fd9 class="phone s02"><cite>Scott_Jones:</cite> That's good.</p>
+<p id=10006 class="phone s06"><cite>Dave_Longley:</cite> If you had this biometric service running locally, you could say these are the parameters from this thing I'm going to pass over to this service and it gets nothing else and the wallet could do that part some piece that the wallet trusts could do that part. And so this is why I was saying I have a lot of different thoughts swirling around here, but this feels very similar to render method in the concepts around announcing what's going to go somewhere and where it's going to go and making sure that the user can make choices about that and making sure that the verifier can request and state the type the things that it would accept if you made those choices.</p>
+<p id=10007 class="phone s01"><cite>Joe_Andrieu:</cite> Let me frame a question for you, Scott. I think we've identified three different ways that we could make this more flexible than this particular schema. One is to enable purely local. So we're not going to an external service but we're letting an app on the phone or on the device do it. the second one is that the user gets to pick their wallet is going to manage that there are service endpoints of certain types and…</p>
+<p id=1f15 class="phone s01"><cite>Joe_Andrieu:</cite> the users involved in picking one. and the third one would be what feels like the started with, which is that the issuer is specifying the service endpoint. I think those are all possible sort of ways to advance this work. I'm curious which of those is do all three of those sound good to you or do you have problems with any of them or how are you thinking about this kind</p>
+<p id=e6c6 class="phone s02"><cite>Scott_Jones:</cite> The thank you for that.</p>
+<p id=cda2 class="phone s02"><cite>Scott_Jones:</cite> The first one was kind of the original spirit of intent. sorry, I've had a lot of coffee, but I'm still not speaking as well as I'd hoped for that. the original impetus for this was that we are working on client side capabilities. we're delivering to a big tech company capabilities compatible with wearables and have a very unique capability there. So, the original intent was to explore that.</p>
+<p id=10008 class="phone s02"><cite>Scott_Jones:</cite> To your second point on the user getting to pick options. that was also kind of the spirit I picked up from Manu of avoiding vendor lock in avoiding making it seem like somebody owns this and no one else. So the idea of how you want to express that whether it's present it I put the user in control and otherwise kind of merchandise you have options and then even on the developer side working with this kind of the expression of the open source options you don't need to use any vendor there's open source capabilities that might not be as great but they're available and then the third one where the issuer specifies the service endpoint I'm</p>
+<p id=9dab class="phone s02"><cite>Scott_Jones:</cite> still learning so much so quickly. So, I can't tell you that that's not a good idea anymore, but I'm happy to hear from others that it's not.</p>
+<p id=b925 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, thank you Scott.</p>
+<p id=3ec0 class="phone s01"><cite>Joe_Andrieu:</cite> That's good to hear. It wasn't clear to me if which of those sort of was your initial intention. So that's great because I agree. I like the local biometric is figuring out and I think frankly I'm not a fan with my chair editor hat off or whatever that the issuer specifying one and…</p>
+<p id=0c33 class="phone s02"><cite>Scott_Jones:</cite> Thank you. That's</p>
+<p id=beaf class="phone s01"><cite>Joe_Andrieu:</cite> only endpoints feels like a control framework and not a framework of choice and I think we're trying to create a framework of choice here. Go ahead.</p>
+<p id=2cd2 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I mean I agree with the only and we have to figure out where we're comfortable. there are use cases that is very much what the issuer wants to do. if you'd look at a military ID used on a military base, that's very much the type of, ecosystem they deal with. certainly we do not want to expose the general population to something like that. so is it a legitimate use case? I think yes it's a legitimate use case with a whole bunch of concerns and warnings that if we decided to support that would put into the threat model and so on so forth.</p>
+<p id=d476 class="phone s04"><cite>Manu_Sporny:</cite> I think one and two is very much where we're wanting to focus though the purely client side one and then the individual gets to pick who their biometric provider is. if we focus on both of those I want to just make sure that the data model supports definitely the first two and…</p>
+<p id=91de class="phone s02"><cite>Scott_Jones:</cite> Thank you.</p>
+<p id=d07c class="phone s04"><cite>Manu_Sporny:</cite> pro and at least the third one. to make sure that we've got a data model that's flexible enough that it can support all the use cases and then we try and nudge the ecosystem towards the first use case ideally and then the second use case is probably more realistic near term next two to three years that's</p>
+<p id=baca class="phone s01"><cite>Joe_Andrieu:</cite> Okay, thanks. I do want to move towards wrapping up as there was a window with the W3C where we anchored to finishing 5 minutes early. So we have time to transition to whatever our next standards call is. it may be manu that with the user selected the type restriction may be able to support the use case of the DoD situation.</p>
+<p id=17f7 class="phone s02"><cite>Scott_Jones:</cite> All right. There</p>
+<p id=7d3b class="phone s01"><cite>Joe_Andrieu:</cite> Because the user can select those things that actually offer that type. and I guess we'd have to think through that but there may be an opportunity with that same data model to say nevertheless there is a type here which we know goes to an authorized DOD biometric verification service endpoint.</p>
+<p id=bc49 class="phone s02"><cite>Scott_Jones:</cite> point. All right.</p>
+<p id=0912 class="phone s01"><cite>Joe_Andrieu:</cite> So maybe we can do that without sort of inviting issuers to think they can lock it down in a way even though they could with the extra work of defining a custom type etc. so with that, I'll give you the last word on the top.</p>
+<p id=463d class="phone s04"><cite>Manu_Sporny:</cite> Yeah, plus to all that I think Scott, raise a PR, please. And if you could have two examples at least in the one for the purely local and then one for the individual gets to choose use cases. I think we can refine the PR after you raise that. And try to keep the very small. don't raise one that has multiple paragraphs of text because those have a very hard time getting achieving consensus.</p>
+<p id=7eb6 class="phone s02"><cite>Scott_Jones:</cite> Cool.</p>
+<p id=ca07 class="phone s04"><cite>Manu_Sporny:</cite> The more you add the more there is to disagree with. So, keep it really tiny and really focused and really tight. and just on the core of what you're trying to get there. and it may just start with examples two examples and then we can, work on that. That's it.</p>
+<p id=46e4 class="phone s01"><cite>Joe_Andrieu:</cite> Thanks, plus one to brevity, but also I think you're going to need more than just one paragraph. It sounded like that was part of Manu's advice. but definitely minimizing it, making it concise makes it easier for people to review and engage with that, let me ask for any final thoughts. and Dacon, if you wanted to add anything. I know we haven't, had much input from you today. but otherwise, we'll move to wrapping. thank you very much. I appreciate the input. I will get that at risk marker fixed.</p>
+<p id=5281 class="phone s02"><cite>Scott_Jones:</cite> Cool. Thank you very much everyone.</p>
+<p id=10009 class="phone s01"><cite>Joe_Andrieu:</cite> And Scott, we look forward to a PR from you. That would be great. All right. Cheers. Meeting ended after 00:57:30 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
