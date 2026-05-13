@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 12 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>12 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Lehn, Dave_Longley, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#cfc6">Meeting Announcements</a></li>
+<li><a href="#6a0b">VC Barcode PR Review</a></li>
+<li><a href="#c48b">Postquantum Cryptography for VC Barcodes</a></li>
+<li><a href="#5415">Add discussion of Post Quantum for VC Barcodes · Issue #33 · w3c/vc-barcodes · GitHub</a></li>
+<li><a href="#c549">General Crypto Suite Discussion</a></li>
+<li><a href="#2362">How Postquantum Signatures Work</a></li>
+<li><a href="#8fce">Data Integrity Threat Model</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=cfc6>Meeting Announcements</h3>
+<p id=bf42 class="phone s01"><cite>Ivan_Herman:</cite> Hello. I'm okay.</p>
+<p id=6ab4 class="phone s02"><cite>Wesley_Smith:</cite> Hey Evvon, how's it</p>
+<p id=476f class="phone s02"><cite>Wesley_Smith:</cite> We'll give it a couple more minutes for folks to check in and then get started.</p>
+<p id=466a class="phone s02"><cite>Wesley_Smith:</cite> All right, that's probably long enough. Folks might continue to trickle in, but let's go ahead and get started. Hi everybody. Welcome to the May 12th, 2026 meeting of the VC barcodes and data integrity task force. the agenda today is much the same as it has been recently. First we'll go through announcements, introductions, and then we'll spend about half the call working on the VC barcode specification and the other half working on the various inflight data integrity specifications. with that noted, does anybody have any announcements they'd like to make to the group? anybody like to introduce themselves or does anybody have any process items they would like to discuss?</p>
+<p id=9a23 class="phone s03"><cite>Brent_Zundel:</cite> Just a gentle reminder to the leaders of this task force that you need to start every meeting with a reminder that it's being recorded and transcribed and ask if anyone has a problem with that.</p>
+<p id=44e3 class="phone s02"><cite>Wesley_Smith:</cite> Thank you,…</p>
+<p id=281e class="phone s02"><cite>Wesley_Smith:</cite> but my apologies. I'll make a note of that. this meeting is being recorded and transcribed. Does anybody have a problem with that? All right, hearing none, I think we can go ahead and jump right into VC barcodes work. today we'll be doing the standard PR review and issue processing. I will share my screen. All right. Do you guys see VC barcodes on the screen?</p>
+<p id=13ec class="phone s02"><cite>Wesley_Smith:</cite> Excellent. All right.</p>
+<p id=2531 class="phone s04"><cite>Manu_Sporny:</cite> Yes.</p>
+</section>
+
+<section>
+<h3 id=6a0b>VC Barcode PR Review</h3>
+<p id=9e8c class="phone s02"><cite>Wesley_Smith:</cite> So, there is only one open poll request this poll request. sorry, there are two. There is a process/administrative poll request and the content poll request has been open for a week. Ivonne, I saw that you left a comment on this PR which is about updating the introuction the examples and the introduction of the specification. Is there anything you wanted to discuss on the call here of or do you think that what you wrote is self-explanatory and it just needs a commit to address?</p>
+<p id=45cf class="phone s01"><cite>Ivan_Herman:</cite> I don't think there is anything to discuss…</p>
+<p id=eda2 class="phone s01"><cite>Ivan_Herman:</cite> unless you have some questions to my comments.</p>
+<p id=8696 class="phone s02"><cite>Wesley_Smith:</cite> No, that's fine.</p>
+<p id=7673 class="phone s02"><cite>Wesley_Smith:</cite> I think your comment was pretty clear. I'll get it polished up and then hopefully I will merge it by the end of the week. so need reviews for that to happen. if you're interested in this particular piece of content,…</p>
+<p id=feb2 class="phone s02"><cite>Wesley_Smith:</cite> go ahead and take a look sometime this week. we also have this outstanding PR which we had just …</p>
+<p id=b741 class="phone s01"><cite>Ivan_Herman:</cite> Excuse me.</p>
+<p id=c67f class="phone s01"><cite>Ivan_Herman:</cite> Excuse me. I have very very practical.</p>
+<p id=bb23 class="phone s02"><cite>Wesley_Smith:</cite> go ahead. Yeah, my apologies. I can't see hands raised. sorry, I can't hear hands raised when I'm in another tab. So, go ahead and speak up if …</p>
+<p id=3125 class="phone s01"><cite>Ivan_Herman:</cite> So I do speak up.</p>
+<p id=d65e class="phone s02"><cite>Wesley_Smith:</cite> if your hand is up. Go ahead.</p>
+<p id=33c4 class="phone s01"><cite>Ivan_Herman:</cite> So a very practical thing I see this error messaging appearing time to time as a result of Google's sorry GitHub's processes workflows. So when you merge this thing, please check whether the PR version has been updated or not because sometimes there are problems and…</p>
+<p id=9848 class="phone s01"><cite>Ivan_Herman:</cite> and timeouts and things like that. So it's worth regularly checking it Yeah, that's a typical error message which is not clear to me.</p>
+<p id=0719 class="phone s02"><cite>Wesley_Smith:</cite> Understood. Thank you very much.</p>
+<p id=3dde class="phone s02"><cite>Wesley_Smith:</cite> It's completely opaque and All right, sounds good. so Benjamin is not on the call. Is that correct, Benjamin Young? so the other ascending PR is Benjamin's PR. we discussed this PR on the call previously. It adds support for an in browser, excuse me, an in text editor preview functionality for working on this stuff. GitHub code spaces. I think it has multiple ways that you can preview with it.</p>
+</section>
+
+<section>
+<h3 id=c48b>Postquantum Cryptography for VC Barcodes</h3>
+<p id=ffff class="phone s02"><cite>Wesley_Smith:</cite> We talked about it. Some people brought up some good concerns. I don't think we can continue that discussion without Benjamin here. All right, I think that we can spend the rest of the VC barcodes time today doing issue processing. since there are quite a lot of issues that have no tags associated with them. so I will go ahead and start with the oldest untagged issue and go from there. And reminder, as we said a minute ago, I can't hear if you raise your hand. So, please speak up if you need to say something. All right. This is an issue from April of this year, which is good. That means we've processed and closed a lot of the older stuff. We're up to modern recent issues. add discussion of postquantum for VC barcodes.</p>
+<p id=2542 class="phone s02"><cite>Wesley_Smith:</cite> Elaine who cannot make today's call one of the other leads on this task force raised this issue and she writes that the spec doesn't address the implications of cryptographically relevant quantum computers on security of VC barcodes and there's not a needs discussion label that is unfortunate add it to the list of tags that we need to create. there you go.</p>
+<p id=3efb class="phone s04"><cite>Manu_Sporny:</cite> If you type it out, it'll a thing to add it immediately should pop up. There you go. Create new label.</p>
+<p id=87f8 class="phone s02"><cite>Wesley_Smith:</cite> Discussion. There you go. Thank you very much. All right.</p>
+</section>
+
+<section>
+<h3 id=5415><a href="https://github.com/w3c/vc-barcodes/issues/33">Add discussion of Post Quantum for VC Barcodes · Issue #33 · w3c/vc-barcodes · GitHub</a></h3>
+<p id=7e8b class="phone s01"><cite>Ivan_Herman:</cite> So I wonder whether this issue is not related to the ones I raised about the crypto used in the barcode specification.</p>
+<p id=472f class="phone s02"><cite>Wesley_Smith:</cite> this needs discussion and…</p>
+<p id=08ee class="phone s02"><cite>Wesley_Smith:</cite> potentially we can do some brief discussion of this in the group right now if that's a good use of time. we've been discussing a fair amount of go ahead</p>
+<p id=479e class="phone s05"><cite>Phillip_Long:</cite> Ivon and Emanuel, have your hands up.</p>
+<p id=a430 class="phone s01"><cite>Ivan_Herman:</cite> that one where we bind what we have now in the spec to ECBSA but the way I read what has to be done is such that it should be usable for other crypto suits as well and there where it may I mean I'm out of my depths here but maybe the same way we can add it to ECDSA can be done with some of the crypto that Greg will bring to the group. So, it raises the more general question of what cryptos can be used for barcodes and…</p>
+<p id=f4fa class="phone s02"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=ad0b class="phone s01"><cite>Ivan_Herman:</cite> whether having anything said explicitly in this specification is appropriate or not.</p>
+</section>
+
+<section>
+<h3 id=c549>General Crypto Suite Discussion</h3>
+<p id=52b5 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, plus one. We should talk about that. But let's do that So, that is a Avon, so at least I'm going to assert that that's a parallel issue. So, there is a XI stands for extra information. in the current VC barcode specification, it builds on top of ECDSA. it really should be moved into the ECDSA data integrity crypto suite.</p>
+<p id=fff3 class="phone s04"><cite>Manu_Sporny:</cite> And ideally it's just generalized so that maybe we have a new one or two ECDSA crypto suites that just allow the generalization as an example and…</p>
+<p id=ef37 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, that's one of the issues I raised.</p>
+<p id=c2c5 class="phone s04"><cite>Manu_Sporny:</cite> and that is a self-contained discussion that we need to have. let me make sure that there's an issue raised on this spec. There we go. Yeah, that's your issue 47, Avon. So we definitely need to talk about that. however the approach for postquantum for barcodes tries to address the problem outside of the crypto suites. and it does that for a number of reasons.</p>
+<p id=cc2a class="phone s04"><cite>Manu_Sporny:</cite> The first reason is that the FIPS approved signature mechanisms that exist today cannot fit in traditional barcodes. It's just not going to work at all. Right? And it's too late. FIPS is not going to approve, ski sign 64 byt signatures by the time we have to start switching over. So, we don't have a good solution for barcodes that just directly signs the barcode. So, that's problem one. And we do have solutions to all these problems. I'm just laying out the problem one is that, there's no FIPS approved thing that could legitimately go into e a PDF 417 barcode or a QR code, right? So, that's problem one.</p>
+<p id=fbf0 class="phone s04"><cite>Manu_Sporny:</cite> Problem two is that even if there was and we could get it down into a 64-bit signature, you can't parallel sign on into a barcode and hope the thing will fit on a driver's license or birth certificate. You would end up with a 128 byt signature in the very best case and that is too big to fit into a PDF 417 or a QR code. So even if we had a small enough signature, you couldn't dual sign and all that kind of stuff. so that's two. Problem three is we have no idea when a cryptographically relevant quantum computer is going to appear onto the scene. It might be 10 years from now. we just don't know. and when that happens, it is going to be too late to protect all the current documents that exist today.</p>
+<p id=f900 class="phone s04"><cite>Manu_Sporny:</cite> So if we just look at driver's licenses are issued between in 5 to 10 year periods, which basically means that we are issuing driver's licenses today that have ECDSA signatures on them today that are going to overlap with the potential appearance of a cryptographically relevant quantum computer. Right? So that's a really terrible place to be in for physical IDs because it means that all of the digital signatures that are being generated today and there are six states in the United States that do this today all of those will be completely and utterly broken by the appearance of a cryptographically relevant quantum computer and we're like could happen in the lifetime of the cards that are issued today. Okay.</p>
+<p id=10000 class="phone s04"><cite>Manu_Sporny:</cite> So what does so that exists as a problem. We have to be able to deploy something in parallel to the systems that exist today that addresses all of those challenges. It can't make the signature sizes any bigger than they currently are which is problem. it's got to be postquantum resistant, which is addresses challenge one, right? But it's got to be it in a way that the signature doesn't exist on I forget what the second chat the Thank you.</p>
+<p id=04bd class="phone s05"><cite>Phillip_Long:</cite> Multi-c</p>
+<p id=773e class="phone s04"><cite>Manu_Sporny:</cite> We can't add it to the thing. So, again it needs to exist off of the card. and then the third thing does anyone remember? what was the third issue?</p>
+<p id=f2ce class="phone s02"><cite>Wesley_Smith:</cite> The timeline multi-IG and…</p>
+<p id=c79c class="phone s02"><cite>Wesley_Smith:</cite> the size of post quantum signal.</p>
+<p id=87ff class="phone s04"><cite>Manu_Sporny:</cite> All right. It overlaps. So we have to start deploying a solution now in parallel to what's being deployed right now. So whatever solution we pick has to meet all of those things. not luckily I mean we thought ahead about this problem. for example in California and we can talk about this because all of this information is public now. there's a website on California DMV that talks very in detail about the solution that they have.</p>
+<p id=4856 class="phone s04"><cite>Manu_Sporny:</cite> It is very much a W3C verifiable credential that's tied to a status list mechanism and uses the TUR status list mechanism that's in the VC barcode spec because we deployed the solution in that way. We can in paralle publish cryptographic hashes of the driver's licenses that have been issued. We can do that retroactively and…</p>
+<p id=1c70 class="phone s04"><cite>Manu_Sporny:</cite> effectively publish hashes of the driver's licenses as a status list. So instead of a status list sorry say that again…</p>
+<p id=9019 class="phone s01"><cite>Ivan_Herman:</cite> Can you explain that…</p>
+<p id=e1ca class="phone s01"><cite>Ivan_Herman:</cite> how that works?</p>
+<p id=4f33 class="phone s04"><cite>Manu_Sporny:</cite> how does that work?</p>
+<p id=27d5 class="phone s01"><cite>Ivan_Herman:</cite> Can you explain how that works?</p>
+<p id=768b class="phone s04"><cite>Manu_Sporny:</cite> So in every single California driver's license that has been issued with these signatures since last October there is an offset that tells you where you can find the revocation information in a published status list. So this is a privacy preserving mechanism. Every single driver's license has a very specific offset where you can go and you can check revocation information. so you have a driver's license. its revocation bit position is 1 2 3 4, right? Offset one, one, two, three, four, into the bitst string status list that California DMV is publishing. when you check the digital signature to make sure it's valid. And then you go and you check the revocation bit to make sure that the DMV hasn't revoked it for any particular reason.</p>
+<p id=d071 class="phone s06"><cite>Greg_Bernstein:</cite> Yeah.</p>
+<p id=10001 class="phone s04"><cite>Manu_Sporny:</cite> you can jump into any status list from that mechanism. Meaning that the one that we're using today is called revocation and you jump to the revocation status list. But we could also jump to a quantum safe status list where it's not a single bit but it is the hash of the verifiable credential for that issued license.</p>
+<p id=9156 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. Heat.</p>
+<p id=dd0b class="phone s04"><cite>Manu_Sporny:</cite> So that is one way that we could solve it. It is certainly not like there are downsides. It's a very big list and all that kind of stuff. So we need to talk about how do we make the most but the benefit of this solution is that you can deploy this retroactively and you can deploy it in parallel not knowing when the cryptocalypse is going to happen and…</p>
+<p id=6a8c class="phone s04"><cite>Manu_Sporny:</cite> be protected from that event whether it's two from or seven years from now. go ahead Wes.</p>
+<p id=b76f class="phone s02"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=7351 class="phone s02"><cite>Wesley_Smith:</cite> two important pieces of nuance that if you said them I didn't hear Manu, maybe I will help clear things up for other people. One is that the status listesque thing that Manu is describing that contains these hashes that is signed with a postquantum signature. So, that's Point number two is the reason why that's valuable at all is because hash functions are not broken by quantum computers. And that means that as long as the data from the credential that goes into this status list kind of thing is a hash then it is not broken by a quantum computer. So for example, we couldn't put a raw identifier from a credential into this kind of status list because that's something that the attacker chooses.</p>
+<p id=7e65 class="phone s02"><cite>Wesley_Smith:</cite> And by attacker I mean somebody with a quantum computer that is forging a credential. The attacker chooses what data goes into that credential…</p>
+<p id=162a class="phone s02"><cite>Wesley_Smith:</cite> but they don't choose what the hash is of that credential because hashes are not broken by quantum computers. So those are two very important u aspects of what monu is describing. Ivon go ahead. Yes.</p>
+</section>
+
+<section>
+<h3 id=2362>How Postquantum Signatures Work</h3>
+<p id=1dbe class="phone s01"><cite>Ivan_Herman:</cite> So I'm sorry I am really an outsider in this so I just ask stupid questions to understand you create a list somewhere…</p>
+<p id=b3ba class="phone s01"><cite>Ivan_Herman:</cite> where each element of the list is a hash. which I presume is what 200 bits sort of I mean not yeah 256 bits and…</p>
+<p id=f901 class="phone s04"><cite>Manu_Sporny:</cite> Two 256 bits.</p>
+<p id=9ea4 class="phone s01"><cite>Ivan_Herman:</cite> this is a giant list…</p>
+<p id=9d05 class="phone s01"><cite>Ivan_Herman:</cite> because it's contains in this case all the hashes of all California driving licenses in circulation and that and…</p>
+<p id=b070 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=3757 class="phone s02"><cite>Wesley_Smith:</cite> go ahead.</p>
+<p id=03a9 class="phone s01"><cite>Ivan_Herman:</cite> that giant list is signed with a quantum safe signature by some authority. is that the mechanism?</p>
+<p id=5096 class="phone s02"><cite>Wesley_Smith:</cite> Essentially, yes. Some of the implementation details are maybe not things like what is the exact data structure? Is there one list or multiple lists? That kind of small detail may be different. But yes, the core idea is exactly what you said, Devon. All right. Ivan Herman:</p>
+<p id=1055 class="phone s01"><cite>Ivan_Herman:</cite> Okay, thank you. I have an idea at least.</p>
+<p id=8b1f class="phone s02"><cite>Wesley_Smith:</cite> Anybody else have any other questions or comments on that topic? Ted, go ahead.</p>
+<p id=10002 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> This is kind of meta. I just want to check whether we want to actually be discussing all of these issues or if this is more of a triage process that we're related to that question, I was going to put it into chat, but I just get chat isn't available. So, I don't know what's going on with that.</p>
+<p id=ccee class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> If it's just or if that's an intended or something something. now it says send a message. Okay.</p>
+<p id=cd8f class="phone s02"><cite>Wesley_Smith:</cite> Man,…</p>
+<p id=ab5b class="phone s02"><cite>Wesley_Smith:</cite> go ahead.</p>
+<p id=55b2 class="phone s04"><cite>Manu_Sporny:</cite> I think Let's see. I would like to talk about this. this is the most important thing for us to lock down before going forward. it's the thing with the greatest amount of I think time sensitivity to it. everything else I mean I haven't looked through all the other things but all the other things are much less concerning I think than this particular issue. So, I just personally talk about this and get to some kind of like this is the concrete next step we're going to,…</p>
+<p id=1b1c class="phone s02"><cite>Wesley_Smith:</cite> Evan.</p>
+<p id=2f8c class="phone s04"><cite>Manu_Sporny:</cite> use to raise a PR and, propose the solution we're talking about. And then, other ones I'm fine with them being triaged, but just that's just one opinion.</p>
+<p id=41d7 class="phone s01"><cite>Ivan_Herman:</cite> So in a way it's in direction of what money is saying or has just said the mechanism you describe is it something which has been defined elsewhere or is it something that we define as part of this specification.</p>
+<p id=c3d1 class="phone s02"><cite>Wesley_Smith:</cite> money.</p>
+<p id=3f59 class="phone s01"><cite>Ivan_Herman:</cite> Is it something that has been developed by some group somewhere? I mean, I am happy to believe you that this works, but I want to know where it comes from and how it lands in this spec.</p>
+<p id=10003 class="phone s04"><cite>Manu_Sporny:</cite> It is up to us Savon. we are the people that have the most leading edge way of doing this in the world as far as we So it's deployed in The California deployment of it is the most advanced one that We know that there have been some other groups that have kind of defined variations of this but they're broken in various ways specifically when it comes to postquantum. this hasn't been defined anywhere. We have to define it and we have to do the security analysis and all that kind of stuff on it. Although the security analysis on it is no different than bitstring status list really. it's up to us to do this.</p>
+<p id=08b8 class=irc><cite>&lt;Phillip_Long&gt;</cite> can we point to the CA mechanism as the solution, per Ivan's question? </p>
+<p id=62af class="phone s01"><cite>Ivan_Herman:</cite> But then…</p>
+<p id=b947 class="phone s01"><cite>Ivan_Herman:</cite> then I'm sorry there are other people in the queue. Greg Sorry about that.</p>
+<p id=ba0b class="phone s06"><cite>Greg_Bernstein:</cite> I was going to point out that this technique of signing over large sets or…</p>
+<p id=5b9b class="phone s06"><cite>Greg_Bernstein:</cite> lists is used for example in registries for certificates for websites and such like that. So the cryptographic technique of how to efficiently keep long lists of items that you can check to see in this case is this hash been signed over by this one postquantum signature. That part is established cryptography. We're just using it in this kind of cool privacy preserving herd immunity type technique.</p>
+<p id=cd46 class="phone s06"><cite>Greg_Bernstein:</cite> That's all I was going to add.</p>
+<p id=8b0e class="phone s02"><cite>Wesley_Smith:</cite> Yeah,…</p>
+<p id=e830 class="phone s02"><cite>Wesley_Smith:</cite> plus one. Greg, I got on the queue to say much the Mo Mosilla's R light or however you say it in English, is an example of essentially the same core technology. what we end up as our final design will probably not be exactly the same as what Mozilla has for light. but the core concept is much the same. So and that is a real production deployment today that is used by the web generally and contains information about millions of hashes of information and identifiers from certificates.</p>
+<p id=5a24 class="phone s02"><cite>Wesley_Smith:</cite> So that's agreed with Greg. and I think that Avon with your question about essentially Where does this live? Manu has discussed it a lot in the context of the established kind of bishang status list and similar status mechanisms. I think that probably what we want to do is ideally we want to define this mechanism in a way that can exist both on its own and also directly coupled to bitstring status list.</p>
+<p id=5b4e class="phone s02"><cite>Wesley_Smith:</cite> So it's like here's the mechanism, here's the data structure, and here's what kind of interfaces it has and what it does. And then if you want, you can plug this into your bitstring status list implementation to have it useful for verifiable credentials that you use bitstring status list. or you can use it in your own way. I think we don't want to overouple it to any one specific piece of tech that we already have.</p>
+<p id=828e class="phone s02"><cite>Wesley_Smith:</cite> Just make it, play nice and cooperate with them. Avon, go ahead.</p>
+<p id=dd01 class="phone s01"><cite>Ivan_Herman:</cite> So that's the direction of the discussion I wanted to raise. Where should this go? because based on what I understand I don't think that the barcode specification is the right place because obviously this is not something that can be used by barcode only. I presume it can be used for other usages. So then the question that comes up is more on the level of the burking group and not this task force is do we want to have a separate documents on that which raises questions of chartering etc and blah and I see the crying face of money here. Ivan Herman:</p>
+<p id=7bd6 class="phone s01"><cite>Ivan_Herman:</cite> The other possibility is to plug it into a revised version of the bitstring status list pack as a second chapter or whatever. we might have to change the title a little bit, but that's no problem. And to put it there as part of a version two of that spec. That seems to be maybe the cleanest and the cheapest way of doing the way I see it right now, but we may see that</p>
+<p id=1bff class=irc><cite>&lt;Phillip_Long&gt;</cite> Should it go into the data integrity group's activity? </p>
+<p id=0511 class="phone s02"><cite>Wesley_Smith:</cite> Morning. Go ahead.</p>
+<p id=87d2 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to that. I think just working, look looking at what you said, Ivon, and kind of work to worst case but workable is we can just shove all of this stuff into the barcode spec and not split it out. I don't think any of us want to do that, but that per process, we could do that because it does go along with the barcodes work. better would be certainly to split out like the XI crypto suite into the ECDSA spec. I think that's within charter we can do that fairly easily. It's a security concern So that allows us to do that.</p>
+<p id=6712 class=irc><cite>&lt;Dave_Longley&gt;</cite> I think the best thing to do is probably include it in the BitstringStatusList spec and reference it for specific things in the VCB spec. </p>
+<p id=8913 class="phone s04"><cite>Manu_Sporny:</cite> we could move there's a section around I think it's like what is it tur bitst string status or tur I forget what the name of it is but we have a section in the spec called tur something or another and we can move that into the bitstring status list because it's supposed to be a tur version of the bitstring status list and I think we should do that however the postquantum thing that we're talking about is different enough where it I don't think is a natural fit into the bitstring status list specification. Ivon, you were saying maybe we rename it to just status list mechanisms or status lists for verifiable credentials and then we have something around bitstring status list in it.</p>
+<p id=08cd class="phone s04"><cite>Manu_Sporny:</cite> we have something about tur bit spitst string status list in it and we have something about postquantum protection lists or something like that so we could do that I think it's arguable that it's within our charter meaning I think it's within our charter right because we as a working group can decide how we want to organize our work in what we are talking about here is largely around security and making security better and we have that, thing in our charter to say we can make updates to specs if it's Yeah. Yeah. Manu Sporny:</p>
+<p id=45eb class="phone s01"><cite>Ivan_Herman:</cite> And we have in the charter something…</p>
+<p id=079a class="phone s01"><cite>Ivan_Herman:</cite> which says that we can make changes that are raised by the new work that we do or something. I don't remember the exact formulation but we have something like that in the charter.</p>
+<p id=1229 class="phone s04"><cite>Manu_Sporny:</cite> So all of these things are possibilities and I think more than likely if we want to do this postquant we have to do the postquantum thing it could probably go in a re titled bitstring status list specification with a new short name that's just around status lists and…</p>
+<p id=12f8 class="phone s02"><cite>Wesley_Smith:</cite> Phillip, go ahead.</p>
+<p id=fe39 class="phone s04"><cite>Manu_Sporny:</cite> we have multiple different types of status lists that we supported that spec back. Mhm.</p>
+<p id=5a5a class="phone s01"><cite>Ivan_Herman:</cite> Changing the short name is the ugly Changing the title is cheap,…</p>
+<p id=f542 class="phone s01"><cite>Ivan_Herman:</cite> but that's technicality.</p>
+<p id=c9e7 class="phone s05"><cite>Phillip_Long:</cite> Yeah, just as we're talking about this, it seems like that this is all associated with the implications of the postquantum space, And if that's the case, it seems like it might be appropriate to put into the spec the work that's associated with data integrity and then have the specific implications in each of the various specs where the description of this handling this process with a postquantum lookup to a hash to fix things or protect things</p>
+<p id=778f class="phone s05"><cite>Phillip_Long:</cite> from the quantum computing threat is described if it needs to have some local interpretation for a status list versus something else. I seems like the postquantum implications are broader and therefore that would be the anchor that we would then describe the approach and…</p>
+<p id=d5d1 class="phone s05"><cite>Phillip_Long:</cite> then in each implementation there might be a smaller section for that particular implementation to translate it. That's just an idea.</p>
+<p id=fb39 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, heard Philillip and…</p>
+<p id=d49a class="phone s02"><cite>Wesley_Smith:</cite> if that for practical reasons becomes the best thing to do, it's certainly an option. I would in general argue that what we're describing is a piece of technology, a feature that has a lot of utility that has nothing to do with quantum computers or non-quantum computers. it's a separable essentially a status mechanism but sort of a set membership check that you can use to do a lot of things and the fact that we can put postquantum signatures there but not elsewhere I don't think we should use to determine where it goes if that makes sense. but with that said it does sound like we don't have a ton of excellent options.</p>
+<p id=d66e class="phone s02"><cite>Wesley_Smith:</cite> So I agree that it's important to keep postquantum safe data integrity spec or whatever it's called in mind. Manu go ahead.</p>
+<p id=92ad class="phone s04"><cite>Manu_Sporny:</cite> Plus one to that. I think Phil that we properly decoupled this stuff years ago. So we're not in a bad situation where you've got to move your ecosystem. it's a step between you're signing in one way and then you're signing in another way and you have to jump between one of the two SD Jot has this Jotss have this problem MDOCS have this problem you cannot attach multiple proofs to the credential. You've got to jump from one to the other right we don't have that problem but we meaning data integrity does not have that problem.</p>
+<p id=a9a0 class="phone s04"><cite>Manu_Sporny:</cite> You can take a base credential and you can attach as many different types of proofs onto it. You can do ECDSA and a postquantum one and So we already properly decoupled this thing 10 years ago because we saw coming this need for multiple different cryptographic protection mechanisms. so I think that's already done Phil we don't have to do anything. The specs are already set up to do that.</p>
+<p id=10004 class="phone s04"><cite>Manu_Sporny:</cite> But again on Wes's point, this mechanism that we're talking about is independent and parallel of the data integrity work. Yes, it does have to do with data integrity. but status list does as well. The more specific place to probably put it is in the status list thing like that that is the class of technologies that we're talking about here. It's not necessarily a proof mechanism. though your general point is true it is about data integrity…</p>
+<p id=bc08 class="phone s02"><cite>Wesley_Smith:</cite> Av</p>
+<p id=26f9 class="phone s04"><cite>Manu_Sporny:</cite> but it's a very specific type of data integrity that is really more status list related than it is cryptographic signature related.</p>
+<p id=98d5 class="phone s04"><cite>Manu_Sporny:</cite> That's a</p>
+<p id=434c class="phone s01"><cite>Ivan_Herman:</cite> So, I have the impression that Philip was saying something different,…</p>
+<p id=6bd1 class="phone s01"><cite>Ivan_Herman:</cite> money, but maybe not. what I see as a possibility is to take the data structure management thing the super status list where each bit is a hash a bigger message or</p>
+<p id=795c class="phone s01"><cite>Ivan_Herman:</cite> something and put that into the bitstring status list as a management of hash strings or I don't know how to call that and that is perfectly fine with that specification but where I think Philip has a point is that the quantum signature of that stuff defined therefore in a different document is probably to be put into the quantum document that is coming up because that's the right place with all the quantum related things. So we don't have to put everything in one place. We can divide it up in a way that sounds logical and consistent.</p>
+<p id=10005 class="phone s01"><cite>Ivan_Herman:</cite> and that sounds like these two documents is good and that also means that putting it the I don't know hash string stuff into the bitstring status list spec is a very natural extension of the spec we have today. I don't think anybody would raise any eyebrows on that and putting anything which is related to into the quantum signature spec that we are coming up is a very natural step again and then the barcode can refer to both documents without too much problems. So I think that sounds like a very coherent picture.</p>
+<p id=7ba3 class="phone s04"><cite>Manu_Sporny:</cite> Yes, plus one to all of that. Avon, totally agree.</p>
+<p id=9560 class="phone s01"><cite>Ivan_Herman:</cite> Mhm.</p>
+<p id=cee7 class="phone s04"><cite>Manu_Sporny:</cite> What I was trying to convey with we already layered these things appropriately. but that statement was talking about the quantum signature spec like that that is a separate concern. So, we've got two concerns. One of them is, how do you put these hashes in a list that, can go in the bitstring status list, spec and then how you do the cryptographic signature on that thing is the quantum safe data integrity suite. So that's already a separate thing. We've already got it kind of, …</p>
+<p id=88f0 class="phone s01"><cite>Ivan_Herman:</cite> So the only thing we have to do is to write it down. Batel</p>
+<p id=f972 class="phone s04"><cite>Manu_Sporny:</cite> focused on that plus one to referring. So I think we're on the same page. exactly the Go ahead, Phil.</p>
+<p id=7009 class="phone s05"><cite>Phillip_Long:</cite> Yeah, I just sorry. Go ahead, M. Yeah, I would just wanted to agree with Eva and I'm not disagreeing that it shouldn't go into the status list or revised named status list thing because that's clearly where it has immediate value and is a challenge that we can't address any other way for this particular spec. I was however speculating and thinking that we have many things that will be affected by the shift to quantum safe concerns and therefore that something in that spec of data integrity probably would be useful to have to remind people of that and…</p>
+<p id=a272 class="phone s02"><cite>Wesley_Smith:</cite> Lot of</p>
+<p id=860b class="phone s05"><cite>Phillip_Long:</cite> and suggest that these things are interrelated and they need to be checked. That's all.</p>
+<p id=10006 class="phone s04"><cite>Manu_Sporny:</cite> Yes, plus one to all of that. I think the other thing I wanted to mention is alluded to there may be a more efficient way to encode the information. so just quickly to hit on that, for example, California has 32 million driver's licenses under circulation, right? So that's 32 million, times, what is 32 bytes for a That means that the postquantum, hash list, whatever we're going to call it, is a gigabyte in size. So you would need to download a gigabyte of data to</p>
+<p id=1500 class="phone s04"><cite>Manu_Sporny:</cite> verify, any significant volume of California driver's licenses. I mean, that's just if nobody lost their driver's license, many people lose their driver's license. So, the numbers usually double to triple that number and we're talking about 3 gigabytes for, California. So that's the worst case in and we believe that there are other mechanisms potentially u balloon filters and other things like that that can reduce that or set membership that can reduce that by quite a bit.</p>
+<p id=8b64 class="phone s04"><cite>Manu_Sporny:</cite> And so I think we need to figure out those details in the very worst case. if we were rushed into it we would just do the raw hash and…</p>
+<p id=7278 class="phone s04"><cite>Manu_Sporny:</cite> and that sort of thing. But we think that there are other kind of computer sciency tricks that can reduce the size of that initial check a first level check. that's it.</p>
+<p id=22e5 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. And to add to that,…</p>
+<p id=886a class="phone s02"><cite>Wesley_Smith:</cite> computer science tricks aside, we can just split these things up, In the same way that there is not one massive status list for every verifiable credential that California issues, we can do the same thing here. it might not fundamentally change the problem. but it in a very practical sense will reduce network traffic down to a reasonable level. I'll also note that as this is a sort of facing technology a lot of what we're looking at in terms of cost is fixed.</p>
+<p id=7c1d class="phone s02"><cite>Wesley_Smith:</cite> it's static and over time that cost will become less and less expensive. 20 years from now a lot of the quantities of network traffic that we're describing might not be seen as a barrier to entry in any way. So anybody else have a point they want to make on that topic? If not, I'd like to write up a brief summary and talk about what next steps are. Okay, that was quite a lengthy discussion, so I'd appreciate people chiming in on how to best summarize it. The pro solution is to augment the bitstring status list specification.</p>
+<p id=10007 class="phone s02"><cite>Wesley_Smith:</cite> That is a note I wanted to as well. was that a Google Meet always tries to scare one point I'd like to make also when we're thinking about this mechanism is a forgery defense mechanism in general. I said before it's not just a quantum anything mechanism. but it also can be used purely against traditional forms of key compromise.</p>
+<p id=5751 class="phone s06"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=43b0 class="phone s02"><cite>Wesley_Smith:</cite> Even today if your issuance key gets stolen this mechanism will protect against that because you again have an authoritative list of what you issued with that key versus what somebody else issued with that key. so this mechanism has value outside of postquantum in that way as well. Okay. do folks have feedback on what I've written here?</p>
+<p id=005c class="phone s02"><cite>Wesley_Smith:</cite> Is that a accurate summary of</p>
+<p id=a331 class="phone s04"><cite>Manu_Sporny:</cite> Looks good.</p>
+<p id=9e5c class="phone s01"><cite>Ivan_Herman:</cite> I came for ones just with you.</p>
+<p id=d3fb class="phone s04"><cite>Manu_Sporny:</cite> I also tagged it Wes so that our entire discussion will be included in that issue once Perontoan script runs so many scripts.</p>
+<p id=032c class="phone s02"><cite>Wesley_Smith:</cite> That's just All right.</p>
+<p id=d2e4 class="phone s06"><cite>Greg_Bernstein:</cite> Thanks, Wes.</p>
+<p id=e8b2 class="phone s01"><cite>Ivan_Herman:</cite> How is that said?</p>
+<p id=32a8 class="phone s02"><cite>Wesley_Smith:</cite> Thank you folks for that discussion. I think that is more than our allocated time for VC barcodes today. So, unless anybody feels that there's more for VC barcodes that absolutely has to get discussed today, I'd like to turn it over to Greg Bernstein to talk about data integrity work.</p>
+</section>
+
+<section>
+<h3 id=8fce>Data Integrity Threat Model</h3>
+<p id=3d8e class="phone s06"><cite>Greg_Bernstein:</cite> A couple purely administrative things. One is we've discussed that we have to do a threat model for data integrity and we've seen some good examples. Joe's did resolution threat model. They have their own W3C get How do we get one for our coming up data integrity threat model? Because we're going to want to have a lot of discussion on this monu</p>
+<p id=be0f class="phone s04"><cite>Manu_Sporny:</cite> I think the decision we made I forget if it was this group or another group was we are just going to create a directory in the existing data integrity spec and put the threat model in that directory. create a directory called threat-model in the data integrity spec create an inde HTML respspec file and that is where all the diagrams and stuff's going to go and then that'll be the base data integrity threat model and the postquantum one will just build on top of that one right yep yeah just all lowercase model in the data integrity repo</p>
+<p id=16c6 class="phone s06"><cite>Greg_Bernstein:</cite> So sorry directly you want it named all lowercase or…</p>
+<p id=cbab class="phone s06"><cite>Greg_Bernstein:</cite> uppercase. What was that And that's easy to do. Sorry, Elvon.</p>
+<p id=526e class="phone s01"><cite>Ivan_Herman:</cite> Just…</p>
+<p id=2b08 class="phone s01"><cite>Ivan_Herman:</cite> because I was on the queue. I think that we will have a discussion about the threat models in general for the working group at the face to face in a few weeks. So we might want to wait until that discussion to see whether we decide to do that way or…</p>
+<p id=3b2d class="phone s01"><cite>Ivan_Herman:</cite> set up a separate GitHub repo. two or three weeks will not change too much on that.</p>
+<p id=f452 class="phone s01"><cite>Ivan_Herman:</cite> And to your original question, Greg, you have to kindly ask me to create a GitHub repo. That's the way it works.</p>
+<p id=c4f4 class="phone s06"><cite>Greg_Bernstein:</cite> But we're waiting before I kindly ask you now.</p>
+<p id=c882 class="phone s06"><cite>Greg_Bernstein:</cite> Correct. Okay,…</p>
+<p id=3788 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I think it's worth we will have a general discussion about threat models for the working group And let's wait until then. In my</p>
+<p id=cab2 class="phone s06"><cite>Greg_Bernstein:</cite> right now I'm just collecting references to these emerging threat model documents that are coming out of Singh and the various specs. And so I'm just collecting those things, putting them into a markdown document that'll go in to whatever stuff we create and place it. But collecting references and ideas and…</p>
+<p id=ea2f class="phone s01"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=27d6 class="phone s06"><cite>Greg_Bernstein:</cite> such like that I will continue to do until we figure out a place and then we'll open it up. Everybody can figure out how we want to organize it. And we're seeing examples coming up. Okay, sounds good. That brings up Mono.</p>
+<p id=ec16 class="phone s04"><cite>Manu_Sporny:</cite> Sorry, Greg. I was going to mention we wanted to move the spec into the group. The final specification commitment stuff has gone out. I think the last person we were waiting on was Andre and the fork bomb folks. He's having W3C account issues of he can't sign the FSA because he can't log into his account. I told him to just send an email to the mailing list saying that he's signing off and…</p>
+<p id=f51d class="phone s04"><cite>Manu_Sporny:</cite> then we'll try to get them sorted out on his account. But with that, we should be able to move the spec into Okay,…</p>
+<p id=f57b class="phone s01"><cite>Ivan_Herman:</cite> He could excuse me.</p>
+<p id=9dd1 class="phone s01"><cite>Ivan_Herman:</cite> He could also directly contact his wreck.</p>
+<p id=10008 class="phone s04"><cite>Manu_Sporny:</cite> There's an email in your inbox, Avon, with him, and I was asking you for help, but okay, that's fine, Cisre. But at this point, I think we're fine from an IPR perspective. No one's planning on, withholding any IP. and I checked, they didn't make any contributions to the text. So I guess the question is, and this is largely, I think, for Brent. do we need to do anything on the Wednesday call to pull in the postquantum spec? We've already made a resolution to do it once, it was ready. FSA is done. We've got the commitments from the people that made contributions to the spec. When should we ask Avon to move it into W3C space?</p>
+<p id=64c9 class="phone s03"><cite>Brent_Zundel:</cite> I think because we already have a resolution to do it the time to do it is as soon as it's ready to do it. mean the next resolution that would come out of the main group is FPWD.</p>
+<p id=c389 class="phone s04"><cite>Manu_Sporny:</cite> Got it. Ivonne, would you have any objection to just moving that forward today?</p>
+<p id=0c63 class="phone s01"><cite>Ivan_Herman:</cite> today. I am not absolutely sure…</p>
+<p id=c476 class="phone s01"><cite>Ivan_Herman:</cite> but let's not forget that it's afternoon for me here.</p>
+<p id=a08e class="phone s04"><cite>Manu_Sporny:</cite> Tomorrow,…</p>
+<p id=3be8 class="phone s04"><cite>Manu_Sporny:</cite> whenever your next moment of availability</p>
+<p id=cef9 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, send me the precise GitHub names because I might get it wrong and…</p>
+<p id=ba18 class="phone s01"><cite>Ivan_Herman:</cite> I will do it probably tomorrow. It's not a big deal for me.</p>
+<p id=9711 class="phone s04"><cite>Manu_Sporny:</cite> Excellent. Thank you. We can do that.</p>
+<p id=da42 class="phone s06"><cite>Greg_Bernstein:</cite> You jumped ahead right to the item I was going to ask about,…</p>
+<p id=0eb4 class="phone s06"><cite>Greg_Bernstein:</cite> which was the handoff. And so that's great because no, that was exactly what I was wanted to find out. because what I started doing is we last meeting we all said selected a disclosure for postquantum. Yes, we want it. And fleshing it through helps us understand the breakdown how we structure our selective disclosure functions which guides how we're going to move the selective disclosure functions from the ECDSA spec to the data integrity spec.</p>
+<p id=2013 class="phone s04"><cite>Manu_Sporny:</cite> Sorry, Greg.</p>
+<p id=d71e class="phone s06"><cite>Greg_Bernstein:</cite> Right now those functions are used both in ECDSA SD and what I call the multiple signature approach. They're also a set of them almost all of them are also used in the BBS spec and what I say is the multiple message aware cryptographic signature approach where the signature understands and takes a nice list. Further those functions as I proved out are used in a salted hash approach where we have to keep instead of doing multiple signatures which is inefficient with the size of postquum signatures we have to float around an extra set of hashes for each statement. Okay.</p>
+<p id=3844 class="phone s06"><cite>Greg_Bernstein:</cite> So when the hashes just say double the hash size like 64 bytes is much smaller or is smaller than a digital signature for example the smallest fips signature falcon is 666 bytes it's much better to use this salted hash approach where you're throwing around a bunch of extra hashes between the various parties. So the same set of selective disclosure functions get used but some get modified for each of those three different techniques.</p>
+<p id=53dd class="phone s06"><cite>Greg_Bernstein:</cite> So what I'm doing right now separately and will combine into the postquantum thing is this SD write up for the postquantum that uses this salted hash technique. Just think of the extra information we throw around as being ashes rather than extra signatures or having some magical BBS like cryptography which okay so I'm going to finish that right up and at that point we'll have a nice good idea of which of those functions we're going to move into data integrity 1.1 or would it be 1 point or would it be 2.0?</p>
+<p id=b8da class="phone s06"><cite>Greg_Bernstein:</cite> O whatever we're calling the new versions…</p>
+<p id=410f class="phone s01"><cite>Ivan_Herman:</cite> We haven't decided that the earth I believe</p>
+<p id=6e50 class="phone s06"><cite>Greg_Bernstein:</cite> what are we calling them I think they're okay don't so that is the plan for working on that so that's why I'm working on this write up right now as soon as we have the other we have a new repo then I'll be able to roll in a PR but I'm just still doing the write up now. Any questions on that? Because that hits threat modeling postquantum and the basic restructuring questions that we have. I know</p>
+<p id=daf8 class="phone s04"><cite>Manu_Sporny:</cite> One of the things that we did on the VCOM call last week was Eric Shu and Joe have been working on the threat model there and they put together kind of like a Google doc outline and identify the actors, and list the threats. But we as a group jumped into that Google doc and wrote down all of the threats that we could think of just as a brain dump from the group to them.</p>
+<p id=cc14 class="phone s06"><cite>Greg_Bernstein:</cite> Yes. Yes.</p>
+<p id=0323 class="phone s04"><cite>Manu_Sporny:</cite> I think and it was very effective. We got 30 threats in 10 minutes or something like that. I think it would be useful for us to go through the same kind of thing. Greg, I don't know…</p>
+<p id=7595 class="phone s06"><cite>Greg_Bernstein:</cite> Yeah. I was wondering about a good Yeah.</p>
+<p id=fe05 class="phone s04"><cite>Manu_Sporny:</cite> if you prep a Google</p>
+<p id=c7f4 class="phone s06"><cite>Greg_Bernstein:</cite> in preformal threat model stage. I mean, where we have this document that's easy for people to throw out ideas I mean, there's nothing wrong with that approach, Is I mean, procedural wise, right?</p>
+<p id=fb1c class="phone s06"><cite>Greg_Bernstein:</cite> because we're just doing the brainstorming in a combined place and then what we like we start rolling into the threat model and all that goes through the formal pro processes put my stuff in the way so I can't see the screen Okay,…</p>
+<p id=69f0 class="phone s01"><cite>Ivan_Herman:</cite> Where's</p>
+<p id=10009 class="phone s06"><cite>Greg_Bernstein:</cite> One last thing is there is movement again on there's some new folks from Europe that are interested and they had a representative show up on our BBS call yesterday and they seem this has to do with Ana Layman's group over in Germany and they seem interested in getting it done. They didn't have a timeline for me and I was trying to push on what is their minimum feature set that they need for the UDR stuff because we have a kind of complete solution involving BBS.</p>
+<p id=1af0 class="phone s06"><cite>Greg_Bernstein:</cite> the specs are kind of being held up by people not wanting to move quicker plus a little uncertainty on some of these exact features and so we've gotten inputs or desire heavily from governments of British Columbia and we got the European</p>
+<p id=7f4c class="phone s06"><cite>Greg_Bernstein:</cite> ans I'm just trying to connect some of the higher level folks because some of these people they know one thing so if there's anybody that's been talking at a higher level with some of these folks it'd be great to hear because we can't blame the CFRG if nobody's going to CFRG and asking for last call and I am</p>
+<p id=50d3 class="phone s06"><cite>Greg_Bernstein:</cite> not an author on the core spec. So, it's kind of hard. And so, I keep trying to be push folks on this because it is still a useful thing, but it will run out of usefulness if we wait too long because it's based on classical cryptography. time to go. We are over. Any other questions, comments? If not,…</p>
+<p id=58a2 class="phone s02"><cite>Wesley_Smith:</cite> Thanks folks.</p>
+<p id=1385 class="phone s06"><cite>Greg_Bernstein:</cite> then we'll continue and we'll see you next week. Meeting ended after 01:00:52 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
