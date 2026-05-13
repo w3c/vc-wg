@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 13 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>&ndash; DRAFT &ndash;<br>
+Verifiable Credentials Working Group Telco</h1>
+<h2>13 May 2026</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026May/0024.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/05/13-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, dlongley, elaine, hsano, hxavier, ivan, jennie, joeandrieu, kevin, kezike, msporny, olvis, pdl-asu, Phil-ASU, phila, TallTed, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>bigbluehat, dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#79eb">w3c/<wbr>vc-wg#13</a></li>
+<li><a href="#102c">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-integrity/<wbr>issues</a>
+<ol>
+<li><a href="#6c7a">w3c/<wbr>vc-data-integrity#344</a></li>
+<li><a href="#d7ca">w3c/<wbr>vc-data-integrity#340</a></li>
+</ol>
+</li>
+<li><a href="#f812">Overview</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=91da class="phone s01"><cite>phila:</cite> I'm watching IRC and not Zoom, so please post in IRC if you need anything<br>
+<span id=50ed>… Hiroyuki, could you please introduce yourself?</span></p>
+<p id=7080 class="phone s02"><cite>Hiroyuki:</cite> I met many of you at past events</p>
+<p id=0ba0 class="phone s01"><cite>phila:</cite> right. Hiroyuki is from Sony</p>
+<p id=a3eb class="phone s03"><cite>TallTed:</cite> I'm Ted and have been attending many of these calls for many years<br>
+<span id=767f>… I will be absent next week, but should be in the week after</span></p>
+<p id=2cc8 class="phone s01"><cite>phila:</cite> thank you, Ted. Anyone else want to do an introduction?<br>
+<span id=7a98>… k. let's move on to discuss the face-to-face</span></p>
+<p id=6597 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to mention something quickly.</p>
+<p id=1d4a class=irc><cite>&lt;phila&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/edit?gid=179611341#gid=179611341">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/<wbr>edit?gid=179611341#gid=179611341</a></p>
+<p id=764f class="phone s01"><cite>phila:</cite> I think everyone who's coming has already filled in the attendance form<br>
+<span id=c32f>… but if you haven't and plan to come in person, we need to know now</span><br>
+<span id=161a>… so if fill that in if you're coming</span></p>
+<p id=34a9 class="phone s04"><cite>manu:</cite> for the face to face, I think we've got several threat modeling things we want to do</p>
+<p id=3839 class=irc><cite>&lt;manu&gt;</cite> Render Method threat model: <a href="https://docs.google.com/document/d/1mQg0pdPMfytkAIgsaApODbaKO--PJvr_E4ZM2HoQPzk/edit?tab=t.0#heading=h.py96npebo7ox">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1mQg0pdPMfytkAIgsaApODbaKO--PJvr_E4ZM2HoQPzk/<wbr>edit?tab=t.0#heading=h.py96npebo7ox</a></p>
+<p id=2c66 class=irc><cite>&lt;manu&gt;</cite> Recognized Entities: <a href="https://docs.google.com/document/d/1EDKHeg03lXcjCq2_evNI18bUjtmhMU66HvyrCa5gQa0/edit?tab=t.0#heading=h.py96npebo7ox">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1EDKHeg03lXcjCq2_evNI18bUjtmhMU66HvyrCa5gQa0/<wbr>edit?tab=t.0#heading=h.py96npebo7ox</a></p>
+<p id=d734 class="phone s04"><cite>manu:</cite> and in prep for that, I've created a few documents that cover some brainstroming we've been doing in other groups</p>
+<p id=81bb class=irc><cite>&lt;manu&gt;</cite> VC Data Model: <a href="https://docs.google.com/document/d/1lKDPZwezBbTrBM8_OalrKVO4JwPdwZl3nB6eLfJ_-4A/edit?tab=t.0#heading=h.py96npebo7ox">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1lKDPZwezBbTrBM8_OalrKVO4JwPdwZl3nB6eLfJ_-4A/<wbr>edit?tab=t.0#heading=h.py96npebo7ox</a></p>
+<p id=ed15 class=irc><cite>&lt;manu&gt;</cite> VC Barcodes: <a href="https://docs.google.com/document/d/1EWC5EQB-rfDho8lxm5fBhDGAoprTwqLw_o34qKVe6QU/edit?tab=t.0">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1EWC5EQB-rfDho8lxm5fBhDGAoprTwqLw_o34qKVe6QU/<wbr>edit?tab=t.0</a></p>
+<p id=f868 class="phone s04"><cite>manu:</cite> the usefulness of using a Google Doc for this is that anyone can contribute and then editors can clean it up</p>
+<p id=b733 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention possibly having Simone facilitate an exercise</p>
+<p id=a9ff class="phone s04"><cite>manu:</cite> we also have a VCALM one that might show up soon</p>
+<p id=640f class="phone s05"><cite>JoeAndrieu:</cite> I'll try and find that one too<br>
+<span id=ec08>… I wanted to mention that Simone may be available to help facilitate for us at the face to face</span><br>
+<span id=b11b>… not sure of the logistics, but he's at least the right timezone</span></p>
+<p id=9045 class=irc><cite>&lt;phila&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1h-0OXOR5NsY-OlC0i26mCDK45B15j2BfkL8f2CIY30E/edit?gid=0#gid=0">Agenda</a></p>
+<p id=89eb class="phone s05"><cite>JoeAndrieu:</cite> so, chairs, perhaps we can add that to the agenda</p>
+<p id=7084 class="phone s01"><cite>phila:</cite> that does sound good<br>
+<span id=dabd>… we've got coffee breaks scheduled so far at least!</span><br>
+<span id=16b9>… and we've started accommodating remote participants for some discussions</span></p>
+<p id=66be class=irc><cite>&lt;JoeAndrieu&gt;</cite> VCALM draft threat model <a href="https://docs.google.com/document/d/11DvzPJhiMuXLLyifA6ANLhT4aOXne_C1rEv4Bedy26M/edit?tab=t.0">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>11DvzPJhiMuXLLyifA6ANLhT4aOXne_C1rEv4Bedy26M/<wbr>edit?tab=t.0</a></p>
+<p id=1b63 class="phone s01"><cite>phila:</cite> so if we can find a time that works for Simone, then we should try and schedule that</p>
+<p id=55cf class="phone s04"><cite>manu:</cite> JoeAndrieu do we have a VC Data Model threat model yet?</p>
+<p id=0772 class="phone s05"><cite>JoeAndrieu:</cite> my hope was to work backwards to that<br>
+<span id=60ba>… our different task forces seem to have very different attack surfaces</span><br>
+<span id=870f>… but yes, the VCDM threat model is still on the horizon</span></p>
+<p id=05af class="phone s01"><cite>phila:</cite> most of the EU is taking the day off tomorrow, so scheduling Simone may be tricky<br>
+<span id=bfcb>… brent ivan can one of you get Simone scheduled?</span></p>
+<p id=91d7 class="phone s06"><cite>ivan:</cite> do we have a preference for the day?</p>
+<p id=23e3 class="phone s01"><cite>phila:</cite> there's a link to the draft agenda in chat<br>
+<span id=3eb8>… so looking at that, it's ideally Tuesday afternoon</span><br>
+<span id=9535>… maybe after lunch?</span></p>
+<p id=39f4 class="phone s06"><cite>ivan:</cite> k. I'll start there and see what simone needs</p>
+<p id=9151 class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.belgianbeerworld.be/en">Social event, Wednesday</a></p>
+<p id=8279 class="phone s01"><cite>phila:</cite> agreed. we can work to accommodate simone's schedule<br>
+<span id=4da5>… there's a social event, please sign up!</span><br>
+<span id=415e>… the face to face is 3 weeks away</span><br>
+<span id=04cb>… Jenny, can you  scribe?</span></p>
+<p id=ce4c class="phone s07"><cite>Jenny:</cite> not this week, I'm on the phone</p>
+<p id=bde9 class="phone s01"><cite>phila:</cite> thank you, sounds good. bigbluehat please continue</p>
+</section>
+
+<section>
+<h3 id=79eb><a href="https://github.com/w3c/vc-wg/pull/13">w3c/<wbr>vc-wg#13</a></h3>
+<p id=ca30 class="phone s01"><cite>phila:</cite> ivan, please set the stage</p>
+<p id=1806 class="phone s06"><cite>ivan:</cite> I promised I'd do an overview, so here goes</p>
+<p id=6d64 class=irc><cite>&lt;ivan&gt;</cite> <a href="https://github.com/w3c/vc-wg/pull/13/changes">https://<wbr>github.com/<wbr>w3c/<wbr>vc-wg/<wbr>pull/<wbr>13/<wbr>changes</a></p>
+<p id=2b18 class="phone s06"><cite>ivan:</cite> this PR includes a table of all the vocabularies in progress<br>
+<span id=b8b3>… their context files, formal URLs for the vocabs, etc.</span><br>
+<span id=d30e>… where they're stored, etc.</span><br>
+<span id=a4ed>… hopefully, I did not forget anything</span><br>
+<span id=d508>… manu and dlongley have reviewed so far</span><br>
+<span id=7fcd>… the question we have to answer is whether we continue this structure</span><br>
+<span id=8e40>… using version numbers, etc.</span><br>
+<span id=055a>… and we might need to bump version numbers for context files, vocabs, etc.</span><br>
+<span id=1282>… we haven't historically done this specifically this way, so we need to define this more strictly this time</span><br>
+<span id=586d>… and we need to decide where we put new terms--existing vocabs? or new ones?</span><br>
+<span id=67a9>… not all of this needs to be decided today, but we should set down some governance</span></p>
+<p id=602b class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note review (LGTM) and future vocab/context work (the governing principles)</p>
+<p id=f133 class="phone s04"><cite>manu:</cite> +1 to the PR</p>
+<p id=9d6a class="phone s04"><cite>manu:</cite> Suggested changes I made you merged in, Ivan, thank you. The rest looked good to me, it aligns with what we've been doing for many years now, +1 to that.</p>
+<p id=0406 class="phone s04"><cite>manu:</cite> With respect to what are the governing principles for the future with vocabs and context files, a couple of thoughts.</p>
+<p id=68fa class="phone s04"><cite>manu:</cite> Ivan has created a really useful tool called yml2vocab and it can take a vocab file and auto-generate well-formed JSON-LD context files. He has refined this over the years and we don't even need to handcraft those now we just generate them. We should use that by default for any work in this group.</p>
+<p id=4a61 class="phone s04"><cite>manu:</cite> I think there are some challenges where there are -- like a subset where we want to define something in a base vocab and only use a subset in a context file and, Ivan, that might be another feature we might need.</p>
+<p id=ffff class="phone s04"><cite>manu:</cite> Ideally want to lock in all the URLs for the extension specifications<br>
+<span id=4608>… so we need to decide for VC Barcodes</span><br>
+<span id=7aac>… I'd suggest we put all the extension terms into the VC Data Model vocab</span><br>
+<span id=513a>… and for the JSON-LD context files, we need to do 2 things</span><br>
+<span id=3fd9>… a tiny JSON-LD context so those can be mixed into other things like VC1.1 implementations</span><br>
+<span id=23bf>… as well as getting those terms into a VCv2.1 context containing all the new extension terms</span><br>
+<span id=044c>… and make sure all the vocab URLs are in `w3.org` space</span></p>
+<p id=4387 class="phone s01"><cite>phila:</cite> thank you<br>
+<span id=b8ea>… as someone who was not deeply involved by how this came about, this looks like a &quot;dog's dinner&quot;</span><br>
+<span id=9088>… I know there's a lot of things in-flight with implementations happening alongside specification writing</span><br>
+<span id=c0d3>… but now we have multiple namespaces</span><br>
+<span id=4f69>… some in `w3id.org`, some in `w3.org`</span><br>
+<span id=706a>… the terms specified in the VCDM as part of the recommendation, then part of the process should be to show that those terms have been used</span><br>
+<span id=d827>… and in an ideal world (which is not the one we're in), we'd go back in time and fix all the URIs properly</span><br>
+<span id=96a0>… and we could add all those terms as a sidecar to the main vocab</span><br>
+<span id=10000>… but, absent that, it would be good to help developers to explain all the vocab terms</span><br>
+<span id=9790>… how they came into being, etc.</span><br>
+<span id=e147>… if that's not absurd, then we need some sort of entry point to this</span></p>
+<p id=48b1 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note we build a decentralized system, and people are using it :) and to note each spec does that (point to the proper locations). and to +1 entry point.</p>
+<p id=8e99 class="phone s01"><cite>phila:</cite> I'd love for them to be outside the main vocab, because it all feels like a mess to me</p>
+<p id=192c class="phone s04"><cite>manu:</cite> it may feel like a mess<br>
+<span id=2a3f>… because you now see the gory details</span><br>
+<span id=a747>… folks outside just use the VCDM context</span><br>
+<span id=8ae9>… so they just copy/paste a URL and they're done</span><br>
+<span id=ce9e>… so maybe you're reacting to the &quot;sausage making&quot;?</span><br>
+<span id=69f6>… and not what most developers will need</span><br>
+<span id=d554>… ivan's done a great job of tracking all that down already</span><br>
+<span id=0f1a>… it'd be great to have a front door, like you descibe</span><br>
+<span id=c176>… and start with &quot;just use the VCDM context&quot; to get started</span><br>
+<span id=2099>… and then maybe mention how to augment that if/when needed</span><br>
+<span id=bd2b>… we very consciously built this as a decentralized system</span><br>
+<span id=8790>… and to some extent this is exactly how this should play out</span></p>
+<p id=5f23 class=irc><cite>&lt;dlongley&gt;</cite> yay for decentralized innovation! -- coming together again afterwards is important too to help people understand, +1 for &quot;entry points&quot;</p>
+<p id=1ce6 class="phone s04"><cite>manu:</cite> we've talked about doing a &quot;clean up&quot;/renaming before, and that usually just runs into what implementations are already doing<br>
+<span id=7fcb>… so, I think from the outside, I think it looks OK</span><br>
+<span id=8547>… but I agree it is hard/ugly from inside the group</span></p>
+<p id=7b2f class="phone s06"><cite>ivan:</cite> I do agree with you phila<br>
+<span id=53c7>… I don't really buy the &quot;it's decentralized&quot; argument, because it's all built by mostly the same group</span><br>
+<span id=383b>… but however it happened, what's done is done</span><br>
+<span id=9d76>… happily, though, most of this is starting to take a consistent shape</span><br>
+<span id=f747>… so, if we can continue that, we are at least sort of OK</span><br>
+<span id=9905>… for the &quot;entry point&quot; document, I'd still need to know more about what it would contain</span><br>
+<span id=b1a1>… it should probably get folded into the overview document</span><br>
+<span id=e1a1>… having it as a separate document feels too abstract for most people to care about</span><br>
+<span id=67ee>… but we can discuss that</span></p>
+<p id=4b43 class="phone s01"><cite>phila:</cite> I think that's a great idea to add it to the overview doc<br>
+<span id=1c35>… point people to the VCDM context and call it good</span><br>
+<span id=3444>… just a reminder, if you are naturally quiet person, please feel free to type</span><br>
+<span id=3f83>… we want to hear from you</span></p>
+<p id=fa3c class="phone s08"><cite>olvis:</cite> I appreciate the chance to talk<br>
+<span id=a742>… I want to say a consistent vocabulary adds a lot of value</span><br>
+<span id=5c46>… for an architecture perspective, a lot of work has been done for the years--which is great and amazing</span><br>
+<span id=9310>… but we also have to consider the current reality</span><br>
+<span id=fdf6>… and think this through from a user perspective</span><br>
+<span id=db66>… and we should think through some alternative ways related to AI</span><br>
+<span id=ffa3>… because when we develop documentation and standards, considering AI seems very relevant</span><br>
+<span id=269c>… especially it we include CLIs and things for agents to use</span></p>
+<p id=87fb class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note that there seems to be an argument for centralization here -- academic purity (we have all worked on this -- isn't right, there have been varying opinions in the group -- for example, data integrity) -- which the Web doesn't do -- &quot;it would have been nice for all commerce sites to be put under the .com domain name&quot; and to note we have those sections already (here's the hash, etc.)</p>
+<p id=fdf0 class="phone s08"><cite>olvis:</cite> having these vocabs and terms will have a lot of value</p>
+<p id=f407 class="phone s04"><cite>manu:</cite> I think we're getting into some academic purity<br>
+<span id=58d7>… so, I don't think we're going to reach some level of academic purity</span><br>
+<span id=19e0>… we approached the W3C about a redirect service, and they said no</span></p>
+<p id=df70 class=irc><cite>&lt;dlongley&gt;</cite> +1 to manu ... decentralization was required here to make progress</p>
+<p id=f814 class="phone s04"><cite>manu:</cite> which is why we now have `w3id.org`<br>
+<span id=ca59>… which is fine</span><br>
+<span id=3c83>… but now we have what we have</span><br>
+<span id=a4a9>… there's no consistency of use across domain names</span><br>
+<span id=8079>… even when TLDs were originally intended to classify businesses with `.com`,  etc.</span><br>
+<span id=b783>… we really shouldn't fear the URLs that get used in these contexts and vocabs</span><br>
+<span id=23f1>… because controlling them isn't really achievable</span><br>
+<span id=0f21>… we can try, but we continue to make decisions that cause problems</span></p>
+<p id=544c class=irc><cite>&lt;dlongley&gt;</cite> try for cohesion and consistency where you can get it, but accept it's ok when you don't always get it (because the trade offs are better than gatekeeping)</p>
+<p id=66b6 class="phone s04"><cite>manu:</cite> like putting the VCDM in front of Data Integrity</p>
+<p id=dc83 class=irc><cite>&lt;pdl-asu&gt;</cite> An index page, that Phil A and Manu have mentioned previously is still a good idea. But that's encough.</p>
+<p id=289c class="phone s04"><cite>manu:</cite> that was a political choice...and a bad one<br>
+<span id=de7d>… Data Integrity can be used on it's own</span><br>
+<span id=7ead>… but now it has this awkward VCDM namespace in front of it</span><br>
+<span id=1283>… which confuses people</span><br>
+<span id=ef48>… and that confusion is not technical, but political</span></p>
+<p id=6ad3 class="phone s09"><cite>brent:</cite> w3id.org got brought up as a possibility for the W3C to take on</p>
+<p id=f2c0 class="phone s04"><cite>manu:</cite> yes!</p>
+</section>
+
+<section>
+<h3 id=102c><a href="https://github.com/w3c/vc-data-integrity/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-integrity/<wbr>issues</a></h3>
+<p id=d250 class="phone s01"><cite>phila:</cite> manu you have issues in the Data Integrity spec</p>
+<p id=bc6d class="phone s04"><cite>manu:</cite> just to make folks aware of what that Task Force is doing</p>
+<h4 id=6c7a><a href="https://github.com/w3c/vc-data-integrity/issues/344">w3c/<wbr>vc-data-integrity#344</a></h4>
+<p id=b8eb class="phone s04"><cite>manu:</cite> Greg is involved in this one<br>
+<span id=520a>… Greg has taken on the unenviable task of refactoring all the algorithms across all the specs to look for commonalities</span><br>
+<span id=325f>… and then move those into the core Data Integrity spec</span><br>
+<span id=5060>… such as selective disclosure ones</span><br>
+<span id=0e7d>… many of these are in cryptosuite sub-specs</span><br>
+<span id=5b87>… and in issue 344 Greg's working on mapping that out</span><br>
+<span id=e49a>… and now that we have FPWDs, he's going to move a bunch of stuff around that is purely editorial</span><br>
+<span id=b6cb>… that is in prep for the post-quantum work coming into the group</span><br>
+<span id=8b04>… anyone have concerns with any of that?</span></p>
+<p id=4ed5 class="phone s01"><cite>phila:</cite> my understanding of what you say, is that it should be a good deal easier to follow what's going on</p>
+<p id=83f9 class=irc><cite>&lt;dlongley&gt;</cite> and reusability of all the algorithms across specs</p>
+<p id=eaf7 class="phone s01"><cite>phila:</cite> and an improvement in readability and consistently</p>
+<p id=27fd class="phone s04"><cite>manu:</cite> yes, we have others making new cryptosuites, and this should let them reference existing stuff vs. copy/pasting or recreating it<br>
+<span id=c2f3>… Greg would love help if anyone is interested/able</span></p>
+<p id=fe98 class=irc><cite>&lt;dlongley&gt;</cite> +1 to this being an excellent editorial upgrade</p>
+<p id=b4e3 class="phone s04"><cite>manu:</cite> I will note there are a number of &quot;future&quot; issues<br>
+<span id=4610>… and I think we're in the future now</span><br>
+<span id=50cd>… should we process those today? or put them on a future call?</span></p>
+<p id=cf9e class="phone s01"><cite>phila:</cite> if there are one or two you want to look at, we can now</p>
+<h4 id=d7ca><a href="https://github.com/w3c/vc-data-integrity/issues/340">w3c/<wbr>vc-data-integrity#340</a></h4>
+<p id=6b95 class="phone s04"><cite>manu:</cite> yes, issue 340<br>
+<span id=b46a>… this is about cryptographic primitives used on existing mobile phones</span><br>
+<span id=e1e2>… there is a question around how much we should speak to existing tech</span><br>
+<span id=f6a7>… there are not secure enclaves on phones today--and I haven't heard of any coming in the next year--that handle post-quantum cryptography</span><br>
+<span id=60c6>… so, Apple, for example only support ECDSA</span><br>
+<span id=5df3>… we could warn people that current mobile phones when a quantum computer shows up</span><br>
+<span id=af0f>… and these existing folks will not be able to safely do a presentation with any of the existing cryptography available on those phones when that happens</span><br>
+<span id=0e18>… we'd have to quickly shift things to newer cryptography</span></p>
+<p id=a257 class="phone s09"><cite>brent:</cite> large tech companies rarely share explicit timelines<br>
+<span id=768c>… however, Google said they're planning a fell post-quantum rollout by 2029</span><br>
+<span id=d19b>… and they do explicitly mention Android being prepared for that</span><br>
+<span id=34d0>… so future phones should be more PQ capable than current ones</span><br>
+<span id=a619>… and perhaps those show up sooner than later</span><br>
+<span id=75e9>… for example, I work for a hardware company and we've got an alpha device that is post-quantum ready</span></p>
+<p id=32a2 class="phone s06"><cite>ivan:</cite> how does this effect our specifications, because that is what we're really responsible for</p>
+<p id=3d5e class="phone s01"><cite>phila:</cite> I think that's  related to my question. I translate what's being said to wonder how much it matters</p>
+<p id=7fb3 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note &quot;not future&quot; but &quot;present day&quot; and to note more about people not upgrading, and not &quot;it will be available&quot;</p>
+<p id=c4e3 class="phone s01"><cite>phila:</cite> are we talking about exclusively smart phones? there are certainly other things out there</p>
+<p id=90e1 class="phone s04"><cite>manu:</cite> +1 to what brent said, there is new stuff coming<br>
+<span id=4ac4>… however, what about the people who don't upgrade</span><br>
+<span id=6570>… it's far less of a concern for large companies using cloud-based HSMs</span><br>
+<span id=f348>… but consumers will suffer</span><br>
+<span id=6339>… if they get into self-sovereign wallets on their current phones</span><br>
+<span id=6da5>… and don't upgrade--for financial reasons or any other reason--they'll be at risk</span><br>
+<span id=f8f8>… so, should our specifications state that wallets should be prepared to do software-based post-quantum</span></p>
+<p id=7258 class="phone s10"><cite>KevinDean:</cite> I don't think we do this in a spec<br>
+<span id=36e6>… this is a very broad problem</span><br>
+<span id=baaa>… we can mention it, but really this would be in a threat model doc</span></p>
+<p id=9c16 class="phone s01"><cite>phila:</cite> is that the answer you needed manu ?</p>
+</section>
+
+<section>
+<h3 id=f812>Overview</h3>
+<p id=f976 class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/TR/vc-overview/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-overview/</a></p>
+<p id=459d class="phone s04"><cite>manu:</cite> yeah, sound like &quot;write threat model text&quot;</p>
+<p id=fb4e class="phone s01"><cite>phila:</cite> ivan wrote an Overview document awhile back<br>
+<span id=8173>… and I'm keen to get more folks involved</span><br>
+<span id=9602>… this doc is our primer / start-here / etc.</span><br>
+<span id=62a4>… and I wonder if people in this group who are not the &quot;usual suspects&quot; who talk a lot</span><br>
+<span id=dcb0>… could look to contribute to this Overview document</span><br>
+<span id=af54>… and to see if you might write some new text for this document</span><br>
+<span id=c780>… it would help everyone</span></p>
+<p id=41ea class="phone s06"><cite>ivan:</cite> I'm very supportive of what you said<br>
+<span id=ad96>… but it might be a bit early</span><br>
+<span id=2d23>… we could get a unified architecture of the whole thing into this document...eventually</span><br>
+<span id=c5ec>… but right now there are a high number of satellite documents</span><br>
+<span id=803c>… and those need to settle down</span><br>
+<span id=4a65>… so, 3-4 months from now, that would be great</span></p>
+<p id=0966 class="phone s01"><cite>phila:</cite> so, TPAC?</p>
+<p id=229d class="phone s06"><cite>ivan:</cite> yeah, that would be better</p>
+<p id=5bd8 class="phone s01"><cite>phila:</cite> following our face-to-face will be in October in Dublin<br>
+<span id=d09c>… 2027 will be in December in Panama</span><br>
+<span id=f2b3>… thank you everyone!</span></p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
