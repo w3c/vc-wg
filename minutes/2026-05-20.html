@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 20 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>20 May 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d811d954-dd65-4cce-844a-53dfd95e75c7/20260520T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/05/20-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, dlongley, elaine, hsano, ivan, jennie, JennieM, JoeAndrieu, kevin, KevinDean, kezike, manu, nathan, patrick, pdl-asuj, ted, wes-smith, wesley, Wip</dd>
+<dt>Regrets</dt><dd>Phila</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>JennieM</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#aa3d">F2F Meeting</a></li>
+<li><a href="#d786">VC and AI</a></li>
+<li><a href="#3513">w3c/<wbr>vc-data-model#1629</a></li>
+<li><a href="#11fd">Controlled Identifiers Maintenance</a>
+<ol>
+<li><a href="#4c5d">w3c/<wbr>cid#168</a></li>
+<li><a href="#8064">w3c/<wbr>cid#170</a></li>
+<li><a href="#9a6a">w3c/<wbr>cid#169</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=d9b1 class="phone s01"><cite>Brent:</cite> welcome, everyone on meeting needs to be member of W3C and working group or invited expert<br>
+<span id=3519>… any introductions?</span></p>
+</section>
+
+<section>
+<h3 id=aa3d>F2F Meeting</h3>
+<p id=25d2 class="phone s01"><cite>Brent:</cite> couple weeks away, meeting in Brussels, number of people both onsite and remote</p>
+<p id=2b17 class=irc><cite>&lt;brent&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1h-0OXOR5NsY-OlC0i26mCDK45B15j2BfkL8f2CIY30E/edit?gid=0#gid=0">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1h-0OXOR5NsY-OlC0i26mCDK45B15j2BfkL8f2CIY30E/<wbr>edit?gid=0#gid=0</a></p>
+<p id=c67e class="phone s01"><cite>Brent:</cite> agenda drafted and possible that things may still shift, content where we want to be<br>
+<span id=e004>… most of agenda given to task forces, each will have at least one 75 minute slot</span><br>
+<span id=ffff>… expectation and hope is that Task Force leads will create brief intro on what Task Force is working on, rest of the time spent as they see fit - issue processing and raising PRs, discussing larger issues</span><br>
+<span id=504f>… however it wishes to spend time</span><br>
+<span id=b4c0>… please review what slots your Task Force has been assigned, limited ability to move things around, tried to be aware of remote participant needs but don't know all things and may not be able to accommodate all, but will do our best</span><br>
+<span id=2ea1>… questions from Task Force leads or comments on agenda?</span></p>
+<p id=9143 class="phone s02"><cite>Joe:</cite> did we manage to close loop with when Simone could do threat modeling?</p>
+<p id=e60f class="phone s01"><cite>Brent:</cite> yes, Tuesday immediately following lunch - will make sure he knows time and has links<br>
+<span id=6f87>… two 75 minute slots - first with Simone, second with the group</span></p>
+<p id=9aa9 class="phone s02"><cite>Joe:</cite> do we know what topically we want to spend time on? Most mature Threat Model or most immature?</p>
+<p id=c541 class="phone s01"><cite>Brent:</cite> Simone has exercise he uses with Working Groups, but whether we start with something mature or immature, we'll take feedback. Open to group on how best to proceed</p>
+<p id=dc68 class="phone s03"><cite>kezike:</cite> what do you recommend for Task Force leaders who are remote for the day?</p>
+<p id=d76d class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note Agenda looks good.</p>
+<p id=5916 class="phone s01"><cite>Brent:</cite> if you can't attend when you are scheduled to lead, we may be able to swap with someone in person. Either leading remotely or coordinating with someone there is good</p>
+<p id=cf65 class="phone s04"><cite>manu:</cite> agenda looks good to me, covers broad swath appropriately, thank you to chairs for putting it together<br>
+<span id=b94b>… threat modeling, would like us to know what we are doing before we show up as it may require a lot of prep</span><br>
+<span id=184a>… happy for us to take most far along model</span><br>
+<span id=90be>… let's take the most far along one and show people how it works - which one is that? other option is that we have a lot of people together, could we use time to work on least done one? two minds - Joe, suggestions?</span></p>
+<p id=d663 class="phone s02"><cite>Joe:</cite> interested in helping one least far along bootstrap. Not fully certain which one is most far along<br>
+<span id=6990>… like bootstrap, give them the boost up and all groups would learn</span></p>
+<p id=5495 class="phone s04"><cite>manu:</cite> I don't know if there are any threat models that are really struggling because we just started<br>
+<span id=fd34>… VCALM feels like good use of time - core issuer holder ecosystem. feels like something everyone would be able to participate in, something we all need to do, benefits other threat model. My vote of what we would focus on. Not super worthwhile to write barcode threat model, pretty niche, number of people who care about core threat model for VC</span></p>
+<p id=0e77 class=summary>Data Model would be much higher</p>
+<p id=0fe6 class="phone s05"><cite>Ivan:</cite> very different problem, no idea how threat model would look for vocabulary work.</p>
+<p id=4f61 class="phone s02"><cite>Joe:</cite> great question, think answer is that there probably shouldn't be one, similar question for registries<br>
+<span id=10000>… process isn't up to date with answering that, don't know if it makes sense to have one</span></p>
+<p id=f036 class="phone s05"><cite>Ivan:</cite> personally agree, but not sure what others would say</p>
+<p id=89c6 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to say there should not be threat model work for vocabularies :)</p>
+<p id=309c class="phone s04"><cite>Manu:</cite> agree with Ivan and Joe, don't think there should be threat models for vocabularies. Used by other systems, we could spend an eternity on just focusing on threat models and need to find right balance</p>
+<p id=9773 class="phone s01"><cite>Brent:</cite> remaining questions and concerns, please reach out to chairs</p>
+</section>
+
+<section>
+<h3 id=d786>VC and AI</h3>
+<p id=9468 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/webai-roadmap/issues/38">w3c/<wbr>webai-roadmap#38</a></p>
+<p id=9783 class="phone s01"><cite>Brent:</cite> asked in an Issue by Dom - team is seeking input on impact of AI on working groups<br>
+<span id=536e>… not asking how we are using AI in meetings or specs, but how is AI impacting VCs and VCs impacting AI</span><br>
+<span id=9602>… 20 minutes max</span></p>
+<p id=10001 class="phone s05"><cite>Ivan:</cite> I took part in one of the discussions in another working group - kind of discussion - digital publication group<br>
+<span id=7944>… conceivable in a few years that there will be digital groups that can display content right away or read aloud, EPUB looking at what additional data and metadata should be added to make the feature really good</span><br>
+<span id=a96f>… what are the features we might have to add or modify in our specs in the future as a result of AI</span></p>
+<p id=875e class="phone s06"><cite>Patrick:</cite> just going to share three quick points - reverse effect that VCs can be used to give authorization to AI, also think AI make implementation of - lot more easy to build these implementations, think AI can help understainding credentials and add purpose, and AI will probably drive features we want to add to the ecosystem, capabilities not</p>
+<p id=e973 class=summary>previously available</p>
+<p id=dfaf class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention AI presenting VCs</p>
+<p id=dbf8 class="phone s02"><cite>Joe:</cite> I think AI in any roles becomes interesting, should probably consider how that will change language<br>
+<span id=438a>… interesting wrinkle - is AI acting on its own or on behalf of legal person.</span><br>
+<span id=fc3e>… how do we respond?</span><br>
+<span id=f003>… not sure if there is consensus on how we would deal with it</span></p>
+<p id=1264 class="phone s04"><cite>Manu:</cite> +1 to everything Patrick and Joe said<br>
+<span id=84eb>… company vouch.id that presented, leveraged VCs and DIDs through whole protocol, example that they are building into protocols, deploying, using VCs for agent representation,</span><br>
+<span id=1801>… healthcare industry, seen very similar type thing where agent operating on behalf of individual has had something delegated to it that allows it to interact with patient records - also using W3C VCs and DIDs</span><br>
+<span id=6292>… explainability in AI, what reasoning path did AI go through to get to answer, today very probabilistic, seeing problems with that. AI conveying answers that make it seem like they went through a human-based thinking process, no formal mechanism that allows you to step through logic in more formal sense.</span><br>
+<span id=3354>… retail sector - agentic commerce - definitely seeing it here</span></p>
+<p id=10002 class=irc><cite>&lt;dlongley&gt;</cite> this isn't new -- so just adding it in chat here, but of course VCs are also being used &quot;defensively&quot; or to help differentiate between AI (or things AI has produced) and humans/persons and what they have produced.</p>
+<p id=7787 class="phone s07"><cite>pdl-asuj:</cite> two responses - first, starting from perspective that there needs to be a connection between the DID whether it is being told to act or not, provenance needs to be retained and clear<br>
+<span id=9a95>… LLMs are probabilistic by design, may get better, but unless disign changes, no deterministic path to decision making</span><br>
+<span id=cfda>… notion of structured data formats VCs represent and algorithms used provide good anchor in keeping decision making reference back to some form of deterministic set of values</span></p>
+<p id=cbf2 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention biometric confidence method as a specific response to personhood / agent questions</p>
+<p id=053d class="phone s02"><cite>Joe:</cite> wanted to highlight biometric template work in confidence method task force<br>
+<span id=bdf9>… if you are interacting with someone, can they prove who</span><br>
+<span id=7d76>… yes, we need something like biometrics to help us figure out if there is a real person involved</span></p>
+<p id=c5d7 class="phone s01"><cite>Brent:</cite> thank you, good exploration so far. Most of what I've heard was positive, any other thoughts?</p>
+<p id=da19 class="phone s05"><cite>Ivan:</cite> my question would be in relation to all the various things you all said, are there or should there be additional extensions or changes in our model or specification somewhere to have positively those applications or counter problems<br>
+<span id=a2d8>… would any of these influence how our specifications look?</span></p>
+<p id=7a41 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note that decentralized approach allows us to delegate to experts for that</p>
+<p id=6533 class="phone s04"><cite>Manu:</cite> great question, also note, we don't have to solve these problems for the world because we aren't the experts here, but Ivan, your point about would there be an extension or anchor that would help, we should look into that more<br>
+<span id=db50>… between DID and VCWG - delegation part that feels like something we could do that would be useful</span><br>
+<span id=c113>… but when you get into provable reasoning, nothing feels like we absolutely have to move on something right now</span><br>
+<span id=d8b9>… just got a decentralized extensibility model, hope people will do work outside of the group</span><br>
+<span id=577e>… mcpi and vouch</span></p>
+<p id=8a75 class=irc><cite>&lt;manu&gt;</cite> +1 to start documenting AI use cases as a first step</p>
+<p id=4cf8 class="phone s01"><cite>Brent:</cite> could have an AI related use case. Because VCs are building block and can be used, this would be a demonstration of how they could be used, now how they would be changed</p>
+<p id=1fa4 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to AI use cases</p>
+<p id=a907 class="phone s04"><cite>manu:</cite> real quick, apologies I was late, one thing I want to highlight with VC Data Model Core</p>
+</section>
+
+<section>
+<h3 id=3513><a href="https://github.com/w3c/vc-data-model/pull/1629">w3c/<wbr>vc-data-model#1629</a></h3>
+<p id=1f42 class=irc><cite>&lt;manu&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></p>
+<p id=a3f4 class="phone s04"><cite>manu:</cite> PR to deprecate digest SRI - lots of +1s but also a push back on the issue<br>
+<span id=2577>… raised a number of things, don't want to merge right now because it feels like he is objecting, would be good for others in group to chime in</span><br>
+<span id=e013>… main concern with objections is that they are not technical in nature</span><br>
+<span id=4d23>… we've got to do something with the PR and issue, other opinions would be helpful in the thread</span></p>
+<p id=8880 class="phone s01"><cite>Brent:</cite> we do not have consensus to merge the PR (chair hat on) - implemented against DigestSRI our changing the spec now or changing in the future is requiring implementations to change, which is a consideration we have to take seriously<br>
+<span id=ba79>… please engage on the issue</span><br>
+<span id=f8f5>… important discussion group needs to have</span></p>
+</section>
+
+<section>
+<h3 id=11fd>Controlled Identifiers Maintenance</h3>
+<p id=1960 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/cid/issues">https://<wbr>github.com/<wbr>w3c/<wbr>cid/<wbr>issues</a></p>
+<p id=0fbf class="phone s01"><cite>Brent:</cite> we have a number of open issues in Controlled Identifiers Specification, need to make sure they are triaged appropriately and have a plan to address them because we are chartered to maintain this spec</p>
+<p id=0082 class="phone s04"><cite>Manu:</cite> there are a couple of comments. I made a pass over all issues to classify on changes, if ready for PR, lots that are not ready for PR</p>
+<h4 id=4c5d><a href="https://github.com/w3c/cid/pull/168">w3c/<wbr>cid#168</a></h4>
+<p id=58a0 class="phone s04"><cite>Manu:</cite> one that is ready that Pierre-Antoine opened trying to qualify what the primary identifier is, one where I would appreciate more reviews on PR before merging. Don't think it harms anything, would also address one or two issues there</p>
+<p id=709a class="phone s04"><cite>Manu:</cite> this PR is about allowing for fragment identifier in DID Document ID<br>
+<span id=80b6>… we are introducing this new term &quot;primary identifier&quot; and the primary identifier in a controlled identifier document, needs to be something without a fragment</span><br>
+<span id=c0b8>… url of document, document ID must not contain a fragment</span><br>
+<span id=361b>… primary identifier must be the same as the canonical</span><br>
+<span id=75f5>… don't put a fragment in document ID, want to make sure other people think algorithms make sense</span><br>
+<span id=2dcd>… think it was confusing in previous working group</span></p>
+<p id=2e0b class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say it sounds backwards</p>
+<p id=ad32 class=irc><cite>&lt;dlongley&gt;</cite> +1 to Joe</p>
+<p id=29e8 class="phone s08"><cite>JoeAndrieu:</cite> manu, seems like what you said is opposite of this PR<br>
+<span id=1036>… okay to have fragment</span></p>
+<p id=604a class="phone s04"><cite>Manu:</cite> think you are right, that would be bad</p>
+<p id=98bb class="phone s05"><cite>Ivan:</cite> so, I can fully understand where he is coming from, whether we like it or not, using fragment ID has been around and used for last 25 years, very often can even see formal ID of TBL<br>
+<span id=26ce>… presume request came from solid working group (name today?) looking at CID as a tool for themselves, use case community that would like to use fragments. Whether we answer it or not is a different case</span></p>
+<p id=c6b4 class="phone s01"><cite>Brent:</cite> with the realization we were looking at this backwards, what are comments? We have the Issue, believe Issue links to conversation, I'm not super familiar with conversation in LWS</p>
+<p id=33d6 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say it feels off</p>
+<p id=78e5 class=irc><cite>&lt;dlongley&gt;</cite> +1 to Joe ... i think this just needs careful consideration ... and comparison against what the DID spec does for compatibility, etc.</p>
+<p id=10003 class="phone s08"><cite>JoeAndrieu:</cite> I think this feels a bit off, part of hesitation is simply not having had time to understand if there is something deeply wrong with why it feels off<br>
+<span id=fd16>… confusing if there there a fragment that is not #me, don't know how that even works in a JSON-LD framework</span><br>
+<span id=3614>… naive solution would be to take ID and append secondary fragment, now we have two fragments and that fees wrong</span></p>
+<p id=07a2 class="phone s04"><cite>Manu:</cite> apologies, totally misrepresented PR, read through it twice<br>
+<span id=2ad0>… http range 14 conversation that never dies, reading through with that understanding</span><br>
+<span id=0a30>… do admit that it is going to be hard to justify not allowing a fragment identifier in the CID document</span><br>
+<span id=31e4>… Joe, agree it feels off, always fall on other side of range 14 conversation</span><br>
+<span id=fd9b>… type of resource tells you what it is point toward</span><br>
+<span id=f956>… but group of people that will never agree, fear is that we get pulled into a range 14 discussion</span><br>
+<span id=10004>… don' think this breaks anything, but need to be very very careful with this PR</span><br>
+<span id=b056>… now three different terms we use in spec to talk about URLs for document itself</span><br>
+<span id=192a>… base identifier, primary identifier, canonical URL, and each of those means something a bit different</span></p>
+<p id=d4d7 class=irc><cite>&lt;dlongley&gt;</cite> needs a little security analysis for things like how comparing controllers when resolving verification methods changes, etc.</p>
+<p id=1472 class="phone s04"><cite>Manu:</cite> just a warning it is HTTPRange 14 territory, keep in mind while reviewing. But to agree with Ivan, that community agrees that there should be hash identifiers on these IDs<br>
+<span id=a8d2>… don't know if there is any big problem adding this feature, but ramifications are pretty broad</span></p>
+<p id=320d class="phone s09"><cite>Benjamin:</cite> I don't think I'd be quite as HTTP range 14, think it is clarifying something that isn't clarified now<br>
+<span id=c16d>… its permitted now, can put fragment identifiers in all of these URLs</span></p>
+<p id=c34e class="phone s02"><cite>Joe:</cite> not permitted now</p>
+<p id=6e66 class="phone s10"><cite>bigbluehat:</cite> in CID spec, fragment identifier can appear?</p>
+<p id=9108 class="phone s04"><cite>Manu:</cite> no, specifically banned that</p>
+<p id=c4c0 class="phone s04"><cite>Manu:</cite> long discussion, fragment IDs not allowed<br>
+<span id=f525>… think that as always range 14 issues seem simple, but not</span><br>
+<span id=2691>… allows a different level of attacks, made us not feel great about security attack surface</span></p>
+<p id=facb class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note it's not as straightforward as it seems.</p>
+<p id=d6d9 class="phone s04"><cite>Manu:</cite> if we are going to allow people to use fragment idenfiers, how does it change ??? could it be used as an attack vector to use key or object mix-ups, all these things come up when we allow this</p>
+<p id=9eb0 class=irc><cite>&lt;dlongley&gt;</cite> +1 it might end up being ok, but requires more analysis.</p>
+<p id=c5a1 class="phone s04"><cite>Manu:</cite> may be okay, but need to look at Data Integrity spec and se how it it is used<br>
+<span id=e4bb>… never really used CID spec directly, they would be the first ones really using the spec</span></p>
+<p id=9715 class="phone s10"><cite>Bigbluehat:</cite> I think one of the things triggering the range 14 bits is the section using hash me, but that could be any identifiable thing with a fragment, is a JSON-LD document<br>
+<span id=3353>… so I think it is maybe okay, but we should dig into whether it is actually before we do the wrong thing</span></p>
+<p id=2e3b class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note it is not always a JSON-LD document.</p>
+<p id=3fd2 class=irc><cite>&lt;ivan&gt;</cite> +1, it is also used that way in my own foaf file</p>
+<p id=b43b class="phone s04"><cite>Manu:</cite> just to highlight why this seems simple - not always JSON-LD document, people who worked on this spec wanted to be able to use it without JSON-LD, so algorithms  are not always straightforward</p>
+<p id=6f07 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask where in the spec is the fragment outlawed</p>
+<p id=aeee class="phone s01"><cite>Brent:</cite> that is PR 168, let's look at our Issues now<br>
+<span id=579a>… did someone just go through and put a bunch of class II and Class IV from these?</span></p>
+<p id=2301 class="phone s04"><cite>Manu:</cite> yes</p>
+<h4 id=8064><a href="https://github.com/w3c/cid/issues/170">w3c/<wbr>cid#170</a></h4>
+<p id=02cf class="phone s02"><cite>Joe:</cite> not sure which class it should be</p>
+<p id=4df3 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note it's class 2</p>
+<p id=c417 class="phone s04"><cite>Manu:</cite> I vaguely remember using CID and it working, totally agree with Joe that this should work, maybe it is CID 1.0, ways to do aliases, need someone who can work with XREF to work with it</p>
+<p id=0fe5 class="phone s02"><cite>Joe:</cite> part of confusion, I meant to refer to term controlled indentifier, not specification</p>
+<p id=99fe class="phone s05"><cite>Ivan:</cite> double brackets is for reference to documents</p>
+<p id=eee6 class="phone s05"><cite>Ivan:</cite> think you are looking for a different notation</p>
+<p id=5ccd class="phone s08"><cite>JoeAndrieu:</cite> I'll check, may not be an issue</p>
+<p id=e0a0 class=irc><cite>&lt;manu&gt;</cite> xref: [&quot;CID&quot;]</p>
+<p id=4f59 class="phone s04"><cite>Manu:</cite> this does work Joe, just checked in DID spec - search for document and it is cross-referenced</p>
+<p id=a3fe class=irc><cite>&lt;manu&gt;</cite> [=controlled identifier document=]</p>
+<p id=7f8a class="phone s11"><cite>JoeAndreiu:</cite> that worked, but that is not CID</p>
+<p id=fc23 class="phone s04"><cite>Manu:</cite> you want to type in CID, where do you want it to link?</p>
+<p id=fd75 class="phone s08"><cite>JoeAndrieu:</cite> the term</p>
+<p id=b3e9 class="phone s04"><cite>Manu:</cite> we need to export the shortened version</p>
+<p id=7788 class="phone s08"><cite>JoeAndrieu:</cite> I think we're on the same page</p>
+<p id=1615 class="phone s01"><cite>Brent:</cite> Agreed, Class II change</p>
+<h4 id=9a6a><a href="https://github.com/w3c/cid/issues/169">w3c/<wbr>cid#169</a></h4>
+<p id=f116 class="phone s01"><cite>Brent:</cite> look at 169 to ensure Class IV is appropriate<br>
+<span id=9ca8>… opened three weeks ago, would require an addition to the IANA registration for CID</span></p>
+<p id=911b class="phone s04"><cite>Manu:</cite> I believe so, but forget what we registered. Suggestion is that we don't do this because multiple different profiles lead to non-interoperable implementations<br>
+<span id=2a59>… want to be specific about profiles, think we need the activity pub use case</span><br>
+<span id=284a>… better thing would be for community to argue for changes into CID spec, need more info from them. Don't think profile leads to good interop</span></p>
+<p id=6d20 class="phone s06"><cite>Patrick:</cite> just curious about idea that profiles hurt interop<br>
+<span id=2ca8>… think profile can give clear pictures of what someone can align to, profiles being prescriptive about specification you want to implement. Don't see why they hurt, don't think they are ultimate solution</span><br>
+<span id=5b5c>… I feel sometimes, some specs more than others there is a lot of optionality, optionality is good, but it can also spend a lot of time. Profile can give a path to a more direct implementation, not sure I totally agree that profiles are bad based on my limited experience</span></p>
+<p id=84fe class="phone s04"><cite>Manu:</cite> profiles are somewhat okay when what you explained ends up happening, but that is not always what happens. With CID spec, you can choose to punt JSON-LD to curb and add lots of features and make that your profile, then you have features that are a superset - you can just add whatever you want to<br>
+<span id=1675>… typically that is not super great if it is not clear, yes you can do that, but inevitably it will make it so that your community is the only one that can implement</span><br>
+<span id=bdd9>… adding profile allows you to do whatever you want, and sometimes people do things that completely break interop without any discussion with broader community, which is where interop failure comes in</span></p>
+<p id=1035 class="phone s06"><cite>Patrick:</cite> agree 100%, do not think profiles should extend capabilities, see them as extension of selected<br>
+<span id=6c1f>… for me, this doesn't add anything, but agree if profiles want to use on own features that expand spec, can see why this would be dangerous path</span></p>
+<p id=a26f class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note very little time to work on CID</p>
+<p id=8916 class="phone s04"><cite>Manu:</cite> +1 to that<br>
+<span id=6bd6>… complete side note on spec, I'm one of the editors, have very little time to work on spec and it is lower priority, if there are other editors who would like to help out that would be great</span></p>
+<p id=cecc class="phone s01"><cite>Brent:</cite> 17 open issues in CID spec, 10 labeled Class II so we can address them.<br>
+<span id=33cc>… work to be done on this spec, need people to jump in</span><br>
+<span id=f56a>… look forward to meeting next week, then in Brusels</span></p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
