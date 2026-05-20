@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 19 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>19 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Kevin_Dean, Manu_Sporny, Nate_Otto, Patrick_St-Louis, Phillip_Long</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#687c">VCWG Render Method Meeting</a></li>
+<li><a href="#6e54">Pull Request Discussion</a></li>
+<li><a href="#f096">Pull Requests</a>
+<ol>
+<li><a href="#1171">Add OverlayRenderMethod with oca-bundle-v2 render suite by PatStLouis · Pull Request #30 · w3c/vc-render-method · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#ec18">HTML Render Method Capabilities</a>
+<ol>
+<li><a href="#e701">Render method to enable card-like displays in wallets and displayers by ottonomy · Pull Request #39 · w3c/vc-render-method · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#ff8b">Removing PDF and SVG Render Suites</a>
+<ol>
+<li><a href="#a55c">Remove pdf-mustache render suite and svg-mustache render suite. by msporny · Pull Request #49 · w3c/vc-render-method · GitHub</a></li>
+<li><a href="#50d4">Add outputPreference terms section. by BigBlueHat · Pull Request #51 · w3c/vc-render-method · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#41c9">PDF Rendering Expectations</a></li>
+<li><a href="#0574">Discuss PDF rendering expectations. · Issue #53 · w3c/vc-render-method · GitHub</a></li>
+<li><a href="#d0dd">Render Method Threat Model Brainstorming</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=687c>VCWG Render Method Meeting</h3>
+<p id=6be2 class="phone s01"><cite>Manu_Sporny:</cite> All right, let's go ahead and get started. welcome everyone to the render method task force. we have an agenda for today which is largely to spend time on threat modeling. We have not spent any time on threat modeling. and so we are going to try and crowdsource a number of the threats that we're concerned about with the render method.</p>
+<p id=950b class="phone s01"><cite>Manu_Sporny:</cite> We will also do our standard kind of looking at pull requests. We have four of those that are more or less ready to go. and we will look into merging those in. I think there are some merch conflicts there but we need to get those into at a high level that's the agenda for today. Any other updates or agend additions to the agenda? Anything else we want to discuss? Go ahead, Benjamin.</p>
+<p id=6538 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I posted something just this morning about PDF related expectations. it can be at the bottom of the agenda if it's any issues,…</p>
+<p id=e326 class="phone s02"><cite>Benjamin_Young:</cite> I think.</p>
+<p id=b968 class="phone s01"><cite>Manu_Sporny:</cite> Got it.</p>
+<p id=425b class="phone s01"><cite>Manu_Sporny:</cite> Okay. I mean, we should How long do you need on that? Okay.</p>
+<p id=d0e0 class="phone s02"><cite>Benjamin_Young:</cite> It depends on how people feel about it. it's mostly stuff I've run into when trying to do sandbox PDF stuff. And it became clear that the current PDF mustache also doesn't really have explained expectations about who's going to do what. is the wallet renderer going to show the PDF? Is it going to make it available for download? Is this expected to be used by some other thing that's going to print PDFs whatever?</p>
+<p id=ebc2 class="phone s02"><cite>Benjamin_Young:</cite> So the sandbox I frame has some limitations I can talk folks through at least in my current testing. and that doesn't need to drive what we would like or expect already that wallet renderer things would be doing. but I kind of need to know which one to try to skate toward or…</p>
+<p id=5cd2 class="phone s02"><cite>Benjamin_Young:</cite> or inform either way. Yeah.</p>
+<p id=5992 class="phone s01"><cite>Manu_Sporny:</cite> got it.</p>
+<p id=d679 class="phone s01"><cite>Manu_Sporny:</cite> Okay, let's do a poll request then we'll tackle that issue, Benjamin, and then we'll spend the rest of the time on threat model. Does that sound okay to you? Seeing a thumbs up. All right, any other updates or changes to the agenda?</p>
+<p id=43e2 class="phone s01"><cite>Manu_Sporny:</cite> All right, if not, let's go ahead and jump into it. the first topic is poll requests. We have four poll requests out there. I think we need to do something about these poll requests. We have poll requests from October. I'm going to suggest I'm a bit concerned that the people that raised this are not here, but we need to, figure out what we're doing here and move on. so the f first poll request subtopic is pull request 30. this is Patrick suggested the overlay render method as one of the render methods that we use.</p>
+<p id=7949 class="phone s01"><cite>Manu_Sporny:</cite> I am going to suggest that this pull request has been overtaken by events meaning that any kind of overlay render method can be implemented via the HTML render method because the HTML render method can contain all sorts of logic. You can put the entire data model into it and to render something as output you can run arbitrary logic to do that. So if folks want to do the OCA render method mechanism, it can just be put into HTML render method late. so that is what I'm suggesting is the outcome of this poll request. I'm suggesting that we close it on the call today.</p>
+</section>
+
+<section>
+<h3 id=6e54>Pull Request Discussion</h3>
+</section>
+
+<section>
+<h3 id=f096>Pull Requests</h3>
+<p id=c1b2 class="phone s01"><cite>Manu_Sporny:</cite> And again, remember if there's violent disagreement about it being closed, we can always just reopen it because GitHub will just keep it around. would there be any objections to taking that plan of action on the call today? not hearing any objections. I'm going to suggest that the task force discussed this.</p>
+<p id=ff51 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, speak of the devil.</p>
+<h4 id=1171><a href="https://github.com/w3c/vc-render-method/pull/30">Add OverlayRenderMethod with oca-bundle-v2 render suite by PatStLouis · Pull Request #30 · w3c/vc-render-method · GitHub</a></h4>
+<p id=240a class="phone s02"><cite>Benjamin_Young:</cite> Yeah, it'd be great to get Patrick on here.</p>
+<p id=ef22 class="phone s02"><cite>Benjamin_Young:</cite> And there he is.</p>
+<p id=2cc6 class="phone s01"><cite>Manu_Sporny:</cite> There he is. Patrick, we are looking at closing the overlay render method. just to give you some context primarily because we're asserting that the HTML render method is capable of running all logic that OCA would need to do the rendering. but would love your thoughts on this. We're trying to close out pull requests that have been open for a very long time now. so over to you Patrick to provide your thoughts…</p>
+<p id=73cf class="phone s01"><cite>Manu_Sporny:</cite> if you have them.</p>
+<p id=9151 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, sure.</p>
+<p id=cb3b class="phone s03"><cite>Patrick_St-Louis:</cite> Happy to provide my thoughts. definitely. So, what's currently in the spec, they're all template based. So, they're a way to provide a template that people can feed the verifiable credential and display some values. the approach of OCA is really to provide semantic information. So you don't provide a template but you provide rendering hints and instruction through an external bundle and it comes with all the overlay capture architecture features and overlays you can put.</p>
+<p id=2855 class="phone s03"><cite>Patrick_St-Louis:</cite> So I personally will keep saying that I think it provides a significant different approach than just providing a template and could possibly offer extra capability. But I've not heard the conversation that just had about this being possible with HTML.</p>
+<p id=676a class="phone s01"><cite>Manu_Sporny:</cite> So, let me kind of highlight what's possible with the HTML nder So the HTML render method can run arbitrary code over the entire verifiable credential and then render it to HTML which then be exported in the future we're going to add this feature can be exported to an image or a PDF or an SVG. So the entirety of the logic, how OCA can work and be expressed in the HTML. So I think your mental model about what we're doing is template based is out of date, right? Meaning meaning that we have new mechanisms like the HTML render method that can run arbitrary code.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> it can take, the verifiable credential as input and then it can do whatever transformations and whatever it wants to render it then to an image format. And the suggestion is we can do that with the HTML render method and OCA can be a subset of that. back over to you Patrick.</p>
+<p id=94a9 class="phone s03"><cite>Patrick_St-Louis:</cite> So I'd be curious just a simple example here. I have a credential and I want to be able to render a HTML page that shows the credential across three different language including labels, descriptions and so on. How would you achieve this with a HTML template without hard- coding all the descriptions and different language in the template itself? duplicating the template or times. For example, if you want to support for language back to you</p>
+</section>
+
+<section>
+<h3 id=ec18>HTML Render Method Capabilities</h3>
+<p id=233b class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://digitalbazaar.github.io/html-render-method-test/">https://<wbr>digitalbazaar.github.io/<wbr>html-render-method-test/</a> </p>
+<p id=aa76 class=irc><cite>&lt;Dave_Longley&gt;</cite> ^this demo site runs a mustache renderer (which could have been any arbitrary code) </p>
+<p id=1670 class="phone s01"><cite>Manu_Sporny:</cite> how do you do it today there is there I'm concerned that using the word template is we're interpreting it in different ways Patrick I'm concerned you think template is static and unchangeable. I'm saying the template includes a whole bunch of dynamic logic that can do the translations, not hard- coding everything. Meaning it can take all of the translated values out of the verifiable credential that comes in and then let's say it's in French and German and English. it can then render the appropriate thing based on the language that's set.</p>
+<p id=3350 class="phone s01"><cite>Manu_Sporny:</cite> So that's how it would be done is whatever logic you have would be in the HTML template to do all of the internationalization conversion within the template if that makes sense. Go ahead, Patrick.</p>
+<p id=09a9 class="phone s03"><cite>Patrick_St-Louis:</cite> Maybe that makes sense. I'm not sure I understand currently how this could be achieved. because if we think about translation and description and so on these values need to live somewhere. They cannot be generated on the spot unless we're talking about, embedding some AI functionality in the HTML template, which sounds a bit advanced at this point. Looking at the spec, currently it does very much seem to me like HTML template is just providing HTML CUD with mustache type variables in it. That's understand it by reading at the spec. But this being said, I haven't been really attending these meetings a lot. which seems to me like a good but simple use case.</p>
+<p id=88f1 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, your mental model of the spec is wrong. Sorry to be blunt, but we have talked about over the past couple of weeks how the HTML thing works. It is not ic. There's dynamic code that's executed within the template. I think you should probably spend a bit of time reading it is in the spec now, I don't know if you've read an old version of the spec. I guess Patrick is saying. what you just said is definitely the way it used to work. That is no longer the way it works.</p>
+<p id=9da0 class="phone s01"><cite>Manu_Sporny:</cite> So for example, what kind of translations are you looking to do Patrick? is that our expectation is that with the verifiable credential data model the fields if you have a multi- language credential you would have multiple fields in there meaning the data would be in different languages in the VC itself. And when that VC comes into the HTML, rendering engine, you would have code in there that would display that thing. And let's talk about key value pairs the first name and then the person's name the first name internationalization stuff that code would go in the HTML rendering engine to</p>
+<p id=dbd6 class="phone s01"><cite>Manu_Sporny:</cite> displayed in French, Spanish, German, and then the values themselves would come by selecting the appropriate language from the credential. So hopefully that made sense. I'm kind of rushing through the explanation of how it would work, but that is the way the new HTML rendering engine stuff works.</p>
+<p id=25f9 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Benjamin.</p>
+<p id=2c72 class="phone s02"><cite>Benjamin_Young:</cite> Sorry, had my mute button backwards.</p>
+<p id=5c2d class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I've got a demo I'm happy to show if it would be helpful, but I think something that might confuse people is when we say HTML, it's really the name for the entire trinity. TML, JavaScript, and CSS. And mostly JavaScript's going to do all the hard lifting because it's going to carry mustache or liquid or edit your JSON or create new stuff or juggle the overlays that you give it or whatever.</p>
+<p id=0d52 class="phone s02"><cite>Benjamin_Young:</cite> I think a piece to explore with OCA if we were to bring it in this way is where if you didn't want to repeat those overlays inside the JavaScript bundle essentially then where would you put them in the JSON of the credential because the JavaScript cannot get anything off the web can't do remote resource stuff so you could potentially reference your OCA bundles or inline them maybe in related resource. and then once they're there, you can selectively disclose them into the JavaScript that's going to do the rendering and then that JavaScript's going to do whatever that JavaScript's going to do on behalf of those OCA bundles.</p>
+<p id=a7db class="phone s02"><cite>Benjamin_Young:</cite> But you really have to think of the stuff that happens in the sandbox iframe as the entirety of the rendering thing. so it's doing way more than any of the past ones have been conceived to do. And they really are mini apps. If you're at all familiar with that phrase, it's mostly coming out of China, which is just HTML XML plus JavaScript running in a super constrained, often non-browser container. And again, Patrick, let me know if you want to. And everybody, it's not a pretty demo, but it is easy to see it.</p>
+<p id=205e class="phone s01"><cite>Manu_Sporny:</cite> Thanks, Patrick, you're on the queue.</p>
+<p id=9c13 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 to a demo </p>
+<p id=5227 class="phone s03"><cite>Patrick_St-Louis:</cite> Yes,…</p>
+<p id=856c class="phone s03"><cite>Patrick_St-Louis:</cite> I'd be definitely interesting in seeing a demo. I just want to give a simple example. there's a client they require you to support five different language in an application you receive a cred you want to issue a specific type of credential and you don't want to duplicate the credential five times to support different language when you render it and when you pass it to this mini app a bundle is a great way to fetch and generate this context</p>
+<p id=7751 class="phone s03"><cite>Patrick_St-Louis:</cite> text without making the credential itself significantly larger. which that's why a demo would be really beneficial for me. but it sounds to me like we are now talking about inventing a new way to do this with this new HTML render method when I would like to be able to just use a specification…</p>
+<p id=95a9 class="phone s03"><cite>Patrick_St-Louis:</cite> which is already in so yeah, that's kind of my stance</p>
+<p id=b300 class="phone s02"><cite>Benjamin_Young:</cite> Yeah. inventing a new thing and…</p>
+<p id=10000 class="phone s02"><cite>Benjamin_Young:</cite> more that we're punting to the browser and allowing anybody to deliver their own renderer just as they would render any web page or iframe or ad widget or whatever. it's way more analogous to advertising iframes into anything else.</p>
+<p id=cb5f class="phone s02"><cite>Benjamin_Young:</cite> And I can give that demo, but Mono, I see you on the queue.</p>
+<p id=795c class="phone s01"><cite>Manu_Sporny:</cite> Yeah, mostly because we're eating up a ton of call time on this thing.</p>
+<p id=6e2c class="phone s02"><cite>Benjamin_Young:</cite> Yeah. But…</p>
+<p id=6837 class="phone s01"><cite>Manu_Sporny:</cite> So, I'm gonna yeah,…</p>
+<p id=6f42 class="phone s02"><cite>Benjamin_Young:</cite> if we're saying this is going to displace everything, I think it's important that everyone understand it.</p>
+<p id=515a class="phone s01"><cite>Manu_Sporny:</cite> yes, I think we need to come back around to this, I think Patrick, you need to read the spec as it exists now and see if there's any way that you can see that it addresses your use case. I think it does. Once you're up to speed, Patrick, on what the current spec does, and once you've potentially seen the demo that Benjamin is going to show, we've shown it on previous calls. I don't want to rehash things we've already discussed on the call again, so Patrick, I think the onus is up to you to bring yourself up to speed on the spec. Take a look at the demo that Benjamin has. Maybe do that offline and then we can come back to this later on. we need to figure out what we're doing here.</p>
+<p id=f05c class="phone s01"><cite>Manu_Sporny:</cite> It's been sitting out here for too long. Avon, go ahead.</p>
+<p id=c7a7 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, the whole discussion for me means that maybe we have already discussed that by the way that we…</p>
+<p id=3ec8 class="phone s04"><cite>Ivan_Herman:</cite> if we go down this HTML line then we would have to have a kind of a collection of I say well doumented well specified</p>
+<p id=8e42 class="phone s04"><cite>Ivan_Herman:</cite> ified example codes, patterns that people can pick up and use and not reinvent the wheel all the time because it's not necessarily obvious although I understand that for example what Patrick wanted to say to do you can run a JavaScript which reach out to translator services and would translate those things into French any other language. but this is not absolutely obvious and having an example library is probably very important.</p>
+<p id=10001 class="phone s01"><cite>Manu_Sporny:</cite> Thanks Patrick, go ahead. And then I'm going to move us on to the next poll request.</p>
+<p id=53e2 class="phone s03"><cite>Patrick_St-Louis:</cite> So the new HTML render suite has new feature. How does that come into play with the embedded renderer which is an HTML rendered in an iframe? what makes it that the embedded renderer is different than this new HTML and why does this new HTML render suite cannot do what the embedded renderer does? So, we're not talking.</p>
+<p id=c1fb class="phone s02"><cite>Benjamin_Young:</cite> I think they're the same.</p>
+<p id=a866 class="phone s01"><cite>Manu_Sporny:</cite> I Hey,…</p>
+<p id=589b class="phone s02"><cite>Benjamin_Young:</cite> I think you're using two words for the same thing. We just started calling it a sandbox iframe.</p>
+<p id=7de9 class="phone s03"><cite>Patrick_St-Louis:</cite> So, I was talking about the Yeah.</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> hey, Patrick. We have more agenda items. we can't spend the call bringing you up to speed. please do it offline. Benjamin I'm sure can do it offline and then we can dedicate an entire call if we want to go through this again. But we are repeating conversations we've had over the past couple of months. it not a good use of call time. thank you for we want to answer your questions just to be clear. It's just I don't want to spend the entire call doing that this time because we're just going to end up repeating ourselves. appreciate you understanding. moving on to the next item. This is a poll request that you raised to add cardlike displays in wallet displayers.</p>
+<p id=ef6e class="phone s01"><cite>Manu_Sporny:</cite> We've gotten high level interest in this people are generally interested in doing something here. I don't know Nate if you feel like this is ready to merge or it needs more work and if it needs more work the question is when are we going to do the work on that? Go ahead, Nate.</p>
+<p id=e01d class="phone s05"><cite>Nate_Otto:</cite> I dropped in on I found the link and this is my first time on this call for a while since it's been moved under VC working group. great. I'm glad to hear that there is interest in this cardlike display method and I think it does need a little bit more work especially if there have been significant recent changes in the other renderer methods that this would sit alongside just to make sure that it is sort of wellcraftrafted text and probably just needs a rebase. As far as when that could happen, I'm probably pretty busy the next few weeks. I'm perfectly happy to collaborate with someone else to speed this along. and otherwise I could take a look in mid July guaranteed but I could definitely collaborate with someone to speed that up a</p>
+<h4 id=e701><a href="https://github.com/w3c/vc-render-method/pull/39">Render method to enable card-like displays in wallets and displayers by ottonomy · Pull Request #39 · w3c/vc-render-method · GitHub</a></h4>
+<p id=75ac class="phone s01"><cite>Manu_Sporny:</cite> All right. sounds good. Nate, again, we're trying to not let PRs just sit out there for extended periods of time. would it be better to move this back to an issue and work through? I mean, it's how complete do you feel is this we're just going to revise the PR until we can review it or what do you think the path forward here is?</p>
+<p id=a524 class="phone s05"><cite>Nate_Otto:</cite> I imagine this is a 90% complete. I bet that I think there was some useful small comments and I don't recall every little bit of the history of whether I went back and made more commits. I don' think you could close the PR or something. Don't delete the brand.</p>
+<p id=c4d6 class="phone s05"><cite>Nate_Otto:</cite> I mean, it's on my remote, so you can't delete the branch. that's more</p>
+<p id=664f class="phone s01"><cite>Manu_Sporny:</cite> Okay, thanks on the queue.</p>
+<p id=a640 class="phone s02"><cite>Benjamin_Young:</cite> Yeah. I would suggest that this is far enough along that we merge it and…</p>
+<p id=8528 class="phone s02"><cite>Benjamin_Young:</cite> and then file issues against it. Even if the JSON format or whatever is going to change, if it's 90% complete, otherwise it's just going to idle so long. it's going to be a pain to merge later. And I think we got to the place where it was like this is probably unique opposite the HTML sandbox thing at minimum for efficiency of display. So that's it.</p>
+<p id=b558 class="phone s01"><cite>Manu_Sporny:</cite> Thanks I'm concerned about merging it in its current form primarily because I don't know if J so I think it's just a terminology, JSON card us data display versus something else. I think we need to be pretty clear about what are we doing here? meaning how do we communicate this to the outside world? One of the things I'm concerned about Benjamin is we merge it and the term Jason card sticks and I don't know if that's the best way of explaining what's going on here. It's really a data view. what you're doing is you're generating a data or it seems like what you're generating is a data view on the thing.</p>
+<p id=ddb1 class="phone s01"><cite>Manu_Sporny:</cite> and there's some open questions like why not YAL that sort of stuff not that I think we should do that but those are the other 10% of things it feels like we need to do here go ahead Nate</p>
+<p id=3452 class="phone s05"><cite>Nate_Otto:</cite> I mean, if there is interest in trying to get this merged and you think that we could resolve open questions around language, I could try and accelerate a little bit of efforts to be able to sort of clean up the last couple things and get it to what I feel confident in merging pretty quickly. I don't care so much about the JSON in there, but I do like the word card is included in here because the idea here was essentially to look at the sort of standard credit card shaped space that something could be displayed in and look at about the amount of fields that could go there.</p>
+<p id=d209 class="phone s05"><cite>Nate_Otto:</cite> and we're seeing lots of wallets that are choosing to display various credentials even down to the level of concert tickets in a cardlike format. So if we call it a data card whatever, I don't care. And then as far as the use of JSON, I think if folks want to make an argument for a preferred language or syntax other than JSON is the lingua frana most common thing. And I think it would probably be hard to say that there would be something that would be more ubiquitous and easier to use.</p>
+<p id=10003 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, plus one to that. I was just suggesting we hadn't necessarily talked about that. So, it sounds like maybe if we can try to get quick iterations on this just to make sure we've got the concepts that's nailed in nailed down I'm seeing Dave saying some things that are slightly different from what you said Nate which are slightly different from what I have in my head which is Benjamin why I'm a little concerned about merging it right now but if we can iterate on this quickly I think we can get to something quickly noting that we're all very busy so how about we keep the PR open and we see if it gets any movement over the next couple of weeks hopefully</p>
+<p id=aaa8 class="phone s01"><cite>Manu_Sporny:</cite> And then we'll revisit on the next call. Does that sound okay to folks or any objections to taking that path? seeing a thumbs up. all right, one is removing this next one is removing the PDF and SVG mustache render suites. No reviews on this. I think I would like to merge this…</p>
+<p id=2a46 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 it's some kind of data view / field view ... something along those lines </p>
+<p id=8615 class="phone s01"><cite>Manu_Sporny:</cite> because I don't think any of us, believe this these two things are going to continue. go ahead, Benjamin.</p>
+<p id=e9f9 class=irc><cite>&lt;Dave_Longley&gt;</cite> worried about locking too much to a &quot;card&quot; concept as UIs can change a lot in a short period of time </p>
+<p id=eec3 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I linked to the issue I created this morning and…</p>
+</section>
+
+<section>
+<h3 id=ff8b>Removing PDF and SVG Render Suites</h3>
+<p id=51a6 class="phone s02"><cite>Benjamin_Young:</cite> mentioned some other things about the example that I was going to demo earlier that shows mustache in use in the HTML render suite which could be used for SVG. It's just not currently. so other than the PDF one, which I don't think it was clear in the mustach- one what was supposed to happen with that either. so I don't know that we have to block this issue on that point.</p>
+<p id=3d82 class=irc><cite>&lt;Dave_Longley&gt;</cite> i'm ambivalent about &quot;card&quot;... pros and cons. </p>
+<p id=fc2e class="phone s02"><cite>Benjamin_Young:</cite> But it is related in that I think we still need some clearer expectations about what happens and can happen in those eye frames.</p>
+<p id=a2c7 class=irc><cite>&lt;Phillip_Long&gt;</cite> I rather like the &quot;card&quot; terminology </p>
+<h4 id=a55c><a href="https://github.com/w3c/vc-render-method/pull/49">Remove pdf-mustache render suite and svg-mustache render suite. by msporny · Pull Request #49 · w3c/vc-render-method · GitHub</a></h4>
+<p id=1aaf class="phone s01"><cite>Manu_Sporny:</cite> Okay, Benjamin, was that a we can't merge it yet until we discuss the other issue. too. Okay.</p>
+<p id=b046 class="phone s02"><cite>Benjamin_Young:</cite> I'm fine to take it out as I don't think we're losing anything per se. you had wanted to keep it in originally because it had the word PDF in it because SVG mustache and PDF mustache do exactly the same thing other than the media type. I'm fine to take them out.</p>
+<p id=f729 class="phone s01"><cite>Manu_Sporny:</cite> I think Dimmitri, it was you that wanted to keep the PDF mustache rendering template in if I recall correctly. Manu Sporny:</p>
+<p id=5c09 class="phone s06"><cite>Dmitri_Zagidulin:</cite> No, no.</p>
+<p id=ec0a class="phone s06"><cite>Dmitri_Zagidulin:</cite> Other way,…</p>
+<p id=4741 class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=eb0e class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> (apologies, big calendar fail) </p>
+<p id=c5c3 class="phone s06"><cite>Dmitri_Zagidulin:</cite> other way around. I'd love to keep the SVG for the moment until I can figure out how to do the equivalent with the, I frame sandbox, plus one to removing PDF mustache.</p>
+<p id=828d class="phone s01"><cite>Manu_Sporny:</cite> Got So, if we discuss your issue, Benjamin, do you think we could get closure on the PDF part of that?</p>
+<p id=6e8e class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I think so.</p>
+<p id=1e97 class="phone s02"><cite>Benjamin_Young:</cite> Again, I don't remember any Sure. Manu Sporny:</p>
+<p id=bf6c class="phone s01"><cite>Manu_Sporny:</cite> Sorry, the SVG part of it. Thank okay.</p>
+<p id=8eb7 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I think either way, it's going to help folks to know what the HTML render suite can and can't do currently. but I think we also need to be aligned on expectations of what we're expecting the render method to be capable of Manu Sporny:</p>
+<p id=513e class="phone s01"><cite>Manu_Sporny:</cite> So Dimmitri, if we were able to demonstrate that the HTML render suite can do what the SVG one does today,…</p>
+<p id=94f4 class="phone s01"><cite>Manu_Sporny:</cite> equivalent can pop out a SVG, then you would be okay with removing both of them. All right.</p>
+<p id=1122 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah. Yes.</p>
+<p id=ec19 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yes. But…</p>
+<p id=fbf2 class="phone s01"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=892f class="phone s06"><cite>Dmitri_Zagidulin:</cite> but in the interest of progress,…</p>
+<p id=2980 class="phone s01"><cite>Manu_Sporny:</cite> So yeah.</p>
+<p id=a525 class="phone s06"><cite>Dmitri_Zagidulin:</cite> we can just split it into two, right? Remove the PDF mouth stash now and remove the SVG shortly.</p>
+<p id=d441 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. The only thing I'm concerned about is I've been meaning to get around to this for three weeks and…</p>
+<p id=6958 class="phone s01"><cite>Manu_Sporny:</cite> haven't split the PRs out yet. So, it might be faster for us all to agree to remove both and just merge this.</p>
+<p id=4515 class="phone s06"><cite>Dmitri_Zagidulin:</cite> I got all right.</p>
+<p id=7d31 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yep. is enough.</p>
+<p id=d663 class="phone s01"><cite>Manu_Sporny:</cite> It's purely just unless somebody else wants to raise the PR. I'd be super happy if that happened as note So Benjamin, there's one other and I'm rushing because I wanted to try to get to the threat model discussion today, but …</p>
+<p id=4ba0 class="phone s01"><cite>Manu_Sporny:</cite> we get to when we get to it. Benjamin, the last PR is this one that you've opened. output preference term section. I think we've got a bunch of thumbs up.</p>
+<p id=6ab6 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, it's approved and…</p>
+<p id=b693 class="phone s02"><cite>Benjamin_Young:</cite> I process the comments into an additional commit.</p>
+<p id=8112 class="phone s01"><cite>Manu_Sporny:</cite> So this is good to merge.</p>
+<p id=9add class="phone s02"><cite>Benjamin_Young:</cite> It is as far as I know.</p>
+<p id=4948 class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=d851 class="phone s02"><cite>Benjamin_Young:</cite> You had some feedback and tall Ted did as ever and those are all in now. Ivon did have a call out about the canonical reference to a CG spec. I think the way it's referenced now is fine and when we check again later when we move to the next phase we can update that…</p>
+<p id=4d7d class="phone s02"><cite>Benjamin_Young:</cite> if it's required.</p>
+<h4 id=50d4><a href="https://github.com/w3c/vc-render-method/pull/51">Add outputPreference terms section. by BigBlueHat · Pull Request #51 · w3c/vc-render-method · GitHub</a></h4>
+<p id=cbbe class="phone s01"><cite>Manu_Sporny:</cite> Okay, great.</p>
+<p id=545f class=irc><cite>&lt;Benjamin_Young&gt;</cite> Mustache in HTML Render Method for folks to check out: <a href="https://github.com/credential-handler/vc-examples/tree/main/credentials/html-render-method-mustache">vc-examples/credentials/html-render-method-mustache at main · credential-handler/vc-examples · GitHub</a> </p>
+<p id=357c class="phone s01"><cite>Manu_Sporny:</cite> right, that looks good. Then let's go ahead and merge unless anybody has any objections. Looks like I approved as and this is normative, right? No objections.</p>
+<p id=8442 class="phone s02"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=2dd0 class="phone s02"><cite>Benjamin_Young:</cite> it adds a new should section. No, I don't think so.</p>
+<p id=028e class="phone s01"><cite>Manu_Sporny:</cite> And rebase and merge. Thank you very much for that one, Benjamin. And did this address an issue that you can think of that you can All right.</p>
+<p id=368f class="phone s02"><cite>Benjamin_Young:</cite> This was born out of the HTML render method coming into being without some of the things that SVG, Mustache, and other things had.</p>
+<p id=02e4 class="phone s01"><cite>Manu_Sporny:</cite> right.</p>
+<p id=fa1e class="phone s01"><cite>Manu_Sporny:</cite> Then let's go ahead and jump to the other issue that you raised which is discussing PDF rendering expectations. That's issue 53. over to you Benjamin.</p>
+</section>
+
+<section>
+<h3 id=41c9>PDF Rendering Expectations</h3>
+<p id=581f class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I can summarize what's there.</p>
+<p id=10004 class="phone s02"><cite>Benjamin_Young:</cite> Essentially, we as a group haven't really pinned down what we expect to have happen in the renderers, generally speaking, or the capabilities of the thing doing the rendering. whether that's the wallet or some viewer or something. meaning we talk about PDFs, but you can obviously do a whole range of stuff with those. You can display them. You can download them. You can print them. your browser can do all of those. HTML and JavaScript can inform which one of those happens even if it's client side generated.</p>
+<p id=ea99 class="phone s02"><cite>Benjamin_Young:</cite> So when trying to build this out in the sandbox iframe, most of the tools that are currently actively developed anyway for client side HTML to PDF rendering, which I realize is not the only option here, but it is the sort of obvious path that you've created this HTML template and now you want to make it available either for download or viewing as a less mutable PDF. none of those work in a sandbox iframe because they all lean on the ability to clone HTML or push it into a canvas or some mix of those things. those libraries might be doing it wrong. There's some chance because most people do not write software for sandboxes.</p>
+<p id=6f4a class="phone s04"><cite>Ivan_Herman:</cite> Look at that.</p>
+</section>
+
+<section>
+<h3 id=0574><a href="https://github.com/w3c/vc-render-method/issues/53">Discuss PDF rendering expectations. · Issue #53 · w3c/vc-render-method · GitHub</a></h3>
+<p id=79fd class="phone s02"><cite>Benjamin_Young:</cite> There might be some chance that those are library limitations.</p>
+<p id=7db4 class="phone s02"><cite>Benjamin_Young:</cite> but it does point to a number of things that are not possible in the sandbox. So then I pivoted a little and explored a library called PDF make which is really just a JSON format for laying out a PDF and that also tripped over or fell over because I can make the PDF but I was no longer able to display it. I had the data for it. they could give me a data URL or a blob which I could put into an anchor tag with the download attribute and you could click it and download your thing and it would view in whatever the native viewer on your computer or phone might be.</p>
+<p id=f58d class="phone s02"><cite>Benjamin_Young:</cite> But the wallet renderer would not be able to display that. because you're not able to use embed or…</p>
+<p id=fee7 class="phone s04"><cite>Ivan_Herman:</cite> Oops. Okay.</p>
+<p id=557e class="phone s02"><cite>Benjamin_Young:</cite> object tags, those old guys. and you're also not able to just have a sub iframe inside the sandboxed iframe that has application PDF as its media type and the browser know what to do with that complains about origin problems and all kinds of stuff.</p>
+<p id=10005 class="phone s02"><cite>Benjamin_Young:</cite> mostly that centers around the use of SRC doc or source dock on the parent iframe in this case which then left it at the only option then to display it by the renderer is to somehow send that data out of the sandbox up to the thing doing the rendering and then let it sort of shell out to the browser or make a new iframe with just PDF in it or whatever. So in that sense display seems off the table within the sandbox unless we're okay with messaging the PDF data up a layer which is to the layer which already has the VC in total but PDFs themselves can also contain JavaScript and all kinds of other scary things.</p>
+<p id=2db2 class="phone s02"><cite>Benjamin_Young:</cite> So it's worth considering that space. But what can happen now at least with the PDF make approach is that we can make download buttons if that's even wanted. So some of this is what affordances were people expecting a renderer to be able to provide in and around PDFs and then measuring that against what's actually possible and what holes we might have to punch in the sandbox to do any of them. That's it.</p>
+<p id=f3b1 class="phone s01"><cite>Manu_Sporny:</cite> Thank you, Benjamin.</p>
+<p id=8bcf class="phone s06"><cite>Dmitri_Zagidulin:</cite> Benjamin, thank you so much for doing this work. this is amazing. This is exactly what's needed for us to sort this speaking for myself and my team and my use cases, the main affordance I would like to see is not display but the download. and yes I realize that posting back the sort of resulting PDF for the outer client to make a PDF out of it quoteunquote votes the warranty as you put it.</p>
+<p id=cb2f class="phone s06"><cite>Dmitri_Zagidulin:</cite> But I think that's within our threat model because the main trust sort of pillar there is still trust in any case I would be content with just the download. I don't know if other people have display expectations, but I do think we can just posting back the message and rendering the PDF outside of the iframe would still allow us to have to display in the next step. Just passing it to a regular displayer. But over to you</p>
+<p id=8782 class="phone s01"><cite>Manu_Sporny:</cite> Thanks I guess my so let's get down to kind of like what are the I'm hearing the concrete options are within the iframe we provide a download button and then you can download as PDF or download as SVG as The other option is that we allow a post message or I forget what it's called back to the parent iframe that is effectively the raw content the raw content of the SVG as generated through whatever program is running inside the downsides there being that may be a dangerous object. and it may be that the thing using the render method really needs to be careful about what it does with that data.</p>
+<p id=6eac class="phone s01"><cite>Manu_Sporny:</cite> So, for example, in our threat model, as Demetri mentioned, we might say hey, it's really dangerous to just include this in a parent iframe that has network access…</p>
+<p id=0808 class="phone s01"><cite>Manu_Sporny:</cite> because it may do start doing some crazy stuff, are those the two general options that we have on the table? over to you, Benjamin.</p>
+<p id=0f9d class=irc><cite>&lt;Ivan_Herman&gt;</cite> +1 to Dmitri (not display but to download) </p>
+<p id=e0cd class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I think more or…</p>
+<p id=b331 class="phone s02"><cite>Benjamin_Young:</cite> less. But I think one note before we dig in a little is we need to keep SVG out of this conversation. It's not related in it's its own thing and renders fine in a sandbox iframe. PDF is the only thing in question here. and you could make any other file format downloadable just by setting it as the href of an anchor tag with the downloading is again not the problem.</p>
+<p id=5062 class="phone s02"><cite>Benjamin_Young:</cite> If we say that we're going to use post message and send back the raw data of the PDF then which is fine and we can explain that in a threat model. I think we will also want to constrain that post message to not be able to do anything else but PDFs because that threat vector is pretty identical to just rendering the HTML directly in a non-sandbox iframe. So, maybe the PDF display thing in your browser is a safer box than a wide open iframe.</p>
+<p id=ff3f class="phone s02"><cite>Benjamin_Young:</cite> I don't know. Somebody would have to have to compare but it is a thing that if we're allowing more as originally conceived and I think written in the spec so far, at least the example the post message function is only used with to send back the word ready and that's it. and we're having to state that and constrain that so that you're not sending back more stuff that the renderer might do the wrong thing upon receiving it. So this changes that punches a good 8 and 1 half by 11 hole in the post message channel. and when we do that we need to think hard about why we're bothering with this sandbox.</p>
+<p id=ae57 class="phone s02"><cite>Benjamin_Young:</cite> which might be we're only using post message for application PDF in this very constrained way and here's how we're going to further constrain the post message to not let other stuff through that hole …</p>
+<p id=d5be class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> displaying the Download button within the iframe is a big ask, since there's no way the iframe (or the issuer) knows what the UI/CSS expectations of the outer client is </p>
+<p id=62f7 class="phone s04"><cite>Ivan_Herman:</cite> It's good.</p>
+<p id=addf class=irc><cite>&lt;Phillip_Long&gt;</cite> sending it back to the parent iFrame sounds bad to me. </p>
+<p id=f71d class="phone s02"><cite>Benjamin_Young:</cite> but it is an implementation thing we need to think through more than saying yeah this is a danger because it's the danger we just said we were avoiding by using sandboxes that's</p>
+<p id=e471 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> not parent iframe, parent client. (like, the wallet) </p>
+<p id=610c class="phone s01"><cite>Manu_Sporny:</cite> Plus one of that. So Benjamin, could we maybe the next steps here are for you to concretely propose those two approaches so that we can have detailed discussion on the next call. Would that work show us what the interface might look like? that gets the stuff out of there and then show us what would have to be done for the download links and then it feels like SVG is somewhat I'd like us to talk about the SVG thing as well…</p>
+<p id=2cb5 class=irc><cite>&lt;Phillip_Long&gt;</cite> Thanks for the correction @Dmitri </p>
+<p id=e449 class="phone s01"><cite>Manu_Sporny:</cite> because it's important to Demetri and…</p>
+<p id=940e class="phone s02"><cite>Benjamin_Young:</cite> I can yeah it's not related at all.</p>
+<p id=f902 class="phone s01"><cite>Manu_Sporny:</cite> I'm trying to figure out how Hey,</p>
+<p id=edf4 class="phone s02"><cite>Benjamin_Young:</cite> I can work up examples, but SVGs live happy as clams and sandbox iframes and are safer to use in there because they could also have JavaScript in them just like any markup in a browser can, but it would be in the same constraints inside the sandbox. So unless there's some printing of them that you're wanting that maybe an iframe can't do, which I don't know if it can or not.</p>
+<p id=721f class="phone s02"><cite>Benjamin_Young:</cite> I have not yet explored printing which is part of why I wanted to have this discussion but I did again I can work up an example but the experience so far is that SVGs are much simpler to work with and…</p>
+<p id=f0fd class="phone s02"><cite>Benjamin_Young:</cite> and they don't require external viewers is the biggest difference I think that's</p>
+<p id=6718 class="phone s01"><cite>Manu_Sporny:</cite> Got it.</p>
+<p id=734a class="phone s01"><cite>Manu_Sporny:</cite> I can think of a use case, but we can take that offline. Go ahead, Dmitri. You might be muted, Dimmitri.</p>
+<p id=632d class="phone s06"><cite>Dmitri_Zagidulin:</cite> And just to be super clear, the download inside the iframe is a non-starter. because there's no way for the issuer inside their suggested display thing to know the the buttons of the client, what the outer environment looks like.</p>
+<p id=f751 class="phone s02"><cite>Benjamin_Young:</cite> the frame provides the button. that's the difference.</p>
+<p id=475f class="phone s02"><cite>Benjamin_Young:</cite> So the thing you're rendering is a button that says download your PDF or whatever. How…</p>
+<p id=4595 class="phone s06"><cite>Dmitri_Zagidulin:</cite> That's my point though.</p>
+<p id=9fbc class="phone s06"><cite>Dmitri_Zagidulin:</cite> The iframe doesn't have enough information. The outer client does.</p>
+<p id=69ea class="phone s02"><cite>Benjamin_Young:</cite> how would it not have enough information? So if I can render HTML, I can render an anchor tag that looks like a button that says download on it. and you click it and you get a download and the surrounding web page doesn't know anything that is well depends on…</p>
+<p id=0139 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yes, but it'll be unstyled.</p>
+<p id=922f class="phone s06"><cite>Dmitri_Zagidulin:</cite> the issuer when issuing doesn't understand what styling requirements the outer environment will have. That's the main problem. That's why it's a nonsparter.</p>
+<p id=065c class="phone s02"><cite>Benjamin_Young:</cite> who you talk to that's a thousand% true of this approach with render method unless we want to spec some ability for the wallet to inform UX inside the render method. But then I think that's exactly not why we're doing this for issuers to have full control over a little box in…</p>
+<p id=b1cc class=irc><cite>&lt;Dave_Longley&gt;</cite> if you want consistent theming, use a &quot;data view&quot; (aka json-card) render method </p>
+<p id=2ea7 class="phone s02"><cite>Benjamin_Young:</cite> which they can do stuff.</p>
+<p id=77d9 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> doesn't help, yeah </p>
+<p id=e3ea class="phone s06"><cite>Dmitri_Zagidulin:</cite> Exactly.</p>
+<p id=a27f class="phone s06"><cite>Dmitri_Zagidulin:</cite> Of the display.</p>
+<p id=e627 class="phone s02"><cite>Benjamin_Young:</cite> So if no…</p>
+</section>
+
+<section>
+<h3 id=d0dd>Render Method Threat Model Brainstorming</h3>
+<p id=977b class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://docs.google.com/document/d/1mQg0pdPMfytkAIgsaApODbaKO--PJvr_E4ZM2HoQPzk/edit?tab=t.0#heading=h.py96npebo7ox">Render Method Threat Model Brainstorming - Google Docs</a> </p>
+<p id=77c7 class="phone s06"><cite>Dmitri_Zagidulin:</cite> But Not the EUI around</p>
+<p id=dd75 class="phone s02"><cite>Benjamin_Young:</cite> because we're correct yeah it'll be within that box. But that again, these things are, I would say, 100% analogous to ads on the internet. Those ads can do whatever they want. They can look like the surrounding web page if they know where they're going to show up. They can look like They can look like a download button. They can whatever. basically once you're inside that iframe, it's whatever that iframe wants to do and it is not fully informed about where it is.</p>
+<p id=10006 class="phone s02"><cite>Benjamin_Young:</cite> most times. so unless we're somehow affording the web page that embeds the iframe essentially to tell the iframe, hey, here's some things you should do if you're going to render a button. it's totally possible with this approach that people could make all kinds of whatevers, buttons and login forms and make it look like anything. the safety net here or rather the counterwe is that the thing the sandboxed iframe can only do so much. So you can make buttons and links that go places and they can only do things within their little box. So those will fail or they'll trigger a download. and I don't know how much that helps your concerns, Dimmitri, or not. That's it.</p>
+<p id=7f22 class="phone s01"><cite>Manu_Sporny:</cite> All right, great. Thanks, Benjamin. We have five minutes left. I have completely failed to get us to our main agenda item today, which was to go over the rendered threat model and get some ideas down. I don't know if folks feel like they could write down a whole bunch of threats in five minutes to just get us started or if folks want to continue discussing the PDF rendering issue. Any strong feelings one way or the other? I'd like us to try and get as many threats down as we can, but go ahead, Patrick.</p>
+<p id=5e4a class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, I'd like to if we could finish on opening the discussion on the threat model.</p>
+<p id=8ff5 class="phone s03"><cite>Patrick_St-Louis:</cite> I think that would be good to kind of preface the next meeting.</p>
+<p id=35d9 class="phone s01"><cite>Manu_Sporny:</cite> Okay, we will do that then.</p>
+<p id=36fa class="phone s01"><cite>Manu_Sporny:</cite> Patrick, any objections to doing that from anyone? All right, here is the document. The way we do this is you go to this section threat brainstorming and just start typing out ideas. How can you attack render method? it's and you just add numbers to whichever section if you don't know if it's a dependency thread or uncatategorize just go ahead and and just start, adding items and adding threats. And we'll go quiet while folks get their ideas</p>
+<p id=0f8e class="phone s01"><cite>Manu_Sporny:</cite> All right, looks like contributions have slowed down a bit, but that was fantastic. I think this is a very effective way of getting threats into a document. We got I mean 19 of them in four minutes. That's pretty awesome. thank you everyone. Really appreciate that last 11th hour push into threat model. we will come back around to it next week and recategorize things. also thank you to everyone for engaging in all the items today as well.</p>
+<p id=10007 class="phone s01"><cite>Manu_Sporny:</cite> Patrick, we'll cover the OCA thing next week as well. so please reach out to Benjamin and demos and sync up so that we are all on the same page with respect to what the current spec is supposed to be able to do and then we can have a updated discussion next week. Benjamin will also try to concrete approaches whatever you put into the issue there. and then we'll also cover threat model next week. All right, that's it for the call this week. Thank you everyone very much for your time and sharing it with us today. have a wonderful rest of your week and we will chat again next week. Take care. Bye. Meeting ended after 00:56:59 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=5f75 class=irc><cite>&lt;Phillip_Long&gt;</cite> sounds like there are lot of threat avenues here! </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

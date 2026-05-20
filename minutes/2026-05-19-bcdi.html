@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 19 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>19 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Manu_Sporny, Phillip_Long, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#3b2f">VC Barcodes and Data Integrity Meeting</a></li>
+<li><a href="#a060">Proposing Document As First Public Working Draft</a></li>
+<li><a href="#4f67">VC Barcodes Threat Modeling Brainstorming</a></li>
+<li><a href="#a6ea">Quishing Presentation Of A Barcode</a></li>
+<li><a href="#7448">Information Leakage Via Video</a></li>
+<li><a href="#bd78">Biometric Falsification Threat</a></li>
+<li><a href="#2308">Information Not Covered On Physical Documents</a></li>
+<li><a href="#bbfd">Mismatch Of Information On Physical Documents</a></li>
+<li><a href="#cf4a">Duplicability Of Optical Barcode Bytes</a></li>
+<li><a href="#86c6">Spoofing Of Keys Where Available</a></li>
+<li><a href="#7cba">Postquantum And BBS Status Update</a></li>
+<li><a href="#106d">Working Towards First Public Working Draft</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=3b2f>VC Barcodes and Data Integrity Meeting</h3>
+<p id=9f0b class="phone s01"><cite>Wesley_Smith:</cite> Good morning, I'll give it a couple more minutes for people to trickle in and then we'll get started.</p>
+<p id=a479 class="phone s01"><cite>Wesley_Smith:</cite> All Good morning everyone. Welcome to the May 19th meeting of the VC barcodes and data integrity task force. A reminder to everyone that this meeting is being recorded and transcribed. if you are not comfortable with that, please let me know. The agenda today is similar to normal. we'll quickly talk about any process items, introductions or announcements folks have and then we'll split about half the remaining time between VC barcodes and data integrity respectively.</p>
+<p id=3709 class="phone s01"><cite>Wesley_Smith:</cite> Today instead of focusing on the normal PR review and issue processing, I hope to talk a little bit about threat modeling and get started with some group threat modeling brainstorming for the VC barcodes work. excuse me. And then in the second half of the call Greg Bernstein, do you want to speak briefly on what you want to talk about?</p>
+<p id=12cf class="phone s02"><cite>Greg_Bernstein:</cite> I was going to go over u selective disclosure for postquantum a little bit of BBS status and anything else people want to discuss.</p>
+</section>
+
+<section>
+<h3 id=a060>Proposing Document As First Public Working Draft</h3>
+<p id=3a2e class="phone s01"><cite>Wesley_Smith:</cite> All right, that sounds good. with that in mind, does anybody have any process items they would like to discuss? Anybody like to introduce themselves to the group or does anybody have any announcements they'd like to make? Avon, go ahead.</p>
+<p id=9842 class="phone s03"><cite>Ivan_Herman:</cite> That's for the quantum thing and not for the barcode. we may want to discuss whether we want to propose the document as a first public working draft just to put a stake in the ground that we do that.</p>
+<p id=1840 class="phone s03"><cite>Ivan_Herman:</cite> But that's for Greg.</p>
+<p id=868f class="phone s02"><cite>Greg_Bernstein:</cite> Okay. Yes,…</p>
+<p id=f1df class="phone s01"><cite>Wesley_Smith:</cite> Great. No,…</p>
+<p id=d272 class="phone s02"><cite>Greg_Bernstein:</cite> I definitely want to understand that process and yes, I would like to put a stake in the ground because especially with the essence when we get to our portion we'll discuss it.</p>
+<p id=a3ed class="phone s01"><cite>Wesley_Smith:</cite> no, it's fine to discuss now, Craig.</p>
+<p id=ee3a class="phone s02"><cite>Greg_Bernstein:</cite> We have some selective disclosure stuff By putting a stake in the ground, we can get folks to implement and try things out and get feedback. this was a thing that I was particularly wanted to get to because sometimes people won't implement until you have something that's at least merged and…</p>
+<p id=90e7 class="phone s02"><cite>Greg_Bernstein:</cite> somewhat stable. And so that sounds like a really good thing to me because Ivonne</p>
+<p id=d86d class="phone s03"><cite>Ivan_Herman:</cite> Yeah, I think it's a little bit more than that,…</p>
+<p id=dcfa class="phone s03"><cite>Ivan_Herman:</cite> I mean what you say is obviously true but by doing a first public working draft process-wise that means that the document becomes an official W3C publication as a draft and there are two things which happens. one that might be of importance in this case that all the IPR related processes start at that point and that might be good to have it behind us but more importantly is that it sends a message to the outside world that the working deals with this.</p>
+<p id=122f class="phone s02"><cite>Greg_Bernstein:</cite> Yeah. yeah. Okay. Okay.</p>
+<p id=c16b class="phone s02"><cite>Greg_Bernstein:</cite> No, that's Yeah.</p>
+<p id=eb70 class="phone s03"><cite>Ivan_Herman:</cite> So far in the charter it's possible we will do that…</p>
+<p id=d2e7 class="phone s03"><cite>Ivan_Herman:</cite> but we haven't committed yet and what we say by publishing is a draft yes we are committed to do that and…</p>
+<p id=4332 class="phone s03"><cite>Ivan_Herman:</cite> with all the hooplas around quantum computing I think that's an important message. Okay.</p>
+<p id=b82b class="phone s02"><cite>Greg_Bernstein:</cite> Yeah, I also think the draft is quite stable and…</p>
+<p id=b624 class="phone s02"><cite>Greg_Bernstein:</cite> technically sound too personally because a lot of it is reusing the frameworks that we've established with our other crypto suites and NISTs. intended these to be somewhat drop in replacements if not as efficient as what we already have. So the APIs that were calling into look a lot like what we were calling into our classical crypto suite. So yeah, I don't think we need to delay any longer.</p>
+<p id=7f06 class="phone s02"><cite>Greg_Bernstein:</cite> So, we'll do whatever we need to do to get that together because it seemed like it took a lot more importance of late. And so, I've got test vectors for everything and only there's just, two PRs that are need to go through and…</p>
+<p id=560f class="phone s02"><cite>Greg_Bernstein:</cite> then we can see what else I might be missing in there. We may be missing. Sounds good.</p>
+<p id=a7ae class="phone s01"><cite>Wesley_Smith:</cite> Sounds good.</p>
+</section>
+
+<section>
+<h3 id=4f67>VC Barcodes Threat Modeling Brainstorming</h3>
+<p id=1ea4 class="phone s01"><cite>Wesley_Smith:</cite> Thanks folks. that is exciting progress as well. All right. Anybody else have any other process announcement or introduction related items? Okay, hearing nothing, let us go ahead and let us go ahead and start the VC barcodes threat modeling brainstorming that I'm hoping to get into. So, here I'm going to drop a link to a Google doc in the chat.</p>
+<p id=91f3 class="phone s01"><cite>Wesley_Smith:</cite> go ahead and let me know if that is inaccessible to anyone for any reason. What currently it's an empty template for threat modeling for VC barcodes. Specifically, I would like folks to go to section four which is threat brainstorming and I'd like us to get some ideas down on paper today as a group. now this is obviously first stage fairly informal that sort of thing. We just want to get ideas and content down in a rough form that we can go back and polish later. so this threat brainstorm section is broken down into sort of categories.</p>
+<p id=f16b class="phone s01"><cite>Wesley_Smith:</cite> target threats, what it does the system does address, implementation threats, things that implementers need to do, external threats, out of scope, dependency threats, things that you inherit. so I would like to hear what you guys think the best way to go about filling this out right now is if we want to just all put in words and type words and then talk about them afterwards. If we want to go item by item, Kevin, go ahead. That sounds good to me.</p>
+<p id=759b class=irc><cite>&lt;Wesley_Smith&gt;</cite> <a href="https://docs.google.com/document/d/1EWC5EQB-rfDho8lxm5fBhDGAoprTwqLw_o34qKVe6QU/edit?tab=t.0#heading=h.py96npebo7ox">VC Barcodes Threat Model Brainstorming - Google Docs</a> </p>
+<p id=7e50 class="phone s04"><cite>Kevin_Dean:</cite> Yeah, I think it would be better if we just had a list at the end that we could add to we could work as a group to categorize them as target implementation external or dependency. Yeah. Yeah.</p>
+<p id=702b class="phone s01"><cite>Wesley_Smith:</cite> And that gives us a nice list to work through as a group and discuss item by item as well. All right, let's go ahead and do that then. I expect I'm typing the word duplicability as a threat, but I expect we'll also have duplicates and the process you described will be a good way to get rid of them.</p>
+<p id=5ebc class="phone s01"><cite>Wesley_Smith:</cite> I'm seeing the pace of addition slowed down a little bit, which is We already have, 10 good items to talk about. anybody still going or should we go through what we have now and categorize and then maybe go back to brainstorming. Great.</p>
+<p id=b840 class="phone s05"><cite>Dave_Longley:</cite> I think we should categorize what we have right now because some of them might even break out into more than one threat if we talk about them.</p>
+</section>
+
+<section>
+<h3 id=a6ea>Quishing Presentation Of A Barcode</h3>
+<p id=ffff class="phone s01"><cite>Wesley_Smith:</cite> and some might break out into less than one threat if there are very related ones. great. Let's go ahead and do that. First one we have quishing presentation of a barcode were expected but one that is intended to hijack the interaction. Kevin, do you want to speak to this?</p>
+<p id=e188 class="phone s04"><cite>Kevin_Dean:</cite> Yeah. fairly common well-known problem that when it's most often in situations where somebody is presented with a barcode maybe to a movie trailer or to some product website, but the barcode itself has been replaced. the barcode is redirects the user to a different website. we could face the same issue with a VC presentation in a barcode. It could have content that is intended to hijack the interaction in some fashion. it could have a different set of signatures, make different claims than are intended.</p>
+<p id=28da class="phone s04"><cite>Kevin_Dean:</cite> But basically the system that is receiving the barcode is getting one that is not valid for that interaction.</p>
+<p id=223f class="phone s04"><cite>Kevin_Dean:</cite> And it may be because the u users the presenter's device has somehow been compromised to present something different.</p>
+<p id=96a3 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that's a great point.</p>
+<p id=6b0c class="phone s01"><cite>Wesley_Smith:</cite> So to my mind that sounds like you could argue a couple of categories for this. Either it could be a dependency threat in that and the external technology is the medium by which somebody reads these barcode bytes that may or may not be malicious and there's a vulnerability there or it could be an external threat just sort of generally out of scope. If you're sharing data with a third party you can craft that data to be malicious if you want. What would you say?</p>
+<p id=c464 class="phone s04"><cite>Kevin_Dean:</cite> Yeah, I think I</p>
+<p id=718a class="phone s04"><cite>Kevin_Dean:</cite> Those are good examples and that spam call coming in there.</p>
+<p id=42bf class="phone s01"><cite>Wesley_Smith:</cite> No worries.</p>
+<p id=0434 class="phone s04"><cite>Kevin_Dean:</cite> Yeah well timed I think but yeah I think that those are good categorizations.</p>
+<p id=a624 class="phone s04"><cite>Kevin_Dean:</cite> There obviously we'd have to go through in detail to think of different ways that these can get into the interaction and ways to detect them and mitigate them.</p>
+<p id=c811 class="phone s01"><cite>Wesley_Smith:</cite> So I'm going to put that in dependency threats and…</p>
+<p id=bffa class="phone s01"><cite>Wesley_Smith:</cite> I'm going to say that there are a couple of at which there are a couple of layers that can be attacked in that way. So external technologies tapped in this way, barcode scanners, JSON LD processors, HTTP clients.</p>
+<p id=7ca6 class="phone s01"><cite>Wesley_Smith:</cite> Anything else that's used in the stack for consuming a VCB that could be subject to a maliciously crafted barcode payload?</p>
+<p id=7cd3 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead, Dave Longley.</p>
+<p id=00c2 class="phone s05"><cite>Dave_Longley:</cite> did and…</p>
+<p id=03fe class="phone s05"><cite>Dave_Longley:</cite> I have a second point too that first does JSON LD processors cover core LD processors…</p>
+<p id=620d class="phone s05"><cite>Dave_Longley:</cite> because that's in the stack.</p>
+<p id=a767 class="phone s01"><cite>Wesley_Smith:</cite> It does now.</p>
+<p id=f945 class="phone s05"><cite>Dave_Longley:</cite> Okay and the other point I want to make is down here what is currently listed under number five we have mismatch of information on physical documents with VCB that seems like it's sort of a category that encapsulates this that mismatch of information could be intentional or it could be for example an implementation threat because it's a mistake so your implementation could put the wrong …</p>
+<p id=efbd class="phone s05"><cite>Dave_Longley:</cite> barcode onto a physical document by accident as opposed to doing it on purpose.</p>
+<p id=0567 class="phone s01"><cite>Wesley_Smith:</cite> I understood all the individual words you said,…</p>
+<p id=e418 class="phone s01"><cite>Wesley_Smith:</cite> but I lost the point you were making.</p>
+<p id=8dcc class="phone s05"><cite>Dave_Longley:</cite> I'm just seeing, one of the reasons we're going down the list right now of things we've been brainstorming where is there overlap and is it the case that there's a general category of mismatched document to barcode where one of the sub items for that that makes this a dependency threat would be the quishing example…</p>
+<p id=589a class="phone s05"><cite>Dave_Longley:</cite> where there's an intent you intentionally mismatch the Bark barcode whereas the mismatch of information with the bar on the document with the barcode could also be listed as a threat in other places. Should we consider quishing to be it's an entirely separate category or entirely different threat or is it just a subthread of mismatched information between barcode and document?</p>
+<p id=0895 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, heard and…</p>
+<p id=e8bd class="phone s01"><cite>Wesley_Smith:</cite> understood. I think the way that this threat brainstorm, which I don't think we're married to, but the way that it's currently laid out, this section is it doesn't seem like quishing should be its own category as listed here.</p>
+<p id=10000 class="phone s01"><cite>Wesley_Smith:</cite> It doesn't see none of these other categories are about the mechanism of attack so much as they are about they kind of are h I would love other people's feedback here because I could see leaving the structure as we have it and I could also see adding a new category. I lean towards leaving the structure as we have it and…</p>
+<p id=ea50 class="phone s01"><cite>Wesley_Smith:</cite> dealing with the fact that lots of these attacks look more or less the same by, having the wrong barcode in some sense. Philip, go ahead.</p>
+<p id=2957 class="phone s06"><cite>Phillip_Long:</cite> Yeah. What I'm taking from Dave's comment,…</p>
+<p id=b6b9 class="phone s06"><cite>Phillip_Long:</cite> and Dave, you can clarify if I'm misunderstanding, but I think the difference that we're talking about here is where there are intentional threats who are doing something with the intent of defrauding or otherwise corrupting the system and attemp and threats that are threats but simply…</p>
+<p id=e81a class="phone s06"><cite>Phillip_Long:</cite> because an error was made in the issuings in the processing in some fashion not malicious intended at all and I'm not sure how to represent that but I think that's the underlying idea</p>
+<p id=851d class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that's a great point and…</p>
+<p id=198e class="phone s01"><cite>Wesley_Smith:</cite> In that framing I think we don't need to do anything to the current structure because these inadvertent mistakes type things sounds exactly like implementation threats implementers must handle what that category is designed for. So if you put the wrong barcode on a document you X follows. thoughts</p>
+<p id=ef47 class="phone s06"><cite>Phillip_Long:</cite> As a quick response, I do think there is a difference in so far as the way in which one corrects reacts to it because in the case of an inadvertent one, it's one of finding the error and fixing it and you're done. if it's one that's intentional it's unlikely to be internal or rather it's more likely to be external than internal I think and the mechanism by which you go about fixing it is it seems to me is different but I may be mistaking</p>
+<p id=4f5b class="phone s01"><cite>Wesley_Smith:</cite> No, I think you're right. yeah. No, I think we're on the same page. I posit that we do not need to change the structure of this document to have it play nicely with the points that Philip and Dave Longley are making. Does anybody disagree with that? Is that I disagree with that or a thumbs up.</p>
+<p id=aba3 class="phone s05"><cite>Dave_Longley:</cite> No, it's Yeah. let's not battle the document.</p>
+<p id=625b class="phone s01"><cite>Wesley_Smith:</cite> Sounds good.</p>
+<p id=0efb class="phone s05"><cite>Dave_Longley:</cite> Let's just make progress.</p>
+<p id=b3e1 class="phone s01"><cite>Wesley_Smith:</cite> That sounds good. All right.</p>
+<p id=ca4a class="phone s01"><cite>Wesley_Smith:</cite> So currently under quishing external technologies are attacked this way or could be barcode scanners, JSLD and CLD processors and HTTP clients. can anybody think of any other sort of attack vectors processors that might be attacked by a micious maliciously crafted VCB in some way. Maybe cryptographic hardwaresoftware.</p>
+<p id=20d1 class="phone s01"><cite>Wesley_Smith:</cite> Although it would have to be some pretty squishy and questionably architected cryptographic hardware to be attacked by malicious. All right.</p>
+<p id=d1ad class="phone s05"><cite>Dave_Longley:</cite> I just want to comment I'm struggling a little bit as thinking about those technologies being attacked. it does not seem to me like you're attacking those technologies in this case at all. I mean you could easily have a barcode that is totally legitimate that you intentionally put in the wrong place. are those technologies being attacked or is it really you're attacking some validation layer of software that's checking for something? you're attacking a user interface that might confuse a user when it should have flagged something to the user or…</p>
+<p id=6807 class="phone s01"><cite>Wesley_Smith:</cite> So my sorry sorry my understanding is that the other subset of the kind of intentionally wrong barcode attacks that we're talking about are not being covered in this current bullet point that's covered under the uncatategorized number five mismatch of information on physical documents with VCB What… Dave Longley:</p>
+<p id=4b2a class="phone s05"><cite>Dave_Longley:</cite> made it clear. Good.</p>
+<p id=4a7b class=irc><cite>&lt;Phillip_Long&gt;</cite> Is there a generic linked data threat grouping? </p>
+<p id=2c55 class="phone s01"><cite>Wesley_Smith:</cite> how I'm thinking about this quishing point that we're currently describing is little Bobby drop tables kind of thing right is there a way to craft a barcode such that it will cause a barcode scanner throw an error is there a way to craft</p>
+<p id=f44a class="phone s05"><cite>Dave_Longley:</cite> I think that's certainly the attack you would probably reach for first,…</p>
+<p id=551c class="phone s05"><cite>Dave_Longley:</cite> but that does not preclude doing something clever. I mean, I guess we have to have a different threat then for it's still an intentional attack, but you're putting the wrong barcode somewhere.</p>
+<p id=3b6f class="phone s01"><cite>Wesley_Smith:</cite> Yes. Yeah.</p>
+<p id=ffb1 class="phone s05"><cite>Dave_Longley:</cite> You could Okay.</p>
+</section>
+
+<section>
+<h3 id=7448>Information Leakage Via Video</h3>
+<p id=26ea class="phone s01"><cite>Wesley_Smith:</cite> Absolutely agree that that is not covered by what we're talking about and does need to be in the threat All next up we have information leakage via video. I wrote this one. I did not put much explanation there. basically presentation of these credentials leaks information in ways that presentation of digital credentials usually does not. For example, a highresolution security camera might capture in its entirety your verifiable credential barcode if you pull out your driver's license at a gas station, right?</p>
+<p id=aa1f class="phone s01"><cite>Wesley_Smith:</cite> So that is not a target threat. It is not an implementation threat. It is presumably an external threat. unless we want to argue that that is a limitation inherited by a barcode, but I don't really think that that's true.</p>
+<p id=7651 class="phone s05"><cite>Dave_Longley:</cite> Yeah. And can we change via video to be some external medium example video? I mean, it doesn't have to be video. Someone could take a picture. What do any number of It's an optical barcode in this case. So anything that can capture</p>
+<p id=5795 class="phone s06"><cite>Phillip_Long:</cite> That may also then allow you to fold in the biometric falsification images. I'm not sure if that is exactly the same thing.</p>
+<p id=560a class="phone s05"><cite>Dave_Longley:</cite> It might be. Yeah, I think that's different because in this case we're worried about someone recording or…</p>
+<p id=948b class="phone s06"><cite>Phillip_Long:</cite> Inadvertent.</p>
+<p id=708b class="phone s05"><cite>Dave_Longley:</cite> seeing the barcode and the biometric. I mean, we don't have to dive into that one, but maybe we'll do that one next.</p>
+<p id=9b8d class="phone s05"><cite>Dave_Longley:</cite> That one seems I think it's also an external threat, but a different</p>
+<p id=6043 class="phone s06"><cite>Phillip_Long:</cite> Right. But different.</p>
+<p id=3457 class="phone s06"><cite>Phillip_Long:</cite> Yeah, that was the one I put in. So that's why I was raising it.</p>
+<p id=dfa6 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=4d06 class="phone s01"><cite>Wesley_Smith:</cite> We'll go to that one next. anybody have anything to add about this what we're calling physical medium information leakage notion.</p>
+<p id=8106 class="phone s06"><cite>Phillip_Long:</cite> I was just thinking of AI image generation that's being used to capture and then somebody else's this image and represent it in a different credential for example.</p>
+<p id=462b class="phone s01"><cite>Wesley_Smith:</cite> You're talking about the biometric falsification.</p>
+<p id=8cb5 class="phone s06"><cite>Phillip_Long:</cite> That's right. That's right.</p>
+<p id=bea2 class="phone s01"><cite>Wesley_Smith:</cite> We'll get to that one. We'll do that one immediately after this one.</p>
+<p id=299d class="phone s06"><cite>Phillip_Long:</cite> Very Very good. Sorry, I thought you would move.</p>
+</section>
+
+<section>
+<h3 id=bd78>Biometric Falsification Threat</h3>
+<p id=1d47 class="phone s01"><cite>Wesley_Smith:</cite> It's all good. Anybody have anything else they want to add to the physical medium of information leakage? the security camera at the gas station steals your VCB. Whatever. All right, Philip, let's go ahead and talk about your biometric falsification notion. I know you just gave a brief summary, but can you do it again? Philip, you're muted if you're talking.</p>
+<p id=d869 class="phone s06"><cite>Phillip_Long:</cite> I was indeed incredibly insightful, but I'll repeat it. the biometric falsification is just a recognition of the extent to which AI tools can represent facial images that are apparently extremely analogous to direct capture of and sand, something that signs the image when it's captured, could be used to represent falsely data for some other purpose as a barcode u conveyed credential.</p>
+<p id=b4fd class="phone s01"><cite>Wesley_Smith:</cite> Dave Longley.</p>
+<p id=7568 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=eeed class="phone s05"><cite>Dave_Longley:</cite> And I would widen it beyond AI.</p>
+<p id=4ffe class="phone s05"><cite>Dave_Longley:</cite> There are twins and…</p>
+<p id=d2ce class="phone s06"><cite>Phillip_Long:</cite> I Fair enough.</p>
+<p id=4099 class="phone s05"><cite>Dave_Longley:</cite> people that look like each other. there are variety of other things that people might do.</p>
+<p id=b725 class="phone s05"><cite>Dave_Longley:</cite> They might do something clever that did not require AI. plus one to that threat and…</p>
+<p id=b9d8 class="phone s05"><cite>Dave_Longley:</cite> talking about those possible vectors for the threat.</p>
+<p id=26fe class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=99ff class="phone s03"><cite>Ivan_Herman:</cite> Much as this is interesting,…</p>
+<p id=ca2a class="phone s03"><cite>Ivan_Herman:</cite> is it really related to the barcode spec? I mean for me this is more a threat to the confidence method which wants to use biometric things.</p>
+<p id=77ce class="phone s03"><cite>Ivan_Herman:</cite> It's not relevant to the barcode.</p>
+<p id=e3c2 class="phone s05"><cite>Dave_Longley:</cite> So true.</p>
+<p id=1b08 class="phone s05"><cite>Dave_Longley:</cite> Part of this threat modeling is identifying external threats which are things that are out of scope. but of course that's not meant to be everything you can think of in the universe that has out of scope. it is the case that there certainly is sometimes some biometric thing that is put into a barcode. And for that reason it seems important to talk about it here in this spec.</p>
+<p id=77e6 class="phone s05"><cite>Dave_Longley:</cite> But say there might be components of it that are out of scope.</p>
+<p id=3db5 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I would argue that this is a pretty clear example of a dependency threat,…</p>
+<p id=10001 class="phone s01"><cite>Wesley_Smith:</cite> something inherited from a external technology. There's nothing preventing you putting a biometric of some clonable form into a VC barcode. And if you do, then you have to deal with this thread. to me it seems just like talking about how cryptographically relevant quantum computers break ECDSA digital signatures because we put those on VC barcodes as well. So agreed that to my knowledge the VC barcode spec does not make explicit use or mention of biometrics at the moment. But there is also nothing to stop you from putting a biometric into a VC barcode if you so desire.</p>
+<p id=d879 class="phone s01"><cite>Wesley_Smith:</cite> And…</p>
+<p id=0988 class="phone s01"><cite>Wesley_Smith:</cite> that seems like not just a thing you could do, a thing that you would often want to do since these things often want to be connected or bound to people that hold the physical pieces of plastic in some way. So, I think it's a good candidate to at least mention here even though it's not, the most directly related threat.</p>
+<p id=b602 class="phone s06"><cite>Phillip_Long:</cite> And just as a practical matter, it's incredibly common that you would have a barcode and an image on the same credential just the way it has been inherited from things like driver's licenses or whatever. But I agree with Ivon.</p>
+<p id=da18 class="phone s05"><cite>Dave_Longley:</cite> And there are specifically Yeah.</p>
+<p id=8469 class="phone s06"><cite>Phillip_Long:</cite> I agree with Ivon that it's an inherited dependency from an external combination of things, but one that is Fair enough.</p>
+<p id=c750 class="phone s05"><cite>Dave_Longley:</cite> One component of it being specific to the barcode spec is you can take a biometric and shrink it down to put it in a barcode. That is the reason why you made the modification. And that doing you might increase the threat that it could be falsified in a variety of ways you have to…</p>
+<p id=ddea class="phone s05"><cite>Dave_Longley:</cite> then close those gaps.</p>
+<p id=7bd5 class="phone s01"><cite>Wesley_Smith:</cite> What is the actual threat there?</p>
+<p id=d1e7 class="phone s01"><cite>Wesley_Smith:</cite> So, you can duplicate a biometric</p>
+<p id=2917 class="phone s05"><cite>Dave_Longley:</cite> I think it is getting a valid true response when you have a actual biometric mismatch.</p>
+<p id=14bf class="phone s03"><cite>Ivan_Herman:</cite> Ready?</p>
+<p id=4d7c class="phone s05"><cite>Dave_Longley:</cite> it's a false positive for a biometric check.</p>
+<p id=6d5c class="phone s05"><cite>Dave_Longley:</cite> So the biometric does not match per the person, but you end up accepting it as if it did.</p>
+<p id=713a class="phone s01"><cite>Wesley_Smith:</cite> So that is certainly a threat.</p>
+<p id=557b class="phone s01"><cite>Wesley_Smith:</cite> I'm not sure that it's the only threat and I'm not sure that it's exactly what we're describing. I mean, we keep bumping into the same exact problem over and over again, but there is a set of threats that in some way are related to the holder binding in quotes.</p>
+<p id=e633 class="phone s01"><cite>Wesley_Smith:</cite> the attempt to staple an identity credential to the person holding the identity credential through the use of physical characteristics and These physical characteristics could be simpler, more primitive things like eye color, hair color or they could be more sophisticated it does sound painful. more sophisticated these sort of biometrics and…</p>
+<p id=407d class="phone s03"><cite>Ivan_Herman:</cite> Thank you.</p>
+<p id=ac81 class="phone s01"><cite>Wesley_Smith:</cite> attempting to subvert that kind of holder identification stuff is certainly a class of threats. It seems to me like using duplicable or clonable or fakeable biometrics is sort of its own threat, but it's not clear what you can do with it besides, fool the biometric check part of an interaction or presentation. All right, let's do the false positive notion for now and we can revisit in the future if we need so we can keep making progress.</p>
+<p id=cdf6 class="phone s05"><cite>Dave_Longley:</cite> One other way to describe such a threat is a masquerading presenter.</p>
+<p id=ffde class=irc><cite>&lt;Dave_Longley&gt;</cite> &quot;masquerading presenter&quot; ? </p>
+<p id=7916 class="phone s05"><cite>Dave_Longley:</cite> Does I don't know that that's helpful or harmful to try and be an umbrella for these</p>
+<p id=5ff1 class="phone s01"><cite>Wesley_Smith:</cite> That sounds still too restrictive,…</p>
+<p id=c1e7 class="phone s01"><cite>Wesley_Smith:</cite> but we can get there when we get there. All next we have information not covered on physical documents by VCB. Who added this one?</p>
+</section>
+
+<section>
+<h3 id=2308>Information Not Covered On Physical Documents</h3>
+<p id=022a class=irc><cite>&lt;Phillip_Long&gt;</cite> It might be useful to mention Ivan's concern that the biometric threat may be more relevant to the binding of an biometric to a holder. </p>
+<p id=7451 class="phone s01"><cite>Wesley_Smith:</cite> Might have been me was it you?</p>
+<p id=db44 class="phone s05"><cite>Dave_Longley:</cite> That it was I'm not sure that one might have been me.</p>
+<p id=7068 class="phone s05"><cite>Dave_Longley:</cite> I was trying to refer there's a couple things here. So you can have a physical document that has information on it. where some of that information is not covered by the barcode and that can be a threat in the sense that people could misunderstand that information. They might think that something is covered by the barcode but and so I was going to consider it an implementation threat in a number of different ways.</p>
+<p id=ba8a class="phone s05"><cite>Dave_Longley:</cite> You need to make sure that the systems that you're using correctly surface to the users of those systems so that there is not confusion.</p>
+<p id=9b0b class="phone s01"><cite>Wesley_Smith:</cite> strongly agree all around.</p>
+<p id=10002 class="phone s01"><cite>Wesley_Smith:</cite> I think that's a pretty straightforward one and also I think it very nicely fits in the implementation threats category. your digital signature isn't over everything. After all, everything is a piece of plastic. What exactly is it over? All right. anybody have anything else they want to add to that particular item? Okay.</p>
+</section>
+
+<section>
+<h3 id=bbfd>Mismatch Of Information On Physical Documents</h3>
+<p id=49ee class="phone s01"><cite>Wesley_Smith:</cite> If not next we have mismatch of information on physical documents with VCB.</p>
+<p id=949b class="phone s05"><cite>Dave_Longley:</cite> I did want to do a time check though. Amen.</p>
+<p id=5635 class="phone s01"><cite>Wesley_Smith:</cite> Back to thank so we are making really good progress on this and we're also discussing things that the group in general have added and we don't want to get into a position where folks aren't able another time to talk about what they've said. Greg Bernstein, do you have any issue with us finishing this out on this call going into your time and…</p>
+<p id=b4db class="phone s01"><cite>Wesley_Smith:</cite> then next week you can take, as much of the call as you need to progress the DI stuff or is there stuff you absolutely need to get done today for a DI?</p>
+<p id=b165 class="phone s02"><cite>Greg_Bernstein:</cite> no I…</p>
+<p id=22d6 class="phone s02"><cite>Greg_Bernstein:</cite> if you can give me 10 minutes or</p>
+<p id=df5f class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that sounds Okay, so We'll go for another 5 to 10 minutes to try to get through most of these labelings and then we'll go over data integrity. All right. with the time sensitivity in mind, mismatch of information on physical documents with VCB. who put this one? Yeah.</p>
+<p id=87bf class="phone s05"><cite>Dave_Longley:</cite> I put that This is the one we were trying to sort of map to quishing, but it was a little different. And this seems like at least for now we can put it under implementation threats, but let's we can put it there,…</p>
+<p id=567b class="phone s05"><cite>Dave_Longley:</cite> but there that doesn't seem to me like it's the right place if for people who intentionally swap out BCBs with other VCBs. Yeah.</p>
+<p id=88c6 class="phone s01"><cite>Wesley_Smith:</cite> And I'll also note that implementers must handle it's kind of restrictive language here.</p>
+<p id=c897 class="phone s01"><cite>Wesley_Smith:</cite> There are attacks that implementers such as people who build issuing and verification systems must handle. And then there are attacks that are totally unrelated that the clerk at the gas station needs to handle, And I don't think we would call them an implementer. So I'll put that in both external and implementation threats. I think we're all aware that as written now needs a lot more explanation and clarity because there are a lot of different ways in which you can do this kind of mismatch attack. All right.</p>
+</section>
+
+<section>
+<h3 id=cf4a>Duplicability Of Optical Barcode Bytes</h3>
+<p id=4f8b class="phone s01"><cite>Wesley_Smith:</cite> Next up we have duplicability of optical barcode bytes. this one I'm going to say is a dependency threat inherited from a required external technology. These things are optical barcodes. You can put them in a photocopier and make photocopies of them. That's something that you can't do with digital credentials in the way that they are expressed most of the time. I think that's pretty straightforward. if I haven't labeled your thing with your contributor name, please do that. duplicability in cases where signed data is not uniquely identifying for a holder for identity barcodes. I put This one is a pretty specific one and it is strongly related to some of the other larger conceptual points that we're touching on.</p>
+<p id=9e94 class="phone s01"><cite>Wesley_Smith:</cite> Basically here if you are going to do something such as sign over the fields in a driver's license credential, those fields might be things like height, eye color, whatever, address related to the threat that we just talked about of information not covered by digital signature. It is possible that the information that is signed by a digital signature reduces the set of people that meet this description to a set larger than one. So if somebody who looks a lot like me takes my barcode, they could present it and then pass this biometric check. again, this is strongly related to some of the other threats that we've already talked about. We need to figure out the best way to reduce them down to a minimal comprehensive set.</p>
+<p id=c17a class="phone s01"><cite>Wesley_Smith:</cite> But for now I would argue that that is an implementation threat that if Elaine go ahead Right.</p>
+<p id=a1ab class="phone s07"><cite>Elaine_Wooton:</cite> Yeah, I think you can add in there that often times at least with US driver's license there is no biometric.</p>
+<p id=20f7 class="phone s07"><cite>Elaine_Wooton:</cite> So you can copy the entire document entirely, scan it entirely, just swap out the photo and then everything's going to be good. So I just put a caveat that often there's no biometric in the barcode yet.</p>
+<p id=745e class="phone s01"><cite>Wesley_Smith:</cite> No, that's a really good point. and so then often the set of identifying characteristics that you're left with are okay, this person is 5 foot 10 and has brown hair and blue eyes and that's it kind of thing.</p>
+<p id=554d class=irc><cite>&lt;Phillip_Long&gt;</cite> +1 @Dave ^^^^ </p>
+<p id=0e86 class="phone s07"><cite>Elaine_Wooton:</cite> Yeah, exactly.</p>
+</section>
+
+<section>
+<h3 id=86c6>Spoofing Of Keys Where Available</h3>
+<p id=5730 class="phone s01"><cite>Wesley_Smith:</cite> And obviously that's a fairly large set of people that you're describing. especially those we are down to the last uncatategorized item. Spoofing of…</p>
+<p id=35ca class="phone s01"><cite>Wesley_Smith:</cite> where keys are available. Who put this one in?</p>
+<p id=3236 class="phone s07"><cite>Elaine_Wooton:</cite> Yeah, that's me.</p>
+<p id=9e0e class="phone s01"><cite>Wesley_Smith:</cite> Okay. Absolutely.</p>
+<p id=20a2 class="phone s07"><cite>Elaine_Wooton:</cite> So, if they bad guys figure out how to put the public keys somewhere other than where they're supposed to be, they can sign it.</p>
+<p id=ca2c class=irc><cite>&lt;Phillip_Long&gt;</cite> Can you implement selective disclosure in a barcode? </p>
+<p id=10003 class="phone s01"><cite>Wesley_Smith:</cite> So that sounds me lot to me like a dependency threat because we're using technologies to distribute these public keys. but not defining them directly in the VC barcode spec. We're using things like decentralized identifiers. And totally right. If you compromise the way in which those public keys are distributed, you can pass off a fraudulent document as real. but I think that's a kind of textbook example of a dependency threat. the way that we've currently architected the VC bar code spec. All nice. We got through categorizing that whole list in only a little bit over time. is there anybody would like to add to this kind of threat model brainstorm session before we pivot over to data integrity for the rest of the call? Man, go ahead.</p>
+<p id=f3be class="phone s08"><cite>Manu_Sporny:</cite> Yeah, just to kind of speak to next step. So this is great this is working out really well to gather kind of threats from the group. the next step is to move it into a threat model document. I am trying to figure out what the best way to do that is. I think I need to talk with Joe, Andrew, and Eric Shu about this, but I think we want to programmatically split these up into a bunch of different YAML files that talk about the threat, that talk about the stakeholders, that talk about, the data flow dictionary. because I think we're going to want to reuse this stuff.</p>
+<p id=9013 class=irc><cite>&lt;Greg_Bernstein&gt;</cite> With something like BBS that is space efficient for SD </p>
+<p id=3821 class="phone s08"><cite>Manu_Sporny:</cite> Just like we reuse bibliography entries we have a bibliography database and we use that bibliography database to link to the latest version of documents so that we don't have to keep updating it. I'm seeing the threat modeling stuff kind of go down that path. I think Joe has said something similar to that. The problem is we have zero tooling for that. I know Joe's working on some of that. So, it may be that somebody else that has more time than me takes a cut at taking what we've brainstormed and putting it in a machine readable format so that we can generate these specifications. von somewhat like you do for YAML to vocab. I'm thinking something in that vein.</p>
+<p id=10004 class=irc><cite>&lt;Dave_Longley&gt;</cite> Phillip -- you can put a derived VC into a QR code, so yes. </p>
+<p id=bab0 class="phone s08"><cite>Manu_Sporny:</cite> That's my kind of thoughts on next steps here is we're now going to be potentially blocked by some of the tooling and…</p>
+<p id=2961 class="phone s01"><cite>Wesley_Smith:</cite> Avon, go ahead.</p>
+<p id=9072 class="phone s08"><cite>Manu_Sporny:</cite> maybe we can do a very rapid iteration on that tooling so we can get a threat model document together so that we can kick off the horizontal review process. that's it.</p>
+<p id=e7f0 class=irc><cite>&lt;Phillip_Long&gt;</cite> Then does SD increase the potential threat opportunities as that which is exposed gives less for the recipient to verify? </p>
+<p id=92d0 class="phone s03"><cite>Ivan_Herman:</cite> I just want to understand something about this whole threat modeling thing. somewhere here we should have something which says yes this is a threat but this aspect of things is covered by the VC spec by these and…</p>
+<p id=d36f class="phone s01"><cite>Wesley_Smith:</cite> Morning. Go ahead.</p>
+<p id=fa94 class="phone s03"><cite>Ivan_Herman:</cite> these reasons and we handle that and I haven't heard anything about that so far.</p>
+<p id=4994 class=irc><cite>&lt;Dave_Longley&gt;</cite> there are probably a few threats that could be listed there (and would go under external or dependency threats i would think) </p>
+<p id=fefe class="phone s08"><cite>Manu_Sporny:</cite> I think so if in the threat modeling guide of there's a place on whether or not we mitigate it or we don't. so that's a required part of the documentation that's generated. There is also an expectation that we point to the other threat models and reuse information from the other threat models. But that is a bit of a handwave right now. We don't know how we're going to do that right. so I think Ivon some of that is to be decided. but when the document is rendered it is very clear on whether or not this spec addresses the issue or another spec addresses the issue which I think addresses your primary concern.</p>
+<p id=afcd class="phone s01"><cite>Wesley_Smith:</cite> Craig, go ahead.</p>
+<p id=32ea class="phone s08"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=e788 class="phone s02"><cite>Greg_Bernstein:</cite> Two points that issues come up a lot as we've been thinking about …</p>
+<p id=1549 class="phone s02"><cite>Greg_Bernstein:</cite> how to do this with data integrity because we are so in parallel to what the signature algorithms claim including when we talk about forgeries ries when we include about things beyond just forgeries.</p>
+<p id=10005 class="phone s02"><cite>Greg_Bernstein:</cite> The other point was we've seen a general digital credential threat model come out of the Singh group and data integrity really a threat model for that could be considered a threat model for a subset of that which is embedded proofs and barcodes could be considered a subset of that which is associated with the barcodes. But of course it has unique threats. So we kind of get into these overlapping threat models and…</p>
+<p id=6f90 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=b63f class="phone s02"><cite>Greg_Bernstein:</cite> how are we mitigating certain things and which things are in scope and…</p>
+<p id=1d77 class="phone s02"><cite>Greg_Bernstein:</cite> out of scope. And I am very glad that Wesley is hitting this before I do for data integrity.</p>
+<p id=ccaa class="phone s03"><cite>Ivan_Herman:</cite> Yeah, just an information.</p>
+<p id=82ff class="phone s03"><cite>Ivan_Herman:</cite> I think it came up on the last meeting of the working group, but we have now an agreement with Simona that he will be present remotely at the discussion on the face meeting which we have on threat model. So there are a number of issues or questions like what Manu said that we can discuss with him as well there.</p>
+<p id=812e class="phone s01"><cite>Wesley_Smith:</cite> Heard generally. I think we at least have a high level understanding of what next steps might be. over to you Greg for data integrity. one very brief note on VC barcodes. I raised a couple of trivially small PRs in response to issues that were pointing out bugs in the spec recently.</p>
+<p id=ddf7 class="phone s03"><cite>Ivan_Herman:</cite> Yes. Yes.</p>
+<p id=10006 class="phone s01"><cite>Wesley_Smith:</cite> If you are an approving type, please go we'll get them and then approve them if you approve them and I'll get those merged. Over to you, Greg.</p>
+</section>
+
+<section>
+<h3 id=7cba>Postquantum And BBS Status Update</h3>
+<p id=46c3 class="phone s02"><cite>Greg_Bernstein:</cite> I'm not used to sharing screens,…</p>
+<p id=0fb0 class="phone s02"><cite>Greg_Bernstein:</cite> but can you see this? and I'm showing poll requests right now. So, here's what we've got is we've got postquantum, we've here's the ordering of priorities currently postquantum, restructuring documents, threat modeling, and BBS. And depending on what happens in the next couple of weeks with BBS, we may accelerate and pull that up closer.</p>
+<p id=10007 class="phone s02"><cite>Greg_Bernstein:</cite> postquantum I put in two different PRs except one builds on the other. The most recent PR is on test vectors for selective disclosure. I am glad people approved it. I would like to get people to approve the other one that is the base text which includes going on the selective disclosure crypto suites. And so this is the write up of the algorithm I outlined and told you guys before. It is a salted hash approach. It's relatively efficient especially compared to the size of the signatures.</p>
+<p id=10008 class="phone s02"><cite>Greg_Bernstein:</cite> I put in some information in there about that. we've got test vectors for these. all test vectors are tentative until somebody else can verify them and such like that. so I'm going to hit up my reviewers again to take a look at question mono.</p>
+<p id=7b37 class="phone s08"><cite>Manu_Sporny:</cite> Do we I glanced and…</p>
+<p id=27fd class="phone s08"><cite>Manu_Sporny:</cite> saw ski sign on there. Do we have test factors for ski sign as well or am I misreading? at the appendix. It's fine if we don't. I was just surprised.</p>
+<p id=c156 class="phone s02"><cite>Greg_Bernstein:</cite> I did we have test vectors for regular ski sign.</p>
+<p id=0bd5 class="phone s02"><cite>Greg_Bernstein:</cite> I did not do ski sign for selective disclosure for two reasons. I don't have a nice JavaScript implementation.</p>
+<p id=59da class="phone s02"><cite>Greg_Bernstein:</cite> It's not that and two ski sign is right at the border of where we might use the technique like we used with ECDSASD with lots of signatures versus a hash and a salted hash approach. But I did create some test vectors for regular C ski sign questions.</p>
+<p id=4651 class="phone s02"><cite>Greg_Bernstein:</cite> Maro and Dave.</p>
+<p id=d732 class="phone s08"><cite>Manu_Sporny:</cite> Yeah, that's great.</p>
+<p id=9839 class="phone s08"><cite>Manu_Sporny:</cite> That's fantastic. Thank you, Greg. That's further along than I thought we were going to be. So, thank you very much for that. heard on the selective disclosure stuff. Yes, we'll need to talk about, that. do you have any plans to look into Ski Sign HD? those I don't know how stable it is just so everyone on the call knows a ski sign made it into the next NIST competition phase so that was very very recent Greg saw that they had accepted Ski sign.</p>
+<p id=39b1 class="phone s02"><cite>Greg_Bernstein:</cite> Haven't seen that.</p>
+<p id=10009 class="phone s08"><cite>Manu_Sporny:</cite> It is the one that has the smallest signature sizes and there is a variant of it called I think Ski Sign HD or something like that that has I think 64 byt signatures which would be amazing because we would have a postquantum signature that would be effectively the same size and as an ECDSA and EDDDSA signature. that's kind of the holy grail I think.</p>
+<p id=828d class="phone s08"><cite>Manu_Sporny:</cite> Pi Sign HD, sorry. as Dave pointed to in the chat. do I guess Greg, say you hadn't heard of it yet. So never mind on the Next question was going to be like it would be good to understand …</p>
+<p id=b9e7 class="phone s02"><cite>Greg_Bernstein:</cite> There was an interesting highlight particularly in that NIST report about the next candidates…</p>
+<p id=f84d class="phone s08"><cite>Manu_Sporny:</cite> how brittle that approach might be or I think there might be a top out on the number of signatures you can do or something like that. Anyway, thoughts.</p>
+<p id=0b35 class=irc><cite>&lt;Dave_Longley&gt;</cite> PIsignHD ... <a href="https://eprint.iacr.org/2024/1404">PIsignHD: A New Structure for the SQIsign Family with Flexible Applicability</a> </p>
+<p id=cd15 class="phone s02"><cite>Greg_Bernstein:</cite> because some of the candidates were being accepted and considered for special properties because they had some candidates that had very small signatures</p>
+<p id=293a class="phone s02"><cite>Greg_Bernstein:</cite> but public keys. And so for a barcode situation, a small signature but a slightly larger key isn't as much an issue. And so don't rule anything out because as long as we keep the verifiable credential application forefront and it can benefit from smaller signatures…</p>
+<p id=f02b class=irc><cite>&lt;Dave_Longley&gt;</cite> 519 bits =&gt; 65 byte signatures </p>
+<p id=5d93 class="phone s03"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=de49 class="phone s02"><cite>Greg_Bernstein:</cite> but slightly larger keys because sign as it exists is overall most efficient in terms of private key size plus signature size. But Dave Yeah,…</p>
+<p id=a8d3 class="phone s05"><cite>Dave_Longley:</cite> Yeah, you're kind of speaking to something I was going to talk about that the latest NIST report for the next round of the competition had things like Mayo in there which has larger public keys than ski sign but it also has small signature sizes which meets the use cases here. So I wanted to make sure we were considering adding those things that might make it all the way through the NIST competition and would meet the requirements of BCBs.</p>
+<p id=0bac class="phone s08"><cite>Manu_Sporny:</cite> How big were the Mayo signatures,…</p>
+<p id=9d5a class="phone s08"><cite>Manu_Sporny:</cite> I thought they were still several hundred bytes in size,…</p>
+<p id=4ba7 class="phone s05"><cite>Dave_Longley:</cite> There are 96 bytes.</p>
+<p id=41e4 class="phone s08"><cite>Manu_Sporny:</cite> but Interesting. Go.</p>
+<p id=893d class="phone s02"><cite>Greg_Bernstein:</cite> they're getting small.</p>
+<p id=d0e6 class="phone s02"><cite>Greg_Bernstein:</cite> So now let me remind folks we refactored the postquantum thing to really make it easy to all we have to do is add something to a table. The algorithms are very generic because NIS said hey we're going to use this common API so to add or remove something is not that hard. Okay, and same thing I extended that to the SD procedures. Currently for this postquantum SD we're doing SLHDSA and Falcon because they have large signatures.</p>
+<p id=0d89 class="phone s02"><cite>Greg_Bernstein:</cite> If we have small signatures and we want to do what we do with ECDSA type approach with multiple signatures which leads to a smaller thing going between the holder and the verifier we have that option still okay because we have these procedures okay I think we're almost out of time but Ivonne what do we need to do so we can get this into besides of course getting these two things the two PRs put in.</p>
+<p id=b4b7 class="phone s02"><cite>Greg_Bernstein:</cite> What do we need to do to get ready for this first public do working document or what does it mean? Okay.</p>
+</section>
+
+<section>
+<h3 id=106d>Working Towards First Public Working Draft</h3>
+<p id=0133 class="phone s03"><cite>Ivan_Herman:</cite> So for this task force…</p>
+<p id=0061 class="phone s03"><cite>Ivan_Herman:</cite> because part of it has to be voted on the working group and part of it has to be</p>
+<p id=0326 class="phone s03"><cite>Ivan_Herman:</cite> cooperation between the editor and myself which is a well-rooted and well-known procedure for this task force it may be much more complicated because we have to agree on a name and that's notoriously long so you are talking about postquantum we are talking about quantum safe we are talking about who knows what we have to agree on the short name as we call it in the WCC jargon because once we have a short name then later in two months changing the short name for whatever reasons is a pain in the backside.</p>
+<p id=fac0 class="phone s03"><cite>Ivan_Herman:</cite> So we had better finding a short name that we can live with all along.</p>
+<p id=3b1f class="phone s02"><cite>Greg_Bernstein:</cite> Okay. …</p>
+<p id=040d class="phone s03"><cite>Ivan_Herman:</cite> That's what we have to agree upon here.</p>
+<p id=3271 class="phone s03"><cite>Ivan_Herman:</cite> And then we officially semiofficially tell Phil and Brent that we want to have that and the rest is routine so to say.</p>
+<p id=a904 class="phone s02"><cite>Greg_Bernstein:</cite> I don't have strong opinions on names. I just take what other people have been recommending. come on in.</p>
+<p id=21f1 class="phone s08"><cite>Manu_Sporny:</cite> Let me suggest that we don't rush it. We have two minutes left. We can't decide this time.</p>
+<p id=d34e class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 for a small signature section, vital for VCBs </p>
+<p id=2617 class="phone s02"><cite>Greg_Bernstein:</cite> Okay. Yeah.</p>
+<p id=2892 class=irc><cite>&lt;Dave_Longley&gt;</cite> (or selection of options at least) </p>
+<p id=8c18 class="phone s03"><cite>Ivan_Herman:</cite> Yeah. I agree.</p>
+<p id=adea class="phone s08"><cite>Manu_Sporny:</cite> A quantum safe is fine except it's not really safe, completely safe.</p>
+<p id=eea4 class="phone s02"><cite>Greg_Bernstein:</cite> Yeah. I was thinking there's a lot of these issues old issues not the newest ones…</p>
+<p id=4a7f class="phone s08"><cite>Manu_Sporny:</cite> It's resistant. Is those kinds of details that we want to get So let's do that on the next call. suggestion.</p>
+<p id=e9b0 class="phone s02"><cite>Greg_Bernstein:</cite> but the older issues I think we've resolved a bunch of them I can go through and try and close them out that's kind of something we do before we try and publish but any items that I can take on right now to help us get there.</p>
+<p id=a696 class="phone s02"><cite>Greg_Bernstein:</cite> I mean,…</p>
+<p id=b2a5 class="phone s08"><cite>Manu_Sporny:</cite> You could categorize them,…</p>
+<p id=5f68 class="phone s08"><cite>Manu_Sporny:</cite> Greg, and suggest why they should be closed. We have to be a little careful on just closing issues.</p>
+<p id=0553 class="phone s02"><cite>Greg_Bernstein:</cite> Yep.</p>
+<p id=ec60 class="phone s08"><cite>Manu_Sporny:</cite> Editors can't just do it by themselves. we have to make sure that the group agrees with, your reasoning to close and then we'll close it.</p>
+<p id=9b9f class="phone s02"><cite>Greg_Bernstein:</cite> One more question.</p>
+<p id=9531 class="phone s02"><cite>Greg_Bernstein:</cite> previously on all the DI documents crypto suites even if we had approval we would wait a week before merge those kind of rules.</p>
+<p id=d384 class="phone s08"><cite>Manu_Sporny:</cite> We have to do that here.</p>
+<p id=605d class="phone s02"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=aaff class="phone s08"><cite>Manu_Sporny:</cite> Yeah, we got it still. Yeah, that's the same process here.</p>
+<p id=6076 class="phone s02"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=f972 class="phone s08"><cite>Manu_Sporny:</cite> You can't merge right away. You've got to give at least seven days for people to get their comments in.</p>
+<p id=575a class="phone s02"><cite>Greg_Bernstein:</cite> I didn't have that much time while this was a CCG document to get used to anything else. so that's fine. So, I mostly worked the more formal system. I think we're out of time. and I can continue on next time and…</p>
+<p id=418f class="phone s03"><cite>Ivan_Herman:</cite> Oops.</p>
+<p id=52f4 class="phone s02"><cite>Greg_Bernstein:</cite> give updates on Once again, it's that restructuring of data integrity feeds off of this work with doing the selective disclosure for the postquantum stuff because we're seeing how those algorithms get reused.</p>
+<p id=9882 class="phone s02"><cite>Greg_Bernstein:</cite> Yet again we have three cases ECGSASD BBS and this salted hash approach for large postquantum signatures.</p>
+<p id=bfd1 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=dabb class="phone s01"><cite>Wesley_Smith:</cite> thanks raig. we are out of time. Thank you everyone for being here. and see you next week. Meeting ended after 01:01:03 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

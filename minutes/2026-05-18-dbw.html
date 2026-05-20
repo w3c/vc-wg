@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Product and Wallet Vocabularies &ndash; 18 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Product and Wallet Vocabularies</h1>
+<h2>18 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Carolynn_Bernier, Carsten_Stöcker, Dr._Susanne_Guth-Orlowski, Eva_Blomqvist, Fireflies.ai_Notetaker_Miguel, Ingo_Wolf, Ivan_Herman, Rigo_Wenning, Ronald_Koenig, Ted_Guild</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#a74d">Battery Vocabulary Discussion</a></li>
+<li><a href="#3d5a">Use Case Requirements and Business Wallet</a></li>
+<li><a href="#8bb8">Defining Goals for the Working Group</a></li>
+<li><a href="#4ee6">Separating DPP and Business Wallet Activities</a></li>
+<li><a href="#1c9a">Semantic Interoperability and Data Sovereignty</a></li>
+<li><a href="#0bb9">Vocabulary Role in Digital Product Passports</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=bcde class="phone s01"><cite>Ingo_Wolf:</cite> Hello. Pass on.</p>
+<p id=bbbb class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> How do you go?</p>
+<p id=c2fe class=irc><cite>&lt;Fireflies.ai_Notetaker_Miguel&gt;</cite> Miguel Ángel invited Fireflies.ai here to record &amp; take notes.  By continuing, you agree to <a href="https://fireflies.ai/privacy">Privacy Policy | Fireflies.ai</a> </p>
+<p id=36c0 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Thank you.</p>
+<p id=7bd8 class="phone s01"><cite>Ingo_Wolf:</cite> Dia of Bes. I will adma.</p>
+<p id=48c3 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, it's 30. published. Mhm. Hi Eva.</p>
+<p id=3e20 class="phone s01"><cite>Ingo_Wolf:</cite> Head camera.</p>
+<p id=71bb class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Good to see you again. Hi Ted. I think we haven't met before.</p>
+<p id=5746 class="phone s03"><cite>Eva_Blomqvist:</cite> Hi, I'm in the car so I will be a bit silent maybe.</p>
+<p id=3c8a class="phone s04"><cite>Ted_Guild:</cite> Thank you.</p>
+<p id=4594 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> It's okay. I even</p>
+<p id=3f26 class="phone s05"><cite>Ivan_Herman:</cite> Hi, good afternoon.</p>
+<p id=a181 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Ingo and…</p>
+<p id=a9de class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Hornald, I was wondering who is leading this call now. I'm sorry I wasn't able to participate until today, I guess.</p>
+<p id=c4a3 class="phone s06"><cite>Ronald_Koenig:</cite> Hello. Go ahead.</p>
+<p id=1884 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Just checking where we stand.</p>
+<p id=6e48 class="phone s01"><cite>Ingo_Wolf:</cite> …</p>
+<p id=bdc3 class="phone s01"><cite>Ingo_Wolf:</cite> yeah. Please go ahead. yeah, the group leaders are Carolyn and Carson. so actually I expect one of them to come today. but yeah else we did not assign any other group leaders. So Ken and Carolyn are the ones for the meeting today.</p>
+<p id=4ae3 class="phone s01"><cite>Ingo_Wolf:</cite> I can share…</p>
+<p id=f694 class="phone s05"><cite>Ivan_Herman:</cite> Before we get there and…</p>
+<p id=4510 class="phone s01"><cite>Ingo_Wolf:</cite> what I did in the last week and present the current state of the use cases and requirements so to say. yeah that's how I would see it.</p>
+<p id=0cdb class="phone s05"><cite>Ivan_Herman:</cite> while we are at the ME meeting issues next week, do we hold the meeting on Monday or we don't?</p>
+<p id=d820 class="phone s07"><cite>Rigo_Wenning:</cite> I will not be there…</p>
+<p id=f9cd class="phone s07"><cite>Rigo_Wenning:</cite> because that's a public</p>
+<p id=9810 class="phone s05"><cite>Ivan_Herman:</cite> Yeah, it's a public holiday for me as well.</p>
+<p id=3612 class="phone s05"><cite>Ivan_Herman:</cite> Not that I care too much, but that's why I'm asking. I guess it's a public holiday in many European countries.</p>
+<p id=92ba class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yes, true.</p>
+<p id=5e28 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Hi, Ro. It's been a while.</p>
+</section>
+
+<section>
+<h3 id=a74d>Battery Vocabulary Discussion</h3>
+<p id=a85e class="phone s07"><cite>Rigo_Wenning:</cite> But once you are here last week we were looking for the battery vocabulary.</p>
+<p id=b2cc class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=1d13 class="phone s07"><cite>Rigo_Wenning:</cite> Do you know something about it and where we can get it and whether this could be one part of our concrete examples</p>
+<p id=7478 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So, it's interesting that everybody is of course jumping on the battery vocabulary.</p>
+<p id=6449 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So I guess the one that's closest to an aligned vocab vocabulary is the one that's currently had been published by the battery pass ready project.</p>
+<p id=b54a class="phone s07"><cite>Rigo_Wenning:</cite> Mhm.</p>
+<p id=db08 class="phone s01"><cite>Ingo_Wolf:</cite> Oops.</p>
+<p id=c74f class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> the version three of the vocabulary that this dika is spec 9900 but this is kind of outdated a little bit or at least some of the stakeholders weren't or have further developed the vocabulary so I believe that the most aligned one is now the version 1.3</p>
+<p id=f273 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> published by the battery pass ready project and I think that is involved so maybe Ingo and…</p>
+<p id=bc0d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Run can agree or disagree to what I'm saying. Mhm.</p>
+<p id=b9ea class="phone s01"><cite>Ingo_Wolf:</cite> Concerning the data attribute long list…</p>
+<p id=1e9c class="phone s01"><cite>Ingo_Wolf:</cite> which is in this version one and three that you mentioned yeah this is published however there was a GitHub repository for the versions before one or two and so on from battery as ready I guess. which also include ontologies and total files and not only schema definitions like JSON schema.</p>
+<p id=f684 class="phone s01"><cite>Ingo_Wolf:</cite> This is not released for the latest version I suppose. Yeah.</p>
+<p id=75e0 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah,…</p>
+<p id=8c85 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> that's possible.</p>
+<p id=df4a class="phone s07"><cite>Rigo_Wenning:</cite> So could there be because why Susan is the battery area so interesting because it's the first to hit the application deadline.</p>
+<p id=ffff class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> That's clear but we have to be careful that we are not standardizing it in three different places.</p>
+<p id=758e class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So yeah, Rigo Wenning:</p>
+<p id=045b class="phone s07"><cite>Rigo_Wenning:</cite> Yeah. so the thing is normally I totally rely on Kaholin for that is that Kolin knows everybody everywhere. meaning that we need to be sure that they are doing the right thing and sometimes you have those vocabularies developed somewhere where they have some JSON schema and this is not really link data friendly. so that you have to make transforms and all of that to make it usable which then defeats the exercise.</p>
+<p id=469b class="phone s07"><cite>Rigo_Wenning:</cite> So there are a hundred ways of dealing with it. You go there and you say, &quot;Hey, why don't you change this little bit and we are happy.&quot; Then they normally do it. At least that was the case for Fireware. sometimes they say, &quot;Hey, W3C is interested in Super duper don't you want to take our stuff and integrate it into we say fine.&quot; here is the things we need. So this kind of standards are great, please use mine. It's really how to advance and the industry is looking for something reliable.</p>
+<p id=10000 class="phone s07"><cite>Rigo_Wenning:</cite> And if you have just a project that publishes something on a website, it's not good enough for industry because they will have sub substantial investment. And so at some point in time either this goes eas integrate some of it because then they rely on it. We get it recognized by the multistakeholder platform. and the article 13 and 14 of regulation 1025.</p>
+<p id=c35c class="phone s07"><cite>Rigo_Wenning:</cite> There are many ways but my goal here was to say hey how can we integrate that stuff with the vocabulary stuff so that we have a coherent link data scenery that we don't have too much of friction inside because the more friction we have the more we have transformation the more we need energy the more defeats the goal of the entire thing. but on the other hand we have the counter challenge is the Everybody uses the same thing for the same and total unification and this never happens because the world is far too diverse.</p>
+<p id=0db1 class="phone s07"><cite>Rigo_Wenning:</cite> And so I'm changing a sweet spot between and one of the things I wanted to see is whether we can use one of those battery vocabularies to extract the common ground between fashion and…</p>
+<p id=abfd class="phone s07"><cite>Rigo_Wenning:</cite> and battery and others and then examp and make an example in the spec for an annex or something like that.</p>
+<p id=3f4f class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. …</p>
+<p id=232c class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> let me maybe recap a little bit. I don't know if someone else has done that already but we've been working on the United Nations transparency protocol for maybe two years now where we have developed a logical model which has gone undergone several iterations of defining a generalized truck structure for a dig product passport logical model or data model which should be an input</p>
+<p id=3f75 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> put of this work which also was one of the things that Caroline Ben suggested as input for this work. So I think Yeah.</p>
+<p id=ca98 class="phone s07"><cite>Rigo_Wenning:</cite> Are we talking about the work from Steve Capel?</p>
+<p id=ff5e class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Exactly. Rigo Wenning:</p>
+<p id=e5eb class="phone s07"><cite>Rigo_Wenning:</cite> Okay, that's aligned anyway. Yes.</p>
+<p id=80db class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> It's not Steve Capel's work alone, but yeah, it's led by him of course, but I think I contributed most of the digital product passport groundwork there. so we can point to that at least stay aligned with that.</p>
+<p id=381b class="phone s07"><cite>Rigo_Wenning:</cite> So this is really a challenge. frozen. There's cavian.</p>
+<p id=2a2f class="phone s08"><cite>Carolynn_Bernier:</cite> Sorry, I was late.</p>
+<p id=6829 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> My connection is gone.</p>
+<p id=20ff class="phone s07"><cite>Rigo_Wenning:</cite> No, you're back.</p>
+<p id=3cff class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay.</p>
+<p id=28e5 class="phone s07"><cite>Rigo_Wenning:</cite> Are you inland?</p>
+<p id=f623 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> H I'm in I don't know what's happening.</p>
+<p id=4798 class="phone s07"><cite>Rigo_Wenning:</cite> Are you in funk land?</p>
+<p id=dd2d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> I've been back to my computer today and it seems the connection is not great. Yeah. and then also we use certain technologies in UNP to create a logical model but we do not have any ontologies there. We maybe do not use some W3C mechanisms that would be nice to define some of the work. so for me…</p>
+<p id=74ed class="phone s07"><cite>Rigo_Wenning:</cite> Not only we need to show people I just learned today that the special data on the web working</p>
+<p id=71fe class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> what I also would like to understand or would like to have a discussion about is which mechanisms and tools are we using to define maybe some digital product passport vocabulary for example. Yeah.</p>
+<p id=1a05 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So that we just have the basics but how do we define it? Every product passports needs an identifier. Every product passport has an economic operator that is responsible. So what I believe would help most people would be we take these three attributes and create a vocabulary with the tools that you want to use. and then see if we need five attributes or 10 for a product segment agnostic thing. Yeah. Uh-huh.</p>
+<p id=f69d class="phone s07"><cite>Rigo_Wenning:</cite> group is They are creating a huge ontology for any kind of measures you can imagine.</p>
+<p id=aebe class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, that's fine, too. yeah.</p>
+<p id=caba class="phone s07"><cite>Rigo_Wenning:</cite> And so that would mean that we show people how to integrate those measures, by saying here is your economic operator and so on. This is the factory and then you can have quality measures and sensor measures all kind of measures and meters integrated into the DPP that you take just from the special data on the web so-called SOSA and SSN vocabularies and then for electronics you could use SAR for that and…</p>
+<p id=96f9 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. Yes.</p>
+<p id=639e class="phone s07"><cite>Rigo_Wenning:</cite> and we just need to show people how to do it in this specification and then we can say hey this is the unification trap we are not defining everything here we just give you a frame where you can fill and this is how you secure it and then this is how you secure it with a verifiable credential I think that way we can really kind of make good progress and…</p>
+<p id=c4fb class="phone s07"><cite>Rigo_Wenning:</cite> ease the pain for many many</p>
+<p id=7c8d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So I see that Ken and…</p>
+<p id=d087 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Kolin are here. So I was just asking questions.</p>
+<p id=9147 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So I'm handing back over to the work group leaders and the plan they maybe have for the call today.</p>
+<p id=2c01 class="phone s07"><cite>Rigo_Wenning:</cite> Yeah, we were just gossiping.</p>
+<p id=1565 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, I think we started kind of with the use case requirements.</p>
+</section>
+
+<section>
+<h3 id=3d5a>Use Case Requirements and Business Wallet</h3>
+<p id=7242 class="phone s09"><cite>Carsten_Stöcker:</cite> So we started doing this from a business wallet perspective and I think this was discussed last week and from my perspective now we have two topics on the agenda in terms of how to kind of add more DPP related use cases and the second one is also I think kind of to finish this discussion about the next steps and then let's say discuss a bit what you just started how to kind of the base vocabulary for both for the DPPs and the business wallet because also on the business wallet side there are interested people in US in APEC especially in Japan who wants to contribute to the business wallet vocabulary but I think we have to agree on the kind of the base vocabulary and that's probably kind of for today in terms of next steps I</p>
+<p id=2166 class="phone s05"><cite>Ivan_Herman:</cite> So I think what we also discussed last week with the use case document is to separate the use case part…</p>
+<p id=154f class="phone s09"><cite>Carsten_Stöcker:</cite> Mhm.</p>
+<p id=df33 class="phone s05"><cite>Ivan_Herman:</cite> which is on VCs in general from the part which is really relevant for the vocabulary itself and the VC use cases eventually should be added to the C use cases document which does exist and this task force should not do that but just the VC thinks…</p>
+<p id=4c0a class="phone s05"><cite>Ivan_Herman:</cite> which are relevant for these vocabularies and concentrate on the vocabulary issues otherwise it doesn't look like a task force being part of a larger working group about</p>
+<p id=d380 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, I think that's a big undertaking because we basically let's say kind of describe business wallet use cases in general to have them in one place. Yeah. where should we move if we move them over? So where should we move them over? I think that could be one option or…</p>
+<p id=114d class="phone s09"><cite>Carsten_Stöcker:</cite> the other option is so we do two things. we do kind of let's say supporting material where we describe the business wallet use cases and have them in one place just as supporting material. and then in addition so we carve out vocabulary related topics. Yeah.</p>
+<p id=ec0e class="phone s05"><cite>Ivan_Herman:</cite> I think…</p>
+<p id=0ada class="phone s05"><cite>Ivan_Herman:</cite> what we really concentrate on in this task force is vocabulary related topics. That's what we are working on. We don't want to do general VC related things. that's out there for things that we can discuss on the face toface meeting when we are all together but we have to be careful to focus ourselves to what's really necessary for the task force otherwise we will spend an inordinate amount of time on the use case document…</p>
+<p id=38d2 class="phone s09"><cite>Carsten_Stöcker:</cite> No. No.</p>
+<p id=4219 class="phone s05"><cite>Ivan_Herman:</cite> which is not really a good idea.</p>
+<p id=2ff0 class="phone s09"><cite>Carsten_Stöcker:</cite> I think what makes sense. I think we might want to park this until we meet in Brussels. And then in addition, so we can write a short module in terms of vocabulary related topics. For example, credential chaining. We need this for delegation power of attorney for example that's vocabulary related so we can kind of let's say do separate this out and we leave the rest to Brussels and then we can make a kind of decision if we should kind of merge them somewhere else or whatever we do with it but I think it's important because these use cases physical AI postquantum cryptoc corridors supply chain critical infrastructure they are pretty much under representative and we need</p>
+<p id=b13b class="phone s09"><cite>Carsten_Stöcker:</cite> to find a home for the business wallet related use cases and I think the intersection of DPPs and business wallets I think can do this here but for all the rest we also need to find a place I would say cool okay for you Ian…</p>
+<p id=fc72 class="phone s09"><cite>Carsten_Stöcker:</cite> if kind of separate out them.</p>
+<p id=760f class="phone s05"><cite>Ivan_Herman:</cite> Yeah. Yeah.</p>
+<p id=41e3 class="phone s05"><cite>Ivan_Herman:</cite> I'm sorry. and I think there will be some discussions. I don't remember which day, but there will be some discussion use cases on the facetoface meeting.</p>
+<p id=a77e class="phone s08"><cite>Carolynn_Bernier:</cite> Coming back to the face toface meeting there was an idea of meeting to talk about vocabularies on the Monday afternoon.</p>
+<p id=d67b class="phone s08"><cite>Carolynn_Bernier:</cite> Has this been cancelled or this been maintained?</p>
+<p id=dabe class="phone s05"><cite>Ivan_Herman:</cite> Phil is not around this week.</p>
+<p id=0d69 class="phone s05"><cite>Ivan_Herman:</cite> He organized it. But what he told me last time that there were only two or three persons who said they would be around and…</p>
+<p id=7dd8 class="phone s05"><cite>Ivan_Herman:</cite> among the two or three it includes Phil and myself who are not really domain expert anyway.</p>
+<p id=3123 class="phone s05"><cite>Ivan_Herman:</cite> So it hasn't been formally cancelled, Caroline, but it may die out finally.</p>
+<p id=b238 class="phone s08"><cite>Carolynn_Bernier:</cite> …</p>
+<p id=10001 class="phone s08"><cite>Carolynn_Bernier:</cite> I definitely do hope it dies out. I really really do.</p>
+<p id=2777 class="phone s05"><cite>Ivan_Herman:</cite> Let me try to find the pointer to the</p>
+<p id=ab04 class="phone s08"><cite>Carolynn_Bernier:</cite> And then if I understand the email that Phil sent last week, the official moment to talk about vocabularies is on the Thursday morning. I think Karsten received this meeting as it was either Brent or</p>
+<p id=73c0 class="phone s05"><cite>Ivan_Herman:</cite> BC process. where is the screen here?</p>
+<p id=2393 class="phone s05"><cite>Ivan_Herman:</cite> What I have is it's not yet the final agenda…</p>
+<p id=e976 class="phone s05"><cite>Ivan_Herman:</cite> but the best I know and…</p>
+<p id=6162 class="phone s09"><cite>Carsten_Stöcker:</cite> That's good. Yeah.</p>
+<p id=8407 class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> Did Phil send around an agenda for next week. I might be able to participate on Wednesday. </p>
+<p id=7994 class="phone s05"><cite>Ivan_Herman:</cite> vocaps is on Thursday indeed but I think I have a meeting with Brent after this course.</p>
+<p id=cbb5 class=irc><cite>&lt;Ivan_Herman&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1h-0OXOR5NsY-OlC0i26mCDK45B15j2BfkL8f2CIY30E/edit?gid=0#gid=0">VCWG Brussels F2F 2026 Agenda - Google Sheets</a> </p>
+<p id=7e0f class="phone s08"><cite>Carolynn_Bernier:</cite> morning. Yes.</p>
+<p id=8a6b class="phone s05"><cite>Ivan_Herman:</cite> So if there is anything I should tell him, you tell me because there is also the use case document on Tuesday in the morning.</p>
+<p id=9747 class="phone s08"><cite>Carolynn_Bernier:</cite> But…</p>
+<p id=d391 class="phone s08"><cite>Carolynn_Bernier:</cite> what are those Use cases for what?</p>
+<p id=d44f class="phone s05"><cite>Ivan_Herman:</cite> There is a use case document done by Joe Andrew and I don't know who else on VC use cases which is a relatively old document which it exists and there is a discussion about sort of updating it and I already talked to Brent about the document that was done here that it should be somehow the two should know from one another.</p>
+<p id=b01f class="phone s05"><cite>Ivan_Herman:</cite> So I would expect this topic coming up on that session.</p>
+<p id=cbe1 class="phone s08"><cite>Carolynn_Bernier:</cite> And I see.</p>
+<p id=b5ed class="phone s05"><cite>Ivan_Herman:</cite> No, you might be put on the spot there.</p>
+<p id=9ba6 class="phone s08"><cite>Carolynn_Bernier:</cite> Mhm. Suzanne</p>
+<p id=ace3 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I was just wondering. So, I thought I had a full week assignment. but it turns out I could be able to join you on Wednesday in Brussels and…</p>
+<p id=a096 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> coming anyway for the dinner on Tuesday evening. is there a possibility to have the dish passport vocabulary discussion on Wednesday or which is now I think scheduled on Thursday or is that a no-go?</p>
+<p id=49e8 class="phone s05"><cite>Ivan_Herman:</cite> From Bren's point of view,…</p>
+<p id=0622 class="phone s05"><cite>Ivan_Herman:</cite> I presume it doesn't make any difference. So I don't see The question is whether the task force has other constraints or…</p>
+<p id=76bc class="phone s05"><cite>Ivan_Herman:</cite> not. Yeah,…</p>
+<p id=b718 class="phone s08"><cite>Carolynn_Bernier:</cite> I think I could make it on my side.</p>
+<p id=9c0d class="phone s08"><cite>Carolynn_Bernier:</cite> I could on Wednesday.</p>
+<p id=689f class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So…</p>
+<p id=a8e7 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> if we could do that morning or some somewhere Wednesday through the day that would be perfect because then I could join Mhm.</p>
+<p id=2257 class="phone s05"><cite>Ivan_Herman:</cite> I am not the one who decides.</p>
+<p id=5d84 class="phone s05"><cite>Ivan_Herman:</cite> So I can be the go between that probably it's better…</p>
+<p id=1e60 class="phone s05"><cite>Ivan_Herman:</cite> if you drop in a mail to Brent and…</p>
+<p id=1a97 class=irc><cite>&lt;Eva_Blomqvist&gt;</cite> Unfortunately not… </p>
+<p id=7fa4 class="phone s05"><cite>Ivan_Herman:</cite> and Phil for them to do the change.</p>
+<p id=6976 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay, I'll do that.</p>
+<p id=b7e6 class="phone s08"><cite>Carolynn_Bernier:</cite> Is anyone else in this call going to be present in Brussels for all three days,…</p>
+<p id=a1b4 class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> I am planning to come for the Tuesday Dinner and Wednesday then. </p>
+<p id=0d5b class="phone s09"><cite>Carsten_Stöcker:</cite> I will I'm planning to go to buses.</p>
+<p id=d749 class="phone s05"><cite>Ivan_Herman:</cite> And it's my job to be there for the three days. Yes.</p>
+<p id=20ca class="phone s08"><cite>Carolynn_Bernier:</cite> Tuesday to Thursday?</p>
+<p id=9851 class=irc><cite>&lt;Ivan_Herman&gt;</cite> Latest list of attendees: <a href="https://docs.google.com/spreadsheets/d/1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/edit?gid=179611341#gid=179611341">VCWG Brussels F2F 2026 Attendees - Google Sheets</a> </p>
+<p id=eb37 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, depending on the gender.</p>
+<p id=a3ea class="phone s08"><cite>Carolynn_Bernier:</cite> Anybody else?</p>
+<p id=c60d class="phone s09"><cite>Carsten_Stöcker:</cite> Depending on the gender, but I think if it's distributed across a week, I will be there. Yeah.</p>
+<p id=7f59 class="phone s08"><cite>Carolynn_Bernier:</cite> But it's going to be remote attendance will be possible, Eva will not be there. Reynolds.</p>
+<p id=3df2 class="phone s01"><cite>Ingo_Wolf:</cite> You're muted. Ronald</p>
+<p id=6e14 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah. Yeah, I see For this vocabulary discussion, have we already selected which vocabularies in particular we want to address in this meeting? Because I can only say from our side, we have this European business wallet vocabulary which is currently be specified by the semantic groups in the VU consortio. I know this UNP core vocabulary which defines more or less the DPP core vocabulary. This is something which is defined using at least classes, properties, code list and so on.</p>
+<p id=e357 class="phone s06"><cite>Ronald_Koenig:</cite> So that means in the same way as we do it for the European business wallet vocabulary and I know Ingo that we have prepared this battery vocabulary right in a way which is fitting to the W3C specification for ontologies and terminologies. So that means this are these three vocabularies we want to discuss about or…</p>
+<p id=5910 class="phone s06"><cite>Ronald_Koenig:</cite> is there any others which we are not aware of?</p>
+<p id=867d class="phone s08"><cite>Carolynn_Bernier:</cite> So there are many core ontologies for DPPS.</p>
+<p id=c442 class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> Thanks, updated my attendance. </p>
+<p id=a4b5 class="phone s08"><cite>Carolynn_Bernier:</cite> The UNP have created a core ontology for DPP. Surpass 2 has defined one. EVA has worked on one previously. and there are many other projects that have defined core ontologies for DPP. So if you want I can prepare a kind of a summary of existing core ontologies for DPP that this may be a good starting point right. so</p>
+<p id=7c78 class=irc><cite>&lt;Ivan_Herman&gt;</cite> thanks </p>
+<p id=4da1 class="phone s07"><cite>Rigo_Wenning:</cite> That could be that first of all Phil is hammering on me Colleen to clear the rights on those ontologies. that's The second question is have it today from Pontan. the question whether the CIA ontology is using the SOZA paradigm from the data special on the web working group. there is a sensor and metering ontology called SOSA and they said that they claimed or…</p>
+<p id=f723 class="phone s07"><cite>Rigo_Wenning:</cite> they were assuming that the SAS 2 ontology is using that which would nicely align stuff but if it's not then we need to look into it.</p>
+<p id=9ce0 class="phone s07"><cite>Rigo_Wenning:</cite> So a list of those ontologies would be really nice because then we can look at how they align.</p>
+<p id=a117 class="phone s08"><cite>Carolynn_Bernier:</cite> Yes. So with Eva,…</p>
+<p id=c1d1 class="phone s08"><cite>Carolynn_Bernier:</cite> and Suzanne were actually writing a paper on this topic because Google is also working on their own DPP corontology. there are Corontologies popping up all over the place and They're all designed according to a specific objective. they reuse things, different things, they're all similar but different somehow, right?</p>
+<p id=d39b class="phone s08"><cite>Carolynn_Bernier:</cite> In the paper we started to write with Suzanne and Eva, we have a list of five or six that we want to compare and to compare in terms of how they align to EU regulations, how they are designed …</p>
+<p id=1e80 class="phone s08"><cite>Carolynn_Bernier:</cite> what is their design principles, what they don't reuse. Ivan.</p>
+<p id=0c96 class="phone s05"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=2932 class="phone s05"><cite>Ivan_Herman:</cite> finish it and then I can</p>
+<p id=2c8b class="phone s08"><cite>Carolynn_Bernier:</cite> So to answer Ronald's question, it may be good to start with a state-of-the-art kind of what already exists in terms of DPP core ontologies and maybe the use cases for me are fundamental because they help us define what it is that we want to achieve with this work in W3C, which I think is creating interoperability</p>
+<p id=0eb2 class="phone s08"><cite>Carolynn_Bernier:</cite> between different DPP systems that are proposed in the world because the Chinese are present proposing their DPP system. There are v mandatory schemes and we want to create interoperability between them in order to make data reusable easily whatever the DPP scheme that is being used.</p>
+<p id=bfd2 class="phone s08"><cite>Carolynn_Bernier:</cite> Anyways, this is how I envision our work here in W3C.</p>
+<p id=e162 class="phone s09"><cite>Carsten_Stöcker:</cite> I think we have maybe kind of two different challenges…</p>
+<p id=5a2c class="phone s09"><cite>Carsten_Stöcker:</cite> because in DPPs there's a lot of kind of adjacent activities in surplus in Europe in Google in China United Nations to bring this under one hood I think this is what one key area I think on the business wallet side is a little bit different because this is just from a timing perspective a little bit earlier in the ecosystem. So there's not so much ecosystem. I think in the past people have also started a little bit with the business wallets and vocabularies but I think there was not a big push for this and for that reason I think in terms of dependencies and stakeholder management it might be a little bit simpler with the business wallets. Yeah.</p>
+<p id=fab6 class="phone s09"><cite>Carsten_Stöcker:</cite> and on the business budget side I think the big topic is really to find a partner in APEC in US and then kind of to agree on a base vocabulary for the legal entity for the power of attorney for market roles or…</p>
+<p id=091a class="phone s09"><cite>Carsten_Stöcker:</cite> whatever this can be agreed and I think on the DPP side there's more kind of stakeholder management dependency work to be done yeah that's that little bit my understanding for that reason on the business world side it might be a little bit more independent in terms of kind of pushing a base vocabulary in place while you guys have to do more of the stakeholder management. At least that's my understanding.</p>
+<p id=cd1d class="phone s08"><cite>Carolynn_Bernier:</cite> In the DPP world,… we have lots of vocabularies. that we kind of have to like you said bring under a common roof not a single common roof that I'm sure ISOIC JDC5 is going to create their own common roof and that's totally fine it's not a problem whereas what you need to do in the wallet world is to in what other regions of the Carolynn Bernier:</p>
+<p id=5b15 class="phone s08"><cite>Carolynn_Bernier:</cite> world are thinking about business wallets and how they're going about creating data standards for those wallets in India, Japan, everywhere.</p>
+<p id=f452 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah. I think Yeah,…</p>
+<p id=0eb1 class="phone s06"><cite>Ronald_Koenig:</cite> Ken you said that there are already vocabularies in the US from the business register with respect to legal persons and legal person identity that would very helpful for us to see this one…</p>
+<p id=f70f class="phone s09"><cite>Carsten_Stöcker:</cite> I think this was Sure.</p>
+<p id=711e class="phone s06"><cite>Ronald_Koenig:</cite> because we don't want to reinvent we would like to reuse them and currently the problem what really at least I can only speak for the European business wallet vocabulary. What I see there is that we have a lot of vocabularies available like the EU core vocabulary for example for persons. I have now three or five vocabularies I can list to describe a person starting from schema or…</p>
+<p id=fa95 class=irc><cite>&lt;Rigo_Wenning&gt;</cite> <a href="https://xkcd.com/927/">xkcd: Standards</a> </p>
+<p id=9557 class="phone s08"><cite>Carolynn_Bernier:</cite> Mhm.</p>
+<p id=0c57 class="phone s06"><cite>Ronald_Koenig:</cite> to the core vocabulary to whatever location is the same thing.</p>
+<p id=59de class="phone s06"><cite>Ronald_Koenig:</cite> I can describe the location in three or four different ways using different vocabularies and they are not matching with each other. Rigo Wenning:</p>
+<p id=a474 class=irc><cite>&lt;Ivan_Herman&gt;</cite> Rigo was faster... </p>
+<p id=cf73 class="phone s06"><cite>Ronald_Koenig:</cite> There's no rule how I match let me say a saf to some street address or something like that but it describes semantically the same thing and this is what I believe that we have to look into the different vocabularies we have and try to figure out…</p>
+<p id=5029 class="phone s06"><cite>Ronald_Koenig:</cite> where we can reuse vocabulary instead of reinventing the wheel for every different district we have or sector. Yeah.</p>
+<p id=3b3e class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah. No,…</p>
+<p id=c0ff class="phone s09"><cite>Carsten_Stöcker:</cite> no, I think that's fine. from my perspective, yeah, you're right. I think DHS has done some, but I think it's a little bit older. In Europe, people have tried to express business wallet vocabularies and roles and delegations of what in the past. Nothing got much momentum, but of course, we can reuse it. Yeah. I think from my perspective not maintained.</p>
+<p id=023e class="phone s06"><cite>Ronald_Koenig:</cite> And another issue is this one you say to cast is if I for example look into the EU core vocabularies they are very official but if they are maintained then you will see it is mostly not the case. So that mean this is really a big issue…</p>
+<p id=f7c3 class="phone s09"><cite>Carsten_Stöcker:</cite> Absolutely. Yeah.</p>
+<p id=b16f class="phone s06"><cite>Ronald_Koenig:</cite> because the not maintained vocabulary is completely useless because</p>
+<p id=54c1 class="phone s07"><cite>Rigo_Wenning:</cite> Let go Ivan first. I think I have an answer to that One. Rigo Wenning:</p>
+<p id=dc5a class="phone s05"><cite>Ivan_Herman:</cite> May I?</p>
+<p id=eb52 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, Come on.</p>
+<p id=b56f class="phone s05"><cite>Ivan_Herman:</cite> So if I understand the situation I would put it in a more concentrated manner. what we have to show is how and what are the missing bits to be able to use any of those vocabularies for A credential we are in the verifiable credential working group.</p>
+<p id=33dc class="phone s05"><cite>Ivan_Herman:</cite> So our goal is to move to prove or show that any of these vocabies they can do whatever they want and we don't control them but how would we use them within a verifiable credentials and what are maybe the missing links the missing features missing terms in the vocabulary maybe that are necessary to be able to integrate the others</p>
+<p id=9fed class="phone s05"><cite>Ivan_Herman:</cite> Who knows maybe we will end up by not defining a vocabulary at all because the things can be used directly in VC without further ado and we don't have anything to do that's an optimistic view and probably as every optimistic view is probably stupid but we have to concentrate and…</p>
+<p id=fe79 class="phone s05"><cite>Ivan_Herman:</cite> and formulate our own work along the lines of what we can do for verifyable credentials because this is the working room.</p>
+<p id=5dd1 class="phone s09"><cite>Carsten_Stöcker:</cite> True. Yeah.</p>
+<p id=1fa1 class="phone s09"><cite>Carsten_Stöcker:</cite> But I think it's fine because no problem and maybe we really have to distinguish if you try to put to fit the kind of the methodology for DPSPs and for business wallets the same way. I think from my perspective as Rodan said it,…</p>
+<p id=a711 class="phone s09"><cite>Carsten_Stöcker:</cite> we look what's there, what can be reused, but we also model what is the base vocabulary that could be reused across the board and then putting this in place. Yeah, I think that's Ronald that's…</p>
+<p id=304d class="phone s05"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=10002 class="phone s09"><cite>Carsten_Stöcker:</cite> what we are primarily kind of trying to achieve, And of course we could blend in a lot of very special European whatever identifiers and here and that but probably on a global level these super special European flavors are probably not really kind of value creating I think the key value creation is a base vocabulary that can be reused from my perspective arona what's your view okay Here we go.</p>
+<p id=4b85 class="phone s05"><cite>Ivan_Herman:</cite> Rio was on the queue. Just let's try to keep the queue.</p>
+<p id=185b class="phone s09"><cite>Carsten_Stöcker:</cite> Which core vocabulary you have name for this?</p>
+<p id=029d class="phone s07"><cite>Rigo_Wenning:</cite> First of all I think to the core vocabularies those were created by Vasidio Pististeras when he was at DGIT and I think the commission has hunted us for 10 years to maintain it because they are the basos called them the core vocabularies on join up with addresses and…</p>
+<p id=3546 class="phone s09"><cite>Carsten_Stöcker:</cite> I forgot the name. Okay. Yeah.</p>
+<p id=de80 class="phone s07"><cite>Rigo_Wenning:</cite> things and all in big data.</p>
+<p id=44f9 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah. Can you share this?</p>
+<p id=3679 class="phone s07"><cite>Rigo_Wenning:</cite> So the commission would be more than happy for us to take them the spatial data on the web some other group and retain it. so if we find resources and we find people and companies willing to maintain that there is no obstacle. So that's The second thing is I think it's decisive what Caroline says and this touches on the business wallet as well as on the DPP which is we are sitting on this linked data stack and I mean Ivan and Susanna they know it by heart is the availability to create interoperability in diversity and we are creating</p>
+<p id=b81e class="phone s07"><cite>Rigo_Wenning:</cite> here this kind of institutional setup to say hey and this is how you use verifiable credentials with their vocabulary provided it's okay and so on but it's also if you have a compound DPP which is a car that has electronics in it and you have electronics DPP and battery DPP. This is how you mix them together. so there is an educational part which is less of a specification, but a working group is also an institutional way to for example create primers and explanatory notes and things like that.</p>
+<p id=c8e1 class="phone s07"><cite>Rigo_Wenning:</cite> So we have the ability to create this interoperability not by unification by saying hey please use that please use mine but by saying hey and this is how you can combine them and this is how you secure the combination thereof where Ivan says hey maybe we need this and that thing in addition. just so our goal is not to just make up some vocabulary.</p>
+<p id=6689 class="phone s09"><cite>Carsten_Stöcker:</cite> Mhm. Yeah. how would you formulate the goal to make a govern to have a govern vocabulary that's being adopted and…</p>
+<p id=c4d3 class="phone s07"><cite>Rigo_Wenning:</cite> the No,…</p>
+<p id=3f45 class="phone s09"><cite>Carsten_Stöcker:</cite> adoption is tested. how would you kind of Yes. Mhm.</p>
+<p id=cfe5 class="phone s07"><cite>Rigo_Wenning:</cite> you called it a core upper framework on making things work together and I imagine this on a data level less on a protocol level on a system level so it's not yet another framework it's just to tell people hey you talked about this Caroline and we talked about all those vocabularies out there but do</p>
+<p id=10003 class="phone s07"><cite>Rigo_Wenning:</cite> they really respect the things the principles of linked data. So we can use them. If not, we can state and we can tell look if you want to use this then you need to transform it in that way. And those are things that the group will be confronted with and the use case document kind of scopes us in saying hey this is what we want to achieve. And if you fit in with your vocabulary that you contribute or where we make it work, I wouldn't make just any vocabulary, but that it needs some traction. So the battery vocabulary once it's endorsed by the battery alliance, yeah, then we kind of say, &quot;Hey,&quot; and that's how you use it here.</p>
+<p id=c900 class="phone s07"><cite>Rigo_Wenning:</cite> or the battery license says, &quot;Hey, and by the way, we don't want to put an official stamp on it. please take it up and manage it through the process to get it approved. there is internationalization verification, there's accessibility verification and all of that. so there is work to do. But our thing here is to say, hey, and how does the Chinese and the American one and the European one work</p>
+<p id=eaf8 class="phone s05"><cite>Ivan_Herman:</cite> Guys, let's keep to the queue and we have only 15 minutes to go.</p>
+<p id=d6d1 class="phone s05"><cite>Ivan_Herman:</cite> So, let's also try to keep it short.</p>
+<p id=18a3 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, Ian,…</p>
+<p id=e3b1 class="phone s09"><cite>Carsten_Stöcker:</cite> are you next to the queue or who's next?</p>
+<p id=bd29 class="phone s05"><cite>Ivan_Herman:</cite> No, Ronald.</p>
+<p id=8495 class="phone s09"><cite>Carsten_Stöcker:</cite> Hold on. Sorry.</p>
+<p id=a76d class="phone s06"><cite>Ronald_Koenig:</cite> That's a short answer with the verifiable credential vocabulary.</p>
+</section>
+
+<section>
+<h3 id=8bb8>Defining Goals for the Working Group</h3>
+<p id=c494 class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> Do we have a document where we write down ideas about our &quot;goal definition&quot;. </p>
+<p id=f871 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah, working on this business vocabulary on just to make sure we fit completely into the verifiable credential vocabulary without any problem. If you are using JSON ID and ontology and terminology based on these turtle and RDFS schema then you are fitting completely in. So we don't have any requirement for fy the credential vocabulary. Currently the problem what we really have is that we need some common approach how we describe the credential subjects inside the credential vocabulary completely separated from the verifiable credential vocabulary itself and this is something which is not so easy because usually you want to reuse existing vocabularies but this is only possible if you get</p>
+<p id=7c2a class="phone s06"><cite>Ronald_Koenig:</cite> a vocabulary where you define the semantic area so that you don't have so much overlapping and everybody is trying to explain the same semantic area again and again or semantic domain is a better word for this. So what I wanted to say is with the verifiable credential vocabulary and if this group is concerned about the verifiable credential vocabulary, I have no concerns at all because the vocabulary is well defined with the latest release I have received and is fitting to what we are currently doing with the European business wallet vocabulary.</p>
+<p id=3769 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> So I hear a lot of different ideas of what this working group should do. I hear subject definition. that's fine. No problem at all. We're finding ourselves. But what I would love to see or what we can all maybe profit from is if we have a document where we write down some buzzwords of what we believe we want to achieve with this we can say okay we define a product segment agnostic DPP thing or we can describe how then this is all matched into</p>
+<p id=a0f4 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> verify the credential or how we have product segment specific descriptions in the subject or how we link to supply chain certificates within a DPP are all that things all good ideas but all different loads of work I guess all different shapes of results that we can produce is there a document where we can collect those ideas just to make sure that we capture the different views of what we actually need.</p>
+<p id=5fdd class="phone s08"><cite>Carolynn_Bernier:</cite> in my so I'm going to respond to Suzanne it for me the use case documents was the place…</p>
+<p id=85b8 class="phone s08"><cite>Carolynn_Bernier:</cite> where we would collectively describe what it is that we're trying to achieve here in this So yes,…</p>
+<p id=3a47 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Is that already somewhere?</p>
+<p id=71fa class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Caroline. Mhm.</p>
+<p id=0a12 class="phone s08"><cite>Carolynn_Bernier:</cite> there is already a draft for the moment. it's 150 pages long and it talks about wallets. So for the moment we have not looked at the use case document structure. we could look at it now. I can share my screen if you want which is very you have to have your GitHub account linked to so this is it here.</p>
+<p id=9d4e class="phone s01"><cite>Ingo_Wolf:</cite> Yes.</p>
+<p id=35db class="phone s08"><cite>Carolynn_Bernier:</cite> So as I said this has been populated by Ronald and Ingo I believe with different use cases for the business wallet and these we build consortium work and then from these use cases they define requirements for the wallet but this is not what I expected</p>
+<p id=bf32 class="phone s08"><cite>Carolynn_Bernier:</cite> from this use case document. I expected that it would be less on use cases for wallets and DP DPPS than on use cases where global interoperability between different DPPS or…</p>
+<p id=b3f2 class="phone s05"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=324d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Ivan.</p>
+<p id=6656 class="phone s08"><cite>Carolynn_Bernier:</cite> between different wallets is needed. So these use cases are all great. I don't know who Ivan clapped. So these are all great wallet use cases but not wallet international interoperability use cases. And I have had zero time in May to write down my ideas of what I consider to be a use case where you need to create interoperability between different DPPS and different types of wallets. Okay, but this is the type of interoperability we want to create.</p>
+<p id=edac class="phone s08"><cite>Carolynn_Bernier:</cite> And I really appreciate what Rio just said. Do we really want to create a new vocabulary? is it really needed to create a new vocabulary?</p>
+<p id=861d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Thank you.</p>
+<p id=c3d7 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Carolyn Agree.</p>
+<p id=2b7f class="phone s08"><cite>Carolynn_Bernier:</cite> So coming back to the meeting in Brussels, I would think that this would be a great meeting if we could agree on the structure of this future use case document which we have not discussed. For me, this is really the fundamental point. We have to agree what it is that we want to achieve together. And unless we write down what we consider a use case,…</p>
+<p id=3e13 class="phone s08"><cite>Carolynn_Bernier:</cite> we will not understand what we're trying to achieve. Ian</p>
+<p id=2dfa class="phone s05"><cite>Ivan_Herman:</cite> So you said enormous amount of things that I wanted to say…</p>
+<p id=df08 class="phone s05"><cite>Ivan_Herman:</cite> which is great. I would go one step further simply because I am the only way I understand it is that when I write it down in a program or something equivalent. So I would like to see one or two examples which take some vocabularies of your area and write down a full verifiable credentials without proof etc which is irrelevant from this point of view but to write down a verifiable credential that makes use how would we envisage a VC making use of those vocabularies and what are the obstacles</p>
+<p id=226a class="phone s05"><cite>Ivan_Herman:</cite> Ronald may be right that there are no obstacles at all and if there are no obstacles then we can stop working and that's fine. But I see Caroline who is not happy at all. So there are obstacles probably. Yeah. No, I want to see them. I want to understand as an outsider I want to understand what the obstacles are whether those obstacles are in the structure or VC which is not out of the question or whether the obstacles are because there are missing terms that we have to define but I want to see that in practice and take two or three examples one at least one from the DPP and one for the other side the business wallet</p>
+<p id=9635 class="phone s05"><cite>Ivan_Herman:</cite> side where the fact of doing an integration on the level of VC is the central question and…</p>
+<p id=07c1 class="phone s06"><cite>Ronald_Koenig:</cite> Maybe I can help a little bit.</p>
+<p id=50b6 class="phone s05"><cite>Ivan_Herman:</cite> I would like to see code not really text Ronald I'm sorry Carson was on the queue I'm sorry I don't want to be a pain but there is a good reason All right.</p>
+</section>
+
+<section>
+<h3 id=4ee6>Separating DPP and Business Wallet Activities</h3>
+<p id=8cf5 class="phone s09"><cite>Carsten_Stöcker:</cite> I know we have to do the…</p>
+<p id=ce8d class="phone s09"><cite>Carsten_Stöcker:</cite> so Ian I think you mentioned one word integration.</p>
+<p id=a363 class="phone s05"><cite>Ivan_Herman:</cite> Thank</p>
+<p id=5e65 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, I think the long-term objective is that we might have an integrated so we have integrated DPP business wallet vocabularies. Yeah. So this is a long-term kind of vision. There are multiple use cases for the business wallets. Many of them DPP is just one of them. Yeah. And I think right now as a group we are pretty much struggling because everyone has a completely different mental model. Everyone has different objectives because on the DBP side there are kind of other objectives and mental models and on the business wallet side and at some point in time you need to integrate them. But I think we should separate both activities to think about two speedboats. Yeah. On the DPP side you address your DPP things with the methodology and your mental model and your objectives. And on the business wallet side we do it the other way around. Yeah.</p>
+<p id=b696 class="phone s09"><cite>Carsten_Stöcker:</cite> So we basically do the base base vocabulary for business wallets and then of course one of the business wallet use cases a DPP. I'm happy to describe the use cases for DPP and business wallet integration and even on the vocabulary side, but from a business wallet perspective is really to get the basics done to get the whatever to get the basics right and to really have the base vocabulary and as Roland kind of let's say described it as well and then to get rid a little bit of dependencies with the DPP discussion because this is really kind</p>
+<p id=0acc class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> Battery VC Example using the UNTP Logical Model followin DIN /DKE 99100 Spec (not perfect, but good start). </p>
+<p id=10004 class="phone s09"><cite>Carsten_Stöcker:</cite> I think this is slowing us down. We should treat it as two speed boats from my perspective and then to integrate it later where we have the intersection of business wallet and DPP vocabulary but right now I would really kind of let's say advocate for having two speeds boats and then we can also pick up Rigo's comments. I think they also make sense and we could do it much faster…</p>
+<p id=226e class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> <a href="https://untp.unece.org/artefacts/samples/v0.7.0/dpp/DigitalProductPassport_battery_instance.json">https://<wbr>untp.unece.org/<wbr>artefacts/<wbr>samples/<wbr>v0.7.0/<wbr>dpp/<wbr>DigitalProductPassport_battery_instance.json</a> </p>
+<p id=d00a class="phone s09"><cite>Carsten_Stöcker:</cite> if we focus on the business wallets independently from the DPPs. Yep.</p>
+<p id=b083 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. …</p>
+<p id=336b class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Ken, you just said what I wanted to say. I think that we have completely different use cases for the business wallet than we have for the DPP. I think it's wrong to handle both topics in the same group. I think we need to make two groups out of that. I also believe that we have to check if we need to do anything at all. I just dropped an example of how uses verifiable credentials using the UNP logical model underneath. and I really do not want to create any divergence. So either we do everything in UNP or we do everything under this working group here.</p>
+<p id=1599 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> because we don't have the resources to have two different initiatives. so I agree I think the two DPP and digital wallet use cases are different for different working groups. Mhm.</p>
+<p id=9cd1 class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah, of course there will be convergence and…</p>
+<p id=d56d class="phone s09"><cite>Carsten_Stöcker:</cite> we can handle this a little bit later. Yeah.</p>
+<p id=3fc9 class="phone s01"><cite>Ingo_Wolf:</cite> Oops.</p>
+<p id=5f2f class="phone s06"><cite>Ronald_Koenig:</cite> I just wanted to show very quickly my screen here.</p>
+<p id=21fa class="phone s06"><cite>Ronald_Koenig:</cite> As an answer to what Ian was saying. Yes, I agree completely with you with you. Can you see my screen? Yeah. Okay. This is from the European business wallet vocabulary we're currently working on. And what is the reason that I'm saying that we don't have any problems what you can see is we are using the verifiable credential v2 data model and don't see any issue with it using it and justifying the credential subject which here describes in lengthly identity of a European business to the European business identity including legal representatives or shareholder structures and all the other I'm pretty convinced that W3C verifiable data model provides what we need and the vocabulary which is below this one the VCDM2.0</p>
+<p id=e212 class="phone s06"><cite>Ronald_Koenig:</cite> zero vocabulary is describing completely what we need and this is not the requirement this is not the issue what we have is and this is what we try to achieve is and I think we should put it also into a international perspective is that we get semantically the same understanding how a business identity is described for example what is a legal name what is a legal representative ownership structure how owner structure looks</p>
+<p id=420a class="phone s06"><cite>Ronald_Koenig:</cite> light and so on a semantic level and defining this model and for this one it is interesting to understand the use cases in which we need this information otherwise they will not go into the vocabulary just to share that even I completely agree with you we should really go into the structure and recognize where the problems are and then discussing the semantics and the other one for Sana what we are also trying to achieve is to get the DPPs and the European business wallet identities together.</p>
+<p id=985d class="phone s06"><cite>Ronald_Koenig:</cite> For example, in a DPP, we have a manufacturer or economic operator or other roles which have already identities and to combine the identity of a economic operator with the DPP.</p>
+<p id=4cb8 class="phone s06"><cite>Ronald_Koenig:</cite> So that the economic operator for example can issue a DPP or can be the holder of a DTP and can prove that for example he is economic operator of a certain battery or something like that. This brings both vocabulary together and should then be reused inside the full vocabulary.</p>
+<p id=9a6c class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> fully agree.</p>
+<p id=b824 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> I mean, you maybe know the little article I wrote about the DPP use cases for wallets and there you have the registration of a DPP, issuing a DPP, verifying a DPP and for all of those you need wallets. Yeah, that's the intersection. Ronald Koenig:</p>
+<p id=5e60 class="phone s06"><cite>Ronald_Koenig:</cite> And that we have in German in Europe now this DPP registry where we have to authenticate against the DPP registry before we can register any DPP and…</p>
+<p id=924e class="phone s06"><cite>Ronald_Koenig:</cite> so on and there is where I see both things comes together.</p>
+<p id=4ff2 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, absolutely.</p>
+<p id=2798 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> You're also raising your hand.</p>
+<p id=7f7f class="phone s07"><cite>Rigo_Wenning:</cite> Yes I think the business vocabulary is just one part and mentioned it where the DPP is much larger than the business wallet. Those are not two distinct things because the DPP necessary will require a European business wallet or a business wallet where your factory identification and so on will be serialized in some way. So the business wallet case is just another application oriented vocabulary.</p>
+<p id=a442 class="phone s07"><cite>Rigo_Wenning:</cite> we see which has two consequences. Seeing it this is you can see the DPP as a function of the business wallet because you kind of integrate the DPP information into your business wallet or you can the other way around. You can say hey in your DPP there is a business wallet to identify the legal entity and the factory and the economic operator.</p>
+<p id=3349 class="phone s07"><cite>Rigo_Wenning:</cite> clearing this kind of going from B to A is function is precisely the goal of this group saying hey what do the business world for me is something that can stand on its own that we use in the DPP and we just have to make sure that we don't have to meet to that we don't have too much friction with it on your quest to get a legal entity ontology. just one question. Do you believe that a French society anonym are the same thing? These are legal considerations. You can't solve them in vocabulary because the variety in the world is too large.</p>
+<p id=e90d class="phone s07"><cite>Rigo_Wenning:</cite> the question here and that's my attorney hat is how do we get up to a level where we allow people to have a blob when you say this is legal entity and this is how you integrate your name space because I am registered in the hund register and I'm not registered in a regist so you have a name space for the registmer and then the application logic will follow and say hey and then we can find off or we can discover something in the register the commerce or something in the hands register which is nice but we need to get up to a level…</p>
+<p id=fe67 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah, but maybe even first</p>
+<p id=19f6 class="phone s05"><cite>Ivan_Herman:</cite> Excuse me.</p>
+<p id=aaef class="phone s07"><cite>Rigo_Wenning:</cite> where we are not in the weeds of this legal entity thinking what is a Delaware corporation</p>
+</section>
+
+<section>
+<h3 id=1c9a>Semantic Interoperability and Data Sovereignty</h3>
+<p id=1bb2 class="phone s05"><cite>Ivan_Herman:</cite> Excuse me.</p>
+<p id=9e2e class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> <a href="https://medium.com/@susi.guth/eu-digital-identity-wallets-and-digital-product-passports-dpps-ff96b24eeae6">https://<wbr>medium.com/@susi.guth/<wbr>eu-digital-identity-wallets-and-digital-product-passports-dpps-ff96b24eeae6</a> </p>
+<p id=6ccc class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> We have Eva.</p>
+<p id=f711 class="phone s05"><cite>Ivan_Herman:</cite> On the one hand on the other hand we are running out of time. I am looking at the document that Susan showed and I am just looking at it and I see the kind of examples that we have to think about is the JSON file that you put in the chat Susanna.</p>
+<p id=d9b3 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=c7c9 class="phone s05"><cite>Ivan_Herman:</cite> So obviously whatever isn't a credential subject is part of the vocabulary that we are discussing and it works and it's fine and no problem about that. But as far as I can understand, your business logic requires terms that are not in the credential subject, but they are not, as far as I know, part of the VC vocabulary. You have something which is called issuing software, which I don't think is in the VC vocabulary. You have issuer, also known as a kind of an alias to an issuer.</p>
+<p id=97a8 class="phone s05"><cite>Ivan_Herman:</cite> These are terms that are currently not in the VC vocabulary and that's fine. from a JSON LD point of view it works because they are defined in another vocabulary. But my editor would say if these terms are of a general usage they should be put into the extended version of the vocabulary not being part of a specific vocabulary for one specific application area. These are the kind of distortions that I'm looking for and this is typically thing that we have to understand where these discrepancies are and we have to go back to the VC working group by saying your vocabulary is not complete because in and these use cases there are requirements on the VC structure in general that are not covered by the current VC vocabulary.</p>
+<p id=cfe6 class="phone s01"><cite>Ingo_Wolf:</cite> Thank you. Bye.</p>
+<p id=1ccb class="phone s05"><cite>Ivan_Herman:</cite> I mean this is something that we have to understand…</p>
+<p id=293d class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Amazing.</p>
+<p id=27b4 class="phone s05"><cite>Ivan_Herman:</cite> but at this point I have to go…</p>
+<p id=4281 class="phone s05"><cite>Ivan_Herman:</cite> because I have a meeting.</p>
+<p id=72e9 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Thank you, and I knew that if we look at code, then we start talking.</p>
+<p id=72ca class="phone s05"><cite>Ivan_Herman:</cite> Yes, we have to look at code.</p>
+<p id=6b16 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> The only way.</p>
+<p id=b546 class="phone s05"><cite>Ivan_Herman:</cite> Thank you very much everyone. I have to go.</p>
+<p id=c8c7 class="phone s02"><cite>Dr._Susanne_Guth-Orlowski:</cite> Thank you.</p>
+<p id=4e89 class="phone s09"><cite>Carsten_Stöcker:</cite> Bye-bye. Hey Caroline,…</p>
+<p id=7fe2 class="phone s08"><cite>Carolynn_Bernier:</cite> Hi Carson.</p>
+<p id=510a class="phone s09"><cite>Carsten_Stöcker:</cite> we might want to discuss to separate this.</p>
+<p id=4dcb class="phone s09"><cite>Carsten_Stöcker:</cite> I think otherwise this is too complex.</p>
+<p id=c551 class="phone s08"><cite>Carolynn_Bernier:</cite> I think that I'm getting to this.</p>
+<p id=21a1 class="phone s08"><cite>Carolynn_Bernier:</cite> In a sense, it's a shame because the link between DPP and wallets, there are so many links. In a sense, it's a shame like what Rio said about, referring to a wallet from a DPP or putting a DPP in a wallet, that this needs to be somehow explained in some, right?</p>
+<p id=c6ca class="phone s09"><cite>Carsten_Stöcker:</cite> Yeah. I think it's totally fine if we have let's say one dedicated activity to define the intersections. Yeah.</p>
+<p id=0daa class="phone s09"><cite>Carsten_Stöcker:</cite> But then to really focus joint work on the definition of the intersections I think is very focused and…</p>
+<p id=ca7b class="phone s08"><cite>Carolynn_Bernier:</cite> Yeah. Yeah, Ronald.</p>
+<p id=a8a8 class="phone s09"><cite>Carsten_Stöcker:</cite> targeted and then with other vocabularies I think we can spread a little bit out and I think it's along these priorities registration registering DPPs access control for markets balance authorities and…</p>
+<p id=c358 class="phone s09"><cite>Carsten_Stöcker:</cite> supply chain actors and provenence of the data in a DPP and for DPP data integrity I think this use case are quickly defined.</p>
+<p id=e15b class="phone s06"><cite>Ronald_Koenig:</cite> car maybe note for this one…</p>
+<p id=fb20 class="phone s09"><cite>Carsten_Stöcker:</cite> But we have the totally other use case for the business wallets as well.</p>
+<p id=159e class="phone s06"><cite>Ronald_Koenig:</cite> because I'm not completely agree with Rio on this one because my understanding is that we have European business wallets And we are holding in this business identity credentials at the stations or verifiable credentials however you want to call or of course also DPP credentials.</p>
+<p id=0822 class="phone s06"><cite>Ronald_Koenig:</cite> So if I for example are a manufacturer of a DPP and issue this one or carbon footprint DPP to another company to prove that something is for example certified the production process or then I'm issuing it into the European business wallet of the other company so that this company can present it to someone else to prove for example that the production process which was evolated by some institutes or something like that he can prove against the third one that the carbon footprint generated with this manufacturing process is at this level. So what I mean with this one is we really have the model that we don't care is it a DPP credential is it a business credential is it a location credential is it whatever credential we hold all this credential inside the wallet</p>
+<p id=2f13 class="phone s06"><cite>Ronald_Koenig:</cite> Because a wallet gives us just the infrastructure where we can have creates the trust model and the trust anchor for this different credentials and the credential content itself decides what the semantic is what I want to express in this one. I can express the identity of a company in verifiable credential or the carbon footprint of the product XY Z as long as I can bind it to the holder of this one because this makes the sense of the wallet because I have the private key material managed in my wallet and I can prove against someone else that I'm the holder and that the statements are about me or a product which I have produced because I'm mentioned as manufacturer inside</p>
+<p id=2ca0 class="phone s06"><cite>Ronald_Koenig:</cite> is PPP for example we said that a wallet can be used inside the DPP it's not my understanding a wallet is the foundation…</p>
+<p id=a068 class="phone s08"><cite>Carolynn_Bernier:</cite> …</p>
+<p id=ae8a class="phone s08"><cite>Carolynn_Bernier:</cite> so why do you disagree with what Rigo said? You could that's yes…</p>
+<p id=ed31 class="phone s06"><cite>Ronald_Koenig:</cite> where I hold different credential whatever the credentials</p>
+<p id=4794 class="phone s08"><cite>Carolynn_Bernier:</cite> but you could also use the vocabularies that you will define to describe an organization in the wallet EUCC kind of company certificate type of attestation you can use these vocabularies in a DPP it…</p>
+<p id=4ea6 class="phone s01"><cite>Ingo_Wolf:</cite> Oops.</p>
+<p id=c4ed class="phone s08"><cite>Carolynn_Bernier:</cite> which doesn't have to be issued as a vocabulary as a verifiable credential,…</p>
+<p id=c395 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah. Yeah.</p>
+<p id=34d4 class="phone s06"><cite>Ronald_Koenig:</cite> But this has nothing to do with the wallet.</p>
+<p id=786d class="phone s08"><cite>Carolynn_Bernier:</cite> right? Yeah.</p>
+<p id=7226 class="phone s06"><cite>Ronald_Koenig:</cite> My understanding is you can use any vocabulary and mix it with other vocabularies because ontology is by the open word, right? You can extend it by using other vocabularies and…</p>
+<p id=3a64 class="phone s08"><cite>Carolynn_Bernier:</cite> Yes. Yes.</p>
+<p id=7b61 class="phone s06"><cite>Ronald_Koenig:</cite> combine them. Just take the context into this JSON ID for example and…</p>
+<p id=f754 class="phone s08"><cite>Carolynn_Bernier:</cite> Yep. Exactly. But the value…</p>
+<p id=b92b class="phone s06"><cite>Ronald_Koenig:</cite> that works.</p>
+<p id=10005 class="phone s08"><cite>Carolynn_Bernier:</cite> but the value of the defining vocabularies for wallets or not actually for wallets but for business attestations that will be in wallets is that these vocabularies can be reused in DPPS.</p>
+<p id=71b4 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah, completely.</p>
+<p id=0e9f class="phone s08"><cite>Carolynn_Bernier:</cite> But our work…</p>
+<p id=9542 class="phone s06"><cite>Ronald_Koenig:</cite> But as you say this has nothing to do with that DPP is using a wallet or a European or identity credential is using the wallet. This is just the infrastructure the tool where we manage this one where we retrieve credentials present credentials manage credentials and so on and really easy Yeah,…</p>
+<p id=7745 class=irc><cite>&lt;Eva_Blomqvist&gt;</cite> I need to go as well now. Thanks! </p>
+</section>
+
+<section>
+<h3 id=0bb9>Vocabulary Role in Digital Product Passports</h3>
+<p id=58b3 class="phone s08"><cite>Carolynn_Bernier:</cite> but our work here in this vocabulary task force is not so much on the wallet infrastructure. It's more on the vocabularies themselves. No.</p>
+<p id=4daa class="phone s06"><cite>Ronald_Koenig:</cite> this is what I would like to understand because if we are discussing wallets, I think we should have a wallet expert group a working group or something.</p>
+<p id=f514 class="phone s06"><cite>Ronald_Koenig:</cite> I thought that we are discussing here vocabularies. At least this was what was the first statement when we created this group that we would like to understand the content of the vocabularies define the semantically so that they are comparable and can be reused in different use cases. This was my understanding and then therefore maybe I like the idea to separate issues but on the other side I think that the business identity vocabulary is something which is related or should be reused in a DPP vocabulary for example for manufacturer economic operator and all the other things.</p>
+<p id=6711 class="phone s06"><cite>Ronald_Koenig:</cite> And on the other side, I think maybe it that we have is the Switzer railway project currently where we have supply chain use case where we have the whole life cycle of the manufacturing of a rail and with carbon footprint and all the others. So that means we have real use case along this supply chain a lot of credentials which are DPP credentials which are carbon footprint credentials which are identity credentials and all they are linked to each other and working on top of the European business wallet.</p>
+<p id=b929 class="phone s06"><cite>Ronald_Koenig:</cite> In our case of the European business wallet, but it should be the business wallet at all because it is a dimensional business.</p>
+<p id=a3d1 class="phone s08"><cite>Carolynn_Bernier:</cite> But it's not so much the cap capacity to link credentials with one another that is the focus of this work…</p>
+<p id=0f1e class="phone s08"><cite>Carolynn_Bernier:</cite> because linked credentials is the focus of another task force within the verifiable credentials work group. If I understand correctly, for me it's more on how vocabularies from a domain can be used by another domain in the context of verifiable credentials. So this is why for example what I consider to be a use case is exactly reusing vocabularies from a business credential domain in the DPP domain that for me defines a use case or reusing data from why did my PC go dark suddenly I cannot see anymore. here you are.</p>
+<p id=83ce class=irc><cite>&lt;Dr._Susanne_Guth-Orlowski&gt;</cite> I have to jump. Have a nice evening. </p>
+<p id=1341 class="phone s08"><cite>Carolynn_Bernier:</cite> reusing data from a UNP DPP and linking a re reusing data from different DPPs. I'm receiving a UNP DPP and I'm receiving a EU DPP and I want to reuse this data unambiguously. How do I do that?</p>
+<p id=70e6 class="phone s06"><cite>Ronald_Koenig:</cite> All right.</p>
+<p id=2b13 class="phone s08"><cite>Carolynn_Bernier:</cite> Because we know that the EU vocabularies will be imposed by the European Commission. The mandatory vocabularies, they will be imposed by the European Commission. the W3C vocabularies so I like the idea that what we don't want to create new vocabularies. We want to explain how the EU can be combined with vocabularies from China and…</p>
+<p id=4009 class="phone s08"><cite>Carolynn_Bernier:</cite> vocabularies from all over the world and how we can combine this data together. For me, that's the goal.</p>
+<p id=0b62 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah, this is one facet.</p>
+<p id=b749 class="phone s06"><cite>Ronald_Koenig:</cite> Let me say it this way. I completely agree with you Caroline because what we have to figure out is for DPPS …</p>
+<p id=eec4 class="phone s06"><cite>Ronald_Koenig:</cite> what are the common terms which should not be redefined by any DPP again. We'll get back.</p>
+<p id=8db9 class="phone s08"><cite>Carolynn_Bernier:</cite> No, no,…</p>
+<p id=216f class="phone s08"><cite>Carolynn_Bernier:</cite> no, no, no, no, no, no, no. We don't need common terms. We don't need common terms. We just have to explain how terms can map to each other because there will always be somebody else to define a new DPP vocab and a new DPP vocab. there will always be more vocabularies. and we can't force the European Commission to use the W3C terms, They will define their own terms. and these terms will be mandatory. If I want to issue my passport as a EU DPP, I need to refer to the European Commission vocabularies.</p>
+<p id=37b6 class=irc><cite>&lt;Carsten_Stöcker&gt;</cite> I need to leave. And will follow up with you soon. </p>
+<p id=c9c9 class="phone s08"><cite>Carolynn_Bernier:</cite> So we have to explain how the W3C creates interoperability between different vocabulary systems, between different DPP systems,…</p>
+<p id=9986 class="phone s08"><cite>Carolynn_Bernier:</cite> between EUDP and UNPDP. It's not about creating another vocabulary.</p>
+<p id=91f4 class="phone s06"><cite>Ronald_Koenig:</cite> No, no,…</p>
+<p id=fb7f class="phone s06"><cite>Ronald_Koenig:</cite> no. I don't get it to be honest. If you say okay, everybody can define its own vocabulary and we just need to provide a mapping between them means nobody is reusing something because the only thing what everybody is defining its own vocabulary. For example, if I have one says, okay, this is a manufacturer and the other side this is a producer and the other side says that is this one and then we have some mapping rules which have to define between the different vocabularies that a manufacturer and a producer is equivalent term of the same thing.</p>
+<p id=c236 class="phone s08"><cite>Carolynn_Bernier:</cite> But do you really think China will reuse European vocabularies? I don't think so. when they create their own vocabularies, they will create vocabularies and…</p>
+<p id=0c59 class="phone s08"><cite>Carolynn_Bernier:</cite> the Europe will create data. eu vocabularies and…</p>
+<p id=1ea4 class="phone s06"><cite>Ronald_Koenig:</cite> But car…</p>
+<p id=de62 class="phone s08"><cite>Carolynn_Bernier:</cite> the …</p>
+<p id=c3db class="phone s06"><cite>Ronald_Koenig:</cite> but I don't understand with it then the guy who is doing the mapping and who maintains the mapping between this and if we don't agreement on a certain level that we are using the same common vocabulary if we talk to each Now I don't like the idea of let me say it this way a base vocabulary.</p>
+<p id=f706 class="phone s08"><cite>Carolynn_Bernier:</cite> for me this is the work of the group is to create these mappings. If we need to create these mappings, if we need to create what you call the base vocabulary, okay, to do the mapping, we can do that.</p>
+<p id=f209 class="phone s06"><cite>Ronald_Koenig:</cite> Let me take this example from the core vocabulary.</p>
+<p id=10006 class="phone s06"><cite>Ronald_Koenig:</cite> There's a definition of manufacturer and there's already a definition of economic operator and a definition of whatever and there's a vocabulary which is quite long. Let me say it this way. And the next one is then the battery vocabulary or fashion vocabulary or automotive vocabulary or whatever. And everybody starts from the beginning on defining every term again and then expecting that someone indeed is it not better to say okay we have this UNP core vocabulary and if I start thinking about a battery vocabulary I try to understand which vocabulary already exists not reinventing it or reusing it.</p>
+<p id=8467 class="phone s06"><cite>Ronald_Koenig:</cite> This is what I'm asking for.</p>
+<p id=f68f class="phone s08"><cite>Carolynn_Bernier:</cite> Yes, but the commission will not reuse UNCE vocabularies for their mandatory DPP data. So the problem is going to come</p>
+<p id=cb30 class="phone s06"><cite>Ronald_Koenig:</cite> But on the other hand we should provide a mapping between both but we have two authorities. One is maintaining the UNP vocabulary and the other one is maintaining the EU whatever vocabulary and then we provide a mapping and this mapping is valid for how long until one of this authority decides to change the vocabulary because we have no authority itself that we can provide a mapping…</p>
+<p id=472e class="phone s06"><cite>Ronald_Koenig:</cite> because we have no control over the one vocabulary as well as the other one or maybe we have the</p>
+<p id=c573 class="phone s06"><cite>Ronald_Koenig:</cite> control over one vocabulary but not about both. And therefore the map will be changed frequently.</p>
+<p id=da32 class="phone s08"><cite>Carolynn_Bernier:</cite> I agree.</p>
+<p id=c536 class="phone s08"><cite>Carolynn_Bernier:</cite> So this is what a W3C base vocabulary may be useful because that way if one of them decides to change something. It throws off the mapping, it doesn't throw everything off.</p>
+<p id=c3f5 class="phone s08"><cite>Carolynn_Bernier:</cite> It only throws off the mapping between our base vocabulary and that standard that has changed.</p>
+<p id=ffdb class="phone s06"><cite>Ronald_Koenig:</cite> What I can only say…</p>
+<p id=d106 class="phone s06"><cite>Ronald_Koenig:</cite> what we try in the European business vocabulary currently and I'm really pushing forward that we get it done.</p>
+<p id=3673 class="phone s06"><cite>Ronald_Koenig:</cite> I don't want to invent the wheel one but one again because we have a lot of vocabul for example country codes for example jurisdictions for example inso terms for there are so many vocabularies already existing…</p>
+<p id=e18a class="phone s08"><cite>Carolynn_Bernier:</cite> But yeah,…</p>
+<p id=6188 class="phone s08"><cite>Carolynn_Bernier:</cite> and they'll be more when the US starts, becoming active in their own business vocabularies.</p>
+<p id=95ab class="phone s06"><cite>Ronald_Koenig:</cite> then maybe we should really get an agreement on some level that</p>
+<p id=10007 class="phone s06"><cite>Ronald_Koenig:</cite> wants to use one vocabular all of them because we have a semantic already already in this is…</p>
+<p id=0877 class="phone s06"><cite>Ronald_Koenig:</cite> what we are really trying I have a section here where we have I don't know country codes currencies for example if I reinvent this one there are 200 currencies in the world I have to reflect for this one of course I'm using a controlled vocabulary and not reinventing the wheel again n 21 codes and by the way this is for example economic activity of a company. Do you know how many different coders we already have?</p>
+<p id=fa84 class="phone s08"><cite>Carolynn_Bernier:</cite> Are you certain that the commission will not step in one day and say business wallet vocabularies will be hosted by European Commission and…</p>
+<p id=f0d3 class="phone s08"><cite>Carolynn_Bernier:</cite> we will define what those vocabularies are. Are you certain that they will not do this? because they have done it for the DPP. They have just done it.</p>
+<p id=c4e9 class="phone s06"><cite>Ronald_Koenig:</cite> I completely agree with you.</p>
+<p id=10008 class="phone s06"><cite>Ronald_Koenig:</cite> I cannot be certain because I cannot control it. But on the other hand is what we are getting from the industry in Germany says okay if you are not getting something which is agreed on an international level we will not use it because our business is not stopping at the border of Europe. So if we are really say we are and nobody else knows us then we have a problem because we cannot do international business.</p>
+<p id=4a6d class="phone s06"><cite>Ronald_Koenig:</cite> And by the way there are some things where they have already lost for example the legal entity identifier…</p>
+<p id=2933 class="phone s06"><cite>Ronald_Koenig:</cite> which is harmonized by the GLE is an international organization. Europe cannot do anything about it because it is already done and I think this is more or less a model we need for international business otherwise it will not be used at least not for international business.</p>
+<p id=d4ad class="phone s08"><cite>Carolynn_Bernier:</cite> From the moment that you have to refer to a specific legally defined vocabulary to be compliant for example for a European DPP I can assume that the reference to the vocabularies defined by the commission will be mandatory…</p>
+<p id=10009 class="phone s08"><cite>Carolynn_Bernier:</cite> because this is what it would make sense. So that an EUPPP must reference those vocabularies that will be hosted and defined by the European Commission. because that's what the registry implementing act says that there will be a semantic repository with all of these vocabularies defined there. So I assume that to be compliant to the EU DPP you will have to refer to those vocabularies. So that means that the vocab I think businesses will be comfortable in using vocabularies if there are either hosted by a country or the European Commission so they're stable right or…</p>
+<p id=6604 class="phone s08"><cite>Carolynn_Bernier:</cite> by an international standardization organization like ISO IEC or W3C. That's the only con two conditions that industry will use these vocabularies.</p>
+<p id=3a48 class="phone s06"><cite>Ronald_Koenig:</cite> and…</p>
+<p id=dad3 class="phone s06"><cite>Ronald_Koenig:</cite> Caroline you understand why I'm saying okay it's nice that the W3C credential working group was taking care of this one the first thing what I did I moved over to W3 3 ID.org</p>
+<p id=75e2 class="phone s06"><cite>Ronald_Koenig:</cite> or European business wallet vocabulary because this is an internationally perma link which is maintained on the international level but could happen and therefore I say I'm not certain that we get a strong request to move it over again into a European domain or something like that because it needs to be under the control of the European Union but then we get the same problem with the DPPs what I'm currently seeing if I import a product from China then someone has to register the DPP for this product from China, And this is then the importing company and not the company which is producing this one and this is generating a lot of overhead because not the company who produced this product is responsible for the DPP.</p>
+<p id=d9df class="phone s06"><cite>Ronald_Koenig:</cite> So then someone who wants to import it into the European Union because we have set up a war around the European Union this way.</p>
+<p id=356c class="phone s06"><cite>Ronald_Koenig:</cite> And is this really the way we want to go? I'm not sure.</p>
+<p id=0f2f class="phone s08"><cite>Carolynn_Bernier:</cite> I'm trying I'm like you,…</p>
+<p id=1000a class="phone s08"><cite>Carolynn_Bernier:</cite> Ronaldo. I'm trying to figure out what it means for importers and how for a same product you could have several DPPS and you could resolve to whatever DPP you need depending on your location, So with resolution you could resolve to whatever DPP you want depending on where you are on the planet right so if you need to resolve to the EU DPP that cites the right context then you can do that right that's one possibility and hopefully we can do that with smart resolvers or we can do that with other approaches know I don't know if a graph can contain concepts that are the same but site</p>
+<p id=82e9 class="phone s08"><cite>Carolynn_Bernier:</cite> different vocabularies. I don't know. But I'm trying to understand how for the moment we only have a single mandatory DPP. It's the EU one. But you can be sure that in a few years there will be going to be more mandatory DPPS all over the place in Vietnam etc. So we have to anticipate how this can work and be easy for economic operators. But in any case, it seems logical that a regulator has control of the data that is considered mandatory in their jurisdiction.</p>
+<p id=fab5 class="phone s08"><cite>Carolynn_Bernier:</cite> So it's normal that the Chinese DPPs and have mandatory EU DPPS and they create laws on how the EU PP the Chinese DPP should look It seems normal. This is normal. This is data sovereignty or it's sovereignty. So we have to make it easy for companies to create these different DPPs and whatever DPP I get when I get a product it could be mandatory in China. So I might get a product imported from China with a Chinese DPP.</p>
+<p id=2ff5 class="phone s08"><cite>Carolynn_Bernier:</cite> That's fine. I want to reuse that data. so exactly.</p>
+<p id=f2ec class="phone s06"><cite>Ronald_Koenig:</cite> As long as you don't use this data,…</p>
+<p id=8e57 class="phone s06"><cite>Ronald_Koenig:</cite> it's But if you have to understand the semantic, then you have to get anyway agreement about the semantic and then you are starting this mapping job, right? Because then you map it to someone to some semantic you have in Germany and…</p>
+<p id=dc9a class="phone s08"><cite>Carolynn_Bernier:</cite> Yes. Yes.</p>
+<p id=94cd class="phone s06"><cite>Ronald_Koenig:</cite> then whenever something change then you have to map again and then okay Leo gave an example… Carolynn Bernier:</p>
+<p id=1284 class="phone s08"><cite>Carolynn_Bernier:</cite> Yeah. Yeah. Chinese semantics to W3C base what we call base semantics and then W3C to EU DPP mapping. Mhm.</p>
+<p id=1000b class="phone s06"><cite>Ronald_Koenig:</cite> therefore I'm not immediately jumping on this one because he said do you really believe that we</p>
+<p id=a30a class="phone s06"><cite>Ronald_Koenig:</cite> get the agreement between French and German with respect to what the legal form of a company is. Of course, we have because with the anti-moneyre, I have to really understand what the legal form of a French company is in the context of opening a bank account. I have to understand what semantically and we have to get this which semantically define how the processing for the antimoney launder is done with respect to this one.</p>
+<p id=1000c class="phone s06"><cite>Ronald_Koenig:</cite> Therefore, for example, we are discussing with infograph the French business register to get an agreement about the semantic terms we are using if we send KYC data from French to Germany. Otherwise, we cannot open a bank account in Europe.</p>
+<p id=bac1 class="phone s08"><cite>Carolynn_Bernier:</cite> Mhm. Yeah.</p>
+<p id=b6b6 class="phone s06"><cite>Ronald_Koenig:</cite> This is what we have Today we have three weeks if you want to open a corporate account in abroad because they have to lead everything and…</p>
+<p id=a027 class="phone s01"><cite>Ingo_Wolf:</cite> Thank you.</p>
+<p id=2a11 class="phone s06"><cite>Ronald_Koenig:</cite> the human being has to look into it.</p>
+<p id=3412 class="phone s08"><cite>Carolynn_Bernier:</cite> So I don't know</p>
+<p id=c935 class="phone s08"><cite>Carolynn_Bernier:</cite> how familiar Rigo is with the business wallet work.</p>
+<p id=a1b0 class="phone s06"><cite>Ronald_Koenig:</cite> No, what I just wanted to say with this one Caroline is not…</p>
+<p id=d4b0 class="phone s08"><cite>Carolynn_Bernier:</cite> I know</p>
+<p id=2b5c class="phone s06"><cite>Ronald_Koenig:</cite> what Ego was saying is at the end maybe we should really start discussing semantic not locally on discussing semantically in the European scale or better in the international scale. And I was by the way really surprised about when we were here in Berlin in this conference how many Chinese and Japanese companies were on our booth to get information about the European wallet and the European business identity because most of them are very interested to get this information because business is international.</p>
+<p id=0013 class="phone s06"><cite>Ronald_Koenig:</cite> delivery cars for example to Germany there are a lot of obligation they have to fulfill and…</p>
+<p id=b944 class="phone s06"><cite>Ronald_Koenig:</cite> to make this easier is also sensible for them and then they are really looking into what we are doing here so it is not completely separated this is what I wanted to say and maybe we should take this opportunity really to get international vocabulary for whenever possible let me say it this way is it not possible then we have to go through this mapping anyway</p>
+<p id=3c4b class="phone s08"><cite>Carolynn_Bernier:</cite> It's always nice…</p>
+<p id=d15e class="phone s08"><cite>Carolynn_Bernier:</cite> if everybody uses the same standard but what I saw in the DPP world is that everybody created their own vocabulary and this will continue to happen all the time it continue and continue to happen. So the idea that everybody will all agree to use the same vocabularies I can't believe that that's going to happen. Maybe in the wallet world because maybe Europe is ahead of the other countries maybe you will be able to say look we have wonderful business wallet vocabularies please reuse ours and then the entire world will align to your vocabularies and that would be great but I can't see that happening in the DPP world.</p>
+<p id=2f78 class="phone s08"><cite>Carolynn_Bernier:</cite> Already we have two sets of vobies, the EU vocabularies and the UNP vocabularies. So we already have two very welldefined vocabularies that They will not merge. and They can't merge. So our work here in W3C is to create the mappings. There's no other solution.</p>
+<p id=e4f2 class="phone s06"><cite>Ronald_Koenig:</cite> Then it's the question why they should trust this mapping. If they don't trust the vocabulary which is maintained by the W3C then why they should trust the mapping? Okay, maybe the work has to be done but on the other side this also means that everybody has to implement the semantic of both sides right and to provide a mapping so that they can implement what the other side is is semantically defining with another vocabulary.</p>
+<p id=f9ef class="phone s06"><cite>Ronald_Koenig:</cite> Yeah, maybe it is really something. But is it the work of this group to provide some mapping from this one? Was this really the goal that we have DPP for China and the automative DPP for China or battery DPP for China and the DE battery DPP in Europe and then providing the WCC is then providing the mapping between it.</p>
+<p id=881b class="phone s08"><cite>Carolynn_Bernier:</cite> How can you stop a government somewhere from saying this is the mandatory DPP in China or in Brazil or wherever or…</p>
+<p id=8d36 class="phone s08"><cite>Carolynn_Bernier:</cite> in the US. It must reference those vocabularies. How can you prevent that?</p>
+<p id=378c class="phone s06"><cite>Ronald_Koenig:</cite> maybe you are right…</p>
+<p id=bf56 class="phone s06"><cite>Ronald_Koenig:</cite> but currently I'm a little bit confused about it why we are using semantic at all because the problem that I have now is and this is a long argument but is going forward if we are using just JSON and provide</p>
+<p id=93c3 class="phone s06"><cite>Ronald_Koenig:</cite> local meaning to the parameters we are using in our domain. So for example for China and for things and so on. Then we need this mapping every time and everywhere. Yeah. And this is by the way what the SON ID when the JSON says okay they define semantic of course but they are defining it only locally with a definition of a document…</p>
+<p id=4fd5 class="phone s06"><cite>Ronald_Koenig:</cite> which describes this one. If we have this mapping then what is the use of providing semantic interoperability using JSON ID? But forget this question. This was just that I have to think about it.</p>
+<p id=5e4f class="phone s08"><cite>Carolynn_Bernier:</cite> I will refer you to an article I wrote on this topic.</p>
+<p id=43b5 class="phone s08"><cite>Carolynn_Bernier:</cite> Here and where is the chat that I can put the thing in the chat here. I wrote this article on the role of standardization organizations for creating semantic interoperability for DPP. And is it chapter two? talks about the levels of semantic interoperability for DPP that exist today. So there are five levels template based semantics embedded semantic references resolvable vocabularies. 2.4 is JSONLDD and…</p>
+<p id=c017 class="phone s06"><cite>Ronald_Koenig:</cite> No.</p>
+<p id=11f7 class="phone s08"><cite>Carolynn_Bernier:</cite> 2.5 is ontology based interoperability. So basically the first three are Jason the fourth is fourth and the fifth are Jason El so we can talk about that Why do we need dissolvable vocabularies?</p>
+<p id=1000d class="phone s08"><cite>Carolynn_Bernier:</cite> what is the point right the point is that we want to reap the economic benefits of semantic interoperability which is chapter 1.5 and remove the data integration semantic conflicts that emerge if you don't have these such mechanisms right data integration chapter 1.3 the different types of semantic conflicts that arise when you try to integrate data from multiple sources and it just explodes because you have semantic conflicts and all sorts of conflicts. So this is what we wanted to achieve here. we want to make it easy to reuse data from multiple sources and multiple sources can be wallet attestations and DPPS and claims and certifications and all sorts of data that's coming at you right from all over the world.</p>
+<p id=22e2 class=irc><cite>&lt;Carolynn_Bernier&gt;</cite> <a href="https://zenodo.org/records/19947142">The role of Standards Developing Organisations (SDO) in the achievement of semantic interoperability for DPP</a> </p>
+<p id=91ee class="phone s08"><cite>Carolynn_Bernier:</cite> from all over the world. and I want to integrate all this data in my system and I don't want it to explode. So, for me, this is what we're trying to achieve here. Make it easy to reuse data in to do other things. so semantic interoperability is about making context explicit first of all but not only making it context explicit. If you have a template then the context is explicit but doesn't mean that the context is easy to exploit. Right?</p>
+<p id=2aea class="phone s08"><cite>Carolynn_Bernier:</cite> So you need context to become explicit, but you want the flexibility from a template free approach. We don't want templates because templates are too difficult to adapt to new needs. In the wallet world, I think you still have a vision of, A certificate contains that data.</p>
+<p id=1f79 class="phone s08"><cite>Carolynn_Bernier:</cite> So, you kind of view the attestations as a kind of a template.</p>
+<p id=f390 class="phone s06"><cite>Ronald_Koenig:</cite> You should not say…</p>
+<p id=4187 class="phone s06"><cite>Ronald_Koenig:</cite> what if you look to SD job PC, I agree with you because this is JSON. So they want to have a template and they want data validation before they are interpreting the data.</p>
+<p id=1000e class="phone s06"><cite>Ronald_Koenig:</cite> But if you look to WCC credentials by the way we prefer is of course that we have the open word of semantic definition. So that means we are not doing validation before we process the data. Yeah.</p>
+<p id=98e9 class="phone s08"><cite>Carolynn_Bernier:</cite> Yeah, but you are a minority in the wallet world.</p>
+<p id=5db9 class="phone s08"><cite>Carolynn_Bernier:</cite> But Ronald, you're a minority in the wallet world. Unfortunately, I know Michael from the Finnish tax other he's all depressed,…</p>
+<p id=78d5 class="phone s06"><cite>Ronald_Koenig:</cite> Unfortunately, Yeah.</p>
+<p id=7ced class="phone s08"><cite>Carolynn_Bernier:</cite> regularly very depressed. And when he saw the DPP registry act, he said and with its reference to semantic interoperability and semantic repositories and vocabularies and authorities like wow, I wish we had that for the wallet, right? But anyways, yeah, but</p>
+<p id=cc8b class="phone s06"><cite>Ronald_Koenig:</cite> Maybe we take it this way. So that means that But I'm not sure that this group is really doing this mapping word.</p>
+<p id=49aa class="phone s06"><cite>Ronald_Koenig:</cite> But what I believe is we have to look into this charter again and then really figure out what the task of this group is. because we have more or…</p>
+<p id=a3a6 class="phone s06"><cite>Ronald_Koenig:</cite> less we have contributed more or less the European business vocab vocabulary to this one. we have contributed the battery vocabulary which we have done using ontologies and terminologies and yeah I'm not sure really what kind the goal of the group is we are Welcome.</p>
+<p id=0a48 class="phone s08"><cite>Carolynn_Bernier:</cite> I'm very happy we disagree on…</p>
+<p id=f15b class="phone s08"><cite>Carolynn_Bernier:</cite> what the objective of this group is. I'm happy because this is stimulating what is it that we're trying to achieve and this is where the interesting conversation happens is happening I think so I'm very happy that we're taking the time to say what is it that we're actually trying to achieve and I think that indeed splitting the work between separating the wallet work from the GPP work may be necessary because yeah I</p>
+<p id=1000f class="phone s08"><cite>Carolynn_Bernier:</cite> think it may be necessary in the future because it's too different that we're not at the same place but I think even in the wallet world the hope that the entire world will align to European business vocabularies I don't know I don't know how reasonable this hope is I know this is what you're hoping that the entire world will align so that W3C will just take all the EU vocabularies and…</p>
+<p id=4282 class="phone s08"><cite>Carolynn_Bernier:</cite> say these are the W3C vocabularies and then the entire world will adopt them. if that happens then that's good for you. But in the DPP world, it won't happen. It cannot happen.</p>
+<p id=a9fb class="phone s06"><cite>Ronald_Koenig:</cite> Let me say…</p>
+<p id=f65d class="phone s06"><cite>Ronald_Koenig:</cite> what was my intention when someone asked me why to go to W3C and the reason for this one is the situation in Europe they are not using ontologies or terminology at</p>
+<p id=e034 class="phone s06"><cite>Ronald_Koenig:</cite> all they are doing at ST just writing ISO specification with simple tables where they define the meaning and says okay this is…</p>
+<p id=a8cf class="phone s08"><cite>Carolynn_Bernier:</cite> It's a template based approach.</p>
+<p id=734f class="phone s08"><cite>Carolynn_Bernier:</cite> Yeah. Yeah.</p>
+<p id=c49b class="phone s06"><cite>Ronald_Koenig:</cite> what we have so we are not really finding where we can anchor this one I get an anchor where I can put it in and say okay at least we have some standardization body which says okay taking care of the vocabulary is much better than what we currently have in Europe and that's my real concern about it it's not really that we have to be international.</p>
+<p id=ac16 class="phone s06"><cite>Ronald_Koenig:</cite> This is let me say a side effect which I believe would be very nice if we get a vocabulary which is also accepted outside of Europe because we have international business and it's maybe also something by the way it is also in the European business model proposal there's chapter 17 and…</p>
+<p id=50b8 class="phone s06"><cite>Ronald_Koenig:</cite> 18 which talks about how do you get the trust model extended beyond the border of Europe because business is beyond Europe right for all the companies Okay.</p>
+<p id=2557 class="phone s08"><cite>Carolynn_Bernier:</cite> Yes. The trust model and…</p>
+<p id=91a8 class="phone s08"><cite>Carolynn_Bernier:</cite> the semantics.</p>
+<p id=ea68 class="phone s06"><cite>Ronald_Koenig:</cite> So we have to expand it. So that mean the trust model is one thing…</p>
+<p id=71b3 class="phone s06"><cite>Ronald_Koenig:</cite> but this is what you can reach if you have mutual recognition or something like that. But how do you get the semantic interoperability?</p>
+<p id=29de class="phone s08"><cite>Carolynn_Bernier:</cite> That's Yeah.</p>
+<p id=c5dc class="phone s08"><cite>Carolynn_Bernier:</cite> Yeah. Yeah. And ex Exactly.</p>
+<p id=f6b0 class="phone s06"><cite>Ronald_Koenig:</cite> If you have two different languages, right?</p>
+<p id=f740 class="phone s06"><cite>Ronald_Koenig:</cite> Nobody understands the other.</p>
+<p id=4180 class="phone s08"><cite>Carolynn_Bernier:</cite> So for me the work in W3C was about building interoperability between different business vocabularies used in different sections of the world. But if you manage to convince the entire planet to reuse your vocabularies, then you don't have to do these mappings, then you see. Ronald Koenig:</p>
+<p id=4a6e class="phone s06"><cite>Ronald_Koenig:</cite> Is this a …</p>
+<p id=ccc7 class="phone s08"><cite>Carolynn_Bernier:</cite> But I doubt that that will happen. I doubt it. I have to catch a train to So I Byebye.</p>
+<p id=ee26 class="phone s06"><cite>Ronald_Koenig:</cite> nice talking to you.</p>
+<p id=f40d class="phone s01"><cite>Ingo_Wolf:</cite> Thank you for the extended time slot.</p>
+<p id=4ab5 class="phone s01"><cite>Ingo_Wolf:</cite> You next time. What is it?</p>
+<p id=a521 class="phone s06"><cite>Ronald_Koenig:</cite> Yong. Meeting ended after 01:46:05 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

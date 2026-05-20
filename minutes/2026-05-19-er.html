@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 19 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>19 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Phillip_Long, Shigeya_S, Stephen_Curran, steve_capell</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4ea0">Meeting Introduction</a></li>
+<li><a href="#bc1b">Digest SRRI Pull Request</a></li>
+<li><a href="#62c1">Use Cases Pull Request Discussion</a></li>
+<li><a href="#3bec">Threat Model Brainstorming</a></li>
+<li><a href="#e324">Threat Model Categorization</a></li>
+<li><a href="#2fdc">Competitive Gatekeeping Threat</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=4ea0>Meeting Introduction</h3>
+<p id=357f class="phone s01"><cite>steve_capell:</cite> Okay.</p>
+<p id=0aba class="phone s02"><cite>Manu_Sporny:</cite> All right, I think we have quorums. So, let's go ahead and get started. welcome everyone. This is the recognized entities task force of the verifiable credential working group. it is May 19th, a reminder to everyone that this call is recorded and transcribed. so if you're not okay with that please let us know otherwise we'll presume that you're fine with that. also reminder that we operate under W3C verifiable credential working group. You have to be a member or an invited expert to participate in this group. Let us know if you're not one of those. I think everyone on the call is.</p>
+<p id=306e class="phone s02"><cite>Manu_Sporny:</cite> And we operate under the W3C code of conduct which effectively is be nice to each other and be accepting of what others have to say and behave yourselves which everyone always does on this call. okay, we do have an agenda today. the agenda is to go over pull requests, process any new issues that we might have. and we plan to spend a significant amount of time on the call today on threat model brainstorming for the recognized entities specification. there we know as part of the poll request process, we're going to get into use cases that you raised. Thank you very much, Steve.</p>
+</section>
+
+<section>
+<h3 id=bc1b>Digest SRRI Pull Request</h3>
+<p id=5441 class="phone s02"><cite>Manu_Sporny:</cite> for raising and I think that's the agenda for today. Are there any other updates or changes to the agenda or anything else that we would like to discuss? All right. If not, let's go ahead and get started on we have two pull requests to process. One of them is the digest SRRI pull request. that has not been resolved in the VC data model call. but we need to process that soon. There are no objections to deprecating a digest SRRI right now on the main spec.</p>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> And we have passed our open review period for it. I will check once again but my presumption is that's going to be merged this week resulting in the digests SRRI property being deprecated but not removed it's going to be just marked as deprecated please go ahead okay okay all right we'll wait for that before processing that.</p>
+<p id=88e0 class="phone s03"><cite>Shigeya_S:</cite> Yeah, I will provide the feedback on the BCDM issue. maybe today. Yeah.</p>
+</section>
+
+<section>
+<h3 id=62c1>Use Cases Pull Request Discussion</h3>
+<p id=445a class="phone s02"><cite>Manu_Sporny:</cite> Okay, so this one issue 69 is waiting on the digest SRRI issue to be resolved on the main call. issue 80 is the use cases PR that we discussed earlier over the past month. let me put a subtopic in and then I'm going to hand the floor over to you Steve to take us through all right over to you help us understand…</p>
+<p id=6cfb class="phone s02"><cite>Manu_Sporny:</cite> what the PR is about and take us through it and so on and so forth.</p>
+<p id=107a class="phone s01"><cite>steve_capell:</cite> Okay, thanks man.</p>
+<p id=52ac class="phone s01"><cite>steve_capell:</cite> Can you hear me? All right.</p>
+<p id=fbde class="phone s02"><cite>Manu_Sporny:</cite> Yes. One clear.</p>
+<p id=d8f4 class="phone s01"><cite>steve_capell:</cite> Yeah, Darling works I'm on a little boat in the Italian coast and I was hoping that the connection would be so this PR is really just a reflection of the issue raised few weeks ago with two use cases in it for trust chains from some sort of transactional document through to some sort of authority and even to a second level of authority. I wasn't sure where to put it but I did find that use cases separate document. It's not in the spec right.</p>
+<p id=be44 class="phone s01"><cite>steve_capell:</cite> it's a separate document and when I had a quick look at the second document it had a bunch of use cases and they were sort of broken into two patterns verifiable issuer lists and verifiable verifier lists and I thought which pattern am I in elected right or wrong to call it a third pattern which is really a linked trust graph pattern and so</p>
+<p id=bac1 class="phone s01"><cite>steve_capell:</cite> the PR does conclude a kind of a little bit of a few words about that pattern which is less about a list and more about a recognition of a single entity from a list by the authority that's discoverable from their DI and the two use cases are commercial invoicing crossber trade and product inform</p>
+<p id=eb8d class="phone s01"><cite>steve_capell:</cite> And one goes from an invoice VC signed by some bid to discover a recognized entity VC from a national business expert this time signed by a authority did and then from there to a list of recognized authorities in one case held by the UN and another case held</p>
+<p id=3253 class="phone s01"><cite>steve_capell:</cite> a global organization called Gaki, GACI, I forget what it stands for. they're a merger of if which are if you like global member associations of national accredititation authorities. but they're two different use cases, but they follow the same pattern. So I just thought I'd put those in there to kind of reflect that the pattern is ubiquitous even if the use cases are different. I also found in the repository a place where there seem to be some sample snippets and cred full cials, just data snippets. So I also put in a probably wrong first stab at these four recognized entity credentials. The one from the business register to the exporter and from the UN to the business register.</p>
+<p id=0aa2 class="phone s01"><cite>steve_capell:</cite> And then also similarly for the product conformity and also some dids for the same entities to kind of show this idea of discovering the recognized entity credential from the did service endpoint. So that's basically the gist of any thoughts questions? First time I raised the PR to W3C. So we probably haven't observed protocol now.</p>
+<p id=67f4 class="phone s02"><cite>Manu_Sporny:</cite> No, I mean it looks good to me. I do have a number of kind of comments on the PR and I'll add them over time, but wanted to kind of raise them here.</p>
+<p id=2455 class="phone s02"><cite>Manu_Sporny:</cite> So going from the top down, I think Steve you used some claw or…</p>
+<p id=eebe class="phone s01"><cite>steve_capell:</cite> I did whatever this is.</p>
+<p id=9896 class="phone s02"><cite>Manu_Sporny:</cite> whatever to generate this. which is fine. It's a little wordy. I don't know…</p>
+<p id=cea1 class="phone s01"><cite>steve_capell:</cite> Yeah. Yeah.</p>
+<p id=01a7 class="phone s02"><cite>Manu_Sporny:</cite> if you want to I don't know if we can cut down on the wordiness. That's the only thing I'm a bit concerned about. what we ideally want in use cases is fairly short single paragraph to get people to kind of understand the use case. But if you're look this is as small as it gets this is fairly complex set of use cases then that's so of</p>
+<p id=ddf6 class="phone s01"><cite>steve_capell:</cite> No, I think make I did use a bit of clawed assistance because I only had a limited time and I wanted to generate some sample credentials as well, but I'm happy to cut it down a bit.</p>
+<p id=021d class="phone s01"><cite>steve_capell:</cite> I've never yet met a claw generated. I mean I didn't just generate and then ignore it. I had a quick look, but you're right.</p>
+<p id=a622 class="phone s01"><cite>steve_capell:</cite> It's a bit long and happy to if you don't want to merge it now, I can revisit it and make it shorter.</p>
+<p id=2634 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I think that that would be the kind of the first set of feedback.</p>
+<p id=e71f class="phone s02"><cite>Manu_Sporny:</cite> The examples are good.</p>
+<p id=0634 class="phone s01"><cite>steve_capell:</cite> Second.</p>
+<p id=5b24 class="phone s02"><cite>Manu_Sporny:</cite> But let's see. it's not expressed in the spec itself in the appendex and I think it should be. So, for example, let me look at VC data integrity. I think let's do the one. DC DI ECDSA and…</p>
+<p id=1631 class="phone s01"><cite>steve_capell:</cite> for It's happening before.</p>
+<p id=45e1 class="phone s02"><cite>Manu_Sporny:</cite> we have a section at the end here that has test vectors and we go through excruciating detail explaining here are all the examples and this is what it looks like and it feels like what you have done would be useful to put in an appendix in the spec itself maybe so the other thing is you added it to the use cases document which is good I think we as a group need to decide if we're going to try and revise the use cases document like Revit or if we want to put some core use cases in the core document.</p>
+<p id=afe3 class="phone s02"><cite>Manu_Sporny:</cite> there benefits and drawbacks to each one of those things. I think that's largely it.</p>
+<p id=cbb3 class="phone s01"><cite>steve_capell:</cite> Hard to look at me.</p>
+<p id=f0ad class="phone s02"><cite>Manu_Sporny:</cite> The only other thing, I'm a bit the JWK versus public key multibase. I'd prefer that we try to keep the examples kind of tur. So, Steve, I've got a lot of echo from you. I'm gonna mute. Yep, there we go. and then let's see. But the rest of it looks pretty solid. I think we'd need to look a little closer at kind of the expressions here, but the rest of the examples look good. So I think at a high level maybe let's try to make it a little more tur if decide if we want this in the use cases document or the main spec.</p>
+<p id=4d41 class="phone s02"><cite>Manu_Sporny:</cite> I feel like it might be better to have a core set of use cases in the main spec. I think the use cases document was, created a very long time ago and it has a lot of content in it that probably needs to be cleaned up. so we should either clean it up or we should say that was a good base document, but we've narrowed the use cases down to a restricted set. and then the examples should probably go in an appendix to explain what each one of these code examples are. I do think it's nice to have these code examples and it would be good if we exposed it in the main spec. that's it as far as my feedback's concerned. Dave,…</p>
+<p id=81e5 class="phone s02"><cite>Manu_Sporny:</cite> you're up</p>
+<p id=fa89 class="phone s04"><cite>Dave_Longley:</cite> How much do we care about…</p>
+<p id=3283 class="phone s04"><cite>Dave_Longley:</cite> how the AI made small mistakes in the examples and put a service type as a credential missing context for certain key types just random stuff like that that's so the examples are a little bit off. How much do we care about that?</p>
+<p id=6b0b class="phone s02"><cite>Manu_Sporny:</cite> a lot…</p>
+<p id=35d6 class="phone s02"><cite>Manu_Sporny:</cite> because people are going to copy it,…</p>
+<p id=434e class="phone s01"><cite>steve_capell:</cite> Yes. I agree.</p>
+<p id=ddc2 class="phone s02"><cite>Manu_Sporny:</cite> And we don't want them to copy the wrong thing a lot.</p>
+<p id=a5da class="phone s04"><cite>Dave_Longley:</cite> Yeah, let me modify…</p>
+<p id=cfbf class="phone s01"><cite>steve_capell:</cite> Let me And I'm</p>
+<p id=5e62 class="phone s04"><cite>Dave_Longley:</cite> what I said. How much do we care about it before we merge the PR? Okay. Manu Sporny:</p>
+<p id=9bee class="phone s02"><cite>Manu_Sporny:</cite> I think we should get it right before it goes into spec because we all know that once something gets into spec, it's really hard to take it out. is</p>
+<p id=3e68 class="phone s01"><cite>steve_capell:</cite> Yeah, just a quick disclaimer. I was in a way kind of relieved to see a separate use case document because it meant that we could chuck some stuff in there and talk about it before it moves to the specs. As I was going to say, it's probably nice to have some in the spec. And I 100% agree we shouldn't put anything in there that we're not collectively happy is good, Particularly at this stage. And I'm sure I can make it shorter and I'm sure there's some bugs in the code.</p>
+<p id=807f class="phone s01"><cite>steve_capell:</cite> And I thought, chuck it in there and put it in this non-spec document so that we can talk about it and then figure out how do we make it good for the spec. That was basically my strategy here. Hope it works for you.</p>
+<p id=7728 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean that is certainly one way to do it. I guess my concern is that people are going to take the use cases document as a that is also up to date and…</p>
+<p id=31bb class="phone s01"><cite>steve_capell:</cite> Yes. Yes. Okay.</p>
+<p id=df13 class="phone s02"><cite>Manu_Sporny:</cite> also correct and it's definitely not right I mean, it's got a whole bunch of stuff in it that I don't think is aligned with consensus in the group currently. so that's my only concern, Steve, about just chucking it in the use cases document is that it's either,…</p>
+<p id=e397 class="phone s01"><cite>steve_capell:</cite> That would be bad. Yes.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> that document is getting more and more it's deviating more and more from con consensus and we're going to end up deleting it at some point, right? or we need to align it with consensus which means we need to spend the time to revise it which is a non-trivial amount of work for somebody or bunch of people to do. and I don't want either one of those to slow down the thing you've done which is explain the concrete use cases that you have and get that into the spec and so into potentially the main spec.</p>
+<p id=bc55 class="phone s02"><cite>Manu_Sporny:</cite> So, one thing I thought we might do is have a use cases specification in the main spec that only has the use cases and the patterns that the group has consensus on. what that means is it means a little more work for you to just, get it down into a, concise form that we can all agree to that is right and correct and we can move it into the main spec. and this is just My personal preference is that we get your use cases into the main spec because I think we have consensus on them, And we don't want them confused with things that, are just a document from a long time ago that isn't up to date.</p>
+<p id=e730 class="phone s02"><cite>Manu_Sporny:</cite> The other way that we could break this up,…</p>
+<p id=c2cf class="phone s01"><cite>steve_capell:</cite> They</p>
+<p id=331e class="phone s02"><cite>Manu_Sporny:</cite> Steve, is that we could take your examples and shift them into a separate PR. And we could take the use cases language, that's TUR, and put that in a separate PR and get the use cases language in and then get the examples in once we've got a whole bunch of commentary on how they should be updated and fixed and so looking for feedback from the group on which direction they want to go and of course you Steve on what you would be comfortable with moving on Dave Longley's comment about the service description this felt very much like who is service.</p>
+<p id=7b4b class="phone s02"><cite>Manu_Sporny:</cite> So Stephen Curran's here this is to me just screams who is service and would be a great use of it and it's kind of like should we model it as that I'll stop talking. what are folks preferences Steve? Do you have a preference on let's just continue to chuck it in the use cases.</p>
+<p id=29cf class="phone s02"><cite>Manu_Sporny:</cite> Do you want to split it into two PRs? Do you want to try and, pair it down?</p>
+<p id=cf3d class="phone s01"><cite>steve_capell:</cite> Look, I accept everything that has been said that the words of the use cases should be more precise,…</p>
+<p id=5c36 class="phone s01"><cite>steve_capell:</cite> shorter, and that it probably does make sense to separate the words of the use case from the samples. Happy to make two separate PRs. I wonder how to collaborate with the much greater expertise in the room about getting the samples right particularly around the use of who is and things like that.</p>
+<p id=1176 class="phone s01"><cite>steve_capell:</cite> Would you prefer that I break these into two PRs and have my best stab at it and then probably get the words all right. I'm reasonably confident I can do that. The samples may still have some bugs that you don't like in which case do I just have my best stab and then you fix it how should we approach the sample?</p>
+<p id=29bc class="phone s02"><cite>Manu_Sporny:</cite> Yes. Yeah.</p>
+<p id=3d9c class="phone s02"><cite>Manu_Sporny:</cite> The sample stuff is just take your best stab at it and…</p>
+<p id=4ed2 class="phone s01"><cite>steve_capell:</cite> Yeah. All right.</p>
+<p id=926f class="phone s02"><cite>Manu_Sporny:</cite> then we will put commentary in the PRs to fix it. we could start doing that today. but if you're going to split it into two PRs, let's wait until you do that and then we'll start, giving you u feedback there. split it into two PRs first and…</p>
+<p id=2e2d class="phone s01"><cite>steve_capell:</cite> Okay. No,…</p>
+<p id=29b6 class="phone s02"><cite>Manu_Sporny:</cite> then get the tur language in the use cases in the main spec. So make a PR against the main spec. Add a use cases section. Do we have one? Do we have a No, we don't have Yeah.</p>
+<p id=51e0 class="phone s01"><cite>steve_capell:</cite> you don't yet.</p>
+<p id=2cf8 class="phone s02"><cite>Manu_Sporny:</cite> So let's you create a use cases section and just add your turf use cases to it. that's one PR and the other PR is add an appendix B or something that has the examples in it.</p>
+<p id=62ec class="phone s01"><cite>steve_capell:</cite> Okay. I think it Yeah.</p>
+<p id=70a7 class="phone s02"><cite>Manu_Sporny:</cite> And you could either, inline the examples or there's a way for you to import, JSON or whatever. Just I think inlining is just faster way to do it.</p>
+<p id=b514 class="phone s01"><cite>steve_capell:</cite> Yeah. We only need the minimal amount of inline that makes it clear…</p>
+<p id=a223 class="phone s01"><cite>steve_capell:</cite> what it means, right?</p>
+<p id=3d2d class="phone s01"><cite>steve_capell:</cite> Where do you have a convention about where you use cases after the overview and after the data model or near the end or…</p>
+<p id=fca2 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, exactly.</p>
+<p id=facf class="phone s02"><cite>Manu_Sporny:</cite> After the introduction and…</p>
+<p id=e6ad class="phone s01"><cite>steve_capell:</cite> where okay</p>
+<p id=3d9e class="phone s02"><cite>Manu_Sporny:</cite> before the data model, make a new section called use cases or you hold on. There's no solid convention. Steve, let me look at I'm trying to figure out if I'm trying to think of another document where we do that. give me half a second to find a good example for you. Maybe BC data model has its own use cases. can anyone remember a spec where we use cases? yeah, here we go. The SIDS spec has use cases.</p>
+<p id=0a44 class="phone s02"><cite>Manu_Sporny:</cite> So here's the link and these might be a little too short, Steve. So use your best judgment, But we've got five use cases there, a paragraph long each. you should not feel limited by that. I mean, it's fine for you to add, quite a bit of elaboration there. And what you could do is you could add the elaboration in the appendix and in the use cases thing, maybe write a paragraph about it or maybe you can split it up into two or three use cases. You got two different patterns,…</p>
+<p id=2f0e class="phone s02"><cite>Manu_Sporny:</cite> so each one of those could be a separate use case. okay.</p>
+<p id=d365 class="phone s01"><cite>steve_capell:</cite> All right.</p>
+<p id=50aa class="phone s01"><cite>steve_capell:</cite> Leave it with me. I'll have a crack. It makes sense to put a few words around the snippets in the appendix, doesn't it? Rather than just have them dangling by themselves.</p>
+<p id=f3f4 class="phone s02"><cite>Manu_Sporny:</cite> Exactly. Yep.</p>
+<p id=83ff class="phone s01"><cite>steve_capell:</cite> Okay. All right.</p>
+<p id=2dc3 class="phone s02"><cite>Manu_Sporny:</cite> And I think that's where you could, really elaborate on why are you doing it this way?</p>
+<p id=fe89 class="phone s01"><cite>steve_capell:</cite> Why are you doing it this way? Okay.</p>
+<p id=f4bc class="phone s02"><cite>Manu_Sporny:</cite> What's the benefit? that sort of thing. and then there are two other use cases that we need to add after you do your work, Steve. So after you do, add your, one or two, however many, use cases you want to break it up into. We do need to add Dimmitri's we just want a list of recognized entities just their name and their logos and things like that. That's one of the use cases. and then we have a use case where it's like you want a to-peer recognized entities thing, where any individual can publish and then you want the official list, although that's probably your one, Steve, that you're going to write in there. So, we'll figure that out after you do the split and we process your PRs and get them into the spec.</p>
+<p id=fb54 class="phone s01"><cite>steve_capell:</cite> Okay, sounds good. Thank you.</p>
+<p id=0b4b class="phone s02"><cite>Manu_Sporny:</cite> Okay, And thank you very much for working on this, Steve. I know, it can take a bit to get these PRs to land, but you're giving us a lot of food for thought on larger changes we want to make to the specification. with that said, any other feedback for Steve on this Anything else we want to do? Okay.</p>
+</section>
+
+<section>
+<h3 id=3bec>Threat Model Brainstorming</h3>
+<p id=9308 class="phone s02"><cite>Manu_Sporny:</cite> With that, I think those are both PRs. the next item up is, working on, our threat model brainstorming. so let me go ahead and switch topics. Threat model brainstorming and then let me share this link with everyone. so we have to generate a threat model as everyone knows. in order to do that we do a number of things. So we typically provide a systems diagram and kind of the primary flow that we're interested in. We have data flows that we want to document like someone going out and getting the recognized entities list is one of the data flows.</p>
+<p id=1f52 class="phone s02"><cite>Manu_Sporny:</cite> We describe the entities and processes and where data is stored and that kind of stuff. We're going to skip over all this stuff. We'll get to that later. we identify stakeholders. Again, we're skipping on that. today, what we're trying to do is we're trying to brainstorm all of the threats we can think of just, really quickly off the top of our heads. what kinds of attacks are we most concerned about when it comes to recognized entities? So, each one of you has the ability to go into the document and start adding things. So, all of us should feel free to jump into the document and start typing out any threats that they feel we should care about. And in vague is totally fine.</p>
+<p id=3aac class="phone s02"><cite>Manu_Sporny:</cite> I'm afraid of aliens using recognized entities in a bad way, put it in the list. we'll process it may not survive to the end. all right. So please start typing the types of threats you're concerned about in there and we'll go from there.</p>
+<p id=aa9d class="phone s02"><cite>Manu_Sporny:</cite> This is great stuff so far. We're going to keep it going until I see people slowing down on their typing and we don't get any more</p>
+</section>
+
+<section>
+<h3 id=e324>Threat Model Categorization</h3>
+<p id=3baa class="phone s02"><cite>Manu_Sporny:</cite> All right, I think most of the typing has died down a bit. Please continue typing if you've got other ideas, but we have a very good starter list. how around 25 items at least. 22ish 20ish. So that's a great start. The next step here is we are going to try to move these into target threats which are threats the system was designed to address. implementation threats where these are things that impleers might get wrong.</p>
+<p id=7ff9 class="phone s02"><cite>Manu_Sporny:</cite> but we leave kind of the choice to that individual that's implementing. external threats where we're like yeah that's a threat but it's out of scope for this version of the specification and dependency threats which are like hey we depend on this other thing out there that we don't really have control over but it's a threat like if they get compromised we get compromised. So, we're going to try to classify each one of these and put them into each one of these categories. before we do that, actually, let's just go ahead and do that, denial of service fetching externally linked registries. what is that? That is an implementation threat, right?</p>
+<p id=df54 class="phone s02"><cite>Manu_Sporny:</cite> as an imple is the one that has to make sure that they protect the software against denial of service attacks. I guess there are two parts to this. One of them is a denial of service for the person publishing the registry. I'm wondering if there's a client denial of service as well. So let's see this is the issuer can experience a denial of service attack when a large number of clients fetch a externally linked registry.</p>
+<p id=c1d0 class="phone s02"><cite>Manu_Sporny:</cite> three. So who contributed this one? Just so we can know. Does anyone remember?</p>
+<p id=35c4 class="phone s04"><cite>Dave_Longley:</cite> I think I did I meant to cover both cases.</p>
+<p id=6e68 class="phone s02"><cite>Manu_Sporny:</cite> Okay, there we go. And thank you for adding the other one. Did you mean server the issue or the client? Dave.</p>
+<p id=8156 class="phone s04"><cite>Dave_Longley:</cite> So splitting at two works fine.</p>
+<p id=d004 class="phone s02"><cite>Manu_Sporny:</cite> All next item. An issuer of recognized entity credential is not authorized or accredited to do so. Is that an implementation thread as well? Is it out of scope?</p>
+<p id=e875 class="phone s02"><cite>Manu_Sporny:</cite> It's not a target.</p>
+<p id=764c class="phone s05"><cite>Phillip_Long:</cite> That sounds out of scope to me. I don't I mean,…</p>
+<p id=72eb class="phone s02"><cite>Manu_Sporny:</cite> It's like you have to like me the person that's managing the verifier has to make sure that they don't make a mistake here, And implementation threat feels like it's the person implementing the software,…</p>
+<p id=fb52 class="phone s05"><cite>Phillip_Long:</cite> right either way.</p>
+<p id=d2cd class="phone s02"><cite>Manu_Sporny:</cite> but maybe it's the person implementing the system. So I'm torn between implementation thread and external. …</p>
+<p id=a36c class="phone s05"><cite>Phillip_Long:</cite> Could be both, I guess, is what you're saying.</p>
+<p id=69f0 class="phone s06"><cite>Dmitri_Zagidulin:</cite> And what's the reasoning for not putting it as a core threat?</p>
+<p id=f5d7 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Because that's one of the core threats that the spec is target threats rather.</p>
+<p id=0e9c class="phone s02"><cite>Manu_Sporny:</cite> it's like the issue.</p>
+<p id=5d7c class="phone s02"><cite>Manu_Sporny:</cite> I don't think it's a threat the system was designed to address because we can't stop a verifier from putting a completely unknown issuer of a list into their software This is an issuer of a recognized entity credential,…</p>
+<p id=5c47 class="phone s06"><cite>Dmitri_Zagidulin:</cite> No, no, it's more that our spec contains information not just on the entities but their accredititation and so that is exactly what our spec contains. So, it's a target threat that our spec addresses.</p>
+<p id=c702 class="phone s02"><cite>Manu_Sporny:</cite> not the issuers in the list. I totally agree with you for the ones in the list.</p>
+<p id=b9a5 class="phone s06"><cite>Dmitri_Zagidulin:</cite> I misunderstood.</p>
+<p id=845f class="phone s02"><cite>Manu_Sporny:</cite> This is like Okay.</p>
+<p id=76d8 class="phone s06"><cite>Dmitri_Zagidulin:</cite> I misunderst Okay, got it.</p>
+<p id=32f5 class="phone s02"><cite>Manu_Sporny:</cite> But what you said is a good one. should add it. Yeah.</p>
+<p id=80d9 class="phone s06"><cite>Dmitri_Zagidulin:</cite> So, that's an unknown registry host. Got it. Unauthorized. Orange.</p>
+<p id=4c00 class="phone s02"><cite>Manu_Sporny:</cite> So let's say an unknown yes,…</p>
+<p id=72b2 class="phone s01"><cite>steve_capell:</cite> I might just quickly interject that that's the one that we mitigate with the UN grid right so this is regi pretending to be registered Doris when they're asserting a business identity or something where we have literally a chain. So it's not just Manu Sporny:</p>
+<p id=5f7d class="phone s02"><cite>Manu_Sporny:</cite> I think so. I'm hesitating, Steve, because I'm not familiar with all the details of grid, right? But it's supposed to be like the global registry for every known entity that should be managing a registered entities or…</p>
+<p id=68ec class="phone s02"><cite>Manu_Sporny:</cite> recognized entities list.</p>
+<p id=8e6d class="phone s01"><cite>steve_capell:</cite> Yeah. But…</p>
+<p id=10001 class="phone s01"><cite>steve_capell:</cite> but I mean the general pattern is a hierarchy of recognized entities, right? So some sort of authority recognizes a business and some sort of other authority recognizes the authority. You know what I mean?</p>
+<p id=22bb class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I think this is the topmost one that we're talking about here,…</p>
+<p id=fca5 class="phone s01"><cite>steve_capell:</cite> Yeah, me.</p>
+<p id=6dd1 class="phone s02"><cite>Manu_Sporny:</cite> I don't know. I guess who added this one? okay. Then you get to decide exactly what it means. are you talking about the grid use case or are you talking about the topmost</p>
+<p id=9bb3 class="phone s01"><cite>steve_capell:</cite> Yeah, I'm talking about…</p>
+<p id=eb1e class="phone s02"><cite>Manu_Sporny:</cite> Okay. Yeah,…</p>
+<p id=64ba class="phone s01"><cite>steve_capell:</cite> how you mitigate the risk that a verifier doesn't have a priority knowledge of the issuer of a recognized entity. Do you see?</p>
+<p id=d162 class="phone s02"><cite>Manu_Sporny:</cite> I'm okay. So do we agree that there are two layers here? There's who watches the watchman layer at the very very top, right? And then below the stuff below it is something our spec addresses. I think definitely it's the topmost one that I'm guessing is out of scope for the spec. But Steve,…</p>
+<p id=ad66 class="phone s01"><cite>steve_capell:</cite> I think technically the spec I'd imagine that the recognized entity credential format,…</p>
+<p id=c74a class="phone s02"><cite>Manu_Sporny:</cite> I think you're talking about the one below the top level.</p>
+<p id=2d8e class="phone s01"><cite>steve_capell:</cite> shape, purpose, would be identical.</p>
+<p id=c467 class="phone s01"><cite>steve_capell:</cite> Whether it's the UN saying to the Australian tax office,…</p>
+<p id=ce0d class="phone s01"><cite>steve_capell:</cite> you're recognized as an authority register or whether it's the Australian tax office saying to an Australian business, you're recognized as an Australian business. It's just they're both entity recognitions, right? What I'm trying to draw out here is a linked chain.</p>
+<p id=e5f8 class="phone s02"><cite>Manu_Sporny:</cite> Mhm. Okay.</p>
+<p id=de45 class="phone s02"><cite>Manu_Sporny:</cite> So, you're trying to draw out a target threat,…</p>
+<p id=67b0 class="phone s02"><cite>Manu_Sporny:</cite> Meaning that this is something the spec was designed to address.</p>
+<p id=bf03 class="phone s01"><cite>steve_capell:</cite> Yes. Hello.</p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> So we should word this in a way where it's like yes that is definitely in scope and the thing that I think is definitely in scope is let's see it's not an unknown issuer of recognized entity credential it's an unknown issuer of a verifiable credential is</p>
+<p id=8776 class="phone s01"><cite>steve_capell:</cite> No. it's an inline issuer of a recognized entity spec credentials. I'm just trying to draw out the idea that you can actually have a hierarchy of recognized entities credentials,…</p>
+<p id=6bbb class="phone s01"><cite>steve_capell:</cite> right? Because up to now the whole spec is about somebody creates a list, but there isn't a list of lists and it's just turtles, right? I mean, it's the same tech and it's just following existing natural governance hierarchies that already exist,…</p>
+<p id=8562 class="phone s02"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=ddad class="phone s01"><cite>steve_capell:</cite> right? …</p>
+<p id=4bd7 class="phone s02"><cite>Manu_Sporny:</cite> Mhm. It's not all right.</p>
+<p id=fd50 class="phone s04"><cite>Dave_Longley:</cite> Can we cover more ground by saying an unknown issuer of a verifiable credential including a recognized entity credential?</p>
+<p id=07e3 class="phone s01"><cite>steve_capell:</cite> I mean, Yeah, possibly.</p>
+<p id=c361 class="phone s04"><cite>Dave_Longley:</cite> Can we cover more ground with that as a single threat?</p>
+<p id=10003 class="phone s01"><cite>steve_capell:</cite> I mean the purpose of the whole spec initially and still is to say I don't know who the issuer of this verified credential is a degree certificate so give me a list of authorized issuers right no</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah. I think that that thing makes sense to me, Steve. I think what you're going to make sense. I don't know if I'm making sense to the rest of the people on the call. Meaning the grid credential does what protects against that, right, Steve? But what happens if titute what's the opposite of a grid sphere credential or something and…</p>
+<p id=de57 class="phone s02"><cite>Manu_Sporny:</cite> I trick a verifier into use my the grid credential and then they're tricked into accepting a whole hierarchy of things that they shouldn't be accepting.</p>
+<p id=d58d class="phone s01"><cite>steve_capell:</cite> Yeah, I think it all goes to the wording of these threats,…</p>
+<p id=a40a class="phone s01"><cite>steve_capell:</cite> And I probably got the wording completely wrong, but I see that one of the biggest risks here is how does a verifier know where to look and who to trust? Yeah.</p>
+<p id=8e65 class="phone s02"><cite>Manu_Sporny:</cite> And I think that's fair,…</p>
+<p id=cd85 class="phone s02"><cite>Manu_Sporny:</cite> right? So, the thing that the threat model should be doing is highlighting the core stuff that we're trying to prevent. And I think your thing does that it is a core part of what we're trying to achieve with the sc. So, it is a core target threat and Demetri I think it was aligned with the way you were interpreting it and not the way I was interpreting it. go ahead Dave.</p>
+<p id=142f class="phone s04"><cite>Dave_Longley:</cite> I think one of the things that came out of the conversation that we want to tease out that we don't need to tease out right now is there is a subtle difference between you've got to go to your configuration to begin with some priori configuration to start with and then after that you can go down this hierarchy but those are two different Yeah. Dave Longley:</p>
+<p id=0b83 class="phone s02"><cite>Manu_Sporny:</cite> Mhm. And one of them is not a target threat.</p>
+<p id=d2f0 class="phone s04"><cite>Dave_Longley:</cite> And one exactly the configuration and…</p>
+<p id=aeba class="phone s04"><cite>Dave_Longley:</cite> thing is not something this spec does not say how to configure your system. It just says you have to have that as an assumption coming into</p>
+<p id=f278 class="phone s05"><cite>Phillip_Long:</cite> So does that mean that we have a target threat and…</p>
+<p id=4b51 class="phone s05"><cite>Phillip_Long:</cite> an implementation threat? The lower level being the implementation threat.</p>
+<p id=6f5a class="phone s02"><cite>Manu_Sporny:</cite> Yeah, top level here. I'm trying to type something up. so verifier configuration is botched to look at the wrong top level recognized entity credential.</p>
+<p id=1a8e class="phone s02"><cite>Manu_Sporny:</cite> I think that's the one I'm trying to tease out. And that is a implementation threat, right? Okay.</p>
+<p id=b316 class="phone s05"><cite>Phillip_Long:</cite> Yeah, that's…</p>
+<p id=49bc class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah, but it's also the same as…</p>
+<p id=5826 class="phone s05"><cite>Phillip_Long:</cite> what I'm thinking.</p>
+<p id=955c class="phone s06"><cite>Dmitri_Zagidulin:</cite> if you don't have a configuration in the first place</p>
+<p id=850f class="phone s04"><cite>Dave_Longley:</cite> It might not be an implementation threat It might not be an implementation threat…</p>
+<p id=a9e5 class="phone s04"><cite>Dave_Longley:</cite> because we are not going to tell people how to implement configuration systems in this spec. We're just going to say you need to do it. So it's more of an external or dependency spec or threat.</p>
+<p id=ffc5 class="phone s02"><cite>Manu_Sporny:</cite> Plus one to that. Demetri, on your comment. it's not the same thing as not configuring at all because my guess is if you don't configure at all, it'll just ject, Any verification with an unknown issuer will reject.</p>
+<p id=4129 class="phone s02"><cite>Manu_Sporny:</cite> But if you botch your configuration and…</p>
+<p id=cb7c class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yes, I see…</p>
+<p id=991f class="phone s02"><cite>Manu_Sporny:</cite> you put the wrong Yeah. Dmitri Zagidulin:</p>
+<p id=28b6 class="phone s06"><cite>Dmitri_Zagidulin:</cite> what you're saying. I see</p>
+<p id=dd2f class="phone s02"><cite>Manu_Sporny:</cite> So This is an external threat. we don't tell people how to configure their software in the spec, but if you misconfigure your software, it's going to turn out badly for next item. legitimately recognized entity claims a scope that does not match the recognition. Who contributed this?</p>
+<p id=5aa4 class="phone s01"><cite>steve_capell:</cite> That's me again.</p>
+<p id=4069 class="phone s02"><cite>Manu_Sporny:</cite> Legitimately recognized Mhm.</p>
+<p id=c8f2 class="phone s01"><cite>steve_capell:</cite> What I mean by that is in product conformity for example I might be issuing let's say a veterary health certificate and I'm accredited there. I discover a linked accreditation from a national accreditation authority and that's valid and it is about me but I'm actually accredited to grow organic cotton not to test animal health right so you can have this chain and each entity is valid but how do you know that you're not talking about something</p>
+<p id=75e3 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=eb3d class="phone s02"><cite>Manu_Sporny:</cite> The use case makes sense. I'm wondering about the wording. yeah. I don't know to I mean I understand what you're saying based on what's written.</p>
+<p id=c84d class="phone s01"><cite>steve_capell:</cite> Wondering about happy to change the wording.</p>
+<p id=bfde class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, D.</p>
+<p id=21d1 class="phone s04"><cite>Dave_Longley:</cite> This is analogous to a confused deputy attack whereby the system that's applying the rules would see this thing in an ACL and…</p>
+<p id=ba5b class="phone s04"><cite>Dave_Longley:</cite> says, &quot;Yeah, it's all good.&quot; But it's not appropriately bound to the resource that's being requested. So, it's like I looked in my list.</p>
+<p id=a338 class="phone s01"><cite>steve_capell:</cite> There's something here.</p>
+<p id=50fd class="phone s04"><cite>Dave_Longley:</cite> This thing's accredited, so we're all good to go. because the whatever was doing the looking was did not have the scope information that said you it has to be good for this specific thing.</p>
+<p id=10005 class="phone s01"><cite>steve_capell:</cite> That's right.</p>
+<p id=5620 class="phone s02"><cite>Manu_Sporny:</cite> …</p>
+<p id=2b19 class="phone s02"><cite>Manu_Sporny:</cite> how would we reword this to make it a little more clear about that? cuz what I'm confused about is there's one case where this entity the veterinary slash cotton growing organization registered themselves on the list they went through some process and…</p>
+<p id=0b85 class="phone s01"><cite>steve_capell:</cite> Come on.</p>
+<p id=305d class="phone s02"><cite>Manu_Sporny:</cite> got on the list with the wrong scope and the list manager allowed that to happen versus they didn't specify anything or the list manager didn't specify anything.</p>
+<p id=883a class="phone s02"><cite>Manu_Sporny:</cite> So, their scope is overly broad. I think those are two different attacks, right? One them the list manager isn't paying attention in both cases.</p>
+<p id=f02b class="phone s04"><cite>Dave_Longley:</cite> Yeah, those are two different things.</p>
+<p id=d9cf class="phone s02"><cite>Manu_Sporny:</cite> Didn't check it.</p>
+<p id=960c class="phone s01"><cite>steve_capell:</cite> There's also a pattern maybe…</p>
+<p id=7ab1 class="phone s01"><cite>steve_capell:</cite> where the scope the list managers the recognized entities done their job, but the verifier is and this is an implementation thing probably, right? Yeah,…</p>
+<p id=f725 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=b93b class="phone s01"><cite>steve_capell:</cite> they're just not looking at it or</p>
+<p id=a75d class="phone s02"><cite>Manu_Sporny:</cite> Plus one of that. So, we've got kind of three places where the failure can happen. Do we want to care about all three of those? Should we generalize this as a list owners not paying attention, verifiers not paying attention?</p>
+<p id=a9b7 class="phone s04"><cite>Dave_Longley:</cite> I think we've got insufficiently specified in the list and…</p>
+<p id=322d class="phone s05"><cite>Phillip_Long:</cite> Yes. Spaced out fire.</p>
+<p id=0114 class="phone s04"><cite>Dave_Longley:</cite> then we verifier insufficiently follows the rules specified in the list.</p>
+<p id=d876 class="phone s02"><cite>Manu_Sporny:</cite> So the issuer of the recognized entity credential.</p>
+<p id=7e54 class="phone s02"><cite>Manu_Sporny:</cite> does insufficiently specifies restrictions on the type of credential.</p>
+<p id=962e class="phone s04"><cite>Dave_Longley:</cite> it. Insufficiently specifies restrictions on…</p>
+<p id=bd4d class="phone s05"><cite>Phillip_Long:</cite> It's awesome. Yeah.</p>
+<p id=56bc class="phone s04"><cite>Dave_Longley:</cite> what an entity can do or something.</p>
+<p id=4b79 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. on the type of actions the recognized entity can perform right and then the other one is the verifier of the recognized entity credential insufficiently applies the restrict</p>
+<p id=d15c class="phone s04"><cite>Dave_Longley:</cite> They insufficiently apply the restrictions.</p>
+<p id=de84 class="phone s02"><cite>Manu_Sporny:</cite> restrictions on the type of actions the recognized entity can perform. Okay, so we've got those two. these are what type of threats are these?</p>
+<p id=4b56 class="phone s02"><cite>Manu_Sporny:</cite> Are they target Feels like they're implementation threats.</p>
+<p id=649c class="phone s04"><cite>Dave_Longley:</cite> So there's certainly implementation threats…</p>
+<p id=c6ad class="phone s05"><cite>Phillip_Long:</cite> Yeah. Heat.</p>
+<p id=6a5a class="phone s04"><cite>Dave_Longley:</cite> if we're going to specify an algorithm. ironically if it's just a data model that we specify ironically they wouldn't be technically implementation threats because you could implement this spec just doing a data model.</p>
+<p id=86de class="phone s02"><cite>Manu_Sporny:</cite> Are we going to specify an algorithm?</p>
+<p id=f1d2 class="phone s04"><cite>Dave_Longley:</cite> I don't think we know the answer to that yet.</p>
+<p id=3c70 class="phone s02"><cite>Manu_Sporny:</cite> So, let's list we don't right now. So, today they're external threats.</p>
+<p id=1715 class="phone s02"><cite>Manu_Sporny:</cite> Is that okay?</p>
+<p id=6033 class="phone s05"><cite>Phillip_Long:</cite> Yeah, but put some kind of note there that indicates that…</p>
+<p id=fc53 class="phone s05"><cite>Phillip_Long:</cite> because later on we'll be confused.</p>
+<p id=db94 class="phone s02"><cite>Manu_Sporny:</cite> If we don't specify an algorithm, these are external threats. Then put Steve as the contributor for both All right. So, is that one compromise of a recognized allows a fraudulent actor to masquerade as a legitimately recognized entity. That's a good one. what is is it an external threat? Because we don't really talk about keeping your DID safe in the spec.</p>
+<p id=bc9c class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think it's an external threat.</p>
+<p id=4594 class="phone s02"><cite>Manu_Sporny:</cite> Recogniz who added this one?</p>
+<p id=5980 class="phone s04"><cite>Dave_Longley:</cite> It's got to be Telltale sign of the ass and recognized.</p>
+<p id=1e71 class="phone s05"><cite>Phillip_Long:</cite> Great catch, Dave.</p>
+<p id=695c class="phone s01"><cite>steve_capell:</cite> It seems was me again. Sorry. I started at the top and read a few.</p>
+<p id=c301 class="phone s02"><cite>Manu_Sporny:</cite> No, no,…</p>
+<p id=c13d class="phone s01"><cite>steve_capell:</cite> You're in</p>
+</section>
+
+<section>
+<h3 id=2fdc>Competitive Gatekeeping Threat</h3>
+<p id=8fd8 class="phone s02"><cite>Manu_Sporny:</cite> this is fine. you're fine. that's right. Privacy leakage in ways compromise of a recognized that we did that An entity generates the first recognized entity list for a particular market vertical and uses that to keep out competition. This is a competitive threat. I added this one. It is dependency or external. It's out of scope certainly.</p>
+<p id=0ed8 class="phone s02"><cite>Manu_Sporny:</cite> It's not an external technology, but it feels like a dependency threat, It's a market failure in some case. do we care about this one? Let me ask that first.</p>
+<p id=42e7 class="phone s04"><cite>Dave_Longley:</cite> I certainly think we should mention this. it's duplicated as simply anti-competitive gatekeeping on number seven. So, I think we can strike that one or,…</p>
+<p id=afc8 class="phone s04"><cite>Dave_Longley:</cite> make this one more general.</p>
+<p id=a717 class="phone s02"><cite>Manu_Sporny:</cite> Okay. …</p>
+<p id=0a2a class="phone s04"><cite>Dave_Longley:</cite> We certainly want to talk about it.</p>
+<p id=95b3 class="phone s02"><cite>Manu_Sporny:</cite> who? Yep.</p>
+<p id=4545 class="phone s04"><cite>Dave_Longley:</cite> People should know that this is a threat to the ecosystem.</p>
+<p id=d0f1 class="phone s05"><cite>Phillip_Long:</cite> time</p>
+<p id=9f2b class="phone s04"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=8bab class="phone s02"><cite>Manu_Sporny:</cite> Plus one. who added the anti-competitive gatekeeping?</p>
+<p id=8c00 class="phone s04"><cite>Dave_Longley:</cite> that was me.</p>
+<p id=3525 class="phone s02"><cite>Manu_Sporny:</cite> All So, I'll list both of us and then we will delete that one. Yes. Thank you, Phil. All right.</p>
+<p id=596f class="phone s02"><cite>Manu_Sporny:</cite> This was very productive. Thank you everyone. really appreciate all of the thinking about this and categorizing. We will come back next time and we will categorize the remaining 15 items and keep going until we have a good categorization of it. we did in the VCOM call earlier come up with a strategy on how we're going to move this into a document format. So Joe, Andrew, Eric Shu and I will continue to do that.</p>
+<p id=d9d0 class="phone s05"><cite>Phillip_Long:</cite> Excellent.</p>
+<p id=2d2c class="phone s02"><cite>Manu_Sporny:</cite> So once this group is done with the categorization we will then move it into spec form and that will allow us to request a horizontal review of the specification. All right. anything else that folks want to mention before we adjourn for today. All really appreciate everyone contributing today and attending even from a boat in the Mediterranean, no doubt. have a wonderful night,…</p>
+<p id=b221 class="phone s01"><cite>steve_capell:</cite> Thank you so much.</p>
+<p id=abc5 class="phone s02"><cite>Manu_Sporny:</cite> a wonderful rest of your week, and we will see everyone here next week. Take care. Bye. Meeting ended after 00:56:48 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
