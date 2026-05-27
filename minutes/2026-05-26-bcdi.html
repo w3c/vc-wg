@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 26 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>26 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Manu_Sporny, Parth_Bhatt, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#26cc">Welcome And Announcements</a></li>
+<li><a href="#9f6e">Reviewing And Closing Old Issues</a>
+<ol>
+<li><a href="#2ff0">w3c/<wbr>vc-di-quantum-safe#2</a></li>
+<li><a href="#76da">w3c/<wbr>vc-di-quantum-safe#3</a></li>
+<li><a href="#9a45">w3c/<wbr>vc-di-quantum-safe#5</a></li>
+<li><a href="#97f2">w3c/<wbr>vc-di-quantum-safe#6</a></li>
+<li><a href="#3484">w3c/<wbr>vc-di-quantum-safe#7</a></li>
+<li><a href="#4ff5">w3c/<wbr>vc-di-quantum-safe#8</a></li>
+<li><a href="#8f90">w3c/<wbr>vc-di-quantum-safe#9</a></li>
+</ol>
+</li>
+<li><a href="#ffec">Adding Secret Key Variants To Table</a></li>
+<li><a href="#7b6a">w3c/<wbr>vc-di-quantum-safe#17</a></li>
+<li><a href="#8794">PR 24 Approval And Merging</a></li>
+<li><a href="#f6c4">Support for Efficient PQC Selective disclosure by Wind4Greg · Pull Request #24 · w3c/vc-di-quantum-resistant · GitHub</a></li>
+<li><a href="#093a">Naming The Document For Publication</a></li>
+<li><a href="#8f15">FPWD</a></li>
+<li><a href="#6592">Categorizing Data Integrity Threats</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=45b4 class="phone s01"><cite>Elaine_Wooton:</cite> C something like that. South of France. Yeah. it's filled with yachts. Yes.</p>
+<p id=6587 class="phone s02"><cite>Wesley_Smith:</cite> Good morning, Elaine.</p>
+<p id=5c4f class="phone s02"><cite>Wesley_Smith:</cite> Good morning, Bright and early. so I'm gonna toss it over to you pretty quickly here, Greg. since we spent most of last week doing the barcodes work, I expect we can spend most of all the time this week doing the data integrity work. Do you have a link to the threat model template for data integrity?</p>
+<p id=1df4 class="phone s03"><cite>Greg_Bernstein:</cite> Yes, it's morning.</p>
+<p id=5847 class="phone s03"><cite>Greg_Bernstein:</cite> No, I haven't started anything on that yet.</p>
+<p id=bbb9 class="phone s02"><cite>Wesley_Smith:</cite> That's totally fine. so what we did last week for barcodes was we took this exact document template that I just linked in the chat,…</p>
+<p id=92d4 class="phone s02"><cite>Wesley_Smith:</cite> and we basically filled out section four, question mark.</p>
+<p id=5cb8 class="phone s03"><cite>Greg_Bernstein:</cite> I just mostly had issues that I want to confirm closing and…</p>
+<p id=8c26 class=irc><cite>&lt;Wesley_Smith&gt;</cite> <a href="https://docs.google.com/document/d/1lGB8X2pEybUJepoLBLyKvw8O3Ag2RFm_gQilIFCo9sU/edit?tab=t.0#heading=h.py96npebo7ox">Data Integrity Threat Model Brainstorming Template - Google Docs</a> </p>
+<p id=f576 class="phone s03"><cite>Greg_Bernstein:</cite> two PRs I want to merge, but</p>
+<p id=094a class="phone s02"><cite>Wesley_Smith:</cite> Yep, sounds good. So, whatever you want to do there is good.</p>
+<p id=81fb class="phone s02"><cite>Wesley_Smith:</cite> And then when you get over to the threat modeling stuff, you're going to want to tell people to go to the document that I linked in chat and basically have a brainstorm session where you take 10 minutes and let people submit threats essentially to the threat modeling section which is section four of that document. and then after that you can kind of go through item by item what people put in and discuss and categorize. Sound reasonable.</p>
+<p id=37b5 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=a7e9 class="phone s02"><cite>Wesley_Smith:</cite> Hello Ivonne.</p>
+<p id=a03d class="phone s04"><cite>Ivan_Herman:</cite> Hello.</p>
+<p id=0577 class="phone s02"><cite>Wesley_Smith:</cite> I'll give it a couple minutes for people to trickle</p>
+</section>
+
+<section>
+<h3 id=26cc>Welcome And Announcements</h3>
+<p id=aa23 class="phone s02"><cite>Wesley_Smith:</cite> All right, I think we can go ahead and get started. Hello everyone. welcome to the May 26th meeting of the barcodes and data integrity task force. a reminder to everybody, this call is being recorded. if you are not comfortable with the recording or transcription of what you are saying, please let me know. we have the Brussels face toface meeting next week. So to those of you that will be there, looking forward to meeting you in person, to those of you remotely, looking forward to seeing you that way as well. The agenda for today, I expect first we'll go through process announcement items. and then I expect we'll spend majority the entirety of the rest of the call on data integrity.</p>
+<p id=ffff class="phone s02"><cite>Wesley_Smith:</cite> Last week we spent most of the call doing a barcodes threat modeling brainstorm session and I expect we will want to do a similar session for data integrity on the call today. with that said, does anybody have any announcements, introductions or process items they would like to discuss?</p>
+<p id=9d74 class="phone s02"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=2807 class="phone s05"><cite>Manu_Sporny:</cite> Mostly just a question about the face toface.</p>
+<p id=8826 class="phone s05"><cite>Manu_Sporny:</cite> Wes Elaine, y'all had a chance to kind of talk through what we're going to talk about on that Monday and then is it issue processing and then the day of? just curious as to the agenda.</p>
+<p id=83a2 class="phone s02"><cite>Wesley_Smith:</cite> No, I haven't spoken with Elaine about…</p>
+<p id=f46c class="phone s02"><cite>Wesley_Smith:</cite> how we're going to break down that time. that sounds like a useful thing to do. Ivonne, go ahead.</p>
+<p id=ccfb class="phone s04"><cite>Ivan_Herman:</cite> So you say Monday?</p>
+<p id=46f4 class="phone s04"><cite>Ivan_Herman:</cite> I didn't even realize you have a meeting in Monday.</p>
+<p id=ebd8 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I believe there's a special meeting specific to the barcodes work scheduled for Monday afternoon. I believe that's from 2 to 6:00 p.m. local time.</p>
+<p id=c906 class=irc><cite>&lt;Elaine_Wooton&gt;</cite> MY MIC IS NOT - SO ... </p>
+<p id=ca14 class="phone s02"><cite>Wesley_Smith:</cite> Yeah.</p>
+<p id=82b5 class="phone s04"><cite>Ivan_Herman:</cite> I didn't realize that to be honest.</p>
+<p id=1edb class=irc><cite>&lt;Elaine_Wooton&gt;</cite> I did ask for the monday meeting for BCs since we have a chance to focus together! </p>
+<p id=2b6c class="phone s04"><cite>Ivan_Herman:</cite> I was planning some private time with my wife which I may do after all. Okay.</p>
+<p id=6528 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I don't think that there's any obligation there or anything that anybody has to be at that meeting for in particular. I think it's just mostly a work session. so please enjoy the time with your wife. anything else related to the face toface meeting or…</p>
+<p id=a117 class="phone s02"><cite>Wesley_Smith:</cite> a different announcement or process item anyone would like to discuss? All in that case, I will go ahead and turn it over to you, Greg, for data integrity</p>
+<p id=6b99 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, let me I'm going to put up the repo so we can go through.</p>
+<p id=3361 class="phone s03"><cite>Greg_Bernstein:</cite> Let's see. Nothing's showing up. Yeah, here it comes.</p>
+</section>
+
+<section>
+<h3 id=9f6e>Reviewing And Closing Old Issues</h3>
+<p id=2dee class="phone s03"><cite>Greg_Bernstein:</cite> Okay, let me go directly to that screen. Let's start with the issues. I want to make sure we're doing the process correctly. So, last week after our discussions, I went back and looked at all our issues, especially some that are quite old. Let's start with issue number two down here. Register multibase values to identify MLDDSA keys. Okay, this was accomplished quite a while ago. the keys were registered with the multi. So I put in a comment on that over a week ago and I marked with a label pending closed on this.</p>
+<p id=6a93 class="phone s03"><cite>Greg_Bernstein:</cite> Is this the correct approach to do this? M. Sporney gave it a thumbs up. Can I mark this closed? It's been marked this way for a week with the comment for a week. Process is question.</p>
+<h4 id=2ff0><a href="https://github.com/w3c/vc-di-quantum-safe/issues/2">w3c/<wbr>vc-di-quantum-safe#2</a></h4>
+<p id=575e class="phone s05"><cite>Manu_Sporny:</cite> Plus Yep. Plus one. That's the process.</p>
+<p id=0300 class="phone s03"><cite>Greg_Bernstein:</cite> Close it. Okay, let's go to the next one. We're gonna just Okay, SLHDSA issue number three not to include any reason not to include MLDDSA SLH DSA. We've added SLHDSA.</p>
+<p id=23ee class="phone s03"><cite>Greg_Bernstein:</cite> working on it. SLHDSA is in there now. Marking this closed. We satisfied that issue. Oops. pick can use multi key names and prefix values. Okay. we worked with the multi-key people to select the appropriate values and names.</p>
+<h4 id=76da><a href="https://github.com/w3c/vc-di-quantum-safe/issues/3">w3c/<wbr>vc-di-quantum-safe#3</a></h4>
+<p id=4d3f class="phone s03"><cite>Greg_Bernstein:</cite> Yes, they look like some of these ones that we put in here. ski sign is not yet standardized. Neither is Falcon. So, we're holding off on Any questions? We did work with the multicodex people to pick the appropriate names for Any other comments on this? Closing issue number five. Modularize algorithms to keep it dry. This was the big update. when was that done? That was PR 11 that was March 2nd.</p>
+<p id=d43a class="phone s03"><cite>Greg_Bernstein:</cite> So that's fine. a while since we did this and that merged pending Any questions about that? Otherwise closing the issue. Just scrubbing these down. Just double checking. this one has to do with this issue number seven has to do with the naming conventions. we have in data integrity a consistent set of cryptosweet naming conventions and we applied those in the merge number 11 that was back in March.</p>
+<h4 id=9a45><a href="https://github.com/w3c/vc-di-quantum-safe/issues/5">w3c/<wbr>vc-di-quantum-safe#5</a></h4>
+<h4 id=97f2><a href="https://github.com/w3c/vc-di-quantum-safe/issues/6">w3c/<wbr>vc-di-quantum-safe#6</a></h4>
+<p id=12bd class="phone s03"><cite>Greg_Bernstein:</cite> Any questions about that? So this has been the satisfied by PR11 and it's been merged quite a while ago. So this is issue number eight. This is encoding of keys and proofs 58 or base 64. postquantum keys and proofs can be significantly longer.</p>
+<h4 id=3484><a href="https://github.com/w3c/vc-di-quantum-safe/issues/7">w3c/<wbr>vc-di-quantum-safe#7</a></h4>
+<p id=10000 class="phone s03"><cite>Greg_Bernstein:</cite> there is discussion about base 58 performance issues and such like that. where we did the drive stuff and things like that, we went with B 64 URL for both proofs and key values. so this issue is closed as far I mean was resolved. So I'm closing the issue. this issue was raised by me to set up our additional refactoring derived type of stuff.</p>
+<h4 id=4ff5><a href="https://github.com/w3c/vc-di-quantum-safe/issues/8">w3c/<wbr>vc-di-quantum-safe#8</a></h4>
+<p id=9778 class="phone s03"><cite>Greg_Bernstein:</cite> This was resolved by PR number 10. so any questions about that? We added test vectors too. So this isn't ready to be closed yet, but I had a question. Let's see if so we did not put in secret key variants. the secret key values not defined.</p>
+<h4 id=8f90><a href="https://github.com/w3c/vc-di-quantum-safe/issues/9">w3c/<wbr>vc-di-quantum-safe#9</a></h4>
+</section>
+
+<section>
+<h3 id=ffec>Adding Secret Key Variants To Table</h3>
+<p id=2f7b class="phone s03"><cite>Greg_Bernstein:</cite> And we need to do that for consistency. So my question to Manu would be sufficient action add a table to the multikey section. Right now we have a multike key section that has all the public keys that we use. We don't list everything from the multicodex only the keys that we're currently using for the crypto suites. I could add a table with the private keys with the caveats saying make sure you don't publish private keys and such like that. Would that be sufficient? And then I'll put in a PR for this.</p>
+<p id=993d class="phone s03"><cite>Greg_Bernstein:</cite> Go ahead.</p>
+<p id=b63f class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I think that would be sufficient. I'm trying to see what we do in the and we refer to the SID spec, which we don't want to do in this case. I don't think multikey and SID. Yeah, in the ECDSA spec, we refer to the multike key section in the SID spec, which is probably wish we hadn't put it there. so yeah, I think just create a table that looks that mirrors.</p>
+<p id=21a5 class="phone s03"><cite>Greg_Bernstein:</cite> We have a table for the public keys.</p>
+<p id=ae6b class="phone s03"><cite>Greg_Bernstein:</cite> So can we mix both of them together in the same table?</p>
+<p id=53e7 class="phone s05"><cite>Manu_Sporny:</cite> This is for the secret keys are also in this table here in the SID spec. So I think just follow that pattern like the look and feel of it but put it in the postquantum spec if that makes sense.</p>
+<p id=c891 class="phone s03"><cite>Greg_Bernstein:</cite> Yes. Okay.</p>
+</section>
+
+<section>
+<h3 id=7b6a><a href="https://github.com/w3c/vc-di-quantum-safe/issues/17">w3c/<wbr>vc-di-quantum-safe#17</a></h3>
+<p id=ebdf class="phone s05"><cite>Manu_Sporny:</cite> No, no, no, no. There's No. if you look at the SID spec, the link I just dropped in there, go ahead and…</p>
+<p id=c086 class="phone s03"><cite>Greg_Bernstein:</cite> I see the multi key.</p>
+<p id=247f class="phone s05"><cite>Manu_Sporny:</cite> open that up. And then you might want to open it on your screen,…</p>
+<p id=1e66 class="phone s03"><cite>Greg_Bernstein:</cite> We have the public secret key, multibase, and we have values.</p>
+<p id=d16b class="phone s05"><cite>Manu_Sporny:</cite> Greg. We can't see what you're looking at.</p>
+<p id=ad10 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah, sorry.</p>
+<p id=d06b class="phone s05"><cite>Manu_Sporny:</cite> No problem.</p>
+<p id=e42a class="phone s03"><cite>Greg_Bernstein:</cite> Switch the windows.</p>
+<p id=0d03 class="phone s03"><cite>Greg_Bernstein:</cite> It's all right.</p>
+<p id=2aaa class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://www.w3.org/TR/cid-1.0/#Multikey">Controlled Identifiers v1.0</a> </p>
+<p id=bdd5 class="phone s05"><cite>Manu_Sporny:</cite> You could just open a new tab there and copy paste the link that I put in the chat.</p>
+<p id=9cd1 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah, we'll do.</p>
+<p id=63c1 class="phone s04"><cite>Ivan_Herman:</cite> That's what I'm doing right now.</p>
+<p id=df0a class="phone s03"><cite>Greg_Bernstein:</cite> coming through yet?</p>
+<p id=b2ae class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=dd10 class="phone s05"><cite>Manu_Sporny:</cite> So, if you scroll down there, this is the public key table here that we listed, right? And…</p>
+<p id=7e04 class="phone s03"><cite>Greg_Bernstein:</cite> And then we have a separate private key,…</p>
+<p id=0f17 class="phone s05"><cite>Manu_Sporny:</cite> then down Yeah.</p>
+<p id=e0ea class="phone s03"><cite>Greg_Bernstein:</cite> secret key.</p>
+<p id=7538 class="phone s05"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=fa01 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah, because we have the public keys currently in the safe postquantum and then I'll add a table that looks like this for the secret keys.</p>
+<p id=3d38 class="phone s05"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=5863 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. The other issues we are sorry</p>
+<p id=8f8c class="phone s04"><cite>Ivan_Herman:</cite> Excuse me. So just from my understanding the goal is to extend the CI tables with these keys or you have a separate one.</p>
+<p id=3ef0 class="phone s05"><cite>Manu_Sporny:</cite> extend is the goal.</p>
+<p id=2c94 class="phone s04"><cite>Ivan_Herman:</cite> Then I was worried for a moment that there would be a separate table somewhere.</p>
+<p id=0b6f class="phone s05"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=9620 class="phone s04"><cite>Ivan_Herman:</cite> Sorry. That's why</p>
+<p id=7b07 class="phone s05"><cite>Manu_Sporny:</cite> there will be a separate table in the postquantum thing. because if we don't do that, we have to bind the SIDS spec publication with the quantum publications and I don't think it was ever intended that we were going to centralize key registrations anywhere because if we do that then it means it kind of defeats the purpose of at least part of the data integrity specs which is people can in a decentralized way create their own specs and extend the table and that sort of thing. that's the reason is that we'll just be in process.</p>
+<p id=fe20 class="phone s05"><cite>Manu_Sporny:</cite> It'll put us in a bad position I think with respect to process of</p>
+<p id=6286 class="phone s04"><cite>Ivan_Herman:</cite> The only problem I have is that I like to have a certain level of consistency along among our own specs.</p>
+<p id=8875 class="phone s04"><cite>Ivan_Herman:</cite> And if we put ECDSA or EDDDSA keys the key definition the expression for them into the CI then why are we doing something different here? I mean that's all.</p>
+<p id=6d9f class="phone s05"><cite>Manu_Sporny:</cite> Yeah. the reason…</p>
+<p id=4bd3 class="phone s04"><cite>Ivan_Herman:</cite> So why did we put it let's put it this way.</p>
+<p id=07ae class="phone s04"><cite>Ivan_Herman:</cite> Why did we put it into the CD spec in the first place?</p>
+<p id=2c70 class="phone s05"><cite>Manu_Sporny:</cite> because there were objections to move into a separate document where we could have managed it better. That's why the SIDS spec exists because Mike, Jones objected to, this stuff going anywhere other than that specification. And so for political reasons, we put it in this document, but it should never have gone in this document. It should have been,…</p>
+<p id=4ca9 class="phone s04"><cite>Ivan_Herman:</cite> Yeah. But his objection potentially is valid for quantum safe as well,…</p>
+<p id=b140 class="phone s05"><cite>Manu_Sporny:</cite> …</p>
+<p id=300d class="phone s04"><cite>Ivan_Herman:</cite> isn't it?</p>
+<p id=3f41 class="phone s05"><cite>Manu_Sporny:</cite> it's not So, yes and…</p>
+<p id=c305 class="phone s04"><cite>Ivan_Herman:</cite> I agree.</p>
+<p id=10001 class="phone s05"><cite>Manu_Sporny:</cite> no. It would be if we would be better if we had a multi key specification and we had a registry where we put this stuff in, but that was objected So that was objected to and we put it in the SIDS spec because we had no other place to do it and there were all this political objections happening at the time. if we want to do this right, we would move multike key into their own specifications. they would have registries at W3C and then you register everything in the registries and then we would have the mechanism that you're talking about Ivon. It's just we don't have that right now and trying to do it in the current charter is questionable. and we wanted to make sure that people could create new data integrity crypto suites without having to go through W3C for every single one.</p>
+<p id=1583 class="phone s04"><cite>Ivan_Herman:</cite> I am Okay.</p>
+<p id=10002 class="phone s05"><cite>Manu_Sporny:</cite> which means that they should be able to publish their own key formats. They should be able to publish their own proof formats completely independently of W3C if they want to. I totally get your argument to let's make it consistent but in order to get that level of consistency and not get wrapped around W3C process you would either have to add it to SID which I don't think is a good idea. I think I'd object to doing that because it would centralize something that was never meant to be centralized. or we would move, the multike key stuff out into its own specification, establish a registry. And I don't know if, people want to take that on with everything else going on right now.</p>
+<p id=1e9e class="phone s04"><cite>Ivan_Herman:</cite> I don't want to start a long argument on that. if I wanted to implement a general tool for multi key handling or whatever, then I would be unhappy that I have to find the key prefixes at 10 different places like this.</p>
+<p id=3d3a class="phone s03"><cite>Greg_Bernstein:</cite> Yes.</p>
+<p id=f92a class="phone s04"><cite>Ivan_Herman:</cite> I mean that just sounds a bit crazy…</p>
+<p id=8160 class="phone s04"><cite>Ivan_Herman:</cite> but okay I won't it comes back to the political discussion about multi anything.</p>
+<p id=1179 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=9fe2 class="phone s05"><cite>Manu_Sporny:</cite> technically all of them are in a central place. They're in the multicodc registry. So, there is one place you could go and find all of this stuff. It's a multicodc registry. But then, people objected that that thing existed at all. They wanted it in W3C or ITF. Yeah. Yep. Exactly.</p>
+<p id=2228 class="phone s04"><cite>Ivan_Herman:</cite> Okay,…</p>
+<p id=40ab class="phone s05"><cite>Manu_Sporny:</cite> Eventually it'll work itself out the next charter.</p>
+<p id=e6e4 class="phone s04"><cite>Ivan_Herman:</cite> give up. Okay.</p>
+<p id=85ae class="phone s05"><cite>Manu_Sporny:</cite> We'll fix it in the next charter</p>
+<p id=a2c1 class="phone s03"><cite>Greg_Bernstein:</cite> So I will add the secret key varants in the table.</p>
+</section>
+
+<section>
+<h3 id=8794>PR 24 Approval And Merging</h3>
+<p id=db14 class="phone s03"><cite>Greg_Bernstein:</cite> Now we have two outstanding. PR number 24 is support for efficient post quantum cryptography selective disclosure. It's early. Sorry.</p>
+<p id=b0b8 class="phone s03"><cite>Greg_Bernstein:</cite> Let's see if we're doing this right. changes were happened last week or before the approvals came last week, but there's only one approval. Do I need two? We used to require two or I do not know. We don't have that many reviewers right now.</p>
+<p id=6769 class="phone s05"><cite>Manu_Sporny:</cite> It would probably be good to get another review on this. one No,…</p>
+<p id=545b class="phone s03"><cite>Greg_Bernstein:</cite> I wasn't sure…</p>
+<p id=235c class="phone s03"><cite>Greg_Bernstein:</cite> if you meant to review this. I have for the other that included test factors which builds on this one. you reviewed it and approved it. So it includes that. So, I'm not sure if you just reviewed the whole thing as a set. Okay.</p>
+<p id=913e class="phone s05"><cite>Manu_Sporny:</cite> I did not review this one. I mean, I don't want to hold it up either because if it's wrong, we will find out in implementations. And Dave did a review. and…</p>
+<p id=4529 class="phone s05"><cite>Manu_Sporny:</cite> I won't have time to review it this week.</p>
+<p id=ecc6 class="phone s03"><cite>Greg_Bernstein:</cite> Do I need to wait another week or…</p>
+<p id=89ed class="phone s05"><cite>Manu_Sporny:</cite> I'm going to do a blind approval here, Greg. just No, no, no.</p>
+<p id=e4ef class="phone s03"><cite>Greg_Bernstein:</cite> Okay. Manu Sporny:</p>
+<p id=e30e class="phone s05"><cite>Manu_Sporny:</cite> It's been two weeks. we should just get it in the spec and…</p>
+</section>
+
+<section>
+<h3 id=f6c4><a href="https://github.com/w3c/vc-di-quantum-safe/pull/24">Support for Efficient PQC Selective disclosure by Wind4Greg · Pull Request #24 · w3c/vc-di-quantum-resistant · GitHub</a></h3>
+<p id=c338 class="phone s03"><cite>Greg_Bernstein:</cite> …</p>
+<p id=9d59 class="phone s05"><cite>Manu_Sporny:</cite> then see if the implementation's, Yeah.</p>
+<p id=b5f5 class="phone s03"><cite>Greg_Bernstein:</cite> yeah, it same thing with you can't trust test vectors until somebody else confirms them. I consistently check them and such like that, but you can be self-consistently wrong, too. okay.</p>
+<p id=961b class="phone s03"><cite>Greg_Bernstein:</cite> I can merge these now or I can merge these offline.</p>
+<p id=d968 class="phone s05"><cite>Manu_Sporny:</cite> Let's go ahead and Merge them now. Let's get them in.</p>
+<p id=5566 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, You're going to remind me of the language.</p>
+<p id=c640 class="phone s05"><cite>Manu_Sporny:</cite> …</p>
+<p id=0c8d class="phone s03"><cite>Greg_Bernstein:</cite> We have to use that language.</p>
+<p id=863e class="phone s05"><cite>Manu_Sporny:</cite> this is normative.</p>
+<p id=10003 class="phone s03"><cite>Greg_Bernstein:</cite> I have it somewhere but not at my fingertips.</p>
+<p id=c9b4 class="phone s05"><cite>Manu_Sporny:</cite> I can type some stuff in. so this is a normative multiple light reviews.</p>
+<p id=29b2 class="phone s03"><cite>Greg_Bernstein:</cite> Trans. …</p>
+<p id=40fa class="phone s05"><cite>Manu_Sporny:</cite> No objections, no changes, no objections emerging.</p>
+<p id=be04 class="phone s03"><cite>Greg_Bernstein:</cite> you're doing it. You can merge. Manu Sporny:</p>
+<p id=7314 class="phone s05"><cite>Manu_Sporny:</cite> I was just putting in the language. it's there above the squash and…</p>
+<p id=f18a class="phone s03"><cite>Greg_Bernstein:</cite> I don't get to see that. What?</p>
+<p id=f50d class="phone s05"><cite>Manu_Sporny:</cite> Although you can just rebase and merge. rebase.</p>
+<p id=7083 class="phone s06"><cite>Dave_Longley:</cite> You got to scroll a little higher on the screen. There it is.</p>
+<p id=79f9 class="phone s03"><cite>Greg_Bernstein:</cite> Sorry.</p>
+<p id=b8c1 class="phone s03"><cite>Greg_Bernstein:</cite> Normative, multiple light reviews, no changes, no objections, merge, squash and merge,</p>
+<p id=3d8b class="phone s05"><cite>Manu_Sporny:</cite> You don't want to lose all your iterations probably. yeah, that you've got a branch merge in here. A rebase should fix that.</p>
+<p id=c8e3 class="phone s03"><cite>Greg_Bernstein:</cite> Should I take those comments and apply them to the</p>
+<p id=3e03 class="phone s03"><cite>Greg_Bernstein:</cite> Should I add the comments? Normative, multiple reviews, no changes,…</p>
+<p id=79d9 class="phone s03"><cite>Greg_Bernstein:</cite> no objections, merging. …</p>
+<p id=6fba class="phone s05"><cite>Manu_Sporny:</cite> these are not normative.</p>
+<p id=e951 class="phone s05"><cite>Manu_Sporny:</cite> They're test vectors. yeah.</p>
+<p id=340d class="phone s03"><cite>Greg_Bernstein:</cite> non-normative then. inform. No,…</p>
+<p id=94a8 class="phone s05"><cite>Manu_Sporny:</cite> Or you can say editorial. …</p>
+<p id=5516 class="phone s03"><cite>Greg_Bernstein:</cite> informative is the term we use,… Manu Sporny:</p>
+<p id=45f7 class="phone s05"><cite>Manu_Sporny:</cite> yeah. Yep.</p>
+<p id=3ad9 class="phone s03"><cite>Greg_Bernstein:</cite> right? …</p>
+<p id=753d class="phone s05"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=10004 class="phone s03"><cite>Greg_Bernstein:</cite> it's been a while. We were doing so many for a while though that How we can Oops.</p>
+<p id=1f8c class="phone s03"><cite>Greg_Bernstein:</cite> Where is cannot be reef b no, we broke something.</p>
+<p id=3f8c class="phone s05"><cite>Manu_Sporny:</cite> Yeah, you'll just have to rebase this PR and then merge it later. But they're approval you have the approvals to do it.</p>
+<p id=1ded class="phone s03"><cite>Greg_Bernstein:</cite> Okay, okay,…</p>
+<p id=26e1 class="phone s05"><cite>Manu_Sporny:</cite> So you just need to rebase and do it at some other</p>
+<p id=b526 class="phone s03"><cite>Greg_Bernstein:</cite> plenty of time. I have not been working on the threat model at all. did you want to lead the threat model exercise?</p>
+<p id=f8c9 class="phone s04"><cite>Ivan_Herman:</cite> Before we go there,…</p>
+<p id=a577 class="phone s02"><cite>Wesley_Smith:</cite> I think it'll be good for you to lead it, but I think it's going to be easier than what you're expecting. So, basically, can you folks see the Google doc that was linked at the beginning of the call before you joined?</p>
+<p id=2c39 class="phone s03"><cite>Greg_Bernstein:</cite> Need to see if I can grab the link and put it up.</p>
+<p id=f67d class="phone s04"><cite>Ivan_Herman:</cite> can I ask something? sorry. Money was ahead of me.</p>
+<p id=18ec class="phone s04"><cite>Ivan_Herman:</cite> Thank You are damn money you preceded me.</p>
+<p id=674b class="phone s02"><cite>Wesley_Smith:</cite> Man, you are Yep.</p>
+</section>
+
+<section>
+<h3 id=093a>Naming The Document For Publication</h3>
+<p id=3b97 class="phone s05"><cite>Manu_Sporny:</cite> Thank you. we need to publish a first public working draft, Greg, and we need to name the document, the short name, before we do that. So, we should do that today.</p>
+<p id=3b6d class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. Greg Bernstein:</p>
+<p id=9415 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. Yeah.</p>
+<p id=c7f2 class="phone s05"><cite>Manu_Sporny:</cite> I don't know,…</p>
+<p id=acc5 class="phone s03"><cite>Greg_Bernstein:</cite> And we're going to have it.</p>
+<p id=4588 class="phone s05"><cite>Manu_Sporny:</cite> Ivonne, if that's the same thing you were gonna Sorry.</p>
+<p id=f979 class="phone s04"><cite>Ivan_Herman:</cite> This is exactly what I wanted to ask. Manu Sporny:</p>
+<p id=914e class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://docs.google.com/document/d/1lGB8X2pEybUJepoLBLyKvw8O3Ag2RFm_gQilIFCo9sU/edit?tab=t.0">Data Integrity Threat Model Brainstorming Template - Google Docs</a> </p>
+<p id=9e37 class="phone s05"><cite>Manu_Sporny:</cite> Sorry, Ivon. So we should cover that before we get into threat model.</p>
+<p id=4b48 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, we should get this published as soon as possible.</p>
+<p id=32ff class="phone s05"><cite>Manu_Sporny:</cite> Okay. So for that we need to pick a short name. I think it's going to be, something. quantum safe is not super great because you're not particularly safe when it comes to cryptography.</p>
+<p id=5e15 class="phone s03"><cite>Greg_Bernstein:</cite> Where rest?</p>
+<p id=ce3c class="phone s05"><cite>Manu_Sporny:</cite> So we should pick a name that works. postquantums. go ahead.</p>
+<p id=8c13 class="phone s02"><cite>Wesley_Smith:</cite> I'm just curious if there's the various efforts to standardize and look into a lot of the technologies that are in this spec through NIST and other people. any useful descriptions in those efforts for the set of things that we're trying to describe Yeah.</p>
+<p id=30f1 class="phone s05"><cite>Manu_Sporny:</cite> Unfortunately, no. I mean, we could do postquantum digital signature algorithm, to follow ECDSA and EDDDSA. each one though is broken into the short names we picked were MLDDSA and SLHDSA and things like that. we could do PQ for postquantum, VCDI,</p>
+</section>
+
+<section>
+<h3 id=8f15>FPWD</h3>
+<p id=75f9 class="phone s03"><cite>Greg_Bernstein:</cite> move on.</p>
+<p id=7c15 class="phone s05"><cite>Manu_Sporny:</cite> PQ, or we could do BCDI quantum. These are all options. I don't know if anyone has strong feelings on any of them. go ahead, Avon.</p>
+<p id=94c2 class="phone s04"><cite>Ivan_Herman:</cite> I try to be in line with the other documents that we already have in the same family.</p>
+<p id=1e52 class="phone s04"><cite>Ivan_Herman:</cite> And yes, we say eddsa but in fact for example that one defines I am not sure I don't remember how many three or four different crypto suites which we may even extend because of barcode. So that by itself is not a problem for me. So PQ crypto suit is a bit cryptic but this is cryptography so that should be okay. Pick your crypto suits.</p>
+<p id=79cb class="phone s05"><cite>Manu_Sporny:</cite> So, you're saying PQ DSA or just PQ?</p>
+<p id=9ca2 class="phone s04"><cite>Ivan_Herman:</cite> Isn't it how the …</p>
+<p id=e1db class="phone s05"><cite>Manu_Sporny:</cite> No, we don't name any of the other ones. Cryptosweet. …</p>
+<p id=e391 class="phone s04"><cite>Ivan_Herman:</cite> that's so true.</p>
+<p id=4963 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=4afc class="phone s04"><cite>Ivan_Herman:</cite> Data integrity BBS crypto suites. That's the title of the document.</p>
+<p id=982a class="phone s05"><cite>Manu_Sporny:</cite> no. I'm talking about the short name Aon,…</p>
+<p id=e108 class="phone s04"><cite>Ivan_Herman:</cite> …</p>
+<p id=588d class="phone s05"><cite>Manu_Sporny:</cite> right? Because…</p>
+<p id=6815 class="phone s04"><cite>Ivan_Herman:</cite> I'm sorry.</p>
+<p id=a3c0 class="phone s05"><cite>Manu_Sporny:</cite> because the title doesn't matter,…</p>
+<p id=1d4d class="phone s04"><cite>Ivan_Herman:</cite> We will have to discuss the title as well,…</p>
+<p id=f034 class="phone s05"><cite>Manu_Sporny:</cite> we can Yeah, that's right.</p>
+<p id=aff7 class="phone s04"><cite>Ivan_Herman:</cite> but you're then it's VC PQ or something like that. What's the short name for the other ones? I don't remember from the top of my head. Let's say ECDs. Yeah.</p>
+<p id=a556 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, it's just ECDSADSA. okay.</p>
+<p id=7f04 class="phone s04"><cite>Ivan_Herman:</cite> is of ECDI PQ and I don't know if you want to have a version number because ECDSA says blah blah blah 1.1</p>
+<p id=6e77 class="phone s05"><cite>Manu_Sporny:</cite> Do we want just then Dave's also suggesting BCDI postquantum</p>
+<p id=9bcf class="phone s02"><cite>Wesley_Smith:</cite> I would argue that if we need to have quantum in the name quantum resistant is better than postquantum the entire rest of human history will be postquantum.</p>
+<p id=2b14 class="phone s05"><cite>Manu_Sporny:</cite> I do agree with that and I do like quantum resistant 1.0,…</p>
+<p id=c512 class="phone s04"><cite>Ivan_Herman:</cite> What about the version number?</p>
+<p id=fddb class="phone s05"><cite>Manu_Sporny:</cite> right? Yes.</p>
+<p id=b8cd class=irc><cite>&lt;Dave_Longley&gt;</cite> vc-di-pqc </p>
+<p id=c39e class="phone s04"><cite>Ivan_Herman:</cite> You tell me.</p>
+<p id=874e class=irc><cite>&lt;Dave_Longley&gt;</cite> vc-di-post-quantum </p>
+<p id=97fd class="phone s05"><cite>Manu_Sporny:</cite> So Ivonne, I think we're going to have the version list thing redirect to the latest version and…</p>
+<p id=632f class="phone s05"><cite>Manu_Sporny:</cite> then we're going to have a 10. Is that the plan?</p>
+<p id=8bb6 class="phone s04"><cite>Ivan_Herman:</cite> I'm just track testing…</p>
+<p id=ae97 class="phone s04"><cite>Ivan_Herman:</cite> what we have for the current one.</p>
+<p id=50b8 class=irc><cite>&lt;Dave_Longley&gt;</cite> vc-di-pq </p>
+<p id=f2ed class="phone s05"><cite>Manu_Sporny:</cite> I think that's what we have for the current one where we have the version list thing just redirect to the latest version and…</p>
+<p id=bda6 class=irc><cite>&lt;Wesley_Smith&gt;</cite> vc-di-quantum-resistant is better IMO </p>
+<p id=f83f class="phone s04"><cite>Ivan_Herman:</cite> Let me see. I will just try it.</p>
+<p id=381b class="phone s05"><cite>Manu_Sporny:</cite> we have a</p>
+<p id=8c9e class="phone s04"><cite>Ivan_Herman:</cite> Wait one minute. Exactly. Yes, we have the VCDSA without anything else.</p>
+<p id=4060 class="phone s04"><cite>Ivan_Herman:</cite> which redirects to 1.0 actually not one to one because 1.1 is a working draft. So it redirects to the latest recommendation to be very precise.</p>
+<p id=3adb class="phone s05"><cite>Manu_Sporny:</cite> All right. So then that…</p>
+<p id=ccfd class="phone s04"><cite>Ivan_Herman:</cite> That was</p>
+<p id=93e7 class="phone s05"><cite>Manu_Sporny:</cite> then that would mean that the would be short name redirect VCDI quantum resistant like Wes mentioned. and then the versioned short name would be 1.0</p>
+<p id=052b class="phone s05"><cite>Manu_Sporny:</cite> O and then the title would be hold on one second let me see DSA I'm trying to remember what we use for our current ones it would be quantum resistant crypto suites and then the subtitle would be crypto suites for data integrity. maybe data integrity quantum resistant crypto suites.</p>
+<p id=537c class="phone s05"><cite>Manu_Sporny:</cite> So, I just typed something so that and…</p>
+<p id=c196 class="phone s05"><cite>Manu_Sporny:</cite> I don't know longly if you're argue. never mind. You're joking. I think D.</p>
+<p id=180e class="phone s04"><cite>Ivan_Herman:</cite> Except that there's a spelling mistake in the subtitle.</p>
+<p id=a39b class="phone s04"><cite>Ivan_Herman:</cite> Although that's No.</p>
+<p id=5c57 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Gertie inter gerty. I'll fix that. Okay, that's all right.</p>
+<p id=e374 class="phone s04"><cite>Ivan_Herman:</cite> Sorry. Let's put that one plus one as well.</p>
+<p id=1deb class="phone s05"><cite>Manu_Sporny:</cite> So, we need to do a proposal as well? Is that right?</p>
+<p id=10005 class="phone s04"><cite>Ivan_Herman:</cite> The formal proposal should be done on the working group anyway.</p>
+<p id=dabc class="phone s05"><cite>Manu_Sporny:</cite> Poll. Yeah. So Paul published the quantum resistant crypto suites version 1.0 specification with a short name of BCDI quantum resistant.</p>
+<p id=7014 class="phone s05"><cite>Manu_Sporny:</cite> Ivon, or do we need to include that? Okay, so publish the qant crypto suites version 1.0 specification with the short name of BCDI quantum resistant 10. Is that good enough? I'm not putting in the URL because we're going to change the URL because we're changing the short name.</p>
+<p id=286d class="phone s04"><cite>Ivan_Herman:</cite> No heat.</p>
+<p id=e25e class="phone s05"><cite>Manu_Sporny:</cite> Does that work for you, Ivon? …</p>
+<p id=bc2f class=irc><cite>&lt;Manu_Sporny&gt;</cite> Short name redirect: vc-di-quantum-resistant </p>
+<p id=14e6 class="phone s04"><cite>Ivan_Herman:</cite> Say it again.</p>
+<p id=219b class="phone s05"><cite>Manu_Sporny:</cite> I'm not going to put the URL in the poll because we're going to change the All right,…</p>
+<p id=2763 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 </p>
+<p id=1291 class="phone s04"><cite>Ivan_Herman:</cite> No, it's not important. The final poll is on the working group anyway. This is not a formal thing. Money. Yeah,…</p>
+<p id=116f class="phone s05"><cite>Manu_Sporny:</cite> we go. So, there's the poll and then we can plus one minus one at least among us.</p>
+<p id=287b class=irc><cite>&lt;Wesley_Smith&gt;</cite> +1 </p>
+<p id=e165 class="phone s04"><cite>Ivan_Herman:</cite> I am not chair.</p>
+<p id=294b class=irc><cite>&lt;Greg_Bernstein&gt;</cite> +1 </p>
+<p id=9573 class="phone s04"><cite>Ivan_Herman:</cite> Thanks So I don't know whether it will be taken up this week but I presume to be realistic money the document will be in a publishable format after the face to face right there is no reason to rush.</p>
+<p id=2a03 class=irc><cite>&lt;Ivan_Herman&gt;</cite> +1 </p>
+<p id=7001 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, that's right. I don't think we need to rush it.</p>
+<p id=2a2b class=irc><cite>&lt;Manu_Sporny&gt;</cite> +1 </p>
+<p id=897f class="phone s04"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=6317 class="phone s05"><cite>Manu_Sporny:</cite> U Yeah.</p>
+<p id=a2a8 class="phone s04"><cite>Ivan_Herman:</cite> no. I don't want to rush. I mean, Friday is my free day anyway. Then travel and whatever. That's all right.</p>
+<p id=266f class="phone s05"><cite>Manu_Sporny:</cite> Yep. Yeah. I think we'll publish, second or third week of June, I think.</p>
+<p id=2c1b class=irc><cite>&lt;Parth_Bhatt&gt;</cite> +1 </p>
+<p id=10006 class="phone s04"><cite>Ivan_Herman:</cite> Last question which does come up and this is the last moment where we can make this change.</p>
+<p id=2d1e class="phone s04"><cite>Ivan_Herman:</cite> Namely, the change in the repository name or do we want to keep it as it is?</p>
+<p id=d5f7 class="phone s04"><cite>Ivan_Herman:</cite> Leave it as it is.</p>
+<p id=f668 class="phone s05"><cite>Manu_Sporny:</cite> We should change it.</p>
+<p id=8f92 class="phone s05"><cite>Manu_Sporny:</cite> I think we should change it. and I could change it right now. So this would be resistant. It's thinking long and hard about it. repo name is changed and the publish location is changed and the document shows up at the new location now.</p>
+<p id=d0c4 class="phone s05"><cite>Manu_Sporny:</cite> So, we just Greg or I just need to go in and change the short name and title of the specification.</p>
+<p id=c942 class="phone s04"><cite>Ivan_Herman:</cite> and…</p>
+<p id=f84f class="phone s04"><cite>Ivan_Herman:</cite> label it as a working draft and not a community report with all that it means and…</p>
+<p id=43f7 class=irc><cite>&lt;Manu_Sporny&gt;</cite> POLL: Publish the Quantum Resistant Cryptosuites v1.0 specification with a shortname of vc-di-quantum-resistant-1.0. </p>
+<p id=8398 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. That's right. Yep. Yep.</p>
+<p id=303b class=irc><cite>&lt;Manu_Sporny&gt;</cite> +1 </p>
+<p id=305b class=irc><cite>&lt;Wesley_Smith&gt;</cite> +1 </p>
+<p id=10007 class="phone s04"><cite>Ivan_Herman:</cite> the editor should be reduced to those who are member of the group. Don't forget that that's been will money rag I presume the two are not members of the working group etc.</p>
+<p id=3073 class=irc><cite>&lt;Ivan_Herman&gt;</cite> +1 </p>
+<p id=3113 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 </p>
+<p id=802b class="phone s05"><cite>Manu_Sporny:</cite> Yep. Yep. Yep. Yep. Yep. Yep. Yep. Yep.</p>
+<p id=3133 class=irc><cite>&lt;Greg_Bernstein&gt;</cite> +1 </p>
+<p id=3163 class=irc><cite>&lt;Parth_Bhatt&gt;</cite> +1 </p>
+<p id=92b4 class="phone s04"><cite>Ivan_Herman:</cite> So the whole header is the one which has to be changed pretty well you may want to up I don't know whether you want to keep the related specifications to the 2.0 for the VCDM and etc.</p>
+<p id=9c31 class="phone s05"><cite>Manu_Sporny:</cite> Let's see.</p>
+<p id=e2da class="phone s04"><cite>Ivan_Herman:</cite> I leave that to you. But all of them now have a 1.1 for a working draft. the PBS doesn't have that.</p>
+<p id=3ffd class="phone s04"><cite>Ivan_Herman:</cite> But all the others I think have been upgraded to working drafts or…</p>
+<p id=edbb class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I'll try to Yeah,…</p>
+<p id=828c class="phone s05"><cite>Manu_Sporny:</cite> we can update that. I'm actually at Yep.</p>
+<p id=c75f class="phone s04"><cite>Ivan_Herman:</cite> use the versionless versions so to say if you…</p>
+<p id=254c class="phone s05"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=741f class="phone s04"><cite>Ivan_Herman:</cite> if you see what I mean.</p>
+<p id=9a5c class="phone s05"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=c8c3 class="phone s05"><cite>Manu_Sporny:</cite> is there a dash between quantum and resistant or…</p>
+<p id=a3fd class="phone s04"><cite>Ivan_Herman:</cite> That to English people.</p>
+<p id=f21f class="phone s05"><cite>Manu_Sporny:</cite> not in the title?</p>
+<p id=3195 class="phone s05"><cite>Manu_Sporny:</cite> Quantum dash resistant. Is that the correct? Yes. What's the proper?</p>
+<p id=51bf class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://w3c.github.io/vc-di-quantum-resistant/">Quantum-Resistant Cryptosuites v1.0</a> </p>
+<p id=c03a class="phone s02"><cite>Wesley_Smith:</cite> Are you asking should there be or…</p>
+<p id=95a3 class="phone s02"><cite>Wesley_Smith:</cite> Yes. And</p>
+<p id=90b9 class="phone s05"><cite>Manu_Sporny:</cite> All right. Thank you see Yeah. I'm leaving that to English people as well.</p>
+<p id=d4c1 class="phone s04"><cite>Ivan_Herman:</cite> I presume all the other things respect will take care of</p>
+<p id=a471 class="phone s05"><cite>Manu_Sporny:</cite> So yeah, it should I'm making the changes right now. Asant sweets or Okay, I think resistant. Sorry, I'm</p>
+<p id=797c class="phone s05"><cite>Manu_Sporny:</cite> All right, Greg. I think we can probably move on to the threat model at this point. I think will</p>
+<p id=ce90 class="phone s02"><cite>Wesley_Smith:</cite> All right, Greg. So, what we're going to want to do is you're going to have people go to the linked Google doc and then give people five or 10 minutes or maybe the rest of the call depending. We're almost out of time to basically brainstorm ideas and drop them in section 4 for what are the various threats and then we're probably going to want to take some time I guess during the face to face or during the next virtual meeting to then go through those things categorize them discuss them that sort of thing.</p>
+<p id=645e class="phone s02"><cite>Wesley_Smith:</cite> But the first step here is just everybody goes to that document and drops ideas in section 4. Does that sound good? probably.</p>
+<p id=a1dc class="phone s04"><cite>Ivan_Herman:</cite> Can you put the link to the document in the IRC or…</p>
+<p id=4fde class="phone s04"><cite>Ivan_Herman:</cite> I see That's what they've longly put there, right? Yeah.</p>
+<p id=e281 class="phone s02"><cite>Wesley_Smith:</cite> I</p>
+<p id=3685 class="phone s02"><cite>Wesley_Smith:</cite> I would argue that is a pretty strong starting point. I think we're also starting to duplicate some of the listed attacks. so Greg, we're almost out of time for today, but next steps basically are we just go through these one by one. and again this could be off the call potentially or in person meeting. and we categorize them according to the four previous definitions.</p>
+<p id=2960 class="phone s02"><cite>Wesley_Smith:</cite> target threats, implementation threats, external threats, and dependency threats. and dduplicate coales some related threats into</p>
+<p id=5b61 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=15a6 class="phone s03"><cite>Greg_Bernstein:</cite> Target threats.</p>
+<p id=10008 class="phone s02"><cite>Wesley_Smith:</cite> I am curious to see where we land on this one specifically because data integrity is a piece of a larger puzzle that touches a lot of other pieces and a lot of the things that are written here are the sort of dependency threat style attacks. but interested to see the final breakdown is of what threats are discussed in what documents and that sort of thing because it seems like what we have listed here is pretty broad and all of them are at least tangentially related to data integrity but not all of them are strongly related to data integrity.</p>
+</section>
+
+<section>
+<h3 id=6592>Categorizing Data Integrity Threats</h3>
+<p id=483c class="phone s05"><cite>Manu_Sporny:</cite> Maybe we could start there. meaning let's figure out the dependency threats. So there four categories. There are target threats which are specifically threats that data integrity tries to address. and then implementation threats like people implementers if they include a specific if they include a specific feature that's optional they've got to handle that. rather the choice is made up to the implement on how to implement the feature.</p>
+<p id=f06f class="phone s05"><cite>Manu_Sporny:</cite> External threats are this is a threat but it's out of scope for this version of the specification or this spec does not deal with it and…</p>
+<p id=0760 class="phone s02"><cite>Wesley_Smith:</cite> such as sphere.</p>
+<p id=7620 class="phone s05"><cite>Manu_Sporny:</cite> then dependency sorry yeah yeah I don't is that a dependency threat or…</p>
+<p id=4204 class="phone s02"><cite>Wesley_Smith:</cite> I said such as Dyson sphere which is number 15 or something.</p>
+<p id=3292 class="phone s05"><cite>Manu_Sporny:</cite> an external threat and then the dependency threats are just like we inherit the problem meaning data integrity does not invent new cryptography new fundament mental like cryptography like ECDSA or MLDDSA and so any kind of for example cryptographic break on the underlying technology itself is an acknowledge threat but it's a dependency threat it's external to us like that's ITF's and CFRG's problem not ours as an example so maybe we want to start with the dependency threats because a lot of these I think are dependency or external threats very little of it I think is data integrity.</p>
+<p id=161c class="phone s05"><cite>Manu_Sporny:</cite> Even stuff like I mean do we have canonicalization scheme in here Shen fails to wondering …</p>
+<p id=f499 class="phone s03"><cite>Greg_Bernstein:</cite> I'm just getting used to</p>
+<p id=6fae class="phone s05"><cite>Manu_Sporny:</cite> but for even canonicalization it's a dependency thread because we depend on RDFC or JCS which are external to this group. So, Greg, usually you would start going down the uncatategorized list and asking which category does it fall into?</p>
+<p id=a19a class="phone s03"><cite>Greg_Bernstein:</cite> this approach to modeling. if you see my notes below, my modeling of threats was always based on CIA triangle and who the different players were and so that's what I did. So depend and we're about out of time. I'm gonna have to study up on this a bit. Greg Bernstein:</p>
+<p id=3ac8 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, that sounds good.</p>
+<p id=5ddb class="phone s05"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=9674 class="phone s02"><cite>Wesley_Smith:</cite> I expect that what you've previously done and the threat modeling approaches you previously used are pretty compatible with what we're doing here. so sounds good.</p>
+<p id=d3e9 class="phone s03"><cite>Greg_Bernstein:</cite> All right.</p>
+<p id=847e class="phone s02"><cite>Wesley_Smith:</cite> All right, thanks for the time those of you that will be in person or remotely attending the face toface next week, I will see you there. and others will see you after we return. thank you for the time and have a good rest of the Meeting ended after 01:01:10 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

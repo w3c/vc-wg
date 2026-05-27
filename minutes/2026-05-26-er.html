@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 26 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>26 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phillip_Long, steve_capell</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9efa">Reviewing Steve's Pull Requests</a></li>
+<li><a href="#9a91">Discussion On PR 81: Use Cases</a></li>
+<li><a href="#fa4d">Business Value Of Use Cases</a></li>
+<li><a href="#849c">Threat Model Categorization</a></li>
+<li><a href="#d354">Discussing Implementation Threats</a></li>
+<li><a href="#705f">Threat Model Categorization Of Censorship</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f648 class="phone s01"><cite>steve_capell:</cite> Okay. You're welcome.</p>
+<p id=fa95 class="phone s02"><cite>Manu_Sporny:</cite> Hey folks, we have another call that's going over and we've got people from that other call that are going to be coming over here very soon. So, we'll start in about two more minutes.</p>
+<p id=4af5 class="phone s03"><cite>Kevin_Dean:</cite> Okay, thank</p>
+<p id=7eb1 class="phone s01"><cite>steve_capell:</cite> Stop.</p>
+</section>
+
+<section>
+<h3 id=9efa>Reviewing Steve's Pull Requests</h3>
+<p id=983e class="phone s02"><cite>Manu_Sporny:</cite> All right, let's go ahead and get started. And I apologize in advance. I have to drop at half past the hour today. So unless there's someone that can keep running the call after I'm gone, it might be a short call. I think on the agenda today we're going to look at your PR again Steve to try to give you some feedback on it. I think that's largely what we had on the agenda. And then there's the threat model or categorization that we started last week that we could also go into today.</p>
+<p id=6b60 class="phone s02"><cite>Manu_Sporny:</cite> If So, Steve, let's get you processed so that you can get back to your holiday. why don't we go get right into it?</p>
+</section>
+
+<section>
+<h3 id=9a91>Discussion On PR 81: Use Cases</h3>
+<p id=6608 class="phone s01"><cite>steve_capell:</cite> …</p>
+<p id=940f class="phone s01"><cite>steve_capell:</cite> now we go.</p>
+<p id=48fb class="phone s02"><cite>Manu_Sporny:</cite> Anything in particular you want to talk about today? Steve, you got two PRs,…</p>
+<p id=aa19 class="phone s02"><cite>Manu_Sporny:</cite> 80 and 81. Which one would you like to focus on?</p>
+<p id=6928 class="phone s01"><cite>steve_capell:</cite> …</p>
+<p id=4f65 class="phone s01"><cite>steve_capell:</cite> one is the one from last week which we discussed was a kind of a monolith to the use cases that we decided we'd break up into some short use case statements for the spec and some appendices to the spec with sample documents and the like.</p>
+<p id=443e class="phone s01"><cite>steve_capell:</cite> So, what I'd suggest is we just delete that first the one by the way, I'll admit to a little bit of beginner screw-ups because when I made a simple just short update to the main spec by adding a use case section,…</p>
+<p id=61b5 class="phone s01"><cite>steve_capell:</cite> my GitHub immaturity, I should say, led to it being considered as an extra commit on the previous PR. So I had to kind of pull back and go no clean it up and create a new branch and I think I finally managed to create just as a small PR which is only one commit to one file…</p>
+<p id=4e3b class="phone s02"><cite>Manu_Sporny:</cite> Yep. Okay.</p>
+<p id=f184 class="phone s01"><cite>steve_capell:</cite> which adds two paragraphs to the spec under the use cases section.</p>
+<p id=b331 class="phone s01"><cite>steve_capell:</cite> So what I'd suggest is we review that one and the other one we just delete it or ignore it or throw it away or whatever because it's going to get replaced by this little one and another one which will be in the appendices.</p>
+<p id=d81a class="phone s02"><cite>Manu_Sporny:</cite> So, I can do that right now. and your new PR looks nice and clean. One commit. so if you hadn't said any of that,…</p>
+<p id=101b class="phone s02"><cite>Manu_Sporny:</cite> we would have been none the wiser. let me see. D. Okay. So, add discoveral. Hold on one second. Let me make sure. I'm going to let's do the 81 first. so PR81 is add trade and conform to use case. And you've added a use case section.</p>
+<p id=4f47 class="phone s01"><cite>steve_capell:</cite> So yeah.</p>
+<p id=8920 class="phone s02"><cite>Manu_Sporny:</cite> Go ahead.</p>
+<p id=193f class="phone s01"><cite>steve_capell:</cite> Yeah. I just added a new section two between introduction and data model called use cases.</p>
+</section>
+
+<section>
+<h3 id=fa4d>Business Value Of Use Cases</h3>
+<p id=0feb class="phone s01"><cite>steve_capell:</cite> and added two subsections, one called trade and one called product conformity. And They're just different examples of the same pattern, right? Which there's some a commercial invoice that has much higher value when it's linked to a entity recognition In that case, a business registration that confers confident identity. And in the conformity one, it's an accreditation credential which basically says this auditor or this test lab is accredited to do these test services. And they're the same patent just a different business context. And hopefully they're short and sweet enough that they are okay.</p>
+<p id=71ea class="phone s01"><cite>steve_capell:</cite> Yeah, that's it. I haven't done the extra PR which we talked about last week which is in the appendix. And here's some sample dibs and…</p>
+<p id=c8de class="phone s02"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=3069 class="phone s01"><cite>steve_capell:</cite> sample entity recognition credentials and so on for those use cases. I'll try to have that for you I'll see you next week anyway in Brussels. Looking forward to that. But yeah, just right now I've got two little business stories and trying to emphasize the business value, right? Because the whole point of this is that when a important verifier and in the trade case there are two one is the importing customs authority who wants to know who packed the box and with confidence of identity and do and data integrity can lear a shipment as a benefit.</p>
+<p id=54a8 class="phone s01"><cite>steve_capell:</cite> The other one is the issuing bank in a documentary letter of credit where it's a painful horrible process today and if they get verifiable invoices and…</p>
+<p id=7d43 class="phone s01"><cite>steve_capell:</cite> identity they can automate their algorithmic due diligence and release a lot of trade value. So those are the two use cases and that's moving through them now and…</p>
+<p id=170f class="phone s02"><cite>Manu_Sporny:</cite> Yep. I'm reading through them now and…</p>
+<p id=d1d9 class="phone s02"><cite>Manu_Sporny:</cite> they look very clean and…</p>
+<p id=add5 class="phone s01"><cite>steve_capell:</cite> they look very good.</p>
+<p id=e6b7 class="phone s02"><cite>Manu_Sporny:</cite> do we have any other feedback from anyone else on these two use cases?</p>
+<p id=0046 class="phone s01"><cite>steve_capell:</cite> Do you have any other tech help? Okay. Manu Sporny:</p>
+<p id=5f4d class="phone s02"><cite>Manu_Sporny:</cite> They look good to me. Go ahead, Dave. All right.</p>
+<p id=36d6 class="phone s04"><cite>Dave_Longley:</cite> I think we should accept them But one of the things that we've done in previous groups with use cases is not mention the specific technology used to solve the problem. And that's kind of integrated in to the use cases here.</p>
+<p id=8e8b class="phone s01"><cite>steve_capell:</cite> is integrated in capable but we could again I think it's accepted…</p>
+<p id=46db class="phone s04"><cite>Dave_Longley:</cite> Again I think we should accept this as is but we might want Yeah.</p>
+<p id=e9c2 class="phone s01"><cite>steve_capell:</cite> but we might talk them later. Yeah, that's fine. I do agree with that sentiment. I suppose I'm trying to establish a pattern of this kind of discoverable but we don't have to do that in the use case. it could be done in a sort of solution to the use case later but I tried to keep it fairly high level.</p>
+<p id=ffff class="phone s01"><cite>steve_capell:</cite> By the way, a little just for those that are interested in history, I happen to be sitting in the city of Valleta, which was created by a merger of the Knights Templars and the Knights Hospital 500 years ago and about 900 years ago, the Knights Templars to support pilgrims going from Europe to the Jerusalem created the very world's first documentary letter of credit and I'd argue a sort of a verifiable credential, right? Because the idea was you posit deposit gold, let's say in London with the office of the Knights Templars and along your journey, you present a credential which was a paper thing but with a substitution cipher that made it verifiable to various Knights Templar's office along your journey and you got a little bit of gold back each journey.</p>
+<p id=db25 class="phone s01"><cite>steve_capell:</cite> And so it's a really sort of old very relevant story that is still a problem today and…</p>
+<p id=1b90 class="phone s01"><cite>steve_capell:</cite> verifiable credentials can help to solve really kind of nearly a thousand years earlier…</p>
+<p id=9efd class="phone s02"><cite>Manu_Sporny:</cite> That is a really cool piece of history,…</p>
+<p id=2cd6 class="phone s02"><cite>Manu_Sporny:</cite> That's neat.</p>
+<p id=7df1 class="phone s03"><cite>Kevin_Dean:</cite> predecessor to American Express Travelers.</p>
+<p id=e55c class="phone s03"><cite>Kevin_Dean:</cite> Checks. Yeah.</p>
+<p id=b1bd class="phone s01"><cite>steve_capell:</cite> but Yes.</p>
+<p id=2a91 class="phone s03"><cite>Kevin_Dean:</cite> My wife loves travel and she loves u period TV shows. I got her a book on travel in the medieval ages and it's just chalk full of stuff like that about letters of credit and how you manage credentials across borders when everyone's traveling on foot and each journey takes months.</p>
+<p id=c8f0 class="phone s03"><cite>Kevin_Dean:</cite> quite fascinating.</p>
+<p id=3928 class="phone s01"><cite>steve_capell:</cite> And everybody wants to steal your pocket of gold. So you have a piece of paper you can't fake and…</p>
+<p id=742a class="phone s03"><cite>Kevin_Dean:</cite> Yes. Mhm. steve capell:</p>
+<p id=b26d class="phone s01"><cite>steve_capell:</cite> is not stealable. it's a brilliant idea, Made them extraordinary wealthy by the way. They were 300 years of building a banking network in Europe and then eventually they became lenders. I'm distracting here, but it's interesting they became lenders to nation states. And what ended them was the fact that the king of France owed the Knights Templars so much money it's like today's national debt problems multiplied. So much money he could never pay it back. So his solution was to kill them all.</p>
+<p id=1918 class="phone s01"><cite>steve_capell:</cite> in the 14th century he killed them all and that what was left all the ones in France and the ones that were left merged with the knights hospital which are really fortress builders and they established Malta and the payment for Malta to the king of Spain every year for 268 years was one Maltese falcon which you might and that's true right and there's a bit of movie history here right the multis falcon…</p>
+<p id=fab1 class="phone s01"><cite>steve_capell:</cite> but it's based loosely on that idea that the knights of St. John which was the merger of Templars and hospital paid the Holy Roman Emperor and the king of Spain who the same guy at the time one multistark per in a big ceremony I love this sort of history right anyway I won't waste any more time on that…</p>
+<p id=02bb class="phone s03"><cite>Kevin_Dean:</cite> As long as our work here today doesn't lead to our executions,…</p>
+<p id=fc0f class="phone s01"><cite>steve_capell:</cite> but it's kind of cool isn't it Right.</p>
+<p id=4b72 class="phone s03"><cite>Kevin_Dean:</cite> I'm okay.</p>
+<p id=dfce class="phone s02"><cite>Manu_Sporny:</cite> Yeah, exactly.</p>
+<p id=d524 class="phone s02"><cite>Manu_Sporny:</cite> Now we've got something to worry about.</p>
+<p id=72ca class="phone s02"><cite>Manu_Sporny:</cite> All right. I'm closing your other PR. Steve taken by and…</p>
+<p id=10f5 class="phone s03"><cite>Kevin_Dean:</cite> There he is.</p>
+<p id=6054 class="phone s01"><cite>steve_capell:</cite> Yeah. Yeah, that's fine.</p>
+<p id=c74b class="phone s02"><cite>Manu_Sporny:</cite> then it'll live again in another future PR.</p>
+<p id=0a2c class="phone s01"><cite>steve_capell:</cite> It'll exactly.</p>
+<p id=3c91 class="phone s02"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=cb62 class="phone s01"><cite>steve_capell:</cite> Yeah. Yeah.</p>
+<p id=19ce class="phone s02"><cite>Manu_Sporny:</cite> That one's closed and we got some PR processing done. let's see. And with that,…</p>
+<p id=3dfa class="phone s01"><cite>steve_capell:</cite> And with that,…</p>
+<p id=b4fa class="phone s02"><cite>Manu_Sporny:</cite> Steve, I mean, you can feel free to go and…</p>
+<p id=7c8f class="phone s01"><cite>steve_capell:</cite> feel free to go.</p>
+<p id=dae1 class="phone s02"><cite>Manu_Sporny:</cite> enjoy your dinner, of course. and…</p>
+<p id=b3e3 class="phone s01"><cite>steve_capell:</cite> I would appreciate that and…</p>
+<p id=e83f class="phone s01"><cite>steve_capell:</cite> I look forward to seeing you next week in Brussels.</p>
+<p id=1255 class="phone s02"><cite>Manu_Sporny:</cite> Yes, same here.</p>
+</section>
+
+<section>
+<h3 id=849c>Threat Model Categorization</h3>
+<p id=ade5 class="phone s02"><cite>Manu_Sporny:</cite> Really looking forward to it. Until then, take care. Bye. All right. the rest of the call will probably focus on threat model for recognized entities. We were classifying it last time. I don't know if someone can take over for me in about 10 minutes because I am unfortunately triple booked for this hour. what we need to do is move I'm not sharing my screen anymore. we need to move all the uncatategorized things into categories.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> So here is topic threat model then there is a link to our threat model and we're just going to keep going through this. and then I'm going to have to drop at about 25 past. we'll just go from the top. maybe it's a random walk. cryptographically relevant quantum computer breaks traditional cryptography that feels like it is a dependency threat because this spec does not deal with that at all. who provided this one?</p>
+<p id=eb8e class="phone s02"><cite>Manu_Sporny:</cite> of course forgetting.</p>
+<p id=106e class="phone s04"><cite>Dave_Longley:</cite> I probably type that in,…</p>
+<p id=189f class="phone s04"><cite>Dave_Longley:</cite> but I don't know that we need these contributor names if the thread is understood.</p>
+<p id=bd18 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, that's true. although I'll leave it there. recognized list is in an X509 list and the verified does not do proper X509 specific validation required to ensure certificate revocation lists are taken into.</p>
+<p id=10001 class="phone s03"><cite>Kevin_Dean:</cite> that's implementation threat. Manu Sporny:</p>
+<p id=232e class="phone s02"><cite>Manu_Sporny:</cite> Yes, thank you very much.</p>
+</section>
+
+<section>
+<h3 id=d354>Discussing Implementation Threats</h3>
+<p id=10002 class="phone s04"><cite>Dave_Longley:</cite> This is one of those ones that's weird…</p>
+<p id=029e class="phone s04"><cite>Dave_Longley:</cite> because it's not an implementation for the spec unless we're going to tell people how to do X509 validation. So yeah, I think it is an implementation threat but at a different layer from this the spec we work on.</p>
+<p id=04e5 class="phone s03"><cite>Kevin_Dean:</cite> Is this really a threat that we should consider though? Because you could argue that, failing to implement any of the underlying technologies on which this spec depends. you could have an explosive list of threats. if there's an X509 list,…</p>
+<p id=94b2 class="phone s04"><cite>Dave_Longley:</cite> Yeah, we yeah,…</p>
+<p id=a084 class="phone s03"><cite>Kevin_Dean:</cite> you expect that somebody using X509 technology should understand revocation lists.</p>
+<p id=2bd5 class="phone s04"><cite>Dave_Longley:</cite> figuring out where to draw the line on the universe for external and…</p>
+<p id=e2c3 class="phone s03"><cite>Kevin_Dean:</cite> Yeah. Yeah.</p>
+<p id=d105 class="phone s04"><cite>Dave_Longley:</cite> dependency threats is hard. but maybe there are spe ones we really wanted to call out. Is that how we should do external independency threats?</p>
+<p id=2cde class="phone s02"><cite>Manu_Sporny:</cite> So I think the way this is supposed to work is that we focus really hard on target threats and…</p>
+<p id=6ea4 class="phone s02"><cite>Manu_Sporny:</cite> implementation threats and the other ones we list but we're kind of like that's dealt with elsewhere. understand that this risk exists, but we're not going to go into excruciating detail about how you mitigate it and whatnot in this spec.</p>
+<p id=fee3 class="phone s04"><cite>Dave_Longley:</cite> Okay, given that, let's just try to throw anything in there that goes there and then not talk about it too much.</p>
+<p id=89cc class="phone s02"><cite>Manu_Sporny:</cite> All right. An issue of recognized is not precise about the data schema and…</p>
+<p id=99bd class="phone s02"><cite>Manu_Sporny:</cite> allows too broad a category. Where's this one go?</p>
+<p id=01f4 class="phone s04"><cite>Dave_Longley:</cite> That seems like it's an implementation threat in our spec.</p>
+<p id=f2e6 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I guess because of the schema, it's really the author, right? I'm wondering.</p>
+<p id=f6cb class="phone s04"><cite>Dave_Longley:</cite> It's still implementation, isn't it? we're going to say this is where you put this, this is how you do it. But you can, build something that is problematic.</p>
+<p id=cb46 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, to put it there. An attacker recognized entity list URL is entered into verification software and is used to accidentally validate incorrect VCs. So this is a kind of a administrator usage error.</p>
+<p id=62d8 class="phone s04"><cite>Dave_Longley:</cite> It's just another implementation threat, right?</p>
+<p id=a5ce class="phone s02"><cite>Manu_Sporny:</cite> Yeah. As you the system wrong. It's like a configuration error, not a software. I don't know if those are implementation threats or not. Just leave it there for now. go ahead. Okay.</p>
+<p id=7877 class="phone s05"><cite>Kayode_Ezike:</cite> Isn't configuration considered external because we don't specify how to configure per se? It's similar to one of the other issues we had last week. it had to do with entering the wrong top level,…</p>
+<p id=ec5c class="phone s05"><cite>Kayode_Ezike:</cite> VC recognized as TVC or something like that.</p>
+<p id=535f class="phone s02"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=7cb3 class="phone s02"><cite>Manu_Sporny:</cite> so this mean I think you have a point Coyot it says the spec leaves the choice to them meaning an implement or someone configuring the software. That's why I think it might belong here more than because external threats I don't think we're going to spend a lot of time talking about. Whereas this I don't know do we want to talk about this? I could go either way. I don't know if other folks have strong opinions.</p>
+<p id=3666 class="phone s02"><cite>Manu_Sporny:</cite> So Coyote you think it should be external.</p>
+<p id=d01a class="phone s04"><cite>Dave_Longley:</cite> I think one of Yeah,…</p>
+<p id=9248 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, I mean I guess it's just going with the pattern that I was using from last week, but yeah, I don't have a strong opinion, but I just like kind of trying to make sure that we're consistent with ourselves basically like how we're trying</p>
+<p id=6060 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, of course.</p>
+<p id=48e2 class="phone s04"><cite>Dave_Longley:</cite> I was going to say that. I think we should be consistent and…</p>
+<p id=470f class="phone s04"><cite>Dave_Longley:</cite> we have number 10 down there is just some other configuration error. So seems like it goes at external.</p>
+<p id=bc84 class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=855a class="phone s02"><cite>Manu_Sporny:</cite> So, all There we go. And then a recognized entity has their metadata altered by an attacker. How does that happen? who raised the issue or this potential attack we can leave it and…</p>
+<p id=0566 class="phone s04"><cite>Dave_Longley:</cite> I don't know if I raised that one and if I did, it was a version of me that doesn't remember what I meant. presumably that might have been like …</p>
+<p id=0220 class="phone s02"><cite>Manu_Sporny:</cite> come back to it later, right?</p>
+<p id=b30b class="phone s04"><cite>Dave_Longley:</cite> it's a rec a recognized entity might be identified by some decentralized identifier.</p>
+<p id=be0b class="phone s04"><cite>Dave_Longley:</cite> And what if that thing's decentralized identifier is compromised in some way? It's going to be an external threat regardless. So I think we should just put it as an external threat.</p>
+<p id=c50f class="phone s02"><cite>Manu_Sporny:</cite> about themselves such as their didcument altered by an attacker and…</p>
+<p id=0025 class="phone s02"><cite>Manu_Sporny:</cite> that's external. You're saying let's see. Still I think information about recognized entities is out of date. a new caching of list due to online presentation.</p>
+<p id=7605 class="phone s04"><cite>Dave_Longley:</cite> So to be consistent,…</p>
+<p id=7ca2 class="phone s04"><cite>Dave_Longley:</cite> this sounds like it's external, but I really do hope that we talk about these things in the spec as imple they do seem like they're things that implementers need to consider.</p>
+<p id=340e class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=0010 class="phone s02"><cite>Manu_Sporny:</cite> Information I recognize. Which one was this? I got a little distracted.</p>
+<p id=7846 class="phone s04"><cite>Dave_Longley:</cite> to be consistent.</p>
+<p id=40e5 class="phone s02"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=7fe4 class="phone s04"><cite>Dave_Longley:</cite> I think it's external.</p>
+<p id=8a26 class="phone s02"><cite>Manu_Sporny:</cite> Changing domain controller for recognized It's external as well, right? Information leak when fetching recognized entity credentials or…</p>
+<p id=6f96 class="phone s04"><cite>Dave_Longley:</cite> Sounds external.</p>
+<p id=15ee class="phone s02"><cite>Manu_Sporny:</cite> linked resources. what does that mean?</p>
+<p id=a5fb class="phone s04"><cite>Dave_Longley:</cite> I would think for regular privacy considerations in such a spec as this one, we would say things like fetch in some privacy preserving way,…</p>
+<p id=2e58 class="phone s04"><cite>Dave_Longley:</cite> O HTTP or whatever it is. is that a implementation concern? same sort of bucket of confusion.</p>
+<p id=1ab1 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, let's say it's an implementation threat…</p>
+<p id=5b98 class="phone s02"><cite>Manu_Sporny:</cite> because I think we're definitely going to tell people use OHTP when requesting, let's see. Leaks information to the server. All right.</p>
+<p id=7ac8 class="phone s02"><cite>Manu_Sporny:</cite> All right. I am out of time. Would someone else be able to take over for me and take the group through the rest of these items?</p>
+<p id=47bd class="phone s05"><cite>Kayode_Ezike:</cite> Suppose I can give it a try.</p>
+<p id=3062 class="phone s02"><cite>Manu_Sporny:</cite> Thank you so much, Coyote. can you get into the document and edit? Okay.</p>
+<p id=50e5 class="phone s05"><cite>Kayode_Ezike:</cite> Yes, I'm there.</p>
+<p id=5b4e class="phone s02"><cite>Manu_Sporny:</cite> And then I'll hand it over to you to share. Thank you very much Kyote for taking the group through the rest of this. I got to run. Thanks all. Bye.</p>
+<p id=c75c class="phone s05"><cite>Kayode_Ezike:</cite> Screen you quickly. One second to share my screen. Y'all can see my screen.</p>
+<p id=d38c class="phone s05"><cite>Kayode_Ezike:</cite> Zoom. All righty.</p>
+<p id=e7ec class="phone s04"><cite>Dave_Longley:</cite> Yep. It's not showing the Google doc yet,…</p>
+<p id=f3f9 class="phone s04"><cite>Dave_Longley:</cite> but now it is.</p>
+<p id=1c70 class="phone s05"><cite>Kayode_Ezike:</cite> So we go to set that we were at. I think we're here now. change domain control for recogniz.</p>
+<p id=b8f4 class="phone s05"><cite>Kayode_Ezike:</cite> Did we just classify this one?</p>
+<p id=3c39 class="phone s04"><cite>Dave_Longley:</cite> Yeah, that one's categorized.</p>
+<p id=6a7a class="phone s04"><cite>Dave_Longley:</cite> We got to go down to the uncatategorized section right below that.</p>
+<p id=2cac class="phone s05"><cite>Kayode_Ezike:</cite> Okay. Blanket censorship.</p>
+<p id=225b class="phone s04"><cite>Dave_Longley:</cite> So, censorship I don't know…</p>
+</section>
+
+<section>
+<h3 id=705f>Threat Model Categorization Of Censorship</h3>
+<p id=cbed class="phone s05"><cite>Kayode_Ezike:</cite> Were any of y'all the authors of this one? So, This is one of those market ones.</p>
+<p id=10003 class="phone s04"><cite>Dave_Longley:</cite> if I wrote that one or not and if nobody else remembers. and this is fairly broad. I wonder where this goes. it could be that some of this I mean there's certain kinds of gatekeeping and censorship that this specifically helps with because it's decentralized in its nature. so let's put it under threats that the spec actually could help with.</p>
+<p id=260d class="phone s04"><cite>Dave_Longley:</cite> Because the external one we would just be ignoring, whatever the spec can't do is external.</p>
+<p id=6460 class="phone s05"><cite>Kayode_Ezike:</cite> so this would maybe be dependency All right.</p>
+<p id=fe82 class="phone s04"><cite>Dave_Longley:</cite> And now I think it's at the top category. It's target threats. So the spec is designed to help prevent censorship because it is decentralized in how it works.</p>
+<p id=ca6a class="phone s05"><cite>Kayode_Ezike:</cite> Happy with that schema text.</p>
+<p id=eb15 class="phone s04"><cite>Dave_Longley:</cite> So, it's definitely external, but again this spec should talk about something and…</p>
+<p id=bdbc class="phone s05"><cite>Kayode_Ezike:</cite> Any other thoughts?</p>
+<p id=5d34 class="phone s04"><cite>Dave_Longley:</cite> maybe the spec even needs to say you need to do certain things. Did I cut out just now? this spec uses JSON schema and maybe we need to talk about it in implementations. I would feel more comfortable dropping it in implementations and moving it to external later. I don't know what other people think. We got a thumbs up from Phil. Yeah.</p>
+<p id=85c8 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, it's really to me too there's I mean not to create more categories but oftentimes like we keep thinking of sorry before I get into that this would be a implementation for now right as we said and then maybe turn it into okay a lot of these are configuration I know I think external maybe might be a little bit confusing so this particular documentation or this document eventually is going to be in some way, shape or form included in these that at least referenced from the spec in some way, right? So between now and that point, we definitely want to think about how to make some of these concepts more understandable as far as the labeling of these issues. okay. That too lacks JSON schema.</p>
+<p id=4220 class="phone s05"><cite>Kayode_Ezike:</cite> Sounds similar to the one that we just did.</p>
+<p id=632d class="phone s04"><cite>Dave_Longley:</cite> Yeah, it's probably we should keep them together, I would think.</p>
+<p id=f0de class="phone s05"><cite>Kayode_Ezike:</cite> All right. improper handling of large entity list. I think and this will be an external. Okay.</p>
+<p id=0af4 class="phone s05"><cite>Kayode_Ezike:</cite> for being consistent. yeah something that implementers need to be concerned about.</p>
+<p id=5336 class="phone s04"><cite>Dave_Longley:</cite> Seems like it could be an implementation.</p>
+<p id=bf00 class="phone s04"><cite>Dave_Longley:</cite> Again, I'm going to continue to struggle with what the line is there.</p>
+<p id=04c7 class="phone s05"><cite>Kayode_Ezike:</cite> I guess it's just the question of yeah what is our semantic for implementation? did you implement back right or…</p>
+<p id=6b97 class="phone s06"><cite>Phillip_Long:</cite> Dave, Dave,…</p>
+<p id=8e83 class="phone s05"><cite>Kayode_Ezike:</cite> did you just do a poor job managing resources in your app?</p>
+<p id=dfea class="phone s06"><cite>Phillip_Long:</cite> you made a comment earlier about things that we need to talk about and I think that's at this point in time. We're not trying to be extremely limiting. We're trying to figure out what it is we really do want to talk about. And so I would be generous about putting things into the category of implementation or whatever. so that it has a chance to be viewed again separately and then if it gets tossed down to external that's great. We can just reference it and people can take it from there.</p>
+<p id=4f97 class="phone s05"><cite>Kayode_Ezike:</cite> J we cut everything.</p>
+<p id=a2df class="phone s06"><cite>Phillip_Long:</cite> And sorry, I'm on a very slow connection today because my died and I'm waiting for my ISP to come out and replace it. Kayode Ezike:</p>
+<p id=5972 class="phone s05"><cite>Kayode_Ezike:</cite> Thanks. That's good input. I mean maybe with that lens we'll continue to go through these and we may want to go back through the external threats just to see if we Yeah.</p>
+<p id=7129 class="phone s06"><cite>Phillip_Long:</cite> There's an external threat that we have that Dave, for example, you've mentioned you'd like to see something said about or we need to say something because there's some particular way we want people to handle it. Then it…</p>
+<p id=04c2 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think right I would say we're probably going to have to go back over the external threats at least one more time with that lens in a future call.</p>
+<p id=f706 class="phone s06"><cite>Phillip_Long:</cite> then it goes up into wherever the implementation or whatever it should be. if we don't care, then we just leave it in imple where it is. Agreed.</p>
+<p id=ca94 class="phone s05"><cite>Kayode_Ezike:</cite> Same page there. Thanks next one is an issuer trying to provide a recognizance to VC alongside a VC that the issuer issues the intermediary to transport the VC's alter. Are these two different dependencies to increase? And I can't tell if these are two different issues.</p>
+<p id=5af5 class="phone s04"><cite>Dave_Longley:</cite> I think that's supposed to be all one thing together. I think it's describing a situation and then what happens while that's happening and…</p>
+<p id=5c80 class="phone s05"><cite>Kayode_Ezike:</cite> Okay, got you. Okay.</p>
+<p id=10004 class="phone s04"><cite>Dave_Longley:</cite> talking about it trying to impersonate sounds like it would be covered by that this would go in the first category as target threats…</p>
+<p id=8088 class="phone s04"><cite>Dave_Longley:</cite> since in theory a digital signature is going to help with that.</p>
+<p id=444b class="phone s05"><cite>Kayode_Ezike:</cite> Yes, exactly.</p>
+<p id=0011 class="phone s05"><cite>Kayode_Ezike:</cite> We might work that a little bit later. so I'll take a few more if resolving a mechanism for discovering a recognized entity depends on DNS and DNS is not properly secured and proper recognized can be injected.</p>
+<p id=2d71 class="phone s04"><cite>Dave_Longley:</cite> I mean this is clearly external and…</p>
+<p id=00ab class="phone s05"><cite>Kayode_Ezike:</cite> Yeah. So far that</p>
+<p id=992c class="phone s04"><cite>Dave_Longley:</cite> it just falls under any DNS threat. And I guess it's a dependency really, right? Because that's just an inheritance problem. We're using DNS and DNS can be attacked. maybe because there's X509 and…</p>
+<p id=d594 class="phone s05"><cite>Kayode_Ezike:</cite> Right. I guess for this particular one,…</p>
+<p id=10005 class="phone s04"><cite>Dave_Longley:</cite> then there is all of the rules for how you use X9509 for validating those and depending on what we say in our spec there might be some specific thing that we add to an X509 certificate so I don't</p>
+<p id=10006 class="phone s05"><cite>Kayode_Ezike:</cite> it seems more appropriate to leave it where it is because it's not saying that anything was wrong with the S79 implementation. It's more so saying something wrong with the way it was processed by the verifier. So maybe that's fine where it is. So still recognizing she was due to aggressive caching policy. this is also something we did. It's a duplicate I think one we did earlier.</p>
+<p id=de59 class="phone s05"><cite>Kayode_Ezike:</cite> Just make sure I see the member.</p>
+<p id=904e class="phone s04"><cite>Dave_Longley:</cite> Yeah, that number 13 in the external list talks about caching.</p>
+<p id=49a6 class="phone s05"><cite>Kayode_Ezike:</cite> So I'll just get rid of this So that's so what we could do is we could either start a discussion of reviewing external threats and seeing if we can recategorize some of these that we care to discuss further or maybe move on to I don't know if there any offline issues that we can review do since we're already here you just want to start with that.</p>
+<p id=79bd class="phone s05"><cite>Kayode_Ezike:</cite> So that's the objection is …</p>
+<p id=8bfe class="phone s04"><cite>Dave_Longley:</cite> Yeah. How about we look at external threats and…</p>
+<p id=1ba2 class="phone s04"><cite>Dave_Longley:</cite> if we think we want to talk about them more with respect to implementations, we can move them up. Although it says, ac Acknowledged seems to me like you are going to talk about them, but they are out of scope.</p>
+<p id=78c5 class="phone s05"><cite>Kayode_Ezike:</cite> I see. Or is it just saying that this document is acknowledging them as out of scope and…</p>
+<p id=f8d5 class="phone s05"><cite>Kayode_Ezike:</cite> not enough that we would acknowledge it out of in spec itself? I guess yeah. Yeah.</p>
+<p id=2316 class="phone s04"><cite>Dave_Longley:</cite> I was going to say I think it's when we build the threat model these are things that are listed so they do get mentioned …</p>
+<p id=ba74 class="phone s04"><cite>Dave_Longley:</cite> but then they are acknowledged as out of scope. So external threats we might be able to move some of the other things down. We might want to get some more. So, one of the things that is supposedly going to come out of the face meeting for those there is more people working getting caught up on how the threat modeling is supposed to be done from the threat modeling people who put these categories together.</p>
+<p id=93d5 class="phone s04"><cite>Dave_Longley:</cite> And we might just want to wait for that work to happen because it might help us not duplicate work by moving things in and out of categories. is</p>
+<p id=3332 class="phone s05"><cite>Kayode_Ezike:</cite> That's true.</p>
+<p id=ebff class="phone s05"><cite>Kayode_Ezike:</cite> And it does help that every task force is using the same template that that's unified. So, I'm sure this discussion will come up some point.</p>
+<p id=f8a1 class="phone s05"><cite>Kayode_Ezike:</cite> That's fair. so yeah, I guess we can then just maybe on our time just keep these things in mind. I don't know how many I shouldn't switch over. any of us if you care to share going to be at the face to face next week. I'm not either.</p>
+<p id=4233 class="phone s04"><cite>Dave_Longley:</cite> I will not be There.</p>
+<p id=095f class="phone s05"><cite>Kayode_Ezike:</cite> So maybe have one or two advocates to make this particular point, but that's fine. And I think maybe on tomorrow DCWD call we can call that out as hey we've been discussing these different types of threats in some of these task forces and some of the language that we're using may be a little bit confusing for the spec documents. So just want to make sure that we're clear on what we mean when we say for example certain threats. Are we saying that this is something that we're not going to target in this version?</p>
+<p id=5bcd class="phone s05"><cite>Kayode_Ezike:</cite> we're saying something else, So, yeah, maybe just discuss that tomorrow or something. So, I don't know if there are any open issues that any on this call be able to speak to. otherwise I'm happy. No system.</p>
+<p id=075d class="phone s04"><cite>Dave_Longley:</cite> I think it's recognized entities.</p>
+<p id=5253 class="phone s05"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=fa13 class="phone s05"><cite>Kayode_Ezike:</cite> So these are not categorized yet. I don't think we don't have 10. Okay. So we only have two that are not categorized and they will open by people that are not here today. So some of these seem fairly simple. So I think it's probably safe to end the call today. had a pretty productive call and unless there's anything else that folks have undermined. We probably need to cancel this call next week. I think we did that for some other task force calls, but this one I don't think I have the authorization to do that.</p>
+<p id=b760 class="phone s03"><cite>Kevin_Dean:</cite> Thank you for taking this on.</p>
+<p id=6ea5 class="phone s05"><cite>Kayode_Ezike:</cite> I think it's been or so we'll have to offline. until then thanks everyone for contributing and we'll see you when I see Cheers. No problem.</p>
+<p id=2dd1 class="phone s06"><cite>Phillip_Long:</cite> Cheers. Meeting ended after 00:37:02 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

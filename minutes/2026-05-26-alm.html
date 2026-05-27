@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 26 May 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>26 May 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Olvis_E._Gil_Ríos, Parth_Bhatt, Patrick_St-Louis, Phillip_Long</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#8963">Threat Model Follow Up</a></li>
+<li><a href="#e0fb">Threat Modeling</a>
+<ol>
+<li><a href="#b669">Create Threat Model for VCALM · Issue #628 · w3c/vcalm · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#501b">Processing Open Pull Requests</a></li>
+<li><a href="#5068">Processing Open Pull Requests</a>
+<ol>
+<li><a href="#e58e">Remove outdated issue about DataIntegrityProof. by BigBlueHat · Pull Request #632 · w3c/vcalm · GitHub</a></li>
+<li><a href="#baf2">Align with VC Data Model 2.0 (context URLs + validFrom/validUntil) by PatStLouis · Pull Request #636 · w3c/vcalm · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#ff48">README URL Updates</a>
+<ol>
+<li><a href="#240b">Fix README.md URLs from w3c-ccg.github.io to w3c.github.io by bparth24 · Pull Request #639 · w3c/vcalm · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#c3a5">Workflow Processing Algorithm</a>
+<ol>
+<li><a href="#9117">docs: add informative reference workflow step processing algorithm by PatStLouis · Pull Request #626 · w3c/vcalm · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#c555">Error Handling For Workflows</a></li>
+<li><a href="#f7fe">Processing Issues</a>
+<ol>
+<li><a href="#b104">Expand error handling to workflows · Issue #637 · w3c/vcalm · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#13b7">Issue Management Strategy</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=65c0 class="phone s01"><cite>Patrick_St-Louis:</cite> Greetings all. We'll get started in about two or three minutes and let people join in.</p>
+<p id=db28 class="phone s01"><cite>Patrick_St-Louis:</cite> Get started in about a minute.</p>
+<p id=52f6 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, let's get started. someone may correct me. I do believe there's some in-person event happening this week, so we might expect a lower attendance than usual. maybe I'm wrong, but I thought I saw something about this around. welcome everyone to the W3C VC API for life cycle management, also known as VCOM. today is 26th of May, 2026. This is a W3C meeting. The meeting is recorded.</p>
+<p id=db77 class="phone s01"><cite>Patrick_St-Louis:</cite> This being a W3C meeting, all W3C code of conduct and IPR policies are into effect. be aware of these before you make any contributions to the call today for the very simple not too many topics. before I announce the agenda going to get started if there's anyone who would like to reintroduce themselves or share any community announcements in relation to the VC API for life cycle management. I will leave a moment of about a minute of silence here.</p>
+</section>
+
+<section>
+<h3 id=8963>Threat Model Follow Up</h3>
+<p id=0c23 class="phone s01"><cite>Patrick_St-Louis:</cite> So if you would like to mention something just please raise your hand or unmute yourself. for the agenda today maybe we will do a quick followup on the threat model. this has been a subject of conversation for the last couple of meetings. I would like today to try and timebox this.</p>
+<p id=26b5 class="phone s01"><cite>Patrick_St-Louis:</cite> It's been a few meeting that we spent quite a lot of time thinking about this. I'd like it if we could today go through some of the poll requests at least get a first pair of eyes on them, discuss them so that hopefully next week we can merge some of them and then maybe we can go over our issues, if there's been any new issue that's been open so for the threat model followup I've been listening the conversation in the last couple of meetings. There have been some back and forth about the model that we should use for this.</p>
+<p id=ffff class="phone s01"><cite>Patrick_St-Louis:</cite> I know I believe it was Joe working in conjunction with Eric to draft a model based around some existing work that you've done and there's been some back and forth regarding this. would any of you like to just throw a quick refresher where we are at with the threat model if there's any updates that's been made in the past week if you could share those and I'd like to time box our discussion about it. would hopefully not take more than half of today's calls. Maybe at half past the hour, I'll try to gently put a stop and…</p>
+<p id=9df5 class="phone s01"><cite>Patrick_St-Louis:</cite> go into PR reviews and we can al always loop back in if there's some times towards the end of the call. yes, Eric.</p>
+<p id=b38a class="phone s02"><cite>Eric_Schuh:</cite> yeah,…</p>
+<p id=10000 class="phone s02"><cite>Eric_Schuh:</cite> I can give a quick update as far as what's happened in the last week. and I'll give I guess a very quick hopefully 30 second overview of kind of our current status. but I will take over screen share if that's all right, Patrick. Okay.</p>
+<p id=3d6d class=irc><cite>&lt;Eric_Schuh&gt;</cite> <a href="https://docs.google.com/document/d/11DvzPJhiMuXLLyifA6ANLhT4aOXne_C1rEv4Bedy26M/edit?tab=t.0#heading=h.qa838bhs33sw">VCALM Threat Model (Draft) - Google Docs</a> </p>
+<p id=d63b class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, please go ahead.</p>
+<p id=f58a class="phone s02"><cite>Eric_Schuh:</cite> Okay. Hopefully you're all seeing the screen. So, sorry. I'll post this document link in the chat in case anyone wants to get here. So, this was the document I started with, probably about a month ago now. not much has happened here since the initial pass and the initial threat indexing that we did on a call three-ish weeks ago. because my focus has mostly been on actually generating the data flow diagram which I had kind of started here but I had a number of outstanding questions that have been the topic of kind of the last two calls I believe.</p>
+<p id=eb0d class=irc><cite>&lt;Eric_Schuh&gt;</cite> <a href="https://github.com/w3c/vcalm/issues/628">Create Threat Model for VCALM · Issue #628 · w3c/vcalm · GitHub</a> </p>
+<p id=6a6d class="phone s02"><cite>Eric_Schuh:</cite> So this week, I was able to push through, and get a first draft of, what ended up being five different DFDs, to walk through, sorry, the lost my issue, the, user flow that we had settled on kind of in the issue as of last week. which is right here. I'll also post a link to this issue in case anyone wants it. so this was the user flow that I was kind of working with in terms of creating the data flow diagram. And you'll see down below here I have posted some I'm working on getting some images without the watermark. I think Joe actually just sent these to me.</p>
+<p id=70a4 class="phone s02"><cite>Eric_Schuh:</cite> I had some licensing issue with the software that I used to create this. so I'll upload new ones, right after I'm done talking here, without the watermarks. but these, images should be posted in order. So you'll see we start with F-0 in this first image and it ends with F6. So this is kind of our data flow. and subsequently, continues. so the way these ended up getting broken down was that this first image basically does the initial setup of the exchange and the interaction In the second one we have Sachin our user getting his initial EMT credential verified.</p>
+</section>
+
+<section>
+<h3 id=e0fb>Threat Modeling</h3>
+<h4 id=b669><a href="https://github.com/w3c/vcalm/issues/628">Create Threat Model for VCALM · Issue #628 · w3c/vcalm · GitHub</a></h4>
+<p id=b77a class="phone s02"><cite>Eric_Schuh:</cite> And the third one the issuer service after verifying the submitted EMT credential gets issued the new incident activation credential which is what Sachin is coming to the issuer to get. this fourth image is the credential being stored in the holder's device and as part of the holder service. And then the last one is the verification of the incident activation credential that was just issued. so these ended up being kind of the five flow diagrams. I'll quickly just move over to the diagramming tool. So we're not looking at watermarks. but yeah, you'll see here we have initiating the interaction the verification step of the workflow.</p>
+<p id=cfdb class="phone s02"><cite>Eric_Schuh:</cite> the issuance step in the workflow, the delivery of the credential back to the holder, and then the verification of the credential that was delivered to the holder. so that's kind of how these ended up getting broken down. I'm sure I didn't get everything completely correct. I believe my next steps are going to be to go over this with Joe here this afternoon and then possibly try to get a call with Dave Longley who has much more exper experience than I do on the actual implementation side and walk through this with him to get corrections into this. and then, I suppose more broadly, the next steps is, now that we have a draft DFD diagram, I'm going to be returning to this Google doc, updating this diagram section here with the new diagrams. fleshing out all of our definitions, to describe the stakeholders that are involved.</p>
+<p id=8872 class="phone s02"><cite>Eric_Schuh:</cite> And then updating the threats so that we can say which of the components in the diagrams the threats apply to. and once I'm done there get the first draft of this into the repo. as a note probably but we had discussed just creating a threat model directory at the top level and I'll put a first version of some HTML in there in all likelihood. hopefully with the help of Joe because he has just done this for the debt resolution group. so we'll just pattern things off of that in all likelihood. those are kind of my updates for the day. So I'll open up the floor for any comments, questions, or concerns.</p>
+<p id=1db6 class="phone s01"><cite>Patrick_St-Louis:</cite> Joe</p>
+<p id=090e class="phone s03"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=9c89 class="phone s03"><cite>Joe_Andrieu:</cite> I just wanted to talk to the integration of a new library. so I had made a JavaScript library to render threats that we're using in the did resolution threat model. I'm about 80% of the way of pulling that out and making it a standalone repo. And so I think part of the exercise, Eric, will be to use that new repo, which is intended to be shared amongst all of our VC groups and frankly anyone in W3C eventually. So we will also integrate that new tooling and hopefully that should make things easier once we start enumerating the threats in the spec.</p>
+<p id=0e24 class="phone s01"><cite>Patrick_St-Louis:</cite> Just so I understand, so you're talking about tooling.</p>
+<p id=6ce2 class="phone s01"><cite>Patrick_St-Louis:</cite> We use respect for DS. Does the tooling is it like an extension of respect or it's a standalone tuning to tooling to generate sort of artifact that you would put in a repo? what is the scope of this tool?</p>
+<p id=b1ca class="phone s03"><cite>Joe_Andrieu:</cite> So it's a library that outputs respspec ready HTML.</p>
+<p id=d1ba class="phone s03"><cite>Joe_Andrieu:</cite> In fact,…</p>
+<p id=0799 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Mhm.</p>
+<p id=7274 class="phone s03"><cite>Joe_Andrieu:</cite> you put it in your respect file and it gets triggered as you load and it uses the respect primitives to make sure that we got the section headings correctly with the links and the table of contents. those were when I was figuring this out for both the web threat model and for the did resolution threat model. That was where all the finicky stuff was.</p>
+<p id=b02a class="phone s03"><cite>Joe_Andrieu:</cite> So this should make it easy so that we don't have to worry about the finicky table formatting or…</p>
+<p id=10001 class="phone s03"><cite>Joe_Andrieu:</cite> headings or sections or whatever. That's the hope.</p>
+<p id=077f class="phone s01"><cite>Patrick_St-Louis:</cite> Is it fair to say that this tool is a standalone tool that can output diagrams and…</p>
+<p id=6eef class="phone s01"><cite>Patrick_St-Louis:</cite> different visual things about threat model and for now it's kind of outputting it as a respspec compatible format but it's not respect dependent.</p>
+<p id=b429 class="phone s01"><cite>Patrick_St-Louis:</cite> Is that fair assumption?</p>
+<p id=93ee class="phone s03"><cite>Joe_Andrieu:</cite> It's only loosely I mean I think it could be configured to be multiformat aware…</p>
+<p id=4be3 class="phone s03"><cite>Joe_Andrieu:</cite> but the hard things about it we're mapping it to the respect primitives. Yes.</p>
+<p id=7926 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yes.</p>
+<p id=182c class=irc><cite>&lt;Kayode_Ezike&gt;</cite> <a href="https://github.com/w3c/did-resolution-threat-model">GitHub - w3c/did-resolution-threat-model · GitHub</a> </p>
+<p id=7045 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. that's totally fine. I'm just trying to understand where it fits in the picture. So, could we see it as some kind of respect adjacent tooling then? or…</p>
+<p id=d894 class="phone s03"><cite>Joe_Andrieu:</cite> Think like the respec oas library or…</p>
+<p id=8df1 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=10002 class="phone s03"><cite>Joe_Andrieu:</cite> the respect mermaid library it's meant to be used as a companion to respec with a little bit of tooling.</p>
+<p id=749d class="phone s03"><cite>Joe_Andrieu:</cite> You it would work in a regular HTML page. It's just HTML doesn't really do anything interesting with sections unless you have respect in evolved, Correct.</p>
+<p id=4017 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it's Yeah.</p>
+<p id=bce2 class="phone s02"><cite>Eric_Schuh:</cite> I think I'm showing the results on screen,…</p>
+<p id=2ffa class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah,…</p>
+<p id=7b53 class="phone s02"><cite>Eric_Schuh:</cite> So, this is what it would look like.</p>
+<p id=1d05 class="phone s01"><cite>Patrick_St-Louis:</cite> it does feel kind of, uniform with the rest of the specification. That's really interesting. there was something you mentioned Eric. So there was these five different sort of step you had the verification issuance and then another verification.</p>
+<p id=035c class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. what's this first verification step here? Is it like the holder verification? What are you referring to exactly?</p>
+<p id=0035 class="phone s02"><cite>Eric_Schuh:</cite> Yeah, sure.</p>
+<p id=1a50 class="phone s02"><cite>Eric_Schuh:</cite> So in our flow we have our user Sachin who is going the kind of backdrop right is incident response. So he is a Arizona EMT that is coming to California to assist in some incident and as he's traveling he goes to the California state website and has to submit his Arizona EMT to receive an credential that would be good at the incident that he's going to.</p>
+<p id=12a1 class="phone s01"><cite>Patrick_St-Louis:</cite> Right. Okay.</p>
+<p id=989d class="phone s02"><cite>Eric_Schuh:</cite> So this first verification here is part of that workflow where Sachin is going to receive this credential but first he needs to supply his basically right identification and proof that he is an EMT. So that gets verified as a first step in the workflow.</p>
+<p id=97ca class="phone s02"><cite>Eric_Schuh:</cite> And then the second step in the workflow is based on that the system decides to issue him redial. and then the second verification is the verification of the credential that was issued rather than Yeah.</p>
+<p id=b4ad class="phone s01"><cite>Patrick_St-Louis:</cite> that. Yeah.</p>
+<p id=9f1a class="phone s01"><cite>Patrick_St-Louis:</cite> So, I understand. So, made you generated a mini workflow to use as a sort of example where to exercise the threat modeling. Okay.</p>
+<p id=781d class="phone s02"><cite>Eric_Schuh:</cite> Correct. Yeah.</p>
+<p id=48c3 class="phone s01"><cite>Patrick_St-Louis:</cite> And just so happened that the example is based on threat modeling as on incident response which is kind of in the same sphere.</p>
+<p id=6028 class="phone s02"><cite>Eric_Schuh:</cite> Yeah. this comment in the issue here kind of goes through the…</p>
+<p id=f993 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=eafd class="phone s02"><cite>Eric_Schuh:</cite> what ended up being six steps or five steps in the flow.</p>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> That's good. Is there any other comments regarding to this or maybe I can also add a question what's the next step that see? I know you kind of went over it. If you could also again just go over it quickly what's the next two actions that we can expect on eventually</p>
+<p id=3ba6 class="phone s02"><cite>Eric_Schuh:</cite> So, there's kind of two parallel paths here. one, I want to have a conversation probably with Dave Longley if I can get some of his time to just review the flows in these DFDs and make sure that they are accurate. and then kind of in parallel,…</p>
+<p id=e2eb class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. Sorry.</p>
+<p id=bad4 class="phone s02"><cite>Eric_Schuh:</cite> I am going to be returning to this Google doc and using what I've already generated as a draft to flush this out and get everything kind of structured in here correctly. including adding all the text for all of the descriptions of our different stakeholders. and if we take a look at the did resolution threat model explan expanding on kind of the description of the DFDs so that everything reads more as it does here right data flow diagram that is yeah yep so I'll be working mostly most of my time will be spent kind of updating this Google doc</p>
+<p id=6924 class="phone s01"><cite>Patrick_St-Louis:</cite> S Yeah. what we're seeing here. Yeah.</p>
+<p id=44f9 class="phone s02"><cite>Eric_Schuh:</cite> and then updating the threats so that they reference the elements of the DFD. but really my focus is going to be using this draft DFD or series of DFDs that I created to update this document here to get a draft set of text in for all of the sections. And as soon as that's done, I probably won't wait for the group to review it here. I'll probably just push right into an HTML note that can be added to the repo. unless timing, of course, that's subject to change. I imagine this will take me most of this week,…</p>
+<p id=733b class="phone s02"><cite>Eric_Schuh:</cite> if not all of this week, to kind of get through updating this document. but my goal kind of vaguely is by the next call we have which is I think probably going to be in two weeks because of the face toface happening next week. yeah so my goal will be by the next call we have here to have a draft of this threat model in the repo.</p>
+<p id=586c class="phone s01"><cite>Patrick_St-Louis:</cite> It's next week.</p>
+<p id=7a67 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Thank you.</p>
+<p id=9743 class="phone s02"><cite>Eric_Schuh:</cite> And then we can decide how future discussions need to go from there.</p>
+<p id=40e7 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=bfce class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, thanks Eric for sharing great progress. I guess it's relevant that you mentioned the face to face because that's what my comment was on. I was wondering so we should probably have a good understanding of how we want to tackle that. My understanding is that there's going to be Simone there from is it sing or ping one of those groups to help coordinate that. In terms of timing, I was looking at the schedule which is here which it's not really clear is in the chat. It's not really clear. Brett Ming has mentioned a few places in the agenda tab. but considering that it is a bit far out and some of us will be remote.</p>
+<p id=2047 class="phone s04"><cite>Kayode_Ezike:</cite> I don't know who will be actually there in person to facilitate or if we would expect for there to be a joint sort of facilitation from across the pond. So just I don't know if there's any thoughts from the group as to how we want to spend our time those of us…</p>
+<p id=cc61 class=irc><cite>&lt;Kayode_Ezike&gt;</cite> <a href="https://docs.google.com/spreadsheets/d/1Emo_yVt90Z5xnHNBPhShO4B7zYQ7kwMfNcOa6sKAdoc/edit">VCWG Brussels F2F 2026 Attendees - Google Sheets</a> </p>
+<p id=a588 class="phone s01"><cite>Patrick_St-Louis:</cite> Joe.</p>
+<p id=43ab class="phone s04"><cite>Kayode_Ezike:</cite> who actually be in person together during that time period. So just a open question.</p>
+<p id=2687 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah, that's a great setup for me, Coyote. So, thanks. we have an open conversation about what focus do we want to have for the threat modeling with Simone and I think we've talked about potentially doing the dead resolution threat model because it feels the most mature. We've also thought about doing the VCOM work and I think we as a working group haven't made a call one way or the other. I think I'm inclined to continue with this. I think there's good momentum here. we also have an hour and 15 minutes in a dedicated VCOM call. So we also have a conversation just amongst us about how do we want to leverage that hour and a half. I will be in Brussels and Simone is trying to get out to Brussels. In fact, he's considering coming out even if he has to pay for it himself.</p>
+<p id=bb2d class="phone s03"><cite>Joe_Andrieu:</cite> but he's right now trying to get travel approval from W3C to pay the couple hundred bucks to get him over there. so that those are the two questions we still have outstanding. What do we want to do in the hour and 15 that's dedicated to VCOM? And for the larger group, do we want to do the threat modeling on VCOM? I think that would be a good idea, but I'm not sure what the other ideas or options are that folks are considering.</p>
+<p id=5f2c class="phone s01"><cite>Patrick_St-Louis:</cite> Eric, please.</p>
+<p id=18ea class="phone s02"><cite>Eric_Schuh:</cite> Yeah, I think Joe, if you do want to do that, we just need to make sure that you have everything you need since I won't be there. so that's just a note for me and…</p>
+<p id=2836 class="phone s02"><cite>Eric_Schuh:</cite> you that Yeah.</p>
+<p id=23b5 class="phone s03"><cite>Joe_Andrieu:</cite> Absolutely. And the time frame is not convenient for you.</p>
+<p id=80d0 class="phone s03"><cite>Joe_Andrieu:</cite> So even you might be able to make VCOM because it's targeted closer to the end of the day,…</p>
+<p id=09a4 class="phone s03"><cite>Joe_Andrieu:</cite> but it's still pretty obnoxious. So</p>
+<p id=9070 class="phone s02"><cite>Eric_Schuh:</cite> Yeah. Yeah.</p>
+<p id=079b class="phone s02"><cite>Eric_Schuh:</cite> And just with how those half inerson things go, I find it often difficult to give too much input as one of the remote participants. but yeah, I think just one final couple notes I wanted to make as far now that I have some clean images up here. I did make some choices that I think if we did want to make the threat modeling a topic for next week in the face toface. I would probably either want to explain now or Joe and I could go over them and Joe, you could bring them in. but obviously since this is mostly my work, I would just want to make sure that, the group's not blocked because I'm not there and have a hard time participating.</p>
+<p id=10004 class="phone s02"><cite>Eric_Schuh:</cite> So, I don't think we have time for that now, Patrick, just because I'm keeping note of your time boxing here.</p>
+<p id=a2d4 class="phone s02"><cite>Eric_Schuh:</cite> But that is just something to consider.</p>
+<p id=7453 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. yeah,…</p>
+<p id=35d4 class="phone s01"><cite>Patrick_St-Louis:</cite> this sounds great. Any further comments regarding threat modeling or the inperson event next week? thanks for this. it's good to see that there's some progress being made here. it's starting to clarify itself a little bit in my mental model of this. I think it's starting to be some place that will be familiar with people from VCOM.</p>
+<p id=1cd9 class="phone s01"><cite>Patrick_St-Louis:</cite> I will be honest especially at the beginning I was a bit overwhelmed by the proposal for the threat model but I think now it's getting a lot more concrete and a lot closer to what we want to do. So great job for kind of processing this and putting it in some kind of document we can look at the beginning of the call mentioned that it was an inerson event. I thought I wasn't sure if it was this It's next week. Thank you for confirming this. I'm not going to be there, unfortunately. Okay, let's move on to oll requests. so we have six poll requests now. It'd be great if we could go over some of them.</p>
+</section>
+
+<section>
+<h3 id=501b>Processing Open Pull Requests</h3>
+<p id=43e4 class="phone s01"><cite>Patrick_St-Louis:</cite> probably not merge any today unless there's a very small straightforward one. But at least if we can get some conversation started so that they're in a good place to be probably not next week but whenever the next meeting we have so I'm going to go ahead and share my screen. we will start if that's okay with everyone with the three pull requests, the three latest one. These ones are a bit outdated. I'm still figuring out some things with my account. I think pull requests that have been already open before we applied some GitHub linkage fix are kind of in the pending state. But this new one that I've opened more recently is passing.</p>
+<p id=838f class="phone s01"><cite>Patrick_St-Louis:</cite> So, I would propose to just go in order from 632 upwards to 639 and try to discuss them a little bit. I don't think that big blue hat is here today. However, we can see that a lot of these had been approved quite some weeks ago. this just removes a fairly outdated note that I think data integrity proof have since then been published right as a recommendation version one. So this is probably not needed anymore. Now I did say we wouldn't want to merge anything.</p>
+<p id=8db6 class="phone s01"><cite>Patrick_St-Louis:</cite> However, I will go ahead and make a proposal to merge this today since it's a very small change and it's already been approved quite some weeks ago. I don't think this changes anything. I would hope that whoever's reading VCOM is somewhat familiar with Tata integrity proof. so unless there is any objection, I will go ahead and merge this. I'll leave a couple seconds if anyone wants to object. Let's rease this. Very good. It doesn't seem like they were any healing tissues. this is something we'll have to figure out eventually. I've been seeing a lot of these 500s there. I've not investigated it. okay.</p>
+</section>
+
+<section>
+<h3 id=5068>Processing Open Pull Requests</h3>
+<p id=10005 class="phone s01"><cite>Patrick_St-Louis:</cite> So 6:36 I had somewhat presented this a couple weeks ago. the only feedback is that had I did ask if there was a good thing or not. So I had made some change in the first public working draft in the kind of snapshot we did and someone told me that that was a very bad thing. I kind of sus suspected so I've reverted all the change to these files. this is really about the request response and bodies from the various presentation endpoints that still had some artifact with VCDM 1.1 and this came also with some normative language.</p>
+<h4 id=e58e><a href="https://github.com/w3c/vcalm/pull/632">Remove outdated issue about DataIntegrityProof. by BigBlueHat · Pull Request #632 · w3c/vcalm · GitHub</a></h4>
+<p id=9891 class="phone s01"><cite>Patrick_St-Louis:</cite> So what this PR does is to make sure that everything is consistent being used for VCDM 2.0. and I think this is also going to come into our test suite that we started talking about. we don't want to, force people to use 1.1. I'd rather if we can use VCDM 2.0 for testing with that integrity and all of this. so I will invite people to have a look at this. I see that Dave kind of approved this two minutes ago and he's got his hand up. So maybe Dave can you share your thoughts?</p>
+<p id=10006 class="phone s05"><cite>Dave_Longley:</cite> So, I do think we should make this change, but I also think we should figure out a way to make it clear that this spec does not require you to use 2.0. You can use 1.1 or…</p>
+<p id=8ec5 class="phone s05"><cite>Dave_Longley:</cite> I guess 1.0 as well.</p>
+<h4 id=baf2><a href="https://github.com/w3c/vcalm/pull/636">Align with VC Data Model 2.0 (context URLs + validFrom/validUntil) by PatStLouis · Pull Request #636 · w3c/vcalm · GitHub</a></h4>
+<p id=c52e class="phone s01"><cite>Patrick_St-Louis:</cite> It's Yes,…</p>
+<p id=4350 class="phone s05"><cite>Dave_Longley:</cite> I'm not quite sure how we communicate that. and we don't have to necessarily figure that out right now, but for the same people that might have erroneously thought, I can't use this for 2.0.&quot; After we make this change, we'll have 1.1 people perhaps thinking, I can't use it for 1.1.&quot; But this spec should allow any of those versions.</p>
+<p id=3b4a class="phone s01"><cite>Patrick_St-Louis:</cite> I think that makes a lot of sense. So the only thing that worries me is about these normative statements that we have in the response, these ones are fine…</p>
+<p id=249d class="phone s01"><cite>Patrick_St-Louis:</cite> because they don't change from one or another. but I think some maybe it's fine, right?</p>
+<p id=1745 class="phone s01"><cite>Patrick_St-Louis:</cite> just to make sure that there's no normative statement and these kind of details that mandates one or the other. U Yes.</p>
+<p id=2ff4 class="phone s05"><cite>Dave_Longley:</cite> Yeah, we're overly prescriptive right now.</p>
+<p id=2f67 class="phone s05"><cite>Dave_Longley:</cite> I would even say that all of this stuff that's on the screen, this has come up in other conversations where we talked about making this appear smaller so it's easier to digest for people, but really all that needs to be in the verifiable credential field is a valid verifiable credential with a link out to those specs. it's still useful to have JSON schema that people can use, and do stuff with, but we have to find some way to better express</p>
+<p id=3aba class="phone s01"><cite>Patrick_St-Louis:</cite> And here you have an ore for this envelope credential. I said the VCOM is interesting because it's kind of an intersection right of many different specs.</p>
+<p id=cd59 class="phone s01"><cite>Patrick_St-Louis:</cite> we don't really want to do data model thing in VCOM but at the same time we kind of want to do data model but more from a rest API perspective because I don't want to get into redoing a bunch of data model testing in the vcom spec because we already have those extensively tested. so yeah basically I think this is maybe something we'll have to redisco oas field description how specific we want to be and that's all it touches right I think I'm pretty sure it only touches these kind of</p>
+<p id=fdf1 class="phone s01"><cite>Patrick_St-Louis:</cite> little example bodies for credentials and verifiable presentation. yeah.</p>
+<p id=c3c0 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I think maybe a go ahead. Yeah.</p>
+<p id=17df class="phone s05"><cite>Dave_Longley:</cite> Yeah, the other comment I want to make is,…</p>
+<p id=10007 class="phone s05"><cite>Dave_Longley:</cite> VCDM 2.1 is going to be out at some point. and we don't want people to think you can't use that. So we might want to even make a few places maybe even make them informative and say you need to put this such as these types future versions of them. We might want to loosen up some of the things that are normative today. I really feel like we need to explore that at some point. because we're duplicating work. We're also creating unnecessary restrictions. and…</p>
+<p id=d6c2 class="phone s05"><cite>Dave_Longley:</cite> we don't want to have to rip to do a revision of this spec just cuz some new data model comes, tweaks are</p>
+<p id=8d10 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, something that could be interesting maybe in the OS we only want to define the context ID and…</p>
+<p id=2d1c class="phone s01"><cite>Patrick_St-Louis:</cite> type and the rest people can put whatever they want as long as it's JSON LD conformant I know if you want to support nonJSONLD things in there. but I would be fairly confident to say that if there's the VCDM 2.1, 2.2, 2.3, they will all have a context ID and type, right? if this changes, I don't know what I'm going to do, but going to lose my mind. for other things like issuance date, right?</p>
+<p id=df39 class="phone s01"><cite>Patrick_St-Louis:</cite> expiration date, even things like issuer, proof, this is all depending on the type, this would cover both enveloped and sort of inline stickering mechanism. so maybe something I can open as an issue following if we merge this PR I think that the PR is good let's update this so that at least it's what we have now is consistent and maybe loosen up the OAS file and remove everything that's kind of derived from the JSONLD stuff and just put words in it that you can use other credential format</p>
+<p id=86df class="phone s01"><cite>Patrick_St-Louis:</cite> I don't know we'll have to probably iron the wording around this. this will also significantly reduce the size of the specification and even this problem response right from valid until Yeah, good thing. I think we're on the same page here. and that. Any other comments regarding this? I'm going to capture this on the issue. I'm not going to merge this today. Maybe I'll leave it open the other issue.</p>
+<p id=8e7f class="phone s01"><cite>Patrick_St-Louis:</cite> maybe link the other issue here to say there's going to be a part two of deciding if we actually need these extensive example I could see arguments for both right some people sometime it's nice when you have the spec completely mapped out and no ended part because us in this group talking about yeah but you might do 2.1 2 or 1.1 or envelope</p>
+<p id=693c class="phone s01"><cite>Patrick_St-Louis:</cite> we're familiar with these things, but I'm thinking about the poor dev, right, that's being tasked to implement VCOM and he's never heard about verifiable credential or anything. having the spec being very prescriptive and not really saying yeah, you go to this spec, move around. I think there's value in that. so I think finding a solution that's kind of in the middle of this could go a long way.</p>
+<p id=863f class="phone s01"><cite>Patrick_St-Louis:</cite> Any other comments for this? discussed it's been mentioned we might want to reduce the restrictive model for response bodies when it comes to VCDM data modeling.</p>
+<p id=b211 class="phone s01"><cite>Patrick_St-Louis:</cite> We want to ensure that there be used both formats.</p>
+<p id=10008 class="phone s01"><cite>Patrick_St-Louis:</cite> BCDM 2.0 is only there as an example, but I can't see. Okay, so here's what I wrote. So, it's been mentioned that we might want to reduce the overly perspective data modeling for request response bodies when it comes to VCDM data modeling.</p>
+<p id=10009 class="phone s01"><cite>Patrick_St-Louis:</cite> We want to ensure that implementers of the specification understand that any VCDM version can be used as well as other credential formats. VCDM 2.0 is only there as an example but currently has some statements within A's definitions. so I think this sums up a bit what we discussed. any objections any other information we might want to capture here?</p>
+<p id=811f class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, Dave.</p>
+<p id=d033 class="phone s05"><cite>Dave_Longley:</cite> We might just want to say instead of saying as well as other credential formats,…</p>
+<p id=bbc0 class="phone s05"><cite>Dave_Longley:</cite> it could be a parenthetical that says this includes other credential formats via enveloped credential because that's still VCDM compliant.</p>
+<p id=6e0d class="phone s01"><cite>Patrick_St-Louis:</cite> Is it VCDM 1.1 compliant?</p>
+<p id=1ab0 class="phone s05"><cite>Dave_Longley:</cite> Yeah, but we're saying any version of ECDM works and…</p>
+<p id=e769 class="phone s01"><cite>Patrick_St-Louis:</cite> Debatable. Yes. Yes.</p>
+<p id=295b class="phone s05"><cite>Dave_Longley:</cite> so it's covered that</p>
+<p id=3ece class="phone s01"><cite>Patrick_St-Louis:</cite> So I think there goes something we need to untangle. we will still merge this as a first step and open an issue to capture the above. There we go.</p>
+</section>
+
+<section>
+<h3 id=ff48>README URL Updates</h3>
+<p id=c7a8 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I'll leave this open for now since I just put in some change a bit earlier. but I think this is a step in the right direction. Some maintenance looks like so, part I believe you're on the call. Yeah. Do you want to just explain us really quick what's happening here? I think it's pretty straightforward, but maybe you can.</p>
+<p id=3580 class="phone s06"><cite>Parth_Bhatt:</cite> …</p>
+<p id=d70a class="phone s01"><cite>Patrick_St-Louis:</cite> Take us through here.</p>
+<p id=525c class="phone s06"><cite>Parth_Bhatt:</cite> the readme URLs were pointing to W3C CCCG links and I just updated with the W3C.io link.</p>
+<h4 id=240b><a href="https://github.com/w3c/vcalm/pull/639">Fix README.md URLs from w3c-ccg.github.io to w3c.github.io by bparth24 · Pull Request #639 · w3c/vcalm · GitHub</a></h4>
+<p id=c4d8 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, that sounds good. So that's some migration cleanup. and yeah, to approve this. I'm happy to say that is nonsubstantive and it's even probably required because there's probably some broken links right now. Yes, Coyote</p>
+<p id=22d2 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, I don't know if you want to address this in this PR or another one, but there are also C W3C.CCG references in other locations in the code. I don't know if one keep just read me or if you want to just include that in another PR meeting,…</p>
+<p id=8c59 class="phone s04"><cite>Kayode_Ezike:</cite> but just wanted to call that out as well.</p>
+<p id=ecc7 class="phone s01"><cite>Patrick_St-Louis:</cite> So there's other links…</p>
+<p id=f348 class="phone s01"><cite>Patrick_St-Louis:</cite> which are not in the readme. Yeah. Yeah,…</p>
+<p id=f4e0 class="phone s04"><cite>Kayode_Ezike:</cite> References to do a global search of W3C.CCG for example you'll see several of those throughout…</p>
+<p id=f1ec class="phone s04"><cite>Kayode_Ezike:</cite> but happy to just have that as another issue that we can just follow up with this if you want to just get this one in quickly.</p>
+<p id=1000a class="phone s01"><cite>Patrick_St-Louis:</cite> We'll go out in a limb and probably suggest to just make another PR and just this is pretty small gives a nice history maybe we can either open another issue in another PR to now that we've read me kind of address whichever it is if it's the index or the OAS does that work Kyote Okay.</p>
+<p id=8265 class="phone s04"><cite>Kayode_Ezike:</cite> You can do</p>
+<p id=0ce4 class="phone s01"><cite>Patrick_St-Louis:</cite> So I will we agreed to merge any objection to merging this in this case so I added this comment so we can track it. let's rebase and merge. This is good. is it okay if I leave you part to track the follow-up issue? Are you okay with doing this part two that we just raised? Okay.</p>
+<p id=e54c class="phone s06"><cite>Parth_Bhatt:</cite> Yes.</p>
+</section>
+
+<section>
+<h3 id=c3a5>Workflow Processing Algorithm</h3>
+<p id=b885 class="phone s01"><cite>Patrick_St-Louis:</cite> So I will let you close this issue maybe comment open a new issue and whenever we are ready we can have a Perfect. I will open the issue for what we discussed with the verifiable data model 2.0. Now I'm going to go over the SPRS. I've opened them. it's been some time. So, I've got my IPR thing. I don't know if I can rerun this test. I don't know.</p>
+<p id=e60e class="phone s01"><cite>Patrick_St-Louis:</cite> So if anyone has the chance to read this I think we wanted some kind of algorithm for running a workflow. I need to go over this again because I'm talking about this right now and it's not clear to me exactly. I don't remember exactly what I did here. I remember that we wanted some processing algorithm for processing workflows and most specifically workflow steps. and from what I remember it wasn't quite right for what we wanted to do. and we wanted more of a higher level algorithm is present in other specification.</p>
+<h4 id=9117><a href="https://github.com/w3c/vcalm/pull/626">docs: add informative reference workflow step processing algorithm by PatStLouis · Pull Request #626 · w3c/vcalm · GitHub</a></h4>
+<p id=f158 class="phone s01"><cite>Patrick_St-Louis:</cite> So I will need to review this and make another proposal. yes, Manu.</p>
+<p id=9715 class="phone s07"><cite>Manu_Sporny:</cite> Yeah, plus one to that. just when you do the algorithmic part down there at the bottom, try to use the O or OLI syntax, it'll do auto numbering for the algorithm and all that kind of stuff. you could probably take this text and run it through an LLM and it'll generate the right format. which I think we do have some other algorithms in the spec.</p>
+<p id=7305 class="phone s07"><cite>Manu_Sporny:</cite> So you could follow the ones in the data integrity spec. those kind of have the right shape as well.</p>
+<p id=a084 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, that sounds good.</p>
+<p id=1000b class="phone s01"><cite>Patrick_St-Louis:</cite> So, I will take this on myself and review this. That's why it's still in draft. and that's pretty much going to do it for us. I know Manuel, I think you came in on the call a bit later. I don't know if you followed our discussion about the example for the request bodies and response. were you here when we discussed that?</p>
+<p id=0963 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Yeah.</p>
+<p id=f440 class="phone s07"><cite>Manu_Sporny:</cite> Yeah, part of it I think the plan was to just simplify it and…</p>
+<p id=e0ae class="phone s07"><cite>Manu_Sporny:</cite> just try to just use ID context and type or something like that.</p>
+<p id=f5e0 class="phone s01"><cite>Patrick_St-Louis:</cite> Kind of a minimal and…</p>
+<p id=a377 class="phone s07"><cite>Manu_Sporny:</cite> Yeah. Yeah,…</p>
+<p id=372d class="phone s01"><cite>Patrick_St-Louis:</cite> allow people to extend other things.</p>
+<p id=890b class="phone s01"><cite>Patrick_St-Louis:</cite> And to be clear that we explained that this is to allow different data model version which have some minor changes.</p>
+<p id=ed4c class="phone s07"><cite>Manu_Sporny:</cite> with the only addition, this is just a technical thing. the respect OAS plugin could be expanded to kind of describe hey, what we're really talking about here is an object from the VC data model spec. look over there if you want to understand more about what this object looks like. we can add something to that to make it plus one to removing all the extra crust and… Manu Sporny:</p>
+<p id=c9e4 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=e3e5 class="phone s07"><cite>Manu_Sporny:</cite> then putting in a simple statement that just points people to another specification. I think that might be a good thing to do. Yeah.</p>
+<p id=8308 class="phone s01"><cite>Patrick_St-Louis:</cite> Even look at the description here. because I think the credential object right the root level of the property are not going to change. And this was by purpose, right? I remember when we were discussing do we want to return the raw c this credential key, So all of these are kind of protected with this root level property. This seems like a good place to include this or I've even seen which one? Yeah, there's some notes that are added here.</p>
+<p id=ea07 class="phone s07"><cite>Manu_Sporny:</cite> Yeah.</p>
+</section>
+
+<section>
+<h3 id=c555>Error Handling For Workflows</h3>
+</section>
+
+<section>
+<h3 id=f7fe>Processing Issues</h3>
+<p id=d369 class="phone s01"><cite>Patrick_St-Louis:</cite> So we can have a look at that. Perfect. Very good.</p>
+<h4 id=b104><a href="https://github.com/w3c/vcalm/issues/637">Expand error handling to workflows · Issue #637 · w3c/vcalm · GitHub</a></h4>
+<p id=9c70 class="phone s01"><cite>Patrick_St-Louis:</cite> So that's pretty happy with this for the issues. the rest I'll update them. I'd like to go over issues and kind of do some triage expand error handling on workflows. I open this. Yes. so this was a thought I had and there's a part two of this which is this problem report so let me explain so I was thinking I'll be honest this was from a test suite perspective right since probably we'll have something like a small workflow client that's going to interact with instance and make sure that they can do the</p>
+<p id=412d class="phone s01"><cite>Patrick_St-Louis:</cite> thing either that's receiving a credential verifying etc. So when we create a workflow I believe that we have a callback URL that we give not sure Where is this call back? Did I make this Strange step call backs. Okay. So, I'll just say what my idea was that when we provide a workflow exchange set call back. Yeah.</p>
+<p id=e53e class="phone s07"><cite>Manu_Sporny:</cite> 3.67 3.6.7 sorry.</p>
+<p id=047b class="phone s01"><cite>Patrick_St-Louis:</cite> My suggestion it would be optional but a endpoint that you can give to the recipient of the workflow where they can report problems that they've encountered. so here's an example. I am a holder. I'm getting a credential issued. I'm getting the credential and before I store it, the status list is not available. I cannot find the status list. so as a holder, I would reject said credential.</p>
+<p id=9d6e class="phone s01"><cite>Patrick_St-Louis:</cite> but it's not clear to me in the current way how besides just dropping the exchange and doing something else like if there's a way that I could report this to the instance and we already have some kind of data model for problem details and we've did kind of include this as a verifier response you can list these so My proposal or topic was to when you set up a workflow, you can set up an endpoint that people interacting with your workflows can report problems of why they couldn't accept the credential. Right? This could be useful for some operational stuff. Right?</p>
+<p id=2864 class="phone s01"><cite>Patrick_St-Louis:</cite> Let's say that in the example the status list is not available and all of a sudden no one's accepting your credentials and yes you should make sure your status is available but now if you get a bunch of problem details that people are reporting hey the status list is not available. I use this as a very specific example, but it could signal why this workflow was not brought to an end beside just kind of guessing that they're abandoning the workflow.</p>
+<p id=a17f class="phone s01"><cite>Patrick_St-Louis:</cite> So I guess two-part question is there a mechanism this way that the recipient of a workflow can gracefully disengage with the workflow and let the sender of the workflow aware so they don't have just a pending workflow and that if they have rejected a credential I think it would be important for the sender to know it so they can mark this credential as void right regardless what that means.</p>
+<p id=dfbc class="phone s01"><cite>Patrick_St-Louis:</cite> So yeah this is kind of what I wanted to do. we don't have any kind of vcom specific errors for workflows. We had some for issuing and verifying credential. we have a little section about problem details but we don't define problem details in the spec here. We leverage problem details defined in other specs like the bitst string status list, the credential data model, data integrity. but for workflows we don't really have any. So is there any comments regarding this? Yes.</p>
+<p id=1000c class="phone s05"><cite>Dave_Longley:</cite> There are a lot of layers to consider there. one simple thing that could be done is have a place if we want this to be machine readable have a place in an error object to say you can go to this URL and then something could be rendered there including a form for somebody to report a problem. that doesn't necessarily do automatic linkage of a particular workflow or exchange for investigative purposes. there seems like there's a lot that could be done to make this feature do all the different things it could possibly do.</p>
+<p id=cbaa class="phone s05"><cite>Dave_Longley:</cite> And I would want us to focus on what are the interop pieces that we would need so that we don't get too prescriptive on how people would go about implementing this …</p>
+<p id=932a class="phone s05"><cite>Dave_Longley:</cite> if we were going to add this to the spec what would be the minimum thing that we would need to put in here so that somebody who's using a digital wallet would know that digital wallet would know how to get some piece of information and do something with it if we have multiple implementers who want this feature.</p>
+<p id=a993 class="phone s01"><cite>Patrick_St-Louis:</cite> Quick answer to that.</p>
+<p id=2b0f class="phone s01"><cite>Patrick_St-Louis:</cite> So the first thing is defining a problem report endpoint. So the didcom they have a protocol for problem report.</p>
+<p id=b460 class="phone s01"><cite>Patrick_St-Louis:</cite> And you don't need to define an endpoint right because you have this persistent connection and you can just use the problem report protocol even with the workflow we don't need to specify this because problem report just already exists right you can just send a problem report so I guess the minimum set of thing that would need to happen here is a sort of a problem report endpoint specification that takes as an input</p>
+<p id=b5b2 class="phone s01"><cite>Patrick_St-Louis:</cite> a problem detail as defined, We already have some data model for problem details. Maybe we can flesh it out a little bit. this problem details object in my point of view there's no expectation of the sender that received the problem details to do anything, I wouldn't go down that line if you receive this problem detail then you must do this. it's really just for a way for the wallet to gracefully disengage with the workflow and to have this in at least they've signaled this they got somewhere to signal it instead of just dropping it. yeah.</p>
+<p id=ee08 class="phone s01"><cite>Patrick_St-Louis:</cite> So this would be like my two first element is define the endpoint and then the data model that goes there I could leverage so we add some kind of step ids here let me go maybe I need to make this issue a little bit better but there's the reference ID right so you could give the reference ID along with the problem details that would mean I was not able to complete this step reference by this reference ID and here are the problem details that I've encountered.</p>
+<p id=2e31 class="phone s01"><cite>Patrick_St-Louis:</cite> I think this could potentially help two implementation trying to implement with each other because it seems like it would be a good way to know why didn't work right one of them is able to report this it puts a lot of burden on the recipient of the workflow because they're the one handling and sending these problem details. yeah, so that would be my quick at least first layer of answers there. Nate</p>
+<p id=1000d class="phone s08"><cite>Nate_Otto:</cite> Thanks for bringing up this idea. I'm not yet sure that this is something that I think we need. but if we did do it, and it's interesting to bring up the DIDCOM comparison because DIDCOM has a sort of already existing message channel and you can just sort of pass a problem message along, as part of the inband communication. We also have that though in exchanges because we just have the exchange participation URL. And so it might be interested to look at that exchange participation endpoint and think about what does that look like if the client can send a problem to the server for the server to sort of log and then probably end the exchange essentially. and if we did that, it might be nice to have par between server sent errors and…</p>
+<p id=4039 class="phone s08"><cite>Nate_Otto:</cite> client sent errors so that they were overall the same shape.</p>
+<p id=34ec class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. very interesting.</p>
+<p id=4cfe class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. I would see this we already have an endpoint for workflow exchange. So it could just be at the end of your exchange the same way we have a protocols right you can take your exchange URL and just add slash protocols it return you the protocols it could be slash problem details right and that's a per exchange problem detail reporting endpoint that you report the reference ID of what the problem is about or where you encountered it and a problem detail as we've got somewhat</p>
+<p id=1000e class="phone s01"><cite>Patrick_St-Louis:</cite> defined on some of the specification and it would very leverage the same thing that we return on verification or issuance as I demonstrated is just now instead of just giving this as a response of a specific call it's given as a request to the exchange server Any other comments regarding this? And of course more concrete use cases like test suite, right?</p>
+<p id=9b42 class="phone s01"><cite>Patrick_St-Louis:</cite> We want to make sure that if someone wants to undergo passing this test suite we can say if you want to pass this point I just want to make sure that you were able to detect that the credential I tried to issue you was revoked and I want you to reject it for this reason. Don't know if that's the kind of level we want to go for these interactions. but it seems like we'll want some of these especially for exchanges because I think these waterfr exchange is the main thing we'll want to be able to test. very good. So, okay, I'll think about it.</p>
+<p id=56fa class="phone s01"><cite>Patrick_St-Louis:</cite> Maybe I'll add a bit more of a proposal here. I didn't sense much objection to this. I did sense some concern about how to do it and which way it should be word and I'll leave it at So we went over this. Yes, man.</p>
+</section>
+
+<section>
+<h3 id=13b7>Issue Management Strategy</h3>
+<p id=415c class="phone s07"><cite>Manu_Sporny:</cite> Yeah, just on that, I'm listening to it and I'm trying in the back of my head I'm kind of like we have to get to candidate wreck and we have to kind of get this through to global standards publication and I'm sure we're going to come up with a number of features like this…</p>
+<p id=9a6f class="phone s07"><cite>Manu_Sporny:</cite> where it's kind of be nice would be good to support implementers but the more we talk about it the longer it takes us to get to, wreck until we run out of time and bad things happen,…</p>
+<p id=2489 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. …</p>
+<p id=8503 class="phone s07"><cite>Manu_Sporny:</cite> so I'm trying to figure out how do we identify, this feels like a feature that could fall into that category. is it going to be the end of the world if we don't get this feature into the spec before we publish Probably not, but at the same time, we don't want to close it and…</p>
+<p id=97af class="phone s01"><cite>Patrick_St-Louis:</cite> is sorry you froze up for a second. Manu Sporny:</p>
+<p id=6dd7 class="phone s07"><cite>Manu_Sporny:</cite> say we're not interested in it, so that's …</p>
+<p id=9e5e class="phone s01"><cite>Patrick_St-Louis:</cite> I think it was maybe me.</p>
+<p id=f25a class="phone s07"><cite>Manu_Sporny:</cite> sure.</p>
+<p id=35c3 class="phone s01"><cite>Patrick_St-Louis:</cite> Could you just restart that?</p>
+<p id=11d3 class="phone s07"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=bc5a class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yes.</p>
+<p id=7313 class="phone s07"><cite>Manu_Sporny:</cite> just going back. I don't know how far back I froze up. So, this feature seems like a nice to have. and I'm wondering if we can start marking things like that so that we need to publish the open standard for this sooner than later. And the more of these kind of nice to have features we discuss, the longer it's going to take us to get the spec done and test suite and implementations and all that kind of stuff. but we don't want to close it, we want to say hey, and so I'm wondering if we should start having tags that are just kind of potential version 1.1 feature or something like that. I'm thinking about it openly. I'm not saying we do that to this issue. I'm just, concerned about we have a growing list of issues again.</p>
+<p id=16c9 class="phone s07"><cite>Manu_Sporny:</cite> we're not, closing issues, faster than we're opening them. and we, …</p>
+<p id=fa73 class="phone s07"><cite>Manu_Sporny:</cite> need to get down to pretty much next to zero issues before we go into candidate wreck. And so I'm trying to make sure that we stay on our timeline. that's a</p>
+<p id=0646 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think that's a very reasonable perspective on this.</p>
+<p id=1e66 class="phone s01"><cite>Patrick_St-Louis:</cite> Because I do have some issues sometimes even I know the VC playground for example is kind of test software but there's sometimes I'm interacting with these VCOM endpoint and then I get a 500 right and I'm like okay what did I do wrong? What happened? And this error handling I feel like it's a thank you for this.</p>
+<p id=940a class="phone s01"><cite>Patrick_St-Louis:</cite> We will resume this conversation next time. Sorry, I got a bit carried over with this. we'll make sure to leave time to discuss some of these issue next time. Thank you all for your collaboration. and we will meet again maybe not next week but the week And have a good rest of your week everyone. Meeting ended after 01:03:57 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
