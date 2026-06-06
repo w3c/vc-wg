@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group F2F, Brussels, 2nd day &ndash; 03 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group F2F, Brussels, 2nd day</h1>
+<h2>03 June 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/5a380851-00b0-4c47-a28f-e3b687db5800/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/06/03-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>amir, bigbluehat, brent, capell, carolynn, carsten, dmitriz, elaine, exe, ganeesh, gannan, ivan, ivoladenius, JennieM, joe, JoeAndrieu, kevin, KevinDean, kezike, manu, michaelshea, olvis, pchampin, phila, schmittner, shigeya, suzanne, Waheed, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>SteveC, phila, wes-smith, manu, IvoLadenius</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#fe82">Business Wallet Vocabs</a></li>
+<li><a href="#f3e1">DPP Vocabularies</a></li>
+<li><a href="#9373">VCALM</a></li>
+<li><a href="#3c9e">Render Method part two, the Reckoning</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id="e402" class=irc><cite>&lt;ivan&gt;</cite> date: 2026-06-03</p>
+<p id="86d1" class=irc><cite>&lt;manu&gt;</cite> Chairs go over logistics for activity and dinner.</p>
+<p id="9d21" class="phone s01"><cite>phila:</cite> phil opens the meeting</p>
+<p id="8e63" class="phone s02"><cite>Sebastien:</cite> EECC introduces himself - interest in EU wallet</p>
+<p id="47f4" class="phone s01"><cite>phila:</cite> Sebastiens company supplies GS1 with VC tech</p>
+<p id="3aa6" class="phone s03"><cite>Ganesh:</cite> From digital Bazaar says hello</p>
+</section>
+
+<section>
+<h3 id="fe82">Business Wallet Vocabs</h3>
+<p id="aa5a" class="phone s04"><cite>pchampin:</cite> W3C staff contact of DID WG and JSON-LD WG.  Interested in vocab discusion</p>
+<p id="fae4" class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/groups/wg/vc/charters/active/">Charter</a></p>
+<p id="422c" class=irc><cite>&lt;csteocker&gt;</cite> <a href="https://w3c.github.io/vc-charter-2026/">https:/<wbr>/<wbr>w3c.github.io/<wbr>vc-charter-2026/</a></p>
+<p id="2ddf" class="phone s05"><cite>csteocker:</cite> Will introduce DPP vocab and (tentative) business vocabulary - for business wallet.  Company registry, membership credentials, etc. Alot of work done in europe - but reaching out to US and Asia.</p>
+<p id="a66b" class="phone s05"><cite>csteocker:</cite> Looking at UNTP and also W3C recognised entitites as basis to create interoperable voacb.  Scope is things like KYC for supplier on-boarding - hopes to facilitate change from months to minuters.</p>
+<p id="2c5f" class="phone s05"><cite>csteocker:</cite> Also power of attorney as a use case for business wallet vocab. EU WeBuild consortium had 150 companies in large scale pilot.  One challenge is distinction between corporates and sole traders - (companies vs individuals)</p>
+<p id="2075" class="phone s05"><cite>csteocker:</cite> Some debate needed about SD-JWT vs W3C VC - Carsten is pushing W3C and is here so that W3C VC can avoid being de-scoped - because EU is writing tech standards into legal text and we need to maintain VCDM presence.</p>
+<p id="a30d" class=irc><cite>&lt;csteocker&gt;</cite> <a href="https://w3id.org/ebwv">https:/<wbr>/<wbr>w3id.org/<wbr>ebwv</a></p>
+<p id="f2cd" class="phone s05"><cite>csteocker:</cite> presentBW vocab - four business registers participating  (Finland, Germany, Netherlands, one more)<br>
+<span id="742f">… draft use cases show the way identifiers are linked.  company, related natural persons, related entities.  Can be 100's of related entities.  THis is the key value prop for linked data - each linked entity is a linked ID.</span></p>
+<p id="7dc7" class=irc><cite>&lt;exe&gt;</cite> I think phil is making my point anyway ;)</p>
+<p id="b4e3" class="phone s01"><cite>phila:</cite> realisation that carsten is talking about the entire company relationship vocabulary, not the business wallet metadata.  THis is complicated and important - but are they only VC based? this needs to be relevant to this group.  Not only that but needs to be perceived as valuable but groups outside VCWG that may perceive this as too locked-in ... to VCWG.  What is your end goal?</p>
+<p id="1ce0" class="phone s05"><cite>csteocker:</cite> we want to build vocabularies that can be used for all these business use case for corporate records and identity.  AML, KYC, Export complaince, etc etc - are a heap of use cases.  Due diligence on company structure.</p>
+<p id="085c" class="phone s06"><cite>manu:</cite> Often a concern about overlap of vocabulary owners - and whether this group is the place for this.  Work going on in US - convenience store ecosystem - 150,000 stores with lots of KYB (KYC?) challenges.  This would be super helpful to them.  We dont have retailers here, but we do have people representing retail (eg GS1?).  US chamber of commerce - interested in KYB, and many others.  We perhaps cant do the work to identity the detailed attributes but perhaps we can connect different communities together.<br>
+<span id="37c1">… Yes this is the value of working here - connecting with other groups.  EU wants to work across border</span></p>
+<p id="4a05" class="phone s07"><cite>SteveC:</cite> Concern - any time you develop standards, you need representative stakeholders. Potential users of those.</p>
+<p id="6803" class="phone s06"><cite>manu:</cite> W3C is a tech SDO, it's not a place where you get banks, freight forwarders and retailers etc<br>
+<span id="370f">… I understand Carsten's desire but I'm not sure that W3C has the people to do it,</span></p>
+<p id="c78b" class="phone s07"><cite>steveC:</cite> You don't want to be tarnished with the anti-JSON-LD brush</p>
+<p id="5e88" class=irc><cite>&lt;manu&gt;</cite> ivan: Along the same lines, what is it that we as a WG will have to standardize? Example of ontology, should that be standardized by W3C? These seem to be use cases put into a vocab? It could be published in a W3C space. Not a recommendation, fine line between the two.</p>
+<p id="ebc5" class=irc><cite>&lt;manu&gt;</cite> manu: My hope is that we can perform some kind of alignment mechanism between the business registry alignment.</p>
+<p id="34ea" class="phone s08"><cite>carolynn:</cite> Agree with manu.  We dont have a place like &quot;world business vocabulary association&quot; so maybe this is the place to do it.  For the moment - we are knocking on the door of this group for it.  For example - where is the &quot;world education forum&quot; - maybe one day it'll exist.  For now we need a place that is a JSON-LD fanbase to host this stuff.</p>
+<p id="93dd" class="phone s05"><cite>csteocker:</cite> This is the value - we are connecting people and that is the value.  EUBW is starting to put a wallet group together.  &quot;Corporate Register Forum&quot; exists but have no idea what a business wallet is..  Maybe bring them into this group.  For the time being, is this group the intersection of business and technical organisations around the<br>
+<span id="3a5b">… world.  Business value is huge - just germany, banking, enterprise KYC - Euro 3Bn.</span></p>
+<p id="457d" class=irc><cite>&lt;shigeya&gt;</cite> +1 to Pierre-Antoine</p>
+<p id="449e" class="phone s09"><cite>pierreAntoine:</cite> Agree with what has been said - including Steve's concern about the right stakeholders.  There are two sides to this - maybe a community group or interest group (especially because these are open to non-w3c members).  But a WG brings formality.  So what is a WG actually endorsing int he end?  Could the WG work at &quot;meta-level&quot;?  Who</p>
+<p id="3f0d" class=summary>would be responsible to figure out who checks the details?  Odd for a WG to publish something without standing behind the content.  Maybe this is a registry function.</p>
+<p id="5717" class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to a registry maintained by the group (without normative assertions about the entries in that registry)</p>
+<p id="556d" class=irc><cite>&lt;csteocker&gt;</cite> Business Register Hierarchy Example</p>
+<p id="a93d" class=irc><cite>&lt;csteocker&gt;</cite> 1. EU Memberstate (or European Country, which is not a EU Member)</p>
+<p id="1c8a" class=irc><cite>&lt;csteocker&gt;</cite> 2. European Business Register Association (EBRA)</p>
+<p id="8ccd" class=irc><cite>&lt;csteocker&gt;</cite> 3. Corporate Registers Forum (CRF), global association of corporate registries</p>
+<p id="dbf0" class=irc><cite>&lt;csteocker&gt;</cite> EBRA: <a href="https://ebra.be/">https:/<wbr>/<wbr>ebra.be/</a></p>
+<p id="d049" class=irc><cite>&lt;csteocker&gt;</cite> CRF: <a href="https://www.corporateregistersforum.org/">https:/<wbr>/<wbr>www.corporateregistersforum.org/</a></p>
+<p id="14e1" class="phone s10"><cite>ivan:</cite> this working group can/should prove that these vocabs can work in VC world.  Consider the vocabs as &quot;black boxes&quot; then the question for this WG is &quot;can I create a VC from this?&quot;.<br>
+<span id="0690">… eg some group was using external vocabs for VCs but demonstrated a misunderstanding of what goes where in VCDM - which can be a feedback loop for what should be added to VCDM in future.  Registry might be the place for it</span></p>
+<p id="5c96" class=irc><cite>&lt;manu&gt;</cite> SteveC: Just to clarify the question -- I don't think we're heading toward publishing these vocabularies as W3C Recommendations, possibly a place to put them in the registry -- if content of vocabulary needs standards-based consensus/authority, that is likely to happen somewhere else.</p>
+<p id="9fd1" class=irc><cite>&lt;manu&gt;</cite> SteveC: Different hosts that have membership structure -- what we're talking here is a framework for how to allow proposed vocabulary that's not group output as register for Linked Vocabs -- vocabulary itself has no authority, in standards sense -- that's not a bad thing, people look at registry and say that's something I can use</p>
+<p id="ded4" class=irc><cite>&lt;manu&gt;</cite> SteveC: Vocabulary may or may not  be in W3C namespace, could register all UNTP vocabs... is that  your expectation, Caresten? That's two differnt things.</p>
+<p id="ced7" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to how vehicle vocabulary was developed at CA DMV.</p>
+<p id="3e20" class=irc><cite>&lt;pchampin&gt;</cite> +1 communication about what the registry means and does not mean will be important</p>
+<p id="63d6" class="phone s11"><cite>wip:</cite> agree that W3C is not the place to design these vocabs.  But the question is what does it rteally mean to add somethign to a W3C registry?  Does it imply endorsement?</p>
+<p id="72e4" class="phone s06"><cite>manu:</cite> Example of California DMV.  It's in prod now - but there was no logical home for the vocab and the logical owner (eg state govt) wants to do it but isnt ready / has no place for it.  Meanwhile stuff happening in Europe.  Question was &quot;can W3C do this?&quot; answer was no but state decided to do it.<br>
+<span id="f453">… these vocabularies often have no home - or many competing homes.  So there's a common tendnancy to ask &quot;can this go to W3C?&quot;.  The tech is fundamentally decentralised anyway - and these vocabs, even if they start here, can move elsewhere when there is a viable home.  Lets focus on making sure that the vocabs are VCDM compatible - and we could</span><br>
+<span id="1318">… have a test suite for that</span></p>
+<p id="b392" class="phone s05"><cite>csteocker:</cite> agree with manu.  Many EU consortium (even with very large funding) build vocabls but have time limited funding / existence.  So where to put the vocabs where they can endure?  W3C perceived as neutral.  Gives people confidence.</p>
+<p id="b5e1" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about terms not normatively defined elsewhere</p>
+<p id="94bd" class="phone s12"><cite>JoeAndrieu:</cite> Entry in registry is required - but even if not a W3C rec, it WILL be perceived as an endorsement.  Because it's in the W3C register.</p>
+<p id="55a6" class="phone s10"><cite>ivan:</cite> important for those that are new - the DID registry is not a formal registry. a home grown thing.  There is a registry track now which more clearly defines rules for registry entry.  The AC must approve the registry framework, but not the content of the registry.  risk is that people confuse approval of registry framework with approval of registry content.</p>
+<p id="b8db" class="phone s04"><cite>pchampin:</cite> To joe's point, a vocab doesnt need to be in the registry to be used in a VC but IF a vocab is in the registry then at least people know it's VC compatible. Like Manu's suggestion for a test suite.  How can community add terms?  maybe vocabs in register have contact points.  Heard people say that, although W3C is not the ideal authority<br>
+<span id="1e36">… for vocabs, many want W3C to take a role.  Perhaps an interest group is the place for this - because non-w3c members can meet there</span></p>
+<p id="b80a" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about how DCAT works</p>
+<p id="72aa" class=summary><a href="https://www.w3.org/TR/vocab-dcat/images/dcat-all-attributes.svg">https:/<wbr>/<wbr>www.w3.org/<wbr>TR/<wbr>vocab-dcat/<wbr>images/<wbr>dcat-all-attributes.svg</a></p>
+<p id="80f7" class=irc><cite>&lt;manu&gt;</cite> Phila: Want to speak to DCAT, worked on by W3C over a long time -- many terms in W3C DCAT vocaulary are not defined at W3C, lots coming from Dublin Core, Provenance vocabulary, etc -- what should we do with most effect? How can we help move things forward in a way that allows us to show value of VCDM. If we go to expert org, they don't have LD vocabulary -- is it about persistent hosting? Persistent domain name. There are rules around w3.org namespace.</p>
+<p id="8054" class=irc><cite>&lt;manu&gt;</cite> Phila: CGs and IGs, different ways of doing it? Is it about reputation? Seen as endorsement? Is it about getting an ISO standard or through PAS -- or about good practice?</p>
+<p id="1b70" class=irc><cite>&lt;manu&gt;</cite> cstoecker: It's at WEBUILD</p>
+<p id="cc99" class=irc><cite>&lt;manu&gt;</cite> phila: Is challenge on persistence? What do we want to do to achieve what we want to achieve? I don't know the answer here, just asking questions.</p>
+<p id="1608" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to suggest other guidance we can provide -- alignment on things like Organization, Address, Person, etc. and to say maybe entry into test suite just requires WG review and a test suite.</p>
+<p id="3211" class=irc><cite>&lt;Zakim&gt;</cite> ivan, you wanted to disagree with manu…</p>
+<p id="a7b6" class="phone s06"><cite>manu:</cite> Concretely, what can we do?  Lets look at the vocabs and say &quot;hey there are three of these already, why do you want somethign different?&quot;. We can act as a kind of linked data vocab expert group.  +1 to Joe &amp; Will, we dont want bad vocabs in the registry but also need to manage scalable review processes.  Some sort of review / test suite - can add value.  Can we do it in a generalised way that can scale and does not impose heavy burden on this group.  Rigorous technical testing can be a valuable entry point - even if we dont make value judgement on vocab content.</p>
+<p id="c484" class="phone s10"><cite>ivan:</cite> The vocabs must be a black-box from W3C VCWG perspective.  No judgement on content.  So we need clear discussions abotu how this registry is managed.  We need to go down this line of formal registry management.</p>
+<p id="f738" class="phone s13"><cite>carsten:</cite> not sure about registry.  Wants to reach consensus on vocabulary content.</p>
+<p id="e41f" class=irc><cite>&lt;pchampin&gt;</cite> phila, there are caveat on what a REC can normatively reference, though</p>
+<p id="1d57" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to propose we create the registry with intent to hand off running the registry to a new interest group</p>
+<p id="e913" class="phone s08"><cite>carolynn:</cite> we need to distinguish core vocabs from others.  The registry can include any existing vocabs from EU etc - but this W3C registry can be used as a &quot;core&quot; vocabulary - that can be the basis for global extensions.</p>
+<p id="1c4d" class="phone s12"><cite>JoeAndrieu:</cite> VCWG is not the expert group and will not survive long term.  Endorse carsten's suggestion to get started.</p>
+<p id="bea3" class="phone s07"><cite>SteveC:</cite> I think a consensus is emerging here - this is the wrong place to have authoritative discussions about content.</p>
+<p id="b7e2" class="phone s12"><cite>JoeAndrieu:</cite> There are cases where obvious authorities don't want to do something, and then down the line that perspective changes and they want to take it over.<br>
+<span id="60f7">… We should be talking about the qualification criteria for entry into the registry.</span><br>
+<span id="d1c3">… Any vocabulary that isn't in the W3C namespace but is VCDM compliant should be allowed in the registry.</span><br>
+<span id="1b3a">… The interesting question is around the metadata and usage of the registry.</span><br>
+<span id="ff8a">… There could be interesting metrics surrounding volume of use of registry entries.</span></p>
+<p id="3d88" class=irc><cite>&lt;manu&gt;</cite> SteveC: Feels like a consensus emerging -- this is the wrong place to have authoritative discussions about content -- however, if an authority can't do work yet, but then we do it, and they want to take it over -- that's fine and might be useful. We should be talking about qualification criteria for entry into the register, should accommodate any vocabulary that is VCDM compliant. What is the register metadata and how do they use it? What metrics should we establish about volume of use? Could we track use? Which ones are more popular, etc? That could be valuable.</p>
+<p id="7857" class=irc><cite>&lt;manu&gt;</cite> SteveC: My only nervous concern is &quot;Core vocabulary&quot; -- look for content, look for overlap -- is that our role or note.</p>
+</section>
+
+<section>
+<h3 id="f3e1">DPP Vocabularies</h3>
+<p id="c6de" class=summary><a href="https://w3c.github.io/vc-wg/minutes/VCWGDPPvocabs.pdf">Carolynn's slides</a></p>
+<p id="3831" class="phone s08"><cite>carolynn:</cite> A brief intro on DPP - I want to know who is interested in this work.<br>
+<span id="46a6">… What's important to understand is that DPPs are being introduced as both mandatory and voluntary instruments</span><br>
+<span id="9f57">… In Europe, this was introduced for sustainability and market surveillance reasons.</span><br>
+<span id="f346">… Market surveillance authority people don't understand what this technology can do for them, so we do education on what opportunities  it provides.</span><br>
+<span id="57e8">… DPPs will be mandatory compliance tools on the European market, starting with batteries in 2027.</span><br>
+<span id="81a2">… Iron and steel will be mandated in 2028.</span><br>
+<span id="3780">… Not only finished goods, but also intermediate products. Garments will be mandatory in 2029.</span><br>
+<span id="2088">… The European Product Act is a review of product regulations to harmonize work done by different people.</span><br>
+<span id="6378">… Term definitions and semantics must be unified across different legislation.</span><br>
+<span id="a968">… What compliance means for a DPP is not entirely understood.</span><br>
+<span id="ec0d">… There are different serialization options for DPP - JSON is mandatory, JSON-LD and XML are optional.</span><br>
+<span id="77c9">… The need for something called a &quot;semantic repository&quot; was published recently - we are trying to convince regulators of explicit semantics.</span><br>
+<span id="5897">… Now people agree we need explicit semantics, whether via JSON-LD or some other form.</span><br>
+<span id="b9c5">… Industry has been introducing DPP for a while - the tire industry has DPP in production for every truck tire, for example.</span><br>
+<span id="af44">… Michelin in France introduced DPP for business reasons.</span><br>
+<span id="cdc5">… The tire industry agreed on a data model and semantics, and they designed an RFID DPP tire system.</span><br>
+<span id="dda3">… There is a widely used industry resolver.</span><br>
+<span id="3c95">… Industry is supportive of DPP. The United Nations transparency protocol is a different type of DPP with different objectives - to improve the traceability of ESG information.</span><br>
+<span id="bef1">… Here, proof is not required that data is correct.</span><br>
+<span id="e934">… What SteveC has been providing with the UN is a layer of assurance that the data is correct.</span><br>
+<span id="60a4">… The US has introduced a voluntary DPP for customs clearance. Vietnam has introduced a consumer protection DPP. China has several DPP initiatives for different product segments.</span><br>
+<span id="778d">… The EU correctly requires a unified DPP approach, while the Chinese approach is more chaotic.</span><br>
+<span id="748e">… The goal in China is to digitize the product economy.</span><br>
+<span id="9816">… In the EU both JSON and JSON-LD will be used for DPP. UN DPP is solely JSON-LD, and we are trying to convince China to use JSON-LD.</span><br>
+<span id="0063">… Some DPPs will be issued as VCs. UN DPPs MUST be issued as VCs. In the EU, the standards can be read differently w.r.t whether VCs are mandatory.</span><br>
+<span id="fd77">… Vocabularies will be highly political things, with questions of sovereignty in different places.</span><br>
+<span id="6268">… We must accept and expect that there will be different vocabularies.</span><br>
+<span id="6cb0">… Personally, I want to make it easy to reuse data across all DPP schemes while respecting the sovereignty of nations to create their own vocabularies.</span><br>
+<span id="eb6b">… DPPs can be linked - products can have subcomponents with their own DPPs.</span><br>
+<span id="de01">… Product related attestations and claims can also be linked.</span><br>
+<span id="413b">… There are two major challenges for the success of global DPPs: Companies may be forced to put different data carriers to conform with different regulations, and there could be conflicts of law yielding regulations shutting down DPPs as barriers to trade.</span></p>
+<p id="ddc8" class="phone s14"><cite>Amir:</cite> What about attacks where data carriers are swapped onto counterfeit goods?</p>
+<p id="8c60" class="phone s08"><cite>carolynn:</cite> There are protections that directly link products to DPPs. There are multiple options to create trust on the authenticity of the product.</p>
+<p id="fd1d" class=irc><cite>&lt;KevinDean&gt;</cite> ISO/IEC 15459</p>
+<p id="8ca0" class="phone s15"><cite>KevinDean:</cite> Depending on the regulator there could be different restrictions - for example, EU regulations could preclude usage of a DID.</p>
+<p id="9a31" class="phone s08"><cite>carolynn:</cite> EU regulation does not preclude usage of a DID in this case.</p>
+<p id="915f" class=summary><a href="https://ref.gs1.org/guidelines/digital-signatures/">GS1's guidance on how to use ISO/IEC 20248 which is the relevant standard for checking that a data carrier is attached to the thing it identifies</a></p>
+<p id="44a0" class="phone s08"><cite>carolynn:</cite> Harmonized standards are clear that many different identification schemes can be used.<br>
+<span id="241b">… Louis Vuitton has a blockchain based product identification system.</span></p>
+<p id="bd4a" class=irc><cite>&lt;michaelshea&gt;</cite> +1 to what Carolyn has said.  (I have been part of the JTC24  process)</p>
+<p id="ba11" class="phone s08"><cite>carolynn:</cite> Different sectors will use different identification schemes, and this should be a per-sector decision.</p>
+<p id="6894" class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id="d8d8" class="phone s08"><cite>carolynn:</cite> Among the things we might want to achieve in this group, one of the first things I am interested in understanding is why to use VCs for DPP.</p>
+<p id="c176" class=irc><cite>&lt;KevinDean&gt;</cite> My statement regarding ISO/IEC 15459 came from Annex III at <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401781.">https:/<wbr>/<wbr>eur-lex.europa.eu/<wbr>legal-content/<wbr>EN/<wbr>TXT/<wbr>HTML/<wbr>?uri=OJ:L_202401781.</a></p>
+<p id="b995" class="phone s08"><cite>carolynn:</cite> For SteveC it's clear, but in the EU context I don't think that this is what is going to happen, since for example when I make a request for a DPP I am querying the manufacturer's site and using HTTP to retrieve the data.<br>
+<span id="700d">… As I understand the harmonized standards, this data does not need to be signed.</span><br>
+<span id="20af">… In most cases for DPP, the issuer is the holder, but there could be multiple holders.</span><br>
+<span id="0c22">… So why issue the DPP as a VC? What are the properties that the VC brings that are of use in such use cases?</span></p>
+<p id="26ea" class="phone s07"><cite>SteveC:</cite> For &quot;Why VCs&quot;, it's not about revocability, it's about &quot;who is the issuer&quot;? This could be hosted anywhere - many providers will use a DPP service provider to host things, but this tells you nothing about who issued it.</p>
+<p id="3e26" class="phone s12"><cite>JoeAndrieu:</cite> When you have a register, issuer identity is linked by the register.<br>
+<span id="c469">… In a decentralized architecture, there can be many copies of a DPP.</span><br>
+<span id="0540">… There is a problem - the DID of the issuer is largely an opaque value - but there are efforts to solve this via business registration and Recognized Entities.</span><br>
+<span id="c2c5">… I envision a future where VCs can be used as transactional messages rather than authoritative credentials.</span><br>
+<span id="17d7">… You must know who issued something in a way that is decoupled from storage.</span></p>
+<p id="53d1" class=irc><cite>&lt;manu&gt;</cite> scribe_</p>
+<p id="66d1" class="phone s16"><cite>wes-smith:</cite> Steve spoke to valu ethat VCs bring, getting data over HTTPS over trusted channel -- are there not use cases today that require some sort of P2P transfer where you can't inherit trust via protocol? Give DPP to someone else? Move product to another product? Where HTTPS doesn't match domain?</p>
+<p id="16a6" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note publishing DPP in a way that can be transferred can be useful (schema.org) -- for use in agentic commerce, for example.</p>
+<p id="e58f" class="phone s06"><cite>manu:</cite> there is another benefit of VCs. As a creator of a product, why would you publish digitally signed information? One example, going back to the convenience retail sector in the US, is that it is difficult for small merchants to understand the latest that is going on with a product (identifier numbers, images...). These are things that it</p>
+<p id="44a3" class=summary>would be nice for them to go out and fetch.<br>
+<span id="482a">… Also, the relationship between that product and other things (such as a GTIN).</span><br>
+<span id="41ee">… Specifically, having core product descriptions as a bag of knowledge that an AI agent can work with is useful - relying on an agent to derive things can be inconsistent, and there can be regulatory requirements surrounding that.</span></p>
+<p id="3549" class="phone s08"><cite>carolynn:</cite> You are talking about liability of publishing or using this data?</p>
+<p id="dcd0" class=summary>GTIN = Global Trade Item Number, the number you see printed beneath a typical barcode. It's a super-class of Universal product Code (USA) and European Article Number (EAN) seen elsewhere. GTIN is the bedrock of GS1.</p>
+<p id="7f95" class="phone s06"><cite>manu:</cite> Using - the consumer of the data must be able to say that they were acting on the fact that there was a confirmable certification about some aspect of the product (such as being allergen free).</p>
+<p id="964c" class=summary>i think what's not well understood is that almost every integrity verification use case involves a linked set of more than one credentials.  The DID is the cryptographic glue that links credentials.  You cant do this for example with an EU register issued VC identifying the economic operator if it is linked only to PDF or unsigned DPPs</p>
+<p id="b5c6" class="phone s17"><cite>cstoecker:</cite> To add to this - DPPs are coming to all products. For cybersecurity purposes and other purposes. VCs have main use cases including data provenance on the data plane, but also authn/authz on the control plane.<br>
+<span id="a46e">… We should distinguish between data plane and control plane.</span><br>
+<span id="e259">… There is a pattern in supervisory bodies - how do we define trust. GenAI content is flooding mainstream information streams, leading to insurance fraud and similar - people are starting to see the value in provenance and authenticity.</span><br>
+<span id="9ebc">… When it comes to ISO certificates relating to this, people are starting to put a trust infrastructure in place.</span><br>
+<span id="f80b">… Europe is investing massively into trust infrastructure for conformance assessment bodies.</span><br>
+<span id="345a">… E2E verifiability of data is important.</span></p>
+<p id="7182" class="phone s08"><cite>carolynn:</cite> I think we need to distinguish between issuing claims and the DPP itself, which can contain links to claims to things.</p>
+<p id="1e5d" class="phone s18"><cite>waj:</cite> We perceive this as an identity problem, which is why we see VCs as the solution.<br>
+<span id="1d47">… VCs provide built in proof that products have rights to exist.</span><br>
+<span id="f4cc">… Commerce sites often have many manufacturers related to some IP and it is hard to tell what has the right to exist.</span></p>
+<p id="79ac" class="phone s19"><cite>shigeya:</cite> VCs have time-limited credential functionality built in. What is the use case for revocation?</p>
+<p id="217a" class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to speak to one value add of VCs</p>
+<p id="baf2" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to react to wes-smith to offer an answer to Carolynn</p>
+<p id="23c4" class="phone s17"><cite>cstoecker:</cite> The Pharma industry is interested in privacy related to lookup.</p>
+<p id="6e1c" class="phone s20"><cite>michaelshea:</cite> On the privacy issue, within the context of the EU, tracking access to DPP data, legally the economic operator is bound not to track consumer access.<br>
+<span id="568a">… Outside the context of the EU, it's anyone's guess.</span></p>
+<p id="0045" class="phone s08"><cite>carolynn:</cite> Issuers can track but cannot store data.</p>
+<p id="803f" class="phone s20"><cite>michaelshea:</cite> Empowering consumers also gives some legalities around the content that can go into the DPP. Having the ability to legally prove things about data in a DPP is relevant, and where VCs are very valuable.</p>
+<p id="5e2e" class="phone s08"><cite>carolynn:</cite> Are you saying that the signature on the data provides a timestamp for the data which limits liability issues?</p>
+<p id="2bf0" class="phone s20"><cite>michaelshea:</cite> correct, DPPs, especially in the fashion world, have been on the market for years - the question is just on how trustworthy the data is.<br>
+<span id="f71b">… This new directive goes into effect in July and assigns liability around making claims as a brand.</span></p>
+<p id="76d2" class="phone s08"><cite>carolynn:</cite> Coming back to vocabularies, the different vocabularies across all product domains create a need for core vocabs and semantic anchors.<br>
+<span id="647b">… We need to determine what a use case is in this context, and determine vocabulary requirements from there.</span><br>
+<span id="534a">… Another question about the applicability of the VCDM to DPPs - we want to double check if there are compatibility issues for the EU there.</span><br>
+<span id="f657">… What are the next steps for our task force?</span></p>
+<p id="e4f7" class="phone s10"><cite>ivan:</cite> I have the impression that what we have is not a use case document in the traditional sense.<br>
+<span id="c2a1">… What I want to see is a document that contains the entire use case completed with VCs.</span><br>
+<span id="1a45">… This is use case + solution, at least a proof of concept.</span><br>
+<span id="93ca">… I think there could be discrepancies, and this document would let us take care of those discrepancies.</span></p>
+<p id="1ad6" class="phone s17"><cite>cstoecker:</cite> Eventually this will go into a test suite?</p>
+<p id="1ffb" class="phone s10"><cite>ivan:</cite> yes, eventually runnable code with a test suite.</p>
+<p id="cea6" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note use cases vs. thing that are more concrete</p>
+<p id="9daf" class="phone s06"><cite>manu:</cite> I want to focus on concrete outcomes for the DPP work. Use cases are helpful, but my hope is that we would be able to provide something more concrete - actual tests, as ivan and cstoecker mentioned.</p>
+<p id="eedb" class="phone s06"><cite>manu:</cite> I want to focus on concrete outcomes for the DPP work. Use cases are helpful, but my hope is that we would be able to provide something more concrete - actual tests, as ivan and cstoecker mentioned.</p>
+<p id="bc0f" class="phone s08"><cite>carolynn:</cite> There are vocabularies hosted by various organizations. We might create a core vocab for test purposes.</p>
+<p id="f73c" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about next steps</p>
+<p id="c0bf" class="phone s01"><cite>phila:</cite> There is no need to write a use cases for DPP - just documentation of how to use what exists today.<br>
+<span id="0efe">… Another question is what W3C document this would correspond to.</span><br>
+<span id="1a93">… Notes are easier than recommendations - recommendation is only required for standardization at some other standards bodies.</span></p>
+<p id="cae7" class="phone s10"><cite>ivan:</cite> You said that vocabularies are available - are they in formats compatible with VCs?</p>
+<p id="b102" class="phone s08"><cite>carolynn:</cite> Some yes, some I don't know.<br>
+<span id="401b">… With respect to standardizing at other organizations, there could be value in bringing vocabularies there - this could help with regulatory bindings.</span></p>
+<p id="6a3b" class="phone s16"><cite>wes-smith:</cite> There is an eternal challenge with VCs -- it would be wonderful for the test suites and use cases displayed the extensibility for the solution. If someone can see how they can extend their own vocabulary on top of DPP, that would be wonderful</p>
+<p id="4c40" class="phone s16"><cite>wes-smith:</cite> Ideally, there would be tooling like VC Playground to show how things interoperate concretely.</p>
+<p id="eeac" class="phone s16"><cite>wes-smith:</cite> The VCWG knows the extensibility is a core feature, it's not obvious to people new to the technology. DPP folks that might not know about the technology could use playground to see thing working in reality.</p>
+<p id="9e27" class="phone s20"><cite>michaelshea:</cite> In the context of Australian agriculture/raw materials/textile sectors, there is a VCDM based DPP solution.<br>
+<span id="40b2">… There are probably half a dozen use cases in these sectors that exist today. is that what you are requesting?</span></p>
+<p id="d79b" class="phone s21"><cite>susanne:</cite> Thank you for taking the discussion. I want to suggest that the European Commission doesn't know much about VCs and how to provide schemas - it would be great if we could produce something to demonstrate this.</p>
+<p id="5f89" class=summary>for ivan - <a href="https://untp.unece.org/docs/specification/DigitalProductPassport#sample-credential">https:/<wbr>/<wbr>untp.unece.org/<wbr>docs/<wbr>specification/<wbr>DigitalProductPassport#sample-credential</a></p>
+<p id="b805" class="phone s21"><cite>susanne:</cite> Creating something and showing people is important for driving these discussion.<br>
+<span id="349a">… Discussions regarding vocabulary creation and hosting could be positively impacted if we had demonstrable materials.</span></p>
+<p id="f022" class="phone s04"><cite>pchampin:</cite> The people in the European Commission we are talking with are certainly interested in following up regarding VCs.</p>
+<p id="f8e8" class=summary>unsigned examples - <a href="https://untp.unece.org/docs/specification/DigitalProductPassport#v070-schema-and-samples">https:/<wbr>/<wbr>untp.unece.org/<wbr>docs/<wbr>specification/<wbr>DigitalProductPassport#v070-schema-and-samples</a></p>
+<p id="5dee" class="phone s08"><cite>carolynn:</cite> There are lots of different parts of the commission that do not regularly communicate with each other.</p>
+<p id="5891" class="phone s21"><cite>susanne:</cite> The discussion is fragmented, and publishing something in public is the simplest solution.</p>
+<p id="394e" class="phone s22"><cite>brent:</cite> welcome back to the VCALM session.</p>
+</section>
+
+<section>
+<h3 id="9373">VCALM</h3>
+<p id="7a9c" class=irc><cite>&lt;kezike&gt;</cite> docs.google.com/presentation/d/1F0RtWg5sUzgym8hRa501sxq2WCLiGQHAPtGjVFASO94/edit</p>
+<p id="c85d" class="phone s23"><cite>kezike:</cite> I've been involved in this space for some years now, primarily as a contributor and implementer of various components of this ecosystem.<br>
+<span id="95b6">… Today I want to give a rundown of VCALM - motivation, overview, demo, and status.</span><br>
+<span id="7872">… Prior to VCALM, there was no standardized way for issuers, holders, verifiers to manage and move credentials around.</span><br>
+<span id="6f02">… This puts organizations at the mercy of credential vendors, i.e. vendor lock.</span><br>
+<span id="df18">… We need a modular way to enable the different components and roles to manage the credentials within their systems and communicate them to other roles in the ecosystem.</span><br>
+<span id="0dc3">… VCALM enables the roles in the three party model to engage with each other via standard interfaces.</span><br>
+<span id="5cf6">… a workflow is a repeatable template of steps that any role in an ecosystem can use to facilitate a sequence of actions.</span></p>
+<p id="c578" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about DC-API and OID4VC</p>
+<p id="ff7c" class="phone s22"><cite>brent:</cite> As you go through VCALM if you could talk briefly about how it relates to the Digital Credentials API for credential interactions in browsers as well as the OID4VC/OID4VP specifications that are already being used.</p>
+<p id="1554" class="phone s23"><cite>kezike:</cite> We look at OID4* family of specifications as technologies that can be naturally layered on top of VCALM, and we directly support them - that family of protocols mostly concerns itself with issuance and presentation, but not other lifecycle considerations such as status management.<br>
+<span id="d1da">… DC API is a browser-centric solution, the hope is for us to have a way to hook into that specification as well.</span><br>
+<span id="00f4">… Currently DC API does not support VCALM but we hope that will change.</span></p>
+<p id="3801" class="phone s01"><cite>phila:</cite> When those other groups say &quot;credential&quot; do they mean the same thing as we do?</p>
+<p id="bad3" class="phone s23"><cite>kezike:</cite> For OID4*, they are talking about VCs, for DC API it is arbitrary but you can set up queries/schemas/matchers that can be used to understand the data being delivered.</p>
+<p id="1a9f" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to OID4 and DC API</p>
+<p id="5f7f" class="phone s06"><cite>manu:</cite> VCALM existed before OID4 was a thing - we started 5-6 years ago at the behest of the US federal government that was concerned about vendors creating systems with vendor lock.</p>
+<p id="5139" class="phone s16"><cite>wes-smith:</cite> For reasons both technical and political the OID4 work began, focusing on creating a protocol for delivery only.<br>
+<span id="1c78">… These protocols say nothing about what happens in the backend systems. In OID4 implementations, when you get into the backend of government systems, this vendor lock-in was happening with proprietary APIs. So OID4 does not address locking problems on the backend.</span></p>
+<p id="8706" class="phone s06"><cite>manu:</cite> VCALM has this protocol selection mechanism that allows interoperability for things like frontend protocol selection.</p>
+<p id="3f77" class="phone s16"><cite>wes-smith:</cite> Recent high assurance profiles from other standards organizations do not support W3C VCs.<br>
+<span id="c55b">… There are concerns that specifications are being written in a way that W3C VCs are specifically being excluded.</span><br>
+<span id="7202">… In initial discussions, W3C VCs and VCALM were in scope in these other technologies.</span><br>
+<span id="7afb">… There are politics being played in the protocol work that this group should be aware of.</span></p>
+<p id="e8f1" class=irc><cite>&lt;Amir&gt;</cite> a+</p>
+<p id="2d26" class="phone s23"><cite>kezike:</cite> We don't have appropriate diagramming for credential life cycling, which I'd like to discuss today.</p>
+<p id="8499" class="phone s10"><cite>ivan:</cite> I'm interested in more complex examples, discussing things like render method, selective disclosure, zero knowledge proofs. Those details would add a lot of complexity but are important approaches to describe.</p>
+<p id="586b" class="phone s23"><cite>kezike:</cite> We could add multiple clarifying steps to a lot of the pieces in the existing diagram.</p>
+<p id="f903" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note backend verification, backend status management, scanning of QR, etc.</p>
+<p id="254c" class="phone s06"><cite>manu:</cite> Backend verification and status management would be valuable to have in this diagram, also things like scanning a QR code/interaction URLs.</p>
+<p id="2ade" class="phone s16"><cite>wes-smith:</cite> I think that differentiating between VCALM and OIDVC*, for example, would be an important thing to include in the spec</p>
+<p id="19df" class="phone s06"><cite>manu:</cite> Show what's possible with VCALM that is also possible in other ways and what only VCALM can do, would be good.<br>
+<span id="01ba">… One concise diagram won't cover it - it will need more</span></p>
+<p id="7827" class="phone s16"><cite>wes-smith:</cite> Differentiation for VCALM - we might not want to use terms like verifier, holder, what is credential lifecycle management? This looks a lot like OID4, can alreaady move things between credentials/issuers/verifiers -- breaking down internal components is what this diagram wants to do. This might be a bit of a pain to do everythign vcalm does, might need to make diagrams on what vcalm does that other protocols don't do.</p>
+<p id="f9f2" class="phone s07"><cite>SteveC:</cite> There is a requirement where a credential needs to be passed from an issuer through parties without credential infrastructure and reach a party who wants to verify. How do we do that consistently?<br>
+<span id="9da5">… One idea is to put a QR code on something that you want to pass along, and the QR code is two URLs - a hosted verifier and a parameterized credential.</span><br>
+<span id="e3f0">… When you scan this, you see a rendered credential - and an advanced verifier can just look at the credential.</span><br>
+<span id="4114">… Where would we put this practice in this collection of specs?</span></p>
+<p id="cd5a" class="phone s19"><cite>shigeya:</cite> manu mentioned backend systems in OID4. A diagram can express the difference with other protocols.</p>
+<p id="8605" class="phone s22"><cite>brent:</cite> The OID4* perspective might be that we don't need to standardize these backend things, those decisions are up to the individual architectures.</p>
+<p id="7b46" class="phone s04"><cite>pchampin:</cite> This diagram is important context and useful as a starting point that can then branch into more detailed diagrams.</p>
+<p id="bbcc" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about dual use URLs</p>
+<p id="1b04" class=summary><a href="https://id.gs1.org/01/09506000164908">https:/<wbr>/<wbr>id.gs1.org/<wbr>01/<wbr>09506000164908</a></p>
+<p id="e6d5" class="phone s01"><cite>phila:</cite> With respect to dual use URIs, here is an example ^</p>
+<p id="eae0" class=irc><cite>&lt;shigeya&gt;</cite> Note: (I also channel some OIDF context ;) )  OIDF has SSRF.</p>
+<p id="edca" class="phone s01"><cite>phila:</cite> We are switching from linear barcodes to QR codes with that structure.</p>
+<p id="398d" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to Interaction URLs</p>
+<p id="33a1" class="phone s01"><cite>phila:</cite> The idea of splitting identifiers and lookup mechanisms is valuable although can cause layering issues.</p>
+<p id="ddcb" class="phone s06"><cite>manu:</cite> The VCALM spec has a section on interaction URLs, which is not the same thing that you are talking about, but might be something that we should talk about. We should discuss - the interaction URL stuff in the VCALM spec is protocol independent at the moment.</p>
+<p id="9070" class=irc><cite>&lt;brent&gt;</cite> is this related at all to VC Barcodes?</p>
+<p id="6a57" class="phone s16"><cite>wes-smith:</cite> To respond to &quot;why standardize all of this backend stuff&quot;, we have seen vendors selling these backend services as proprietary product, especially with governments - and many of these governments want to move away from vendor locked solutions.</p>
+<p id="139e" class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to add to Manu's point about backend lock</p>
+<p id="d0a7" class="phone s16"><cite>wes-smith:</cite> One of our jobs is descriptive messaging. The VC paradigm is now well accepted, but people are trying to push proprietary systems in</p>
+<p id="be43" class="phone s06"><cite>manu:</cite> So we need to work on the messaging of why VCALM is necessary and show why it's important</p>
+<p id="b8c1" class="phone s23"><cite>kezike:</cite> A short illustrative example of an issuance workflow. This is a VC playground interface, which is a community application that does issuance and verification.<br>
+<span id="cedd">… This is an example of an issuer coordinator - it holds business logic and allows the user to engage with the credential ecosystem.</span><br>
+<span id="03e7">… An example could be a student portal for a student to claim credentials related to a university.</span><br>
+<span id="018b">… On the screen is a QR code containing an interaction URL, which contains the multiplicity of protocols we're talking about.</span><br>
+<span id="a825">… Next we see a wallet that understands this QR code and shows you the origin.</span><br>
+<span id="5247">… The main VCALM components were the issuer, the holder, and a workflow in the middle.</span><br>
+<span id="d2bb">… VCALM was added to the WG charter recently. We have many implementations and production deployments.</span><br>
+<span id="8ac3">… We spend a lot of time discussing the threat model, which has spawned the threat model template for the other task forces.</span><br>
+<span id="df8b">… We are also exploring test suite designs as well as PR/issue processing.</span><br>
+<span id="26d2">… Our goal is horizontal review for candidate recommendation readiness.</span></p>
+<p id="5ab2" class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to ask if this is an appropriate time for general points around VCALM</p>
+<p id="1cf6" class="phone s16"><cite>wes-smith:</cite> Is this a good time for a more general discussion about VCALM. People on the queue for other things</p>
+<p id="d9e3" class="phone s16"><cite>wes-smith:</cite> Is this a good time to talk about VCALM? See others have process questions. Let me know when the right time would be to discuss VCALM more generally.</p>
+<p id="1216" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about wide review</p>
+<p id="6873" class="phone s23"><cite>kezike:</cite> the goals for this discussion are largely around knowledge sharing and standardization strategy.</p>
+<p id="7d6b" class="phone s01"><cite>phila:</cite> You say you are getting ready for wide review. Wide review will take many weeks to get a response, so put in a request before you want the actual review to occur.</p>
+<p id="4c4c" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to propose potential CR timeline</p>
+<p id="a52d" class="phone s06"><cite>manu:</cite> We have most of the pieces for wide review ready, the best we could possibly do by TPAC would be &quot;ready for CR but without the horizontal review&quot;</p>
+<p id="405f" class=summary>Aside - TPAC 2026 is 26 - 30 October in Dublin</p>
+<p id="579e" class="phone s12"><cite>JoeAndrieu:</cite> The threat modeling lego work that we did was advancing the threat model from VCALM, and Simone is converting that into updating the google document to help flesh that out.<br>
+<span id="4c0e">… We need to convert that down into a renderable form, and then the threat model will be ready for CR.</span><br>
+<span id="d579">… The timeline there for internal review is on the order of weeks.</span><br>
+<span id="40da">… There is also some desire from the team to leverage either the DID resolution threat model or the VCALM threat model to show other groups.</span></p>
+<p id="fa31" class="phone s10"><cite>ivan:</cite> Are you discussing review by the task force or the working group</p>
+<p id="9674" class="phone s12"><cite>JoeAndrieu:</cite> The WG</p>
+<p id="7da2" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask a general question</p>
+<p id="6e2a" class="phone s22"><cite>brent:</cite> Under the VCALM model, does VCALM define its own transport from issuer to holder interaction?</p>
+<p id="e798" class="phone s06"><cite>manu:</cite> Yes</p>
+<p id="c86c" class="phone s22"><cite>brent:</cite> The question from folks in another WG will ask is &quot;why not point to OID4VCI&quot;?</p>
+<p id="3565" class="phone s06"><cite>manu:</cite> Yes, you can do those things and swap out protocols.</p>
+<p id="e38b" class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to talk about an improvement to VCALM's accessibility</p>
+<p id="04b1" class="phone s16"><cite>wes-smith:</cite> general point about VCALM, I'm not actively engaged in VCALM,  but do design/build VCALM compliant systems -- real messaging problem, developer experience starting to hoook into VCALM is difficult, no concrete actions to support -- difficult building VCALM initial integration, need to improve the developer experience.</p>
+<p id="a36e" class="phone s16"><cite>wes-smith:</cite> A lot of reason is what we have is extensible, general, powerful, but it comes across as complicated. Appreciate power flexibility modularity, but need to make it easier.</p>
+<p id="a24b" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to channel Mike Jones and to ask about the harmonized presentation thing</p>
+<p id="c92c" class="phone s10"><cite>ivan:</cite> One way to achieve this is with an appropriate high level conceptual model of what is happening. If that is a focus of the spec the accessibility of the spec could be improved.</p>
+<p id="2e73" class="phone s22"><cite>brent:</cite> Other organizations are working to develop OIDF/ISO technologies to incubate some of these technologies - this group should be aware that rules regarding who can participate in an OIDF working group are changing.<br>
+<span id="75f8">… There will be minimal requirements around who can join this joint working group even if you are not an OIDF member.</span></p>
+<p id="d480" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to peak to general strategy</p>
+<p id="89ff" class="phone s06"><cite>manu:</cite> In the worst case, DC API will sideline VCALM. We should ask them to integrate VCALM, but should prepare for cases where that does not happen.</p>
+<p id="7e75" class="phone s16"><cite>wes-smith:</cite> Ideally other groups are not in the critical path for VCALM.</p>
+<p id="3c67" class="phone s01"><cite>phila:</cite> The TAG is designed to support standards cooperation, they might be able to help here if we communicate these issues to the TAG appropriately.</p>
+</section>
+
+<section>
+<h3 id="3c9e">Render Method part two, the Reckoning</h3>
+<p id="e633" class="phone s24"><cite>dmitriz:</cite> overal goal: how things are displayed, making implementing easier, handle different devices, handle multiple languages<br>
+<span id="15c3">… number 1 thread model: issuer</span><br>
+<span id="898a">… looming thread from issuer about tracking, caching, etc</span><br>
+<span id="e666">… render methods is different types, trade-off to link to rendering instructions from VC. a notion of remote integrity,</span><br>
+<span id="3227">… digest tags and hashes</span><br>
+<span id="9da8">… with other extensions we need notion of types, selectors: the consuming client, wants to display VC, and render the information,</span><br>
+<span id="76b3">… the client needs to pass selectors into a rendering engine, &quot;i want to rendering  method for a purpose to print&quot;</span><br>
+<span id="346e">… what is the device that is rendering it? Printer, colour printer,</span><br>
+<span id="e127">… click to expand, can this device do this?</span><br>
+<span id="4052">… can you hover or is it a pointer based screen</span><br>
+<span id="3c83">… think about these selectors, also multilanguage, which language display</span><br>
+<span id="3b14">… questions about selectors?</span></p>
+<p id="8a91" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about a11y, mobile web etc (when Dmitri has made his presentation)</p>
+<p id="58c0" class="phone s01"><cite>phila:</cite> He was a young man, he was in a mobile web best practises, they were also talking about this, and progressive enhanchment<br>
+<span id="4687">… is there is 1 then X, if there is 2 then Y,</span><br>
+<span id="7a96">… 25 may 2010: revolutionize web design, progressive enhanchment got an upgrade for example mobile web,</span><br>
+<span id="f670">… W3C recomendation, that tells how big a certain screen is, that was made redundant</span></p>
+<p id="f401" class="phone s10"><cite>ivan:</cite> html + css rendering diagram, isn't it on that level that should be dealt with?</p>
+<p id="0b2b" class="phone s24"><cite>dmitriz:</cite> we have a lot of tools like CSS to solve this stuff. But our case in progressive enhancment in general there are still tough corners with regards to modality, multilanguage, accessability<br>
+<span id="3deb">… it solved a lot of problems but with a *</span><br>
+<span id="510e">… it is for this group expectations to highlight challenges, pitfalls and how those to comply to credentials</span></p>
+<p id="6117" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention Amir Hameed's email to the group &quot;Brainstorming: Accessibility-First Interaction Negotiation for Decentralized Identity&quot;</p>
+<p id="fd6a" class="phone s12"><cite>joeAndrieu:</cite> statement of expected needs: the group has explored html features like SVG, PDF, points out to the email: &quot;Brainstorming: Accessibility-First Interaction Negotiation for Decentralized Identity&quot; that raised about accessability<br>
+<span id="34b4">… ways to approve accessability tools, it is in line with what amir said (the e-mail)</span></p>
+<p id="68dc" class="phone s10"><cite>ivan:</cite> fully understand but still worry going down the path, instead of solving the missing corners, push the relevant working groups that it is html problems,<br>
+<span id="f15e">… usually we avoid our own solution that become outdated in a few years, think that CSS-like media, we should not deal with it. acknowledge, and let the world solve it</span></p>
+<p id="5f9e" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to ask about a11y</p>
+<p id="14a1" class="phone s24"><cite>dmitriz:</cite> agreed, we are dealing with inside-out, in a JSON, we are inviting the browser to the web, we still need to make a technical decision to offload to the web</p>
+<p id="f7d1" class="phone s01"><cite>phila:</cite> we not only need a review but also expertise, it is not just about html or SVG, Member of accessability group could help possibly</p>
+<p id="dac7" class="phone s25"><cite>dimitriz:</cite> awesome! we need the accessability people to help, phil will write to the group</p>
+<p id="870d" class="phone s26"><cite>bigbluehat:</cite> we have a layer inside the JSON object where there is a handfull of render specs but not all are full on HTML or Javascript.<br>
+<span id="28f3">… but they could work together to solve certain problems, but it start a layer above with rendering</span><br>
+<span id="1740">… or render method array, to give 4 or 5 render methods that is going to be influenced by render method devices, for example non browser devices</span></p>
+<p id="28d1" class="phone s25"><cite>dimitriz:</cite> reminder: render methods, do we reinvent them, link to them, do we want connectivity or front-end caching,<br>
+<span id="ae49">… downsize, logo could be changing in the future, so the template can be changed upstream by the issuer, hasher is compatible for it.</span><br>
+<span id="6350">… flipside is embedding, but great usable offline</span><br>
+<span id="fee3">… regardless of the method, html, iframe, etc, we want to keep in mind sandboxing and standardisation</span><br>
+<span id="82f9">… challenges come across various methods: we have a couple special cases, one is, printing and screen displays, you want to link a raw JSON, it is laid out in the screen, you can also use your own source code. But you can't have a source code in the credential, you need a special tag</span><br>
+<span id="349e">… that says: when you are rendering, you need to do some kind of processing</span><br>
+<span id="ee87">… print pdf functionality, share the credential, in the printed version there is a placeholder for the QR code, it goes to the raw source code but also a specifiek rendering for raw source code</span><br>
+<span id="36d8">… you cannot hard-code the QR code, it is a special case field that the client knows where it is located</span><br>
+<span id="8137">… special case number 2: there are some cases where the rendering method is gonna need to do special processing: date format function, time stamp in VC is location independent. the consuming client and engine need to work together to pass the information like templating information like mustache</span></p>
+<p id="d1d2" class="phone s07"><cite>SteveC:</cite> nightmare of QR code templates: how do you know which QR code you need to print without the product beeing made yet. Question: We need to be able to pass credentials that don't have a wallet, maybe a phone, solution: resolver.<br>
+<span id="7d6a">… do you put that in VCALM or in VC render method? Yes in the last one</span></p>
+<p id="8906" class=irc><cite>&lt;exe&gt;</cite> example for passing a VC by passing a link (in a QR Code) which is in this case even usable by people withtout any ssi tech <a href="https://ssi-gs1-verifier-stage.prod-k8s.eecc.de//?input=https%3A%2F%2Fcompany-wallet-dev.prod-k8s.eecc.de%2Fapi%2Fregistry%2Fvc%2Flicense%2Fgs1_prefix%2F4007111">https:/<wbr>/<wbr>ssi-gs1-verifier-stage.prod-k8s.eecc.de/<wbr>/<wbr>?input=https%3A%2F%2Fcompany-wallet-dev.prod-k8s.eecc.de%2Fapi%2Fregistry%2Fvc%2Flicense%2Fgs1_prefix%2F4007111</a></p>
+<p id="1763" class=irc><cite>&lt;exe&gt;</cite> this is a demo credential on a demo stage, but you get the idea</p>
+<p id="e9b4" class="phone s08"><cite>carolynn:</cite> conversation with amazon right now because of law, you need a link to the DPP that might have a VC that needs to be accessable before purchase, the UI is a design problem for them. Is the rendering problem the way to access with the VC or the way for rendering.</p>
+<p id="e0a5" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note QRs land in various places - vc-barcodes, VCALM, and Render</p>
+<p id="bdc3" class=irc><cite>&lt;ivan&gt;</cite> s/Do you put that in/….Do you put that in/</p>
+<p id="7773" class="phone s06"><cite>manu:</cite> yes, it is multiple things, 3 potential taskforces, VC barcodes, VCALM, VC render methods, where does it land? we should all be carefull, because we do not know all the use cases that they mean. use case: i want the thing in a rendering template within a QR, etc, there is no clear answer in which taskforce certain things land</p>
+<p id="4e26" class="phone s01"><cite>phila:</cite> gs1 hat on: GS1 would see the code that reads the code and do the verification on the device. They are moving to a QR code, the retailer will use a resolver within their system, i would like to do without online lookup or notice that there is an identifier and then look for the VC. i know a few scanner manufacturers</p>
+<p id="8890" class=irc><cite>&lt;gannan&gt;</cite> dmitri, could you put that link in irc please?</p>
+<p id="6fdb" class="phone s24"><cite>dmitriz:</cite> one example of a degree template of a qr code. at the time of sharing the wallet goes where  it is hosted,</p>
+<p id="7ca4" class=irc><cite>&lt;dmitriz&gt;</cite> <a href="https://github.com/digitalcredentials/test-files/blob/main/html-templates/mock-MIT-bachelors-template.html">https:/<wbr>/<wbr>github.com/<wbr>digitalcredentials/<wbr>test-files/<wbr>blob/<wbr>main/<wbr>html-templates/<wbr>mock-MIT-bachelors-template.html</a></p>
+<p id="5343" class=irc><cite>&lt;gannan&gt;</cite> thank you</p>
+<p id="fc41" class="phone s24"><cite>dmitriz:</cite> these various types of embedded jsons or wrapped in a renderer. the render methods spoke so far has been put in these 5 categories; pre-baked payload, JSON card style, Templated text, sandboxed approach, &quot;other&quot;<br>
+<span id="2365">… pre-rendered: issuer knows all the properties, no processing, just display it. example: pre-rendered pdf.</span><br>
+<span id="fb29">… it is just a binary stream for example. and easily parameterized, type, version, contenttype, payload</span><br>
+<span id="365e">… second method: JSON card style: at least: make, description, icon, style is a card with maybe a couple colours and key values. Google, apple and samsung wallet are doing it right now with this method.</span><br>
+<span id="8067">… it is a bag of key values with a couple of colours, like airline tickets, concert tickets,</span><br>
+<span id="1316">… it is really easy to display for the client. Not as easy as a pre-baked image or pdf but some have well-known card components and do not have a long list.</span><br>
+<span id="5ecf">… third method: templated text, some text with variables for text substitution, clients perfoms text processing and display's it</span></p>
+<p id="a8df" class=summary>here's a signed VC with linked render template - displayed in an aware verifier. <a href="https://untp.showthething.com/verify?uri=https%3A%2F%2Funtp-storage.s3.ap-southeast-2.amazonaws.com%2Fde0ef9bd-f1b1-4804-88cb-fadda5b7dd51.json">https:/<wbr>/<wbr>untp.showthething.com/<wbr>verify?uri=https%3A%2F%2Funtp-storage.s3.ap-southeast-2.amazonaws.com%2Fde0ef9bd-f1b1-4804-88cb-fadda5b7dd51.json</a></p>
+<p id="ffef" class="phone s24"><cite>dmitriz:</cite> challenge: how to sanitize it? we learned how to display arbritrary javascripts and show html safely<br>
+<span id="a10d">… example: &quot;print to pdf&quot; in wallets</span></p>
+<p id="6782" class=irc><cite>&lt;exe&gt;</cite> <a href="https://xkcd.com/327/">https:/<wbr>/<wbr>xkcd.com/<wbr>327/</a> ;)</p>
+<p id="9b72" class=summary>I think its closest to Dmitry's version 4</p>
+<p id="4a1f" class="phone s24"><cite>dmitriz:</cite> fourth example: sandboxed iframe approach: javascript app in a iframe. the app handels display<br>
+<span id="3f63">… drawback: it has challenges with special fields, the iframe knows where to display it. but for example the wallet not (yet). print to pdf is a problem then.</span><br>
+<span id="0030">… issue 53 points out some of his findings about pdf rendering in Iframe</span><br>
+<span id="471e">… the fifth one is other.</span></p>
+<p id="56d8" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say in general people seem to be doing card style and to ask about the need for platform implementation support of iframe/html/css method</p>
+<p id="c1ac" class="phone s22"><cite>brent:</cite> how few of these method need to be standardizing? i think i understand conceptually for Iframe sandbox method by default in a browser but does that work out of the box for google or apple wallet? because it is logical place for VC's<br>
+<span id="8eb6">… is there a plan to reach out?</span></p>
+<p id="36f0" class="phone s27"><cite>exe:</cite> regarding iframe rendering method: we are already at SVG rendering, if we use this with mustache for example with HTML, why do we need complicated web-apps, what is the rational?</p>
+<p id="6c36" class=irc><cite>&lt;exe&gt;</cite> mustache spec: <a href="https://github.com/mustache/spec">mustache/<wbr>spec</a></p>
+<p id="7486" class="phone s26"><cite>bigbluehat:</cite> mustache has it's own limitations, but they are not really standardized specs, instead of borrow it and make it a spec, the iframe thing came over and do the whole thing, you can do it in a sandboxed iframe with security,</p>
+<p id="ef57" class="phone s24"><cite>dmitriz:</cite> sandboxed mechanism can displayed in iframe, we can use iframe for both of these methods, method 3 it takes place outside the iframe, method 4 inside iframe</p>
+<p id="8926" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note what the minimum set could be</p>
+<p id="ad03" class="phone s07"><cite>SteveC:</cite> there are very strict lay-out regulations in train regulations, rendering requirements are much more complex for the world,</p>
+<p id="5f8a" class=irc><cite>&lt;dmitriz&gt;</cite> -1 to eliminating 3 (in favor of 4). 3 has the same security properties, and is much simpler</p>
+<p id="8895" class="phone s06"><cite>manu:</cite> +1 to that, we do have to do sandboxed app, we can probably 3 as 4. we need to do probably 2.  method 1 could be</p>
+<p id="7630" class="phone s16"><cite>wes-smith:</cite> singapore work could be replaced the iframe, the OCA bundle could be in javascript or HTML<br>
+<span id="8b77">… we are not saying we can do it in this order, but for now, do we freak out about priority: iframe, card style, prebaked payload</span></p>
+<p id="b7fe" class="phone s26"><cite>bigbluehat:</cite> who is providing render methods?</p>
+<p id="1215" class="phone s24"><cite>dmitriz:</cite> openbadge just use prebaked, but questionable</p>
+<p id="aa67" class="phone s12"><cite>JoeAndrieu:</cite> is not listed as a challenge, but it is a security problem if it is interactive, if we make it a javascript</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 1.0 (Python) (2025).</address>
+
+</body>
+</html>

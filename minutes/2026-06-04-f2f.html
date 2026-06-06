@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group F2F, Brussels, 3rd day &ndash; 04 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group F2F, Brussels, 3rd day</h1>
+<h2>04 June 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/b7f65d9a-7340-4d1c-a587-6639d054592b/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/06/04-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>, brent, carolynn, denkeni, elaine, ganeesh, ivan, ivo, IvoL, JennieM, joe, JoeAndrieu, KevinDean, manu, olvis, phila, shigeya, wes, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent, phila</dd>
+<dt>Scribe</dt><dd>Carolynn, Elaine, wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1d5e">Barcodes and DI</a></li>
+<li><a href="#58f4">Recognized Entities</a></li>
+<li><a href="#8942">DI and Barcodes</a></li>
+<li><a href="#59a8">Barcodes and data Integrity (Part II)</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id="8e62" class=irc><cite>&lt;ivan&gt;</cite> Date: 2026-06-04</p>
+<p id="87f7" class="phone s01"><cite>brent:</cite> Welcomes the group, thanks the host, asks everyone to follow code of conduct. Today first session is bar code and data integrity.</p>
+</section>
+
+<section>
+<h3 id="1d5e">Barcodes and DI</h3>
+<p id="a1a9" class="phone s02"><cite>wes:</cite> will do something different today. Will talk about recent work not directly related to barcode but credential status. Was are the next steps</p>
+<p id="93e1" class="phone s02"><cite>Wes:</cite> Work is a forgery defense technique for VCs</p>
+<p id="d26f" class=summary>The group discusses internet connectivity issues</p>
+<p id="2ed1" class=irc><cite>&lt;Wip&gt;</cite> <a href="https://aipagents.xyz/">https:/<wbr>/<wbr>aipagents.xyz/</a></p>
+<p id="c176" class="phone s03"><cite>JoeAndrieu:</cite> A group is claiming that a DID method is standardised by W3C because they have registered in the DID registry.</p>
+<p id="6104" class="phone s04"><cite>manu:</cite> Data integrity for VC barcodes. digital signatures should be added to barcodes. Need to get signature sizes small enough to fit in barcodes.<br>
+<span id="5ff3">… working on quantum-resistant crypto schemes. Challenge is that the tech industry is concerned by quantum computers able to break all crypto used today (perhaps in 2-3 years, or 7-10 years more realistically). Need to secure VCs assuming this will happen soon. FWPD will contain a number of post-quantum crypto suites, reusing NIST work. Module lattice algorithm are being adopted. There is a backup if this one fails. But they have not been tested sufficiently to ensure 100% certainty, therefore multiple algorithms are being considered 3-4. Skisign has very small signature sizes, but don't think this will be standardised in the next years. Not expecting controversy on this. hope is the post-quantum content in a CR by TPAC. But Skisign may not be included.</span></p>
+<p id="10ed" class=irc><cite>&lt;JoeAndrieu&gt;</cite> FWIW, Apple's open source supports ML-KEM and ML-DSA,</p>
+<p id="7ca7" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to chime in on Q-day timelines</p>
+<p id="01b6" class="phone s05"><cite>ivan:</cite> crypto-suite in the barcode and in documents means that there are lots of commonalities in these documents. editorial work may be needed to remove duplications. Issue is we have 10-15 crypto-suites in various documents and this has become chaotic. Nowhere is there a listing of these suites to help people understand how to use them. We may need a note or appendix in DI spec which gives a clear overview of all cryptosuite and references to relevant specs so people can find their way in the maze as today it is a mess.</p>
+<p id="8c45" class="phone s01"><cite>brent:</cite> google does a lot of PQC research and has moved it deadline to be 100% PQ to 2029. So this is happening sooner than anyone anticipated. However, there may be some gradual risk to PQC and as it becomes more available will reach all applications. So the threat is real but not immediate. Will JOSE/COSE be updated for PQ ? IETF is already freaking out on this for us !</p>
+<p id="e27b" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about Apple's open source announcement <a href="https://www.helpnetsecurity.com/2026/05/27/apple-quantum-resistant-encryption-open-source/">https:/<wbr>/<wbr>www.helpnetsecurity.com/<wbr>2026/<wbr>05/<wbr>27/<wbr>apple-quantum-resistant-encryption-open-source/</a></p>
+<p id="d435" class="phone s06"><cite>phila:</cite> TPAC is only 4 months away. Will PQR examples be added to the document ?</p>
+<p id="3976" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note factoring commonalities, cryptosuite registry, etc. and to provide update to BBS and to provide feedback on examples</p>
+<p id="40ea" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to library support</p>
+<p id="0158" class="phone s03"><cite>JoeAndrieu:</cite> apple's annoucement on PQ software libs.</p>
+<p id="864f" class="phone s04"><cite>manu:</cite> Yes, Greg has done this work to refactor specs to make it easy for others to write new cryptosuite. We have a cryptosuite registry but noone has been doing it. Do we want to keep going down that path ? Manu would prefer overview document rather than registry. To provide guidance on usage. Caveat is that it must be kept up to date. Dangerous to let it drift. Something to consider for workload.</p>
+<p id="5e8b" class="phone s05"><cite>ivan:</cite> These are crypto-suites that we standardised, so this should not be a problem.</p>
+<p id="5757" class="phone s04"><cite>manu:</cite> BBS is continued to be pushed at IETF. Going very slowly but don't know why it's going so slowly. Questions have not received good feedback. Tremendous interest but no sense of urgency but this is a problem as this will be probably broken by PQC, so we are running out of time.<br>
+<span id="344a">… examples ? Yes we need 8 hours or so to add another tab for examples, with gigantic signature for QR.</span><br>
+<span id="47d4">… library support : Joe's questions. Available in SSL and others. These libs depend on single underfunded persons. Apple's additions are a good thing if you are on Apple.</span></p>
+<p id="ad70" class="phone s05"><cite>ivan:</cite> in next week's PQR annoucement which will be on W3C website, a blog on the importance of QR work in W3C would be useful. Realize there is a problem, 1-2 paragraphs to explain this would be useful. Who would have the necessary knowledge to do this?</p>
+<p id="7f25" class="phone s04"><cite>manu:</cite> Greg would probably be happy to do this.<br>
+<span id="3c37">… He is capable of not being too technical and has the credibility for this. Try to talk to him next week.</span></p>
+<p id="46ad" class="phone s02"><cite>Wes:</cite> VC finderprint list. Same motivators (PQC, ..) Name will likely change as evokes tracking/surveillance but this is not what this technology is doing. Crypto fingerprints. Threat is key compromise, not a new threat. Keys can be stolen/lost/etc. PQC can consistently steal a signing key. Need mechanisms to distinguish keys created by the key issuer from those that are stolen. Credentials are unfortunately identical. Publish a signed list of shot crypto fingerprints. A fingerprint is created for a credential, a list of these is made and signed independently of the signature of the credential itself. Cases where a VC siganture is not PQC safe but the fingerprint list is signed by a PQC mechanism. So the security can be inherited, improving the security of the first scheme. Get the best of both worlds. Anti-forgery effect. Can detect if a VC was issued by the real issuer or by an issuer who stole the key. Can incurr a lot of web traffic. Privacy is important. Avoid tracking and information leak. anonymisation is needed.<br>
+<span id="1e57">… Flexibility of use. backwards and forwards compatibility. Example given of a fingerprint credential. lenght of fingerprint list. VC is large in terms of bytecount but simple structure. Simple to compute fingerprints. Basically a truncated hash. Truncation depends on use cases. False positive rates should be zero is working assumption.</span><br>
+<span id="2794">… assumption is hash function is not broken by PQC and this is a common assumption.</span><br>
+<span id="36a3">… Three usage modes. implicit, explicit, standalone for both back and forwards compatibility.</span><br>
+<span id="28f6">… issuers take VC they have already issued and piggyback existing VC status entry and index to piggiback fingerprint list and index.</span></p>
+<p id="1022" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about compromise and to ask about accumulators/merkle trees</p>
+<p id="663c" class=summary>explicit is for the future, add a credential status field to a VC. Standalone is for custom or applications-defined deployments.</p>
+<p id="ee10" class="phone s01"><cite>brent:</cite> accumulators or Merkle trees are being considered ?</p>
+<p id="eee8" class=irc><cite>&lt;shigeya&gt;</cite> +1 (one of my questtion is same)</p>
+<p id="01d8" class="phone s02"><cite>wes:</cite> yes, but core problem is set membership. Very well understood information theoretical bounds. So we don't use Merkle trees for that reason. For accumulators, we are concerned about the way they are published and updated has information leaks. We have designed to avoid this.</p>
+<p id="1ec4" class="phone s01"><cite>brent:</cite> is this partial compromise assumption ?</p>
+<p id="ba6b" class="phone s02"><cite>wes:</cite> yes. The fingerprint list can be signed by different schemes and different keys. If we compromise both, this indeed adds nothing.</p>
+<p id="0944" class="phone s07"><cite>wil:</cite> credential hash means C14N ?</p>
+<p id="04f8" class="phone s02"><cite>wes:</cite> yes</p>
+<p id="4fa6" class="phone s07"><cite>wil:</cite> did not understand explaination around merkle tree and accumulators.</p>
+<p id="e313" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note where this technology is likely to be deployed and to note we are very interested in better solutions given the constraints</p>
+<p id="487b" class="phone s02"><cite>wes:</cite> designing goal is minimal data on the VC itself and minimal data leakage on issuer. &quot;Is the VC in the set?&quot; is the problem formulation. Other approaches were investigated but were found not to be applicable. Can't do better than things like a Merkle tree.</p>
+<p id="a0fb" class="phone s04"><cite>manu:</cite> why do we care ? California DMV has put digital signatures on the back of drivers licences but quantum break will break these and we have to propose something to protect these documents. Concerns around the size of the lists, publishing them in a useful ways,<br>
+<span id="2433">… if there is any way we can do better, we are open to doing better. We feel this is deployable. List only needs to be checked if PQC comes faster then expected, or breach suspicion. if merkle or if size can be smaller, we are open but time is ticking.</span></p>
+<p id="0475" class="phone s08"><cite>shigeya:</cite> what is the purpose of the seedbytes in the has ?</p>
+<p id="ff30" class="phone s02"><cite>wes:</cite> if you are an issuer, you want the publication of this list to reveal anything of your processes. e.g. how many credentials have I issued ? How many do I issue each day ? This gives information to observers. In some cases this is a problem. We pad the list to make it a fixed size. only issuer knows which of the fingerprints corresponds to real VCs. Dummy hashes can be diffed to discover how many VCs are issued each day. So everyfinger print is different every day. The seed is added in the fingerprint credential used that day.</p>
+<p id="52f7" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to confirm the two signing systems can also be operationally isolated (a a key difference rom the &quot;pre-rotation&quot; pattern) and the fingerprint list signature scheme can change over time</p>
+<p id="ac4e" class="phone s09"><cite>KevinDean:</cite> merkle tree is a comparison to a root hash. If list of credentials is constantly changing, this will invalidate the possiblity to compare to a root hash</p>
+<p id="30e2" class="phone s03"><cite>JoeAndrieu:</cite> both services are completely distinct. This is an advantage to key rotation. Other advantage is that mechanisms can be changed.</p>
+<p id="d609" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to suggest that if every VC includes that day's seed, I can look at all the VCs and see how many have that seed and therefore how many were issued</p>
+<p id="30d1" class="phone s02"><cite>wes:</cite> the lists are short-lived, so many adaptations can be made on even a daily basis.</p>
+<p id="b4ad" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask a chair question</p>
+<p id="d4c1" class="phone s01"><cite>brent:</cite> is this a seperate document, specification? where has this been incubated ?</p>
+<p id="5475" class="phone s02"><cite>wes:</cite> where this fits is this is a form of credential status. The best place would be a rev on the bit string status spec. &quot;was not forged&quot; status.</p>
+<p id="0096" class="phone s01"><cite>brent:</cite> official charter designation is that no new features can be added to bitstring status. Justification needed.</p>
+<p id="d664" class="phone s02"><cite>wes:</cite> do this mean that the existing status list spec cannot be modified.</p>
+<p id="1ec9" class="phone s01"><cite>brent:</cite> reads the charter to try to clarify reasoning the justification.</p>
+<p id="4ed8" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note security issue wrt charter</p>
+<p id="b750" class=irc><cite>&lt;SteveC&gt;</cite> Testing IRC</p>
+<p id="b582" class="phone s04"><cite>manu:</cite> first reason is that this is a PQ key compromise so this is a security issue.  d</p>
+<p id="236c" class=summary>The team had to break due to a fire alarm.</p>
+<p id="9567" class="phone s01"><cite>brent:</cite> preference is to move to recognized entity now</p>
+</section>
+
+<section>
+<h3 id="58f4">Recognized Entities</h3>
+<p id="0c73" class=irc><cite>&lt;manu&gt;</cite> Slides for this topic: <a href="https://docs.google.com/presentation/d/1o0zlQKuey26a-nAxTZ94R0FmGChM0mMg6Uy8N8pILEw/edit?slide=id.p1#slide=id.p1">https:/<wbr>/<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>1o0zlQKuey26a-nAxTZ94R0FmGChM0mMg6Uy8N8pILEw/<wbr>edit?slide=id.p1#slide=id.p1</a></p>
+<p id="9cfb" class=irc><cite>&lt;gannan&gt;</cite> <a href="https://w3c.github.io/vc-recognized-entities/">https:/<wbr>/<wbr>w3c.github.io/<wbr>vc-recognized-entities/</a></p>
+<p id="968f" class="phone s04"><cite>manu:</cite> High level overview followed by threat modeling - link to spec in slide deck.<br>
+<span id="40dc">… Compare to other technologies.  Specification is about who can do what in the ecosystem.  Determining if party is authorized to do a specific action.</span><br>
+<span id="5171">… Number of people want this.  US vital records have 1000s - book of possibilities.  Try to make that easier.  Currently, various proprietary bodies manage the data - may be available or not.  Trying to do this in a decentralized way.  Some governments trying to limit lists.  Corner case -</span></p>
+<p id="32e1" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to advocate for avoidance of &quot;allowed to&quot; language and &quot;who can do what&quot;</p>
+<p id="a3c4" class="phone s04"><cite>manu:</cite> Tight group - tribal use case.</p>
+<p id="b24f" class="phone s03"><cite>JoeAndrieu:</cite> Naming discussion is lost in these slides. I want to strongly argue against saying that these specs are about &quot;allowed to&quot; - it's about who is &quot;recognized for&quot; a purpose. You can issue whatever you want without recognition - this supports jurisdictional differences.</p>
+<p id="490e" class=irc><cite>&lt;Wip&gt;</cite> +1 recognized entities is a good name</p>
+<p id="469c" class="phone s04"><cite>manu:</cite> spec tries to be clean about addressing recognition.</p>
+<p id="144d" class="phone s09"><cite>KevinDean:</cite> structured way of saying &quot;I recognize Joe's authority to issue a driver license&quot;. Still need root of trust.</p>
+<p id="28ca" class="phone s04"><cite>manu:</cite> three things: RecognizedEntity list - each has RecognizedAction (free form/open) - with JSON schema which must match<br>
+<span id="a5e6">… may require other than JSON schema, but using it for now.</span><br>
+<span id="5934">… use case - organization list - like universities - with name/address/contact and no actions</span></p>
+<p id="cf52" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to take co-chair hat off and talk about GS1 use case</p>
+<p id="aaf9" class="phone s06"><cite>phila:</cite> for GS1 - federated system which distributes licenses to specific GS1 office via a prefix - with multiple hops.  Would like open source software to go in scanners.  Ideally useful to more than GS1.</p>
+<p id="0fc0" class="phone s10"><cite>wes-smith:</cite> don't understand this use case.</p>
+<p id="05f8" class="phone s04"><cite>manu:</cite> 1) should address GS1 use case at least.  2) how is this recognized entities? someone knows the entity based on some level of info - without any action (see MITDC)</p>
+<p id="f5ef" class="phone s04"><cite>manu:</cite> other use case: Joe/Kevin mentioned - any entity - even a single operator - should be able to use this spec.  It's not just for big corporations or member states.  Decentralized case is enabled.</p>
+<p id="cec1" class=irc><cite>&lt;phila&gt;</cite> <a href="https://ref.gs1.org/gs1/vc/data-model/">GS1 Data Model for VCs</a></p>
+<p id="c115" class="phone s09"><cite>KevinDean:</cite> as co-editor of use cases and original GS1 use case - my reading is that it will support those use case.  You can add more JSON-LD data.  One thing is missing - especially for chains of credentials -</p>
+<p id="0a3b" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask why not just use existing web PKI</p>
+<p id="46f9" class="phone s09"><cite>KevinDean:</cite> back reference.</p>
+<p id="194c" class=irc><cite>&lt;gannan&gt;</cite> <a href="https://fidoalliance.org/fido-alliance-digital-credentials/">https:/<wbr>/<wbr>fidoalliance.org/<wbr>fido-alliance-digital-credentials/</a></p>
+<p id="b2d5" class="phone s01"><cite>brent:</cite> FIDO has started a digital credential WG - verifier authentication via web PKI - so consider why isn't web PKI sufficient?</p>
+<p id="21be" class="phone s08"><cite>shigeya:</cite> question re slide #4 - bottom text - tons of implications. It's too large.  Providing attributes about entity. Addresses trust but not with x509.</p>
+<p id="ca07" class="phone s04"><cite>manu:</cite> started with ETSI but not good for decentralization - so trying to create a bridge to ETSI/x509</p>
+<p id="59de" class="phone s04"><cite>manu:</cite> text - if need something else for your trust model, you can.  Or build a bridge.  Serious implications for how you build your trust model.</p>
+<p id="1851" class="phone s08"><cite>shigeya:</cite> additional use case to suggest - will provide later on Originator Profile (OP)</p>
+<p id="c48f" class="phone s11"><cite>SteveC:</cite> spec started with &quot;here's a list of things you trust&quot;.  Scope is not what is in the list.  Start with credential and discover the recognized list.</p>
+<p id="9571" class="phone s04"><cite>manu:</cite> delivering the recognized credential is in scope.<br>
+<span id="74de">… use case: cross border trade.  (two: product conformity and cross border trade).  Multiple disconnected entities and the ability to discover why importer/exporter should be allowed to bring goods in.  asks Steve for input.</span></p>
+<p id="3209" class="phone s11"><cite>SteveC:</cite> multiple steps - how does customs verify identity of the entity.  Numbers are quite high.  Business register gives credential.<br>
+<span id="16bf">… other related use case is certificate of compliance - national accreditation authority - then who accredits the accreditors.  Keep going until arrive at sufficent trust root.</span></p>
+<p id="17e8" class="phone s05"><cite>ivan:</cite> is there a verifiable presentation? how does it work?  If I see a DID, what do I do with it?</p>
+<p id="e3c2" class="phone s12"><cite>Carolynn:</cite> back and forth is not clear - how do you go up?</p>
+<p id="1394" class="phone s01"><cite>brent:</cite> how do you get to the recognized entity?</p>
+<p id="695a" class="phone s11"><cite>steveC:</cite> particular service endpoint - who is - point to another VC - check invoice then get DID, verify that, is the subject the same? Is the issuer on &quot;the list&quot;, then move up.  Via an established convention.</p>
+<p id="69f4" class="phone s12"><cite>Carolynn:</cite> why is there not a link?</p>
+<p id="6537" class="phone s04"><cite>manu:</cite> discussion for later</p>
+<p id="9804" class=irc><cite>&lt;JoeAndrieu&gt;</cite> whois is a property of a DID document, and can be in any DID document, not a property of any particular method</p>
+<p id="2d23" class="phone s05"><cite>ivan:</cite> side effect is that to use this, you have to use DIDs.  Is this deliberate?</p>
+<p id="3ca7" class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to the wrinkle about DID entanglement and working to avoid it</p>
+<p id="0e31" class="phone s04"><cite>manu:</cite> group needs to decide - but don't need to entangle it with DIDs.  Dangers of connecting VCs to DIDs.</p>
+<p id="a235" class="phone s08"><cite>shigeya:</cite> from verifier to accreditation, can create abstract method without using DIDs</p>
+<p id="7872" class="phone s01"><cite>brent:</cite> original model was fuzzy about issuers - v2 was more specific.  Is Recognized Entities more specific?</p>
+<p id="2fc7" class="phone s04"><cite>manu:</cite> should not change core spec</p>
+<p id="470a" class="phone s01"><cite>brent:</cite> is the approach: controlled identifier document should have specific stuff and here's what it is?  Or is that out of scope?</p>
+<p id="98a8" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say the recognized entity credential can be delivered alongside the VC. No entanglement.</p>
+<p id="ca5b" class="phone s04"><cite>manu:</cite> alternate - when you configure verifier, configure some Verified Entity lists</p>
+<p id="15a7" class="phone s03"><cite>JoeAndrieu:</cite> every time you hit an endpoint, you create an opportunity to phone home.</p>
+<p id="c74b" class=irc><cite>&lt;wes-smith&gt;</cite> +1 to allowing but not enforcing both of those approaches, as there are practical tradeoffs in the implementations</p>
+<p id="9161" class="phone s11"><cite>SteveC:</cite> Could put info in VC but then exporter has to put link into every VC while if it's in their DID, it's there.<br>
+<span id="5cf6">… nothing technical keeping from sharing business license in addition to other items, but likely to &quot;fall over constantly&quot;</span></p>
+<p id="9917" class="phone s12"><cite>Carolynn:</cite> how many things to you have to bundle together before you get to the root of trust.  Trust is difficult.  Possibility to go up until you hit someone you trust.</p>
+<p id="a8fa" class="phone s08"><cite>shigeya:</cite> up to verifier.  Verifier has the freedom to decide if they trust at the level they have reached.  It's difficult.</p>
+<p id="1d8f" class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to Shigeya's observation that it's the verifier policy that prevails (holder doesn't know) and also Wes' comment about group privacy from holder providing what they can</p>
+<p id="4142" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about verification and validation</p>
+<p id="1db4" class="phone s10"><cite>wes-smith:</cite> Privacy/trust implicit sliding scale - tree-like structure.  It's not a binary.  Group privacy is also not binary.</p>
+<p id="4825" class="phone s06"><cite>phila:</cite> difference between verification v validation.  If spec says check DID - may be forcing proof that is not necessary - less may be enough.  It's a policy choice by the validator.</p>
+<p id="28ff" class="phone s11"><cite>SteveC:</cite> If ATO issues a license and verifier trusts ATO, it's sufficient.<br>
+<span id="f49f">… with x509 - go to CA - create/embed chain of trust in advance while this is more flexible.</span></p>
+<p id="9f89" class="phone s08"><cite>shigeya:</cite> PKI is structured - if you want to add an attribute it is not easily possible - need to create a policy</p>
+<p id="7afd" class="phone s04"><cite>manu:</cite> comparison x.509 CA lists v Recognized Entities VC.  Differences in slide chart re format, trust hierarchy, action semantics, onboarding.<br>
+<span id="0383">… comparison ETSI trust lists v RE VC.  More regulated for ETSI - VC is more flexible.</span><br>
+<span id="2859">… Threat model.  Have developed new threat model process for W3C.  Applied to Recognized Entities.  For various TFs, have done brainstorm for threat model.  Example for RE using tool created by Joe - has five threats in three categories: target, implementation and dependency.</span><br>
+<span id="e768">… next, identity stakeholders.  Then create a dictionary of all the things in the ecosystem - with coded categories (flow/objects/containers etc.)</span></p>
+<p id="e806" class=irc><cite>&lt;gannan&gt;</cite> I'm trying to understand the difference between process and data flows. In what was presented, after the first read we seem to duplicate VC Issuance. Should one look at data flows as the fundamental blocks for building processes? Or are data flows and processes not related at all?</p>
+<p id="cee1" class="phone s04"><cite>manu:</cite> create a flow diagram.  I used AI to generate mermaid.  Not like existing example but may be sufficient. see slides<br>
+<span id="44ba">… correction - not slides.</span></p>
+<p id="71af" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to talk about diagraming</p>
+<p id="b86a" class="phone s04"><cite>manu:</cite> only worked on five threats - the group came up with 30+ during discussion - will be overwhelming level of work.</p>
+<p id="b62e" class="phone s03"><cite>JoeAndrieu:</cite> number of threats is about complexity of the system, not of the threat model.  Job is to curate.  Expect Mythos will be useful.  WG should curate it's knowledge to focus threat info. Creating diagram changes<br>
+<span id="84a1">… sensibility during process.</span><br>
+<span id="fbf0">… can add to tool.</span></p>
+<p id="d321" class="phone s04"><cite>manu:</cite> ref something Simone said yesterday - every arrow should be a flow.  Should do one for each letter of STRIDE.</p>
+<p id="a77e" class="phone s03"><cite>JoeAndrieu:</cite> curate from that.</p>
+<p id="5ecd" class="phone s04"><cite>manu:</cite> won't get done unless we appoint one person for each TF - upfront group effort will take too long - do one person and then group will review.</p>
+<p id="105f" class="phone s03"><cite>JoeAndrieu:</cite> this actually makes things easier for security committee - they have to do their own TM currently</p>
+<p id="ba17" class="phone s13"><cite>Wip:</cite> should diagram system and then threats are revealed</p>
+<p id="7dd0" class="phone s04"><cite>manu:</cite> out of the threats - must modify the diagram - but how to make the decision/judgement call.  Especially if someone is doing the process independently.  =</p>
+<p id="6d82" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to single editor to wrestle the alligator to the ground</p>
+<p id="6f11" class="phone s03"><cite>JoeAndrieu:</cite> agree about finding an editor who will wrestle the alligator to the ground - instead of getting feedback in process, go as far as possible first</p>
+<p id="27c4" class="phone s04"><cite>manu:</cite> volunteers to do TM for Recognized Entities - ready in about two weeks</p>
+</section>
+
+<section>
+<h3 id="8942">DI and Barcodes</h3>
+</section>
+
+<section>
+<h3 id="59a8">Barcodes and data Integrity (Part II)</h3>
+<p id="e656" class="phone s10"><cite>wes-smith:</cite> will recap and continue re Fingerprint List - what can group do? review mechanism (packed hash) - glad to learn about other methods.</p>
+<p id="0509" class="phone s03"><cite>JoeAndrieu:</cite> like bitstring status list - put data on the public web.  Includes privacy and security issues so need to minimize data.  Make clear in spec: if use bitstring status list, shrink size to smaller list.<br>
+<span id="91da">… issues with hashing: reuse absolute index from bitstring status list - is your credential an exact match? Good for group to engage re privacy and security.  Need to get it right.</span></p>
+<p id="f25e" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about slide 10 (when Wes has finished, no need to interrupt)</p>
+<p id="a070" class=summary><a href="https://github.com/wes-smith/vc-forgery-defense">wes-smith/<wbr>vc-forgery-defense</a></p>
+<p id="a43c" class="phone s06"><cite>phila:</cite> every design choice was made in response to the recognition of a threat.  So threats are part of the process.</p>
+<p id="1e2c" class="phone s10"><cite>wes-smith:</cite> still useful to do threat model process.  see draft github repository just linked.</p>
+<p id="c77b" class="phone s10"><cite>wes-smith:</cite> vc forgery defense fits best by doing rev of bitstring status list - rename it VC Status List<br>
+<span id="12b6">… brent noted earlier that we can't change things except for certain reasons - and security risk is one reason.  This meets that requirement.</span></p>
+<p id="a0c3" class="phone s05"><cite>ivan:</cite> This proposed content fits in that requirement.  Don't change the short name.</p>
+<p id="67f0" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to how to publish</p>
+<p id="34db" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say why updating that way is a stretch</p>
+<p id="32cd" class="phone s10"><cite>wes-smith:</cite> easy to defend given the increasing urgency of quantum timeline</p>
+<p id="3bc2" class="phone s01"><cite>brent:</cite> security issues meant an actual spec is under threat.  This scenario is a stretch.  But it is a serious risk, therefore it's plausible.<br>
+<span id="2689">… go ahead and be ready if someone asks.</span></p>
+<p id="304d" class="phone s04"><cite>manu:</cite> other option is to put it in VC Barcodes - from DB customer perspective (CA) - potential harm would be catastrophic and W3C can address it<br>
+<span id="97eb">… definitely not do something all new</span><br>
+<span id="44af">… this is defensible in whatever spec we choose.</span></p>
+<p id="7878" class="phone s10"><cite>wes-smith:</cite> reason we are accumulating issues via VC BC is because the implementation is happening</p>
+<p id="110b" class="phone s14"><cite>@ivan:</cite> consistency of the family matters - feature that isn't barcode dependent can be with cryptosuites  - or bitstring status list<br>
+<span id="348a">… mitigate in the family, not the document.  Also - need to issue a 1.1 for bitstring status list.</span></p>
+<p id="f748" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to propose another path</p>
+<p id="81c0" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to offer a suggestion in case Brent hasn't already said it</p>
+<p id="8f53" class="phone s01"><cite>brent:</cite> any of the current specs where this kind of fits can be split to include the forgery defense mechanism</p>
+<p id="152b" class="phone s10"><cite>wes-smith:</cite> agree with brent that there are a lot of ways to do this - but right now we issue digital signatures with keys - that's compromise-able and will become more compromised over time.  Perhaps this is part of lifecycle management.  Not sure of the right place for this new content but needs to be somewhere.</p>
+<p id="44ab" class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note that a separate document would be the best option, imho</p>
+<p id="bdb8" class="phone s05"><cite>ivan:</cite> maybe add general text to DI spec and then point to bitstring status list addition.</p>
+<p id="edb0" class="phone s03"><cite>JoeAndrieu:</cite> need deployed VCs to discuss on podcast</p>
+<p id="bcc4" class="phone s01"><cite>brent:</cite> thanks! this was awesome.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 1.0 (Python) (2025).</address>
+
+</body>
+</html>
