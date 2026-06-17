@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 17 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>17 June 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/mid/d1c023dec417871d2a465f055a38d43c@w3.org"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/06/17-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, Carolynn, dlongley, dmitriz, elaine, hsano, ivan, ivo, jennie, JennieM, JoeAndrieu, KevinDean, kezike, manu, michaelshea, pdl-ASU, phila, schmittner, TallTed, ted, wes-smith</dd>
+<dt>Regrets</dt><dd>brentz</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>pdl-ASU</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4ef5">Reflections on F2F</a></li>
+<li><a href="#6d3d">recognized Entities TF</a></li>
+<li><a href="#f383">VC Forgery Defense</a></li>
+<li><a href="#5ed1">Confidence and threat models</a></li>
+<li><a href="#86b0">Remote participation</a></li>
+<li><a href="#5996">Vocab TF</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f5c3 class=summary>Phila asks for intros</p>
+<p id=a616 class=summary>hsano - introduced last time</p>
+</section>
+
+<section>
+<h3 id=4ef5>Reflections on F2F</h3>
+<p id=f806 class="phone s01"><cite>Phila:</cite> f2f meeting brought people together working toward a common goal. Biggest takeaway.</p>
+<p id=1bd0 class="phone s02"><cite>manu:</cite> wes to talk about forgery defense to Wes.</p>
+</section>
+
+<section>
+<h3 id=6d3d>recognized Entities TF</h3>
+<p id=1f1f class="phone s02"><cite>Manu:</cite> recognized enitities - good discussion, including a threat model for that spec. Developed a threat model with many use cases making sure the GS1, UNECE and the rest are supported</p>
+<p id=3dff class="phone s02"><cite>Manu:</cite> how to achieve that remains.</p>
+<p id=df59 class="phone s02"><cite>Manu:</cite> won't go to a CR without concrete solutions that work for all concerned</p>
+<p id=c9ce class="phone s02"><cite>Manu:</cite> Threat modeling as it applies to recognized entities spec. We are appoint a single person to put together a cohesive threat model draft. The Data Flow Diagram needs updating, and all threats addresses with cross-linking</p>
+<p id=4019 class=irc><cite>&lt;manu&gt;</cite> <a href="https://github.com/w3c/vc-recognized-entities/pull/83">w3c/<wbr>vc-recognized-entities#83</a></p>
+<p id=9ca9 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention shapes for accessibility</p>
+<p id=3e46 class="phone s02"><cite>Manu:</cite> will be in CR as a result of TPAC</p>
+<p id=6ffb class="phone s03"><cite>Joe:</cite> on the diagrams please change the shapes of things for accessibility reasons</p>
+<p id=fc30 class="phone s02"><cite>Manu:</cite> tried it but it didn't looked good. What is our symbology for these diagrams?</p>
+<p id=6946 class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://w3.org/TR/threat-modeling-guide">https://<wbr>w3.org/<wbr>TR/<wbr>threat-modeling-guide</a></p>
+<p id=2747 class=irc><cite>&lt;TallTed&gt;</cite> a11y will ding us for the &quot;color is your only clue&quot; ... as I flagged yesterday</p>
+<p id=0976 class="phone s02"><cite>Manu:</cite> used Google Draw</p>
+<p id=6323 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say the tmg guide has one</p>
+<p id=c3b7 class="phone s01"><cite>Phila:</cite> Manu's approach likely will be trend setting for diagramming</p>
+<p id=e6b2 class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to ask if we can discuss the forgery defense work on the call today</p>
+<p id=fc1a class="phone s03"><cite>Joe:</cite> should have a uniform language</p>
+</section>
+
+<section>
+<h3 id=f383>VC Forgery Defense</h3>
+<p id=5039 class="phone s04"><cite>Wes:</cite> Forgery defense - talked about next steps in F2F. Best thing to do publish this forgery defense as a separate specification. Want to discuss this proposal  publishing forgery defense of a stand alone doc and puiblish it</p>
+<p id=b01e class="phone s01"><cite>phila:</cite> is it a rec or note?</p>
+<p id=221c class="phone s04"><cite>Wes:</cite> it's a req by intent</p>
+<p id=2c79 class="phone s05"><cite>Ivan:</cite> we can do that. When we do it we should present it and sell it to the outside world that it's under the quantum safe crypto suites</p>
+<p id=2e52 class="phone s01"><cite>Phila:</cite> do we do working draft vote today?</p>
+<p id=307c class="phone s04"><cite>Wes:</cite> wants to run a proposal to adopt the document formall and run the FPWD</p>
+<p id=f84d class="phone s06"><cite>phlla:</cite> hoping to copy Manu's style for the threat model as Wes has done great work on it.</p>
+<p id=3612 class=irc><cite>&lt;wes-smith&gt;</cite> Suggested proposal: Create a new document, titled Verifiable Credential Forgery Defense 1.0, short name &quot;vc-forgery-defense-1.0&quot;, adopt this document in the group (under the VC Barcodes and Data Integrity task force), and publish this document as a first public working draft.</p>
+<p id=7384 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=f384 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=b522 class="phone s01"><cite>Phila:</cite> the proposal includes a first public working draft- should drop that part as it's not ready yet.</p>
+<p id=dfa4 class="phone s04"><cite>Wes:</cite> agreed will split it up</p>
+<p id=6e17 class=irc><cite>&lt;wes-smith&gt;</cite> PROPOSAL: Create a new document, titled Verifiable Credential Forgery Defense 1.0, short name &quot;vc-forgery-defense-1.0&quot;, and adopt this document in the group (under the VC Barcodes and Data Integrity task force).</p>
+<p id=f388 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=7388 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=7389 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=738a class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=b388 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=f389 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=f38a class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=3389 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b389 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=738b class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=338a class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=b94c class=resolution><strong>RESOLUTION:</strong> Create a new document, titled Verifiable Credential Forgery Defense 1.0, short name &quot;vc-forgery-defense-1.0&quot;, and adopt this document in the group (under the VC Barcodes and Data Integrity task force).</p>
+<p id=a385 class="phone s05"><cite>Ivan:</cite> should no there is a publication moratorium as of the 3rd of July, if not it will slip until later in July</p>
+<p id=3bbe class="phone s04"><cite>Wes:</cite> If it's ready by next week will that be in time?</p>
+<p id=9968 class="phone s05"><cite>Ivan:</cite> we can try</p>
+<p id=4946 class="phone s05"><cite>Ivan:</cite> FPWD's are accepted much more quickly</p>
+<p id=66ce class="phone s04"><cite>Wes:</cite> will try to get it in shape.</p>
+<p id=6cfc class="phone s01"><cite>Phila:</cite> the home page news paragraph also needs done</p>
+<p id=75e9 class="phone s05"><cite>Ivan:</cite> today's the 17th, so next week at this meeting we must have the resolution. Can't make the request without that.</p>
+<p id=8861 class="phone s01"><cite>Phila:</cite> would it be helpful to have the resolution now?</p>
+<p id=4eb3 class="phone s05"><cite>Ivan:</cite> We can make a resolution &quot;as soon as it's in the right shape ...&quot; now.</p>
+<p id=3987 class=irc><cite>&lt;phila&gt;</cite> PROPOSAL: The WG seeks to publish the vc-forgery-defense document as a FPWD as soon as it is ready, given that the substantial work is already done.</p>
+<p id=c88d class="phone s05"><cite>Ivan:</cite> this works</p>
+<p id=14f9 class="phone s04"><cite>Wes:</cite> works for wes</p>
+<p id=f39d class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=339d class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=739d class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=b39d class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=b39e class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=f39e class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=339e class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=739e class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=f39f class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=b39f class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=339f class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=128e class=resolution><strong>RESOLUTION:</strong> The WG seeks to publish the vc-forgery-defense document as a FPWD as soon as it is ready, given that the substantial work is already done.</p>
+<p id=de0d class="phone s05"><cite>Ivan:</cite> needs abstract and intro</p>
+<p id=33a0 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=57ec class="phone s01"><cite>Phila:</cite> congrats wes</p>
+</section>
+
+<section>
+<h3 id=5ed1>Confidence and threat models</h3>
+<p id=54b2 class="phone s01"><cite>Phila:</cite> Joe's reflections on the F2F</p>
+<p id=5178 class="phone s07"><cite>JoeAndrieu:</cite> did an exercise with Legos to model threats and responses. Helps you get out of your head and learned a lot from it.</p>
+<p id=4d10 class="phone s07"><cite>JoeAndrieu:</cite> scope of work concerns raised.  Simplying the threat model guide is needed</p>
+<p id=47e8 class="phone s07"><cite>JoeAndrieu:</cite> the full threat model approach is useful but it's not where the WG is - capturing what the WG is aware of to describe them and their mitigation. Want to keep threat modeling from being more work than the spec.</p>
+<p id=2464 class="phone s07"><cite>JoeAndrieu:</cite> got 33 threats modeled and feedback using the VCALM spec as test case. Confidence Method also has a threat model session. What is the privacy preserving method for biometrics?</p>
+<p id=40e5 class="phone s08"><cite>JoeAndieu:</cite> A photo image was one suggestion, and the other is a biometric template using a service to provide a biometric match and how to secure that</p>
+<p id=d99a class="phone s07"><cite>JoeAndrieu:</cite> this covers the f2f</p>
+<p id=04f8 class="phone s01"><cite>Phila:</cite> what stage will threat modeling be at by TPAC?</p>
+<p id=0c86 class="phone s07"><cite>JoeAndrieu:</cite> hesitancy is the level of work (completion, throroughness, etc). Will have something toward an an acceptable draft of the sectiosn for review and discussion for TPAC</p>
+<p id=2b26 class="phone s01"><cite>phila:</cite> hopes to get a  bunch of CRs out after TPAC</p>
+<p id=392b class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say open to horizontal review by TPAC</p>
+<p id=5f34 class="phone s05"><cite>Ivan:</cite> we need horizontal reviews before going to CRs, not just security but accessibility and internationalization, as well.</p>
+<p id=b686 class="phone s07"><cite>JoeAndrieu:</cite> hopes to have a draft ready for horizontal review</p>
+<p id=836e class="phone s05"><cite>Ivan:</cite> that's more realistic</p>
+<p id=b0ad class="phone s01"><cite>phila:</cite> want's many CRs ready for horizontal review</p>
+</section>
+
+<section>
+<h3 id=86b0>Remote participation</h3>
+<p id=80f5 class="phone s09"><cite>Jenny:</cite> interesting to get an overview of the different TFs</p>
+<p id=7e80 class="phone s01"><cite>Phila:</cite> others for feedback?</p>
+<p id=e169 class="phone s10"><cite>KevinDean:</cite> alot was accomplished, comparable quality to previous years</p>
+<p id=e5bb class="phone s11"><cite>michaelshea:</cite> remote participation was quite good. Content excellent, depth and conversation was really good.</p>
+<p id=19a7 class="phone s01"><cite>phila:</cite> another f2f in may/june of next year under discussion</p>
+<p id=007c class="phone s01"><cite>phila:</cite> it was worth it and would be good to have another.</p>
+<p id=5f18 class=irc><cite>&lt;exe&gt;</cite> I do as well think that remote participation was pretty nice</p>
+<p id=aa0e class=irc><cite>&lt;exe&gt;</cite> could not take part in the Lego and Beer most unfortunately, but the hybrid setup in that room was great and I was well able to follow the discussion :)</p>
+</section>
+
+<section>
+<h3 id=5996>Vocab TF</h3>
+<p id=e679 class="phone s12"><cite>Carolynn:</cite> excellent meeting, more productive than she expected. Only vocab person and had discussion about whether this WG was right place for cross border vocab discussions.  Things brought to VCWG because there aren't really other places to do it.</p>
+<p id=9c6f class="phone s12"><cite>Carolynn:</cite> should create a registry for VCDM compatible vocabs with use cases</p>
+<p id=de91 class="phone s12"><cite>Carolynn:</cite> on the work itself they now have a scop of work that is clear. Short term: guidance document discussing why using VCs is useful for issuing a DPP use cases is valuable.</p>
+<p id=fb34 class="phone s12"><cite>Carolynn:</cite> mid-term goals - test suites for VCDM for example. Want to create a EU compliant VCDM implementation.</p>
+<p id=1014 class=irc><cite>&lt;michaelshea&gt;</cite> Carolyn, I would be interested in participating in these efforts.</p>
+<p id=5343 class="phone s12"><cite>Carolynn:</cite> Longer-term - decided to postpone decision to create another DPP vocab.</p>
+<p id=0b13 class=irc><cite>&lt;phila&gt;</cite> <a href="https://lists.w3.org/Archives/Public/public-credentials/2026Jun/0018.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Public/<wbr>public-credentials/<wbr>2026Jun/<wbr>0018.html</a></p>
+<p id=4c5b class=irc><cite>&lt;ivan&gt;</cite> s/VPD (?)/DPP/</p>
+<p id=9dfe class="phone s01"><cite>phila:</cite> concerns about others addressing DPP</p>
+<p id=c969 class=irc><cite>&lt;hsano&gt;</cite> <a href="https://www.w3.org/community/eudi-4-payments/">https://<wbr>www.w3.org/<wbr>community/<wbr>eudi-4-payments/</a></p>
+<p id=f6d8 class="phone s12"><cite>Carolynn:</cite> how do payment wallets relate to credential wallet is unclear.</p>
+<p id=0095 class="phone s01"><cite>phila:</cite> dmitri in text mode, - render method will be summarized later</p>
+<p id=b17b class="phone s01"><cite>phila:</cite> Brent gets together with phila on Monday's to get agenda items together. Trying to insure inclusivity.</p>
+<p id=a467 class="phone s01"><cite>phila:</cite> congrats to wes, manu, and a great scribe job  ;-)</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#b94c">Create a new document, titled Verifiable Credential Forgery Defense 1.0, short name &quot;vc-forgery-defense-1.0&quot;, and adopt this document in the group (under the VC Barcodes and Data Integrity task force).</a></li>
+<li><a href="#128e">The WG seeks to publish the vc-forgery-defense document as a FPWD as soon as it is ready, given that the substantial work is already done.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
