@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 16 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>16 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Ivan_Herman, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#8500">VC Forgery Defense Work</a></li>
+<li><a href="#63fd">Separate Specification Forgery Defense</a></li>
+<li><a href="#bfb2">Generative Specification For Data</a></li>
+<li><a href="#8497">Quantum Resistant Document Publication</a></li>
+<li><a href="#fe6b">Data Integrity Updates</a></li>
+<li><a href="#74c5">VC Barcodes Threat Model</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=7a0f class="phone s01"><cite>Wesley_Smith:</cite> Good morning slafter afternoon folks. I'm going to give people a few more minutes to trickle in before we get started.</p>
+<p id=e733 class="phone s01"><cite>Wesley_Smith:</cite> All right, that's probably enough time to wait. Hi everyone. welcome to the June 16th meeting of the barcodes and data integrity task force. reminder to everyone, this meeting is being recorded and transcribed. If that's something that you are not comfortable with, please let me know. the agenda today is largely the same as normal with a couple small exceptions. first I'd like to go through any announcements, introductions or process items. Then I'd like to briefly recap something that we talked about at the facetoface meeting in Brussels which is the VC forgery defense work. I'd like to discuss that a bit with the group. specifically I'd like to discuss what the sort of concrete next steps are and the plan for that work.</p>
+<p id=bfb1 class="phone s01"><cite>Wesley_Smith:</cite> And then as normal we will do poll request review and issue processing for both the BC barcodes and the quantum resistant data integrity work.</p>
+<p id=3981 class="phone s01"><cite>Wesley_Smith:</cite> With that in mind, does anybody have any announcements or introductions they would make today? Ivonne, go ahead.</p>
+<p id=7d4e class="phone s02"><cite>Ivan_Herman:</cite> Yeah, just in case you haven't seen the mail going around,…</p>
+<p id=c6a3 class="phone s02"><cite>Ivan_Herman:</cite> the quantum resistant document has been published in the first public working draft about two or three hours ago. So that's done.</p>
+</section>
+
+<section>
+<h3 id=8500>VC Forgery Defense Work</h3>
+<p id=e050 class="phone s01"><cite>Wesley_Smith:</cite> Thank you in Greg's place and congratulations. That's very exciting news. Anything else from anyone else or the bond again? All right, sounds good. so next I want to talk a little bit about the VC forgery defense work. So for those who weren't able to make it to the VC working group face toface, either in person or remotely, during that meeting, we discussed a new technology for defense against key compromise for issued verifiable credentials.</p>
+<p id=f20b class="phone s01"><cite>Wesley_Smith:</cite> One of the major drivers for this is the kind of impending cryptographically relevant quantum computer threat which compromises traditional digital signature schemes. we discussed in a fair amount of detail this technology what it is and how it works. if you weren't able to make any of those presentations we'll be sharing some technical material for folks to review pretty soon here. But what I want to discuss today is what the concrete next steps are for this group with respect to how it's going to pick up that work item. So what we discussed during the face toface was that probably what makes the most sense is to do an update on the bitst string status list specification where we generalize it into a more general VC status specification.</p>
+<p id=81ae class="phone s01"><cite>Wesley_Smith:</cite> That's a pretty natural fit for the forgery defense work because the way that the forgery defense stuff works is you publish to the web a list of essentially small proofs that a credential was issued by the organization or entity that claimed to have issued it. And that works much the same way as bitstring status list. And when a verifier wants to check this, they pull down the list and they select the index in the list that they care about based on data in the credential they're receiving. So it functions very similarly to bitstring Concept is to do an updated version of bitstring status list to be general VC status mechanisms and include the VC forgery defense stuff.</p>
+<p id=e1f3 class="phone s01"><cite>Wesley_Smith:</cite> Folks at the facetoface mentioned that it's not clear that that is necessarily the best place for it to go. You could certainly make arguments that for example forgery defense could be part of credential life cycle management and there could be potentially a place for it in the vcom spec. there were other discussions as well potentially something to do with confidence method. so I'd like to get folks perspectives here on what they think concrete next steps are for the VC forgery defense work. which of those options sound good to people? What are next steps? Manu, go ahead.</p>
+<p id=ab2e class="phone s03"><cite>Manu_Sporny:</cite> So I sent a quick email to Ivon and Brent and you and Elaine where I thought we had made a different decision at the face toface meeting and Von noted that the minutes were not clear about that. I thought we started off with the notion of we'll just update bitstring status lists and make this spec about status and we'll go forward like that because that's probably the easiest thing from a process perspective. and then my recollection is we talked about what would we do in the ideal case?</p>
+<p id=583b class="phone s03"><cite>Manu_Sporny:</cite> it feels like we're kind of shoving it into this specification and it's not like the whole design around the verifiable credential specifications is that we should be able to advance the ecosystem in a decentralized way by issuing new specifications that solve specific problems and if we did not have process burden to deal with this should be a separate specification and I heard Brent, who is in charge of the process group, saying, &quot;Let's do that.&quot; because let's not let the process get in the way here. let's do the right thing and then change the process so that the right thing happens. and so, the argument is the group can publish as many different documents as it wants to as long as it's addressing the problems in the charter.</p>
+</section>
+
+<section>
+<h3 id=63fd>Separate Specification Forgery Defense</h3>
+<p id=45d5 class="phone s03"><cite>Manu_Sporny:</cite> And that is the basis of us publishing this specification as a new specification as an FPWD where we basically say it's addressing a security vulnerability that the charter says we can address right so we could put it in the bitstring status list thing But we can also make the decision that we can split the bitstring status list spec into two specs. And so why don't we just fast forward and do that instead of kind of trying to shove it in a place that it doesn't belong. that's</p>
+<p id=43ef class="phone s01"><cite>Wesley_Smith:</cite> Ivan, go ahead.</p>
+<p id=0ffa class="phone s02"><cite>Ivan_Herman:</cite> So first of all whether we define we put it into the B string status list spec or…</p>
+<p id=9333 class="phone s02"><cite>Ivan_Herman:</cite> we do a separate document we have a similar administrative step to do which is always a pain which is the first public working draft itself because that would require a first public draft for the next release of the bitstream document So we are not bypassing the first public working draft. If we put it into confidence method to be honest I don't remember about that being discussed but I was partly out then of course we don't have to do that because that's a new document anyway but the bitstring is already a recommendation so we start a new line you can do that.</p>
+<p id=86c3 class="phone s02"><cite>Ivan_Herman:</cite> That being said, maybe money hasn't realized that, but we do not live in the ideal world. and in the current situation, I am trying to be very defensive because I know that there are dark forces out there that try to push against VC still and I don't want to get into a stupid war around that issue. So that's my very p a very conflict aware and conflict avoiding approach to the whole thing.</p>
+<p id=fe30 class="phone s02"><cite>Ivan_Herman:</cite> And in a way if I call the document not bitstring status list or something similar then it doesn't sound so unnatural to have the mechanism being there as Wesley said it is fundamentally a similar idea to hide privacy this kind of issues behind a big crowd of data out there. so there are very similar things in there. So it seems to be pretty natural for me. It doesn't bother me if we do it that way even from a technical point of view. So I would be in favor to do it the way Wesley outlined it in the biting document.</p>
+<p id=cf29 class="phone s01"><cite>Wesley_Smith:</cite> really quick.</p>
+<p id=1cc5 class="phone s01"><cite>Wesley_Smith:</cite> Ivonne, could you speak to with your, perspective that is conscious of dark forces as you put it, can you speak to the danger that you see in creating a new document for a BC4?</p>
+<p id=db86 class="phone s02"><cite>Ivan_Herman:</cite> that there will be not formal objections…</p>
+<p id=0f4f class="phone s02"><cite>Ivan_Herman:</cite> but there will be objections to the first public working draft request to do that because it is not in the charter and the charter is as it is. I am very happy if Brent is able to change the process but that will take a long time. In the meantime, we have to move ahead with what we have. and that will be a refusal at that point or even if we get it done, there might be objection on the AC vote at the end of the whole process in a way saying that there was no entry in the charter to do this.</p>
+<p id=1870 class="phone s02"><cite>Ivan_Herman:</cite> Our charter is not open-ended. so yeah.</p>
+<p id=fe9f class="phone s01"><cite>Wesley_Smith:</cite> Thanks, Mona. Go ahead.</p>
+<p id=d07f class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I disagree that we should use fear and process issues to drive what we do in this group. I think we should do the right thing technically and that should drive what we're doing. the end. So Ivonne, I'm not saying that you don't have some points, and I totally agree that sure there are dark forces that might try and stop us, but to we should do the right thing technically and here's why.</p>
+<p id=7e8f class="phone s03"><cite>Manu_Sporny:</cite> If we put this thing in status, the threat model for status all of a sudden has to cover two fairly different threat things. the threat vectors for bitstring status lists are different than the threat vectors for the key compromise detection stuff. So all of a sudden our threat model is this weird mashup of two different threat models. and the whole thing driving this is and I think Brent said there's justification in the charter for us publishing a document. I mean groups can decide to publish documents There should be no difference between putting this information in the status specification and publishing it as an FPWD versus publishing it as two different documents. Working groups are allowed to do that. Right? We can decide how to split the work up.</p>
+<p id=0988 class="phone s03"><cite>Manu_Sporny:</cite> So I think maybe Ivonne if you're concerned we run it by PL and ask them if they agree with the charter and process concern and if people want to fight this if they want to fight getting a security document out there I mean let them because they're going to fight it in bitstring status list if that's the case right if they're looking for a reason to object to something then object to the VC status spec because all of a sudden it's growing in scope, And it doesn't include things that the group was going to do. So I think it's defensible. I do agree with you that it's a little more risky than putting in the BC status spec, but we should be doing the right thing from a science perspective.</p>
+<p id=0052 class="phone s03"><cite>Manu_Sporny:</cite> And if the process does not support that or if people want to snipe it for reasons that they just want to stop the work. I think we should do the right thing from a scientific basis. That's it.</p>
+<p id=ffff class="phone s01"><cite>Wesley_Smith:</cite> Thanks acting myself. I am curious if it is possible to test the waters and do this publication publish a new document try to publish a new document as a first public working draft and see if we receive the kind of push back that you are concerned about Ivonne and if we receive the kind of push back that indicates that people are really dug in and it would be a extended fight to try to go through with that plan that course then it say okay we're not going to actually publish this as a separate document we're going to instead do an update to visioning status list or something to that effect I'm curious if that is an option Kevin go ahead</p>
+</section>
+
+<section>
+<h3 id=bfb2>Generative Specification For Data</h3>
+<p id=b5fb class="phone s04"><cite>Kevin_Dean:</cite> Yeah, I'm all for having some way of publishing the key compromise information, but I'm not sold on the idea that it's part of should be related to the bitst string status list because they are two very different things. The key compromise detection is essentially static data that is side loaded during the verification process for the credential itself.</p>
+<p id=ac41 class="phone s04"><cite>Kevin_Dean:</cite> Whereas a status list is something dynamic that can change over time to indicate that a credential has been revoked. The design principle behind the status list as well also required that it be as small as possible. That's why it's a bit string and that it be designed in such a way as to reduce the possibility of detecting who's using it and what credentials being verified. Whereas with key compromise, we're talking about much more data and if you have a large number of credentials, applying the same principles as bitstring status lists and having just a single file and then indexes into that file could lead to absolutely huge results. I think these things are sufficiently different that to try to shoehorn it into something into the bitstring status list would be a mistake.</p>
+<p id=bae9 class="phone s04"><cite>Kevin_Dean:</cite> I would agree however with the idea that the two are related closely enough that we could come up with a consolidated specification for essentially sideloaded data which for now encompasses just bitstring status list could in compro compromise be composed of the key compromise material as well. And if we do it right, then if some other requirement comes up in the future where we need some externally referenced data as part of the verification process, we have a specification that can be used to do it in a generic fashion.</p>
+<p id=801f class="phone s01"><cite>Wesley_Smith:</cite> All right. Thanks, Kevin.</p>
+<p id=bed6 class="phone s02"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=3ea6 class="phone s02"><cite>Ivan_Herman:</cite> Something else came to my mind right now. Maybe that can be a way forward. It's all come down how we sell this in a way. I mean that's obviously the problem or the thing to do. What if we publish it as a separate document but in the abstract or the introduction or both we put the emphasis of what you actually refer to Wesley that the necessity for this document is because of coup.</p>
+<p id=a39a class="phone s02"><cite>Ivan_Herman:</cite> So it is not part of the quantum resistance cryptosweet specification per se but it is something which is in a way related because we are answering to a threat coming up about quantum computers. And if we put that very clearly in the abstract in the introduction even if my understanding is correct the mechanism could be used in any setting it is not bound technically to quantum but it is made necessary by quantum. Let's put it this way.</p>
+<p id=10000 class="phone s02"><cite>Ivan_Herman:</cite> And if we do that then we may have the good arguments to make the cell so to say. Yeah.</p>
+<p id=da0d class="phone s01"><cite>Wesley_Smith:</cite> Acting myself plus one, Ivon. And I think the way that we frame that is this is a defense against key compromise and the threat that quantum computers bring is that key compromise is about to become a lot easier and a lot more commonplace, it's about to become free if you have a quantum computer essentially. so that's the way we frame it in the spec I would think. strongly agree with everything you said Ivon. I also will note that bigger picture with respect to process the work Brend is doing and the like.</p>
+<p id=4f5f class="phone s01"><cite>Wesley_Smith:</cite> I think it is somewhat surprising to me as someone still fairly new to these organizations that it is difficult to do this because this thing publishing a creating and publishing a specification for a new security technology as a result of an emerging threat seems like exactly what this group is meant to do. so I don't know if I'm not proposing any solution. I'm just saying that if there's any process change that can happen in order to make this easier, that seems like that would be a really good thing to happen because again, if not us, then who? I guess I would ask. Okay. go ahead.</p>
+<p id=af9b class="phone s02"><cite>Ivan_Herman:</cite> No, let's not go down that route. I mean, I don't disagree, Wes, but this is not the place and the time to discuss it. That's something…</p>
+<p id=257f class="phone s02"><cite>Ivan_Herman:</cite> which goes to Brent, but he's not here. He's on a trip somewhere. So, yeah. Yes.</p>
+<p id=0d31 class="phone s01"><cite>Wesley_Smith:</cite> Understood. And I know there's a tremendous amount of complexity in managing these groups and…</p>
+<p id=0015 class="phone s01"><cite>Wesley_Smith:</cite> doing it in a consensus driven way and all that sort of thing. All right. so I think that we have a plan. Let's do a proposal. and…</p>
+<p id=7ed1 class="phone s03"><cite>Manu_Sporny:</cite> Sorry,…</p>
+<p id=2d51 class="phone s01"><cite>Wesley_Smith:</cite> then</p>
+<p id=7d3c class="phone s03"><cite>Manu_Sporny:</cite> We can't call them proposals in here.</p>
+<p id=31d4 class="phone s01"><cite>Wesley_Smith:</cite> Excuse Sorry. Let's do it. I said was my goodness. Manu Sporny:</p>
+<p id=e1dd class="phone s03"><cite>Manu_Sporny:</cite> No. P O L</p>
+<p id=59c4 class="phone s01"><cite>Wesley_Smith:</cite> Do we need to specify things like short name in this poll? So then the new document I'm going to propose it should be titled VC forgery defense verifiable credential forgery defense with short name VC forgery defense.</p>
+<p id=f548 class="phone s01"><cite>Wesley_Smith:</cite> I suppose asking this verbally doesn't make much sense since I'm about to run a poll on it.</p>
+<p id=941a class="phone s02"><cite>Ivan_Herman:</cite> Before we do that,…</p>
+<p id=0827 class="phone s02"><cite>Ivan_Herman:</cite> something that we almost missed with the quantum thing. do we want to put a version number to it?</p>
+<p id=c97d class="phone s03"><cite>Manu_Sporny:</cite> 1.0.</p>
+<p id=dfdc class="phone s02"><cite>Ivan_Herman:</cite> We had to do it the very last minute for the quantum safe and sorry, quantum resistant. I don't want to get into that again.</p>
+<p id=42ed class="phone s01"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=dbe5 class="phone s02"><cite>Ivan_Herman:</cite> So the short name might be what you said Wesley 1.0 zero or…</p>
+<p id=3c43 class="phone s01"><cite>Wesley_Smith:</cite> 1.0. Okay. Ivan Herman:</p>
+<p id=c61f class="phone s02"><cite>Ivan_Herman:</cite> something like that. Yeah.</p>
+<p id=aadd class="phone s01"><cite>Wesley_Smith:</cite> Does this poll need to cover anything other than the creation of this documents?</p>
+<p id=e0da class="phone s03"><cite>Manu_Sporny:</cite> Can we say publication as FPWD as well?</p>
+<p id=390f class="phone s01"><cite>Wesley_Smith:</cite> That's okay.</p>
+<p id=31e9 class="phone s03"><cite>Manu_Sporny:</cite> adopt the verifiable credential forgery 10 defense blahy blah and then publish as an FVWD.</p>
+<p id=f8b5 class="phone s01"><cite>Wesley_Smith:</cite> Give me one second.</p>
+<p id=45fc class="phone s01"><cite>Wesley_Smith:</cite> Before we vote, anybody have any changes that need to be made? Okay, hearing none, please vote on this poll.</p>
+<p id=559d class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Plus one for me. My IRC is not cooperating yet.</p>
+<p id=4378 class="phone s02"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=d5c3 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=50e1 class="phone s02"><cite>Ivan_Herman:</cite> You are twice dead.</p>
+<p id=4d99 class="phone s01"><cite>Wesley_Smith:</cite> You're plus two. do we have an IRC for this meeting?</p>
+<p id=e6a9 class="phone s01"><cite>Wesley_Smith:</cite> It is automatically minuteed. So, the IRC participation is not required. Okay. …</p>
+<p id=ff35 class="phone s02"><cite>Ivan_Herman:</cite> as an aside money.</p>
+<p id=6233 class="phone s02"><cite>Ivan_Herman:</cite> Are we sure that it works? Because it didn't work for the task force yesterday.</p>
+<p id=d6b1 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, it failed last night because Google didn't move the files into place on time. So, I'll try and rerun it.</p>
+<p id=6509 class="phone s02"><cite>Ivan_Herman:</cite> Okay. Agree.</p>
+<p id=38de class="phone s01"><cite>Wesley_Smith:</cite> what is the analog to resolved for pollled agreed? Is there one agreed? Okay.</p>
+<p id=59c2 class="phone s06"><cite>Dave_Lehn:</cite> Is it resolved?</p>
+<p id=39c6 class="phone s01"><cite>Wesley_Smith:</cite> It's resolved for a proposal.</p>
+<p id=faef class="phone s03"><cite>Manu_Sporny:</cite> No, no,…</p>
+<p id=4691 class="phone s03"><cite>Manu_Sporny:</cite> don't use result.</p>
+<p id=dd6d class="phone s06"><cite>Dave_Lehn:</cite> All right.</p>
+<p id=d8bd class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Agreed. Is that where we landed?</p>
+<p id=14f2 class="phone s03"><cite>Manu_Sporny:</cite> You don't need anything. I think you can just say we pulled and it looked like there was consensus in the group.</p>
+<p id=f26a class="phone s01"><cite>Wesley_Smith:</cite> I will bring this up to the larger working group on the call tomorrow.</p>
+<p id=f33c class="phone s01"><cite>Wesley_Smith:</cite> Then I think that's it for that item. Anybody else have anything they want to say on the VC forgery defense topic? Mhm.</p>
+<p id=e9d3 class="phone s02"><cite>Ivan_Herman:</cite> on practicalities,…</p>
+<p id=4113 class="phone s02"><cite>Ivan_Herman:</cite> I would prefer just to be very formal about it to wait until the formal vote is done before taking over the repository. But I believe I need an admin access to your repository to move it to the W3C as you prefer.</p>
+<p id=4426 class="phone s01"><cite>Wesley_Smith:</cite> Would it be simpler for you to just create a repository and then I will raise a PR against that repository? Yeah, let's do that.</p>
+<p id=608f class="phone s02"><cite>Ivan_Herman:</cite> in a way I can create an empty repository with a phony respect file and then that's fine that no problem about that let's do that …</p>
+<p id=4517 class="phone s01"><cite>Wesley_Smith:</cite> Just excellent. Thank you very much.</p>
+<p id=5773 class="phone s01"><cite>Wesley_Smith:</cite> That certainly sounds fine to me.</p>
+<p id=eff2 class="phone s02"><cite>Ivan_Herman:</cite> but what will be the name of the repository I don't want to change that once we agree on it VC forger jury defense is Okay.</p>
+<p id=0be7 class="phone s01"><cite>Wesley_Smith:</cite> I don't know if there are naming conventions for the W3C code.</p>
+<p id=be70 class="phone s02"><cite>Ivan_Herman:</cite> I just don't want to change it because all we have all kind of redirection that go wrong need…</p>
+<p id=7f88 class="phone s01"><cite>Wesley_Smith:</cite> Right. Understood.</p>
+<p id=1eb0 class="phone s02"><cite>Ivan_Herman:</cite> if we change No,…</p>
+<p id=abe4 class="phone s01"><cite>Wesley_Smith:</cite> All Thank you very much, anything else on that topic? I don't see Greg here, otherwise I would yield the rest of the time to the data integrity work.</p>
+<p id=02c7 class="phone s01"><cite>Wesley_Smith:</cite> I suppose we potentially still could. does anybody here Avon, go ahead.</p>
+<p id=4bfb class="phone s02"><cite>Ivan_Herman:</cite> no, no. Finish person.</p>
+<p id=cce1 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I'm curious if anybody here has any updates they want to give on the data integrity work or if anybody wants to do some, discussion, issue processing, pull requests, anything like that for data integrity. Ivon, do you want to Q minus later?</p>
+<p id=d79d class="phone s02"><cite>Ivan_Herman:</cite> So that's actually an announcement I should have done at the beginning, but I just forgot. if you guys remember the charter includes an entry for the SM2 crypto suite, which I think it's a Chinese version of analytical curve algorithm. I don't know the crypto side behind it. I had some discussion with my Chinese colleagues. They are busy doing one thing now which is making sure that there are no IPR or other issues in China. Now this is obviously a discussion that we keep away from and let's suppose that it's done then I will have to convince people in China to send their necessary experts to do the work.</p>
+</section>
+
+<section>
+<h3 id=8497>Quantum Resistant Document Publication</h3>
+<p id=00e9 class="phone s02"><cite>Ivan_Herman:</cite> I just want to check something with you guys because I am not an expert. I looked a little bit at the various crypto suites which are around ECDSA etc. and my impression is that they follow more or less the same structure as far as the transformation is done and then hashing and canonicalization and whatnot. And in a way using a new algorithm is just sort of copy pasting the current specification and plug in whatever is necessary for SM2. Is that grossly speaking correct?</p>
+<p id=10001 class="phone s02"><cite>Ivan_Herman:</cite> I use this argument to get people that in a way doing the crypto suite document for SM2 is not a big deal because it's mostly there and again if I remember eventually all those joint common things will go general as well so this means a crypto sweet document can be two page long eventually is that all correct Yeah.</p>
+<p id=e988 class="phone s01"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=0b0c class="phone s03"><cite>Manu_Sporny:</cite> Yes, almost all of it. Avon, I think that saying that generally is fine. Two pages, you want to have test suites and that takes six pages,…</p>
+<p id=b114 class="phone s02"><cite>Ivan_Herman:</cite> Yeah. Yeah.</p>
+<p id=3c27 class="phone s03"><cite>Manu_Sporny:</cite> right? …</p>
+<p id=47d7 class="phone s02"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=c44d class="phone s03"><cite>Manu_Sporny:</cite> but yes, in general, what she said is probably the work that they'll need to do.</p>
+<p id=0c40 class="phone s02"><cite>Ivan_Herman:</cite> So, it's not a huge amount of work for them.</p>
+<p id=0392 class="phone s03"><cite>Manu_Sporny:</cite> No, it shouldn't be especially for elliptic curve.</p>
+<p id=1c6d class="phone s03"><cite>Manu_Sporny:</cite> And they should talk with it is Yep.</p>
+<p id=1ef5 class="phone s02"><cite>Ivan_Herman:</cite> I think I don't know SM2.</p>
+<p id=fc16 class="phone s02"><cite>Ivan_Herman:</cite> I seem to remember it's an elliptical curve, but it is okay.</p>
+<p id=bf5a class="phone s03"><cite>Manu_Sporny:</cite> Yep. Ivon,…</p>
+<p id=4e58 class="phone s02"><cite>Ivan_Herman:</cite> Thank I hope that it will be successful, but I do my best.</p>
+<p id=e6ce class="phone s03"><cite>Manu_Sporny:</cite> something else that would be very interesting to learn is if the Chinese national standards for cryptography are going to use any of the NIST approved cryptography meaning like MLDDSA or…</p>
+<p id=5798 class="phone s03"><cite>Manu_Sporny:</cite> SLHDSA or Falcon. it would be really interesting if they had alternatives. but they might not be ready to speak to</p>
+<p id=52e9 class="phone s02"><cite>Ivan_Herman:</cite> I understand.</p>
+<p id=9f1c class="phone s02"><cite>Ivan_Herman:</cite> We know it's difficult to get information from there.</p>
+<p id=81b9 class="phone s01"><cite>Wesley_Smith:</cite> All right. Thank you. Manu, did you have your hand up for a point about data integrity?</p>
+</section>
+
+<section>
+<h3 id=fe6b>Data Integrity Updates</h3>
+<p id=7cde class="phone s03"><cite>Manu_Sporny:</cite> Yeah. just a couple of updates. I think Ivon you did mention that it's published on TR now.</p>
+<p id=d9fe class="phone s02"><cite>Ivan_Herman:</cite> Yeah. Heat.</p>
+<p id=10002 class="phone s03"><cite>Manu_Sporny:</cite> Did I miss that? All right. and that's great. because we have had a number of other people that are starting to become more interested in data integrity and postquantum. I will note that digital bazaar has an implementation of one of the crypto suites. This is the MLDDSA 44 for RDFC. and I did a JCS one as well. so there are two implementations of the spec there. Greg's got his own. So we've got two independent at least one of the base ones.</p>
+<p id=61d5 class="phone s03"><cite>Manu_Sporny:</cite> I think Greg or we are going to work on the test suite for it as well. we don't expect it to deviate much from the way the ECDSA and EDDDSA ones are done. so I think that's on a good glide path. so just those updates there. so that all that's kind of good news. we've also deployed MLDDSA as a data integrity solution for a new blind witnessing service that we announced to the public credentials mailing list. Let me get the link to that.</p>
+<p id=10003 class="phone s03"><cite>Manu_Sporny:</cite> And that blind witnessing service uses data integrity to sign cryptographic hashes that you send it. And it will also use MLDDSA to do those signatures. So that's actually being used in an experimental data integrity signing endpoint. And the blind witnessing stuff is useful for things like did cell or these little mini blockchains that people are playing around with these days. so implementation's going fairly well there. The other thing I wanted to mention was ski sign.</p>
+<p id=65c9 class="phone s03"><cite>Manu_Sporny:</cite> Most recently I've spoken with two people that want to do implementations beyond I think Greg's going to do an implementation or has already done implementations of ski sign just I think using Luca DeFeo's group's ski sign implementation so the official ski sign implementation I know Dig Bazar wants to do one. We're probably going to reuse somebody else's cryptography library to do it. And this new individual has written ski sign from scratch using rust. so that they have an implementation and they have committed to integrating with the test suite as well. So that gives us three independent implementations for skis sign.</p>
+<p id=a5f2 class="phone s03"><cite>Manu_Sporny:</cite> The challenge is going to be that I really doubt NIST is going to approve ski sign before we're where our charter ends, and it is not clear to me if an ITF RFC is required for ski sign or this paper that Luca Defeo's group has published and has been analyzed by NIST and NIST and has all of the implementation details in it is good enough.</p>
+<p id=04f6 class="phone s03"><cite>Manu_Sporny:</cite> So there's a question of around can we link to the paper that NIST is using for evaluation or does this thing if it needs to come from CFRG that's going to make things more difficult. So there's a question on how stable does everything need to be. I think we can make the case for there's a stable reference for it but there's a different question around is the cryptography ready. My expectation is that we will have everything but that stable reference by the time we want to go to wreck. and as a result of that we're going to have to remove ski sign from version 10 before we publish the wreck.</p>
+<p id=c3a3 class="phone s03"><cite>Manu_Sporny:</cite> But we would do that during I think that's the default path. and I think that might hold for Falcon as well. I don't think Falcon has a FI I don't think Falcon We don't know when Falcon's FIPS, documents going to come out. And I don't know if we need a CFRG document for that one either. So, there's a chance that we have to cut Falcon and ski sign from the version 10 spec, which is super unfortunate because, MLDDSA signature sizes are 2.4 kilobytes for the smallest of them and SLH is just multiples of that. all right. I'll stop there.</p>
+<p id=c597 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=5bc9 class="phone s02"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=85b7 class="phone s02"><cite>Ivan_Herman:</cite> we know that what's really important is to have a freely available and stable reference. I mean I don't think that we are formally required that to be an RFC or whatn not. So if there is a stable reference that the community can rely on once for all and it's publicly available then I think we can make an argument for that and we are still a little bit far away from that anyway so we will have time to wait to see what happens but I think for something like crypto it is perfectly fine to sort</p>
+<p id=f2a0 class="phone s02"><cite>Ivan_Herman:</cite> of refer to stable documents that the community relies on. if there is one which is in danger as you said Falcon I would like to find a way to keep it in the document but not being normative or something like that. I don't know exactly the best way of doing it. I mean it would be a waste and a shame to just remove it all together. we do not recommend it but we add it as an appendix saying this is also an informal appendix which says this is on its way. The crypto part may still change and therefore it is not recommended.</p>
+<p id=54a2 class="phone s02"><cite>Ivan_Herman:</cite> However, if that happens or I don't know. I mean, we can find some text around it, but let's try not to take out valid things from the spec.</p>
+<p id=01bb class="phone s01"><cite>Wesley_Smith:</cite> Morning. Go ahead.</p>
+<p id=9bd9 class="phone s03"><cite>Manu_Sporny:</cite> Interesting.</p>
+<p id=2263 class="phone s03"><cite>Manu_Sporny:</cite> I think I'm going to be more conservative than you are, Ivon, on this one. I do agree we should keep it in the document for as long as we can. I think it will potentially have a negative impact on W3C's reputation if we suggest cryptography and a recommendation that has not been approved by CFRG or NIST. So I totally agree that I Dave in the chat channel said we just refer to FIPS for ECDSA. So I think we need a stable reference to either fifth fips for both falcon and ski sign or at a very minimum CFRG.</p>
+<p id=618e class="phone s03"><cite>Manu_Sporny:</cite> It's not going to happen in CFRG or Falcon or Ski Sign, I don't think, because the work hasn't even been started, right? it is much more likely that NIST publishes documents before CFRG does at IFF, which is surprising, but that's just kind of the way it's probably going to happen. So I think maybe what we do is we just keep it in the document for as long as possible, but we will need to publish a wreck and we will need to make a discussion at that point. And I think at that point, Ivon, we can just make it so we comment I think even putting it in non-normatively might backfire, So let's just comment the sections out, publish the wreck, it's not in there, and then immediately publish new11 working draft with it back in there, right?</p>
+<p id=2674 class="phone s03"><cite>Manu_Sporny:</cite> So it is clearly, marked in there as this is how you would do it, but we don't put it in the recommendation. So there's a little blip in history where we remove it, publish the final wreck, and we warn CR that this is probably what's going to happen. And then right when we publish the one one, it just goes right back into the spec as an option. That's it.</p>
+<p id=60dc class="phone s01"><cite>Wesley_Smith:</cite> Kevin, go ahead.</p>
+<p id=5996 class="phone s04"><cite>Kevin_Dean:</cite> Yeah, plus one to Manu. I think that, something as important as cryptography shouldn't be based on anything provisional. at this late stage, it's very unlikely that they'll find a weakness. I'm sure they've got their best people on it, but in the unlikely event that they do and therefore never get to recommendation, then it would look for us. Be bad to have that in spec.</p>
+<p id=835e class="phone s01"><cite>Wesley_Smith:</cite> Thanks, Avon, go ahead.</p>
+<p id=9c4b class="phone s02"><cite>Ivan_Herman:</cite> I hear both of you.</p>
+<p id=ab29 class="phone s02"><cite>Ivan_Herman:</cite> So that's fine. But there is one thing that buzzers if my understanding is correct of what you said, I am gathering information here. I am not an expert. The one which is stable is the one which has huge keys. Is that correct?</p>
+<p id=298f class="phone s03"><cite>Manu_Sporny:</cite> Correct.</p>
+<p id=5420 class="phone s02"><cite>Ivan_Herman:</cite> So in the worst case if we go with a recommendation which relies on that one we are providing a recommendation which is very difficult to use in practice because of this problem.</p>
+<p id=a156 class="phone s02"><cite>Ivan_Herman:</cite> So if that is the case and again we don't decide it right now but I might propose to do the same as we did with BBS leaving the whole CR open until the dust settles around these things and publish it as a recommendation only when that comes something like that. I mean that's my only worry. But again I think we can leave the discussion with we have roughly speaking a year to go anyway.</p>
+<p id=7f39 class="phone s01"><cite>Wesley_Smith:</cite> Thanks, Kevin, is that an old hand?</p>
+<p id=483b class="phone s04"><cite>Kevin_Dean:</cite> Yeah, that's an old hand. I'll take it down.</p>
+<p id=7ef6 class="phone s01"><cite>Wesley_Smith:</cite> All right, man.</p>
+<p id=8609 class="phone s03"><cite>Manu_Sporny:</cite> yeah van I agree we can make the decision later on. while it is true that the key sizes and the signature sizes for MLDDSA are gigantic and SLH is worse it is what Google and Cloudflare and all those people are deploying right so basically this is what people are deploying my concern with leaving it in perma CR is that people that don't like data integrity will use that as a reason</p>
+<p id=5663 class="phone s03"><cite>Manu_Sporny:</cite> that there is no postquantum secure mechanism that is a W3C recommendation and that would disadvantage us right so our customers when we're talking with our customers there are other vendors in the room and some of them are looking for any excuse to say that data integrity is not a good thing to use and they'll use that the fact that it's just in CR and it's not a wreck as the reason to just not use W3C's and not use data integrity. So that's my major concern with keeping it in, forever is that it never becomes a recommendation and therefore everybody else gets to go forward and implement MLDDSA and we're kind of left back waiting for the longest pole in the tent to kind of resolve itself. That's it.</p>
+<p id=4916 class="phone s01"><cite>Wesley_Smith:</cite> Dave Long,…</p>
+<p id=671b class="phone s01"><cite>Wesley_Smith:</cite> you go ahead.</p>
+<p id=6f07 class="phone s07"><cite>Dave_Longley:</cite> So I think we should probably just give this more time to decide.</p>
+<p id=542a class="phone s07"><cite>Dave_Longley:</cite> Lots could happen in a while. one of the other last minute options is also to split the documents. publish one, CR the other and let that one go have a longer time horizon.</p>
+<p id=2df3 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=fa48 class="phone s02"><cite>Ivan_Herman:</cite> Why? I want to promise you I did not think it with Dave,…</p>
+<p id=dfb4 class="phone s02"><cite>Ivan_Herman:</cite> but I was thinking about the same way. I mean, after all, what we did so far is we published one document per crypto suite. Not exactly because there's a GCS versus canonicalization split, but essentially one document per crypto algorithm. Let's put it this way. and if we end that by having what I pushed a little bit too far maybe but to say that a crypto sweet definition is a two-page document then we can just simply have if my memory is correct four crypto suite specifications one for each of the algorithm that are listed there and</p>
+<p id=f57c class="phone s02"><cite>Ivan_Herman:</cite> and could not go to a wreck separately from one another. That's perfectly possible. it's a bit of a pain on the editors and myself, but we can survive that.</p>
+<p id=0add class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I put myself on the queue to say that that seems to make a lot of fairly obvious sense as well since the publication of these documents is dependent on external definitions of maturity which we've been discussing in this group and the different crypto suites the different technologies are at different points in those definitions of maturity. it seems to make a lot of sense to not couple them together with respect to the W3C process. That's it. All right. Should we run a poll to that effect to split out the different algorithms?</p>
+<p id=fca3 class="phone s02"><cite>Ivan_Herman:</cite> I would I'm sorry.</p>
+<p id=f6bb class="phone s01"><cite>Wesley_Smith:</cite> It's okay. Go ahead.</p>
+<p id=558f class="phone s02"><cite>Ivan_Herman:</cite> Go ahead.</p>
+<p id=7057 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I would like to not do that right now because it'll just create more work for us that I don't know if it's got let's wait. I think I agree with Dave like we don't need to make this decision right now. we just published the FPWD for the quantum resistant crypto suites. we're just going to create a bunch of other process headaches for us. Let's just wait. I don't think there's anything timesensitive right now.</p>
+<p id=0a50 class="phone s01"><cite>Wesley_Smith:</cite> It is definitely an exciting time to work on quantum safe cryptography.</p>
+<p id=38b4 class="phone s03"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=1929 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=d8c2 class="phone s02"><cite>Ivan_Herman:</cite> Yeah, more or…</p>
+<p id=ed8a class="phone s02"><cite>Ivan_Herman:</cite> less the same thing and I think we will have to engineer this spec anyway if all the common part go to the DIP spec which is boring but necessary editorial work that will come up and once that is done the current spec will have to be engineered anyway and at that time we can think about splitting it into four not. Yeah, that's it.</p>
+<p id=10004 class="phone s01"><cite>Wesley_Smith:</cite> Okay, it sounds like we're in agreement that it's sort of a no up for now with a general group understanding of what may happen down the line. That sounds good. All right. Anything else related to data integrity that we should discuss today? hearing nothing. we have seven minutes left, which probably is not worth shifting gears into doing issue processing, poll request reviewing. but does anybody have any announcements or discussion points they want to talk about for the VC barcodes work? Wanna go ahead.</p>
+</section>
+
+<section>
+<h3 id=74c5>VC Barcodes Threat Model</h3>
+<p id=94ad class="phone s03"><cite>Manu_Sporny:</cite> Just one thing let me we see barcodes. I'm switching the topic back. at the face-toface meeting we spent a lot of time doing threat models and threat modeling. I believe I have a complete first pass for a threat model for the recognized entities specification. that is this pull request here that we are going to discuss later today at the recognized entities call.</p>
+<p id=fd4f class="phone s03"><cite>Manu_Sporny:</cite> I feel pretty good about it for a first draft. meaning I feel like it's fairly complete. it took in the working group the enty recognized entities task force input onto the threat model. It created a diagram that I think the threat the security folks will be happy with. it's fairly not exhaustive but covers a lot of attacks probably goes a little too far and uses Joe's new threat modeling library for respect. so I think it's in a good state to review and I think we should potentially use it as the basis for the threat model in this group for VC barcodes.</p>
+<p id=8708 class="phone s03"><cite>Manu_Sporny:</cite> I know that Greg is working on a threat model for data integrity stuff in the quantum resistant stuff. on the barcodes work need to work on a threat model for barcodes. I think we went through that exercise where we collected a bunch of threats. which means that I think we're ready to do a threat model for the barcodes work and if we do that then we'll be able to ask for horizontal review. So my suggestion is that is the next big thing that the barcodes folks and the forgery defense spec needs to work on and I think everything's in place for us to do that.</p>
+<p id=6983 class="phone s03"><cite>Manu_Sporny:</cite> So now we just need a volunteer to work on those things. and I'm happy to help folks as they put those things together. I think for the barcode stuff, putting together a threat model is let's say 10 hours of work. I think it took me about 16 to 20 hours to put the one together for recognized entities. but that was mostly because I had to figure out I had to learn everything and so it might be faster with a smaller kind of target barcodes as a smaller target than recognized entities maybe. Okay, just wanted to put that out there. we'll still need volunteers to do that work and don't underestimate how much time It's going to take, at least 10 hours,…</p>
+<p id=0848 class="phone s03"><cite>Manu_Sporny:</cite> maybe 20 hours per spec. That's it.</p>
+<p id=e2e5 class="phone s01"><cite>Wesley_Smith:</cite> Right.</p>
+<p id=4396 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=804e class="phone s02"><cite>Ivan_Herman:</cite> a related thing…</p>
+<p id=10005 class="phone s02"><cite>Ivan_Herman:</cite> because the threat model comes in when the document is technically I don't say ready but more or less ready. Now I think that we have one pending thing for the barcode document and that is to move the crypto suite which is there out of the document and somehow put it into one of the crypt I think the SECDSA one. so I think this should be done first before we do we merge any threat model into the document because some of the threats might be actually around that crypto suite and not the barcode document itself.</p>
+<p id=a5e1 class="phone s01"><cite>Wesley_Smith:</cite> Man, go ahead.</p>
+<p id=a58e class="phone s03"><cite>Manu_Sporny:</cite> I agree with Von. We need to move it, but you can work on the threat model presuming that's going to happen.</p>
+<p id=5b17 class="phone s02"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=0e74 class="phone s03"><cite>Manu_Sporny:</cite> I think we have consensus to do that. And so the threat model shouldn't include the XI crypto suite because it's being moved, right?</p>
+<p id=d78b class="phone s01"><cite>Wesley_Smith:</cite> All right, that sounds good. noting that we are almost out of time. I think next steps for the VC barcodes work are pretty well understood. I'm not going to ask for a volunteer to do the threat That sounds like a painful exercise. the asking, not the modeling. I expect that person will be me. but…</p>
+<p id=2ad6 class="phone s02"><cite>Ivan_Herman:</cite> Bye-bye.</p>
+<p id=eb32 class="phone s01"><cite>Wesley_Smith:</cite> if anybody on this call is interested in contributing to the threat modeling work for VC barcodes, please and we will go from there. All right, we are about out of time. thanks folks. thank you for the time and I will see you all next week.</p>
+<p id=9eb4 class="phone s08"><cite>Elaine_Wooton:</cite> Bye-bye. Meeting ended after 00:54:49 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 16 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>16 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Benjamin_Young's_Presentation, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Phillip_Long</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#c4ec">Render Method Options Discussion</a></li>
+<li><a href="#f0ad">Prioritizing Render Method Options</a></li>
+<li><a href="#0484">Templated Text vs. Sandboxed App</a></li>
+<li><a href="#f7e1">Web Views and Implementation Load</a></li>
+<li><a href="#cb8c">Use Cases for Render Methods</a></li>
+<li><a href="#ab3a">Interoperability Points in Render Methods</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=92aa class="phone s01"><cite>Benjamin_Young:</cite> There we go. Demetri, I guess you were the one to unblock us.</p>
+<p id=3595 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=a620 class="phone s01"><cite>Benjamin_Young:</cite> I at least was stuck in a lobby. I do know from a handful of people that they're out today. Digital Bizarre folks are not, but like Patrick St. Louis and some others. So, I'd suggest we give it till I don't know 10 after the most and then drop.</p>
+<p id=1753 class="phone s01"><cite>Benjamin_Young:</cite> That sound okay, Demetri, because I know you're happy.</p>
+<p id=8744 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I like the sound of that.</p>
+<p id=5c35 class="phone s01"><cite>Benjamin_Young:</cite> I'm sure you did.</p>
+<p id=31ae class="phone s02"><cite>Dmitri_Zagidulin:</cite> Sounds good.</p>
+<p id=5edf class="phone s01"><cite>Benjamin_Young:</cite> Hey, we're just waiting to see if enough people join to make this worthwhile. Hey guys, we were just giving it a little more time to get more folks to join. Some of our regular people are out.</p>
+<p id=fcfc class="phone s01"><cite>Benjamin_Young:</cite> Coyote saying he's stuck in a waiting room as well. So, I don't know who's able to manage that, but we might have more people over there.</p>
+<p id=f6d2 class="phone s03"><cite>Manu_Sporny:</cite> He is probably at the wrong link if he's in a waiting room.</p>
+<p id=0e38 class="phone s01"><cite>Benjamin_Young:</cite> That's right. Because there's that old one floating around.</p>
+<p id=0eb8 class="phone s01"><cite>Benjamin_Young:</cite> I was in a waiting room and I was on this link.</p>
+<p id=851a class="phone s04"><cite>Elaine_Wooton:</cite> Yeah, I was in a waiting room,…</p>
+<p id=0aad class="phone s04"><cite>Elaine_Wooton:</cite> too, and I got out.</p>
+<p id=b3b3 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. Got you.</p>
+<p id=c0c0 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, the waiting room exists until the meeting organizer shows up, which was probably Dimmitri. That's why both of you were in a right waiting room. But there shouldn't be a waiting room after the meeting coordinator shows up.</p>
+<p id=78c5 class="phone s01"><cite>Benjamin_Young:</cite> I got him the other link.</p>
+</section>
+
+<section>
+<h3 id=c4ec>Render Method Options Discussion</h3>
+<p id=fac3 class="phone s01"><cite>Benjamin_Young:</cite> I think we'll go ahead and do this. Dimmitri is traveling so handed andor tossed the conchk to me to take over mcing. the last meetings were two weeks ago at the face to face. I hope everyone had a good time with the trip who was able to make it. consequently, I don't have all this loaded into my head. so happy to collaborate on where we should go. there's not been a whole ton of conversation since then. We do have some pending PRs and issues. go ahead, Mike.</p>
+<p id=1804 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, just on kind of agenda for today, there were a couple of things that happened at the Brussels face to face that are relevant. I do think that we need to make some hard decisions on what's in the spec today and what gets cut. and we should make those decisions today or this week next week so we can move this towards CR. the other item would be threat modeling whenever we want to talk about that I think we've got a clear path there so we'd want to just mention some things related to that.</p>
+<p id=5310 class="phone s03"><cite>Manu_Sporny:</cite> That's a</p>
+<p id=2884 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, that'd be great to get threat modeling in the queue.</p>
+<p id=8452 class="phone s01"><cite>Benjamin_Young:</cite> because that's definitely going to relate to a lot of the paths we pick between. great. So I think one of the key things that the face toface ended on was what you were just pointing to picking a path for CR.</p>
+<p id=ada8 class="phone s01"><cite>Benjamin_Young:</cite> There's still a handful of things that there's debate both directions about keeping or taking out. also this call as a side note is set up to use the messaging here for additional comments. Right Monu or do we need to be in IRC?</p>
+<p id=1dda class="phone s03"><cite>Manu_Sporny:</cite> Correct. No, no IRC.</p>
+<p id=390d class="phone s01"><cite>Benjamin_Young:</cite> Okay.</p>
+<p id=7b98 class="phone s03"><cite>Manu_Sporny:</cite> Just a chat.</p>
+<p id=d543 class="phone s01"><cite>Benjamin_Young:</cite> Thank yeah, so the current things in the spec are five different approaches. some of them overlapping pretty heavily, some of them not like NFC's. and I know Mono, you'd expressed that you felt the HTML render suite solved for the SVG and PDF mustache ones and that therefore those could come out.</p>
+<p id=14e3 class="phone s01"><cite>Benjamin_Young:</cite> Dimmitri, I know you had minus one that at least in chat or I think at minimum the PDF one, but had shared some other thoughts there. we also have the embedded renderer which is a whole other thing that I think lacks representation and the participants here. And then we have a pending PR for an overlay render method or OCA bundles. yeah, that's right. You had slides and everything, Demetri. I'm sad you're not here to go through these again. let me screen share these slides because it is a good summary. and go ahead.</p>
+<p id=3a8b class="phone s02"><cite>Dmitri_Zagidulin:</cite> And Manu on the subject of threat modeling if you could refresh our memory where the VC working group in general landed on what our general threat modeling mechanism and template is.</p>
+<p id=0393 class="phone s03"><cite>Manu_Sporny:</cite> Yes. Dimmitri, let's do that, but after we do this what's in and… Dmitri Zagidulin:</p>
+<p id=124c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yep. Manu Sporny:</p>
+<p id=ad22 class="phone s03"><cite>Manu_Sporny:</cite> in and out thing.</p>
+<p id=1099 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No cab.</p>
+<p id=0812 class="phone s03"><cite>Manu_Sporny:</cite> But yeah, happy to go into</p>
+<p id=cbf0 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, we certainly can.</p>
+<p id=5ecb class="phone s01"><cite>Benjamin_Young:</cite> There is a bit of a cart horse here maybe with threat modeling. but sure, we can cue them that way. So, what we're looking at is the list that Dimmitri made sort of grouping the render methods. number one is a rendered pre-baked payload, which would be NFC's I think is the only one currently listed, but you could imagine images and things rehydrated and stored in the render method space. a Jason card style Nate Otto has been working on a PR there. I think he's unavailable this week and about to go on vacation.</p>
+<p id=8ada class="phone s01"><cite>Benjamin_Young:</cite> So hopefully he can return to that soon. There's general agreement that that's needed for listing if nothing else. it's similar to other approaches like vary wallet has a highlight system that's buried inside of it that is similar point out fields that are worth surfacing and then surfaced under the card style display. templated text. this is the ones currently called SVG mustache and PDF mustache. where the template process is run by the renderer and it implements some template engine obviously mustache in the case of the existing specified ones.</p>
+<p id=60a8 class="phone s01"><cite>Benjamin_Young:</cite> over the last year working with those there are inhibitors around date formatting and some complicated conditioning if you have to look around inside the JSON to make decisions. that doesn't work out great. handlebars and nunchucks and things like that are more advanced, but template engines are code not specifications for the most part. So finding a stable path for those is tricky. mustache does have a spec, but it lacks key capabilities. So if we were to stay the course on those approaches, we would have to pin down a stable templating engine augment something like mustache with its extensibility mechanism is lambda functions where you can do date formatting and things like that.</p>
+<p id=e6f0 class="phone s01"><cite>Benjamin_Young:</cite> So we'd have to pin down that and essentially add mustache to the specification space our extended version of that so that people could implement that together. all of that pain led to the fourth option which is the sandboxed app iframe approach where you can do HTML JavaScript and CSS inside a sandboxed iframe surrounded by content security policy settings. this works well enough for replacing mustache and handlebars for generating SVGs and other text formats. it does not work for PDFs and things. It of the PDF out not render it. It can create it but then it has to hand that off for display to something else.</p>
+<p id=e3dc class="phone s01"><cite>Benjamin_Young:</cite> So, it's possible to create a binary format like PDF and share it via download link, which is probably not the experience wallets are expecting to provide. it could be expanded and this is where it bumps into the threat model by allowing the sandboxed web app to essentially send back large amounts of content to the wallet to then do something else with. there's pros and cons there. a wallet nder. The fifth one is an OCA bundle approach. this has some amount of traction with the UNP crowd. Patrick St. Louis is the one who's promoted that. It's been idling in a PR for a while and hasn't really gotten good discussion because he's not been on these calls. he is also on vacation this week but plans to be here next week.</p>
+<p id=f7ae class="phone s01"><cite>Benjamin_Young:</cite> So that is the lay of the land as I understand it. we can pick up from there</p>
+</section>
+
+<section>
+<h3 id=f0ad>Prioritizing Render Method Options</h3>
+<p id=ffff class="phone s03"><cite>Manu_Sporny:</cite> things. so at the face toface meeting I suggested a priority order of these things and I didn't hear too much push back on it. So let me more concretely say we should use this priority order unless people think a different priority order we should use a different priority order. Right? So looking at what's on the screen four is the thing that I think addresses a number of the other use cases that are on the slide.</p>
+<p id=f6a0 class="phone s03"><cite>Manu_Sporny:</cite> So with four it addresses three. I will assert that it addresses the OCA one. and I'll assert that it addresses the embedded renderer use case as well as number one. not perfectly, not in the way that maybe some would intend but I think four addresses the vast majority of these use cases.</p>
+<p id=8621 class="phone s03"><cite>Manu_Sporny:</cite> is the only one that's not addressed as to the Jason card style, So, I think the priority should be on four and getting consensus around that. and I do think do we have consensus to go all the way direct with this feature. and then kind of see where we land on that. and there's some here NFC that's not covered. that we should also, talk about. I guess the NFC is the rendered pre pre-baked payload, but I think it matters because I don't think we can do the NFC thing in the sandbox, as an example. so I do want to get down to brass tax on this call and the next call.</p>
+<p id=2eef class="phone s03"><cite>Manu_Sporny:</cite> I don't think it's a good idea to, put OCA out of scope because Patrick's not here. Let's wait until he comes back. But I would like to get a feeling from the group on absolutely, we support this and I would implement it or…</p>
+<p id=d09a class="phone s01"><cite>Benjamin_Young:</cite> Demetri.</p>
+<p id=373d class="phone s03"><cite>Manu_Sporny:</cite> or something like that because people are going to have to start doing a significant amount of work to get this stuff implemented in their implementations and then tested in the test suite and so on so forth. we'll stop</p>
+</section>
+
+<section>
+<h3 id=0484>Templated Text vs. Sandboxed App</h3>
+<p id=10000 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So I want to push back a little bit against number four as the first focus and suggest number three as the first focus. A templated text specifically mustache has equivalent or better security posture when coupled with an iframe or other sandbox mechanisms. better because it doesn't have running JavaScript code. it has a specification not IDF or W3C formal but still a stable specification and it has provisions for passing in consumer wallet formatted date stamps and So it also handles printdf the HTML JavaScript one does.</p>
+<p id=3296 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So my proposal is that one first and…</p>
+<p id=b9d9 class="phone s01"><cite>Benjamin_Young:</cite> Thank you, Demetri.</p>
+<p id=214d class="phone s02"><cite>Dmitri_Zagidulin:</cite> then the HTML and JS if we have time in the working group.</p>
+</section>
+
+<section>
+<h3 id=f7e1>Web Views and Implementation Load</h3>
+<p id=113a class="phone s05"><cite>Ivan_Herman:</cite> My question is and…</p>
+<p id=3400 class="phone s05"><cite>Ivan_Herman:</cite> it's really a question because I've never done implementation of these things. if I want to do a non browser implementation of any of these, that means that I would have to use essentially web views if the number four is put into the center. Is that a major load on implementations or is it already the case that the web view is used all over the place?</p>
+<p id=1c3c class="phone s01"><cite>Benjamin_Young:</cite> That is a great question. I sadly think we have underrepresented mobile app deployers. there aren't many here and all the mobile app deployers are wrapping web views. So they're going to be in that camp of the folks on the call as far as I know. Kyote, you might have a different approach for your talent path. I'm not sure. Monica, go ahead.</p>
+<p id=f414 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think the assertion is every major development environment and platform has that capability today. you have webview capabilities and it is very broadly deployed and so it should not be an issue. You also have implementations that are totally headless that can do all of the rendering in a headless way like you don't need a browser engine.</p>
+<p id=60d0 class="phone s03"><cite>Manu_Sporny:</cite> There are other engines that you can use but every major platform has a browser engine and has a web view that you can use for either headless rendering or what was the question</p>
+<p id=93b4 class="phone s05"><cite>Ivan_Herman:</cite> I'm sorry that was not the question.</p>
+<p id=b024 class="phone s05"><cite>Ivan_Herman:</cite> I mean I mean I know that web view is available. that's not the point. I realized that the question is whether it using web views to implement let's say a wallet on a device on a phone is it an extra load which is acceptable or Not</p>
+<p id=fd83 class="phone s03"><cite>Manu_Sporny:</cite> Almost every wallet I know uses web views at some point in their architecture.</p>
+<p id=151a class="phone s03"><cite>Manu_Sporny:</cite> Maybe not for rendering, but they, call out to external things. I mean, that's certainly the case in California DMV. I think we're asserting this…</p>
+<p id=8ecc class="phone s01"><cite>Benjamin_Young:</cite> I Von,…</p>
+<p id=c0c9 class="phone s03"><cite>Manu_Sporny:</cite> until people tell us &quot;No, I can't use it,&quot; And I don't think anyone said I don't have access to HTML a web engine in my environment.</p>
+<p id=77be class="phone s01"><cite>Benjamin_Young:</cite> is your question just about the processing load of a web view with essentially web views inside of web views?</p>
+<p id=93ca class="phone s05"><cite>Ivan_Herman:</cite> No, my processing mode my question is whether we are imposing a major implementation load…</p>
+<p id=05ca class="phone s05"><cite>Ivan_Herman:</cite> if the sandboxed approach is the only one that's my question I realize it can be done I realize that web view is all over the place I work with EPUB readers so they are typical cases of such application that's not the problem the problem is if I want to implement something like that rendering some VCs is the requirement to use web views too high for people.</p>
+<p id=7485 class="phone s01"><cite>Benjamin_Young:</cite> And yeah,…</p>
+<p id=738f class="phone s05"><cite>Ivan_Herman:</cite> It's not an easy thing to use.</p>
+<p id=c738 class="phone s01"><cite>Benjamin_Young:</cite> we need more people here to answer that. I think Mona, go ahead.</p>
+<p id=fe78 class="phone s03"><cite>Manu_Sporny:</cite> Going back to Dimmitri's thing and I guess we need more people here. We have the people here like me meaning people can go out and try to get more people to join this group but we need to make decisions and move forward on this stuff, I don't think we need to ring our hands endlessly on it. Let's make a decision, move forward, and if people tell us it's a problem, then we can change our mind and go back. Ivon, I don't think it is a burden to ask people to have access to a web view today. again, it is on every major platform.</p>
+<p id=9063 class="phone s03"><cite>Manu_Sporny:</cite> Let's wait for impleers to tell us it's a problem for them instead of trying to guess when we shouldn't get let's wait for people to tell us that this is an issue. We are asserting that it's not an issue until we hear otherwise from an implementation community and if people think that there are impleers out there or this is an issue like please invite them to come to the meeting or…</p>
+<p id=4107 class="phone s05"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=106c class="phone s03"><cite>Manu_Sporny:</cite> to ask them to send something to the mailing list. but this is broadly deployed technology. if it is too much we have the JSON card style as a backup. and then they can always do whatever they want to with the properties in the credential as well.</p>
+<p id=2867 class="phone s03"><cite>Manu_Sporny:</cite> So, I think we've got backups and even if the web views too much. originally put myself on the queue though to No, Dimmitri three I don't see the benefit that three gives us over four. In fact, three that's where we started and we tried for multiple years and found a bunch of problems with trying to pick a templating environment and that sort of thing. So, I think we would probably be a minus one and probably an objection to working on three. We think it's the wrong approach this. so, we should figure out if we have consensus to go down that path.</p>
+<p id=7e7d class="phone s01"><cite>Benjamin_Young:</cite> Hey there.</p>
+<p id=1a34 class="phone s03"><cite>Manu_Sporny:</cite> I'm imagine we're going to be a very strong minus one because of our experiences over the last two years trying to use the templated SVG based approach. That's it.</p>
+<p id=02d7 class="phone s06"><cite>Dave_Longley:</cite> So, I want to make two comments. First, I think for a lot of simple screens on mobile and in web app wallets and other displayers, I'm expecting that the first contact that users have is probably actually going to be with the JSON card style renderer. And if they then want to see how the issuer renders something, which is going to be common in a variety of different views, it makes total sense to be calling out to some tool that lets you render a view that something somebody else has provided that totally fits the paradigm of using a web view as well in mobile app development.</p>
+<p id=c1c0 class="phone s06"><cite>Dave_Longley:</cite> The other thing I want to say I wouldn't agree with Monu that I think we moved to the sandbox HTML approach because we had so many problems with what we wanted to do with the handlebars and mustache approach both from what it was able to do and what we'd be able to specify. I would like us to focus on the sandbox HTML but also look at the things that we think that some people in the group are saying I would like us to see if we can do those things. because so far I think we found that we can do those things. We just need to find the right spec text and right APIs and things to make it work.</p>
+<p id=6edb class="phone s06"><cite>Dave_Longley:</cite> And if that's all true, then we can cover all the cases with that one. And it provides the widest value and it would allow us to cover all the cases, I think, except the NFC one and the Jason Card one. And we could focus much more easily that way without having to do so much spec</p>
+<p id=bdbc class="phone s01"><cite>Benjamin_Young:</cite> Go ahead, Demetri.</p>
+<p id=c87a class="phone s02"><cite>Dmitri_Zagidulin:</cite> So it sounds like it's really a choice road map between three and four and I would like to offer then Manu and whoever is saying that there's strong technical problems with approach number three to list those problems. as having implemented those on mobile the templated text I do believe all of them can be addressed with the addition of iframe and specifying handling things like date formats specifically with mustache.</p>
+<p id=49de class="phone s02"><cite>Dmitri_Zagidulin:</cite> So we're both saying the other method can't do something.</p>
+<p id=ba37 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Let's list those technical problems and list the sort of security posture and then take it to implementers. Which one would you rather implement?</p>
+<p id=22d1 class="phone s01"><cite>Benjamin_Young:</cite> Turn it on.</p>
+<p id=b861 class="phone s05"><cite>Ivan_Herman:</cite> as a kind of a point of order just to avoid unnecessary things.</p>
+<p id=e8a5 class="phone s05"><cite>Ivan_Herman:</cite> The number one apart from NFC, what else does it refer to? Or do we take NFC as a separate entity…</p>
+<p id=375b class="phone s05"><cite>Ivan_Herman:</cite> which we feel is necessary and so far cannot handle the others and then we take that as granted? I just don't understand the list there.</p>
+<p id=7801 class="phone s01"><cite>Benjamin_Young:</cite> Demetri, do you have an answer?</p>
+<p id=fa4a class="phone s02"><cite>Dmitri_Zagidulin:</cite> I can speak to that. aside from NFC, it also refers to pre-rendered images, which the, open badges community uses, and pre-rendered PDFs. So the issuer at issue in time generates the display and…</p>
+<p id=82c5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> either links to it or embeds it in the render method as opposed to being generated at view time.</p>
+<p id=399b class="phone s05"><cite>Ivan_Herman:</cite> But isn't that identical in practice with the JSON card style?</p>
+<p id=9524 class="phone s05"><cite>Ivan_Herman:</cite> I mean, you get the JSON</p>
+<p id=2372 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, because JSON card only passes a couple of fields. the first one generates photorealistic, full on screen like the image of the let's say driver's license or…</p>
+<p id=76ae class="phone s02"><cite>Dmitri_Zagidulin:</cite> your diploma.</p>
+<p id=f1b6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So the two looked at the</p>
+<p id=53f4 class="phone s05"><cite>Ivan_Herman:</cite> Vitri. you break up. I didn't understand.</p>
+<p id=248f class="phone s01"><cite>Benjamin_Young:</cite> Sorry, Demetri,…</p>
+<p id=eb0f class="phone s01"><cite>Benjamin_Young:</cite> we're losing your audio. Ivon, did that cover any of what your question was? Okay. …</p>
+<p id=d2c5 class="phone s05"><cite>Ivan_Herman:</cite> Let's move on.</p>
+<p id=7030 class="phone s01"><cite>Benjamin_Young:</cite> Kyote, is there any of that you would like to voice</p>
+<p id=f672 class="phone s07"><cite>Kayode_Ezike:</cite> Yeah, I was just responding to questions in the chat. So, I mean, my last experience with web was some time ago and I recall it being awkward to register using it, but that might not be as relevant anymore. I think as far as approach 3 goes. I mean, it feels to me natural to keep it. It was the first one we had sort of tried with SVG and PDF and all that. And there are implementations including in our app as well for it. It seems simpler and it seems a little bit more native than to present</p>
+<p id=22ba class="phone s07"><cite>Kayode_Ezike:</cite> a web view than when you click into a credential that started off in a native view. So, I think there's also that not introducing a potentially awkward feeling for the holders. but that being said, I think obviously there are also web wallets and I think it doesn't hurt to add this as long as we're agreeing that we're not going to exclude it.</p>
+<p id=52cb class="phone s07"><cite>Kayode_Ezike:</cite> It's just going to be that we're going to add this sandbox one as well. That's all.</p>
+</section>
+
+<section>
+<h3 id=cb8c>Use Cases for Render Methods</h3>
+<p id=8bbc class="phone s01"><cite>Benjamin_Young:</cite> So I think the tension still centers around the belief that or…</p>
+<p id=4a47 class="phone s01"><cite>Benjamin_Young:</cite> displaces three and five and possibly one versus having it appear as one of many options. because there's clearly not consensus to throw all the eggs into that one basket. and I agree with Dimmitri that I think pinning down the rock throwing that goes both directions into concrete lists of what they can and would be very helpful.</p>
+<p id=09c7 class="phone s01"><cite>Benjamin_Young:</cite> In the room I probably have the most experience working with the sandbox iframe. it certainly is not that developer joy has to be the only driver, but it also does have serious limitations around what you can do inside that box in terms of use of canvas and other things which PDF rendering would expect if you were thinking as I did that you could run it through mustache and then sort of print the PDF using something like not PDFJS but some of these other HTML to PDF renders that are popular in the ebook world. they do not work in a sandboxed environment.</p>
+<p id=f4c2 class="phone s01"><cite>Benjamin_Young:</cite> There are others like PDF make that can generate PDFs from JSON input which is interesting but awkward because you're taking JSON into JSON and then out to a PDF but then once you've done that you can't do anything with the PDF and the iframe. So at minimum we would need to explore communication responses from the sandbox di iframe back out to the renderer then trusting the renderer to do something with that generated output.</p>
+<p id=bd7d class="phone s01"><cite>Benjamin_Young:</cite> So it essentially starts to look like the wallet thing delegating some render processing into a sandbox space and then accepting whatever comes back and attempting to display it in another container. and in that way it's not dissimilar to a web worker whatever where you're not actually displaying anything from the iframe other than its output. but that then changes the animal into a third thing. going along</p>
+<p id=10001 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I just want to say if this group wants to support PDFs and in so doing there are different assumptions in that model. It doesn't matter how those PDFs get generated. we might be able to put a sandbox around their generation and then have the sandbox output the PDF to you to do something with it. But you're fundamentally getting a different thing because the PDF itself can now go maybe fetch links and do tracking and by accident or otherwise. And so it's a different threat model entirely and it doesn't really matter what system we use to generate that PDF, you get that same output because that thing will if we're going to shoot things out of the sandbox, those things are escaping the sandbox and then being handled outside of them. that's going to be true for anything that we allow the sandbox to process and export.</p>
+<p id=10002 class="phone s06"><cite>Dave_Longley:</cite> But if we want to support those things and the sandbox can do that process and we want to enable issuers to be in control of how those things are produced and then they just hand it off to the rendering host to run their code in a sandbox and then get that's a clear interoperable interoperability model where issuers get to control that process. they get to produce what happens and then you get to decide as a user or a wallet what to do with the output of that process. I think that's really the only clean way to do it.</p>
+<p id=2c6e class="phone s06"><cite>Dave_Longley:</cite> And</p>
+<p id=402c class="phone s01"><cite>Benjamin_Young:</cite> Yeah, I think the big question that all of that raises is…</p>
+<p id=f240 class="phone s01"><cite>Benjamin_Young:</cite> why we're doing this on the client. why are we creating this runtime rendering environment for essentially static content and creating a sort of late a last mile trust tangle to then render something it might be trustworthy. But you mentioned threat model. I personally would rather us pivot and work on threat modeling across all of these then come back and see who's left.</p>
+<p id=1d2a class="phone s01"><cite>Benjamin_Young:</cite> or at least use the threat modeling to inform where we put pressure on specification because we still have yet to cleanly define the use cases for render method which is why I think we all come to the table with slightly different perspectives on what we think it will be can do. and then so far the conversation has been singularly around issuer provided render methods and for many of these things they're really more likely I think to center around credential types and stuffing the rendering code and whatever that means however small or large it might be into every single credential seems like a architectural waste.</p>
+<p id=8ad6 class="phone s01"><cite>Benjamin_Young:</cite> versus having some registered type combo deal with renderers that are shared even if they're from the issuer having the issuer say these are my render methods for these types that I have issued and having wallets cache those and use those rather than stuffing them in every credential and those are architectural conversations I don't think we've had in any depth but that had too many things in it go ahead one.</p>
+<p id=0858 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I do think talking about at least getting a little further down the threat modeling path would help people understand what the options are. I think if you start putting things like PDFs with a hash of them directly into a VC, you've made it impossible to avoid the phone home problem for issuers that would like to be more privacy preserving for the people that they issue VCs to. and so I think that's where that comes from is enabling more privacy preserving mechanisms.</p>
+<p id=992b class="phone s06"><cite>Dave_Longley:</cite> That doesn't mean that you get the guarantee that who whoever you're working with is going to fully comply with them. But if you don't even enable them, the people who would like to comply with them aren't even able to do so. they're forced to have artifacts and logs and things on their system that could abuse people's privacy. and…</p>
+<p id=2ec1 class="phone s06"><cite>Dave_Longley:</cite> I would hope shake out in the threat model so we could see what are we enabling by doing this or that. and I think that would be valuable.</p>
+<p id=2630 class="phone s01"><cite>Benjamin_Young:</cite> …</p>
+<p id=bcaa class="phone s01"><cite>Benjamin_Young:</cite> I would like to see if we can shift the conversation away from who do we kill off because there's no consensus on that and toward how do we move forward towards threat modeling around what we do have and not just threat modeling I think pinning down what the expected uses of these are because there does seem to be tension around the use cases. so I man has done most of the threat modeling so far on other VC specs.</p>
+<p id=9bcb class="phone s01"><cite>Benjamin_Young:</cite> But I think if there's consensus perhaps the champions of each of their respective groupings can take it on themselves to start threat modeling in a basic even just pros and…</p>
+<p id=10003 class="phone s01"><cite>Benjamin_Young:</cite> cons sort of listening that we can massage into formal threat modeling later. That might be the next steps. Go ahead Ivon.</p>
+<p id=8c83 class="phone s05"><cite>Ivan_Herman:</cite> Unfortunately, there is another issue that we have to clarify once and…</p>
+<p id=93bd class="phone s05"><cite>Ivan_Herman:</cite> for all and around mustache or whatever else we take is the matter whether we can use it in a normative spec in the first place because if not then we are spending our time on something which has no future in any case in this specification. that is a worry. I try to look around whether any W3C recommendation has ever used mustache reference normatively.</p>
+<p id=69e9 class="phone s05"><cite>Ivan_Herman:</cite> So far I think neither me nor the various AI system that I tried to use for that came up with any positive result. So that by itself shows that this is a postential problem and if we don't have a clear answer on normative reference then we do not have any choice than removing the templated text from the spec. I know there is a spec. I found that Benjamin and I also know that it hasn't been touched for a long time.</p>
+<p id=c1e4 class="phone s01"><cite>Benjamin_Young:</cite> Right. …</p>
+<p id=803d class="phone s05"><cite>Ivan_Herman:</cite> So it is in this sense stable but whether it can be used in a normative spec at least I can ask the team about it whether this is possible or not. I am happy to ask that but</p>
+<p id=10004 class="phone s01"><cite>Benjamin_Young:</cite> that was not meant to be the answer. and I was certain you'd found that. I wanted to add to that Even with this existing there's more that I think any implementer is going to have to do and provide on top of it. So even if we say whatever the current version is 1.1.2 I guess of the mustache specification is the foundation we're also going to have to spec additives in order for it to be useful I think.</p>
+<p id=ceca class="phone s01"><cite>Benjamin_Young:</cite> Yeah, I think Demetri's call out that it's probably going to end up similar to multibase and data integrity is not a bad read. yeah,…</p>
+<p id=264e class="phone s05"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=57aa class="phone s05"><cite>Ivan_Herman:</cite> the multibase is much shorter.</p>
+<p id=cf3a class="phone s01"><cite>Benjamin_Young:</cite> they Yeah.</p>
+<p id=56af class="phone s05"><cite>Ivan_Herman:</cite> So to put it in our own spec was not a huge deal. I would I would be very scared to put the mustard back into our own spec normatively. Yeah.</p>
+<p id=dfce class="phone s01"><cite>Benjamin_Young:</cite> I understand that and that is probably out of scope to define it as a spec inside the W3C and I think there is a good bit of question marks around whether mustache is even the right foundation.</p>
+<p id=f882 class="phone s01"><cite>Benjamin_Young:</cite> Dimmitri, do you want to voice your thing about dates and approach for Yeah.</p>
+<p id=237b class="phone s02"><cite>Dmitri_Zagidulin:</cite> I'm not sure how good my answer is. but I'm just saying that dates I would like to make an argument and back it up with slides that formatting dates is not going to be a problem. And if it is, it's going to be the same problem for both approach three and four.</p>
+<p id=77c0 class="phone s01"><cite>Benjamin_Young:</cite> So practically I can speak to what I ran into anyway in existing demos that use mustache that are on the playground and in the VC examples repo. it's less that like you said the rendering client could provide localized date formats and pass that to the mustache template engine to then inject in whatever date hole you've carved out for it.</p>
+<p id=91e2 class="phone s01"><cite>Benjamin_Young:</cite> It's that there are times as a template designer, you want to show the year somewhere and you want to show the month somewhere else and you want to show the day somewhere else. this is particularly a pain point with birth certificates that chop dates into all kinds of pieces. and there's nothing native in mustache that lets you do any kind of string processing or concatenation or concatenation you can do, but not splitting and altering and whatever else.</p>
+<p id=d305 class="phone s01"><cite>Benjamin_Young:</cite> So you end up essentially having to have the rendering client, the outer boundary thing, turn the verifiable credential into what in mustache lambdas called a view model where you've beefed it up with all kinds of extra lambdas and multiple instances of the date in lots of different shapes and your handing mustache a much richer object so that then the template designer has many more tools at their disposal.</p>
+<p id=048d class="phone s01"><cite>Benjamin_Young:</cite> The disadvantage is that we have to spec all of that stuff so that there's a common layer that common set of expectations that if you're using SVG mustache that here's all the different bells and whistles you get around the content and that is easy enough to do for valid until and valid from but it's pretty much impossible to do when you're talking about credential subject achieve ment whatever issue date when you're 30 layers down in some open badges thing and you want to format a date then mustache is going to really not be helpful. go ahead.</p>
+</section>
+
+<section>
+<h3 id=ab3a>Interoperability Points in Render Methods</h3>
+<p id=a932 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think something that's key to highlight in the differences between three and four is we only have to put in our spec where the points of interop are. So this is if you're going to develop an implementation, everyone's implementation needs to be able to do these things and do them with the same expectations. And for the sandboxed approach that is every implementation needs to implement a particular API to send data into which is effectively a sandbox blackbox and then get some kind of data out of it. And that's the point of interoperability. the issuer who's going to provide what goes on inside that black box can do whatever they want with the affordances that are in that box.</p>
+<p id=6981 class="phone s06"><cite>Dave_Longley:</cite> And the affordances are whatever can run inside of a sandboxed HTML environment with JavaScript, CSS, HTML. We don't have to specify any of that. It can evolve over time. We don't have to think about it. that's just out of our purview. We just care about that the inputs and outputs into that box. Now the templated approach is different. We're specifying we're telling implementers this is the template language you have to use. these are the affordances that template language supports. We have to say how that works so that anyone designing a template knows what every wallet or other displayer out there is going to be able to do and what they will do with their inputs.</p>
+<p id=e79b class="phone s06"><cite>Dave_Longley:</cite> We have to specify all of that in our spec. And that is a huge difference between options three and</p>
+<p id=76fa class="phone s01"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=705b class="phone s01"><cite>Benjamin_Young:</cite> so Demetri, you asked about iframes for list view. I think that'd be a nightmare. you could do it. Sure.</p>
+<p id=f5c0 class="phone s06"><cite>Dave_Longley:</cite> I would love to just jump in on that one. I think there's an misunderstanding about the different rendering options that we would put in the spec. I do not expect anybody to ever create a list view or anything of that nature using the sandboxed iframe thing. Sure, you can go ahead and try and do it, but that's not really what it's for. that is the J. We still need a better name than this, but that is what the JSON card style renderer is for. We have two different concepts between those two things. We have a renderer that's producing effectively an AI description, something that's more view model like that's ready for you to apply your own style if you want to.</p>
+<p id=0b2e class="phone s06"><cite>Dave_Longley:</cite> You can still have style hints, background colors or whatever that the issuer might want to provide, but you're going to in be incorporating some display information about a VC that the issuer says are the important fields to highlight, what are details, things of that nature. You're going to incorporate that into your own look and feel in your application. So when you use the JSON card style thing, you're not getting a rendered visual for I know we also want to cover audio and other things, but for the sake of this conversation, you're not getting visual details You're getting information out about how you could build a UI that would be helpful for this VC. That is a totally different thing.</p>
+<p id=97a8 class="phone s06"><cite>Dave_Longley:</cite> And that's what I expect people to put into list displays, things that incorporate directly into their own look and feel of their application. That is not what the sandbox HTML is That is for rendering things like these, birth certificates and really specific views of really specific credentials where issuers get to control the entire experience. So that in those situations, you're expecting the user to be looking at a single credential to get the full experience that the issue would like you to have for that specific credential. And those are two very different things and…</p>
+<p id=60de class="phone s06"><cite>Dave_Longley:</cite> they serve two very different purposes. And I think we need to provide support for both of those things in the spec.</p>
+<p id=406d class="phone s01"><cite>Benjamin_Young:</cite> Yeah. …</p>
+<p id=8802 class="phone s01"><cite>Benjamin_Young:</cite> the reason I browsed over here is the introduction is pretty anemic. and I think it's left all of us tangling wires around what each of these are for and when they should be used and whatever. And certainly needs some beefing up in terms of intended UI outputs of right now they're just Jason card isn't in here but when it shows up it's just down in the rest with the rest of these and I think we need to call out the use cases and centralize the fact that these are issuer provided things in that live inside a credential across the</p>
+<p id=423a class="phone s01"><cite>Benjamin_Young:</cite> Some are intended for list use Jason card and then others are meant for essentially rendering areas. And the reason I brought this up when I was on the queue before was that I was going to point to this for using mustache inside of the sandbox iframe. There's existing code that can be used inside the VC viewer code I'll drop a link to as well. this ain't pretty but it does work.</p>
+<p id=d8cf class="phone s01"><cite>Benjamin_Young:</cite> Then you'll have to pick the credential you want. so this is from the VC example thing. The template code includes all of mustache.js. You can maybe see how tiny this scroll bar is. as well as the actual combined into the value of the template field here in the render method. the credential is then filtered to just the thing selected in this area and then that's passed to the template engine and the template engine then runs in this sandboxed di iframe to make this really beautiful credential output. all of that gets bundled into this credential.json</p>
+<p id=ed67 class="phone s01"><cite>Benjamin_Young:</cite> JSON file which comes in at about 27K for mustache. I'd be considerably larger for handlebars or something like that, but I intend to redo this demo for handlebars. and I have I think a PDF make one that's pending maybe. Yeah. so this guy uses JSON passed through JSON into PDF.js. and then yeah, there's all kinds of questions around the naming's terrible, but the bigger questions are around how does the data get back out because you can't do anything with it. in fact, I think I can display that with some serious copy paste here. Yeah.</p>
+<p id=c150 class="phone s01"><cite>Benjamin_Young:</cite> 3.25 meg to do one credential that wants to be a PDF when it grows up. And My browser doesn't like it either. Okay, here you go. So, the same thing, the top bits. I think mustache is in here, too. maybe that's only 27k of the 3 2 something big might be wrong and then I can create this download button which is a PDF which when clicked that's right clicking it is also disabled I don't know that that's true of all links but I can rightclick and think open it in a new tab yeah and then it renders over</p>
+<p id=6593 class="phone s01"><cite>Benjamin_Young:</cite> there, but that's not a useful experience for anyone in a wallet. And in the I may have had to pass it out of it.</p>
+<p id=c46b class="phone s01"><cite>Benjamin_Young:</cite> I think it's in the frame. that's a demo of how this stuff currently sort of functions. Go ahead, Longley. to be clear,…</p>
+<p id=de30 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I wanted to say I don't know that we should say that that's not a useful experience for anyone in a wallet.</p>
+<p id=7a1c class="phone s06"><cite>Dave_Longley:</cite> That might actually be a very useful experience.</p>
+<p id=92d3 class="phone s01"><cite>Benjamin_Young:</cite> this is not useful. Left clicking doesn't work.</p>
+<p id=fe9b class="phone s06"><cite>Dave_Longley:</cite> Yes. With Yes, that's true. Okay.</p>
+<p id=58a5 class="phone s01"><cite>Benjamin_Young:</cite> And that's with a download attribute on the anchor. so I haven't tested this in other browsers. I don't know how much of that user interaction stuff is blocked.</p>
+<p id=ab29 class="phone s01"><cite>Benjamin_Young:</cite> I haven't tried putting in other anchors to go to example.com etc. I do know I frame inside an iframe so you can do that but you cannot inside a sandbox. it'll say that you broke the src doc requirements etc. so your only practical option is to send this blob that you've created out to the rendering client and then have the rendering client do something else.</p>
+<p id=bb4b class="phone s01"><cite>Benjamin_Young:</cite> But that totally shifts the story around threat modeling from everything's going to be fine inside this little box to it will be and then we're going to take it all out and hand it to somebody else and…</p>
+<p id=b6e9 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I was going to say I don't think it actually shifts it.</p>
+<p id=c48c class="phone s01"><cite>Benjamin_Young:</cite> trust both sides.</p>
+<p id=c880 class="phone s06"><cite>Dave_Longley:</cite> Everything is fine in that little box. but the thing that whenever it comes out of that little box now you're in a different space.</p>
+<p id=10005 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. Except Then the way we've been pitching this is everything stays in that little box and that cannot be the case if it's going to render something like a PDF. I haven't tested video or anything like that yet. But audio would seem to be one we keep saying is going to work in here.</p>
+<p id=4164 class="phone s01"><cite>Benjamin_Young:</cite> Yeah but again this is a three and a half three and almost three and a half meg credential of nearly no value. It has two fields in a PDF. kind, right?</p>
+<p id=5c23 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I put this in the chat. I just want to remind everybody that it is a goal to externalize templates so that you can fetch them with something like OTTP and then you can check a digest multibase against the content. so the VCs themselves should remain</p>
+<p id=6573 class="phone s01"><cite>Benjamin_Young:</cite> Which then returns us to the story of providing them around credential types and not stuffing them into the credential itself.</p>
+<p id=7716 class="phone s01"><cite>Benjamin_Young:</cite> in which case again we have a different threat model. so I think some of the architectural choices need to be pinned down and threat modeled against probably as well as exploration of what we can and cannot do with template engines and HTML inside a sandbox. Go ahead, Phil. Yeah.</p>
+<p id=42b4 class="phone s08"><cite>Phillip_Long:</cite> Yeah. Yeah. It seems to me we're coming back again and again to let's get to the threat modeling and see where we stand. because we can go around and then look at various options forever. But I think the threat modeling is going to provide the guidelines. And what you just described to me, it doesn't make any sense unless the intention is not to give issuers confidence that what they issue is going to be…</p>
+<p id=7b6a class="phone s08"><cite>Phillip_Long:</cite> what they have produced. I don't see the point of spending a lot of time doing that because it's not addressing the issues. Thanks,</p>
+<p id=8517 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, agreed.</p>
+<p id=7e4f class="phone s01"><cite>Benjamin_Young:</cite> And this demo of generating a PDF looks even stupider when you realize you could just put the PDF rider from somewhere else into the credential and it'd be smaller. So, there's some of this that's just kind of explaining the cutlery at the table and, knowing when to use the spoon and not the knife. but yeah, that is certainly all threat model. So, I think Dimmitri, you'll be cheering again next week. maybe we can flip the conversations over and point towards threat modeling and maybe use cases and then try and try and move forward that way.</p>
+<p id=1881 class="phone s01"><cite>Benjamin_Young:</cite> I know Manu is keen to get to CR,…</p>
+<p id=088c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, copy</p>
+<p id=3875 class="phone s01"><cite>Benjamin_Young:</cite> but I don't think we have consensus on how to do that just yet, but I will let you take over. All right, thanks for coming everybody. And you guys are still chatting. I maybe Dimmitri don't sign off yet so we don't all get pitched. Okay, next time Phil says.</p>
+<p id=5c9c class="phone s08"><cite>Phillip_Long:</cite> Excellent. Next time.</p>
+<p id=aa9d class="phone s01"><cite>Benjamin_Young:</cite> All right. Thanks everybody. Take care all. Meeting ended after 00:57:01 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

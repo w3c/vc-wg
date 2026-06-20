@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 16 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>16 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Elaine_Wooton, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phil_Archer, Phillip_Long, steve_capell, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#a364">VC WG Recognized Entities Agenda</a></li>
+<li><a href="#d884">Trust Registries Discussion Kickoff</a></li>
+<li><a href="#a683">Recognized Entities Threat Model Review</a></li>
+<li><a href="#546d">Trust Lists And Registries Definitions</a></li>
+<li><a href="#1d0e">The Role Of Trust In VCs</a></li>
+<li><a href="#b16c">Centralized Vs Decentralized Trust Models</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=17a7 class="phone s01"><cite>steve_capell:</cite> is now being recorded.</p>
+<p id=a5b9 class="phone s01"><cite>steve_capell:</cite> Speaking</p>
+<p id=a722 class="phone s02"><cite>Manu_Sporny:</cite> Hey folks, we'll wait a couple more minutes to allow other people to join. and just a heads up that I'm double booked today unfortunately at the bottom of the hour. So I will have to drop and join another call. but we do have stuff to talk about and my hope is that actually Steve, you're here. I want to make sure that we address some of the things that came up at the face toface meeting. So maybe we can good. And Phil's here as late for both of you, I imagine. I want to make sure that we cover the GS1 and UN ECE use cases. but unfortunately I am going to have to drop right before we get into that conversation. but we'll hold for another two minutes and then start the call.</p>
+<p id=9b26 class="phone s03"><cite>Phil_Archer:</cite> Just know Manu, I'm really only sort of able to I mean I can talk a little bit but I'm walking the dog because it's that time of day. so yes, I am here and I will participate as much as I can but there is a limit to what I can do.</p>
+<p id=4bba class="phone s02"><cite>Manu_Sporny:</cite> Noted. We will not ask you to tap dance today.</p>
+<p id=4917 class="phone s03"><cite>Phil_Archer:</cite> Yes. Thank you. Cheers.</p>
+<p id=ad29 class="phone s02"><cite>Manu_Sporny:</cite> and excellent just the man that I was hoping would be here. Kevin, I was noting that we want to cover the GS1 use case and…</p>
+<p id=d025 class="phone s01"><cite>steve_capell:</cite> It's coming.</p>
+<p id=becc class="phone s04"><cite>Kevin_Dean:</cite> Tell me.</p>
+<p id=809d class="phone s02"><cite>Manu_Sporny:</cite> figure out a concrete path forward there today. So, my hope is to rely on you, Kevin, to kind of talk us through how we might do it. I've got an idea, but very unfortunately, I'm double booked at the bottom of the hour, so I'm going to have to leave at the bottom of the hour. But Kevin, would you mind maybe trying to make some headway on that at the latter half of the call today?</p>
+<p id=1632 class="phone s04"><cite>Kevin_Dean:</cite> Yeah,…</p>
+<p id=9708 class="phone s02"><cite>Manu_Sporny:</cite> Awesome. Thank you. Sorry to drop that on</p>
+<p id=dfe5 class="phone s04"><cite>Kevin_Dean:</cite> that's quite hard. I expected to be discussing that or the issue I raised today. So, I knew I'd be on the spot.</p>
+<p id=7214 class="phone s02"><cite>Manu_Sporny:</cite> All right, I think we've got a healthy group of people here and getting healthier by the minute. so let's go ahead and get started.</p>
+<p id=3f2f class="phone s02"><cite>Manu_Sporny:</cite> Welcome everyone. this is the recognized entities task force call for the W3C verifiable credential working group. A reminder that we are recording and…</p>
+<p id=c20b class="phone s01"><cite>steve_capell:</cite> that and…</p>
+<p id=e35a class="phone s02"><cite>Manu_Sporny:</cite> transcribing the call and…</p>
+<p id=b8ba class="phone s01"><cite>steve_capell:</cite> transing. So I can ask that</p>
+</section>
+
+<section>
+<h3 id=a364>VC WG Recognized Entities Agenda</h3>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> that we are under the W3C code of ethics and professional conduct. not that we've ever had any problems with that here. we do have an agenda today, a proposed agenda, and that is to just do a brief recap of the face-to-face meeting and then talk about a threat model. specifically, there's a PR out there that we can review in a decent amount of detail. and then we do want to as we said we would do at the face-to-face meeting focus very precisely on the trade use cases the UNCE GS1 style use cases because we do want to make it very clear…</p>
+<p id=9f6e class="phone s01"><cite>steve_capell:</cite> I will.</p>
+<p id=e5ba class="phone s02"><cite>Manu_Sporny:</cite> how the specification addresses those use cases. So I think that's the proposed agenda for today. Are there any other updates, anything else anyone would like to add to the agenda for today?</p>
+<p id=b6a0 class="phone s03"><cite>Phil_Archer:</cite> So note, Manu, that I'm hoping tomorrow on the all group call, excuse me, there'll be a time for each task force to reflect on the face to face. So you may not want to dwell too much on that if we're going to do it tomorrow.</p>
+<p id=e699 class="phone s02"><cite>Manu_Sporny:</cite> Thank That is very helpful. And yes, let's skip that if we're going to do it tomorrow. not skip, but I'll do a quick recap. two minutes and then we can move on. Any other updates to the agenda?</p>
+</section>
+
+<section>
+<h3 id=d884>Trust Registries Discussion Kickoff</h3>
+<p id=d780 class="phone s01"><cite>steve_capell:</cite> I hoped to spend a little bit of time picking brains.</p>
+<p id=4b87 class="phone s01"><cite>steve_capell:</cite> I had an interesting time in Bangkok where there was significant member state interest in the UN thing called grid which is just a kind of trust list. and also I've got a meeting in a few hours time with the Australian government about their VC policy and I've been doing some digging into this whole thing of so-called trust registries because I also attended a meeting</p>
+<p id=2c7c class="phone s01"><cite>steve_capell:</cite> or represented on a task force created by the global digital collaboration. and the task force is called trust registries or something similar. And I've come to realize that there's a not insignificant disconnect in thinking about what is a trust registry, where does it fit in, what's it for between the way I understand things and the way I think GS1 and you and others think it should work and versus what members other participants in that group thought a trust registry was for. And I'd like to resolve some of that if I have a moment.</p>
+<p id=1505 class="phone s02"><cite>Manu_Sporny:</cite> Sure thing. So, let's put it on the agenda. yeah, let's cover that.</p>
+<p id=701b class="phone s01"><cite>steve_capell:</cite> It's hot.</p>
+<p id=fdc7 class="phone s02"><cite>Manu_Sporny:</cite> Yours is timesensitive, Steve. So, let's put it on the front of the agenda. and let's make that the first item we dive into. So we'll do the trust registries kickoff discussion if we can time box that to let's spend however much time you need. My concern is we won't get to the threat model thing and that'll be delayed by another week because I will have to drop at half past the hour. okay.</p>
+<p id=8be0 class="phone s01"><cite>steve_capell:</cite> We'll Do that first if you want.</p>
+<p id=d785 class="phone s02"><cite>Manu_Sporny:</cite> I'll try to do a quick thing. okay let's just skip the face to face. most of us were there and…</p>
+<p id=abea class="phone s01"><cite>steve_capell:</cite> I got that.</p>
+</section>
+
+<section>
+<h3 id=a683>Recognized Entities Threat Model Review</h3>
+<p id=5e32 class="phone s02"><cite>Manu_Sporny:</cite> we'll hear about it tomorrow. So real quick on the threat model I noted that spent the pain the plane ride over putting together a recognized entities threat model. got feedback on it at the face toface and spent the plane ride back updating the threat model. I mentioned this to the mailing list I think a week or two ago. I don't know whenever we came back from the face toface meeting. and I think we have a complete threat model for recognized entities. Now the question is do other people in the group think it's good or okay enough for a first draft?</p>
+<p id=84d2 class="phone s02"><cite>Manu_Sporny:</cite> So a couple of It's been open for two weeks now. I'm going to very quickly kind of go through the recognized entities threat model.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> Not in detail, just to kind of show what's there. the other thing that kind of came out of the face toface meeting was this loose agreement that we would try to just get someone in each task force to put a cohesive threat model together.</p>
+<p id=a0bf class="phone s01"><cite>steve_capell:</cite> I have to go.</p>
+<p id=10001 class="phone s02"><cite>Manu_Sporny:</cite> and not necessarily spend months trying to do it by So, I volunteered to do the threat model for recognized entities. it is just a proposal, on so forth, but it is complete to the point that we can get other people to take a look at and review it. So, I'm just going to walk through it. this uses what I believe to be the approach that Simone and Joe and the rest of the security group has agreed to. it uses Joe's tooling …</p>
+<p id=a53a class="phone s01"><cite>steve_capell:</cite> the same</p>
+<p id=8278 class="phone s01"><cite>steve_capell:</cite> …</p>
+<p id=3cab class="phone s02"><cite>Manu_Sporny:</cite> and used all the feedback from the Brussels face to face. Okay, so up this is standard respect stuff. We open up with an abstract to talk about what the threat mall is about. There's a status of the document section. I think this is going to be a group note. we have an introduction which is more or less boilerplate from the W3C threat modeling and then we have a description of the ecosystem we're trying to model with the entities that exist in that ecosystem like issuers and holders and verifiers and the publisher of the recognized entities list. Right?</p>
+<p id=7520 class="phone s01"><cite>steve_capell:</cite> I just</p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> So the introduction just kind of gives a description of this is the ecosystem we're interested in threat modeling. and it calls each one of these entities and labels them and links them to a data flow diagram. One of the pieces of feedback that we received at TAC was that the previous DFD which was totally AI generated which I found kind of useful but not super useful needed to be redone. So this is a human generated artisal handcrafted Google doc and let me see if I can get this a little bigger.</p>
+<p id=bdf7 class="phone s02"><cite>Manu_Sporny:</cite> and tries to simplify it in the way that Joe and Simony were talking about. It is not the entire ecosystem and every potential outcome. It is the key things that we're most interested in modeling in the system. So what does this diagram contain? It contains four security boundaries. The publisher system security boundary. This is issuing the recognized entity list/credential. you have the issuer system which is a different security zone. This is just the issuer of the credential. You've got the holder of the credential, another security zone. And then finally the verifier system which is another security zone. So there are four they call them containers.</p>
+<p id=863b class="phone s02"><cite>Manu_Sporny:</cite> I don't necessarily like that word, but they're containers that contain various processes and entities and storage and things like that. trust boundaries is another way to think about it. within each one of these containers, and I think I did this incorrectly, but I kind of like this approach is an entity. So it's the list publisher or the issuer or the holder or the verifier. These are things that we are familiar with in the PC ecosystem.</p>
+<p id=870e class="phone s01"><cite>steve_capell:</cite> You're going</p>
+<p id=10003 class="phone s02"><cite>Manu_Sporny:</cite> There are also's P2, P7. These are processes that happen within the system like creating the recognized entity updating the list, storing stuff. S is storage. So the publisher list is stored here which it kind of telegraphs that if somebody broke into that storage it might not be a good thing. so there are things within the trust zone that happen that we describe in the threat model and then there are flows between the trust zones for example when the issuer asks the list publisher to be put on a list or the list publisher decides to put an issuer on the list there's some identification process that happens that the list publisher identifies the issue in some way maybe there's a identity vetting process</p>
+<p id=5bd4 class="phone s02"><cite>Manu_Sporny:</cite> So It's the flow of kind of information to this system. so for example when the publishes a list there can be in the GS1 and UN and ECE use cases a recognized entity credential gets published and…</p>
+<p id=6938 class="phone s01"><cite>steve_capell:</cite> It's coming.</p>
+<p id=abdb class="phone s02"><cite>Manu_Sporny:</cite> it's effectively sent into the to the holder where the holder can then hand that off to the verifier system. Right? So that's the GS1 UNCCE style stapling the credential send it along with the payload approach and then there's another approach where the verifier is just configured to retrieve the list from some public endpoint and that's this flow right so retrieving the list when the credential is being validated as a part of that process.</p>
+<p id=8da1 class="phone s02"><cite>Manu_Sporny:</cite> So it's not everything it's meant to be this is the core set of things that happen in this ecosystem that we're concerned with threat modeling u because we want to talk about how the threats are mitigated using these flows and processes entities boundaries and storage. Let me pause there for half a second and…</p>
+<p id=f20d class="phone s02"><cite>Manu_Sporny:</cite> if there are any questions at this point. Go ahead, Steve.</p>
+<p id=81de class="phone s01"><cite>steve_capell:</cite> Yeah, I was thinking a little bit about one of the possibly most common issues and…</p>
+<p id=1320 class="phone s01"><cite>steve_capell:</cite> how to resolve it. So what happens when the subject of a recognized entity credential their did is compromised. so let's say I'm a conformity assessment body and I've been issuing I don't know ISO 9,000 certificates for a year. I've issued a thousand of them and my did is suddenly compromised and I'm the subject of a recognized entity credential issued by the National Accreditation Authority.</p>
+<p id=10004 class="phone s01"><cite>steve_capell:</cite> that says you are indeed accredited for issuing 9,000 certificates and one year on my DID's compromised and so I need to rotate get another DD. I probably need to get another recognized entity credential that links to my new did. But that happens at a point in time. It doesn't actually invalidate the thousand, certificates that I've issued over the last year, only those that are issued during a period since my did was compromised until I've got a new one.</p>
+<p id=d1f8 class="phone s01"><cite>steve_capell:</cite> So how do you reflect that kind of timebound revocation that says the recognized entity credential that says you're the controller of this is accredited to issue 9,000 certificates as 9,000 certificates that accreditation is revoked for that did from this date.</p>
+<p id=270f class="phone s02"><cite>Manu_Sporny:</cite> Yes, that is an excellent question. so let's work through that using the DFD, because we should be able to speak to your use case using the revocation of the list, that happens within the publisher system. The list publisher is the one that does the revocation They run the update list process and they publish it to publisher storage. as an example of how we could explain one part of the flow that you talked about, So that is the revocation or…</p>
+<p id=bef0 class="phone s01"><cite>steve_capell:</cite> The painting.</p>
+<p id=c6a9 class="phone s02"><cite>Manu_Sporny:</cite> withdrawing or updating of the validity periods of the recognized entity credential. So we would create a threat on exactly what you said and we would specify how the list publisher runs process 7 to update the list to publish it in storage and how the verifier after they've configured it to pull from this list during the validation process which is process would check and see that</p>
+<p id=72a1 class="phone s02"><cite>Manu_Sporny:</cite> the information has been updated and there is a new time bound on that particular issuer. So all that to say I think the things that we have in the diagram allow us to talk about one part of your use case the other part of your threat has to do with the issuer going back and getting a new credential. So the issuer here, goes through potentially a new identification reidentification process because that is used to create kind of a new list by the The publisher then gives the new credential to the issuer which is a new recognized entity credential which they can then use in their flow. so again it kind of flows through just the initial recognized entity credential.</p>
+<p id=d7f4 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Good arrangement. </p>
+<p id=2a75 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Needs more cues about box types than colors, e.g., box shape, fill pattern, line type. Legend of P/E/C/x prefixes might be enough. </p>
+<p id=ea95 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> O1 &amp; O2 should have white text on that purple. I think other contrasts are sufficient. </p>
+<p id=7a48 class="phone s01"><cite>steve_capell:</cite> It</p>
+<p id=e98e class="phone s02"><cite>Manu_Sporny:</cite> Let me pause there. and just remind the purpose of this diagram is not to catch every single detail. It's to have enough detail in there where you can point to things, in that exist on the diagram that are supposed to do certain parts of this process. Let me stop there. did that make sense or were you able to</p>
+<p id=b66b class=irc><cite>&lt;Phillip_Long&gt;</cite> Unstated in the diagram is the validity time period metadata </p>
+<p id=4009 class="phone s01"><cite>steve_capell:</cite> I follow, but there's still an issue I think which is that if we're using the GS1/UN style discovery of an accredit recognized entity credential possibly through the DID right so I've got this certificate I see it's issued by did XY Z there's some sort of discovery mechanism to go now I found a entity credential issued by the National Accredititation Authority. In other words, my pathway to the list is through the DID of the conformity assessment body, the subject.</p>
+<p id=dcbb class="phone s01"><cite>steve_capell:</cite> Then if the National Accreditation Authority revokes just simple bitstring status list style revokes the accreditation the verifier pathway to go okay certificate's valid and issuer of certificate is accredited that verifier pathway will fail not just from that time point in time but for every credential that's been issued and I don't see a way around that problem when your pathway is through the document discovery mechanism which is actually quite fundamental to this trust chain discovery architecture right.</p>
+<p id=68b3 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. I think what that might also mean is that we're missing something in here or we're missing like a did storage and discovery …</p>
+<p id=cf30 class="phone s01"><cite>steve_capell:</cite> Okay. Excuse me.</p>
+<p id=3ebe class="phone s02"><cite>Manu_Sporny:</cite> who is style storage environment. let me say that noted and we should talk about it later.</p>
+<p id=1bcb class="phone s02"><cite>Manu_Sporny:</cite> I want to get through the rest of the document before I have to drop just so that people have enough to review and we can make a decision to merge or not by next week. go ahead Kevin though if you wanted to</p>
+<p id=28ae class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 that there are details to work through that use case to make sure everything is covered </p>
+<p id=6a05 class="phone s04"><cite>Kevin_Dean:</cite> I just want to make this the question of…</p>
+<p id=7d5c class="phone s04"><cite>Kevin_Dean:</cite> what to do when a data is compromised or a key is compromised is one that's been bedeviling us from the beginning. And if all is that the credential has been revoked, then obviously everything that's based on that credential is invalid. If you got a time time boxing around the revocation, then you have a better ability to make decisions about what to do based on the revocation and where you are in the time stream relative to that revocation and relative to what other pieces of information you're looking at. so anything that did key was used to issue after the revocation is obviously invalid. Everything before that's a business decision.</p>
+<p id=de68 class=irc><cite>&lt;Phillip_Long&gt;</cite> +1 there needs to be time frame metadata </p>
+<p id=3a19 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, plus one in that. So, Steve, I think we do need to talk at depth, through that. …</p>
+<p id=23df class="phone s01"><cite>steve_capell:</cite> Good.</p>
+<p id=8b8b class=irc><cite>&lt;Dave_Longley&gt;</cite> (and a discussion of who is saying what the date is ...) </p>
+<p id=10005 class="phone s02"><cite>Manu_Sporny:</cite> but, I can't necessarily. So let's and raise an issue Steve if you feel like I mean we should raise an issue so we can talk through that particular threat. okay so going back to the document there's a DFD here and we just kind of use it to identify all the parts of the ecosystem and then in the ecosystem we have entities like the list publisher and we've got a definition for it an issuer and holder and verifier and then we have definitions for the processes create publish configure we've got definitions for the flows what's happening in each flow We've got definitions for storage. We have definitions for data objects. We have definitions for the security containers and so on so forth.</p>
+<p id=09b7 class="phone s02"><cite>Manu_Sporny:</cite> So we basically go through and define everything's in the diagram that's labeled down here. and then we talk about the main stakeholders that we care about. so the verifier. and then have at least in this one we went through and brainstormed a bunch of things. We have I think 18 threats. after including everyone's thing and dduplicating and seeing if we could combine or not we're left with these target s, external threats, dependency threats, and each one is tagged as either a security threat or a privacy threat.</p>
+<p id=7d5d class=irc><cite>&lt;Dave_Longley&gt;</cite> (i.e., can't trust a date statement signed by the compromised DID's keys; need a proof of publication or similar) </p>
+<p id=2e3c class="phone s02"><cite>Manu_Sporny:</cite> And I took this one for a spin, which I thought was interesting. A market competition threat. and so this is the tooling. It does it automatically. I felt like it did a pretty good job. The colors could use a little work. It's a bit hard on the eyes. and then if you click on each one of these, let's take a JSON schema attack as an implementation threat. You've got a description of the threat and you've got a response and then you also list the components in the diagram that are affected by it. And then you specify what the threat taxonomy is. So this is a denial of service attack per the stride threat taxonomy. and…</p>
+<p id=e0d4 class="phone s01"><cite>steve_capell:</cite> What happened? Sorry.</p>
+<p id=e981 class="phone s02"><cite>Manu_Sporny:</cite> and that's effectively You can have multiple responses per threat, but I tried to just start out with one per threat to make it easy. and that's largely it right. I don't think we need to go through every single one of these threats and read them though people do need to do that. We do need a complete review by some folks. but that's at a high level that's it, right? So this document exists as a PR. I would like us to merge it so that people can do a more thorough review on it. again it is just a proposal. It's just a note. the expectation is that we will refine it. but I think the assertion I'll make is that I think this is good enough to kick off a horizontal review with privacy and security.</p>
+<p id=2e30 class="phone s02"><cite>Manu_Sporny:</cite> I think we would need at least two other people to review the full document before we do that. so let me stop there. I've got four minutes before I need to drop. any high level on I hate it. Bad, thoughts on is this the Level of detail. Thumbs up from Coyote.</p>
+<p id=0da3 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Just him.</p>
+<p id=16fb class="phone s01"><cite>steve_capell:</cite> I think it's good.</p>
+<p id=6fb2 class="phone s03"><cite>Phil_Archer:</cite> May I put me down as a reviewer,…</p>
+<p id=5913 class="phone s02"><cite>Manu_Sporny:</cite> Okay. Awesome.</p>
+<p id=7e55 class="phone s03"><cite>Phil_Archer:</cite> please? Thank you.</p>
+<p id=a264 class="phone s02"><cite>Manu_Sporny:</cite> Thank you, Appreciate that. Go ahead, great. Thanks, Steve. Mhm.</p>
+<p id=1fdc class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> I put this in the chat, too. good arrangement, lacking a recoil. I got a couple issues that I put in. the different blocks need more cues about them than colors like box shape fill pattern line type. legends of the PEC and whatever might be enough.</p>
+<p id=679a class="phone s01"><cite>steve_capell:</cite> question.</p>
+<p id=60ca class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> And the other thing is that 01 and O2 definitely need white text on that purple.</p>
+<p id=50a4 class="phone s02"><cite>Manu_Sporny:</cite> I gotcha. Yep. I see it.</p>
+<p id=b260 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> That's it.</p>
+<p id=7668 class="phone s02"><cite>Manu_Sporny:</cite> We do have A tad. I don't know if this is the right thing,…</p>
+<p id=4eef class="phone s02"><cite>Manu_Sporny:</cite> but the VC recognized entities is the repo and threat model is underneath it. And you can probably just open it on that it mingles threat model with the spec, but I think that's probably fine.</p>
+<p id=4e10 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Okay, this is in there.</p>
+<p id=3da5 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Okay, that's fine.</p>
+<p id=947b class="phone s02"><cite>Manu_Sporny:</cite> All I have to drop Okay. I think that's it for this. I'm fairly happy with where things are. I feel like it's a repeatable process. It took 20 hours, which is an enormous amount of time. It's way more than I have ever spent on any security or privacy considerations probably all added up. but that's where we are.</p>
+<p id=b293 class="phone s02"><cite>Manu_Sporny:</cite> Okay. Let's move on to the next item. Steve, and I apologize, I'm going to have to drop, but this is the,…</p>
+</section>
+
+<section>
+<h3 id=546d>Trust Lists And Registries Definitions</h3>
+<p id=3fb8 class="phone s01"><cite>steve_capell:</cite> It's like</p>
+<p id=10006 class="phone s02"><cite>Manu_Sporny:</cite> different definitions of, trust lists and registries and things like that. before we jump in, I'm going to hand it over to you, Steve, in a second. I will note that trust registry has the same effect on people as talking about identity which is everybody has a different definition. everyone's got really strong opinions on them and my hope at least for this group is we can avoid that debate entirely just we avoided the debate entirely for the verifiable credential stuff. We focused on verifiable credentials.</p>
+<p id=10007 class="phone s02"><cite>Manu_Sporny:</cite> We did not focus on identity because when you focus on identity, you never get anywhere, right? And I think trust registries are very much in that same bucket. You will never get people to back down from their personal feelings around what a trust registry does and doesn't do. And I think what we can do is work on a specification called recognized entities that has some useful things going on. And maybe it's useful for trust registries,… maybe it's just verifiable credentials. Maybe it's useful for identity, maybe it's not. with that, over to you, Steve, please Manu Sporny:</p>
+<p id=7e3c class="phone s01"><cite>steve_capell:</cite> just look I would agree with…</p>
+<p id=71e3 class="phone s01"><cite>steve_capell:</cite> what you just said Manu that everyone has a different definition of trust registries. The only reason I wanted to see if we could reach some consensus in this group was because it is getting discussed at nation state level later today.</p>
+<p id=a4bc class="phone s01"><cite>steve_capell:</cite> because vendors especially those in the oid for what is it OID4 VP camp are inserting the idea of we've got to be able to know who the verifier is so we can add them to a trust list and we've got to know who the issuer is and add them to a trust and we need a trust registry service and this talk is going on and influencing member state policy right and that worries me a bit because when I dig into it with my very limited knowledge, some of it seems a bit misguided or maybe self-interested.</p>
+<p id=2101 class="phone s01"><cite>steve_capell:</cite> and that's to the extent that I've thought about this I have a kind of inkling that recognized entities particularly if they're a discovered credentials in a kind of a linked credential hierarchy actually completely replaces the need for any kind of trust registry as others describe them shall I put it that way and I think that's</p>
+<p id=f35c class="phone s01"><cite>steve_capell:</cite> there's maybe some wrong thinking or maybe I'm thinking so I'm trying to think how to express this in a few hours to the Australian government and later on to various other governments in a way that doesn't sort of put offside this other camp. but kind of reveals that the emperor's got no clothes, if you like.</p>
+<p id=2c67 class="phone s01"><cite>steve_capell:</cite> It seems to me that the idea that you insert some sort of registry lookup at the time you are verifying sorry when verifying a credential the idea is apparently that there's some registry that is in some undefined place typically maintained by some</p>
+<p id=2a5a class="phone s01"><cite>steve_capell:</cite> undefined party who typically is not the authority, right? that actually control already has a governance process around this kind of recognition. It's some tech provider and that this registry somehow is fundamental to trust in this architecture and I feel that thinking is broken and particularly also on the the idea that I've got to authenticate a verifier authorize the verifier seems a bit strange to me as well right in the sense that depending on the use case if I'm walking into a bar and want to prove my age not every bar on the planet is going to be on some trust list and I know I've walked into the bar and I've always shown a credential to prove my age. why do they need to be on a trust list?</p>
+<p id=f61e class="phone s01"><cite>steve_capell:</cite> There is the use case of I'm got medical records and I'm visiting my doctor. he's in front of me. I trust him. If it's a teley health and it's a remote connection, maybe I do need to be sure that this party really is an accredited doctor and not a spammer. in which case I want to almost revert the discovery architecture and say right before I give you my medical records prove to me that you are a registered doctor in which case there's really no difference in the pattern as far as I can see whether I'm as a verifier traversing a chain from a credential I'm presented up to some authority that recognized that credential issuer or as a holder traversing</p>
+<p id=b528 class="phone s01"><cite>steve_capell:</cite> a chain from a request for information up to some authority that says that requesttor is who they are. It's the same pattern. and in both cases, what I really want to know is who is the authority that granted this, not some tech service provider trust list that I don't know even know…</p>
+<p id=b25b class=irc><cite>&lt;Phillip_Long&gt;</cite> Actually Steve I've had the same thoughts about the recognized entities can be used in the US as a mechanism for a state to recognize a business as permitted to commerically deliver services within it. </p>
+<p id=4068 class=irc><cite>&lt;Dave_Longley&gt;</cite> -1 to &quot;authenticating verifiers&quot;, it's unworkable </p>
+<p id=995e class="phone s03"><cite>Phil_Archer:</cite> Keep close.</p>
+<p id=d006 class="phone s01"><cite>steve_capell:</cite> how they would govern what's on it, so the bottom line of all this is I let me just say one thing I can't think of a single use case that doesn't really seek to only provide digital verification of a trust architecture that already exists in other words trust is either institutional I trust something because there's some governance processes around registering doctors or accrediting certif</p>
+<p id=1741 class=irc><cite>&lt;Dave_Longley&gt;</cite> authentication of verifiers should be something done between the holder and verifier *only* (and there are many ways to do this) </p>
+<p id=d0b7 class="phone s01"><cite>steve_capell:</cite> ifiers or whatever it is. That process has existed for a decade or even 100 years or I trust Ted because Manu says he's trustworthy and I trust Manu. That social network that's been around since Neandertos walked the earth, right? And all this VC stuff is just making that existing either organizational social trust digitally verifiable. And therefore, no new entity that somehow magically maintains a list has any relevance in this. It's only the existing entities that have always maintained the list that are the ones that are relevant. And they are the issuers in my mind recognized entities and nobody else.</p>
+<p id=c22c class="phone s01"><cite>steve_capell:</cite> And it seems to me like the people are trying to insert these kind of technical trust lists I don't know of software platforms and I'm trying to find out am I right in this thinking and how shall I explain this to the governments</p>
+<p id=94cb class="phone s06"><cite>Dave_Longley:</cite> I would love to jump in and say you're right in this thinking and it is a problem that is happening across various ecosystems where people are trying to inject things into the system that both were not meant to be part of the original three-party model design for VCs are problematic in a variety of ways both in that they create gatekeeping and…</p>
+<p id=6819 class="phone s06"><cite>Dave_Longley:</cite> confusing systems and they're unscalable. so it's more or…</p>
+<p id=f483 class="phone s01"><cite>steve_capell:</cite> eight times.</p>
+<p id=89f7 class="phone s06"><cite>Dave_Longley:</cite> less everything you described. I'm on board with how you describe the system. the designs for things like in VCOM with having things be sort of peer-to-peer when you describe the doctor situation. You could turn this around and ask the doctor for the VCs you'd like to see if you don't trust your person interaction with your eyeballs. how you go about authenticating that verifier is an external thing. but the fact that it's all external and…</p>
+<p id=c1eb class="phone s01"><cite>steve_capell:</cite> I'm okay.</p>
+<p id=1873 class="phone s06"><cite>Dave_Longley:</cite> open allows different people in different ecosystems to propose their own solutions for how to go about doing things. And some of them are proposing systems like this that don't work very well. And I would not recommend those systems and…</p>
+<p id=8e83 class="phone s06"><cite>Dave_Longley:</cite> people should not be thinking that those systems are a necessary part of how VCs can be exchanged.</p>
+<p id=bba3 class="phone s01"><cite>steve_capell:</cite> Right. And anytime you disconnect the management of a list from the natural authority of the list,…</p>
+<p id=8ade class="phone s01"><cite>steve_capell:</cite> you get far worse problems, I think. so one example would be leis, right? Issued by Glyfe. you could regard an LEI or VLEI as a kind of recognized entity credential, right? Because it's an organization saying this is That genuine business then subsequently issues commercial invoices and things like this.</p>
+<p id=5ca9 class="phone s01"><cite>steve_capell:</cite> So the verifier is going invoice valid who is this a recognized entity from LEI says this is that business you could think of it that way and if you do you quickly realize that lei has spent 10 years registering maybe 2 million businesses and by now half of them are stale in other words half of the entries in the entire 2 million list are untrustworthy and that's because a Swiss not for-p profofit is not the authority of who is a genuine registered business, it's always the national regulator, right? So, it's a case of someone maintaining a list that has somehow gained traction but actually has no authority. and I see this pattern happening at worse than no authority, right? it's like 50% of the data is bad.</p>
+<p id=1676 class="phone s01"><cite>steve_capell:</cite> And this pattern will repeat itself because as soon as you got a need to feed yourself by charging somebody to get on the list, these lists will pop up everywhere and they're all s***, it seems to me.</p>
+</section>
+
+<section>
+<h3 id=1d0e>The Role Of Trust In VCs</h3>
+<p id=8134 class="phone s03"><cite>Phil_Archer:</cite> asking the is it for me to speak now?</p>
+<p id=5072 class="phone s03"><cite>Phil_Archer:</cite> I don't want to speak over someone.</p>
+<p id=0884 class="phone s01"><cite>steve_capell:</cite> Yeah. Sorry.</p>
+<p id=7c33 class=irc><cite>&lt;Dave_Longley&gt;</cite> allow lists of wallets, verifiers, and so on -- are problematic and in some sense, just defeat the whole purpose of VCs to begin with; if you'd like a closed ecosystem with registration lists you don't need the 3 party model and much of the crypto, etc. </p>
+<p id=e0fb class="phone s03"><cite>Phil_Archer:</cite> No, it's fine. No, I'm walking along. I've just got my phone, so I can't see the queue. everything that you've been saying, Steve and Dave, in that trust as I always say, is a human emotion. I can't make you trust me. You're right, Steve. It is the institution that you trust. and it's also the software. we spent some time, tackling people complaining about the insecurity of QR codes,…</p>
+<p id=2870 class="phone s01"><cite>steve_capell:</cite> Yes. I'm doing this.</p>
+<p id=44da class="phone s03"><cite>Phil_Archer:</cite> to which our response is, there's no such thing as a There is only secure software that reads the QR code. And that's true for verifiers as well. Any of us could produce a quote verifier, unquote, that always produced indeed a false negative. It's almost trivially easy to do. So you have to as a human being put your trust in the software you're using that it is going to follow the rules. and so this is why I think that in so you could say okay my verifier itself is registered as one of the good guys.</p>
+<p id=c481 class="phone s01"><cite>steve_capell:</cite> I</p>
+<p id=e711 class="phone s03"><cite>Phil_Archer:</cite> But what does that tell you? it's turtles all the way down. whatever you're built on, there's another layer beneath that you could get to and get to. And ultimately, it comes down to do I don't know the consumer goods forum? Do I trust whoever it may be? Sooner or later, a human being has to make a decision that they trust the institution or the person that is saying here is my software, here is my information. And you can't build an infinite layer of infinite levels wouldn't solve the problem that ultimately it's a human decision.</p>
+<p id=0e98 class="phone s06"><cite>Dave_Longley:</cite> Kevin, you've got your hand</p>
+<p id=66ed class="phone s04"><cite>Kevin_Dean:</cite> Yeah. I want to talk about basically two different trust models and…</p>
+<p id=5898 class="phone s01"><cite>steve_capell:</cite> Thank you.</p>
+<p id=cdd8 class=irc><cite>&lt;Phillip_Long&gt;</cite> The maintainer of the list has to have a vested interest in the accuracy of the list. Which is one reason why there has to be multiple trust lists for the community they are a part of. </p>
+</section>
+
+<section>
+<h3 id=b16c>Centralized Vs Decentralized Trust Models</h3>
+<p id=d70d class="phone s04"><cite>Kevin_Dean:</cite> the two seem to have collided in the recognized entity specification and I raised this in the issue that I put up after the last call for those that are interested. it's issue number 85 which we may not get to in this call but there we talk about a trust list and let's take the example of a registered business. I'm in Ontario Canada. I can go to the Ontario government website and I can look up registered businesses in Ontario. as with glyife, a lot of these entries are stailed. A lot of these businesses are out of business. but one of the last things people care about when their business is going under is notifying the government that hey, this business is no longer a going concern.</p>
+<p id=5bf4 class="phone s01"><cite>steve_capell:</cite> Thank you.</p>
+<p id=5177 class="phone s04"><cite>Kevin_Dean:</cite> they may eventually do so through the tax system but the fact is this authoritative list of registered businesses is out of date almost by definition it's just not possible to keep it up to date that doesn't change the fact that this is still the authoritative source and what you can get out of it is that a business by this name was registered by per these people on this date and that's all it's telling you now that that is a centralized list. Now there's another model and…</p>
+<p id=62bf class="phone s01"><cite>steve_capell:</cite> That's</p>
+<p id=e103 class=irc><cite>&lt;Dave_Longley&gt;</cite> perhaps i should modulate my earlier comment in chat... authenticating verifiers is fine (it's good to know who you are talking to of course), but any &quot;allow list&quot; of *who* can be a verifier is not something some special group gets to decide for everyone. </p>
+<p id=e4d5 class="phone s04"><cite>Kevin_Dean:</cite> if we get to the GS1 model I'll talk about it in more detail where you have a decentralized list which means that you may not have the ability to look anything up. There may not be a discovery mechanism behind it, but if I present you with a business registration credential whose did you recognize as belonging to the Ontario government and you can verify that credential and validate the content of that credential,…</p>
+<p id=7913 class=irc><cite>&lt;steve_capell&gt;</cite> Yes they do so fairly quick because they want to stop tax reporting </p>
+<p id=e09f class="phone s01"><cite>steve_capell:</cite> How</p>
+<p id=8890 class="phone s04"><cite>Kevin_Dean:</cite> then you can say definitively that I have presented you with a valid business registration credential. there will be other parts of that presentation that will include that would include information why am I presenting it? I'm the owner of the business. that had better be linked to the ownership information that's in the VC itself issued by the Ontario government. So, the model there is a decentralized one. There is still a central authority. there's always a route of trust that in any system there is a route and that route is it could be a definfined list at a well-known secure location and with appropriate integrity checks to make sure nobody's hacked the website and fiddled with the content. Or it could be as something as simple as a well-known did.</p>
+<p id=7488 class="phone s04"><cite>Kevin_Dean:</cite> And as long as the key material for that is valid, as long as everything around that did is considered valid, then the VCs that it issues are verifiable. So the question we really have to answer in anything to do with VCs is what is your and the root of trust will vary depending upon your use case. the Gly list is centralized and the root of cost might be the Ontario government website for registered businesses in the case of GS1 because of the multitude of credentials that can be issued and circumstances under which they can be issued. The root of trust is the GS1 global office did and everything branches out from that and there's no central list of anything.</p>
+<p id=da09 class="phone s04"><cite>Kevin_Dean:</cite> It's just a question of what your business use case is requires. And when you were looking at things like an Etsy trust list, these things already exist. If we want to map Etsy trust lists onto VCs in some fashion, then we have to acknowledge the fact that the Etsy trust list already exists. It's already out there. but people want to do Cs with it. Great. That's the root of trust is that Etsy trust list. let's figure out how to wrap VCs around it in a way that can fit into the DC infrastructure without having to go back and…</p>
+<p id=e149 class="phone s04"><cite>Kevin_Dean:</cite> change anything about the Etsy trust list. Steve, you're next.</p>
+<p id=cc5f class="phone s01"><cite>steve_capell:</cite> Yeah. …</p>
+<p id=10008 class="phone s01"><cite>steve_capell:</cite> thank you I just wanted to agree in the use case you described of the Ontario government issuing a credential attesting to the business registration of an Italian business and the Ontario government having a well-known did therefore if you like a trust anchor for that is exactly the UN use case that we see being valuable in tra trade except that it is turtles and goes another level up, right?</p>
+<p id=afb2 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 &quot;root of trust&quot; for ____ &lt;-- fill in the blank; it changes for different things. </p>
+<p id=75d8 class="phone s01"><cite>steve_capell:</cite> Because if I'm at the other side of the world because that Ontario business has exported some goods I don't know to China and I'm the China government wanting to verify that this or not just a government a bank even some place a long way from Ontario wants to verify that this business is who they say they are. they may not recognize that well-known did of the Ontario government because there's about a thousand of them around the world right and so we say you can have another turtle which there is already a governance system in the world of member states belonging to an entity called the UN so UN can make on the advice of the head of delegation of a member state added did to the next level of registry up right so that then I just check that that Ontario did</p>
+<p id=c799 class="phone s04"><cite>Kevin_Dean:</cite> Yeah, absolutely.</p>
+<p id=e9fb class="phone s01"><cite>steve_capell:</cite> is on the UN list. and it gets there through an existing governance process. So all of these are nothing more than making existing processes verifiable. and I think there's a mis So I agree with what you say that the Etsy trust list or some other technical list is also just another kind of list. But I see some bad messaging going on about somehow drawing some equivalence,…</p>
+<p id=9bc4 class="phone s01"><cite>steve_capell:</cite> And I don't think there's any equivalence between, for example, the Ontario government as the authority of businesses and LEI as the authority of business identity. Hardly any whatsoever. but yeah,</p>
+<p id=fb75 class="phone s04"><cite>Kevin_Dean:</cite> No, they're making different statements.</p>
+<p id=2b54 class="phone s04"><cite>Kevin_Dean:</cite> They're making different statements about a business, but they are not Agree completely with that. and you're right, the further you get from something, the more you have to look for a route of trust that you can trust that thing so that you trust…</p>
+<p id=ce8b class="phone s01"><cite>steve_capell:</cite> I don't need</p>
+<p id=9d2f class="phone s04"><cite>Kevin_Dean:</cite> what that thing says. when we talk about the GS1 identification system, what we don't talk about in general and bear in mind please that I haven't been with GS1 for a while. the authority to the only one who speaks for GS1 here is Phil Archer, not me. that the GS1 identification system is actually a subset of a larger ISO identification system and there are some use cases where that's relevant. Most use cases within GS1 it's enough to know that hey this is global office this is GS1 Global's office did and…</p>
+<p id=5c2f class="phone s04"><cite>Kevin_Dean:</cite> and then be done with it but if you're doing something at the ISO level you might need another layer. So the solution to every computing problem is another layer of interaction.</p>
+<p id=7308 class="phone s01"><cite>steve_capell:</cite> Okay. …</p>
+<p id=636c class="phone s01"><cite>steve_capell:</cite> look, thank you guys. At least nobody's spoke up and said you're talking rubbish. So I feel somewhat empowered to have my conversation with the Australian government in a few hours. I think back to the timestamping on revocation. When you think of this as Kevin described in a sort of discovery hierarchy credential find the did is the key to the next one. I'm still not clear and we don't have to resolve it today.</p>
+<p id=89d9 class="phone s01"><cite>steve_capell:</cite> What happens when a did is compromised and a recognized entity credential is revoked? how you communicate the time the date of that revocation so that all previous issued credentials are not invalidated.</p>
+<p id=6d5e class="phone s01"><cite>steve_capell:</cite> But that's probably I'll just raise a ticket on that one. Thank you.</p>
+<p id=a496 class="phone s04"><cite>Kevin_Dean:</cite> Yeah, I'm sure we'll get into it likely in more detail when we have more time with only 10 minutes left.</p>
+<p id=f160 class="phone s04"><cite>Kevin_Dean:</cite> I won't have time to go into detail on the GS1 use case or onto the issue I raised, but I've got some thinking on that I can share with the group.</p>
+<p id=d8ec class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> If you can't abstract it, it's not worth talking to. </p>
+<p id=ffe4 class="phone s07"><cite>Phillip_Long:</cite> a quick question observation. one of the things I'm not noticing is that the degree to which your concern about the verification or the authenticity of the record coming from a trust list is typically associated with the harm that misunderstanding that or having that inaccurate might cause to you or some or others. And the only way I know that you can deal with that is to have the trust lists governance pro processes transparent so that you can see things like…</p>
+<p id=0108 class="phone s01"><cite>steve_capell:</cite> Nothing.</p>
+<p id=63a4 class="phone s07"><cite>Phillip_Long:</cite> how often they validate the membership in that list which goes to back to a point that was made earlier. I think that in that root of trust, the people that are most impacted by it are likely the ones who are going to care the most about maintaining its accuracy and currency. And so that may not be the government in some cases. It may be some professional association of those businesses for example. But I think we have to keep that model in mind when we're thinking about these things and not simply ascribe a government or another recognized large-scale player as necessarily better about this than somebody else.</p>
+<p id=75f2 class="phone s01"><cite>steve_capell:</cite> Yes. Perfect.</p>
+<p id=ace7 class="phone s03"><cite>Phil_Archer:</cite> Phil,…</p>
+<p id=60fd class="phone s03"><cite>Phil_Archer:</cite> I think you're absolutely right. sorry, I'm sorry talking over somebody. I can't say the queue. and I think I'm right. Everybody on this call is in a privileged position of living in a western democracy. Remember years ago doing a workshop when I was at W3C and there's a guy from Ukraine in those days who said you are all talking as if your government are trustworthy. come to Ukraine, they're as corrupt as hell. and so I think you're absolutely right.</p>
+<p id=f2f2 class="phone s03"><cite>Phil_Archer:</cite> It does depend on professional bodies. It depends on all sorts of things. And again, it's not up to us as engineers to decide what a rooster of trust is. It's a human emotion.</p>
+<p id=d6af class="phone s01"><cite>steve_capell:</cite> Yes. Thank you.</p>
+<p id=8222 class="phone s01"><cite>steve_capell:</cite> Thank And I did talk a lot about governments, but you're absolutely right that I might care that this honey that I've bought was genuine genuinely created by a member of the Monaka Honey oation. nothing to do with government but there is an existing industry association that has some process to measure to register Monica honey beekeepers and that's the trust I want right but I suppose my broader point is in my view I struggle to think of a single use case where the technology isn't adding a digital verification to an existing</p>
+<p id=278b class="phone s01"><cite>steve_capell:</cite> already existed for decades or even centuries trust model whether that's government anchored or…</p>
+<p id=9b54 class="phone s03"><cite>Phil_Archer:</cite> Yeah, agree.</p>
+<p id=c19f class="phone s01"><cite>steve_capell:</cite> whether it's Monica beekeepers or…</p>
+<p id=6d1d class="phone s01"><cite>steve_capell:</cite> whatever it is it's like the governance is already there we're just making it digitally verifiable I can't find a case that isn't that Phil Archer:</p>
+<p id=c5e6 class="phone s03"><cite>Phil_Archer:</cite> Absolutely right, So what might the current battle I have is with our leadership team saying we need to publish openly our process and if we don't do that then our credentials mean nothing.</p>
+<p id=fdd3 class="phone s04"><cite>Kevin_Dean:</cite> I can't go back.</p>
+<p id=4b28 class="phone s06"><cite>Dave_Longley:</cite> Yeah, cryptographic primitives are not something that adds trust to a system. They make sure you can say this thing hasn't been tampered with…</p>
+<p id=5790 class="phone s03"><cite>Phil_Archer:</cite> Right. Right.</p>
+<p id=02c2 class="phone s06"><cite>Dave_Longley:</cite> since whoever signed the</p>
+<p id=3a08 class="phone s04"><cite>Kevin_Dean:</cite> Yeah. Right.</p>
+<p id=8beb class="phone s04"><cite>Kevin_Dean:</cite> C VCs are a convenience standardized way of exchanging data within a trust system. But what you trust within it, and why you trust it, those are all well out of scope of any technical solution. Yeah. No.</p>
+<p id=0dff class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Have most interest in, and often least actual control of. </p>
+<p id=0eb0 class="phone s01"><cite>steve_capell:</cite> Although there is a remarkably wide misconception that somehow my blockchain or…</p>
+<p id=9930 class="phone s01"><cite>steve_capell:</cite> my special list adds I hear it mentioned all the time and it…</p>
+<p id=09a0 class="phone s03"><cite>Phil_Archer:</cite> Stop swearing.</p>
+<p id=70e5 class="phone s03"><cite>Phil_Archer:</cite> Stop swearing on these calls, Stop swearing with that blockchain nonsense. Come on.</p>
+<p id=5f86 class="phone s01"><cite>steve_capell:</cite> but it's a risk, Because governments make decisions and policy statements based on it. And that's the thing I want to try and kill off if I can in a couple hours. thank you for your time. I've taken enough of it.</p>
+<p id=75e8 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Who?</p>
+<p id=c3b3 class="phone s03"><cite>Phil_Archer:</cite> All right.</p>
+<p id=c7df class=irc><cite>&lt;Phillip_Long&gt;</cite> You can't get around human judgement matters. </p>
+<p id=9cda class="phone s03"><cite>Phil_Archer:</cite> I hope I'll see a lot of you on the call tomorrow. The group.</p>
+<p id=c438 class="phone s04"><cite>Kevin_Dean:</cite> All right.</p>
+<p id=8c47 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> One reason to avoid &quot;trust&quot; and instead work on &quot;cryptographically test/prove&quot; </p>
+<p id=4028 class="phone s03"><cite>Phil_Archer:</cite> This is a very interesting conversation. Thank you, gentlemen. It's a PR,…</p>
+<p id=79b1 class="phone s04"><cite>Kevin_Dean:</cite> In that case, bye everyone.</p>
+<p id=4a93 class="phone s07"><cite>Phillip_Long:</cite> Is the document that manu shared publicly available?</p>
+<p id=d751 class="phone s03"><cite>Phil_Archer:</cite> I think, isn't it?</p>
+<p id=3c20 class="phone s01"><cite>steve_capell:</cite> Thank you very much.</p>
+<p id=40a3 class=irc><cite>&lt;Phillip_Long&gt;</cite> 100% Steve </p>
+<p id=69d0 class="phone s03"><cite>Phil_Archer:</cite> Memory. You're wrong,…</p>
+<p id=5609 class="phone s07"><cite>Phillip_Long:</cite> Is it I didn't notice with a PR number. That's what my oversight probably.</p>
+<p id=455b class="phone s03"><cite>Phil_Archer:</cite> Phil. I'm sorry.</p>
+<p id=1389 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> (Yes, that turns &quot;trust of&quot; into &quot;reliance on&quot; software engineers, etc.) </p>
+<p id=d996 class="phone s07"><cite>Phillip_Long:</cite> I'll look for it on the site. See if it's there.</p>
+<p id=1e3b class="phone s03"><cite>Phil_Archer:</cite> Yeah. All right. Phillip Long:</p>
+<p id=9657 class="phone s07"><cite>Phillip_Long:</cite> Thank you.</p>
+<p id=06e7 class="phone s04"><cite>Kevin_Dean:</cite> Yeah. Yeah.</p>
+<p id=155b class="phone s04"><cite>Kevin_Dean:</cite> There's an update threat model number it looks like number 83. Yeah.</p>
+<p id=5826 class="phone s07"><cite>Phillip_Long:</cite> Yeah. Have a great day, guys.</p>
+<p id=359b class="phone s03"><cite>Phil_Archer:</cite> Thanks everyone. Goodbye. See you tomorrow. Bye.</p>
+<p id=d0b3 class="phone s01"><cite>steve_capell:</cite> Thank you. Meeting ended after 00:55:17 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
