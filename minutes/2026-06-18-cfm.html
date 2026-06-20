@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 18 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>18 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Denken_Chen, Ivan_Herman, Joe_Andrieu, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#d606">VCWG Confidence Method Meeting</a></li>
+<li><a href="#da6d">Reviewing Scott's PR</a></li>
+<li><a href="#fc8e">Definition of &quot;At Risk&quot; Term</a></li>
+<li><a href="#06c8">Biometric Data Modeling Concerns</a></li>
+<li><a href="#6c5f">Issuer Role in Biometric Negotiation</a></li>
+<li><a href="#fb56">CEN Liaison For Biometric Templates</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=d606>VCWG Confidence Method Meeting</h3>
+<p id=6e28 class="phone s01"><cite>Joe_Andrieu:</cite> Happy Deck.</p>
+<p id=7217 class="phone s02"><cite>Denken_Chen:</cite> Okay, I just got home. I didn't have enough time to do through all the issues, but let's see whether the folks will be joining us today.</p>
+<p id=20d0 class="phone s01"><cite>Joe_Andrieu:</cite> That's fine. we'll see who shows up. Hey, man.</p>
+<p id=0895 class="phone s03"><cite>Manu_Sporny:</cite> Hey Joe, how you doing? Hey Duncan,…</p>
+<p id=26ef class="phone s01"><cite>Joe_Andrieu:</cite> I am tired.</p>
+<p id=1bb8 class="phone s03"><cite>Manu_Sporny:</cite> I'm sorry to hear that.</p>
+<p id=1960 class="phone s03"><cite>Manu_Sporny:</cite> Long week or just no sleep.</p>
+<p id=2ef1 class="phone s01"><cite>Joe_Andrieu:</cite> a little bit of both.</p>
+<p id=201d class="phone s01"><cite>Joe_Andrieu:</cite> We had some ER and hospital visits and stuff that kind of stressor on sleep and…</p>
+<p id=0ae5 class="phone s03"><cite>Manu_Sporny:</cite> Sorry to hear that.</p>
+<p id=bea3 class="phone s01"><cite>Joe_Andrieu:</cite> whatnot. Yeah, I mean things are okay.</p>
+<p id=3b95 class="phone s01"><cite>Joe_Andrieu:</cite> It's just, disruptive. and then last night was actually Erica and I celebrating our birthdays. So, our birthdays are two weeks apart. So, thanks.</p>
+<p id=2db8 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, congrats.</p>
+<p id=b029 class="phone s03"><cite>Manu_Sporny:</cite> Nice. Congrats. Happy birthday.</p>
+<p id=aede class="phone s01"><cite>Joe_Andrieu:</cite> It's better to get older than to not.</p>
+<p id=2746 class="phone s03"><cite>Manu_Sporny:</cite> Very true.</p>
+<p id=3f8c class="phone s01"><cite>Joe_Andrieu:</cite> So, yeah, we went to our favorite sushi place up in Monosito.</p>
+<p id=3e05 class="phone s01"><cite>Joe_Andrieu:</cite> That was lovely with a couple friends.</p>
+<p id=27bd class="phone s03"><cite>Manu_Sporny:</cite> Nice.</p>
+<p id=c79f class="phone s03"><cite>Manu_Sporny:</cite> Happy birthday. Glad to have you around for another year.</p>
+<p id=4338 class="phone s01"><cite>Joe_Andrieu:</cite> Welcome, So, I'm not sure who else we might be getting. I was hoping we might see Scott, but we have not seen an update to his PR since the face to face</p>
+<p id=3945 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I was wondering if I mean I think it's in enough shape to merge with the big issue marker saying that the group is still going to revise this and please don't use it and maybe open an issue. for Will's challenge thing and so on so forth.</p>
+<p id=7038 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=7dea class="phone s03"><cite>Manu_Sporny:</cite> I'm a bit concerned about that stalling. Yep.</p>
+</section>
+
+<section>
+<h3 id=da6d>Reviewing Scott's PR</h3>
+<p id=b3aa class="phone s01"><cite>Joe_Andrieu:</cite> let's take a look at it. I think Denin, we were just planning on processing issues and whatnot. So, let's look at that PR and put a comment in and suggest we do exactly what you just said. Managers I'm with you. if other folks disagree, by all means, chime in. but I'll go and share my screen for that. Right.</p>
+<p id=19b8 class="phone s01"><cite>Joe_Andrieu:</cite> So it talked about does the CKP thing exist and that dance which seemed like to mark that at risk was the right solution in any case. and then what is still outstanding? We had some merge conflicts questions about how do we trust the output. I think we didn't quite get to the bottom of that. Right. Joe Andrieu:</p>
+<p id=d0c4 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean I think maybe we have some discussion to close it out. maybe we add a couple of issue markers just to warn people this thing's still a bit unstable. We're still working through it, but we wanted to get something in there. and my personal what I want to try and do is get into threat model kick off the horizontal review process and this is highle goals can we say we have most of the feature set we think we're going to go to 10 in the document. Can we then start threat modeling it? And then can we get a horizontal review? I just want to,…</p>
+<p id=9a1e class="phone s03"><cite>Manu_Sporny:</cite> make sure that we're making decent progress towards that.</p>
+<p id=9f49 class="phone s01"><cite>Joe_Andrieu:</cite> Plus one.</p>
+<p id=cc67 class="phone s01"><cite>Joe_Andrieu:</cite> So items at risk one is the ZP algorithm. What section I mean is there another section to flag that would highlight this issue about …</p>
+<p id=e1b0 class="phone s01"><cite>Joe_Andrieu:</cite> how do we trust the verifier? Go ahead, man.</p>
+<p id=0257 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, maybe…</p>
+<p id=9ef4 class="phone s03"><cite>Manu_Sporny:</cite> what we do is we go through this. I've opened a suggestion at the top of the section and you're also tracking it in a comment here. If we can just go through the things like, asking exactly the questions you're asking, Joe. I'll type it up in an issue marker, you type it up in the comment, and then we merge in the issue marker, you commit your comment, and then maybe we can merge. I think I'm not seeing any merge conflicts this time. So, I think he did do some updates. I think I saw some new ones at the bottom. So I think…</p>
+<p id=f71f class="phone s03"><cite>Manu_Sporny:</cite> if we do that, we're in good shape to merge and we can get it into the spec as a proposal.</p>
+<p id=7860 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=d78e class="phone s01"><cite>Joe_Andrieu:</cite> logistically you're suggesting let's go through this and just have the conversation about where the gaps are to get to the comment and…</p>
+<p id=dd4e class="phone s03"><cite>Manu_Sporny:</cite> Plus one.</p>
+<p id=1e4e class="phone s01"><cite>Joe_Andrieu:</cite> and the PR. Go ahead. Mhm.</p>
+<p id=d2e7 class="phone s04"><cite>Ivan_Herman:</cite> just an admin thing.</p>
+</section>
+
+<section>
+<h3 id=fc8e>Definition of &quot;At Risk&quot; Term</h3>
+<p id=9177 class="phone s04"><cite>Ivan_Herman:</cite> Joe, the term at risk has a specific meaning in a process, so let's not mix them up. Unless this is exactly what you mean at risk means that it is in the spec. We consider this technically okay but if there are not enough implementations then we take it out from the spec. That's what it means.</p>
+<p id=5985 class="phone s03"><cite>Manu_Sporny:</cite> I think that's exactly…</p>
+<p id=0a74 class="phone s01"><cite>Joe_Andrieu:</cite> So I think that's right.</p>
+<p id=79b0 class="phone s03"><cite>Manu_Sporny:</cite> what we mean. I'm sorry.</p>
+<p id=06d6 class="phone s01"><cite>Joe_Andrieu:</cite> There's a nuance but I think it's in the same vein but just to close Ivonne there is an algorithm here that's mentioned as ZKP which I think is not standardized. So, it's not that there aren't implementation, that it's not mature enough for us to reference. but I think that falls into the general category you just described.</p>
+<p id=bb48 class="phone s04"><cite>Ivan_Herman:</cite> But are there hopes that by the time we go to wreck it becomes stable?</p>
+<p id=c8c0 class="phone s03"><cite>Manu_Sporny:</cite> We don't know. Yes, there are hopes that that's the case there.</p>
+<p id=04e5 class="phone s04"><cite>Ivan_Herman:</cite> No. No. but then what we can do is we put it at risk on that That's fine.</p>
+<p id=3a84 class=irc><cite>&lt;Phillip_Long&gt;</cite> makes sense </p>
+<p id=7008 class="phone s03"><cite>Manu_Sporny:</cite> Meaning it's at risk because</p>
+<p id=adee class="phone s04"><cite>Ivan_Herman:</cite> It's at risk in terms of having a stable reference.</p>
+<p id=ea49 class="phone s04"><cite>Ivan_Herman:</cite> If we don't have a stable reference by the time we go to wreck, we are supposed to take it out. That's what it means. Okay, that's then I shut up.</p>
+<p id=1a23 class="phone s01"><cite>Joe_Andrieu:</cite> Yes, that sounds good.</p>
+<p id=eff1 class="phone s01"><cite>Joe_Andrieu:</cite> So I'm just visually reading through this. I don't think it's the realize that's just their type. so that is not the at risk part.</p>
+<p id=9764 class="phone s01"><cite>Joe_Andrieu:</cite> or is it so realizes has this approach this biometric mapping model right that they've defined what are our IP related or standards related aspects that we need to consider before that gets put into our spec? Go ahead, Matt.</p>
+<p id=6214 class="phone s03"><cite>Manu_Sporny:</cite> I think the matching model is a text string that does not go in the spec. It goes in something they produce. the only thing the spec needs to do is define the fields that they need for whatever they want to do. And I think we make it those fields just strings. and that detangles the IP concerns,…</p>
+<p id=b593 class="phone s03"><cite>Manu_Sporny:</cite> So, we definitely in the spec do not want to show any preference towards any biometric matching provider technology. So, I think that's my expectation anyway.</p>
+<p id=68eb class="phone s01"><cite>Joe_Andrieu:</cite> Yep. Okay.</p>
+<p id=9a37 class="phone s04"><cite>Ivan_Herman:</cite> Theyre I think it was me,…</p>
+<p id=ffff class="phone s01"><cite>Joe_Andrieu:</cite> So, another biometric provider, sorry, I hear you ve. could have a type biometric vector confidence method with a different biometric model that they've defined and hopefully put in the context and with whatever matching model but these are strings as far as the spec is concerned and anyone can extend that to know for the biometric vectors.</p>
+<p id=9a3f class="phone s03"><cite>Manu_Sporny:</cite> Correct. Yep.</p>
+<p id=a25a class="phone s01"><cite>Joe_Andrieu:</cite> Okay, Dave.</p>
+<p id=4aa3 class="phone s05"><cite>Dave_Longley:</cite> I think it was actually avon,…</p>
+<p id=7902 class="phone s04"><cite>Ivan_Herman:</cite> not Dave.</p>
+<p id=00b8 class="phone s01"><cite>Joe_Andrieu:</cite> Sorry.</p>
+<p id=6580 class="phone s05"><cite>Dave_Longley:</cite> .</p>
+</section>
+
+<section>
+<h3 id=06c8>Biometric Data Modeling Concerns</h3>
+<p id=151f class="phone s01"><cite>Joe_Andrieu:</cite> Okay, go ahead, Ivan. correct these property names are defined and…</p>
+<p id=8f57 class="phone s04"><cite>Ivan_Herman:</cite> Dave, that's the first time that we are mess mixed up. just to be clear the fields like biometric model and vectors are specified in this specification. the property names the property themselves.</p>
+<p id=4535 class="phone s03"><cite>Manu_Sporny:</cite> Yes.</p>
+<p id=b40b class="phone s01"><cite>Joe_Andrieu:</cite> or will be I think there is in this text it's these terms that are not right so we define that these must be strings and…</p>
+<p id=c20c class="phone s04"><cite>Ivan_Herman:</cite> No, we'll be. Yeah. Not Sure. Right.</p>
+<p id=dd7b class="phone s01"><cite>Joe_Andrieu:</cite> the strings tell you how to interpret this but we do</p>
+<p id=3cc2 class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=1503 class="phone s01"><cite>Joe_Andrieu:</cite> not read on the IP or the contributions.</p>
+<p id=0d00 class="phone s04"><cite>Ivan_Herman:</cite> So, those eventually go into the vocabulary that I will have to produce. Okay.</p>
+<p id=2577 class="phone s01"><cite>Joe_Andrieu:</cite> Yes, I believe that's right.</p>
+<p id=3cf0 class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=e802 class="phone s05"><cite>Dave_Longley:</cite> So I did put my hand up now.</p>
+<p id=1f96 class="phone s05"><cite>Dave_Longley:</cite> This is not in any effort to hold this PR up whatsoever.</p>
+<p id=acbe class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. Go ahead, Dave.</p>
+<p id=10000 class="phone s05"><cite>Dave_Longley:</cite> But I keep getting a little bit tripped up as to because I haven't implemented this myself and I don't know exactly how it works. But I don't know if the biometric vectors for example always change if you ever change what the matching model is. So there might be some binding between the matching model and the biometric vectors. and we work together, which might allow us to compress some of this. if it works that way or if it could work that way, there could be ways to just express the vectors or to move things around a little bit. And that can all happen later. But I'm hearing about, …</p>
+<p id=a443 class="phone s05"><cite>Dave_Longley:</cite> we want to put something in the spec with some kind of example that doesn't show preference for any particular vendor, and that may or may not help.</p>
+<p id=a421 class="phone s01"><cite>Joe_Andrieu:</cite> All right.</p>
+<p id=9694 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, man.</p>
+<p id=9311 class="phone s03"><cite>Manu_Sporny:</cite> Yes they are bound together is my understanding. the vectors that you have are very strongly bound to the ma matching model that you have and specifically each onboarding of an individual to the matching model. So we could combine them in the future using some thing like a multicodec thing to specify the model and…</p>
+<p id=b531 class="phone s01"><cite>Joe_Andrieu:</cite> Hey man.</p>
+<p id=549f class="phone s03"><cite>Manu_Sporny:</cite> the vector format. That's it.</p>
+<p id=db98 class="phone s04"><cite>Ivan_Herman:</cite> Just for my understanding of Dave's question in practice this means that…</p>
+<p id=2f5c class="phone s04"><cite>Ivan_Herman:</cite> if I want to have a confidence method in a VC which can be checked with my face and then I have let's say an Android phone and an iPhone which have different ways of matching the phase then they have to have two entries in the confidence method for those that okay I mean…</p>
+<p id=40f3 class="phone s03"><cite>Manu_Sporny:</cite> That is correct.</p>
+<p id=c82b class="phone s04"><cite>Ivan_Herman:</cite> if the technology is like that that's fine but it sounds like a pain in the</p>
+<p id=b73b class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=6142 class="phone s05"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=9058 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, David.</p>
+<p id=93c2 class="phone s05"><cite>Dave_Longley:</cite> this is also sounding to me more like the biometric vectors should capture and hold on to this information be some seabboard representation that then becomes this base encoded in here. I again not having implemented it, I don't know how much value there is in surfacing the matching model in this way and decoupling it from that whole payload. I'm trying to imagine I'm implementing something. I've got this confidence method. I know it is a biometric vector competence method. what do I do with it? I feel like I just hand that off to some other layer that would know how to process my biometric vectors or not.</p>
+<p id=10001 class="phone s05"><cite>Dave_Longley:</cite> or I should stop talking about this because I don't want to hold up the PR on this but I feel like there's more work to do and again only that the value might be in that we don't need to put a vendor's name in the matching model…</p>
+<p id=cd16 class="phone s01"><cite>Joe_Andrieu:</cite> man.</p>
+<p id=ec4a class="phone s05"><cite>Dave_Longley:</cite> if we don't need that</p>
+<p id=9bbe class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to that. I think we're going to make this and I think noted we'll make this change in time. I don't think we need to hold up the PR for it, which is exactly what she said. Dave, Avon, yes, this is a giant pain. the reason this is a pain is because there's an enormous amount of patents around facial vector matching and a very large number of companies that have proprietary matching models. the way these companies differentiate themselves from each other is the way that they have built those matching models which is directly related to the number of faces real world human faces that they have scanned over the past 10 to 20 years right and so they know that that is their moat and they're sitting on it.</p>
+<p id=6998 class="phone s03"><cite>Manu_Sporny:</cite> There are other governments and organizations that are trying to create so for example some of the openw weightight matching models are based on criminal record databases. convicts who don't have a right to their biometrics when they're thrown in jail which is there's a large number of moral and ethical discussions around that but that is how they do some of these open weight models and of course that biases the model towards people that have spent some time in jail.</p>
+<p id=87d8 class="phone s03"><cite>Manu_Sporny:</cite> So that is the reason there are these proprietary models is that these companies feel like they can't stay in business unless they keep their stuff proprietary and that is true to some degree and so what do we have the problem right now I think that we're trying to solve for is that people that are getting their face scanned</p>
+<p id=8215 class="phone s03"><cite>Manu_Sporny:</cite> and have no ability to say which one of these models and vendors they want to use and the vendors believe that they can differentiate themselves on the privacy protections around the matching service that's being used.</p>
+<p id=3fa9 class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=caac class="phone s03"><cite>Manu_Sporny:</cite> That is the problem that we're trying to solve and the reality of the ecosystem is that there just a bunch of proprietary models that exist. we believe that will change over the next decade. but in the meantime, we're trying to ship something that is going to improve the privacy position, of how this technology is being used. and yes, it's a giant pain in the backside, but we've got to deal with the reality of where we are today. That's it.</p>
+<p id=b763 class="phone s01"><cite>Joe_Andrieu:</cite> two things but I want to gauge with the last one first.</p>
+<p id=10002 class="phone s01"><cite>Joe_Andrieu:</cite> So many I do think we have had good conversations on this PR to find a way to give the user some choice as to which biometric matching service they might use which I think is anchored to how does the verifier trust it right so there's this opportunity to maybe offload to a biometric matching provider that the user selected but I don't think we have that flexibility with regard to the biometric vectors and the matching model that the issuer puts into the VC. So the issuer is making a commitment to a particular technological framework and that needs to be represented here. And I honestly don't know how we get rid of realize in this model without having some other example if we don't have a matching model that we can reference this feels like it's not implementable.</p>
+<p id=e889 class="phone s01"><cite>Joe_Andrieu:</cite> So I'm not sure we can avoid saying hey here is an example technology that can be used in this manner and…</p>
+<p id=f55c class="phone s01"><cite>Joe_Andrieu:</cite> I think we have to have at least one that works. Avon That is my understanding.</p>
+<p id=6d7a class="phone s04"><cite>Ivan_Herman:</cite> Still for my understanding the biometric vectors I mean the data is it an encoding of my face aligning with realized 26 etc that is there.</p>
+<p id=f1b0 class="phone s04"><cite>Ivan_Herman:</cite> So it is a special encoding of my face per model.</p>
+<p id=9eaa class="phone s01"><cite>Joe_Andrieu:</cite> M go ahead.</p>
+<p id=611c class="phone s03"><cite>Manu_Sporny:</cite> yes it is a mapping I mean these are LLM type things right in neural nets so it is based on that model what the parameters are for whatever the model cares about related to your face. it's a bunch of, vector coordinates in the multi-dimensional space that the model cares about. So, some models might care about where your eyes are placed and your eyebrows Other models might care about your skin color and lighting. Other models might care about mouth position related to nose position.</p>
+<p id=cdb6 class="phone s03"><cite>Manu_Sporny:</cite> Each one of those models is going to encode that vector space in a totally different way. And the matching, the biometric vectors are the output of you sitting in front of the model,…</p>
+<p id=89b2 class="phone s03"><cite>Manu_Sporny:</cite> the model analyzing your face and then producing a vector space of what it saw, hopefully that made sense.</p>
+<p id=ba4b class="phone s04"><cite>Ivan_Herman:</cite> That makes a lot of sense. Thank you. But does Ivan Herman:</p>
+<p id=1504 class="phone s03"><cite>Manu_Sporny:</cite> I have a response to Joe as Joe I think and we had this discussion with realize I think maybe on a call where we said yes we need an open matching model. So there are open matching models so for example open face there are a couple arcface every model has face in the name of it.</p>
+<p id=d0e2 class="phone s03"><cite>Manu_Sporny:</cite> There are a number of open models that we can use as an example. and there are open models that you can use you could ship it into production with the open model. I'm still trying to find a good open one that we could potentially implement. one of the really useful things that exists is something called, give me one second. I'm going to get to the face technology evaluations work at NIST. So, I'll drop a link in here.</p>
+<p id=4842 class="phone s03"><cite>Manu_Sporny:</cite> FRTE and FATE are the two things facial recognition technology evaluation and facial analysis technology evaluation. They actually evaluate every single one of the biometric facial matching providers to the various open galleries that they have and there are open models that train on this stuff. So it is possible for us to do that. Joe, I do agree that we are going to have to do that to demonstrate that it does work with these openw weight models. and then the proprietary folks can do whatever they want to do.</p>
+<p id=b687 class="phone s03"><cite>Manu_Sporny:</cite> Plus one we need to have examples with open matching models and we could even make that a normative requirement. I suggest we don't do that. but hopefully that addresses your concern, Joe.</p>
+<p id=a777 class="phone s01"><cite>Joe_Andrieu:</cite> Yes, it does.</p>
+<p id=386d class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://www.nist.gov/programs-projects/face-technology-evaluations-frtefate">Face Technology Evaluations - FRTE/FATE | NIST</a> </p>
+<p id=72d7 class="phone s01"><cite>Joe_Andrieu:</cite> Thank the other thing you're on the queue. Go ahead.</p>
+<p id=c0c7 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I'm sorry I promise it's the last time.</p>
+<p id=b4da class="phone s04"><cite>Ivan_Herman:</cite> No, I don't promise but it is the last time.</p>
+<p id=2416 class="phone s01"><cite>Joe_Andrieu:</cite> Good.</p>
+<p id=9c47 class="phone s04"><cite>Ivan_Herman:</cite> But…</p>
+<p id=181d class="phone s04"><cite>Ivan_Herman:</cite> what you said, man, which makes a lot of sense. Doesn't it mean that the biometric vectors can be very large?</p>
+<p id=5f4a class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, man.</p>
+<p id=f237 class="phone s03"><cite>Manu_Sporny:</cite> If the biometric vectors and the size of them is a function of how complex the neural net or the LLM however the reason we're interested in some of these biometric vectors is that they can be 256 to 512 bytes in size. and I mean they can be as big as 8 kilobytes…</p>
+<p id=7129 class="phone s01"><cite>Joe_Andrieu:</cite> I love you.</p>
+<p id=9dd2 class="phone s03"><cite>Manu_Sporny:</cite> but they usually don't get much bigger than that. and looking at the smaller payloads like the 256 byt 512 byt payloads and I might be getting that wrong. I don't think it's 256 bits or 512 bits. I'm pretty sure it's 512 bytes. that is smaller than a very low resolution image but provides matching capability beyond the low resolution image. So a biometric vector at 512 bytes would be almost equivalent ca could be way more resistant to face masks and other types of ways to spoof this stuff.</p>
+<p id=39eb class="phone s03"><cite>Manu_Sporny:</cite> than a static image or a human being looking at a static image and looking at the person. because for example you can get in 512 bytes. vector depth information like what is the relation of the person's eyebrow in relation to the tip of their nose in relation to the bottom of their chin. Right? So you can get a 3D map of the person's face encoded in the vector but in a way that is irreversible in theory from the vector.</p>
+<p id=3a4c class="phone s03"><cite>Manu_Sporny:</cite> So to answer your question about these vectors can be relatively small in size 512 bytes which can fit on a piece of paper as a QR code but provide very very strong privacy characteristics because there's no picture there. They're irreversible and…</p>
+<p id=2ab6 class="phone s03"><cite>Manu_Sporny:</cite> they have very high matching qualities versus a human being looking at a static image. hope that helped.</p>
+<p id=2ef6 class="phone s04"><cite>Ivan_Herman:</cite> … that helps a lot. Thank you. Sorry to take up so much time. Ivan Herman:</p>
+<p id=8635 class="phone s01"><cite>Joe_Andrieu:</cite> No, it's all good.</p>
+<p id=5bb2 class="phone s01"><cite>Joe_Andrieu:</cite> Avon, those are good questions. I had two things I wanted to bring up. one's more forward-looking, but I wanted to get back to Dave, your comments about the data modeling here. there are some choices about how this data is modeled that I think come from a JSON sensibility as opposed to a JSON LD sensibility. So I can see some motivation to try and clean up the binding in that way. but when you first said are these bound together I'm like yeah it's all signed like this is all signed by the issuer.</p>
+<p id=02d9 class="phone s01"><cite>Joe_Andrieu:</cite> So what when I look at this particular confidence method, I see face video, the matching model and the biometric vectors are all bound together. So I wasn't quite understanding how you were proposing that we might clean that up, but I'm interested in see how we might do that because I just don't think Scott was thinking about sort of those data modeling components. Go ahead, Dave.</p>
+<p id=6eef class="phone s05"><cite>Dave_Longley:</cite> I had two things in mind. The first are these vectors about the same subject of things? So, should they be in the same object? That's a JSON LD modeling question. And then the other thing I had in mind is this similar to what we have done with things like multikey where breaking out certain attributes of some primitive to list them in the JSON is actually counterintuitive or more problematic. There's more things to validate.</p>
+<p id=c744 class="phone s05"><cite>Dave_Longley:</cite> there are more things to check versus keeping everything together in one string value that you pass around that has everything you need. And if we're saying that the matching model, even if you change that version but keep this the provider the same for example and that exact version goes with those exact vectors, there's just one payload that you hand off to some other layer that's going to understand what that is. In the same way you hand like a public key off to some other layer that's going to understand the different pieces inside of that key. it might make sense to put all those things together in that one value. I know right away that a biometric type of face or input type video those things could be of use to some other layer like a digital wallet that would say hey do you want to provide your biometric as a face?</p>
+<p id=59b7 class="phone s05"><cite>Dave_Longley:</cite> you're going to have to have video. So, I got to check the capabilities on the machine for you to be able to do that. those are things that make sense for other layers that to use before you even commit to or make a choice for a biometric thing. I don't know if knowing the matching model is the right abstraction for any other layer to read or…</p>
+<p id=c313 class="phone s05"><cite>Dave_Longley:</cite> if that should just be in the biometric vectors.</p>
+<p id=2085 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, that's interesting.</p>
+<p id=1e6e class="phone s01"><cite>Joe_Andrieu:</cite> I want to share my two reactions because I was both for and against as you were walking through that. one is if there isn't an existing representation of such a thing like we have with the multibbase stuff then to me it's just a topological transformation between entropic information that has to be represented somewhere so whether you pack it into a few bytes in the beginning or you put it in JSON my tendency is to prefer the JSON because you don't have to know how it's specially packed right the JSON is self-labeling in a way that I think is very useful especially when debugging</p>
+<p id=10003 class="phone s01"><cite>Joe_Andrieu:</cite> However you convinced me that there is something interesting here because if we can reduce it to a string then the interprocess communications are easier right because we're not trying to deal with JSON here's a take the string so I think I understood both of those so that's kind of interesting I would be hesitant to suggest that we come up with that model though that feels like a lot of work for us to take on But I understand your data modeling proposal about that. So thank you. go ahead man.</p>
+<p id=7400 class="phone s03"><cite>Manu_Sporny:</cite> Plus one to all of that. and this is just to kind of nudge us forward. What else do we need to take a look at and note in issue?</p>
+<p id=cca9 class="phone s01"><cite>Joe_Andrieu:</cite> I'll just plant a seed for us on this call. There is another topic on this but I do want to go through the rest of this. So I've got it written down on an index card and I'll come back to it.</p>
+<p id=e94e class="phone s01"><cite>Joe_Andrieu:</cite> Okay biometric factors and the data model there and so let me make a quick note about that. and then let's just scan through the rest of this.</p>
+<p id=8b14 class="phone s01"><cite>Joe_Andrieu:</cite> So he's got an issuer but not a service provider right in this current because there are two credentials in this approach right just to anchor there's a credential that is given to a holder which has a biometric template And then there's the credential that is produced by the biometric evaluator.</p>
+<p id=c0fc class="phone s01"><cite>Joe_Andrieu:</cite> And we don't have those two tightly bound together yet in terms of how you select the but I see that Scott has adopted this user select approach. So I think we're aligned there with intent at least. So this is the second one where this is the service who is signing. Is that right? Am I following this right? Okay.</p>
+<p id=8878 class="phone s03"><cite>Manu_Sporny:</cite> No, I think that is the service that you use to produce the second one.</p>
+<p id=d67f class=irc><cite>&lt;Phillip_Long&gt;</cite> Are these intended to be stapled together? </p>
+</section>
+
+<section>
+<h3 id=6c5f>Issuer Role in Biometric Negotiation</h3>
+<p id=3fa3 class="phone s01"><cite>Joe_Andrieu:</cite> So was the holder has this credential from an issuer and the issuer said there's a service endpoint. That's what I'm seeing here.</p>
+<p id=919e class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah. Yeah. Yeah. The way this is supposed to work, and I'm guessing I didn't read closely. the way this is supposed to work is that the issuer is just with different types of cryptography that can be used for selective disclosure. The issuer gets to pick all the different options for the holder, right? And that is what's the word?</p>
+<p id=10004 class="phone s03"><cite>Manu_Sporny:</cite> There could be a pre-negotiation where the holder is like, &quot;Hey, this is my biometric provider. Please generate something that they can use.&quot; the issuer then could say &quot;Okay, I see that. I'll generate one just for that.&quot; Or, I'll throw in five other biometric templates and you can choose any one of them when you present this as long as the verifier is okay with, a certain number of those. So we're allowing the negotiation within the ecosystem. but the issuer has to enable the base the choices. the expectation here is that the business model around this biometric providers is that they will generate templates for free because where they want to make their money is in verification. that's the easiest way for them to make money. But it doesn't necessarily mean that's the case.</p>
+<p id=2482 class="phone s03"><cite>Manu_Sporny:</cite> they could charge to issue matching templates. so the belief here is that the issuer will have the ability to generate a large variety of biometric mashing templates or one suggested by the holder and they'll put all of those variations into the credential and each one of those will have a URL that the holder can use to generate the proof that they match and some of these by the zero knowledge ones won't have that They'll be able to do all of it client side, using a ZKP. So, some of these credentials won't use this URL to generate the biometric matching proof.</p>
+<p id=b554 class="phone s03"><cite>Manu_Sporny:</cite> Hopefully, that was useful background information.</p>
+<p id=d7d3 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, a little bit.</p>
+<p id=d937 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, Dave.</p>
+<p id=e7cc class=irc><cite>&lt;Manu_Sporny&gt;</cite> no ^ </p>
+<p id=10005 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I feel like something's off here. in a variety of different ways. so first of all, if there's this open biometric ve vectors thing that starts to exist or becomes popular, I would think a variety of different services could be used to do it. so something feels off in that in having the issue are your service options into Having an issuer be able to ise or say provide a hint for where you could go to do something makes sense, but that's kind of being overloaded. in some sense something about this feels a little bit off.</p>
+<p id=7728 class="phone s05"><cite>Dave_Longley:</cite> and I'm not having at all digested it all does makes it challenging for me to talk more about it…</p>
+<p id=0ec8 class=irc><cite>&lt;Phillip_Long&gt;</cite> Thanks Manu </p>
+<p id=cb1a class="phone s05"><cite>Dave_Longley:</cite> but again I wouldn't block the PR over this but it does seem like something isn't quite</p>
+<p id=04c7 class=irc><cite>&lt;Phillip_Long&gt;</cite> It also seems quite complicated for verifiers </p>
+<p id=40de class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I agree.</p>
+<p id=799f class="phone s01"><cite>Joe_Andrieu:</cite> What was precipitating it doesn't feel like it's settling but what's precipitating from what you just said for me Dave is it seems like the issuer is it should not be the one who's saying these are the services that you should use that's the verifier's job the verifier is the one to say hey I trust this biometric provider and that's a negotiation with the holder to say wait a minute I'm not going to let you do this from</p>
+<p id=36f6 class=irc><cite>&lt;Dave_Longley&gt;</cite> issuer provides the data, holder + verifier negotiate on the service </p>
+<p id=3968 class="phone s01"><cite>Joe_Andrieu:</cite> that service provider because I don't trust them. and that's where the negotiation happens. I think the issuer should be providing here's the template that any compatible biometric evaluation service could use without preference to any particular service because that's really between the issuer and the holder is what it seems like to me. Go ahead, man.</p>
+<p id=cd24 class="phone s03"><cite>Manu_Sporny:</cite> I agree with you that is the ideal state. That is not the market state right now because all of the templates are proprietary and people don't tell issuers how to generate the templates. You have to use the biometric SDK or vendor or whatever to generate the template. So that's the challenge that we have absolutely in ideal world that's exactly what we'd do. There'd be open weights models. There would be open biomet creation mechanisms. There would be open standards for facial vector templates. Those things don't exist. so that's one. Comment two this thing does not have to come from the issuer.</p>
+<p id=d22f class=irc><cite>&lt;Phillip_Long&gt;</cite> The walled garden once again. </p>
+<p id=7675 class="phone s03"><cite>Manu_Sporny:</cite> the individual could independently go and get it from one of the providers and the negotiation could happen between the verifier and the holder purely right so there's another approach where the verifier is I trust these 10 biometric providers the holder goes okay I'm going to go to one of those and get my, template and then get a proof that I match and then I'm going to just send that back to the verifier. the problem is how was it bound to the credential you wanted it to be bound to, how is it bound to the driver's license? because the DMV has got to do something there, right?</p>
+<p id=05af class="phone s03"><cite>Manu_Sporny:</cite> And so maybe the holder has to go and get one of these credentials and then they present that to the DMV and the DMV is like, &quot;Okay, we know that, provider is. We'll just include that when we issue your driver's license to you.&quot; And then that's how the negotiation happens. So, I'll write down that we're still figuring out how to do the negotiation, but no matter how this negotiation happens, I think the objects that we end up with are still more or less the same. but I'm noting it as a we need to,…</p>
+<p id=7fc5 class=irc><cite>&lt;Dave_Longley&gt;</cite> seems odd to have it signed by the issuer </p>
+<p id=82e3 class="phone s03"><cite>Manu_Sporny:</cite> talk about this. I'll note that we're 40 minutes into the hour. let's</p>
+<p id=bf0b class="phone s01"><cite>Joe_Andrieu:</cite> Yeah thanks for the time check.</p>
+<p id=26cf class="phone s01"><cite>Joe_Andrieu:</cite> I don't think the proprietary nature of the current state of the market affects whether or not the issuer is that it makes sense for the issuer to specify a service. if it is proprietary then there are only going to be a couple of services. So when the holder talks fier to negotiate what verification providers are acceptable then it will settle on one of the proprietary ones. I like the flow you just described which to me feels like the did off pattern where before you issue you should verify the did off and then you put in the VC.</p>
+<p id=b467 class=irc><cite>&lt;Dave_Longley&gt;</cite> seems like some issuers might want to just say &quot;just use our service, we'll make it all work for you, give us a call whenever you get your biometrics checked&quot; </p>
+<p id=8d1a class="phone s01"><cite>Joe_Andrieu:</cite> So, what I'm hearing you say, which is not yet in here, but I want to socialize it, is just that the user could go to their preferred verification provider, get a biometric template that they provide to the r. The issuer could prove that the user satisfied that because it's signed by a biometric provider, There's a credential the one here. and they can say, &quot;Okay, we will include that biometric vector because you as a user who's interacting with us have proven that it is your biometric vector.&quot; And then the issuer doesn't even need to get involved with that.</p>
+<p id=116e class="phone s01"><cite>Joe_Andrieu:</cite> They're just referring to something that they trust because there it's been proven. So, I do like that pattern a lot. go ahead, Ivon.</p>
+<p id=c25d class="phone s04"><cite>Ivan_Herman:</cite> two things.</p>
+<p id=d7d9 class="phone s04"><cite>Ivan_Herman:</cite> one just what you said I was wondering about the same thing that if I have a DID as a person and I have a DID document isn't it the right place to put these biometric vectors per providers that I care about so the question is can I express these kind of things did document at the moment we</p>
+<p id=1922 class="phone s04"><cite>Ivan_Herman:</cite> we don't have that so in a sense we are coming up with a structure that should be convert should be valid there as well a totally different thing that I wanted to say that yes I understand and I understand from what manu explained that this open vectors or I don't know what terms he used do not exist today I think describing an environment where these are used in formally could be part of the specification to say in an ideal world this is the goal and this is what we would like to see.</p>
+<p id=47c6 class="phone s04"><cite>Ivan_Herman:</cite> We understand that's not the case today. but not let this line of thought be lost in a sense.</p>
+<p id=e500 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I think there are some open things but I'll let Dave Rainer speak to that. What I wanted to respond to Ivon was please for the love of God do not put information about the subject in the ume the VC is the architecture where we have chosen how to bind an identifier to attributes about subjects and that has a whole bunch of privacy sort of in security models how we revoke it how you deal with that etc. The DID document itself should just be about how you get to services and how you do the verification relationships defined in that did document.</p>
+<p id=783b class="phone s01"><cite>Joe_Andrieu:</cite> Once you start putting in things that can be tied to individual people, it completely transforms what that data model is and entangles it in a very unfortunate and dangerous way. So you could because it's JSON LD and you can put anything in there if you want, but having it would be better to have a VC that says I have proven to someone's satisfaction that I control this did and I satisfied this biometric vector. that is I think a better layering of the architecture and I'll hand it off to Dave.</p>
+<p id=dda5 class="phone s05"><cite>Dave_Longley:</cite> Yes to all that. Sorry, too many interesting things are being said and too many thoughts in different directions. but one of the things that is concerning in the ecosystem that people keep picking up on because they kind of keep trying to take the three-party model and make it a two-party model is treat the issuer as this service or treat the issuer as a party that needs to provide their approval of certain choices that users would make with their VCs and so on. and this thing on the page sort of smacks of that to me or that it could be twisted and used in that way either you on purpose or otherwise.</p>
+<p id=b526 class="phone s05"><cite>Dave_Longley:</cite> And so some of these confidence methods and so on are things there's a model that makes sense where a user is saying I would like you to incorporate this into my credential because it's my choice and I want to be able to use it to do 2FA wherever that is a use case for a confidence method but that should not be confused with the issuer getting to decide for the user what software they can what 2FA they can use. those are decoupled things. And in some sense, this starts to feel like we're crossing over that.</p>
+<p id=1d78 class="phone s05"><cite>Dave_Longley:</cite> And this gets in back into the holder binding discussion where there's confusion over what is the purpose of the so-called holder binding which I think is better expressed as a two-factor authentication option that the holder of a credential can make their own software choices or hardware choices about and they can have that incorporated into a VC if an issuer provides that affordance, but it's never approval by the issuer over something in a gatekeeping sense.</p>
+<p id=5a5e class="phone s01"><cite>Joe_Andrieu:</cite> Thanks. Dave, Phil</p>
+<p id=b903 class="phone s05"><cite>Dave_Longley:</cite> And so I'm a little worried about</p>
+<p id=59ca class="phone s06"><cite>Phillip_Long:</cite> Yeah, this is in fact a multi-dimensional and fascinating conversation, probably one we need to have in the broader CCG as but one of the things I am concerned about is what we're expecting the use of the holder to be able to do or be responsible for in terms of finding the proper biometric template providers or what have you that are needed and the market is so both go walled up right now by proprietary approaches and it's in such flux. It just sounds like that's asking an awful lot of the individual holders to be able to manage and therefore is a blocker or…</p>
+<p id=229c class="phone s06"><cite>Phillip_Long:</cite> andor a security risk in itself. So I just want to express that concern on what we're asking the holders to be able to do and how. Thanks.</p>
+<p id=d6c9 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. Thanks,…</p>
+<p id=05d9 class="phone s01"><cite>Joe_Andrieu:</cite> How do we put Phil's hand down? Normally, it's automatic. but I see you're next, Dan.</p>
+<p id=787d class="phone s02"><cite>Denken_Chen:</cite> Yeah, I've been thinking similar question like Dave mentioned whether the issuer should sign the biometric vector data and let the issue control the whole verification process. But however to make the local verification work there has to be some app integrity check those kind of things.</p>
+<p id=10006 class=irc><cite>&lt;Dave_Longley&gt;</cite> users need to be able to choose (and change!) their choice of service provider at-will </p>
+<p id=7d04 class="phone s02"><cite>Denken_Chen:</cite> to make for the verifier to trust that the user are using an app that is truly binded to the biometric match model on the device and calculate it on the device. So the device is trustable is the integrity is checked so it can trust the verification result. So there has to be this kind of layers. So imagine if we got an open matching models that can actually be used across different verifiers. so the same for a pair of matching vector data and a pair matching models can be used together but they can actually use across different verifiers.</p>
+<p id=7f84 class="phone s02"><cite>Denken_Chen:</cite> And for the verifiers to trust the device, it has to be like creating a water for it for example the provider will probably creating a software development kit into the verif verifiers app or service etc. So there are also another layer for the B muscle to work without ever use adver relying on the issue side.</p>
+<p id=82ed class="phone s02"><cite>Denken_Chen:</cite> Yeah, that's my understanding.</p>
+<p id=f33e class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I think that's mostly right.</p>
+<p id=bc00 class="phone s01"><cite>Joe_Andrieu:</cite> What the thought you triggered for me, Denin, is the architecture that Scott's presented it has a secondary VC, right? that is from the biometric evaluator for the purposes of a particular evaluation.</p>
+<p id=10007 class="phone s01"><cite>Joe_Andrieu:</cite> And if that is local on the phone then however the app or the device is doing it whether it's at the operating system level like Apple was supporting something directly or it's something in an app then it seems to me that either Apple or that app is signing that VC and so that's I think where that would fit into this model without a lot of contortions in terms of hey, how do we know where it came from?</p>
+<p id=10008 class="phone s01"><cite>Joe_Andrieu:</cite> We have a signature on the VC and the device could sign that it's problematic that will be hackable as opposed to a remote evaluation but I don't think anyone has solved the problem of how do you do the local evaluation without trusting the device in some manner right and the devices can always be hacked so that's just a gap that we probably will never be able to those but I think we want to have both on device and remote through trusted parties. and whether that's Apple on the device or Apple through a service bureau, I think it's a market's choice about which fits the use case. okay, we're at 752. I'm not seeing anyone else on the queue.</p>
+<p id=1210 class="phone s01"><cite>Joe_Andrieu:</cite> Are there any other aspects? I guess we have the knots. So we should add that bit. the knots challenge string is an element that we want to address will so with regard to what your proposal was manu in terms of at risk markers etc. I think we just got through that exercise. Is there anything more we need to speak to about that before I'll close this comment here. And you were going to suggest a PR.</p>
+<p id=3508 class="phone s01"><cite>Joe_Andrieu:</cite> I Cool.</p>
+<p id=5477 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=de4a class="phone s03"><cite>Manu_Sporny:</cite> I've been taking notes the entire time and adding I think what everybody mentioned here. I think it's fairly complete. can I get this as if folks want to take a quick glance through? Sorry for what I'm having it's just difficult to do this but I was going to suggest this if people don't have any changes and we can always adjust right this is a big giant warning says that this entire section is at risk and…</p>
+<p id=c7d8 class="phone s03"><cite>Manu_Sporny:</cite> here are all the things that we are continuing to discuss so nobody comes away thinking that we're correct.</p>
+<p id=97d3 class=irc><cite>&lt;Denken_Chen&gt;</cite> Agreed. In this sense, we need data portability for biometric vector. </p>
+<p id=2f62 class=irc><cite>&lt;Phillip_Long&gt;</cite> How does that fit into platform-based wallets (cloud wallets)? </p>
+<p id=3c16 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, cool.</p>
+<p id=10009 class="phone s01"><cite>Joe_Andrieu:</cite> So, this is something we can approve today is what your hope is, Yeah. Plus one. let's entertain that. I'm keen for it. I want to hear if anyone has doubts or think that's a bad idea. But I think getting something into the document so that other people just looking at the root document have some context rather than it being hidden at PR.</p>
+<p id=9e36 class=irc><cite>&lt;Manu_Sporny&gt;</cite> ^ it's something they will either do or won't do. :) </p>
+<p id=ec52 class="phone s04"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=730b class=irc><cite>&lt;Manu_Sporny&gt;</cite> (and it's a potential market competition issue) </p>
+<p id=5e6e class="phone s01"><cite>Joe_Andrieu:</cite> I think that's really valuable. and I'm seeing a bunch of thumbs up from anyone concerned? Okay.</p>
+<p id=dc36 class="phone s01"><cite>Joe_Andrieu:</cite> Then I guess I can add my review.</p>
+<p id=1209 class="phone s03"><cite>Manu_Sporny:</cite> And then if you I can merge the thing. I forget what my editor status is on this spec. It says I can merge, but defer to the task force chairs to</p>
+<p id=d811 class=irc><cite>&lt;Phillip_Long&gt;</cite> Yeah - and the cloud wallet providers will have the some plethora or decisions to make which complicates things further </p>
+<p id=be04 class="phone s01"><cite>Joe_Andrieu:</cite> Let me ask Denin for you to merge just because then we'll have three participants in the group. Having put artifacts into this dialogue, I think that shows some factual consensus that we had some agreement. Yeah.</p>
+<p id=c4fe class="phone s03"><cite>Manu_Sporny:</cite> And there are two things that need to be merged. One is the issue comment I just made. so please do that one. Please do first and then let's please do a squash merge because the history on this thing is a mess. It's just a whole bunch of update index.ht HTMLs and if we can squash it into just a add biometric vector confidence method to data model that would be good.</p>
+<p id=e88c class="phone s04"><cite>Ivan_Herman:</cite> It's a giant one.</p>
+<p id=38ce class=irc><cite>&lt;Dave_Longley&gt;</cite> when a verifier checks 2FA, they are checking something on *on behalf of the user* to help prevent 3rd party fraud; they aren't stopping the user from sharing their 2FA device (which may/may not be considered 1st party fraud) </p>
+<p id=4660 class="phone s01"><cite>Joe_Andrieu:</cite> So once these get done, I think Dankin, if you could do the squash merge, I think that would be the right option.</p>
+<p id=a24b class=irc><cite>&lt;Dave_Longley&gt;</cite> ^ just a note that we keep this in mind while modeling/thinking about these things </p>
+<p id=4437 class="phone s02"><cite>Denken_Chen:</cite> I think you can just do it. I forgot to bring my laptop homes.</p>
+<p id=5d01 class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=ac91 class="phone s02"><cite>Denken_Chen:</cite> So yeah.</p>
+<p id=f452 class="phone s01"><cite>Joe_Andrieu:</cite> If you don't have it handy, yeah, I can push the button.</p>
+<p id=8ea1 class="phone s02"><cite>Denken_Chen:</cite> Yeah. Yeah. No problem. We already have consensus over this.</p>
+<p id=e7a9 class=irc><cite>&lt;Dave_Longley&gt;</cite> 3rd party fraud = theft of user's credentials; 1st party fraud = user willingly enabling someone else to use their credentials (a form of delegation) </p>
+</section>
+
+<section>
+<h3 id=fb56>CEN Liaison For Biometric Templates</h3>
+<p id=497a class="phone s01"><cite>Joe_Andrieu:</cite> Okay, Then there is one other thing I wanted to bring up and this is just socializing something that I think ultimately is going to bubble up to the working group and I believe Elaine has spoken to both Mano and Ivonne about this.</p>
+<p id=df8f class="phone s01"><cite>Joe_Andrieu:</cite> There's some work going on over at the European Standards Group around a small form factor biometric template and they have expressed interest in getting it into the W3C in some fashion and I've been talking with Elaine about what exactly does that mean? so my understanding is the individual who stepped up to do that liaison work his company is going to join the W3C and he is going to participate in these conversations and it's not clear to me sort of at the higher level what sort of liaison relationship might make sense with CEN in terms of having an opportunity for us to participate in their meetings and</p>
+<p id=34a9 class="phone s01"><cite>Joe_Andrieu:</cite> them participating in our meetings. that's sort of gets above my pay grade and I'm not sure quite how to navigate it. but I think I gave Elaine the right direction to say hey create an issue in the confidence method repo and…</p>
+<p id=dbbe class="phone s01"><cite>Joe_Andrieu:</cite> we can use that to bubble up to the working group as a whole and have a conversation about how do we want to work with CEN on this. and I think then from there we can figure out if there's any institutional support other than this gentleman and his company becoming members and contributing in the way that we are all contributing right now. go ahead Ian</p>
+<p id=249b class="phone s04"><cite>Ivan_Herman:</cite> So yeah the last thing…</p>
+<p id=1d01 class="phone s04"><cite>Ivan_Herman:</cite> which you said is important if they can contribute and join then we are halfway there or even more. I don't know the details because I hate these kind of things and I keep away but there are relationship between W3C and SEN. Rigo is the one in the team who deals with all these relationship among organizations.</p>
+<p id=54d4 class="phone s04"><cite>Ivan_Herman:</cite> So if he's here and if this comes up that we need some sort of a formal leazison or whatnot then we will have to bring in Rio to the discussion but that's easy to do Rio winning I putting on IRC Okay.</p>
+<p id=62dc class="phone s01"><cite>Joe_Andrieu:</cite> Okay, good.</p>
+<p id=66ae class="phone s01"><cite>Joe_Andrieu:</cite> That's a good name for me to try and remember. and what's the last Wedding. okay. Great.</p>
+<p id=80c1 class="phone s01"><cite>Joe_Andrieu:</cite> Rio winning. Great. So, that sounds good. I just want to socialize it. I think that, that may address some of these questions we have about do we have a good enough biometric template that's small and convenient and all that sort of thing. so we'll follow that through to its natural progression. okay. I'm going to go ahead and squash and merge this and we'll take it from there. So my note for me and Denin is you and I need to get some first draft language for the two confidence methods that we are signed up for. one of the things that came up in the VCWG call yesterday was for TAC we want to be in horizontal review.</p>
+<p id=bc0c class="phone s01"><cite>Joe_Andrieu:</cite> So that means having enough flesh in the text and having a threat model such that we can get this out to the privacy interest group, security interest group, tag, accessibility group, internationalization,…</p>
+<p id=07ed class="phone s01"><cite>Joe_Andrieu:</cite> all those groups. so that's just some impetus for you and me, Dink, and we got to get some pros in the spec text. Go ahead, Ivon. …</p>
+<p id=e760 class=irc><cite>&lt;Manu_Sporny&gt;</cite> ^ we need to document that somehwere in a threat model, possibly the VCDM. </p>
+<p id=46b2 class="phone s04"><cite>Ivan_Herman:</cite> So we always talk about threat model and…</p>
+<p id=c8a0 class="phone s04"><cite>Ivan_Herman:</cite> these kind of things which is okay but let's not underestimate the problem for example accessibility will raise with these kind of things. I mean I have no idea what accessibility problems these face recognition things raise but probably they are there. so that will come back to us.</p>
+<p id=9689 class="phone s01"><cite>Joe_Andrieu:</cite> it's huge. Totally. I agree with you.</p>
+<p id=f340 class="phone s04"><cite>Ivan_Herman:</cite> It will come back to us for example.</p>
+<p id=e0a1 class="phone s01"><cite>Joe_Andrieu:</cite> It is one of my concerns with World ID for example that they claim they can handle everyone on the planet except if you don't have eyeballs and I'm like come on you guys that's not okay.</p>
+<p id=dc30 class="phone s04"><cite>Ivan_Herman:</cite> Or…</p>
+<p id=a171 class=irc><cite>&lt;Manu_Sporny&gt;</cite> Rigo Wenning </p>
+<p id=e469 class="phone s01"><cite>Joe_Andrieu:</cite> That's just not okay.</p>
+<p id=bbed class=irc><cite>&lt;Ivan_Herman&gt;</cite> Rigo Wenning </p>
+<p id=9510 class="phone s04"><cite>Ivan_Herman:</cite> if you cannot take a fingerprint because your fingers are special in that way. I know people around me who cannot use fingerprints at all. for example.</p>
+<p id=f3a8 class="phone s01"><cite>Joe_Andrieu:</cite> So that is going to be an interesting because there are features here that are going to need that.</p>
+<p id=9d98 class="phone s04"><cite>Ivan_Herman:</cite> That's Yeah,…</p>
+<p id=d20e class="phone s01"><cite>Joe_Andrieu:</cite> But we're at time but I appreciate that is a big opening for a longer conversation Ivon. I appreciate that. anything else before we wrap up? We are a minute past. Okay. Thank you for showing up. I appreciate it and we will be in touch.</p>
+<p id=9535 class="phone s04"><cite>Ivan_Herman:</cite> Just for the experience of that my spouse is exactly part of this two who had 2%.</p>
+<p id=8769 class="phone s03"><cite>Manu_Sporny:</cite> 2% is a very big number of the global population.</p>
+<p id=23c9 class="phone s01"><cite>Joe_Andrieu:</cite> That's a big number.</p>
+<p id=cf2b class="phone s04"><cite>Ivan_Herman:</cite> Yeah. Yeah.</p>
+<p id=9713 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. All right.</p>
+<p id=0af2 class="phone s04"><cite>Ivan_Herman:</cite> And we have had problems like we could not open in certain banks we couldn't open some safe deposit box because the only way they checked the entry was fingerprints.</p>
+<p id=6f96 class="phone s03"><cite>Manu_Sporny:</cite> It's the fingerprint. Yeah, that's crazy. I mean,… Ivan Herman:</p>
+<p id=c6a8 class="phone s04"><cite>Ivan_Herman:</cite> That's crazy.</p>
+<p id=cf2c class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=513c class="phone s03"><cite>Manu_Sporny:</cite> All right. Thanks, guys. Have a good week. Bye.</p>
+<p id=758a class="phone s01"><cite>Joe_Andrieu:</cite> Thanks everyone. Cheers.</p>
+<p id=3746 class="phone s04"><cite>Ivan_Herman:</cite> Bye-bye. Meeting ended after 01:01:25 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=af7e class=irc><cite>&lt;Manu_Sporny&gt;</cite> 2% of the global population has fingerprints that are naturally too faint or damaged to be accurately read by modern biometric scanners. </p>
+<p id=3ffd class=irc><cite>&lt;Denken_Chen&gt;</cite> 😢 </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
