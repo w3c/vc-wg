@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 23 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>23 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Parth_Bhatt, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1eed">Announcements, Introductions, and Process Items</a></li>
+<li><a href="#d6d2">VC Forgery Defense Publication Request</a></li>
+<li><a href="#97c2">Quantum Resistance Specifications</a></li>
+<li><a href="#d1e0">Moving Selective Disclosure Functions</a></li>
+<li><a href="#de7b">Separate Document for Crypto Suites</a></li>
+<li><a href="#e583">Clarifying &quot;Secure Barcode&quot; Terminology</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=1eed>Announcements, Introductions, and Process Items</h3>
+<p id=117b class="phone s01"><cite>Wesley_Smith:</cite> Hey folks, I'll give people a couple minutes to check</p>
+<p id=9412 class="phone s01"><cite>Wesley_Smith:</cite> All right, I think we can go ahead and get started. everybody. Welcome to the June 23rd meeting of what is formerly known as the barcodes and data integrity task force. recently the VC forgery defense work has fallen under our purview as a reminder that this meeting is being recorded. if you are not comfortable with being recorded, please let me know. The agenda for today is much the same as previously. We'll start with announcements, introductions, and process items. And then we will go one by one through the specifications for discussion issue processing and poll request processing.</p>
+<p id=4676 class="phone s01"><cite>Wesley_Smith:</cite> Greg Bernstein, I'm going to yield the floor to you for data integrity work after announcements and introductions because we haven't been spending as much time on these calls recently. with that in mind, does anybody have any nounce introductions, or process items they would like to discuss today? Ivon, go ahead.</p>
+</section>
+
+<section>
+<h3 id=d6d2>VC Forgery Defense Publication Request</h3>
+<p id=97cb class="phone s02"><cite>Ivan_Herman:</cite> But for the others we are at the point of submitting a publication request for the forgery defense document was as soon as you merge that you gave…</p>
+<p id=237c class="phone s01"><cite>Wesley_Smith:</cite> All right, sounds</p>
+<p id=ffff class="phone s02"><cite>Ivan_Herman:</cite> which seems to be okay to me then I can do the publication request officially. The only thing which is pending and I propose to leave it pending at this point whether we will publish it on the 30th or the 2nd. The 30th might be a bit tight but we can try.</p>
+<p id=29c8 class="phone s01"><cite>Wesley_Smith:</cite> Thank you as always.</p>
+<p id=b6df class="phone s02"><cite>Ivan_Herman:</cite> So I didn't want to merge the PR myself. It's not proper. So I leave it to you.</p>
+<p id=0424 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that sounds good. I will go ahead and get that merged. so just to catch the people up, we are at the point where we now have multiple editors of the VC for defense specification and we believe the spec is in a place readiness for first public working draft. That's what Ivonne was noting that now we're actually moving to do a first public working draft request.</p>
+<p id=c7fd class="phone s02"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=5d7c class="phone s01"><cite>Wesley_Smith:</cite> Thank you Avon as always for all the hard work. I will get that merged today and then turn it over to you. Thank you very much. Anybody else have any announcements, process, or introduction items?</p>
+<p id=43a7 class="phone s01"><cite>Wesley_Smith:</cite> All right, hearing none, Greg, I will turn it over to you for data integrity.</p>
+<p id=b237 class="phone s01"><cite>Wesley_Smith:</cite> I would say take as much of the call today as you need since, as I mentioned, we've been spending lots of time on other things. and if there's time left over, we'll move on to barcodes forgery events.</p>
+</section>
+
+<section>
+<h3 id=97c2>Quantum Resistance Specifications</h3>
+<p id=9cad class="phone s03"><cite>Greg_Bernstein:</cite> Most of the time has been spent on we were trans we've got a first public working draft now of quantum resistance…</p>
+<p id=5e2e class="phone s03"><cite>Greg_Bernstein:</cite> if FP</p>
+<p id=b5e1 class="phone s03"><cite>Greg_Bernstein:</cite> And now that's gone in, we are starting to get some confirmations from folks and questions about the test vectors, which we've gotten some confirmations on some of them. the most recent activity was Ivan's at Chidna update. PR went in. It's been approved. I've just been waiting for the classic week after we approve PR. It doesn't seem like it really should go the full week because it's just kind of a process thing, but we'll do that. And so that'll go in. what is the agenda thing, Ivan?</p>
+<p id=e4af class="phone s02"><cite>Ivan_Herman:</cite> What the effect is that from now on whenever you merge a PR on that document it will be automatically updated on the official W3C publication list and…</p>
+<p id=1428 class="phone s02"><cite>Ivan_Herman:</cite> publication in the sense of using the w3.org URL instead of GitHub. So what…</p>
+<p id=dc61 class="phone s03"><cite>Greg_Bernstein:</cite> knife. Okay.</p>
+<p id=bc63 class="phone s02"><cite>Ivan_Herman:</cite> what you and I had to do manually for the first public working draft now becomes automatic and neither you nor I have to do anything with it until we are in CR.</p>
+<p id=147f class="phone s03"><cite>Greg_Bernstein:</cite> The second thing we've been doing started doing since we have the first public working draft is we've been going through the issues and starting to close them that was appropriate. Some of them have been marked pending closed for a couple weeks now. So, I just closed some of those.</p>
+<p id=9451 class="phone s03"><cite>Greg_Bernstein:</cite> The first one to start attacking was I think this was historical based on some precedent because I don't think any cryptographer would want us really commenting on doing private keys, but I think we have some precedent on that. So, I'm updating and putting in the private key prefixes for So, I just put in a PR and I think Dave commented on it for private key formats with private key multibase. Okay.</p>
+<p id=b5e2 class="phone s03"><cite>Greg_Bernstein:</cite> And so I think Dave had one where he was saying whether he prefers the seeds and for this is the ML DSA case because the MLDDSA case can work with either seeds or with private keys themselves. Dave, did you want to comment anything about that comment on the PR? I haven't read the full thing.</p>
+<p id=9397 class="phone s04"><cite>Dave_Longley:</cite> My comment was I think we should probably list both the full private key format and…</p>
+<p id=efb1 class="phone s03"><cite>Greg_Bernstein:</cite> I just saw that you'd done that this morning.</p>
+<p id=1adf class="phone s04"><cite>Dave_Longley:</cite> the seed format. if we're going to pick one to list there, I would think we would want to list the seed format. It's smaller, more compact. expect that one to be more frequently used for things like doing interoperability with this test suite so I would say e either list both of them or just list the seed. but not do just the full private Dave Longley:</p>
+<p id=0a41 class="phone s03"><cite>Greg_Bernstein:</cite> The second closely related issue that related to this has to do with deterministic signatures.</p>
+<p id=5eee class="phone s03"><cite>Greg_Bernstein:</cite> Most of the postquantum signatures use randomness. So they generate fresh a new signature every time which makes it a little more difficult for people trying to verify test vectors in the sense that we give them all the intermediate steps.</p>
+<p id=b81a class="phone s03"><cite>Greg_Bernstein:</cite> But when it comes to the signature, if it's a non-deterministic signature, each signature uses randomness then you can't check just the signature value. You can verify and go the other way. We have all sorts of intermediate values which are deterministic like canonicalization outputs hashes of the various pieces and it is a concatenation of those hashes that go into the signature. I had been treating the signatures a little bit more as black boxes.</p>
+<p id=2983 class="phone s03"><cite>Greg_Bernstein:</cite> some and I hadn't dug into which I can do if we can turn on deterministic kind of options by providing seeds or other things. It may be specific to each signature type how we do that. I just haven't done that yet. any opinions on how worthwhile that would be. Dave</p>
+<p id=10000 class="phone s04"><cite>Dave_Longley:</cite> There's a tension here because to get to interoperability on RSpec, you don't necessarily have to be engineering the cryptographic primitives from the ground up. you can use a library. Interoperability with our spec is a layer up. but when working on these things, it's very nice to be able to go through each intermediate step and wind up with a deterministic value at the end.</p>
+<p id=0246 class="phone s04"><cite>Dave_Longley:</cite> So if it's possible for us to use this specific random number generator or that it's seated with this so that you can get this exact value for the test vectors that's helpful to implementers. If it's too hard to do that it's the other intermediate steps that are about producing the list of hashes and all those things I think are probably more critical. so I don't think it's a dealbreaker if we can't find a nice way to tell people, hey, if you use this randomness, you'll get this exact signature value out.</p>
+<p id=425f class="phone s04"><cite>Dave_Longley:</cite> But it feels like that could be maybe I don't want to say last mile. It's just the last inch of doing the implementation.</p>
+<p id=03ea class="phone s03"><cite>Greg_Bernstein:</cite> Okay. …</p>
+<p id=10001 class="phone s03"><cite>Greg_Bernstein:</cite> NIST has known answer tests. I did not dig far enough in to see the different libraries. So, I'm going to take that as an action then put on the list. because it's nice to have those values. Then over in the BBS world where we use a lot of different randomness in different places, we do produce test vectors that are based off a given pseudo random number generator with seeds.</p>
+<p id=09ab class="phone s03"><cite>Greg_Bernstein:</cite> So we have those numbers people can verify every step at that detailed level. as far as where we are, as far as issues, so we had scrubbing down the issue ad codes for the private keys.</p>
+<p id=688e class="phone s03"><cite>Greg_Bernstein:</cite> We were starting on that. we were missing some of the multicodex points. They hadn't merged our request yet. I contacted them and now they say they're fixed that. So, I'll double check all that. And I had a caveat in the PR about codes not being specific, but we'll get through to that. so let's just look at our issues list quickly. can I share but on a different tab in the same thing? I mean, is that appropriate to go through and take a look at these things right now?</p>
+<p id=edef class="phone s01"><cite>Wesley_Smith:</cite> Yeah, it's appropriate to do, but if you can when you're make sure that you are discussing in a way that will be understandable by somebody just reading the text. So don't say like this and…</p>
+<p id=9499 class="phone s01"><cite>Wesley_Smith:</cite> that if you can when indicating things on your screen.</p>
+<p id=9640 class="phone s03"><cite>Greg_Bernstein:</cite> …</p>
+<p id=b5b6 class="phone s03"><cite>Greg_Bernstein:</cite> let me see if I use so many different programs here. says to share screen. Can we people see my screen? Allow window. You should be seeing yourself in.</p>
+<p id=d4c1 class="phone s01"><cite>Wesley_Smith:</cite> Yep. We can see this current tab, Google Meet tab and…</p>
+<p id=9c0f class="phone s03"><cite>Greg_Bernstein:</cite> Okay, we see the quantum resistance.</p>
+<p id=770c class="phone s01"><cite>Wesley_Smith:</cite> issues. Yep.</p>
+<p id=9ee0 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, so as far as issues go, we've got the MSA secret key variance X values not defined. That's being worked right this second. Horizontal review is not something we can start yet. We're kind of started a threat model with your help. add MLS MLDDSA65 crypto suites. I think I contacted Amir about closing this because we have the hooks.</p>
+<p id=3563 class="phone s03"><cite>Greg_Bernstein:</cite> I commented out MLDDSA 65 because it's a higher security level crypto suite based with parameters for MLDDSA. we were going with the level one and level two categories right now. Is that a question?</p>
+<p id=332e class="phone s01"><cite>Wesley_Smith:</cite> Go ahead. Tiban.</p>
+<p id=7325 class="phone s02"><cite>Ivan_Herman:</cite> I am really not an expert…</p>
+<p id=0a49 class="phone s02"><cite>Ivan_Herman:</cite> but I recently went through creating a table with all the crypto suites and there is always a pair. So if we do GCS we do also the RDFC I presume.</p>
+<p id=55fc class="phone s03"><cite>Greg_Bernstein:</cite> Yes. …</p>
+<p id=f937 class="phone s02"><cite>Ivan_Herman:</cite> Okay, that's okay.</p>
+<p id=10002 class="phone s03"><cite>Greg_Bernstein:</cite> what we have right now is That's a certain parameter set of MLDDSA giving us think security category level one which is equivalent to ECDSA with the P256 curve but postquantum and we have the JCS and RDFC versions. Okay.</p>
+<p id=54a8 class="phone s02"><cite>Ivan_Herman:</cite> And the same will happen with 65 if we take it.</p>
+<p id=407f class="phone s03"><cite>Greg_Bernstein:</cite> If we I would yeah I have done test vectors. I had it in but there was push back for having all the higher level security categories for all of them because in MLDDSA, I put in SLH. Falcon has two levels and ski sign has I think three levels. So until we decide as a group we want to bring in those, it adds a lot more to test. And if their security categories are what they say they are, then they're more than adequate as replacements.</p>
+<p id=10003 class="phone s03"><cite>Greg_Bernstein:</cite> And we're ready to add in the higher security category suites. Easy to turn on. We've made sure that we're getting public and secret key multibase codes for all of them. What we didn't do is we just didn't add because once we add them in, we have to add in test vectors for all of them. And we can do that.</p>
+<p id=5d0f class="phone s03"><cite>Greg_Bernstein:</cite> It just gets long. So there was this discussion a while back. Go ahead.</p>
+<p id=43a6 class="phone s02"><cite>Ivan_Herman:</cite> So I am looking at this not from the detailed crypto point of view because it's beyond my pay grade but overall in the family at this moment I have a table with all the crypto suites which we define formally there are 18 of them so we can add two more to get the 20s which is a round number but it is a large number of crypto suites… which we define which begins to bother me a little bit. Ivan Herman:</p>
+<p id=f366 class="phone s03"><cite>Greg_Bernstein:</cite> And it also is good to provide some guidance to people.</p>
+<p id=70ae class="phone s03"><cite>Greg_Bernstein:</cite> So yeah, I mean Mono, who I don't think was the one who raised the concern because my initial update to the U the CCG document, I put in all the flavors for each one of them. And he said, &quot; that's too many.&quot;</p>
+<p id=701c class="phone s03"><cite>Greg_Bernstein:</cite> And people get the wrong impression that they should start using the highest level because they want the highest security and that gives us big keys and big signatures and all the other things when they don't understand that they're not they're really not buying themselves security when the issue really becomes, key compromise rather than somebody actually breaking the security of the cryptography. there's everything every other way to get around the signatures or to steal keys versus actually cracking the cryptography. So</p>
+<p id=c491 class="phone s03"><cite>Greg_Bernstein:</cite> Question it.</p>
+<p id=827a class="phone s05"><cite>Phillip_Long:</cite> Yeah, Greg, this is Phil. I'm just curious. I know that you mentioned you're primarily focused on NIST's category one and two, which are essentially equivalent to what? AES 128 and SHA 3 256. But I also noticed in the NIS description that they're recommending any new deployment use category three or more, but category three for all new deployments. And I'm just curious about their decision versus yours.</p>
+<p id=f9a3 class="phone s03"><cite>Greg_Bernstein:</cite> Where? no. I didn't see that. If we have something that we have to We should be paying attention. Is that in their key guide or…</p>
+<p id=3bcf class="phone s05"><cite>Phillip_Long:</cite> It's in their computer security resources center guide.</p>
+<p id=8bc4 class="phone s03"><cite>Greg_Bernstein:</cite> where? Yes,…</p>
+<p id=3e0b class="phone s05"><cite>Phillip_Long:</cite> I can send you a URL link.</p>
+<p id=9fb1 class="phone s03"><cite>Greg_Bernstein:</cite> No, because that's going to come up as an issue. I didn't see that new advice.</p>
+<p id=d374 class="phone s03"><cite>Greg_Bernstein:</cite> I had been going with from their new draft of their key guide which explains all the security categories. So that I think we should probably put this down as an issue then.</p>
+<p id=1f06 class="phone s05"><cite>Phillip_Long:</cite> Very good.</p>
+<p id=cba3 class="phone s05"><cite>Phillip_Long:</cite> I'll get that out to you.</p>
+<p id=90c8 class="phone s03"><cite>Greg_Bernstein:</cite> Because no because if we shouldn't…</p>
+<p id=e2e2 class="phone s03"><cite>Greg_Bernstein:</cite> if we should go to the next level the dangerous question somebody else was going to bring it up. We do want short signatures.</p>
+<p id=283a class="phone s05"><cite>Phillip_Long:</cite> Yeah. No,…</p>
+<p id=95a7 class="phone s05"><cite>Phillip_Long:</cite> I get the problem that that might be incumbent by doing this, but such as…</p>
+<p id=f084 class="phone s05"><cite>Phillip_Long:</cite> what I've seen in their recent recommendation.</p>
+<p id=fa4f class="phone s01"><cite>Wesley_Smith:</cite> Dave Longley,…</p>
+<p id=373a class="phone s01"><cite>Wesley_Smith:</cite> you have your hand up.</p>
+<p id=e86c class="phone s04"><cite>Dave_Longley:</cite> Yeah, let's take a look at that. See what they're saying. I do know that in the ecosystem everyone's deploying MLDDSA 44 for MLDDSA which has that level one slash to it. So, it'll be interesting to see if there's new advice, why there's new advice, and see if other people are reacting to that. it also becomes an interoperability challenge if there are too many options available.</p>
+<p id=81ff class="phone s05"><cite>Phillip_Long:</cite> right? Yeah,…</p>
+<p id=4225 class="phone s01"><cite>Wesley_Smith:</cite> Phillip, could you put that link as well as in the issue you're describing?</p>
+<p id=d066 class="phone s01"><cite>Wesley_Smith:</cite> Could you put it in the chat of the meeting?</p>
+<p id=8c19 class="phone s05"><cite>Phillip_Long:</cite> I'll see if I can get the right one. I'm looking at a summary at the moment, but yeah.</p>
+<p id=e320 class="phone s01"><cite>Wesley_Smith:</cite> Back to you.</p>
+<p id=1224 class="phone s03"><cite>Greg_Bernstein:</cite> or what?</p>
+<p id=3941 class="phone s03"><cite>Greg_Bernstein:</cite> So that is a very important one that's probably our most important thing trying to keep what we offer appropriate and the other thing is now you're making do we need some explanatory text somewhere trying to guide and is that this document</p>
+<p id=10004 class="phone s03"><cite>Greg_Bernstein:</cite> or would that be in the DI document? but let me just quickly So, we've got what crypto suites at what levels. we had a comment about an issue that they successfully verified the MLDDSA test vector in the case. which is great. I think they put in some other information there that belongs someplace else, but I put that as pending closed. Amir also I wasn't quite sure what he meant by mechanistic and such like that. it's a very nice long issue with some suggestions.</p>
+<p id=01ab class="phone s03"><cite>Greg_Bernstein:</cite> I responded to him asking him if he could put together a R with better explanatory text since he seemed very up to date on the issue. Is he on the call? then there's some people doing some Rust for Falcon and SLHDSA. so I responded to those folks. as you can see, we also kind of use issues as the place for some discussion back and forth to talk. So, they're open, but we'll close them as appropriate. I'm trying to m close things as we go. Any questions on quantum resistance?</p>
+<p id=d580 class="phone s03"><cite>Greg_Bernstein:</cite> Okay I'm going to stop sharing because let me get to because you are presenting stop sharing okay we've been looking at quantum resistance what we added to quantum resistance and the issue has now been closed is we added selected disclosure via a industry kind cryptographic standard approach of hashing and signing salted hashes with one signature on a list of salted hashes which then you reveal stuff as you want. You have to send around a lot more data.</p>
+</section>
+
+<section>
+<h3 id=d1e0>Moving Selective Disclosure Functions</h3>
+<p id=c283 class="phone s03"><cite>Greg_Bernstein:</cite> So it's bigger than a BBS approach which inherently has it but for postquantum which has large signatures is a reasonable thing. It uses a lot of the same primitives. So I think we're at a good point where we can update the data integrity spec to move the selective disclosure functions.</p>
+<p id=70ac class="phone s03"><cite>Greg_Bernstein:</cite> Let me just Sorry, I'm looking at my notes on data integrity editing. so we've had it as kind of an issue moving the selected disclosure functionality from VCDI ECDSA, right? That's a specific spec to VC data integrity. Why do that? most of the selective disclosure functions are reused in ECDSA and BBS and now in quantum resistance. So it's not just one place they're used or two places they're used.</p>
+<p id=10005 class="phone s03"><cite>Greg_Bernstein:</cite> They're reused in three places and they could be applied with other crypto suites. so it seems like we're kind of at time to do that. go ahead.</p>
+<p id=027a class="phone s02"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=6f57 class="phone s02"><cite>Ivan_Herman:</cite> Finish what you wanted to say.</p>
+<p id=10006 class="phone s03"><cite>Greg_Bernstein:</cite> Part of what I had a conversation with Dave about some constraints with JSONLDLD certain things and that it also gives us a single place to comment on those to give it any constraints because for selective disclosure to what we do there's</p>
+<p id=70c5 class="phone s03"><cite>Greg_Bernstein:</cite> There's is an issue with something in JSON LD an at list parameter and so that we can't support with selective disclosure but it doesn't seem to hurt much because otherwise if you just use in my previous examples of this kind of stuff I had some quite elaborate examples where I had arrays in JSON and those just get handled as sets which makes sense if you're going to selective disclose out of a list like thing or an array. What are you selective disclosing some properties out of that? And that works fine. we already showed that working.</p>
+<p id=f42c class="phone s03"><cite>Greg_Bernstein:</cite> So that's really kind of the main thing to move right right now. And that would impact the DI document, and the draft BBS document because we'd be moving reference either references or functionality from one document to another questions.</p>
+<p id=08e2 class="phone s02"><cite>Ivan_Herman:</cite> So the reason why I was on the queue is my understanding was that it is not only the SD functionalities that would move to the DIP spec but even a number of functions on the core signature schemes transformation formations, the handling of transformation, the choose choice of canonicalization, all that stuff which is repeated all over the place as well.</p>
+<p id=def8 class="phone s02"><cite>Ivan_Herman:</cite> In my dream I would like the cryptosweet document the specification itself to be apart from the test suite be a one or two page document which says you use this and this is the signature algorithm that you use that would overly simplify the structure because I put a table on IRC of all the script the all thing that we have right now. And for an outsider it becomes overly chaotic and it's a bit frightening to see all these documents which are all of them very complex or look very complex until you realize that they are repeating themselves.</p>
+<p id=10007 class="phone s02"><cite>Ivan_Herman:</cite> And I am saying that also because I'm still in discussion with the Chinese community that SM2 would come to add to the picture and if they come in and they see let's say the ECDSA document and they have the impression that they have to duplicate the whole thing with all the details. It's pretty frightening if it's only one page which says instead of ECDSA you use your own elliptic curve stuff and you are done that makes a huge difference and my feeling is that this should preede the move of the SD part or…</p>
+<p id=0050 class="phone s02"><cite>Ivan_Herman:</cite> should be done together I mean whatever is better but we should not forget</p>
+<p id=c13c class="phone s03"><cite>Greg_Bernstein:</cite> I'm raising my own hand to respond.</p>
+<p id=650d class="phone s03"><cite>Greg_Bernstein:</cite> For the quantum resistance crypto suite that I faced that exact issue. I tried to make it as simple as possible by factoring out the transformations, the hashing steps and such like that into kind of parameterized functions.</p>
+<p id=040e class="phone s03"><cite>Greg_Bernstein:</cite> I just don't know if we've had any independent eyes on it besides mine because if that did work it's hasn't gotten much review but we could take that format. Dave. Yes.</p>
+<p id=f9ab class="phone s04"><cite>Dave_Longley:</cite> Yeah, I mean ideally that's where we go. These things are all repeating themselves. one of these suites repeats all a bunch of English language text with the same steps and the only things that actually change are the parameters that are in this we could put in a table and that are very close to what these tables are that Avon is producing. So we definitely want to get there. the review will eventually come. so we should try to head in that direction. and that's for all of the functions, not just the SD stuff. And then we just have the individual crypto suite specs just say use these parameters with those functions.</p>
+<p id=936b class="phone s02"><cite>Ivan_Herman:</cite> So yeah I mean I mean I wonder whether editorially I mean we have two way to approach it is that we push everything into the DIP spec</p>
+<p id=665a class="phone s03"><cite>Greg_Bernstein:</cite> Okay. …</p>
+<p id=f989 class="phone s03"><cite>Greg_Bernstein:</cite> so how to proceed as far as I mean go ahead. There you go.</p>
+<p id=10008 class="phone s02"><cite>Ivan_Herman:</cite> which will make the DIP spec a monster. it is already a monster but even bigger monster. The other possibility which I just thought of at this moment that we do a separate document which is cryptosweet general or whatever the title would be that would concentrate exclusively on the creation of a crypto suite and all the other documents would refer to that.</p>
+<p id=43ce class="phone s05"><cite>Phillip_Long:</cite> What the hell?</p>
+<p id=5d22 class="phone s02"><cite>Ivan_Herman:</cite> by parameterizing I mean these two are possible I don't know which one is simpler editorially</p>
+<p id=ac0c class="phone s03"><cite>Greg_Bernstein:</cite> Okay. I don't know…</p>
+<p id=10009 class="phone s03"><cite>Greg_Bernstein:</cite> how many eyes have looked at the quantum resistance document where I did create these parameterized functions for the hashing transformation the various pieces.</p>
+<p id=bcd6 class="phone s03"><cite>Greg_Bernstein:</cite> Let me take a look and try and I mean, I think I had a plan way back about because I looked over all the SD functions, but let's make it a little bigger and such like that because before, I start going into the documents and cutting them up. It's nice to have a full plan on the functions, but like I said, it did work very well on the u in the quantum resistance adding in those steps. And so if we add in a function document the base functions for creating crypto suites separate from the DI. Okay.</p>
+<p id=afaf class="phone s03"><cite>Greg_Bernstein:</cite> or we put in the DI. I'll have to take a look at how big the DI is. So, I've got some action items, but it seems like we're kind of getting ready to do this and it sounds like it'll help folks the more we functional parameterize this and show that it is really a drop in kind of thing to add in a new crypto suite. I think it really cements the fact that we do have good crypto agility. You combine that with proof sets and we're there. Wesley, I think it's your engineering</p>
+<p id=2937 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, plus one to this nice abstraction that we're talking about. and you probably are aware of what I'm about to say. I just wanted to briefly make a note that we need to be careful with how we do the abstractions. that's not restrictive going forward, especially when it comes to new andor emerging types of crypto that do things differently than the way we currently do things or…</p>
+<p id=f1fa class="phone s03"><cite>Greg_Bernstein:</cite> Is it</p>
+<p id=142e class="phone s01"><cite>Wesley_Smith:</cite> support features that we don't even know exist yet and require different algorithms and different structures and that sort of thing. So, need to make sure we make the abstraction extensible. That's it.</p>
+</section>
+
+<section>
+<h3 id=de7b>Separate Document for Crypto Suites</h3>
+<p id=3459 class="phone s02"><cite>Ivan_Herman:</cite> Actually what Wesley said reinforces my view that it should not be part of the DI document. It should be a separate document for crypto suites I don't know how to formalize that which would fall into this picture which would make it clearer that someone may come with something that does not fit into the mold but can still do a crypto suite for DI. So that just reinforces that maybe a separate document makes more sense.</p>
+<p id=e74e class="phone s03"><cite>Greg_Bernstein:</cite> And that becomes less length. It makes it easier to add test vectors too because if you throw in test vectors for functions with DI Dave. Okay.</p>
+<p id=34e8 class="phone s05"><cite>Phillip_Long:</cite> Oops.</p>
+<p id=f1cc class="phone s04"><cite>Dave_Longley:</cite> I'm not opposed to either approach going forward. I just don't want us to create a blocking effect where we're waiting for some new document to get figured out and published with a new name. So there will be some process there. Avon, do you have any issue if we end up going that way? if Greg needs a working space, he works with the DI spec for now in a crypto suite section and then we move it out</p>
+<p id=e64e class="phone s02"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=fb20 class="phone s02"><cite>Ivan_Herman:</cite> whatever makes it easier, ve. as I said, this is just an idea that I had about 10 minutes ago. So, it's worth what is worse.</p>
+<p id=5447 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=b1fa class="phone s03"><cite>Greg_Bernstein:</cite> So, we'll get moving on things and we'll keep it sectioned off so we can easily move it someplace else if need be.</p>
+<p id=a735 class="phone s03"><cite>Greg_Bernstein:</cite> But getting these functions defined and showing folks it's a very structured approach that we've been repeating ourselves but that's because there are very good reasons for the different crypto suites that we have even if we don't have them written down in a</p>
+<p id=cc47 class="phone s03"><cite>Greg_Bernstein:</cite> I think I might have done something like that in one of my presentations to the CCG where I said, why do you pick that one?&quot; you should use EDDDSA if you don't have any classic requirements. But now going to postquantum, what do you use? that's a little harder to say, but MLDDSA is kind of over SLHDSA and such like that. Okay. I've got my marching orders. any That's kind of where we're at.</p>
+<p id=b0b8 class="phone s03"><cite>Greg_Bernstein:</cite> and we're I said slowly getting some confirmations on the test vectors. so I've got this deterministic thing to look into. and…</p>
+<p id=99d3 class="phone s03"><cite>Greg_Bernstein:</cite> I'm going to turn it back over to you Wes unless there are any other questions.</p>
+<p id=940f class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=7e82 class="phone s01"><cite>Wesley_Smith:</cite> Thanks, Greg. So, we have about 15 minutes left. Phil, I noticed that you raised a hefty issue on the BC barcodes repo earlier today.</p>
+<p id=87e4 class="phone s01"><cite>Wesley_Smith:</cite> Is that something that you think would merit from group discussion?</p>
+<p id=054a class="phone s06"><cite>Phil_Archer:</cite> Mhm. yes,…</p>
+</section>
+
+<section>
+<h3 id=e583>Clarifying &quot;Secure Barcode&quot; Terminology</h3>
+<p id=b24d class="phone s06"><cite>Phil_Archer:</cite> sometimes it came to me I was talking to my line manager those of you who were in the room met briefly. the first time I had a chance of a talk to her since that time today and she highlighted a discussion that obviously happened in the room. Goodness knows what I was thinking because I didn't pick up on it and it's a really important thing for clarity I'm wearing my GS1 hat. I'm not wearing my cochair hat for this discussion. I understand from Sue my line manager that there was some discussion around the concept of something called a secure barcode.</p>
+<p id=6260 class="phone s06"><cite>Phil_Archer:</cite> There is no such thing as a secure barcode and it hurts us GS1 if anyone is in the belief that There most certainly is secure software that reads barcodes, but there is no such thing as an optical barcode that is inherently secure. and so I wanted to make sure that this group was in alignment with</p>
+<p id=dd41 class="phone s05"><cite>Phillip_Long:</cite> Where's the machine?</p>
+<p id=00d1 class="phone s01"><cite>Wesley_Smith:</cite> Plus Strongly, Definitely agreed. And I think that while it is kind of the nuance, I think it's an important nuance. is there specific text in the specification that you found problematic or…</p>
+<p id=d4eb class="phone s01"><cite>Wesley_Smith:</cite> do you think that's just more, conversationally the way that we approach terms like secure barcode or adding security to a barcode? I know we say things like that quite a lot.</p>
+<p id=7a1f class="phone s06"><cite>Phil_Archer:</cite> Yeah, that's the worry.</p>
+<p id=6117 class="phone s06"><cite>Phil_Archer:</cite> It's that thing saying, I'm going to add some security to my barcode. No, you're not. You're going to add a feature to you're going to add some data to your barcode that can be read by my secure software. And the reason why we're jumping on it so much is to do with other areas where people do talk about secure barcodes and we have to jump up and down and basically everyone who has a quote secure barcode unquote what they're actually selling is their own proprietary system. and they say hey GS wants a lot of crap look put my QR code on your product and you'll be safe because it's secure.</p>
+<p id=bf3b class="phone s06"><cite>Phil_Archer:</cite> And so it is that discussion around it rather than any specific text although I might review it with that in mind but there's no particular bit of text I thought no that's wrong right yeah exactly Yes.</p>
+<p id=e654 class="phone s02"><cite>Ivan_Herman:</cite> Yeah,</p>
+<p id=2164 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I might have just found a bit of text that you might think,…</p>
+<p id=85be class="phone s01"><cite>Wesley_Smith:</cite> that's wrong because it does explicitly secure the optical barcode. which sounds like text very much want to avoid. Yeah, that's a really good point.</p>
+<p id=1000a class="phone s01"><cite>Wesley_Smith:</cite> I think that as Benjamin noted, the threat modeling work will hopefully …</p>
+<p id=3892 class="phone s05"><cite>Phillip_Long:</cite> Oops.</p>
+<p id=3832 class="phone s01"><cite>Wesley_Smith:</cite> make that distinction clearer and also is a way that once we have the threat modeling done, I expect that we can clean up all the relevant text to not be incorrect basically. Dave Longley,…</p>
+<p id=4265 class="phone s06"><cite>Phil_Archer:</cite> Right.</p>
+<p id=b4c4 class="phone s01"><cite>Wesley_Smith:</cite> you have your hand up. Go ahead.</p>
+<p id=1bef class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think it's going to be tricky. in all of the other work in this space, I mean, similarly, you don't have secure documents just because you put a digital signature on the document. but these things are referred to as securing mechanisms. The things that make documents verifiable are referred to as securing mechanisms. it's text that can easily be confused. and so we're going to need to be careful. we should try to use language that doesn't lead to confusion and…</p>
+<p id=3118 class="phone s04"><cite>Dave_Longley:</cite> we can't always do that I'm sure but I generally agree that with your comments</p>
+<p id=d5c2 class="phone s01"><cite>Wesley_Smith:</cite> Bill, I'm wondering,…</p>
+<p id=1000b class="phone s01"><cite>Wesley_Smith:</cite> so you use the language there's no only secure software. And while I agree that there's no such thing as a secure barcode because you can just steal it or scratch it or whatever you want. I wonder if the secure software is maybe not the right framing either. maybe there are secure ways to use or consume barcodes rather than the ways in which the workflows are secure. I don't know something to that effect.</p>
+<p id=9448 class="phone s01"><cite>Wesley_Smith:</cite> something about the security being applied to a process or an action rather than a entity. I don't think it's the software that consumes a barcode that is secure. I think it's the process of consuming the barcode that has security added to something to that effect. But either way, we can sort of workshop that sort of text explicitly. believe or I agree with you that saying that a barcode is secure is wrong. Greg, give your hand up.</p>
+<p id=fbf8 class="phone s03"><cite>Greg_Bernstein:</cite> Dave had a comment about verifiability. it's data integrity. because they can scratch it off. You don't have confidentiality. You don't have availability but we are adding an integrity feature just when we add in to ect error correcting codes to packets like we do in every TCP IP packet.</p>
+<p id=ae1b class="phone s03"><cite>Greg_Bernstein:</cite> So yeah I mean people have their marketing terms but what we are doing is trying to make something verifiable. We are adding a mechanism to increase the integrity. but obviously yeah you let the marketing folks go wild but integrity is part of security. also I might have not opened the messages in time. Did somebody post reference to that postquantum security reference?</p>
+<p id=108e class="phone s01"><cite>Wesley_Smith:</cite> Try again.</p>
+<p id=afd4 class="phone s05"><cite>Phillip_Long:</cite> Not yet. This is Phil.</p>
+<p id=fba2 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. Okay. Thanks. Phillip Long:</p>
+<p id=3f9b class="phone s05"><cite>Phillip_Long:</cite> I'm looking for it. I originally went back to figured I'd find it quickest with Claude, and Claude apparently has guard rails, which won't allow that question to be answered.</p>
+<p id=a181 class="phone s01"><cite>Wesley_Smith:</cite> Interesting.</p>
+<p id=0a1d class="phone s06"><cite>Phil_Archer:</cite> just shows…</p>
+<p id=fabd class="phone s05"><cite>Phillip_Long:</cite> Yeah, I'm still looking.</p>
+<p id=9dcb class="phone s06"><cite>Phil_Archer:</cite> how far ahead of the game you are, right? I had to just say thank you everybody. I really appreciate the positive response. I appreciate that. Yes, of course, words like workflow, integrity, features, whatever. All that absolutely fine. it's the shorthand secure barcode that as I say for GS1 I'm wearing my GS1 hat is a problem. So thank you for taking it on board.</p>
+<p id=37f0 class="phone s01"><cite>Wesley_Smith:</cite> Thank you, The GS1 perspective is of course extremely valuable here. I will note that there is some tension here between technical accuracy and readability, especially in places like the abstract and the introduction of the document where we want them to be accessible to non-technical folks who don't know or care much about the nuances that we're describing. but of course we don't want to completely sacrifice technical accuracy for accessibility readability.</p>
+<p id=863b class="phone s01"><cite>Wesley_Smith:</cite> I expect we can kind of workshop bike shed this further on the issue and on PRs and the like but thank you for the discussion today. we're a bit low on time. We're scheduled to wrap in five minutes. Does anybody have anything brief they'd like to discuss? All right. If not, I think we can wrap five minutes early. Thank you everybody for the time today and see you all next week.</p>
+<p id=6908 class="phone s06"><cite>Phil_Archer:</cite> Thank you.</p>
+<p id=ce6b class="phone s03"><cite>Greg_Bernstein:</cite> Bye.</p>
+<p id=75db class="phone s07"><cite>Elaine_Wooton:</cite> Thanks guys. Bye. Meeting ended after 00:50:09 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

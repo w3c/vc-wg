@@ -28,6 +28,5 @@ Experimental implementation exists, nothing deployed
 
 # Note
 
-This specification is, strictly speaking, bound to the problems raised by quantum computing, ie, to the quantum-resistant cryptosuites. However, editorially and technically, it was decided that it is
-more appropriate to publish it as a separate document.
+This specification is, strictly speaking, bound to the problems raised by quantum computing, ie, to the quantum-resistant cryptosuites work. However, editorially and technically, it was decided that it is more appropriate to publish it as a separate document instead of adding it to that specification.
 

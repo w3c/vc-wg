@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 23 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>23 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Kevin_Dean, Parth_Bhatt, Patrick_St-Louis, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#6a13">Community Announcements</a></li>
+<li><a href="#2e79">VC Playground QR Flow</a></li>
+<li><a href="#0e76">VC Soft Lockdown for 1.0</a></li>
+<li><a href="#9bec">Test Suite Updates</a></li>
+<li><a href="#6629">Threat Model Progress Update</a></li>
+<li><a href="#37b1">PR Review: Open API Description Fields</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=05a7 class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, welcome to the call. We'll get started in a couple minutes.</p>
+<p id=b119 class="phone s01"><cite>Patrick_St-Louis:</cite> Looks like I'm having a hard time sharing my screen today. I will leave the call and be back or we'll kick other people from the call.</p>
+<p id=f400 class="phone s02"><cite>Kevin_Dean:</cite> Are you the host? you can make somebody else the host before leaving.</p>
+<p id=c745 class="phone s01"><cite>Patrick_St-Louis:</cite> I am one of the hosts.</p>
+<p id=3e8b class="phone s03"><cite>Benjamin_Young:</cite> Patrick, it shouldn't kick you…</p>
+<p id=525f class="phone s02"><cite>Kevin_Dean:</cite> In…</p>
+<p id=f6a3 class="phone s03"><cite>Benjamin_Young:</cite> because I'm here.</p>
+<p id=f84a class="phone s02"><cite>Kevin_Dean:</cite> which case Yeah.</p>
+<p id=071d class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think there's three hosts on the call,…</p>
+<p id=00f1 class="phone s03"><cite>Benjamin_Young:</cite> Yeah. Or Yeah,…</p>
+<p id=51ac class="phone s01"><cite>Patrick_St-Louis:</cite> so it should be fine.</p>
+<p id=4c61 class="phone s03"><cite>Benjamin_Young:</cite> it shouldn't kick us.</p>
+<p id=393f class="phone s02"><cite>Kevin_Dean:</cite> Yeah. As long as there's another host on the call,…</p>
+<p id=9e28 class="phone s03"><cite>Benjamin_Young:</cite> It should</p>
+<p id=bbd0 class="phone s02"><cite>Kevin_Dean:</cite> you should be okay.</p>
+<p id=8849 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, so I'm just going to come back, restart my browser, and hopefully that will fix it. See you guys in a second. Thank you.</p>
+<p id=c50e class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, I'm back and we'll try this again.</p>
+<p id=272e class="phone s01"><cite>Patrick_St-Louis:</cite> Is anyone seeing my screen currently?</p>
+<p id=b328 class="phone s03"><cite>Benjamin_Young:</cite> No, sorry,…</p>
+<p id=4151 class="phone s03"><cite>Benjamin_Young:</cite> Patrick. …</p>
+<p id=9449 class="phone s03"><cite>Benjamin_Young:</cite> is it the demo that you wanted to show the demo video?</p>
+<p id=52b7 class="phone s01"><cite>Patrick_St-Louis:</cite> No,…</p>
+<p id=40ff class="phone s01"><cite>Patrick_St-Louis:</cite> I just want to share just the repo and the VC call screen. it's okay. Let's get the meeting started and when we get to PR reviews, I'll ask someone else if they want to share their screen. I think we will be so welcome everyone. this is the vall vcon call today is the June 23rd 2026. this is a verifiable credential working group call. So all W3C policies are into effect.</p>
+</section>
+
+<section>
+<h3 id=6a13>Community Announcements</h3>
+<p id=4da8 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm back from vacation. I've missed a couple calls and there were a few cancelled calls also for the person events that happened over the last few weeks. I've had the chance to synchronize with Coyote, which gave me some updates of the things that were discussed last week. So hopefully we'll be able to pick back up where the group left off. before we get started so let's get into the introductions community announcements or any propose topic proposals for the agenda so I will let a couple minutes for people who want to share some of that I'm happy to share an announcement to after other people have gone coyote</p>
+<p id=016f class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, so I noticed yesterday as I was looking at this spec that the current TR version like URL for BCOM doesn't have the first public working draft status on it which I thought would have been resolved by now. I'll get it pull up really quickly. I'm pretty sure that it's supposed to be at that status right now. I think it says working draft instead of first public working draft. So, I don't know if there's an action that we need to take with Ivonne offline or on the call tomorrow, but that's something that just stood out to me for anyone who may be familiar with this process that would be useful to know if it really should be FPWD.</p>
+<p id=4fd2 class="phone s01"><cite>Patrick_St-Louis:</cite> Are you talking about the spec document itself?</p>
+<p id=c90c class="phone s04"><cite>Kayode_Ezike:</cite> Yeah.</p>
+<p id=9672 class="phone s04"><cite>Kayode_Ezike:</cite> Basically the slashtr UR URL I'll pull it up really quickly if I can find it but that currently points to a document that says working draft as opposed to first public draft and…</p>
+<p id=e9b9 class="phone s04"><cite>Kayode_Ezike:</cite> I'm just not sure if that's the correct status and if not then you have to follow up with Ivon god.</p>
+<p id=3957 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=2e79>VC Playground QR Flow</h3>
+<p id=ffff class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, we'll make sure to follow this. I think you are correct. So, yeah, we'll follow up on this potential Libra just login issue. I'm assuming it's going to be a small PR that we'll need to go along with it. Thank you for this observation. so yeah, I just wanted to share. So I've been working with different codebase to kind of implement some VC API stuff for a couple of years now. I believe last week or the week before the VC playground was updated to add a QR flow to the Chappie sign in with your Chappie wallet option which is a QR code that serves a very small interaction URL with a issuance workflow.</p>
+<p id=e9c8 class="phone s01"><cite>Patrick_St-Louis:</cite> So one of the codebase I have a project at the open wallet foundation labs it's called the pidentity wallet which is a mobile first front end for an occupi multi-tenant agent and I've implemented this without too many issues. I already had implemented the QR codes from the VC playground but now I've implemented this new way to get it and it's been working really good. I did not have many problems implementing this.</p>
+<p id=4a29 class="phone s01"><cite>Patrick_St-Louis:</cite> It's interesting to have these mini workflows which I've also added a sort of a user prompt to consent for the VPR theVPR and another one to consent to storing the wallet. so I thought it was interesting to show how these multi-steps even though it's a very simple multi-step workflow how it can look when implemented on a mobile wallet. thank you very much Kyod.</p>
+<p id=a920 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. So that's my community nouncement. is there any other announcement a topic they would like to discuss? Yes. Perfect.</p>
+<p id=a6d1 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I do want to just give a quick update on the threat model.</p>
+<p id=d2aa class="phone s05"><cite>Eric_Schuh:</cite> But I'll let you decide when that happens. So, doesn't need to be now. Yep. Yep.</p>
+<p id=2a83 class="phone s01"><cite>Patrick_St-Louis:</cite> it is in. So I had four topics listed and the thread model update is definitely one of those. I have put it last as four because the other ones I believe they will be very short and we can spend a bit more time on the trip models if need be. Is that okay?</p>
+<p id=69d6 class="phone s05"><cite>Eric_Schuh:</cite> All good. Sorry, I don't have the agenda in front of me, so miss that.</p>
+<p id=b2a4 class="phone s01"><cite>Patrick_St-Louis:</cite> I wish I could be sharing the agenda right now but unfortunately Google decided not today. so the four topics I have I was wondering if there'd be any interest in starting to maintain a small implementation rooster and have a small section of a call dedicated to if people want to share any implementation updates. I know busy playground was one.</p>
+<p id=f2d7 class="phone s01"><cite>Patrick_St-Louis:</cite> I've also seen a couple other threads on Slack about people updating their infrastructure. I think the verifier plus was another one and some have been tested with various wallets. so I just wanted to open the door as we will start developing the test suite. we will have our implementations directory there. but I was wondering if anyone would like to talk a bit about their specific implementation and share what they are working on or if they have future plans to do so maybe I'll ask again next week in case there's something that comes up. second topic.</p>
+</section>
+
+<section>
+<h3 id=0e76>VC Soft Lockdown for 1.0</h3>
+<p id=c8a0 class="phone s01"><cite>Patrick_St-Louis:</cite> So I believe this was one of the subject that was decided last time. So there's the idea of creating a very soft lockdown. I don't think we can fully create one but the idea was for the current issues that are open on the repo to create a tag system or badge system to decide what we feel is in scope for 1.0. know and what is out of his Coyote and I met I believe Friday. correct me if I'm wrong, Coyote. I think the badge has been created.</p>
+<p id=f23e class="phone s04"><cite>Kayode_Ezike:</cite> That's correct.</p>
+<p id=2a76 class="phone s01"><cite>Patrick_St-Louis:</cite> We just need to do some perfect. So, I think we just need to do some triaging u because otherwise it will be easy to want to add other feature. so this is something that we can start looking at if you have time and you would like to go through the issues and flag things that you would like to see in 1.0. please do so and then we can discuss this. we have some time usually at the end of the call to do issue review so we could filter by this 1.0 tag and make decisions about if there's consensus or not.</p>
+</section>
+
+<section>
+<h3 id=9bec>Test Suite Updates</h3>
+<p id=d9cd class="phone s01"><cite>Patrick_St-Louis:</cite> I will surely be going through and start to look at these. Keep in mind when you do this the scope of the P of the issue, right? Some issues are more complex than other. third one is so test suite update. so I believe we're in a good place. So I sent an email this morning to ask to create a repo for our test suite so we can start adding the scaffolding and the required dependencies. I have a proposal for a first version. I believe I mentioned it before, but what I would like to do is to deprecate the API issuer and BC API verifier test suites and move them into the VCON test suite.</p>
+<p id=f506 class="phone s01"><cite>Patrick_St-Louis:</cite> So these two test suites were mostly used to test integration with the VC playground and they are test suite to test the issuer and verifier service as i I believe still as defined by the vcom spec unless there's been some change since the time these test suites were run u but yeah I would like to remove these two test suite from CCG and instead just implement these test cases in the vic test test suite as a second part was to do some sort of endpoint testing. So we have the open API schema that we spend a good amount of time to make sure that it represents the specification.</p>
+<p id=7a6c class="phone s01"><cite>Patrick_St-Louis:</cite> So we could look at testing this open API schema definition against endpoints that are provided by user. so these two are kind of lowhanging fruit. I think the part that is very unique to the VCOM is the workflow and the exchanges and testing implementations capacity to create workflow templates and to be able to complete some exchange. So I believe this will be the part that we will need the most attention.</p>
+<p id=0801 class="phone s01"><cite>Patrick_St-Louis:</cite> we can as we get to that point decide how extensive we want them to be. usually when we write the test suite we tally up the normative statements in each section and we make sure that each statement has at least one positive and one negative test scenario. It's been working pretty well. we did have some concern last time about the normative statements that appear in the open API descriptions and definition. what we had concluded is that we will simplify these payloads and only test the I want to say first layer of properties like the ones that are particularly defined by the open API.</p>
+<p id=4119 class="phone s01"><cite>Patrick_St-Louis:</cite> Mostly we're not going to be doing some extensive C data model testing. There's already extensive testuite for this and the BC data model test suite here. We mostly want to focus around API interactions. yeah. So that's my topic for the test suite. Is there any further comments on test suite any ideas? Any things to be Very good. so that's test so the last topic before we get into review is the threat model. so I think for this one I will leave the floor opened to Eric.</p>
+<p id=1a40 class="phone s01"><cite>Patrick_St-Louis:</cite> And maybe Eric and Joel, if Joel's on the call can, give us the latest updates. you want to go, Eric, please share your screen also.</p>
+<p id=e536 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, sure.</p>
+</section>
+
+<section>
+<h3 id=6629>Threat Model Progress Update</h3>
+<p id=87df class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I can do that. second. So, I know last week I had said that after this call I had hoped to get a PR in by the end of the day. that obviously has not happened effectively. Joe and I had a call after this one to kind of review where we were at and it was clear after that there was quite a bit more work to do.</p>
+<p id=ee9e class="phone s05"><cite>Eric_Schuh:</cite> But I do think that the work was worth doing just in terms of the simplification that occurred during the refactor here. and I also want to just call out Dave Longley for helping out. we had a call with him on Monday to kind of go through this whole flow. but where I'm at right now is that this Google doc is effectively ready to be per this repo that Joe's put together as an example for the respect threats. so as far as I'm concerned this draft is very complete. we have the architecture down to a single DFD rather than four that we started with and I think two that I presented last week.</p>
+<p id=bca1 class="phone s05"><cite>Eric_Schuh:</cite> the whole description of the flows the dictionary stakeholder analysis and the list of threats. so basically my task that's left is to translate this into the appropriate respspec threats HTML and structure and then push the PR. So that's where I'm at. I doubt I get to this today. I've been looking at this a lot the last couple of days. so it'll probably be tomorrow, but I do plan on pushing through this tomorrow.</p>
+<p id=da1d class="phone s05"><cite>Eric_Schuh:</cite> as it is, I see the light at the end of the tunnel. I just need to get from this Google doc into the HTML. and so yeah, that's where I'm at. I did have a couple of things that came out of this in terms of for the group. just a number of issues. I did try to fill in responses where I could. as I had said last week, I tried to use Gemini to generate some of these. and I'd say that was maybe 50% effective. it did come up with some good threats. It also came up with some that just didn't apply. but I did try to do a pass and make sure most everything does have at least one response. you can see I have a list of a few threats here that I struggled coming up with response to.</p>
+<p id=6f2a class="phone s05"><cite>Eric_Schuh:</cite> And then there were a couple of choices made that I just want to check in with the group at some point. one was, that I know Manu, who I don't believe is on this call today, had mentioned originally that he was interested in seeing an person interaction done. and part of the simplification that ended up happening kind of omitted the second verification that was in our original set of user flows. and that second verification was where this person interaction occurred. so there is a world where we could create a secondary DFD to kind of highlight that person interaction.</p>
+<p id=2565 class="phone s05"><cite>Eric_Schuh:</cite> But just to speak to it, I did try in the architecture description of the model. so sorry, just scroll back up to here. So, kind of in these paragraphs, I did try to call out where the person interactions could possibly happen if we had made different choices in the flows. so there was that and then I also just had an open question about the use of normative language in the threat model.</p>
+<p id=abdc class="phone s05"><cite>Eric_Schuh:</cite> Joe, I know that reading through the did resolution threat model there at least looked like there was some shoulds used here and there and I just wanted to see if the group had any thoughts on that. because I do think just in my work here some shoulds and…</p>
+<p id=2480 class="phone s05"><cite>Eric_Schuh:</cite> mays snuck into my language. but it is something I could look at before going to the HTML version. So, I'll leave it there, Joe.</p>
+<p id=22be class="phone s06"><cite>Joe_Andrieu:</cite> Cool.</p>
+<p id=0958 class="phone s06"><cite>Joe_Andrieu:</cite> Yeah, I just want to talk about the must and we need to try and get them out of there. It is often natural when talking about a response to think of it in terms of do this that means you must do this or you should do this. but if you step into the right voice you can say it without the must and should and say the response is doing this thing right and so you could just say this is what you're doing as the response and that's one way to get around that.</p>
+<p id=26af class="phone s06"><cite>Joe_Andrieu:</cite> It is a little bit tedious…</p>
+<p id=7133 class="phone s06"><cite>Joe_Andrieu:</cite> because you just naturally want to use that kind of language. but it's worth it to go through and tease it out because all of this should be non-normative.</p>
+<p id=52a0 class="phone s05"><cite>Eric_Schuh:</cite> Okay. Yeah,…</p>
+<p id=2e99 class="phone s05"><cite>Eric_Schuh:</cite> I think that's simple enough. there were only a few places that I know I did it. and that was one thing that the AI did fairly well where it used require ensure some words like that. but okay I'll add that to my list of things to do. any other comments, questions or concerns at this stage?</p>
+<p id=7675 class="phone s01"><cite>Patrick_St-Louis:</cite> My comment is good job. I think this is a lot of work and…</p>
+<p id=febf class="phone s01"><cite>Patrick_St-Louis:</cite> thank you for taking the time for doing this work. I didn't quite catch is there anything we can do to help or we want to wait for this poll request?</p>
+<p id=2ee5 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I think waiting for the requ pull request makes the most sense…</p>
+<p id=e129 class="phone s05"><cite>Eric_Schuh:</cite> because then we'll have each one of these threats in its own file.</p>
+<p id=9c31 class="phone s05"><cite>Eric_Schuh:</cite> So it should be easier for people to comment on a particular response to a threat in that way. and then also obviously separating out the kind of the primary text of the AR architecture description and the explanation of the flows.</p>
+<p id=d369 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=10000 class="phone s05"><cite>Eric_Schuh:</cite> So I do plan on having that PR in by tomorrow and then I'll probably seed at least a few set of issues in terms of any threats that I know don't have responses and any responses that I added or included but am not 100% sure of such as this R9 as an example.</p>
+<p id=9d48 class="phone s05"><cite>Eric_Schuh:</cite> But yeah, I think that's probably the best path forward. jump.</p>
+<p id=b04f class="phone s06"><cite>Joe_Andrieu:</cite> Yeah, one question I have for the group is a threat model could be used for both the security and…</p>
+<p id=1a3b class="phone s06"><cite>Joe_Andrieu:</cite> the privacy consideration section. And so we have a discussion about how we want to do that. the expectation I have is that one agreement we seem to have with Simone but not yet with Ping, right, who do the privacy review. is that a table of contents that just identifies your threats with links to them, even if they're in an appendix or in another note, that can stand in for a security consideration section.</p>
+<p id=0121 class="phone s06"><cite>Joe_Andrieu:</cite> And there is the possibility, and we might want to try it and see if ping disagrees to have a single security and privacy consideration section that has a table of threats that include both privacy and security related threats. and we use tags. So, you see the name of the threat and it has a big privacy chicklet. or it has a security or it could have both. but there's a question for us about do we want two separate table of context. So there's the security threats are in one thing and all the privacy threats are in another. we need some changes to the respect threat engine to support that. But I'm keen to do that if that's what we want to do. So the open question for us is do we think an integrated threat table is a good answer?</p>
+<p id=5333 class="phone s06"><cite>Joe_Andrieu:</cite> Do we want to see how Ping likes that or do we want to break it out and potentially stay more true to the traditional approach which is you have a separate security considerations and a separate privacy consideration section. And I'm cur c curious what folks think.</p>
+<p id=c4e6 class="phone s07"><cite>Dave_Longley:</cite> I'm on the queue to say I would like us to minimize any additional work. So a lot of this threat modeling sort of stands in and takes the place of what those sections previously would do. So in any way that we can releverage that work without having to duplicate it in some sense just to give it the same sort of appearance as before. Even if we end up having AI generate that, I think that it would be</p>
+<p id=10001 class="phone s06"><cite>Joe_Andrieu:</cite> I'm just giving some silence in case anyone else wants to chime in. I think that's a good approach, Dave. I mean, I think let's figure out the lightweight way to do it and if Ping says that's not sufficient, then, we can make it better. rather than adopting the extra work upfront in anticipation that they might want it the oldfashioned way. I think our goal at least Simony and I is to figure out how to get that this is the new way but that's going to be multi-year process to literally update the W3C process etc. Okay, cool. That's good feedback.</p>
+<p id=a6b5 class="phone s01"><cite>Patrick_St-Louis:</cite> Any closing thoughts on this threat model topic Very good. So, we will be on the lookout in the coming weeks for PRs that will be open and we will do a follow-up discussion most likely next week or the following week. Thank you very much. okay, so let's go in the poll requests.</p>
+<p id=10002 class="phone s01"><cite>Patrick_St-Louis:</cite> Do you want to share your screen, Coyote? It's giving me a hard time. Let me try one last thing. I'll try to share my full screen. Just going to again, it's not working. okay. So, I will do this.</p>
+<p id=db93 class="phone s01"><cite>Patrick_St-Louis:</cite> So, there's couple PRs open. Can anyone else hear me?</p>
+<p id=e93d class="phone s07"><cite>Dave_Longley:</cite> Yes, I still hear you. I don't know…</p>
+<p id=45fb class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=38ab class="phone s07"><cite>Dave_Longley:</cite> if I'm the only one.</p>
+<p id=64d7 class="phone s04"><cite>Kayode_Ezike:</cite> Okay, I think I hear you talk about that. did you need me to share your screen? I'm not sure if that's what you're asking.</p>
+<p id=16de class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, if you could just show your screen. here. I'll give you the link. I'm just on the poll request section for VCOM. Okay. Yeah.</p>
+</section>
+
+<section>
+<h3 id=37b1>PR Review: Open API Description Fields</h3>
+<p id=91ff class="phone s04"><cite>Kayode_Ezike:</cite> All right. all right.</p>
+<p id=a095 class="phone s01"><cite>Patrick_St-Louis:</cite> So for the issue 636 we had discussed this u back in May. Yeah this one. so I think this had to do with the description fields and the example fields in the open API. there was divergence between somewhere VCDM 1.0 2.0. and this started our conversation about maybe we don't want to go that deep into the detail of which credential format version type you use instead to simplify the payload to only require the context landed.</p>
+<p id=3b0c class="phone s01"><cite>Patrick_St-Louis:</cite> and then the rest of the example open API bodies would just not be prescribed and instead it should be defined to whatever context and types you are defining whether you are showing a verifiable presentation or their envelope counterparts I'm not certain if this has been captured as an issue so the only</p>
+<p id=b265 class="phone s01"><cite>Patrick_St-Louis:</cite> thing pending this to be done was to create an issue to capture this which I will do during this call and we will be able to then link this issue here and close it merge the followup to this work will be to just simplify the JSON payload examples from the OAS file.</p>
+<p id=512f class="phone s01"><cite>Patrick_St-Louis:</cite> Are we still in alignment here for the direction that we want to go?</p>
+<p id=4c8c class="phone s04"><cite>Kayode_Ezike:</cite> If I may,…</p>
+<p id=70c4 class="phone s04"><cite>Kayode_Ezike:</cite> I'm sharing my screen so I can raise my hand. But do we need to create an issue for it or is it just something that we can just process or… Patrick St-Louis:</p>
+<p id=5e96 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I'm just looking.</p>
+<p id=96d8 class="phone s04"><cite>Kayode_Ezike:</cite> because Yeah.</p>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> So Ted left a comment advising to merge when the issue for the next step exists and…</p>
+<p id=9f89 class="phone s01"><cite>Patrick_St-Louis:</cite> we can sort of link to it. So I will just create this and reply to that comment just to make sure that we capture everyone's comment.</p>
+<p id=5130 class="phone s04"><cite>Kayode_Ezike:</cite> got Jimmy for the next issue,…</p>
+<p id=bf42 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah so this will close issue 625 and…</p>
+<p id=5ae2 class="phone s04"><cite>Kayode_Ezike:</cite> but the issue that came from this is what we said.</p>
+<p id=ced3 class="phone s04"><cite>Kayode_Ezike:</cite> Okay, that's cool.</p>
+<p id=8bd2 class="phone s01"><cite>Patrick_St-Louis:</cite> then I'll just open another issue to simplify further the OAS definitionpecially specially for presentations and credential this will also simplify testing okay let's go to 650 50.</p>
+<p id=98f8 class="phone s04"><cite>Kayode_Ezike:</cite> Before we do that,…</p>
+<p id=d934 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=7716 class="phone s04"><cite>Kayode_Ezike:</cite> I'm going to ask if we can go to another issue that's more foundational that exists in all the PRs for now because there's a broken reference in respect if that's okay.</p>
+<p id=68ef class="phone s01"><cite>Patrick_St-Louis:</cite> Would you like to take over since I see you have three of the PRs here. Do you want to lead us going through all these three PRs?</p>
+<p id=03f8 class="phone s04"><cite>Kayode_Ezike:</cite> No problem. Okay.</p>
+<p id=f8ea class="phone s04"><cite>Kayode_Ezike:</cite> So this R is one that I raised after I noticed that there was an issue in the automated checks and it had to do with an improper reference to URL. So we're supposed to be doing this instead. This was just not the way to do it unless there was a DFN for it. So this just fixes that and it would no longer be an issue for future PS. It's relatively straightforward. I don't know if we want to have maybe additional week to do to process it, but folks can feel free to at least review.</p>
+<p id=a94e class="phone s04"><cite>Kayode_Ezike:</cite> can't see the queue.</p>
+<p id=14c6 class="phone s04"><cite>Kayode_Ezike:</cite> So, I'm just gonna cool other rejection.</p>
+<p id=e10f class="phone s07"><cite>Dave_Longley:</cite> Yeah, I put my hand up.</p>
+<p id=58ce class="phone s07"><cite>Dave_Longley:</cite> I think this is purely editorial and if people on the call agree, I think we should merge it because it's causing all of the other tooling to break in the other PRs.</p>
+<p id=65fd class="phone s04"><cite>Kayode_Ezike:</cite> I will just do that then. Thank you. It's very simple. And next up, we will start with 650. So for this basically is related to an issue that Ted raised maybe about a month and change ago. So we were using an outdated name for the recap entity spec. think it was like verify recognition we're using at the time and so this is just to update all references to that both in terms of the name of a spec as well as the name of the credential that is defined in that spec.</p>
+<p id=9e37 class="phone s04"><cite>Kayode_Ezike:</cite> So that's what we have here. And I think I did have a comment here that I wanted to bring up. so basically I wasn't sure because within the spec we are referencing another spec that is also going to be standardized in current charter. And so I just wonder doing am I supposed to use what we expect it to be by the end of the charter? it's just like a small comment there to that.</p>
+<p id=15e9 class="phone s04"><cite>Kayode_Ezike:</cite> So for now I just left it as I think working address and updated the publishing on that but</p>
+<p id=2e29 class="phone s07"><cite>Dave_Longley:</cite> I put my hand up. I think we should keep the status as is. I think that will just affect I'm not sure how respect goes about deciding how it's going to resolve links if it uses that status or if that's justformational, but I wouldn't change right now. it looks like we've got other links in here.</p>
+<p id=1d7f class="phone s07"><cite>Dave_Longley:</cite> If we went and looked at other specs, we could see what they do, but that seems like a different PR than just fixing the name. So at least for this PR right now I would keep it this way. If we need to change that other status field we could do that with another decision.</p>
+<p id=3a7a class="phone s04"><cite>Kayode_Ezike:</cite> Sounds Great. Thanks, so if folks would like to take a look at this as well, would you consider this to be editorial as well? Kayode Ezike:</p>
+<p id=5e36 class="phone s07"><cite>Dave_Longley:</cite> I certainly think it's editorial.</p>
+<p id=4492 class="phone s04"><cite>Kayode_Ezike:</cite> Let me see if I can resolve this issue. but maybe I can try to resolve this offline. But basically this is probably related to the we just merged now…</p>
+<p id=b313 class="phone s04"><cite>Kayode_Ezike:</cite> but I'll try to do that call.</p>
+<p id=3fcf class="phone s08"><cite>Ted_Thibodeau_Jr:</cite> You can change that comment into it its own issue.</p>
+<p id=b085 class="phone s08"><cite>Ted_Thibodeau_Jr:</cite> There should be a drop down in the three dots.</p>
+<p id=f6b1 class="phone s04"><cite>Kayode_Ezike:</cite> For I guess I resolve this. I may have to do this offline to see what's going on. But in the meantime, folks can feel free to leave comments or Googles and reviews. Great.</p>
+<p id=10004 class="phone s04"><cite>Kayode_Ezike:</cite> And then the next one. So I raised this issue 651 629 probably a month and change ago as well. And this was in the result of a conversation that was raised in a slack. I think it was maybe Nate that brought it up but I think Demetri also was signing it. there wasn't enough guidance as to when to versus accepted crypto suites. and so what this does is it basically updates the description for NDAS for each of those that indicates that they should be mutually exclusive generally. I tried to use normative language. I said they should be mutually exclusive with each other. because one of them it has to do with sort of the integrity for 45.</p>
+<p id=3356 class="phone s04"><cite>Kayode_Ezike:</cite> The other one is for envelope credentials. But I will allow the first person to speak who raised their hand</p>
+<p id=10005 class="phone s01"><cite>Patrick_St-Louis:</cite> So I think somewhere that this will get confusing is if you have a type of data integrity proof with a crypto suite versus if you have a tight of a EDDD ed 25519 signature I consider ED25519 2020 to be a crypto suite in itself but it's used as a type so I'm curious when you have a list of accepted crypto tweets would you consider ED25519 signature 2020 to be an acceptable value in there even though it's not technically a data integrity</p>
+<p id=934a class="phone s01"><cite>Patrick_St-Louis:</cite> the proof crypto suite. that's the layer of confusion that this could bring me. we can word clarify this around data integrity proof in the case of a data integrity proof pipe the crypto suite value is…</p>
+<p id=585c class="phone s01"><cite>Patrick_St-Louis:</cite> what is in the crypto suite field. that's my comment.</p>
+<p id=095b class="phone s04"><cite>Kayode_Ezike:</cite> an excellent point.</p>
+<p id=0f38 class="phone s04"><cite>Kayode_Ezike:</cite> I hadn't thought about that. go ahead whoever had it now.</p>
+<p id=0057 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that was me. I think we should put a call out for that proof type in particular because it is sort of its own special legacy proof type. and call out that its type name can be used in the cryptosweet field. so we should have a special call out for that. And then I'm realizing that I did approve this PR, but I'm realizing that the language mutually exclusive might be confusing because people might think that they cannot put both accepted crypto suites and accepted envelopes in the same request, but they can do that.</p>
+<p id=0215 class="phone s07"><cite>Dave_Longley:</cite> There's just no crossover in the values in the …</p>
+<p id=06cf class="phone s07"><cite>Dave_Longley:</cite> what is it in the domain of values that are acceptable. So I'm not sure if mutually exclusive is quite the right language.</p>
+<p id=2f89 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah. And that's…</p>
+<p id=aaa5 class="phone s04"><cite>Kayode_Ezike:</cite> where and I was thinking of this too, which is why I used should. Maybe that's not the right Okay.</p>
+<p id=fdd5 class="phone s07"><cite>Dave_Longley:</cite> And they're independent from one another but can be used together. And maybe that's the right language.</p>
+<p id=e6e1 class="phone s04"><cite>Kayode_Ezike:</cite> How do you think that I should capture that and it's to do</p>
+<p id=28ee class="phone s07"><cite>Dave_Longley:</cite> I think in remove mutually exclusive and…</p>
+<p id=67fe class="phone s07"><cite>Dave_Longley:</cite> say that accepted crypto suites is an independent value isn't the right thing independent feature from accepted envelopes and vice versa. They can be used together, but they are independent and the value set is different for each one in the way that's already described in this PR.</p>
+<p id=28b8 class="phone s01"><cite>Patrick_St-Louis:</cite> That's it.</p>
+<p id=99b3 class="phone s01"><cite>Patrick_St-Louis:</cite> I think this raises an interesting question. so we also have accepted issuers. I think I would worry or wonder if you have both together if you have accepted issuer and accepted crystal suite you need to satisfy both accepted fields. at least you need a match from both. If you have accepted crypto suite and accepted envelope this could get tricky right because you could have a weird combination if I have an accepted envelope of VC Jose and I put accepted crypto suite of something is this and right because accepted issuer accepted crypto suite that's an end.</p>
+<p id=d0fb class="phone s01"><cite>Patrick_St-Louis:</cite> but if you have to choose between an envelope and a crypto suite that's a one or the other. So I'm wondering if they can really both be together or it's not preferred to have two different queries. hopefully this made sense. yes, Dave.</p>
+<p id=10006 class="phone s07"><cite>Dave_Longley:</cite> I think the only way to It does make sense. They're not exactly modeled the same way. I get your general issue there. when you're saying you will accept these crypto suites and you will accept these envelopes there's no requirement to have both of them sim similarly when you're saying I will accept these issuers you're announcing all the things you would accept and in order to create a payload that would be accepted you need to make sure you tick those button</p>
+<p id=79fe class="phone s07"><cite>Dave_Longley:</cite> boxes and I don't think there's an appetite to try and combine the accepted crypto suites and…</p>
+<p id=ab58 class="phone s07"><cite>Dave_Longley:</cite> envelopes into yet another container around securing technologies or something like that. I don't know that there's really necessarily a problem, but I get the sort of categorical purity argument that we're a little bit</p>
+<p id=d7b3 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah,…</p>
+<p id=fb26 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm happy with that answer. I think my question was more as to what's the relationship between these different accepted fields. so you've seen it I think from what I understood you've proposed it more from the verifier's point of view that whatever the verifier receives the verifier will be able to check if they can verify it or not. My angle was more from the wallet. How would the wallet choose what to present? but I think I'm happy with leaving them both and having faith it won't be too much of a problem.</p>
+<p id=b598 class="phone s01"><cite>Patrick_St-Louis:</cite> At the end of the day, I think there's something to be said about creating a presentation request that can be met, I think, we just want to avoid having a model that they can create the VPR that is on impossible to meet. yeah,…</p>
+<p id=72be class="phone s07"><cite>Dave_Longley:</cite> I agree.</p>
+<p id=9b8a class="phone s01"><cite>Patrick_St-Louis:</cite> I'll leave it.</p>
+<p id=6b8f class="phone s07"><cite>Dave_Longley:</cite> I Yeah,…</p>
+<p id=dcea class="phone s01"><cite>Patrick_St-Louis:</cite> I'll think about it a bit more.</p>
+<p id=2611 class="phone s07"><cite>Dave_Longley:</cite> I agree with that. But I think we'll quickly find that anyone creating those things will stop using them after they find out that no one can meet them.</p>
+<p id=77e4 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=359a class="phone s07"><cite>Dave_Longley:</cite> So there is some back pressure on</p>
+<p id=845a class="phone s01"><cite>Patrick_St-Louis:</cite> Maybe don't know if we want to put the note regarding using both accepted crypto street and…</p>
+<p id=9111 class="phone s01"><cite>Patrick_St-Louis:</cite> envelope which is I think what we were discussing earlier. the presence</p>
+<p id=466b class="phone s04"><cite>Kayode_Ezike:</cite> sounds good.</p>
+<p id=4ecd class="phone s04"><cite>Kayode_Ezike:</cite> Yeah. and I think this second note should cover that mostly and there may be maybe some other things that we can add that relates to your concern Patrick. feel free to also just copy for that and start it here. Yep.</p>
+<p id=9f38 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, sounds good. I would be comfortable if we leave this one open maybe for another week. if that's okay. I just want to think about it a little bit and read it with more attention. I think it's fine.</p>
+<p id=4b3c class="phone s01"><cite>Patrick_St-Louis:</cite> But yeah, let's leave it open one more week. That would make me happy.</p>
+<p id=695a class="phone s04"><cite>Kayode_Ezike:</cite> It's fine with me.</p>
+<p id=8ba8 class="phone s04"><cite>Kayode_Ezike:</cite> And I think that basically is it for now. I'll see if I can while we're passing issues like resolve this protocol, but if not, I would like to at least touch on the time we have left. one issue that was raised this week or was it maybe? Yeah, last week by Dave that there's a thread on so far. So basically I'll maybe let Dave explain but there's this idea of allowing for the ability to have to include an array of very popular presentations as a response to a VPR. So, you have to</p>
+<p id=dc33 class="phone s07"><cite>Dave_Longley:</cite> So this issue is more about making sure we don't prevent further incubation with people who have workflows that are more complex that might need to receive different formats for digital credentials at the same time. because if you don't do it that way, it might impact UX. And so the idea here is don't close the door in the spec by making it impossible for someone to engineer a workflow where they might receive more than one verifiable presentation in response. this doesn't mean that anyone who's implementing workflows today has to accept more than one. They can always just reject that and say I didn't ask for more than one. but we shouldn't make it seem in the spec like it's not possible.</p>
+<p id=f124 class="phone s07"><cite>Dave_Longley:</cite> So I feel like this falls into the category of things this sort of thing has come up before in the past where people can go and do more things than the spec might say without running a foul of the spec with it without the spec being too prescriptive. So what I proposed here was we should say that a response to an exchange message the verifiable presentation field can be one or more verifiable presentations. We shouldn't preclude the ability to send more than one even if most people would engineer workflows where they only need one.</p>
+<p id=afac class="phone s07"><cite>Dave_Longley:</cite> And to reiterate a reason why you might want to accept more than one is sometimes the cryptographic formats and digital credential formats are incompatible with one another. so you can't for example sign a VP for one format with one type of key. where the VP includes multiple different formatted credentials. You might need two different VPs to make it work just because of technology choices that were not made by this group and…</p>
+<p id=90fe class="phone s07"><cite>Dave_Longley:</cite> that are outside of the purview of the API.</p>
+<p id=85ce class="phone s04"><cite>Kayode_Ezike:</cite> Thank you,…</p>
+<p id=f874 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, and I think this is interesting feature. I think the first got reaction when I saw it was like, does this mean that we're going to be changing email in a breaking way? From my understanding, it shouldn't. I just had some questions which I had feared as follow-ups and maybe you can respond offline but generally just wanting to understand what sort of implementations would be impacted would we need to have for example the existing implementers update theirs to include it or is it solely in the control of the workflow service implementations to dictate sort of who gets to decide whether you would send back an array can a client send that to a workflow service without being solicited for things of that.</p>
+<p id=033a class="phone s04"><cite>Kayode_Ezike:</cite> So is this something just wanted to understand what all is the surface of impact that for a feature like this Okay.</p>
+<p id=d082 class="phone s07"><cite>Dave_Longley:</cite> Yeah, I don't think any implementer has to change or do anything. If they've created workflows and all of their use cases today would reject a message that sends more than one verifiable presentation, that's fine. and that's the expected behavior for those workflows. What we want to do is make it so that if there is some kind of request that would accept multiple presentations in response to it, that is also okay and the spec doesn't prohibit it.</p>
+<p id=7516 class="phone s04"><cite>Kayode_Ezike:</cite> I'm presuming this not something that for example multiple steps could solve because I think what it seems like what you're saying is that there's some protocols that might expect multiple BP responses and from a single request as opposed to multiple requests. Is that correct?</p>
+<p id=edb0 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's right.</p>
+<p id=065b class="phone s04"><cite>Kayode_Ezike:</cite> All and my takeaway was I'm okay with signing off. to give it too was like I would like to hear from other folks who have been involved with implementing workflow services and you touch seven and tree on your thoughts and maybe they have any thoughts as well but we can keep it open at least for another week thoughts for now go ahead</p>
+<p id=7009 class="phone s09"><cite>Dmitri_Zagidulin:</cite> Remind me the context for multiple presentations and responses like what's the use</p>
+<p id=2f81 class="phone s07"><cite>Dave_Longley:</cite> The simplest use case is making sure that we have par with oid forvp which enables multiple presentations to be provided in the same response and that is a protocol that requires a single step to operate properly.</p>
+<p id=9748 class="phone s09"><cite>Dmitri_Zagidulin:</cite> Stop</p>
+<p id=3c2f class="phone s07"><cite>Dave_Longley:</cite> So yeah, so we don't want to make ourspec be coming incompatible with other protocols that people would want to run over</p>
+<p id=2ba6 class="phone s04"><cite>Kayode_Ezike:</cite> I'll take this silence as potential consensus and agreement, but I'll leave it open for maybe few more days, two weeks to see any others have comments on that. t five to the time. At the very least, what I'll say is rap is that like I said, we created this v 1.0 label and I started applying it to issues gotten through in most if not all the first page.</p>
+<p id=b0e7 class="phone s04"><cite>Kayode_Ezike:</cite> There are some in here that I sort of held off on for now. could you need me to use more context and there are some, for example, that I said, okay, I won't apply the label to it, but if there's time, then we can include it. So, it's just one of those things that it's nice to have, but just want to apply a label to it. I was wondering in the same vein if it's appropriate just to be explicit about whether or not we've seen we've already processed the issue to use another post v1 o tag or something. but that's something that still has to decide on. So it could also be useful for those who created the issue themselves to decide on what they think it should be for. things like this that I wasn't sure what to attribute to it if we should include error handling workflows in V1 or not.</p>
+<p id=cba5 class="phone s04"><cite>Kayode_Ezike:</cite> So, yeah, still a work in progress here, but just doing my best to nail down what I think we should keep in in the current version of the upcoming thoughts, questions, opinions.</p>
+<p id=db8b class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I'll be going through some of these issues. I know some of them I've opened myself about features that could be nice to have. I know you're just looking at the error one. I will think about it if it's something we need really for 1.0. Most likely not. That's my comment here.</p>
+<p id=910d class="phone s04"><cite>Kayode_Ezike:</cite> All So, in that case, I think we are fine. Let me just double check something really quickly. I was trying to do a few things at the same time, but I want to see if I was able to resolve the issue we saw earlier with the editorial update. That's fine. That's fine.</p>
+<p id=eaf7 class="phone s04"><cite>Kayode_Ezike:</cite> So looking at my head in two places so couldn't figure it out.</p>
+<p id=4268 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you, Kodi.</p>
+<p id=0b17 class="phone s04"><cite>Kayode_Ezike:</cite> But thanks everyone for a great call and we will do this again next week.</p>
+<p id=cb74 class="phone s04"><cite>Kayode_Ezike:</cite> This Meeting ended after 00:58:42 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
