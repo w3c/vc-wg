@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 24 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>24 June 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d811d954-dd65-4cce-844a-53dfd95e75c7/20260624T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/06/24-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, Carolynn, elaine, hsano, ivan, Jennie, JennieM, joe, KevinDean, kezike, mark-andree, mccown, phila, smccown, TallTed, ted, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>manu</dd>
+<dt>Chair</dt><dd>brentz, phila</dd>
+<dt>Scribe</dt><dd>KevinDean, wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#b65b">Forgery Defense Co-Editor</a></li>
+<li><a href="#0d66">VCDM Maintenance</a>
+<ol>
+<li><a href="#70cc">w3c/<wbr>vc-data-model#1633</a></li>
+<li><a href="#b3c8">w3c/<wbr>vc-data-model#1632</a></li>
+<li><a href="#ea59">w3c/<wbr>vc-data-model#1631</a></li>
+</ol>
+</li>
+<li><a href="#3d6f">Task Force Round Table</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0e7d class="phone s01"><cite>Brent:</cite> We're going to look at forgery defence, process some data model issues, and get updates on task forces.</p>
+<p id=b0f6 class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to mention external interest in confidence method work</p>
+<p id=c4b1 class="phone s02"><cite>Wes-smith:</cite> I have a brief note and ask a brief question.<br>
+<span id=bb15>… I've been speaking either Elaine Wooten, who has been speaking with European Committee for Standardization (CEN) and they're interested in developing biometric credentials that would be useful for VC use cases.</span><br>
+<span id=a9a1>… They're interested in getting a concrete set of technical requirements for the confidence method task force.</span><br>
+<span id=b8f2>… What are the next steps to do so?</span></p>
+<p id=dad2 class="phone s03"><cite>Phila:</cite> Would you clarify the name of the standards body?</p>
+<p id=9269 class="phone s02"><cite>Wes-smith:</cite> CEN European Committee for Standardization.</p>
+<p id=36a1 class="phone s03"><cite>Phila:</cite> They are not an open standards organization so we will have to figure out how to integrate them.</p>
+<p id=ef30 class="phone s02"><cite>Wes-smith:</cite> Elaine, can you clarify how they can participate?</p>
+<p id=869a class="phone s04"><cite>Elaine:</cite> Some have expressed that they can't participate in W3C so we'll have to look into it.</p>
+<p id=9c82 class="phone s01"><cite>Brent:</cite> I would encourage the task force to look into it so we can have a deeper conversation.</p>
+<p id=0b07 class="phone s04"><cite>Elaine:</cite> They're looking into how to join W3C.</p>
+<p id=9a54 class="phone s05"><cite>Ivan:</cite> To be very specific, I think the best thing is to invite them to one of the task force calls and see what they want to do. There's no need to put the load on Elaine right now until we see what the requirements are.</p>
+<p id=0f44 class="phone s06"><cite>JoeAndrieu:</cite> That's fine. Happy to have them join us. We meet every other week Thursday at 7am Pacific.</p>
+</section>
+
+<section>
+<h3 id=b65b>Forgery Defense Co-Editor</h3>
+<p id=12f6 class="phone s01"><cite>Brent:</cite> Originally this topic was to announce that we have a co-editor. I would like to share some information feedback to the FPWD.<br>
+<span id=4206>… We see that Forgery Defense is in the charter, but we don't quite believe that it's there. It's on the task force to get the lawyer to look into it to ensure that the work can proceed.</span></p>
+<p id=456b class="phone s05"><cite>Ivan:</cite> It would be cleaner to investigate the problem immediately.</p>
+<p id=0e4c class="phone s01"><cite>Brent:</cite> The problem is that they need convincing that it can be supported in the current charter and they need further explanation.</p>
+<p id=7857 class="phone s05"><cite>Ivan:</cite> Wes, do you know what else to add there?</p>
+<p id=422a class="phone s02"><cite>Wes-smith:</cite> I think the relevant question is, do they need to be convinced by the text of the specification or by the emerging security threat that allows it to fall under the charter?</p>
+<p id=9216 class="phone s01"><cite>Brent:</cite> They need to be convinced that the charter covers this specification.</p>
+<p id=9bf7 class="phone s02"><cite>Wes-smith:</cite> I can put together a persuasive write-up that there is an emerging security threat that needs to be addressed here.<br>
+<span id=b555>… That doesn't seem like stuff that would go into the specification.</span></p>
+<p id=a685 class="phone s01"><cite>Brent:</cite> That's not something for the specification, it's for communication.</p>
+<p id=f83f class="phone s02"><cite>Wes-smith:</cite> If I do this write up, what's the next step?</p>
+<p id=b772 class="phone s01"><cite>Brent:</cite> Send it to the chairs.</p>
+<p id=84aa class="phone s05"><cite>Ivan:</cite> I find it strange that this is happening as a back door discussion. I don't know why this wasn't put into the issues I was working on this morning.</p>
+<p id=d0ae class="phone s01"><cite>Brent:</cite> It was someone looking for clarification.</p>
+<p id=8bef class="phone s05"><cite>Ivan:</cite> Why didn't they ask me or Wes about it?</p>
+<p id=0a3f class="phone s01"><cite>Brent:</cite> It was a matter of being on the same call at the same time for different reasons and it happened to come up.<br>
+<span id=6883>… If we were to independently add some detail to the issue, that would be helpful.</span></p>
+<p id=60fd class="phone s05"><cite>Ivan:</cite> It should go into a GitHub issue for it to be worked on.</p>
+<p id=711e class="phone s02"><cite>Wes-smith:</cite> I would prefer to have messaging come from the chair of the group.</p>
+</section>
+
+<section>
+<h3 id=0d66>VCDM Maintenance</h3>
+<p id=1be2 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues</a></p>
+<p id=8d5a class="phone s01"><cite>Brent:</cite> There are three at the top that have not yet been triaged.</p>
+<h4 id=70cc><a href="https://github.com/w3c/vc-data-model/issues/1633">w3c/<wbr>vc-data-model#1633</a></h4>
+<p id=2d03 class="phone s01"><cite>Brent:</cite> We will look at them and determine whether we're going to address them here.<br>
+<span id=56ed>… Normative text on VP-within-VP</span><br>
+<span id=8f45>… Do folks have any questions or need more clarity?</span><br>
+<span id=b95d>… I will note that the poster is asking questions, so it may be sufficient for the group to answer the question.</span><br>
+<span id=a232>… The answers may affect the specification.</span></p>
+<p id=aa99 class="phone s05"><cite>Ivan:</cite> My feeling is that the answer is no, that the model is such that the VP can have several VCs but not another VP. As far as I remember, this is the model.<br>
+<span id=4e89>… I would prefer having someone deeper in the technology give a definitive answer.</span></p>
+<p id=cf1f class="phone s03"><cite>Phila:</cite> I'm not qualified to answer directly, but it looks to me like this commenter wants links to other credentials. If the answer is no, could the answer be to look at recognized entities?</p>
+<p id=30c5 class="phone s01"><cite>Brent:</cite> The VC Data Model says the a presentation contains a set of VCs. The JOSE-COSE documentation says that it can contain VPs as well.</p>
+<p id=7a5e class="phone s05"><cite>Ivan:</cite> I think you're right, Brent, but that means for me that the JOSE-COSE document is incorrect in terms of the model. I personally do not see how recognized entities help.<br>
+<span id=a7db>… I would like to see an example that would be solved by this.</span></p>
+<p id=ffff class="phone s01"><cite>Brent:</cite> The description of the VP is that it contains multiple VCs and can contain arbitrary data, and that the VCs may be from multiple issuers.<br>
+<span id=ab93>… Conceptually, there wouldn't be a problem with including another VP, but it doesn't explicitly say that that can be done.</span><br>
+<span id=10000>… I think that the VC JOSE-COSE recognizes that need from the supply chain space. Often folks would be receiving VPs and would often want to pass them along directly rather than extract the VCs.</span><br>
+<span id=2860>… What I'm reading in the core data model section of our spec is that this is possible but in order to make it explicitly possible it would require normative and substantive changes to the VC data model.</span><br>
+<span id=bdde>… These changes would be beyond what we're currently chartered to do.</span><br>
+<span id=a0f7>… I'm adding the class 4 and future labels.</span></p>
+<h4 id=b3c8><a href="https://github.com/w3c/vc-data-model/issues/1632">w3c/<wbr>vc-data-model#1632</a></h4>
+<p id=ed88 class="phone s01"><cite>Brent:</cite> remove confidence and render methods from the VCDM spec<br>
+<span id=e3fc>… This is definitely within our charter to do.</span><br>
+<span id=658e>… It points out that because we're producing a confidence method specification and extension points should point to those specifications.</span></p>
+<p id=9ed3 class="phone s05"><cite>Ivan:</cite> That's one possibility. Another option is to delete the entire section.<br>
+<span id=fa9e>… That will raise problems for the confidence and render methods. I think we can remove the whole section altogether. Something has to be done.</span></p>
+<p id=8517 class="phone s01"><cite>Brent:</cite> Sounds like this is class 2, editorial.</p>
+<p id=fced class="phone s05"><cite>Ivan:</cite> Yes, maybe a bit more.</p>
+<h4 id=ea59><a href="https://github.com/w3c/vc-data-model/issues/1631">w3c/<wbr>vc-data-model#1631</a></h4>
+<p id=616b class="phone s01"><cite>Brent:</cite> Deployment-pattern guidance: principal-authority pre-layer for credentials consumed by autonomous agents<br>
+<span id=1581>… Is there anyone who has read this and has an opinion?</span><br>
+<span id=9b40>… On one hand, the formatting and length suggests that this was written by an agent, but there still may be a point within the text. It's mostly usage guidance. Unless vcomm wants to have an opinion, perhaps this would best fit within the implementation guide.</span><br>
+<span id=c9ad>… My suggestion is that this is a recommendation for implementation guidance clarity and doesn't appear to be calling for changes to the data model itself.</span></p>
+<p id=fdbd class="phone s07"><cite>wip:</cite> It definitely reads like AI to me, but we can move it to the implementation guide.</p>
+<p id=a573 class="phone s01"><cite>Brent:</cite> Anyone opposed to transferring to the implementation guide? Hearing none, we can look at there in the future.</p>
+</section>
+
+<section>
+<h3 id=3d6f>Task Force Round Table</h3>
+<p id=7a21 class="phone s02"><cite>Wes-smith:</cite> On behalf of the barcode and data integrity task force...<br>
+<span id=2ef7>… One of the big issues is the forgery defence specification, but we need to make sure it's clear how that fits into the charter.</span><br>
+<span id=9701>… The barcodes work is on the back burner as a result. We know we have outstanding work such as threat modeling to do.</span><br>
+<span id=099a>… My understanding of the data integrity work is that it's going well.</span><br>
+<span id=162e>… I think we're in a good place in that task force.</span></p>
+<p id=669e class="phone s05"><cite>Ivan:</cite> There is one more thing we discussed the other day. It's an editorial reengineering of the DI spec and the crypto suite.<br>
+<span id=9144>… We are considering factoring all of them out and generating separate specs. This would make future crypto suite publication much easier.</span></p>
+<p id=7e61 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to voice opinions about PQ</p>
+<p id=2c92 class="phone s01"><cite>Brent:</cite> The guidance I have heard in various quantum secure forums is to keep things as simple as possible. Choose as small a subset of the existing potential algorithms as is absolutely necessary.</p>
+<p id=8c5c class="phone s08"><cite>Carolynn:</cite> Things are going well. We spent an hour and a half with Ivan to prepare the work for the Digital Product Passport task force. We're writing a note in three parts: Why are VCs useful for DPP? Why is there an international VC task force in W3C? How can I check that my DPP standard is compatible with VCDM?<br>
+<span id=e7d4>… I hope to steer the group on the first part in the coming weeks.</span></p>
+<p id=2bec class=irc><cite>&lt;phila&gt;</cite> Thanks Carolynn - that sounds very +ve</p>
+<p id=18b0 class="phone s09"><cite>Kezike:</cite> We got good progress at the meeting with the vcomm task force and have a good path forward. We've created a v1.0 label for labelling existing and new issues. We want to implement a feature freeze to discourage blood in the spec. We're continuing to apply that to issues as they come in. We're making good progress on existing PRs and issues.<br>
+<span id=417d>… Threat modelling is proceeding and we should have a PR in the next day or two. We are also developing test suites. We're going to move the CCG tests into the charter.</span></p>
+<p id=0f47 class="phone s03"><cite>Phila:</cite> It sounds like you're making fantastic process. As CR is on the horizon, have you thought horizontal review yet?</p>
+<p id=a5e8 class="phone s09"><cite>Kezike:</cite> No, but that's why we're rushing issues. It will likely still be in flight at TPAC but we should be closer.</p>
+<p id=235d class="phone s01"><cite>Brent:</cite> Another feature of GitHub that might be useful is creating milestones.<br>
+<span id=5842>… I encourage you to consider that.</span></p>
+<p id=b496 class="phone s05"><cite>Ivan:</cite> I wrote in an email this morning that I don't recall seeing any requests.<br>
+<span id=2505>… Can you send me an email to tell me what needs to be moved forward?</span></p>
+<p id=a73b class="phone s09"><cite>Kezike:</cite> I think we're just looking for permission to move the repository into W3C space.</p>
+<p id=bdf8 class="phone s05"><cite>Ivan:</cite> We can coordinate that.</p>
+<p id=1451 class="phone s06"><cite>JoeAndrieu:</cite> We don't have a lot to report. We merged in the draft biometric PR with quite a few at-risk issue markers. We thought it was a good foundation. We also made a commitment to have enough of the tests fleshed out so we can get to horizontal review by TPAC.</p>
+<p id=6314 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to a month out to start the request</p>
+<p id=a711 class="phone s01"><cite>Brent:</cite> It may be good to submit for horizontal review a month before TPAC.</p>
+<p id=ac2d class="phone s05"><cite>Ivan:</cite> Another thing I would need is, what are the terms that would have to be added to the VCDM coming from your spec? It would be helpful to have clear guidance.<br>
+<span id=e1a9>… Same for the render method.</span></p>
+<p id=3499 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1, understood. I'm not sure either at this point.</p>
+<p id=629d class="phone s01"><cite>Brent:</cite> I don't see Dmitri on the call, who is leader for render method.</p>
+<p id=7b52 class="phone s10"><cite>KevinDean:</cite> Brief update on Recognized Entities, recently have been discussing linkages between credentials, focused on the GS1 use case, which documents a hierarchy of credentials beginning with a root of trust.<br>
+<span id=af96>… We have been discussing how the presence of one VC can authorize the issuance of others by the subject of the original VC.</span></p>
+<p id=d6bb class="phone s05"><cite>Ivan:</cite> Something which is not a technical thing is to say in presentations about our work... The interesting thing I find in that work is that it's an application of VCs that does not add anything to the VCDM per se.<br>
+<span id=c8ef>… I think it's important that we demonstrate the ability to add community-specific capabilities built on the existing VCDM spec.</span></p>
+<p id=20eb class="phone s03"><cite>Phila:</cite> Next week, my target is to create the ISO-friendly version of VCDM2.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+
+</body>
+</html>
