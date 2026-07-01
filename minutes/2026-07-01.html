@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 01 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>01 July 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/d811d954-dd65-4cce-844a-53dfd95e75c7/20260701T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/07/01-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, Blomqvist, carolynn, dlongley, dmitriz, elaine, Henrique, hsano, ivan, IvoLadenius, jennie, JennieM, joe, kezike, michaelshea, pdl-ASU, phila, TallTed, ted, wes-smith</dd>
+<dt>Regrets</dt><dd>brentz</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>JoeAndrieu, dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#147f">Task Forces update</a></li>
+<li><a href="#920d">Housekeeping</a>
+<ol>
+<li><a href="#3f07">CID</a></li>
+<li><a href="#f7d7">Bit String Status List</a></li>
+<li><a href="#e381">VCDM 2.1</a></li>
+<li><a href="#1a6e">Implementation Guide</a></li>
+<li><a href="#61b0">VCDM test suite</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+
+
+<section>
+<h3 id=147f>Task Forces update</h3>
+<p id=3d36 class="phone s01"><cite>phila:</cite> task force check ins<br>
+<span id=960d>… posted about the doc. its getting responses</span></p>
+<p id=7066 class="phone s01"><cite>phila:</cite> anyone else from task forces?</p>
+<p id=517e class="phone s01"><cite>phila:</cite> moving on</p>
+</section>
+
+<section>
+<h3 id=920d>Housekeeping</h3>
+<p id=7793 class="phone s01"><cite>phila:</cite> housekeeping. Several documents we are maintaining as a group, not assigned to any particular task force</p>
+<h4 id=3f07>CID</h4>
+<p id=0fcb class=irc><cite>&lt;phila&gt;</cite> <a href="https://github.com/w3c/cid/issues">https://<wbr>github.com/<wbr>w3c/<wbr>cid/<wbr>issues</a></p>
+<p id=69b0 class="phone s01"><cite>phila:</cite> the issue list for CID doc, there are 17 open issues and two PRs<br>
+<span id=8866>… Joe added on a couple months ago.</span><br>
+<span id=636b>… Do we care? Do we have the capacity to handle that?</span></p>
+<p id=59a5 class="phone s01"><cite>phila:</cite> You raised issues in the recent past, can you say your views of CID?</p>
+<p id=d677 class="phone s02"><cite>JoeAndrieu:</cite> Good question.</p>
+<p id=6a93 class="phone s01"><cite>phila:</cite> the only way, IMO, for that to move forward is new editors. Mike Jones, Drummond, Christopher Allen, Markus, the people involved aren't as involved any more.<br>
+<span id=5760>… unless we get someone to step up, I'm not sure how we handle it.</span><br>
+<span id=1f75>… I don't think we can formally deprecate, but that doesn't mean it has to be high priority</span><br>
+<span id=40ad>… For this one, CID, we recognize its important. I wish we had time to do it, but we haven't.</span><br>
+<span id=6161>… So until we have an editor or otherwise it becomes important, it'll just sit there.</span></p>
+<p id=9bee class="phone s03"><cite>ivan:</cite> are there any issues that point to a bug?<br>
+<span id=3889>… our hands are tied a bit</span></p>
+<p id=9e6c class="phone s01"><cite>phila:</cite> there is one issue, #166</p>
+<p id=0f9c class=irc><cite>&lt;phila&gt;</cite> Issue #166 <a href="https://github.com/w3c/cid/issues/166">w3c/<wbr>cid#166</a></p>
+<p id=17e1 class="phone s01"><cite>phila:</cite> That one is marked as possible errata. Raised by possible errata</p>
+<p id=fab7 class=irc><cite>&lt;dmitriz&gt;</cite> my question would be -- are there ANY implementations of CIDs in VC libraries currently? like, do we know of any software that issues or verifies CIDs?</p>
+<p id=11ff class="phone s01"><cite>phila:</cite> There are a lot listed as class 2 and class 3<br>
+<span id=6cc7>… so pchampin has raised a couple errors</span></p>
+<p id=c074 class="phone s03"><cite>ivan:</cite> if it's class 2 we can handle it, but someone needs to</p>
+<p id=e02d class=irc><cite>&lt;dlongley&gt;</cite> CID is now a base document for DIDs, IIRC.</p>
+<p id=2523 class="phone s03"><cite>ivan:</cite> I'm surprised. There were some alternatives in those digests. The editing process was doing it automatically.</p>
+<p id=5880 class="phone s04"><cite>dlongley:</cite> I'd have to look into that more closely</p>
+<p id=6307 class="phone s01"><cite>phila:</cite> seems like this is important</p>
+<p id=8f10 class="phone s04"><cite>dlongley:</cite> I'm trying to remember the context. We moved a number of things into the CID, then started relying on CID, specifically for DIDs, as a profile of CID<br>
+<span id=f528>… So I do think maintenance is important.</span></p>
+<p id=6f31 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to suggest transfer</p>
+<p id=28c5 class="phone s02"><cite>JoeAndrieu:</cite> I agree with Dave Longley, we did bake this in -- we did have the DID spec depend on CIDs. I think the right thing is to figure out how to transfer it. That might depend on a future rechartering. It feels like the folks working on the spec need it to be maintained.</p>
+<p id=456f class="phone s01"><cite>phila:</cite> I thought about the DID WG, but it is also resource constrained</p>
+<p id=9b1e class="phone s04"><cite>dlongley:</cite> there are some definitions in CID that are used in Data Integrity<br>
+<span id=ed4a>… not clear if its any easier for either DIDWG or VCWG to manage that. Maybe what we should need is a third group focused on data integrity</span></p>
+<p id=4d2e class="phone s01"><cite>phila:</cite> seems unfortunate.</p>
+<p id=961e class="phone s05"><cite>TallTed:</cite> part of the challenge is how these documents came to be.<br>
+<span id=f322>… we initiated some of these in this group. We initiated the CID document because at that time the DIDWG didn't allow it.</span><br>
+<span id=e763>… And we realized we needed to revise. But the hand off didn't happen. That's what I recall.</span><br>
+<span id=2618>… We originated stuff for other groups that couldn't take it on.</span></p>
+<p id=6f71 class="phone s03"><cite>ivan:</cite> Ted is correct, but incomplete.<br>
+<span id=51eb>… one of the problems was that there was a normative dependency suggested, which was opposed.</span></p>
+<p id=ff0c class=irc><cite>&lt;TallTed&gt;</cite> +1 ivan's recollection of JOSE-COSE complicating matters is correct</p>
+<p id=59cf class="phone s03"><cite>ivan:</cite> so we created CIDs to avoid this (JOSE COSE) dependency on Data Integrity<br>
+<span id=8efd>… So... merging things into DID document might lead to ugly discussions that will take us back to that political debate from years ago.</span><br>
+<span id=7d7a>… So, the CID document probable needs to stay with us.</span></p>
+<p id=21ae class="phone s01"><cite>phila:</cite> We have a problem, then, that needs to be resolved<br>
+<span id=94b6>… First question: does anybody have the time to look that those issues and consider putting their hand up as editor, noting that we can only make Class 1 and Class 2 changes.</span><br>
+<span id=fce9>… only maintenance changes. Not deriving a whole new set of things. So, a relatively small ask.</span><br>
+<span id=fae2>… If anyone has the time &amp; interest to learn how to edit a spec, this might be a good fit.</span><br>
+<span id=0f2e>… Everyone in the group with experience is happy to help. This could be a good starter editor role.</span><br>
+<span id=c7d7>… Now would be a great time to raise your hand.</span></p>
+<p id=cf88 class="phone s06"><cite>michaelshea:</cite> I'm interested, but I'll need guidance on what's the right answer to the issues</p>
+<p id=352f class="phone s01"><cite>phila:</cite> You will get plenty of feedback and help</p>
+<p id=266c class="phone s06"><cite>michaelshea:</cite> I have not edited before</p>
+<p id=065b class="phone s03"><cite>ivan:</cite> For Michael, I repeat a question: Benjamin, isn't it true that the hash digest values in documents were automatically created by some magic, rather than manual?<br>
+<span id=3684>… Because there is an incorrect value. So can we figured out why?</span></p>
+<p id=f019 class="phone s07"><cite>bigbluehat:</cite> I'm not the one to generate those, but I'm happy to research and figure it out.<br>
+<span id=248c>… This is in the CID spec?</span></p>
+<p id=f333 class="phone s01"><cite>phila:</cite> To recap: the CID document is one that we have for legacy reasons. But nobody is chartered to look after it.<br>
+<span id=6cda>… It exists because of a bunch of compromises, but its on our plate.</span><br>
+<span id=bbb7>… No task force is focused on it</span><br>
+<span id=8fc3>… But is seems other documents need to refer to it. So we should look after it, as much as our charter allows (class 1 and class 2)</span><br>
+<span id=a9b5>… We are greatful for Michael Shea to take a look</span><br>
+<span id=e752>… This might become his first editor role</span></p>
+<p id=accb class="phone s03"><cite>ivan:</cite> I was wondering, are the multikeys part of this spec or are they just examples?<br>
+<span id=e775>… one thing that came up in DI Task force, related to multibase.</span><br>
+<span id=b42c>… if we need multi-key definition added, that's a bit more work.</span></p>
+<p id=fd11 class="phone s04"><cite>dlongley:</cite> yes, the multikey is in the CID spec<br>
+<span id=950d>… that should just be a few additions to a table</span><br>
+<span id=4350>… Thats one of many things that are in the CID spec and relied on elsewhere</span></p>
+<p id=079b class="phone s01"><cite>phila:</cite> Dave, would you consider those Class 1/2 change or are we straying into Class 3.</p>
+<p id=c22a class=irc><cite>&lt;ivan&gt;</cite> +1 dlongley</p>
+<p id=c360 class="phone s04"><cite>dlongley:</cite> it's true that there are new things in our new specs. it's just a question of where they go.</p>
+<p id=0bc2 class="phone s01"><cite>phila:</cite> is the DID WG expecting to recharter?<br>
+<span id=4f28>… ok, That's CID. That was one of seven that the group is meant to be maintaining</span></p>
+<h4 id=f7d7>Bit String Status List</h4>
+<p id=a328 class="phone s01"><cite>phila:</cite> The next topic: bitstring status list</p>
+<p id=8de1 class=irc><cite>&lt;phila&gt;</cite> <a href="https://github.com/w3c/vc-bitstring-status-list/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-bitstring-status-list/<wbr>issues</a></p>
+<p id=ffff class="phone s01"><cite>phila:</cite> This is important. It went to rec not that long ago. Nine open issues.<br>
+<span id=e98c>… One is broken links. Manu opened one. A bunch of what look like minor things. Except for Kyle Den Hartogs from last spring</span><br>
+<span id=406c>… So what we must do? Can do? What is reasonable to do?</span><br>
+<span id=cb76>… Mike Prorock and Mahmoud are no longer active.</span><br>
+<span id=4a62>… Dave and Manu are, but they have a lot of work on their plate.</span><br>
+<span id=7c9b>… Dave, does that issue list fill you with dread?</span></p>
+<p id=0f86 class="phone s04"><cite>dlongley:</cite> It doesn't fill me with dread, but I also don't have the couple of hours to take a review on<br>
+<span id=dcb1>… Looks like mostly editorial.</span><br>
+<span id=e10f>… Kyle's suggestion would be a bigger lift. We'd need someone to step up for that.</span><br>
+<span id=cb80>… Doesn't look horrible, just clarifications and clean up.</span></p>
+<p id=8ba6 class="phone s01"><cite>phila:</cite> I can't see anything jumping out saying &quot;You need to fix this right now!&quot;<br>
+<span id=e336>… tempted to tag them all with next iteration</span><br>
+<span id=f24b>… Does anyone disagree that this needs immediate attention?</span></p>
+<p id=2762 class="phone s04"><cite>dlongley:</cite> I don't think there are any emergencies</p>
+<p id=147a class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to no emergencies right now</p>
+<p id=b5c6 class="phone s01"><cite>phila:</cite> Is there an unofficial way to say &quot;we're a bit busy, but we aren't actively working on this spec&quot;<br>
+<span id=9743>… can we put something like that on the ReadMe</span></p>
+<p id=d4c7 class="phone s03"><cite>ivan:</cite> If that's the reality, there is no shame to saying that we are focused on other things</p>
+<p id=c622 class="phone s01"><cite>phila:</cite> Thing is, if someone does find something serious, we can act on it.<br>
+<span id=14e9>… but if its something that can wait, we're going to wait.</span><br>
+<span id=ab52>… So, I'll look at the issues in more depth and triage, with a note on each explaining where we are at.</span></p>
+<h4 id=e381>VCDM 2.1</h4>
+<p id=d1a4 class="phone s01"><cite>phila:</cite> The big one is VCDM 2.1<br>
+<span id=c44d>… This is something we're going to have to think about.</span><br>
+<span id=10000>… Ten open issues and one pull request. Some issues are Class 4. Some class 2.</span><br>
+<span id=dd21>… We published an FPWD</span><br>
+<span id=368f>… had some discussion about deprecating DigestSRI</span></p>
+<p id=3b58 class="phone s03"><cite>ivan:</cite> this is a place where the class story is irrelevant.<br>
+<span id=690a>… this will have to go through the normal approval process</span></p>
+<p id=1b75 class="phone s01"><cite>phila:</cite> the editors here are Manu, Ted, and Ivan.<br>
+<span id=375d>… active members of the group. There are active issues. and An active PR (the DigestSRI deprecation)</span></p>
+<p id=6e95 class="phone s01"><cite>phila:</cite> Ted how are you on this?</p>
+<p id=4d03 class="phone s05"><cite>TallTed:</cite> My listing there is more work that has been done than prospective edits in the future</p>
+<p id=d6a6 class="phone s01"><cite>phila:</cite> Ivan?</p>
+<p id=23ea class="phone s03"><cite>ivan:</cite> Same problem. My hands are full. But I know the Manu is overrun, but this is a case where Manu has to run that.<br>
+<span id=d324>… He's probably the only guy who has a view of the entire document to manage this.</span><br>
+<span id=3f47>… Ted did a bunch of editorial changes. I did a bunch in specific sections. But this is where Manu has to speak up</span><br>
+<span id=1540>… That's the document where I would be uneasy touching</span><br>
+<span id=6638>… This isn't going to go away. This is 2.1.</span></p>
+<p id=3861 class="phone s04"><cite>dlongley:</cite> the other comment I want to make, the document is largely complete and designed to be extensible.<br>
+<span id=8220>… The design is to put specifics in other documents.</span><br>
+<span id=43b2>… So that's a pressure release valve.</span></p>
+<p id=c0f6 class="phone s03"><cite>ivan:</cite> To take renderMethod and confidenceMethod, we have an open issue. IMO, those things should be removed from VCDM altogether.<br>
+<span id=65ec>… There are things that we can take out.</span></p>
+<p id=b431 class=irc><cite>&lt;dlongley&gt;</cite> +1 for using the extension model and simplify the VCDM</p>
+<p id=6308 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 to lean into extensions</p>
+<p id=8ccb class="phone s01"><cite>phila:</cite> this is one where we need Manu's time</p>
+<p id=2cd7 class=irc><cite>&lt;pdl-ASU&gt;</cite> +1 for taking out the things active TFs are doing good work on.</p>
+<p id=2a5a class="phone s01"><cite>phila:</cite> I'm sure he would welcome additional help.<br>
+<span id=66e9>… If you'd like to be a co-editor, this is another opportunity for folks to volunteer</span></p>
+<h4 id=1a6e>Implementation Guide</h4>
+<p id=c12f class="phone s01"><cite>phila:</cite> The implementation guide. #9 on the agenda today</p>
+<p id=b903 class=irc><cite>&lt;phila&gt;</cite> <a href="https://github.com/w3c/vc-imp-guide">w3c/<wbr>vc-imp-guide</a></p>
+<p id=9a77 class="phone s01"><cite>phila:</cite> This is one that currently has 17 open issues. These are historic.<br>
+<span id=f026>… Going back to previous charter. PRs that exist. One from JonnyCrunch, from 7 years ago tomorrow.</span><br>
+<span id=f02d>… Clearly this is not under active development. but we refer to this document in the VCDM</span><br>
+<span id=00a9>… And at least two from this year. Going back to '23</span><br>
+<span id=c365>… So, who on earth is going to have time to spend on this.</span></p>
+<p id=0943 class=irc><cite>&lt;dmitriz&gt;</cite> how important is it to the group?</p>
+<p id=5b8c class="phone s01"><cite>phila:</cite> Original editor:  Andre Sambra</p>
+<p id=63c5 class=irc><cite>&lt;JoeAndrieu&gt;</cite> s/Sandberg/Sambra</p>
+<p id=02c9 class="phone s01"><cite>phila:</cite> we need someone to write the book about VCs</p>
+<p id=af6c class="phone s01"><cite>phila:</cite> no one is going to look at this any time now<br>
+<span id=ac7e>… I'm just going to add a note in the read me saying that this is not under active development</span><br>
+<span id=bf04>… I'm currently in a middle of creating a Word Doc version of VCDM 2 that will go to ISO.</span><br>
+<span id=098c>… I noticed lots of references within VCDM2 that point to implementation guide.</span><br>
+<span id=a024>… I'm not saying we have time to do it, but is not unimportant. People rely on implementation guides.</span><br>
+<span id=0e64>… It is needed.</span><br>
+<span id=07c1>… So we might have to come back to this, after we finish the work we are actively working on now.</span><br>
+<span id=3796>… but maybe later this calendar year, once we get some of our specs to CR</span></p>
+<p id=a072 class="phone s03"><cite>ivan:</cite> I am busy doing a 1.1 version of the overview, that folds in all the documents that we've been working on<br>
+<span id=786d>… maybe readable in a few weeks</span></p>
+<h4 id=61b0>VCDM test suite</h4>
+<p id=94ac class="phone s01"><cite>phila:</cite> That currently has a number of open issues. 17 open issues.<br>
+<span id=d015>… some go back a couple years. Newest is less than a year old.</span></p>
+<p id=a126 class="phone s07"><cite>bigbluehat:</cite> A lot what's going on now, in terms of PRs, is dealing with the bitrot that happens.<br>
+<span id=f2c2>… upgrading dependencies.</span><br>
+<span id=ba12>… Related is the canivc dashboard.</span><br>
+<span id=fdea>… That is gradually moving to W3C as a new open source project.</span><br>
+<span id=89d7>… That is a predominant interface for making sure that you pass and promoting that you pass.</span></p>
+<p id=9708 class=summary><a href="https://canivc.com/">https://<wbr>canivc.com/</a></p>
+<p id=10001 class="phone s07"><cite>bigbluehat:</cite> The specs have driven the test suites. The hope is that coupling the dashboard with canivc would let us keep an eye on this whole set of things<br>
+<span id=f009>… The state of play for July 2026 is that we are prepping the house for that migration.</span><br>
+<span id=484b>… Trying to get all the dependencies are up to snuff for when new tests come in.</span><br>
+<span id=5625>… The bigger piece  of work is comparing the new spec to see what tests might need to be added/removed/updated.</span><br>
+<span id=3ef0>… Hopefully with the dashboard moving to W3C will encourage others to contribute</span><br>
+<span id=acb6>… It a useful thing and we'd love people to join us.</span></p>
+<p id=2b43 class="phone s01"><cite>phila:</cite> Is *the* test suite aware of what's happening with renderMethod, confidenceMethod, etc?</p>
+<p id=10002 class="phone s07"><cite>bigbluehat:</cite> I kind of feel they have two options. All TR specs must have two implementers and the test suite is how we prove that.<br>
+<span id=2549>… So where those tests live is not subjective. Must be a w3c repo, but a test suite can address multiple specs. But how we mix it in might become cumbersome.</span><br>
+<span id=9902>… We have tried to make the core of the test suite a template so you can make new test suites simply</span><br>
+<span id=6bc5>… Other task force specs like rendermethod is radically different</span></p>
+<p id=2134 class="phone s03"><cite>ivan:</cite> no problem with the same test suite for multiple specs</p>
+<p id=7db9 class="phone s01"><cite>phila:</cite> thanks everyone.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+
+</body>
+</html>
