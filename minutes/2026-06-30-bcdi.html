@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 30 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>30 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#da45">Data Integrity And Quantum Resistance Discussion</a></li>
+<li><a href="#495a">Restructuring Algorithm Sections</a></li>
+<li><a href="#09ff">Quantum Resistance Updates</a></li>
+<li><a href="#5f37">Deterministic Signatures For Test Vectors</a></li>
+<li><a href="#8977">Perception Of Selective Disclosure Complexity</a></li>
+<li><a href="#5c4b">Forgery Defense Publication Status</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=5fb9 class="phone s01"><cite>Elaine_Wooton:</cite> Good morning all. I do not know where Wes is. Maybe we'll wait a couple minutes and if he doesn't turn up, we can let Greg start the show.</p>
+<p id=7a18 class="phone s01"><cite>Elaine_Wooton:</cite> Hey Dave, do you know where Wes is?</p>
+<p id=b5b9 class="phone s02"><cite>Dave_Longley:</cite> I did just send him a message. So, we'll see if he responds.</p>
+<p id=2a25 class="phone s03"><cite>Greg_Bernstein:</cite> Since I've got folks here,…</p>
+<p id=0b4f class="phone s03"><cite>Greg_Bernstein:</cite> let's see if I can share my screen and talk about an editorial decision. Okay. Please. Cool.</p>
+<p id=0103 class="phone s04"><cite>Ivan_Herman:</cite> Can I make an announcement before we go into the details? in case you haven't seen it, the forgery defense documents has been published as a draft about four or five hours ago.</p>
+<p id=7355 class="phone s01"><cite>Elaine_Wooton:</cite> Thanks for that, Avon.</p>
+<p id=126c class="phone s04"><cite>Ivan_Herman:</cite> Thanks for Wes, not me.</p>
+</section>
+
+<section>
+<h3 id=da45>Data Integrity And Quantum Resistance Discussion</h3>
+<p id=f69f class="phone s03"><cite>Greg_Bernstein:</cite> I am presenting infinity mirror. So I've got two main items. One is data integrity and the other is quantum resistance. so we put in some issues. to move both selective disclosure and</p>
+<p id=a31c class="phone s03"><cite>Greg_Bernstein:</cite> the high level the parameterized algorithms the reusable algorithms from we'll just look at them right here common algorithms sorry that was the word I was looking for we were able to break down for we had so many different crypto suites right we've got MLDDSA SLHDSA a falcon es ski sign.</p>
+<p id=1356 class="phone s03"><cite>Greg_Bernstein:</cite> we were able to break down the creation of proofs into as I think u Ivonne said last time about a page or less each. Okay, here we've got the different flavors of MLDDSA summarize saying what you should do. We summarize here in this table what flavors we're currently doing. Right now we've been doing category one. some people are asking about the higher security categories and I've got them in here. I just commented them off because we were seeing so many that I was getting push back from folks. So we're just started with a certain set. We can always bring them in.</p>
+<p id=ffff class="phone s03"><cite>Greg_Bernstein:</cite> But as you can see here, the create proof procedure is that long by reusing these common algorithms which are just parameterized by a hash function or a signature algorithm a transformation algorithm. Do we use JCSRD FC? So I put in an issue saying that maybe we should move these common algorithms to the data integrity document. Okay.</p>
+<p id=ad48 class="phone s03"><cite>Greg_Bernstein:</cite> So let's see under the issues under that issue I said maybe we restructure the algorithm section as following processing model add proof set these are the highle functions that were already there insert a section on common algorithms insert a section on selective disclosure functions then put in the information back in context validation and processing errors. So let's take a look what that is. So that would be in this section. Okay, the alternative would be maybe we have two more higher level sections instead of algorithms.</p>
+</section>
+
+<section>
+<h3 id=495a>Restructuring Algorithm Sections</h3>
+<p id=4fb9 class="phone s03"><cite>Greg_Bernstein:</cite> In addition to algorithms, we have higher level u common algorithms and selective disclosure algorithms rather than making this section longer and higher. people's thoughts, I am not super opinionated on this. we pretty much have agreement that we should move the selective disclosure and the common algorithms to this document. What are people's opinions on where we do that?</p>
+<p id=dcfc class="phone s03"><cite>Greg_Bernstein:</cite> Because if I'm going to move them, I don't want to move them multiple times. I'm going to stop the sharing. Somebody raised a hand. Ivonne, what do you like?</p>
+<p id=f4c9 class="phone s04"><cite>Ivan_Herman:</cite> Yes. Yes.</p>
+<p id=8e0b class="phone s04"><cite>Ivan_Herman:</cite> I am mildly tempted to say that the selective disclosure should be put separately as you proposed as an alternative. it was interesting yesterday on a different task force we heard the reaction that many application areas for the time being don't use selective disclosure because it's too complicated and they find their way through non- selective discsure full disclosure things. so to reflect this situation maybe put the selective disclosure as a separate thing…</p>
+<p id=502b class="phone s04"><cite>Ivan_Herman:</cite> which describes how it might be editorially better but as I said I am only mildly in favor I can be convinced of the otherwise I know and…</p>
+<p id=b28d class="phone s03"><cite>Greg_Bernstein:</cite> It is a long list of functions,…</p>
+<p id=3eaf class="phone s03"><cite>Greg_Bernstein:</cite> Dave. So that would be helpful. Ivan Herman:</p>
+<p id=7253 class="phone s04"><cite>Ivan_Herman:</cite> very difficult to no.</p>
+<p id=d68e class="phone s02"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=3654 class="phone s02"><cite>Dave_Longley:</cite> I am a little in favor of putting that separately. You could take the existing algorithms that just says algorithms and maybe that gets called base algorithms or we come up with some other appropriate adjective and then we would have common algorithms and really those are common for all crypto suites. maybe there's another adjective there. and then selective disclosure algorithms. just to get things moving unless there are objections. If we wanted to do the three categories, I would just do base, common, and selective disclosure.</p>
+<p id=33c7 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, Ivon.</p>
+<p id=457d class="phone s02"><cite>Dave_Longley:</cite> And then those can always be changed if we have better names.</p>
+<p id=1f4f class="phone s04"><cite>Ivan_Herman:</cite> I am absolutely fine with that. I also had a question that in the list of the DI document I haven't seen reference to the choice of canonicalization.</p>
+<p id=2511 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. in…</p>
+<p id=23cc class="phone s04"><cite>Ivan_Herman:</cite> This is also a common feature isn't it? in the quantum document,…</p>
+<p id=fdfd class="phone s03"><cite>Greg_Bernstein:</cite> what sense? in the common algorithms under transformation, I do take as a parameter whether you want JCS or DFC. But what do you mean?</p>
+<p id=6b21 class="phone s03"><cite>Greg_Bernstein:</cite> We don't discuss it enough.</p>
+<p id=ea5e class="phone s04"><cite>Ivan_Herman:</cite> you had a sort of table of content which I may be wrong, which I think had a separate entry for canonicalization and I was looking for that in the DI</p>
+<p id=c8bf class="phone s03"><cite>Greg_Bernstein:</cite> You want me to pull that back up? Sorry for the infinite repeat.</p>
+<p id=b380 class="phone s02"><cite>Dave_Longley:</cite> I think it would be good to pull it back up because I also had a question or comment as I enjoy the event.</p>
+<p id=54d3 class="phone s03"><cite>Greg_Bernstein:</cite> Then we'll go look at data in the you start. Okay.</p>
+<p id=47e3 class="phone s04"><cite>Ivan_Herman:</cite> Don't show your Yeah.</p>
+<p id=c718 class="phone s03"><cite>Greg_Bernstein:</cite> So common algorithms under transformation takes cryptosweet the canonical canonicalization scheme and…</p>
+<p id=845e class="phone s04"><cite>Ivan_Herman:</cite> I presume it's under transformation. I am sorry.</p>
+<p id=dc26 class="phone s03"><cite>Greg_Bernstein:</cite> the hash scheme. So it's kind of Yeah. D</p>
+<p id=10000 class="phone s04"><cite>Ivan_Herman:</cite> I am sorry. I see that and I presume that this section moves to the DIP spec as well. Okay, then I shut up.</p>
+<p id=6a49 class="phone s02"><cite>Dave_Longley:</cite> So my question comment was if we create proof at 33 1 for MLDDSA and we compare that to the SLDSA one how different are those now because I see that those are not so if we look at this and we look at 341 one. I imagine those look almost Yeah,…</p>
+<p id=a9ac class="phone s03"><cite>Greg_Bernstein:</cite> Yes. …</p>
+<p id=48b6 class="phone s02"><cite>Dave_Longley:</cite> I think we've got some more commonality and we might be able to get to get this to a place where it's just a list of parameters and then you just go use the right algorithm. So, I think we could even get this even shorter.</p>
+<p id=c2b5 class="phone s03"><cite>Greg_Bernstein:</cite> somebody has a comment. Yeah, these are non- selective disclosure ECDSA and…</p>
+<p id=7c1e class="phone s04"><cite>Ivan_Herman:</cite> I have a question just for my understanding.</p>
+<p id=2c12 class="phone s04"><cite>Ivan_Herman:</cite> These commonalities here would also apply to the older crypto suites, right? Okay.</p>
+<p id=3998 class="phone s02"><cite>Dave_Longley:</cite> I would fully expect that. Yeah.</p>
+<p id=b178 class="phone s03"><cite>Greg_Bernstein:</cite> ED that we have a flavor of EDDDSA that is not data integrity.</p>
+<p id=37f7 class="phone s03"><cite>Greg_Bernstein:</cite> So that's old, but the ones that go by data integrity, this is exactly how they do it. And this has a little bit more explanation because in the ECDSA we talk we did have support for P384 and we had to put in a bunch of little extras saying you're using P384 that means you're going for this higher security category you have to use this is different hash here we explain that very much about the hashing, what hashes you should use when we talk about the crypto suites in general we bring up compatible hashes but the signature schemes and things like that.</p>
+<p id=7e46 class="phone s04"><cite>Ivan_Herman:</cite> And what about now I mess up is it execs ecca the one that is brought in by the barcode document. Correct.</p>
+<p id=6431 class="phone s03"><cite>Greg_Bernstein:</cite> So that information would also be brought up. we would move this all this explains the question.</p>
+<p id=3415 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I think everything will be the same modulo and extra step for that one. And so there's probably a clever way to write that as well.</p>
+<p id=039b class="phone s04"><cite>Ivan_Herman:</cite> But is that an extra step which is valid only for that or is this an extra step…</p>
+<p id=edbb class="phone s04"><cite>Ivan_Herman:</cite> which in fact can be used for all the others…</p>
+<p id=b8c7 class="phone s04"><cite>Ivan_Herman:</cite> which we get for free then which mean…</p>
+<p id=1773 class="phone s02"><cite>Dave_Longley:</cite> Yeah, it could be written that way as well such that all of the others could use that step…</p>
+<p id=ab17 class="phone s02"><cite>Dave_Longley:</cite> if a parameter is provided. So yes, that could be done.</p>
+<p id=7a94 class="phone s04"><cite>Ivan_Herman:</cite> which means that the barcode could be signed with a quantum thing.</p>
+<p id=030b class="phone s02"><cite>Dave_Longley:</cite> Yes, that's right.</p>
+<p id=9ae2 class="phone s04"><cite>Ivan_Herman:</cite> Okay, that sounds all nice.</p>
+<p id=5357 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, I'm gonna just quickly check my data integrity tick list.</p>
+<p id=d727 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, I had moving reusable. Dave brought up an issue that goes with that I'll put in when I move selective disclosure.</p>
+</section>
+
+<section>
+<h3 id=09ff>Quantum Resistance Updates</h3>
+<p id=7525 class="phone s03"><cite>Greg_Bernstein:</cite> There's this JSON LD thing concerning a rare attribute something called at list. I will be putting in that comment when I move these to that the U. So I think that covers selective disclosure. Let's go to quantum resistance. Okay, let me share that screen. Quantum resistance.</p>
+<p id=9ff1 class="phone s02"><cite>Dave_Longley:</cite> You're on the quantum resistant tab already.</p>
+<p id=b381 class="phone s03"><cite>Greg_Bernstein:</cite> Sorry. Let's What I probably need is to go to the</p>
+<p id=b2dc class="phone s03"><cite>Greg_Bernstein:</cite> Most of you have too many tabs. move the promise that they great day integrity. So, works. Okay, let me just read off the list or I can get to it. Where's the repo? Okay, I pulled in Ivonne's Chidna update.</p>
+<p id=5e39 class="phone s03"><cite>Greg_Bernstein:</cite> I'm just waiting a couple more days for we up pulled in all the secret key stuff. We caught a couple things on that. and so I'm just waiting a couple more days to close that. it's found some strange wording left over inside the document that I'll be taking out. We had the word Cipher. it doesn't show up except in some of the links. so we will be helping with that.</p>
+<p id=d3e3 class="phone s03"><cite>Greg_Bernstein:</cite> We had somebody buff stands for beyond unforgeable something properties and somebody would like to see that section strengthened. So I asked him since he seemed very knowledgeable to see about contributing a PR. let's see. Okay, I'm going to read off my editor's list here. Okay, we got the private key previs prefixes. Okay.</p>
+</section>
+
+<section>
+<h3 id=5f37>Deterministic Signatures For Test Vectors</h3>
+<p id=c264 class="phone s03"><cite>Greg_Bernstein:</cite> There is a request to check if I can generate deterministic signatures. All these postquantum signatures I think use randomness in the signatures but at least for MLDDSA and SLHDSA the spec explicitly says you can turn that off. It's not necessarily recommended but it's great for test vectors. And I was able to verify that I can do that with the library that I'm using to generate test vectors. So I proposed I didn't put an issue on it but I will generate new test vectors that are deterministic. So it makes it people so people can check even the signature part should be the same for the MLDDSA and SLHDSA cases.</p>
+<p id=2728 class="phone s03"><cite>Greg_Bernstein:</cite> And since I'm upgrading those test vectors, I'll include the secret key multibase values and seed values as part of those test vectors. Is there any issues with that? I'll wait a bit on Falcon and ski sign for those because we don't even have the secret key multibase values yet for those because they are not standardized. Do people understand what I mean by that?</p>
+<p id=4a97 class="phone s04"><cite>Ivan_Herman:</cite> I think I understand.</p>
+<p id=4588 class="phone s02"><cite>Dave_Longley:</cite> I gave you a thumbs up. I don't know if you can see that.</p>
+<p id=41dd class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=83f9 class="phone s03"><cite>Greg_Bernstein:</cite> So basically when generating test vectors, you want people to be able to check every step. So we publish the canonicalized document depending on what canonicalization this transformation step we publish the hashes step that works on the canonicalized proof and the canonicalized document. when you go and compute the signature, if you're using an algorithm that uses randomness in it, they can't get the same signature value because it involves a random number.</p>
+<p id=22d1 class="phone s03"><cite>Greg_Bernstein:</cite> However, it turns out that both quantum algorithms all include that randomness, but at least for I looked reread the specs closely, SLH and ML DSA both have little places where you can turn that off. And the library I used, I went and discovered how to do that. So it can get a deterministic signature which makes it easier for people to verify every step. Make sense?</p>
+<p id=e53a class="phone s02"><cite>Dave_Longley:</cite> Yep.</p>
+<p id=5777 class="phone s03"><cite>Greg_Bernstein:</cite> Other than that, let's see if I can show it real quick.</p>
+<p id=554a class="phone s03"><cite>Greg_Bernstein:</cite> got some email from nice some folks that put together a website because they were in contact with I think Mono who sent them to me and they had been doing some stuff with Ski Sign and they ended up making a test bed website that did both JCS and RDFC FC they were able to verify ski sign MLDDSA and Falcon signatures. So that's a bunch. So they were able to verify the test spectr. So we are doing good.</p>
+<p id=1f2e class="phone s03"><cite>Greg_Bernstein:</cite> We've had air did MLDDSA and some other folks were talking about a rust implementation of MLDDSA. So we are getting some interoperability at least verification of the test vectors and some of this I will say that doing that factoring out the common algorithms really shows people like the steps and so once they can get through with one like MLDDSA they can easily add any of the others including the classical. So, hats off to people for, pushing to do that generalization and parameterization of things because, one last thing to ask and this is more a general ask.</p>
+<p id=c01e class="phone s03"><cite>Greg_Bernstein:</cite> Do we know I other folks did the work and set up the interoperability stuff for ECDSA testing and EDDDSA testing for the verifiable credentials. I don't know who's in charge of that or who's done that in the past and so I didn't know if the quantum resistance was in the queue, but I am encouraged by the takeup I'm getting from some of the folks out there as far as interoperability and people wanting to verify the test vectors.</p>
+<p id=a40e class="phone s03"><cite>Greg_Bernstein:</cite> Let me stop my screen share before we all go crazy. Okay, Dave.</p>
+<p id=4f7b class="phone s02"><cite>Dave_Longley:</cite> Yeah, I just wanted to comment on that. Benjamin's not here today, but he often helps with the CANIVC website that is connected to test suites. And I imagine there will be some work to hook that up for the postquantum or quantum resistance suites as well. so that there will be reports there and get us toward the test suites we need to get through</p>
+<p id=b3d2 class="phone s03"><cite>Greg_Bernstein:</cite> Was that before we had that rather elaborate approach for interoperability testing where we'd do an implementation and then we would register with the GitHub and then we'd be included our</p>
+<p id=3d79 class="phone s03"><cite>Greg_Bernstein:</cite> in my case my little teeny tiny server to include with interoperability tests. Was that necessary for CR or was that something we was done to just help promote things?</p>
+<p id=7111 class="phone s02"><cite>Dave_Longley:</cite> it is necessary for SE so to one of the group will agree on…</p>
+<p id=d2f8 class="phone s03"><cite>Greg_Bernstein:</cite> They Okay.</p>
+<p id=e65a class="phone s02"><cite>Dave_Longley:</cite> what the specific conditions to leave are once we get there but the minimum bar is almost always two interoperable implementations passing all of the normative test statements in all the musts in the spec and noises from Ivon. So I turn it over</p>
+<p id=b162 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I mean I don't think we should get into the discussion. I think that this group for good reasons. I don't want to criticize but this group set up tighter goals than…</p>
+<p id=d936 class="phone s03"><cite>Greg_Bernstein:</cite> Ted</p>
+<p id=f02b class="phone s04"><cite>Ivan_Herman:</cite> what is required by W3C but that's in a so security related area like credentials I can very well see the point but the fundamental approach for specs in general control means that every normative feature must be implemented by two independent implementations. And it is not necessarily a requirement that every implementation has to implement everything.</p>
+<p id=8c36 class="phone s02"><cite>Dave_Longley:</cite> To be clear,…</p>
+<p id=7c1f class="phone s04"><cite>Ivan_Herman:</cite> And okay.</p>
+<p id=c609 class="phone s02"><cite>Dave_Longley:</cite> yeah, I wasn't suggesting that there is two independent implementations for every feature that is in the spec.</p>
+<p id=43ce class="phone s04"><cite>Ivan_Herman:</cite> Then that's okay,…</p>
+<p id=f2b2 class="phone s04"><cite>Ivan_Herman:</cite> Ve. I misunderstood what you said.</p>
+<p id=9c0d class="phone s02"><cite>Dave_Longley:</cite> I should have been</p>
+<p id=b9ce class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> If I may,…</p>
+<p id=e3e3 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> that's the point here is to test the spec. It's not to test the software. The goal is to make sure that everything that we have specified is implementable, not that everything that's been implemented is actually useful, fit for purpose,…</p>
+<p id=a4de class="phone s04"><cite>Ivan_Herman:</cite> Abs. Absolutely.</p>
+<p id=e157 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> or anything else like that. Everything it's made could actually be totally broken except that it does prove that the features are implementable. That's it.</p>
+<p id=b333 class="phone s03"><cite>Greg_Bernstein:</cite> I think the only other updates are coming from BBS land…</p>
+<p id=90bd class="phone s03"><cite>Greg_Bernstein:</cite> where I</p>
+<p id=dd87 class="phone s03"><cite>Greg_Bernstein:</cite> up that's a separate organization but the IATF drafts for blind BBS and pseudonyms have been updated we've got a new push from Europe to try and help get this done quicker and we've got some cryptographers that are going to be helping present at the Vienna IETF so Hopefully we get BBS nailed down before time runs out on classical computing cryptography. any other questions? so I've got editorial action items.</p>
+<p id=566b class="phone s03"><cite>Greg_Bernstein:</cite> One thing I was wondering since Ted's on the call, Ted, have you thought about doing just an overall editorial PR on the quantum resistance.</p>
+<p id=01c4 class="phone s03"><cite>Greg_Bernstein:</cite> So, just scan the whole thing for us and do fixups rather than because I know you usually do that.</p>
+<p id=08eb class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> I've sure thought about it,…</p>
+<p id=db1b class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> but it would take me a week just to get my head wrapped around the whole thing.</p>
+<p id=03a2 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> It's much easier to do the pieces, I'm afraid. if the time gets there,…</p>
+<p id=431c class="phone s03"><cite>Greg_Bernstein:</cite> Wait to look at my PRs.</p>
+<p id=46f3 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=7a49 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> I will certainly do it, but I'm afraid it's not top of my list.</p>
+<p id=6000 class="phone s03"><cite>Greg_Bernstein:</cite> I will try to when I see something that bugs me in the writing,…</p>
+<p id=fcbb class="phone s03"><cite>Greg_Bernstein:</cite> I will try and do a PR and then you can fix up what bugs me. Okay.</p>
+<p id=1bde class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> You can also just log an issue on the thing and…</p>
+<p id=311e class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> other people can write the PR and I can pick on them. It doesn't matter which way it goes.</p>
+</section>
+
+<section>
+<h3 id=8977>Perception Of Selective Disclosure Complexity</h3>
+<p id=a4e3 class="phone s03"><cite>Greg_Bernstein:</cite> Any other questions about DI in general? I would like to do something about the perception of selective disclosure as being hard partially there's one or two highle functions and then a rest of dis supporting.</p>
+<p id=7198 class="phone s03"><cite>Greg_Bernstein:</cite> So maybe if we're going to put it into a separate section, maybe Dave can help me think about how to Dave how to make it look less intimidating.</p>
+<p id=46e0 class="phone s02"><cite>Dave_Longley:</cite> So I'm not sure if certainly the comments about SD could be related to implementation challenges but I'm not sure that it could be use of selective disclosure in a given use case itself has complexities should you mark things as mandatory? Should you not? If people decide to disclose this field and not that field, And what does it mean for your data modeling? You need when you're modeling something that supports selective disclosure, you need to keep that in mind. So you don't create data models that don't work very well.</p>
+<p id=1aed class="phone s02"><cite>Dave_Longley:</cite> don't create fields that are if this field's present and set to true, then it totally changes the meaning of the credential. that's a bad data modeling thing. But people who aren't thinking about that might reach for that and then their credentials can't easily be selectively disclosed. So you've got to think through things like that when you're designing your credentials. I think that's inescapable regardless of the selective disclosure technology or…</p>
+<p id=06a5 class="phone s02"><cite>Dave_Longley:</cite> how challenging or easy it might be to implement and…</p>
+<p id=ba30 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. …</p>
+<p id=62a2 class="phone s02"><cite>Dave_Longley:</cite> that's just me talking. I mean if there were spec specific things people said about we could make it easier for people to implement if we change the instructions this way or that way we should certainly take that feedback. But I do know just selector disclosure in general is a higher lift but it gives better benefits to the users of credentials.</p>
+<p id=abee class="phone s03"><cite>Greg_Bernstein:</cite> when I go and we get a little bit if we have a highle section for selective disclosure rather than selective disclosure functions a couple levels down. We have this limit about three levels of hierarchy in the table of contents.</p>
+<p id=f0b6 class="phone s03"><cite>Greg_Bernstein:</cite> And when we started with a level or two down already, we ended up with a very long list of selective disclosure functions that kind of hid the hierarchy within them and such like that. Maybe we can, because I've done three different flavors of selective disclosure reusing these functions now and they work and they work pretty well. is just how clear it is to others. I mean, I'd love to get it Ivonne, I'd love to get it to the point where we got the common ALGs because that sure made my implementations easier. Ivon</p>
+<p id=9add class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I think what I would like to have but okay it's only me is that section I mean the one on selective disclosure that would begin by some very high level description of…</p>
+<p id=3cf4 class="phone s04"><cite>Ivan_Herman:</cite> what the hell is happening.</p>
+<p id=953f class="phone s03"><cite>Greg_Bernstein:</cite> Yep.</p>
+<p id=43e1 class="phone s04"><cite>Ivan_Herman:</cite> I mean it's very difficult to take a spec and…</p>
+<p id=8148 class="phone s03"><cite>Greg_Bernstein:</cite> I get it.</p>
+<p id=10001 class="phone s04"><cite>Ivan_Herman:</cite> I know a lot of people consider that as a must and readability is bad but it's very difficult to dive into mathematical functions essentially one after the other without having some sort of an overall idea of guy this is…</p>
+<p id=70ec class="phone s04"><cite>Ivan_Herman:</cite> what happens roughly and then you get down into the gritty nitty details And I didn't find that in the existing specs.</p>
+<p id=8437 class="phone s03"><cite>Greg_Bernstein:</cite> Maybe for regular processing we have that diagram that's like shows transformation this</p>
+<p id=672f class="phone s04"><cite>Ivan_Herman:</cite> Yeah. that would be very helpful.</p>
+<p id=67ba class="phone s03"><cite>Greg_Bernstein:</cite> than this, hashing blah blah blah. Maybe we can do a diagram like that for selective disclosure because it's gotten clearer in my head now and I've done three different flavors of it. But Philip</p>
+<p id=d118 class="phone s06"><cite>Phillip_Long:</cite> Yeah, I'm just responding in fact to David's comment in that it's almost as though the thinking about this is at the time when you're building your credential as he mentioned and at least at the high level and I don't know whether we've included in the VCDM data model explanation of signatures and…</p>
+<p id=a167 class="phone s04"><cite>Ivan_Herman:</cite> No.</p>
+<p id=aae6 class="phone s06"><cite>Phillip_Long:</cite> the reference sufficiently of selective disclosure and its implications to the data</p>
+<p id=8982 class="phone s06"><cite>Phillip_Long:</cite> model that and…</p>
+<p id=29a8 class="phone s06"><cite>Phillip_Long:</cite> maybe that's where it really belongs because otherwise you have to dive into it in a detail that people just reading and implementing the VCs and want later to have selective disclosure will perhaps miss it.</p>
+<p id=c915 class="phone s03"><cite>Greg_Bernstein:</cite> Because I don't think that selective disclosure is probably going to get maybe even more important.</p>
+<p id=3cf2 class="phone s03"><cite>Greg_Bernstein:</cite> We were talking with some of our cryptographer friends and what they asked us to do for BBS is allow a right now we can di not disclose something. They asked us for another type of disclosure which is like you could call it they call it a commitment. It's somewhat of a hidden disclosure and then you do a zero knowledge proof about that thing. So your bank issues a credential that says you've got x amount of dollars.</p>
+<p id=19ce class="phone s03"><cite>Greg_Bernstein:</cite> Instead of disclosing that completely hiding it from a verifier, you hide it but then prove that you've got an amount over a certain value. So you use it to do an additional proof about things. and that seemed a very powerful thing. so that's a selective disclosure like mechanism that could work with the tools we have plus and that's exactly what we use. Okay.</p>
+<p id=2735 class="phone s03"><cite>Greg_Bernstein:</cite> So I'll take that and I'll open up an issue about let's get some diagrams, some better things because now we have more space for it because before it was like I can't even hire,…</p>
+<p id=3ea1 class="phone s03"><cite>Greg_Bernstein:</cite> organize this stuff more because we were kind of out of space. I know what it message should be. loud and clear. Phillip Okay.</p>
+<p id=75ba class="phone s04"><cite>Ivan_Herman:</cite> I'm sorry.</p>
+<p id=312c class="phone s04"><cite>Ivan_Herman:</cite> We shouldn't have a side discussion there.</p>
+<p id=10002 class="phone s06"><cite>Phillip_Long:</cite> Yeah. I following up on Ivon's comment dis the discussion that was around full disclosure in a private exchange.</p>
+<p id=9ea8 class="phone s06"><cite>Phillip_Long:</cite> That's hard to describe. This was associated with commercial in u privacy or rather co companies that do not want to disclose attributes of products in an exchange with a third party.</p>
+<p id=10003 class="phone s06"><cite>Phillip_Long:</cite> And so they have instead just expressed them in a context where the communication is limited to a particular audience. But it seems as though that has been more because there wasn't an alternative way of being careful out about expressing the attributes of the product. They want to keep confidential versus they just didn't have any way to do it. And I think Ivonne perhaps this is a sense that you may have gotten as well. But it seems as though they're open to the idea or at least some of them open to the idea of the flexibility that selective disclosure enables and therefore they are more open to it.</p>
+<p id=05d1 class="phone s03"><cite>Greg_Bernstein:</cite> Dave.</p>
+<p id=35e3 class="phone s06"><cite>Phillip_Long:</cite> The only resistance was their unfamiliarity with the whole process and the cryptography involved.</p>
+<p id=99d0 class="phone s06"><cite>Phillip_Long:</cite> I think that's where that resistance is coming</p>
+<p id=10004 class="phone s02"><cite>Dave_Longley:</cite> Yeah, one consideration for any use case is whether handing someone a credential that could be used in many different places to disclose many different subsets of information is of significant value. There are a lot of personal credentials that can work that way. and it's just a question of whether or not that even is well suited to the commercial case. Are the credentials that they're getting going to be filled with things that they would, have many different subsets of things to disclose or at least would there be two clear different subsets for the same credential or does it just make sense for them to make a credential that's going to do, crossborder stuff and have different credentials for other use cases. And that's something</p>
+<p id=6322 class="phone s02"><cite>Dave_Longley:</cite> I don't know where we put this sort of framing around how to think about your use cases and whether or not it is valuable to buy into extra complexity to do certain things. but it is certainly helpful in some cases and in the personal credential case it definitely gives more power to the person holding the credential in a way that you would want to give to them…</p>
+<p id=57ea class="phone s02"><cite>Dave_Longley:</cite> if you can and that might not be true for a number of other use cases.</p>
+<p id=7ce1 class="phone s06"><cite>Phillip_Long:</cite> my hands up so I'll respond.</p>
+<p id=cdce class="phone s06"><cite>Phillip_Long:</cite> I think that's exactly right In fact, the thing that seemed to emerge is that this is actually where governance is the key consideration in the sense that there may be a complicated and extensive private inconfidence information particularly in a product cross crossborder kind of context.</p>
+<p id=10005 class="phone s06"><cite>Phillip_Long:</cite> But there may be patterns of the sets of data that they exchange in different contexts which the organizations that are communicating establish governance rules around and therefore reduce the complexity by saying this subset should be done this way for this context. And that seemed to also resonate and try to simp make it so that taking what you just described the notion that these things might be presented in lots of different settings one needs to have thought through what you're willing to share or what you're concerned about and would be unwilling to share in one setting versus another. So I think this the question of where to put it to me is in governance.</p>
+<p id=c605 class="phone s03"><cite>Greg_Bernstein:</cite> Thanks.</p>
+<p id=10006 class="phone s02"><cite>Dave_Longley:</cite> That sounded good to me. to slightly switch topics, Greg, I did want to make sure that you saw the couple of the comments in the chat here after you were talking so you had a chance to read it. but I don't remember and I didn't look just now during the call if we had a highle description at all in the way that Ivonne was describing for SD where we talk about that just the general what is happening with the data before you go about choosing a particular type of cryptography to do something to it and we should describe what's happening with the data you take a VC you convert it into a flat list of messages which is</p>
+<p id=a8cd class="phone s02"><cite>Dave_Longley:</cite> using RDFC to do that. So you're taking a VC and you're expressing it all the same information as individual statements. Each statement is what we describe in the VCDM spec as a claim subject a property and an object and technically a graph identifier. so you have that flat list of messages and then you hash all the mandatory ones together and you sign the selectively disclosable ones separately.</p>
+<p id=0459 class="phone s02"><cite>Dave_Longley:</cite> and how you do that signing, whether you use a multi- message technology like BBS or you literally sign each individual message or you do some salted hash thing is a detail of the cryptography not a detail of what you're actually doing to prepare the data so that you can do selective disclosure with some type of cryptography.</p>
+<p id=8956 class="phone s03"><cite>Greg_Bernstein:</cite> Ivonne that I do want to comment Okay.</p>
+<p id=7f9d class="phone s02"><cite>Dave_Longley:</cite> And those are kind of the two different steps and all those common functions are around just preparing the data so that you can…</p>
+<p id=2ddc class="phone s02"><cite>Dave_Longley:</cite> then use some kind of crypto to do what you need to</p>
+<p id=5cc0 class="phone s04"><cite>Ivan_Herman:</cite> So just to answer…</p>
+<p id=8199 class="phone s04"><cite>Ivan_Herman:</cite> what they said, I just checked in the DIP spec and the selective disclosure appears in the privacy consideration but nowhere else.</p>
+<p id=cc75 class="phone s03"><cite>Greg_Bernstein:</cite> I'm gonna double plus to Dave because like I said, I've been working with the crypto people about what we call committed disclosure which allows additional proofs and that requires some extra preparation like just like a step because we need to know what parameters they want to do that fancy committed disclosure too. So we can actually not hash on that information for use in doing zero knowledge proof. So I think this is really good and I did copy your u I don't know if any of this gets preserved.</p>
+</section>
+
+<section>
+<h3 id=5c4b>Forgery Defense Publication Status</h3>
+<p id=c41a class="phone s03"><cite>Greg_Bernstein:</cite> So, I did your comment there, Dave, from the in call messages to turn that into a issue for the DIP spec. And I see Wesley's here. and if there's no more right now on data integrity, postquantum selective disclosure, we can turn it over to Wes. Where's</p>
+<p id=c4c6 class="phone s07"><cite>Wesley_Smith:</cite> All right. hey folks. sorry for my lateness. I'm glad that folks it sounds like, having a good discussion in my absence. I don't have a tremendous amount today for VC barcodes or for VC forgery defense. Ivonne, you might have already discussed this, but is there anything that you need from me on VC forgery defense to mute our timeline?</p>
+<p id=9b4a class="phone s03"><cite>Greg_Bernstein:</cite> Do we have a link to that? yes we do. Phil, no.</p>
+<p id=4ab0 class="phone s07"><cite>Wesley_Smith:</cite> Would you like me to put one in the chat?</p>
+<p id=a3f6 class="phone s03"><cite>Greg_Bernstein:</cite> Phil did.</p>
+<p id=aaf1 class="phone s07"><cite>Wesley_Smith:</cite> Excellent.</p>
+<p id=6fa6 class="phone s03"><cite>Greg_Bernstein:</cite> But Dude, you're</p>
+<p id=d324 class="phone s04"><cite>Ivan_Herman:</cite> Excuse me.</p>
+<p id=624d class="phone s04"><cite>Ivan_Herman:</cite> Wes, what was your question?</p>
+<p id=5045 class="phone s07"><cite>Wesley_Smith:</cite> I'm wondering,…</p>
+<p id=e171 class="phone s07"><cite>Wesley_Smith:</cite> you might have already discussed this, but is there anything you need from me for VC forgery defense to hit our timeline for first public working draft?</p>
+<p id=ec8e class="phone s04"><cite>Ivan_Herman:</cite> It has just been published.</p>
+<p id=ab1b class="phone s07"><cite>Wesley_Smith:</cite> Excellent. That is wonderful news.</p>
+<p id=9ab3 class="phone s04"><cite>Ivan_Herman:</cite> So the answer to your question is no.</p>
+<p id=86c2 class="phone s07"><cite>Wesley_Smith:</cite> That's great news.</p>
+<p id=2187 class="phone s04"><cite>Ivan_Herman:</cite> So it has been published about this morning.</p>
+<p id=a466 class="phone s07"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=6c69 class="phone s04"><cite>Ivan_Herman:</cite> I mean my time this morning.</p>
+<p id=cca7 class="phone s07"><cite>Wesley_Smith:</cite> Wonderful. Okay, then in that case, I think I would default to VC barcode issue processing, although I don't think there's really time for that given we only have five minutes left. so back to you, Greg. I'm all set.</p>
+<p id=ff04 class="phone s03"><cite>Greg_Bernstein:</cite> Would anybody else have a long list of action items that they should get started on me? If so, then maybe we'll call it a couple minutes early. Okay, I'll go start working on my action items, which I'll hopefully try and turn it to others, but let me go put some things down.</p>
+<p id=3cfe class="phone s04"><cite>Ivan_Herman:</cite> Thank you all.</p>
+<p id=8e5a class="phone s03"><cite>Greg_Bernstein:</cite> This is really good. This was really helpful on the big editorial things…</p>
+<p id=8041 class="phone s01"><cite>Elaine_Wooton:</cite> That was great. Bye.</p>
+<p id=8782 class="phone s03"><cite>Greg_Bernstein:</cite> because breaking up documents into sections usually requires a couple opinions on. All right, we'll see everybody next week.</p>
+<p id=255f class="phone s07"><cite>Wesley_Smith:</cite> Thanks folks.</p>
+<p id=2500 class="phone s03"><cite>Greg_Bernstein:</cite> All right. Dave Longley:</p>
+<p id=5ef1 class="phone s06"><cite>Phillip_Long:</cite> Cheers.</p>
+<p id=d742 class="phone s01"><cite>Elaine_Wooton:</cite> Juliet cuz we really Meeting ended after 00:49:28 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

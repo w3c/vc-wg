@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 30 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>30 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Kayode_Ezike's_Presentation, Parth_Bhatt, Patrick_St-Louis, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#7294">Community Updates And Agenda</a></li>
+<li><a href="#db1a">VC Comp Test Suite Repo</a></li>
+<li><a href="#7b16">VCOM Presentation Deck</a></li>
+<li><a href="#bf7b">Threat Model PR</a></li>
+<li><a href="#ee8e">Accepted Envelopes vs Crypto Suites</a></li>
+<li><a href="#94fe">OATH 2 Scopes Guidance</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=6ef3 class="phone s01"><cite>Patrick_St-Louis:</cite> I guess we'll get started in a couple of minutes. Think Kyod will be leading the call today. Hate to see this come in right now.</p>
+<p id=f471 class="phone s02"><cite>Kayode_Ezike:</cite> Yes, indeed. Welcome everyone.</p>
+<p id=cbb9 class="phone s02"><cite>Kayode_Ezike:</cite> I'll just wait another minute. Anyone comes in All righty.</p>
+<p id=ae7a class="phone s03"><cite>Joe_Andrieu:</cite> Yes, I can.</p>
+</section>
+
+<section>
+<h3 id=7294>Community Updates And Agenda</h3>
+<p id=34b1 class="phone s02"><cite>Kayode_Ezike:</cite> Can you all hear me hello and welcome everyone. Today is June 30th and this is the weekly firefighter credentials for API life cycle management task force call. My name is Kyote Zik and I'll be leading us to the call today. before we get started, let's keep in mind that all these calls are recorded and transcribed and that we are subject to all of the W2C policies of good conduct and of licenses and such. All before we dive into the agenda, I'd like to open up the floor to see if there are any community updates from anyone.</p>
+<p id=0846 class="phone s02"><cite>Kayode_Ezike:</cite> in front of the computer. Go ahead, Patrick. Awesome.</p>
+</section>
+
+<section>
+<h3 id=db1a>VC Comp Test Suite Repo</h3>
+<p id=74c0 class="phone s01"><cite>Patrick_St-Louis:</cite> not so much of a community update but just a little update relevant to us. So the VC comp test suite repo was created and updated yesterday and so I will try my best to have a initial PR to present next week covering the existing API issuer and VC API verifier endpoints.</p>
+<p id=eef7 class="phone s02"><cite>Kayode_Ezike:</cite> Exciting. Yes, I did notice that. thank you. That's be very useful. Appreciate anything else from anyone? And if not, anyone want to introduce or reintroduce? I think everyone hears this is a known quantity but just in case a few seconds if not that's okay. so we'll quickly go over the agenda. Today's relatively light just going to make a few announcements about some recent updates and then we're going to do the standard PR and issue processing.</p>
+<p id=9092 class="phone s02"><cite>Kayode_Ezike:</cite> So, the first of these topics that I wanted to just briefly touch on, I'm not going to really spend time on it, but I just wanted to call it out and make sure folks are aware, is that Wes put together a very useful presentation deck on overview of VCOM. I had a look at it. I wanted to bring it up just to encourage folks to review it offline and give feedback. And from what I saw, it was good. I liked what I saw. There was some small things here and there that could be refined just more like editorially, but generally the content thought was great and it could be a useful resource. I don't know where it could land, but it's just a useful resource that comes up a lot when we're in calls whether in the community like ECG other calls where we just want to give a high level overview of why is it different from other families and protocols.</p>
+</section>
+
+<section>
+<h3 id=7b16>VCOM Presentation Deck</h3>
+<p id=aa80 class="phone s02"><cite>Kayode_Ezike:</cite> having a resource like this handy is useful. So if folks have a chance just take a look at it feel free to leave comments so that's the first thing and then the other thing is this is going to lead directly into our PR. So there is a PR available now. Only reason why it's a separate item is because I mean there's a lot of gravity behind threat modeling of course in his group lately and Eric put a lot of great work and along with Joe of course in putting together a PR for the first draft of the third model. I already saw some reviews.</p>
+</section>
+
+<section>
+<h3 id=bf7b>Threat Model PR</h3>
+<p id=c415 class="phone s02"><cite>Kayode_Ezike:</cite> I left a few comments of my own earlier in the week and I was going to try to revisit it again to more thoroughly review it, so just want to encourage people to continue to give that feedback so that we can kind of get that merged in somewhat shortly maybe in next week or week week or any questions about any of those two things before we move on? If not, we'll move on to PR. Okay, just refresh. Make sure it's up to date. So, do that.</p>
+<p id=8949 class="phone s02"><cite>Kayode_Ezike:</cite> up this view. All right. I'm assuming we're still going to leave these for now, before I move on to the ones that were more recent maybe cuz take the silences as yes. So I'll just start with this one which is actually a carryover from last week.</p>
+</section>
+
+<section>
+<h3 id=ee8e>Accepted Envelopes vs Crypto Suites</h3>
+<p id=6c48 class="phone s02"><cite>Kayode_Ezike:</cite> So as a reminder about this issue which I'm just pasting in the chat here. this issue the intent of it was to clarify when to use accepted envelopes and when to accepted crypto suites. I saw that there was a discussion about that a few about a month ago at this point in a Slack channel where folks weren't sure when to use and so we reviewed it. I think folks mostly were happy with it from last week. There were some things that I was asked to include including just to call out to the legacy ED2519 for 2020 as crypto valley. So we now indicate in the spec that it's okay to include that. And then just change the wording around mutually exclusive.</p>
+<p id=196b class="phone s02"><cite>Kayode_Ezike:</cite> I think Dave was suggesting that we just specify that they can be used independently and separately from each other. so weren't too many changes since last week. but yeah, happy to go ahead Pat.</p>
+<p id=4771 class="phone s01"><cite>Patrick_St-Louis:</cite> have a risky question. ED25519 signature 2020.</p>
+<p id=e798 class="phone s02"><cite>Kayode_Ezike:</cite> I'll leave that to Dave who's probably equipped to answer any question.</p>
+<p id=0e81 class="phone s01"><cite>Patrick_St-Louis:</cite> I guess this is more of a data integrity spec how much of a pile would it be to use it as the actual crypto suite in the proof object and use that integrity proof? Is that to not do that or would it be a kind of interesting way to reconcile this legacy crypto suite with the current thing?</p>
+<p id=53af class="phone s04"><cite>Dave_Longley:</cite> So if I'm interpreting your question correctly, you're what if we have another way to express this leg legacy crypto suite and I don't think we should do that and I don't think there's interoperability for legacy systems on how it's currently expressed and if we add yet another way to do that especially for something in legacy that we hope to deprecate and…</p>
+<p id=813c class="phone s01"><cite>Patrick_St-Louis:</cite> Thank</p>
+<p id=1447 class="phone s04"><cite>Dave_Longley:</cite> then people just kind of keeps it going and has people do more work on it. I think this is a really minor thing. and eventually people just won't even use it in this when they're making query requests.</p>
+<p id=a93d class="phone s04"><cite>Dave_Longley:</cite> So, it'll just get dropped.</p>
+<p id=f7dc class="phone s02"><cite>Kayode_Ezike:</cite> Great. …</p>
+<p id=d976 class="phone s02"><cite>Kayode_Ezike:</cite> thanks for that. And any other questions or comments on this I think generally seems that people are okay with the changes here in which case it had Okay,…</p>
+<p id=b2be class="phone s04"><cite>Dave_Longley:</cite> Yeah, since you can't see chat thumbs up, I gave you a thumbs up and said the changes looked good to me.</p>
+<p id=ffff class="phone s02"><cite>Kayode_Ezike:</cite> Thanks, So, I will go ahead since this has been open since the last call, I think it's okay to just go ahead and rebase merge this. So, we'll just do that right now. I think history is pretty clean. Not that crazy here. So, yeah, let's go ahead and reverse the merge.</p>
+<p id=f1ee class="phone s02"><cite>Kayode_Ezike:</cite> and thank you for playing So this is for issue 629. So just going to go to the issues tab really quickly. Okay, that it is now okay to close one issue process. So let's now go over to pull request tab again. See So what we have next? sorry. Someone see that?</p>
+<p id=6b49 class="phone s02"><cite>Kayode_Ezike:</cite> Something. so next I'll come to the third model on I mean there's not too much to maybe say about it right now, but I'll come to that a little. Go ahead, Pat. …</p>
+<p id=129d class="phone s01"><cite>Patrick_St-Louis:</cite> I believe 636 could be a quick one to have a look and just close it was just pending an issue being created which I've created in link. So,</p>
+<p id=5547 class="phone s02"><cite>Kayode_Ezike:</cite> So, we already were okay with the changes and it was just about upgrading the new issue that if folks are okay with that, there are two approvals on this PR. I did look at this earlier too and it looks fine to me. So, yeah. it's cool with me. And I will go ahead and close it. And this will address issue 635. So let me just actually do this tab. So it's ready. 636. Great. Thank you for that magic.</p>
+<p id=44ed class="phone s02"><cite>Kayode_Ezike:</cite> So, two PRs and two issues processed. Let's go to next one. And I guess while we're with you, these ones still need some love. Patrick behind the scenes or should we look into them? Patrick. …</p>
+<p id=303e class="phone s01"><cite>Patrick_St-Louis:</cite> Sorry. what do you think? These ones. Kayode Ezike:</p>
+<p id=37e0 class="phone s02"><cite>Kayode_Ezike:</cite> just No problem.</p>
+<p id=fde4 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, sorry. These one. Just leave them to me. This were open before my GitHub account was like there's still some weird things happenings.</p>
+<p id=1f22 class="phone s02"><cite>Kayode_Ezike:</cite> All No problem. Great. So, we'll move forward with this one which is a new one since the last call. So I raised this issue few about a month ago at this point and the idea that there was a previous issue that I raised that was yearning to see a better sort of fidelity descriptions of what oath 2 scopes should look like for VCOM so that was put up but then I realized that there was still some more work that was needed sort of a little more guidance as far as for example giving guidance with the fact</p>
+</section>
+
+<section>
+<h3 id=94fe>OATH 2 Scopes Guidance</h3>
+<p id=64ea class="phone s02"><cite>Kayode_Ezike:</cite> that you should include an audience that points to the service that actually is hosting the resources right and you should also include in the instance that is actually you're targeting right so the issuer instance or verify instance whatever it may be right so things like that and then also just other best practices and I think also there were some examples here that I wasn't comfortable with there was a wide</p>
+<p id=42f7 class="phone s02"><cite>Kayode_Ezike:</cite> open read and write slash command as an example which I don't think should really be used anywhere. and so I just defined some of those as well and that's mostly So any comments? Go ahead. Go ahead Dave.</p>
+<p id=f140 class="phone s04"><cite>Dave_Longley:</cite> So what you described as the wide openen slash I think is designed to give access to slash add a particular audience. and…</p>
+<p id=e285 class="phone s04"><cite>Dave_Longley:</cite> maybe that needs to be more clear but it gives full permission to do whatever you want to do with that particular instance. And so that's sort of admin access to that instance or any of its APIs anyway.</p>
+<p id=12a6 class="phone s02"><cite>Kayode_Ezike:</cite> Right. Okay.</p>
+<p id=f9bc class="phone s02"><cite>Kayode_Ezike:</cite> Is it worth because I guess should that be implicit? Should we actually add those two back in addition to the ones That's the Okay,…</p>
+<p id=fd7f class="phone s04"><cite>Dave_Longley:</cite> I would put them back. But even the one that says workflows, I would expect that workflow to be part of the audience. that would just be part of the audience. I don't think you would ever create a read workflow a read scope that puts the instance in there. I would expect the instance to appear in the audience. dot</p>
+<p id=3f5b class="phone s02"><cite>Kayode_Ezike:</cite> I remember we discussed this actually offline I think sometime last year and I think you actually recommended that we included it in the scope itself.</p>
+<p id=10000 class="phone s02"><cite>Kayode_Ezike:</cite> And this also does relate to a question that I had actually interestingly enough which is whether or not to include I know the answer to that question probably but I was wondering if we should even include the instance inside of the audience. my intuition was yes that we should include instances slash id whatever inside the audience but I think you're saying we should also include the path components which is interesting because I guess those And okay.</p>
+<p id=b9cb class="phone s04"><cite>Dave_Longley:</cite> Those path components are for an instance that is a workflow instance So workflows wouldn't hang off of some It is an instance. So that's a workflow instance identifier.</p>
+<p id=89bb class="phone s02"><cite>Kayode_Ezike:</cite> I guess that's Okay. it's a good point.</p>
+<p id=3e84 class="phone s02"><cite>Kayode_Ezike:</cite> So then it seems to me that maybe a lot of this actually should be I think for one maybe this can just instead go into subsumed by the audience like guidance up here that I can give an example instead of added on top of here…</p>
+<p id=2ea0 class="phone s04"><cite>Dave_Longley:</cite> Yeah. of a workflow instance.</p>
+<p id=ee9b class="phone s02"><cite>Kayode_Ezike:</cite> which means it sounds it really is just about the scopes are always just going to be read by in stock.</p>
+<p id=8677 class="phone s04"><cite>Dave_Longley:</cite> Yeah. The scope should be lative. Read write and relative to the instance that the scopes are for.</p>
+<p id=f34c class="phone s02"><cite>Kayode_Ezike:</cite> I see. So then the SLAS exchanges I think that was there before was actually correct and that it would be hanging off of a workflow instead of Okay,…</p>
+<p id=e339 class="phone s04"><cite>Dave_Longley:</cite> Yeah, that's right.</p>
+<p id=27b3 class="phone s02"><cite>Kayode_Ezike:</cite> this one exactly. Okay, so that's good to know. I guess then I'll modify this in order to reflect that.</p>
+<p id=f6a6 class="phone s02"><cite>Kayode_Ezike:</cite> just change the audience description up here to give an example.</p>
+<p id=7153 class="phone s04"><cite>Dave_Longley:</cite> That's good. Okay.</p>
+<p id=9d0f class="phone s02"><cite>Kayode_Ezike:</cite> Which it probably means all of these will be reversed back to what they were originally. So I'll think a little bit more about that. Ted, I saw your comment. I sorry I was in the middle of talking and looking at it. Could you maybe walk around Ted looking at your True,…</p>
+<p id=566d class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I can find my mute button. I'm suggesting that we keep the pull requests andor issues churning by sorting them by the least recently updated. It just makes sure that we don't always focus on the newest thing and leave the oldest thing forever.</p>
+<p id=8334 class="phone s02"><cite>Kayode_Ezike:</cite> It's feedback. okay. Yeah, this might even save this somewhere just in so more work to do here. I'll do that offline and a related PR.</p>
+<p id=8173 class="phone s01"><cite>Patrick_St-Louis:</cite> I would like to ask a question please for the…</p>
+<p id=1d8a class="phone s02"><cite>Kayode_Ezike:</cite> Yeah,…</p>
+<p id=c51e class="phone s01"><cite>Patrick_St-Louis:</cite> what yeah so just two question first of all is this a normative thing we're adding to the spec meaning we'll have to test it for conformance or… Kayode Ezike:</p>
+<p id=ddfb class="phone s02"><cite>Kayode_Ezike:</cite> sorry Patrick. so I look at it as a normative thing just…</p>
+<p id=ef19 class="phone s01"><cite>Patrick_St-Louis:</cite> is this an appendicit situation ation normative people. Okay.</p>
+<p id=d9d3 class="phone s02"><cite>Kayode_Ezike:</cite> because it will allow for basically existing instances to know what scopes to expect in their tokens and things of that sort. and to be clear, this actually was technically in the spec already. It just wasn't defined well enough. yeah.</p>
+<p id=5c6c class="phone s01"><cite>Patrick_St-Louis:</cite> So let's just keep in mind if we want it this way we'll need to have tests for these conformance tests for oath which is fine just it adds some test that we'll need to cover. second question. So you mentioned Dave, could you clarify what instance means in the context of VCOM workflows?</p>
+<p id=10001 class="phone s04"><cite>Dave_Longley:</cite> I don't remember if at some point there was a issue about talking about instances in the spec. I'd have to search the spec right now to see if we got around to doing that. But an instance more or less refers to a particular configuration. it's an instance of one of the sets of APIs like an issuer instance,… Patrick St-Louis:</p>
+<p id=e274 class="phone s04"><cite>Dave_Longley:</cite> a verifier instance, a workflow instance. where the endpoints defined in the s hang off of it entified as a particular configuration. So if you're implementing your API with instance support rather than there's just perhap you would use workflows slash and then I think we call it the local workflow ID and…</p>
+<p id=633d class="phone s04"><cite>Dave_Longley:</cite> that local workflow ID identifies is the local identifier of the instance the full URL to that is the full instance ID.</p>
+<p id=2feb class="phone s01"><cite>Patrick_St-Louis:</cite> Interesting.</p>
+<p id=f0ca class="phone s01"><cite>Patrick_St-Louis:</cite> So an instance is not an You have an exchange of a workflow instance. So when we talk about workflow let's say let's start a workflow, we really mean start an exchange of an instance of a workflow. Right.</p>
+<p id=d0bd class="phone s04"><cite>Dave_Longley:</cite> So the word instance is used across any of these general types. So you can have a workflow instance, you can have an exchange instance, you can have a verifier instance, issuer instance, status instance. And a workflow instance allows you to create exchange instances.</p>
+<p id=aae4 class="phone s03"><cite>Joe_Andrieu:</cite> Awesome.</p>
+<p id=1bac class="phone s04"><cite>Dave_Longley:</cite> So any exchange instance is sort of a sub component of a workflow instance.</p>
+<p id=3d8c class="phone s02"><cite>Kayode_Ezike:</cite> These are great questions.</p>
+<p id=1d39 class="phone s04"><cite>Dave_Longley:</cite> It's scoped to a specific workflow instance.</p>
+<p id=4379 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=5374 class="phone s01"><cite>Patrick_St-Louis:</cite> That makes sense. Thank you.</p>
+<p id=10002 class="phone s02"><cite>Kayode_Ezike:</cite> Great. So, we'll move on to the last PR for today. and this was quite similar to the one we just process. This has to do with Zcaps. I know that this has been something that we've been a little kind of shing a little bit just because we have been trying to figure out the status of it. I think I've noticed more comfort around referring to it especially as we have a capability based storage like work item coming up and also even in the threat model that I saw earlier I noticed that there's an encouragement of using it more but even if there wasn't I think it's important to include it if nothing more than for the fact that in this workflow configuration schema there is a controller field</p>
+<p id=1fca class="phone s02"><cite>Kayode_Ezike:</cite> that essentially is a Zcap or it's supposed to be the control that is in a ZCAP. and so I think it is important that we similar to the way that we're defining scopes for OOTH that we define the appropriate actions for Zcap because the core spec doesn't define those actions for you. It's up to whatever profile of Zcap that you're using to define them. And so that's what this PR is about. basically, yeah, just that it's very similar to what you saw earlier, except now it has an example of a Zcap and also just subsets of them that would be appropriate for different sort of API endpoints and use cases. And yeah, so that's all. Go ahead, Dave.</p>
+<p id=f9f0 class="phone s04"><cite>Dave_Longley:</cite> I haven't had a time to look at this PR yet, but some of the terminology from the ZCAP spec that might help here is to refer to the controller that's in an instance as the root controller of that instance.</p>
+<p id=9159 class="phone s04"><cite>Dave_Longley:</cite> And then that helps make it clear that the controller for the root capability would be that same controller. Yes.</p>
+<p id=c018 class="phone s02"><cite>Kayode_Ezike:</cite> …</p>
+<p id=f00c class="phone s02"><cite>Kayode_Ezike:</cite> it would always have to be So, the controller in the workflow config will always be the root controller. let's get to know. I think that's the only place in the spec where controller I'll have to double check is used, but that's good I'll leave time for folks at least another week or so for folks to take a look at this. I know folks like Demetri might be interested in seeing this considering your involvement with that work. but anyone else feel free to also chime in where you feel you can. Great.</p>
+<p id=82e4 class="phone s02"><cite>Kayode_Ezike:</cite> So that's not it for the really quickly. I mean,…</p>
+<p id=faec class="phone s02"><cite>Kayode_Ezike:</cite> I won't spend too much time. I know we don't have Eric here today. I'll do have Joe here. Not sure if there's much you want to say, but basically …</p>
+<p id=99f9 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> just before we jump further.</p>
+<p id=365c class="phone s02"><cite>Kayode_Ezike:</cite> sorry. Yes.</p>
+<p id=ed7d class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Yeah. you had asked what the right capitalization is for Zcap. That's a really good question. Dave, you just referenced the specification…</p>
+<p id=f75b class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> which I'm not able to find quickly on a link to that would be helpful to have somewhere and that should give us the right capitalization. There seem to be a number of things using that abbreviation.</p>
+<p id=3484 class="phone s02"><cite>Kayode_Ezike:</cite> Yeah. Right.</p>
+<p id=6f66 class="phone s02"><cite>Kayode_Ezike:</cite> So, the spec uses all caps. I've noticed. but I've seen in other spaces where people are using Zcaps that sometimes they capitalize a C and that's it and sometimes capitalize nothing. So I just was wondering and maybe that's maybe there.</p>
+<p id=95a0 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> The spec should be authoritative.</p>
+<p id=7ce4 class="phone s02"><cite>Kayode_Ezike:</cite> So then I will probably update. It also uses Zcap-LD which I'm not using anywhere.</p>
+<p id=bae8 class="phone s02"><cite>Kayode_Ezike:</cite> So I don't know if that's still we want to keep but okay that's it. So I guess we'll do that. Joe I suspect you want to talk about the model but I don't know if others have other comments before that related to this.</p>
+<p id=6f42 class="phone s04"><cite>Dave_Longley:</cite> I've got a quick ZCAP comment if Joe is not talking about that.</p>
+<p id=0462 class="phone s03"><cite>Joe_Andrieu:</cite> I am not.</p>
+<p id=7b90 class="phone s02"><cite>Kayode_Ezike:</cite> Okay,…</p>
+<p id=a2ae class="phone s03"><cite>Joe_Andrieu:</cite> Yeah, I was queued up for threat modeling. So, you can defer me until we're done with this part of the thread.</p>
+<p id=935c class="phone s04"><cite>Dave_Longley:</cite> So real quick, this section in VCOM, we don't want to take on a normative dependency on the ZCAP spec because, it's still a CCG work item and we don't expect it to move along as quickly as the VCOM spec. So, we should make sure this section is non-normative. These are all just, suggestions for patterns. and that spec is a little bit out of date and should say ZCAP, but still says Zcap LD.</p>
+<p id=c73a class="phone s02"><cite>Kayode_Ezike:</cite> sounds Great. I think Ben had his hand up first. Go ahead, Benjamin. Okay,…</p>
+<p id=fedc class="phone s06"><cite>Benjamin_Young:</cite> Yeah, I was just going to catch you…</p>
+<p id=90df class="phone s06"><cite>Benjamin_Young:</cite> because I was joking about the Zcap LD. It is I don't think anybody's called it Zcap LD in six years. So, yeah, nobody would know what that is. yeah, it just longly mentioned just needs dusting</p>
+<p id=adc9 class="phone s02"><cite>Kayode_Ezike:</cite> Thanks. go ahead, Patrick.</p>
+<p id=9f69 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, just to go back in my earlier question about OAT and normative if we make ZCAP non-normative and OAT normative I think this just create a kind of a weird in between.</p>
+<p id=59f5 class="phone s01"><cite>Patrick_St-Louis:</cite> So not sure if we just want to give recommendation for authorization just so that they're at the same level here and there's no preferential treatment or anything like that.</p>
+<p id=bae7 class="phone s02"><cite>Kayode_Ezike:</cite> Yeah. Yeah,…</p>
+<p id=4122 class="phone s02"><cite>Kayode_Ezike:</cite> and just really quickly to that too, I mean I noticed it seems to me that a lot of the production instances that I know about are using that the ZCAP authorization mechanism and so that also adds a little bit to that disconertment because it's just like what signal does that give to I guess the community if we're kind of not making something normative that is being used regularly. in materializations of the spec. So go ahead Dave. Okay.</p>
+<p id=6d5e class="phone s04"><cite>Dave_Longley:</cite> Yeah, we might just want to clearly mark that these are both non-normative sections but we can't use the word recommended e either I think but being able to say it's highly suggested or that you use the p these patterns and then have the section for those two patterns And they can both just have informative links.</p>
+<p id=0cb7 class="phone s02"><cite>Kayode_Ezike:</cite> And I guess also on a point of normative versus non-normative, I guess we're saying that the uses usage of them is non normative, but the places where I'm using normative language here is more so relative to this actual reference like the specs themselves even though're at least ZCAP's case not yet ready but know the oath case is ready but we're still not like claiming it's normative.</p>
+<p id=aecd class="phone s02"><cite>Kayode_Ezike:</cite> So, is it okay to leave the normative language if it's not away?</p>
+<p id=a069 class="phone s04"><cite>Dave_Longley:</cite> We should change it.</p>
+<p id=a186 class="phone s04"><cite>Dave_Longley:</cite> You have to just change it to other language. It's like is expected to and things like that.</p>
+<p id=0df1 class="phone s02"><cite>Kayode_Ezike:</cite> Got All right, no problem. We'll make a mental note of that and update this accordingly. Thanks for all the great discussion and feedback there.</p>
+<p id=2cc0 class="phone s02"><cite>Kayode_Ezike:</cite> Nothing else on that. We'll return to VCOM and I think Joe, you wanted to say a few things about it.</p>
+<p id=d826 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah.</p>
+<p id=e220 class="phone s03"><cite>Joe_Andrieu:</cite> Just to give folks a heads up, I have been working through it this morning while we've been on the call. there have been a bunch of great feedback especially from Manu and from Ted and I see a couple from you Kyrie. I will be going through all of this and the things that seem friendly or editorial or easy, I will just accept. and I'll raise questions for those that seem to need more conversation. Some of them definitely do. but let me filter this through so we can identify, hey, there were three really hairy ones that Manu Ted or someone brought up substantive issues and we can bring that back to the group and go from there.</p>
+<p id=d4bb class="phone s03"><cite>Joe_Andrieu:</cite> We are please by all means feel free to engage in the conversation and…</p>
+<p id=94b5 class="phone s02"><cite>Kayode_Ezike:</cite> Awesome. Thank you so much,…</p>
+<p id=93ed class="phone s03"><cite>Joe_Andrieu:</cite> raise issues especially if you can propose language hey I don't like this response it should have a different word just go ahead and put a suggestion in that PR are and will adopt it. If it makes sense</p>
+<p id=b2b5 class="phone s02"><cite>Kayode_Ezike:</cite> Joe, and for all the hard work that you and Eric put in. I think also Eric had a question in the overview of the PR should we create more issues for the questions he has or keep the main running issue. I would recommend the latter. just for the sake of sanity because I can see this really exploding into several issues for each of the questions but that's just a small response that I wanted to I meant to put somewhere…</p>
+<p id=82d6 class="phone s02"><cite>Kayode_Ezike:</cite> but I don't think I actually captured that anywhere yet. So sounds good.</p>
+<p id=d2f0 class="phone s03"><cite>Joe_Andrieu:</cite> Yes, I think I agree coyote with your intuition here.</p>
+<p id=10003 class="phone s03"><cite>Joe_Andrieu:</cite> Especially if it's a short issue. some of these there are no responses, So if someone can come up with a response, we can just put it in here. I think if for those that we cannot resolve within the next week then we should consider escalating some of those to issues so that we could get this pulled in and then we'll retain those issues for the longer conversation that maybe we need to</p>
+<p id=566c class="phone s03"><cite>Joe_Andrieu:</cite> You're welcome.</p>
+<p id=10004 class="phone s02"><cite>Kayode_Ezike:</cite> Looks like in all the time that you spoke and my page two hasn't loaded fresh question, but it's okay. I mean, nothing to review there for now. folks just feel free to review offline and leave comments. Of course, that shows up. But yeah, great work again Joe and Eric. Thanks. That takes us to issues. so like I mentioned last week, we created a v1.0 O label that started to use to u classify the issues. And so I've gone through most of the ones on this first page. there are that I still am a little hazy on anyways there few little hazy on could need some help.</p>
+<p id=10005 class="phone s02"><cite>Kayode_Ezike:</cite> Some of these don't have it intentionally. For example, not these ones, but there are a few over here that I left the comment in where I just said basically we're not including It's not a blocker for review candidate rec rather for version 10. But if there's time that folks can feel free to look into them. And so I think the best thing that we can do right now is that we should go through some of the ones that I'm a little hazy on. For example, there's one that Pat raised on error handling for workflows and there's also one that we discussed last week that I left a comment on and did actually decide to label as V1 is related to the array valleys.</p>
+<p id=b6c8 class="phone s02"><cite>Kayode_Ezike:</cite> So maybe we'll do that one first and just make sure we have agreement there and then there's a few others that I was struggling a little bit with. And so that's what we'll do. So first let me just quickly go ahead Patrick topic this.</p>
+<p id=b5b2 class="phone s01"><cite>Patrick_St-Louis:</cite> Happy to talk a bit about the error handling issue.</p>
+<p id=85b6 class="phone s02"><cite>Kayode_Ezike:</cite> Sounds good. all right let's do that One second. Let's go.</p>
+<p id=5378 class="phone s01"><cite>Patrick_St-Louis:</cite> So because there's kind of two things in this issue. The first one is defining different error problems that could happen during a workflow. And the other one is defining an endpoint to report these error to the other party of a workflow exchange. I think if we want to scope this for 1.0,</p>
+<p id=10006 class="phone s01"><cite>Patrick_St-Louis:</cite> I know and I believe that's one of the tasks we want to define a workflow processing algorithm of some sort in the spec. I think it would be worthwhile to just define these problem details and leave out this whole thing about providing an endpoint so the other person can report these problem details. I think that's something we could kind of scope a little bit this issue for 1.0. I could think of many reason why someone would have a hard time processing a workflow whether that's a malformed template or a proof doesn't verify.</p>
+<p id=2c74 class="phone s01"><cite>Patrick_St-Louis:</cite> a lot of these things are going to exist in other spec probably the example about proof doesn't verify is a good example that the problem details is already there so we don't need to define it here…</p>
+<p id=59da class="phone s01"><cite>Patrick_St-Louis:</cite> but I think for things related to workflow exchanges and processing could probably add a couple</p>
+<p id=4926 class="phone s02"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=abda class="phone s02"><cite>Kayode_Ezike:</cite> Just really quickly, so the consumer of these errors is supposed to be like an internal admin or a holder just to be explicit about it.</p>
+<p id=ca8b class="phone s01"><cite>Patrick_St-Louis:</cite> So there's two parties, let's just say issuer and holder. Just make it simple. There's a workflow. The issuer gives a workflow, reaches the holder and they start an exchange, They engage. I think mostly as the holder processes the workflow exchange things may go wrong right of course ideally the workflow is going to be created it's going to be beautiful and it's not going to match but ideally an issuer would create a valid proof and it would never fail verification but there might be instances where the holder is not going to be able</p>
+<p id=c438 class="phone s01"><cite>Patrick_St-Louis:</cite> to reach the next step of the workflow. and I think we need to have something in the algorithm to say what should happen there. It doesn't need to go to the extent I was saying earlier that the holder can report to the issuer what problem they encountered. But at the very least, I think we should have a defined behavior. if the holder service cannot process …</p>
+<p id=3649 class="phone s02"><cite>Kayode_Ezike:</cite> Hurry.</p>
+<p id=44eb class="phone s01"><cite>Patrick_St-Louis:</cite> the holder workflow service cannot process a workflow step, they should to themsel to their coordinator whatever raise some kind of error and abandon the exchange because there's no way to gracefully abandon an exchange. you leave the conversation.</p>
+<p id=10007 class="phone s01"><cite>Patrick_St-Louis:</cite> Ideally I think it would be nice to have a way for the holder to tell the issuer hey I'm having this problem I cannot complete this workflow. I can think many reason why this would be useful that there's a problematic workflow. the issuer could see none of the olders can complete the workflow and all telling me this thing is wrong. But at the very least to put in the spec a I don't need to be too crazy but I can think definitely a problem detail. maybe we can start with something just unable to continue and leave the specific detail kind of out of this.</p>
+<p id=c3f4 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah so because we need to have these algorithms are in the other spec a sort of a high level algorithm I believe that's one of my PR that's going to be there and…</p>
+<p id=dfc7 class="phone s01"><cite>Patrick_St-Louis:</cite> there might be a couple of things that raise certain conditions in this algorithm like we want for example when someone interacts with an exchange they will need to make sure that the correct keys are there,…</p>
+<p id=63af class="phone s02"><cite>Kayode_Ezike:</cite> Then yes,…</p>
+<p id=3d20 class="phone s01"><cite>Patrick_St-Louis:</cite> They need to make sure there's a verifiable presentation request. They need to make sure there's a verifiable credential or Yeah,…</p>
+<p id=1290 class="phone s02"><cite>Kayode_Ezike:</cite> thank you Pat. And that's actually where I was leading is you mentioned the other P you have the algorithm. do you think this would just be added to that?</p>
+<p id=cecd class="phone s01"><cite>Patrick_St-Louis:</cite> I think they can both be addressed in the same PR.</p>
+<p id=6901 class="phone s01"><cite>Patrick_St-Louis:</cite> What I can do here or if you want to do is I can respond to this issue and clarify the scope and say we're not going to have a way to report these problems just yet…</p>
+<p id=def9 class="phone s01"><cite>Patrick_St-Louis:</cite> but at least some kind of set of problems exist that people can</p>
+<p id=6024 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, thanks.</p>
+<p id=86f6 class="phone s02"><cite>Kayode_Ezike:</cite> Go ahead, Dave. Yeah.</p>
+<p id=a3ab class="phone s04"><cite>Dave_Longley:</cite> I don't remember.</p>
+<p id=d7c5 class="phone s04"><cite>Dave_Longley:</cite> I know our implementation has this feature. I don't remember if I included it in the generic algorithm text that I wrote up that's going into that other issue one way or another. there's a place that I might have put in there to save the last error that happened with the exchange so that it could be made available to a coordinator system that's pulling exchange state and so yeah last hair it's in the spec so that is probably in the algorithm if it's not and so that might also be a place to talk about this</p>
+<p id=ee8f class="phone s02"><cite>Kayode_Ezike:</cite> Yeah, replacements. So, thanks that for that reminder. I do remember that property. So, then it sounds that we should classify this under B10. That's I think the first business.</p>
+<p id=e884 class="phone s01"><cite>Patrick_St-Louis:</cite> with the reduced code. I think this is the key part here we don't want to include this new feature of communicating to the other party. We can explore if the last error is suitable for this. at least define a couple new codes here that are relevant to workflows and exchanges. Most of the issuer verifier service I think these are covered by other specs whether that's integrity data model so for the workflow exchange you're going to want to validate the response you get right if you want to advance to the next step you want to validate that the respond kind of matches the spec.</p>
+<p id=8b99 class="phone s01"><cite>Patrick_St-Louis:</cite> So if it's malformed maybe you have a response body malformed there these kind of not hyper specific but specific enough things because this is one of the only spec that we really touch HTTP right exchange the other specs are very kind of self-contained like your software has this document and you need to manipulate it but here We're talking about two entities interacting with each other.</p>
+<p id=0df2 class="phone s01"><cite>Patrick_St-Louis:</cite> So I think it adds some new problem details that are worth being define. And I'm probably thinking around four or five something like that, not more.</p>
+<p id=aa65 class="phone s02"><cite>Kayode_Ezike:</cite> Sounds good.</p>
+<p id=2f7a class="phone s02"><cite>Kayode_Ezike:</cite> So I'm going to do this and assign it to you Pat. And essentially the task is to combine this with I'm going to link to the actual issue but the workflow processing algorithm which has an issue and a draft if I recall correctly and we will assign this we will say that yes we can kind of say PR exists but for now let's just say 1.0 at least and I think that's good enough for now. great. Thank you, Patrick. And I did notice here, I copied both of your comments, for each sari. So, next time I will I'll try my best to remember to use,…</p>
+<p id=38dc class="phone s02"><cite>Kayode_Ezike:</cite> the date ascending, filter that you Yes.</p>
+<p id=8628 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> And no worries.</p>
+<p id=5d50 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> It's more of a thing with longer lists of issues or PRs. but certainly as time gets tighter, it gets more important to do this stuff.</p>
+<p id=10008 class="phone s02"><cite>Kayode_Ezike:</cite> Certainly. and part of also just spending time processing these issues offline. I guess for me I have in top of my mind the ones that I know for sure need to be classified and even some of the older ones that I came across today for example.</p>
+<p id=2016 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> All</p>
+<p id=0a16 class="phone s02"><cite>Kayode_Ezike:</cite> So it's still useful though and I will try to see if ways we can incorporate it in future calls. And so the next one that I wanted to get to was one that Dave created here which we never got to classify one second. yes So yeah Dave could you remind us about this one and give us a sense if you feel like it's something that we should include in V1.</p>
+<p id=90e5 class="phone s04"><cite>Dave_Longley:</cite> Yeah, personally I think we should market v 1.0 and see if we can get it in. because the DC API which is presently being worked on at W3C currently has a pattern that involves passing a so I don't know how much anyone's familiar with the DC API that's digital credentials API that is a browser API that's being worked on at W3C and it's designed around enabling a web app a website to call some JavaScript</p>
+<p id=7154 class="phone s04"><cite>Dave_Longley:</cite> and request digital credentials through that JavaScript. Digital credentials is a broader C category of credentials that includes various types of things including verifiable credentials and that API takes a request object in some form of a particular protocol. Bet API that API is designed around there's a normative requirement that a browser implement at least one protocol that is in a registry or in the spec maybe at this point not in a registry.</p>
+<p id=10009 class="phone s04"><cite>Dave_Longley:</cite> And if we want VCOM to work with that API, we should probably provide some extra surface that sort of fits with their design. And in their design, they're looking for a way for the browser to inspect a request when it arrives before the handoff to a wallet. And we can do that by making our exchanges have an endpoint where the initial request at the start of the exchange can be made available where all you do with that endpoint is fetch the request and then this has additional side benefits. you might want to see what the request is before deciding to even engage and so on.</p>
+<p id=1000a class="phone s04"><cite>Dave_Longley:</cite> So you could use it for that purpose as well, but it seems like it would be helpful with DC API. And one of the things they struggle with in DC API is making sure that a request that arrives at a wallet hasn't been tampered with. And one way that they're doing that with the OID4 protocol is they're at least for some use cases requiring their request to be digitally signed. And that introduces an entirely new layer of infrastructure where verifiers and issuers and so on or whoever is making these requests has to now have certificates that are part of some list.</p>
+<p id=f5dd class="phone s04"><cite>Dave_Longley:</cite> And right now that's me manifesting the ecosystem as each wallet has its own set of lists that have. So you have to go register with wallets and that's becoming kind of a mess and it also creates gatekeepers that could be problematic. So we can get around all of that with the designs that we've had in this group around things like interaction URLs and so on. And another way that we can get around this sort of problem is enabling the request to be fetched over TLS so that the existing TLS infrastructure can be used.</p>
+<p id=662f class="phone s04"><cite>Dave_Longley:</cite> And so that this issue was written more or less with a hey what do we need to do to make sure that we can become compatible or help influence the DC API to adopt something simpler or…</p>
+<p id=27d3 class="phone s04"><cite>Dave_Longley:</cite> make it so something simple can work when people want to use VCOM a in conjunction with that API. Okay.</p>
+<p id=df26 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, great.</p>
+<p id=42cf class="phone s02"><cite>Kayode_Ezike:</cite> Go ahead, Patrick.</p>
+<p id=1000b class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, that's couple questions. So, it sounds like right now this would only work with some very specific workflow instances where it starts with a verifiable presentation request. what does it mean a workflow instance that has multiple verifiable presentation requests? Do we assume that only the first one needs to be shared like this and then you're good to go? Or do we need to expose all of them?</p>
+<p id=017d class="phone s04"><cite>Dave_Longley:</cite> I'm trying to parse your request because you introduced the concept of multiple requests. can you explain that?</p>
+<p id=2f36 class="phone s01"><cite>Patrick_St-Louis:</cite> I mean, let's say we have a workflow instance and there's three different virtable presentation requests at different steps in that workflow instance.</p>
+<p id=ecdb class="phone s04"><cite>Dave_Longley:</cite> I see what you're saying. Yeah, I don't think browser manufacturers have even considered the idea that a workflow could have multiple steps. I think that's just miles ahead of where they are in that group. And so I would recommend that this would just refer to the first request that can happen the onset of a request. And that might cover what people are looking for to make sure that a user would be given additional heads up on what is about to happen in their browser before they hand something off to a wallet.</p>
+<p id=2501 class="phone s02"><cite>Kayode_Ezike:</cite> Come on.</p>
+<p id=614f class="phone s04"><cite>Dave_Longley:</cite> So it's kind of that concept. I don't know if exactly how I wrote up this issue is even quite right for what we would want to do. Maybe we want to hang this off of interactions or something instead. so there are things to don't take whatever I put in the issue as literally what we should do. the main goal is hey if we wanted to make this compatible with the DC API in its current inception for simple cases or at least as a hook to get some more whatever it is browsers want to offer to users before they're handed off to a different user agent which is their wallet. that's the goal.</p>
+<p id=15be class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think the key point you mentioned is at least for the first part this very simple use case like a workflow that has just one problem like show me this credential right and it's just the one DPR and it shows it and start with this it sounds from what I'm reading here with me not knowing what DC API is it sound like this would not necessarily work with very complex workflow instance it would work best like something like what's on the VC playground right now right if I go on the verifier and I say hey I want to request this credential from the wallet the workflow that is going to send is there's not too many steps right it's just a verifiable presentation request that's</p>
+<p id=2119 class="phone s01"><cite>Patrick_St-Louis:</cite> and that can be exposed. I guess my question is how do we want to have a way to define what gets served by this slash request? Do we want to always assume that it's the first step and that it's going to be a vertical presentation request or do we want to say I want this slash request to send whatever is at the current step of the workflow or do we want to flag something in a workflow that stands like I want this to be the VPR that send that request all the</p>
+<p id=87f0 class="phone s04"><cite>Dave_Longley:</cite> I think those are good questions.</p>
+<p id=4e83 class="phone s02"><cite>Kayode_Ezike:</cite> I did.</p>
+<p id=54c1 class="phone s04"><cite>Dave_Longley:</cite> And we can try to answer those. and even if we decided that it would send whatever the current request is for the step the fact that it would work for the first step might be sufficient for DC API and that it shows whatever the request is for the next step might be useful in other circumstances.</p>
+<p id=4ba2 class="phone s02"><cite>Kayode_Ezike:</cite> Yeah, I agree. But I think it seems to me at least that is it even possible to get past the first step rather can we guarantee that we can get past the first step if for example you require what you're required to present something from that first step before you can see the second step in a use case for example go ahead</p>
+<p id=148d class="phone s04"><cite>Dave_Longley:</cite> Yeah, I don't think there's any way that you could sensibly show all possible requests at the start of a workflow, but it could be that the content returned from Exchange request is always whatever the present steps next request is if there is one and I think that would potentially meet what we're looking for here for DC API and be of use for a digital wallet that's going through the steps and maybe for some reason they might want to ask what's next before just executing.</p>
+<p id=8f14 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. …</p>
+<p id=dbc0 class="phone s02"><cite>Kayode_Ezike:</cite> and do you want to wrap up soon, Patrick? But, go ahead, give your last thought.</p>
+<p id=c22d class="phone s01"><cite>Patrick_St-Louis:</cite> No, no,…</p>
+<p id=0a5a class="phone s01"><cite>Patrick_St-Louis:</cite> no. Second that again.</p>
+<p id=8f6e class="phone s02"><cite>Kayode_Ezike:</cite> Yeah, I just wanted to say so before we leave this issue, a general consensus or feelings around including this as a B10 target any rejections against that concern about it. I think generally issues that try to position us in favorably towards the evolution of other standards and…</p>
+<p id=4159 class="phone s02"><cite>Kayode_Ezike:</cite> protocols is good. So I'm going to go ahead and do that.</p>
+<p id=156b class="phone s01"><cite>Patrick_St-Louis:</cite> Maybe a quick suggestion is sometime there's inspectors things like relationship to other specs.</p>
+<p id=3ea6 class="phone s02"><cite>Kayode_Ezike:</cite> Go ahead, Magic. …</p>
+<p id=d360 class="phone s01"><cite>Patrick_St-Louis:</cite> So if this gets I would say probably in that kind of appendex format like relationship to the DC API with some very light wording about what needs to happen here.</p>
+<p id=657c class="phone s04"><cite>Dave_Longley:</cite> That would be yeah,…</p>
+<p id=5ddb class="phone s02"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=35a7 class="phone s04"><cite>Dave_Longley:</cite> that would be good. but I do also expect that we would need to be talking with that group once we feel like we're ready to say what we need from that group.</p>
+<p id=1000c class="phone s02"><cite>Kayode_Ezike:</cite> All keep that in mind. we'll leave So, we're going to label it B10 and, we'll continue. some I guess I'll say it's probably ready for as sorry, and then I just wanted to not talk too much about it, but there's this issue that we talked about last week that I made an action on.</p>
+<p id=b6d6 class="phone s02"><cite>Kayode_Ezike:</cite> So this is the one also raised by Dave and kind of also relates to the DC API and that there's some protocols that may require us to be able to retrieve to send multiple VPs in a single round trip either because they have to be secured differently cryptographically or for whatever other reason and so we currently don't have a way to do that and so this is basically just to the suggestion I gave was that we assign it a union schema to that representation field wherever it comes across in the spec so that you can accept a VP or an array of VPS. and I did label it as a V1 target as well. any objections to any of those decisions?</p>
+<p id=686f class="phone s04"><cite>Dave_Longley:</cite> That sounds right to me.</p>
+<p id=ea5b class="phone s02"><cite>Kayode_Ezike:</cite> We are three to the top of the hour.</p>
+<p id=ced5 class="phone s02"><cite>Kayode_Ezike:</cite> I think it's a good time to adjourn. So, thanks all for a great discussion today and look forward to chatting with you all again next week. Cheers. Bye. Meeting ended after 00:57:32 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

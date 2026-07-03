@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 2 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>2 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Denken_Chen, Ivan_Herman, Joe_Andrieu, Manu_Sporny, Phillip_Long, Scott_Jones, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#31ff">Welcome And Meeting Start</a></li>
+<li><a href="#6ad2">Provider Selection And Model Matching</a></li>
+<li><a href="#2d88">Biometric Vectors In DID Documents</a></li>
+<li><a href="#8e02">Holder Provider Selection UX</a></li>
+<li><a href="#a022">Issuer Service URL Specification</a></li>
+<li><a href="#9995">Fraud Types Discussion</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=31ff>Welcome And Meeting Start</h3>
+<p id=5673 class="phone s01"><cite>Joe_Andrieu:</cite> How dick?</p>
+<p id=6e14 class="phone s01"><cite>Joe_Andrieu:</cite> Happy Manny Scott.</p>
+<p id=a808 class="phone s02"><cite>Manu_Sporny:</cite> Morning.</p>
+<p id=b856 class="phone s03"><cite>Scott_Jones:</cite> Hi. Yeah,…</p>
+<p id=ffbd class="phone s01"><cite>Joe_Andrieu:</cite> Sorry you missed our last meeting. It was fun and exciting. Now it's all good.</p>
+<p id=5b7b class="phone s03"><cite>Scott_Jones:</cite> I'm sorry about that. I just felt pretty dumb after that. but feel like I'm Denin was able to route me to I believe it was Ivan…</p>
+<p id=179a class="phone s01"><cite>Joe_Andrieu:</cite> It happens. I Excellent.</p>
+<p id=561d class="phone s03"><cite>Scott_Jones:</cite> who properly affiliated me with this project. So now I'm linked up in the back end.</p>
+<p id=d91a class="phone s01"><cite>Joe_Andrieu:</cite> We're glad you could make it. We are going to be at this time in perpetuity.</p>
+<p id=44f7 class="phone s03"><cite>Scott_Jones:</cite> And oddly enough,…</p>
+<p id=f898 class="phone s01"><cite>Joe_Andrieu:</cite> we had for a hot minute considered alternating and I think you did make it to one of the alternate meetings that was later in the day. but since we weren't getting much pickup there we felt this time was more accessible to more folks.</p>
+<p id=2cc8 class="phone s03"><cite>Scott_Jones:</cite> or not oddly enough, I'm on holiday in your neck of the woods. I'm in Los Angeles right now.</p>
+<p id=15be class="phone s01"><cite>Joe_Andrieu:</cite> Nice. what …</p>
+<p id=e209 class="phone s01"><cite>Joe_Andrieu:</cite> what kind of holiday you going to Disneyland? What are you doing?</p>
+<p id=0c72 class="phone s03"><cite>Scott_Jones:</cite> We did.</p>
+<p id=8452 class="phone s03"><cite>Scott_Jones:</cite> We did yesterday actually.</p>
+<p id=26da class="phone s01"><cite>Joe_Andrieu:</cite> Nice.</p>
+<p id=8658 class="phone s03"><cite>Scott_Jones:</cite> Good call.</p>
+<p id=e3ec class="phone s01"><cite>Joe_Andrieu:</cite> That's fun.</p>
+<p id=0905 class="phone s03"><cite>Scott_Jones:</cite> Yeah. Yeah. We used to live here. and my twins are 12 and a half. We brought them here for the first time three years ago and they loved it. So, now it's doing another lap with friends that we left behind 14 years ago when we moved to North Carolina.</p>
+<p id=35a4 class="phone s01"><cite>Joe_Andrieu:</cite> That's lovely. Yeah.</p>
+<p id=ca5f class="phone s03"><cite>Scott_Jones:</cite> Yeah, it's funny. You can It's bring people to Los Angeles or just California in general and it. They're like, &quot; I understand why you want to live here.</p>
+<p id=c852 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, the weather is really nice. Thank Are you actually here?</p>
+<p id=dd31 class="phone s04"><cite>Denken_Chen:</cite> Yes.</p>
+<p id=b8d8 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, When I first checked in with you, I didn't hear back. So, I don't know if we're expecting anyone else. so I guess we can go and get started, I think. Thumbs up from So, I'm just looking at the repo. there are no additional PRs, which was expected. we merged in your PR, but we flagged quite a bit at risk.</p>
+<p id=4d43 class="phone s01"><cite>Joe_Andrieu:</cite> And so we were thinking we should just go over that. especially since you were not able to join us for the live conversation. I don't know if you manage to look at the minutes or the recording, but we can walk through all those issues today and figure out, what Okay,…</p>
+<p id=cf7e class="phone s03"><cite>Scott_Jones:</cite> I did I've got 11 at risk items that I've tracked and I've bucketed them into three groups. Sure.</p>
+<p id=5be7 class="phone s01"><cite>Joe_Andrieu:</cite> cool. You want to present that back to us? that sounds fun. Yeah, that sounds useful.</p>
+<p id=f423 class="phone s03"><cite>Scott_Jones:</cite> Yeah. It's fun.</p>
+<p id=eb64 class="phone s01"><cite>Joe_Andrieu:</cite> Standards fun. Scott Jones:</p>
+<p id=4ed6 class="phone s03"><cite>Scott_Jones:</cite> Yeah. Yeah. Yeah. Yes. for sure.</p>
+<p id=48d1 class="phone s01"><cite>Joe_Andrieu:</cite> Welcome, Dave.</p>
+<p id=8484 class="phone s03"><cite>Scott_Jones:</cite> So bucket A are things that I think I can address and I have answers ready. So number three from the list was open matching model examples.</p>
+<p id=731a class="phone s01"><cite>Joe_Andrieu:</cite> Uh-huh. Excellent.</p>
+<p id=31b2 class="phone s03"><cite>Scott_Jones:</cite> Yeah, I've identified some fully open sourced options and I can draft examples using those in a number five, no standardized EKP yet. there is an example biometric ZKP placeholder with that at risk note. But also worth noting last week I think it was Drummond Reed officially kicked off in the decentralized trust graph working group that I am chairing the ZKP pseudonyms task force and that's officially kicking off in two weeks.</p>
+<p id=e72b class="phone s03"><cite>Scott_Jones:</cite> And I don't know the right words to use. I'm so tired. We expect to have a spec of what the requirements will be for this ZKP capability in Septemberish that can then be handed off to the ZKP experts to do. it's all to say that work is happening. saying it's not going to be ready as quickly as we might want,…</p>
+<p id=b317 class="phone s03"><cite>Scott_Jones:</cite> but it's happening to fill this gap. Number eight, the ideals.</p>
+<p id=eaa1 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, welcome.</p>
+<p id=5a8a class="phone s01"><cite>Joe_Andrieu:</cite> Hold on. Scott,…</p>
+<p id=0123 class="phone s03"><cite>Scott_Jones:</cite> Go ahead.</p>
+<p id=3d0d class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-confidence-method/issues/39">Another possible biometric example. · Issue #39 · w3c/vc-confidence-method · GitHub</a> </p>
+<p id=effe class="phone s01"><cite>Joe_Andrieu:</cite> before you go on to eight, manu jump down the queue.</p>
+<p id=45ab class="phone s02"><cite>Manu_Sporny:</cite> Yeah, just on that note, Scott, I know that we also have interest and Elaine raised an issue in the issue tracker. I'll put it here in the chat. This is issue 39. we've got interest also from a group called CLR Labs in France that say they have a small face template plus ZKP solution and they're willing to open it up to the public. they are trying to push it through SEN I think working group 18 in SEN which is I believe a French standards body. Avon we might need a little bit of help trying to figure out how to link up send and W3C so that work could be used by us.</p>
+<p id=e197 class="phone s03"><cite>Scott_Jones:</cite> Mhm. awesome.</p>
+<p id=b1f4 class="phone s02"><cite>Manu_Sporny:</cite> They did say they're interested in joining W3C, but I think then there was some issue with it and they decided to keep it at SEN. We'll have to figure out what's going on there. but just to flag that also, Scott, and their sol they're claiming their solution is a working open solution. so we might be able to and it's a ZKP. so we might be able to use some subset of that as well. just as awareness to you Scott that there's interest coming from there as well. the other point I think is diff maybe Scott I don't know if you're in that group but I think FaceT around this but I'm not quite sure what the activity is.</p>
+<p id=f7c1 class="phone s02"><cite>Manu_Sporny:</cite> So the danger here is okay now it's happening in three different places.</p>
+<p id=926f class="phone s03"><cite>Scott_Jones:</cite> The face the original I'm still waking up here.</p>
+<p id=0419 class="phone s02"><cite>Manu_Sporny:</cite> Can we</p>
+<p id=c310 class="phone s03"><cite>Scott_Jones:</cite> So the original concept was at IIW Drummond kicked it off where the thought was it is true this group will be inclusive of Andrew Hughes from FaceTech me some cryptographic experts from Berkeley and some other other players and the original thought was that Andrew and I would chair it but ultimately Andrew will not be chairing it…</p>
+<p id=7ae4 class="phone s02"><cite>Manu_Sporny:</cite> Okay. Scott Jones:</p>
+<p id=c087 class="phone s03"><cite>Scott_Jones:</cite> but he will be participating. And cool.</p>
+<p id=9782 class="phone s02"><cite>Manu_Sporny:</cite> So, at least your organizations are hooked together. We just need to get CLR Labs from France integrated as well and then I think we'll be in a good state.</p>
+<p id=146f class="phone s02"><cite>Manu_Sporny:</cite> But on the send question, Ivonne, I saw you had hand Any ideas on how we get them? So, we can probably talk with Rigo about that.</p>
+<p id=b9cb class="phone s05"><cite>Ivan_Herman:</cite> Yeah, Rio is the one…</p>
+<p id=2be1 class="phone s05"><cite>Ivan_Herman:</cite> who works and contacts all these various organizations, Sen and Senak and God knows what else, Etsy. So he knows I have no idea about them and…</p>
+<p id=7285 class="phone s02"><cite>Manu_Sporny:</cite> Okay. Okay.</p>
+<p id=d7bf class="phone s05"><cite>Ivan_Herman:</cite> I am happy that it is so yeah…</p>
+<p id=f583 class="phone s02"><cite>Manu_Sporny:</cite> And Carolyn Bernier can also maybe help us.</p>
+<p id=c702 class="phone s05"><cite>Ivan_Herman:</cite> but officially it's regard let's not burden current with</p>
+<p id=66f8 class="phone s02"><cite>Manu_Sporny:</cite> Got it. Good. we'll follow that up. Elaine needs some help help getting them connected.</p>
+<p id=d901 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, Cool.</p>
+<p id=afb4 class="phone s01"><cite>Joe_Andrieu:</cite> Scott, back to you for the next issue in your buckets.</p>
+<p id=08c0 class="phone s03"><cite>Scott_Jones:</cite> Yeah. Yeah.</p>
+<p id=df40 class="phone s03"><cite>Scott_Jones:</cite> So number eight was ideal state use cases. I drafted some concepts from earlier work. So the convenience store, age verification, account recovery, mobile credential holder binding and I can submit those as a follow-up when the group is ready if that's the right approach.</p>
+<p id=7e04 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, that sounds great.</p>
+<p id=46b6 class="phone s03"><cite>Scott_Jones:</cite> Cool. …</p>
+<p id=eeb9 class="phone s01"><cite>Joe_Andrieu:</cite> I mean, I think, le less is more in general, but the key is to have a good paragraph or so that for each use case explains why it's uniquely valuable, so we don't want a whole tone, but yeah, if you can put together four or five paragraphs, that'd be a great addition.</p>
+<p id=41d0 class="phone s03"><cite>Scott_Jones:</cite> number 11, the nonses. I believe I did do this. I added challenge announces to both verification output examples per whip Abramson's feedback if I'm saying that right. So, I think that's done.</p>
+<p id=da3c class="phone s01"><cite>Joe_Andrieu:</cite> I'm just scanning through what's live. We had thought when we looked through and pulled in the PR that was not yet in the text.</p>
+<p id=f9d3 class="phone s03"><cite>Scott_Jones:</cite> Mhm. I can check again.</p>
+<p id=7af9 class="phone s01"><cite>Joe_Andrieu:</cite> I wish Will was here. I'm not sure where he's looking for it. I do see you have a challenge value in example four. and the proof if that's meant to be where you're putting in the knots. what? I guess this makes me realize we don't have So, let me ask you this, Scott.</p>
+<p id=224b class="phone s01"><cite>Joe_Andrieu:</cite> So I think that we pulled in so in the spec as it exists in the repo we talked about a credential which has a confidence method of this biometric template type and…</p>
+<p id=a688 class="phone s01"><cite>Joe_Andrieu:</cite> then we talked about a credential that is the result of a biometric evaluation. I don't think we have an example of a verifiable presentation request or VPR that is saying, &quot;Hey, I want this credential with a biometric proof.&quot; and I think maybe that's the nonsloop that we're talking about because I think that's where it would plug in.</p>
+<p id=5cde class="phone s03"><cite>Scott_Jones:</cite> Mhm. Got it.</p>
+<p id=3a7f class="phone s03"><cite>Scott_Jones:</cite> Got it.</p>
+<p id=1c9b class="phone s01"><cite>Joe_Andrieu:</cite> I'm kind of thinking out of the box, so I may be analyzing this wrong. So looking to Dave or Manny or if any of the rest of you, but that feels like the flow, right?</p>
+<p id=6a80 class="phone s01"><cite>Joe_Andrieu:</cite> when the verifier is asking for it, he's going to provide some sort of nons that would be used to deal with replay attacks. So, I think that's the right flow, but I don't think we have that flow really described in here. Although, maybe the challenge that you have in that example four is where it would come back if that makes sense to folks.</p>
+<p id=1cd7 class="phone s03"><cite>Scott_Jones:</cite> Cool.</p>
+<p id=ffff class="phone s01"><cite>Joe_Andrieu:</cite> I see Dave with the thumbs and menu. So, I let me add that as an issue so we don't lose it. just to add the VPR for I'm just going to say add VPRs generally.</p>
+<p id=7c7a class="phone s01"><cite>Joe_Andrieu:</cite> Great.</p>
+<p id=d89b class="phone s06"><cite>Dave_Longley:</cite> And I wouldn't necessarily describe it as a nons, but there is something called a challenge. and that challenge can be used during a whole interaction inside of some channel where a VPR was presented. There might be other things that also might use that challenge and do proofs on it. so we need to be careful and not describe it literally as a don't use it more than once but it is a challenge that should be sufficiently random and generated for that particular interaction.</p>
+<p id=cb62 class="phone s01"><cite>Joe_Andrieu:</cite> So the clarification is not that this isn't used in the way that the nons is used in terms of the flow, just that It's more important that it's a challenge that's for this session. Is that right?</p>
+<p id=4862 class="phone s06"><cite>Dave_Longley:</cite> Yeah. Yeah.</p>
+<p id=106e class="phone s01"><cite>Joe_Andrieu:</cite> Okay, that's good to think.</p>
+<p id=8937 class="phone s03"><cite>Scott_Jones:</cite> just for my own edification because I'm learning all of this. Scott Jones:</p>
+<p id=bc5c class="phone s03"><cite>Scott_Jones:</cite> So the notion of a non is used only once.</p>
+<p id=c029 class="phone s06"><cite>Dave_Longley:</cite> That nonsense is a shortcut for not more than once.</p>
+<p id=aede class="phone s03"><cite>Scott_Jones:</cite> Got Cool. It's a good contraction.</p>
+<p id=e777 class="phone s06"><cite>Dave_Longley:</cite> Some weird portmen do style. Yeah.</p>
+<p id=e08e class="phone s03"><cite>Scott_Jones:</cite> I like it. Awesome. You got it.</p>
+<p id=6ae2 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I always took it as number used only once,…</p>
+<p id=991a class="phone s01"><cite>Joe_Andrieu:</cite> but obviously it doesn't need to be a number. So, I think you're more right, Dave. Sounds right. Do we So I guess that's another question I have and…</p>
+<p id=1e30 class="phone s03"><cite>Scott_Jones:</cite> Cool.</p>
+<p id=d2e0 class="phone s01"><cite>Joe_Andrieu:</cite> maybe it's clear in the text and it just hasn't bubbled up to my head. Do we have these two different credentials that we just introduced? do we have clean names for them?</p>
+<p id=d649 class="phone s01"><cite>Joe_Andrieu:</cite> what do we call this evaluation result?</p>
+<p id=4c0f class="phone s01"><cite>Joe_Andrieu:</cite> There are handful of ways we could just call it, but what do you…</p>
+<p id=417f class="phone s02"><cite>Manu_Sporny:</cite> The first answer is no.</p>
+<p id=8753 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean I don't think we have clean names for it now and we should spend some time bike shedding it maybe in the future. but yeah, I don't think we have plain names for it just</p>
+<p id=3e54 class="phone s01"><cite>Joe_Andrieu:</cite> how do you refer to it, Scott? when you talk about, there's a W3C VC that has a biometric template in it and…</p>
+<p id=7b88 class="phone s01"><cite>Joe_Andrieu:</cite> then it goes to an evaluation, what's just your natural language that you would refer to that second VC. Okay.</p>
+<p id=0534 class="phone s03"><cite>Scott_Jones:</cite> validation,…</p>
+<p id=9626 class="phone s03"><cite>Scott_Jones:</cite> result, things like that. I don't know if I'm knocking it out of the park with those thoughts, but Yeah.</p>
+<p id=79e4 class="phone s01"><cite>Joe_Andrieu:</cite> sometimes an easy lance will find the right thing but if we don't have one handy then we should bite shed it maybe we let's get through this list of things and we'll see where we are with the balance of the time but it would be good to have those names because I struggle to explain it's the first one and then it's the second one and a crisp name would help with that.</p>
+<p id=b4b7 class="phone s03"><cite>Scott_Jones:</cite> All right.</p>
+<p id=9c38 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=1b6b class="phone s03"><cite>Scott_Jones:</cite> Cool. Then the next bucket is things I brought to the CTO,…</p>
+<p id=9572 class="phone s01"><cite>Joe_Andrieu:</cite> okay, we got through 11, which is about the nons/challenge. Okay.</p>
+<p id=42bd class="phone s03"><cite>Scott_Jones:</cite> our CTO Elnar for input. so the first of those was number two about combining the model and the vector into CBOR. and Elnar confirmed that combining the model and the vector data into base 64 URL encoded CBOR is technically sound.</p>
+<p id=00bd class="phone s03"><cite>Scott_Jones:</cite> The only trade-off is losing the human readable model identifiers, but that's manageable. So, all good with this approach if that's preferred.</p>
+<p id=5f27 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I see a thumbs up for Manu.</p>
+<p id=8d33 class="phone s01"><cite>Joe_Andrieu:</cite> I know he was a strong advocate for that reactoring. so that sounds good. Scott, if you want to put that on a queue to get into a PR</p>
+<p id=e87f class="phone s03"><cite>Scott_Jones:</cite> And then number 10, application integrity for local device checks. this is something we're working on this in real time with an enterprise customer who's working running us on the client side. And the honest assessment is as we're working with them too. there's currently no fully secure solution today for local device checks like app test and play integrity are the best available but they aren't bulletproof and even a midsophistication level attacker can overcome them. So this is one re I'm looking at something I'm missing what is a hand up got it.</p>
+<p id=15b3 class="phone s03"><cite>Scott_Jones:</cite> So one reason we believe that a user selected provid scenario is the more realistic near-term deployment path with client side as a future goal once device integrity capabilities improve and…</p>
+<p id=5c4b class="phone s01"><cite>Joe_Andrieu:</cite> minute.</p>
+<p id=800e class="phone s03"><cite>Scott_Jones:</cite> the ZKP capabilities and potentially more</p>
+<p id=a345 class="phone s02"><cite>Manu_Sporny:</cite> And that is definitely the answer we were expecting, the reason it matter it does ma certain governments think it really matters for super high security scenarios and so have gone to tremendous amounts of effort to try and mandate it that it's supported by wallets. I personally think that it's wholly unrealistic and is not actually the way the real world works and when you're crossing a border or boarding an airplane there are humans there it's not just done on the device so so…</p>
+<p id=5f96 class="phone s03"><cite>Scott_Jones:</cite> Mhm. Damn. Yeah.</p>
+<p id=0026 class="phone s02"><cite>Manu_Sporny:</cite> what you said I think makes sense we should mention that in the threat model so that basically means that we should basically say yeah this can be done client side and that's the goal but there is</p>
+<p id=f5a9 class="phone s02"><cite>Manu_Sporny:</cite> no mechanism today that is foolproof for doing a client side for doing things like age restricted purchases that's where it might be totally fine right if somebody wants to go to the effort of jailbreaking their phone and then showing up in person and trying to get away with something with a hacked device. there's still the clerk and the ability to do a hard check through a video feed and all that kind of stuff. but one thing that does raise is do you want to provide a fallback where it's like you can do this client side or you could do the video stream.</p>
+<p id=dd71 class="phone s02"><cite>Manu_Sporny:</cite> Both of those are possible with the provider and then it is the verifier that's like we're fine with it happening client side or no we want to do have it done server side and…</p>
+<p id=4749 class="phone s02"><cite>Manu_Sporny:</cite> we're willing to pay extra to have that happen right so there's some optionality in here that we might want to put into the data model where we make that assertion that's</p>
+<p id=3b0e class="phone s03"><cite>Scott_Jones:</cite> Got it.</p>
+<p id=0be2 class="phone s03"><cite>Scott_Jones:</cite> right.</p>
+<p id=5edf class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, plus one to…</p>
+<p id=3100 class=irc><cite>&lt;Dave_Longley&gt;</cite> verifier should be able to ask for what they want </p>
+<p id=0dcf class="phone s01"><cite>Joe_Andrieu:</cite> what Dave put in the chat. That was basically where I was going to go with this is that I think actually the application integrity checks I agree with all the technical things that have been said about there are approaches but they all have holes at various levels of sophistication of an attacker. but it seems to me it is also the verifier who's going to say, &quot;I want you to use a solution that I trust and come back with me with the evaluation credential from a provider I trust.&quot;</p>
+<p id=b576 class=irc><cite>&lt;Dave_Longley&gt;</cite> (what they'd accept) </p>
+<p id=34de class="phone s01"><cite>Joe_Andrieu:</cite> And I believe that trust boundary can include if the verifier trusts a local device app or they may only provide for you frankly three biometric service centers that are on federal government property and you have to go through locked gates in order to go get this credential. those are all possible ways that this could come out in terms of why do they trust? But if the verifier says yeah I'm happy to trust app XYZ then I think just having trust in the identifier who is the source of the integrity check I think we can speak about it in that context and provide the optionality where the verifier is letting the holder know in real time what's acceptable and then we have this matching problem I think we haven't gotten rid of that what if the holder can't get to one of those services or doesn't have one of those services available</p>
+<p id=c189 class="phone s01"><cite>Joe_Andrieu:</cite> But the flexibility I think is worth that potential complexity there. That make sense, That was number 10.</p>
+<p id=8c52 class="phone s03"><cite>Scott_Jones:</cite> I think so.</p>
+<p id=10000 class="phone s03"><cite>Scott_Jones:</cite> And then the next bucket are items that require number one vendor agnosticism. the spec is designed to be model agnostic. So this notion of the matching model field lets any vendor declare their model and then being able to combine it with open source references you'd expect to be in good shape.</p>
+<p id=21fe class="phone s01"><cite>Joe_Andrieu:</cite> The main gap was just we had an example with your company's name in it.</p>
+<p id=7d66 class="phone s03"><cite>Scott_Jones:</cite> But happy to hear if the group sees gaps with that approach.</p>
+<p id=f2be class="phone s01"><cite>Joe_Andrieu:</cite> That was just…</p>
+<p id=a347 class="phone s03"><cite>Scott_Jones:</cite> Take I got it.</p>
+<p id=525a class="phone s01"><cite>Joe_Andrieu:</cite> what triggered this. and so addressing it with the open answers addresses that. And I don't think we're opposed to having examples that realize. We just need to make sure that we have an implementable answer Is that right? is at the boundary.</p>
+<p id=6c39 class="phone s02"><cite>Manu_Sporny:</cite> No,…</p>
+<p id=e1fa class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, medic.</p>
+<p id=fd62 class="phone s02"><cite>Manu_Sporny:</cite> you usually don't want to mention vendors in global standards, Because the vendor might disappear and then all the other vendors get all cranky about it, FaceT's going to show up and be like, &quot;Why didn't you have us in there as well?&quot; Right? so we do prefer to like not but here's the thing not like if I think we just decided to make the model go into the B 64 URL encoded string that's fine we can have realize even they might show up in the URL it's better to just do open examples we can try to get it in there but there's always a chance that someone's going to object to it or…</p>
+<p id=e093 class="phone s02"><cite>Manu_Sporny:</cite> raise it as an issue when they do the horizontal and view.</p>
+<p id=00ed class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, thanks.</p>
+<p id=9bcb class="phone s03"><cite>Scott_Jones:</cite> Got it.</p>
+<p id=e6ac class="phone s01"><cite>Joe_Andrieu:</cite> Thanks for that. I forgot, often so you don't know this Scott, but I've worked a lot on the use cases for DIDs and VCs and my first pass almost always mention some real company or some real agency and there's always a process of hey,…</p>
+<p id=e51e class="phone s01"><cite>Joe_Andrieu:</cite> let's make that more generic. Let's go to the state of Utopia. let's go to Acme Inc., just to get the brand names out of there to avoid, friction downstream. So, that would be helpful.</p>
+<p id=bbd2 class="phone s03"><cite>Scott_Jones:</cite> Got it.</p>
+<p id=6542 class="phone s03"><cite>Scott_Jones:</cite> Number four, multiple vectors from different providers. it makes sense architecturally. You can imagine an issuer could embed vectors from multiple providers to give holders more flexibility and…</p>
+<p id=e5c3 class="phone s03"><cite>Scott_Jones:</cite> the confidence method property supports arrays. So should I just fold in an example of what this might look like?</p>
+<p id=517b class="phone s01"><cite>Joe_Andrieu:</cite> That sounds right to me.</p>
+<p id=79d1 class="phone s01"><cite>Joe_Andrieu:</cite> Did Dave with the thumbs up?</p>
+<p id=ece1 class="phone s01"><cite>Joe_Andrieu:</cite> And even just a sentence could address it. there is a risk that we overexample and then it's too hard to read the spec.</p>
+<p id=a2a1 class="phone s03"><cite>Scott_Jones:</cite> Come here.</p>
+<p id=20fc class="phone s01"><cite>Joe_Andrieu:</cite> But just making it clear that you can have multiple vectors in this value. sometimes people don't realize that with JSON LD there's an expected flexibility there.</p>
+<p id=1bcc class="phone s01"><cite>Joe_Andrieu:</cite> So we should make it clear that that is a valid normative value is to have multiple vectors</p>
+<p id=9fe9 class="phone s03"><cite>Scott_Jones:</cite> and then number six service URL design and negotiation. this came out of the Brussels face-face meeting I believe where there were three approaches surfaced client side local user selected provider and issuer specified endpoint. and then Joe and Manu agreed to focus on the first two. the negotiation flow between the holder and the verifier needs more specification. how does the verifier express which providers they accept?</p>
+<p id=a0ff class="phone s03"><cite>Scott_Jones:</cite> And this feels like it connects to Dave Longley's work on query languages.</p>
+<p id=23a6 class="phone s01"><cite>Joe_Andrieu:</cite> That's right.</p>
+<p id=e57a class="phone s01"><cite>Joe_Andrieu:</cite> It connects to the VPR which is a verifiable presentation request which is the typical flow of how we go through that and I think manu got on the queue to talk about it.</p>
+<p id=575e class="phone s02"><cite>Manu_Sporny:</cite> I was on the queue to talk about maybe something slightly different, which is if we collapse the model in the vectors into one seabore B 64 URL encoded seabboard string. Dave, I think it makes it much more difficult to query for specific models or providers. So, I'm wondering how we would do the matching in that case. That might be an argument to not collapse them. go ahead Dave.</p>
+<p id=aebe class="phone s06"><cite>Dave_Longley:</cite> So, this got into one of the questions that came up when we were considering the collapsing was what exactly is being selected for by the verifier and I don't know that they for a model. I think they would select for a provider and so the vectors are bound to the model which may not be prevalent bound to the provider and that would not be the case for open models I would think and so what we'd be looking for is a way for them to say I accept these providers however they go about doing that and so we might be missing a property for a provider or something to do selection And that's what would be human readable and that would also seemingly what might be useful to display in a digital wallet. my provider for this biometric.</p>
+</section>
+
+<section>
+<h3 id=6ad2>Provider Selection And Model Matching</h3>
+<p id=9603 class="phone s06"><cite>Dave_Longley:</cite> this or…</p>
+<p id=08a6 class="phone s06"><cite>Dave_Longley:</cite> that as opposed to it's some model of some version or whatever.</p>
+<p id=8984 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. …</p>
+<p id=7e16 class="phone s01"><cite>Joe_Andrieu:</cite> I agree that the primary differentiator is going to be the service provider because that's where the trust relationship is. but I do expect we're going to say, &quot;Hey, I need this model from one of my service providers on this list.&quot; because I believe service providers will probably support multiple models. do I need your fingerprints? iris scanned? Do I need a DNA match? What do I need that is not just localized to the provider in my opinion? Go ahead.</p>
+<p id=9010 class="phone s02"><cite>Manu_Sporny:</cite> And I guess in addition to that, Joe, you do care about which model's being used, I mean, if you're just looking at LLM models today, you may care if the fast the pro model versus the deep thinking model is used. I'm guessing there's some equivalent to that, Scott, in the biometric facial vector matching thing. And what we don't want to do is we don't want to end up in a situation where, the verifier is I'm okay with this provider and then, a certain model and vector set is selected and then the proof goes over to the verifier and they're like, yeah, but not that model, right?</p>
+<p id=db27 class="phone s02"><cite>Manu_Sporny:</cite> &quot;Yes, you got the vendor right, but you got the model wrong, and I'm going to reject it.&quot; That ends up with a pretty bad user experience. right. that's</p>
+<p id=c63f class="phone s03"><cite>Scott_Jones:</cite> Yeah. Yeah. the correlary to LLMs definitely checks the box where you could just say, I thought you ran this with Fable,…</p>
+<p id=469c class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=5059 class="phone s03"><cite>Scott_Jones:</cite> but you actually did it with Sonnet, and that's not good enough.&quot; we don't currently have that sort of variation, but I totally imagine you could. So, I definitely get your point.</p>
+<p id=53ae class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think we need to collect some constraints or set of properties that we would expect verifiers to ask for and we need to do some analysis on whether or not they really should be able to ask for those things because you can also create gatekeeping problems. this is similar to what happened with hardware attestations where they had to relax those things because it became too challenging for people to get the right things and you ended up being locked out of all kinds of services because you were gatekept. So some amount of gatekeeping is expected but it needs to be a reasonable level of it. and if you have too many switches to flip it's just too hard to do.</p>
+<p id=63b7 class="phone s06"><cite>Dave_Longley:</cite> And so there's some basic expectation that if that a verifier will decide to trust some provider based on what that provider says they're going to make sure happens, what level of assurance they offer, whatever it is. and I don't know that model was even the right thing for any of those things. like I heard, it's using a fingerprint, it's using that. Those things might be implicit in how the model works. but maybe exposing, this is the mode. it seems like there would be other properties that you'd be looking for that might be important for how it works,…</p>
+<p id=187f class="phone s03"><cite>Scott_Jones:</cite> Come on.</p>
+<p id=a458 class="phone s06"><cite>Dave_Longley:</cite> that aren't necessarily… what the model is. So I think we need to capture those and then we need to do some analysis on what makes sense to be able to ask for it and what might happen economically to the market if all of those switches are available. Dave Longley:</p>
+<p id=296d class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I'm raising an issue on that,…</p>
+<p id=9c3f class="phone s01"><cite>Joe_Andrieu:</cite> That does seem like the next thing to do. So I don't think we know based on this Scott how much we might want to bundle into a single string because if we do want the VPR to query off of model or some other constraint then it seems like am I right Dave that it would be easier to have those terms in it if we do not bundle it into that string you're online with</p>
+<p id=d7c8 class="phone s06"><cite>Dave_Longley:</cite> Yes. I don't think My main concern is us conflating things that I just think we need to a better understanding of everything that they might want to ask for and then think through whether or not it makes sense to surface all of those possibilities. As far as the VPR is concerned, we could make it super complicated in the VPR too if we wanted to. there could be 10 different variables to flip these switches on and off and I need them all to have these properties. I don't know technically how much ground a model covers and…</p>
+<p id=7b9e class="phone s03"><cite>Scott_Jones:</cite> Yeah, totally.</p>
+<p id=b4b5 class="phone s06"><cite>Dave_Longley:</cite> if that's even the right thing, but if we write all these things down, then we can get an idea for what would make sense to surface in a BPR.</p>
+<p id=72d6 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, that sounds good.</p>
+<p id=5bf9 class="phone s01"><cite>Joe_Andrieu:</cite> Does that make sense, Okay, so I'll create that as an issue. We can at least for the moment take that off your plate, in terms of the edits that you might be coming up with based on this conversation we're having.</p>
+<p id=10001 class="phone s06"><cite>Dave_Longley:</cite> Yeah, to a certain extent this sort of reflects how work. a lot of verifiers will end up saying I will accept from this issuer. I assume they've done whatever they needed to do to make the claims that they're making. And so the question is what goes outside of that boundary that they verifiers would need to additionally select for. I don't know thing that you use this model or that AI model is necessarily on the verifier. They're delegating that to the provider and if the provider is going to do something that's too weak or they're not going to go with that provider or…</p>
+<p id=b337 class="phone s03"><cite>Scott_Jones:</cite> Yeah, man.</p>
+<p id=1478 class="phone s06"><cite>Dave_Longley:</cite> if there is a sensible reason to have different levels for performance then that seems like that's something we would surface that's independent of a provider and…</p>
+<p id=00b9 class="phone s01"><cite>Joe_Andrieu:</cite> All right.</p>
+<p id=fd46 class="phone s06"><cite>Dave_Longley:</cite> let the provider map to those different levels. Security level one, two, three or whatever it is. so we just need to do some more analysis to better understand what those switches ought to</p>
+<p id=7db8 class="phone s01"><cite>Joe_Andrieu:</cite> Next item, Scott.</p>
+<p id=93c2 class="phone s03"><cite>Scott_Jones:</cite> Yeah. …</p>
+</section>
+
+<section>
+<h3 id=2d88>Biometric Vectors In DID Documents</h3>
+<p id=1a17 class="phone s03"><cite>Scott_Jones:</cite> number seven, where to this feels like an open question. I don't currently have a strong opinion on whether biometric vectors belong in DID documents versus only in credentials. the security implications of putting this in a DID document seem non-trivial. so would be curious for the group's input.</p>
+<p id=25fc class="phone s01"><cite>Joe_Andrieu:</cite> I feel pretty strongly it shouldn't go in the DID document. but I welcome the debate. my sense of how we break these sort of identity, meta system into different components. is that the DIDs help you understand if this identifier was involved in a verifiable interaction. but attributes about the alleged subject of an identifier is something that we do in and so anywhere where we have an attribute that is characterizing who the subject is. I very much prefer that it doesn't go in the DID document.</p>
+<p id=50f2 class="phone s01"><cite>Joe_Andrieu:</cite> For example, we could put in the DID document that the subject of the DID is a corporation or it's a human being or they're of a particular race or a particular age. we could start putting attributes in the DID document, but then that changes what the meaning of the DID document is. And unfortunately, it also entangles it in all sorts of privacy related regulations.</p>
+<p id=bd5f class="phone s03"><cite>Scott_Jones:</cite> Mhm.</p>
+<p id=fb64 class="phone s01"><cite>Joe_Andrieu:</cite> So to the extent we can separate out the attributes into verifiable credentials instead of in the DID document then we have a chance of having DIDs be only lightly tiable to PII and that sometimes they might be considered PI in the same way that sometimes an IP address depending on how it's used might be considered II. but on the network just because you see a IP address does not mean that the person who is using that IP address.</p>
+<p id=26e8 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=23fa class="phone s06"><cite>Dave_Longley:</cite> Yeah, there's even another layer that can happen where the confidence methods and so on themselves are just seed seen as even if they carry a DID the DID is for identifying the confidence method. this is some tool of authentication that I have which is subtly different from mapping it directly did that might be for a background. either a person or the profile of a person. So there's different layers that can be used to refer to things in different ways and sometimes that also helps with privacy regulation.</p>
+<p id=427e class="phone s01"><cite>Joe_Andrieu:</cite> Thanks, Dave. do we know who raised that seven in our conversation?</p>
+<p id=7b3b class="phone s02"><cite>Manu_Sporny:</cite> I think I did and…</p>
+<p id=0260 class="phone s01"><cite>Joe_Andrieu:</cite> Okay. …</p>
+<p id=b133 class="phone s02"><cite>Manu_Sporny:</cite> I agree. I mean, it shouldn't go in there, but maybe I didn't. but I think the response is what we were expecting and we should put it in threat model.</p>
+<p id=c5e2 class="phone s01"><cite>Joe_Andrieu:</cite> So, we should track this as a threat and we don't really have a bucket for that, but we should figure out how to have a running bucket. because this is the right time to capture that threat, right?</p>
+<p id=5003 class="phone s01"><cite>Joe_Andrieu:</cite> even if we don't have it fully fleshed out. but I'll make a note on my index card. We're going to have to come through and do quite a bit of work on the threat modeling here. Phil, you said put it in the template. okay.</p>
+<p id=e2eb class="phone s07"><cite>Phillip_Long:</cite> We have a threat model template we use for brainstorming and this is exactly the kind of thing that would be appropriate to put in it, I think.</p>
+<p id=c598 class="phone s02"><cite>Manu_Sporny:</cite> That's not I think u Phil is talking about the brainstorming document we had right so have we done that for this I guess we did yeah so we don't have that document yet for this</p>
+<p id=107b class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, that's the template would be to make it an issue, So if we had a template that was for creating a threat, then one way to track this would be to go create an issue says, hey, add this threat. This is an interesting threat.</p>
+<p id=7943 class="phone s01"><cite>Joe_Andrieu:</cite> We have not</p>
+<p id=9941 class=irc><cite>&lt;Phillip_Long&gt;</cite> put it in the template </p>
+<p id=53ee class="phone s07"><cite>Phillip_Long:</cite> That's where you're absolutely right. That's why I'm raising it because that document collected possible things and…</p>
+<p id=cffd class="phone s07"><cite>Phillip_Long:</cite> also when you go through it, we put it into categories to be addressed which then would become issues.</p>
+<p id=4360 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, let me I'm going to create that right now.</p>
+<p id=940e class="phone s02"><cite>Manu_Sporny:</cite> Let's see. And then this is the confidence method threat model brainstorming. And here is a link to that document in chat. And I think it is now. Let me make it world editable editor done.</p>
+<p id=254f class="phone s02"><cite>Manu_Sporny:</cite> And so if you refresh now that you should have it brainstorm and then Yeah.</p>
+<p id=6e13 class="phone s07"><cite>Phillip_Long:</cite> It was available before, but it's fine.</p>
+<p id=1523 class="phone s02"><cite>Manu_Sporny:</cite> And then let's see What type of thread is this?</p>
+<p id=218b class="phone s01"><cite>Joe_Andrieu:</cite> We don't actually have the threat template in here.</p>
+<p id=38bc class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://docs.google.com/document/d/1g7pYHi5ax3WS0kVoEXra8_ZLqydECtk5G0OHrhXOiP0/edit?tab=t.0#heading=h.py96npebo7ox">Confidence Method Threat Model Brainstorming - Google Docs</a> </p>
+<p id=00e9 class="phone s01"><cite>Joe_Andrieu:</cite> But we can get it in there are the six or seven attributes that we need for threats like an ID and a response and a type and a component.</p>
+<p id=e969 class="phone s02"><cite>Manu_Sporny:</cite> Mhm. …</p>
+<p id=6da9 class="phone s02"><cite>Manu_Sporny:</cite> this was just supposed to be a brainstorming thing. there's a page three is where we just free form type stuff out. I think we have something better than this document now, Joe, is what I'm saying. but if we want to take notes somewhere, this is one place we could take them. I'm blanking on the threat we just identified though, though. Should this information be published? So, this is I don't know an implementation thread, I guess. publishing biometric vectors in a did document.</p>
+<p id=cd3d class="phone s02"><cite>Manu_Sporny:</cite> Leaks pi There we go.</p>
+<p id=f294 class="phone s02"><cite>Manu_Sporny:</cite> All right, that's written down. One threat down. How many to go?</p>
+<p id=c96a class="phone s03"><cite>Scott_Jones:</cite> Shut up.</p>
+<p id=0f94 class="phone s01"><cite>Joe_Andrieu:</cite> And I'm going to add that template.</p>
+<p id=0ccf class="phone s01"><cite>Joe_Andrieu:</cite> So as we flush this out,…</p>
+<p id=2e32 class="phone s01"><cite>Joe_Andrieu:</cite> we can fill it in. But, totally endorsing what you just did, Manny, which is let's just get a name in, that's the way we start. Cool. All right. What's next, Scott?</p>
+</section>
+
+<section>
+<h3 id=8e02>Holder Provider Selection UX</h3>
+<p id=a603 class="phone s03"><cite>Scott_Jones:</cite> Yeah, the last one was number nine,…</p>
+<p id=3e9d class="phone s03"><cite>Scott_Jones:</cite> the holder burden provider selection. this seems to be a UX question where concerning how does a holder find the right biometric provider? is the wallet responsible? Do they maintain relationships with multiple providers? sounded like Manu's vision from the April call was that the holder should be able to say, I trust this vendor through their wallet, but the mechanics need definition.</p>
+<p id=cd45 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, we need to talk about it in a way that makes people feel confident that which means in part we need to convince ourselves there's a reasonable flow here. part of this I guess to give you the larger context, Scott, there is some very frustrating matching dynamics that end up being very complex because of how we built our ecosystem. about, hey, I'm willing to accept a verifiable credential…</p>
+<p id=e31a class="phone s03"><cite>Scott_Jones:</cite> Uh-huh. Anything?</p>
+<p id=1d68 class="phone s01"><cite>Joe_Andrieu:</cite> if it's of this flavor and it's using this crypto suite and it's this issuer.</p>
+<p id=ef8c class="phone s01"><cite>Joe_Andrieu:</cite> there are lots of constraints that can happen like using these did methods like and so there are just a lot of things that have to be constrained that have to line up and so we just need to speak to that complexity and I think we don't quite yet go ahead ma Yep.</p>
+<p id=d6b3 class="phone s02"><cite>Manu_Sporny:</cite> I added a threat about a holder selecting a biometric vendor that uses their information in a way that was not approved by the holder as one way to track this.</p>
+<p id=3ff1 class="phone s03"><cite>Scott_Jones:</cite> It's okay.</p>
+<p id=54f0 class="phone s02"><cite>Manu_Sporny:</cite> Joe, I mean, plus one to everything he said. I'm just trying to I think we can just at least get this down into the threat model and then go from</p>
+<p id=97d2 class="phone s01"><cite>Joe_Andrieu:</cite> And I think that goes into flavors of the verifier requires a biometric vendor that the holder can't use. and that could be for any number of reasons.</p>
+<p id=9267 class="phone s01"><cite>Joe_Andrieu:</cite> they might financially not be able to. these are all complexities in this architecture.</p>
+<p id=74a0 class="phone s03"><cite>Scott_Jones:</cite> That was the end of the list.</p>
+<p id=5768 class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=7ebc class="phone s01"><cite>Joe_Andrieu:</cite> So, we're looking for those of you who are following along at home, the current body of the text is in 5.3, section 5.3. This is where the issues were that Scott just ran through. And so, I just want to give a call out to anyone here. Fact, I mean, I can drop a link in because Scott, I think, appropriately bundled these into buckets and we just walked through all of them. But are there any ones in here that folks feel we didn't quite address just now? I mean, we're not going to erase this until we get the issues in that formally do, but this is a chance to talk about the ones we haven't talked about yet. Scott, do you think we literally just went through all of them? One, two, three, four.</p>
+<p id=623c class="phone s03"><cite>Scott_Jones:</cite> That is my understanding.</p>
+<p id=653d class="phone s01"><cite>Joe_Andrieu:</cite> I look for my list. Five. did we talk about six?</p>
+<p id=2857 class="phone s03"><cite>Scott_Jones:</cite> Yeah. The service URL design negotiation.</p>
+<p id=87da class=irc><cite>&lt;Joe_Andrieu&gt;</cite> <a href="https://w3c.github.io/vc-confidence-method/#biometric-vector-confidence-method">Confidence Method v1.0</a> </p>
+<p id=6c12 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, great.</p>
+<p id=a927 class="phone s01"><cite>Joe_Andrieu:</cite> On my notes, I happen to be writing it down and I didn't get that one written down. 7, six, seven, eight. did we do nine?</p>
+<p id=de2b class="phone s03"><cite>Scott_Jones:</cite> The holder burden provider selection</p>
+<p id=0e59 class="phone s01"><cite>Joe_Andrieu:</cite> Is it asking too much? We did talk about nine and we did talk about 10 and we did talk about the notches. Okay.</p>
+<p id=10002 class="phone s06"><cite>Dave_Longley:</cite> When we talked about six, did I'm trying to remember. One of the things that struck me as odd in that model was having a issuer sign over the service URL that the user might decide to use.</p>
+</section>
+
+<section>
+<h3 id=a022>Issuer Service URL Specification</h3>
+<p id=13d5 class="phone s06"><cite>Dave_Longley:</cite> Did we sort of cover that angle? What when we talked about six, what did we cover?</p>
+<p id=d493 class="phone s01"><cite>Joe_Andrieu:</cite> My recollection,…</p>
+<p id=0be6 class="phone s01"><cite>Joe_Andrieu:</cite> Scott, was you identified three different aspects of this and that we like the first two and not putting the service in the service endpoint in the VC. But you just touched on it lightly. I don't think we discussed Dave whether or not we want to explicitly say that that's not a pattern we want to standardize. which I think would be my disposition, but Scott, I'm not sure where you come down on that question.</p>
+<p id=5bc5 class="phone s01"><cite>Joe_Andrieu:</cite> To my sensibility the issuer specifying a service endpoint I think endorses a issuer controlled pattern where the issuer can just say yeah you can use a biometric provider it's me which just creates this phone home black hole that we fall into. so how do you feel as a progenitor of this sort of threat of work about potentially not having a service endpoint in there as a property at all?</p>
+<p id=d3e5 class="phone s03"><cite>Scott_Jones:</cite> I'll let Manu go first as I consider this.</p>
+<p id=cd5c class="phone s02"><cite>Manu_Sporny:</cite> I'm wondering how if you don't provide that link, how the wallet knows where to go to do whatever it needs to. I think maybe we had talked about having an interaction URL or something like that as the mechanism and not it have it be a service URL but yeah, thoughts Dave?</p>
+<p id=ec00 class="phone s06"><cite>Dave_Longley:</cite> So one way this could be done is the biometric would express who the provider is as an identifier like it did that could be resolved or a controlled identifier that could be resolved. you could find a service provider in a list that the biometric provider uses and can change it at will. So the wallet could discover that at the time the wallet's going to be talking with that service provider. and that having that layer of discovery enables it to be flexible for the service provider to change it.</p>
+<p id=b1c9 class="phone s06"><cite>Dave_Longley:</cite> it decouples it from the issuer or allows it to be decoupled from the issuer and it allows for that discovery to not be used in some other mechanism that the wallet might know about however to also be used. you could even have those pro publish a service that has a list of service provider choices. So did you can resolve as a service provide some service and the service lets you get access to URLs somehow that you can use to send your biometric. So they could publish a VC list that says these are these 10 systems you can send it to pick your favorite. there's a variety of things you can do that don't pin it to every to anything and that don't make it so that the issuer gets to control and…</p>
+<p id=ff93 class="phone s06"><cite>Dave_Longley:</cite> say which service you're going to use.</p>
+<p id=f8ec class="phone s01"><cite>Joe_Andrieu:</cite> I'm not sure I followed…</p>
+<p id=2b58 class="phone s01"><cite>Joe_Andrieu:</cite> if that's addressing my concern, so let me just echo back and maybe you can fill me in. seems to me the issuer specifying who is blessed to provide it still has this sort of centralized control flavor as opposed to specifying here is a biometric that I have validated for this user.</p>
+<p id=18f8 class="phone s01"><cite>Joe_Andrieu:</cite> One of the flows that we have talked about that is an alternate pattern here is in fact that the holder before the issuing goes and gets a biometric template from a trusted provider because they know that some verifiers will accept that r. that's another gap of discovery. But then that biometric template is provided to the issuer to put into the VC, And so in that pattern, the user is entirely in control as long as the verifier is willing to accept it.</p>
+<p id=a630 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, Dave.</p>
+<p id=e200 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think that's probably preferred and…</p>
+<p id=3311 class="phone s06"><cite>Dave_Longley:</cite> So I was trying to solve the question of how would you go about getting some service URL and I think if we peel it back to and we look at the process you just went through there was a previous mechanism where the user went somewhere and got something potentially saving a VC in their wallet that has this vector in it and all they're doing is putting the vectors or some com some piece of that VC gets into the new VC they're going to get so there's some way for them to link to that and find their provider from the first VC I can tell this is hard to explain without going through steps</p>
+<p id=e634 class="phone s06"><cite>Dave_Longley:</cite> It's step one. Go find a biometric provider that you think is going to be widely accepted by verifiers…</p>
+<p id=68ad class="phone s06"><cite>Dave_Longley:</cite> where as the holder of a VC you're going to get later. So, we need better names here.</p>
+<p id=d7ac class="phone s01"><cite>Joe_Andrieu:</cite> Or…</p>
+<p id=10003 class="phone s01"><cite>Joe_Andrieu:</cite> more likely, Dave, because I'm going through some visa application process to do some travel. and it's generally the state department or whoever the consulate is giving me a list of things that I need. And so it very well may be the consulate says, &quot;Hey, you are going to need a biometric template bound to your credential that you're going to have produced for us.</p>
+<p id=40c0 class="phone s06"><cite>Dave_Longley:</cite> Right. Yeah.</p>
+<p id=b021 class="phone s01"><cite>Joe_Andrieu:</cite> These are the 10 providers that we accept.&quot; and so then I'm going to know, for me to apply for my visa, I need to go get it, my proof of address that's bound to my confidence method that has this particular biometric so that my address is tied to my biometric. and the policy of all of that is the end verifier.</p>
+<p id=3979 class="phone s01"><cite>Joe_Andrieu:</cite> And so to me part of that discovery is you go to the people that you want to verify your identity and they will tell you what is acceptable for them for the particular use case and it will be different depending on what the use case is</p>
+<p id=cea6 class="phone s06"><cite>Dave_Longley:</cite> And importantly here when you go to one of those providers you will receive one or more VCs from them you'll do some process with them you'll get your vectors from them you'll get some other things from them and then when you go to get whatever other VC you want you would submit a VC that would just have the vectors or whatever minimized information and you would do a proofing process and then that minimized information would make its way into your VC that is issued to you.</p>
+<p id=3c20 class="phone s06"><cite>Dave_Longley:</cite> But importantly, at the start of that process, you stored something in your wallet that is the thing that you will use to find your service provider later whenever you want to do the proofing process. And how that thing could have a service URL in it at that point because it's less problematic. But you could also use the discovery process, which I like better because it allows that service URL to move around or…</p>
+<p id=fd92 class="phone s03"><cite>Scott_Jones:</cite> I think so.</p>
+<p id=522e class="phone s06"><cite>Dave_Longley:</cite> change or it allows you to choose from potentially multiple different service providers for a given biometric.</p>
+<p id=7b68 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I think I'm tracking that Scott, does that make sense to you? So, does Dave to collapse this to the property or no property question, does that mean we can remove the service endpoint in the confidence method itself?</p>
+<p id=4585 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think we should but I think we need to model something else as well that's not just the confidence method and say this is the credential you would get when you actually onboard you would get this other credential and that's where you put the provider information and maybe optionally a service endpoint but the second we remove this service endpoint we're going to wind up with the same question that we had here and how do you figure out where that service endpoint is and so we need that other credential from the onboarding process that at least gives you a vector into discovering a potential ser list of service endpoints.</p>
+<p id=095b class="phone s01"><cite>Joe_Andrieu:</cite> So I'm curious if we might already have that credential or if we need a third one. So one of the credentials in the spec right now is this the output for a biometric match. maybe there's privacy reasons or other reasons not to just reuse that. But if we could reuse that then what in the flow where I go to the state department they say you need to go to this biometric provider and then you're going to go get your proof of residency and when I go to that biometric provider if they do a biometric evaluation and give me an evaluation match credential as defined in the spec right now that is something I could give to the proof of residence issuer but I think we haven't done any analysis as to whether or not that is complete</p>
+<p id=df21 class="phone s01"><cite>Joe_Andrieu:</cite> And is it overkill on both ends? would that work is the question.</p>
+<p id=248a class="phone s06"><cite>Dave_Longley:</cite> And it doesn't seem like it's fit for that purpose.</p>
+<p id=3f16 class="phone s06"><cite>Dave_Longley:</cite> It seems more like you'd be receiving that. That sounds like I don't know that that's the credential you're handing over to prove that you've matched something. Does it say who the provider was that used it? I mean,…</p>
+<p id=b8aa class="phone s01"><cite>Joe_Andrieu:</cite> It does.</p>
+<p id=edf7 class="phone s06"><cite>Dave_Longley:</cite> I mean, maybe. Okay.</p>
+<p id=4059 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, it does have the issuer. I mean, the part of the question, I guess, does it get around the gatekeeping in any meaningful way?</p>
+<p id=18b2 class="phone s01"><cite>Joe_Andrieu:</cite> Or maybe another way to think about it is when a holder goes to an issuer in this use case this proof of residency and they provide a biometric template and say hey I want this in my VC what's the burden on the issuer at that point in the dead off world the argument that I've strongly made u repeatedly is before you issue the DC, verify that the user controls DID that they are using to present for themselves. So, I think there's a potential pattern here where the issuer even they get a biometric template, then they have to prove it is that really yours? And then Dave, the answer is here's my proof of satisfying it at a particular provider.</p>
+<p id=639f class="phone s01"><cite>Joe_Andrieu:</cite> So depending on what we're expecting the issuer to do with that data, maybe that credential is still part of the the matching credential</p>
+<p id=aaf2 class="phone s06"><cite>Dave_Longley:</cite> It certainly would need to be there if we're going to have the requirement that the user that the issuer check any confidence method that they're willing to attach to a VC that they sign. So, there would be some other kind of match that would happen. I just don't know if it's the right I think we need to work through it.</p>
+<p id=a404 class="phone s06"><cite>Dave_Longley:</cite> Maybe it can attach there, but it kind of feels like we're trying to say I like the idea of trying to reuse something if it makes sense. I'm worried a little bit about whether or…</p>
+<p id=4043 class="phone s01"><cite>Joe_Andrieu:</cite> Yep. Sure.</p>
+<p id=3d59 class="phone s06"><cite>Dave_Longley:</cite> not we're trying to overreuse something for that's intended for a different purpose, but that it might all work out. I think we need to work through</p>
+<p id=1e46 class="phone s01"><cite>Joe_Andrieu:</cite> I share the concern that hence how I'm trying to approach this conversation. I think one of the other things that I feel my proposal is overstepping a bit which makes me want to relax it's enforcing a policy that I think at most in terms of standards language like that the issuer should check the biometric template but if they're the kind of issuer that doesn't have the resources to do that</p>
+<p id=e04d class=irc><cite>&lt;Phillip_Long&gt;</cite> I like the parsimony of Joe's approach. </p>
+<p id=6ddb class="phone s01"><cite>Joe_Andrieu:</cite> then blindly putting in the biometric templates may be appropriate for that use.</p>
+<p id=79d2 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, D.</p>
+<p id=0301 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think we need to be pretty clear about the semantics of when a confidence method appears in a VC,… what does it mean? Does it mean that the issuer will always also have checked this or is it just potentially something that the holder asked you to put in there so they can do two-factor authentication or whatever it is that they would prefer verifiers check that a third party fraud can't take your VC and use it somewhere. Dave Longley:</p>
+<p id=3340 class="phone s06"><cite>Dave_Longley:</cite> So those are very different things and it's easy to mistake putting confidence methods into VCs and…</p>
+<p id=7553 class="phone s01"><cite>Joe_Andrieu:</cite> Yep.</p>
+<p id=a089 class="phone s06"><cite>Dave_Longley:</cite> treat them as protections against first party fraud where someone is intentionally delegating letting someone use a VC that no one in the ecosystem was expecting to let them. This is the evil Alice versus evil Bob use case. so we've got thirdparty fraud where someone's stealing your credentials and using them and you want to protect against that and that makes a whole lot of sense for please sign these confidence methods so that whenever I go and use these, I will use these confidence methods. I will do proofs on them to make sure that only I can use my own credentials. And that's very different from first party fraud where you're letting someone else use your credentials where it's not okay for you to delegate their use. and those two things are easily and dangerously conflated sometimes.</p>
+<p id=229d class="phone s06"><cite>Dave_Longley:</cite> And so we need to figure out whether confidence method itself is the semantics of it is either open where it's like maybe the issuer has checked this maybe they haven't or if it is supposed to be as a verifier if you find these confidence methods that the issuer is asserting that they also checked them and maybe we even need a flag in confidence methods that say whether or not that's</p>
+<p id=10004 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, maybe that might be a good approach. I want to note we are at time. I think this is very deep conversation. I think one of the interesting things Dave is I'm just going to wait to say it because I want to keep having this conversation but we need to wrap up. so we do need to figure out I guess what I did want to say let me say it is I think assurance level is the better place to say this is what they absolutely did according to some standard. but I like the ability to indicate on a given confidence method whether or not the issuer will state that they also check this before including it.</p>
+<p id=e0c2 class="phone s03"><cite>Scott_Jones:</cite> Thank you. Bye.</p>
+<p id=ff0d class="phone s01"><cite>Joe_Andrieu:</cite> That's an interesting approach. any last comments before we wrap? Okay, this is great. We'll see you all in two weeks.</p>
+<p id=79c3 class="phone s01"><cite>Joe_Andrieu:</cite> Appreciate the input. Meeting ended after 01:02:31 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+
+<section>
+<h3 id=9995>Fraud Types Discussion</h3>
+<p id=9811 class=irc><cite>&lt;Manu_Sporny&gt;</cite> We might consider &quot;collusion fraud&quot; and &quot;theft fraud&quot; instead of 1st party vs. 3rd party. </p>
+<p id=5b7d class=irc><cite>&lt;Manu_Sporny&gt;</cite> (likely easier to grasp the concepts based on the names for most people) </p>
+<p id=3aa0 class=irc><cite>&lt;Phillip_Long&gt;</cite> Got a drop. </p>
+<p id=671c class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 &quot;collusion&quot; vs. &quot;theft&quot; </p>
+<p id=fb4c class=irc><cite>&lt;Manu_Sporny&gt;</cite> or maybe &quot;loan-based fraud&quot; (ick) vs. &quot;theft-based fraud&quot; </p>
+<p id=3a51 class=irc><cite>&lt;Phillip_Long&gt;</cite> I like the flag idea </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

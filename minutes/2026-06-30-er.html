@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 30 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>30 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Benjamin_Young's_Presentation, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Kayode_Ezike, Parth_Bhatt, Phillip_Long, Shigeya_S, steve_capell, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#fdec">Discovery Mechanism For Recognized Entities</a></li>
+<li><a href="#13c0">Discovery Versus Verification</a></li>
+<li><a href="#b14f">Discovery model for recognised entity VCs · Issue #89 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#8692">validation rules for chained credentials · Issue #90 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#b271">Validation Rules For Chained Credentials</a></li>
+<li><a href="#8988">Use Cases For Recognized Entities</a></li>
+<li><a href="#c391">UNTP / UNGRID / DIA Identity Anchor use case · Issue #66 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#b29d">Historical Recognized Action Validity</a></li>
+<li><a href="#847d">How do you state a historical recognized action is valid between two dates? · Issue #63 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#19cc">Forgery Defense And Compromised Keys</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=8181 class="phone s01"><cite>Benjamin_Young:</cite> We're going to give it just a few more minutes. See if anybody else joins. Just wire.</p>
+<p id=65c0 class="phone s01"><cite>Benjamin_Young:</cite> Okay, I think this is probably everybody. thanks for coming. this is the VC recognized entities call and today I think we're going to look at Steve's two issues from a week ago and walk back through those. does anyone have anything else they'd like to add to the agenda or speak to before we get started? And is Steve that okay with you?</p>
+<p id=87c2 class="phone s02"><cite>steve_capell:</cite> That's fine.</p>
+<p id=7390 class="phone s01"><cite>Benjamin_Young:</cite> All right.</p>
+<p id=ffff class="phone s01"><cite>Benjamin_Young:</cite> And Steve, I assume we need to take these in the order they were created. Or do you have a preference? I'm going to screen share.</p>
+<p id=1cb5 class="phone s01"><cite>Benjamin_Young:</cite> And I mean,…</p>
+<p id=ae59 class="phone s02"><cite>steve_capell:</cite> We may as well go in the order created.</p>
+<p id=da71 class="phone s02"><cite>steve_capell:</cite> Yes. Yeah.</p>
+<p id=72ec class="phone s01"><cite>Benjamin_Young:</cite> they were minutes apart, I didn't know if you wanted to discuss them in a particular order. So, this is the first one. Can you all see that? I can zoom in or shrink the screen size. That better?</p>
+<p id=886a class="phone s03"><cite>Dave_Longley:</cite> Yeah, it's a little better.</p>
+<p id=17d5 class="phone s01"><cite>Benjamin_Young:</cite> I can go bigger.</p>
+<p id=2ec8 class="phone s03"><cite>Dave_Longley:</cite> I can read it.</p>
+<p id=4cca class="phone s01"><cite>Benjamin_Young:</cite> Okay, I'll leave it here.</p>
+<p id=527f class="phone s01"><cite>Benjamin_Young:</cite> Yeah, Steve, do you want to summarize this for us?</p>
+</section>
+
+<section>
+<h3 id=fdec>Discovery Mechanism For Recognized Entities</h3>
+<p id=d889 class="phone s02"><cite>steve_capell:</cite> Yeah. just reading it myself.</p>
+<p id=10000 class="phone s02"><cite>steve_capell:</cite> So this is one of two, right? that kind of both relate to the use of recognized entities. that's more about trust chains than about an already stored list. Right? It's very similar to GS1's use case. So this is basically saying I've got a credential. it's issued by some did and I want to know whether this did is a recognized entity by some other issuer that I trust and I need the way to find the recognized entity credential in a kind of consistent manner.</p>
+<p id=13dd class="phone s02"><cite>steve_capell:</cite> So it's a discy requirement. and the reason discovery kind of matters a bit is we can't always assume that let's say a commercial invoice and the related recognized entity let's say this issuer is a genuine Australian business so says the Australian tax office travel together, right? Because the invoice might go through multiple hands, the related identity credential may well get lost, especially if the way it passes through is like an email attachment with a QR on it or something.</p>
+<p id=b094 class="phone s02"><cite>steve_capell:</cite> So, a consistent way for a verifier who may be quite some arms lengths, many hops away from the holder or issuer, to find the recognized entity credential is what this ticket's about. And I have some sympathy for the mechanism that is currently defined in one of the DID methods but I don't think it's sort of architecturally or conceptually limited to that did method which who is endpoint. so yeah that's basically the issue doesn't specify how we do it.</p>
+<p id=8d60 class="phone s02"><cite>steve_capell:</cite> It just says, as a party who's been presented discovered a credential, I want to be able to see if there's a recognized entity credential. you could put the link inside the credential. There's a few choices here, right? I've got an invoice credential and the link to the recognized entry credential is inside the invoice credential. or you could put it as who is endpoint or something like that, a service endpoint in the corresponding did document of the issuer. these are all just signposts to find a thing, right? They're not necessarily either or. Maybe you do both.</p>
+<p id=365e class="phone s02"><cite>steve_capell:</cite> But the reason I sort of like attaching it to the did is that it's then sort of done once, And if I issue 10,000 invoices in a year, I don't have to put the link to the recognized entity credential because what the recognized entity credential is really recognizing is it's the issuer of the invoice, right? So sort of conceptually it's a thing related did not to the credential. Plus it could be that I'm sort of a bit constrained by perhaps I've got to comply with a credential standard that has a schema that doesn't have that feature in it and so if I insert a recognized entity credential link I'm breaking schema compliance. I don't know.</p>
+<p id=8aad class=irc><cite>&lt;Dave_Longley&gt;</cite> <a href="https://didwebvh.info/latest/whois/">did/whois - did:webvh DID Method Information -- &quot;did:web + Verifiable History&quot;</a> </p>
+<p id=e636 class="phone s02"><cite>steve_capell:</cite> There's could be reasons why it's awkward to put the link in a credential, but I don't see any reason we would want to prevent it cuz does it matter if there are two signposts of the same thing? Pick the one you want. But if we were going to define one, my feeling is that it ought to be some sort something in the did document that points to the recognized entity. But anyway, that's the purpose of this issue is to stimulate this discussion about how do we do discovery and…</p>
+<p id=ec2e class="phone s02"><cite>steve_capell:</cite> where should we define a consistent way to do it. Is there anything else I should say really? that's about it for this issue.</p>
+<p id=fd16 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, thank you for that.</p>
+<p id=70df class="phone s01"><cite>Benjamin_Young:</cite> Dick, go ahead.</p>
+<p id=cdda class="phone s03"><cite>Dave_Longley:</cite> Yeah. thank you for the intro and I think you covered it I would say that this is somewhat obvious but I don't think we should define more than the number of mechanisms we really need. So if we're going to define a mechanism it should be well justified. If we're going to define another that should be well justified and there should be really ideally overlap in why we have those more than one feature. So far I have heard that we might need as many as two of these mechanisms.</p>
+<p id=704d class="phone s03"><cite>Dave_Longley:</cite> I personally think the mechanism that's bound to the issuer ID through did who whatever we recommend in that space is the cleaner solution to the problem. precisely for what Steve said this is more about authenticating who has made the claims in the VC necessarily what the VC is itself. but I've also heard that that might be a challenge for a variety of reasons and people would like to be able to have backlinks in VCs which could bump into for people who is mechanism can create the problems Steve mentioned with schema violations or whatever else. so it seems to me like at most we might have to define two different mechanisms.</p>
+<p id=ded6 class="phone s03"><cite>Dave_Longley:</cite> I think Steve says it would be fine for any consumer to go use whichever mechanism they would prefer. I don't see any reason why you would have to for example maybe validate both otherwise it's no good. I don't know why that would be the case and I think that would defeat the purpose of having two of them. in terms of process around what we can put in our spec or what we should put in our spec there's some sticky questions. Certainly the did webvh people are trying to define who is service. I don't know how much they care about if components of that were defined here sort of did method agnos maybe even did agnostic way. that might be a conversation we would have with them. maybe they don't care where that work's taken on.</p>
+<p id=823c class="phone s03"><cite>Dave_Longley:</cite> Maybe it doesn't matter if they care and we can define our own service here and say you can hang this ser service off of something and when somebody talks to the service it responds one way or another with these recognize entity credentials one one or more or whatever seems to make sense regardless or irrespective of all of that I think we definitely need a section in the spec and we can decide to what extent it's normative or informative where we say here are ways to go about discovering these lists so that you don't have to entirely rely on it just a priority knowledge that hangs around and might not be scalable as Steve said for certain use cases.</p>
+<p id=575f class="phone s03"><cite>Dave_Longley:</cite> So we should definitely have that in the spec and I would recommend that we start with did who is approach and even if that means sort of making it more generic and then talking about how it can be realized concretely using did who</p>
+<p id=da84 class=irc><cite>&lt;steve_capell&gt;</cite> if the link is in VC then it's probably something at VCDM </p>
+<p id=fe6f class="phone s01"><cite>Benjamin_Young:</cite> Okay, thank you. should</p>
+<p id=6238 class="phone s04"><cite>Shigeya_S:</cite> Yes, thank you very much for introduction. I'm seeing this as the logistics of pieces of information which needed to accept the terminal credential and that we need multiple point of view which need to be discussed and one of them is privacy of course and privacy is related to a mechanism which a discovery mechanism.</p>
+<p id=2233 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Please put URLs here, as they're loaded for seeing. It's easier to zoom/enlarge locally than it is to make sure the shared screen is legible for all things. </p>
+<p id=9b88 class="phone s04"><cite>Shigeya_S:</cite> If you relying on any third parties in a certain way it will cause a privacy leak of course and also whether you're going to trust the entity which you delegate about the discovery is also question and related also that the scalability is a potentially issue. So how and when the end entity want to verify the information verify the terminal credential is a kind of point of interest.</p>
+<p id=580e class=irc><cite>&lt;Dave_Longley&gt;</cite> i don't think we need to modify do anything with VCDM -- it's designed to be extensible </p>
+<p id=2077 class="phone s04"><cite>Shigeya_S:</cite> So from the placement point of view and the Dave mentioned that too but I think more than that potentially and one of them is of course accompanying with the terminal credential and second is the discover from somewhere but I think it is potentially possible to I mention about the delegations</p>
+<p id=b27d class=irc><cite>&lt;Phillip_Long&gt;</cite> Ted: <a href="https://github.com/w3c/vc-recognized-entities/issues/89">Discovery model for recognised entity VCs · Issue #89 · w3c/vc-recognized-entities · GitHub</a> </p>
+<p id=fd55 class="phone s04"><cite>Shigeya_S:</cite> So who is involved with the logistics of the terminal credential depends on that it is who is working on the discovery of the middle part of the chain of trust. I mean that part is not necessarily one. So potentially multiple.</p>
+<p id=c033 class="phone s04"><cite>Shigeya_S:</cite> So that part is also I think need to be discussed and from the different point of view they mentioned about how it can be relying on the did or not and there tons of debate can be possible on that and who is defining the delegation not delegation who is defining discovery mechanism and who is going to enforce that to the end entity is also a question so that's my first thought related to the use cases discussed by</p>
+<p id=cf15 class="phone s01"><cite>Benjamin_Young:</cite> dead.</p>
+<p id=c4d3 class="phone s03"><cite>Dave_Longley:</cite> So, a couple of things. first, I do think we need to make sure that we separate whether we're talking about the discovery bucket, which does potentially bring in a interesting set of privacy considerations as you were saying. and we separate that from just the mechanical when you're presenting something what needs to be present for someone to be able to verify and validate the whole trust chain cuz certainly you could say without discovery there are a number of ways to do that and we shouldn't ignore that.</p>
+<p id=f810 class="phone s03"><cite>Dave_Longley:</cite> And in the more privacy preserving cases, you could have in whatever way you wanted obtained all the lists that the verifier needs and present all of the credentials all at once so that the verifier has no need to potentially go fetch something. and by one of the ways you could have gotten all that information is by using one of the potential discovery mechanisms. So we got to keep those two things separate from one another and not couple them.</p>
+<p id=c51c class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> tnx Phil </p>
+<p id=ce3a class="phone s03"><cite>Dave_Longley:</cite> and if I can try to remember the other point I wanted to make the multiplicity of did methods and did resolution that's certainly a concern I would think in this not that we should avoid that concern in the spec but I think in the spec if we're going to define a service that you can fetch from the issuer we wouldn't be getting into the details of how you</p>
+<p id=881a class="phone s03"><cite>Dave_Longley:</cite> resolve the issuers's identifier, but we would be saying when you do resolve the issuers's identifier, you were looking for this service and this is what the service provides to you. but then certainly we would need to have a consideration section and that it would be something to the effect of if you're going to use this for global trade, you better all agree on some set of DIDs that are going to be acceptable because everyone is going to agree to resolve all of them. And so you pick random did methods then don't expect everybody to have to willingly have a driver for resolving those. but that's sort of in the use case space. We should talk about it so that people coming to the spec and building and using it for the use cases know that it's a consideration. but that's where that goes and ideally whatever we put in our spec is agnostic about that piece.</p>
+<p id=d255 class=irc><cite>&lt;steve_capell&gt;</cite> Indeed discovery is quite separate to verification. </p>
+<p id=bc89 class="phone s01"><cite>Benjamin_Young:</cite> Great. So,…</p>
+<p id=0da8 class="phone s01"><cite>Benjamin_Young:</cite> how does everyone feel about carving out specific things to tackle here? Because the discussion's been good. do we have some issues that can drive us towards spec text or is this understood enough Steve where you would want to do a second pass based on conversation.</p>
+</section>
+
+<section>
+<h3 id=13c0>Discovery Versus Verification</h3>
+<p id=e10b class="phone s02"><cite>steve_capell:</cite> I felt like I was in strong agreement.</p>
+<p id=10d1 class="phone s02"><cite>steve_capell:</cite> ment with everything said that discovery is and should be separate to verification. I should be able to be presented with with no discovery at all and verify them or I discover them or either predictably or because someone told me it doesn't matter right there it could be seven different signposts to the thing. so that's completely agree with that also your point about independence of did method absolutely obviously people will choose which did methods they prefer but our spec should say however you should find the recognized entity at this kind of service endpoint or however we decide to do it and yes there is a cardality where</p>
+<p id=b210 class="phone s02"><cite>steve_capell:</cite> where it could be both an Australian business and a Monica beekeeper, so yeah, it needs to be a list of recognized entity lists in this discovery chain. in my view there's mostly only one entry in each list because you're coming at it bottom up instead of top down, right? you're discovering if you like an authorization as opposed to going to the authority and saying is this entity on your list.</p>
+<p id=4b56 class="phone s02"><cite>steve_capell:</cite> you're actually verifying an authority issued credential about one entity so I would expect to see potentially several service endpoints did all pointing to recognized entity credentials but issued by different authorities or different authorities to know the loaded word a party that I trust or…</p>
+<p id=3b05 class="phone s01"><cite>Benjamin_Young:</cite> Okay. All right. steve capell:</p>
+<p id=0deb class="phone s02"><cite>steve_capell:</cite> I care about. But yeah, look, all good so far. I think no disagreement.</p>
+<p id=3571 class="phone s03"><cite>Dave_Longley:</cite> So I think Benjamin you were trying to drive towards what would spec text look like. I think we need a section on discovery and I think it starts out as non-normative and then we figure out what we make normative in that section and if it starts out as non-normative we can just start talking about the two different methods that we're cons one through some kind of service when you resolve the issuer identifier as a URL you get back a controlled identifier document which could also be</p>
+<p id=1b85 class="phone s03"><cite>Dave_Longley:</cite> a did document and it has services in there and you find the right service whatever we decide that that is and when you talk to that service you get the things that Steve was just talking about. and then the second method of discovery is you can put a recognized in property in your issuer field in your VC and point to a list. and I think if having an informative section that says that and then we can figure out what should be normative is a good starting place. and of course we should also have text in there that makes it clear that discovery is decoupled entirely from verification so that's clear to the reader.</p>
+<p id=7bad class="phone s01"><cite>Benjamin_Young:</cite> Yeah, I was starting from the back and you shared the specifics. Thank you. But I didn't catch those and I'm what I think I'm going to do is just say should be added about call discovery separate from verification and note the two methods proposed here. They're both mentioned above I think but maybe too abstractly.</p>
+<p id=0ee7 class="phone s03"><cite>Dave_Longley:</cite> I think if we had put topic or subtopic into the messages here,…</p>
+<p id=330f class="phone s01"><cite>Benjamin_Young:</cite> Darn.</p>
+<p id=df7e class="phone s03"><cite>Dave_Longley:</cite> the minutes would have linked everything we just said to the issue.</p>
+<p id=cb66 class="phone s01"><cite>Benjamin_Young:</cite> That's good to know. I'm not used to.</p>
+<p id=4891 class="phone s03"><cite>Dave_Longley:</cite> I mean, if we put in there now, this is issue 89.</p>
+<p id=1361 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, it's 89.</p>
+<p id=47b8 class="phone s03"><cite>Dave_Longley:</cite> Is this a topic or a subtopic?</p>
+<p id=3742 class="phone s01"><cite>Benjamin_Young:</cite> This is a topic…</p>
+<p id=28f0 class="phone s01"><cite>Benjamin_Young:</cite> because we don't have other topics. I didn't write an agenda.</p>
+<p id=d1e7 class="phone s03"><cite>Dave_Longley:</cite> All right.</p>
+<p id=4d63 class="phone s03"><cite>Dave_Longley:</cite> So, if we just do that,…</p>
+<p id=a5ce class="phone s01"><cite>Benjamin_Young:</cite> Not my usual sharing.</p>
+<p id=e8bd class="phone s03"><cite>Dave_Longley:</cite> it's close, but it won't gather. It won't do everything just said.</p>
+<p id=9cb8 class="phone s01"><cite>Benjamin_Young:</cite> And if I knew where these lived, I could edit that file and refeed it probably. right.</p>
+<p id=820a class="phone s03"><cite>Dave_Longley:</cite> And if you say something right now, it'll link in to this issue and…</p>
+<p id=b582 class="phone s01"><cite>Benjamin_Young:</cite> So that Okay. Dave Longley:</p>
+<p id=10001 class="phone s03"><cite>Dave_Longley:</cite> So readers of this issue can read up a little bit and see what we were just talking about since we forgot to put the topic in there until just now a back link probably use reusing the recognized in property that we've defined</p>
+</section>
+
+<section>
+<h3 id=b14f><a href="https://github.com/w3c/vc-recognized-entities/issues/89">Discovery model for recognised entity VCs · Issue #89 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=10002 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. who was one option and the other was a I didn't catch the term you mentioned.</p>
+<p id=b33e class="phone s01"><cite>Benjamin_Young:</cite> Can't type. It's late in the day. Y'all are watching. Yeah. Look at that property. Okay, that sound like it more or less covers it.</p>
+<p id=fb87 class="phone s03"><cite>Dave_Longley:</cite> Yeah, I guess the only other thing is sometimes the Steven who's involved in VH shows up on these calls and if I go find I think he's the prim primary author of who is thing over at did webv, but I'm not sure. I'm clicking to see if that's listed anywhere.</p>
+<p id=f451 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, we could app mention him and…</p>
+<p id=72b1 class="phone s03"><cite>Dave_Longley:</cite> Yeah. Yeah.</p>
+<p id=7412 class="phone s01"><cite>Benjamin_Young:</cite> if he wants to contribute. You're checking Webb PH.</p>
+<p id=c8a8 class="phone s03"><cite>Dave_Longley:</cite> I am checking right now.</p>
+<p id=2975 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, it'd be good to have that group speak to this a bit. I think he was in there.</p>
+<p id=ec88 class="phone s03"><cite>Dave_Longley:</cite> And I don't remember his GitHub handle, but if we can get Stephen Curran tagged, then that would be good. I don't know if you just start typing at and…</p>
+<p id=1b9b class="phone s02"><cite>steve_capell:</cite> I'm vaguely remembering SW current something like that.</p>
+<p id=c063 class="phone s03"><cite>Dave_Longley:</cite> type something that looks remotely like Stephen Curt</p>
+<p id=32d8 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. Yeah, that sounds familiar. But he may not be in the autopop populate list.</p>
+<p id=ca8b class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> He's the top contributor to the GitHub archive for those spec.</p>
+<p id=67d4 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> <a href="https://github.com/swcurran">swcurran (Stephen Curran) · GitHub</a> </p>
+<p id=d634 class="phone s01"><cite>Benjamin_Young:</cite> Peak visit.</p>
+<p id=60e4 class="phone s01"><cite>Benjamin_Young:</cite> or the webbar SW current.</p>
+<p id=047f class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I just</p>
+<p id=5b25 class="phone s03"><cite>Dave_Longley:</cite> Yeah, it That's right. Yep. D U R R A</p>
+<p id=06dc class="phone s01"><cite>Benjamin_Young:</cite> I had one R. That's what did it. many Steves. Paste that just to be Okay.</p>
+<p id=4be3 class="phone s01"><cite>Benjamin_Young:</cite> We good on this one? Would you like to move on to the next one?</p>
+<p id=bdca class="phone s02"><cite>steve_capell:</cite> It looks good to me.</p>
+</section>
+
+<section>
+<h3 id=8692><a href="https://github.com/w3c/vc-recognized-entities/issues/90">validation rules for chained credentials · Issue #90 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=e9fa class="phone s01"><cite>Benjamin_Young:</cite> Is I think Okay, because I think we'll come back to this one and talk towards breaking this into few pieces of work eventually. Okay, Dave, to you again. steve capell:</p>
+</section>
+
+<section>
+<h3 id=b271>Validation Rules For Chained Credentials</h3>
+<p id=10003 class="phone s02"><cite>steve_capell:</cite> All right. So this one is the other half of the discussion we've been having which is having found by whatever means a recognized entity credential what do we say if anything about how you should verify the graph effectively of the linked set of credentials right because obviously a recognized entity credential could be potentially reused or replayed by anyone. and just because it's independently valid and issued by someone you trust, doesn't mean it's related to the credential, that doesn't mean that the party is related has anything to do with the first credential you're verifying. So, I got an invoice.</p>
+<p id=7ec6 class="phone s02"><cite>steve_capell:</cite> it's issued by some DID and that has attached a recognized entity credential that it found issued by some authority that's actually recognizing a completely different entity, right? So I think this area can get really complex quite quickly because it is the subject of the recognized entity a match to the issuer of the credential that I'm verifying. That's one fairly obvious validation rule.</p>
+<p id=dd15 class="phone s02"><cite>steve_capell:</cite> There could be all kinds of others and it's unclear to me how far we go down this right because it might be too that there's a match of ds but the scope of the recognition is completely unrelated so it's an accredititation authority that's recognizing a certificate issuing body to issue 9 ISO 9000 certificates but the credential I'm verifying is not an ISO 9000 certificate something else that's where it gets a little bit perhaps verifier specific so the question here is what is the minimum set of rules that would be useful for us to specify that whether it's a should or a must that relate to the verification of the linked set of if you like graph data</p>
+<p id=7deb class="phone s02"><cite>steve_capell:</cite> That is fundamentally the purpose of this recognized entity, right? We have it for a reason, which is that it's referencing the entity that is issuing the thing you care about. so I've put two concerns in there. Is the issue of the dead blah blah blah The claims might be a more tricky one to standardize. I don't know. But open the floor for the discussion about what verification rules should we include and…</p>
+<p id=9b76 class="phone s01"><cite>Benjamin_Young:</cite> Go ahead.</p>
+<p id=a1c0 class="phone s02"><cite>steve_capell:</cite> whether they should be a must or a should or whatever.</p>
+<p id=6f1b class="phone s03"><cite>Dave_Longley:</cite> Our current design…</p>
+<p id=2a22 class="phone s03"><cite>Dave_Longley:</cite> which needs to be proven out and we got to test it against some good use cases so we've created this hopeful design that is first it's fail closed. So if you create a recognized entity list and you do not recognize any particular actions like the action of issuing a credential if you don't have that then it's assumed that you're just recognized for who you are and the list itself does not recognize you to issue any credentials.</p>
+<p id=10004 class="phone s03"><cite>Dave_Longley:</cite> However, if you add for example you recognized to issue this credential that credential and this is always by whoever is created the recognized entities list so it's got their signature on it. we've tried to cover without having to specify some set of validation rules ourselves. We've tried to cover enabling very flexible validation rules by using JSON schema. This is the part that needs to be proven out to see if this is going to work or going to create some terrible mess.</p>
+<p id=b948 class="phone s03"><cite>Dave_Longley:</cite> So the idea is you say this entity is recognized to issue credentials that match this schema or that schema and you can have a list of these and if those are crafted properly in theory you could when you're doing your discovery or doing your verification and going through the list of links and credentials.</p>
+<p id=c1a1 class="phone s03"><cite>Dave_Longley:</cite> You would look at your first credential and verify it and then you'd look at your first list and see if this credent you would do the simple check is the issuer did matching the subject or is the subject of the recognized entity really matching the issuer which you're more or less going to get for free because you're stepping through a path up a chain and when you find it does it say they're allowed to issue something, they're recognized to issue something to begin with. And then if you take the schema, does the schema validate against what's in your hand, and if so, then you go up the next link in the chain.</p>
+<p id=c608 class="phone s03"><cite>Dave_Longley:</cite> And the theory is that seems like it could work provided that people can craft JSON schemas properly and if that's all self-contained and people do what they're supposed to do, does that work out? That's the open</p>
+<p id=c371 class="phone s02"><cite>steve_capell:</cite> Certainly verifying the issue of one is the subject of the other. That's a fairly straightforward rule for the recognized action. whilst I don't dispute that's a potentially useful test, it's not the only type of test that might So for example, a product passport I might want to know even that conformity credential I spoke about before might have a recognized entity link.</p>
+<p id=eef8 class="phone s02"><cite>steve_capell:</cite> But I also want to be sure that the thing you're verifying is might have to write an issue about this. I'm struggling to explain that there are sometimes things that are less about the schema and more about an additional kind of subject is this credential not only issued by a recognized conformity body but it's about this factory or that product that is the subject of the</p>
+<p id=84fe class="phone s02"><cite>steve_capell:</cite> Sorry, I've got to organize my thoughts before because I realize that what I'm talking about are validation rules that are maybe less about recognized entities and more about a broader case of change credentials where you want to link data across all kinds of change credentials,…</p>
+<p id=3a88 class="phone s02"><cite>steve_capell:</cite> not just recognized entities. pause what I said and let regroup.</p>
+<p id=e3a6 class="phone s03"><cite>Dave_Longley:</cite> Yeah, no worries.</p>
+<p id=7f26 class="phone s03"><cite>Dave_Longley:</cite> It would be good to have a concrete example to work to see if it fits in with this concept. I wanted to be clear though in case I wasn't before the schema that is checked it would be against any type of credential. So, as you were describing that, which I know you want to collect your thoughts a little bit more, but as you were describing that, you were saying that the credential needs to be about, a factory or I would expect the schema to say you're only allowed to issue credentials that have this context, this type, and the subject is a type of factory or, if there's a list of options. it's just a more complicated JSON schema, but it works just the same.</p>
+<p id=2593 class="phone s03"><cite>Dave_Longley:</cite> The only time I think that wouldn't work is if you're not just evaluating the schema against the credential, but some external data from some other system. And now you've got to talk about how you going to point and reference that and I should say if there is that external data and so on that that'll introduce additional privacy concerns around how are you going to go fetch it and so on. But the hypothesis that's put out there right now is with any given JSON schema and the set of credentials you have in your hand, presumably if there's nothing outside of what's in your hand, the JSON schema could be crafted such to apply the appropriate validation rules.</p>
+<p id=2183 class="phone s02"><cite>steve_capell:</cite> Yes, quite possibly. Why don't I take an action to just describe in structured English a bunch of chained credential validation scenarios and then we can say yeah these are relevant for recognized entities those ones aren't or…</p>
+<p id=1d6f class="phone s02"><cite>steve_capell:</cite> just at least give us some concrete examples.</p>
+<p id=d5d5 class="phone s03"><cite>Dave_Longley:</cite> Yeah, that sounds great.</p>
+<p id=27ed class="phone s01"><cite>Benjamin_Young:</cite> Thank you,…</p>
+<p id=d129 class="phone s01"><cite>Benjamin_Young:</cite> Anyone else have thoughts on this one or the Jason schema approach? And thank you, Ted, for topicing that one. I think the PRs are still the same and ending other discussions.</p>
+<p id=5872 class="phone s01"><cite>Benjamin_Young:</cite> Issues wise, let's skip over the threat model ones and the editorial ones. Kevin is not on, I don't think. Nope. Nor is anyone from that group. That looks editorial. If folks have favorite issues, please raise them. I'm going to mark these two as editorial. Phil's not here. We could discuss this without him.</p>
+<p id=ecee class="phone s01"><cite>Benjamin_Young:</cite> I'm trying to find ones that overlap with the current audience. Steve, this one's marked as use case. It's one you filed. I imagine it's just an action that you've taken.</p>
+<p id=9921 class="phone s02"><cite>steve_capell:</cite> What…</p>
+<p id=4322 class="phone s01"><cite>Benjamin_Young:</cite> Or is it one you'd like to discuss given recent conversations?</p>
+<p id=8740 class="phone s02"><cite>steve_capell:</cite> what is that?</p>
+<p id=1004 class="phone s01"><cite>Benjamin_Young:</cite> I'm bringing it up this guy. Okay. Yeah. Yeah.</p>
+</section>
+
+<section>
+<h3 id=8988>Use Cases For Recognized Entities</h3>
+<p id=6b3b class="phone s02"><cite>steve_capell:</cite> This is the original one where I described the business scenarios. So both the two issues we just discussed point to this one to say here's what emerges because somewhere down the bottom of this I say we need a discovery mechanism we need some validation rules and most of the issue I think is the invoicing and the conformity credential scenarios.</p>
+<p id=75c6 class="phone s01"><cite>Benjamin_Young:</cite> So the two you just created kind of closes the loop on this use case.</p>
+<p id=919f class="phone s02"><cite>steve_capell:</cite> Yes, exactly.</p>
+<p id=478a class="phone s01"><cite>Benjamin_Young:</cite> I do we have a use cases document for this group? I thought we did. is the plan to coalesce this text into that document? I'm going to check real quick. Yeah, we do have a use cases document. do we want to bring that over or is that down the road?</p>
+<p id=adb3 class="phone s02"><cite>steve_capell:</cite> If we had a use case document, it makes sense to put the use cases in it, wouldn't it? So, I'm happy to take an action to do that as well.</p>
+<p id=9fd0 class="phone s01"><cite>Benjamin_Young:</cite> Awesome.</p>
+<p id=8681 class="phone s02"><cite>steve_capell:</cite> Is it a separate document?</p>
+<p id=2663 class="phone s01"><cite>Benjamin_Young:</cite> Let's see…</p>
+<p id=6479 class="phone s01"><cite>Benjamin_Young:</cite> what Yes, apparently plural this guy.</p>
+<p id=d182 class=irc><cite>&lt;Benjamin_Young&gt;</cite> <a href="https://w3c.github.io/vc-recognized-entities/use-cases">Recognized Actions Use Cases v0.9</a> </p>
+<p id=c182 class="phone s03"><cite>Dave_Longley:</cite> I'm trying to remember I feel like we went over this ground recently. Did we start to move the use cases into…</p>
+</section>
+
+<section>
+<h3 id=c391><a href="https://github.com/w3c/vc-recognized-entities/issues/66">UNTP / UNGRID / DIA Identity Anchor use case · Issue #66 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=1df3 class="phone s02"><cite>steve_capell:</cite> Yeah. That's right.</p>
+<p id=4862 class="phone s03"><cite>Dave_Longley:</cite> because those other use cases are quite old and I think we started to try to curate things and put them into the document itself maybe.</p>
+<p id=a801 class="phone s01"><cite>Benjamin_Young:</cite> I think you're right. Yeah, I'm having vague memories of this or that was discussed. I don't think it started happening yet. no. There are some up at the top.</p>
+<p id=9129 class="phone s03"><cite>Dave_Longley:</cite> So I think currently we're trying to use cases in here.</p>
+<p id=5ee3 class="phone s01"><cite>Benjamin_Young:</cite> Okay, I'm going to make an issue.</p>
+<p id=d758 class="phone s02"><cite>steve_capell:</cite> I remember That's true. Yeah.</p>
+<p id=10005 class="phone s01"><cite>Benjamin_Young:</cite> Okay, I'm going to make a new issue.</p>
+<p id=8e02 class="phone s01"><cite>Benjamin_Young:</cite> Deprecate remove cases HTML place with inline use cases section. Some are already there. Other issues tag with use case should be added such as UNP that guy. Okay, so that sounds good. Someone can take those actions.</p>
+</section>
+
+<section>
+<h3 id=b29d>Historical Recognized Action Validity</h3>
+<p id=90cf class="phone s01"><cite>Benjamin_Young:</cite> Come the writing of the use case to be added into section minutes. Tada. Thank you, go back to the issues list. where were that one? How do we state historically recognized actions is valid between two dates?</p>
+<p id=d951 class="phone s01"><cite>Benjamin_Young:</cite> Sounds fine. Does anybody want to dig into this one for now or does it need further definition?</p>
+<p id=2f81 class="phone s02"><cite>steve_capell:</cite> This one's a bit interesting. I have this see if I can draw some of the use cases for verification might reveal this need. Right. is there a difference between the issue and expiry of a recognized entity credential as part of the VCDM versus if you like the term of the recognized action and…</p>
+<p id=4b77 class="phone s01"><cite>Benjamin_Young:</cite> Sounds like it.</p>
+<p id=b565 class="phone s02"><cite>steve_capell:</cite> can we pull out some use cases where that really matters is what's driving this I think isn't</p>
+<p id=f94e class="phone s03"><cite>Dave_Longley:</cite> And if we were to dive into this, we'd have to be really careful because it's easy to say, this issuers was recognized to, issue this BC between these two dates but who's responsible for saying for the proof that the date is accurate? So what is the proof of publication? you go and find that BC maybe this is the wrong use case but if the keys were compromised for example or the issuers no longer trusted after a certain date they can still put whatever date they want and issue a VC and so you would need additional evidence some witness proof or some proof of publication that the date that is on the VC is the date at which was issued which is different from just</p>
+<p id=10006 class="phone s03"><cite>Dave_Longley:</cite> taking trusting the issuer to have put that date on there. And those are two subtly different things. we'd have to be careful that peop if we define a way to do either or both of these that people don't get them confused.</p>
+</section>
+
+<section>
+<h3 id=847d><a href="https://github.com/w3c/vc-recognized-entities/issues/63">How do you state a historical recognized action is valid between two dates? · Issue #63 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=9a0c class="phone s01"><cite>Benjamin_Young:</cite> Is this another credential being issued by somebody else on top of the other one as an annotation?</p>
+<p id=58b7 class="phone s06"><cite>Phillip_Long:</cite> Okay.</p>
+<p id=aa3d class="phone s03"><cite>Dave_Longley:</cite> I think this use case is sort of a college issued a diploma and then presumably the college has gone away and maybe was only in this case it says it was good forever but it's going to have a valid from date that says I don't know 1990 and this university maybe that's bad didn't exist 2020 and it persists into the future but that college is gone and you want to continue saying it's still valid and we could explore really why you need to do that at that point …</p>
+<p id=75ea class="phone s03"><cite>Dave_Longley:</cite> but you also want to say it's no longer valid I'm not sure what really we want this to say.</p>
+<p id=8844 class="phone s01"><cite>Benjamin_Young:</cite> I'm also wondering…</p>
+<p id=fa2b class="phone s03"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=3dd1 class="phone s01"><cite>Benjamin_Young:</cite> who the speaker is in this case. a verif…</p>
+<p id=58ed class="phone s03"><cite>Dave_Longley:</cite> I'm using for pronouns. Yeah. That's true.</p>
+<p id=c913 class="phone s01"><cite>Benjamin_Young:</cite> because a verifier is going to do what it's going to do, it's going to care or not care based on I got this credential, the issuer is gone. But the issuer metadata I have this in a database somewhere that this issuer used to exist and…</p>
+<p id=7dfd class="phone s03"><cite>Dave_Longley:</cite> But the verifiers</p>
+<p id=42c2 class="phone s01"><cite>Benjamin_Young:</cite> I'm okay with accepting it maybe and I don't know who would after the demise of the issuer jin up a bunch of no please continue to trust this thing like maybe somebody would other than the verifier.</p>
+<p id=565c class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think that's the use case which is the verifier wants to delegate. They don't know whether they should trust this,…</p>
+<p id=4fde class="phone s01"><cite>Benjamin_Young:</cite> The dead poet Society.</p>
+<p id=32e6 class="phone s03"><cite>Dave_Longley:</cite> but there's someone else who's going to create this recognized entities list that's going to tell them it's fine. I think that's The details of the use case aren't clear to me.</p>
+<p id=1954 class=irc><cite>&lt;steve_capell&gt;</cite> yes I think we need to draw out the ned for this via concrete use cases </p>
+<p id=2b05 class="phone s01"><cite>Benjamin_Young:</cite> Okay, let's go to the queue. Phil</p>
+<p id=d3e9 class="phone s06"><cite>Phillip_Long:</cite> Yeah, this is one that there's another way of looking at this and…</p>
+<p id=10007 class="phone s06"><cite>Phillip_Long:</cite> that is an issuer may issue a series of credentials that are consistent with let's say it's an instructional activity and the instructional activity lasts six weeks and there's three of them in sequence but the institution does not publish them until some later date. and that's not uncommon and so is at it the question that you have to deal with is the credential is issued for the training period from January till May and another one from June until I don't know August or something. The institution doesn't publish it until December.</p>
+<p id=89bd class="phone s06"><cite>Phillip_Long:</cite> And the question distinguish is there anything that would arise where you would be concerned about that difference in time how does the verifier interpret that difference? and the other aspect I guess is the issuer of a credential that has disappeared.</p>
+<p id=2be6 class="phone s06"><cite>Phillip_Long:</cite> Ex in governance rules, you expect that the institution that's going out of business would pass its private key and to a third party that would be available to represent it after it is gone. so that the credential actually can be verified in the future even though it's no longer present. We've had an example of that in the US where a private training institution issued credentials, went out of business and a community college system contacted it to get the the keys associated with those issued credentials and…</p>
+<p id=8ee2 class="phone s06"><cite>Phillip_Long:</cite> acted as a proxy for it so that it still can be verified and therefore the individuals who have that credential weren't at sea with having a credential that couldn't be verified. That's it.</p>
+<p id=b7f4 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, it'd be good to write up some of that,…</p>
+<p id=56c3 class="phone s01"><cite>Benjamin_Young:</cite> I think. thank you, Phil. Dave</p>
+<p id=6364 class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think it would be great to have the concrete use cases and generically it seems like what we're trying to say here is there's this idea that someone would produce a recognized entities credential with a allowable action or whatever we call this thing to issue recognize action with a strict time limit and to point</p>
+<p id=10008 class="phone s03"><cite>Dave_Longley:</cite> I would recognize something they issued in this time window and it would really be interesting to understand why the time window would be selected what reasons there would be and what the threat model is if something is issued outside of that time window and what the threat model is if something's issued within the time window but with a dishonest date on the VC.</p>
+<p id=2fc5 class="phone s01"><cite>Benjamin_Young:</cite> Okay, we got six more minutes. Any other thoughts on that? Go ahead, Demitri. Yeah, good.</p>
+</section>
+
+<section>
+<h3 id=19cc>Forgery Defense And Compromised Keys</h3>
+<p id=aa8f class="phone s07"><cite>Dmitri_Zagidulin:</cite> There's also the issue of compromised keys and so part of the calculus there was the verifiable credential issued during the valid period of the key in between issuance and compromise.</p>
+<p id=7b4b class="phone s03"><cite>Dave_Longley:</cite> That raises a really interesting point which is we might want to collaborate with the forgery defense spec or make use of the forgery defense spec make it possible to link to that in a recognized entity spec and…</p>
+<p id=7308 class="phone s03"><cite>Dave_Longley:</cite> hey you could check this forgery defense spec for any credential ials issued by this party or whatever. so there might be some interesting reuse of that spec</p>
+<p id=f158 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, because I would think forgery is in a historically defunct college no longer around at least in this particular version of that use case.</p>
+<p id=69d8 class="phone s01"><cite>Benjamin_Young:</cite> There's a lot of overlap there.</p>
+<p id=831b class="phone s03"><cite>Dave_Longley:</cite> And that really might be a way to sort of do what Phil was saying that community college did without having to have the keys around. If you have checked existing VCs for using whatever mechanism you decided that those were true valid VCs, you could put that in your forgery defense list.</p>
+<p id=4c75 class="phone s01"><cite>Benjamin_Young:</cite> We will undoubtedly come back to this.</p>
+<p id=9668 class="phone s03"><cite>Dave_Longley:</cite> And that can persist forever.</p>
+<p id=aaa5 class="phone s01"><cite>Benjamin_Young:</cite> Calling you out, Phil. Yeah.</p>
+<p id=6794 class="phone s06"><cite>Phillip_Long:</cite> Yeah, I was just pointing out there are cases in medical and healthcare where there's a credential with effectively an end date because there's a continuing education requirement at specified times because the discipline is changing. And so if the person doesn't get the continuing education unit for that next time period, there is an expectation or a rule that the previous one is no longer valid. That is to say, they are not licensed to practice without that continued updating process verified. Right.</p>
+<p id=c68b class="phone s07"><cite>Dmitri_Zagidulin:</cite> And I think that's handled by regular from valid until it's in the interplay of the verb credentials expiration and the recognized entities credential expiration that's tricky.</p>
+<p id=d3dd class="phone s01"><cite>Benjamin_Young:</cite> Right. Yeah.</p>
+<p id=1a3c class="phone s06"><cite>Phillip_Long:</cite> Yeah, but the question as Dimmitri just said is about the recognized issuer.</p>
+<p id=9863 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. Because some of what you just described, Phil, I think is just credential expiration, but entity, right? Yeah. Okay, this is a fun one. we will come back to it. There's only three more minutes left on the call. Anyone have final thoughts as we depart?</p>
+<p id=0920 class="phone s01"><cite>Benjamin_Young:</cite> Okay, thanks so much for coming everybody. Thanks for the good discussions.</p>
+<p id=4ed7 class="phone s01"><cite>Benjamin_Young:</cite> Steve, thanks for kicking off two hefty issues and we'll see you all in a week or so.</p>
+<p id=97e6 class="phone s02"><cite>steve_capell:</cite> Thank you.</p>
+<p id=6df5 class="phone s02"><cite>steve_capell:</cite> Thank you. Meeting ended after 01:09:39 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=23fa class=irc><cite>&lt;Phillip_Long&gt;</cite> There are credentials issued in a medical or health care context where a credential h as an end date because the professional association requires continuing education at regular intervals or the orginal license is no longer valid </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
