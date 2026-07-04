@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 30 June 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>30 June 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Phillip_Long</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#afd1">Relationship Between Barcode and Render Method Specs</a></li>
+<li><a href="#3829">Low Attendance at Meeting</a></li>
+<li><a href="#1e08">Preparing Threat Model Document</a></li>
+<li><a href="#b191">Focus Constraints and Threat Models</a></li>
+<li><a href="#c7ea">Using Existing Templates for Threat Modeling</a></li>
+<li><a href="#1195">Core Use Case Flow Document</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=787c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hello.</p>
+<p id=c3fa class="phone s02"><cite>Ivan_Herman:</cite> How you doing?</p>
+<p id=bbed class="phone s02"><cite>Ivan_Herman:</cite> Mitri, can I ask a question?</p>
+<p id=7926 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Please. Yeah.</p>
+</section>
+
+<section>
+<h3 id=afd1>Relationship Between Barcode and Render Method Specs</h3>
+<p id=e332 class="phone s02"><cite>Ivan_Herman:</cite> Has there ever been discussions or is it a anthema that the barcode spec is in fact a specification of a render method? Where's she? What? Dmitri Zagidulin:</p>
+<p id=96d4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Great question. I mean we've definitely mentioned that they're they go in different directions. barcode is how to fit the credential inside a barcode. Render method is how to fit barcode and other stuff inside the credential. from what I understand, the barcode spec has to do with…</p>
+<p id=12ac class="phone s01"><cite>Dmitri_Zagidulin:</cite> how do we fit the payload verifiable credential into the constrained envelope of a barcode.</p>
+<p id=49c2 class="phone s02"><cite>Ivan_Herman:</cite> It generates a barcode.</p>
+<p id=ffff class="phone s02"><cite>Ivan_Herman:</cite> That's what it does. It renders the credential in the form of a barcode. here is Dave. He will probably shut me down. you are muted.</p>
+<p id=52dc class="phone s02"><cite>Ivan_Herman:</cite> You became muted somehow.</p>
+<p id=bc55 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dave will be able to answer that better,…</p>
+<p id=2319 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but the short answer to your question is yes, it's been discussed that they're related. I don't think anybody's made an argument that the barcode spec is a subset of render method because I think they deal with slightly different concerns. What do you think, Dave, about the relationship between barcode and…</p>
+<p id=c6ee class="phone s03"><cite>Dave_Longley:</cite> Yeah.</p>
+<p id=65f8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> render method specs?</p>
+<p id=10000 class="phone s03"><cite>Dave_Longley:</cite> So, I mean, while a barcode is technically a rendering, at least one version of what happens in that spec, it is a rendering of a verifiable credential. the spec also covers cases where it's not only a rendering of verifiable credential.</p>
+<p id=8a14 class="phone s02"><cite>Ivan_Herman:</cite> That is perfect and…</p>
+<p id=fa69 class="phone s03"><cite>Dave_Longley:</cite> Yeah and…</p>
+<p id=92b1 class="phone s02"><cite>Ivan_Herman:</cite> true. Yeah.</p>
+<p id=00e3 class="phone s03"><cite>Dave_Longley:</cite> I think it's got a different concerns. They are certainly related. and there is also something in the render method spec for you providing a direct rendering that you could use to render to NFC or…</p>
+<p id=7888 class="phone s03"><cite>Dave_Longley:</cite> to a QR code. So there's a relationship, but I wouldn't say that they're Yeah.</p>
+<p id=a241 class="phone s02"><cite>Ivan_Herman:</cite> So let me modify the question.</p>
+<p id=6a79 class="phone s02"><cite>Ivan_Herman:</cite> I was imprecise when I asked what I would call the plain barcode method which is just take the credential and turn it into a barcode. Forget about the other one which is indeed different. if I issue a credential I might want to give say that one of my preferences to present this bar this credential is in the form of a barcode.</p>
+<p id=8a1b class="phone s02"><cite>Ivan_Herman:</cite> This is exactly what render method has. the issuer puts information about its preferences on how to render these things. in this view, the simple barcode method is a special render method.</p>
+<p id=10001 class="phone s03"><cite>Dave_Longley:</cite> plus depending on how it's done plus some potential recursion if you're going to put the VC itself that has the render method into the barcode that's a little bit different from providing it as a render method some details about what you should take and put into a barcode or maybe repeating the entire payload and saying this is a barcode ren show it as a barcode. So there's a relationship there for sure.</p>
+<p id=d523 class="phone s03"><cite>Dave_Longley:</cite> But I don't think that we could make the renderer method subsume the whole barcode spec.</p>
+<p id=53fe class="phone s02"><cite>Ivan_Herman:</cite> I did not meant to do that,…</p>
+<p id=8a4b class="phone s02"><cite>Ivan_Herman:</cite> but I should be able the render methods in a spec say something that my preference is to Use that spec as a rendering.</p>
+<p id=5b5e class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think that's related to so we had a short list of types of render methods that we were talking about in the last meeting and…</p>
+<p id=159f class="phone s03"><cite>Dave_Longley:</cite> one of them I don't remember what terminology we used but it was some kind of binary representation or do you happen to remember Demetri we had categories of render methods?</p>
+<p id=bec7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=e895 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yeah.</p>
+<p id=1c52 class="phone s03"><cite>Dave_Longley:</cite> One of them had as an example you would use it with NFC but I think that same type of render method you would use with a QR code. so yes to what you're saying, Ivon, we got to figure out exactly what the shape of that looks like. but yes to what you're saying.</p>
+<p id=ae9a class="phone s03"><cite>Dave_Longley:</cite> And if we walk through how that works, it might very well make perfect sense for that to slot into the same type of render method that you would use with NFC.</p>
+<p id=22d3 class="phone s02"><cite>Ivan_Herman:</cite> So it turns out that it is useful that I am working on the 1 version of the overview document…</p>
+<p id=6f13 class="phone s02"><cite>Ivan_Herman:</cite> where I have to fit all these things together and make some sense among them. And that's when I realized that this is an issue. a question and…</p>
+<p id=5d6e class="phone s03"><cite>Dave_Longley:</cite> Yeah, I definitely think it is something that has been on people's minds from time to time and hasn't fully crystallized with how it ought to be.</p>
+<p id=8d7a class="phone s02"><cite>Ivan_Herman:</cite> we have to address it somewhere at some point.</p>
+<p id=eb31 class="phone s03"><cite>Dave_Longley:</cite> Yes. Yeah.</p>
+</section>
+
+<section>
+<h3 id=3829>Low Attendance at Meeting</h3>
+<p id=38cb class="phone s02"><cite>Ivan_Herman:</cite> So how come we are only the three of us?</p>
+<p id=1ace class="phone s03"><cite>Dave_Longley:</cite> Is there a problem with the meeting invite?</p>
+<p id=3429 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Great question.</p>
+<p id=c0b6 class="phone s03"><cite>Dave_Longley:</cite> That was my first thought. Are we in the wrong room from other people?</p>
+<p id=e1b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, So meeting invites says ends with GCR. The call second is Yeah,…</p>
+<p id=7bc0 class="phone s02"><cite>Ivan_Herman:</cite> I think we are at the right place.</p>
+<p id=c211 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think we're at the right place.</p>
+<p id=ece2 class="phone s03"><cite>Dave_Longley:</cite> So, is everyone else at the wrong place?</p>
+<p id=ab87 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Unclear.</p>
+<p id=5b4c class="phone s02"><cite>Ivan_Herman:</cite> Any event…</p>
+<p id=f4c0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's ping in some channels.</p>
+<p id=7375 class="phone s02"><cite>Ivan_Herman:</cite> which has driven people away to somewhere else.</p>
+<p id=4e16 class="phone s03"><cite>Dave_Longley:</cite> There is an ongoing conference I think a napsis conference and…</p>
+<p id=5dde class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, I don't think so.</p>
+<p id=be01 class="phone s03"><cite>Dave_Longley:</cite> that would definitely involve barcode people.</p>
+<p id=f7f3 class="phone s03"><cite>Dave_Longley:</cite> But I don't know about render method people despite our conversation that we just had.</p>
+<p id=56f8 class="phone s02"><cite>Ivan_Herman:</cite> No,…</p>
+<p id=4bcc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do we have speaking of…</p>
+<p id=f7b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> which do we have a render methods channel on the W3C slack? No. Okay. Absolutely.</p>
+<p id=9a6a class="phone s02"><cite>Ivan_Herman:</cite> We have never talked about it. it's possible to set it up, but we have never set up any specific channels on Slack or for VC in general. I believe it seems that people are uneasy to take up yet another way of communicating.</p>
+<p id=753e class="phone s01"><cite>Dmitri_Zagidulin:</cite> which is fully understandable. I wish bridging worked better.</p>
+<p id=589b class="phone s02"><cite>Ivan_Herman:</cite> But I'm happy to set up a new channel…</p>
+<p id=f50a class="phone s02"><cite>Ivan_Herman:</cite> if it's I think anyone of us can do it. But it seems that this meeting now is only the three of us.</p>
+<p id=e6c8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> You're right though that there's a chicken and egg thing.</p>
+<p id=8b6c class="phone s03"><cite>Dave_Longley:</cite> It is also the third everyone has off…</p>
+<p id=8960 class="phone s03"><cite>Dave_Longley:</cite> because July 4th in the US has happened. So a lot of people take this week off for a vacation.</p>
+<p id=5cca class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, I was wondering.</p>
+<p id=eb46 class="phone s02"><cite>Ivan_Herman:</cite> What?</p>
+<p id=d682 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I was wondering about that…</p>
+<p id=c718 class="phone s02"><cite>Ivan_Herman:</cite> That people take the whole week in this case,…</p>
+<p id=76b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> if it's early July 4th.</p>
+<p id=25f1 class="phone s03"><cite>Dave_Longley:</cite> And maybe in particular it's the 250th birthday of the United States. So they might be super pumped.</p>
+<p id=293b class="phone s02"><cite>Ivan_Herman:</cite> but we got more people at the previous task force.</p>
+<p id=5d79 class="phone s03"><cite>Dave_Longley:</cite> That is true.</p>
+<p id=21ee class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, I wonder I do not know.</p>
+</section>
+
+<section>
+<h3 id=1e08>Preparing Threat Model Document</h3>
+<p id=2b00 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I thought while we're waiting for folks to show Dave Lane says that summer on another call should be over soon. So maybe another call is running late. the VC barcode call specific.</p>
+<p id=b69d class="phone s02"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=dec8 class="phone s02"><cite>Ivan_Herman:</cite> no, no, no. We were both on.</p>
+<p id=0438 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, no, you just from there.</p>
+<p id=14f6 class="phone s02"><cite>Ivan_Herman:</cite> Yeah, we both come from there.</p>
+<p id=b11b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. yeah,…</p>
+<p id=45ae class="phone s01"><cite>Dmitri_Zagidulin:</cite> great question.</p>
+<p id=e31b class="phone s02"><cite>Ivan_Herman:</cite> As Greg said,…</p>
+<p id=82aa class="phone s02"><cite>Ivan_Herman:</cite> we all have a to-do list, so we can just call it a</p>
+<p id=0d9c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right, right, right, right. yes, can do in case it's helpful to either one of Here is I dropped a link in Google chat here to a notes document that I was proposing the group to go over with that gathers together our focus constraints and the threat models. against which we're going to be evaluating the for method categories, right? So just lists out what are we trying to do which is detail view and list view. We need to be able to render PDFs.</p>
+</section>
+
+<section>
+<h3 id=b191>Focus Constraints and Threat Models</h3>
+<p id=64c6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We have the spectrum of fully quote unquote baked at issuance time versus templated. And Phil. Hey.</p>
+<p id=c292 class="phone s04"><cite>Phillip_Long:</cite> How are you?</p>
+<p id=81e6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We're for whatever reason smaller group today. we're not sure whether people are celebrating July 4th earlier or there's another conference or the 4th.</p>
+<p id=4fde class="phone s04"><cite>Phillip_Long:</cite> I suspect for the former Yeah.</p>
+<p id=3f7a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. but welcome anyways. Dave, you have your hand up?</p>
+<p id=158f class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think this is useful and to get some of the use cases in there and I see a couple of threat model notes. I can't remember in this group, we have all these task force a bunch of them started doing some threat modeling exercises. I can't remember if we did that here in the render method group. but in those other task force we opened up a document and just wrote down a bunch of threats and…</p>
+<p id=ecba class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mh And that's kind of what I was hoping to do here. Yeah. Yes.</p>
+<p id=7526 class="phone s03"><cite>Dave_Longley:</cite> yeah so we had a pattern for that and it works better if we have more people because everybody can sort of jump in and…</p>
+<p id=acd9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=c1c1 class="phone s03"><cite>Dave_Longley:</cite> put those in there and…</p>
+<p id=9ae8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Right.</p>
+<p id=2b1f class="phone s03"><cite>Dave_Longley:</cite> I do think that's a good way to drive the discussion forward so that we can get an idea of a lot of those threat model things are things that it will answer questions like why are we doing this with a template instead of just putting it fully baked? what or…</p>
+<p id=affc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=9118 class="phone s03"><cite>Dave_Longley:</cite> …</p>
+<p id=084a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=ea07 class="phone s03"><cite>Dave_Longley:</cite> what happens if we put a link to a fully baked thing. these are these great privacy concerns and so getting all of that down can help us get the shape of explain sort of where some of the things came from and…</p>
+<p id=10bf class="phone s03"><cite>Dave_Longley:</cite> help us figure out where to</p>
+<p id=cb62 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, agreed.</p>
+<p id=f08b class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's exactly the idea. that once we have more people, I'm hoping to go through that exercise here to see anything we've missed. but in case we want to adjourn early, I just wanted to put it out there in case Dave you Ivonne Phil you glanced and you're like, &quot; yeah, we forgot this thing.&quot; Prefill it before we do the group exercise.</p>
+<p id=7066 class="phone s03"><cite>Dave_Longley:</cite> Yes. Okay. So I have the link.</p>
+<p id=cab7 class="phone s03"><cite>Dave_Longley:</cite> And…</p>
+</section>
+
+<section>
+<h3 id=c7ea>Using Existing Templates for Threat Modeling</h3>
+<p id=585e class="phone s04"><cite>Phillip_Long:</cite> Didn't we have a template for this already that we've used in multiple places?</p>
+<p id=3b00 class="phone s03"><cite>Dave_Longley:</cite> yeah. Yeah,…</p>
+<p id=bd4d class="phone s04"><cite>Phillip_Long:</cite> It might be wise.</p>
+<p id=196b class="phone s03"><cite>Dave_Longley:</cite> that's what I was getting at. And I was going to see if I could find that.</p>
+<p id=21f4 class="phone s04"><cite>Phillip_Long:</cite> That's what I'm looking for right now.</p>
+<p id=9ecc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Mhm.</p>
+<p id=a0b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm. Yep. We can absolutely use a Google Doc template.</p>
+<p id=fa6e class="phone s04"><cite>Phillip_Long:</cite> Here it I've got it, I think. is that right? This may be one that's partially filled out. let me just put the link in and I'll put it in chat here if I can find where my there we are. Is that accessible?</p>
+<p id=10002 class="phone s04"><cite>Phillip_Long:</cite> I don't know whether that's mine or whether that's a copy from a public one.</p>
+<p id=327a class="phone s03"><cite>Dave_Longley:</cite> Yeah, that's Yeah. And now it might be…</p>
+</section>
+
+<section>
+<h3 id=1195>Core Use Case Flow Document</h3>
+<p id=2b84 class="phone s04"><cite>Phillip_Long:</cite> Was that an early one? I can't recall. Mhm.</p>
+<p id=da9f class="phone s03"><cite>Dave_Longley:</cite> but we could just copy this one into a render method space. Did we not do this in the render method task force?</p>
+<p id=0024 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, we have not.</p>
+<p id=2bc6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We did another task forces though.</p>
+<p id=0f3c class="phone s03"><cite>Dave_Longley:</cite> So, I don't want to stomp on the template, but if somebody knows…</p>
+<p id=7c22 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, we can make a copy.</p>
+<p id=a945 class="phone s03"><cite>Dave_Longley:</cite> where to put that copy,</p>
+<p id=e670 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, let me here's the VCOM threat model draft. but that's one extensive. Yeah. Yeah.</p>
+<p id=4369 class="phone s04"><cite>Phillip_Long:</cite> Yeah, that one's extensive.</p>
+<p id=81e2 class="phone s04"><cite>Phillip_Long:</cite> I was looking I thought there was one that was put out there and this may not be the right choice, but I'll keep looking. there's also the guide. I mean, it might be worth sending around as well that Joe Andreo did.</p>
+<p id=a26c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Yeah.</p>
+<p id=bb41 class="phone s04"><cite>Phillip_Long:</cite> I've got the link for that if you need it.</p>
+<p id=24c2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Paste the link.</p>
+<p id=b916 class="phone s04"><cite>Phillip_Long:</cite> Wait a minute.</p>
+<p id=b809 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Is that Yeah.</p>
+<p id=692d class="phone s04"><cite>Phillip_Long:</cite> Yeah, this template maybe this no. You've sent this around before, haven't you? your template really…</p>
+<p id=e578 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I have not. No. No.</p>
+<p id=acc8 class="phone s04"><cite>Phillip_Long:</cite> because I just found it in my bookmarks.</p>
+<p id=2410 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the one that I just said also that's from recognized entities threat modeling. wait a second. render method thread model.</p>
+<p id=41d3 class="phone s04"><cite>Phillip_Long:</cite> Here's the one that I just found.</p>
+<p id=bf5b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Here's the render method one.</p>
+<p id=c0a5 class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think I just found our link.</p>
+<p id=3443 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Yep.</p>
+<p id=2d2a class="phone s03"><cite>Dave_Longley:</cite> Mhm. And this.</p>
+<p id=2401 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I got it. Excellent. Perfect. So …</p>
+<p id=95b8 class="phone s03"><cite>Dave_Longley:</cite> So, we did start this.</p>
+<p id=3b40 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we did do this. That's right. Okay. Yep.</p>
+<p id=b741 class="phone s03"><cite>Dave_Longley:</cite> it just got left as uncatategorized.</p>
+<p id=254e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm.</p>
+<p id=d204 class="phone s04"><cite>Phillip_Long:</cite> Yeah, we started this.</p>
+<p id=c54d class="phone s03"><cite>Dave_Longley:</cite> So if…</p>
+<p id=a26d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Yeah.</p>
+<p id=38ad class="phone s03"><cite>Dave_Longley:</cite> if the three I think you had three or four threats on that dock you were drawing Demetri…</p>
+<p id=8c60 class="phone s03"><cite>Dave_Longley:</cite> if you just want to copy those over. Mhm.</p>
+<p id=21fa class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yep. Yeah.</p>
+<p id=0501 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'll do that. The Yes.</p>
+<p id=767e class="phone s04"><cite>Phillip_Long:</cite> The link I put out has 15 items uncatategorized,…</p>
+<p id=da45 class="phone s04"><cite>Phillip_Long:</cite> right? Yeah. Okay. Okay.</p>
+<p id=ef4f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, I think that's the one we're all looking at.</p>
+<p id=7b39 class="phone s04"><cite>Phillip_Long:</cite> This won't Okay.</p>
+<p id=83b4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And here's the steps for the core use case flow. So I can transfer the core use case documents there.</p>
+<p id=0816 class="phone s04"><cite>Phillip_Long:</cite> So, why don't you clean that up and send it all out to the list? yeah,…</p>
+<p id=32fb class="phone s01"><cite>Dmitri_Zagidulin:</cite> And we can do that for the Sounds good.</p>
+<p id=d13e class="phone s04"><cite>Phillip_Long:</cite> exactly. We've got a lot accomplished on this call next week.</p>
+<p id=e335 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, we'll do. All right. Hey, this is great. Yeah.</p>
+<p id=6bab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Great seeing all of you. we will reconvene next week or…</p>
+<p id=9346 class="phone s02"><cite>Ivan_Herman:</cite> Bye-bye.</p>
+<p id=6af3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the week after that whichever way the schedule the calendar dictates.</p>
+<p id=c1ff class="phone s03"><cite>Dave_Longley:</cite> Thanks.</p>
+<p id=fa56 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks all. Cheers.</p>
+<p id=d340 class="phone s04"><cite>Phillip_Long:</cite> See him. Meeting ended after 00:19:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
