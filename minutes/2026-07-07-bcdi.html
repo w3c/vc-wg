@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 7 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>7 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Manu_Sporny, Parth_Bhatt, Phil_Archer, Phillip_Long, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#185d">Threat Model Requirements For W3C Specs</a></li>
+<li><a href="#e994">Scoping The Data Integrity Threat Model</a></li>
+<li><a href="#73e8">Threat Model Diagrams Requirement</a></li>
+<li><a href="#53a5">Discussing VC Barcodes Issue 59</a></li>
+<li><a href="#ba33">ISO 18013-2 Vs AMA Driver's License</a></li>
+<li><a href="#f25f">Feature Relocation For Bitstring Status</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=2f2f class="phone s01"><cite>Wesley_Smith:</cite> Hey folks, I'll give people a few minutes to trickle in before we get started.</p>
+<p id=ffff class="phone s01"><cite>Wesley_Smith:</cite> All right, that's probably enough time. Hello everybody. Good morning and welcome to the July 7th meeting of the barcodes, data integrity, and forgery defense task force. A reminder that this meeting is being recorded and transcribed. If you're not comfortable with that, please let me know. The agenda for today is similar to most days. we will go through agenda, introduction and excuse me, we go through introduction, announcement and process items followed by VC barcodes, PR review and issue processing as well as data integrity, PR review and issue processing. does anybody have any announcement process or introduction items they'd like to discuss? Mon, go ahead.</p>
+<p id=9ebc class="phone s02"><cite>Manu_Sporny:</cite> just maybe an agenda plus on the threat model stuff. So, I'm sure I don't know if y'all had talked about kind of what the process is for that or when we're going to, try to do horizontal review, but I'd like to try and get us in horizontal review sooner than later. So, I wanted to put aside some time on the agenda for that if we haven't already talked about that in the past couple of weeks.</p>
+<p id=feec class="phone s02"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=80fa class="phone s01"><cite>Wesley_Smith:</cite> Yeah, great.</p>
+<p id=82a2 class="phone s01"><cite>Wesley_Smith:</cite> We haven't talked about that recently. let's go ahead and…</p>
+<p id=e67b class="phone s01"><cite>Wesley_Smith:</cite> do that Is there anything else you'd like to say other than what you just said?</p>
+</section>
+
+<section>
+<h3 id=185d>Threat Model Requirements For W3C Specs</h3>
+<p id=331a class="phone s02"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> a couple of things. so, for I think the general framing is we're trying to get a number of specifications into candidate recommendation during TAC, And so TAC is just a couple of months away at this point. And in order for us to do that we have to get horizontal review on these specifications which sometimes takes up six months. and that means we have to start the horizontal review process sooner than later. So basically last month or May is when we should have started the horizontal review process for some of these specs. but the sooner the better.</p>
+<p id=eae5 class="phone s02"><cite>Manu_Sporny:</cite> In order to kick off that horizontal review, we do need a number of things in the specifications. One of them being the start of not a complete threat model, but at least something that exists. we took a shot at one of these things. the VCOM spec, is getting one soon. The recognized entity spec has one. And based on that, I think we've got a fairly decent way to build one out. so now what we need is for someone to build one of those things out. I am happy to volunteer to do it because I know how to kind of, do it pretty quickly at this point. and so just kind of wondering in the group I think we're definitely ready to do that for the barcodes spec.</p>
+<p id=9a92 class="phone s02"><cite>Manu_Sporny:</cite> I think we could probably also do it for the forgery defense, spec, as well. So, let me just stop there. thoughts, concerns.</p>
+<p id=8156 class="phone s01"><cite>Wesley_Smith:</cite> Acting myself. So with respect to the various threat modeling that needs to happen, I have the VC barcodes threat model in progress. It's not in a PR, but I've started it. I'm working on it. it's been a bit of a slower going than some of the other PRs, which is why I didn't just, bang it out in a day like I do with most PRs. I'm curious about the status of the data integrity stuff with respect to threat modeling. To what extent does the new data integrity stuff as a subclass of the old data integrity stuff need a new threat model? That sort of thing. Monti, go ahead.</p>
+<p id=09e5 class="phone s02"><cite>Manu_Sporny:</cite> I expect we're going to have to have a thread model for data integrity to get even the 11 one stuff through the process. Savvon, you might have a different opinion on that, but I think the guidance from Simony has been pretty clear that we are expected to start going to threat models. we could probably sneak by with the existing security privacy considerations, but I think we'd have to make a case for it. and frankly, a data integrity threat model would help us write the threat model for forgery defense. so if that's the case, maybe I could parallel track a data integrity threat model, unless Greg, you've been able to get one together. at this point,…</p>
+<p id=d523 class="phone s02"><cite>Manu_Sporny:</cite> let me just pause</p>
+<p id=ef6c class="phone s03"><cite>Greg_Bernstein:</cite> No, I have not.</p>
+</section>
+
+<section>
+<h3 id=e994>Scoping The Data Integrity Threat Model</h3>
+<p id=605b class="phone s03"><cite>Greg_Bernstein:</cite> I have been working on the editing. I put down notes and things like that, but pretty soon it got into boiling the ocean because it's like our threat model should be a subset of the verifiable credentials threat model and they started some kind of threat modeling of that. I was looking at their Singh was doing a credential threat model what was it an API or something and things like that. So we've got to scope this a bit.</p>
+<p id=bd2a class="phone s01"><cite>Wesley_Smith:</cite> Ivon, you got your hand up. Go ahead.</p>
+<p id=2348 class="phone s04"><cite>Ivan_Herman:</cite> Yeah. …</p>
+<p id=9519 class="phone s04"><cite>Ivan_Herman:</cite> the problem I see with the DIP spec is that we could get by not doing it. However, we will do a significant change in the document with the editing that Greg is referring to, which means that we will have to do a complete threat model because the document is too much diff different or will be too much different compared to the 1.0 spec. let alone the fact that whatever Greg will do will affect the crypto documents as well.</p>
+<p id=a66f class="phone s04"><cite>Ivan_Herman:</cite> So even for those we will have to look at the security and privacy consideration parts with a fresh pair of eyes because everything would have changed. So I agree with Manu that it's better to think in terms of doing the whole thing. But while we are at the horizontal reviews, I realize that threat model is close to our hearts here because we are talking about security. but let's not forget that we will also have to go through a tag review which might be interesting.</p>
+<p id=b325 class="phone s04"><cite>Ivan_Herman:</cite> I'm a bit sarcastic with the term and also the accessibility and internationalization spec which may not be a big deal because this task force I don't know about accessibility with barcodes. How is that handled in general? But there might be issues there as well and we should not forget about those because it takes a long time to get response for those folks as well.</p>
+<p id=9942 class="phone s01"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=932d class="phone s02"><cite>Manu_Sporny:</cite> And just to add a bit to what Avon said, so the data integrity restructuring is So that should be purely editorial. and so the new threat model shouldn't be kicked off because of that. but I don't think it changes the outcome of what Avon said. we have to do it at some point. We might as well do it now. And I think if we do a threat model for data integrity, we can wrap if not all of the crypto suites into that threat model as well. Right? So for example, postquantum security is a base part of any cryptographic protection mechanism. You have to talk about postquantum at this point.</p>
+<p id=94cd class="phone s02"><cite>Manu_Sporny:</cite> And by doing that we can say that one of the mitigations for postquantum is for example the verifiable credentially a forgery defense specification right and so I think we can refer a lot to the base data integrity spec. I will note that I mean you've done a very good job of adding a bunch of security considerations that are kind of specific to forgery defense. I don't know how we do a light version of a threat model like there really does not seem to be such a thing.</p>
+<p id=79fa class="phone s02"><cite>Manu_Sporny:</cite> So just noting that I think we can get a little bit of mileage from a threat model that's generic to data integrity that does cover most of the other crypto suites. but I don't know exactly how much mileage we can get. I will note that one of the downsides that I'm finding for these new threat models is that you can't be nearly as detailed as we were in the security and privacy consideration section. So I'm very much seeing we would have talked about things before but because of the threat models getting too big we are deciding to not talk about things that we would have talked about before and I don't think that's a very good outcome for a security consideration.</p>
+<p id=a417 class="phone s02"><cite>Manu_Sporny:</cite> And so now we're put in a position where if we want to talk about those other things, the load on the working group is much more we're talking 300% more work to do these things at this point. we can do them like our group has the capacity to do this. I worry about other W3C groups having the capacity to do this level of effort. That's it.</p>
+<p id=6466 class="phone s01"><cite>Wesley_Smith:</cite> Greg, go ahead.</p>
+<p id=5c5e class="phone s03"><cite>Greg_Bernstein:</cite> When it comes to scope of the data integrity threat modeling,…</p>
+<p id=1e17 class="phone s03"><cite>Greg_Bernstein:</cite> to me it seemed like, data integrity is really about the embedded proof as opposed to the other forms of attached proof and things like that. So the threat model seems like it has to be very general to kind of address verifiable credentials with the embedded proof. when we go to a particular crypto suite whether it be EDDDSA or ECDSA the security considerations then would just hit issues with EDDDSA libraries common problems that you might have with ECDSA is</p>
+<p id=7eaf class="phone s03"><cite>Greg_Bernstein:</cite> That what we're thinking.</p>
+<p id=707f class="phone s01"><cite>Wesley_Smith:</cite> Ela, go ahead.</p>
+<p id=4e65 class="phone s05"><cite>Elaine_Wooton:</cite> Yeah, I'm concerned.</p>
+<p id=4851 class="phone s05"><cite>Elaine_Wooton:</cite> I love that Manu is I'll do this threat model thing, but I think we need to make sure that we get input across the group. So, I'm thinking maybe we either make an issue or a pull request for each thing that's for the threat model just so there's a place for people to put their input. They might not have anybody, but at least we've gone through that process.</p>
+<p id=0982 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, and jumping queue really quick. that's certainly my plan for the VC barcodes work and I expect that any other threat model for these texts will go through the standard PR process. man, go ahead.</p>
+<p id=ab85 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, on that spec on that point specifically I thought that we did go through that process in this group.</p>
+<p id=3b0a class="phone s02"><cite>Manu_Sporny:</cite> Did we do it for data in tech?</p>
+<p id=41bc class="phone s03"><cite>Greg_Bernstein:</cite> restarted.</p>
+<p id=27b9 class="phone s01"><cite>Wesley_Smith:</cite> you're talking about the brainstorming.</p>
+<p id=009f class="phone s02"><cite>Manu_Sporny:</cite> Yeah, the brainstorming thing we did.</p>
+<p id=ee51 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, we did a brainstorm session for VC barcodes. I don't think we did one for data integrity.</p>
+<p id=1aa4 class="phone s02"><cite>Manu_Sporny:</cite> There are 68 things that we wrote down for data integrity. actually those are not probably properly I mean there are at least 20 27. So here's the document for data integrity. So we've done this just to remind the group. I know it's been a while. plus one to what Elaine said. I mean, when I suggested I do it, I'm suggesting I will put together the PR in all of the document structure and all of the code and all of that stuff, but the threats themselves will be from what the group, brainstormed. And, people can add things as well, right?</p>
+<p id=10001 class="phone s02"><cite>Manu_Sporny:</cite> So I am not going to be doing the core analysis. That's something the group needs to do. but I'm happy to do the mechanics of putting this stuff together because it is not easy. it is a non-trivial task. Greg to your point on what about ECDSA implementation thing there's a class in the threat model there's a class of threats that are that are dependency threats so when we depend on an ITF specification that is a dependency threat there are implementation threats there are threats that this specific specification tries to target threats the ones that this specification actually addresses and then implementation threats</p>
+<p id=41ba class="phone s02"><cite>Manu_Sporny:</cite> dependency threats, external threats. Each one of those is a different threat category that we're expected to fill out. and again, I mean, I can do the categorization. That's not a difficult thing to do and move around. but to be clear, Greg, at least in my head, I have a very concrete plan about how this can be done, So, we don't know what we're going to do about X or Y. I can suggest what we should do and I would love the group that, provide input and have a position on it, but we're getting to the point where we need to get this stuff done. we can't draw it out for a couple of, months, even a couple of more weeks is just going to make us completely miss our review window.</p>
+<p id=a797 class="phone s02"><cite>Manu_Sporny:</cite> So we need to create them</p>
+<p id=ce1c class="phone s03"><cite>Greg_Bernstein:</cite> Do we have diagrams that we can Okay,…</p>
+<p id=2798 class="phone s03"><cite>Greg_Bernstein:</cite> because that's what I'm curious about because then it's easier to address with the diagrams because I did see some of their example diagrams in some of the other cases were these very elaborate things because they were modeling some of the processes and such like that. I'm curious as what we would do for something as general as data integrity. That was my quest or my issue.</p>
+<p id=f259 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead. Ivon, go ahead.</p>
+<p id=bbcf class="phone s04"><cite>Ivan_Herman:</cite> Money is this whole threat modeling such that we are required to make these diagrams and…</p>
+<p id=4d38 class="phone s02"><cite>Manu_Sporny:</cite> Yes.</p>
+</section>
+
+<section>
+<h3 id=73e8>Threat Model Diagrams Requirement</h3>
+<p id=181b class="phone s04"><cite>Ivan_Herman:</cite> we don't have okay but I wonder whether we should push back because we don't have tools for that making diagram I know I haven't done diagrams for this but for other things it takes an enormous amount of line time to do it properly if we don't have right tools and even with the right tools and this becomes an inordinate amount of work for the working group.</p>
+<p id=41c3 class="phone s02"><cite>Manu_Sporny:</cite> I do not disagree with you at all. but…</p>
+<p id=ef59 class="phone s04"><cite>Ivan_Herman:</cite> But we should…</p>
+<p id=8d43 class="phone s02"><cite>Manu_Sporny:</cite> but they don't…</p>
+<p id=5960 class="phone s04"><cite>Ivan_Herman:</cite> then trying to</p>
+<p id=86d9 class="phone s02"><cite>Manu_Sporny:</cite> but the security group does not care at this point. They have, published something. They've laid it down. Simony has a process. Joe is adamant about that process. we are in the position where we either do what they say or we are going to have to argue with them which is going to slow down the work. So, here is an example. Greg, you asked, do we have diagrams of I'm using Google draw to do it. That's the only tool that I found. I went through five different tools. Wasted a bunch of time trying to figure out if there is a good threat modeling tool. There at least not Simona and Joe are okay with. I put this together.</p>
+<p id=039e class="phone s02"><cite>Manu_Sporny:</cite> They're still complaining about the diagram, but at this point, I don't care. it's like this is the diagram. We are 100% required by the new W3C process to create one of these. The diagram is central to the threat model.</p>
+<p id=624b class="phone s03"><cite>Greg_Bernstein:</cite> There you go.</p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> It took me four iterations and about six hours to get this diagram to…</p>
+<p id=3ea7 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I can understand that it's</p>
+<p id=15d2 class="phone s02"><cite>Manu_Sporny:</cite> where it needs to be and it needs to be done for every single threat model we create, for every single specification. So, I think, if folks want to disagree and argue with Simone and Joe, I go right ahead. But it's going to take less time for us to generate the diagrams and do it in the way that they've suggested than try and, change it at this point. At least that's my, personal take. I'd much rather spend the time just putting something together and learning from it and…</p>
+<p id=006f class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. Yeah.</p>
+<p id=8b4e class="phone s02"><cite>Manu_Sporny:</cite> and giving feedback back to them. versus, trying to undo something Sing has published as, a way that they expect the groups to do this.</p>
+<p id=1ddc class="phone s04"><cite>Ivan_Herman:</cite> I think this is something that should go my fear Brad and…</p>
+<p id=585b class="phone s04"><cite>Ivan_Herman:</cite> I will have to think about that and somehow go back to W3C with that. this is not right. I mean I am horrified by the amount of work that this group has to put into this whole thing it's just not right and again we have other horizontal reviews that we completely forget and the energy is swallowed up with the threat model.</p>
+<p id=0a11 class="phone s04"><cite>Ivan_Herman:</cite> Something is wrong here for me.</p>
+<p id=f36b class="phone s01"><cite>Wesley_Smith:</cite> M go ahead.</p>
+<p id=8c01 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean I don't disagree with you, n. It is much more work than we've typically had to do and because of the number of specs that we have, it is an enormous amount of work, but it is doable. now that I've been through the process once, I know I can probably do at least, three or four more of these before probably the end of this month or August. the problem is that it is so hyper specialized at this point that there is no way that a typical working group member is going to be able to do this. whereas before it was a straightforward have a typical working group member provide input on security and privacy considerations.</p>
+<p id=08ed class="phone s02"><cite>Manu_Sporny:</cite> So the bar has been raised, quite a bit. and to be clear, Simone thinks this is the bare minimum that we can do, he's got a much higher bar. but the bare minimum is, I think, beyond what, most working group members are going to have the time for or be able to do. but the positive outcome of that is that it is a very focused complete threat model using a standard threat modeling mechanism. So, there are examples here in the recognized entities document. we can use Google draw for now to do the diagrams and that will at least be good enough to get us into CR. That's it.</p>
+<p id=10003 class="phone s01"><cite>Wesley_Smith:</cite> All So I think going forward We know we need a forgery defense. I am in progress on the VC forgery defense. We'll see. And data integrity. I'm not totally clear on where we landed. is the concept that we're going to do a generic data integrity threat model and then have a sort of per crypto suite addenda or diffs cryptosweet threat models. Manu, go ahead.</p>
+<p id=d20a class="phone s02"><cite>Manu_Sporny:</cite> I will do the data integrity one. So, I'm guess you're going to do the barcodes one. Greg, I will do the first pass of the data integrity one just because we need it and it's blocking some other, things. And then I'm going to hand that over to you, Greg, to go further on. the base data integrity one will do a base ecosystem and…</p>
+<p id=8a4f class="phone s02"><cite>Manu_Sporny:</cite> it will not and all the other crypto suites we are not going to do a threat model for the other crypto suites it's a waste of time right so those will just point back to the original threat model we can have that is definitely…</p>
+<p id=2241 class="phone s03"><cite>Greg_Bernstein:</cite> No. And…</p>
+<p id=fdf8 class="phone s03"><cite>Greg_Bernstein:</cite> then security considerations specific to that crypto suite.</p>
+<p id=e04d class="phone s02"><cite>Manu_Sporny:</cite> what I'd like to do Greg I have no idea</p>
+<p id=85e1 class="phone s02"><cite>Manu_Sporny:</cite> what Simony and Joe and…</p>
+<p id=2d78 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. No worries. Yep.</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> Sing's going to say about that, It should be good enough, but we'll see. but in that based data integrity threat model, we will talk about postquantum attacks, we will talk about external threats like ECDSA, EDDDSA and NDBS. any external spec that's dependent upon at ITF is kind of an external threat to that specific document. and then if there are common threats there are common threats between any elliptic curve mechanism like the postquantum threat we can talk about that in data integrity as well.</p>
+<p id=4316 class="phone s02"><cite>Manu_Sporny:</cite> So there I think we just need to work on one for data integrity and get that out there and then we're going to have to just kind of point the other crypto suite specs towards the base data integrity one to say there's the threat model but you should also pay attention to these other security and privacy considerations.</p>
+<p id=fc4d class="phone s01"><cite>Wesley_Smith:</cite> Phil, go ahead.</p>
+<p id=e7d6 class="phone s06"><cite>Phil_Archer:</cite> like Ivan I'm concerned about the sheer amount of work that is required by this.</p>
+<p id=6780 class="phone s06"><cite>Phil_Archer:</cite> So I'm thinking which other groups are doing this? Who else has done this already or is Manu the first? And so I looked at what's published in the TR space and searched for threat model and there are three documents with the word threat model in the title. all come from the security interest group on how to do it. and I'm just concerned that man who's blazing a trail and I can imagine other groups who are not represented here might throw their hands up and say yeah dream we're not doing that.</p>
+<p id=a1ca class="phone s06"><cite>Phil_Archer:</cite> So is anyone aware of any other group not this one or the did group that is facing this and is tackling it with as much integrity and assiduousness as this group is cuz I think we're probably blazing a trail which other people will thank us for. Yes. but I don't know.</p>
+<p id=847d class="phone s06"><cite>Phil_Archer:</cite> It's almost like a I think I'm tempted. I don't know if I can do this. Can I raise users on the chairs group Ivan and just say look our group's doing this and…</p>
+<p id=1023 class="phone s04"><cite>Ivan_Herman:</cite> Yes, absolutely.</p>
+<p id=cb21 class="phone s06"><cite>Phil_Archer:</cite> just say what do you think? Yeah.</p>
+<p id=c3a4 class="phone s04"><cite>Ivan_Herman:</cite> Absolutely. That's something that the chairs group should look at. to your question, I am also staff contact for the EPUB work. We are lucky in the new version that we have the changes compared to the previous version are relatively small. So we have gotten for CR transition not to do that but to be very open about it what happened is that we declared time out for the security review which just didn't happen.</p>
+<p id=bb05 class="phone s04"><cite>Ivan_Herman:</cite> But I also had a discussion with Simona in Brussels that he agreed that for that document it's not necessary. We have another document coming up on annotation in EAB. that's still not at the CR phase but I don't know what will we do there but I just don't see that working group being equipped technically and with this necessary background to do a scrap model properly I just don't see that happening so I see that as a major problem now so yes please raise it at the chair's group this is one of the places…</p>
+<p id=60ac class="phone s06"><cite>Phil_Archer:</cite> Okay, thank you.</p>
+<p id=e219 class="phone s04"><cite>Ivan_Herman:</cite> where this should be discussed</p>
+<p id=500f class="phone s01"><cite>Wesley_Smith:</cite> Man, go ahead.</p>
+<p id=2c44 class="phone s02"><cite>Manu_Sporny:</cite> And I don't know of any other group that's doing this. Phil, and we are continuing in our long tradition of being a guinea pig for new W3C processes. we are the group that they come to either the DID group or the VC group and we get to blaze the trail and feel the pain on a lot of these changes. So I think that's exactly what's going on.</p>
+<p id=8e16 class="phone s04"><cite>Ivan_Herman:</cite> This one goes beyond all the others.</p>
+<p id=fbcd class="phone s02"><cite>Manu_Sporny:</cite> again we are very willing and eager to be experimented on I</p>
+<p id=f12f class="phone s01"><cite>Wesley_Smith:</cite> Greg, go ahead.</p>
+<p id=ad24 class="phone s03"><cite>Greg_Bernstein:</cite> Some of this it's like we're repeating everything that's been done in cryptography in the sense that when we look at a data integrity threat model the fundamental threat are forgery replay attacks those kind of things I mean a second when We look at forgery…</p>
+<p id=8218 class="phone s03"><cite>Greg_Bernstein:</cite> then we sit there and go cryptographically relevant quantum computer then we have to worry about quantum resistance things like that but we're talking kind of generic threats we're like rewriting a book on security that's trying to put some limits on Morning.</p>
+<p id=ce0b class="phone s02"><cite>Manu_Sporny:</cite> Yeah, that is not the purpose of the threat model. So just to be clear, Greg, we're not meant to rewrite, basic books on cryptography. we do need to call out hey, this specification has a set of external threats and all of those external threats are just basic. you need to care about cryptography and understand how it works, Unfortability and all the things that you've written about, Greg, get turned into external threats. so the thing that threat model supposed to focus on is that and this is all fuzzy, But it's that specification specifically, So the target what is that specification?</p>
+<p id=82b7 class="phone s02"><cite>Manu_Sporny:</cite> care about. So for example for the data integrity stuff we do canonicalization like that is a conscious choice we made there are benefits for doing that but that is something that we have to talk about that is very very central to the data integrity specifications whereas Jose and JW JWT and SDJ they don't do that and they pay prices not doing that. so for example that would be an internal threat that we would discuss a target threat that we would discuss is hey if you canonicalize badly or if you can canonicalize two inputs to the same output that's really bad right and there are things we have done things to prevent that from happening and that just needs to be discussed right but when it comes to the basis of elliptic curve</p>
+<p id=e448 class="phone s02"><cite>Manu_Sporny:</cite> nerve digital signatures. That is an external threat. We can talk about it, but we're not That's the CFRGS and ITF's problem. and the folks that are not us, right? So we depend on this specification depends on that technology. So there line at least in my head Greg there's a clear line that we can draw around…</p>
+<p id=2c74 class="phone s02"><cite>Manu_Sporny:</cite> what we focus on in our data integrity threat model versus what's external to it and what we just don't talk about we're just not going to talk about jots there because they're irrelevant to the spec right jotss are another technology they're Not even an external threat…</p>
+<p id=b0ae class="phone s03"><cite>Greg_Bernstein:</cite> They're an external that's not an embedded proof,…</p>
+<p id=6c73 class="phone s03"><cite>Greg_Bernstein:</cite> So I mean…</p>
+<p id=86ca class="phone s02"><cite>Manu_Sporny:</cite> because the document doesn't depend on Jots at all. Right?</p>
+<p id=10005 class="phone s03"><cite>Greg_Bernstein:</cite> but when you brought up canonicalization and we talk about the fact that if two things canonicalize to the same thing that's a form of data integrity from the point of view of cryptography or the point of view of that's a delion with a hash. And so we can break this at least up into some higher level threats because that's a form of forgery, and replay attacks. And that's why we have the same issue of in the quantum spec was being very careful to make sure our hashing process is at the right strength compared to the signature algorithms because that's one of those same issues because finding a collision there allows you to do stuff right mess with the credential and things like</p>
+<p id=2a71 class="phone s03"><cite>Greg_Bernstein:</cite> that same with an attack on the canonicalization. So it seems like we can do a little bit more. I mean what's the common threat thing that came out of MITER when we do CVEEs and such like that they arranged the threats into a hierarchy with then the method the mechanisms for carrying out those threats get more and more detailed but at least we could have something of that because right now it's like we should throw in a list of everything in the world. It's like those are all associated with forgery. That's all associated with a replay attack. that's all associated with denying availability. I see a thumbs up. Okay.</p>
+<p id=ba9b class="phone s03"><cite>Greg_Bernstein:</cite> So let's start and then I'll see let's start with some kind of simple highle diagram for data integrity the kind you produced and let's go at it that way. Okay.</p>
+</section>
+
+<section>
+<h3 id=53a5>Discussing VC Barcodes Issue 59</h3>
+<p id=3f73 class="phone s01"><cite>Wesley_Smith:</cite> All right. So, I think we have a plan for at least a couple of these dart models, getting them off the ground. does anybody have anything more on that topic they want to say? All right. moving on then we will do Let me drop a link in the chat here. So I would like to discuss number 59 on the VC barcodes spec.</p>
+<p id=b8bd class="phone s01"><cite>Wesley_Smith:</cite> So Ivonne, you raised some points that I'd like to discuss with the group. so this PR does a few things. and most of these things we've talked about to some extent in this group before. the main thing that it does is it generalizes the optical barcode credential type. before we said if you create a credential of type optical barcode ial the credential subject needs to either be of type machine readable zone or of AMA driver's license scannable information. we remove that restriction to create an extension point in this PR. We say if you have an optical barcode credential you can externally define whatever type you would like for credential subject and do that.</p>
+<p id=9ffd class="phone s01"><cite>Wesley_Smith:</cite> However, the spec still does introduce the types machine readable zone and ambo driver's license scannable information. Ivonne, you raised some concerns about this setup. I know you said that we should have a general type definition that the AMA specific type definition could be sort of a subclass of.</p>
+<p id=45b4 class="phone s01"><cite>Wesley_Smith:</cite> So, what you're describing in this issue sounds pretty similar to what this PR actually does. So, I'd like to hear from you a little bit more about what you're thinking.</p>
+<p id=e28f class="phone s04"><cite>Ivan_Herman:</cite> It may be an editorial thing,…</p>
+<p id=10006 class="phone s04"><cite>Ivan_Herman:</cite> but maybe I don't know. You tell me. the whole document started to be and I don't want to be political here not I have to say it in advance it was a very ccentric document and that's bad that creates potentially all kinds of problems and we shouldn't do that the AMPA is ccentric it's not a standard that I can use anywhere else outside of the US as far as I understand. I also understand that for the reasons of past and deployment we need a standard for amba driver I don't want to remove it but I want to put it not s in such a cric central position as it is today.</p>
+<p id=ef55 class="phone s04"><cite>Ivan_Herman:</cite> So I would prefer to have something which is a kind of a super type of amva if it makes sense. after all the amva is a way to add the credential to an existing barcode if my understanding is correct by pointing at data and the AMVA as a specific standard class should be put in a separate section possibly in a normative appendix of the document to remove the emphasis that it has today.</p>
+<p id=10007 class="phone s04"><cite>Ivan_Herman:</cite> So just as you did a general class which is extendable, I would like to have a class which is a super type of AMA drivers which is extendable which maybe other nations can put their own version there as a subclass and we put an American one or a I don't know it's American or Californian standard as part of the document. in the appendix that's I think is healthier and we are less prone to have attacks and…</p>
+<p id=06a5 class="phone s04"><cite>Ivan_Herman:</cite> I mean yeah okay I think I said What?</p>
+<p id=42b6 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=b2f3 class="phone s01"><cite>Wesley_Smith:</cite> Just to briefly jump Q and moving things to an appendix. I don't see any, issue creating a type that is a superass of the AMA type. the way things are currently structured might present some tactical issues. but I'll go more into detail there later. Manu, go ahead.</p>
+<p id=c72b class="phone s02"><cite>Manu_Sporny:</cite> Yeah, the super type we can just use ISO 18013-2 that is the personal identification standard for an ISO compliant driving license of I think that would address your concern.</p>
+<p id=2a28 class="phone s04"><cite>Ivan_Herman:</cite> whatever that is that would be I mean I don't know all these technical details M so at this point I just believe you…</p>
+<p id=49b1 class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+</section>
+
+<section>
+<h3 id=ba33>ISO 18013-2 Vs AMA Driver's License</h3>
+<p id=8553 class="phone s04"><cite>Ivan_Herman:</cite> but yes that looks very different if we do that the practical question that comes up is it an ISO specification that is freely available or Not bad…</p>
+<p id=655e class="phone s02"><cite>Manu_Sporny:</cite> No, it is now.</p>
+<p id=7710 class="phone s04"><cite>Ivan_Herman:</cite> but yeah there are ISO specifications that are free of charge.</p>
+<p id=56c8 class="phone s02"><cite>Manu_Sporny:</cite> It's an ISO specification. You have to pay for it. I'm joking. But I can show you the link. You have to pay for it. ISO IEC 1803-2</p>
+<p id=34e2 class="phone s04"><cite>Ivan_Herman:</cite> So we may have to somehow argue very clearly that nevertheless we want to have a normative reference to that. Let's cross that bridge when we get there.</p>
+<p id=1fda class="phone s04"><cite>Ivan_Herman:</cite> to create a class…</p>
+<p id=a36e class="phone s04"><cite>Ivan_Herman:</cite> which is ISO specific is probably a good answer.</p>
+<p id=adbb class="phone s01"><cite>Wesley_Smith:</cite> I guess I'm not totally understanding…</p>
+<p id=2b9a class="phone s01"><cite>Wesley_Smith:</cite> this is necessary. So I can understand why we don't want an AMA section to be central to the specification but to define a type to go in credential subject to be used with optical bar the credential type you need to also specify how you're going to process whatever the external data that you're signing over is and so creating an abstract superype that doesn't</p>
+<p id=d3ff class="phone s01"><cite>Wesley_Smith:</cite> come with such specification is essentially what optical barcode credential is more or less. I don't know how we would in a usefully generic way define a super type that comes with the mechanics, the mechanisms, the sorting algorithm and the bit string and…</p>
+<p id=70f1 class="phone s01"><cite>Wesley_Smith:</cite> so on and so forth that tells you how to pull data out of the rest of the barcode. yep. So,</p>
+<p id=e3c9 class="phone s04"><cite>Ivan_Herman:</cite> So le let's suppose that the Europeans come up with something similar for European driving license…</p>
+<p id=2d74 class="phone s04"><cite>Ivan_Herman:</cite> which is a realistic setup. and at the moment it's not even clear what they should do and how they should do it. if we have some sort of a super structure which says this is the class it doesn't exist formally but it can be an abstract class which says this is the structure this is the way these are the points that have to be filled for a specific usage but this is the structure of this class the way it works and…</p>
+<p id=dfb2 class="phone s04"><cite>Ivan_Herman:</cite> with the way it's expected where then Europeans can put in whatever they define for their own class.</p>
+<p id=2f7f class="phone s01"><cite>Wesley_Smith:</cite> So jumping Q really quick.</p>
+<p id=f3ca class="phone s01"><cite>Wesley_Smith:</cite> That is the way that this leaves open the ability for people to do that exact thing. And what they would do is in a separate specification they would say okay we are going to generate credentials of type optical barcode credential and we're going to introduce a credential subject type called European driver's license scannable information and in that specification we're going to define the nism is or the mechanism to canonicalize the data in the external machine readable source and we're also going to express an index over that external machine readable source.</p>
+<p id=416b class="phone s01"><cite>Wesley_Smith:</cite> So we can do the XI based proof and that's totally fine and good. So the abstraction is done with the optical barcode credential type not with a generic credential subject type that can be instantiated for any different type of driver's license but the way that what this PR does is it intentionally makes the extension point at optical barcode credential. So any external spec can come and they can define a new credential subject type to be used with optical barcode credential that does exactly what you said Ivon that is the intent anyway. it's not clear to me why doing that abstraction at credential subject.type makes more sense there.</p>
+<p id=4dae class="phone s04"><cite>Ivan_Herman:</cite> There is a NATO get together today.</p>
+<p id=f7ef class="phone s01"><cite>Wesley_Smith:</cite> But sorry for jumping Q. M you have your hand up.</p>
+<p id=10008 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, just to I guess speak more concretely to it. Ivon's trying to avoid an international incident. that is why we need to do this. Just to double underscore, we cannot as the worldwide web consortium define something and only define it for Americans. It will be received very badly. So just to be blunt but what Wes said is absolutely I mean the base layer is the optical barcode thing.</p>
+<p id=165b class="phone s02"><cite>Manu_Sporny:</cite> We have an easy out in this particular case. ISO 18013-2 is an specification. it does define mandatory fields and we can apply effectively the same thing that we did for Just so everyone knows how 18013-2 It came from ANVA. It started off as a US supplied specification. The world adopted it. They renamed it as ISO 18013-2 and then everyone in the world continued to provide input to it inside ISO. but it was a US-based spec first and for foremost.</p>
+<p id=10009 class="phone s02"><cite>Manu_Sporny:</cite> So that continues to be true today. updates to 1803-2 typically are led by AMBA with of course European and Asia Pacific and all those other countries providing input but they are very very largely the same and similar because of the way the input process typically works. okay so I think we're fine here. we do need to define probably we should try west 18013-2 saying that we're going to leave it to an external body is almost guaranteed to lead to a divergence in a way that we is probably not healthy. and so we can provide this and see if there's any push back.</p>
+<p id=755d class="phone s02"><cite>Manu_Sporny:</cite> we have a horizontal review process to ask for input on it. So we can do that anyway just hope that helps. I think the only modification west to the PR would be and…</p>
+<p id=6584 class="phone s04"><cite>Ivan_Herman:</cite> I understand that.</p>
+<p id=8b9a class="phone s02"><cite>Manu_Sporny:</cite> it may be in the future is moving the emma thing to a normative appendix right this is why we can't make it filled this is why we can't make it an example this thing is deployed in production this is right and then the ISO 18013-2 one can be a parallel one that folks that want to use ISO8013 can use and then of course If for example South Korea wants to use the South Korean extensions then they can extend and apply it as needed. I will also note that the AMVA spec for this is open and public accessible patent royalty-free anyone can view it. The ISO spec is not.</p>
+<p id=4e73 class="phone s02"><cite>Manu_Sporny:</cite> Hope those details help. That's it.</p>
+<p id=d46e class="phone s01"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=dc7a class="phone s01"><cite>Wesley_Smith:</cite> thanks definitely makes sense. We can definitely move the AMB stuff to a normative appendix and look to explicitly support ISO 18032. I am curious whether this issue of the specification being overly specific to one locality one place seems like a pattern that would come up all the time and what I mean by that is we're defining a technology we're an abstract technology and how you instantiate that for a specific</p>
+<p id=b8e3 class="phone s01"><cite>Wesley_Smith:</cite> thing and the way it's instantiated is typically by locality. Different places have different ways of doing driver's licenses, things like that. And so we have one instance of this technology at the moment because that's what has driven the development of the technology and where it is is currently being used and so on and so forth. that doesn't mean the technology is overly centered around that place. It's just there is what exists. So, do other technologies that have this sort of pattern, do they try to go out of their way to frontr run integrating that tech with all of the other localities and the technologies that those other places use before publication? Is that sort of the concept? I guess I'm not understanding how a ton of other technologies don't run into this problem during the specification process. Or maybe they do.</p>
+<p id=d419 class="phone s01"><cite>Wesley_Smith:</cite> But that's just sort of a meta question about the process and the problem. Phil, go ahead.</p>
+<p id=007a class="phone s06"><cite>Phil_Archer:</cite> very briefly.</p>
+<p id=b60f class="phone s06"><cite>Phil_Archer:</cite> I'm pretty confident that you can use a vocabulary term from an ISO standard without falling foul of their usual paying policies. if you can make the specs such that you're using those data terms, that might avoid having to make a nominative reference to a closed standard. I heard that quite authoritatively recently. So once you start copying spec text then you're in trouble. But if you're just using a term from a data model, knock yourself out. You can do that…</p>
+<p id=b8e1 class="phone s06"><cite>Phil_Archer:</cite> if that helps.</p>
+<p id=5eb1 class="phone s01"><cite>Wesley_Smith:</cite> Thanks, Phil.</p>
+<p id=6a75 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=037f class="phone s04"><cite>Ivan_Herman:</cite> So there is a related issue that I raised…</p>
+<p id=d03f class="phone s04"><cite>Ivan_Herman:</cite> which might help in editing this spec and this differentiation. at the moment the various vocabulary items, properties, classes etc. are very much in a huge English pros paragraph. and the structure is not necessarily visible and I think that the spec itself should be edited to use the same kind of approach that has been taken in other spec the DIP spec and others where there are clear tables for what we define as properties and classes and subclasses and whatnot and that might make the whole situation much clearer.</p>
+<p id=4e3d class="phone s04"><cite>Ivan_Herman:</cite> so that's a separate issue whose dream I don't remember the number but I raised it right after reviewing this PR that this should be done and we should follow the same style and that might actually help in cleaning up what is generic what is specific what is an abstract class so to say but can be filled with specific thing etc</p>
+<p id=2ad2 class="phone s01"><cite>Wesley_Smith:</cite> All right. Manu, go ahead.</p>
+<p id=8c0e class="phone s02"><cite>Manu_Sporny:</cite> And in this case, I don't want to say it's easier because in a US driver's license are the mandatory fields in the ISO 1803-2 thing, right? there's heavy overlap there. and those are the things that we care about. and the way we sort those is alphabetically and so we don't have to refer to much of anything in the specification. but if we do I think upon the mechanism you suggested is a totally fine way to do it. So I think this is very doable. It's just we do have to do it and we have to be careful about what we say in the spec as you know we cannot come across as a ccentric thing and it is not right but we just need to clarify that in the spec.</p>
+<p id=7350 class="phone s01"><cite>Wesley_Smith:</cite> All right. I think that probably wraps that discussion. I think next steps are pretty clear for that noting that we have about two minutes left, not a lot of time to jump into anything else. So, anybody have any last thoughts or questions or points for a brief discussion?</p>
+<p id=065d class="phone s06"><cite>Phil_Archer:</cite> I do, but there's no time, so I'm going to put it by email.</p>
+<p id=b3d5 class="phone s01"><cite>Wesley_Smith:</cite> All right. Thanks, Phil. Avon, go ahead.</p>
+<p id=d309 class="phone s04"><cite>Ivan_Herman:</cite> There is a one question that I raised in a different issue…</p>
+</section>
+
+<section>
+<h3 id=f25f>Feature Relocation For Bitstring Status</h3>
+<p id=cd7f class="phone s04"><cite>Ivan_Herman:</cite> which is just food for thought. we have already agreed that the crypto suit which is in this pack should go into ECDSA or ECCSA. but the same question arises for me about this tur bitstring thing. It is not necessarily a barcode specific feature for me. It's something that should be transferred to the bitstring status list spec and…</p>
+<p id=2a8f class="phone s04"><cite>Ivan_Herman:</cite> keep in the barcode only what is really barcode specific.</p>
+<p id=a355 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, from a technical perspective,…</p>
+<p id=d06a class="phone s01"><cite>Wesley_Smith:</cite> 100% agree. I know that there looks like everybody else does too. I defer to you, Ivonne, on whether or not that's allowed by the current charter and…</p>
+<p id=e177 class="phone s01"><cite>Wesley_Smith:</cite> process rules and so but if we decide it's all good to move that feature elsewhere, happy to push those buttons.</p>
+<p id=a2a9 class="phone s04"><cite>Ivan_Herman:</cite> We have in the proviso that we are allowed to do changes…</p>
+<p id=cf12 class="phone s04"><cite>Ivan_Herman:</cite> which originate from the new specs that we added to the family. So I think that under that heading we can justify reopening the bitring status document by putting it there. But we can discuss that with the chairs.</p>
+<p id=fc14 class="phone s01"><cite>Wesley_Smith:</cite> All thank you everyone for your time. That is, it for this meeting. have a great rest of your week and see you next week.</p>
+<p id=e913 class="phone s06"><cite>Phil_Archer:</cite> See you soon. Meeting ended after 00:55:28 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
