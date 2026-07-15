@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 14 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>14 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Parth_Bhatt, Patrick_St-Louis, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#3f48">Threat Model Issues Discussion</a></li>
+<li><a href="#bd8e">Test Suite Update</a></li>
+<li><a href="#03da">OAUTH Scope PR</a></li>
+<li><a href="#61b9">ZCAP PR</a></li>
+<li><a href="#b1ff">Acceptance Issuer Examples PR</a></li>
+<li><a href="#1435">Expression PR</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=a18b class="phone s01"><cite>Kayode_Ezike:</cite> Hey everyone, just gonna minute or so. I know this week is sort of a lot going on with conferences, but just wait another minute. We'll get started.</p>
+<p id=6c3c class="phone s01"><cite>Kayode_Ezike:</cite> Okay, it's okay Hello everyone, Today is July 14th, 2026 and this is the weekly call for the verifiers API life cycle management task force call. excited to get started today. We have a lot to discuss. but before we dive in, just wanted to remind folks that this call is governed by the W3C policies u of the conduct and disclosure. And before we dive in, any community updates, announcements from anybody on the call here today. And just I'll just ask too I think everyone here is familiar but any reintroductions updates you want to share with us?</p>
+<p id=e2b9 class="phone s01"><cite>Kayode_Ezike:</cite> I see that we have a noteaker I believe. So do we know John and…</p>
+<p id=8618 class="phone s01"><cite>Kayode_Ezike:</cite> this noteaker? Is he safe to say?</p>
+<p id=8e82 class="phone s02"><cite>Dave_Longley:</cite> We do,…</p>
+<p id=8967 class="phone s02"><cite>Dave_Longley:</cite> but we usually turn off any AIs that are in here recording things.</p>
+<p id=6bc1 class="phone s01"><cite>Kayode_Ezike:</cite> So I'm going to get started. I'm going to ask Patrick if you could share your screen. I don't mind still driving, but it's just that my computer today is a little bit slow. So, can you pull up the agenda really quickly now?</p>
+<p id=5c15 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, I can certainly do that. please just give me one second. let me log in.</p>
+<p id=cfd7 class="phone s01"><cite>Kayode_Ezike:</cite> Problem. In the meantime, I guess I'll just give a brief up some overview.</p>
+<p id=ca47 class="phone s01"><cite>Kayode_Ezike:</cite> So essentially today just wanted to get a quick update regarding the test suite and then I also have a set of targeted a bunch of PRs that I want for us to ideally close today that have been sitting around for a bit and then there are some targeted issues that I pinpointed about five of them that I think there's important decisions to make with them that we should make sooner than later. So, I'd like to go through each of those as well. so for starters, we can go to the no, that's not P request view. For starters, I'd like to open the floor for either Eric or Drew.</p>
+<p id=0169 class="phone s01"><cite>Kayode_Ezike:</cite> I noticed that there was a proliferation of issues about 12 or 13 or so the last week that's related to the threat model and I had questions around…</p>
+</section>
+
+<section>
+<h3 id=3f48>Threat Model Issues Discussion</h3>
+<p id=2795 class="phone s01"><cite>Kayode_Ezike:</cite> how we should deal with any actions you need from any of us so that we can pair those down. Go ahead Eric.</p>
+<p id=5642 class="phone s04"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=3c15 class="phone s04"><cite>Eric_Schuh:</cite> I think I could probably address most of that and then we'll see if you have any questions. so I went through as I said last week yesterday and basically resolved if not all of the suggestions on the threat model PR. the two that I left outstanding in terms of conversations were questions about licensing. and that was the main reason I did not push forward in terms of merging directly. I wasn't sure if it was appropriate until we get those license files and I wasn't sure exactly what content was supposed to go in those or if they were necessarily needed since we have a license file at the top level.</p>
+<p id=3ae9 class="phone s04"><cite>Eric_Schuh:</cite> But in terms of issues, basically anything that I didn't directly edit into the PR in terms of making updates because there were either outstanding conversations that were unresolved That into issues and I think it was 11 or so. and my general plan with that is next week when I get back from my travels Joe and I have some time on the calendar to sit down and I think probably the most prudent path forward is for the two of us to try to tackle most of those issues.</p>
+<p id=0c7a class="phone s04"><cite>Eric_Schuh:</cite> hopefully once the PR has been merged and basically open up a series of PRs to address most of them and then any that are left after Joe and I get a chance to review it that we want to bubble up to the group we'll do so probably not next week but maybe the week after if we want to allocate the time for that. I know we've spent a lot of time on this so if we want to let it settle for a few weeks I think that's reasonable as well.</p>
+<p id=ae6a class="phone s04"><cite>Eric_Schuh:</cite> But per Manu's point I think today the only kind of goal that I had was to resolve the questions about the license file that is currently part of the PR and the copyright file and hopefully be able to push the merge button assuming those questions are easily resolved. So I'll leave it there.</p>
+<p id=8ec7 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you very Cool. is there anyone here who has a cogent response to how to handle the license from experience in the past? Go ahead, V. …</p>
+<p id=0465 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I signed on late. What's the PR number? I'm happy to take a look.</p>
+<p id=1331 class="phone s01"><cite>Kayode_Ezike:</cite> this is the threat model. so this would be the yeah.</p>
+<p id=d22e class="phone s04"><cite>Eric_Schuh:</cite> 655.</p>
+<p id=b111 class="phone s05"><cite>Benjamin_Young:</cite> Or just drop the link in chat. It's probably better.</p>
+<p id=7126 class="phone s04"><cite>Eric_Schuh:</cite> Yeah. Yes,…</p>
+<p id=9779 class="phone s01"><cite>Kayode_Ezike:</cite> Right. Yes. Good.</p>
+<p id=59b0 class="phone s05"><cite>Benjamin_Young:</cite> Thank you.</p>
+<p id=85c8 class="phone s03"><cite>Patrick_St-Louis:</cite> can drop it if it's not done. One second. Where is the chat? Okay, it's hidden. Is this one correct?</p>
+<p id=17e6 class="phone s04"><cite>Eric_Schuh:</cite> that's it.</p>
+<p id=6b3f class="phone s03"><cite>Patrick_St-Louis:</cite> I'm going to actually tag you, Ben, in my question is this PR blocked by this licensing issue or…</p>
+<p id=6bd0 class="phone s05"><cite>Benjamin_Young:</cite> Okay. Yeah,…</p>
+<p id=e389 class="phone s05"><cite>Benjamin_Young:</cite> happy to take a look.</p>
+<p id=9caf class="phone s03"><cite>Patrick_St-Louis:</cite> is it something we can kind of have a look subsequently is there a quick answer to that?</p>
+<p id=4466 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, man.</p>
+<p id=ca92 class="phone s05"><cite>Benjamin_Young:</cite> Yeah.</p>
+<p id=8971 class="phone s05"><cite>Benjamin_Young:</cite> So, the, Mono just says There is several of those. I think he means the, W3C documentation license, which Apache can be used, but it does cover content unlike some others. but I'm just clicking through the code.</p>
+<p id=ad62 class="phone s01"><cite>Kayode_Ezike:</cite> Nothing.</p>
+<p id=ffff class="phone s05"><cite>Benjamin_Young:</cite> These are all just the more or less JSON configs, are they not? It is documentation, but it's bundled in JavaScript files. let me get a link to the W3C document license. I would go ahead and make that change. it doesn't need to be a blocker though. So if you guys want to get it in the W3C for code tends to prefer BSD3 clause.</p>
+<p id=ecee class="phone s05"><cite>Benjamin_Young:</cite> But that's also shifting around. essentially the way for full expression of this …</p>
+<p id=2783 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah. I mean,…</p>
+<p id=8f12 class="phone s03"><cite>Patrick_St-Louis:</cite> if it's just to add a link or a file, might as well get it in.</p>
+<p id=ead3 class="phone s05"><cite>Benjamin_Young:</cite> because legendary is still an active entity still alive Joe's here sometimes they can change the license so merging this as Apache and they have exclusive copyright over this piece they could change it later in accordance with W3C policy.</p>
+<p id=8c1d class="phone s05"><cite>Benjamin_Young:</cite> So, nobody needs to fall over about this right now, but if you want to go ahead and make the change, I don't know, where the urgency is. I put the license in chat for anybody…</p>
+<p id=f7e6 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=a691 class="phone s03"><cite>Patrick_St-Louis:</cite> so it sounds to me like we are okay with merging this today and just opening an issue for this license that can be resolved quickly. perfect. Yeah.</p>
+<p id=c28a class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, I agree.</p>
+<p id=3ea0 class="phone s01"><cite>Kayode_Ezike:</cite> Let's do that.</p>
+<p id=785f class="phone s04"><cite>Eric_Schuh:</cite> Yeah, I will just yeah,…</p>
+<p id=eef6 class="phone s05"><cite>Benjamin_Young:</cite> who wants to see it and I'm adding it to the review as well, but I'm also going to approve it…</p>
+<p id=67d7 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=7069 class="phone s05"><cite>Benjamin_Young:</cite> because I think it's fine either way as long as Eric's willing. to send in a PR later. should it be a must?</p>
+<p id=0728 class="phone s03"><cite>Patrick_St-Louis:</cite> just the issue number.</p>
+<p id=27b4 class="phone s01"><cite>Kayode_Ezike:</cite> What's that Eric?</p>
+<p id=130a class="phone s04"><cite>Eric_Schuh:</cite> that all sounds fine to me. And I just wanted to note I do already have an issue open. One of the 11 issues was about this licensing issue question. So we should be good for that. let me one second. I'll get it for you. I linked it in that last comment actually that I left.</p>
+<p id=35ea class="phone s04"><cite>Eric_Schuh:</cite> It is 674 I believe. I'll put the link in chat here.</p>
+<p id=c38f class="phone s06"><cite>Joe_Andrieu:</cite> Eric, when we do merge it, we should list all those issues,…</p>
+<p id=6c49 class="phone s03"><cite>Patrick_St-Louis:</cite> Is there any other issues than 674 that you would like to list?</p>
+<p id=59bb class="phone s06"><cite>Joe_Andrieu:</cite> just in the merge comment, we should just site the ones that you created so people have continuity with the discussion. Couple</p>
+<p id=b8b6 class="phone s04"><cite>Eric_Schuh:</cite> Yeah, my last comment on the PR, I believe It's</p>
+<p id=8a67 class="phone s01"><cite>Kayode_Ezike:</cite> Oh. Yeah.</p>
+<p id=3be1 class="phone s04"><cite>Eric_Schuh:</cite> Let me just take a quick look.</p>
+<p id=3439 class="phone s04"><cite>Eric_Schuh:</cite> It's issues 667 through 678 were all and…</p>
+<p id=802d class="phone s04"><cite>Eric_Schuh:</cite> I did create a tag for threat model in the issues. So, if we don't want to be looking at them, you should be able to omit the threat model tag and not see any of the issues related to threat model. yes.</p>
+<p id=7a38 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. Sorry.</p>
+<p id=0e6d class="phone s03"><cite>Patrick_St-Louis:</cite> Can you repeat the issue numbers? I'm just going to list them here.</p>
+<p id=fa7e class="phone s04"><cite>Eric_Schuh:</cite> 667 through 678.</p>
+<p id=1aa9 class="phone s04"><cite>Eric_Schuh:</cite> So it's 11 of them. Is the last one correct?</p>
+<p id=00c9 class="phone s03"><cite>Patrick_St-Louis:</cite> 678. Okay.</p>
+<p id=bb12 class="phone s03"><cite>Patrick_St-Louis:</cite> So that includes 674 is related to licensing. So the group has agreed to mer we didn't agree yet. is there any objection to merging this today? with the condition that we acknowledge that issue through 678 needs to be addressed and…</p>
+<p id=ae24 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=be14 class="phone s03"><cite>Patrick_St-Louis:</cite> special mention that 674 is related to ing. Perfect. I'm going to comment this. I believe here we will want to do a squash because there's a lot of comets with the same name and there's only one commit before. So as per a discussion any objection to use the squash and merge for this one since a lot of the comments they just mentioned apply suggestion. We'll go ahead and squash and rge. There we go.</p>
+<p id=9b80 class="phone s03"><cite>Patrick_St-Louis:</cite> I will let you Eric go and make sure that all relevant issues are closed or open depending what's still needed. And back to you, Cutie.</p>
+<p id=36a8 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you,…</p>
+</section>
+
+<section>
+<h3 id=bd8e>Test Suite Update</h3>
+<p id=e2b2 class="phone s01"><cite>Kayode_Ezike:</cite> Patrick. U for the next topic before we go through the rest of the PR about four or five of them that I'd like to merge today, but wanted you Patrick to give an update on the test suite PR that you put up yesterday.</p>
+<p id=10000 class="phone s03"><cite>Patrick_St-Louis:</cite> Yes. Yes, I'd be happy to. so the last time I presented this scaffolding PR so what I've done since then is I basically just copied the content on a branch on the WTC repo and re reopened the PR from there. I believe it's the same PR. You can see the history. So I closed my PR from my fork. and then just pushed what was on here. So I invite you to read this. So this one here has no tests. it only sort of describes the approach that's going to be taken.</p>
+<p id=bc37 class="phone s01"><cite>Kayode_Ezike:</cite> Hey,</p>
+<p id=3fe2 class="phone s03"><cite>Patrick_St-Louis:</cite> There's a list of the normative statements. and the read me is probably the thing we should have a look and make sure we are in accordance with. so once this is done, I believe it's not open but I have another branch ready for open and draft PR that's going to be subsequent here. This other branch covers the test needed for let me just go. So it adds a few sections. So this is divided by section. So that PR focuses on the conformance for the issuer service and the verifier service.</p>
+<p id=e6e9 class="phone s03"><cite>Patrick_St-Louis:</cite> So it includes partial of section 1.3 and it includes 2.2 3.2.1 and 3.3.1. I have not included section 3 I've not included these optional endpoints. we can review as mentioned if these endpoints they are optional but in the case that you do want to implement it there's some normative statement so we will be able to make these sort of a opt in the spec without negatively impacting those…</p>
+<p id=0fb1 class="phone s01"><cite>Kayode_Ezike:</cite> Make sure it's funny.</p>
+<p id=1220 class="phone s03"><cite>Patrick_St-Louis:</cite> who choose not to do it meaning it won't count as a failed test and it won't count as a not implemented you will just get more points if you implement it. yeah. So, this following PR should put us in a position that we can start deprecating the VC API issuer and verifier test suite from the CCG. since they will cover these. something I would like to do also is to for now while we test this create a small implementations JSON in here that we can start I have an implementation I'm developing at the same time as I'm building this test suite. So I'll put it out there and I believe Digital Bazaar mentioned they would have one.</p>
+<p id=55c9 class="phone s03"><cite>Patrick_St-Louis:</cite> So just until we have a test suite then we can add it into the official implementations directory.</p>
+<p id=10001 class="phone s03"><cite>Patrick_St-Louis:</cite> Yes, Ben. Yeah.</p>
+<p id=075f class="phone s05"><cite>Benjamin_Young:</cite> Yeah. …</p>
+<p id=5362 class="phone s05"><cite>Benjamin_Young:</cite> one thing we did locally in the other test suites was to have a local config.cjs file. I'm trying to find you a link to where that gets explained.</p>
+<p id=bfe0 class="phone s03"><cite>Patrick_St-Louis:</cite> So, this is here.</p>
+<p id=93b8 class="phone s05"><cite>Benjamin_Young:</cite> And you could do something like that maybe.</p>
+<p id=24e8 class="phone s03"><cite>Patrick_St-Louis:</cite> The reason I wanted implementations that Jason was just …</p>
+<p id=b465 class="phone s03"><cite>Patrick_St-Louis:</cite> if there's test suite that is more like interrupt related to make that it needs to implementation we can just slowly try to make sure that the pipelines are functional and if we start with one or two implementation it's a small scope it's just a suggestion I had before we put it in the other one the pipelines</p>
+<p id=d142 class="phone s05"><cite>Benjamin_Young:</cite> Sure.</p>
+<p id=d808 class="phone s05"><cite>Benjamin_Young:</cite> Yeah. If you…</p>
+<p id=4a51 class="phone s05"><cite>Benjamin_Young:</cite> if you take a look at the thing I just linked to for testing locally, the local config.cjs file is basically just exactly what you described. It's a list of multiple implementations potentially with talk for turning interop tests on and…</p>
+<p id=7ac3 class="phone s03"><cite>Patrick_St-Louis:</cite> guy. …</p>
+<p id=d3ed class="phone s03"><cite>Patrick_St-Louis:</cite> yes. Okay.</p>
+<p id=66bb class="phone s05"><cite>Benjamin_Young:</cite> I don't know that there's a whole lot of code around that.</p>
+<p id=124d class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. Yeah,…</p>
+<p id=37e4 class="phone s05"><cite>Benjamin_Young:</cite> I think we just check for it and then load it in place of the implementations list and the settings. But it might be useful if they all kind of match.</p>
+<p id=c578 class="phone s03"><cite>Patrick_St-Louis:</cite> let's start with this and it should cover our needs. Perfect.</p>
+<p id=2723 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, let me know if it doesn't. I'm doing a lot more with the test suites in the next couple weeks. happy to help.</p>
+<p id=2344 class="phone s03"><cite>Patrick_St-Louis:</cite> And I'll probably reach you for information if there's a digital bazaar implementation I can try to just inter up with for some basic stuff.</p>
+<p id=679b class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah for the issuing verifying stuff not too worried. I think the workflows is where it's going to get interesting. so yeah that's all I have. Is there any questions? Perfect. back to you, Coyote.</p>
+<p id=3181 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you very much.</p>
+</section>
+
+<section>
+<h3 id=03da>OAUTH Scope PR</h3>
+<p id=3d98 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. So, I have several PRs that were from previous calls. This one I'm going to put in chat right now is for the OOTH scope. and so this is So, this is 656. The only thing that needed to be done from the last week was that I needed to make sure that the references were informative and not normative.</p>
+<p id=0af9 class="phone s01"><cite>Kayode_Ezike:</cite> Turns out that the way I wrote it,…</p>
+<p id=e8b8 class="phone s01"><cite>Kayode_Ezike:</cite> it was normative. So I updated that for this R over here. That's the only diff from last week.</p>
+<p id=9539 class="phone s03"><cite>Patrick_St-Louis:</cite> Yes.</p>
+<p id=0ade class="phone s03"><cite>Patrick_St-Louis:</cite> I remember. Yeah, the question perfect. I'm happy with Any objection to merging this PR? I think we were all pretty much on agreement. I'm going to put this back to rebase.</p>
+<p id=42bb class="phone s01"><cite>Kayode_Ezike:</cite> Great.</p>
+<p id=1739 class="phone s03"><cite>Patrick_St-Louis:</cite> Since this is fairly clean, I'm going to merge this. Awesome. Are you okay with doing that?</p>
+<p id=e0ab class="phone s01"><cite>Kayode_Ezike:</cite> And then the next one just I guess before we move on, we should close the issue associated with this which should be linked in there somewhere. should have caught it before he closed it, but it should be in the French and…</p>
+<p id=a22d class="phone s03"><cite>Patrick_St-Louis:</cite> 643.</p>
+<p id=ba6a class="phone s01"><cite>Kayode_Ezike:</cite> yeah 643.</p>
+<p id=f83e class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. PR 66 and I think you add some Zcap stuff also right in the PR.</p>
+<p id=693a class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, that one's next. I'm going to that one soon.</p>
+<p id=4220 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=ecae class="phone s01"><cite>Kayode_Ezike:</cite> Not you. Patrick St-Louis:</p>
+<p id=ce9d class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. Oops. There we go.</p>
+<p id=50d8 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. All right.</p>
+<p id=0103 class="phone s03"><cite>Patrick_St-Louis:</cite> Can I close this with the comment? Okay. So,…</p>
+<p id=dc1f class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=1dba class="phone s03"><cite>Patrick_St-Louis:</cite> Let me try to guess which one's going to be next. There's something…</p>
+</section>
+
+<section>
+<h3 id=61b9>ZCAP PR</h3>
+<p id=e6d6 class="phone s01"><cite>Kayode_Ezike:</cite> Sorry for spoiling the surprise. This topic is a 657. go ahead.</p>
+<p id=4f8d class="phone s03"><cite>Patrick_St-Louis:</cite> because I got the closed PR.</p>
+<p id=cffe class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=b07d class="phone s03"><cite>Patrick_St-Louis:</cite> Yes, Ted.</p>
+<p id=2c44 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Just a going forward best practices.</p>
+<p id=23b2 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> These applied and recent commit messages do not make it easy to check and see what got applied. there's generally a one-click button on these that will let you either apply a single suggestion or…</p>
+<p id=8a1a class="phone s01"><cite>Kayode_Ezike:</cite> Got you. Come. Speed back.</p>
+<p id=acc0 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> start a batch commit. either one of those takes the suggestion and applies it. So you don't have to type or anything like that. and once it's applied, we know that it review is very easy.</p>
+<p id=7200 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you. Better mind.</p>
+<p id=10002 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> That's it.</p>
+<p id=b080 class="phone s01"><cite>Kayode_Ezike:</cite> So I put the next subtopic in have it open.</p>
+<p id=48e2 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay, thank you.</p>
+<p id=9fe7 class="phone s01"><cite>Kayode_Ezike:</cite> Same thing informative reference for ZCAP as well.</p>
+<p id=8cca class="phone s03"><cite>Patrick_St-Louis:</cite> Was there something to do Is there a change you did since last time or this one was pretty much good?</p>
+<p id=a7b5 class="phone s01"><cite>Kayode_Ezike:</cite> if you go back to the main page to see the commit says, but the last commit should been for informative update for CC reference.</p>
+<p id=1324 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, there It was one curly square bracket too much. This looks good. Any objection to merging this PR? Is that you objecting, Dave, or just a support?</p>
+<p id=9a1e class="phone s02"><cite>Dave_Longley:</cite> And that was a support.</p>
+<p id=f312 class="phone s03"><cite>Patrick_St-Louis:</cite> I thought we were going to have a conflict.</p>
+<p id=9031 class="phone s02"><cite>Dave_Longley:</cite> I'll have to find some other way to object with a thumbs up someday.</p>
+<p id=8c0d class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. I'm kidding. and then 644.</p>
+<p id=1d29 class="phone s01"><cite>Kayode_Ezike:</cite> That's issue 644.</p>
+<p id=d0ca class="phone s03"><cite>Patrick_St-Louis:</cite> Address Which one is it? Authentication or authorization? Perfect.</p>
+<p id=da53 class="phone s01"><cite>Kayode_Ezike:</cite> I think authorization probably more appropriate.</p>
+<p id=9433 class="phone s02"><cite>Dave_Longley:</cite> Yes. Authorization.</p>
+<p id=3973 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay, I'm going to close this issue.</p>
+</section>
+
+<section>
+<h3 id=b1ff>Acceptance Issuer Examples PR</h3>
+<p id=4f55 class="phone s03"><cite>Patrick_St-Louis:</cite> That's really good. Okay, what's next? 659. Okay.</p>
+<p id=a713 class="phone s01"><cite>Kayode_Ezike:</cite> Next one is this one in chat 659.</p>
+<p id=32da class="phone s01"><cite>Kayode_Ezike:</cite> This one is from Benjamin. So feel free to take the floor Benjamin regarding the accepted issuers examples.</p>
+<p id=b850 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, just reloading this into my head. yeah, so as this example shows can be a string or…</p>
+<p id=ab10 class="phone s05"><cite>Benjamin_Young:</cite> an object and the surrounding text in one place sort of said that and in another place didn't. So the example only showing one of them made it seem like it had to be an object.</p>
+<p id=19cd class="phone s03"><cite>Patrick_St-Louis:</cite> Perfect. Okay,…</p>
+<p id=8839 class="phone s01"><cite>Kayode_Ezike:</cite> My god.</p>
+<p id=004f class="phone s05"><cite>Benjamin_Young:</cite> And in any case, issuer was never the right key name because it's JSON LD. So either way, you're passing in an identifier. but the issuer key name was wrong. So while fixing that, I went ahead and put another example where you don't pass in an object and show two different issuers. it wouldn't validate in safe mode for sure…</p>
+<p id=6e69 class="phone s03"><cite>Patrick_St-Louis:</cite> that's good. I'm trying to think if I've seen this in the wild somewhere. I don't think so. but yeah,…</p>
+<p id=5a3f class="phone s05"><cite>Benjamin_Young:</cite> if somebody tried to do that. it shouldn't anyway.</p>
+<p id=a7a2 class="phone s03"><cite>Patrick_St-Louis:</cite> but is there a context for this? I don't</p>
+<p id=d370 class="phone s05"><cite>Benjamin_Young:</cite> That's a good point.</p>
+<p id=6c5f class="phone s02"><cite>Dave_Longley:</cite> Yeah, we're getting wires crossed a little. This is just JSON,…</p>
+<p id=67b1 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, you are. Or I am. Yep.</p>
+<p id=bd44 class="phone s02"><cite>Dave_Longley:</cite> but the whole idea is that you could query on any number of properties in a JSONLDD credential. So, you'd be matching against that.</p>
+<p id=fffe class="phone s03"><cite>Patrick_St-Louis:</cite> Mhm. Yeah,…</p>
+<p id=17c6 class="phone s02"><cite>Dave_Longley:</cite> You wouldn't match against issuer.</p>
+<p id=8466 class="phone s01"><cite>Kayode_Ezike:</cite> Here we come.</p>
+<p id=ed23 class="phone s02"><cite>Dave_Longley:</cite> viewed match against its ID.</p>
+<p id=4bdd class="phone s03"><cite>Patrick_St-Louis:</cite> I this direction because you basically treat this array as an array of issuer fields, Which themselves can be either a string or an object. let's just hope that nobody implemented this. and if they did, I'm sure we can play nice.</p>
+<p id=9b76 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I think that example was only added a couple weeks ago by accident. So, I doubt anyone's implemented that.</p>
+<p id=6260 class="phone s03"><cite>Patrick_St-Louis:</cite> And did we make sure that it doesn't say anywhere that it's an object with the issuer key field? Perfect.</p>
+<p id=421e class="phone s02"><cite>Dave_Longley:</cite> It I do think I checked that when this PR came in. and this PR matches the text.</p>
+<p id=00e0 class="phone s03"><cite>Patrick_St-Louis:</cite> Perfect. Is that okay?</p>
+<p id=dcdc class="phone s05"><cite>Benjamin_Young:</cite> Yeah, it does not say anything about an issuer key. it talks about an object identifying the issuer or something like that. So, you could see how it got read wrong,…</p>
+<p id=5aaa class="phone s01"><cite>Kayode_Ezike:</cite> Yes, it could be.</p>
+<p id=88f7 class="phone s05"><cite>Benjamin_Young:</cite> but yeah.</p>
+<p id=82c8 class="phone s03"><cite>Patrick_St-Louis:</cite> Any objection to merging this? fairly nonsubstantial R but really good to have. We like examples. Was there an issue for this or 658</p>
+<p id=2821 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=e147 class="phone s03"><cite>Patrick_St-Louis:</cite> what's next?</p>
+</section>
+
+<section>
+<h3 id=1435>Expression PR</h3>
+<p id=5ac7 class="phone s01"><cite>Kayode_Ezike:</cite> Next is in chat 661.</p>
+<p id=6d01 class="phone s03"><cite>Patrick_St-Louis:</cite> I mean, are we just going in order? yeah.</p>
+<p id=19a5 class="phone s01"><cite>Kayode_Ezike:</cite> All one I guess. Yeah, pretty much. So, this one is yours. I don't know if you have any updates with this one.</p>
+<p id=10003 class="phone s03"><cite>Patrick_St-Louis:</cite> No, I believe this one is done. did you put any comments since last time? we got some review to apply. So let's put into practice what that suggested here.</p>
+<p id=789c class="phone s01"><cite>Kayode_Ezike:</cite> Come on. Okay.</p>
+<p id=0471 class="phone s03"><cite>Patrick_St-Louis:</cite> And we're going to do a batch. this one resolve This one has been resolved. and then this was about expressions</p>
+<p id=a694 class="phone s03"><cite>Patrick_St-Louis:</cite> for something.</p>
+<p id=6e5c class="phone s03"><cite>Patrick_St-Louis:</cite> Okay, I think I did this correctly. any objection to merging this PR? I don't know if you wanted to change your review, Kyote, before we merge or…</p>
+<p id=5504 class="phone s01"><cite>Kayode_Ezike:</cite> I think it's probably fine.</p>
+<p id=61e5 class="phone s03"><cite>Patrick_St-Louis:</cite> Okay, you're fine if we leave you as change requested.</p>
+<p id=c505 class="phone s01"><cite>Kayode_Ezike:</cite> Is there a way to guess I don't have it open right now to update it,…</p>
+<p id=2010 class="phone s03"><cite>Patrick_St-Louis:</cite> I'll put you in like this.</p>
+<p id=51bc class="phone s01"><cite>Kayode_Ezike:</cite> but you can Yeah, it's fine.</p>
+<p id=05b7 class="phone s03"><cite>Patrick_St-Louis:</cite> And I believe I'll just make sure everything is resolved. I'm just letting all your comments have been resolved. at least the best of my knowledge.</p>
+<p id=65bb class="phone s03"><cite>Patrick_St-Louis:</cite> It was mostly for the version. Okay.</p>
+<p id=a47f class="phone s01"><cite>Kayode_Ezike:</cite> I think the issue is 653.</p>
+<p id=9c95 class="phone s03"><cite>Patrick_St-Louis:</cite> I kicked off a perfect. Rebase and merge. can't get two for 653. Okay.</p>
+<p id=193d class="phone s01"><cite>Kayode_Ezike:</cite> This is sad.</p>
+<p id=5fc7 class="phone s01"><cite>Kayode_Ezike:</cite> Jesus.</p>
+<p id=494d class="phone s03"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=9c2e class="phone s01"><cite>Kayode_Ezike:</cite> Next topic 62. So, this one is relatively It's relatively simple. So, this issue has been sort of lingering around and languishing for I feel like over a year now. There was a young man who made a comment about the way that we were defining the export for domain and challenge would have created a duplicate entry that we can just reuse or that we should scope out the actual scope for the domain of these fields. And so a relatively minor editorial fix update</p>
+<p id=6cc1 class="phone s03"><cite>Patrick_St-Louis:</cite> What does this do?</p>
+<p id=ce4b class="phone s03"><cite>Patrick_St-Louis:</cite> Sorry. What does this do concretely?</p>
+<p id=99b6 class="phone s01"><cite>Kayode_Ezike:</cite> So my understanding is that essentially there's a reference to a database that maintains the definitions.</p>
+<p id=75f1 class="phone s01"><cite>Kayode_Ezike:</cite> And if you have multiple of these links this when there's already another reference to it in a different section of database it creates a duplicate that's problematic in some way. That's essentially the description that was given by T doduce. if he goes to the issue, he can find the guy who commented on it. But that's roughly my understanding is that it's better to scope it to the actual schema that we're working with.</p>
+<p id=6eef class="phone s03"><cite>Patrick_St-Louis:</cite> Okay, I see.</p>
+<p id=8333 class="phone s03"><cite>Patrick_St-Louis:</cite> Any objection to merging this I do I don't believe Tedus is on the call with us. So I'm going to reply.</p>
+<p id=447e class="phone s01"><cite>Kayode_Ezike:</cite> No. Yeah,…</p>
+<p id=f864 class="phone s03"><cite>Patrick_St-Louis:</cite> However, we'll let him a chance to make sure that this resolves is concerned.</p>
+<p id=4c6a class="phone s01"><cite>Kayode_Ezike:</cite> I did respond to the issue.</p>
+<p id=4ab7 class="phone s01"><cite>Kayode_Ezike:</cite> a couple of weeks ago hasn't responded yet, but was in agreement with the approach that I proposed and so it's probably okay to inform issue.</p>
+<p id=002b class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. okay.</p>
+<p id=e03a class="phone s03"><cite>Patrick_St-Louis:</cite> So as on the rest need to reopen this issue.</p>
+<p id=79f0 class="phone s03"><cite>Patrick_St-Louis:</cite> Perfect. Okay.</p>
+<p id=5dfa class="phone s01"><cite>Kayode_Ezike:</cite> This one is 63 and…</p>
+<p id=e2a0 class="phone s01"><cite>Kayode_Ezike:</cite> So, this is a new one. essentially we want to be cognizant of the fact that there are some specs out there specifically for example a the credentials API where there's a need to know either the initial or…</p>
+<p id=135d class="phone s01"><cite>Kayode_Ezike:</cite> the current VPR request that would be sent out to the wallet before they actually send it out to them. And so essentially that adds an endpoint slash request at the end of an exchange.</p>
+<p id=4978 class="phone s01"><cite>Kayode_Ezike:</cite> And what you get back is the current sort of DPR that would be returned if you were to continue at that state.</p>
+<p id=e086 class="phone s03"><cite>Patrick_St-Louis:</cite> And we do want to make this normatively required…</p>
+<p id=5f47 class="phone s03"><cite>Patrick_St-Louis:</cite> because I vaguely remember this discussion not sure if we finded that you need to implement this or if you want to be compatible with DC API one could do it like this Dave Yeah.</p>
+<p id=44c6 class="phone s02"><cite>Dave_Longley:</cite> So I think we would have normative requirements in here, but we might decide that in order to be a conformant workflow service, you don't have to implement this endpoint. Sort of that middle ground that you talked about in that other do.</p>
+<p id=9225 class="phone s03"><cite>Patrick_St-Louis:</cite> What about we do like to be compatible with this API you may implement this and if you do are the must is that sort of what you're</p>
+<p id=f1bb class="phone s02"><cite>Dave_Longley:</cite> We might find that this is useful beyond DC API and we might find that it's really easy for impleers to add this. so maybe we just leave it as is right now and we decide later it's optional. we should probably try and get some implementation experience with it and if it's really easy to do just leave it. It seems like would be a helpful thing.</p>
+<p id=f208 class="phone s02"><cite>Dave_Longley:</cite> potentially to know that it's available.</p>
+<p id=578e class="phone s03"><cite>Patrick_St-Louis:</cite> So we do want to make this a normative requirement or…</p>
+<p id=6bb9 class="phone s03"><cite>Patrick_St-Louis:</cite> make it optional.</p>
+<p id=81fb class="phone s02"><cite>Dave_Longley:</cite> Why don't we start with making it a requirement and…</p>
+<p id=898b class="phone s02"><cite>Dave_Longley:</cite> then we dial it back if we were like this could really be optional.</p>
+<p id=79dc class="phone s03"><cite>Patrick_St-Louis:</cite> Okay. to me.</p>
+<p id=37ee class="phone s01"><cite>Kayode_Ezike:</cite> I'm back.</p>
+<p id=f3c7 class="phone s03"><cite>Patrick_St-Louis:</cite> I'm going to approve and I'm just going to capture what we discussed on it. We're not going to merge it today. it was just open three days ago. So, we'll let it discussed I want to say this All right. Wait, just if</p>
+<p id=0dd8 class="phone s01"><cite>Kayode_Ezike:</cite> So, let's</p>
+<p id=966a class="phone s03"><cite>Patrick_St-Louis:</cite> So the group decided that this might be preferred as an optional endpoint with normative instructions…</p>
+<p id=062c class="phone s03"><cite>Patrick_St-Louis:</cite> if implemented leaving it as required for the time being. We may revisit and make it optional. does this reflect what we feel? Is there anyone that wants to object to this comment here?</p>
+<p id=5980 class="phone s01"><cite>Kayode_Ezike:</cite> That's good.</p>
+<p id=cab5 class="phone s03"><cite>Patrick_St-Louis:</cite> Going to comment we leave this open. It's just been open three days ago. we'll circle back on this next week and if we still feel the same way, we can go ahead and merge it. If we suddenly all realize that this is a bad idea, we can't talk about it. Okay.</p>
+<p id=4c00 class="phone s01"><cite>Kayode_Ezike:</cite> Great. Thank you.</p>
+<p id=a9f9 class="phone s01"><cite>Kayode_Ezike:</cite> And this is a nice subtopic five. Yeah. So the thing here is pretty simple. There was a missing component in a mermaid diagram. Basically the holder is supposed to interact with a workflow service whenever it participates in an exchange and the current one interacts directly with the coordinator which is not correct. So I updated that you can actually see the image in the comments So that extra service there is needed to for the bottom half but also I guess the top one as well before you generate the QR code. I started to add that interaction between the issue colonator and workflow service.</p>
+<p id=13dc class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah. Yeah. Yeah. So, yeah, you're adding the workflow service and…</p>
+<p id=f9a8 class="phone s03"><cite>Patrick_St-Louis:</cite> adding this kind of backend communication. I zoomed in too much.</p>
+<p id=3c8c class="phone s01"><cite>Kayode_Ezike:</cite> That's for issue 631.</p>
+<p id=7c57 class="phone s03"><cite>Patrick_St-Louis:</cite> So, I'll approve. same thing. We'll let it brew for a week. but we'll make sure to get this right at the beginning next week.</p>
+<p id=5af1 class="phone s01"><cite>Kayode_Ezike:</cite> That's good. Next one is oops everybody.</p>
+<p id=6222 class="phone s03"><cite>Patrick_St-Louis:</cite> 666 this one number of the devil. All right.</p>
+<p id=8be2 class="phone s01"><cite>Kayode_Ezike:</cite> But yeah, so essentially this has to do with the fact that we didn't want to lock ourselves out of the possibility that there may be some protocols where you do need to return multiple VPs in a single round trip for whatever reason either because this has different security mechanisms or a number of other reasons. So I basically…</p>
+<p id=2073 class="phone s01"><cite>Kayode_Ezike:</cite> what this does is it allows for the verify representation property to be both an object either an object or an array type. So that's essentially what</p>
+<p id=781a class="phone s03"><cite>Patrick_St-Louis:</cite> Mhm. or…</p>
+<p id=b7d1 class="phone s03"><cite>Patrick_St-Louis:</cite> an array. Yeah. I'm just trying to think how this affects the OS restructuring we did earlier, but I don't think it matters because we, point to this schema and that's what's changed. So, I think it should be fine. I will personally approve. I think this is good.</p>
+<p id=2983 class="phone s03"><cite>Patrick_St-Louis:</cite> We'll leave it open and I'll let a chance for Dave to review this. he already approved yesterday actually.</p>
+<p id=43b8 class="phone s03"><cite>Patrick_St-Louis:</cite> So same thing. Let's leave it open for next week, but we'll remember that this one if nothing changed and there's no objection we'll be able to merge it.</p>
+<p id=8c32 class="phone s01"><cite>Kayode_Ezike:</cite> Sounds good.</p>
+<p id=eb2e class="phone s01"><cite>Kayode_Ezike:</cite> And the last one which is 679 pretty quickly. And what we have here is sorry basically the idea here is that we wanted to enable an inter rather directory URL that comes back from a message between client and server to possibly be an interaction URL.</p>
+<p id=1ba3 class="phone s01"><cite>Kayode_Ezike:</cite> And so basically up until now the assumption generally has been that it would be a URL that you have to visit in browser even though we did already have language that said you can use interaction I wanted to just make it more abundantly clear that you can use interaction URL and…</p>
+<p id=7034 class="phone s01"><cite>Kayode_Ezike:</cite> if you do include it and the client understands what to do with an interaction URL you can just automatically start the next exchange that associated with that essentially exchange chaining is the concept to you.</p>
+<p id=2d44 class="phone s03"><cite>Patrick_St-Louis:</cite> Please. Yeah,…</p>
+<p id=10004 class="phone s03"><cite>Patrick_St-Louis:</cite> it's really interesting. I've been working a bit with the DICCOM workflow protocol and that's definitely like something that's possible. it's less chaining as you just start a new workflow, but here it sounds like it's more of a chaining option. something we are also looking at is this concept of subworkflow. So in the middle of a workflow there's a requirement for you to let's say you need a certain credential and they need to send you to another service to get it right these sort of ideas. would this be possible with VCOM or it's more of a you really chain the workflow so once you move to this new workflow like you can't really come back or how would this be managed?</p>
+<p id=ada4 class="phone s03"><cite>Patrick_St-Louis:</cite> Yes, Dave.</p>
+<p id=466e class="phone s02"><cite>Dave_Longley:</cite> So to implement something like that, the redirection URL, you would still use chaining, but the redirection URL could carry along with it an interaction URL to come back when you're done.</p>
+<p id=962a class="phone s03"><cite>Patrick_St-Louis:</cite> Mhm. Yeah.</p>
+<p id=00d9 class="phone s02"><cite>Dave_Longley:</cite> That's generally how it would be done and that keeps it to a single primitive. We could explore doing something more complicated than that, but I think you might even lose the state or…</p>
+<p id=87c4 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=4b97 class="phone s02"><cite>Dave_Longley:</cite> have trouble with that. So we might again this is a good PR that we have these extra notes in the OAS…</p>
+<p id=ad11 class="phone s02"><cite>Dave_Longley:</cite> but we might really even want a section on interaction URL changing that's just text that says hey you can combine these things in these ways. including what you just said, Patrick, and give some guideposts for how they can compose these pieces</p>
+<p id=2eb7 class="phone s03"><cite>Patrick_St-Louis:</cite> interesting. …</p>
+<p id=2cad class="phone s03"><cite>Patrick_St-Louis:</cite> I'm going to go ahead and improve this one. I think it looks good. I like this idea. I could see this being useful maybe in some case where someone has engaged with the VCOM protocol and…</p>
+<p id=a7c4 class="phone s01"><cite>Kayode_Ezike:</cite> Are you serious?</p>
+<p id=3a6f class="phone s03"><cite>Patrick_St-Louis:</cite> then you need to redirect it with another service that they use oid for VCI right so you give them this interaction this next part you're going to inte you're going to engage in a workflow with this other instance that for some reason we need to issue this credential over another protocol or could see this interesting even maybe to bootstrap a didcom connection right at the end of a workflow. that could be interesting. So you just give an interaction URL with the didcom invitation for persistent notifications and So yeah, I definitely see a lot of use for this.</p>
+<p id=8447 class="phone s03"><cite>Patrick_St-Louis:</cite> And it allows for some interesting idea of if you implement this in a wallet it allows you to chain these exchange without leaving the wallet right you stay in the wallet the wallet knows how to handle this and you don't need to send a user to some external page which can have inconsistent behavior and so on. yes, Dave.</p>
+<p id=43ae class="phone s02"><cite>Dave_Longley:</cite> Yes, that's one of the most important features about it and is another reason why we probably should really highlight it. and wallet implementers would be particularly interested in knowing that,…</p>
+<p id=fb27 class="phone s02"><cite>Dave_Longley:</cite> when they get that redirect URL back, hey, check to see if it's an interaction URL and you can keep going without taking the user out of where they</p>
+<p id=2166 class="phone s03"><cite>Patrick_St-Louis:</cite> Something that's really interesting about work especially with the didcom workflows and…</p>
+<p id=8441 class="phone s03"><cite>Patrick_St-Louis:</cite> I think it would be possible to also build this with these vcom workflow the workflow almost becomes a mini application in itself right you can serve different content and you can serve workflows from different instance so we can create this interesting the wallet becomes more than an application in itself but it becomes a sort of a application renderer of some sort right they can add with this different work I know with the workflow they get into display hints and stuff like that so they give hints about…</p>
+<p id=b747 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=800a class="phone s03"><cite>Patrick_St-Louis:</cite> how to display the workflow to the user and what actions they can do and interact with. but I don't see why this couldn't be implemented with VCOM workflow as well. Even if it's in the spec a wallet can very well define their own sort of display hints for different type of actions. Yes, Dave.</p>
+<p id=50ea class="phone s02"><cite>Dave_Longley:</cite> Yeah, that's right.</p>
+<p id=94b4 class="phone s02"><cite>Dave_Longley:</cite> And with interaction else the wallet if it really doesn't understand a protocol or wants to offer a user a different path forward they can kick them out back to a browser because the interaction an HTML can render any arbitrary page to keep the user going and so it's a good unified way to compose these</p>
+<p id=1c44 class="phone s03"><cite>Patrick_St-Louis:</cite> Yep. Yeah.</p>
+<p id=90a5 class="phone s03"><cite>Patrick_St-Louis:</cite> So this looks really good. I think this is really promising. I'll leave it open for review next week as well. But I think with the size and the scope feature is really good and we can reiterate after if we want to</p>
+<p id=407e class="phone s02"><cite>Dave_Longley:</cite> So, we might not want to close the issue though, Coyote…</p>
+<p id=9ecd class="phone s02"><cite>Dave_Longley:</cite> because we might want a interaction chaining or some informative text that better, explains that people can use this feature.</p>
+<p id=45c9 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, we did also mention I think in there that…</p>
+<p id=24ba class="phone s01"><cite>Kayode_Ezike:</cite> because of the fact that PC API is evolving that I'm not sure if it was this sorry PRs but I think it was this one where it's like we can't make a definitive decision around what to do until we have a</p>
+<p id=091e class="phone s01"><cite>Kayode_Ezike:</cite> better sense of how that aspect is evolving which sorry that's difficult but I agree</p>
+<p id=096c class="phone s03"><cite>Patrick_St-Louis:</cite> What do I call this? Workflow exchange chaining or just workflow chaining.</p>
+<p id=5078 class="phone s03"><cite>Patrick_St-Louis:</cite> Workflow exchange. Chaining. Okay. I'll just comment this so we get reminded next time.</p>
+<p id=e68e class="phone s02"><cite>Dave_Longley:</cite> Yeah, we might end up just calling it interaction chaining…</p>
+<p id=fc2c class="phone s03"><cite>Patrick_St-Louis:</cite> Very good. Sure. Yeah.</p>
+<p id=589f class="phone s02"><cite>Dave_Longley:</cite> since it occurs at that layer. But a workflow exchange. Yeah.</p>
+<p id=e293 class="phone s03"><cite>Patrick_St-Louis:</cite> No, it's true. No, you have a good point because like you said you could just be redirected to a HTTP page, It's not always about interaction chaining.</p>
+<p id=e6dc class="phone s03"><cite>Patrick_St-Louis:</cite> And if it's on one line, I like it. Back to you, Coyote.</p>
+<p id=91c7 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=6689 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, so the next piece I have I don't know we won't be able to get through all of them, but I had five different issues that I wanted to discuss that still have open comments on or questions on them. so maybe you can at least go through one or two of them. First of them is 642 which I linked in the chat as Yeah. so I think Ben Benjamin made this comment where wanted to know basically</p>
+<p id=91c6 class="phone s01"><cite>Kayode_Ezike:</cite> what we should do around the registration of the protocols that we've introduced into the spec. I'm not sure Benjamin you were suggesting that we have a different document for this or a different section. Trying to figure out what you wanted to do there. Go ahead Ben.</p>
+<p id=6c4a class="phone s05"><cite>Benjamin_Young:</cite> Yeah, it was mostly just to call out that we needed to do something…</p>
+<p id=ced9 class="phone s05"><cite>Benjamin_Young:</cite> because are currently undefined and just people do whatever in their implementations there. Some of them are just in examples and not even in a list of this means at this version or leak with these specification mappings and it's essentially the front door to getting to a whole lot of stuff. So it needs to be, treated as important essentially as a context URL with a hash because you need it to be dependable and mapped ideally to where whatever that protocol value is coming from in terms of a written standard. whoever's reading VC column and expecting interaction URLs to be more than just a guessing game of JSON.</p>
+<p id=69da class="phone s05"><cite>Benjamin_Young:</cite> then we're going to have to say, these are the keys and…</p>
+<p id=9718 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=fc8c class="phone s05"><cite>Benjamin_Young:</cite> they map to this stuff. And there's also, the obvious embarrassing flip gun that VC API is our key for VCOM. So, we'll shoot all that out, but that was it.</p>
+<p id=c19f class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, that's interesting.</p>
+<p id=c2e6 class="phone s03"><cite>Patrick_St-Louis:</cite> I'm curious where do you land for so I'm thinking for example There's two versions of didcom. would you want to express versioning and these things? I know IDC for VC there was this whole draft issue and things and at one point maybe we'll change some of the VCOM stuff maybe when VCOM 2.0 …</p>
+<p id=53b4 class="phone s03"><cite>Patrick_St-Louis:</cite> right in many many years, we'll want to change this. do you have any, thoughts about how we should potentially handle this? Mhm.</p>
+<p id=386b class="phone s05"><cite>Benjamin_Young:</cite> I think that's exactly…</p>
+<p id=3376 class="phone s05"><cite>Benjamin_Young:</cite> what needs to be discussed. I don't personally have a way to do it. I'm of course only ever half joking about using JSON LD because then you would know what the terms were and you could change them over time. and it is exactly the sort of sand that we're building on by not defining them.</p>
+<p id=4fa6 class="phone s03"><cite>Patrick_St-Louis:</cite> And Yeah,…</p>
+<p id=3935 class="phone s05"><cite>Benjamin_Young:</cite> Another related one is that the examples that use oid, they're all uppercase and implementers need to know whether or not it's case sensitive. So that's another piece</p>
+<p id=f523 class="phone s03"><cite>Patrick_St-Louis:</cite> that's really good. Then to the same kind of idea like some protocol they implicitly handle versioning while other it's just to version and…</p>
+<p id=6010 class="phone s01"><cite>Kayode_Ezike:</cite> There we go.</p>
+<p id=0ad9 class="phone s03"><cite>Patrick_St-Louis:</cite> you just need to know which version to expect beforehand. so that's some kind of thing we'll need to normalize I guess. Dave</p>
+<p id=97c6 class="phone s02"><cite>Dave_Longley:</cite> Yeah, having nothing but examples in the spec is a problem right now. So I'd say we should get started with at least a table that says these are some already in use ones and then we can take the discussion further.</p>
+<p id=e626 class="phone s02"><cite>Dave_Longley:</cite> There's always a big discussion around registries and things like that. just start small.</p>
+<p id=51f6 class="phone s03"><cite>Patrick_St-Louis:</cite> any preference for what to do with the VC API? Do we want to create an alias for VCOM saying you can use mini? Patrick St-Louis:</p>
+<p id=0275 class="phone s02"><cite>Dave_Longley:</cite> No, I think I mean V vcom is the VC API for life cycle management. so it's still in the title and there are already implementations using it.</p>
+<p id=b31f class="phone s02"><cite>Dave_Longley:</cite> I don't think there's a lot of value in changing that name.</p>
+<p id=cf60 class="phone s03"><cite>Patrick_St-Louis:</cite> No, I meant because right now one thing that Ben was explaining is it's VCAPI the protocol key for VCOM.</p>
+<p id=78fa class="phone s02"><cite>Dave_Longley:</cite> Yeah, I don't think we should define yet another one.</p>
+<p id=4b63 class="phone s02"><cite>Dave_Longley:</cite> You're suggesting there could be an alias and you could check for either one. Let's just use VC API. That's what implementations are already using and clearly note it. Yeah. I don't know that really buys us</p>
+<p id=fbba class="phone s03"><cite>Patrick_St-Louis:</cite> We don't want Okay.</p>
+<p id=22f7 class="phone s03"><cite>Patrick_St-Louis:</cite> I think it's like when you want to explain this to someone that's always like what I come to like yeah it's this API but it's actually VCOM but it was called VC API before. So that's what is VCOM right and…</p>
+<p id=dc63 class="phone s01"><cite>Kayode_Ezike:</cite> This is good.</p>
+<p id=a8f3 class="phone s03"><cite>Patrick_St-Louis:</cite> I think it adds because we had thought does the interaction URL protocol belongs in VCOM or is it its own thing what kind of discussion I think at least from what I've experienced showing BCOM to people. so that would be the side.</p>
+<p id=aa5c class="phone s02"><cite>Dave_Longley:</cite> heard. We could, discuss that</p>
+<p id=6ec8 class="phone s03"><cite>Patrick_St-Louis:</cite> Are we okay with these three? Is there anything else we'd want in a first table version? I know there was HTTP, I think. Okay.</p>
+<p id=90a6 class="phone s01"><cite>Kayode_Ezike:</cite> I think invite requests. there's a few others that are already inside the spec that we have to just include here to double check.</p>
+<p id=f276 class="phone s01"><cite>Kayode_Ezike:</cite> we are at time but yeah thank thanks everyone for the contribution I had maybe four other issues we can get through maybe next week u things like for example interaction scheme registration was still an open question around that and also web plus interaction as well so what I'll do I think is just make comments on some of these issues maybe ask questions and…</p>
+<p id=93c6 class="phone s03"><cite>Patrick_St-Louis:</cite> Bye-bye.</p>
+<p id=1dca class="phone s01"><cite>Kayode_Ezike:</cite> potentially reach out individually to some folks wherever necessary but thanks again I think you've Patrick for leading the browser navigation and thanks everyone for contributing. See you next week. Meeting ended after 00:59:56 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

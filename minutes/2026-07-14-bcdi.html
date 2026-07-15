@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 14 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>14 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#e734">Barcode Pull Request Discussion</a></li>
+<li><a href="#07a4">ISO 18013-2 Standard Concerns</a></li>
+<li><a href="#aa5d">Data Integrity Algorithms</a></li>
+<li><a href="#9d98">Selective Disclosure Process</a></li>
+<li><a href="#4c5f">Issues and Pull Requests</a></li>
+<li><a href="#c605">BBS and IETF CFRG</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=9fa6 class="phone s01"><cite>Ivan_Herman:</cite> Hey everyone.</p>
+<p id=6440 class="phone s02"><cite>Wesley_Smith:</cite> Hey everyone, I'll give folks a couple minutes to trickle in before we get started.</p>
+<p id=357f class="phone s01"><cite>Ivan_Herman:</cite> God.</p>
+<p id=dcfa class="phone s02"><cite>Wesley_Smith:</cite> All right. Hi folks. Welcome to the July 14th meeting of the barcodes, data integrity, and forgery defense task force. A reminder that this meeting is being recorded. if you're not comfortable with that, please let me know. The agenda for today is much the same as normal. we'll do process announcements and introduction items followed by PR review and issue processing for the DC barcodes work, the data integrity work andor the forgery defense work. does anybody have any announcements, introductions or process items they would like to discuss today?</p>
+<p id=2b28 class="phone s02"><cite>Wesley_Smith:</cite> All right, hearing none, I think we can go ahead and get right into some BC barcodes work. Greg Bernstein, is there anything any specific amount of time you think you want today for data integrity discussion? Greg, you may be muted. No worries.</p>
+<p id=a7bd class="phone s03"><cite>Greg_Bernstein:</cite> Sorry about that. I have too many tabs. I'd like 10 to 15 minutes.</p>
+<p id=8860 class="phone s02"><cite>Wesley_Smith:</cite> So, sounds good. problem. We'll probably plan to switch over to the data integrity stuff after about 10 or 15 minutes of barcode stuff. All right.</p>
+<p id=59af class="phone s02"><cite>Wesley_Smith:</cite> So the first topic I'd like to discuss is a poll request in…</p>
+<p id=10ad class="phone s01"><cite>Ivan_Herman:</cite> No, you have to put in topic. Yes.</p>
+</section>
+
+<section>
+<h3 id=e734>Barcode Pull Request Discussion</h3>
+<p id=c136 class="phone s02"><cite>Wesley_Smith:</cite> which there's been a fair amount of discussion. This is a fairly large poll request and both the content of the poll request and the discussion in that thread could use the group's eyes. So let me drop this remind me is it topic or subtopic in this Google Meet thing are topics automatically generated? So there's no so subtopic is meaningless. I should do can there be a subtopic without a topic?</p>
+<p id=cf34 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And it's not that subtopic is meaningless. If you look at the minutes when they generate, they do different things. No. Yep.</p>
+<p id=8362 class="phone s02"><cite>Wesley_Smith:</cite> That's sort of what I meant. All something like this. all right.</p>
+<p id=0a77 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Just like that.</p>
+<p id=a555 class="phone s02"><cite>Wesley_Smith:</cite> So, this is a pull request that I think a lot of folks in the group have already reviewed and that is wonderful. but I don't think we've come to consensus yet on exact actly what state this PR needs to be in to be merged. So the current state Von might have gone back and forth a couple of times. Elaine chimed in recently as well. this PR generalizes the feature that allows you to insert a VC barcode into an existing barcode to provide digital signature coverage over the other machine readable data on the document. and it moves all of the AMVA content to a normative appendix and also adds support for ISO 18013-2 machine readable driver's license documents.</p>
+<p id=5987 class="phone s02"><cite>Wesley_Smith:</cite> It provides an instantiation of the and algorithms and such to support that specific kind of PDF 417based driver's license barcode information. so Ivonne, I think we're still not communicating properly on the class definition issue that you're raising. My perspective and I would love to hear if this is wrong but my perspective is that out of optical barcode credential ISO driving license machine readable information and AMA driver's license scannable information I don't see a sub/supclass relationship in any of those terms.</p>
+<p id=6e63 class="phone s02"><cite>Wesley_Smith:</cite> So what I more meant was that optical barcode credential it's the generic case, but it's not necessarily a superass or a super type of any of the others. it's the generic type of a VC verifiable credential. That goes on any of these documents, but the others are type values. So a verifiable credential is an optical barcode but the credential subject types that are other schemas for how barcodes express information or relate to other schemas for how express information aren't directly related to barcode credential in a super sub relationship at all as far as I can tell.</p>
+<p id=7732 class="phone s02"><cite>Wesley_Smith:</cite> Does that align with what you're hearing, what you're getting out of that</p>
+<p id=846c class="phone s01"><cite>Ivan_Herman:</cite> There are separate things…</p>
+<p id=5b09 class="phone s01"><cite>Ivan_Herman:</cite> because I put in some comments a few hours ago and I presume you were still sleeping. I hope for you at least. so the one that is according to the new setup you have, let me just be</p>
+<p id=708b class="phone s01"><cite>Ivan_Herman:</cite> There is the optical barcode credential that you created which is a kind of a new type if I understand which is there for the cases when a part of the optical barcode itself has to be encoded in the VC in some way or other as well. that's the kind of generic thing and in my understanding what you intend to do and intended to do is the one which is for ammo which is specific to AMBA and specifies exactly what fields you choose to be encoded.</p>
+<p id=3d77 class="phone s01"><cite>Ivan_Herman:</cite> you described it as a subclass of the generic class which is fine. are we at least up to this point agreeing?</p>
+<p id=fd2e class="phone s02"><cite>Wesley_Smith:</cite> No.</p>
+<p id=4a6b class="phone s02"><cite>Wesley_Smith:</cite> So, I don't see a sub superclass relationship in between optical barcode credential and the AMVA amba driver's license scannable information.</p>
+<p id=4ad0 class="phone s01"><cite>Ivan_Herman:</cite> Wait. I mean we are not talking about subclass relationship in terms of a programming language.</p>
+<p id=77c1 class="phone s01"><cite>Ivan_Herman:</cite> We are talking about a subclass relationship in the ontological sense of the word or in RDF if you prefer. Are we agreeing on that one?</p>
+<p id=8728 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=5dbb class="phone s02"><cite>Wesley_Smith:</cite> yeah. I mean, to be totally clear, I'm not sure. I thought I had an understanding. Wesley Smith:</p>
+<p id=0b89 class="phone s01"><cite>Ivan_Herman:</cite> The only thing…</p>
+<p id=8b23 class="phone s01"><cite>Ivan_Herman:</cite> what so sorry I didn't want to interrupt you.</p>
+<p id=2193 class="phone s02"><cite>Wesley_Smith:</cite> No, please go ahead.</p>
+<p id=abf5 class="phone s01"><cite>Ivan_Herman:</cite> So the only thing it says when I call about a subtype or a subclass I'm sorry is that if I declare a credential to be of type amva whatever it's too long for me to remember …</p>
+<p id=4c72 class="phone s02"><cite>Wesley_Smith:</cite> Be careful.</p>
+<p id=8b5c class="phone s01"><cite>Ivan_Herman:</cite> if I declare something to be of class Ava something different etc it</p>
+<p id=d9ac class="phone s01"><cite>Ivan_Herman:</cite> is also automatically of class. what was its name? Optical barcode credential is This is all it says in it doesn't mean that the properties must be the same or must be Wait,…</p>
+<p id=a8eb class="phone s02"><cite>Wesley_Smith:</cite> So to be clear, the reason why I don't think that's true and maybe I'm misunderstanding the relationship you're saying is that one of those types is a property of verifiable credential. And the other is a property of verifiable credential subject.type. So when you say a credential…</p>
+<p id=a91c class="phone s01"><cite>Ivan_Herman:</cite> wait, wait, wait, wait, wait, wait, wait. Wesley Smith:</p>
+<p id=4387 class="phone s02"><cite>Wesley_Smith:</cite> if it is Yeah,…</p>
+<p id=9918 class="phone s01"><cite>Ivan_Herman:</cite> that completely misreading then maybe Dave will come chime in and tell us</p>
+<p id=4936 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=6e32 class="phone s05"><cite>Dave_Longley:</cite> I was gonna chime in to agree with Wes and I typed some of this into An optical barcode credential is a credential that includes claims about sning scannable information. So the main roots credential subject of such a credential is some kind of scannable information and you need a type for that. And so an optical barcode credential can include claims about an AMVA driver's license scannable information or about an ISO driving license machine readable information or any other kind of scannable information and that's the relationship.</p>
+<p id=8815 class="phone s05"><cite>Dave_Longley:</cite> So I'm in agreement with Wes that the optical barcode credential is not a superclass of any of the scannable information. It's a type of credential that includes claims about these other things.</p>
+<p id=639a class="phone s05"><cite>Dave_Longley:</cite> And these scannable information things are in a separate layer.</p>
+<p id=3a72 class="phone s02"><cite>Wesley_Smith:</cite> And I think the way it's currently architected,…</p>
+<p id=1e56 class="phone s02"><cite>Wesley_Smith:</cite> Ivan, is that there is no generic supertype for the augmented barcode case, but optical barcode credential is intended to be used just for that case and is intended to be an extension point where you can define your own credential subject.</p>
+<p id=e1f9 class="phone s02"><cite>Wesley_Smith:</cite> in whatever way you want, but you're not creating a new instance of a subclass of a superclass.</p>
+<p id=64c4 class="phone s02"><cite>Wesley_Smith:</cite> You're just creating a new credential subject type. Does that make sense?</p>
+<p id=5c57 class="phone s01"><cite>Ivan_Herman:</cite> It makes sense that I'm looking at the text…</p>
+<p id=818f class="phone s01"><cite>Ivan_Herman:</cite> where you described optical barcode credential and I try to find okay so put it in other words.</p>
+<p id=e235 class="phone s01"><cite>Ivan_Herman:</cite> It's a class for a credential that restricts the types of subject it can use. Is that correct?</p>
+<p id=b077 class="phone s02"><cite>Wesley_Smith:</cite> If you are interested only in using what's in the specification,…</p>
+<p id=ae70 class="phone s02"><cite>Wesley_Smith:</cite> yes, the only credential subject types you can use are machine readable zone, ambbo driver's license, ISO driver license, dot dot dot. However, we also explicitly say that other specifications may define their own values for type that can be used with optical barcode credential. Basically, there are a lot of data structure formats in the world for…</p>
+<p id=05cf class="phone s02"><cite>Wesley_Smith:</cite> how barcodes express information. And if you want to write your own specification for your own flavor of bark, code. It's pretty straightforward and we say, &quot;Okay, you need to define these four things. You need to tell us how we're going to pull information out of that barcode. You need to tell us how we're going to index against those pieces of information to create an order for a digital signature. That sort of thing.&quot; that's</p>
+<p id=3e27 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=f74a class="phone s01"><cite>Ivan_Herman:</cite> Okay I misunderstood and there are two specific in sort of consequences.</p>
+<p id=a786 class="phone s01"><cite>Ivan_Herman:</cite> One is that I put in a separate item somewhere that somehow the whole class structure and properties etc should be sort of tableized the way it is done in other specs to make it more readable and that may have I misled the text. That being said, now putting on my vocabulary hat on in if I look at this in RDF so to say, what would be clean in my view is to introduce a kind of a super abstract class maybe, which collects all</p>
+<p id=ffff class="phone s01"><cite>Ivan_Herman:</cite> the subject that can be used for an optical barcode a kind of a superclass which is called somehow I have no idea which has subclasses which we define in this spec and subclasses that the world defines for their own. to make it very clear that we have a kind of a restriction here and that I can express properly in the vocabulary that says if I am an optical barcode credential then my subject must be of this class or is automatically of class of that abstract class that I'm looking for.</p>
+<p id=f40c class="phone s01"><cite>Ivan_Herman:</cite> Other than that, it sort of mixes a proper vocabulary with English text,…</p>
+<p id=7880 class="phone s01"><cite>Ivan_Herman:</cite> which bothers me a bit. Is that a bit clearer?</p>
+<p id=a8b5 class="phone s02"><cite>Wesley_Smith:</cite> Yes, definitely.</p>
+<p id=d508 class="phone s02"><cite>Wesley_Smith:</cite> And yeah, I think that we could definitely, introduce the generic class that you're describing. I might need some help from you, Ivan, on exactly how to reflect that in the spec texts and so but yeah, I mean, that sounds good. Okay, I think we're on the same page But there were other points that you made in your discussion on that that I want to talk about.</p>
+</section>
+
+<section>
+<h3 id=07a4>ISO 18013-2 Standard Concerns</h3>
+<p id=4639 class="phone s02"><cite>Wesley_Smith:</cite> So, you also had flagged a potential problem with the closedness of the ISO 18013-2 standard. Third.</p>
+<p id=bef0 class="phone s01"><cite>Ivan_Herman:</cite> Yes. Yes.</p>
+<p id=bd85 class="phone s01"><cite>Ivan_Herman:</cite> Let me there are two things one is that absolutely coincidentally in another group there has been a lot of discussion now about are we allowed to normatively refer to an ISO document and the problem is that the documents usually are to be paid for and as far as I remember money found it last time we discussed that this iso specification is one of those And I may be wrong but I mix up but I believe that that was a formal objection against the standard because of that.</p>
+<p id=10000 class="phone s01"><cite>Ivan_Herman:</cite> The question is there any part of this ISO document that is in some way normatively referencable and that describes exclusively those details that are relevant for this specification because I presume that the ISO document itself has tons of things which are in some sense irrelevant because if not then we may have a problem on our hands if we do that. That's one thing and the other hand and the other question is are we sure that we will get enough implementations for the ISO version as you all know two mutually independent implementations that are interoperable.</p>
+<p id=51c4 class="phone s01"><cite>Ivan_Herman:</cite> Do we have enough confidence that we can get that? Because if any of these two goes wrong then we will have a problem with that when we go rec time and…</p>
+<p id=71b1 class="phone s02"><cite>Wesley_Smith:</cite> Hey, go ahead.</p>
+<p id=57a2 class="phone s01"><cite>Ivan_Herman:</cite> maybe we have to at the minimum turn it into an informative appendix and not a normative text.</p>
+<p id=154d class="phone s05"><cite>Dave_Longley:</cite> So I don't know, if you had any time in the middle of these discussions to catch up on Ivonne's comments on on that thread, but one of his suggestions is to move the ISO bit into an informative appendex, which sort of is one of the things that he might have been Devon, you might have just been hinting at. It seems to me given that I think we just got some clarity on where people were with the class discussion that we added the ISO driving license thing to help resolve that and it wasn't really accomplishing that we should for now move it to an informative appendix and find out…</p>
+<p id=635c class="phone s01"><cite>Ivan_Herman:</cite> That works.</p>
+<p id=d1dd class="phone s05"><cite>Dave_Longley:</cite> if we're going to get implementations on it and then deal with this possible normative linkage Red.</p>
+<p id=09bb class="phone s02"><cite>Wesley_Smith:</cite> Just for my own clarification, we only need multiple independent implementations of normative features and affirmative appendics. Are we fine if we had zero implementations? Okay. Phil, go ahead.</p>
+<p id=4af1 class="phone s06"><cite>Phil_Archer:</cite> Yeah, I share this concern about normative references to ISO standards. So, what Dave said makes sense. I see there's also normative reference to the PDF 417 ISO standard, which again you have to pay and a question that arises and I'm sorry for asking this at such a late stage. does it matter to this group whether it's a PDF 417 or some other symbology? Because if it…</p>
+<p id=1c37 class="phone s06"><cite>Phil_Archer:</cite> if it doesn't matter if it's just an optical symbology of some kind and there are many more than the ones that will be familiar here then they don't need to be normative references. You can just say put it in some sort of format.</p>
+<p id=f918 class="phone s02"><cite>Wesley_Smith:</cite> So to be clear to briefly respond and…</p>
+<p id=fad8 class="phone s02"><cite>Wesley_Smith:</cite> then longly I'll cho does the group care whether it's PDF 417 from the perspective of this technology? No. I mean VC barcodes can be used to add digital signatures over any kind of barcode you want. The use cases and production implementations that we currently have today including AMBA drivers license scannable information are over PDF47s. So I don't think the group cares from a technological perspective but we do need to support PDF417based credential formats. They've only won</p>
+<p id=e0e0 class="phone s05"><cite>Dave_Longley:</cite> Yes, but everything that's in the spec is around the information that you scan from such a code or any other code. And I think we could structure the spec such that we talk about the information that's scanned off the code and we informatively say, &quot;By the way, these codes can appear as PDF47s.&quot; So once you scan them, you'll get this kind of payload and then you're off to the races with the normative stuff in our spec, which shouldn't be a problem at that</p>
+<p id=4ffd class="phone s02"><cite>Wesley_Smith:</cite> Feel 10.</p>
+<p id=32c0 class="phone s06"><cite>Phil_Archer:</cite> That sounds good.</p>
+<p id=1721 class="phone s06"><cite>Phil_Archer:</cite> Because any normative reference to a pay wall PDF is a problem. and I fully understand of course It's absolutely critical that this group meets that use case and of course PDF 417 must be supported. But by making it an example rather than a thing you must do, that's still true. if this were used for things like boarding passes, it's typical for most of the boarding passes you scan, those are actually Aztec codes. They look a bit like QR codes, but They're Aztec codes and so on. There are all sorts of other symbologies. As long as they can be supported, but we're good.</p>
+<p id=554d class="phone s02"><cite>Wesley_Smith:</cite> And I was just going to note that I would have to look back at the spec text to see exactly…</p>
+<p id=8a95 class="phone s02"><cite>Wesley_Smith:</cite> where the PDF47 spec is referenced. But it's kind of unclear why we would need to reference the PDF47 spec…</p>
+<p id=387f class="phone s06"><cite>Phil_Archer:</cite> Right. Threat.</p>
+<p id=7856 class="phone s02"><cite>Wesley_Smith:</cite> because This is sort of…</p>
+<p id=1d89 class="phone s02"><cite>Wesley_Smith:</cite> what Dave Volley was alluding to that what is specified there is completely at a different layer than what we're doing in the barcode spec. We don't talk about minimum bar width and densities and we don't talk about that sort of thing. Right.</p>
+<p id=8309 class="phone s06"><cite>Phil_Archer:</cite> Exactly. We do that all the time.</p>
+<p id=83bd class="phone s06"><cite>Phil_Archer:</cite> We talk about extra mentions all the time. You don't want to get</p>
+<p id=85c0 class="phone s02"><cite>Wesley_Smith:</cite> Okay So I think I will try to roll Excuse me.</p>
+<p id=ade5 class="phone s02"><cite>Wesley_Smith:</cite> I will roll in the changes that will remove any normative references to the PDF47 spec into this PR. I will also move the ISO stuff to a informative appendix and I will add a superclass definition and this is a question. This superass we expect to never appear on an actual verifiable credential.</p>
+<p id=c44e class="phone s01"><cite>Ivan_Herman:</cite> we don't have to say that in RDF you don't have such object officially as an abstract class in this respect so we define a class</p>
+<p id=d851 class="phone s02"><cite>Wesley_Smith:</cite> It is data modeling RDF glue. Is that correct? Yes. This is between you and me Okay.</p>
+<p id=d40b class="phone s01"><cite>Ivan_Herman:</cite> to be a kind of a placeholder for specific classes and That's all you have to say. You don't have to say that you do not expect that to appear in a just forget about that.</p>
+<p id=45c1 class="phone s02"><cite>Wesley_Smith:</cite> All So, I will make those changes. does anybody else have anything else to say on that any of the related topics to that PR?</p>
+<p id=2b50 class="phone s01"><cite>Ivan_Herman:</cite> Sorry to be that stubborn with this one.</p>
+<p id=94eb class="phone s02"><cite>Wesley_Smith:</cite> No, it's making the spec better without a doubt. cool. If that I think we can probably Let me check briefly to see if there are any more high priority poll requests. I think that was the big outstanding one. Phil, you have a PR open. Did you want to discuss that with the group's time?</p>
+<p id=b325 class="phone s06"><cite>Phil_Archer:</cite> No, I think it's time to move on to the DI stuff.</p>
+<p id=d20f class="phone s06"><cite>Phil_Archer:</cite> All I would say is thanks as always to Ted for reviewing. I think it still needs a little bit of work, but there's no disagreements anywhere. So, thank you.</p>
+<p id=dce3 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=7914 class="phone s02"><cite>Wesley_Smith:</cite> All right. Thanks very much.</p>
+<p id=f964 class="phone s02"><cite>Wesley_Smith:</cite> I will say before we move on to data integrity, if you are a reviewer of that big PR that we were just talking about, please go back and beer. review in the next couple of days once I've got those changes pushed. I really like to get that merge down. It's a big outstanding PR and we need some review since we keep making big changes to it.</p>
+<p id=ef14 class="phone s01"><cite>Ivan_Herman:</cite> You are breaking up, Greg.</p>
+<p id=7670 class="phone s02"><cite>Wesley_Smith:</cite> All right, over to you, Greg Bernstein for data integrity.</p>
+<p id=4ef0 class="phone s03"><cite>Greg_Bernstein:</cite> Let's do some screen. I'm breaking up. Or do I need to log out and log back? Can't hear me.</p>
+<p id=cbe0 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I can hear you now. A bit better.</p>
+<p id=b1f6 class="phone s05"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=d3a2 class="phone s03"><cite>Greg_Bernstein:</cite> You can't hear me.</p>
+<p id=8e9c class="phone s02"><cite>Wesley_Smith:</cite> Maybe you're breaking up a little bit.</p>
+<p id=6192 class="phone s05"><cite>Dave_Longley:</cite> you have to talk for a sustained period of time for us to tell…</p>
+<p id=689c class="phone s05"><cite>Dave_Longley:</cite> if you're still picking up.</p>
+<p id=3b3a class="phone s03"><cite>Greg_Bernstein:</cite> got to talk for a period of time.</p>
+<p id=72f2 class="phone s03"><cite>Greg_Bernstein:</cite> So, let's see.</p>
+<p id=aeb3 class="phone s02"><cite>Wesley_Smith:</cite> I don't know if that's helpful feedback. Bye, Greg. And all right. what do you think? Should we just talk about something else when he's gone? Yeah, let's talk about forgery defense. I don't know of much in the forgery defense space. Hey, Greg, you got booted for five minutes. Hang tight.</p>
+<p id=10001 class="phone s02"><cite>Wesley_Smith:</cite> Does anybody have anything related to BC forgery defense they want to discuss? All right. I don't either. I didn't think so. Just wanted to check. All right. Back to you, Greg.</p>
+<p id=00a9 class="phone s03"><cite>Greg_Bernstein:</cite> Can you hear me now?</p>
+<p id=13bc class="phone s05"><cite>Dave_Longley:</cite> Much better.</p>
+<p id=ca5b class="phone s03"><cite>Greg_Bernstein:</cite> Sounds like a commercial. Yeah, I don't know what it is, but if you get out of the thing and come back in. So, We're going to Allow share window. We should have infinite repeats. Now we'll go and look at our issues. Can people see the issues?</p>
+<p id=ac93 class="phone s05"><cite>Dave_Longley:</cite> Yes. Chip.</p>
+</section>
+
+<section>
+<h3 id=aa5d>Data Integrity Algorithms</h3>
+<p id=614b class="phone s03"><cite>Greg_Bernstein:</cite> Show my screen and infinite repeats. Way back, we have two move general selective disclosure functions from BCDI ECDSA where we initially had them over to data integrity. And that's been around since January. The newer one was move the common algorithms from VC quantum resistance to data integrity. what happened since we said this about selective disclosure is we came up with</p>
+<p id=bb0f class="phone s03"><cite>Greg_Bernstein:</cite> another approach that's better for large signatures and we put that in quantum resistance. So we have more than one approach to selective disclosures. if we look at data integrity so this is data integrity but this is not even a pull request yet. This is my working copy. you see this win for Greg here.</p>
+<p id=1715 class="phone s03"><cite>Greg_Bernstein:</cite> Turns out I discovered how I can with GitHub for any of my branches, I can get a nice looking preview for people to look at. So, it'll aid in pre type work, which is what we're kind of at. So we have two PRs about moving stuff over to data integrity. Okay. Then we have some issues with that came up about algorithms.</p>
+<p id=f375 class="phone s03"><cite>Greg_Bernstein:</cite> So currently the section called algorithms if people can see this this is a highlevel set of algorithms and by add proof actually calls create proof from a particular crypto suite. So all the crypto street specs we have something called create proof and this add proof procedure calls So this calls algorithms in a particular crypto suite. It doesn't do too much else. It wraps some stuff around it concerning something called the domain and something called the challenge.</p>
+<p id=ed6a class="phone s03"><cite>Greg_Bernstein:</cite> And I think there are some open questions about those two items because I know these sound like kind of standard cryptography things, but I'm not quite sure if they're used in that standard type of way. But add verify proof sets. All these call basically algorithms either create proof or another flavor of verify proof from crypto suites. So these are a set of procedures that then call down into crypto suite procedures. just trying to set up for where we're going with this because of the data integrity.</p>
+<p id=c324 class="phone s03"><cite>Greg_Bernstein:</cite> We kind of figured out how to generalize our crypto suite algorithms. Okay, we generally have a generic create proof now and this applies not just the data integrity but by looking at our EDDDSA, the only thing different than what we do in all the different quantum resistant proofs comes in around this last Step six in all the quantum resistance we use base 64 URL encoding in those older specs EDDDSA ECDSA we use base 58.</p>
+<p id=2efc class="phone s03"><cite>Greg_Bernstein:</cite> Hence we can with the other parameterizations of hash function canonicalization and signature algorithm. We've pretty much completely parameterized create proof to make it very generic and it depends on a common set of functions subunctions hashing proof configuration transformation and such like that. Okay, so that's why I named this section crypto common algorithms. I don't know what to name these algorithms. Okay, so what am I getting at here?</p>
+<p id=5ff4 class="phone s03"><cite>Greg_Bernstein:</cite> So I thought this was looking fairly solid. However, then when Manu reviewed this, he said, &quot; all algorithms should be in the same section for some reason to do with conformance testing or for some reason.&quot; And that starts looking like a lot of stuff crammed in one section. And we start getting the fact that we usually don't like to go more than three levels deep in our table of contents.</p>
+<p id=c18a class="phone s03"><cite>Greg_Bernstein:</cite> We could go more, but it starts looking Well, I was told we could go more, so I've got a question and monitor is not here to answer it, but maybe others have it. Do we need to put all our algorithms in one section? And do we really want to do that? These work at different levels. These call cryptosuite algorithms. These are cryptosuite common algorithms that have been parameterized. So it makes it much simpler. If I go and do EDDDSA, I just say I'm going to create proof and I say use it with this signature, this hash.</p>
+<p id=fce7 class="phone s03"><cite>Greg_Bernstein:</cite> this canonicalization Okay, so this is looking in pretty good shape. But until we know how we want to structure these things, I don't know. I'm not ready to do a pull request because if they're going to be in separate sections or not. Okay, question. U who just raised their hand. Ivonne,…</p>
+<p id=dcf6 class="phone s02"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=ece9 class="phone s03"><cite>Greg_Bernstein:</cite> go ahead.</p>
+<p id=1ded class="phone s02"><cite>Wesley_Smith:</cite> Ivon, you're muted.</p>
+<p id=3325 class="phone s03"><cite>Greg_Bernstein:</cite> still we cannot hear you.</p>
+<p id=6a37 class="phone s02"><cite>Wesley_Smith:</cite> Ivon, your Google Meet client is muted.</p>
+<p id=52b8 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=278b class="phone s01"><cite>Ivan_Herman:</cite> Sorry, sorry. I think everyone makes this mistake once a day.</p>
+<p id=2995 class="phone s02"><cite>Wesley_Smith:</cite> It's okay.</p>
+<p id=86d2 class="phone s03"><cite>Greg_Bernstein:</cite> So all great stuff you just said you got to repeat.</p>
+<p id=8b00 class="phone s02"><cite>Wesley_Smith:</cite> I'm sure have 800 different</p>
+<p id=92ac class="phone s01"><cite>Ivan_Herman:</cite> Yes, I realize that. So, I just want to understand what man is thinking if that is possible. So what he says is that on the top level of the sectioning you should have a new section which would include a subsection what you have here as four and five.</p>
+<p id=cc74 class="phone s03"><cite>Greg_Bernstein:</cite> H I he said Dave did you see his comments? Do you remember…</p>
+<p id=f17a class="phone s05"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=afef class="phone s03"><cite>Greg_Bernstein:</cite> what he was getting at with that? Okay.</p>
+<p id=d97e class="phone s05"><cite>Dave_Longley:</cite> I think he was looking for all algorithms to be collected under some heading rather than having different headings for different groups of algorithms. go ahead</p>
+<p id=eb30 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> If I may,…</p>
+<p id=ef98 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> often I have a sense of what I know is thinking. the title algorithms is more generic than it intends to be here. So I would submit that section 4 algorithms should include everything that is now in through 4.7 plus 5.1 through 543 or whatever it is 545.</p>
+<p id=4fb6 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> There might be some changing in levels and a title for what is now the collective of four once we figure out what class of algorithms So if these are generic algorithms that would be a good title for that section or subsection rather but this puts all algorithms in one section if that makes sense hopefully.</p>
+<p id=6cf3 class="phone s05"><cite>Dave_Longley:</cite> So, here's what I would recommend that we do. have an algorithm section. come up with a new subtitle for section for put it all in there, get a PR in so everyone can see it and everyone can have potentially an allergic reaction to how deeply nested it is. And then we would change that.</p>
+<p id=56a9 class="phone s05"><cite>Dave_Longley:</cite> That seems like the way to go because people do want it conceptually put it all together, but we might find that the presentation format of that is just too icky.</p>
+<p id=6ad6 class="phone s03"><cite>Greg_Bernstein:</cite> Because the other thing I was going to do was I'm proposing to do is do these crypto suite non- selective disclosure algorithms combining them into the document in a PR first and…</p>
+<p id=76e9 class="phone s03"><cite>Greg_Bernstein:</cite> then hit selective disclosure because there's a lot more work and selective disclosure and I can get at that after we finish talking about the non- selective disclosure case.</p>
+<p id=c7bb class="phone s03"><cite>Greg_Bernstein:</cite> Comments, please.</p>
+<p id=6c5a class="phone s01"><cite>Ivan_Herman:</cite> May I?</p>
+</section>
+
+<section>
+<h3 id=9d98>Selective Disclosure Process</h3>
+<p id=f161 class="phone s01"><cite>Ivan_Herman:</cite> So what worries me is what you were just hinting at that there is also the selective disclosure part and I presume that the same idea that Dave had to say there is one section for crypto squit algorithm in general the selective disclosure would also be part of this big place in some way or</p>
+<p id=c2ac class="phone s01"><cite>Ivan_Herman:</cite> there which does not bother me too much and to be honest I am less sensitive as this rule of let's not go deeper than three …</p>
+<p id=5526 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=8536 class="phone s01"><cite>Ivan_Herman:</cite> if we go deeper than three and we go deeper to four I can perfectly live with it I mean we are treating a very complex thing that is then the way to go Dave</p>
+<p id=0356 class="phone s05"><cite>Dave_Longley:</cite> So, yeah, I got on the queue to say I primarily want us to not slow down your work, just because we might want to shuffle things around a little bit in the spec. I think it's more important to get all of these common things into this spec so you can move on Greg and do the other bits you need to do.</p>
+<p id=aa8e class="phone s05"><cite>Dave_Longley:</cite> I'm sure several subsequent readings of this spec might result in us saying we really should move it around this way and then that just becomes an editorial thing. I mean all this technically is editorial. We're just moving it all around. But I think that's an easier thing to do when it's all in one place.</p>
+<p id=5585 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=244f class="phone s05"><cite>Dave_Longley:</cite> which is the main goal is getting it into this one place as generic algorithms that are parameterized.</p>
+<p id=575d class="phone s03"><cite>Greg_Bernstein:</cite> Okay. let me So…</p>
+<p id=046d class="phone s05"><cite>Dave_Longley:</cite> And Ted's still on the queue. Greg Bernstein:</p>
+<p id=d686 class="phone s03"><cite>Greg_Bernstein:</cite> what I'm good.</p>
+<p id=eac3 class="phone s05"><cite>Dave_Longley:</cite> Since she probably can't see</p>
+<p id=ecbf class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Mostly yes…</p>
+<p id=10002 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> what you were saying Dave also I sense that there's going to be some reshuffleling no matter how polished it gets at this point because of these selective disclosure cryptosweet common algorithms which will not be part of the algorithm section that we're now contemplating. So it's more important to get a rough cut of the text into the document as a whole. Shuffling things around we can do a million times between now and then and it is purely editorial when it's shuffling around.</p>
+<p id=16d8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> There will be nits to pick about making sure that cross references still point to the right places, but that should mostly be handled by using the invisible section names as opposed to the human readable ones, which is what we'll change. Hopefully that was clear, too. X.</p>
+<p id=e7d4 class="phone s03"><cite>Greg_Bernstein:</cite> Are there any more hands up?</p>
+</section>
+
+<section>
+<h3 id=4c5f>Issues and Pull Requests</h3>
+<p id=e59d class="phone s05"><cite>Dave_Longley:</cite> The queue is India.</p>
+<p id=e1c8 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, that gives me a step to work forward. because like I said I will do the non select I mean this part these cryptosweet comment algorithms are fairly well defined now and I think they're ready for if I put into a PR I think I'll group these together and we can get everybody's feedback on it. Let's talk about then what needs to be done for selective disclosure because when I was trying to work on bring we're missing a section to me we're missing a definition of selective disclosure we're missing the fact that we have not one process but two where we produce the data with the base proof</p>
+<p id=c613 class="phone s03"><cite>Greg_Bernstein:</cite> And The signer gets that to the holder with the possible addition of some mandatory disclosure. Don't worry, these are not the final diagram. Somebody can do better pictures me. But I wanted to modify what we have if you see up here the processing model for the non oops way up at the top. how it works.</p>
+<p id=4293 class="phone s03"><cite>Greg_Bernstein:</cite> Way at the beginning of the document, we talk about the transformations and things like that and such layout. Things are more complicated in selective disclosure because we've got multiple transformations. so that's why we have a transformation from the original. This is what the signer does. The issuer produces the data with a base proof and then the holder takes the data with the base proof and they decide that they don't want to reveal everything. So to kick that off I tried and Dave had some feedback already on this.</p>
+<p id=b552 class="phone s03"><cite>Greg_Bernstein:</cite> I put it into an issue to come up with a generic highlevel definition of selective disclosure that's kind of independent of technology except I did kind of do it at the claim level a subset of claims. ops. review on that. Then I'd kind of want how it works now. At the high level instead of just create proof and verify proof in the other highle section under algorithms we have add verify derived proof. In addition we have two very generic approaches signing individual statements.</p>
+<p id=4c4a class="phone s03"><cite>Greg_Bernstein:</cite> This is like what we did with ECDSA SD, but it could apply to ski sign and EDDDSA because they both have relatively small signatures. Or we've got the solid hashes that we applied to solid hash approach which we used in the quantum resistance. and that we already kind of made generic because everything it already accommodates u A, SLHDSA, Falcon, blah blah blah. And then of course when the cryptographic suite itself supports selective disclosure via multiple messages.</p>
+<p id=5f1d class="phone s03"><cite>Greg_Bernstein:</cite> So we kind of have a number of generic highlevel ways of doing these things. And the question is we would almost have two or three sections like crypto street common algorithms but instead one they would be individually signed statements. And the reason to go this far is to make it easy to just plug in a few things like the signature algorithm, the hashing algorithm and say I want select</p>
+<p id=9cd5 class="phone s03"><cite>Greg_Bernstein:</cite> ive disclosure and then people get the rest of the functionality from a library, right? Because selective disclosure requires a bunch of extra processing and we should describe that a bit. what we're doing is helping these things happen. then we'd move these common selective disclosure algorithms over here. but like I said, we have at least two sets of them. One based on the ECDSA approach where we had individually signed and the other based on what we do with in the quantum resistance where we use salted hashes.</p>
+<p id=b7ba class="phone s03"><cite>Greg_Bernstein:</cite> So that's why I see this stuff growing and getting it in. we can do that. And I know at one point I think Ivonne said, &quot; if we have to, we can have a selective disclosure document with these generic happenings.&quot; But that's kind of where I'm at with the editing. because selective disclosure feels like a bigger reach, I wanted to put a separate PR that kind of however we, want to do these, I can make sure they're all within the same stuff with the non- selective disclosure case because that's more mature.</p>
+<p id=c5b0 class="phone s03"><cite>Greg_Bernstein:</cite> But we need the intro text explaining selective disclosure because we need that highle description of selective disclosure just so it influences our security model because I think a thing that we cared a lot about when we came up with selective disclosure and why we</p>
+<p id=06dc class="phone s03"><cite>Greg_Bernstein:</cite> some differences between the selective disclosure approaches is because we worry about information leakage and things like that. So we try and prevent if the holder didn't want to reveal something. We analyze this from a cryptography perspective of making sure or ways that information could leak and…</p>
+</section>
+
+<section>
+<h3 id=c605>BBS and IETF CFRG</h3>
+<p id=b747 class="phone s01"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=3dd9 class="phone s03"><cite>Greg_Bernstein:</cite> how to minimize that and such. I know that sharing. So that's where we're kind of at. So I was planning on or based on what the feedback here I'd prefer to do the non- selective disclosure. Two. first to bring this stuff in. We can worry about what we call the sections. we can put it all in one algorithm section if that's the preferred way. And then I can take a PR while I continue to work on trying to get more text for selective disclosure comments.</p>
+<p id=89ef class="phone s03"><cite>Greg_Bernstein:</cite> Dave gave a thumb.</p>
+<p id=10f4 class="phone s05"><cite>Dave_Longley:</cite> I think your plan sounds fine. Avon, go ahead.</p>
+<p id=41cb class="phone s01"><cite>Ivan_Herman:</cite> No, go on.</p>
+<p id=d56a class="phone s01"><cite>Ivan_Herman:</cite> Go on.</p>
+<p id=37d3 class="phone s05"><cite>Dave_Longley:</cite> I'm trying to remember what else I was going to say. I think the plan sounds fine. we can put things under lump it all under an algorithm section. get that the main goal again is to get all the common stuff into that spec and…</p>
+<p id=03b7 class="phone s05"><cite>Dave_Longley:</cite> then do something similar with selector disclosure. And then we expect some reshuffleling of all of that. once we can see everything that's there, that might help people better decide…</p>
+<p id=1f59 class="phone s05"><cite>Dave_Longley:</cite> how we ought to organize from</p>
+<p id=a389 class="phone s03"><cite>Greg_Bernstein:</cite> Sounds good, Ivon.</p>
+<p id=47ee class="phone s01"><cite>Ivan_Herman:</cite> Yeah, just a minor comment.</p>
+<p id=e4a5 class="phone s01"><cite>Ivan_Herman:</cite> I think what I said was not to have the selective disclosure into a separate document if needed. I actually thought of the whole thing that you are doing now. whether it is part of the DI spec or…</p>
+<p id=3463 class="phone s01"><cite>Ivan_Herman:</cite> whether it is a part of a se or it is a separate spec a kind of a abstract crypto sweet specification it's okay I mean whichever works…</p>
+<p id=1b02 class="phone s03"><cite>Greg_Bernstein:</cite> Yes yes yes. Okay. Okay.</p>
+<p id=88a5 class="phone s01"><cite>Ivan_Herman:</cite> but I agree first let's have the text done and then we can think about spanning it out into a separate document keeping it that becomes an editorial thing on which one is easier to manage</p>
+<p id=200b class="phone s01"><cite>Ivan_Herman:</cite> That's all.</p>
+<p id=65b9 class="phone s03"><cite>Greg_Bernstein:</cite> Just for folks reference, we're continuing to do clean up and deal with issues and pull requests on quantum resistance. there have been some DI related issues that have come up which are more what I'd say somewhat deeper in the RDF or JSON LD space. So if folks could take a look at some of those issues people were talking about compound documents or some of those things which are more on the cryptographic side.</p>
+<p id=1df0 class="phone s03"><cite>Greg_Bernstein:</cite> So, if people can look at some of those issues, if they've can answer some of these questions. These are some folks I don't know, but they seem to be u knowledgeable in the RDF kind of world and such like that. that would appreciate that. And That's kind of it for me. And when there's a bunch of work going on with BBS, but that's a different thing. not our spec yet. That's at the IETF CFRG.</p>
+<p id=04cb class="phone s02"><cite>Wesley_Smith:</cite> All right, we are about out of time for today. So, thank you all for joining. Thanks for the discussion as always. And we'll see you folks next week.</p>
+<p id=10003 class="phone s06"><cite>Phil_Archer:</cite> Thanks. Meeting ended after 00:54:13 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

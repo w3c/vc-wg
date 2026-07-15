@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 14 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>14 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Ivan_Herman, Kayode_Ezike, Parth_Bhatt, Phil_Archer, Phillip_Long</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4ea0">Meeting Introduction</a></li>
+<li><a href="#5196">Render Method Strategy Discussion</a></li>
+<li><a href="#f926">Three Required Render Methods</a></li>
+<li><a href="#3231">Static Render Method Discussion</a></li>
+<li><a href="#8833">Rendering Method Field Nesting</a></li>
+<li><a href="#4e94">Future Discussion Topics</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=4ea0>Meeting Introduction</h3>
+<p id=011c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Welcome we're going to give it another few minutes for folks to join. We'll get started.</p>
+<p id=2e45 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, three minutes after might as well get started. So, welcome everyone to the weekly random method task force of the W3C verified credentials working group. as always we're under the W3C code of conduct and IPR regime. you need to be a member of the group to contribute etc etc. let's see am I forgetting anything else from boilerplate? I think those are the main things.</p>
+<p id=032d class="phone s01"><cite>Dmitri_Zagidulin:</cite> So during the last couple of calls, we started working on the threat model brainstorm which is over this URL here. I'll put it a chat in Google meet chat. Although also let's see do we usually use an IRC room for these task force meetings.</p>
+<p id=999e class="phone s02"><cite>Dave_Longley:</cite> No. so you just need to put it in this Google chat and…</p>
+<p id=0bd9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. …</p>
+<p id=2ce3 class="phone s02"><cite>Dave_Longley:</cite> the Google chat is now saved.</p>
+<p id=7412 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. So I will share screen also for convenience.</p>
+<p id=35bf class="phone s01"><cite>Dmitri_Zagidulin:</cite> All So hopefully everybody can see that. Yeah. So we ordered in our usual brainstorming method where we put a bunch of sort of parking lot implementation and dependency threats. these are these items.</p>
+</section>
+
+<section>
+<h3 id=5196>Render Method Strategy Discussion</h3>
+<p id=df68 class="phone s01"><cite>Dmitri_Zagidulin:</cite> there below. And now need to move the uncatategorized threats these 15 items through the categories. We need to categorize them as external threats, as dependency threats, implementation and so before we dive into that, so in terms of pull requests, we don't have any new pending ones because everyone I think is waiting to see the resolution of the discussion of given our limited time in the working group charter, how few render methods can we get away with shipping?</p>
+<p id=ee41 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And during previous calls the several points of view have been brought up from I think mom and Dave was the proposal that we only ship the sandbox iframe app method. and for myself what was the sort of counterp proposal that we don't start with that we start with the templating method to which I think it was Benjamin who brought up the question of what are we going to do about special functions such as date formatting.</p>
+<p id=b5f0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> It was also during the discussion the point came up that we at the very least need separate methods for rendering credential detail views and a separate more lightweight method likely the quote unquote JSON card approach for the list view right so that at the very least if we do nothing else within the scope of this task force of their credentials working group charter. We need to ship at least two things. Something that addresses the list view and something that addresses the detail view. And then we're continuing sort of the discussion of what's the minimal amount of methods that can cover those two things.</p>
+<p id=0247 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And what further came up in the conversation was okay in order to decide between the Pambox iframe approach and the template substitution approach let's look at the security and feature tradeoffs of those two methods which is how we got to the render method threat modeling exercise. Aside from the fact that I think a lot of the VC working group task forces are going through this exercise right now anyway.</p>
+<p id=490c class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think that sums up the story so far. If I missed any important details, please jump in.</p>
+<p id=0c2a class="phone s02"><cite>Dave_Longley:</cite> Yeah, I don't know that you missed anything, but I wanted to be clear that my position in right now is that I think we need three render Something for view data. This is sort of the JSON card rendering case where the render will pick all the styling and whatever else to fit it in with their UX but they want the prominent data fields that the issuer would like to show up and then we have sort of an NFC binary payload case and then finally we have the HTML case. that's my view that we have those three things and I think the HTML case can also be used as a sort of data export get some rand renderer code will run in a sandbox and…</p>
+<p id=062f class="phone s02"><cite>Dave_Longley:</cite> output some kind of binary format like a PDF. So no.</p>
+<p id=7a77 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=ba7a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=9534 class="phone s02"><cite>Dave_Longley:</cite> Yep.</p>
+</section>
+
+<section>
+<h3 id=f926>Three Required Render Methods</h3>
+<p id=b3d6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, let me just that I remember the three were the sort of rendered pre-baked methods like the NFC binary.</p>
+<p id=9473 class="phone s02"><cite>Dave_Longley:</cite> And then there's a view data.</p>
+<p id=5fd6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The Yep.</p>
+<p id=2ce6 class="phone s02"><cite>Dave_Longley:</cite> We need a better name for this. there's a PR called JSON card. I think that's too specific to a particular That's that thing. that's, just a transformation from a credential to data that, prominent fields that you would put in a display of some kind, lists, cards, whatever else that you style yourself. There might be style hints in there that are helpful, though. And then which is single I consider this to largely be a single credential display totally customized by the issuer using whatever HTML they want. And it also covers the case of outputting you put something into this HTML sandbox and…</p>
+<p id=d038 class="phone s02"><cite>Dave_Longley:</cite> you can get out like a PDF.</p>
+<p id=7a91 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=6077 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So looking at those three, I personally completely agree. I'd love to hear from the group if we have consensus unleashed on this statement that we need these three things. does anybody else object or desent? So, I see plus one from Ivonne and parts. major objection. All right. So, at the very least, let's start with the easy case.</p>
+<p id=c6be class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think we all agree that we need something pre-baked like the NFC method or even heaven for send a pre-baked static image for whatever super limited display clients that can't do HTML but just if you give it an image it'll display it. so that's the good news. That means we can start working on PRs to finalize that method. I suppose we need a better name for this. We maybe need a final name for this. We need a consensus name for this method for the static pre-bake method.</p>
+<p id=ce28 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's take a look at our stack real quick just to see what it's currently called if anything. Okay. So we don't Okay.</p>
+<p id=add2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So we have this thing called the.</p>
+<p id=f95d class="phone s02"><cite>Dave_Longley:</cite> It might be Yeah,…</p>
+<p id=5e23 class="phone s02"><cite>Dave_Longley:</cite> it might be a listed as a render suite.</p>
+<p id=4c9e class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, if I'm understanding the conversation so far correctly, and if nobody objects, I would propose that we generalize this, right?</p>
+<p id=d51a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Instead of calling it an NFC render suite, we parameterize it even further by calling it a pre-rendered and then have another parameter called content type or something that determines the content type of the actual payload of the template.</p>
+<p id=e0f8 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I feel like there's an open issue or…</p>
+<p id=cf8a class="phone s02"><cite>Dave_Longley:</cite> About doing this. I think we were going to Yeah,…</p>
+<p id=fc09 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Don't think there's a PR,…</p>
+<p id=4528 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but let's look at the issues.</p>
+<p id=1ec8 class="phone s02"><cite>Dave_Longley:</cite> maybe it was in some demo code as well. I think there was the concept of either the render suite would be called static and there was a mode for NFC or audio video. there was some other mechanism we had that was doing a better job of generalizing</p>
+<p id=ccf5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yes.</p>
+<p id=71b0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. If I vaguely remember this,…</p>
+<p id=2e89 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but let's actually see if we can find handling record. Yeah, it's not currently. Yeah, go ahead.</p>
+<p id=47e9 class="phone s03"><cite>Ivan_Herman:</cite> Just one of you two could explain…</p>
+<p id=5ac4 class="phone s03"><cite>Ivan_Herman:</cite> how exactly this works in practice.</p>
+<p id=2cdb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Absolutely. So the way it would work is at issuing time or before that the issuer renders some way they want to output a credential. For example,</p>
+<p id=73de class="phone s01"><cite>Dmitri_Zagidulin:</cite> this is a binary blob that's going to get transmitted via NFC and we have a separate credential method NFC task force that is doing the exact format of that binary block but the point is by the time it gets to the VC method it's just an octet stream yeah go ahead</p>
+<p id=7c95 class="phone s02"><cite>Dave_Longley:</cite> Yeah, that we might want to ground this in a concrete use case. This would be something like giving the digital form of a ticket to get on a train pass and they could go buy a train scanner and pass their phone over it and…</p>
+<p id=ffff class="phone s02"><cite>Dave_Longley:</cite> that thing your phone would know how to use the render method to pull out the exact NFC payload to so it's generally for that sort of use</p>
+<p id=e939 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, does that make sense?</p>
+<p id=0a15 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, issuer renders or bakes one or more of an NFD offset stream, a pre-rendered PNG image, a wave file or an MP3 file of an audio description, something that the consuming client, the wallet, so to speak, does not need to change. It can just display it or play it back or transmit it as is.</p>
+<p id=545e class="phone s01"><cite>Dmitri_Zagidulin:</cite> If go ahead on the queue right so part of it is the question of generic versus specific meaning specifically for barcode there could be their own method…</p>
+<p id=d847 class="phone s03"><cite>Ivan_Herman:</cite> Yeah. I understand that the reason…</p>
+<p id=10000 class="phone s03"><cite>Ivan_Herman:</cite> why I was wondering about without stirring up too much mud. But what's the difference between doing it this way and use the simple barcode method which we define elsewhere? What the relation between these two</p>
+<p id=c820 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but what about a general purpose this is a rendered PDF of the certificate that this represents.</p>
+<p id=2354 class="phone s03"><cite>Ivan_Herman:</cite> You are looking at one direction. I was looking at the other direction…</p>
+<p id=1969 class="phone s03"><cite>Ivan_Herman:</cite> which what I was saying is that the generation of a barcode is one of these</p>
+<p id=a120 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=be59 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I see Benjamin has hand up.</p>
+</section>
+
+<section>
+<h3 id=3231>Static Render Method Discussion</h3>
+<p id=9278 class="phone s04"><cite>Benjamin_Young:</cite> It's fine.</p>
+<p id=6881 class="phone s04"><cite>Benjamin_Young:</cite> I didn't know if Avon was headed here, but we do also have related resource as a static stuff. but as yet that's all unidentifiable bag of things. so maybe there's just some plumbing here to say, use this related resource also in the payload as a render method. and then we get all our semantics from related resource because if it's just a static blob, we already have all that plumbing</p>
+<p id=10001 class="phone s03"><cite>Ivan_Herman:</cite> Okay, we can leave it for later. But at some point in time, I am always wondering about…</p>
+<p id=4b69 class="phone s03"><cite>Ivan_Herman:</cite> how the different specification relate to one another. That's something that we have to get a proper story around that because for the time being it's not clear.</p>
+<p id=3576 class="phone s01"><cite>Dmitri_Zagidulin:</cite> You're absolutely right.</p>
+<p id=ca67 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And I would love for the barcode task force folks to weigh in on this because I'm not as familiar with it as I'd like to be, but it's a good question. You're right. we do need to figure this out if nothing else than for consolidation reasons. But aside from figuring out whether or not let's say this static PDF render method can also fulfill the simple barcase use case.</p>
+<p id=0102 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Aside from that, Ivonne or anybody else, any objection to a general purpose static render suite,…</p>
+<p id=a7d0 class="phone s03"><cite>Ivan_Herman:</cite> This</p>
+<p id=3e0c class="phone s01"><cite>Dmitri_Zagidulin:</cite> so instead of an NFT being a top level render suite, we have a top level static and then the NFC would go into a second parameter that's like content type or…</p>
+<p id=fcd2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> or usage or whatever. Go ahead. venture and</p>
+<p id=d0f7 class="phone s04"><cite>Benjamin_Young:</cite> Yeah.</p>
+<p id=90e1 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, we've been down this road before and cracked our heads on some unexpected glass ceilings. I think we should go down it again because we keep, coming around the barn and the door's still there. but there were complaints, concerns around modeling it tangled up in template language and then trying to undo that and extract it kind of in the way that you're describing u other modeling concerns or fears or whatever. so what I'd love to see is us do exactly as you described,…</p>
+<p id=bef7 class="phone s04"><cite>Benjamin_Young:</cite> try again and see if we end up with the same set of proposals that we had last time. and then if we do then we address them properly this go around. but if anybody wants to muck around in the issues there is a whole lot of prior art that points the direction you're pointing</p>
+<p id=fba2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=77f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. But it sounds to me though that most of the friction was dealing with the template part which may be we may encounter less of that if we look at this just from the narrow scope of static dates. You have to hand up.</p>
+<p id=35e0 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I don't know how easily you can see the chat, but I also pasted in there another working example of another way to model it. Dave Longley:</p>
+<p id=e256 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Apologies like not equally.</p>
+<p id=e9df class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's look. Okay. So</p>
+<p id=6d59 class="phone s02"><cite>Dave_Longley:</cite> And then maybe it was in the HTML PR. I'm looking to find we've used output preference before and mode and things like that as fields that for example digital wallet would be looking for based on the current user experience they're working with. They might be looking for it's an NFC task or…</p>
+<p id=c781 class="phone s02"><cite>Dave_Longley:</cite> it's an audio video task or whatever it is. they might look for matching on render methods based on that output mode that the render method prefers.</p>
+<p id=7bab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=84f8 class="phone s02"><cite>Dave_Longley:</cite> And…</p>
+<p id=fbae class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=8e24 class="phone s02"><cite>Dave_Longley:</cite> then the static thing in as a literal template as opposed to a template that you replace things in.</p>
+<p id=9bb1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=8252 class="phone s02"><cite>Dave_Longley:</cite> But it still has render property in there. So that you could do some analysis. you would assume based on what the issuer has announced that the properties in the render property what would appear in that static template even if there is no template processing.</p>
+<p id=d946 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, overall, I really like this approach. I think this is great. Exactly what we're looking for. minus possibly we need to rename from template to static render method.</p>
+<p id=4eee class="phone s01"><cite>Dmitri_Zagidulin:</cite> But that last part that you said that it's the responsibility of the consuming client to introspect the pre-baked payload and make sure that it matches That seems a little rough.</p>
+<p id=4956 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=de7f class="phone s02"><cite>Dave_Longley:</cite> No, I'm saying the opposite of that.</p>
+<p id=4edb class="phone s02"><cite>Dave_Longley:</cite> I'm saying you would have to trust that the issuer is going to announce the rendered properties,…</p>
+<p id=457d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. okay.</p>
+<p id=7ba2 class="phone s02"><cite>Dave_Longley:</cite> which you could still use those rendered properties to tell a user this is what's going to be sent in the data. But you'd have no way as a wallet, …</p>
+<p id=9bc5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=a08e class="phone s02"><cite>Dave_Longley:</cite> yet if you somehow knew how to read that template, you could do it. But that would not be the expectation. the issuer has said these are the properties that will be sent if you use this render method.</p>
+<p id=15d7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. go ahead.</p>
+<p id=70d5 class="phone s03"><cite>Ivan_Herman:</cite> But then the property is not template.</p>
+<p id=460b class="phone s03"><cite>Ivan_Herman:</cite> It's value or whatever we call it.</p>
+<p id=6f7e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes. It would be pre-rendered bundle. It would be literal.</p>
+<p id=637b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yeah. So not template.</p>
+<p id=ee28 class="phone s03"><cite>Ivan_Herman:</cite> So the property change the property as well to something whatever we know you go down the last one the template property</p>
+<p id=0b71 class="phone s02"><cite>Dave_Longley:</cite> So we should leave this as is because there have been people who have suggested that we should keep it general and…</p>
+<p id=9d28 class="phone s02"><cite>Dave_Longley:</cite> we can do a second JSON that calls it static render method and changes the name template that has different proposals but I No,…</p>
+<p id=6f28 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Whoa, wait,…</p>
+<p id=55b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> leave it As is this thing right here.</p>
+<p id=f08a class="phone s02"><cite>Dave_Longley:</cite> I mean you edit as is I meant from what was pasted into the chat.</p>
+<p id=434b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=79da class="phone s02"><cite>Dave_Longley:</cite> So, if you go back to your notes,…</p>
+<p id=bf2b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yep. Got it.</p>
+<p id=c6e3 class="phone s02"><cite>Dave_Longley:</cite> instead of changing it to say static, let's yeah,…</p>
+<p id=43e9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Yeah. All right.</p>
+<p id=4d05 class="phone s02"><cite>Dave_Longley:</cite> let's leave it like that as one proposal.</p>
+<p id=de8d class="phone s02"><cite>Dave_Longley:</cite> And then we're editing live the proposal to change some names around. And there are pros and</p>
+<p id=4387 class="phone s03"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=957c class="phone s03"><cite>Ivan_Herman:</cite> I get that what you do. Okay. But…</p>
+<p id=bbec class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=2faa class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. and then Demetri is saying, &quot;How about we rename template to static like this? do we want to make two separate PRs?</p>
+<p id=6154 class="phone s03"><cite>Ivan_Herman:</cite> then you should also rename the template property. the last line.</p>
+<p id=6961 class="phone s02"><cite>Dave_Longley:</cite> Yeah, line 71 he's in</p>
+<p id=4d61 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see it. Got it. template to static and templates to payload. Thank you,…</p>
+<p id=e4ca class="phone s03"><cite>Ivan_Herman:</cite> Yeah, Coyote is on the queue.</p>
+<p id=445a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=c728 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, do we want to make this two separate yards with these two sort of computing methods? Does that seem like a decent idea? All right. Dave, do you want to or anybody who wants to volunteer to make the template method? Coyote. Okay.</p>
+<p id=f163 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead, Coyote. Yeah,…</p>
+<p id=4532 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, sorry.</p>
+<p id=29d5 class="phone s05"><cite>Kayode_Ezike:</cite> I just had a quick question. Isn't a static render method redundant with literal as suite? wouldn't we always expect those two to be the same if that's what we're literally supposed Yeah,…</p>
+<p id=806a class="phone s01"><cite>Dmitri_Zagidulin:</cite> but where's the literal under sleeve.</p>
+<p id=f172 class="phone s02"><cite>Dave_Longley:</cite> So the render suite is handling this difference in it being static versus dynamic. So if you go the render suite line 61, this is mirroring what it was done with the crypto suite properties in the data integrity work to avoid creating extra classes. and having the overhead of people doing extensions on classes rather than extensions through suites.</p>
+<p id=417a class="phone s05"><cite>Kayode_Ezike:</cite> I guess my question is would there ever be a nonliteral static template?</p>
+<p id=dd73 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=9069 class="phone s02"><cite>Dave_Longley:</cite> I don't think there would be. So I literal is meant to cover Yeah,…</p>
+<p id=14f3 class="phone s05"><cite>Kayode_Ezike:</cite> That's where I was confused.</p>
+<p id=9e1e class="phone s03"><cite>Ivan_Herman:</cite> That's true.</p>
+<p id=073d class="phone s05"><cite>Kayode_Ezike:</cite> Wait. I missed that. Hi.</p>
+<p id=bd30 class="phone s02"><cite>Dave_Longley:</cite> I agree Coyote. Literal is meant to cover the fact that it's static. So if we're going to rename it to static render method and introduce a new class, we're really getting rid of the suite component of it. we're using different ways of trying to express the extension capability and…</p>
+<p id=d58a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=2a93 class="phone s02"><cite>Dave_Longley:</cite> we should pick one one way and we could do this through classes or we can do it through the render suite. we had a lot of learnings doing it through classes. if we're expecting to be many of these is problematic. If we don't expect there to ever be more than three, maybe we can have three classes and live with that. But we might be better off with having one class that does the extensibility through the render suite.</p>
+<p id=c078 class="phone s02"><cite>Dave_Longley:</cite> And payload might just be a better name better to cover whether it's a template or not.</p>
+<p id=c768 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=0cd2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> let me see if I capture what you said. you're saying we need to decide on whether we're dispatching off of the type for these three different methods, let's say, or is going to be the same for all of them and we're dispatching off render suite. Is that what you said?</p>
+<p id=2b0f class="phone s02"><cite>Dave_Longley:</cite> Yes. Maybe this should just be a sweet render method.</p>
+<p id=4623 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right.</p>
+<p id=655b class="phone s02"><cite>Dave_Longley:</cite> That's a terrible, terribly long name though.</p>
+<p id=0573 class="phone s01"><cite>Dmitri_Zagidulin:</cite> … Dave Longley:</p>
+<p id=5fee class="phone s02"><cite>Dave_Longley:</cite> And invon has his hand up. Got another Y to that.</p>
+<p id=8036 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ivon, go ahead. Yeah. Good morning.</p>
+<p id=b08f class="phone s03"><cite>Ivan_Herman:</cite> Yeah. now that we turn this into some sort of a more static thing…</p>
+<p id=ce5d class="phone s03"><cite>Ivan_Herman:</cite> then what was a template is now payload then I don't see why we have output preference NFC blah and then payload on a different level I mean that means the payload is a fixed thing whose media type is octed string and maybe mode is NFC these three information are on the same level as far as the rendering is going. it's not output it may be as simple as saying that the payload should be a property for output preference and not as it is right now or that we don't need output preference but we just need information about the static output that we are creating here.</p>
+<p id=9bd5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I agree.</p>
+<p id=9659 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's a really good question.</p>
+<p id=0d55 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I think we might want to bring in…</p>
+<p id=619e class="phone s02"><cite>Dave_Longley:</cite> what the HTML render method looks like so that we have an another it's in the spec today. So, you can copy if you keep going down. Yeah, this one has output preference and it looks like mode was renamed to vis to access mode.</p>
+<p id=7375 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh-huh.</p>
+<p id=c6ff class="phone s02"><cite>Dave_Longley:</cite> So, I'm going to grab this whole render method so we can compare those two and…</p>
+<p id=9174 class="phone s03"><cite>Ivan_Herman:</cite> But I think the access mode was for accessibility reasons,…</p>
+<p id=88a5 class="phone s02"><cite>Dave_Longley:</cite> what reuse we would get for</p>
+<p id=01fe class="phone s03"><cite>Ivan_Herman:</cite> wasn't it? it was patterned after some terms that are used in the accessibility world for access mode.</p>
+<p id=9f08 class="phone s03"><cite>Ivan_Herman:</cite> So we should not bring these two too close together because they Apples and oranges here.</p>
+<p id=3350 class="phone s04"><cite>Benjamin_Young:</cite> I yeah we should at least reference that spec…</p>
+<p id=bb18 class="phone s04"><cite>Benjamin_Young:</cite> which I think is referenced in the draft currently because if in the use of that word it would be something like tap or something for NFC not the current technological implement Presentation of the action of tapping.</p>
+<p id=fd55 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm.</p>
+<p id=bd95 class="phone s02"><cite>Dave_Longley:</cite> Yeah, this might just be the wrong name for it and it instead should perhaps be tap. I do think we have a similar fruit, whatever this is. so I do think we need to have output preference. That's a signal if you're thinking about when you're providing a user experience, you have some sense of what user experiences are available or what the current workflow is that in some application.</p>
+<p id=7ff5 class="phone s02"><cite>Dave_Longley:</cite> you're going to want to filter on render methods that match that workflow. And that might be access mode. And if you're looking for NFC situation, you would look for tap rather than NFC.</p>
+<p id=5671 class="phone s03"><cite>Ivan_Herman:</cite> But isn't that correct that you can have several output preferences and…</p>
+<p id=db14 class="phone s03"><cite>Ivan_Herman:</cite> therefore you can have several payloads depending on whether it is an NFC message. It's a QR code. It is whatever else.</p>
+<p id=cf51 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait. That's a great question. So, how would it be modeled if the same VC had two different ones? Let's say it had a static and tap one and a HTML templated one. To me the yes agreed.</p>
+<p id=c4de class="phone s03"><cite>Ivan_Herman:</cite> I think… Dave Longley:</p>
+<p id=a2de class="phone s03"><cite>Ivan_Herman:</cite> what the render method property in the type allows for several render methods…</p>
+<p id=2c2e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Rather than several payloads or several output preferences. So I agree.</p>
+<p id=4df2 class="phone s03"><cite>Ivan_Herman:</cite> but then the output preference is not a okay Yes.</p>
+<p id=92eb class="phone s01"><cite>Dmitri_Zagidulin:</cite> I agree. So you're saying why nest it?</p>
+<p id=05da class="phone s01"><cite>Dmitri_Zagidulin:</cite> Why not put these things peer level? I agree I don't think we need to method.</p>
+<p id=26c6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do any reason why we wouldn't just put these things both for the template and the static pier.</p>
+<p id=5a12 class="phone s02"><cite>Dave_Longley:</cite> The first reason is to be clear that it's about the output preference for the render method.</p>
+<p id=fd4e class="phone s02"><cite>Dave_Longley:</cite> When the issuer was creating this they were saying the preferred way to get express output is with these things. if we and just have style and access I mean maybe these don't all work well together. putting style at the top level of the render method might be awkward.</p>
+<p id=fd3a class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=13e9 class="phone s03"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=9eaf class="phone s03"><cite>Ivan_Herman:</cite> no, no. we are not talking about the HTML one.</p>
+<p id=3204 class="phone s02"><cite>Dave_Longley:</cite> It right, but we are trying to bring them together and some of this is getting confusing because we've still got type static render method with a render suite of literal.</p>
+<p id=02fa class="phone s02"><cite>Dave_Longley:</cite> Either we're bike shedding and working on a design for something that uses render suite and the type is a more generic name or we're doing something else entirely. I'm not at this point.</p>
+<p id=60d0 class="phone s03"><cite>Ivan_Herman:</cite> My understanding is that we are talking looking at the static render method exclusively.</p>
+<p id=52ba class="phone s02"><cite>Dave_Longley:</cite> I'm not sure what we're doing.</p>
+<p id=3fe4 class="phone s03"><cite>Ivan_Herman:</cite> The HTML just came in as an example, but I think it's not a good example here. And we are doing something which is supposed to be simple and…</p>
+<p id=b57e class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I…</p>
+<p id=3536 class="phone s03"><cite>Ivan_Herman:</cite> and</p>
+</section>
+
+<section>
+<h3 id=8833>Rendering Method Field Nesting</h3>
+<p id=08bb class="phone s01"><cite>Dmitri_Zagidulin:</cite> but I agree with so Ivon I hear you that we're looking specifically at the</p>
+<p id=d027 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I agree with Dave that ideally all of the methods static, HTML and the list view should all have similar structure. Hence trying to align it.</p>
+<p id=36c3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I also agree with you that for example media type in the output preferences. It should be top level. go ahead whoever's on the queue.</p>
+<p id=5790 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, I think I'm next.</p>
+<p id=0900 class="phone s04"><cite>Benjamin_Young:</cite> Can we render sweet literal out of online 61?</p>
+<p id=b02c class="phone s04"><cite>Benjamin_Young:</cite> Take that out because I think that was one of the things Dave was saying. It was unclear about which way we're going. yeah.</p>
+<p id=47a2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=3429 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see. yes. It sounds like we should decide. It sounds like Yeah.</p>
+<p id=f517 class="phone s04"><cite>Benjamin_Young:</cite> Hang on. we should decide that if that's not what the group wants. versus just take it out. But you also just put media type on the main object, but it's already in payload unless there's some sort of transformation happening,…</p>
+<p id=2fc4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. …</p>
+<p id=d3b3 class="phone s04"><cite>Benjamin_Young:</cite> which would then mean it's not static. I think we need to be clear about…</p>
+<p id=2617 class="phone s01"><cite>Dmitri_Zagidulin:</cite> there's agreed and…</p>
+<p id=26f5 class="phone s04"><cite>Benjamin_Young:</cite> what each handle is for and what audience the affordance is for. and…</p>
+<p id=234a class="phone s01"><cite>Dmitri_Zagidulin:</cite> specifically you're right that we don't want duplication.</p>
+<p id=7a09 class="phone s04"><cite>Benjamin_Young:</cite> then Yeah. Go ahead.</p>
+<p id=8522 class="phone s01"><cite>Dmitri_Zagidulin:</cite> On the other hand, there is a strong argument for duplication because the consumer for this field is the wallet itself trying to switch off you're trying to pick the right random method for the job.</p>
+<p id=e1d5 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I want to speak to that.</p>
+<p id=563e class="phone s01"><cite>Dmitri_Zagidulin:</cite> And go ahead. Dave Longley:</p>
+<p id=2758 class="phone s02"><cite>Dave_Longley:</cite> …</p>
+<p id=432d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. No,… Dave Longley:</p>
+<p id=dc7d class="phone s02"><cite>Dave_Longley:</cite> I didn't mean to interrupt. my driving force for having these things be of the same type is I'm expecting a digital wallet to want to filter the list of render methods based on…</p>
+<p id=85b6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> please go ahead. Dave Longley:</p>
+<p id=772e class="phone s02"><cite>Dave_Longley:</cite> what it supports. And I think it would be rather awkward to say, I support these three different types and…</p>
+<p id=75bb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Beautiful. Dave Longley:</p>
+<p id=7201 class="phone s02"><cite>Dave_Longley:</cite> my filter's going to go look in for something that approximates access mode for all three of them which might look slightly different for this particular use case I would rather have the wallet say I understand suite render methods and I'm going to look for and they all have access mode in the same place the situation that the user's in the workflow that they're in is a tap situation or it's a audio or video situation and I'm going to filter out the render methods knowing that they all share that property and…</p>
+<p id=10002 class="phone s02"><cite>Dave_Longley:</cite> work that way. So, I'm looking for properties that the digital wallet's going to use to filter things first and then the digital wallet will go ahead and express the will actually do the rendering based on…</p>
+<p id=5943 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'll wait.</p>
+<p id=10003 class="phone s02"><cite>Dave_Longley:</cite> what the render suite says. And that all seems unified to me. If we're going to have three different classes or many different classes that all have different modeling, I don't think you can get that same sort of simple experience when you're implementing a digital wallet.</p>
+<p id=4d0f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed, Benjamin.</p>
+<p id=838a class="phone s04"><cite>Benjamin_Young:</cite> Yeah, I think it'd be useful we're kind of implementing rather than knowing…</p>
+<p id=a8eb class="phone s04"><cite>Benjamin_Young:</cite> where and why we're implementing to write up the wallet wants to XYZ And what does it need to take its action? if the use case because we keep switching them in and out, but if the use case is the wallet needs to find the NFC,…</p>
+<p id=6cad class="phone s04"><cite>Benjamin_Young:</cite> the tapable credential encoding, whatever that thing is. how is it thinking and then how is it expressing that to the individual? and then what affordances does the JSON need to provide for it to know that? And that's probably not application octet stream because that's the trash bin of media types like everything everything is octed stream.</p>
+<p id=342d class="phone s01"><cite>Dmitri_Zagidulin:</cite> super generic.</p>
+<p id=7321 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, it is a tough bit.</p>
+<p id=aa64 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. …</p>
+<p id=68d6 class="phone s04"><cite>Benjamin_Young:</cite> So and it wouldn't be that in payload or anywhere else it could sus it out, it would need to be something like an access mode of tap. But then, 300 years from now when we're no longer using NFC and we're using, forehead to forehead, then what is that? how do we express that? It's probably not.</p>
+<p id=d6f1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> that would be access mode bonk, right? Forehead to forehead.</p>
+<p id=3cf8 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, B for sure.</p>
+<p id=89fe class="phone s01"><cite>Dmitri_Zagidulin:</cite> That'll be great.</p>
+<p id=b25b class="phone s04"><cite>Benjamin_Young:</cite> Bon, but the protocol probably also changed.</p>
+<p id=0fbb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yeah. You're right.</p>
+<p id=d5c2 class="phone s04"><cite>Benjamin_Young:</cite> And…</p>
+<p id=31e6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yep.</p>
+<p id=10004 class="phone s04"><cite>Benjamin_Young:</cite> NFC is a known thing right now but what is it simil similar to Bluetooth affordance or something like that it kind of matters but it kind of doesn't because you want to just hand over this this is a data description so you want to tell the wallet hey I've got this stuff and…</p>
+<p id=97c2 class="phone s04"><cite>Benjamin_Young:</cite> here's this is why I'm providing this stuff and then the wallet or the render is the thing that determines protocol and determine needs to know enough about the stuff you're handing it to know which pipe to push it down. …</p>
+<p id=a6ac class="phone s01"><cite>Dmitri_Zagidulin:</cite> got it.</p>
+<p id=6465 class="phone s04"><cite>Benjamin_Young:</cite> it may just be an unfortunate fact that NFC doesn't have its own media type.</p>
+<p id=beb3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Right.</p>
+<p id=4a03 class="phone s04"><cite>Benjamin_Young:</cite> I don't know.</p>
+<p id=da90 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And for all we know, it does I don't actually Okay. All right. So, let's step back and make sure we don't lose this. This is great. we've got several open questions and we have consensus on one. we'd at least use these three method categories.</p>
+<p id=4186 class="phone s01"><cite>Dmitri_Zagidulin:</cite> static list and detail whatever whichever names we give them. we definitely need an static method. Open questions how are we dispatching off of type or render suite? it would be great.</p>
+<p id=5254 class="phone s01"><cite>Dmitri_Zagidulin:</cite> It would be great if I picked one. Okay, so that's one thing to pick. the second open question is how are we nesting the fields? keeping in mind that we want the three categories to Go ahead on the queue. Nope. Nope.</p>
+<p id=096d class="phone s02"><cite>Dave_Longley:</cite> I didn't want to interrupt your flow, but I was going to take issue with it would be great…</p>
+<p id=e93d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Not at all. Go ahead.</p>
+<p id=82fd class="phone s02"><cite>Dave_Longley:</cite> if we switch off maybe I mean type you're totally switching what you're working with. And if each of these does similar things, switching off of type, I don't know if that's the right thing to do. it feels like too much of a hammer or I don't know buzz saw when you want to scaple. I don't know what the right analogy here is. but each of these seems like they at least share some base class that has this sort of access mode thing as part of it there's something in common What?</p>
+<p id=1e42 class="phone s02"><cite>Dave_Longley:</cite> these that would allow you to be looking at them together in a group as opposed to individually just based on their type. it type feels like it's at the wrong level of resolution to make the kinds of decisions you need to make.</p>
+<p id=2e6b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ivon.</p>
+<p id=a1c9 class="phone s03"><cite>Ivan_Herman:</cite> Let me remind you that the current vocabulary already has a type called render method with capital R.</p>
+<p id=9a1b class="phone s03"><cite>Ivan_Herman:</cite> Which I think it's a vocabulary from day one or has been. So we are talking about possible subtypes of render method but we have that already and we cannot remove this now and…</p>
+<p id=19b1 class="phone s02"><cite>Dave_Longley:</cite> That is true.</p>
+<p id=b246 class="phone s03"><cite>Ivan_Herman:</cite> let me check whether it's true let me check whether it's true or that was my daydream let Hey, heat.</p>
+<p id=9d0a class="phone s02"><cite>Dave_Longley:</cite> Sure, you can go ahead and check that. But we have had this conversation before where we didn't want to add anything to the root render method…</p>
+<p id=19d8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dr. I have Von and Benjamin.</p>
+<p id=775c class="phone s02"><cite>Dave_Longley:</cite> because there might be other decisions for other types of render methods that people might come up with in the future and future versions of the spec that would not do for example maybe this access mode thing. Maybe they'll do something else. And we're looking for a category that's going to cover what we know we want to do now without making it so that no one could do anything else who more clever people than ourselves might come in later and come up with a better render method sub super class or it's a subclass of render method but it's an intermediate class that covers whatever it is they want to do and as a digital wallet I would want to potentially support both of those, but they're going to behave in different ways.</p>
+<p id=468d class="phone s03"><cite>Ivan_Herman:</cite> Yeah. So we have a reserved class…</p>
+<p id=02ac class="phone s03"><cite>Ivan_Herman:</cite> which is called render method whose definition is pretty much empty. It's the object of a with non- capital render method property that's all that class we have and if we have that then let's fill it with some sensible thing that we feel are common as we have it as we have it and…</p>
+<p id=c7b0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait.</p>
+<p id=ec49 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Say that again just to make sure I heard you right. We have reserve class. Got it.</p>
+<p id=cd6a class="phone s03"><cite>Ivan_Herman:</cite> we have some properties that we think are common to all render method then by all means you we have to define it with that class.</p>
+<p id=846b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Okay. Understood. So, we've got a class. We can put common properties in there. That's good. It's still an open question on whether we want to switch off of type or Ivan Herman:</p>
+<p id=09ee class="phone s03"><cite>Ivan_Herman:</cite> Their open question is whether we create subasses for render method or we rely exclusively on some term within it. I think that's the way you're saying it.</p>
+<p id=e7f9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think there's a third option I think that Dave is bringing up that neither subclass wait is that correct what said Dave does…</p>
+<p id=7693 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what you're proposing fit into those two options? Okay.</p>
+<p id=c55f class="phone s02"><cite>Dave_Longley:</cite> No.</p>
+<p id=5f6a class="phone s02"><cite>Dave_Longley:</cite> So, I'll just quickly say I'm concerned we'll lose our placeholder for future proofing if we start putting the things that we think are common to all render methods on the render method class. we might get that wrong. I'd like to keep that thing as empty as possible and make another thing and then we can decide if that other thing is all we need or if that other thing should be itself an abstract class that we extend</p>
+<p id=e8de class="phone s04"><cite>Benjamin_Young:</cite> So, I think the last time we attempted this, it was something similar of leave the foot in the door for all the future things. and what we ended up doing was coming up with super weird render method renderers and bad class names because we weren't sharing anything in the super class of any kind. So it feels Dave like you're suggesting we have a capital T thing definition that is render method that essentially nobody should ever touch or define anything on and then we have other things downstream.</p>
+<p id=891c class="phone s02"><cite>Dave_Longley:</cite> That's right…</p>
+<p id=720f class="phone s04"><cite>Benjamin_Young:</cite> Right. Right.</p>
+<p id=198a class="phone s02"><cite>Dave_Longley:</cite> because that is the range of the render method property.</p>
+<p id=9d2d class="phone s04"><cite>Benjamin_Young:</cite> But it's already led to weird things like using template render method on non-mplated things. And we're back to Yeah,…</p>
+<p id=5453 class="phone s02"><cite>Dave_Longley:</cite> No, I think those things are decoupled. if we just left render method alone and we invented render method then if you want to use a type system you can make a static render method you can make a templated render method and…</p>
+<p id=6e9a class="phone s02"><cite>Dave_Longley:</cite> those all ex extend from fu but you didn't stomp on remove the possibility for future other things that inherit from the totally empty render method.</p>
+<p id=3c92 class="phone s01"><cite>Dmitri_Zagidulin:</cite> What the hell?</p>
+<p id=529e class="phone s04"><cite>Benjamin_Young:</cite> I think I'd like to see how the modeling shakes out this time because last time it didn't seem like an improvement. but I understand now what you're trying to do with leaving it just a platonic notion of a render method with no actual meaning. But yeah,…</p>
+<p id=de83 class="phone s01"><cite>Dmitri_Zagidulin:</cite> What would you…</p>
+<p id=50b8 class="phone s04"><cite>Benjamin_Young:</cite> I'm curious what all the class names are going to shake out to Go ahead, Demetri.</p>
+<p id=a97e class="phone s01"><cite>Dmitri_Zagidulin:</cite> what would you call to it's not like render method seems generic like this is the capital T thing like Benjamin said parent of all the classes you're proposing something as generic</p>
+<p id=4cd4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But also in between …</p>
+<p id=82a7 class="phone s02"><cite>Dave_Longley:</cite> Here's a terrible name,…</p>
+<p id=10005 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what would you call it?</p>
+<p id=65f1 class="phone s02"><cite>Dave_Longley:</cite> Render method and it has a render suite on it and it has an output preference or an access mode or accessible render method and it has an access mode and then everything extends from that. There's any number of names we could give this thing and those names are going to depend on what we decide are which properties are in common with the three types of renderers this group has just for today in 2026 said this is what we think we need and they're going to have these things in common.</p>
+<p id=10006 class="phone s02"><cite>Dave_Longley:</cite> We don't know if we're going to make a mistake when we do that. And so let's not close the door on all other possible render methods or making or…</p>
+<p id=146d class="phone s02"><cite>Dave_Longley:</cite> or create a weird vocabulary problem where the range of the render method property is no longer just render method. It's other things. So there's some combinatorial list.</p>
+<p id=3109 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Understood.</p>
+<p id=f2fc class="phone s01"><cite>Dmitri_Zagidulin:</cite> So you're proposing something like this for the moment.</p>
+<p id=f0e5 class="phone s02"><cite>Dave_Longley:</cite> I'm just saying let's not mess with the root render method and…</p>
+<p id=87bf class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=5723 class="phone s02"><cite>Dave_Longley:</cite> either we're going to have something like that. We might end up with just What's on line 62 sweet render method and…</p>
+<p id=0ff2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Uh-huh. Dave Longley:</p>
+<p id=6d3d class="phone s02"><cite>Dave_Longley:</cite> it covers everything somehow. Or maybe we do need subtypes and…</p>
+<p id=3d30 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh-huh. Got it.</p>
+<p id=f4fe class="phone s02"><cite>Dave_Longley:</cite> those are what you have listed.</p>
+<p id=27d3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Go ahead. You Yeah.</p>
+<p id=7548 class="phone s03"><cite>Ivan_Herman:</cite> So that's obviously something that we can decide later when we have at least those three properly specified that we are converging to as possibilities. That being said,…</p>
+<p id=1ad6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Back.</p>
+</section>
+
+<section>
+<h3 id=4e94>Future Discussion Topics</h3>
+<p id=fcef class="phone s03"><cite>Ivan_Herman:</cite> I already see the render property appearing everywhere, which for me looks like a property that is relevant to all render methods for obvious cases. So for example, the render property for me would be a candidate to put into the render method as a kind of a generic property because we have it everywhere. For all the others probably we can leave them for the time being.</p>
+<p id=104c class="phone s03"><cite>Ivan_Herman:</cite> But again we can see that when we define all three others in a proper way</p>
+<p id=4fdc class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think right agreed and I think Dave is arguing for let's not put render property into top level render method let's give ourselves future room for mistakes and nest it at least one level. So that's something to discuss. But I agree with you that okay so overall overall shape is clear. We need to decide whether we need subasses or not. we've agreed that we need these three categories. So now I think the work that remains to be done is to figure out what to name these three categories and to figure which fields</p>
+<p id=10007 class="phone s01"><cite>Dmitri_Zagidulin:</cite> go into each one of them and can we extract some fields in common at least one level higher? So, with an eye towards the time, we've got nine minutes left to the top of the hour. What are some good concrete next steps? It sounds like we should So, earlier on, we had two sort of different proposals.</p>
+<p id=9a4c class="phone s01"><cite>Dmitri_Zagidulin:</cite> We had the template render method sort of as is right now and I was proposing that we have static render method but it sounds like the conversation has evolved a little bit since. go ahead. Who was that?</p>
+<p id=10008 class="phone s05"><cite>Kayode_Ezike:</cite> Sorry, that was me. I was going to type it, but I was going to say we should probably create issue so that we can discuss this asynchronously between now and next call. That's the main thing I was just going to propose.</p>
+<p id=bc69 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So let's create shoes. and those issues would be what one is let's see superclass approach do we put fields in common into the top level render method or nest</p>
+<p id=9647 class="phone s01"><cite>Dmitri_Zagidulin:</cite> it one lower as something like sweet render method. So that would be issue two would be and please feel free to interrupt or jump in somebody since time is short. How do we dispatch off of subtype or subtype So we got two options essentially subset is always rendered and we're just dispatching off of weap issue two. What else?</p>
+<p id=b82e class="phone s05"><cite>Kayode_Ezike:</cite> Let me just jump in, I guess. maybe just like a naming issue to solidify all the names for the three different types that we're trying to get to.</p>
+<p id=7ea0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> got a solidify name for the render method categories static list view detail view…</p>
+<p id=8665 class="phone s03"><cite>Ivan_Herman:</cite> Wasn't it data view rather than this view?</p>
+<p id=baec class="phone s01"><cite>Dmitri_Zagidulin:</cite> which are temporary code names for them. All right. Fantastic.</p>
+<p id=d9ac class="phone s01"><cite>Dmitri_Zagidulin:</cite> Baby…</p>
+<p id=db5c class="phone s02"><cite>Dave_Longley:</cite> Yeah, list is a little too specific. It's some kind of view on fields…</p>
+<p id=5b44 class="phone s01"><cite>Dmitri_Zagidulin:</cite> if you data view and…</p>
+<p id=4230 class="phone s02"><cite>Dave_Longley:</cite> because it could be, cards, lists, whatever.</p>
+<p id=8eed class="phone s01"><cite>Dmitri_Zagidulin:</cite> then okay so by that logic what would you call the third category? Got it.</p>
+<p id=fdfc class="phone s03"><cite>Ivan_Herman:</cite> I think we have HTML view…</p>
+<p id=85f9 class="phone s03"><cite>Ivan_Herman:</cite> which sort of covers it at least in my view.</p>
+<p id=8080 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Okay. Understood. Yep.</p>
+<p id=1da1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=0d97 class="phone s05"><cite>Kayode_Ezike:</cite> Or maybe …</p>
+<p id=1764 class="phone s05"><cite>Kayode_Ezike:</cite> if we're using detail maybe we should use item instead of data just to make that parallel too. Anyways, this probably can be discussed in the issue too. So it's not</p>
+<p id=a980 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I mean this is the naming discussion, these are very temporary code names just so that we can open the issue. Okay.</p>
+<p id=b25a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do I have any volunteers to open at least one of these issues?</p>
+<p id=8d89 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, I can take one.</p>
+<p id=5cec class="phone s01"><cite>Dmitri_Zagidulin:</cite> Which one would you like?</p>
+<p id=6d39 class="phone s05"><cite>Kayode_Ezike:</cite> I'll take the last one.</p>
+<p id=25ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Last one. Okay. Dave, do you want to take this middle one? since you seem to have stronger feelings about Okay.</p>
+<p id=eee6 class="phone s02"><cite>Dave_Longley:</cite> Sure.</p>
+<p id=9eea class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dave and super class approach. I can open this one. All Simon the top of the hour. We want to go a little early to give ourselves time to get to the next call. anything else we're missing? I'm really appreciative of the conversation. Looks like we're making decent progress.</p>
+<p id=de37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we can at least nail down the static method fairly soon. it sounds like I think overall we've got decent consensus on the data item the JSON card thing and then we can argue about the HTML view based on the red modeling etc.</p>
+<p id=c3ff class="phone s05"><cite>Kayode_Ezike:</cite> Yeah. Could you just share that link that you were using for the notes?</p>
+<p id=5949 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Last minute questions reminders from the group.</p>
+<p id=6110 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes, absolutely. the thing is I mean I'm reluctant…</p>
+<p id=b80f class="phone s03"><cite>Ivan_Herman:</cite> Yeah, that was a general thing.</p>
+<p id=6570 class="phone s03"><cite>Ivan_Herman:</cite> I mean, I think one other possibility is that you somehow copy the whole thing into the Okay, that's one possibility.</p>
+<p id=71f1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> because these are fairly messy, but I wanted to have this scratch notepad. Ivan Herman:</p>
+<p id=415e class="phone s03"><cite>Ivan_Herman:</cite> Yeah, I understand that. On the other hand,…</p>
+<p id=938e class="phone s03"><cite>Ivan_Herman:</cite> I am certain not responsible, but I am caring about the minutes and…</p>
+<p id=17e4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I appreciate that.</p>
+<p id=1e72 class="phone s03"><cite>Ivan_Herman:</cite> this information and my own experience reading the minutes generated by the tool here on other task forces is not very good. And this is…</p>
+<p id=17c0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I appreciate that. Okay. So,…</p>
+<p id=f928 class="phone s03"><cite>Ivan_Herman:</cite> but okay…</p>
+<p id=3cde class="phone s01"><cite>Dmitri_Zagidulin:</cite> let's start with this. Ivan Herman:</p>
+<p id=d68c class="phone s03"><cite>Ivan_Herman:</cite> if you have the pointer there That should be okay. Bye-bye.</p>
+<p id=c171 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yeah. Okay. Thank you so much everyone. great conversation, good progress. I'll talk to you all in a couple weeks. Cheers. Meeting ended after 00:57:23 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
