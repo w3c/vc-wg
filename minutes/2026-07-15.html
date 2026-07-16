@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials WG Weekly teleconference &ndash; 15 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials WG Weekly teleconference</h1>
+<h2>15 July 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/2026/07/08-vcwg-minutes.html"><img alt="Previous meeting." title="Previous meeting" src="https://www.w3.org/StyleSheets/scribe2/go-previous.png"></a>
+<a href="https://www.w3.org/events/meetings/b1a3e329-74d1-405d-ab47-2934b41c2ab4/20260715T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/07/15-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+<a href="https://www.w3.org/2026/07/22-vcwg-minutes.html"><img alt="Next meeting." title="Next meeting" src="https://www.w3.org/StyleSheets/scribe2/go-next.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>brent, dlongley, Elaine, exe, hsano, JennieM, JoeAndrieu, kezike, michaelshea, mlinck, pdl-ASU, phila, TallTed, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>Brent</dd>
+<dt>Scribe</dt><dd>phila, dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#a793">Task Force Updates</a></li>
+<li><a href="#358b">Process</a></li>
+<li><a href="#0dd9">Render Method</a>
+<ol>
+<li><a href="#1ef7">w3c/<wbr>vc-render-method#39</a></li>
+<li><a href="#97a1">Issue 39</a></li>
+<li><a href="#bd9c">Other PRs</a></li>
+</ol>
+</li>
+<li><a href="#5981">VCDM 2.1</a>
+<ol>
+<li><a href="#b5eb">w3c/<wbr>vc-data-model#1629</a></li>
+<li><a href="#a9a5">w3c/<wbr>vc-data-model#1634</a></li>
+<li><a href="#b934">w3c/<wbr>vc-data-model#1619</a></li>
+<li><a href="#567f">w3c/<wbr>vc-data-model#1592</a></li>
+<li><a href="#bcb1">w3c/<wbr>vc-data-model#1583</a></li>
+<li><a href="#1ed8">w3c/<wbr>vc-data-model#1632</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=d94b class="phone s01"><cite>brent:</cite> Welcomes everyone</p>
+<p id=465b class="phone s01"><cite>brent:</cite> Any introductions?</p>
+<p id=d01d class="phone s02"><cite>mikeLinck:</cite> Says hello. From Google, working on DPP and more</p>
+<p id=bde6 class="phone s01"><cite>brent:</cite> Talks about the reason for the weekly all-group meeting</p>
+<p id=bee0 class="phone s01"><cite>brent:</cite> Goes through agenda<br>
+<span id=e591>… with a focused render method session</span><br>
+<span id=047b>… notes that michaelshea has asked to look at classes of changes cf. the charter</span></p>
+</section>
+
+<section>
+<h3 id=a793>Task Force Updates</h3>
+<p id=0cda class="phone s01"><cite>brent:</cite> Please let us know how things are going in your TF</p>
+<p id=1e21 class="phone s03"><cite>wes-smith:</cite> barcodes and DI TF - now has hte forgery defence work under its umbrella<br>
+<span id=f4ca>… things progressing smoothly for now</span></p>
+<p id=5a81 class=irc><cite>&lt;JoeAndrieu&gt;</cite> Nothing to report from Confidence Method</p>
+<p id=56b5 class="phone s01"><cite>brent:</cite> To all TF leads. We're starting a trend on the all-group call to focus on a specific TF each week</p>
+<p id=8e8c class=irc><cite>&lt;kezike&gt;</cite> +1 JoeAndrieu</p>
+<p id=e368 class="phone s04"><cite>JoeAndrieu:</cite> Please check with the TF leads before scheduling!</p>
+<p id=573b class="phone s01"><cite>brent:</cite> Noted</p>
+<p id=eeec class="phone s01"><cite>brent:</cite> Anyone from other TFs?</p>
+<p id=f51c class="phone s05"><cite>kezike:</cite> We've been speed-running through issues. Some still need to be resolved. But we're making progress</p>
+<p id=4fea class="phone s01"><cite>brent:</cite> If you have major issues, it's entirely appropriate to bring those to the Wednesday meetings</p>
+</section>
+
+<section>
+<h3 id=358b>Process</h3>
+<p id=0efa class=irc><cite>&lt;brent&gt;</cite> <a href="https://www.w3.org/policies/process/#correction-classes">https://<wbr>www.w3.org/<wbr>policies/<wbr>process/#correction-classes</a></p>
+<p id=8cc1 class="phone s01"><cite>brent:</cite> Links to the classes of changes. 4 of the 5 apply to the docs we're working with<br>
+<span id=ffff>… the first is stylesheet/white space changes. No change to text</span><br>
+<span id=9d8a>… class 2 is editorial changes. No effect on the function of the doc. Correcting examples etc.</span><br>
+<span id=e75c>… If there's any doubt that a change is class 2, then it becomes class 3.</span><br>
+<span id=10000>… Class 3 doesn't add a new feature but does make a substantial change.</span><br>
+<span id=3429>… Class 4 is new features. No class 4 changes are in scope for docs we're maintaining.</span><br>
+<span id=ba55>… Our charter lists the ones we're maintaining</span><br>
+<span id=e58d>… in the new work we're doing, anything goes.</span></p>
+<p id=7fae class=irc><cite>&lt;kezike&gt;</cite> Re VCALM update: We have also merged our first version of the threat model since the last call. We will be iterating on it shortly and regularly.</p>
+<p id=6f83 class="phone s01"><cite>brent:</cite> Class 3 changes may be OK in response to bugs or errata, but in general, no, we can't do those in maintenance mode</p>
+<p id=73b3 class="phone s01"><cite>brent:</cite> We're going from a 1.0 to a 1.1</p>
+<p id=30ad class="phone s06"><cite>michaelshea:</cite> Thanks. If any change is required because of task force that is using CID, is that class 3?</p>
+<p id=93ba class="phone s06"><cite>michaelshea:</cite> How does that get classified?</p>
+<p id=1868 class="phone s01"><cite>brent:</cite> That's where things get fuzzy<br>
+<span id=cff8>… We are chartered to maintain. If we're chartered to work on a new item that depends on a doc we're maintaining... the delineation between specs is not that clear cut.</span><br>
+<span id=4902>… We do have a good deal of leeway.</span><br>
+<span id=4bf7>… We'd need to have a full WG agreement to make a spec change to a maintenance doc and we'd have to discuss. We're both chartered and not chartered to do that.</span></p>
+</section>
+
+<section>
+<h3 id=0dd9>Render Method</h3>
+<p id=919d class="phone s01"><cite>brent:</cite> Is there anything render-method specific that would benefit from the WG's attention, great. If not, we'll look at them all</p>
+<p id=10001 class="phone s07"><cite>dmitriz:</cite> Overall - there are 3 current PRs open, they're waiting on decisions.<br>
+<span id=fe99>… We have a bunch of stuff that has consensus and some we're arguing about.</span><br>
+<span id=139e>… We have consensus. Time is limited of course. We have 3 categories of render method. 1) Static -at issue time, the issuer pre-bakes 1 or more rendered version. Can be a pre-rendered PDF, PNG etc.</span><br>
+<span id=5072>… We def need to cover that.</span><br>
+<span id=15d6>… Category 2 is to do with data view/list view/item view.</span></p>
+<p id=3f23 class=irc><cite>&lt;kezike&gt;</cite> Re render method category naming: We now have this issue to track this: <a href="https://github.com/w3c/vc-render-method/issues/55">w3c/<wbr>vc-render-method#55</a></p>
+<p id=b640 class="phone s07"><cite>dmitriz:</cite> That's where the issuer says: if you're displaying these in a list, when it doesn't make sense to display the full list - here are the fields that are importantr for the cred.</p>
+<p id=fcca class="phone s07"><cite>dmitriz:</cite> The current example in the spec of a static render, is the NFC. The 2nd category, it's the JSON Card view<br>
+<span id=4282>… But the principle is the same; select a small set of fields. This one's emphasis, bold etc.</span></p>
+<p id=7d81 class="phone s07"><cite>dmitriz:</cite> The 3rd type - there's some disagreement in the group - that's the HTML view. That's the full-on render method.</p>
+<p id=4ed5 class="phone s07"><cite>dmitriz:</cite> We know that there will be fields in common. Type, subject etc.<br>
+<span id=10002>… then we have specific details to think about.</span></p>
+<p id=6cb2 class="phone s07"><cite>dmitriz:</cite> For the HTML view, a full on JS/HMLT app sandboxed in an iframe. The other contender is a mustache HTML template<br>
+<span id=e856>… The HTML is provided and field values are substituted (with the {{...}} notation)</span></p>
+<p id=3803 class="phone s07"><cite>dmitriz:</cite> This is on contrast to the iframe snadbox which boots up a full HTML/JS app that handles everything<br>
+<span id=98e7>… One of the points of contention is whether JS should be allowed. Sandboxed, but still. The other point is what to do for the print to PDF use case?</span><br>
+<span id=2b76>… The HTML/JS app in an iframe sandbox proposes a mechanism for the app to put together a transformed payload via a iframe POST method to the client so it can be printed.</span></p>
+<p id=32f6 class=irc><cite>&lt;kezike&gt;</cite> Another point of contention is the fidelity (or lack thereof) of the mustache spec.</p>
+<p id=5dcf class="phone s07"><cite>dmitriz:</cite> Approach 2 is the template approach. The consuming client can do some substituting</p>
+<p id=aa76 class=irc><cite>&lt;exe&gt;</cite> To throw an example for what dmitriz is talking about:</p>
+<p id=6a83 class=irc><cite>&lt;exe&gt;</cite> this showing an example of a rendered mustache template for an svg, which is essentially another version to sandbox html: <a href="https://ssi-gs1-verifier.prod-k8s.eecc.de/?input=https%3A%2F%2Fcompany-wallet-dev.prod-k8s.eecc.de%2Fapi%2Fregistry%2Fvc%2F0c2819e7-7ef3-44f7-9cb0-51c4da55433f">https://<wbr>ssi-gs1-verifier.prod-k8s.eecc.de/?input=https%3A%2F%2Fcompany-wallet-dev.prod-k8s.eecc.de%2Fapi%2Fregistry%2Fvc%2F0c2819e7-7ef3-44f7-9cb0-51c4da55433f</a> (demo credential vie). the credential</p>
+<p id=0af4 class=irc><cite>&lt;exe&gt;</cite> <a href="https://company-wallet-dev.prod-k8s.eecc.de/api/registry/vc/license/gs1_key/01/04047111000006">https://<wbr>company-wallet-dev.prod-k8s.eecc.de/<wbr>api/<wbr>registry/<wbr>vc/<wbr>license/<wbr>gs1_key/<wbr>01/<wbr>04047111000006</a> has</p>
+<p id=c69b class=irc><cite>&lt;exe&gt;</cite> {</p>
+<p id=a3c0 class=irc><cite>&lt;exe&gt;</cite>       &quot;template&quot;: {</p>
+<p id=1b2d class=irc><cite>&lt;exe&gt;</cite>         &quot;id&quot;: &quot;<a href="https://gs1.github.io/GS1DigitalLicenses/templates/gs1-sample-key-template.svg">https://<wbr>gs1.github.io/<wbr>GS1DigitalLicenses/<wbr>templates/<wbr>gs1-sample-key-template.svg</a>&quot;,</p>
+<p id=b10a class=irc><cite>&lt;exe&gt;</cite>         &quot;mediaType&quot;: &quot;image/svg+xml&quot;</p>
+<p id=7b86 class=irc><cite>&lt;exe&gt;</cite>       },</p>
+<p id=2147 class=irc><cite>&lt;exe&gt;</cite>       &quot;renderSuite&quot;: &quot;svg-mustache&quot;,</p>
+<p id=c768 class=irc><cite>&lt;exe&gt;</cite>       &quot;name&quot;: &quot;SVG for web display&quot;,</p>
+<p id=c101 class=irc><cite>&lt;exe&gt;</cite>       &quot;type&quot;: &quot;TemplateRenderMethod&quot;</p>
+<p id=7750 class=irc><cite>&lt;exe&gt;</cite>     }</p>
+<p id=ca13 class=irc><cite>&lt;exe&gt;</cite> But if this is according to this groups standard is very much under discussion as far as I can say ;)</p>
+<p id=006f class="phone s07"><cite>dmitriz:</cite> For the static methods, we need an NFC method. Can define a PNG or whatever</p>
+<p id=e6b2 class="phone s07"><cite>dmitriz:</cite> We only need one JSON Card example</p>
+<p id=a355 class="phone s07"><cite>dmitriz:</cite> Main disussion is in the HTML detailed view, which oif the 2 approaches to take. That takes us into the Threat Modelling discussion.<br>
+<span id=2fae>… Other TFs are doing the same. We're hoping that the list of threats will allow us to point to the trade offs</span></p>
+<p id=f89a class="phone s07"><cite>dmitriz:</cite> That's the snapshot</p>
+<p id=1c41 class=summary>Subtopic Issues and PRs</p>
+<h4 id=1ef7><a href="https://github.com/w3c/vc-render-method/pull/39">w3c/<wbr>vc-render-method#39</a></h4>
+<h4 id=97a1>Issue 39</h4>
+<p id=7c58 class="phone s07"><cite>dmitriz:</cite> That's the list view/item view in JSON Card</p>
+<p id=f00e class="phone s07"><cite>dmitriz:</cite> So this is the current PR that is going to collect all of the fields for the list view/JSON Card View<br>
+<span id=fa94>… Comments welcome. This one is less contentious.</span></p>
+<p id=2236 class="phone s07"><cite>dmitriz:</cite> The other two open PRs...</p>
+<p id=6c7d class="phone s01"><cite>brent:</cite> The JSOn Card render method - if I open my wallet, I'll see a card-style presnetation.</p>
+<p id=5d0d class="phone s07"><cite>dmitriz:</cite> Yes, that's what we're trying to emulate, that constrained space</p>
+<p id=df56 class="phone s08"><cite>dlongley:</cite> The key feature is for the issuer to highlight the important fields<br>
+<span id=f82f>… And then the client can style it as they see fit</span></p>
+<p id=ece0 class="phone s07"><cite>dmitriz:</cite> What's the minimum no of things we need to display. That's about it<br>
+<span id=9dea>… That's what most wallet approaches have reinvented</span></p>
+<h4 id=bd9c>Other PRs</h4>
+<p id=7282 class="phone s07"><cite>dmitriz:</cite> The other 2 PRs are waiting on the resolution of the HTML issue<br>
+<span id=3b49>… Hoping to unify</span></p>
+<p id=7dbb class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-render-method/pull/30">w3c/<wbr>vc-render-method#30</a></p>
+<p id=9c08 class="phone s07"><cite>dmitriz:</cite> One PR 49 is waiting on the HTML discussion</p>
+<p id=be23 class="phone s07"><cite>dmitriz:</cite> Those are the main things that it makes sense to look at today.</p>
+<p id=be93 class="phone s01"><cite>brent:</cite> For those on the call who don't normally join the RM TF. If that sounds interesting, please feel free to join the TF. All are welcome to look at the issues and PRs of course.</p>
+<p id=ff0c class=irc><cite>&lt;dmitriz&gt;</cite> <a href="https://docs.google.com/document/d/1mQg0pdPMfytkAIgsaApODbaKO--PJvr_E4ZM2HoQPzk/">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1mQg0pdPMfytkAIgsaApODbaKO--PJvr_E4ZM2HoQPzk/</a></p>
+<p id=49fa class=irc><cite>&lt;dmitriz&gt;</cite> ^ threat model brainstorm</p>
+<p id=c1f2 class="phone s07"><cite>dmitriz:</cite> I want to post a link to our threat model brrainstorm - we need more eyes on that</p>
+<p id=82d9 class="phone s01"><cite>brent:</cite> Any more comments on this topic?</p>
+</section>
+
+<section>
+<h3 id=5981>VCDM 2.1</h3>
+<p id=04a3 class="phone s01"><cite>brent:</cite> This is the maintenance of our core data model<br>
+<span id=1bc0>… the first thing to look at, is PR 1629</span></p>
+<h4 id=b5eb><a href="https://github.com/w3c/vc-data-model/pull/1629">w3c/<wbr>vc-data-model#1629</a></h4>
+<p id=5394 class="phone s01"><cite>brent:</cite> This deprecates DigestSRI as an option. Several approvals but some objection bc there is an implementation that uses it.<br>
+<span id=4bdc>… If you have not engaged on this and have a view, please do so.</span></p>
+<p id=59d2 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></p>
+<p id=ada7 class="phone s01"><cite>Brent:</cite> In terms of spec maintenance, this is probably the major issue</p>
+<p id=b0a2 class="phone s01"><cite>brent:</cite> I believe neither Manu or Shigeya are on the call. They're the prime people for and against</p>
+<h4 id=a9a5><a href="https://github.com/w3c/vc-data-model/issues/1634">w3c/<wbr>vc-data-model#1634</a></h4>
+<p id=9557 class="phone s01"><cite>brent:</cite> This one we're looking at because it's un-triaged. Terminology<br>
+<span id=56f1>… Two processing modes are mentioned. We're not proposing a re-opening of that conversation. This is asking rather than framing in terms of JSON vs JSON-LD should we use different terminology</span></p>
+<p id=5683 class="phone s01"><cite>brent:</cite> IMo this could be addressed as a editorial change. What do others think?</p>
+<p id=2816 class=irc><cite>&lt;dlongley&gt;</cite> +1 sounds editorial</p>
+<p id=04da class="phone s01"><cite>brent:</cite> If no objection, I'll add a class 2 label</p>
+<p id=921e class="phone s01"><cite>brent:</cite> If there's anything folks want to say, please jump on the queue</p>
+<p id=7485 class="phone s01"><cite>brent:</cite> Should we rename? Makes sense to me</p>
+<p id=a374 class="phone s08"><cite>dlongley:</cite> I think the spec currently calls it general vs type-specific. We no longer call it JSON vs JSON-LD. SO is there a better name than the spec currently has? I do think it's editorial</p>
+<p id=84b2 class="phone s09"><cite>phila:</cite> You and I talked about this. We are looking for an editor for the VCDM spec.</p>
+<p id=069b class="phone s09"><cite>phila:</cite> We are looking at who has been and has been active and we could use another name. We could use another name for political reasons so we have another person working for another company on that spec. We need you, thanks!</p>
+<p id=62c5 class="phone s01"><cite>brent:</cite> TO be clear, there is an ask for additional editorial support for VCDM 2.1<br>
+<span id=f95b>… You can do it by telling the chairs, or you can just start writing PRs</span></p>
+<p id=2260 class=irc><cite>&lt;dmitriz&gt;</cite> I'd volunteer, but I'm Invited Expert, and I suspect a member company person is needed for editor</p>
+<h4 id=b934><a href="https://github.com/w3c/vc-data-model/issues/1619">w3c/<wbr>vc-data-model#1619</a></h4>
+<p id=a583 class="phone s01"><cite>brent:</cite> In that case we'll look through the other open issues for maintenance</p>
+<p id=0914 class=irc><cite>&lt;dmitriz&gt;</cite> ok sweeet</p>
+<p id=72a1 class="phone s09"><cite>phila:</cite> Yay!</p>
+<p id=2663 class="phone s01"><cite>brent:</cite> Reads the issue aloud</p>
+<p id=d5af class="phone s01"><cite>brent:</cite> raised in Feb. It's ready for PR - maybe someone else wants to raise the PR<br>
+<span id=1f48>… Any concerns/comments?</span></p>
+<p id=6a10 class="phone s10"><cite>TallTed:</cite> I would suggest we re-ping the originator of the issue<br>
+<span id=58f8>… They may not feel the need to say &quot;I'm working on it&quot;</span><br>
+<span id=9358>… But if they don't, then OK, we need to find an alternative</span></p>
+<p id=bbc7 class="phone s01"><cite>brent:</cite> OK, I'll ping them</p>
+<h4 id=567f><a href="https://github.com/w3c/vc-data-model/issues/1592">w3c/<wbr>vc-data-model#1592</a></h4>
+<p id=1634 class="phone s01"><cite>brent:</cite> helpful comments in the intro.<br>
+<span id=0e2b>… Some recommended changes to reduce confusion. Class 2 editorial changes. We have talked about this a few times. This is an ideal issue for a new editor to jump into</span></p>
+<p id=c288 class="phone s01"><cite>brent:</cite> Dmitri?</p>
+<p id=210f class=irc><cite>&lt;dmitriz&gt;</cite> yesss go ahead</p>
+<p id=c3f0 class=summary>brent; Awesome, thank you.</p>
+<h4 id=bcb1><a href="https://github.com/w3c/vc-data-model/issues/1583">w3c/<wbr>vc-data-model#1583</a></h4>
+<p id=d8bf class="phone s01"><cite>brent:</cite> As en editor, you get to suggest the editorial direction that hte group can then review</p>
+<p id=a7fd class="phone s01"><cite>brent:</cite> This is about restructuring our security section. I think this is under way in our threat modelling<br>
+<span id=9370>… Once that's done for the other TFs, this looks like something that can follow on</span></p>
+<p id=ac1f class="phone s01"><cite>brent:</cite> Does anyone know how that's going?</p>
+<p id=88f7 class="phone s04"><cite>JoeAndrieu:</cite> I don't think anyone's assigned to this. Individual TFs know they have to do it in their work but no one has it assigned to them for the VCDM</p>
+<p id=bfbb class="phone s01"><cite>brent:</cite> Is there anyone who wojuld be willing to be assigned to this issue? The task now is &quot;keep an eye on the the modelling in the TFs&quot;</p>
+<p id=eea7 class="phone s04"><cite>JoeAndrieu:</cite> I'm happy to do that<br>
+<span id=c8d8>… It depends when we need to start but I can keep an eye on what's happening and when it's time, ask me again and we'll see hwo things are</span></p>
+<h4 id=1ed8><a href="https://github.com/w3c/vc-data-model/issues/1632">w3c/<wbr>vc-data-model#1632</a></h4>
+<p id=82da class=summary>brent; Remove render and confidence models from the VCDM as they're being developed in separate doc. It's class 4 but we can do it within the charter as it comes from the new work we're chartered to fo.</p>
+<p id=756b class="phone s01"><cite>brent:</cite> Right now the spec talks quite a bit about these extension points.</p>
+<p id=9051 class=irc><cite>&lt;dlongley&gt;</cite> +1 to Joe's suggestion</p>
+<p id=fa7f class=irc><cite>&lt;dmitriz&gt;</cite> +1 to what Joe is saying -- we should definitely still point to that the properties exist</p>
+<p id=038d class="phone s04"><cite>JoeAndrieu:</cite> My though is that we should still clarify that the properties exist but we shouldn't define them in the VCDM and just point to the other docs for those defs</p>
+<p id=7760 class="phone s09"><cite>phila:</cite> +1 to Joe</p>
+<p id=894b class="phone s01"><cite>brent:</cite> Hopefully this gives Ivan the guidance he needs to raise a PR</p>
+<p id=839a class="phone s01"><cite>brent:</cite> We have talked about all the open issues that are within scope</p>
+<p id=dea3 class="phone s01"><cite>brent:</cite> That means we're done for this week.<br>
+<span id=db5f>… Any other topics?</span></p>
+<p id=f2ea class="phone s01"><cite>brent:</cite> thanks scribe and dmitriz</p>
+<p id=7c95 class="phone s01"><cite>brent:</cite> See you next week</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
