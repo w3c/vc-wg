@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 16 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>16 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Denken_Chen, Elaine_Wooton, Joe_Andrieu, Manu_Sporny, Phillip_Long, Scott_Jones</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4345">Introduction and Initial Discussion</a></li>
+<li><a href="#2f50">Recap of Previous Actions and Updates</a></li>
+<li><a href="#7f69">CLR Labs Collaboration and ZKP Task Force</a></li>
+<li><a href="#1b61">Use Case Discussion and Placement</a></li>
+<li><a href="#799d">Restructuring the Document Sections</a></li>
+<li><a href="#4fa7">Horizontal Review Preparations</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=4345>Introduction and Initial Discussion</h3>
+<p id=d84e class="phone s01"><cite>Denken_Chen:</cite> I think Joe will be chairing for this call. Let me pin him. let's wait for a few minutes.</p>
+<p id=7038 class="phone s01"><cite>Denken_Chen:</cite> Hey So think let's get started. probably we start with SC PVR.</p>
+<p id=c161 class="phone s02"><cite>Joe_Andrieu:</cite> Sounds good.</p>
+<p id=879c class="phone s03"><cite>Scott_Jones:</cite> Hi. Hear me?</p>
+<p id=0b6b class="phone s02"><cite>Joe_Andrieu:</cite> Yes. It's the bestselling shirt.</p>
+<p id=e19f class="phone s03"><cite>Scott_Jones:</cite> Man, I used to have that shirt. That's Communist Party. Yeah. Wow. Joe Andrieu:</p>
+<p id=2edf class="phone s02"><cite>Joe_Andrieu:</cite> That's right.</p>
+<p id=9004 class="phone s03"><cite>Scott_Jones:</cite> That's from 20 years ago.</p>
+<p id=0cf9 class="phone s02"><cite>Joe_Andrieu:</cite> Those guys had a great little business model.</p>
+<p id=ab21 class="phone s03"><cite>Scott_Jones:</cite> What was it called again? Yes.</p>
+<p id=67cb class="phone s02"><cite>Joe_Andrieu:</cite> Threadless. Yeah,…</p>
+<p id=f9b6 class=irc><cite>&lt;Denken_Chen&gt;</cite> Joe is coming in a few minutes </p>
+<p id=26c8 class="phone s03"><cite>Scott_Jones:</cite> That's awesome.</p>
+<p id=97ac class="phone s02"><cite>Joe_Andrieu:</cite> I have quite a few threadless shirts. They're all a little worn and torn by now.</p>
+<p id=f7c2 class="phone s03"><cite>Scott_Jones:</cite> Yeah, I remember I wore that to work and I really offended my boss. how many people have died under that flag, my god.</p>
+<p id=a1fc class="phone s02"><cite>Joe_Andrieu:</cite> I wore it to vote once and the person who checked me in was like, &quot;Are you a member of the Communist Party?&quot; And I'm like I paused because I'm like are you allowed to ask me that depends on the party.</p>
+<p id=18bd class="phone s03"><cite>Scott_Jones:</cite> Yeah. if it's a party like this. Yes, I am.</p>
+<p id=fd15 class="phone s02"><cite>Joe_Andrieu:</cite> That's right.</p>
+</section>
+
+<section>
+<h3 id=2f50>Recap of Previous Actions and Updates</h3>
+<p id=dcc0 class="phone s03"><cite>Scott_Jones:</cite> Cool. Do you want me to recap I've kind of always started this by recapping what we're intending to do. I figure could You want me to recap that and then the actions taken?</p>
+<p id=50f8 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, I think that'd be great.</p>
+<p id=df86 class="phone s03"><cite>Scott_Jones:</cite> Cool. So, section 5.3 is attempting to add a biometric vector confidence method to an issuer compact biometric vectors into a credential, not raw data.</p>
+<p id=2855 class="phone s03"><cite>Scott_Jones:</cite> And when a verifier needs higher confidence that the presenter is a legitimate holder, a fresh biometric sample is compared against those enrolled vectors. The result is a signed verification credential with a non-binary confidence score. and then two scenarios, a client side local verification where nothing leaves the device and then a user selected provider where the holder picks a trusted biometric service. our last call two weeks ago I took actions on what we discussed last week I believe by the end of the week. so that was submitted as number 42.</p>
+<p id=7c93 class="phone s03"><cite>Scott_Jones:</cite> And the changes include renamed field names in JSON examples to match updated definitions that was biometric modality and specific names with generic examples as Manu provided guidance that there should be no vendor names in global standards. use case subsection with four paragraphs. So, age verification at a point of sale, account recovery, mobile credential presenter restrictions, and remote onboard added a sentence clarifying that issuers may include multiple vectors from different providers. challenge nons confirmed in verification output examples.</p>
+<p id=d7ee class="phone s02"><cite>Joe_Andrieu:</cite> Excellent.</p>
+<p id=057b class="phone s03"><cite>Scott_Jones:</cite> And then, tall had a bunch of editorial suggestions a couple days ago, so I batched and committed those.</p>
+</section>
+
+<section>
+<h3 id=7f69>CLR Labs Collaboration and ZKP Task Force</h3>
+<p id=7d03 class="phone s03"><cite>Scott_Jones:</cite> And then in the Manu's threat model brainstorming doc, I added three threats to that. device compromise for client side verification, vector inversion risk, and biometric provider data misuse. and then one thing I just wanted to note, Manu mentioned Clar Labs, I believe is how it's pronounced in France, who have ZKP knowledge. I just kicked off the ZKP pseudonyms task force on Friday under the LFDT trust over sort of banner. lots of async conversation so far. this is my first time sharing such a thing but people watching it are excited. So it seems to be going in an exciting direction but all to say if they want to get involved now's the time and we're looking to have our first live call next Thursday or Friday.</p>
+<p id=49e5 class="phone s03"><cite>Scott_Jones:</cite> I can provide a link to a Discord channel if you want to hook them up or how else you might think they could get folded in if they're interested.</p>
+<p id=61a9 class="phone s02"><cite>Joe_Andrieu:</cite> That is a great question.</p>
+<p id=f708 class="phone s02"><cite>Joe_Andrieu:</cite> Elaine, do you have any suggestions on the best next step? Go ahead, Ma.</p>
+<p id=025a class="phone s04"><cite>Elaine_Wooton:</cite> I'm here. Go ahead, a. my thoughts are not gathered though,…</p>
+<p id=cf55 class="phone s05"><cite>Manu_Sporny:</cite> So we were, go ahead, Elaine, because we both talked with them.</p>
+<p id=9c6f class="phone s03"><cite>Scott_Jones:</cite> That's what happens.</p>
+<p id=1e47 class="phone s04"><cite>Elaine_Wooton:</cite> why don't you talk and…</p>
+<p id=11b0 class="phone s05"><cite>Manu_Sporny:</cite> Okay. Sure.</p>
+<p id=2b21 class="phone s04"><cite>Elaine_Wooton:</cite> then I'll talk.</p>
+<p id=845b class="phone s05"><cite>Manu_Sporny:</cite> Thank you. so we had a great, conversation with the, CLR labs folks. …</p>
+<p id=5d98 class="phone s05"><cite>Manu_Sporny:</cite> and I think total buyin to collaborate and work together to figure out how some of this stuff could work. Their focus is on kind of I mean they're coming at it more from the research perspective like education or not like university research perspective, right? So, a lot of their kind of time horizons are like, &quot;Yeah, we would love to do some R&amp;D on this, and we think we'll get the first version of that R&amp;D out by, Q4 of this year, but it's going to take years for us to settle on something,…</p>
+<p id=e1af class="phone s03"><cite>Scott_Jones:</cite> That's awesome.</p>
+<p id=34fb class="phone s03"><cite>Scott_Jones:</cite> That's</p>
+<p id=e3b2 class="phone s05"><cite>Manu_Sporny:</cite> right? which is fine, right?</p>
+<p id=832d class="phone s05"><cite>Manu_Sporny:</cite> because we do need to be able to get through this standardization process, we need to be able to at least demonstrate how this can work in a fully open, model so I they're very excited to work on this us. so I think what we might do is kind of send them your way, with some light kind of cross collaboration on RSpec. the only thing I think we need to look out for is I don't know what IP regime or policy LFDT and Toy operate under.</p>
+<p id=25cd class="phone s05"><cite>Manu_Sporny:</cite> Unfortunately, unless they've already got it figured out, we're going to have to get lawyers together to figure out how do we make sure that this thing doesn't become patent or IP encumbered with, Linux Foundation claiming copyright over it and not allowing W3C to work on it. that could create some challenges. So, just a heads up to you, Scott, to keep an eye out on specifically how we navigate that. we can, happy to put you in touch with the lawyers, but the second the lawyers get involved, it turns into a multi-monthlong exercise. so you might try to see if you can shortcut that by seeing if they already have some kind of collaborative agreement with W3C.</p>
+<p id=d978 class="phone s03"><cite>Scott_Jones:</cite> Let's see.</p>
+<p id=c950 class="phone s05"><cite>Manu_Sporny:</cite> because we will ultimately need to pull whatever the CLR people are working on in I mentioned that early on…</p>
+<p id=3bad class="phone s05"><cite>Manu_Sporny:</cite> though we can include them as a invited expert in this group and as long as they release their stuff as open source that we should be fine meaning that's just because they're university and research that should be fine. so I think that is potentially that box ticked meaning that we can defend the specification like hey this is not some proprietary vendor grab there's an open version of it.</p>
+<p id=fc72 class="phone s05"><cite>Manu_Sporny:</cite> If anybody wants to do better go right ahead. We work with both open models and…</p>
+<p id=3c07 class="phone s03"><cite>Scott_Jones:</cite> Okay.</p>
+<p id=7f2a class="phone s05"><cite>Manu_Sporny:</cite> proprietary.</p>
+<p id=3777 class="phone s05"><cite>Manu_Sporny:</cite> models, the technology is agnostic to that. So, I think that's really good news all around. and as a next step, Elaine, I think we need to and maybe Joe and Denin, we need to get them into the invited expert process. one challenge the mention that they would have is that their French organization they will not engage with a US-based organization. Scott Jones:</p>
+<p id=fa31 class="phone s03"><cite>Scott_Jones:</cite> I love it. Okay.</p>
+<p id=9ba5 class="phone s05"><cite>Manu_Sporny:</cite> But luckily W3C in France Enria exists and they would probably deal directly with the European version of W3C so they don't have to be associated with there's a challenge there but I think it's easily surmountable.</p>
+<p id=cec3 class="phone s05"><cite>Manu_Sporny:</cite> I think that's largely We just need to get them invited expert status and get them integrated in the group. And then Scott, we should do some introductions with you and then we would probably need to very clearly articulate to them like we need X, Y, and Z in this order. And if you could deliver it in that order, that would be great. for example, we need a matching model that does the facial vector as one of them. That's one component. The other component is we need a ZKP approach that operates on that facial vector matching model that you have. That's the second thing that we need from you. and each time you do that we need some kind of bundled open source thing that we can actually run and show people works.</p>
+<p id=489a class="phone s05"><cite>Manu_Sporny:</cite> Sorry that was a lot but I think that's largely it from the outcome of that discussion.</p>
+<p id=a9a3 class="phone s04"><cite>Elaine_Wooton:</cite> Yeah. Yeah.</p>
+<p id=9d18 class="phone s04"><cite>Elaine_Wooton:</cite> And I'll just add real quick. So the notion in the conversation was that as they work on their project, it's going to be open on GitHub and that. So, I think that makes it pretty simple that Mono said, the complication is whether they can participate on these calls with W3C. and I just got completely stuck. But I didn't realize there was this French version. So hopefully that'll work out and we can leverage this work that they're doing …</p>
+<p id=33ba class="phone s04"><cite>Elaine_Wooton:</cite> because I think it sounds great.</p>
+<p id=8fc8 class="phone s02"><cite>Joe_Andrieu:</cite> Interesting. …</p>
+<p id=acd9 class="phone s02"><cite>Joe_Andrieu:</cite> have Mano, I have a question for you about if the source code is in a repo, that doesn't necessarily mean that we can use it in a standard. I don't know if you've tried to answer that question before with lawyers, I'm not a lawyer, but that's a question that seems to be relevant to us. Go ahead.</p>
+<p id=7315 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Yes, you're right. it needs to be under specific licenses. for example, there are licenses that are viewed as compatible with the W3C documentation and…</p>
+<p id=e1f5 class="phone s03"><cite>Scott_Jones:</cite> Excuse me.</p>
+<p id=25be class="phone s05"><cite>Manu_Sporny:</cite> and code license. So if you use BSD3 clause, you're fine because it doesn't create any restrictions on W3C using it. But if you were to use something like a Pharaoh GPL, I think that would violate it potentially. so we need to take a look at, what license they're going to use and just ask them to please use a license that's compatible with W3C and Linux Foundation, whatever. yes, also what Benjamin said, MIT, Apache 2,…</p>
+<p id=1ea2 class="phone s05"><cite>Manu_Sporny:</cite> those work just as well.</p>
+<p id=715f class="phone s02"><cite>Joe_Andrieu:</cite> Do you Yeah,…</p>
+<p id=ccf9 class=irc><cite>&lt;Benjamin_Young&gt;</cite> Also MIT, Apache-2.0. Essentially &quot;liberally licensed&quot; OSS </p>
+<p id=ffff class="phone s02"><cite>Joe_Andrieu:</cite> I have my doubts, but I think that's at least the right start. so there's still some hope of getting them to join in some way. It's just because of the American roots of the W3C, that's a little bit of a ruffle. but I understand they're going to go and commit to GitHub presumably with some sort of open source license and hopefully we can influence them to pick a license that's compatible with the wrinkle I'm worried about, Manu, it's not clear on those licenses if it means in with the use of this software. I can you extract the license to essential claims and not using the software.</p>
+<p id=3aae class="phone s02"><cite>Joe_Andrieu:</cite> And that's where I'm like, I guess now lawyers need to chime in. Go ahead, Benjamin.</p>
+<p id=a475 class="phone s06"><cite>Benjamin_Young:</cite> Yeah, I'd probably need to see the repo,…</p>
+<p id=383e class="phone s03"><cite>Scott_Jones:</cite> Ready?</p>
+<p id=d937 class="phone s06"><cite>Benjamin_Young:</cite> but if you put up a collective work under a license like the BSD3 or Apache or even the GPL or any of those, the aggregate is licensed. But if there are no direct claims on any of the files that differ, then the contents of those files tend to be deemed licensed in kind with the aggregate. those who do thorough homework put the same license claim on every single file so it's clear.</p>
+<p id=a2f3 class="phone s06"><cite>Benjamin_Young:</cite> But in litigated open source cases, if somebody's put up a bunch of content into a collection,…</p>
+<p id=f8a8 class="phone s03"><cite>Scott_Jones:</cite> It's This time</p>
+<p id=4b35 class="phone s06"><cite>Benjamin_Young:</cite> if it's a zip file or a repo and there's a license file that says, this is all BSD3 clause, then somebody else could pick one file or even one chunk of a file and…</p>
+<p id=fcb7 class="phone s02"><cite>Joe_Andrieu:</cite> interesting light.</p>
+<p id=c467 class="phone s06"><cite>Benjamin_Young:</cite> extract that and claim that they got it from this source that said it was part of an aggregated openly licensed thing.</p>
+<p id=a35a class="phone s06"><cite>Benjamin_Young:</cite> As long as somebody can prove the provenence later, Then you're fine.</p>
+<p id=536b class="phone s04"><cite>Elaine_Wooton:</cite> Yeah, just to be clear the intention in this they offered to do this.</p>
+<p id=aa3c class="phone s04"><cite>Elaine_Wooton:</cite> They want to have the small face vector that'll fit in a barcode open source. They want that to happen. So whatever hoops need to get jumped through or licenses or no licenses or whatever I think we can figure it out but their intention is for it to be open source and to be used by W3C.</p>
+<p id=d74b class="phone s04"><cite>Elaine_Wooton:</cite> So, we just had to figure out how to get that to work.</p>
+<p id=05fe class="phone s02"><cite>Joe_Andrieu:</cite> Okay, that sounds good. I think my biggest concern that still is on the niggling edge, but I'll follow your confidence, Elaine, that their intention is honest and we can get there. It's around the patents. because licensing the use of a given file doesn't mean that the claims in the patent are licensed outside of that use.</p>
+<p id=5b9c class="phone s03"><cite>Scott_Jones:</cite> Yeah. Joe Andrieu:</p>
+<p id=840e class=irc><cite>&lt;Benjamin_Young&gt;</cite> It will need some sort of license for anyone to use it--because default is &quot;unlicensed&quot; </p>
+<p id=4866 class="phone s02"><cite>Joe_Andrieu:</cite> And that's the concern. but we can figure it out.</p>
+<p id=172e class="phone s06"><cite>Benjamin_Young:</cite> Yeah, if…</p>
+<p id=7d49 class="phone s06"><cite>Benjamin_Young:</cite> if there are known patents around it, then encouraging them towards a pat an Apache 2 license choice might help there because that has essentially patent kill switches that say by open sourcing this we're not going to litigate this code even if we own the patent to it that we've let that happen. there's also kind of a standing belief with some lawyers that the BST3 clause implies that and apparently it's been litigated next to patents and has survived in that BSD3 clause code was released and…</p>
+<p id=f2a9 class="phone s06"><cite>Benjamin_Young:</cite> patent claims made against it and it was litigated in favor of the open-source BSD3 clause project.</p>
+<p id=f8ff class="phone s03"><cite>Scott_Jones:</cite> I'm sorry.</p>
+<p id=bf26 class="phone s06"><cite>Benjamin_Young:</cite> That by doing both of those things, the company that open sourced their own patented code had basically done what the Apache more concretely says. but the Apache 2 license is the most on the nose about patents.</p>
+<p id=9349 class="phone s06"><cite>Benjamin_Young:</cite> And I'm happy to discuss this anytime.</p>
+<p id=36d2 class="phone s03"><cite>Scott_Jones:</cite> Yeah. Continue.</p>
+<p id=1479 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, I kind of want to keep talking about it,…</p>
+<p id=ca69 class="phone s02"><cite>Joe_Andrieu:</cite> but we need a sandbox system to move on. I got to go look at that Apache Benjamin. my concern remains, but it may just be because to my mind that the copyright related licensing is around the use of that copyright. and so standards like ours, if we enshrine an algorithm that's patented and someone goes and implements it completely independent of this codebase, copyright wouldn't be in play, but the patent still so the case you cited may be absolutely right on and that maybe that's if they do XYZ</p>
+<p id=3a3c class="phone s02"><cite>Joe_Andrieu:</cite> and some courts at least have interpreted that as wider licensing. but that's where my fear factor is. Cool. Go ahead, Ben. Benjamin</p>
+<p id=beee class="phone s06"><cite>Benjamin_Young:</cite> Yeah, that's where the express tent grant of patent license in the Apache license is helpful… Scott Jones:</p>
+<p id=ce96 class="phone s06"><cite>Benjamin_Young:</cite> because the Apache 2.0 license covers more than just copyright. it also has this section about patent license. which is worth a read. It's like one paragraph. it's not going to kill anybody. you've said yes to more terms of services today than is in this one paragraph. So, it's pretty armchair lawyering that anybody can do.</p>
+<p id=19aa class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, I have to say, Benjamin, reading it, I think my concern is still there because it's about the work or contribution incorporated within the work.</p>
+<p id=5efc class="phone s06"><cite>Benjamin_Young:</cite> Yeah, we should tease this out offline probably and…</p>
+<p id=0b9b class="phone s02"><cite>Joe_Andrieu:</cite> So, yeah,…</p>
+<p id=9db0 class="phone s06"><cite>Benjamin_Young:</cite> and come back to the group…</p>
+<p id=105a class="phone s02"><cite>Joe_Andrieu:</cite> it's an interesting question.</p>
+<p id=9f0e class=irc><cite>&lt;Benjamin_Young&gt;</cite> <a href="https://apache.org/licenses/LICENSE-2.0#patent">https://<wbr>apache.org/<wbr>licenses/<wbr>LICENSE-2.0#patent</a> </p>
+<p id=e0ee class="phone s06"><cite>Benjamin_Young:</cite> because Yeah,…</p>
+<p id=413d class="phone s02"><cite>Joe_Andrieu:</cite> In fact, I don't know, Manu, who in the W3C might we have a friendly conversation about this with?</p>
+<p id=9d9c class="phone s02"><cite>Joe_Andrieu:</cite> My thoughts are maybe historically Wendy, but I don't know…</p>
+<p id=a7ff class="phone s05"><cite>Manu_Sporny:</cite> Rio. No.</p>
+<p id=22f8 class="phone s05"><cite>Manu_Sporny:</cite> Rio winning.</p>
+<p id=02b3 class="phone s02"><cite>Joe_Andrieu:</cite> if she knows Rio.</p>
+<p id=42b5 class="phone s05"><cite>Manu_Sporny:</cite> But I don't think you're going to be happy with the out.</p>
+<p id=c460 class="phone s06"><cite>Benjamin_Young:</cite> you're not going to get a super fast concrete answer Rio and Christine, but I'll also add that Ian Jacobs and I are working on an open source software creation policy at the W3C so that the W3C can actually house code as well. I mean it has code but more formally say this is a member created with an aggregate copyright by the W3C incorporated entity.</p>
+<p id=db7a class="phone s03"><cite>Scott_Jones:</cite> Thank you.</p>
+<p id=fee3 class="phone s06"><cite>Benjamin_Young:</cite> So we're discussing all of this stuff right now and there's probably a way to weave this specific story into that conversation. because patents have come up as how do we deal with these because patents frankly are why we have the W3C.</p>
+<p id=d6d7 class="phone s02"><cite>Joe_Andrieu:</cite> That's right.</p>
+<p id=118b class="phone s06"><cite>Benjamin_Young:</cite> Otherwise we'd be ITF, but W3C forked up the IETF to defend against patents. so we're at now this code moment for the W3C and…</p>
+<p id=9538 class="phone s03"><cite>Scott_Jones:</cite> Stand up.</p>
+<p id=dcaf class="phone s02"><cite>Joe_Andrieu:</cite> Cool. Yeah,…</p>
+<p id=4423 class="phone s06"><cite>Benjamin_Young:</cite> defending against lurking patent trolls is part of what I want to make sure is covered. So if it doesn't feel covered, I'd love to bring you into those conversations so that we can address it.</p>
+<p id=da49 class="phone s02"><cite>Joe_Andrieu:</cite> that sounds like an interesting conversation. Call me a legal nerd, but yeah, let's talk some more,…</p>
+<p id=3ad5 class="phone s06"><cite>Benjamin_Young:</cite> I'm clearly right there with you.</p>
+<p id=1d2d class="phone s02"><cite>Joe_Andrieu:</cite> Benmin. Yeah,…</p>
+<p id=cf45 class="phone s06"><cite>Benjamin_Young:</cite> You buy the Guinness and I'll talk to you all day.</p>
+<p id=3a9b class="phone s02"><cite>Joe_Andrieu:</cite> we will have that conversation. That's right.</p>
+<p id=c013 class="phone s06"><cite>Benjamin_Young:</cite> right out of the fountain and don't bother</p>
+<p id=bbc5 class="phone s02"><cite>Joe_Andrieu:</cite> Okay. thank you for the walk down…</p>
+<p id=c627 class="phone s04"><cite>Elaine_Wooton:</cite> CLR CLR CR CLR</p>
+<p id=a9c8 class="phone s02"><cite>Joe_Andrieu:</cite> how we might engage these folks at is it…</p>
+<p id=594b class="phone s03"><cite>Scott_Jones:</cite> Let's go.</p>
+<p id=f751 class="phone s02"><cite>Joe_Andrieu:</cite> is it CL A R. How do we refer to their R. All right. thanks for that conversation. I thought that was very useful. who's going to talk to them next?</p>
+<p id=827d class="phone s05"><cite>Manu_Sporny:</cite> It is.</p>
+<p id=a44d class="phone s02"><cite>Joe_Andrieu:</cite> It's cool.</p>
+<p id=56e6 class="phone s05"><cite>Manu_Sporny:</cite> How about this? I'll send an email out or Elaine if you don't actually Elaine or I will send an email out with Denin, Joe, and Scott CCD to the chairs of the verifiable credential working group kicking off the process to pull them in as an invited expert.</p>
+<p id=2623 class="phone s03"><cite>Scott_Jones:</cite> Excellent.</p>
+<p id=6307 class="phone s05"><cite>Manu_Sporny:</cite> That's the very next task and then we'll see where the conversation goes after that and then Scott feel free to engage with them independently and…</p>
+<p id=9975 class="phone s05"><cite>Manu_Sporny:</cite> pull them into your work and we can just kind of do some of this in parallel.</p>
+<p id=9c04 class="phone s02"><cite>Joe_Andrieu:</cite> Okay, that's great.</p>
+<p id=63d8 class="phone s02"><cite>Joe_Andrieu:</cite> All right, let's return I think checking in with you, in. Back to the PR. So, where did my PR Go ahead. Dang it.</p>
+</section>
+
+<section>
+<h3 id=1b61>Use Case Discussion and Placement</h3>
+<p id=66a9 class="phone s01"><cite>Denken_Chen:</cite> It's so very interesting about the discuss one question about the use case.</p>
+<p id=0ac7 class="phone s03"><cite>Scott_Jones:</cite> You kiss me.</p>
+<p id=548a class="phone s01"><cite>Denken_Chen:</cite> So use case is important for us to kick off the deals for biometric vectors in real world. And before talking about the details, I want to mention that we have another draft called the verifiable credentials use cases and in VCTM spec we refer to that draft for use cases.</p>
+<p id=e837 class="phone s03"><cite>Scott_Jones:</cite> Thank you.</p>
+<p id=fe26 class="phone s01"><cite>Denken_Chen:</cite> So I wonder whether that will be a better place to put together in all of the use cases and…</p>
+<p id=84c9 class="phone s01"><cite>Denken_Chen:</cite> so we can point out to them. yeah I just paste the link about the C use cases. Yeah. Yeah. This job.</p>
+<p id=10000 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, my take from the chat in Brussels on this was rather than trying to have all the task forces get full use cases integrated into the use case documents would be to have them add it to their own work and in the use cases document we refer to the different use cases because I think the barcode guys have use cases and the render method guys should have use cases I don't know if they do I haven't been following that…</p>
+<p id=4e81 class=irc><cite>&lt;Denken_Chen&gt;</cite> <a href="https://www.w3.org/TR/vc-use-cases/">Verifiable Credentials Use Cases</a> </p>
+<p id=5a76 class="phone s03"><cite>Scott_Jones:</cite> What is this? specific.</p>
+<p id=10001 class="phone s02"><cite>Joe_Andrieu:</cite> but was that other people's takeaway from that go ahead Are you sure?</p>
+<p id=cf22 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, plus and in addition to that a birectional link where we point to the use cases document and we're like hey by the way there's a broader set of use cases around VCs that'll just get by the directional link going. and the other reason we're doing it is because of this weird mismatch between what the tag wants out of the main document. they want to use cases specific to the technology in the specification and it is much easier for us to just quickly get that together and refine it in the spec,…</p>
+<p id=1e08 class="phone s03"><cite>Scott_Jones:</cite> Still people.</p>
+<p id=2733 class="phone s05"><cite>Manu_Sporny:</cite> like confidence method spec and then once things settle then we can potentially move the more generalized versions to the main use cases document.</p>
+<p id=0e14 class="phone s05"><cite>Manu_Sporny:</cite> So part of this is just a side effect of all the horizontal review people not necessarily asking for the in the same format. We're doing it specifically so that we don't have to generate a completely separate explainer document for the technology just for the tag itself. We're trying to put all the information they're asking in the spec itself.</p>
+<p id=9634 class="phone s05"><cite>Manu_Sporny:</cite> And use cases are one of the things they ask for. That's it.</p>
+<p id=e596 class="phone s02"><cite>Joe_Andrieu:</cite> Very cool. Thank you, looking at the use cases that Scott's put together, I guess one question I have is would it make sense to have one section for the whole document or do we like that, for each confidence method, we would identify use cases specific for that confidence method. I'm not sure… Joe Andrieu:</p>
+<p id=d364 class="phone s03"><cite>Scott_Jones:</cite> I'm not sure. Joe Andrieu:</p>
+<p id=d495 class="phone s02"><cite>Joe_Andrieu:</cite> which way to go. Minute.</p>
+<p id=0cbb class="phone s05"><cite>Manu_Sporny:</cite> probably just having one section because again this is a bit tail wagging the dog…</p>
+<p id=5d1e class="phone s05"><cite>Manu_Sporny:</cite> but the tag asks for the section where you talk about your use cases and it was like they give you a link you can put in a fragment identifier to the document not multiple.</p>
+<p id=5f1c class="phone s03"><cite>Scott_Jones:</cite> That's what you're doing.</p>
+<p id=75c8 class="phone s05"><cite>Manu_Sporny:</cite> They might have changed that but having them all in one place I think is useful. And then from the use case you can say by the way this use case is addressed in section blah blah blah blah.</p>
+<p id=f065 class="phone s05"><cite>Manu_Sporny:</cite> And the use cases typically go high up in the document in the introductory portions of the document. it's not ideal Joe.</p>
+<p id=4ebe class="phone s05"><cite>Manu_Sporny:</cite> I mean I think the VC use cases document does a much better job of talking about the fcal use case extracting the requirements and…</p>
+<p id=db6a class="phone s03"><cite>Scott_Jones:</cite> Is that There's something</p>
+<p id=10002 class="phone s05"><cite>Manu_Sporny:</cite> all that kind of stuff whereas these use cases are very like broadbrush high level just to give a paragraph of what you're trying to accomplish from the user's perspective I will note that we have four use cases for kind of biometric, video and image use cases. And I don't think we have one yet for the cryptographic traffic key one.</p>
+<p id=13fb class="phone s05"><cite>Manu_Sporny:</cite> So, we should probably add that to the use cases. Not in this PR, but I'm just noting that, having reviewed the PR. That's a</p>
+<p id=ef2a class="phone s02"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=f0c1 class="phone s02"><cite>Joe_Andrieu:</cite> I think I'd like that too. having a unified section would be good. I think some of these actually could account recovery by did off is possible. So I think that's what I think in general confidence method has a bunch of common use cases and…</p>
+<p id=6dcc class="phone s02"><cite>Joe_Andrieu:</cite> you could and sort of the whole point is you might get confidence via biometric you might get confidence via cryptography you might get confidence via something else let's do that Scott is move the use cases up to its own section that I think would be good and…</p>
+<p id=f7cf class="phone s03"><cite>Scott_Jones:</cite> All right.</p>
+<p id=10003 class="phone s02"><cite>Joe_Andrieu:</cite> then I'm looking at the tail end of the use cases and Those all look like good property definitions. but usually that's in the data model. So I'm wondering if that was maybe we should move those term the property definitions in there.</p>
+<p id=dc5f class="phone s03"><cite>Scott_Jones:</cite> Got it.</p>
+<p id=597a class="phone s02"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=56d2 class="phone s01"><cite>Denken_Chen:</cite> It will just to add a little bit the VC use case is now the VC working groups group note. So I probably should add some PR to it and discuss in the main call. So that's the first thing and second thing is about the current use case. I'm very curious about when we are putting it back to the main use cases the loan documents it'll be more compelling to compare with existing use cases and…</p>
+<p id=04bd class="phone s03"><cite>Scott_Jones:</cite> That's</p>
+<p id=d28b class="phone s01"><cite>Denken_Chen:</cite> why does it makes more sense to preserve the privacy by using this biometric vector verification stuff and it's also important</p>
+<p id=10ba class="phone s01"><cite>Denken_Chen:</cite> for us when adopting the digital identity. For example, any kind of biometric checking will help us to verify the presenter's identity. that happens a lot when doing online verification and…</p>
+<p id=30fa class="phone s03"><cite>Scott_Jones:</cite> See that?</p>
+<p id=d224 class="phone s01"><cite>Denken_Chen:</cite> so for example in the age verification at the point of sale the first example usually it's on site so probably you can compare with exceeding solutions when you have a portrait just given with the verification so the point of sale can directly</p>
+<p id=708b class="phone s03"><cite>Scott_Jones:</cite> Excuse me.</p>
+<p id=9276 class="phone s01"><cite>Denken_Chen:</cite> compare the portrait with the person on site. But on the other side, when we are using this biometric verification, the people at the store will not even get your personal portrait image. So that's a plus for So this kind of comparison I think it would help us to differentiate the current use cases. Yeah.</p>
+<p id=6e05 class="phone s02"><cite>Joe_Andrieu:</cite> I followed most of that. What I wasn't clear of is if you recommending we do anything different than what Manu and I just put on the table in terms of the two groups referring to each other are the task force specs referring to the VC use cases and the VC use cases referring back. Were you proposing an additional or an alternative</p>
+<p id=d05d class="phone s01"><cite>Denken_Chen:</cite> Yeah, I'm proposing that we can do more in the VC group note really to introduce why the biometric vector is a better way in terms of biometric verification. So there I could also help on that part if we are going to write some paragraph in the VC group notes to compare with existing solutions.</p>
+<p id=6347 class="phone s02"><cite>Joe_Andrieu:</cite> I so as a current editor of that spec, we would welcome if you're talking about adding a section that you want to highlight the distinctions between these different mechanisms, that would be welcome. We would appreciate that.</p>
+<p id=06c9 class="phone s01"><cite>Denken_Chen:</cite> Yes, Okay.</p>
+<p id=a8b5 class="phone s02"><cite>Joe_Andrieu:</cite> One question for you, Scott. …</p>
+<p id=94c6 class="phone s02"><cite>Joe_Andrieu:</cite> it sounded like as you went through the list, your intention was to address all the bullet points from our last review. and, do you think you did that or were there remaining ones that we should still talk about?</p>
+<p id=6963 class="phone s03"><cite>Scott_Jones:</cite> I believe I did.</p>
+<p id=a964 class="phone s03"><cite>Scott_Jones:</cite> And then the other things I had to track were things you said you would take.</p>
+<p id=529f class="phone s02"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=8205 class="phone s03"><cite>Scott_Jones:</cite> The verifiable presentation request examples and a provider model selection analysis. That's what the transcript says.</p>
+<p id=bbbc class="phone s02"><cite>Joe_Andrieu:</cite> Selection analysis. Did I say I was going to do that? Fair enough. I saw Tall Ted engaged quite widely on this. Did anyone else in the group have a chance to review this in depth? I mean, we all had a chance. Did you get in your schedule? Did you make the time to do it? Okay. I have not either. scanning through it.</p>
+<p id=0392 class="phone s02"><cite>Joe_Andrieu:</cite> I guess I'm just confused. So maybe we could talk about where those properties go that you have at the bottom of the use case section.</p>
+<p id=82fa class="phone s03"><cite>Scott_Jones:</cite> Please.</p>
+</section>
+
+<section>
+<h3 id=799d>Restructuring the Document Sections</h3>
+<p id=099a class="phone s02"><cite>Joe_Andrieu:</cite> So we're talking about 5.31. I could share my screen if that helps folks. So I'm in section 531 the use cases. I think we just agreed to move this up to a top level perhaps between three and four.</p>
+<p id=8d45 class="phone s02"><cite>Joe_Andrieu:</cite> And then we have these sections which are really property definitions and in fact a normative requirement about this data object. and so for one that's a little bit weird to have in a use case section. So probably goes somewhere else. We do have a data model. and I'm wondering how we would integrate it into here. I think the data model isn't really fleshed out fully enough to identify the properties. we need a data model for each of these confidence methods really and I think that's the gap in the document. Manu, I see your hand raised.</p>
+<p id=3614 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, plus one to that. So, Scott, typically these documents are split into an introductory portion at the top. And so, that's really introduction,…</p>
+<p id=8dc4 class="phone s03"><cite>Scott_Jones:</cite> for each one of these trick.</p>
+<p id=4248 class="phone s05"><cite>Manu_Sporny:</cite> conformance, and relation to the evidence property. The sections one, two, and three should be combined into one section. Conformance and relation, should be subsections. That's where you can also use cases. So, the use cases should probably go up there in the tro. and then you have a data model that just talks about this is what the data model looks like. And we should probably have a data model section for each one of these things. The biometric the image one and the did authentication one. this is one way to do it.</p>
+<p id=e6b8 class="phone s05"><cite>Manu_Sporny:</cite> And then you explain in the data model you'd move a lot of the section five kind of up in the data model just the introductory portion of this is what the data model's out.</p>
+<p id=4ee5 class="phone s03"><cite>Scott_Jones:</cite> Okay. That's good.</p>
+<p id=baa3 class="phone s05"><cite>Manu_Sporny:</cite> And then sometimes you have a totally different top level algorithm section that talks about the algorithms that you use on each data model. that is Another way to do it is to just say confidence method and for each confidence method have its potentially a separate use cases section. I don't know if I like that as much. there are positives and negatives to each approach, but typically what we do is the top level sections are introductory information and then the next top level section is data model and the next top level section is algorithms.</p>
+<p id=595a class="phone s05"><cite>Manu_Sporny:</cite> And then the reason we do it that way is because in the conformance section we're like a conforming document is any document that adheres to the data model section a conforming processor is any processor that conforms to the algorithm section.</p>
+<p id=2b23 class="phone s03"><cite>Scott_Jones:</cite> Still pick up. Okay.</p>
+<p id=f5bc class="phone s05"><cite>Manu_Sporny:</cite> That's typically why we do it that way. and you don't have to do this refactor, Scott. It's up to the editors to do it. I think just get the information in there and then the editors can, mess around with it till it flows. It I'm making it sound more complicated than it is.</p>
+<p id=2641 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, I think that's so maybe we just give this a week and we could merge it in because I think most of what I've been talking about have been editorial,…</p>
+<p id=0a71 class="phone s03"><cite>Scott_Jones:</cite> Not that I'm aware of.</p>
+<p id=38cd class="phone s02"><cite>Joe_Andrieu:</cite> put this section somewhere else. so Scott, the feedback that we've had so far, has any of it been non-editorial? Yeah, I don't think So maybe we just give folks I mean Manny, do you think we need to give folks a week? I mean, this is the second rev of updates based on…</p>
+<p id=71ce class="phone s05"><cite>Manu_Sporny:</cite> But I don't think it's a big deal it's a use cases thing like…</p>
+<p id=072e class="phone s02"><cite>Joe_Andrieu:</cite> what we talked about last week. right.</p>
+<p id=d938 class="phone s05"><cite>Manu_Sporny:</cite> what are people going to do object and then suggest some changes and…</p>
+<p id=2673 class="phone s02"><cite>Joe_Andrieu:</cite> Also we're the task force,…</p>
+<p id=0d96 class="phone s05"><cite>Manu_Sporny:</cite> and Yeah.</p>
+<p id=4de1 class="phone s02"><cite>Joe_Andrieu:</cite> So we're also separated from the group's official proposal.</p>
+<p id=6880 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=4035 class="phone s02"><cite>Joe_Andrieu:</cite> So this can't be taken as consensus of the group just because of how we're structured. Denin, what do you think? Do you have any objection to just go ahead and merge Scott's contributions in and…</p>
+<p id=1cc9 class="phone s02"><cite>Joe_Andrieu:</cite> then we'll take the notes to restructure and I can take care of that?</p>
+<p id=fe12 class="phone s01"><cite>Denken_Chen:</cite> Yeah, sure.</p>
+<p id=12fb class="phone s01"><cite>Denken_Chen:</cite> No problem. Can just merge with PR and move on to do the editorial things.</p>
+<p id=c736 class="phone s02"><cite>Joe_Andrieu:</cite> Okay, Dave, go ahead.</p>
+<p id=5a6f class="phone s07"><cite>Dave_Longley:</cite> Yeah, I agree with that. I just want to note those properties are already in the spec today. So he's just making some adjustments to those in this PR. I also wanted to note and…</p>
+<p id=51d0 class="phone s07"><cite>Dave_Longley:</cite> I left a comment in the PR that the property list is sort of just floating not in its own section and it actually follows after in the HTML. If you look at the HTML it's floating after the use cases section just as a paragraph tag. So it's actually technically in the main subsection of biometric vector confidence method but in an awkward place. So, it'll be good when that gets moved around to address that as well.</p>
+<p id=f7d1 class="phone s02"><cite>Joe_Andrieu:</cite> Okay, cool.</p>
+<p id=dcc3 class="phone s02"><cite>Joe_Andrieu:</cite> Then Deni, you want to do the honors or shall I just need to get back to the PR. I had it up in preview mode. All right.</p>
+<p id=306d class="phone s03"><cite>Scott_Jones:</cite> It's just</p>
+<p id=1dcd class="phone s02"><cite>Joe_Andrieu:</cite> I do this all the time.</p>
+<p id=0fcf class="phone s02"><cite>Joe_Andrieu:</cite> Okay, I'm going to merge it Thank you, Scott, for the work. much appreciated. the editors will iterate on this. I do want to chat a little bit before we go about logistics. our next planned meeting, I will not be able to make it. as I will be on travel, that's the 30th. but, Dankin, if you can make it, I think the group can be productive without me. So, I don't want to suggest we cancel, but I want to check in with you, Denin, and make sure you can be there.</p>
+<p id=6848 class="phone s01"><cite>Denken_Chen:</cite> Yes, I can share that code and I expected to go through some of the early issues and I think most of them are canop market as proposed closing because we have addressed most of them and some are still ready for PR. We need to drip some PR for this and that's And one thing is like we need manual or Benjamin's help to assign me as the host of this Google meet.</p>
+<p id=9e26 class="phone s03"><cite>Scott_Jones:</cite> Thank</p>
+<p id=4f01 class="phone s01"><cite>Denken_Chen:</cite> For me to host that later. Yeah. This money.</p>
+<p id=2902 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I can do that. I thought you were already a co-host, but if not, I'll definitely make you one. I think I need a Google account from you. That's the thing that enables you to kind of start these meetings.</p>
+<p id=d4e9 class="phone s01"><cite>Denken_Chen:</cite> Yeah, no problem.</p>
+<p id=1319 class="phone s05"><cite>Manu_Sporny:</cite> Okay, great. Thank you.</p>
+<p id=a6f8 class="phone s02"><cite>Joe_Andrieu:</cite> Okay. …</p>
+<p id=8ebf class="phone s02"><cite>Joe_Andrieu:</cite> anything else we might want to talk about, Denin? This feels like a good chunk of work, man.</p>
+<p id=33ac class=irc><cite>&lt;Denken_Chen&gt;</cite> denkenie@gmail.com </p>
+</section>
+
+<section>
+<h3 id=4fa7>Horizontal Review Preparations</h3>
+<p id=670b class="phone s05"><cite>Manu_Sporny:</cite> I do have one question and apologies. We might have talked about this a month ago and I've forgotten, but what are we expecting for the did and biometric sections?</p>
+<p id=2389 class="phone s03"><cite>Scott_Jones:</cite> That's what</p>
+<p id=e2e9 class="phone s05"><cite>Manu_Sporny:</cite> I'm wanting to get us into some kind of horizontal review, sooner than later.</p>
+<p id=b84b class="phone s05"><cite>Manu_Sporny:</cite> And so we need threat model. We need to did a biometric confidence sections. who has those tasks? Because I'll take one of those or two of those if we don't have someone for it.</p>
+<p id=10004 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, that would be great. my understanding and my personal commitment given the travel I'm about to be going on was to be ready for horizontal review by TPC. and that does mean we need some drafts ASAP. I think Denin you were planning on doing the biometric image one. I don't know where that is in your priority queue. I had been expecting to did off one, and we have at least three different, types of did off that we need to document and figure out. so if you're comfortable tackling that, I mean, I could give you the Do when I say the three ones, is that obvious to you or is that … Joe Andrieu:</p>
+<p id=2b5b class="phone s05"><cite>Manu_Sporny:</cite> No, but if you what they tell me what they are, I can take it from there.</p>
+<p id=7ac1 class="phone s02"><cite>Joe_Andrieu:</cite> Yeah, that would be So the three did go use the authentication method in the it is a verification method that is pointed to by did URL right all the way to the key one or…</p>
+<p id=b85c class="phone s05"><cite>Manu_Sporny:</cite> Okay,…</p>
+<p id=21d3 class="phone s02"><cite>Joe_Andrieu:</cite> whatever the identifier is for that particular verification method. and then the third one is it's an embedded verification method. So all the material is there. ideally using the exact same data scheme that we use for verification method in DID documents or SID documents.</p>
+<p id=2d9e class="phone s05"><cite>Manu_Sporny:</cite> I can. Yeah, those are Easy. I might ping you just to get those again.</p>
+<p id=bc82 class="phone s02"><cite>Joe_Andrieu:</cite> No, I'm happy to engage, but the other things I'm trying to get through editing.</p>
+<p id=1170 class="phone s05"><cite>Manu_Sporny:</cite> Yep. Yeah,…</p>
+<p id=2c06 class="phone s02"><cite>Joe_Andrieu:</cite> So I would appreciate that if you're in a position to help.</p>
+<p id=f540 class="phone s05"><cite>Manu_Sporny:</cite> sure thing. No problem. And then what about threat model?</p>
+<p id=de43 class="phone s05"><cite>Manu_Sporny:</cite> I can take a first rough cut with one threat per category if that would be helpful. or</p>
+<p id=4744 class="phone s02"><cite>Joe_Andrieu:</cite> The trick for us,…</p>
+<p id=b072 class="phone s02"><cite>Joe_Andrieu:</cite> I think, is that we do need a diagram. I think that's the hard part.</p>
+<p id=a91d class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Mhm. Okay.</p>
+<p id=10005 class="phone s02"><cite>Joe_Andrieu:</cite> And what I just paused on was do we need a diagram for each of these different kinds of methods? I think so certainly the biometric stuff has a device in there that the did off probably doesn't. so to me the hard part is coming up with the diagram that works effectively. so I would start there. but happy to have some help. I had this conversation actually with Eric about VCOM and whether or not he wanted me to who really have a role as an editor with that threat model. and I'm like I want to help other people be editors of that.</p>
+<p id=ea63 class="phone s05"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=10f7 class="phone s02"><cite>Joe_Andrieu:</cite> Let me coach and advise because I'm just kind of overwhelmed with my volunteer obligations right now. Denin</p>
+<p id=63ec class="phone s01"><cite>Denken_Chen:</cite> So first I will keep up with PR for biometric and I propose that for example I'm responsible for biometric and Scott is ironing the biometric vectors and then the proposed that each of us responsible for ourselves write us some paragraph of security considerations because that also will help the diagram you're mentioning to cover all of these confidence methods.</p>
+<p id=10006 class="phone s02"><cite>Joe_Andrieu:</cite> Did you have more, that all sounds good. anything else worth covering today or we can wrap a few minutes early? Okay, I think that means we're good for this week.</p>
+<p id=312d class="phone s03"><cite>Scott_Jones:</cite> Thank you. Bye.</p>
+<p id=0c30 class="phone s02"><cite>Joe_Andrieu:</cite> I will not be here two weeks from now, but we will be meeting under Denin's leadership and hopefully that'll be good and productive. So, see you guys hopefully in four weeks. Cheers.</p>
+<p id=d00d class="phone s01"><cite>Denken_Chen:</cite> Thanks, Joe.</p>
+<p id=e37d class="phone s05"><cite>Manu_Sporny:</cite> Thanks Meeting ended after 00:50:25 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
