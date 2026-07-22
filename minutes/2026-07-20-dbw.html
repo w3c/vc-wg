@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Product and Wallet Vocabularies &ndash; 20 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Product and Wallet Vocabularies</h1>
+<h2>20 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Carolynn_Bernier, Carsten_Stöcker, Christian_Fries, Dr._Susanne_Guth-Orlowski, Fireflies.ai_Notetaker_Miguel, Ingo_Wolf, Ivan_Herman, Ivo_Ladenius, Ivo_Ladenius_gs1_netherlands, M.-A._Wolf, Phil_Archer, Ronald_Koenig, Sebastian_Schmittner</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#0549">Introduction Of New Participants</a></li>
+<li><a href="#02fa">GitHub Merge Conflict Resolution</a></li>
+<li><a href="#00bc">DPP Use Case Document Review</a></li>
+<li><a href="#9817">DPP Document Structure And Scope</a></li>
+<li><a href="#1da9">Dpp Issuer Holder Verifier Model Discussion</a></li>
+<li><a href="#1d03">Link Data's Usefulness For Dpp</a></li>
+<li><a href="#4e21">How Vcs Are Used In Dpp</a></li>
+<li><a href="#dcaa">Verifiable Presentations In Dpp Context</a></li>
+<li><a href="#7df3">Vc Usage Models For Dpp</a></li>
+<li><a href="#c4b6">Bringing Vc Issues To The Working Group</a></li>
+<li><a href="#767d">Document Feedback And Contributions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=0549>Introduction Of New Participants</h3>
+<p id=3dc7 class="phone s01"><cite>Ivo_Ladenius:</cite> Good afternoon.</p>
+<p id=8bbc class="phone s02"><cite>Phil_Archer:</cite> Hello.</p>
+<p id=007f class="phone s03"><cite>Carolynn_Bernier:</cite> Good</p>
+<p id=4e34 class="phone s03"><cite>Carolynn_Bernier:</cite> Afternoon. Can you hear me?</p>
+<p id=8530 class="phone s02"><cite>Phil_Archer:</cite> Yes.</p>
+<p id=8b30 class="phone s03"><cite>Carolynn_Bernier:</cite> I see that there is someone called Schmidler in this meeting.</p>
+<p id=f43f class="phone s02"><cite>Phil_Archer:</cite> Yeah, he's a member of the group. Don't worry.</p>
+<p id=435c class="phone s04"><cite>Sebastian_Schmittner:</cite> Yeah. Hi.</p>
+<p id=e922 class="phone s03"><cite>Carolynn_Bernier:</cite> Hi. just Sebastian just so I know you're from which organization and…</p>
+<p id=dd3f class="phone s04"><cite>Sebastian_Schmittner:</cite> European EPC competent center. I can't type this in the chat.</p>
+<p id=1570 class="phone s03"><cite>Carolynn_Bernier:</cite> your interest is for rather wallets or Great Cooper.</p>
+<p id=d70c class="phone s04"><cite>Sebastian_Schmittner:</cite> Both actually</p>
+<p id=265b class="phone s03"><cite>Carolynn_Bernier:</cite> Kirsten, if you don't mind, I would like to use this meeting to talk about DPP.</p>
+<p id=9783 class="phone s05"><cite>Carsten_Stöcker:</cite> It's DPP time this week.</p>
+<p id=fd70 class="phone s03"><cite>Carolynn_Bernier:</cite> It's DPP time.</p>
+<p id=950e class="phone s03"><cite>Carolynn_Bernier:</cite> Just so I will disappear from all electronic forms of communication for the next 3 weeks.</p>
+<p id=7431 class="phone s02"><cite>Phil_Archer:</cite> Have a good time.</p>
+<p id=01ca class="phone s06"><cite>M.-A._Wolf:</cite> You are smart.</p>
+<p id=d0f0 class="phone s06"><cite>M.-A._Wolf:</cite> That's for sure anyway.</p>
+<p id=18e7 class="phone s06"><cite>M.-A._Wolf:</cite> But this is the evidence.</p>
+<p id=3794 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=02fa>GitHub Merge Conflict Resolution</h3>
+<p id=bc4e class="phone s03"><cite>Carolynn_Bernier:</cite> So, it's too bad an Ivan is here. I need his help to resolve a GitHub merge conflict. so first of all, I would like to apologize to everybody. Yes. Ian. Hi.</p>
+<p id=3686 class="phone s07"><cite>Ivan_Herman:</cite> Yeah, I had to find the right button. just forget about it and in your copy add the additional attribute in the HTML file and that's it.</p>
+<p id=cb0e class="phone s03"><cite>Carolynn_Bernier:</cite> So, it's Yeah.</p>
+<p id=8790 class="phone s07"><cite>Ivan_Herman:</cite> The one which is in the PR and then close the merge conflict is always a mess.</p>
+<p id=ed9c class="phone s03"><cite>Carolynn_Bernier:</cite> So that you're talking about the format two points markdown.</p>
+<p id=f599 class="phone s07"><cite>Ivan_Herman:</cite> Yeah, that forget about the markdown five. It was okay. I tested it a little bit and that's why probably there is a conflict in the index.html file where you can find it. what? Let's take that after that.</p>
+<p id=3a00 class="phone s03"><cite>Carolynn_Bernier:</cite> No, but I know exactly what you're talking about. I think you're talking about line 18 in the index.html. you added format two points markdown. Is this what you're No.</p>
+<p id=b14d class="phone s07"><cite>Ivan_Herman:</cite> No, no, no. that one as well and the later at the very end in the section include.</p>
+<p id=bf8b class="phone s03"><cite>Carolynn_Bernier:</cite> So I don't know what you're talking about.</p>
+<p id=da0a class="phone s07"><cite>Ivan_Herman:</cite> Yeah, that's one</p>
+<p id=7a72 class="phone s03"><cite>Carolynn_Bernier:</cite> So as I suggest…</p>
+</section>
+
+<section>
+<h3 id=00bc>DPP Use Case Document Review</h3>
+<p id=15fe class="phone s03"><cite>Carolynn_Bernier:</cite> so first of all I'd like to apologize to the group because since our meeting on the 29th of June where you provided a lot of feedback to improve the document that we're working on. I hadn't time to actually integrate your comments into the document. I started to do it today. I'm not quite done, but I would like to share with so I'm just going to put the link to the GitHub in the chat so that the sub subsidiary of GS1 Germany and Schwarz Group.</p>
+<p id=3d8d class="phone s03"><cite>Carolynn_Bernier:</cite> Interesting. Yeah, sure.</p>
+<p id=9638 class="phone s04"><cite>Sebastian_Schmittner:</cite> Yeah, I can do a short introduction if you like. Yeah. Hi everybody. I guess I've seen most people, but in case you don't know Yeah. ECC, we're a small company. Indeed, subsidiary GSM Germany and Trouts Group. and also some shares with our co and I've been in SSI for I don't know 7. eight years working in ID union ID ideal so the German SSI projects the funded projects and we're mostly working with GS1 Germany trying to establish a business wallet so we do have a production wallet developed so this is why I'm obviously interested in the wallet part of this group and we do also work quite a bit on digital product passport stuff we do more with Schwartz's group</p>
+<p id=1dbb class="phone s04"><cite>Sebastian_Schmittner:</cite> And interested to get to know what you guys are working on.</p>
+<p id=3ccf class="phone s03"><cite>Carolynn_Bernier:</cite> Okay, great.</p>
+<p id=e1a1 class="phone s03"><cite>Carolynn_Bernier:</cite> Welcome to the group. Just checking if anybody else knew from last time. there's a Christian fries.</p>
+<p id=ad62 class="phone s08"><cite>Christian_Fries:</cite> yellow Chris tries the same story. I just dropped in here because we are intrigued what's going on in the wallet environment.</p>
+<p id=75dd class="phone s08"><cite>Christian_Fries:</cite> So I just popped by I don't know if I'm can listen to it. You can tell me</p>
+<p id=98b3 class="phone s03"><cite>Carolynn_Bernier:</cite> So you're welcome to stay…</p>
+<p id=0dbd class="phone s03"><cite>Carolynn_Bernier:</cite> if you want in today's meeting. So, we tend to alternate every second week between the topic of the business wallet and the topic of the I'm leading the DPP activities and Karsten is leading the wallet activities. So today we were going to talk about the DPP and…</p>
+<p id=abb2 class="phone s08"><cite>Christian_Fries:</cite> Thank you very much.</p>
+<p id=709d class="phone s03"><cite>Carolynn_Bernier:</cite> next week on the wallet. So you can drop out and have some free time and do something else or You're welcome to stay. Because we have this dual topic thing. I prefer to let people understand why are they staying in the meeting?</p>
+<p id=5f34 class="phone s03"><cite>Carolynn_Bernier:</cite> so that we avoid wasting people's All right. So on the DP coming back to the DPP topic as you know we are we started to write a use case note on DPP and the DPP secured by verifiable credentials. so if you go here, you should see so that's the markdown, but if you go here, you will see the HTML version of the documents.</p>
+<p id=ffff class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Are you sharing anything or am I the only person that doesn't see it?</p>
+<p id=2657 class="phone s03"><cite>Carolynn_Bernier:</cite> I'm sharing my screen.</p>
+<p id=370c class="phone s03"><cite>Carolynn_Bernier:</cite> I just put the link to the document in the chat but if you want I can share my screen.</p>
+<p id=f3d4 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Why not? Then we can all look at the same thing.</p>
+<p id=6f01 class="phone s03"><cite>Carolynn_Bernier:</cite> All right. So I'm just going to share this screen here. So last time I shared with you a preliminary version of this use case document. So can you see my screen? Yes. Yeah.</p>
+<p id=a534 class="phone s01"><cite>Ivo_Ladenius:</cite> Yes.</p>
+</section>
+
+<section>
+<h3 id=9817>DPP Document Structure And Scope</h3>
+<p id=8e52 class="phone s03"><cite>Carolynn_Bernier:</cite> So, I changed following the discussion that we had, I'm in the process of fixing the issue with the numbering of the paragraphs. I don't want them to be subheadings of number one. So, this is the issue Ivan and I were talking about. so there's a few things that I wanted to show So I added an abstract to this document to be reviewed by everybody. I also changed a little bit the structure of the document to talk about DPSPs in international value chains. This was to answer Suzan's questions about the scope of the document.</p>
+<p id=f4d5 class="phone s03"><cite>Carolynn_Bernier:</cite> And Suzanne added here a figure and here basically I provided some elements of scope to be again read and pro proof read by and also a little bit more details about the scope the first part of the document is why are verifiable credentials useful for DPPS? and we have a number of use cases. I have not completed it with the contributions provided by last time. so Rio mentioned that we could talk about legal evidence and…</p>
+<p id=fdf5 class="phone s07"><cite>Ivan_Herman:</cite> It's awesome.</p>
+<p id=e1a6 class="phone s03"><cite>Carolynn_Bernier:</cite> we could also talk about quantum resistance as well. So I have not added that yet. Also I want to split this section into two different sections.</p>
+<p id=3e4b class="phone s03"><cite>Carolynn_Bernier:</cite> one for selfissued and…</p>
+<p id=10000 class="phone s03"><cite>Carolynn_Bernier:</cite> self-hosted DPPs and a second for third party held DPSPs. So this long list of use cases where VCs provide additional capabilities with respect to HTTPS. I want to split these into two families of use cases. One for self-hosting and one for third party hosted BVPs.</p>
+<p id=bc01 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> And… Dr. Susanne Guth-Orlowski:</p>
+</section>
+
+<section>
+<h3 id=1da9>Dpp Issuer Holder Verifier Model Discussion</h3>
+<p id=6b31 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> why is that conceptually different?</p>
+<p id=a1c9 class="phone s03"><cite>Carolynn_Bernier:</cite> Because I think that we have to be clear that in the DPP case we are not necessarily in the issuer holder verifier model…</p>
+<p id=9eef class="phone s03"><cite>Carolynn_Bernier:</cite> which is typical of verifiable credentials.</p>
+<p id=d105 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But I wouldn't agree to that I think we're completely in that model. If someone does it for me, then I'm still I mean technically does that for me that's fine.</p>
+<p id=3387 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But conceptually that's still the holder issuer verifier model.</p>
+<p id=18a3 class="phone s03"><cite>Carolynn_Bernier:</cite> If…</p>
+<p id=6b23 class="phone s03"><cite>Carolynn_Bernier:</cite> if I'm a responsible economic operator and…</p>
+<p id=c9ad class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=9f43 class="phone s03"><cite>Carolynn_Bernier:</cite> I'm creating my own DPPs, I'm the issuer and the holder.</p>
+<p id=e0bc class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But no problem with</p>
+<p id=cbac class="phone s03"><cite>Carolynn_Bernier:</cite> It's not a problem. it's slightly different from the normal VC use case where you have an issuer that is one organization, a holder that's another organization and a verifier that's another organization. It's not a problem. It's just so if the issuer is a holder, does it make sense to issue the DPP as a verifiable credential is the question I'm trying to answer.</p>
+<p id=a2b1 class="phone s03"><cite>Carolynn_Bernier:</cite> No. I'm not saying there is no reason not to do it,…</p>
+<p id=7f14 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But yeah, why wouldn't it be? I mean, you can selfissue something.</p>
+<p id=ef4e class="phone s03"><cite>Carolynn_Bernier:</cite> but because it departs from the normal case of using feces. Carolynn Bernier:</p>
+<p id=39ca class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm not sure…</p>
+<p id=276d class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> if that's the normal case of having issue a holder and verify three different parties. I would understand if you would say there's a different level of security or a different level of you may trustworthiness maybe but then that depends on how I identify or verify the issuer but conceptually that's still the same thing for me. I wouldn't separate it out is…</p>
+<p id=872d class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> what I'm trying to say.</p>
+<p id=d725 class="phone s03"><cite>Carolynn_Bernier:</cite> For me,…</p>
+<p id=740a class="phone s03"><cite>Carolynn_Bernier:</cite> a VC by definition is the fact that a holder has data that has been issued by somebody else but there are claims about himself,…</p>
+<p id=b0c1 class="phone s03"><cite>Carolynn_Bernier:</cite> the holder, but the data was issued by somebody else. my identity papers are issued by the Ministry of the Interior, but I'm the holder of that. Okay. Yeah.</p>
+<p id=8255 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I see completely…</p>
+<p id=1017 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> where you're coming from. you think that we need three parties. I'm just saying I don't think we need three parties. If I'm issuing my own DPP as a verifiable credential, then everyone can check who issued it,…</p>
+<p id=6294 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> which is the same party who holds it, but it just says that I issued it. And the concept is the same no matter where the verifiable credential is found.</p>
+<p id=f6b2 class="phone s03"><cite>Carolynn_Bernier:</cite> So I agree with you that we want to Is it in?</p>
+<p id=10001 class="phone s03"><cite>Carolynn_Bernier:</cite> Because 9% of people who work in the field of verified credentials come with the issuer holder verifier or different organizations model in mind. And here we're saying we're using it differently because the issuer and the holder can be the same organization and there</p>
+<p id=4117 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm not Yeah, I don't think that this is true that we use it differently.</p>
+<p id=529e class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm. Ethan.</p>
+<p id=8f61 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But maybe others Yeah, even</p>
+<p id=baa1 class="phone s07"><cite>Ivan_Herman:</cite> Yeah, I think the difference between you two is that the differentiation between order verifier and…</p>
+<p id=3431 class="phone s07"><cite>Ivan_Herman:</cite> issuer is in the functionalities that they perform not that they are same or different and the fact that there is an entity which is for example an issuer and a holder at the same time is probably something that does exist out there. So it's not necessarily true that the three are sort of physically or in a virtual space they are different entities. It's a matter of the functionalities they perform.</p>
+<p id=989e class="phone s07"><cite>Ivan_Herman:</cite> And in this respect, I agree with Susan that there is real difference functionalitywise whether the two the three or…</p>
+<p id=52b4 class="phone s07"><cite>Ivan_Herman:</cite> two out of the three are the same entity.</p>
+<p id=922a class="phone s03"><cite>Carolynn_Bernier:</cite> Yes,…</p>
+<p id=eda8 class="phone s03"><cite>Carolynn_Bernier:</cite> I'm just saying it's an unusual way to use verifiable credentials which may be surprising to people. that's all.</p>
+<p id=feb1 class="phone s03"><cite>Carolynn_Bernier:</cite> I don't know if there are many other maybe you've ran into multiple use cases where the issuer is the holder. I don't know.</p>
+<p id=2a38 class="phone s03"><cite>Carolynn_Bernier:</cite> Have you? Mhm.</p>
+<p id=2dc0 class="phone s07"><cite>Ivan_Herman:</cite> I am not the person to ask…</p>
+<p id=ad37 class="phone s07"><cite>Ivan_Herman:</cite> because I'm not in the practical field, but the situation would not really be a shock to me that if an issuer and a hoarder is the But okay,…</p>
+<p id=cbf4 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> So I think we would more confuse Yeah.</p>
+<p id=efbd class="phone s07"><cite>Ivan_Herman:</cite> I understand that from a use case point of excuse me Susanna.</p>
+<p id=1d97 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> No, I think we more confuse people if we say this is a different usage of verified credentials. I don't think it creates clarity for me if I would read that it would create more confusion.</p>
+<p id=8359 class="phone s03"><cite>Carolynn_Bernier:</cite> Perhaps for for me, it's because of what Ivan said about the functionalities of the issuer and the holder that are different, how that relates to the DPP issuer. and the DPV holder…</p>
+<p id=0685 class="phone s03"><cite>Carolynn_Bernier:</cite> who are actually the same entities. I need to understand how this relates to what's going to happen that I really understand what is the value of the VC in this case. I really need to understand this. Mar Andre your hand is up.</p>
+<p id=5ee3 class="phone s06"><cite>M.-A._Wolf:</cite> Yeah, thank you.</p>
+<p id=864f class="phone s06"><cite>M.-A._Wolf:</cite> Maybe it's enough to say this is one of the subtypes of ent self issued verifiable credential versus yeah with an issuer not by the hold of the same entity we have it in our domain for reviews there's an internal revenue and external dependent independent it's all a review but it has an of course different assurance level and you say I agree that people may be surprised that the holder is the one who issues</p>
+<p id=3bb8 class="phone s06"><cite>M.-A._Wolf:</cite> Is it this case it could then be identified as a subtype whether it's common or less common is not so important I think it's technically the same what I understand but the assurance level is different and…</p>
+<p id=a88b class="phone s06"><cite>M.-A._Wolf:</cite> this could be clarified by saying it's a safe issued one</p>
+<p id=f1f3 class="phone s03"><cite>Carolynn_Bernier:</cite> For me,…</p>
+<p id=10002 class="phone s03"><cite>Carolynn_Bernier:</cite> its It's more a question of because a DPP could be self-issued or could be third party held. So, it's not a question of subtype. It's more of a question of value. what are the functionalities that are enabled</p>
+<p id=6550 class="phone s06"><cite>M.-A._Wolf:</cite> Mhm.</p>
+<p id=1bd6 class="phone s03"><cite>Carolynn_Bernier:</cite> if the DPP is self-held or…</p>
+<p id=40cf class="phone s07"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=f452 class="phone s03"><cite>Carolynn_Bernier:</cite> if it's third party held what are the new features that become possible that's what I'm interested in understanding Sebastian your hand is</p>
+<p id=81c7 class="phone s04"><cite>Sebastian_Schmittner:</cite> Yeah, you are currently discussing what to put as the subject, So the credential subject ID essentially and…</p>
+<p id=9539 class="phone s03"><cite>Carolynn_Bernier:</cite> Yes.</p>
+<p id=f6d4 class="phone s04"><cite>Sebastian_Schmittner:</cite> whether that holder would be the same dead as the issuer, so what we usually do when we issue DPP credentials we put the identity of the thing that we are issuing facts or attestating facts about as the credential subject ID because I mean if we did often organization say as the credential subject ID it would look like to me semantically as far as I understand the VC data model,…</p>
+<p id=d408 class="phone s07"><cite>Ivan_Herman:</cite> Thank you.</p>
+<p id=9de7 class="phone s04"><cite>Sebastian_Schmittner:</cite> it would look like we're at stating some facts about that company. we're talking about facts of a product.</p>
+<p id=52bc class="phone s04"><cite>Sebastian_Schmittner:</cite> So, we put usually the products into the credential subject ID field. I don't know if this kind of matter has been discussed in this group already.</p>
+<p id=adfd class="phone s03"><cite>Carolynn_Bernier:</cite> I think I misunderstood your question.</p>
+<p id=f95e class="phone s03"><cite>Carolynn_Bernier:</cite> The credential subject is indeed the product. The question is who issued it? So the key of the issuer and the key yes the issuer ID and…</p>
+<p id=da39 class="phone s04"><cite>Sebastian_Schmittner:</cite> So you're talking about the issuer ID,…</p>
+<p id=e39f class="phone s04"><cite>Sebastian_Schmittner:</cite> not the credential subject ID.</p>
+<p id=5835 class="phone s07"><cite>Ivan_Herman:</cite> What's that?</p>
+<p id=c6ff class="phone s03"><cite>Carolynn_Bernier:</cite> the holder ID.</p>
+<p id=d404 class="phone s04"><cite>Sebastian_Schmittner:</cite> Yeah, but I mean who's the holder? Usually the holder would be the credential subject ID. Yeah, that's…</p>
+<p id=3e5d class="phone s03"><cite>Carolynn_Bernier:</cite> I know because the product is not a holder.</p>
+<p id=d0b3 class="phone s04"><cite>Sebastian_Schmittner:</cite> what I'm saying. I mean for a digital I mean what you mean by a holder? that's the question in the first place. usually the holder of the verifiable usually if you talk about I don't know an electronic ID credential or something you want to have holder binding in the sense that only a certain person in this case can present a credential so holder binding in this sense is why you usually have this holder in this SSI triangle thing right but this concept doesn't really make sense for I don't</p>
+<p id=b629 class="phone s04"><cite>Sebastian_Schmittner:</cite> products. So I don't know some object doesn't present something on its own. So we don't need to cryptographically bind the credential to I don't know some object so that only this object can present the credential.</p>
+<p id=ddcd class="phone s10"><cite>Ronald_Koenig:</cite> Thank you.</p>
+<p id=af08 class="phone s04"><cite>Sebastian_Schmittner:</cite> So certainly we don't need holder binding in this sense. and yeah as I said so what we usually do is we put the credential subject ID we put an identifier of the actual thing we're talking about and…</p>
+<p id=459a class="phone s04"><cite>Sebastian_Schmittner:</cite> we do not use holder binding for DPP credentials but yeah…</p>
+<p id=4c86 class="phone s03"><cite>Carolynn_Bernier:</cite> I think we Yeah,…</p>
+<p id=2795 class="phone s03"><cite>Carolynn_Bernier:</cite> we agree.</p>
+<p id=6570 class="phone s04"><cite>Sebastian_Schmittner:</cite> but it's kind of like a big topic I don't know if this has been discussed in the group already I don't want to completely steer the conversation of topics.</p>
+<p id=f9a3 class="phone s03"><cite>Carolynn_Bernier:</cite> No, no, no, no, no, no, no, no. This is a good comments, Suzanne.</p>
+<p id=ff7c class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. …</p>
+<p id=b894 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> of course I agree to what Sebastian said. and we touched it last time when we were discussing this by saying, do we actually need a verifiable presentations in here? because that's kind of used in this holder binding use. so it's the related to that discussion and the other point that I wanted to say is we made the distinction in the recommendation 49 as well where we said if we're using verifiable credentials or electronically signed documents What?</p>
+<p id=02a4 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> are the services that we get from this To get everyone on the same page. Therefore, I added the very first three points I think it is to this list and say first of all I can check the authenticity of the DPP. So meaning that I know who issued the DPP. I know that then I know or I can use non-repudiation which is just the regular things that you can do from digital signatures. Yeah. the issuer cannot claim that he did not issue the DPP which is also a service of electronic signatures in general.</p>
+<p id=0dc3 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> then I can detect the modification of a DPP saying so I understand that the integrity of the DPP can be secured just in the same way as with any other digitally signed document and that's what you can do and then you can use it for typical DPP use cases and I think maybe we should differentiate</p>
+<p id=22ed class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> between the two that's also what we did in recommendation 49 direct use of verify credentials for DPP is this and then there is an almost unlimited list of indirect benefits that you can get from it in the environment of digital product pass such as increase the trust in DPP data…</p>
+<p id=7651 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> but why because you base on the previous three points yeah and I don't Yeah.</p>
+<p id=c008 class="phone s03"><cite>Carolynn_Bernier:</cite> …</p>
+<p id=da7b class="phone s03"><cite>Carolynn_Bernier:</cite> what you would say is these three here they're like</p>
+<p id=a1f8 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think it's these three. if someone has a better I mean please review it and if someone wants to change it. That's my usual three things that I use for digital signature since 20 years and I've been building on top of that various different services like digital rights management for video files, stuff like that. So, it's always the same. And then in the context of digital product passports, that means we can do this and this and this and this with it.</p>
+<p id=b8b6 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> For example, we can do updates in the supply chain, but we know that the issuer is someone different, maybe the one who repairs the battery and issues, I don't know, or maybe that's a stupid example because then you have to issue a new product passport. Let's say we have an auditor that issues a certificate about the state of health, but then it has been issued by the auditor and not by the economic operator. And we can see all that and that's the use of these features in the context of disha passports and…</p>
+<p id=390d class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> that's what we can describe but in the end it always comes back to the first three</p>
+<p id=689c class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm. …</p>
+<p id=2f65 class="phone s03"><cite>Carolynn_Bernier:</cite> so I think that if you say these first three they refer to the use case for digital signatures that's fine but VCs go beyond just being digital signatures. It's also about machine readable interoperable data.</p>
+<p id=6f44 class="phone s03"><cite>Carolynn_Bernier:</cite> Carson,…</p>
+<p id=9abd class="phone s05"><cite>Carsten_Stöcker:</cite> I also want to say this.</p>
+<p id=fe3d class="phone s07"><cite>Ivan_Herman:</cite> Close.</p>
+</section>
+
+<section>
+<h3 id=1d03>Link Data's Usefulness For Dpp</h3>
+<p id=dea1 class="phone s05"><cite>Carsten_Stöcker:</cite> I saw yet multiple research activities about knowledge graphs. Yeah. And with the linked data character of the VCs, this is advantageous. And now we see a lot of research in terms of feeding linked knowledge graph data into AI models.</p>
+<p id=fe44 class="phone s03"><cite>Carolynn_Bernier:</cite> I put here some place…</p>
+<p id=ba7e class="phone s05"><cite>Carsten_Stöcker:</cite> And this is Yeah.</p>
+<p id=92b5 class="phone s03"><cite>Carolynn_Bernier:</cite> where you'll be able to add content. Karsten, thinking about what you said,…</p>
+<p id=1eb4 class="phone s03"><cite>Carolynn_Bernier:</cite> I added this chapter. Why is link data useful for DPSPs? so there are several reasons and the one you're referring to is this one.</p>
+<p id=c63e class="phone s05"><cite>Carsten_Stöcker:</cite> There you go.</p>
+<p id=d7ec class="phone s03"><cite>Carolynn_Bernier:</cite> So I suggest that you provide some text to describe very summarized a few sentences that summarize possibly provide a reference to this.</p>
+<p id=d5e6 class="phone s05"><cite>Carsten_Stöcker:</cite> Yeah.</p>
+<p id=573d class="phone s03"><cite>Carolynn_Bernier:</cite> So I would like to come back to…</p>
+<p id=c9cf class="phone s05"><cite>Carsten_Stöcker:</cite> And I will definitely do this. And now I'm finding multiple research of comp of universities supporting this argument really really this with high quality facts. Good.</p>
+<p id=bea3 class="phone s03"><cite>Carolynn_Bernier:</cite> what Sebastian. Yes, Ian.</p>
+<p id=c2ca class="phone s07"><cite>Ivan_Herman:</cite> or…</p>
+<p id=7e44 class="phone s07"><cite>Ivan_Herman:</cite> do you want to come back to the previous topic?</p>
+<p id=8ba0 class="phone s03"><cite>Carolynn_Bernier:</cite> No, go ahead.</p>
+<p id=bb35 class="phone s07"><cite>Ivan_Herman:</cite> No. are we getting into the link data useful for DPP's topic or not?</p>
+<p id=0d55 class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm.</p>
+<p id=b7fd class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I just wanted to say that of course I agree we have electronic signatures it gives us services and…</p>
+<p id=10003 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> then we can talk about I don't know interoperability some say yeah or I don't know semantic interoperability that's of course an additional topic that we have in fiber credentials fine with me to you use cases there at a different section.</p>
+<p id=6733 class="phone s03"><cite>Carolynn_Bernier:</cite> So before we go to the link data topic, I would like to come back to what Sebastian said about the fact that there is no holder binding and the fact that in the normal VC use.</p>
+<p id=763b class="phone s03"><cite>Carolynn_Bernier:</cite> case you have the credential subject being the holder and this is the completely of course different topic different appro way to use verifiable credentials in our context here and I wonder again for me this is again an unusual way to use verifiable credentials someone coming from the identity use of VCs may be surprised by this unusual approach to using verify credentials or maybe it's just me that I find this unusual but I wonder if this needs to be explained if or…</p>
+<p id=34fe class="phone s03"><cite>Carolynn_Bernier:</cite> if this will be obvious to everybody.</p>
+<p id=106d class="phone s03"><cite>Carolynn_Bernier:</cite> I was just thinking that it would be useful to describe how we are exploiting VCs in the topic of DPP and how that departs from the normal identity way to use Ronald, do you have</p>
+<p id=1766 class="phone s10"><cite>Ronald_Koenig:</cite> Yeah, for me there is a little bit missing …</p>
+<p id=71cb class="phone s10"><cite>Ronald_Koenig:</cite> why we are want to have verifiable credentials here because if I only take the first three points verifiable credentials are not required at all because this are signed documents only. This is nothing with a trust model of verifiable credentials. This is what I can reach if I take a document and sign it. But this is not a ial from my point of to a rifiable credential in this issuer holder verifier is that the issuer makes a statement about something. So as Sestian say this credential subject can prove against the third party that someone else has made claims about it and can prove against this one that this claims are about him and therefore we need verifiable presentations and verifiable credentials.</p>
+<p id=b955 class="phone s10"><cite>Ronald_Koenig:</cite> But if you only have a document which should be authentic and should have non-repudg cannot be questioned and…</p>
+<p id=694b class="phone s10"><cite>Ronald_Koenig:</cite> that every modification of the DPP is recognized okay this is just a signed document it's nothing more and…</p>
+<p id=b8a7 class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm. So…</p>
+<p id=7707 class="phone s10"><cite>Ronald_Koenig:</cite> I think the really value of course you can make selfisssued credentials and you can also present a credential without a verifiable presentation and holder binding and all this one. But this is a very specific case where the real value of a verifiable credential is not really used. So</p>
+<p id=f51a class="phone s03"><cite>Carolynn_Bernier:</cite> there's a long list of reasons right have you looked at this list Ronald have you and</p>
+<p id=7cb1 class="phone s03"><cite>Carolynn_Bernier:</cite> here I'm inviting everybody to proofread this list and tell me have we covered the reasons why we believe VCs are useful in this have we explained it properly because today I don't know if we have explained it properly but the whole for me this group the value of the work we're doing is to make this list a good one to make a very good case for</p>
+<p id=eeb1 class="phone s03"><cite>Carolynn_Bernier:</cite> Ian,…</p>
+<p id=effc class="phone s07"><cite>Ivan_Herman:</cite> two different things.</p>
+<p id=fa2c class="phone s07"><cite>Ivan_Herman:</cite> One is that you made a statement at some point to say that the holder ID is the same as the subject that is not correct. the holder is different than the subject of the verifiable credential. But probably it was misunderstanding. the credential subject is the holder is the wallet for example I mean the identity is not the person…</p>
+<p id=372c class="phone s03"><cite>Carolynn_Bernier:</cite> so how does binding happen if the holder and the credential subject are different. okay.</p>
+<p id=495c class="phone s03"><cite>Carolynn_Bernier:</cite> Okay.</p>
+<p id=bba5 class="phone s07"><cite>Ivan_Herman:</cite> who is id So that's very different. I think the one aspect which is sort of missing is the emphasis on the possibilities offered by verifiable presentations and the fact that a verifiable presentations is able to combine several credentials together in one consistent entity. that I think is as far as I can understand a DPP which is very very shallow.</p>
+<p id=255f class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm.</p>
+<p id=6765 class="phone s07"><cite>Ivan_Herman:</cite> this is probably the most important part for DPPS the fact of combining DPSPs coming from all over the places into one coherent thing and…</p>
+<p id=a9b5 class="phone s07"><cite>Ivan_Herman:</cite> that's what the presentation can do and can do it in different tricky ways with selective disclosure etc etc so I think and that is made possible by the very existence of VCs so I have the impression that presentations are a little bit under used or…</p>
+<p id=655f class="phone s06"><cite>M.-A._Wolf:</cite> Mhm.</p>
+<p id=54cf class="phone s07"><cite>Ivan_Herman:</cite> underemphasized feature of the model which is important and it's bound to the question of holder because the verifiable presentations are produced by the holder which is a major differentiation in functionality Okay.</p>
+<p id=a239 class="phone s10"><cite>Ronald_Koenig:</cite> I think you are front office.</p>
+<p id=0829 class="phone s03"><cite>Carolynn_Bernier:</cite> We're done.</p>
+<p id=0cac class="phone s03"><cite>Carolynn_Bernier:</cite> We're done. Go ahead.</p>
+<p id=c9c8 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. …</p>
+</section>
+
+<section>
+<h3 id=4e21>How Vcs Are Used In Dpp</h3>
+<p id=b08b class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> so I wanted to respond to I think it's right. maybe before we start with the list of the pure services of electronic signatures, maybe we have to explain how dig So verifiable credentials are used in digital product passport contexts. the few sentences that you say for example the economic operator is issuing with its entity. So the issuer ID is the economic operator.</p>
+<p id=542c class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> he makes claims about something that is also clearly identified and makes claims about that subject and subject ID and this is how an economic operator can issue a product passport about a product that he produces. So I think you're right we should combine the electronic signature with the identities that we use and how we use it in this use case. So I think that's right.</p>
+<p id=7e0c class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> And on Ivan's comment I haven't worked with verifiable project presentations too much and we've been using wallets especially for battery passports where we do not necessarily connect everything that belongs to DPP into a verifiable presentation but we created a wallet that is kind of a battery wallet and every information that belongs to that battery is in is put into that wallet and linked to each other by the same identifier. So that I believe that verified representations are not being created to receive all information about the battery but it's simply connected by the same globally unique identifier.</p>
+<p id=09c7 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But I'm super curious to hear if the verifiable presentation solutions w which I haven't used too much creates an alternative yeah that was my comment Yeah.</p>
+<p id=9fd1 class="phone s03"><cite>Carolynn_Bernier:</cite> What? …</p>
+<p id=0880 class="phone s03"><cite>Carolynn_Bernier:</cite> the whole point of this section, Suzanne, I agree, is to gather, arguments from people who think VPs are useful in the DPP world and people who think BPs are not useful in and what that enables, So, the whole point is to gather input or opinions on people.</p>
+<p id=bd89 class="phone s03"><cite>Carolynn_Bernier:</cite> So from the discussion we had last time, I put a number of advanced what I call them advanced e exploration topics here in order to make sure the conversation happens.</p>
+<p id=1f98 class="phone s03"><cite>Carolynn_Bernier:</cite> I'm going to give the floor to Phil</p>
+<p id=5021 class="phone s02"><cite>Phil_Archer:</cite> Thank you.</p>
+<p id=405e class="phone s02"><cite>Phil_Archer:</cite> just this conversation resonates with one that's happening in the recognized entity group that meets on a Tuesday night …</p>
+<p id=7f93 class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm. Hey, I hope</p>
+<p id=3588 class="phone s02"><cite>Phil_Archer:</cite> which most Europeans are not going to join because it's at 10:00 c on a Tuesday.</p>
+<p id=10004 class="phone s02"><cite>Phil_Archer:</cite> It's just early enough for me to go to but there's a discussion just last week the very active discussion about whether verifiable presentations were useful in the context of an issue with saying the reason I am allowed or my accreditation for issuing that kind of credential comes from somewhere else or the reason I can give you this credential is because I got these 17 others or whatever and there are ways that we are defining that to</p>
+<p id=10005 class="phone s02"><cite>Phil_Archer:</cite> link one credential to another and a mean credential on my presentation where one credential is either linked via the content of the credential itself that says basically also over there or from the identifier. So this was issued by did 1 2 3 4 5 and if you resolve did 1 2 3 4 5 you'll find a bunch of accredititations there. Both those methods are going to be supported and so there's an active discussion about why don't you just use a BP? Why don't you just wrap it all up in that way? and so I guess what I wanted to say is this discussion you're having is also happening in that other task force. Maybe it's something we should bring to the whole group. But I know that the discussion was not conclusive last week as I don't think we're being conclusive here either. But you're not alone in having the same conversation.</p>
+<p id=2340 class="phone s03"><cite>Carolynn_Bernier:</cite> And it's perfectly good to know that this conversation is happening and that means it's a relevant conversation and I don't think that we need to conclude. I think that we need to show the options that are possible and the pros and cons of the different options.</p>
+<p id=6bda class="phone s02"><cite>Phil_Archer:</cite> It's great.</p>
+</section>
+
+<section>
+<h3 id=dcaa>Verifiable Presentations In Dpp Context</h3>
+<p id=e324 class="phone s03"><cite>Carolynn_Bernier:</cite> So once this matures a little bit I will be happy to share the link to this draft with the recognized entities because basically how can one know if the VC or DPP issuer is a valid issuer. This is direct impact with the recognized entity work in the VC working group. vote. Yeah.</p>
+<p id=3f7e class="phone s03"><cite>Carolynn_Bernier:</cite> Somebody else had their hand up, I think. No. Okay.</p>
+<p id=58bc class="phone s10"><cite>Ronald_Koenig:</cite> Yes unfortunately I just one remark to even yes it is right the credential subject doesn't have to be the holder…</p>
+<p id=63ee class="phone s10"><cite>Ronald_Koenig:</cite> but it could be that the credential subject is the holder we have as we are using very very extensively the holder concept. We have also multiholder binding for credential subjects. For example, if you have let me say a list of legal representatives and issue this one to a wallet where every legal representative has its own identities or cryptographic material which it can express into then I can bind one credential to different holders which are represented in one wallet. So we are not re really assigning a wallet to a credential subject. We are assigning the identity or the controller of a cryptographic material by cryptographic binding to the verifiable credential allowing this person or this identity to authenticate against the verifier.</p>
+<p id=a698 class="phone s10"><cite>Ronald_Koenig:</cite> So from my understanding is and I think it is very important for Verifiable credentials can be bound to a holder and to more than one holder and the mechanisms of the verifiable presentation allows this holder to authenticate against the verifier and to prove that the statements claims inside the verifiable credentials are about him or he has a certain relationship to this one. I make an example. If I for example have a car title, then the car title for example the car could be the credential subject but the holder of the car is also mentioned in the car title.</p>
+<p id=10006 class="phone s10"><cite>Ronald_Koenig:</cite> So in this verify the credential and he can then prove that he is the owner of the car by presenting this credential it is bound to him against the third party and then claiming that he is the owner of the car. Of course he is not the credential subject because the credential subject is the car but he is mentioned as a holder of the car and this credential is then bound to him. So then she is a holder of this credential and can present it to someone else. and this is from my point of view something…</p>
+<p id=3e29 class="phone s10"><cite>Ronald_Koenig:</cite> which is very extensively used with verifiable credentials verifiable presentations.</p>
+<p id=f15a class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Is it this product passport use case or…</p>
+<p id=040d class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> is this additional product passport use case?</p>
+<p id=d957 class="phone s10"><cite>Ronald_Koenig:</cite> Excuse me. I didn't get it.</p>
+<p id=a5a5 class="phone s10"><cite>Ronald_Koenig:</cite> a product passport for me from my point of view I really would start with really this issuer holder verifier model because my understanding is okay yes we have also selfisssued product passports of course but my understanding is take a car for example the manufacturer of the car should provide a verifiable credential explaining the properties or the claims of the car and then this property should be bound to the car itself. So that for example if I put the serial number of a car and…</p>
+<p id=3b0f class="phone s03"><cite>Carolynn_Bernier:</cite> Does the car have a wallet?</p>
+<p id=265d class="phone s10"><cite>Ronald_Koenig:</cite> put this serial number in direct close contact to this car then I can prove that this digital product passport is about this car. So that means the holder of this verifiable credential is really the car and not the manufacturer. Of course, it can have a wallet. we have identity for machines. We have identity for things. Of course, if you drive later with your car to a charging station, of course, the car will get identity.</p>
+<p id=7633 class="phone s10"><cite>Ronald_Koenig:</cite> It has to authenticate against the car station so that can prove that on the other side is for example a car from whoever manufacturer you have and it will also prove claims about the car to the charging station. This is what we are already doing to make sure that this car is loaded just to the specifications…</p>
+<p id=6a56 class="phone s10"><cite>Ronald_Koenig:</cite> which are in the digital product passport of this car.</p>
+<p id=3fcf class="phone s03"><cite>Carolynn_Bernier:</cite> Mhm. Okay.</p>
+<p id=768a class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But…</p>
+<p id=a3c5 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> but yeah,' that probably my point. can we start with something that we need for digital product passports and then take it from there? Yeah.</p>
+<p id=bc45 class="phone s03"><cite>Carolynn_Bernier:</cite> So I'm taking from this discussion I need to start to add a section how are verified credentials how are used in DBP use cases.</p>
+</section>
+
+<section>
+<h3 id=7df3>Vc Usage Models For Dpp</h3>
+<p id=0a6f class="phone s03"><cite>Carolynn_Bernier:</cite> So we need to describe the selfissue the third party the self we need to explain this a little bit and also the absence of holder binding or the multiholder binding. a question for Ronald just out of my own ignorance is holder binding is the whole concept of binding for verifiable presentations do…</p>
+<p id=33f5 class="phone s10"><cite>Ronald_Koenig:</cite> That's it.</p>
+<p id=dfbe class="phone s03"><cite>Carolynn_Bernier:</cite> if I don't use verifiable presentations do we have any kind of binding requirements</p>
+<p id=f921 class="phone s03"><cite>Carolynn_Bernier:</cite> Or does the concept of binding only apply to pres presentations?</p>
+<p id=2ced class="phone s10"><cite>Ronald_Koenig:</cite> No, I don't say that is the topic of presentation. The question is you can do it without any kind of holder binding but it is then questionable why do you need verifiable credentials for this one? Make your example for I think a very valid use case for DPPS is for example battery passport and the battery passport. It is essential that this battery passport is bound to the battery itself because the value comes from if I want to sell a battery, I want to make sure that the claims is precisely about this battery and not any battery something like that. For example, if I want the charging cycles, is I want the sock or the state of charging and all the other things and how long it was operated in which temperature range and so on.</p>
+<p id=5ce3 class="phone s10"><cite>Ronald_Koenig:</cite> All this information needs to be bound to the battery itself and it will be done so that the battery gets a unique identifier and maybe this is either embossed or as a NFC code or something like that directly connected to the battery so that I can prove that every claim about this credential subject is more or less about this battery and I can prove And this is from my point of the whole thing of binding of information to a certain product and this binding is from my point of view done in different ways.</p>
+<p id=77de class="phone s10"><cite>Ronald_Koenig:</cite> For example, we have a project with the Switzer railway and there the product is a rail itself and of course every rail has at the beginning and the end of the rail a number which cannot be u modified and…</p>
+<p id=b2dd class="phone s10"><cite>Ronald_Koenig:</cite> this goes into the different product passport so that everybody knows this product passport is about this rail.</p>
+<p id=b7f3 class="phone s03"><cite>Carolynn_Bernier:</cite> No, that just yes fundamentally my question is so in your understanding the product itself is the holder…</p>
+<p id=9863 class="phone s03"><cite>Carolynn_Bernier:</cite> if I understand correctly. So the product itself has a wallet because in most the simple use case for a DPP The issuer which is the responsible economic operator. What you're saying is here is that the holder is not the responsible economic operator.</p>
+<p id=d7de class="phone s03"><cite>Carolynn_Bernier:</cite> It is the product itself.</p>
+<p id=cf8b class="phone s10"><cite>Ronald_Koenig:</cite> And my understanding is the issuer is usually not the holder.</p>
+<p id=9fc3 class="phone s10"><cite>Ronald_Koenig:</cite> The issuer makes statement about something let me call it this way and issues it to something so that something can prove it against the third party. This is the idea of verifiable credentials and verifiable presentations. Otherwise, if you just make a statement about something without to issue it to them so that he can prove that it is really the credential subject related to the credential subject,…</p>
+<p id=c482 class="phone s10"><cite>Ronald_Koenig:</cite> then you can make a normal signed document and prove it and say that's it. You don't need verifiable credentials for it. This is my understanding.</p>
+<p id=863c class="phone s03"><cite>Carolynn_Bernier:</cite> We about it.</p>
+<p id=46e1 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> But Caroline,…</p>
+<p id=9663 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> yes, I would like to confirm that that's a possibility that the product as an identity has a wallet where it collects all the claims that have been made about it. Yeah. …</p>
+<p id=ac61 class="phone s03"><cite>Carolynn_Bernier:</cite> How do you give a product a wallet? Dr. Susanne Guth-Orlowski:</p>
+<p id=c6fa class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I guess they're different ways. is here you can in the battery case for example you put it online or…</p>
+<p id=dc91 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> you put it in the battery management system. yeah.</p>
+<p id=96ef class="phone s10"><cite>Ronald_Koenig:</cite> Yeah. this way that really you have to…</p>
+<p id=414e class="phone s10"><cite>Ronald_Koenig:</cite> if we for example talking about things we are also talking about agents everybody who needs the identity gets some wallet functionality in the sense that they can present the credential or I can receive the credential from this one and he can sign it so that I can prove that really this is the object which is the holder of this credential right by the way it doesn't</p>
+<p id=484f class="phone s10"><cite>Ronald_Koenig:</cite> Could also be a claim inside the credential subject which is related to the holder.</p>
+<p id=3052 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> So all the articles I wrote on that always assumed that the product has its own wallet especially in the battery use case…</p>
+<p id=a92d class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> because we also have the claims that are coming during life cycles such as a state of health and negative events and that's collected in the wallet and we've discussed it a lot of times and always came to the conclusion that this is the best way to do it especially for the battery as a first thing and then for textiles to be discussed yeah because textiles have a lower margin and not clear…</p>
+<p id=ca6c class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> if every textile gets a wallet maybe online but it cannot be done in the product so to be discussed.</p>
+<p id=9ec2 class="phone s03"><cite>Carolynn_Bernier:</cite> H okay so I will add a section and…</p>
+<p id=376b class="phone s03"><cite>Carolynn_Bernier:</cite> how are VCs using DPP use cases and I think that's the self-held the third party held the product itself has a wallet and etc. I think we need to spell this out and all this is diversity meaning there are multiple ways to use VCs in the DPP context and…</p>
+<p id=d4c0 class="phone s03"><cite>Carolynn_Bernier:</cite> I think that we need to spell it out to be very clear. I think that will be very useful. okay so who Ian Yes.</p>
+<p id=c02d class="phone s07"><cite>Ivan_Herman:</cite> Yeah, I think it's a little bit more than that, Caroline. I think that you should collect the discussions and…</p>
+<p id=5cb3 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=c4b6>Bringing Vc Issues To The Working Group</h3>
+<p id=35de class="phone s07"><cite>Ivan_Herman:</cite> not necessarily with end results and bring it to the working group as a whole on one of the Thursdays no f Wednesdays. because you are right in one aspect very much so that if I try to recolct all the working group discussions over the years.</p>
+<p id=10007 class="phone s07"><cite>Ivan_Herman:</cite> the identity card kind of model has always dominated all the use cases that we were discussing. I'm not saying that they are the only ones. But if you look at the various examples in the various documents, they are almost all these kind of identity kind things.</p>
+<p id=1b69 class="phone s03"><cite>Carolynn_Bernier:</cite> That's my fear.</p>
+<p id=5b08 class="phone s07"><cite>Ivan_Herman:</cite> Yeah. driving license or…</p>
+<p id=e2c1 class="phone s03"><cite>Carolynn_Bernier:</cite> That's my fear. passports. Yeah.</p>
+<p id=8c20 class="phone s07"><cite>Ivan_Herman:</cite> or university alumni or something like that. And so if you bring these kind of issues to the group as soon as possible and you have to talk to the chairs on how they schedule that it would be very important I believe.</p>
+<p id=59d3 class="phone s03"><cite>Carolynn_Bernier:</cite> I agree, but I want to do this in a clearer way, So that means we Okay. Yeah.</p>
+<p id=68d5 class="phone s07"><cite>Ivan_Herman:</cite> Yeah, I am not saying doing it right now, Caroline, but in the coming weeks it would be really good to have</p>
+<p id=10008 class="phone s03"><cite>Carolynn_Bernier:</cite> In the next 3 weeks, I will be disconnected from electronic forms of communication. So, nothing is going to happen except so what I promise to do before I leave on my vacation is to take this content and to modify the draft. this document here so that you can start reacting to the content. This is what I would like to invite people in this group to do is to say is to react to what is already here and for example react to this list add content here and also maybe react to this. Okay.</p>
+</section>
+
+<section>
+<h3 id=767d>Document Feedback And Contributions</h3>
+<p id=a342 class="phone s03"><cite>Carolynn_Bernier:</cite> So we need to start collecting content from our conversation and putting it on paper because once we have it on paper virtual paper things become clearer. Once we write things down we need to write things down and once we have them written down then at least in our own minds things become clearer. so I promise that before Thursday I will send an email pro show explaining that there I've updated this document and inviting everybody to read the content and to provide feedback on the GitHub.</p>
+<p id=54b0 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Caroline, is this still the same GitHub page that I used and…</p>
+<p id=2411 class="phone s03"><cite>Carolynn_Bernier:</cite> Yes. Yes.</p>
+<p id=a206 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> simply, published? we just doing it for a while this way or do We have a process in place. Okay.</p>
+<p id=e9b0 class="phone s03"><cite>Carolynn_Bernier:</cite> You mean so yes so if you want to make a proposals you create a branch so you commit to your own branch any modifications you want to write or you can create an issue which means you don't make a pull request but you just create an issue if you want to discuss a topic you committed to main and…</p>
+<p id=cff5 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> because last time I just deployed okay thanks</p>
+<p id=3385 class="phone s03"><cite>Carolynn_Bernier:</cite> that's perfectly fine.</p>
+<p id=c8f5 class="phone s03"><cite>Carolynn_Bernier:</cite> It was perfectly fine but now I think we need to start communicating through issues and pull requests.</p>
+<p id=4f0b class="phone s10"><cite>Ronald_Koenig:</cite> But Caroline,…</p>
+<p id=d98a class="phone s10"><cite>Ronald_Koenig:</cite> for you is it fine if I make a branch? I don't need to fork the repository and then send a pull request to you. For you it is fine if I'm branching it only and then make a pull request from the feature branch to the main branch.</p>
+<p id=082c class="phone s03"><cite>Carolynn_Bernier:</cite> Yes. Exactly.</p>
+<p id=5f01 class="phone s10"><cite>Ronald_Koenig:</cite> Okay.</p>
+<p id=8e0b class="phone s03"><cite>Carolynn_Bernier:</cite> So hopefully before the end of today I will have modified the structure of the document so it's easier to contribute to it and the important thing that I will add is this section here how are VCs using DPP use cases I think that this conversation here has been valable valuable to understand how we have to make the structure</p>
+<p id=66c2 class="phone s03"><cite>Carolynn_Bernier:</cite> of the document evolves. so I don't know…</p>
+<p id=1b54 class="phone s03"><cite>Carolynn_Bernier:</cite> if I will put it after this section. I think before Yep.</p>
+<p id=683f class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, why not?</p>
+<p id=da26 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> It's fine for that, I think.</p>
+<p id=9d71 class="phone s03"><cite>Carolynn_Bernier:</cite> Yep. …</p>
+<p id=de5f class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> And I'm also happy to help with that. Yeah. Yeah.</p>
+<p id=9515 class="phone s03"><cite>Carolynn_Bernier:</cite> you already have,…</p>
+<p id=ee48 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I know.</p>
+<p id=684b class="phone s03"><cite>Carolynn_Bernier:</cite> but…</p>
+<p id=ab94 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm just saying you maybe don't have to write it alone.</p>
+<p id=8fb9 class="phone s03"><cite>Carolynn_Bernier:</cite> and I don't intend to write it alone. I only want to put together a structure so that people can contribute properly.</p>
+<p id=21e2 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> The structure. Okay.</p>
+<p id=8c1a class="phone s03"><cite>Carolynn_Bernier:</cite> It's difficult to contribute to a draft that is a real mess.</p>
+<p id=48a2 class="phone s03"><cite>Carolynn_Bernier:</cite> So I wanted to make this draft less of a mess and…</p>
+<p id=34ef class="phone s03"><cite>Carolynn_Bernier:</cite> also wanted to ask Ivan how do we have field here editors or contributors authors. Yeah.</p>
+<p id=373d class="phone s07"><cite>Ivan_Herman:</cite> You mean the two different thing the editors you in the beginning of the HTML file there is a JSON structure and…</p>
+<p id=2c67 class="phone s07"><cite>Ivan_Herman:</cite> there you can add people's name and there are some data that you have to put there you can look at your own data which I filled in at some point and then the same words for anyone who is An editor appear it's the only official thing at W3C and…</p>
+<p id=8552 class="phone s03"><cite>Carolynn_Bernier:</cite> you can't have all the contributors.</p>
+<p id=4ef8 class="phone s07"><cite>Ivan_Herman:</cite> you can have as many editors as you want but the rule is usually that editors for example have the right to merge the PRs etc. So they have a certain responsibility.</p>
+<p id=bd59 class="phone s03"><cite>Carolynn_Bernier:</cite> Yeah. Yes.</p>
+<p id=536d class="phone s07"><cite>Ivan_Herman:</cite> We can without any problem add an additional entry in this header which says authors and authors can list any number of people and we can also and one doesn't exclude the other at the end one become a little bit more public…</p>
+<p id=bc00 class="phone s07"><cite>Ivan_Herman:</cite> then at the end we put an acknowledgement section where we can put even more people. and there are no rules for that.</p>
+<p id=11d8 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> What?</p>
+<p id=3bf4 class="phone s07"><cite>Ivan_Herman:</cite> The only rules there are in W3C is for the role of editors. Everything else is working groupwise.</p>
+<p id=507d class="phone s03"><cite>Carolynn_Bernier:</cite> So I would like to add authors here.</p>
+<p id=5f5b class="phone s07"><cite>Ivan_Herman:</cite> You want to add outs.</p>
+<p id=bcae class="phone s03"><cite>Carolynn_Bernier:</cite> Yes. Okay.</p>
+<p id=d3fb class="phone s07"><cite>Ivan_Herman:</cite> So clean the current stuff and then you tell me when and I can add another and…</p>
+<p id=89f4 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay, super.</p>
+<p id=4695 class="phone s07"><cite>Ivan_Herman:</cite> then you can multiply</p>
+<p id=8a03 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay, I suggest we end the meeting here. I will stop sharing my screen. I will be present on the Monday of the 17th, but So until then, you will have lots of time to talk about wallets and…</p>
+<p id=f1b5 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah.</p>
+<p id=e9f5 class="phone s03"><cite>Carolynn_Bernier:</cite> I wish everybody a very No,…</p>
+<p id=4d80 class="phone s02"><cite>Phil_Archer:</cite> It's weird just watching your brain completely shut down. Carolyn, you need a holiday.</p>
+<p id=1239 class="phone s03"><cite>Carolynn_Bernier:</cite> no, no, no. was reading Sebastian's chat comment. so Sebastian I think a new PR is probably best.</p>
+<p id=cc14 class="phone s03"><cite>Carolynn_Bernier:</cite> Sorry about that. Ivan, can you stay on just two minutes so I don't mess up the Yeah.</p>
+<p id=813c class="phone s07"><cite>Ivan_Herman:</cite> Yeah. Don't worry too much.</p>
+<p id=23f2 class="phone s10"><cite>Ronald_Koenig:</cite> I'm</p>
+<p id=e44f class="phone s03"><cite>Carolynn_Bernier:</cite> Yeah. Yeah. Thanks. Bye.</p>
+<p id=06ba class="phone s04"><cite>Sebastian_Schmittner:</cite> Many thanks everybody.</p>
+<p id=c6a8 class="phone s04"><cite>Sebastian_Schmittner:</cite> Have a good day.</p>
+<p id=be8f class="phone s11"><cite>Ingo_Wolf:</cite> Thank you.</p>
+<p id=3b9a class="phone s02"><cite>Phil_Archer:</cite> Thanks everyone. Bye.</p>
+<p id=bf27 class="phone s12"><cite>Ivo_Ladenius_gs1_netherlands:</cite> Say goodbye. Fine.</p>
+<p id=0e00 class="phone s03"><cite>Carolynn_Bernier:</cite> I don't want to mess this up. so okay we will add you as soon as we have some merge conflicts and…</p>
+<p id=15fd class="phone s07"><cite>Ivan_Herman:</cite> Don't honey.</p>
+<p id=52b5 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> So Carolyn this is what I think I started in 2021 the topic and I'm glad to see it here now at W3C and I would be happy to be an editor to bring this to an official page other than my Medium articles.</p>
+<p id=aa75 class="phone s03"><cite>Carolynn_Bernier:</cite> I will add you as editor</p>
+<p id=4d34 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. Okay. I know for me is difficult. I just wanted to let you know that I would like to put some of my energy into this.</p>
+<p id=0e1c class="phone s07"><cite>Ivan_Herman:</cite> Done. felt.</p>
+<p id=9652 class="phone s03"><cite>Carolynn_Bernier:</cite> Excellent. Thank you, Susan. Thank you.</p>
+<p id=9c6e class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Wish you a nice evening and a wonderful holiday. And when you're back,…</p>
+<p id=f59d class="phone s02"><cite>Phil_Archer:</cite> All right.</p>
+<p id=7e5b class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm on holiday. So, I will be back the beginning of September.</p>
+<p id=1c24 class="phone s03"><cite>Carolynn_Bernier:</cite> Fine. Thanks a lot.</p>
+<p id=5b38 class="phone s09"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Okay. you. Bye-bye.</p>
+<p id=8446 class="phone s03"><cite>Carolynn_Bernier:</cite> Byebye. Wait.</p>
+<p id=ae31 class="phone s07"><cite>Ivan_Herman:</cite> Byebye. Susanna statement.</p>
+<p id=6338 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay.</p>
+<p id=acd0 class="phone s07"><cite>Ivan_Herman:</cite> HTML and include the cont. Data replace. No. Wait, wait.</p>
+<p id=e35a class="phone s03"><cite>Carolynn_Bernier:</cite> HTML path edit. Mhm. Mhm.</p>
+<p id=d615 class="phone s07"><cite>Ivan_Herman:</cite> include email.</p>
+<p id=f1f9 class="phone s03"><cite>Carolynn_Bernier:</cite> data include format markdown true section. Okay. markdown you Okay.</p>
+<p id=3d07 class="phone s07"><cite>Ivan_Herman:</cite> Wait, exact says to say.</p>
+<p id=9f25 class="phone s03"><cite>Carolynn_Bernier:</cite> When is It's telepathy.</p>
+<p id=8d43 class="phone s07"><cite>Ivan_Herman:</cite> for your deputy for us.</p>
+<p id=70b5 class="phone s03"><cite>Carolynn_Bernier:</cite> No. Minute.</p>
+<p id=ae47 class="phone s07"><cite>Ivan_Herman:</cite> We scient command shift air.</p>
+<p id=3cd5 class="phone s03"><cite>Carolynn_Bernier:</cite> Are home control? No.</p>
+<p id=74e2 class="phone s07"><cite>Ivan_Herman:</cite> Control shift.</p>
+<p id=19ae class="phone s03"><cite>Carolynn_Bernier:</cite> Windows. Ah.</p>
+<p id=141c class="phone s07"><cite>Ivan_Herman:</cite> Control shift. for the cash local index.</p>
+<p id=4537 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay. Fore text HTML editors.</p>
+<p id=1c08 class="phone s07"><cite>Ivan_Herman:</cite> Wait, paste.</p>
+<p id=c37c class="phone s03"><cite>Carolynn_Bernier:</cite> I don't really know.</p>
+<p id=9035 class="phone s03"><cite>Carolynn_Bernier:</cite> I know.</p>
+<p id=10009 class="phone s07"><cite>Ivan_Herman:</cite> Wait. C joining as a member. She's passed escort. Wait, I could</p>
+<p id=4af8 class="phone s03"><cite>Carolynn_Bernier:</cite> Okay. Come on.</p>
+<p id=847b class="phone s07"><cite>Ivan_Herman:</cite> CCT. We slash thresh. probably get no address email</p>
+<p id=1142 class="phone s03"><cite>Carolynn_Bernier:</cite> Are we? Okay.</p>
+<p id=7202 class="phone s03"><cite>Carolynn_Bernier:</cite> Search through.</p>
+<p id=0509 class="phone s07"><cite>Ivan_Herman:</cite> Olowski. Sorry.</p>
+<p id=692d class="phone s03"><cite>Carolynn_Bernier:</cite> Suzan, Sorry.</p>
+<p id=45a5 class="phone s03"><cite>Carolynn_Bernier:</cite> invited expert ID.</p>
+<p id=8ebc class="phone s07"><cite>Ivan_Herman:</cite> How was it? Wait. Susan.</p>
+<p id=c805 class="phone s03"><cite>Carolynn_Bernier:</cite> Catherine cat. Okay.</p>
+<p id=ef9e class="phone s07"><cite>Ivan_Herman:</cite> I can account the digit I Suzanne,…</p>
+<p id=6e9f class="phone s03"><cite>Carolynn_Bernier:</cite> Okay.</p>
+<p id=4916 class="phone s07"><cite>Ivan_Herman:</cite> co-editor I pass one Caroline in back.</p>
+<p id=7a63 class="phone s03"><cite>Carolynn_Bernier:</cite> All right. Mercy. Meeting ended after 01:12:25 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

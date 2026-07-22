@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 21 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>21 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, read.ai_meeting_notes, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f0d3">Threat Model Follow Up</a></li>
+<li><a href="#7490">Test Suite Follow Up</a></li>
+<li><a href="#8459">Pull Request Reviews</a></li>
+<li><a href="#4107">Interaction Protocol Registry</a></li>
+<li><a href="#bd3b">IANA Scheme Registration</a></li>
+<li><a href="#5b9b">Advanced Presentation Features</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=d30f class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, welcome to the call. We'll get started in a couple minute as usual.</p>
+<p id=53f0 class="phone s01"><cite>Patrick_St-Louis:</cite> So, we have seven person in the call so far. So, we're slowly going to get started. If people join in late, they will be able to catch so welcome everyone to this VCOM call. today is the July 21st, 2026. so this is a call for a W3C specification. So all W3C policies and IP commitment are into effect. in this call we'll be discussing a VC API for life cycle management of credentials and instances.</p>
+</section>
+
+<section>
+<h3 id=f0d3>Threat Model Follow Up</h3>
+<p id=076a class="phone s01"><cite>Patrick_St-Louis:</cite> Before I present the agenda for today, I will leave some time for introductions or reintroductions, community updates and any suggested topics for that we want to add to the agenda. So if you have anything to share, now is the time. Very good.</p>
+<p id=c459 class="phone s01"><cite>Patrick_St-Louis:</cite> In this case, the agenda for today, nothing out of the ordinary. So, we're going to be doing a followup on our two parallel items, which is the threat modeling as well as the test suite. after that, we will go into R reviews. I know there's quite a few PRs that we will be able to merge right away. And then we're going to go do some issue triaging reviewing a bit of our issues and making sure we are advancing at a steady pace. so let's get started. And the first topic again I put this topic here. I'm not actively working on this. I am reviewing PR. So maybe there's things to discuss, maybe not.</p>
+<p id=54ae class="phone s01"><cite>Patrick_St-Louis:</cite> But I still wanted to leave a bit of space to specifically talk about this and…</p>
+<p id=00cb class="phone s01"><cite>Patrick_St-Louis:</cite> if there's any advancement that been done. Eric</p>
+<p id=1943 class="phone s02"><cite>Eric_Schuh:</cite> Yeah. …</p>
+<p id=194b class="phone s02"><cite>Eric_Schuh:</cite> I guess I'll kind of give a sense of what my plan was with the threat model. so nothing has really progressed since last week in terms of the threat model. I've mostly just did some issue cleanup and made sure everything was being tracked. so in the near term I think the only thing I have planned is to put in a PR to u link to the threat model document from the security consideration section of the main spec. other than that and Manu please correct me if I'm wrong I believe we have what we need in terms of the threat model to go to CR.</p>
+<p id=7a26 class="phone s02"><cite>Eric_Schuh:</cite> So I'm going to be turning my attention back to the version 1.0 tagged issues until we get to the point that we're going to CR. And once we're there, I'll probably at that point come back to the threat model and look to make more revisions and…</p>
+<p id=4bf2 class="phone s02"><cite>Eric_Schuh:</cite> kind of get it from a draft state into a more final state. so that's I guess generally where I'm going. if anyone would like to raise PRs for any of the open issues, obviously that's welcome. but as far as my work, it'll probably be, at least a few weeks before I come back to it.</p>
+<p id=2c4a class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. yeah,…</p>
+<p id=c119 class="phone s01"><cite>Patrick_St-Louis:</cite> that sounds good.</p>
+<p id=ffff class="phone s01"><cite>Patrick_St-Louis:</cite> So the next tangible action is this to look at the issues and open PRs. That's the best effort that we could do to help here. Sounds Very good. I know you mentioned I don't see Manuel on the call right now. He might join later. so something to bear in mind. is there anything you wanted to add Joe or does that summarize the situation with the threat model? I know you've been working with Eric a little bit.</p>
+<p id=020d class="phone s02"><cite>Eric_Schuh:</cite> Yep. Thanks.</p>
+<p id=08b3 class="phone s03"><cite>Joe_Andrieu:</cite> Nothing to add.</p>
+<p id=9d28 class="phone s01"><cite>Patrick_St-Louis:</cite> So, yeah, looks like there's a bit of progress here. and the next step is clear. Tackle issues, open PRs. quick question.</p>
+<p id=89bc class="phone s01"><cite>Patrick_St-Louis:</cite> the issues about this. Do we have a special tag for these issues like a threat model tag because this is kind of its own little thing or…</p>
+<p id=48a2 class="phone s01"><cite>Patrick_St-Louis:</cite> are they just listed as normal issues? Yeah. Awesome.</p>
+<p id=ffb2 class="phone s02"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=2e3e class="phone s02"><cite>Eric_Schuh:</cite> there is a threat model tag that I made. So I believe it was 11 or 12 issues that I created all have that tag. So you can easily omit it from searches if you don't want to see those issues. and then, just to respond to Coyote in chat, I have no issue, renaming that, folder if you want to change from an underscore to a dash as well.</p>
+</section>
+
+<section>
+<h3 id=7490>Test Suite Follow Up</h3>
+<p id=4969 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you very much. so a quick test suite followup. so there's still a PR. I'm still waiting gently for</p>
+<p id=0a1b class="phone s01"><cite>Patrick_St-Louis:</cite> Hold on, I just got a message. yeah. So, I'm still waiting for a review on the VCOM test suite sort of initial scaffolding. So, any review on this will be good. I know I reached out to Benjamin. He's going to have a look especially here. but for those just a reminder. So we have the WC VCON test suite repo. there's an initial PR about scaffolding. So this installs a bunch of dependencies in here. so don't be too intimidated by this big number. Most of it is the package lock file which is just package that are installed.</p>
+<p id=fcee class="phone s01"><cite>Patrick_St-Louis:</cite> there's a list of our normative statements that we'll want to test in this test suite and we have a bit of a read me that explains a bit the approach and the methodology here. Those are the two most important things. I have another PR ready to come in after this for the issuer and verifier service conformance test and then I will have another one for the other parallel service. And then finally will be the workflows and exchange left to test. so I invite you to have a look at this.</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> I will probably ask in the coming week on Slack if there's any interest in if anyone's interested in maybe joining 10 15 20 minutes before the VCOM call if they are available to do a focused session around test suite so we don't take too much of the VCOM call for this I'll reach out on Slack for So, if at least a thumbs up in here would be great. Otherwise, I might just merge it and keep working on it. okay. So, let's go have a look at VCOM. so we have the specification.</p>
+</section>
+
+<section>
+<h3 id=8459>Pull Request Reviews</h3>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> I believe we had merged our simplified example. There's a bit of a render error here. So I will have to look at this. this is not exactly how we wanted this to surface and although the intention is good. the idea was to simplify a bit the requirement for these response and say that we can accept either a embedded proof or envelope proof in here. so I'll need to review this a bit this kind of rendering component. that's just one thing I wanted to show here kind of an adverse effect. Otherwise let's go in our pull request.</p>
+<p id=b58b class="phone s01"><cite>Patrick_St-Louis:</cite> So first thing we're going to go through. So we had two or three PRs that were ready to be closed last time. We just wanted to let them sit a little bit. this one was about adding a slash request endpoint. that would make this potentially allegedly u compatible with the DT API. It's an endpoint that just shows the verifiable presentation request. now I see there's been some comments added here from Dave yesterday. A few reviews from Ted. I see that Dave has approved it.</p>
+<p id=d4ca class="phone s01"><cite>Patrick_St-Louis:</cite> The only notable thing is we had decided that this endpoint would be required for the time being and we may discuss in the future to make Can optional in case if people don't really care about the API. I think as far as I'm concerned looks I'm still happy with this. so I will maybe turn it to Kyote. Maybe you can tell us a bit about the…</p>
+<p id=60d1 class="phone s01"><cite>Patrick_St-Louis:</cite> what was resolved yesterday and give us the thumbs up if you think we can still go ahead with this merge.</p>
+<p id=cf6b class="phone s04"><cite>Kayode_Ezike:</cite> Sure.</p>
+<p id=d999 class="phone s04"><cite>Kayode_Ezike:</cite> So I know that I had a few questions that I asked I think late last week or so. Have to excuse me a second. So I believe the question so the latest thing that I added last week that I can recall was that there was the need to basically include the verifiable presentation property in the response and not just include the VPR directly in the body. So that was one of the bigger ones. And then I asked if I should also allow for that to potentially be an array the same way that other places where we now have a PR we just merged in a few a week or two ago where we now accept arrays for the verify presentation property. So I was wondering if we should do the same for this one. I don't know if that question was resolved. I know a few other questions.</p>
+<p id=01a9 class="phone s04"><cite>Kayode_Ezike:</cite> Just give me a second to open this on my computer but there was I think off top of my head. So basically it was something related to the fact that what do we do when there is no current VPR that needs to be returned for example what if there is a workflow that never gets to that it only has an init a redirect URL or it only has some other field that doesn't</p>
+<p id=afc0 class="phone s04"><cite>Kayode_Ezike:</cite> should that still verify presentation with the object?</p>
+<p id=5e7d class="phone s04"><cite>Kayode_Ezike:</cite> Should it just return a null or that was one question that I had as well and then I guess he did respond to moving it up now. So I haven't addressed any of the responses that he gave they gave to these questions. So I'll probably need to revisit this before we can move forward.</p>
+<p id=d30e class="phone s01"><cite>Patrick_St-Louis:</cite> I was also thinking this approach right you just put an empty object so there still returns something…</p>
+<p id=8473 class="phone s01"><cite>Patrick_St-Louis:</cite> but there's no presentation requests in this workflow so there's not much that can be done there.</p>
+<p id=639a class="phone s01"><cite>Patrick_St-Louis:</cite> Are you saying you want us to wait a little bit before merging this?</p>
+<p id=9356 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah,…</p>
+<p id=d0da class="phone s04"><cite>Kayode_Ezike:</cite> I think I would be comfortable.</p>
+<p id=2f7c class="phone s04"><cite>Kayode_Ezike:</cite> I mean, if y'all are comfortable, like looking through the remaining comments and just basically applying the suggestions that were given there and maybe merging it offline.</p>
+<p id=3761 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. …</p>
+<p id=78f6 class="phone s01"><cite>Patrick_St-Louis:</cite> it's really the comment about MTVPR, correct? Okay.</p>
+<p id=dc0d class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, exactly.</p>
+<p id=5f4e class="phone s01"><cite>Patrick_St-Louis:</cite> I'll come in this and we'll leave it fix the interaction diagram. so I believe nothing new has been brought up of last week. this was adding I think a missing service. Is that correct?</p>
+<p id=0493 class="phone s01"><cite>Patrick_St-Louis:</cite> If I'm trying to remember this.</p>
+<p id=2591 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, it was adding the component to the workflow service…</p>
+<p id=1cb7 class="phone s04"><cite>Kayode_Ezike:</cite> which I was going to say yeah which bas Yeah, based on that that's actually what is interacted with when the wallet receives the interaction URL in exchange URL so that's just in the update Yeah.</p>
+<p id=2e4b class="phone s01"><cite>Patrick_St-Louis:</cite> Sounds good. Any objection to merging this. I will let you coyote respond to the issues and close the relevant issues if that's okay.</p>
+<p id=2b35 class="phone s04"><cite>Kayode_Ezike:</cite> Okay. That's fine. Stupid</p>
+<p id=9347 class="phone s01"><cite>Patrick_St-Louis:</cite> Just capturing a small comment how the issue was resolved.</p>
+<p id=bef9 class="phone s01"><cite>Patrick_St-Louis:</cite> So add support for multiple VC VPs and exchange participation message. I see two days ago you added some comments. so since we approved there's been a couple change. Do you want to tell us about these new changes that you've added…</p>
+<p id=3be3 class="phone s01"><cite>Patrick_St-Louis:</cite> since last week and let us know if this changes anything or if they're still in a good place.</p>
+<p id=0e09 class="phone s04"><cite>Kayode_Ezike:</cite> Okay. …</p>
+<p id=0692 class="phone s04"><cite>Kayode_Ezike:</cite> good question. could you open some of these commits so I can remember myself? so that first one. Exactly. Or was that Sorry, not that one. That's just the open the PR, but the one below that. Yeah. Okay. What does the message say the commit? this is just What this is is that I noticed that while I was doing this work to add the capacity for an array to be provided for the ver presentation. I noticed that there was a weird sort of artifact where there was no way to indicate that the exchange was completed unless you were required to provide a reference ID.</p>
+<p id=f4a6 class="phone s04"><cite>Kayode_Ezike:</cite> Basically, it was just bringing this to parody with the request message so that you can just return an empty object for now. I think Dave mentioned potentially adding another way to indicate this through a different property like slash or something, but that will be for a different issue another time. for now. Just wanted to bring the servers at least in this respect the server's response to par with the client by just allowing for the empty message to indicate allowing that to be a possible response which would just be that there's nothing more left to do for the wallet in the exchange. So nothing really material substantive with this I would say.</p>
+<p id=70e0 class="phone s04"><cite>Kayode_Ezike:</cite> But I don't know…</p>
+<p id=a4e4 class="phone s04"><cite>Kayode_Ezike:</cite> if there's any other comments that I made since last week from what you can see there.</p>
+<p id=0f8c class="phone s01"><cite>Patrick_St-Louis:</cite> No, this looks pretty good.</p>
+<p id=5d81 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I'm happy with this and I'm happy to merge this. Is there any objections to merging this and closing this issue about allowing an array of Ps? Very good. Okay. So, refresh this. Okay.</p>
+<p id=e30f class="phone s01"><cite>Patrick_St-Louis:</cite> So, this one went over it. So, let's open the three other PRs. so this one was also open last week and it looks like we actually also approved this. Let's see if there was any issue.</p>
+<p id=91f6 class="phone s04"><cite>Kayode_Ezike:</cite> Not an objection,…</p>
+<p id=d8d3 class="phone s01"><cite>Patrick_St-Louis:</cite> You just changed the title here. Nothing else was changed. so I'm still happy to merge this. It looks like it will need a quick rebase based on the PRs that we just merged. so if you want to look at that we can come back either during this call or after the call. I'll ask now is there any objection to merging this once the rebase is done,</p>
+<p id=fa19 class="phone s04"><cite>Kayode_Ezike:</cite> but I do remember Dave mentioned something about adding more commentary on this notion of interaction training.</p>
+<p id=41e1 class="phone s04"><cite>Kayode_Ezike:</cite> I thought that was captured in a comment somewhere from last week. discuss yeah I mean I'll close it as got through.</p>
+<p id=f0e1 class="phone s01"><cite>Patrick_St-Louis:</cite> H you're correct.</p>
+<p id=0afd class="phone s01"><cite>Patrick_St-Louis:</cite> You're cor so I think this was saying we don't want to close the issue, I remember a little bit we said this PR might not address completely the issue but address it partially but that this PR was good to go. I think that was where we landed.</p>
+<p id=434d class="phone s04"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=1de7 class="phone s01"><cite>Patrick_St-Louis:</cite> So I will let you decide if you want to add a bit information about interaction chaining here and we can review next week or if you want us to just merge this once it's rebase. I'm okay with this as well.</p>
+<p id=8997 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, I'm fine with basing. How many approvals do we have?</p>
+<p id=dcf7 class="phone s01"><cite>Patrick_St-Louis:</cite> We have three.</p>
+<p id=125b class="phone s04"><cite>Kayode_Ezike:</cite> I'm fine with just basing what we have and then just leaving the issue open for now.</p>
+</section>
+
+<section>
+<h3 id=4107>Interaction Protocol Registry</h3>
+<p id=10002 class="phone s01"><cite>Patrick_St-Louis:</cite> Sounds good. So, if you want to do this now, we can come back to it later or as I said, we can merge after the call. That's So, interaction protocol registry. So, this is great. do you want to take us through this.</p>
+<p id=7379 class="phone s04"><cite>Kayode_Ezike:</cite> So essentially we just need a reference to the different protocols that we constantly refer to in the protocols object that comes from the exchange. Right? So obviously we know about the API one ID for VCI invite request. and so we kept referring to these but it feels odd to use them without actually explicitly saying these are all the valid options.</p>
+<p id=10003 class="phone s04"><cite>Kayode_Ezike:</cite> even if it is possible for folks to extend that I kind of do see that potentially being extension point but it felt important to at least define some of them and so what this does is it lists out the VC API one already for VP RD for VCI and then I have outstanding questions about which other ones we should include should we include the DICCOM one I remember there was mentioned that we should not include DC API because it's captured at a different layer in the browser.</p>
+<p id=1477 class="phone s01"><cite>Patrick_St-Louis:</cite> What's that?</p>
+<p id=edf2 class="phone s04"><cite>Kayode_Ezike:</cite> But I still asked the question anyway just to be clear. And then there's a few other ones that sort of I came up with. And then the other thing is that fifth point is related to a question that Benjamin had last week which is how do we accommodate a versioning? So my thought with this as an initial idea is that we keep the same generic fields that we currently have that don't have versions on them and those will be interpreted as the latest version of the spec at the time of the exchange. And then</p>
+<p id=a35a class="phone s04"><cite>Kayode_Ezike:</cite> If you wanted to support versioning we add some format for the keys to do that. so that now basically the decision to be made by both the wallet and…</p>
+<p id=6dac class="phone s04"><cite>Kayode_Ezike:</cite> the issuer and verifiers which is that if you constantly want to be supporting the latest or rather if you want to use the generic fields you need to be sure that you're following the latest and that you keep a breast with that. But if you are not confident that you'll be able to make that update in time, then you should just use the versioned keys instead. So I think that's kind of the idea that I have for now,…</p>
+<p id=6324 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah,…</p>
+<p id=ed23 class="phone s04"><cite>Kayode_Ezike:</cite> but I'm happy to for feedback from others.</p>
+<p id=d1cd class="phone s01"><cite>Patrick_St-Louis:</cite> I think it's interesting because different protocol will manage their versioning differently, Some of them the protocol itself will handle versioning. So you don't need to identify it necessarily, Because the versioning is kind of negotiated as part of the protocol as other ones they're just straight up different. so I don't have a definitive answer.</p>
+<p id=9617 class="phone s01"><cite>Patrick_St-Louis:</cite> I'd say for now, let's keep the versioning out and add it if there's a need. but maybe Nate has a better answer.</p>
+<p id=10004 class="phone s05"><cite>Nate_Otto:</cite> I don't know if I have a better answer. I just wanted to note that you can't necessarily tell from a versionless string whether the server is actually supporting the latest version or if they have not yet updated to the latest version and are some n versions behind. not that it particularly matters. but if you're going to support the oid forvp thing or bare vcapi thing, you probably need to basically support all possible versions of that protocol for what might be on the other end of that protocol.</p>
+<p id=605a class="phone s05"><cite>Nate_Otto:</cite> That said, I have been experimenting with putting versioned strings into systems and there are pretty big differences sometimes between protocols between drafts of OAD forvp and…</p>
+<p id=f489 class="phone s04"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=9040 class="phone s05"><cite>Nate_Otto:</cite> the 1.0 version. there were some very significant differences and it is useful to be able to have multiple different strings to be able to start the different protocol versions from different interaction urls for those. so I don't know if I'm strongly for having the versions in there or…</p>
+<p id=0acb class="phone s05"><cite>Nate_Otto:</cite> weekly for it, but I will note that in my implementations it has been very useful to be able to indicate which version I'm working on so that client partners are able to sort of seamlessly switch versions. We're supporting both and then they can decide when to upgrade their software as soon as they have support for the more updated</p>
+<p id=9564 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Another advantage.</p>
+<p id=4fe1 class="phone s01"><cite>Patrick_St-Louis:</cite> message I see is like so I'll take the didcom example right so there's com one didcom 2 when you get the didcom use JSONLD for the messages so you can see based on the message you receive if it's version one or two but what if I want to offer both version one and two right for the same workflow and let the client decide if we don't have versioning in the string I wouldn't be able to do that right I need to make</p>
+<p id=10fa class="phone s01"><cite>Patrick_St-Louis:</cite> a decision if I want to include V1 or V2. because we can't have just two didcom keys, you can have two identical keys for the protocols. That would create issues. so that's where I could see a use for included versioning is if you want to offer multiple version of a protocol on the same kind of workflow exchange.</p>
+<p id=83ec class="phone s01"><cite>Patrick_St-Louis:</cite> But yeah, Joe</p>
+<p id=5de7 class="phone s03"><cite>Joe_Andrieu:</cite> I thought I had a coherent concise …</p>
+<p id=6bbd class="phone s03"><cite>Joe_Andrieu:</cite> but I don't because I just got confused. So are we talking about the response that someone might give to say some sort of discovery request where we want the server to respond back that these are the protocols I support or are we talking about the registry which is what I thought this was about from a registry standpoint the spec I think does not distinguish between any of these versions. in fact I think we should not call it a registry. Dave Longley and I have commented on that topic to that extent. because really we want to say hey open ID for VP it's great we can use it and…</p>
+<p id=1b20 class="phone s03"><cite>Joe_Andrieu:</cite> and we want to say that without reference to any particular protocol but it is going to be very useful to have in some sort of discovery mechanism a way to understand that a given server supports specific protocols and so I just got confused between those two and I'll leave my comment at</p>
+<p id=d197 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. …</p>
+<p id=1f77 class="phone s01"><cite>Patrick_St-Louis:</cite> what I think this is about is so when you get an exchange URL you can get the protocols right you can request this protocols object which gives you all the way that you can engage with this exchange right so I think it's like you just do a get request and then you get this object and then you have protocols and then you have your list of protocols</p>
+<p id=10005 class="phone s01"><cite>Patrick_St-Louis:</cite> I think this is what we're talking about and we want to define somewhere in the spec non-normatively a mini thing of these are the keys that at least we start that you can support obviously at the end of the day I think people can put whatever they want in there. but ideally we should highlight I want to air quote here the mainstream protocols right which is the oid for VCI did come and then I think there was HTTPS and these other things</p>
+<p id=a2d9 class="phone s01"><cite>Patrick_St-Louis:</cite> And this discussion is about this protocols object that we return. Do we want the protocol keys that we use and this protocol object to contain versioning information or just leave that we don't really care about it and we just put VC API we just put oid for VCI and…</p>
+<p id=dcf3 class="phone s01"><cite>Patrick_St-Louis:</cite> the wallet will figure it out. Okay, you</p>
+<p id=8003 class="phone s04"><cite>Kayode_Ezike:</cite> So d to that and…</p>
+<p id=2421 class="phone s04"><cite>Kayode_Ezike:</cite> the only thing I would add is that Joe basically the table would just have the key the generic keys but if we were to add support for the communication or the advertisement of versioning of the different protocols. It wouldn't explicitly list those out in the table. it would just say this is the way that this is the format you would use to indicate that you want to use minor version for example. so that it would still basically just list out the generic keys…</p>
+<p id=4351 class="phone s04"><cite>Kayode_Ezike:</cite> but it would be up to the server to decide whether or not they would include that versioning information in their keys or not.</p>
+<p id=758d class="phone s03"><cite>Joe_Andrieu:</cite> So, if…</p>
+<p id=cb36 class="phone s03"><cite>Joe_Andrieu:</cite> if I may, is there no one else in the queue? it seems weird to me that our document, which is going to be rather static once it goes through CR and is published as a recommendation, we will not be able to update these strings.</p>
+<p id=1f91 class="phone s01"><cite>Patrick_St-Louis:</cite> No. Yeah.</p>
+<p id=32ff class="phone s03"><cite>Joe_Andrieu:</cite> And yet the versions are going to be updated. so it seems to me like we should separate the strings from a good protocol from the versioning string so that we don't have to keep publishing a rata to support future versions.</p>
+<p id=5cf6 class="phone s04"><cite>Kayode_Ezike:</cite> I guess but I guess what I was thinking more was that the semantics of the table would be such that would never change the core whatever three to five protocols that</p>
+<p id=00cc class="phone s04"><cite>Kayode_Ezike:</cite> we land on would never change. It would just be extra information to say that if you wanted to fully support the ability to address different versions,…</p>
+<p id=adf7 class="phone s04"><cite>Kayode_Ezike:</cite> this is the format that you'd have to understand. it would basically just be a generic grammar or something to show this is how you would use this version of this protocol, but we would never actually list out explicitly the different versions per se. Does that make sense? If we were to go</p>
+<p id=8329 class="phone s01"><cite>Patrick_St-Louis:</cite> It does.</p>
+<p id=4d06 class="phone s01"><cite>Patrick_St-Louis:</cite> It does. given all this, my I think I'd say let's leave it out. and just list out these OID for VC API, HTTPS rather than adding some information about what people should do for use case that we don't even</p>
+<p id=10ad class="phone s01"><cite>Patrick_St-Louis:</cite> yet. it will keep it simple and…</p>
+<p id=e279 class="phone s01"><cite>Patrick_St-Louis:</cite> if it really becomes a problem that protocols need to be versioned yeah Joe Yeah,…</p>
+<p id=fbad class="phone s03"><cite>Joe_Andrieu:</cite> why don't we just treat it as two properties?</p>
+<p id=b442 class="phone s03"><cite>Joe_Andrieu:</cite> I mean I think my concern was that the collapse of the two properties version and protocol are meaning that we're creating a fairly fragile list. whereas if we have a list of strings of protocols that we know and then we could separately let those version through a separate property. Yes.</p>
+<p id=2163 class="phone s01"><cite>Patrick_St-Louis:</cite> but this would change a bit the model because right now it's like key string and the string is the URL, right? It's not key object.</p>
+<p id=faac class="phone s01"><cite>Patrick_St-Louis:</cite> Because if I understand what you're saying is the key would be oid for VP and then the value would be an object with the URL and a separate version key. Is that what you're kind of alluding to?</p>
+<p id=50d2 class="phone s03"><cite>Joe_Andrieu:</cite> I mean maybe you are speaking to the point yeah it just feels frustrating trying to jam that into a string.</p>
+<p id=fa80 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes ma'am.</p>
+<p id=5846 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to what Patrick's saying, it would break the entire ecosystem that we've deployed. Joe is the problem, right? Because everything's just expecting a string there. we did talk about breaking this out before and I think we just decided it was not worth it. the thing that has happened I think since then is there was this somewhat promise that once open ID 10 happened there would be backwards compatible and no breaking changes but that's actually demonstrating to not be true right so one adds breaking changes there is talk about one two adding breaking changes now the alignment with you</p>
+<p id=f26a class="phone s06"><cite>Manu_Sporny:</cite> the MDOC and it's just the things are going to continue to break in the ecosystem and the protocol URLs there will be a definite difference between oid 10 versus 11 versus 12 and there the protocol strings are kind of all bound together right I don't think it's a big deal I shouldn't say I don't think it's a big deal like it sucks because implementers are going to have to deal with it but this is reality And I don't think breaking it up into a separate object is really going to change anything. You will literally have, two or three or four or five different Open ID strings that you need to pick from depending on…</p>
+<p id=a326 class="phone s06"><cite>Manu_Sporny:</cite> what your wallet supports.</p>
+<p id=75de class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=10006 class="phone s01"><cite>Patrick_St-Louis:</cite> So that was a bit one of the reason I mentioned so my example was didcom v1 and v2 once you receive the initial didcom response the response is going to tell you if it's V1 or V2 because it used JSON LD and it's typed. But the problem this gives is if I want me to offer V1 and V2 for the same exchange I can't put two Dcom keys, right? Because then they would be the same and it would be confusing. so it forces the one creating the exchange to pick a version, right?</p>
+<p id=2abf class="phone s01"><cite>Patrick_St-Louis:</cite> they cannot do multi- version support to be nice to wallets.</p>
+<p id=5267 class="phone s01"><cite>Patrick_St-Louis:</cite> I hope that makes sense. Yes, Eric</p>
+<p id=eade class="phone s02"><cite>Eric_Schuh:</cite> So I think my suggestion it causes maybe some other issues…</p>
+<p id=b470 class="phone s02"><cite>Eric_Schuh:</cite> but I do think one path through this is that we could add some language that basically recommends that any other protocol specification that would like to enable their protocol as part of this interaction u mechanism they should in their own specification publish the key for different versions of their spec.</p>
+<p id=0d78 class="phone s02"><cite>Eric_Schuh:</cite> So you would have a didcom-1.0 and a didcom-2.0 as two separate keys.</p>
+<p id=74c1 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. Yeah.</p>
+<p id=0ba8 class="phone s02"><cite>Eric_Schuh:</cite> That gets us out of having to maintain any registry. of course it does maybe obuscate which protocols do support this mechanism but it is one path through at least</p>
+<p id=42fd class="phone s01"><cite>Patrick_St-Louis:</cite> I think this goes back to coyote's idea of saying if we define these key mainstream exchange as this and there's just a very thing that says you may add a version segment to the string I don't know if dash is the right way or if we want to do a semicolon or underscore but we don't provide more than that right and it's up to this protocol</p>
+<p id=b272 class="phone s01"><cite>Patrick_St-Louis:</cite> to do something. So I could have didcom semicolon 1.0 or so on. But I could also just do same thing for oid for VCI if I want to support I don't know a specific draft, Could have ID for VCI semicolon draft blah blah blah blah. yes man.</p>
+<p id=993a class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah. what's in our control and what's out of our control. plus one Patrick to what you're saying. We should just tell people like, you can either use a a base string with a version. the wallets are going to match on the whole string basically, right? don't expect things to break the string down. They're opaque strings and either the wallet matches on the entire thing or not. I will note that our usage of oid4 VCI and OID4VP at this point is broken. it's totally and utterly broken because there's backwards compatibility.</p>
+<p id=7850 class="phone s06"><cite>Manu_Sporny:</cite> built in between draft 18 and 10. There are hardbreaking changes there. You can do back flips to try and get everything to work and do a whole bunch of heruristics and guessing, but in general it's not going to hold. So those strings are already broken. and we should probably stop using them at some point in the future and put warnings around them and start versioning open ID because of all the issues I'm mentioning there. we may also want to anyway so there's some legacy issue there currently. and as Joe mentioned we can't predict what's going to happen here other than they're going to continue to break the protocol or they're going to be hard breaks. one option in the future is for us to run a registry. I really hesitate saying we should go right out of the gate.</p>
+<p id=961b class="phone s01"><cite>Patrick_St-Louis:</cite> Not.</p>
+<p id=41f6 class="phone s06"><cite>Manu_Sporny:</cite> But that's one way to kind of help people register all the different variations and protocols and we could define a couple of initial entries in that registry. We could say OID for VCI and OID for VP are legacy and people should stop using them and we can say that they actually map to draft 18 or 1.0 0 with certain heristics right now and in the future you should be using open ID o ID4-1.1 or -1.2 two or so on and so forth and you can have multiple strings mapped to the same URL so the same workflow can do a whole bunch of heruristics to try and guess what version of the protocol is being run …</p>
+<p id=26e0 class="phone s06"><cite>Manu_Sporny:</cite> but I think it's better to be explicit about no this is X of the protocol running on There.</p>
+<p id=e2f5 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. yeah cuz that's two different thing like…</p>
+<p id=9a28 class="phone s01"><cite>Patrick_St-Louis:</cite> if you want to offer multiple version in the same workflow versus you just want to specify which version you use I see those as two different things both useful. okay one thing I'm understanding for sure we want to prefer having the version in the string rather than transforming the value into an object that has a version key that something we all agree on or any disagreement on that rather okay now is this something we</p>
+<p id=a917 class="phone s01"><cite>Patrick_St-Louis:</cite> want to address in this here. I think it's worth probably creating an issue. if we create a registry eventually I know this is kind of trying to do that but I think it's Joe that raised a point that this registry should definitely not be part of the spec. It should be like an adjacent document so we don't have to actually update the spec every time there's a new version that comes out. I know there's a few other specs that does these kind of external adjacent registries. I think the deadcore services kind of have that I don't know what other spec does that. I can't talk to how effective it is.</p>
+<p id=6e70 class="phone s01"><cite>Patrick_St-Louis:</cite> But it's definitely a pattern that exists. Yeah. Manu.</p>
+<p id=10aa class="phone s04"><cite>Kayode_Ezike:</cite> What the heck?</p>
+<p id=1824 class="phone s06"><cite>Manu_Sporny:</cite> So we do have a verifiable credential extensions registry that the CCG runs that is terribly out ofd and…</p>
+<p id=099f class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Yeah.</p>
+<p id=98a2 class="phone s06"><cite>Manu_Sporny:</cite> not very good. So that is an ex I mean we tried and I don't think we did a super great at keeping it up to date.</p>
+<p id=1108 class="phone s01"><cite>Patrick_St-Louis:</cite> And do you think that's just because of this model of having an external registry is doesn't work or it's just like it could have worked but it just didn't turn out in this case because I know proof method like these we have crypto sweet specs now so this is not super relevant but other things. Yeah. Yeah.</p>
+<p id=1049 class="phone s01"><cite>Patrick_St-Louis:</cite> I guess the goal of this was to kind of point to different specs and here are all the specs related to credentials. okay.</p>
+<p id=8155 class="phone s01"><cite>Patrick_St-Louis:</cite> Someone in the queue Joe Mhm.</p>
+<p id=b562 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah,…</p>
+<p id=3d2e class="phone s03"><cite>Joe_Andrieu:</cite> I just want to put a voice in against any registry. Manu and I are on different sides of this debate, but I think a registry implies things that we're frankly not capable of doing. For example, staying on top of these protocols as they change over time. We're a working group. We're going to create a specification. We're going to go away. I think if we want to publish a list of things that today are relevant and interesting to our readers of the spec, I think that's useful. which is the language we try to use in shifting what used to be called the DID registries. but it's also not just The terminology invites the idea that the registry could solve a whole bunch of problems that it will not solve.</p>
+<p id=e796 class="phone s03"><cite>Joe_Andrieu:</cite> I'm in this debate and argument over in the DC API conversation as well where they seem to think that putting a bunch of protocols in a list will establish that they are safe and that is exactly the opposite of…</p>
+<p id=3e98 class="phone s03"><cite>Joe_Andrieu:</cite> what it will do. it will establish that at one time some people thought it was safe but that doesn't mean that what it becomes tomorrow is safe. So it takes a cyber security disposition to be monitoring and maintaining and staying on top of all that sort of stuff. so I don't think we want to get in the business of maintaining those sorts of data…</p>
+<p id=9124 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=63b9 class="phone s03"><cite>Joe_Andrieu:</cite> because we don't have the resources to do it.</p>
+<p id=5e18 class="phone s01"><cite>Patrick_St-Louis:</cite> It's taking on a burden and it's the effort today might be great like the intention but the longevity of it it's a good point. Yes manu yeah I think it's not really I think…</p>
+<p id=ecc0 class="phone s06"><cite>Manu_Sporny:</cite> So, I mean, I don't know if Joe and I are on opposite ends of this thing. I don't like registries either having had to I was going to do a counterpoint right…</p>
+<p id=0d23 class="phone s01"><cite>Patrick_St-Louis:</cite> what you just said was that this is there but we haven't been really maintaining it so I don't see a big disagreement here.</p>
+<p id=e619 class="phone s06"><cite>Manu_Sporny:</cite> which is the data extensions and did methods registry does exist and while we're not entirely on top of it it is very active and…</p>
+<p id=7566 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm.</p>
+<p id=661c class="phone s06"><cite>Manu_Sporny:</cite> people continuing to use it and we're having to figure out ways to, spread the review burden to add things into there. And so, there's an example there where you have 250 plus, registrations. and again, it's not I think the terminology is problematic. the way I use the word registry, I think, is slightly different than the way, Joe uses the word registry. Having this stuff documented somewhere is useful. Making it the official thing or…</p>
+<p id=1a7f class="phone s01"><cite>Patrick_St-Louis:</cite> What's</p>
+<p id=c49e class="phone s06"><cite>Manu_Sporny:</cite> putting a blessing that it's up to date and people are paying attention. that's where the danger comes in which I agree with Joe we don't have the resources to do it and I don't think any of us really want to do that type of work. so I'm not arguing that we should create a registry it might be just specifications can declare that sections in their spec that talk about they can be listed as a string in the protocols object for an interaction whatever and…</p>
+<p id=a400 class="phone s06"><cite>Manu_Sporny:</cite> and's let it be decentralized and I think that's good Enough for now.</p>
+<p id=bb0d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=03a2 class="phone s01"><cite>Patrick_St-Louis:</cite> yeah, that's good. I'll reply to this. from my standpoint, yes, I would like an entry for Dcom. It can just be uppercase Dcom key. and it's simply you give a out ofband invitation Simple as that. I don't think for these register protocols we need to go into much detail about how the exchange should handle it. That's up to the person creating the exchange. I'll defer what to do about these strings that are becoming problematic. I don't know if you want to leave them there, not leave them there.</p>
+<p id=687c class="phone s01"><cite>Patrick_St-Louis:</cite> As far as I'm concerned, I would just like to at least have didcom somewhere in there so I can point to it when I tell people &quot;Hey, we should be using interaction URL for DICOM. because it's good. and that's all for it, right? yes, man. Yeah.</p>
+<p id=91f9 class="phone s06"><cite>Manu_Sporny:</cite> I think we can have something in the spec that says at the time of publication of this specification, these were the known, protocol strings and then we can list them and then we can point to, somewhere else that talks about the protocol. We do need to document OID4 VC and OID4VP because it's been out there and it's been deployed. and we need to give people warnings that it doesn't mean what you think it means. and we probably need to give some pretty strong guidance that it really means draft 18 of this and…</p>
+<p id=ec49 class="phone s01"><cite>Patrick_St-Louis:</cite> Do we want Okay.</p>
+<p id=24b0 class="phone s06"><cite>Manu_Sporny:</cite> and it is possible to do 10 as well if you do these funky heristics but I don't know if the spec really go into any detail there.</p>
+<p id=f69c class="phone s04"><cite>Kayode_Ezike:</cite> So just to be clear because the original intention of the bare keys that don't have versions on them was that they would always refer to the latest version I guess which would be one O in this case. Do we not agree with that or what are your thoughts about that?</p>
+<p id=c83a class="phone s01"><cite>Patrick_St-Louis:</cite> What happens? Kayode Ezike:</p>
+<p id=9471 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah. Go ahead. Good morning.</p>
+<p id=7c52 class="phone s06"><cite>Manu_Sporny:</cite> No, no, because it's totally broken, you can't do that because there are systems that are deployed that have that string in there that expect draft 18. So in those and that will continue to happen, right? People will deploy systems today if you deployed a system you're like OID4 VCI and OD4VP version 10 that is what the system needs and then that system's just going to sit there for 5 years and in 5 years there's going to be open ID version 1.3 with a bunch of backwards breaking changes.</p>
+<p id=3ab3 class="phone s06"><cite>Manu_Sporny:</cite> Somebody's going to come to that exchange. They're going to try to use it with 13 and it's going to break because the server was only deployed with 10 five years ago, right?</p>
+<p id=3aa8 class="phone s04"><cite>Kayode_Ezike:</cite> So I guess it means that we have to give clear guidance on…</p>
+<p id=16c9 class="phone s04"><cite>Kayode_Ezike:</cite> what each of these bar even for we're going to say that for now this is version 1.0 if you use it.</p>
+<p id=26d5 class="phone s01"><cite>Patrick_St-Louis:</cite> Let me after this I'll put a PR with didcom and…</p>
+<p id=cdc5 class="phone s01"><cite>Patrick_St-Louis:</cite> put the things in and explain this. Yeah, because like I mentioned for Ditcom in the first when you read the autoban invitation, this invitation itself will tell you what version it is, right? it kind of got that implicitly to the.</p>
+<p id=6df3 class="phone s04"><cite>Kayode_Ezike:</cite> No, I said VCOM, not D like even like sorry API or…</p>
+<p id=d1b5 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=630e class="phone s04"><cite>Kayode_Ezike:</cite> the other ones we'd have to like…</p>
+<p id=f3af class="phone s01"><cite>Patrick_St-Louis:</cite> This guy.</p>
+<p id=cbab class="phone s04"><cite>Kayode_Ezike:</cite> if it's not the latest one, we'd have to be clear about what the semantics of each of the bare keys mean when we use them. the only other thing I want to ask about this is just to be clear, we don't want to include DC API as a protocol option, right? cuz that's captured elsewhere or something. in the browser. Okay, confirm that. all right.</p>
+<p id=6425 class="phone s04"><cite>Kayode_Ezike:</cite> So, I have a general idea of what needs to be done here, but I'll take another this</p>
+<p id=edae class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=3755 class="phone s01"><cite>Patrick_St-Louis:</cite> So if I understand we want to omit versioning for now likely provide non normative guidance that protocols can include versioning in the protocol e specific format.</p>
+<p id=3969 class="phone s01"><cite>Patrick_St-Louis:</cite> If what I type does not reflect what we just discussed, just let me know. initial registry might not want to call it a registry to current mainstream protocols.</p>
+<p id=5926 class="phone s01"><cite>Patrick_St-Louis:</cite> Was there something else warnings for keys and…</p>
+<p id=64f5 class="phone s04"><cite>Kayode_Ezike:</cite> That's the warnings around O for VP and…</p>
+<p id=9def class="phone s04"><cite>Kayode_Ezike:</cite> VCI usage. And then you said that you would take care of the didcom entry.</p>
+<p id=0d13 class="phone s01"><cite>Patrick_St-Louis:</cite> their associated versions slashdraft Sure.</p>
+<p id=29a2 class="phone s04"><cite>Kayode_Ezike:</cite> Is that correct?</p>
+<p id=0600 class="phone s01"><cite>Patrick_St-Louis:</cite> I can just submit a follow-up with didcom maybe an example or something and keep it a very small footprint. there's an example in there. So when I'm telling people that should be using interaction</p>
+<p id=e6b3 class="phone s01"><cite>Patrick_St-Louis:</cite> I can show that look it does come more fine.</p>
+<p id=7741 class="phone s04"><cite>Kayode_Ezike:</cite> Right. Sorry.</p>
+<p id=85f2 class="phone s01"><cite>Patrick_St-Louis:</cite> This is old.</p>
+<p id=8eea class="phone s04"><cite>Kayode_Ezike:</cite> There was also one more thing. If you could scroll back up on a small thing at the end. There was a mention of a protocol a forvp and one of the issues that I saw. I was wondering is that being used anywhere in production and should we be including that? This is that the second comment that I have there. Or is that just a vestage of something that we don't really want to use anymore. And should we include it in the table or not? …</p>
+<p id=fbd5 class="phone s06"><cite>Manu_Sporny:</cite> Where is it mentioned?</p>
+<p id=64e9 class="phone s04"><cite>Kayode_Ezike:</cite> if you search MDOC-ID for VP, you'll see that there's a proto do it again. I think it was listed as a proto in the protocols object somewhere.</p>
+<p id=c11d class="phone s04"><cite>Kayode_Ezike:</cite> Yeah.,</p>
+<p id=0f43 class="phone s04"><cite>Kayode_Ezike:</cite> Is this a real thing that we shouldn't document somewhere?</p>
+<p id=eb32 class="phone s06"><cite>Manu_Sporny:</cite> No. …</p>
+<p id=be42 class="phone s01"><cite>Patrick_St-Louis:</cite> Is this a real thing?</p>
+<p id=8698 class="phone s01"><cite>Patrick_St-Louis:</cite> That's the question.</p>
+<p id=fab4 class="phone s06"><cite>Manu_Sporny:</cite> we shouldn't mention it…</p>
+<p id=26d4 class="phone s01"><cite>Patrick_St-Louis:</cite> Cuz they do have a thing here.</p>
+<p id=9f78 class="phone s06"><cite>Manu_Sporny:</cite> because all that's changing. it's all changing again. they're in active discussion of changing it again. So we shouldn't do anything there.</p>
+<p id=ba13 class="phone s04"><cite>Kayode_Ezike:</cite> Leave that out then. Great. Idea of what to do. Thank you. Kayode Ezike:</p>
+<p id=1506 class="phone s01"><cite>Patrick_St-Louis:</cite> So I'll put this comment here so we know a little bit…</p>
+<p id=9956 class="phone s01"><cite>Patrick_St-Louis:</cite> what was happening.</p>
+<p id=f011 class="phone s04"><cite>Kayode_Ezike:</cite> Yeah.</p>
+</section>
+
+<section>
+<h3 id=bd3b>IANA Scheme Registration</h3>
+<p id=8443 class="phone s01"><cite>Patrick_St-Louis:</cite> I'll reply here that I can propose the format after this KOD Mhm.</p>
+<p id=4f62 class="phone s04"><cite>Kayode_Ezike:</cite> So, there's a few things we won't be able to get to on this call, but I wanted to at least ceue it up for people to be aware of if we're moving on to issue processing just really quickly. That's So one of them is I've started basically there's a need for us to document or rather to register a provisional scheme with Ayana for interaction and for web plus interaction schemes. So I started re researching that just to understand the requirements for that.</p>
+<p id=c6b6 class="phone s04"><cite>Kayode_Ezike:</cite> And so I'll be working on that soon. And I don't know if there's any guidance that folks want to give in the meantime, but the idea from my understanding is that you have to put up a public resource that documents like a registration and that template basically just lists all the important things to know about it and security considerations and a bunch of other just standard things.</p>
+<p id=4cbe class="phone s04"><cite>Kayode_Ezike:</cite> So I'll be working on that in the coming weeks. go ahead Mon this one as well as 634 634 is the web version of it web plus interaction.</p>
+<p id=00b7 class="phone s01"><cite>Patrick_St-Louis:</cite> Is this issue here?</p>
+<p id=32d8 class="phone s01"><cite>Patrick_St-Louis:</cite> Just want to confirm. That's the one.</p>
+<p id=b9b8 class="phone s04"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=96a7 class="phone s06"><cite>Manu_Sporny:</cite> Yes, it just goes in the Coyote, don't make it a separate document. there should be an INA consideration section in the VCOM spec and…</p>
+<p id=4800 class="phone s06"><cite>Manu_Sporny:</cite> it should do fill out the registration form in the spec itself. look at the verifiable credential data model spec and…</p>
+<p id=0b7d class="phone s04"><cite>Kayode_Ezike:</cite> Got you.</p>
+</section>
+
+<section>
+<h3 id=5b9b>Advanced Presentation Features</h3>
+<p id=eaab class="phone s06"><cite>Manu_Sporny:</cite> look at the ionic consideration section in there to understand kind of how we do it. So the process is you're going to do a PR to add those registrations to the VCOM spec. We'll review the PR, put it into the dot into the spec. And once the spec is published on TRSpace, which happens as soon as we merge, then you can put in the request to register both.</p>
+<p id=f69e class="phone s04"><cite>Kayode_Ezike:</cite> Okay, even simpler than I thought. Great. Thank you. and then the other thing that is somewhat urgent because we kind of just addressed this issue. We never really got back to it. It has to do with the support for advanced PBS features. this is 396. so we have to make progress on this…</p>
+<p id=8064 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. Okay.</p>
+<p id=10007 class="phone s04"><cite>Kayode_Ezike:</cite> because I know that there's going to be a need to include this. so I don't know if I had a question or not. If you scroll down, is there a comment that I left here or something? Okay. It was just generic but we do have to drive this conversation forward and basically it was just how do we actually indicate that we want to yeah how's that do …</p>
+<p id=6e0c class="phone s04"><cite>Kayode_Ezike:</cite> what are the common use cases we went through that process of showing different use cases for how to do the blinding and whatnot but then we also have to actually put up a PR to give examples and not just examples…</p>
+<p id=8550 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I remember I had a similar point once I brought out about presentation requests for anon creds and…</p>
+<p id=0870 class="phone s04"><cite>Kayode_Ezike:</cite> but actually specify important properties and stuff There's actually a separate issue for that predicate one actually,…</p>
+<p id=9e47 class="phone s01"><cite>Patrick_St-Louis:</cite> how to express the predicate request, right? Or some of these things whether it should be</p>
+<p id=0e00 class="phone s01"><cite>Patrick_St-Louis:</cite> the request.</p>
+<p id=451d class="phone s04"><cite>Kayode_Ezike:</cite> but that's also important.</p>
+<p id=0604 class="phone s01"><cite>Patrick_St-Louis:</cite> Is that related to presentation request or is that something else? Kayode Ezike:</p>
+<p id=ad28 class="phone s04"><cite>Kayode_Ezike:</cite> 30 second countdown. I believe Yes. But Yes.</p>
+<p id=24d9 class="phone s01"><cite>Patrick_St-Louis:</cite> Needs more discussion. Okay. I'll make sure to make this we can make sure we start with this next week.</p>
+<p id=208b class="phone s04"><cite>Kayode_Ezike:</cite> You can Okay,…</p>
+<p id=508e class="phone s04"><cite>Kayode_Ezike:</cite> sounds good.</p>
+<p id=5756 class="phone s01"><cite>Patrick_St-Louis:</cite> We are right on time.</p>
+<p id=5f4d class="phone s04"><cite>Kayode_Ezike:</cite> Thank you. Thanks.</p>
+<p id=ab29 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you for if we didn't finish five minutes earlier. so we'll see you again in the week. Meeting adjourned. Meeting ended after 01:02:29 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

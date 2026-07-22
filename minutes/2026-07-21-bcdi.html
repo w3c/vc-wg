@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 21 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>21 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f8fe">Introduction Of Meeting Attendees</a></li>
+<li><a href="#393c">VC Data Integrity Threat Model PR</a></li>
+<li><a href="#2c93">VC Barcodes Threat Model PR</a></li>
+<li><a href="#f197">Diagram Consistency And Generation</a></li>
+<li><a href="#ab32">Process Concerns About Threat Modeling Workload</a></li>
+<li><a href="#00d6">Merging Strategy For Threat Models</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=f8fe>Introduction Of Meeting Attendees</h3>
+<p id=0bda class="phone s01"><cite>Wesley_Smith:</cite> Morning folks. I'm going to give people a couple more minutes to trickle in before we get started.</p>
+<p id=4a00 class="phone s01"><cite>Wesley_Smith:</cite> All right, let's go ahead and get started. Everyone, welcome to the July 21st meeting of the barcodes and data integrity task force. a reminder that this meeting is being recorded and transcribed. If you are not comfortable with that, please let me know. it's a bit of a light turnout today, but that is summer after all. I know a couple of the folks from Digital Bazaar specifically will not be able to make it. the agenda today we're going to be focusing on threat modeling for both the data integrity specification and the VC barcode specification. We have open poll requests that add threat models to the specification and I'd like to talk about those with the group.</p>
+<p id=167e class="phone s01"><cite>Wesley_Smith:</cite> But before that, does anybody have any announcement, introduction, or process related items they'd like to talk about? All right, then let's go ahead and start looking at some threat models. hey, Phil, just do you have any introduction announcements or…</p>
+<p id=160b class="phone s01"><cite>Wesley_Smith:</cite> process items for today before we move on?</p>
+<p id=f8da class="phone s02"><cite>Phil_Archer:</cite> Not at all worth.</p>
+<p id=562f class="phone s02"><cite>Phil_Archer:</cite> No, thank you.</p>
+<p id=3dd8 class="phone s01"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=12c4 class="phone s02"><cite>Phil_Archer:</cite> Just listening,…</p>
+<p id=7c07 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=1236 class="phone s02"><cite>Phil_Archer:</cite> I think.</p>
+</section>
+
+<section>
+<h3 id=393c>VC Data Integrity Threat Model PR</h3>
+<p id=97bc class="phone s01"><cite>Wesley_Smith:</cite> Thanks very much. So, we're focusing on threat modeling today, Phil. So, here is an open poll request in the BC data integrity specification. Manu opened this poll request a couple weeks ago.</p>
+<p id=37ca class="phone s01"><cite>Wesley_Smith:</cite> it is not a comprehensive threat model for data integrity as a whole but it does introduce the structure of the threat model. It provides a beginning place for the diagram and it also of course includes a few of the threats that will eventually be in the threat model. This PR has been approved by Dave Longley, Greg Bernstein, myself and Simone. and that is the current state. I would like to get that merged down. would people in the group find it helpful? I know that the threat modeling doesn't play particularly nice with the R preview functionality and so it can be a bit tricky to review.</p>
+<p id=1363 class="phone s03"><cite>Greg_Bernstein:</cite> What's up?</p>
+<p id=49c5 class="phone s01"><cite>Wesley_Smith:</cite> Would people find it useful if right now live on the call I serve the threat model document locally and screen share it and walk through it together?</p>
+<p id=68f8 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=c60e class="phone s01"><cite>Wesley_Smith:</cite> seeing some thumbs up. I will go ahead and do that. Give me one moment.</p>
+<p id=cd94 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And just so I say it,…</p>
+<p id=fef4 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I have not had a chance to review this yet at all. So if you can give me a couple more days to before you merge it, that'll be good.</p>
+<p id=fb42 class="phone s01"><cite>Wesley_Smith:</cite> Okay. if you're planning on reviewing it, we can definitely wait. Although I would like to set a hard deadline by which we merge it because it's been out for a couple weeks and it's important to get it merged in. I will note that as I mentioned that this is nowhere near the final threat model. I expect there to be multiple future PRs that are touching this exact document. so don't fear that anything that you review now is going to be final.</p>
+<p id=9c44 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, for me it's just about bite-sized chunks.</p>
+<p id=b629 class="phone s01"><cite>Wesley_Smith:</cite> Hey Ivon, good morning or good afternoon to you. we are just I'm sorry. Yeah, understood. All right, Greg, you have your hand up. Go ahead.</p>
+<p id=ffff class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. threat modeling is an ongoing process.</p>
+<p id=c050 class="phone s03"><cite>Greg_Bernstein:</cite> So it is natural that we keep expanding on it. it is though I reviewed this over two weeks ago. It is a very good highlevel framework just as it exists right now from my point of view because it allowed me to think about adding stuff when we get into selective disclosure. So, I think it's better than the example threat model and…</p>
+<p id=09fe class="phone s03"><cite>Greg_Bernstein:</cite> the threat modeling guide. So, that's my opinion.</p>
+<p id=4678 class="phone s01"><cite>Wesley_Smith:</cite> For any folks…</p>
+<p id=6a52 class="phone s01"><cite>Wesley_Smith:</cite> who have joined late, we are focusing on threat modeling today. we are currently looking at the open PR for VC data integrity that adds a basic threat model specification or to the specification. and we are just kind of looking at that together. so this is the threat it is in the form of a note that is in the same repository as the BA base VC data integrity specification. So the structure is a little bit different from what people might be used to. and it looks as follows.</p>
+<p id=c0ed class="phone s01"><cite>Wesley_Smith:</cite> There is a doc or excuse me there is a diagram that breaks down the entities flows and relations in the system. the framework uses this s breakdown entities processes data objects and system boundaries. so obviously this is the general threat modeling framework uses this terminology. This diagram is applying these entity and relation types to the specific specification. then there is a dictionary of those entities. What we see in this diagram here for data integrity it's things like a verifier. processes such as transform, hash, sign, store and veri data flows such as transmit to verifier.</p>
+<p id=10000 class="phone s01"><cite>Wesley_Smith:</cite> There's data stoages, objects, and security boundaries. and then of course there is a list of threats and for each threat there is a description of the threat is, what the mitigations are, what under the stride taxonomy it's categorized at, the threat is categorized as and of course what the affected components are. So I know that this PR currently only has a handful of threats. Yep, it has five threats. we are all in agreement that is insuffic That is not currently a comprehensive threat model for the data integrity technology.</p>
+<p id=18aa class="phone s01"><cite>Wesley_Smith:</cite> But we are also all in agreement or those who have reviewed the PR are all in agreement that it is a really good starting point and should probably be merged because something as big as a comprehensive threat model for data integrity should be iterated on rather than trying to finalize it in that any questions related to what I just said?</p>
+<p id=8df1 class="phone s01"><cite>Wesley_Smith:</cite> Avon, go ahead. correct. Yep.</p>
+<p id=e74e class="phone s05"><cite>Ivan_Herman:</cite> I'm sorry…</p>
+<p id=f13c class="phone s05"><cite>Ivan_Herman:</cite> if it was mentioned at the beginning. I was wait by a few minutes. This document is a threat model for the DI in general, So, it's not for the barcode or any specific of it's for the whole family.</p>
+<p id=9f2e class="phone s01"><cite>Wesley_Smith:</cite> It is for the VC data integrity specification.</p>
+<p id=cf61 class="phone s01"><cite>Wesley_Smith:</cite> Right.</p>
+<p id=c570 class="phone s03"><cite>Greg_Bernstein:</cite> So that's embedded proofs in via the DI process,…</p>
+<p id=0e3d class="phone s03"><cite>Greg_Bernstein:</cite> That's why that diagram will show you the transformation In there, it shows the key steps. on the left hand side.</p>
+<p id=caa6 class="phone s03"><cite>Greg_Bernstein:</cite> The key steps that we use almost we use in everything when we are crypto suites</p>
+<p id=4d60 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=e9dc class="phone s05"><cite>Ivan_Herman:</cite> So my question was in a way so that this document will also cover the security review for let's say the barcode document or for the various specific crypto suites or…</p>
+<p id=f849 class="phone s01"><cite>Wesley_Smith:</cite> So I think it is a per So,…</p>
+<p id=898f class="phone s05"><cite>Ivan_Herman:</cite> how would these things relate?</p>
+<p id=54f5 class="phone s01"><cite>Wesley_Smith:</cite> so understood the general question whether or not some of the other documents in this family need a separate threat model is a per document decision. as you noted, some documents may not need a separate threat model. For example, documents that are specific data integrity crypto suites.</p>
+<p id=3d09 class="phone s01"><cite>Wesley_Smith:</cite> I'm not totally sure what the best practice is there. however, some documents like VC barcodes will need a separate threat model and that's something I'm planning on discussing on the call later today. Greg. sorry. Evvon, go ahead.</p>
+<p id=0664 class="phone s05"><cite>Ivan_Herman:</cite> Okay. No,…</p>
+<p id=c5e0 class="phone s05"><cite>Ivan_Herman:</cite> no. I said, &quot;Okay,</p>
+<p id=536d class="phone s01"><cite>Wesley_Smith:</cite> Okay, Greg,…</p>
+<p id=64c0 class="phone s01"><cite>Wesley_Smith:</cite> do you know what folks plans are, including yourself, for the data integrity crypto suites?</p>
+<p id=9e29 class="phone s01"><cite>Wesley_Smith:</cite> Do they need separate threat models or just addenda to the main one? Yeah, I mean that makes sense,…</p>
+<p id=3546 class="phone s03"><cite>Greg_Bernstein:</cite> We're hoping to be able the reference this threat model and…</p>
+<p id=384b class="phone s03"><cite>Greg_Bernstein:</cite> then have security considerations that are more specific to the crypto suite…</p>
+<p id=1045 class="phone s01"><cite>Wesley_Smith:</cite> right? It's like</p>
+<p id=b8bb class="phone s03"><cite>Greg_Bernstein:</cite> because when we talk about document tampering and some of those things, this is the good place for it, And when we talk about reusing a signature to protect it, this is a good place for it. when we talk about the specifics of you're using ECDSA and what its properties are and what you can expect from its security properties,…</p>
+<p id=9813 class="phone s03"><cite>Greg_Bernstein:</cite> that's instead of redoing the threat model, we're really securities considerations of this specific crypto suite.</p>
+<p id=a12a class="phone s05"><cite>Ivan_Herman:</cite> Yeah. Heat.</p>
+<p id=3db3 class="phone s03"><cite>Greg_Bernstein:</cite> That's what we're hoping.</p>
+<p id=e4ff class="phone s01"><cite>Wesley_Smith:</cite> Yeah, plus one.</p>
+<p id=8569 class="phone s01"><cite>Wesley_Smith:</cite> That makes a ton of sense, It's like ECDSA, crypto suites, it's the data integrity threat model plus whatever the specific ECDSA threats are, which don't merit their own threat model. cool. any other questions on this threat model?</p>
+<p id=93ca class="phone s01"><cite>Wesley_Smith:</cite> the general process. And I said</p>
+<p id=7e09 class="phone s03"><cite>Greg_Bernstein:</cite> The only thing that I was concerned of is this is more with the threat modeling document from that we're referencing.</p>
+<p id=8999 class="phone s03"><cite>Greg_Bernstein:</cite> They buried all these definitions of the EP whatever you call this model. they buried it in an appendix and so I am more concerned with them editing and getting that document better for us to reference because we don't want to have to repeat what do we mean by an external entity and things like that and that was hard for me to find. I start reading the long u that's from I guess long sing threat modeling document.</p>
+<p id=253f class="phone s03"><cite>Greg_Bernstein:</cite> I'm looking for where do they define the all that stuff and it's in an appendix right before where they do their example. It'd be nice if they pulled that out a little bit more and such. and I think the diagrams here are a little easier to reproduce than the formal stuff in that document too. I think Mon did a good job of coming up with a easy to produce document diagramming methodology rather than the more complicated data flow diagram templateish stuff. This makes good use of color and the things like that. So,</p>
+<p id=7475 class="phone s01"><cite>Wesley_Smith:</cite> All right. not hearing other questions about the content of this specific PR. So, to reiterate, this has been approved by Dave Longley, Greg Bernstein, myself, and Simone. Ted has requested some additional time to do his reviews.</p>
+<p id=083f class="phone s01"><cite>Wesley_Smith:</cite> Ted, How much time do you think you'll need?</p>
+<p id=3e54 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Okay.</p>
+<p id=9b9a class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Am I still muted? I can't tell.</p>
+<p id=8db4 class="phone s01"><cite>Wesley_Smith:</cite> You are not muted.</p>
+<p id=3e81 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=f626 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It should just be a couple of days. I just have a long queue at the moment.</p>
+<p id=49db class="phone s01"><cite>Wesley_Smith:</cite> How about we plan to merge this then tomorrow at end of day. Does that work?</p>
+<p id=cdcc class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Sure. Wesley Smith:</p>
+<p id=7b55 class="phone s01"><cite>Wesley_Smith:</cite> All right. Yeah, sorry to rush you.</p>
+<p id=2a7a class="phone s03"><cite>Greg_Bernstein:</cite> because I've been waiting to merge this and I was told we should make sure everybody had a chance. So, I had given its time. So, Yvon</p>
+<p id=768b class="phone s05"><cite>Ivan_Herman:</cite> Yeah, my question is absolutely administrative with my staff contact hat on this document.</p>
+<p id=f6da class="phone s01"><cite>Wesley_Smith:</cite> So, it's currently a note.</p>
+<p id=e26a class="phone s05"><cite>Ivan_Herman:</cite> Is it meant to be a working group note? Is it meant to be a separate recommendation? Probably it's a note, but we have to decide at some point in time when we publish it. Okay, I'm fine with it…</p>
+<p id=b756 class="phone s01"><cite>Wesley_Smith:</cite> I think that's the intent. if there are administrative or process reasons why there would be a better way to publish it, then I think we talk about it. But I think it is currently structured as a note and I think that is the intent.</p>
+<p id=30c3 class="phone s05"><cite>Ivan_Herman:</cite> because usually the security consideration sections are not areformational. So the note corresponds to that. So that's fine with me. But I say that to fear. This is a working group decision. This is not a task force decision.</p>
+<p id=bb60 class="phone s02"><cite>Phil_Archer:</cite> Sorry, I was.</p>
+<p id=4a8e class="phone s03"><cite>Greg_Bernstein:</cite> Otherwise, we'd embed it into the document,…</p>
+<p id=f29c class="phone s03"><cite>Greg_Bernstein:</cite> the main document.</p>
+<p id=1af9 class="phone s05"><cite>Ivan_Herman:</cite> No, no, no. I don't think that would be an overkill.</p>
+<p id=6882 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, good. Phil Archer:</p>
+<p id=76ac class="phone s02"><cite>Phil_Archer:</cite> Yeah. Yeah. Just to pick up on what Ivonne was saying we have said that of course task forces do most of the work and are empowered to do a lot of stuff when it comes to publishing new documents or transitions and this becomes a new document then we do want the whole group to look at it because it's part of ensuring that everybody does feel part of a single group. Yes, the work is being done in this task force. but as a publication, it's as much a part of the other task forces as it is this one. That's the thinking behind that. But for clarity, if you for example wanted to have this on the agenda for tomorrow's call, what u 24 and… 3/4 hours time? if you wanted that slot west then we can easily put it Phil Archer:</p>
+<p id=a610 class="phone s01"><cite>Wesley_Smith:</cite> …</p>
+<p id=209f class="phone s01"><cite>Wesley_Smith:</cite> my apologies. I was typing. I didn't realize you were talking to me. Phil, could you repeat the question?</p>
+<p id=f217 class="phone s02"><cite>Phil_Archer:</cite> Sorry. Yes.</p>
+<p id=10001 class="phone s02"><cite>Phil_Archer:</cite> I mean, in general, if this task force wants the working group as a whole to vote to approve the publication of a first public working draft or whatever, then there's always going to be time on a Wednesday call to do that, including tomorrow, if you so needed it.</p>
+<p id=9bf8 class="phone s01"><cite>Wesley_Smith:</cite> Appreciated. Greg Bernstein.</p>
+<p id=f493 class="phone s03"><cite>Greg_Bernstein:</cite> So the way this would work is we would reference this document from the spec so people reading the spec would know about its existence.</p>
+<p id=bd9f class="phone s05"><cite>Ivan_Herman:</cite> Yes, I think that's the right way to do it.</p>
+<p id=b69c class="phone s03"><cite>Greg_Bernstein:</cite> Okay, great.</p>
+</section>
+
+<section>
+<h3 id=2c93>VC Barcodes Threat Model PR</h3>
+<p id=ca42 class="phone s01"><cite>Wesley_Smith:</cite> Okay, I think we have good direction here. anybody have anything else they would like to say on the data integrity threat model topic? If not, we can move over to the VC barcodes threat modeling. All right.</p>
+<p id=10002 class="phone s01"><cite>Wesley_Smith:</cite> Okay, next subtopic is BC barcodes threat model. okay so same deal this is another threat model in essentially the same format to the previous one. it might be structured very slightly differently. For example, I think Manu used YAML not JavaScript to hold the threats in the previous one but essentially it's id The structure of the document is identical and it's located in the same place.</p>
+<p id=69b4 class="phone s01"><cite>Wesley_Smith:</cite> This threat model is much more comprehensive than the data integrity one. Of course it is not final as I expect we will want to yeah Ivon I think it's because it's I have no idea. I suspect it's because it is multiple documents that and this one is located in a place that the previewer is unaware of. So I don't think it knows to go to this threat model location to preview. But I could be wrong. Anyway, of course, this is not final final as in ready to be, published with no further review. However, I do think it is a fairly comprehensive list of the threats related to the BC barcodes work. Ivon to your question earlier about what's covered by data integrity and what isn't.</p>
+<p id=d99f class="phone s01"><cite>Wesley_Smith:</cite> There are a lot of threats here that are very specific to For example, malicious barcode injection or information leakage via the optical medium. a high resolution security camera accidentally intentionally steals your driver's license data or something like that, right? So, this I would say is not ready to be merged. It's only been out for a few days. but I would like to merge it. So if folks could go ahead and give it a review, that would be wonderful. it is quite a big PR. It's a couple thousand lines of addition. but again, a lot of it is boilerplate. T23 should be T 13 at the end.</p>
+<p id=6605 class="phone s01"><cite>Wesley_Smith:</cite> They're just out of order based on their classification. I think there are 23 threats. Greg Ring,…</p>
+<p id=7d56 class="phone s01"><cite>Wesley_Smith:</cite> go ahead.</p>
+<p id=ed87 class="phone s03"><cite>Greg_Bernstein:</cite> Review…</p>
+<p id=241d class="phone s03"><cite>Greg_Bernstein:</cite> since we don't have the preview capability, it seems like the best way to review these is there's almost a file per thread and…</p>
+<p id=88e4 class="phone s03"><cite>Greg_Bernstein:</cite> so people should go through those files. I mean they're either YAML or JavaScript and they contain the key text that gets turned into the document. Correct. Okay.</p>
+<p id=f44f class="phone s01"><cite>Wesley_Smith:</cite> So that is one way you can do review.</p>
+<p id=1ef6 class="phone s01"><cite>Wesley_Smith:</cite> That's not what I would recommend. So what I would recommend is exactly what I'm doing, which is pulling down the branch serving it locally via local host and then just visiting the file in a browser.</p>
+<p id=e3a9 class="phone s01"><cite>Wesley_Smith:</cite> as a visiting the directory in a browser which serves the HTML so this is not for my fork…</p>
+<p id=4afb class="phone s03"><cite>Greg_Bernstein:</cite> So when you say that so is that from the person's fork or…</p>
+<p id=5d45 class="phone s03"><cite>Greg_Bernstein:</cite> is that the P I when we set up a PR it becomes its own branch or you have to go get the person's fork of the person who contributed the PR Hello.</p>
+<p id=9aa7 class="phone s01"><cite>Wesley_Smith:</cite> because I'm an editor on the spec so I'm raising the PR directly against domain. if you pull down this repository W3CBC barcodes, you can load this branch add threat model locally. If you do that, you can serve the contents of that directory locally and then you can visit VC barcodes.</p>
+<p id=0ea1 class="phone s01"><cite>Wesley_Smith:</cite> This is the directory that contains the repository/threat model in a browser and this document will render. and then you obviously gets you,…</p>
+<p id=43f6 class="phone s01"><cite>Wesley_Smith:</cite> the diagramming, but it also gets you the nicely rendered and linked and tagged threats in a way that's much easier to review.</p>
+<p id=dc64 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. Yes. Makes a mud. Jesus. Okay. Greg Bernstein:</p>
+<p id=edd9 class="phone s01"><cite>Wesley_Smith:</cite> Yes, much easier to review than the JavaScript files. did I hear a hand go up?</p>
+<p id=9b92 class="phone s05"><cite>Ivan_Herman:</cite> No, you said…</p>
+<p id=cf57 class="phone s05"><cite>Ivan_Herman:</cite> what I wanted to say about how to do that.</p>
+<p id=28f6 class="phone s01"><cite>Wesley_Smith:</cite> All right. So, going back up the call stack, I was saying this is a very large PR. However, a lot of it is fairly boilerplate. if you've seen another one of these threat models, I mean, it's the same stuff. We do the same kind of threat classification, target implementation, external dependency.</p>
+<p id=3fff class="phone s01"><cite>Wesley_Smith:</cite> There's a diagram. This one is a bit more complicated, but it's essentially the same diram. We have this EPFSOC classification. and then we have a list of threats and for each threat we go through these threats making the threat model for a non-trivial technology in this model it's a little bit challenging to do perfectly because threats relate to each other and collapsing down related threats to the perfect number of atomic individual threats is quite a difficult thing to do.</p>
+<p id=9833 class="phone s01"><cite>Wesley_Smith:</cite> So I've done my best to collapse threats appropriately and combine but it might not be perfect. So that could be something that folks could review if they think that could be improved.</p>
+<p id=ffdb class="phone s03"><cite>Greg_Bernstein:</cite> Is our response a reduction? I wasn't clear from the threat modeling guide.</p>
+<p id=a5e3 class="phone s01"><cite>Wesley_Smith:</cite> I think it's reduction. So I believe they're responses but they have different</p>
+<p id=600b class="phone s03"><cite>Greg_Bernstein:</cite> Response to the threat.</p>
+<p id=448b class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=80f8 class="phone s01"><cite>Wesley_Smith:</cite> So they have different forms.</p>
+<p id=ac53 class="phone s01"><cite>Wesley_Smith:</cite> So here let me show you they have different forms. So some of the I believe responses are reductions. Yeah. So Wait no. Yeah. Here's the response and it is of type reduce. So for this threaten denial of service of status services the response is R10 which is basically host your status information in a resilient way.</p>
+<p id=e487 class="phone s01"><cite>Wesley_Smith:</cite> and fail closed. That's the response and that is of type reduction. There are some responses that are not of type reduction. For example, physical medium information leakage. that is a type reduction. I thought that some of them are of type Yeah. So, here's one that is of type accept, which is basically that you can't do selective disclosure on a barcode…</p>
+<p id=1a47 class="phone s01"><cite>Wesley_Smith:</cite> because it's a barcode and it's not smart enough to do selective disclosure. So we accept the threat that if you have too much information in a barcode, you can overshare information.</p>
+<p id=3718 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. Yeah,…</p>
+<p id=3180 class="phone s01"><cite>Wesley_Smith:</cite> We accept that as a threat because you can't do selective disclosure on a barcode. So people who use VC barcodes need to understand that risk and not put a tremendous amount of sensitive information in a single barcode that cannot be selectively disclosed. Does that make sense?</p>
+<p id=357e class="phone s03"><cite>Greg_Bernstein:</cite> Since I need to generate expand the model and generate this stuff, I'm little curious about the methodology where it's documented so I can repeat it. and I'm also Okay, good.</p>
+<p id=0bf8 class="phone s01"><cite>Wesley_Smith:</cite> Mhm. yeah.</p>
+<p id=10003 class="phone s01"><cite>Wesley_Smith:</cite> There are multiple good examples now. and for example, another type here is eliminate, right? So this is more like what you'll see for target threats like what are the threats that the technology is designed to address for the threat that is barcode data tampering that is exactly…</p>
+<p id=1b8b class="phone s01"><cite>Wesley_Smith:</cite> what this technology is designed to address and as such the response is elimination of that threat which is digitally sign the data so it can't be tampered right and…</p>
+<p id=3d05 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah. The other thing I'm more familiar with the attack framework from MITER and…</p>
+<p id=845b class="phone s01"><cite>Wesley_Smith:</cite> just another example</p>
+<p id=d5d6 class="phone s01"><cite>Wesley_Smith:</cite> Yeah.</p>
+<p id=10004 class="phone s03"><cite>Greg_Bernstein:</cite> one thing they did and it seems more appropriate maybe for the data integrity threat model is they kind of break it up into categories because they have a lot of more detailed threats that all fit within denial of service type of thing right and…</p>
+<p id=1898 class="phone s01"><cite>Wesley_Smith:</cite> So the stride framework is what's being used here. Greg Bernstein:</p>
+<p id=4e94 class="phone s03"><cite>Greg_Bernstein:</cite> such like that. but even within that we have categories…</p>
+<p id=94a6 class="phone s01"><cite>Wesley_Smith:</cite> Tampering, elevation of privilege, denial of service, information leakage. so that is the framework that's being used here. and they are categorized as such. Denial of service, repudiation, tampering, spoofing, information disclosure.</p>
+<p id=7d25 class="phone s03"><cite>Greg_Bernstein:</cite> or we'll see if the list gets too long I'd like to categorize them and have a higher level, just similar to what we do with in the cryptographic side when we have certain types of threats and…</p>
+<p id=f1f6 class="phone s03"><cite>Greg_Bernstein:</cite> responses. But thanks for the explanations.</p>
+<p id=d9c2 class="phone s01"><cite>Wesley_Smith:</cite> Yeah,…</p>
+<p id=6e03 class="phone s01"><cite>Wesley_Smith:</cite> of course. and Ivon, go ahead. Mhm.</p>
+<p id=4d20 class="phone s05"><cite>Ivan_Herman:</cite> the usual troublemaker.</p>
+<p id=02ff class="phone s05"><cite>Ivan_Herman:</cite> So there are two things which are independent of one another. One is probably a shorter thing. when you move through this whole thing I saw some references to the XI crypto suite the one which is in the document right now and…</p>
+<p id=0de3 class="phone s01"><cite>Wesley_Smith:</cite> Right.</p>
+<p id=ca48 class="phone s05"><cite>Ivan_Herman:</cite> I think we have an open issue whether this should be in this document in the first place. So if it goes away then it should go away from this threat model as well I presume. I don't know but that's a question and it goes to the more general question is for the average reader. How do you relate this to the previous generic DI threat model?</p>
+<p id=a89a class="phone s05"><cite>Ivan_Herman:</cite> I mean, it's obviously not independent of the other one? Does it reuse some of the categorization or dictionary terms? And if does it make it clear that this is what happens or is it a totally independent document? Correct.</p>
+<p id=b58c class="phone s01"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=52e5 class="phone s01"><cite>Wesley_Smith:</cite> it's a good question. give me one second. I just want to find the VC barcode specification regardless of the location of the XI crypto suite the VC barcode specification will require the use of the XI crypto suite for optical barcode credentials. So I would expect there to be discussion of the ECDSA XI crypto suite regardless of where it lives.</p>
+<p id=10005 class="phone s01"><cite>Wesley_Smith:</cite> But to your point and I think your two points were strongly related. there is some amount of overlap between this and the generic data integrity threat model. So for example some of the entities are the same there in this diagram there is an issuer a holder and a verifier the three parties much as there are in the data integrity threat model. there is overlap and there is some duplication between the threats here and the threats there.</p>
+<p id=5a20 class="phone s01"><cite>Wesley_Smith:</cite> Hopefully it should be very minimal because a lot of what it's not quite they operate at different layers but for example a lot of the threats that the data integrity threat model will fall under this essentially a black box credential creation and signing right this threat model assumes that credential creation and signing is a foolproof secure blackbox process because that's the job of the data integrity threat model to cover attacks on canonicalization and hashing and all of that sort of thing. Right? So ideally they're separated out in that way. are they perfectly separated out? No. And I expect that to be kind of future work is if we can figure out how to better separate concerns between these threat models in these documents.</p>
+<p id=1288 class="phone s01"><cite>Wesley_Smith:</cite> I don't know about most many of the threats in this threat model are specific to barcodes as I mentioned such as quishing and…</p>
+<p id=3f63 class="phone s01"><cite>Wesley_Smith:</cite> that sort of thing. Some of them are not such as compromise of a signing key right denial of service of a status service things like that these are not specific to VC barcodes.</p>
+<p id=0c57 class="phone s05"><cite>Ivan_Herman:</cite> No, yeah.</p>
+<p id=dfb4 class="phone s01"><cite>Wesley_Smith:</cite> So totally agreed. Mhm. Ivan Herman:</p>
+<p id=9be7 class="phone s05"><cite>Ivan_Herman:</cite> And death. And that is what bothers me. and excuse me one more thing. If you move down to the diagram only. I stop there. so for example, I see that you talk about the bitstring status with credential. This is again not a barcode specific thing. it should be explained and should be threat modeled so to say somewhere else and not here because anything that you threat model here is valid for bitstring status list in general and people will never find it if it is hidden behind the barcode. and also everything that you explained about the black boxes makes an enormous sense but this should be made absolutely clear in the text and maybe even in the diagram.</p>
+<p id=5ea9 class="phone s05"><cite>Ivan_Herman:</cite> So again, I am worried about the consistency of the family of specs,…</p>
+<p id=9231 class="phone s05"><cite>Ivan_Herman:</cite> not the individual specs here. and it's still a bit messy for my taste in this respect.</p>
+<p id=a24e class="phone s01"><cite>Wesley_Smith:</cite> Understood. I will note that even under this classification framework even threats that are fully inherited are still described in this threat model.</p>
+<p id=f515 class="phone s01"><cite>Wesley_Smith:</cite> So, that's sort of the tension, I guess, is the cleanliness that you're describing versus being comprehensive with threats that even if they're not a threat that is a direct result of your technology, you still have to care about.</p>
+<p id=a280 class="phone s01"><cite>Wesley_Smith:</cite> So totally agreed that things like status list denial of service attacks and generic data integrity attacks ideally we can separate them out cleanly.</p>
+<p id=ecc4 class="phone s01"><cite>Wesley_Smith:</cite> Yeah and perhaps that's the iteration that we're talking about will result in that and as Yeah.</p>
+<p id=78e8 class="phone s03"><cite>Greg_Bernstein:</cite> capture then prune.</p>
+<p id=6373 class="phone s03"><cite>Greg_Bernstein:</cite> First make sure we capture them then if we can reduce redundancy without sacrificing clarity we should do it.</p>
+<p id=429d class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Plus one Greg Bernstein:</p>
+<p id=bcb8 class="phone s03"><cite>Greg_Bernstein:</cite> But we need to capture these things. I have not seen anybody with as clear and structured u security modeling as this. And so I think we're making a good start and…</p>
+<p id=ef10 class="phone s03"><cite>Greg_Bernstein:</cite> I haven't seen anything like this in other specs. So this is a good start and capture it and then we'll edit and things like that.</p>
+<p id=54e5 class="phone s05"><cite>Ivan_Herman:</cite> I agree.</p>
+</section>
+
+<section>
+<h3 id=f197>Diagram Consistency And Generation</h3>
+<p id=10006 class="phone s05"><cite>Ivan_Herman:</cite> I don't think that we have a disagreement on that. It's just that I want to clarify the road ahead because at some point this must be done. Now one more consistency thing which may be more difficult to handle because I don't know how much control mermaid gives you But You said that the diagram is essentially expanded from the previous one because holder and verifier etc is there which is correct but I would like to have these two diagrams visually to be more similar to one another because if I comprehend properly the diagram which is in one document and then I go to the other document and… I see the same concept in a totally different looking diagram that is cognitively a problem. Ivan Herman:</p>
+<p id=07ee class="phone s05"><cite>Ivan_Herman:</cite> I don't know what control we have over mermaid because both of them are mermaid as far as I could see in the screen down there whether this could be done but ideally I would like to see some much more consistency between the diagrams or…</p>
+<p id=f754 class="phone s01"><cite>Wesley_Smith:</cite> So understood.</p>
+<p id=7afa class="phone s01"><cite>Wesley_Smith:</cite> Let me speak to that a little bit. So, didn't think that the data integrity one was mermaid, but let me go a little double check. Ivan Herman:</p>
+<p id=55c2 class="phone s05"><cite>Ivan_Herman:</cite> maybe not I don't know I Very cool. Uh-huh.</p>
+<p id=5f85 class="phone s01"><cite>Wesley_Smith:</cite> That's not even going to work, is it? give me one second. I will check outside of my screen share. no, it is not Okay, so the data integrity is not mermaid.</p>
+<p id=e872 class="phone s01"><cite>Wesley_Smith:</cite> As part of putting together this one, I have given a mermaid expression of this diagram in order to have something that is ideally repeatable across the specs as you note. having a cohesive design language is obviously the goal. Caveats. So what does this mermaid do? It's very simple. It's somewhat rudimentary. I'm not a mermaid expert. It defines classes that relate to the oops to the entity process store object breakdown that we've talked about and then it goes from there. with that said, if you take this mermaid and you just copy paste it into any mermaid renderer, you won't get this exact diagram because this exact diagram is additionally So my understanding and if anyone's a mermaid expert and can correct me, please do so.</p>
+<p id=aeb3 class="phone s01"><cite>Wesley_Smith:</cite> My understanding is that mermaid specifies a language for things like entities and their relations. but things like layout decisions are on a per renderer basis. So how exactly I generated this diagram is I took this mermaid and I put it into an AI model and I said render this diagram but do it in the specific way and then I gave it specific constraints such as lay out all of the entities on an orthogonal grid so there are no oblique arrows and use connectors with elbows so that their arrows don't cross each other don't go through boxes things like that and that's how I got this diagram. So you can</p>
+<p id=544b class="phone s01"><cite>Wesley_Smith:</cite> take this mermaid and you will get a functionally equivalent diagram to this with any mermaid render. It'll have the same exact boxes and arrows. I fed that mermaid into AI to get it a slightly more polished version.</p>
+<p id=3481 class="phone s01"><cite>Wesley_Smith:</cite> That is the current process. which happy to refine. Does that make sense?</p>
+<p id=5b02 class="phone s05"><cite>Ivan_Herman:</cite> It makes sense…</p>
+<p id=e1ef class="phone s05"><cite>Ivan_Herman:</cite> but it worries me because we don't have the whole production process properly in hand.</p>
+<p id=6659 class="phone s05"><cite>Ivan_Herman:</cite> If in five years from now we want to make any kind of changes and Wesley is working on something totally different then something is lost and…</p>
+<p id=8281 class="phone s01"><cite>Wesley_Smith:</cite> The I sorry.</p>
+<p id=8d04 class="phone s05"><cite>Ivan_Herman:</cite> So I am worried about this kind of processes. I understand that it speeds up the work. and that's fine. But if the fact that it's difficult to reprod worries me a lot</p>
+<p id=62ff class="phone s01"><cite>Wesley_Smith:</cite> So, I would argue that that's not necessarily true because the specific visual polish here isn't what's important for working on it. the mermaid is a complete specification of the diagram. And if I'm busy or I'm gone, whatever, and you need to update this diagram, this is where you start from because it doesn't matter if the exact visual polish of this diagram is preserved.</p>
+<p id=25e3 class="phone s05"><cite>Ivan_Herman:</cite> I Okay,… Wesley Smith:</p>
+<p id=cce1 class="phone s01"><cite>Wesley_Smith:</cite> You can take this diagram, change it however you'd put it into a mermaid renderer, and then the output that you get is totally valid to replace this docu or this image.</p>
+<p id=950b class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> If I may.</p>
+<p id=cddd class="phone s05"><cite>Ivan_Herman:</cite> Leave it to 10 because he's the next in the queue.</p>
+<p id=165e class="phone s01"><cite>Wesley_Smith:</cite> Please, Ted</p>
+<p id=96e7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> This is a bunch of things. but right now we're very early in this process and a lot of refinement is going to happen as we go. So, I wouldn't get too deep into the weeds on it. That said, refinement of whatever we produce is a very different thing from recreation, right? If one of these boxes needs different text in it, that is a different kind of edit than all of these labels need to change and their shapes need to change and their arrows need to change. That would be regenerated through Mermaid.</p>
+<p id=9ab7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> changing a couple of labels, nudging a few things around. That's a different kind of process. and that second process is the one that I think is more likely to be of concern because that's where we need to make sure that the seven documents that are connected about this have that same look and feel and have, for instance, different subchunks right there. I'm betting that there's going to be at some point a larger image that shows a lot of blocks and a lot of arrows and then there's like an inset</p>
+<p id=93a0 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> view showing this piece is in this document and so we're only talking about this sub image and there will be a different one in the next one. so barcode is one thing and data integrity is another one and there will be others that are related that have different pieces of it and again I don't think we should get too much into the weeds of it. I think this is a part of what will wash out as we go. over the decades a lot of illustrations that have needed to be revised in much more significant ways. And that's been figured out as we've gone.</p>
+<p id=cc89 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And tools have become better and we've become better at keeping records of how things were done and trying to put all of the information that is necessary to regenerate the thing into inline notes that say this was done using this tool on this platform by this person and this data. And I think we're getting there. It's a moving process but we're getting there. So again, I wouldn't stress too much about it.</p>
+<p id=110c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> At this point,</p>
+<p id=342c class="phone s01"><cite>Wesley_Smith:</cite> Yeah, plus one Ted.</p>
+<p id=617c class="phone s01"><cite>Wesley_Smith:</cite> And I would note that what I've done in this repo I think is an active effort to get there. So for example, the data integrity diagram is just a diagram. There's a PNG and an SVG in the actual repository. here we are at least working towards introducing a unifying process language whatever with the mermaid expression of the diagram to getting to what you're saying Ted so agreed of course can be improved and iterated on and I agree of course strongly agree that ideally we have a kind of unified visual language and process and all of that across all of these threat models so people don't have</p>
+<p id=cee9 class="phone s01"><cite>Wesley_Smith:</cite> to wrap their head around something new every time they open one of these anybody else have anything they want to say on this threat model? If not, I'd like to summarize what the group has discussed in the GitHub All right. there was a lot of non-trivial discussion there, so bear with me for a moment. We can workshop this text a bit together. I guess so. first, this PR is not ready to be merged. It's only been around for a few days. I expect Tall Ted will want to do a pass, as well as any other folks. would there be any issues with my planning to merge this at the end of the week?</p>
+<p id=92d2 class="phone s01"><cite>Wesley_Smith:</cite> Does anybody think that it should not be merged or that they want to do? next Tuesday.</p>
+<p id=5ace class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I would suggest that notation be made in it that the plan is to merge it at next call.</p>
+<p id=3f83 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that makes a lot of Yep.</p>
+<p id=8873 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I don't think we're under too much time pressure at this point.</p>
+<p id=08dc class="phone s01"><cite>Wesley_Smith:</cite> Yeah, you're right. And this is also a extremely substantial PR. So, best practice is almost certainly to merge it not off the call. Thank you, Ted. All right.</p>
+<p id=448c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> and making note of that will also encourage people to make their notes or at least show up for the</p>
+<p id=8507 class="phone s03"><cite>Greg_Bernstein:</cite> While he's writing, I wanted to double check on process about merging the data integrity threat model. should we wait till the next call there or wait until we have Ted's feedback? Okay.</p>
+<p id=868f class="phone s01"><cite>Wesley_Smith:</cite> I think.</p>
+<p id=10007 class="phone s01"><cite>Wesley_Smith:</cite> So I put this in the thread on that PR. We're going to merge that at end of day tomorrow. the reason why that's different is that PR has been around for quite a long time and it's kind of important at this point to get it merged and we spent an extensive amount of time on the call today discussing it. And the only changes between this threat model and the DI threat model are going to be small editorial changes from TED. If that changes then we won't merge it tomorrow. Sound good?</p>
+<p id=854d class="phone s03"><cite>Greg_Bernstein:</cite> Yep.</p>
+<p id=9fe2 class="phone s01"><cite>Wesley_Smith:</cite> regeneration. Is that a word?</p>
+<p id=e417 class="phone s01"><cite>Wesley_Smith:</cite> Recreatability and ability to recreate small.</p>
+<p id=b203 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's appropriately structured.</p>
+<p id=7204 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's a fine word.</p>
+<p id=9e9c class="phone s01"><cite>Wesley_Smith:</cite> I know it's like English was more formal, we could make our own words like that.</p>
+<p id=690e class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's perfectly chromulent.</p>
+<p id=acb7 class="phone s01"><cite>Wesley_Smith:</cite> What was the third thing? There's the diagramming. just that we're going to merge it next week. The group change in work. anybody have any issues with…</p>
+<p id=993d class="phone s01"><cite>Wesley_Smith:</cite> what I've written here or would like wording change? Leavon, go ahead. Sorry, I see your hand.</p>
+<p id=a63e class="phone s05"><cite>Ivan_Herman:</cite> No, no,…</p>
+<p id=4b1f class="phone s05"><cite>Ivan_Herman:</cite> no. I don't have a comment on what you wrote. So if someone has a then should say now this working group.</p>
+<p id=bcfb class="phone s06"><cite>Phillip_Long:</cite> I think I made a comment about whether you said when the overlap between this threat model and…</p>
+<p id=ec14 class="phone s06"><cite>Phillip_Long:</cite> others in the group just to clarify what you mean the group working group that's…</p>
+<p id=cdd3 class="phone s01"><cite>Wesley_Smith:</cite> I mean the VC working group generally even within this task force the data integrity there are going to be threat models that overlap that are not under the purview of this task force…</p>
+<p id=9ad6 class="phone s06"><cite>Phillip_Long:</cite> that's what I thought so I think this is mean other task force threat models is perhaps another way to say Yeah.</p>
+<p id=d39d class="phone s01"><cite>Wesley_Smith:</cite> though or at least For example, if there ends up being a status threat model for bitstring status list that would be one that doesn't fall into the task force.</p>
+<p id=4350 class="phone s05"><cite>Ivan_Herman:</cite> I could see overlaps with the render method thread models.</p>
+<p id=86c7 class="phone s01"><cite>Wesley_Smith:</cite> I will change to say working group. Does that work? Perfect.</p>
+<p id=381b class="phone s06"><cite>Phillip_Long:</cite> Yeah. that helps. Thanks, Yeah.</p>
+<p id=1bf0 class="phone s01"><cite>Wesley_Smith:</cite> Perfect. Okay.</p>
+<p id=cef2 class="phone s01"><cite>Wesley_Smith:</cite> Thank you all for the discussion. Ivon, go ahead.</p>
+<p id=dbf5 class="phone s05"><cite>Ivan_Herman:</cite> So can I so still try to clarify and…</p>
+<p id=fa28 class="phone s05"><cite>Ivan_Herman:</cite> maybe some meta comment as do I understand well that this threat model is security and privacy threat model or is it only security explicitly?</p>
+<p id=61c4 class="phone s01"><cite>Wesley_Smith:</cite> It is both security and privacy.</p>
+<p id=d1ad class="phone s01"><cite>Wesley_Smith:</cite> And yep.</p>
+</section>
+
+<section>
+<h3 id=ab32>Process Concerns About Threat Modeling Workload</h3>
+<p id=b674 class="phone s05"><cite>Ivan_Herman:</cite> So, Sorry.</p>
+<p id=d4ea class="phone s01"><cite>Wesley_Smith:</cite> And if you take a look at it, you will see the specific threats are tagged with things like security, privacy.</p>
+<p id=e6ee class="phone s05"><cite>Ivan_Herman:</cite> I see. Okay. I understand. what is maybe a working group level discussion? So, Phil may stop me. I am a little bit worried about the huge amount of work which has to go into these threat models. I mean there is something which is a bit wrong with the process in my view let alone the fact that this is only one sorry…</p>
+<p id=d34e class="phone s03"><cite>Greg_Bernstein:</cite> Yeah, we're writing a book.</p>
+<p id=c392 class="phone s05"><cite>Ivan_Herman:</cite> then two horizontal reviews to be done compared to the fact that the tech hasn't seen yet the thing and we have internationalization in an accessibility which might have less role here…</p>
+<p id=d42a class="phone s05"><cite>Ivan_Herman:</cite> but nevertheless has to be done so I am a little bit worried process-wise about the inordinate amount of time this takes.</p>
+<p id=6351 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> We are beta testing the threat model situation as this particular subd discipline often does.</p>
+<p id=b66d class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> We're on the bleeding edge of the tech end of the specifications and this was one of the things that was talked about a fair amount in the last TAC and I'm sure it'll come up at the next one as well. that threat models are a huge amount of work and if they're really done to the degree that</p>
+<p id=cae5 class="phone s05"><cite>Ivan_Herman:</cite> Yeah. All right.</p>
+<p id=4029 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Simony and others want them to be, including us, I think, then we'll need another couple of years just for the threat model, never mind the rest of the specs that are being worked on.</p>
+<p id=f38e class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And I think that is sort of recognized that it is a moving target that we're not trying to be that perfect, but we're at least trying to recognize that there is a goal that we're not going to reach and to keep striving towards it.</p>
+<p id=0e7a class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I'm just going to jump real quick, Phil, to say plus one, Ted. And that is certainly echoed by… Wesley Smith:</p>
+<p id=66ef class="phone s01"><cite>Wesley_Smith:</cite> what Simone said on the data integrity PR which I will pull up for people to view. Bill, go ahead.</p>
+<p id=e091 class="phone s02"><cite>Phil_Archer:</cite> just quickly to say that there was a member meeting with the advisory board the previous hour and…</p>
+<p id=6465 class="phone s02"><cite>Phil_Archer:</cite> I raised this issue with lots of people and I didn't complain but I made it clear that this group was doing a huge amount of work and as Ted just said I think we're a long way ahead ahead of other people. Simone saw the IRC chat and jumped on the call. and I think he's working with Joe and is trying to I think Simone is aware of the issues that we're raising that it is such a large amount of work. I think a lot of it in time come down to tooling. I was struck.</p>
+<p id=f8b8 class="phone s02"><cite>Phil_Archer:</cite> I know I'm going back a little bit, but when Wes was talking us through his work on forgery defense, so many of the design of the design decisions that were made are kind of in response to threats that would come up. And a lot of what we're doing here, it's almost like going back over it and thinking, why do we do that? We did it because we want to protect against this, and this. And it might be the case underlined might that it's easier to do these things as you go along than it is to go back and reverse engineer what the threat model was. All these things will only come out in time. But it is recognized that this is a lot of work. on the flip side of that, it does make the specs better. It does actually improve the integrity of the work and…</p>
+<p id=a53d class="phone s02"><cite>Phil_Archer:</cite> it shows us ahead of any other standards body on this. I don't think anyone else does it. I think they should. I think it'd be good if they did, but we are really paving the way. And this group particularly deserves a lot of credit for that.</p>
+<p id=3747 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I think and…</p>
+<p id=c66c class="phone s01"><cite>Wesley_Smith:</cite> and agree that it is a lot of work. these PRs are many hours of work for sure. but I do think there is value even in the case where there is redundancy and where nothing new comes to light as a result of doing the threat model because all of it everything contained in the threat model was already considered during design even in that sort of quote unquote worst case I think the threat models have a tremendous amount of external value especially for things like VC barcodes or VC data integrity that</p>
+</section>
+
+<section>
+<h3 id=00d6>Merging Strategy For Threat Models</h3>
+<p id=d14c class="phone s01"><cite>Wesley_Smith:</cite> are used in these kind of ultra could be used in ultra high assurance security critical environments. I think having rigorous concrete templatized frameworkized threat models to point for external people to look at as evidence that this has been rigorously thought about is tremendously valuable. so it is a lot of work. but I think it is really valuable. I mean obviously other I wouldn't have done it right. I wouldn't have done it for the barcodes work. all right I'm noting we are out of time. Anybody have any final thoughts they want to share? All right. Thanks very much folks.</p>
+<p id=99f8 class="phone s01"><cite>Wesley_Smith:</cite> As always, thanks for the engagement, time, and efforts. plan is to merge the data integrity threat model tomorrow,…</p>
+<p id=c764 class="phone s03"><cite>Greg_Bernstein:</cite> Thanks.</p>
+<p id=10008 class="phone s01"><cite>Wesley_Smith:</cite> end of day, barring, of course, any new objections or substantive change requests, and hopefully we can get the VC barcodes threat model merged down on next week's call. Thank you all for the time.</p>
+<p id=97e6 class="phone s02"><cite>Phil_Archer:</cite> Thank you.</p>
+<p id=bd82 class="phone s07"><cite>Elaine_Wooton:</cite> Thank you. Bye everybody. Meeting ended after 00:56:53 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
