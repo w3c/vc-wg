@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 22 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>Verifiable Credentials Working Group Telco</h1>
+<h2>22 July 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/b1a3e329-74d1-405d-ab47-2934b41c2ab4/20260722T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/07/22-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, carolynn, dmitriz, Eric_Scouten, Grace_Rachmany, hsano, ivan, JennieM, JoeAndrieu, kevin, KevinDean, kezike, manu, michaelshea, mlinck, parth, pdl_asu, phila, saad, Scott, TallTed, wes-smith</dd>
+<dt>Regrets</dt><dd>brentz</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>manu, dmitriz</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#34ba">CAWG and C2PA</a></li>
+<li><a href="#41c5">VCDM 2.1</a></li>
+<li><a href="#bd0a">Overview doc, rename to 1.0 and start draft of 1.1</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=7712 class=irc><cite>&lt;michaelshea&gt;</cite> brb</p>
+<p id=b535 class="phone s01"><cite>phila:</cite> We have three guests with us today, thankful for their time. Scott, Eric, and Grace, from CAWG.</p>
+<p id=fbe9 class="phone s01"><cite>phila:</cite> We're going to hear about C2PA as well. There are some issues we need to cover after that, Brent is at IETF.</p>
+<p id=e27b class="phone s01"><cite>phila:</cite> We will look at VCDM issues, and overview document, and open issue for group to look at.</p>
+<p id=1c19 class="phone s01"><cite>phila:</cite> Do we have any new members of the group that haven't introduced themselves yet?</p>
+<p id=ac67 class="phone s02"><cite>Saad:</cite> Hi Saad from Siemens AG, recently joined the group, our interest is in Digital Product Passport, should be able to contribute soon.</p>
+<p id=8248 class="phone s01"><cite>phila:</cite> Is this your first WG group?</p>
+<p id=274d class="phone s02"><cite>Saad:</cite> I've participated in IETF, fairly used to participating in IETF.</p>
+<p id=8499 class="phone s01"><cite>phila:</cite> Ok, please join IRC, queue there, welcome to the group!</p>
+<p id=c530 class="phone s01"><cite>phila:</cite> Anyone else on the call for the first time today?</p>
+<p id=8add class="phone s03"><cite>Koriyama-san:</cite> Michiko Koriyama from Keio, working with Shigeya-san.</p>
+<p id=11be class="phone s01"><cite>phila:</cite> We will get to usual meeting work, but we have a presentation today from our guests.</p>
+</section>
+
+<section>
+<h3 id=34ba>CAWG and C2PA</h3>
+<p id=a4a9 class="phone s04"><cite>Scott:</cite> Thank you for the opportunity to present, today we're going to talk a bit about C2PA and CAWG ecosystem... building identity into the content provenance ecosystem. We will have an ask about coordination about advancing VCs in this marketplace.</p>
+<p id=a40b class="phone s04"><cite>Scott:</cite> My nameis Scott Perry, play multiple roles -- VCs and provenance, Co-Chair of steering committee of Trust over IP, co-chair of creator assertions WG, and I have colleagues Grace and Eric with me today.</p>
+<p id=a0f1 class="phone s05"><cite>Gracedao:</cite> I'm Grace, Executive Director of DIF, mostly a figurehead, I go around to places like IETF where I am today. I love content, and that's why the Creator Assertions Working Group is great!</p>
+<p id=b4c8 class="phone s04"><cite>Scott:</cite> The CAWG started out in C2PA and there was a motion to note individual attribution in C2PA spec, they moved it over to DIF with Adobe's support as well as ToIP that houses the CAWG, Grace has helped us make sure that effort got under way at DIF.</p>
+<p id=472a class="phone s06"><cite>Scouten:</cite> Hi Eric Scouten, I lead team at Adobe that builds open source and internal implementations of C2PA and CAWG ecosystem, I also co-chair Creator Assertions WG.</p>
+<p id=43cc class="phone s06"><cite>scouten:</cite> Who are we and how does all this fit together? Why are we here and what are we hoping to accomplish with W3C WGs.</p>
+<p id=e136 class="phone s06"><cite>scouten:</cite> We want to enable content creators to attach tamper evident digital nutrition label to the content they produce, how did they create the work, did they use AI tools, who am I, what do I want you to know about the context of the digital media?</p>
+<p id=3e76 class="phone s06"><cite>scouten:</cite> We use various cryptographic techniques to determine whether or not the material is original or has been modified... what do hardware and software tool vendors say about content, and what do individuals say about it?</p>
+<p id=8e36 class="phone s06"><cite>scouten:</cite> There are three Cs that work togheter: C2PA (What and how), CAWS (Who), and Advocacy and Education.</p>
+<p id=e88a class="phone s06"><cite>scouten:</cite> CAWG defines things that people and orgs to say about content -- how can you use digital credentials to express things about digital content.</p>
+<p id=67a8 class="phone s06"><cite>scouten:</cite> contentauthenticity.org is a bunch of companies that feel like content provenance is important for society.</p>
+<p id=8dcc class="phone s06"><cite>scouten:</cite> How does this translate to tech used -- taking accountability. Hardware/software tools are the &quot;C2PA claim generator&quot;. Individual or organization involved in creating the content is the CAWG named actor (mostly aligns w/ credential community's use of credentialSubject) -- who was operating the camera/microphone?</p>
+<p id=8082 class="phone s06"><cite>scouten:</cite> C2PA deals w/ GPS data, edit actions taken, AI used, CAWG -- uses x509 cert / COSE signature, conformance program Scott alluding to, certificates used have specific purpose (not TLS certs, not S/MIME, specific to C2PA and vendor's agreement).</p>
+<p id=05b9 class="phone s06"><cite>scouten:</cite> In CAWG, credentials that describe people/orgs is much more complex/flexible -- can use multiple types of credentials to attest to work, we do have an x509 system, but instead temporary backed by S/MIME governance program, will probably build our own. Specific grammar of W3C VCs, has platform vendor roll up a sequence of social media signals (Instagram, website, etc. verify those and put them in specific type of VC).</p>
+<p id=d337 class="phone s06"><cite>scouten:</cite> Projects we have in place, make VC integration much more generic, not tied to platform vendor, can bring credential from different markets, also working with GLEIF to bring in VLEIs to attest to organizational identity.</p>
+<p id=8e48 class="phone s06"><cite>scouten:</cite> Good jumping off point for VCWG discussion, set context with Scott</p>
+<p id=0a34 class="phone s04"><cite>Scott:</cite> As Eric alluded to, we launched C2PA conformance program over a year ago, viral adoption, Google is all in, bringing all of their products to C2PA, creating canvases of many groups of digital objects that will be available in marketplace for attribution to be attached to. Seeing in CAWG, rapid adoption by major industires, that want attribution of digital photos in marketplace, and entire creator community in film, music, where money flows based ... on attribution.</p>
+<p id=c7ed class=irc><cite>&lt;TallTed&gt;</cite> Gracedao, scouten, Scott (and others) -- You may also be interested in the W3C Credible Web Community Group, <a href="https://www.w3.org/community/credibility/">https://<wbr>www.w3.org/<wbr>community/<wbr>credibility/</a></p>
+<p id=1a8f class="phone s04"><cite>Scott:</cite> Looking at viral acceptance for more verifiable credentials in aggregate than any other use case in market today -- we want every digital object created having a verifiable credential that VCs can be placed on top of it for attribution. In C2PA conformance ecosystem, it's working well, we have governance, platform canvas... real conversation w/ W3C is around attribution.</p>
+<p id=1f91 class=irc><cite>&lt;scouten&gt;</cite> TallTed thank you … taking a note to dig deeper on that group's work.</p>
+<p id=c79e class="phone s04"><cite>Scott:</cite> C2PA is dealing w/ orgs, we are expanding world where individuals want to make claims, and with advance w/ VCs in markets, expand acceptance of VCs to directly within CAWG spec, use that as attribution as another opportunity for different industries to make a claim against digital object, consent, identification, facilitation of metadata, attached to digital object, creating hooks for trust registries and extended registries to allow that.</p>
+<p id=354a class="phone s04"><cite>Scott:</cite> Use tech we are building to build fair use and disclosive information about the use of AI.</p>
+<p id=af96 class="phone s04"><cite>Scott:</cite> We started up VC Task Force and didn't have the number of people that are in this meeting today -- we want to partner with W3C to advance VC options to be used with digital objects, want to get involved in CAWG and bring VCWG to table, largest use case that I'm familiar with in VCs.</p>
+<p id=21a5 class="phone s07"><cite>manu:</cite> this is a fantastic initiative. Scott, Eric, Grace, wonderful to see you again<br>
+<span id=0259>… this group should do everything we can to support the work you're doing</span><br>
+<span id=c478>… let's work with CAWG and C2PA to make sure they find success using this tech</span><br>
+<span id=a2b1>… either create a new Task Force to work on this, or to cycle steal from the main call</span><br>
+<span id=8fe0>… but this is really an important initiative</span><br>
+<span id=96ef>… as Scott mentioned, and Eric has been letting us know for years</span></p>
+<p id=093e class="phone s04"><cite>Scott:</cite> thanks manu. and yes, we're very interested in organizations to participate in this<br>
+<span id=3dcf>… we need lots of orgs that are trying to figure out how to do all this</span><br>
+<span id=2347>… especially ones already issuing VCs for identity</span></p>
+<p id=a76b class="phone s08"><cite>bigbluehat:</cite> just to continue -- thanks for coming, and for presenting on this. I've been a fan from the sidelines<br>
+<span id=59e9>… I want to ask about practicalities. I know a TF would be amazing. do you have some technical targets or issues, re what you feel is the main interface points could be?</span></p>
+<p id=ffff class="phone s09"><cite>Eric:</cite> I think there are two pieces we're in flight on, and would benefit from guidance<br>
+<span id=72f2>… one is - we have a draft proposal for how a VC can be correctly bound to a specific piece of content. a review of that work on the W3C side would be greatly helpful</span><br>
+<span id=651b>… Scott and I can work with you to work out an individual session, or have you join one of our wg sessions</span><br>
+<span id=4dfa>… the other one is -- how do we establish a marketplace of trust? It's easy for someone to self-issue a VC, but how do you know that you should trust VCs from CA DMV, etc</span><br>
+<span id=66ee>… understanding that, and providing roots of trust that make the CAWG credential marketplace interoperable is the biggest challenge we face</span><br>
+<span id=bcac>… a lot of the usecases for VCs so far have been closed ecosystems, but now we're stretching the boundaries</span><br>
+<span id=e3e1>… where consumers are unknown at the time of publication, at a larger scale</span></p>
+<p id=7ec7 class="phone s10"><cite>KevinDean:</cite> hi, Kevin with Legendary Requirements, working on supply side standards for a while<br>
+<span id=fc4f>… when I was at GS1 we ran across this from time to time, with content creators who were licensing their characters for merchandise for example</span><br>
+<span id=3449>… and the challenge as always is to ensure that a retailer who is selling what appears to be licensed content is sourcing it legitimately</span></p>
+<p id=b991 class="phone s09"><cite>Eric:</cite> yes, that's the usecase, with some wrinkles. the data formats we use from C2PA are immutable<br>
+<span id=650f>… and the legal agreements that establish the rights to use characters etc, are mutable</span><br>
+<span id=34e0>… legal agreements change, ownership rights, and so on, change after media is published</span><br>
+<span id=a264>… so if walmart comes across a representation of a character 5 years from now, how do they find out what changed in the 5 years</span></p>
+<p id=e143 class="phone s04"><cite>Scott:</cite> we're looking at 2 distinct governance models<br>
+<span id=c0d3>… one is a specific industry controlling specific metadata.</span><br>
+<span id=0867>… the thing we want to solve is -- if an individual is claiming an identity, how do we know who they are. and what's the governance model to give us confidence in it</span><br>
+<span id=beb2>… there's some aspects in 509 that allow for some of this. I want to see a governance model at scale for VCs too</span><br>
+<span id=32c5>… maybe at the W3C level</span></p>
+<p id=fabf class=irc><cite>&lt;bigbluehat&gt;</cite> <a href="https://w3c.github.io/vc-recognized-entities/">https://<wbr>w3c.github.io/<wbr>vc-recognized-entities/</a></p>
+<p id=1a4b class="phone s08"><cite>bigbluehat:</cite> Ivan mentioned it already in chat, but I wanted to share about the VC Recognized Entities spec<br>
+<span id=0364>… which covers exactly the use case you were talking about</span><br>
+<span id=d8a6>… handles self-signed content by a content creator</span><br>
+<span id=c3a2>… like the Patreon artist space</span><br>
+<span id=be4e>… where currently the artist doesnt have a lot of tools to back up their claims</span><br>
+<span id=e902>… so, recognized entities could play towards promoting a way individuals and orgs can support each other's claims</span></p>
+<p id=f772 class=irc><cite>&lt;scouten&gt;</cite> bigbluehat thanks – taking a note to read up on RE spec</p>
+<p id=7912 class="phone s01"><cite>Phila:</cite> thanks Benjamin, i'm delighted this conversation has taken off<br>
+<span id=3b31>… what I did was completely and utterly abuse the system, and Steve Cappell has done the same</span><br>
+<span id=da98>… so what Steve and I have both done, is to crowbar our usecases directly into the VC Recognized Entity standard. so, those usecases are really well covered!</span><br>
+<span id=6ef8>… thing like -- a product claims it's organic, is it? and country of origin? etc</span><br>
+<span id=494a>… resting on a trust anchor at the base. so, the VC Recognized Entity might be of direct use to you</span><br>
+<span id=5e76>… wearing my W3C co-chair hat for a moment,</span><br>
+<span id=e2bc>… there's some great opportunities here, and of course some challenges</span><br>
+<span id=59fd>… noone, including you and all of us, has any time to do any more than we're already doing. hopefully we'll find time</span><br>
+<span id=160f>… secondly, like DIF, TOIP we have IP rules</span><br>
+<span id=7212>… about contributions and so on.</span><br>
+<span id=1c9d>… what we'd need to do is to take this positivity and turn it into concrete action steps</span><br>
+<span id=00cb>… a conversation involving Grace, and Ivan (team contact representing W3C here), about how we make this happen</span><br>
+<span id=c776>… in terms of formal agreement / working together</span><br>
+<span id=0cdb>… anyone else in the group has questions?</span></p>
+<p id=7214 class="phone s04"><cite>Scott:</cite> please provide our email addresses</p>
+<p id=e45e class=irc><cite>&lt;scouten&gt;</cite> When you transition to other topics, I'll jump off. Thank you for the opportunity to talk with your group! :-)</p>
+<p id=10f2 class="phone s11"><cite>Grace:</cite> just to add, we already have some joint WGs with W3C, so the lawyer part might be easier</p>
+<p id=3f4d class="phone s09"><cite>Eric:</cite> as Grace said, and others, we run under W3C IPR, so, should work<br>
+<span id=40e8>… and welcome anyone as individual members or org collaboration</span></p>
+<p id=6773 class="phone s01"><cite>phila:</cite> as GS1, I'm co-organizing a workshop with W3C (giving me so much schitzophrenia)<br>
+<span id=8506>… some of the people taking part in that are about Know Your Agent / KY Customer / KY Supplier</span><br>
+<span id=bd49>… very similar to what you were talking about, Eric</span><br>
+<span id=392a>… not just attaching identity to software, but what its authorization is</span></p>
+<p id=ea89 class="phone s11"><cite>Grace:</cite> we do have a working group specifically on this, the TAWG wg - Trusted AI WG<br>
+<span id=a03b>… and they have a KYA-OS spec</span></p>
+<p id=4ab4 class="phone s04"><cite>Scott:</cite> I am going to be at the GDC week in geneva, and the week before<br>
+<span id=0b1b>… hopefully we can have conversatins about it</span></p>
+<p id=2340 class="phone s01"><cite>phila:</cite> I'll be there</p>
+<p id=5f32 class="phone s12"><cite>dmitriz:</cite> can you post a link to CAWG meetings?</p>
+<p id=761c class="phone s01"><cite>phila:</cite> eric - is there a stable URL for the slides?</p>
+<p id=42f5 class="phone s09"><cite>Eric:</cite> will send the slides</p>
+<p id=6fbc class="phone s01"><cite>phila:</cite> ok, for the group, lets go through some of the regular stuff<br>
+<span id=40d1>… couple of things on the agenda</span></p>
+</section>
+
+<section>
+<h3 id=41c5>VCDM 2.1</h3>
+<p id=75a5 class="phone s01"><cite>phila:</cite> I know manu isn't here, but Kevin --</p>
+<p id=5cb4 class=irc><cite>&lt;phila&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues</a></p>
+<p id=c07c class="phone s01"><cite>phila:</cite> you very kindly put your hand up to help with this<br>
+<span id=1c36>… what manu said briefly before the call was -- these issues have been triaged, and several are looking for PRs. Kevin, would you be willing/able to take a stab at working on those?</span></p>
+<p id=ba11 class="phone s10"><cite>KevinDean:</cite> ok I will take a look</p>
+<p id=7637 class="phone s01"><cite>phila:</cite> this is one of the documents that we as the full WG need to take care of<br>
+<span id=24aa>… we need to keep our eye on it as the main group (vs task forces</span><br>
+<span id=aae1>… next step is to prep it for horizontal review</span><br>
+<span id=74d4>… so the first thing is to start on it, start correcting the errors, postpone things for the future</span><br>
+<span id=5dab>… so, thank you, Kevin</span></p>
+</section>
+
+<section>
+<h3 id=bd0a>Overview doc, rename to 1.0 and start draft of 1.1</h3>
+<p id=3f22 class="phone s01"><cite>phila:</cite> anyone else have comments about VC DM 2.1?<br>
+<span id=468a>… if not, the next topic..</span><br>
+<span id=adde>… Ivan, this is on your doorstep</span></p>
+<p id=35d8 class=irc><cite>&lt;ivan&gt;</cite> <a href="https://www.w3.org/TR/vc-overview/">https://<wbr>www.w3.org/<wbr>TR/<wbr>vc-overview/</a></p>
+<p id=a871 class="phone s13"><cite>ivan:</cite> for those who were not around in the first round of the WG, I added an overview doc in the old days of 1.0<br>
+<span id=7202>… and is decently used (for example, at W3C), when communicating with other institutions</span><br>
+<span id=42f1>… so I really think it's an important doc (not just cause I added it)</span></p>
+<p id=051d class=irc><cite>&lt;ivan&gt;</cite> <a href="https://iherman.github.io/vc-overview-1.1/">https://<wbr>iherman.github.io/<wbr>vc-overview-1.1/</a></p>
+<p id=029e class="phone s13"><cite>ivan:</cite> incorporating the input from all the task forces is a large amount of work<br>
+<span id=625c>… I took a first pass at it</span><br>
+<span id=12d4>… question is: how do we move forward to officialize the changes?</span><br>
+<span id=af91>… we made a mistake back in the day not to give a version to the overview. so any change I'd do in the current doc would be reflected on the overview</span><br>
+<span id=c413>… and that wouldn't be good, since there are major changes since 1.1</span><br>
+<span id=287d>… so, would be ideal to cut a stable version to the public, so we can have a working version we can continue editing as the WG works</span></p>
+<p id=134f class=irc><cite>&lt;ivan&gt;</cite> - re-publish the current one titled VC Overview 1.0, with short name vc-overview-1.0</p>
+<p id=4c3d class=irc><cite>&lt;ivan&gt;</cite> - vc-overview will redirect to vc-overview-1.0</p>
+<p id=006f class=irc><cite>&lt;ivan&gt;</cite> - officially publish VC Overview 1.1 as a Draft Note, with short name vc-overview-1.1 (essentially through a PR to the content above)</p>
+<p id=8d75 class=irc><cite>&lt;ivan&gt;</cite> - At some point in the future it will become a Note and vc-overview will redirect to vc-overview-1.1</p>
+<p id=54a6 class="phone s13"><cite>ivan:</cite> I have put together a set of steps I think should be done ^<br>
+<span id=a022>… (ivan goes over the steps above)</span></p>
+<p id=ff40 class="phone s01"><cite>phila:</cite> any comment on this?</p>
+<p id=d654 class="phone s13"><cite>ivan:</cite> i need a lot of review for the 1.1 version<br>
+<span id=3d76>… lots of details there around SD, various methods and classes and so on</span><br>
+<span id=5c00>… I tried to review all the new docs from the task forces, but there's still a bit of hand-waving, that needs review and help</span><br>
+<span id=c99b>… the other thing, to avoid any kind of misunderstanding -- there's an Editor, and a list of Authors</span><br>
+<span id=8216>… which at the moment is a concat of all the editors that have published before</span></p>
+<p id=003d class="phone s01"><cite>phila:</cite> ok, I have forked your repo, I currently have 4 PRs and 2 issues</p>
+<p id=d517 class="phone s13"><cite>ivan:</cite> good</p>
+<p id=f63d class="phone s01"><cite>phila:</cite> yes, it's an important document<br>
+<span id=462c>… an essential guide</span></p>
+<p id=9470 class=irc><cite>&lt;phila&gt;</cite> Proposed Resolution: We re-publish the existing Overview document unchanged but renamed version 1.0 (/TR/vc-overview-1.0). We will then adopt Ivan's draft as a FPWD of version 1.1 (/TR/vc-overview-1.1)</p>
+<p id=7400 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=b400 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=3400 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f400 class=irc><cite>&lt;pdl_asu&gt;</cite> +1</p>
+<p id=f401 class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=7401 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=7402 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=b401 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=3401 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=3402 class=irc><cite>&lt;Saad&gt;</cite> +1</p>
+<p id=7403 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=7317 class=resolution><strong>RESOLUTION:</strong> We re-publish the existing Overview document unchanged but renamed version 1.0 (/TR/vc-overview-1.0). We will then adopt Ivan's draft as a FPWD of version 1.1 (/TR/vc-overview-1.1)</p>
+<p id=c48d class="phone s01"><cite>phila:</cite> so resolved.</p>
+<p id=b03e class="phone s01"><cite>phila:</cite> we'll look at issue 12 next time<br>
+<span id=15a9>… anyone have any other comments before we close?</span><br>
+<span id=b2e1>… thanks all!</span><br>
+<span id=183f>… next week, I'll chair again (Brent is away)</span><br>
+<span id=71a6>… I'll be issuing agenda for next week tomorrow though</span><br>
+<span id=ccac>… for the new members of the group -- do please take a look at the Task Forces</span></p>
+<p id=59d7 class=irc><cite>&lt;michaelshea&gt;</cite> thanks phil!</p>
+<p id=93e9 class="phone s01"><cite>phila:</cite> thanks again all, talk to you all later</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#7317">We re-publish the existing Overview document unchanged but renamed version 1.0 (/TR/vc-overview-1.0). We will then adopt Ivan's draft as a FPWD of version 1.1 (/TR/vc-overview-1.1)</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
