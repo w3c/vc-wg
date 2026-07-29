@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 28 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>28 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9413">Tracker For VCWG Deliverables</a></li>
+<li><a href="#3334">VC Barcodes Threat Model Review</a></li>
+<li><a href="#a63d">VC Barcodes Horizontal Review Timeline</a></li>
+<li><a href="#7dc3">VC Forgery Defense Threat Model Discussion</a></li>
+<li><a href="#678f">Data Integrity Crypto Suite Algorithms</a></li>
+<li><a href="#612a">Data Integrity Selective Disclosure Definition</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=9977 class="phone s01"><cite>Ivan_Herman:</cite> p.m.</p>
+<p id=a20f class="phone s02"><cite>Wesley_Smith:</cite> Good morning folks. I will give people a couple minutes to trickle in before we get started. Good.</p>
+<p id=91a6 class="phone s02"><cite>Wesley_Smith:</cite> All Good morning everyone. welcome to the July 28th meeting of the VC barcodes data integrity and forgery defense task force. a reminder that this meeting is being recorded and transcribed. If you're not comfortable with that, please let me know. The agenda for today is similar to what it usually is. brief introduction, announcement items and then we will do pull request review issue processing and any other discussion needed for the BC barcodes, the data integrity and the forgery defense specifications. Does anybody have any announcements, any introductions or any process items they would like to discuss today?</p>
+</section>
+
+<section>
+<h3 id=9413>Tracker For VCWG Deliverables</h3>
+<p id=964f class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=20a7 class="phone s02"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=aba1 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=5308 class="phone s03"><cite>Manu_Sporny:</cite> Just a review of kind of where we are for each kind of work item where we are I'm in the process of trying to create a tracker for VCWG so that we can track all these deliverables to see where we are in the process.</p>
+<p id=4f01 class="phone s03"><cite>Manu_Sporny:</cite> The hope is that, we can transition some of these things that we've been working on into candidate wreck during W3CT pack, which is only about threeish months away, which is not a lot of time at all. so just want to make sure that we're keeping an eye on that and we have a plan on when we're going to do feature freeze, when we're going to ask for horizontal review,…</p>
+<p id=63cf class="phone s03"><cite>Manu_Sporny:</cite> and when we're expecting to, move forward. that's it. No, I'm in the process of creating it,…</p>
+<p id=1d7e class="phone s02"><cite>Wesley_Smith:</cite> Is that something that you wanted to discuss with the group or…</p>
+<p id=5ccf class="phone s02"><cite>Wesley_Smith:</cite> you just wanted the group to be aware that you are in the process of creating such a thing.</p>
+<p id=9327 class="phone s03"><cite>Manu_Sporny:</cite> but I don't know what the group's plans are. So, I need, us to start committing to we're going to try to get this done by X date.</p>
+<p id=e499 class="phone s03"><cite>Manu_Sporny:</cite> I think as we hit each item,…</p>
+<p id=bb6f class="phone s02"><cite>Wesley_Smith:</cite> Do you think that's something that we should spend time on the call today now discussing or do you think that's something we should keep in the back of our minds? What's your All right,…</p>
+<p id=03b3 class="phone s03"><cite>Manu_Sporny:</cite> whoever's in charge of the item should start giving us firm dates. when's the threat model going to be done? When are we expecting to be in horizontal review? When are we expecting feature freeze? we need to start setting these dates to make sure that we're on track.</p>
+<p id=7eba class="phone s02"><cite>Wesley_Smith:</cite> let's go ahead and discuss that when we move to each item today. Then any other process introduction or announcement items? All right, hearing none. Greg Bernstein, my plan for today is to spend some time talking about barcodes. I can briefly give a status update on forgery defense, although that hasn't had much change in the last couple of weeks, and then hand it over to you for DI.</p>
+<p id=2a8c class="phone s02"><cite>Wesley_Smith:</cite> Does that work or do you need a specific amount of time?</p>
+<p id=c831 class="phone s04"><cite>Greg_Bernstein:</cite> networks. We have PRs.</p>
+<p id=d5ee class="phone s04"><cite>Greg_Bernstein:</cite> We've got some updates and some decision type of things to think about, but that'll work.</p>
+</section>
+
+<section>
+<h3 id=3334>VC Barcodes Threat Model Review</h3>
+<p id=d851 class="phone s02"><cite>Wesley_Smith:</cite> All If that is the case, we can go ahead and start. Me one second. All right, sweetie barcodes. so last week I presented the threat model draft that I had a PR raised to add. We'll do a very status update of that.</p>
+<p id=dbda class="phone s02"><cite>Wesley_Smith:</cite> So, this PR has had an extensive amount of feedback and discussion on it. Thank you to everybody who engaged there. I believe that I have addressed everything that needs to be addressed in order to merge this PR. however I don't think we can merge it on the call today because we have not heard back from Simony and I be happy to hear other people in the group's opinion if they have a different opinion but he requested quite extensive changes. I believe I've addressed these changes and created issues to track the change requests that were too large to make sense in this PR. however I haven't heard back from him after that.</p>
+<p id=b16f class="phone s02"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=4e43 class="phone s03"><cite>Manu_Sporny:</cite> I think this is a first draft right and we expect to continue to work on it. So as long as you're tracking issues and you've made some set of changes that are easy to make I think we should merge it. the main reason being like we can't do horizont we want I think my personal opinion is VC barcodes is close enough to feature fe freeze and…</p>
+<p id=3e1f class="phone s02"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=a5d0 class="phone s03"><cite>Manu_Sporny:</cite> with a threat model would allow us to us the horizontal review and I think we should kick that process off. I don't think Simony would object to that. so all that to say, we've waited for Simon's feedback. There are issues where we can give more feedback. We're not done yet. I think we can march. That's it.</p>
+<p id=0f5d class="phone s02"><cite>Wesley_Smith:</cite> Thank you. From a process perspective, does it matter that the official GitHub status of this PR is changes requested and the person requesting that changes those changes has not come back and approved? He is not objected to anything.</p>
+<p id=524b class="phone s03"><cite>Manu_Sporny:</cite> Avon you can disagree with me but this is an initial draft. I think you give them seven days if they're like no objections we merge. I haven't seen Simone's feedback. Is he objecting to anything in the threat model?</p>
+<p id=2665 class="phone s02"><cite>Wesley_Smith:</cite> He made Okay.</p>
+<p id=5520 class="phone s03"><cite>Manu_Sporny:</cite> You could ask him or is any of your feedback we have made changes. We have raised issues. is there anything remaining that is blocking? Can we merge?</p>
+<p id=0793 class="phone s03"><cite>Manu_Sporny:</cite> Would be the way to ping him. Great.</p>
+<p id=1eae class="phone s02"><cite>Wesley_Smith:</cite> I will ping him in a comment on the PR. Do we have a time by …</p>
+<p id=b8d1 class="phone s01"><cite>Ivan_Herman:</cite> Who am I to disagree with money?</p>
+<p id=9f19 class="phone s02"><cite>Wesley_Smith:</cite> go ahead, Ivon. do we have a time…</p>
+<p id=d260 class="phone s01"><cite>Ivan_Herman:</cite> I said, who am I to disagree with money?</p>
+<p id=2f92 class="phone s02"><cite>Wesley_Smith:</cite> where we would like to merge this assuming we get radio silence from Simone?</p>
+<p id=ad7b class="phone s03"><cite>Manu_Sporny:</cite> end of this week I suggest end of the week is plenty of time to hear back from him I</p>
+<p id=8805 class="phone s02"><cite>Wesley_Smith:</cite> Perhaps end of day tomorrow, end of the week. Okay. Absolutely.</p>
+<p id=8ece class="phone s01"><cite>Ivan_Herman:</cite> To be fair to Simona, he has an enormous amount of things on his hands.</p>
+<p id=8caa class="phone s01"><cite>Ivan_Herman:</cite> So, it's sort of understandable that he pushed a number of comments and then let it go for now because he has to do that probably for 10 specification in parallel.</p>
+</section>
+
+<section>
+<h3 id=a63d>VC Barcodes Horizontal Review Timeline</h3>
+<p id=5e8f class="phone s02"><cite>Wesley_Smith:</cite> Totally understood. Let me write a brief note to him. there is a PR open from Phil that I was hoping to talk to him about, but he is not on the call. I think we can probably talk timeline for VC barcodes and then move on. Give me one second. Yeah. Okay. timeline for VC barcodes. So the threat model is soon to be merged in the specification.</p>
+<p id=26e6 class="phone s02"><cite>Wesley_Smith:</cite> It is certainly to my mind close enough to comprehensive for horizontal review. I think it is not perfect certainly but 95% of quite a lot of issues on the specification but they are mostly almost all relating to editorial polish and things like that. with respect to feature freeze. So there are two things that need to happen that I don't know if they qualify as a tutorial or not. I would assume no is we need to move the XI crypto suite into data integrity work and we need to move the stuff into bit string status list work. Do those have to happen before horizontal review?</p>
+<p id=06b1 class="phone s02"><cite>Wesley_Smith:</cite> I assume they certainly have to happen for feature freeze.</p>
+<p id=3f94 class="phone s02"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=d31d class="phone s03"><cite>Manu_Sporny:</cite> They do not need to happen before horizontal review.</p>
+<p id=4ca8 class="phone s03"><cite>Manu_Sporny:</cite> We do want to mention it in the comments that we raise for horizontal review. It would be easier not to mention those and…</p>
+<p id=51d9 class="phone s03"><cite>Manu_Sporny:</cite> have the move done before horizontal review. But given how long horizontal review takes, we should request horizontal review first and then make some notes and then clean it up. Mhm.</p>
+<p id=a8ec class="phone s02"><cite>Wesley_Smith:</cite> Yeah, this also feels like the right order…</p>
+<p id=9cf2 class="phone s02"><cite>Wesley_Smith:</cite> because the worst case scenario here is that horizontal review happens twice on the same set of normative features. Ivon, go ahead.</p>
+<p id=09f3 class="phone s01"><cite>Ivan_Herman:</cite> And we should not forget that the crypto suit thing is easy…</p>
+<p id=b7e1 class="phone s01"><cite>Ivan_Herman:</cite> because we already have a first public working draft for ECDSA. So we can do that and it also binds with what Greg is doing. However, what this requires is that we reissue the status document as a 1.1 because it's a recommendation and therefore we cannot just add thing to it. it's an administrative thing. So it's mainly a chore on me and whoever is editors of the document but it has to go to the working group level. It has to be voted up on da da da da da.</p>
+<p id=ffff class="phone s01"><cite>Ivan_Herman:</cite> So that takes a long time and so therefore I would think we should do that as early as possible. Billy is not here neither is Bren so I cannot comment on which working group call this should be put on the agenda but I think we should try to get that rolling. Let's not leave it on the last minute.</p>
+<p id=59ac class="phone s02"><cite>Wesley_Smith:</cite> Yep, strongly agree. So, with those things in mind, I don't know what is actually required to kick off horizontal review and…</p>
+<p id=c8f2 class="phone s02"><cite>Wesley_Smith:</cite> From a literal practical perspective, what buttons need to be pushed, what emails need to be sent. But I would expect that next week sometime would be when I would view VC barcodes as ready. given what we just said, Ivon, go ahead.</p>
+<p id=0ea5 class="phone s01"><cite>Ivan_Herman:</cite> So just to avoid unnecessary problems with the tag we have to make a decision at some point in…</p>
+<p id=cd0f class="phone s01"><cite>Ivan_Herman:</cite> which vocabulary do we want to put the new terms. when and how etc. And I may have some problems this week but I plan to make a more thorough proposal for the working group at large with all the task forces for which vocabulary we have we have to modify etc.</p>
+<p id=10000 class="phone s01"><cite>Ivan_Herman:</cite> that there are only a few terms, but there are terms that have to be put somewhere. And once they are put somewhere, all the examples must be updated to be precise because at the moment it's handwaving in terms of context wise and that has to be done. If the tag is remotely serious about…</p>
+<p id=ad55 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=20d1 class="phone s01"><cite>Ivan_Herman:</cite> how they do it, they would comment on that.</p>
+<p id=5ed4 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to everything Avon, my expectations are that the vast majority of the terms are either going to fall into the verifiable credentials vocabulary or the security vocabulary. there may be some edge cases,…</p>
+<p id=c020 class="phone s03"><cite>Manu_Sporny:</cite> but I don't know if that was your expectation, but that's my expectation. I don't think we should create new vocabularies unless really really have to did we do that makes sine are</p>
+<p id=79c0 class="phone s01"><cite>Ivan_Herman:</cite> The bit string is already a separate vocabulary.</p>
+<p id=6e62 class="phone s01"><cite>Ivan_Herman:</cite> So if we add something there, then it has to go there. For example, we did that.</p>
+<p id=0a36 class="phone s02"><cite>Wesley_Smith:</cite> I think the base credential was</p>
+<p id=ea4b class="phone s01"><cite>Ivan_Herman:</cite> Sorry, there is a status list vocabulary and…</p>
+<p id=7a31 class="phone s03"><cite>Manu_Sporny:</cite> do vocabulary context. Did we really do that? Why did we Yeah,…</p>
+<p id=7594 class="phone s01"><cite>Ivan_Herman:</cite> I think we did. we'll have to check all the details, but I remember having done a relatively small vocabulary. It's there.</p>
+<p id=aa72 class="phone s01"><cite>Ivan_Herman:</cite> It's on the list that I put together a few weeks ago which is on the markdown file on the list and actually I am not sure I agree with you over all of the specs…</p>
+<p id=4341 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I just like that in the chat.</p>
+<p id=3fba class="phone s01"><cite>Ivan_Herman:</cite> but that's a separate discussion we shouldn't start it here because that's not only for the barcode Sorry.</p>
+<p id=de2a class="phone s03"><cite>Manu_Sporny:</cite> It's the vocabulary for bitstring status list. So maybe, we put forgery defense in Anyway, so yeah, I agree with you. I think the thing to do is just do a mapping. These are all the vocabularies we have. These are all the new terms we have.</p>
+<p id=5bbf class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I will do that.</p>
+<p id=0991 class="phone s03"><cite>Manu_Sporny:</cite> Which vocabulary does wonderful thank Over.</p>
+<p id=79f0 class="phone s01"><cite>Ivan_Herman:</cite> I will try to do it this week. I may have some personal issues,…</p>
+<p id=62de class="phone s01"><cite>Ivan_Herman:</cite> but I will try to do it this week or next week.</p>
+<p id=32d9 class="phone s02"><cite>Wesley_Smith:</cite> So my plan…</p>
+<p id=d360 class="phone s02"><cite>Wesley_Smith:</cite> then is to work with Ivonne and Manu question mark next week to help get horizontal review kicked off for VC barcodes. Are we on the same page there?</p>
+<p id=c6a3 class="phone s03"><cite>Manu_Sporny:</cite> That would be great. I was trying to get useful links for and I can share these offline OS, but here is an example of a horizontal review being done. Still need to update the last link there. but there are self- reviews that also need to be done which is really annoying but that's the process. typically it takes 3 to 6 hours to do all the self- reviews and another 3 hours to just open the issues in the issue trackers. so look at 6 to n hours to kick off the horizontal review. That's presuming you have absolutely everything lined up, which is,…</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> it's a lot. just set expectations and then what the result of it is a single issue that I just linked</p>
+<p id=da6c class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=b731 class="phone s02"><cite>Wesley_Smith:</cite> I will get that moving. given that it's a block of work, I would say I'll aim for the end of next week, but that might need to get pushed back and we'll go from there. Does that work for everybody? Come on.</p>
+<p id=7938 class="phone s03"><cite>Manu_Sporny:</cite> the other plus one. sorry. I'm jumping. Q. Go hit up on</p>
+<p id=1731 class="phone s01"><cite>Ivan_Herman:</cite> So just to make the life of Wes a little bit easier at some point in time either today or…</p>
+<p id=d9de class="phone s01"><cite>Ivan_Herman:</cite> next week we should spend some time to envisage the kind of issues that may come up with the other horizontal reviews because we have concentrated on the threat model because that's the core business of this working group in some sense which is fine.</p>
+<p id=eeaa class="phone s01"><cite>Ivan_Herman:</cite> we know about the tag. Okay, that will happen and the way it happened. I have no idea right now whether this specific work will have accessibility or internationalization issues. I am less worried about the second. and at some point in time we may want to think about the way the group worked at some point on collecting the threat model entries by coming up with rough ideas of…</p>
+<p id=f024 class="phone s01"><cite>Ivan_Herman:</cite> what threats are I have not given any thought so far on what we can expect let's say for accessibility Okay.</p>
+<p id=f06f class="phone s02"><cite>Wesley_Smith:</cite> So I have a question about that.</p>
+<p id=d8a0 class="phone s02"><cite>Wesley_Smith:</cite> So in general I can certainly see why there may be accessibility challenge is the PC barcode stuff is a purely optical medium at least for the moment. So that clearly links to the visually impaired community. I could see overlap that maybe could go in a threat model such as a visually impaired person could present the wrong VC barcode by accident because there's no way to differentiate them or something to that effect. I don't know. My question to the group is what goes into or</p>
+<p id=8d98 class="phone s02"><cite>Wesley_Smith:</cite> What does the accessibility review surface other than sort of security issues like I just mentioned or privacy issues like I just mentioned? what else do they say besides threat model type things?</p>
+<p id=7568 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=5458 class="phone s03"><cite>Manu_Sporny:</cite> They typically don't say threat model like things.</p>
+<p id=49a2 class="phone s03"><cite>Manu_Sporny:</cite> So that's usually security privacy. this is a weird one. It has an accessibility component to it. they don't typically do reviews on specs like VC barcodes. you could argue so accessibility is usually like you have somebody that has a site need or a hearing need or a cognitive need. how are they going to interact with the technology that you have? Right? So, for example, one thing we could say from an accessibility perspective is that for individuals that don't have site, they're not going to be able to tell that the thing's got a barcode on it. They're not going to be able to position it to be scanned, that sort of thing. But that's also something that we can't help with the technology. that is just the end result of a barcode.</p>
+<p id=d9e1 class="phone s03"><cite>Manu_Sporny:</cite> It's not anything that we could really do. They may want us to write about it. They may not want us to write about it. Usually the best thing to do is just give it to them and they have a much better idea of what they should be paying attention to. So this one's weird. it's not they usually deal with I'm sitting at a web browser and I'm trying to do X Y or Z I'm using the geoloccation feature. How do I, as somebody that can't see the screen, use that feature? Right? That's typically what accessibility does. I don't think we should try and guess too much unless there's something very obvious. handing it over to them and going &quot;Help is, what they're there for.&quot; That's it.</p>
+<p id=a6a7 class="phone s02"><cite>Wesley_Smith:</cite> That sounds reasonable.</p>
+<p id=eb56 class="phone s02"><cite>Wesley_Smith:</cite> Agreed that the core parts of this technology in specific are not particularly enduserfacing. And so would expect not to have as many accessibility concerns.</p>
+<p id=40ae class="phone s01"><cite>Ivan_Herman:</cite> Yeah. I think that the fact itself that we have given it some thought and…</p>
+<p id=c323 class="phone s02"><cite>Wesley_Smith:</cite> right,</p>
+<p id=f758 class="phone s01"><cite>Ivan_Herman:</cite> we document even if the end result is saying this is the barcode world we don't define what barcodes are we just do whatever they want and that's not under our control that's fine I think the very fact that we have given some sort and we can document that might be</p>
+<p id=e731 class="phone s01"><cite>Ivan_Herman:</cite> enough in this case but we have to do that and…</p>
+<p id=93d2 class="phone s01"><cite>Ivan_Herman:</cite> I think indeed there are issues but we can't do anything about them that may be the answer but that's fine</p>
+<p id=1964 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=1468 class="phone s02"><cite>Wesley_Smith:</cite> sounds good. with all that said, I will target the end of next week to have the horizontal review request up. All right. anybody have anything else they'd like to say on the barcodes topic before we move on? All right. Next up, we have VC forgery defense.</p>
+</section>
+
+<section>
+<h3 id=7dc3>VC Forgery Defense Threat Model Discussion</h3>
+<p id=67a2 class="phone s02"><cite>Wesley_Smith:</cite> So this spec we obviously incubated quite recently or are currently incubating but published a first working draft of quite recently there's been very little activity on that specification to that chat I know that obviously we want to target this for horizontal review as well I know that there's a little uncertainty</p>
+<p id=10002 class="phone s02"><cite>Wesley_Smith:</cite> on what exactly we're doing with a threat model here. options that I've seen discussed are do its own fully inherit the threat model from other specifications or, somewhere in the middle where we largely inherit the threat model from other specifications with a little extra polish. I think that probably could use some group discussion. So, what do folks think about that? Mind you, go ahead.</p>
+<p id=a0b9 class="phone s03"><cite>Manu_Sporny:</cite> I don't think we should do a separate threat model for forgery defense because it is very tightly scoped to what threat it's trying to address which is theft of a key style compromising I worked on the threat model for data integrity. that is the base. I think I'll put some stuff for postquantum in there. And then the forgery defense stuff should point at the data integrity threat.</p>
+<p id=45b9 class="phone s03"><cite>Manu_Sporny:</cite> threat model which should contain something around key compromise. and I think that's largely the other part of the threat model is the publication of lists. and that might be something that the bitstring status list threat model deals with or the other alternative is the base VC data model should deal with that. so I don't think we should do a model for defense. We should point at other threat models. It's still unknown which ones we should point to. I'm thinking a combination of the data integrity spec for the postquantum compromise and key theft threats.</p>
+<p id=e9ea class="phone s03"><cite>Manu_Sporny:</cite> And then the list distribution and…</p>
+<p id=dfcd class="phone s03"><cite>Manu_Sporny:</cite> consumption threats probably from bitstring status list status list or the base VC threat model. That's it.</p>
+<p id=9a7f class="phone s02"><cite>Wesley_Smith:</cite> Okay, understood.</p>
+<p id=6f4a class="phone s02"><cite>Wesley_Smith:</cite> So I want to make sure that the core technical features of VC4 defense are covered in what you said. So the hashing mechanisms present in data integrity does that mean that the data integrity threat model will cover things such as second pre-image resistance collision resistance that sort of thing because the truncated witness feature of VC forgery defense the way that it actually works has non-trivial threat that informal threat modeling that we did in order to write the specification that needs to be written down somewhere.</p>
+<p id=8862 class="phone s02"><cite>Wesley_Smith:</cite> Mu go ahead.</p>
+<p id=43c4 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, for that I think we may want to have a security and privacy consideration section in forgery defense. I know this is this weird hybrid that folks were like no we just need to do a threat model. I'm finding that to not be true. there are things that we state in for example ECDSA Greg went to a great deal of trouble to talk about all of the things that are very specific to ECDSA that do not clearly fit in a threat model. so I think we should have a hybrid.</p>
+<p id=633d class="phone s03"><cite>Manu_Sporny:</cite> I think this is a general threat model general ecosystem but there are times where we need to be very very fine-tuned and specific about hey we did this analysis and it was important that we did it and it doesn't easily fit in a threat model we can put it in security and…</p>
+<p id=5b26 class="phone s03"><cite>Manu_Sporny:</cite> privacy consideration section. So I think that's how we should address that one Wes until Simone and Joe can tell us a better way to go about it.</p>
+<p id=2580 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=6477 class="phone s02"><cite>Wesley_Smith:</cite> I have great news for you, which is that there currently exists security and privacy consideration sections in that specification that I believe are quite comprehensive. all right. that sounds good. So, Does that mean we're ready to go to horizontal review?</p>
+<p id=ca26 class="phone s03"><cite>Manu_Sporny:</cite> I think we need the base VC threat model or the status list threat model in place unfortunately.</p>
+<p id=52b1 class="phone s02"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=568d class="phone s03"><cite>Manu_Sporny:</cite> I think we could kick off horizontal review knowing that they're not going to get to it for months and get that stuff in place quickly in two weeks. So, that's a risk that, everyone should discuss,…</p>
+<p id=0b4b class="phone s03"><cite>Manu_Sporny:</cite> but I think that's an acceptable way to proceed. they won't toss it back on a technicality because technically the threat modeling stuff is not a requirement for horizontal review. So if they raise that we're going to say show us in the W3C process document…</p>
+<p id=8fa6 class="phone s02"><cite>Wesley_Smith:</cite> You think that it's worth running the risk of them tossing it back on a technicality rather than waiting for there to be the threat models to point at?</p>
+<p id=52fb class="phone s02"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=9a16 class="phone s03"><cite>Manu_Sporny:</cite> where threat model is required. we can standards lawyer around it I think.</p>
+<p id=ef29 class="phone s02"><cite>Wesley_Smith:</cite> All does anybody disagree? Anybody not think that the DC forgery defense stuff is ready to attempt kicking off horizontal review? All right, I will put that one on the queue behind barcodes and get to it when I get to it. Mono, go ahead.</p>
+<p id=80f8 class="phone s03"><cite>Manu_Sporny:</cite> No, that's great. The other thing to note about horizontal review is you can request it at any time. You can request it when you do an FPWD when you have one paragraph of text in the document. So, they're not going to bounce us. you can just say this is where we are in the process. we just did an FPWD do review, please. But in the review in the request you can say we are pretty complete and…</p>
+<p id=e88f class="phone s03"><cite>Manu_Sporny:</cite> we want to go to CR. So do the review as if we were going into CR. That's another option. we can talk about the details</p>
+<p id=5d59 class="phone s02"><cite>Wesley_Smith:</cite> Ivon. Go ahead.</p>
+<p id=2381 class="phone s01"><cite>Ivan_Herman:</cite> One practical request please.</p>
+<p id=6d74 class="phone s01"><cite>Ivan_Herman:</cite> I saw that man had a place where he collected all the pointers to the words of the reviews etc. Please do that for all the documents…</p>
+<p id=8ade class="phone s01"><cite>Ivan_Herman:</cite> because when we go to CR as part of the transition request I have to document them and it's a pain in the backside if I have to collect all those one by one from issue list and whatever.</p>
+<p id=b3a9 class="phone s01"><cite>Ivan_Herman:</cite> So, alternatively,…</p>
+<p id=4883 class="phone s02"><cite>Wesley_Smith:</cite> I'll follow the template as closely as I can.</p>
+<p id=00dd class="phone s01"><cite>Ivan_Herman:</cite> I will bug you when the transition request comes to do it for you.</p>
+<p id=a84f class="phone s02"><cite>Wesley_Smith:</cite> either without your input, I will eventually get to the right set of issues to track the horizontal review. anything else on that topic? Anybody else have anything to say for a VC forgery defense? All right. Greg Bernstein, over to you for, data integrity.</p>
+</section>
+
+<section>
+<h3 id=678f>Data Integrity Crypto Suite Algorithms</h3>
+<p id=758d class="phone s04"><cite>Greg_Bernstein:</cite> Good morning all. there is a PR. let's see. Should I put the link in the link? This is associated with moving the common algorithms. I think I've got two people have looked at it. do you want me to bring it up on the screen or can people just go to it? So, it's add cryptocrete common algorithms number 353.</p>
+<p id=2231 class="phone s04"><cite>Greg_Bernstein:</cite> in this it's easier to show. I just brought up the preview. Let me see if I can make this work without share screen. go back for a sec. Add cryptosweet comment algorithms.</p>
+<p id=e77a class="phone s04"><cite>Greg_Bernstein:</cite> The reason why I'm asking folks to review this closely is because this reflected this algorithm section I extended it to go deeper because Mono asked us and that's why I told Mono please review he wanted all algorithms in this section. Okay.</p>
+<p id=fffd class="phone s04"><cite>Greg_Bernstein:</cite> Also we have the higher level algorithms which really deal with the documents as a whole. So I re labeled that section document algorithms. Then we have the crypto suite common algorithms for example add proof calls in the cryptouite common algorithm of create proof. Okay, etc. verify proof those build on the common functions of hashing, proof configuration, transformation, etc. Okay, so this we don't usually like to go four levels deep. I didn't know that we could still have the table of contents work with it. knee just after extended.</p>
+</section>
+
+<section>
+<h3 id=612a>Data Integrity Selective Disclosure Definition</h3>
+<p id=773f class="phone s04"><cite>Greg_Bernstein:</cite> But that's what I'd like people to review. Dave reviewed it. He didn't get upset about me calling it document algorithms. looking forward to a review from Tall, Ted, and Manu. Anybody else? so that's one thing. Okay, the next one has to do with selective disclo Okay, so we've had this move selected disclosure functions out of ECDSA to data integrity. This has been around for a while. However, since then, we have actually done a bunch more work. We figured out and implemented selective disclosure for the postquantum stuff.</p>
+<p id=1750 class="phone s04"><cite>Greg_Bernstein:</cite> So the next piece is we needed a definition of selective disclosure, some introductory text. We actually didn't have any to define what selective disclosure is. So I came up with some preliminary stuff. I didn't know where to put it. It's very preliminary in the sense that I don't know where to put it in the other documents and I wanted it to be reviewable on a nice way. So, this is off my fork of the repo and I figured out how to help it to u get it to preview nicely. So, this is GitHub pages.</p>
+<p id=0b29 class="phone s04"><cite>Greg_Bernstein:</cite> This is just my fork in a particular branch, but it allows people to see look, we did like how it works section and showing it's kind of like what we had before the figures except we're producing we're generating base proofs. It's not just two steps of create a proof and verify a proof. It's three steps. Creating base proofs with Creating derived proof with additional inputs. ive disclosure Verifying derived proof and such like that. The other piece is trying to generalize selective disclosure.</p>
+<p id=10003 class="phone s04"><cite>Greg_Bernstein:</cite> There's actually three base approaches that we've now One is signed individual state claims or sik where we have a list of signatures basically one for each claim. This is what we do in ECDSA. ASD we have assigned h of claims the salted hash approach or shock. We don't have to keep any of these acronyms. I put these in just to get somebody to read these things where this is what we do with all the postquantum where we have large signatures. This section here describes these approaches, their pros and cons in different situations. And then we have multi-laim signature like BBS and its properties. Okay, so this is introductory text explaining selective disclosure. The question is where to put it.</p>
+<p id=ce8c class="phone s04"><cite>Greg_Bernstein:</cite> So I could open an issue, point to this and have folks take a look. Happy to have any kind of feedback on where to put it or any of the text. questions yet. The next one was u when it comes to moving the selective disclosure functions I said we discovered that not only do we have a lot of commonality between what we did in ECDS and BBS we've got a lot of commonality of what we did with the new approach that we did for postquantum</p>
+<p id=10004 class="phone s04"><cite>Greg_Bernstein:</cite> the salted hash approach. The question was, can we pull out the essentials? we have a bunch of very useful functions to help do this at a low level. Can we extract some highlevel functions? Okay, right now we have three different things you do. you create a base proof, verify a derived proof. It looks like within each of those there's places where we can pull things out. most of create base proof, it's general until we get to the proof serializations that's where we do the differences, between the approaches.</p>
+<p id=931f class="phone s04"><cite>Greg_Bernstein:</cite> an ad derived proof. we had the way we had it which was fine. We actually kind of embedded parsing proofs, the base proof and serializing proofs. We put those in places where it weren't so general. It seems like create disclosure data is a very general thing that we use across all the approaches while parsing proofs and creating new derived proofs. those are specific to the thing. So this is my proposal for how to kind of restructure that</p>
+<p id=5bc2 class="phone s04"><cite>Greg_Bernstein:</cite> and a similar type of case with verified derived proof. I've walked through this. They kind of make sense to me. If we'd like to do this though, what I first do before I do any writing is and make sure this works with I have test vector code for all these different approaches signed individual claims salted hash and I would actually try and see if that would work. any feedback on that I will stop presenting Dave.</p>
+<p id=74c4 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I thought that looked good to me. and it might even more closely match how some implementations have broken up like some utility functions maybe. so it seemed good to me. I'm very supportive of making things more general…</p>
+<p id=a230 class="phone s05"><cite>Dave_Longley:</cite> where possible so that people can write libraries that have more reusable code across these different things and that the specs for the different types become much smaller.</p>
+<p id=935a class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, because…</p>
+<p id=4ed6 class="phone s04"><cite>Greg_Bernstein:</cite> what it looks like is yeah, we'll be able to do just with the slight refactoring create disclosure data would be the main general function that we call for doing derived proofs. almost everything for base proof is general except when we get to serializing where you do what's special about that approach and so I wanted to prove that out with my test vectors and then I'll write it up and we have these nice low-level manipulation things but if all somebody implementing this has to do is I go get somebody's their open source libraries that do create disclosure and stuff like that.</p>
+<p id=ec8b class="phone s04"><cite>Greg_Bernstein:</cite> And it kind of reflects what happened with the simple non- selective disclosure case where everything most of the stuff got put into a section where we were doing kind of parsing and serialization or where we chose to call the signature libraries. So, we have the PR that I want review. how should I request feedback on this preliminary introductory text? I don't even know quite where to put it in the document, but it just seemed like we</p>
+<p id=5483 class="phone s04"><cite>Greg_Bernstein:</cite> really need an explanation of selected disclosure. I don't know if we put it up near the top, but I also had that table where I compared the approaches. How should I solicit feedback? Raise an issue, ask and ping certain people.</p>
+<p id=a113 class="phone s04"><cite>Greg_Bernstein:</cite> Dave put it right up near the existing…</p>
+<p id=45ce class="phone s05"><cite>Dave_Longley:</cite> Yeah. Is there any reason not to just insert it?</p>
+<p id=26a7 class="phone s05"><cite>Dave_Longley:</cite> I mean, you could raise an issue and ask where to put it, but if it's simpler and you think people might just accept having a section earlier in the document since the document is all about different ways of securing. Yeah, I mean maybe Yeah,…</p>
+<p id=1062 class="phone s04"><cite>Greg_Bernstein:</cite> how it works since it kind of references that and…</p>
+<p id=a356 class="phone s05"><cite>Dave_Longley:</cite> I mean it's a…</p>
+<p id=e2b6 class="phone s05"><cite>Dave_Longley:</cite> this is just how it works for selective disclosure if I'm understanding you correctly and so it's just a subtitle I would think under So how it works selective disclosure and then that goes there and people can decide if it should go somewhere else.</p>
+<p id=8edf class="phone s04"><cite>Greg_Bernstein:</cite> Yep, it is.</p>
+<p id=04fc class="phone s04"><cite>Greg_Bernstein:</cite> And that more comparing the approaches could go down with the section that's going to introduce those general approaches.</p>
+<p id=4d15 class="phone s05"><cite>Dave_Longley:</cite> Yeah, that sounds really</p>
+<p id=8bc0 class="phone s04"><cite>Greg_Bernstein:</cite> Sounds like a plan. I see an immediate PR with the intro stuff and…</p>
+<p id=d310 class="phone s04"><cite>Greg_Bernstein:</cite> then I see a PR that comes later after I've finished figuring out verifying my refactoring. Ivonne</p>
+<p id=8824 class="phone s01"><cite>Ivan_Herman:</cite> So I have a question…</p>
+<p id=10005 class="phone s01"><cite>Ivan_Herman:</cite> if we agree on what we have been just discussed. I have worked on a new version of the overview document and I have collected in all the crypto suite that we have right now. Let me just put it there.</p>
+<p id=fc6c class="phone s01"><cite>Ivan_Herman:</cite> It's a big table which contains all the ones that I found and try to categorize them And the question is after we do the refactoring will this table become some more symmetric and more easily describable. So for example EDDDSA does not have selective disclosure. Is there a fundamental reason of that or just we don't deal about it? ECDSA will have this XI version coming from the barcodes. Is it something that is specific to ECDSA or not? So somehow I was not horrified but I was a bit annoyed by the size of</p>
+<p id=ad11 class="phone s01"><cite>Ivan_Herman:</cite> this table that I had to create for an introductionary document but that's what it is today and I just wonder whether as a result of the refactoring we can make some more readable version of all These are the specification.</p>
+<p id=c98b class="phone s04"><cite>Greg_Bernstein:</cite> The issue is if we're trying to show every crypto suite and its properties as far as selective disclosure or quantum resistance, you end up with that table. if we Yes.</p>
+<p id=c7cf class="phone s01"><cite>Ivan_Herman:</cite> These are the crypto suites which are part of the current specifications. They are there.</p>
+<p id=435a class="phone s04"><cite>Greg_Bernstein:</cite> Yes, they are there. And I was wondering about insight to people. because obviously selective disclosure and quantum resistance are decision criteria. and I guess people use canonicalization. it helps on implementing if we want EDDDSA to have a selective disclosure that generalization is going to make it easy to do and…</p>
+<p id=2aad class="phone s04"><cite>Greg_Bernstein:</cite> a one line a very short update to the EDDDSA document to do it but it doesn't I mean go ahead no go ahead</p>
+<p id=0b1b class="phone s01"><cite>Ivan_Herman:</cite> So can we I'm sorry.</p>
+<p id=dd26 class="phone s01"><cite>Ivan_Herman:</cite> Sorry, could we then have a description which says let's say EDDDSA I take that as an example because it's at top of the table for every crypto algorithms like EDDDSA you can have a choice with RDFC or GSD you can have selective disclosure and…</p>
+<p id=fca7 class="phone s01"><cite>Ivan_Herman:</cite> you can have XI and you don't have to enumerate all of these things because for</p>
+<p id=1785 class="phone s01"><cite>Ivan_Herman:</cite> Each crypto algorithm you can have these variance or something like that.</p>
+<p id=23ba class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, that is kind of the point.</p>
+<p id=0ab9 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah. I mean because by doing this refactoring of both the non SD and…</p>
+<p id=ffb6 class="phone s04"><cite>Greg_Bernstein:</cite> the SD cases it makes it very easy for us to include that and so we could just do that as the default. I don't know…</p>
+<p id=a39f class="phone s01"><cite>Ivan_Herman:</cite> Do that's adding some external data to the JSON base data with before you do the</p>
+<p id=77c1 class="phone s04"><cite>Greg_Bernstein:</cite> I don't know what the XI is. I haven't reviewed any of that. So I don't know what the demand for that is that I should review that because that was a question of that comes up with BBS and some of the other things about if there's extra data to actually include, how might we want to deal with that? So, I just go take a look. Okay. Okay.</p>
+<p id=10bf class="phone s05"><cite>Dave_Longley:</cite> That's currently in the barcode spec. We got to move it.</p>
+<p id=8b2d class="phone s04"><cite>Greg_Bernstein:</cite> It's just over in the other standards I work on, we've been trying to modularize adding some additional proof type information to things and so I started thinking about how we would do that and here. So, okay. Yeah,…</p>
+<p id=ccc5 class="phone s01"><cite>Ivan_Herman:</cite> So in a sense what we might end up doing is that instead of enumerating all varants as separate crypto suites, we will have some sort of a generative way of saying we have the algorithm. This is the year when it comes from and you automatically get these and these varants. something like that that would simplify the picture.</p>
+<p id=e102 class="phone s04"><cite>Greg_Bernstein:</cite> that would very simplify the table. Great.</p>
+<p id=c9d0 class="phone s05"><cite>Dave_Longley:</cite> Yeah, you might still end up with an exception or two, but I think it would simplify</p>
+<p id=56fc class="phone s01"><cite>Ivan_Herman:</cite> There are always exceptions.</p>
+<p id=55b0 class="phone s04"><cite>Greg_Bernstein:</cite> When I get to it, I do have some maintenance on some test vectors for quantum resistant because there are deterministic versions of the signatures I can use for generating the test vectors that I will want to use. But I think these other things are fairly important.</p>
+<p id=a0ab class="phone s04"><cite>Greg_Bernstein:</cite> After we do the DI then we'll want to roll out the changes into the separate specs right eddsa ECDSA to reference the functions in DI correct okay I see discussion</p>
+<p id=1176 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I think that's right. I only half caught</p>
+<p id=bc4f class="phone s04"><cite>Greg_Bernstein:</cite> it's just as far as complete all the pieces on DEI the non selective disclosure and selected disclosure update then go and update the 1.1 ECDSA EC EDDDSA and…</p>
+<p id=b577 class="phone s05"><cite>Dave_Longley:</cite> Yeah, that sounds right.</p>
+<p id=5610 class="phone s04"><cite>Greg_Bernstein:</cite> and quantum yeah So, we got a plan. I don't particularly have a date for Manu, but we've got a plan. Okay, that's it for me for right now.</p>
+<p id=1bc9 class="phone s02"><cite>Wesley_Smith:</cite> All right. we are about out of time, so no time to transition into a new topic. Thank you all for the time today, and I will see you next week. Meeting ended after 01:01:17 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

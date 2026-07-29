@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 28 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>28 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Manu_Sporny, Nate_Otto, Parth_Bhatt, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#3d8b">Initial Meeting And Previous Discussion Summary</a></li>
+<li><a href="#61a4">Discussion On Render Method Dispatch Mechanism</a></li>
+<li><a href="#cd7f">Nate Otto's JSON Card View Method</a></li>
+<li><a href="#4128">Customer Pressure And Spec Progress</a></li>
+<li><a href="#b0ca">Debate On Removing Spec Components</a></li>
+<li><a href="#001c">Discussion On Unimplementable Render Method</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0141 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hey Ted. question. What does 4 booked mean?</p>
+<p id=610a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Say that again.</p>
+<p id=5ece class="phone s02"><cite>Nate_Otto:</cite> They like double or…</p>
+<p id=d84c class="phone s02"><cite>Nate_Otto:</cite> more than double booked.</p>
+<p id=ffff class="phone s01"><cite>Dmitri_Zagidulin:</cite> Quadruple Got it. All right. That makes perfect sense. Welcome everyone. As always, we're going to give it another minute or two for people to connect and we'll get started.</p>
+</section>
+
+<section>
+<h3 id=3d8b>Initial Meeting And Previous Discussion Summary</h3>
+<p id=8dce class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, it's 3 minutes past the hour. let's get started. Welcome everyone to the weekly VC render method task force call. we're part of the VC working group. who are under the W3C code of conduct and IPR regime. I see familiar faces. I think everybody signed up. and we can dive right in. previously two weeks ago, I just pasted a link to the notes from the previous discussion.</p>
+<p id=f769 class="phone s01"><cite>Dmitri_Zagidulin:</cite> This is not a replacement but an addition for the transcribed notes and recordings that we have available. this is just as a scratch d. as we discussed for us to put examples in which is a little bit nicer to look at than the chat and we also obviously included in the chat which gets recorded in the transcript.</p>
+<p id=1827 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So to summarize to recall where we left off, we have consensus that we need to ship at least A pre-baked static method, an example of which is our current NFC one, but other common use cases of it include the OBV2 quote unquote baked image. so statically rendered at the time of issuance not rerendered by wallet or consumer client. number two is the list view or view data or JSON card view. One of the things that we need to do is of course come up with good names for the three of these methods.</p>
+</section>
+
+<section>
+<h3 id=61a4>Discussion On Render Method Dispatch Mechanism</h3>
+<p id=4a2a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Think of it as static list or JSON card and HTML view current and currently there's two sort of main competing candidates for those one being so both what are those things called? I'm blanking out. What's the I frame. Both of them are iframe sandboxed.</p>
+<p id=b877 class="phone s01"><cite>Dmitri_Zagidulin:</cite> one of them includes booting up a full HTML and JavaScript app that does the rendering and the other one includes template substitution inside the iframe and we'll get into the threat modeling and the engineering trade-offs involved in both last time's discussion surfaced a couple of fundamental decisions that we need to make. One of them is how do we switch between how do we dispatch on these types?</p>
+<p id=6acd class="phone s01"><cite>Dmitri_Zagidulin:</cite> And that's discussed here in issue 54 that they very kindly opened which says okay we basically have two basic options. we can dispatch off of a single type property. Meaning we would have a sort of render method superass and then we'd have a suite type defined for each one of these and just dispatch off the type. And then option two is have a generic type and dispatch off of a second field called a render suite rather.</p>
+<p id=10000 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ivonne in the issue points out that maybe it makes sense to define some of the fields in common first before we decide that. and I could see it either way. It's up to the group whether we want to decide the dispatch mechanism first or work out the fields. we might as well at least sketch the fields that all of these methods are going to have in common. Last time we started on at least sketching what some of the fields are going to be in common.</p>
+<p id=035f class="phone s01"><cite>Dmitri_Zagidulin:</cite> and the question came up of how do we nest them? But for today's call I want to focus on a couple of things. I want to see if we can make progress on the dispatch method. I want to do a preliminary sketch of which fields at least all three might have in common and see that informs a dispatch method. And if nothing else, given that there's some discussion about the HTML detail view, I was hoping we can at least see how much progress we can make on the two less controversial ones which is the static method and the list view.</p>
+<p id=dbc5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Nate Auto who's here but who may or may not need to drop at any point has an open pull request with a JSON card view method sort of preliminary version. so in fact Nate since you might need to drop off at any moment do you want to walk us through the PR give us a sense of where it's at whether it's ready for review what some of the highlights of it are or is it better that we discuss the fields in common first. So question to the group and question to Nate.</p>
+<p id=e967 class="phone s02"><cite>Nate_Otto:</cite> I can go.</p>
+<p id=0c10 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Go ahead.</p>
+<p id=2765 class="phone s02"><cite>Nate_Otto:</cite> He's going to go first. And indeed, I'm probably going to have a contractor visit in five minutes or…</p>
+<p id=7266 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Okay, great.</p>
+</section>
+
+<section>
+<h3 id=cd7f>Nate Otto's JSON Card View Method</h3>
+<p id=21fa class="phone s02"><cite>Nate_Otto:</cite> so. We'll see how on time he is. so I created this draft in November as a first contribution to the group looking at the type of render method that I might want to see. which is to help a renderer see what the essential fields are that they would want to present for a credential that they otherwise don't have deep type specific knowledge for. And so seeing that a lot of wallets were rendering credit card previews of credentials, I figured there's a great way we can make it possible for a renderer wallet to choose which fields to put into that display. And so I put together a quick little prototype and made a poll request.</p>
+<p id=62fe class="phone s02"><cite>Nate_Otto:</cite> And then it did go through an initial review, but I have just been swamped the last eight months and haven't had a chance to come back to it. I did this morning rebase it based on the latest commits on main and that was literally minutes ago, so it's possible this preview is out of date. but in any case, it adds this JSON card method. There was some good commentary in the thread that has I haven't quite responded to and whether JSON card is specifically the right way to call this or just card or something like that is it doesn't necessarily need to be rendered into JSON. It's just a way to express what are certain fields that you would want to pull out of the credential. so it's basically ready to go.</p>
+<p id=10001 class="phone s02"><cite>Nate_Otto:</cite> So, it needs a tiny bit more work I think just to respond to the group's feedback and specifically a note on the final naming of what the method should be reflexible to handle anything. I should have some time over the next week or so to do a little bit of work on my side to finish it up.</p>
+<p id=4dcc class="phone s02"><cite>Nate_Otto:</cite> But it would be good to I don't know get the sense of the group on the right direction to move forward with this so that I have a good tick list of tasks that I should work</p>
+<p id=fd6c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Fantastic. Thank you so much,…</p>
+<p id=df4a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Before we go to the queue to see if there's questions, comments, I want to say that so hopefully today's discussion on some of the fields in common can feed back into this PR. we should also take a look at the Apple Wallet and Google Wallet data models which are trying to do a very similar thing down to the primary color and accent color and then the card name and all that stuff just to make sure that we learn from the other examples in the fields. But you're up on the queue.</p>
+<p id=e75f class="phone s03"><cite>Manu_Sporny:</cite> Plus one to that. I do have to drop at the bottom of the hour and I want to at least say something unrelated to this before I drop but on this specifically can we merge it in because it feels like it's high level there low level we'll need to make changes the most important thing is that someone needs to start working on the threat model for this and we can't work on the threat model for it until we at least have the three different types down. So if we have consensus for the three different types and this is going to be effectively one of them, I suggest unless people have massive objections to the way this is structured, we pull it in and then revise it in a separate PR. Manu Sporny:</p>
+</section>
+
+<section>
+<h3 id=4128>Customer Pressure And Spec Progress</h3>
+<p id=6ffd class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think that's a great idea.</p>
+<p id=566a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Does anybody have objections to that? once going twice. Okay. So, in that case, let's do just that. let's capture the comment that steering</p>
+<p id=61e3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All so I'm hearing no objections. Let's merge it. I'm not entirely sure what the CI failure.</p>
+<p id=4095 class="phone s03"><cite>Manu_Sporny:</cite> Don't worry about Yeah, It's</p>
+<p id=186a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, don't worry about it. All right. Great.</p>
+<p id=10002 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All So, this is to say this is still in progress, but we might as well start sketching out the three methods that we're dealing with. All So, in case you have to drop, do you want to say what you wanted to say previously?</p>
+<p id=088a class="phone s03"><cite>Manu_Sporny:</cite> Yeah, apologies. I wanted to kind of say this at the top of the call.</p>
+<p id=10003 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No worries. No worries.</p>
+<p id=5220 class="phone s03"><cite>Manu_Sporny:</cite> I'm sure everyone already knows this. but we digital bazaar are experiencing a lot of customer pressure to get this type of stuff done right we told them the group should have a pretty good idea of the render methods and we should be able to start experimenting and putting stuff in there but here we are still talking about kind of the data model and it is resulting in some pretty unpleasant conversations around when this spec is going to be</p>
+<p id=c9a3 class="phone s03"><cite>Manu_Sporny:</cite> and other things like that. I want to make sure that we get these three mechanisms solidified and we get the threat model in place and we start horizontal review sooner than later. and if we can't come to consensus on some of these things, we drop it for now. I'm just noting that we have been talking about the multiple different mechanisms for months. We have not taken things out of the spec that really should have been taken out a while ago. so this is just a friendly request to speed things up because we are experiencing very negative customer outcomes because this is taking much longer than it needs to be.</p>
+<p id=87f6 class="phone s03"><cite>Manu_Sporny:</cite> So, I'll just mention that I will try to help. but Dimmitri, I think that means that I'm going to start raising PRs to remove things from the specification that does not have consensus, right? …</p>
+<p id=572a class="phone s03"><cite>Manu_Sporny:</cite> that's it.</p>
+<p id=de73 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah and…</p>
+</section>
+
+<section>
+<h3 id=b0ca>Debate On Removing Spec Components</h3>
+<p id=3faa class="phone s01"><cite>Dmitri_Zagidulin:</cite> that would be thanks man understood. I think we wholeheartedly agree with all of that. So just to address the I think part of the issue that the current remove removal PR of yours removed both the PDF mustache which we have consensus on removing and SVG mustache which we do not have consensus on removing. And so I think that was part of the hold go ahead.</p>
+<p id=acfa class="phone s03"><cite>Manu_Sporny:</cite> We don't have consensus to have SVG mustache in the spec. We don't have it. I'm asserting that very strongly. I disagree strongly with it. I think it should be removed. We do not have consensus to have that section in the spec. That doesn't mean we can't put it back in there or once we have consensus we can put something back in there. But I very strongly disagree. We do not have consensus to have that item in the spec.</p>
+<p id=3943 class="phone s01"><cite>Dmitri_Zagidulin:</cite> understood. Do you feel we have consensus on having the iframe the JS app render method in the spec understood?</p>
+<p id=7873 class="phone s03"><cite>Manu_Sporny:</cite> I hope so because if we don't, we are going to start shipping things other than this spec.</p>
+<p id=6b4c class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I don't think we have consensus on that. I certainly have a strong objection to it. I completely understand vendor pressure to do but let's get the no consensus items. we can get your merged about the PDF mustache suite and SVG mustache suite and I can raise a PR to remove the I frame one and we discuss it there and read the ones that we do have consensus on.</p>
+<p id=594d class="phone s01"><cite>Dmitri_Zagidulin:</cite> So to that effect, does anybody have any objections we merge the PR that removes the two contentious and problematic one not contentious at all. I think everybody's agreed that PDF mustache one needs to be removed and…</p>
+<p id=4cba class="phone s01"><cite>Dmitri_Zagidulin:</cite> SVG mustache. So any objections from the group to merge this? Benjamin</p>
+<p id=516e class="phone s04"><cite>Benjamin_Young:</cite> I'd suggest we take a slightly different approach and…</p>
+<p id=3657 class="phone s04"><cite>Benjamin_Young:</cite> either keep SVG Mustache in the main spec or at least move it to an appendix. it is by and large the most popular choice in the ecosystem right now. So, while I know there's an intended replacement with the HTML iframe thing, what's used in the wild is some variation of that SVG mustache thing. So, if it does not show up in the spec somewhere, that's going to raise concern from people who already use it in production because it was previously in the spec.</p>
+<p id=d71a class="phone s04"><cite>Benjamin_Young:</cite> And again there are several variations of it. Some of them with date names, some of them moving it to an appendix might help ease some concerns,…</p>
+<p id=84cb class="phone s04"><cite>Benjamin_Young:</cite> but I don't think we can just totally strip it out. The PDF one I don't think anybody's ever even tried to implement, so no objections with that.</p>
+<p id=5cdc class="phone s01"><cite>Dmitri_Zagidulin:</cite> And this is Yeah.</p>
+<p id=47d2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And this is exactly what I mean. Mano, we're making the classic mistake of having a rider bill of trying to push through both of these when one would be an easy quick win and…</p>
+<p id=8cde class="phone s01"><cite>Dmitri_Zagidulin:</cite> the other one has a lot more discussion. but Ivon, go ahead and then Manu.</p>
+<p id=5a1a class="phone s05"><cite>Ivan_Herman:</cite> Yeah, I think the elephant in the room with both of them is mustache in the sense that…</p>
+<p id=d53d class="phone s05"><cite>Ivan_Herman:</cite> if I think we discussed that at the beginning of the task force or even maybe earlier that at the moment there is no way to put a normative reference to mustache into the spec. So that means it is just according to the W3C process impossible to have these two as part of the normative items. Putting the SVG one into the appendix the non-normative appendix is perfectly fine. and based on what I heard from Benjamin that a lot of people use it. It's probably the best way to go. But it's certainly not to be part of the core normative part of the spec. It just cannot be. I mean am I have to say Ivan Herman:</p>
+<p id=3255 class="phone s05"><cite>Ivan_Herman:</cite> like that. but that's just the reality.</p>
+<p id=de77 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=7c69 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So in that case, do we have consensus on our preferred extension point? is it literally we open another PR we merge this one after the conflicts are resolved and then the merge conflict specifically and then open another PR to add it to a non-normative appendix does anybody have objection to that is that our mono go ahead no go ahead finish and…</p>
+<p id=e368 class="phone s05"><cite>Ivan_Herman:</cite> That's I think Sorry.</p>
+<p id=d85f class="phone s01"><cite>Dmitri_Zagidulin:</cite> then go to mono</p>
+<p id=ffc7 class="phone s05"><cite>Ivan_Herman:</cite> No, I mean mean that depends on the author of the PR because maybe it's easier to move it into the appendix and…</p>
+<p id=7cb8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. Ivan Herman:</p>
+<p id=126b class="phone s05"><cite>Ivan_Herman:</cite> leave it that way. I leave that too. I think money was the author of the PR. So I think he should say that. But the goal I think is the important thing.</p>
+<p id=118a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks Mono. Go ahead.</p>
+<p id=2615 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, nobody has that I know of has implemented SVG mustache or PDF mustache. The thing that people have implemented is the SVG 2024 renderer. And we just saw that happen most recently in an additional plugfest. people have not unless someone knows who's implemented this thing, I made it up and I put it in the spec, both of those things, I don't think anybody's implemented them. And if they did, that's pretty sad and we need to know who it is. I'm fine with putting the SVG renderer, the thing that people have actually implemented in an appendix because it reflects a very sad reality that we did not want people to do, but that's fine with me.</p>
+<p id=91de class="phone s03"><cite>Manu_Sporny:</cite> The removal that I was talking about was removing embedded renderer…</p>
+<p id=10004 class="phone s03"><cite>Manu_Sporny:</cite> because we don't have as far as I know multiple implementations. The folks that created that are not in the group. I wasn't necessarily talking about SVG PDF HTML section 2.3.</p>
+<p id=ffa6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> is what is embedded render?</p>
+<p id=d232 class="phone s01"><cite>Dmitri_Zagidulin:</cite> This one. I see.</p>
+<p id=5f21 class="phone s03"><cite>Manu_Sporny:</cite> It's the phone home to render your thing, …</p>
+<p id=1c35 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=4668 class="phone s03"><cite>Manu_Sporny:</cite> approach, which that's the thing I was going to raise a PR to remove. so the reason I wanted to remove SVG and PDF is nobody has implemented those. I'm asserting that if somebody knows somebody that has implemented them,…</p>
+<p id=2200 class="phone s03"><cite>Manu_Sporny:</cite> please let me know. we have implemented that. I'd rather it not go out, but that's fine. If Dimmitri you want to raise a PR to do that because you do object to that being in the spec.</p>
+<p id=6eef class="phone s01"><cite>Dmitri_Zagidulin:</cite> I do.</p>
+<p id=1c80 class="phone s03"><cite>Manu_Sporny:</cite> That will force us as a company to make a fairly drastic decision. Dimmitri, I'm just stating that very clearly on the record. We are going to have to go our own way as a result of</p>
+<p id=8d6c class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I just want to be also so couple things. Yes, let's merge removing if you want to resolve the rebase conflicts. If not, I'm happy to resolve the rebase conflicts and merge this.</p>
+<p id=e40f class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, first things first,…</p>
+<p id=7a62 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, please do.</p>
+<p id=edbf class="phone s03"><cite>Manu_Sporny:</cite> I can try to get to it, but again,…</p>
+<p id=cd65 class="phone s01"><cite>Dmitri_Zagidulin:</cite> let's yeah,…</p>
+<p id=7e76 class="phone s03"><cite>Manu_Sporny:</cite> this shouldn't affect anyone, right?</p>
+<p id=3671 class="phone s01"><cite>Dmitri_Zagidulin:</cite> shouldn't affect anyone.</p>
+<p id=ea8f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's remove these two. so that's thing one done. Not a problem. I can also make a pull request today to remove the embedded renderer the embedded method that you just mentioned this one right here embedded renderer because also I don't think anybody's implemented it and we have consensus there. so what it sounds like people are okay with adding the HTML template renderer because that's the thing that the most implementers have implemented it.</p>
+<p id=10005 class="phone s01"><cite>Dmitri_Zagidulin:</cite> and then separately whether to keep the iframe.js app render suite at which is currently called HTML render suite. I see the names are confusing or not. my personal view as an implementer is that as is currently specified the iframe app render method is unimplementable I'm certainly not going to recommend that the dcc teams implement it and I'm going to warn other implementers away from it as well. I don't think it is a solution to the problem.</p>
+<p id=c863 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I would point people to the non-normative HTML u template appendix is on and then mono cube.</p>
+<p id=2df1 class="phone s05"><cite>Ivan_Herman:</cite> the HTML template that you refer to is it based on mustache as well…</p>
+<p id=57a7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, it's no no it's based on iframe JavaScript app not mustache.</p>
+<p id=bffa class="phone s05"><cite>Ivan_Herman:</cite> because if so sorry I am mixed up now because there are two things.</p>
+<p id=7153 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The names are confusing.</p>
+<p id=1ec5 class="phone s05"><cite>Ivan_Herman:</cite> Yeah, so I understand the one which comes originally to this document from Benjamin but you were referring to another HTML renderer. Which one is that?</p>
+<p id=5b54 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I was referring to adding a non-normative appendix to an HTML template renderer that does involve mustache. Yes.</p>
+<p id=0539 class="phone s05"><cite>Ivan_Herman:</cite> I understand. Okay thank you. it's confusing as you said. So the renaming should be done quickly. Ivan Herman:</p>
+<p id=bb6f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah,…</p>
+<p id=8c1c class="phone s01"><cite>Dmitri_Zagidulin:</cite> no worries. Excellent. go ahead.</p>
+<p id=733e class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm fine with two different HTML renders being in the spec and us saying we don't know which one we're going to do and some one of them has pro we think we don't have consensus right and having both of them in there the most important thing Demetri here is the signaling to our customers that the group has this under control right and that we are making progress and if you look at the spec for the past couple of months we have not been signaling that we've been making much progress that's the thing that's important to us so the entire Removal of all HTML render suites from the spec would be catastrophic to us. Having two of them that conflict and say the group's continuing to work through them. That's fine at least with me and it'll help with the signaling to the customer. Removing the embedded renderer thing is hopefully sends a signal that look we're really getting serious about implementations here. we need multiple impleers and then we need the people that are building these things to be involved in the group.</p>
+<p id=943f class="phone s03"><cite>Manu_Sporny:</cite> I unfortunately have to drop but u thank you for the time in this</p>
+<p id=ef07 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ammano, your request is heard loud and…</p>
+<p id=d178 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we will proceed with just what you described. Benjamin, you're up next.</p>
+<p id=a9d2 class="phone s04"><cite>Benjamin_Young:</cite> Yeah,…</p>
+</section>
+
+<section>
+<h3 id=001c>Discussion On Unimplementable Render Method</h3>
+<p id=83f0 class="phone s04"><cite>Benjamin_Young:</cite> you kind of clarified it over chat, but when you said unimplementable, I wanted to see if you could scope that because I've obviously implemented it as mentioned in chat and mentioned here previously but have also concurrently raised that I had serious doubts that it was implementable in a native app, which Digital Bizarre doesn't produce a native app yet. and when we do, it's going to be, a PWA probably anyway. so it's a blind side that we would like filled.</p>
+<p id=3fa1 class="phone s04"><cite>Benjamin_Young:</cite> It's why W3C working groups exist in part to have someone explore and see how far they can get and what constraints can be made to create the same sort of runtime environment that's intended here which would be a bundle of HTML, JavaScript and CSS given a handful of JSON. if that needs to be expressed differently or at least at the JSON level expressed the same way, but the surrounding plumbing within a mobile app could be specified differently as to provide that more clearly that I think we're all on board with that. But I wouldn't say it is unimplementable without some sort of framing context.</p>
+<p id=c4af class="phone s04"><cite>Benjamin_Young:</cite> So if that's just mobile that's fine…</p>
+<p id=5982 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, agreed.</p>
+<p id=f3bc class="phone s04"><cite>Benjamin_Young:</cite> but even more narrow would be helpful. because conversely again web views have been invoked as the solution. I don't know if they are. I would love somebody to test that out. That's it.</p>
+<p id=f8fe class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Benjamin.</p>
+<p id=7a9f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dave, you're up next.</p>
+<p id=e8e6 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I also want us to be careful with saying…</p>
+<p id=7f2c class="phone s06"><cite>Dave_Longley:</cite> just if we take the assumption on its face the premise on its face that you can't implement it on mobile, that's not a reason to not put something in a W3C specification that's for the web. I mean, we just throw out most of W3C specs or a significant portion of them. so that seems to be at odds with what W3C does. there's no requirement that you be able to implement something natively in Android whatever else.</p>
+<p id=de24 class="phone s06"><cite>Dave_Longley:</cite> So we should be careful with that and we should also explore the space a little bit more so that we try to make it as easy as possible to implement in those spaces and…</p>
+<p id=dd94 class="phone s06"><cite>Dave_Longley:</cite> that we have some good advice there. But I don't think that's a reason to not have a spec at W3C.</p>
+<p id=2f52 class="phone s01"><cite>Dmitri_Zagidulin:</cite> understood. Thanks,…</p>
+<p id=ab51 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin.</p>
+<p id=0a55 class="phone s04"><cite>Benjamin_Young:</cite> Yeah. it's fun to hear these extremes like Dimmitri you're like can't be implemented in days can't be a specification like those are nuts right thank you both those are the polls that we are in the middle between I think we just need to say as a group add a note or…</p>
+<p id=10006 class="phone s04"><cite>Benjamin_Young:</cite> even an at risk statement or something on both the HTML ones exploration is still ongoing to find out how to do this in a mobile context the reason I would say we need the node despite it being a W3C specification. not all of which for what it's worth have anything to do with the web. many of which do not. but that we should call that out because the vast majority of things people call wallets in our ecosystem do run on phones. there are a whole lot Some of them don't even have heads and will never do render method at all.</p>
+<p id=d3e4 class="phone s04"><cite>Benjamin_Young:</cite> So It does function. It has a whole host of threat modeling that's needed around it. but it works fine for web wallets, right? We know that much. there is doubt expressed from mobile app vendors namely Dimmitri that it's not implementable or there is no known path to do that. concern about that is raisable. We can't raise it as a fact until somebody can prove it. so we frame it as yet we don't have a way We do not yet know for certain that this is on mobile. if that would ease your concerns, Demetri, so you don't minus one the whole thing.</p>
+<p id=b844 class="phone s04"><cite>Benjamin_Young:</cite> Right? Because we don't have an implementation yet. but conversely, I don't think we need to throw out all specifications because they're not wholly web related.</p>
+<p id=db7b class="phone s05"><cite>Ivan_Herman:</cite> What will happen now after all this discussion?</p>
+<p id=97a3 class="phone s04"><cite>Benjamin_Young:</cite> Yeah. So, that I hope is a middle ground that we can walk on.</p>
+<p id=0440 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That seems reasonable to me.</p>
+<p id=1ee8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Anyone else? questions, comments? So now we have a couple of consensus to resolve due based conflict and merge this PR with a follow on PR to move an HTMLbased template method to a non-normative appendix.</p>
+<p id=6997 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So the rough action items are one merge removing existing PDF and SG mustache suite. step two, open PR to remove the embedded renderer. just current section 2.3.</p>
+<p id=e6f4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=072e class="phone s05"><cite>Ivan_Herman:</cite> Which the consequence of that in terms of hierarchy that the template renderer disappears as a notion.</p>
+<p id=a908 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. …</p>
+<p id=9746 class="phone s01"><cite>Dmitri_Zagidulin:</cite> no. template render as a notion gets moved to a non-normative appendix. So, this will be this item three. Open it. Yes, I believe that is the case.</p>
+<p id=a55b class="phone s05"><cite>Ivan_Herman:</cite> Yeah, for the standard part we don't have this notion.</p>
+<p id=be72 class="phone s05"><cite>Ivan_Herman:</cite> Okay, that's a simplification.</p>
+<p id=093a class="phone s01"><cite>Dmitri_Zagidulin:</cite> So that to reflect and</p>
+<p id=7a94 class="phone s01"><cite>Dmitri_Zagidulin:</cite> After that the group needs to decide on whether to dispatch off of type plus render suite. And in either case, it doesn't matter that much, or at least I don't think it matters. So, I'm fine with whatever we decide on that item four.</p>
+<p id=dc6e class="phone s06"><cite>Dave_Longley:</cite> it's item four is going to be insufficient.</p>
+<p id=caf7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=8720 class="phone s06"><cite>Dave_Longley:</cite> You can't simply unless we're going to make different types for audio, visual, tactile like that's just not…</p>
+<p id=cd5c class="phone s01"><cite>Dmitri_Zagidulin:</cite> And Not at all because we can parameterize.</p>
+<p id=540b class="phone s01"><cite>Dmitri_Zagidulin:</cite> So for example, the…</p>
+<p id=974d class="phone s06"><cite>Dave_Longley:</cite> if you're going to add a parameter, you have to dispatch off of that parameter as well. that's my point.</p>
+<p id=2e3d class="phone s01"><cite>Dmitri_Zagidulin:</cite> how would you…</p>
+<p id=a28b class="phone s01"><cite>Dmitri_Zagidulin:</cite> how would you phrase this decision, Dave? All right.</p>
+<p id=ed92 class="phone s06"><cite>Dave_Longley:</cite> We need to decide could you described it as dispatch.</p>
+<p id=4b87 class="phone s06"><cite>Dave_Longley:</cite> So, we need to describe how we will dispatch.</p>
+<p id=ec97 class="phone s01"><cite>Dmitri_Zagidulin:</cite> decide on dispatch strategy and form up list of properties in common to all three methods and finalize so we can get to horizontal</p>
+<p id=1736 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you. Those three methods, Ivon, go ahead.</p>
+<p id=67de class="phone s05"><cite>Ivan_Herman:</cite> Yeah, I just want to be to understand…</p>
+<p id=11e9 class="phone s05"><cite>Ivan_Herman:</cite> where We were discussing last time three top level methods or approaches I would say.</p>
+<p id=5f5c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes,…</p>
+<p id=8970 class="phone s05"><cite>Ivan_Herman:</cite> Right I mean yeah they are there.</p>
+<p id=9361 class="phone s01"><cite>Dmitri_Zagidulin:</cite> that's right. these three top level. Yeah. Mhm.</p>
+<p id=8d8d class="phone s05"><cite>Ivan_Herman:</cite> So at the moment for pre-baked we have only NFC…</p>
+<p id=24fb class="phone s05"><cite>Ivan_Herman:</cite> which is a very special thing. So that has to be generalized.</p>
+<p id=5249 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's right.</p>
+<p id=6b65 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's right. So that's correct.</p>
+<p id=ef8f class="phone s05"><cite>Ivan_Herman:</cite> The view data at the moment is the JSON card. Is that correct?</p>
+<p id=8e86 class="phone s06"><cite>Dave_Longley:</cite> That's correct.</p>
+<p id=112a class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's correct.</p>
+<p id=4089 class="phone s06"><cite>Dave_Longley:</cite> But what you just described as pre-baked or static is incorrect because you can have a simple image or…</p>
+<p id=0a86 class="phone s06"><cite>Dave_Longley:</cite> an audio stream as other examples.</p>
+<p id=a4b6 class="phone s05"><cite>Ivan_Herman:</cite> No. No.</p>
+<p id=00a2 class="phone s06"><cite>Dave_Longley:</cite> You said we this back. Okay.</p>
+<p id=fb85 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, I think in the spec right now. Ivan Herman:</p>
+<p id=148c class="phone s05"><cite>Ivan_Herman:</cite> Yeah. No. No. I'm not saying yeah that's…</p>
+<p id=3d37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's right.</p>
+<p id=a03b class="phone s05"><cite>Ivan_Herman:</cite> what I'm trying to understand and it has to be worked on because as you say NFC is too restrictive that's clear and…</p>
+<p id=d3a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah,…</p>
+<p id=68d9 class="phone s05"><cite>Ivan_Herman:</cite> the HTML view is now the I frame based HTML view and that's it in the standard Okay.</p>
+<p id=f71a class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's correct.</p>
+<p id=ecb2 class="phone s05"><cite>Ivan_Herman:</cite> I just wanted to understand I mean that has to be made for all the concerns about the business side. I think we have to firm up this hierarchy very quickly…</p>
+<p id=cd1d class="phone s05"><cite>Ivan_Herman:</cite> because for now the spec is a bit messy.</p>
+<p id=4aef class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right, that sounds good.</p>
+<p id=ddb1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. Does anybody else see any other items that we're missing or…</p>
+<p id=e89e class="phone s05"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=10007 class="phone s01"><cite>Dmitri_Zagidulin:</cite> does this seem like a decent road map? All right. So, we have 19 minutes till the top of the hour remaining. unless somebody has a better idea, I'd like to continue the discussion on what the fields are that we have in common.</p>
+<p id=10008 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So we have our dispatch mechanisms such as type and render suite. We have a list of properties. This is common to both the iframe JS app method and…</p>
+<p id=16ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Nate auto's JSON card method. Right. Both in fact this is a common approach to a lot of the render method suites. Go ahead Dave.</p>
+<p id=cf52 class="phone s06"><cite>Dave_Longley:</cite> If you were going to only say it's in common with two, I was going to say I think it's in common with all three. This property expresses to the reader of it…</p>
+<p id=3de9 class="phone s06"><cite>Dave_Longley:</cite> what information is expected to be expressed in the rendering. And so that is going to be true for all of them.</p>
+<p id=96fd class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, absolutely.</p>
+<p id=c263 class="phone s05"><cite>Ivan_Herman:</cite> So what does this specify? Exactly. For my understanding,…</p>
+<p id=15d3 class="phone s06"><cite>Dave_Longley:</cite> This is an array of JSON pointers into the verifiable credential itself. So, it's pointing at the bits of data that appear in the rendering.</p>
+<p id=52b2 class="phone s05"><cite>Ivan_Herman:</cite> I understand. Okay.</p>
+<p id=36ed class="phone s01"><cite>Dmitri_Zagidulin:</cite> So yeah, so this is this property or one it is common to most of the render method suites out there either this groups or other groups. Okay, so we have that we have</p>
+<p id=0916 class="phone s05"><cite>Ivan_Herman:</cite> I saw somewhere I think it was in the PR of auto the validity tax valid from valid…</p>
+<p id=5dab class="phone s05"><cite>Ivan_Herman:</cite> until or something like that I don't remember…</p>
+<p id=eff6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=979c class="phone s05"><cite>Ivan_Herman:</cite> what temp I used those are again obviously Common things.</p>
+<p id=fdb8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Gas. So let's start writing. so the question actually comes up about the life cycle of the render method as opposed to the verifiable credential itself. An argument could be made and a strong one that the render method shares the valid from invalid until of the credential overall. Does it need its own separate one?</p>
+<p id=b274 class="phone s01"><cite>Dmitri_Zagidulin:</cite> It's not clear.</p>
+<p id=8751 class="phone s05"><cite>Ivan_Herman:</cite> at this moment I would say…</p>
+<p id=a8ac class="phone s05"><cite>Ivan_Herman:</cite> if there is a need for it then it is valid for all render methods so let's take it as a global we can decide later whether we want really to have them or…</p>
+<p id=3073 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Yeah.</p>
+<p id=760e class="phone s05"><cite>Ivan_Herman:</cite> not but if we have them it is not specific to any of those. Yeah.</p>
+<p id=60f5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead, Benjamin.</p>
+<p id=f187 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, this is a tangent, but it's more to come back to and it's in the context of shared properties. we have mostly been writing these and talking about these in line. I know the example you have here has a template ID with it being remote. but the vast majority of implementations I've seen either are just blindly trusting their own infrastructure and not tossing a digest multibbase onto stuff just aren't remotely doing them in line.</p>
+<p id=9417 class="phone s04"><cite>Benjamin_Young:</cite> So at some point I want to come back to make sure that this spec calls out when and where the digest multibase needs to appear for all of these.</p>
+<p id=25b4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hold on.</p>
+<p id=08f7 class="phone s05"><cite>Ivan_Herman:</cite> It is the digest of…</p>
+<p id=af6d class="phone s05"><cite>Ivan_Herman:</cite> what exactly?</p>
+<p id=f15e class="phone s04"><cite>Benjamin_Young:</cite> There you go.</p>
+<p id=0868 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I want to remind folks No,…</p>
+<p id=88d5 class="phone s04"><cite>Benjamin_Young:</cite> Yeah. Sorry it is a tangent. I just wanted to we can come back to it some other time.</p>
+<p id=822a class="phone s01"><cite>Dmitri_Zagidulin:</cite> go completely very much appreciated.</p>
+<p id=51bb class="phone s06"><cite>Dave_Longley:</cite> We need to express the nesting Good.</p>
+<p id=c664 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, so you're right in general that once we have this list, we should figure out how to nest them. I do want to remind folks that digest multibase is a general mechanism in the core VC data model that can be applied to essentially any ID. So whether it's in the template or elsewhere, it is general purpose. this</p>
+<p id=64c1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> This would just be a highlight and reminder that it's out there and…</p>
+<p id=0718 class="phone s01"><cite>Dmitri_Zagidulin:</cite> they should be used.</p>
+<p id=bb23 class="phone s05"><cite>Ivan_Herman:</cite> But we still have to say that in the case of a render method,…</p>
+<p id=903f class="phone s05"><cite>Ivan_Herman:</cite> what is that we digest?</p>
+<p id=8b84 class="phone s01"><cite>Dmitri_Zagidulin:</cite> in case if it's a template method, it's a digest of the template. If it's a static method, it's a digest of the baked binary in the non-normative appendix.</p>
+<p id=a7c2 class="phone s05"><cite>Ivan_Herman:</cite> I don't want to be difficult but do we still have the notion of template method.</p>
+<p id=146b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yeah, I'll highlight that.</p>
+<p id=e6ae class="phone s05"><cite>Ivan_Herman:</cite> So I would say just to be nasty that we should concentrate on those things that are part of the normative first.</p>
+<p id=2f8d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Not nasty at all. I'm just answering your question. what's it a digest of? Depends. So if it's a static method,…</p>
+<p id=589b class="phone s06"><cite>Dave_Longley:</cite> Let's skip Yeah,…</p>
+<p id=140e class="phone s01"><cite>Dmitri_Zagidulin:</cite> is it a digest of the binary?</p>
+<p id=ea9f class="phone s06"><cite>Dave_Longley:</cite> let's skip digest for now because I think it's impeding our progress.</p>
+<p id=11da class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yep. Yeah. so all of the methods have in common a media type. we have an access mode of the date of …</p>
+<p id=7560 class="phone s06"><cite>Dave_Longley:</cite> What is the media type for the data view render method?</p>
+<p id=9a84 class="phone s01"><cite>Dmitri_Zagidulin:</cite> great question. Let's find out.</p>
+<p id=6750 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=2431 class="phone s06"><cite>Dave_Longley:</cite> In fact, how about we skip media type for now because that one might not all actually be in common with all of them. Let's just move that down and keep making progress. Okay.</p>
+<p id=7c56 class="phone s01"><cite>Dmitri_Zagidulin:</cite> how about put question these are candidates. but to answer your question about the data view the JSON card the</p>
+<p id=21ed class="phone s02"><cite>Nate_Otto:</cite> to scroll down a little more. There's an example that of JSON might be</p>
+<p id=1b22 class="phone s05"><cite>Ivan_Herman:</cite> Exactly.</p>
+<p id=10fb class="phone s01"><cite>Dmitri_Zagidulin:</cite> does not have immediate type…</p>
+<p id=8fe7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> which is I think is your point Dave. So access mode we need a localization language selector for AC across these render method types.</p>
+<p id=ac3e class="phone s06"><cite>Dave_Longley:</cite> I don't know if that's true either.</p>
+<p id=bdbe class="phone s01"><cite>Dmitri_Zagidulin:</cite> Can you say more about that?</p>
+<p id=f207 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Why not?</p>
+<p id=a2a9 class="phone s06"><cite>Dave_Longley:</cite> What do you select for NC?</p>
+<p id=8d49 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the different so first of all you select whether the language rendered on that picture is Spanish or…</p>
+<p id=6efe class="phone s06"><cite>Dave_Longley:</cite> What do you select for a picture?</p>
+<p id=683e class="phone s01"><cite>Dmitri_Zagidulin:</cite> English and…</p>
+<p id=1b24 class="phone s06"><cite>Dave_Longley:</cite> Whatever is just Okay.</p>
+<p id=cbd3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> then it's an optional field but it's a field in common across all of the methods</p>
+<p id=10009 class="phone s06"><cite>Dave_Longley:</cite> Right. at my experience of this exercise is that I keep getting confused as to whether we're making a list of things that we know are in common and then we have a list of things to explore or if we're going over every property we've considered and we're just kind of talking about what they are and they may or may not be common. I'm not quite sure So could you clarify what is the exercise we're presently</p>
+<p id=130e class="phone s01"><cite>Dmitri_Zagidulin:</cite> let's say listing the candidates and then selecting a subset of those candidates.</p>
+<p id=5de4 class="phone s06"><cite>Dave_Longley:</cite> Okay.</p>
+<p id=6930 class="phone s01"><cite>Dmitri_Zagidulin:</cite> My proposal is that localization is common across all of those render methods including static including NSC in fact</p>
+<p id=31d6 class="phone s06"><cite>Dave_Longley:</cite> I agree that localization is a consideration for all render methods but that itself is not a property and that is also why it's kind of getting crosswise with how I was envisioning the process that we're going through. that's a concept and I agree with it that it's an important concept for each of them but we don't have a property for it and…</p>
+<p id=e413 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No problem.</p>
+<p id=7b57 class="phone s06"><cite>Dave_Longley:</cite> it might not entail having a property. I don't know.</p>
+<p id=7578 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Any other properties that we have in common?</p>
+<p id=8288 class="phone s06"><cite>Dave_Longley:</cite> We were saying we're listing all of them now, not necessarily what's in common.</p>
+<p id=86e8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'll put preference as a grouping. Dave Longley:</p>
+<p id=dedd class="phone s06"><cite>Dave_Longley:</cite> So, there's more on the page right down there. There's output preference style. No. No.</p>
+<p id=ebaa class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm going to avoid that for the moment. So let's say style second height</p>
+<p id=d1e8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> eight CSS prints versus screen selectors. I forget what the property is called,…</p>
+<p id=c05f class="phone s01"><cite>Dmitri_Zagidulin:</cite> but there is a property name for it. Yes. Yes. I forget what that thing Is it literally media selector or…</p>
+<p id=4134 class="phone s05"><cite>Ivan_Herman:</cite> Are you talking about media selectors?</p>
+<p id=a117 class="phone s05"><cite>Ivan_Herman:</cite> I think media query.</p>
+<p id=1d93 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we'll look it Media query is the screen versus the printed one.</p>
+<p id=317d class="phone s05"><cite>Ivan_Herman:</cite> We can look it up.</p>
+<p id=69f3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I don't Yeah, we'll come back to it. Don't worry. Yeah. …</p>
+<p id=9f25 class="phone s05"><cite>Ivan_Herman:</cite> But what again? I mean, where would that be used in reality?</p>
+<p id=183a class="phone s01"><cite>Dmitri_Zagidulin:</cite> that's easy.</p>
+<p id=67b2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The PDF is for one of the overwhelming use cases for the render method suite is to print a verifiable credential to PDF that is specifically a CSS print u media selector.</p>
+<p id=bc4b class="phone s05"><cite>Ivan_Herman:</cite> Yeah, I understand. I was expecting something like that. But my problem is again it's like with the template we collecting things that some non-standard render methods can use or…</p>
+<p id=0389 class="phone s05"><cite>Ivan_Herman:</cite> will use which we have never have a proof of it or are we collecting those that are to be used by those render methods that are part of the standard because</p>
+<p id=0e49 class="phone s01"><cite>Dmitri_Zagidulin:</cite> printing is a use case that needs to be addressed by standard methods.</p>
+<p id=fb19 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So whatever standard methods we ship, they need to address the overwhelming use case of printing.</p>
+<p id=3a97 class="phone s06"><cite>Dave_Longley:</cite> So there is output preference media type which is where you could put application PDF. Is that what we're talking about?</p>
+<p id=aaaf class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, we're talking about the CSS.</p>
+<p id=8b8d class="phone s05"><cite>Ivan_Herman:</cite> Yeah. And</p>
+<p id=5f5b class="phone s06"><cite>Dave_Longley:</cite> That sounds like it's a specific way to express it is CSS. But are we talking about expressing the output preference of a render method that might be for generating a PDF?</p>
+<p id=480b class="phone s01"><cite>Dmitri_Zagidulin:</cite> A render method that is suitable to display on screen versus suitable to display on a printage.</p>
+<p id=cf83 class="phone s06"><cite>Dave_Longley:</cite> Yeah, this sounds like a combination of access mode and So the ut preference of the render method is this is how I would like the output. This is the preferred way to express the output. And that could have media types. It could have something to do with the access mode, visual, audio. That is what output preferences.</p>
+<p id=8716 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Down. Wait,…</p>
+<p id=c706 class="phone s05"><cite>Ivan_Herman:</cite> Yeah, I would indeed be a bit concerned having sort of bring in CSS into this pack…</p>
+<p id=8491 class="phone s05"><cite>Ivan_Herman:</cite> because that's bringing in a masttodon.</p>
+<p id=65f8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> wait. during previous calls,…</p>
+<p id=b731 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think it was you specifically that said, &quot;Hey, we have these CSS selectors. We should reuse them.&quot; changing your mind is okay, but I do just want to highlight that you were arguing for them previously. No worries. No worries.</p>
+<p id=3aa8 class="phone s05"><cite>Ivan_Herman:</cite> Maybe then…</p>
+<p id=b38a class="phone s06"><cite>Dave_Longley:</cite> Yeah, that might have been in the context of an h of HTML.</p>
+<p id=1075 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Come back to it. Yeah.</p>
+<p id=f322 class="phone s06"><cite>Dave_Longley:</cite> If you're already using HTML, there's certainly an expectation that you have all the tooling. Yeah.</p>
+<p id=f5f7 class="phone s05"><cite>Ivan_Herman:</cite> then that's different. Yeah.</p>
+<p id=7e20 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin.</p>
+<p id=b4d9 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, even our earliest SVG render mustachy thingies and…</p>
+<p id=4eae class="phone s04"><cite>Benjamin_Young:</cite> in many names it has almost always had a CSS media query tag along to suggest size and shape. It's only been recently that that's fallen off and we now say width and height but previously we had invoked the full power of this CSS many media query and…</p>
+<p id=691a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=1671 class="phone s04"><cite>Benjamin_Young:</cite> in fact I think the property name was CSS media query</p>
+<p id=3c24 class="phone s05"><cite>Ivan_Herman:</cite> I think my worry is that…</p>
+<p id=799c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Makes sense.</p>
+<p id=e38b class="phone s05"><cite>Ivan_Herman:</cite> if we bring in CSS we will have an unwritten expectation somewhere that says you have to have a CSS implementation at your hand and that's what worries me and indeed if we are in HTML then we have CSS so that's there we just take it for granted and we can use all the terminology of CSS at our heart content,…</p>
+<p id=32be class="phone s01"><cite>Dmitri_Zagidulin:</cite> Menu.</p>
+<p id=e3a6 class="phone s05"><cite>Ivan_Herman:</cite> but not in the general case.</p>
+<p id=cfd1 class="phone s04"><cite>Benjamin_Young:</cite> Yeah, we're in it's actually not CSS proper. It's an extension called media queries level 4 that define these things. CSS happens to be its probably one and only consumer at present, but there's a whole lot of terms in here that could be useful. Not saying we have to do this, but it has been surfacing as a way to define so many things at the same time in one string in past attempts. so that we don't end up with…</p>
+<p id=8966 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right.</p>
+<p id=02f9 class="phone s04"><cite>Benjamin_Young:</cite> where we will undoubtedly hit…</p>
+<p id=913d class="phone s04"><cite>Benjamin_Young:</cite> which is we have width and height but then it's like Is that the maximum width? Is that I really like this very specific width and height? And then What about screen rotation? What about printing?</p>
+<p id=e002 class="phone s05"><cite>Ivan_Herman:</cite> Is it in point or…</p>
+<p id=5bc1 class="phone s04"><cite>Benjamin_Young:</cite> As you mentioned, contrast Right. Ivan Herman:</p>
+<p id=ef22 class="phone s05"><cite>Ivan_Herman:</cite> kilometers or device.</p>
+<p id=009f class="phone s04"><cite>Benjamin_Young:</cite> On and on and on. And none of the examples put up so far with width and height say anything except maybe they use pixels. so I don't really remember when the drift happened. I think it was probably for the same reasons mentioned of fear of slurping in the one true language CSOS. and we don't need all of that.</p>
+<p id=1000a class="phone s04"><cite>Benjamin_Young:</cite> So again, thankfully this is just one and not tiny spec. The scroll bar is kind of squishy, but it is not CSS in toto</p>
+<p id=f513 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=7f2e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Makes sense.</p>
+<p id=efad class="phone s02"><cite>Nate_Otto:</cite> Yeah, we probably don't need to dive into it too deeply here. I would probably rather leave CSS power in the CSS layer, have it be part of the HTML that is expressed for certain HTML methods that can use it and leave it out of the upper level of defining these things because the risk I think is that you make a bunch of complex media queries that only will match certain devices and…</p>
+<p id=7da3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Makes sense, Benjamin.</p>
+<p id=19a1 class="phone s02"><cite>Nate_Otto:</cite> situations and then the amount of render code that you have to put into your credential is enormous.</p>
+<p id=5c88 class="phone s02"><cite>Nate_Otto:</cite> ask the event just to do it here's one it's HTML it can express a variety of break points and container sizes</p>
+<p id=8fad class="phone s04"><cite>Benjamin_Young:</cite> Yeah, just one last thing here.</p>
+<p id=6049 class="phone s04"><cite>Benjamin_Young:</cite> We keep talking about these properties at the JSON level affecting rendering. I really think we need to scope them to just selection. I know we have a style one…</p>
+<p id=3af7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Is</p>
+<p id=67f4 class="phone s04"><cite>Benjamin_Young:</cite> but it's only right now pointing at width and height for the media query style really these properties output preferences wherever they show up need to be about the viewer wallet thing picking the right one and then doing something with that. But I don't expect that we're going to constrain the viewer or the wallet beyond that. So even if we were to say media queries is part of CSS which thankfully it's not and invoke all of CSS. I don't think how we write the spec should ever imply that anyone working with this JSON is going to need to know…</p>
+<p id=63db class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=19a6 class="phone s04"><cite>Benjamin_Young:</cite> what CSS is. If you're using the HTML one, render suite, whatever it's going to be called, you're already kicking all of that power down into an iframe and therefore delegating that. You're just saying, &quot;I'm doing a browsery thing inside of a box.&quot; But that really shouldn't affect again the JSON side of it other than to say,…</p>
+<p id=0638 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Absolutely. So we are past time.</p>
+<p id=51d2 class="phone s04"><cite>Benjamin_Young:</cite> &quot;Hey, get ready for this. You're going to need an iframe box.&quot; Does that make sense? Yeah, we are.</p>
+<p id=999b class="phone s01"><cite>Dmitri_Zagidulin:</cite> It does make sense. We are past time. But Dave real quick your comment.</p>
+<p id=b98b class="phone s06"><cite>Dave_Longley:</cite> Yeah, I just want to say output preferences is very much about selection, filter, ing in dispatch.</p>
+<p id=a959 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All Thank you very much everyone. you in the PRs. sounds like we have a road map with some clear items. cheers all. Meeting ended after 01:19:58 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

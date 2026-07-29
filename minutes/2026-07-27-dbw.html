@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Product and Wallet Vocabularies &ndash; 27 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Product and Wallet Vocabularies</h1>
+<h2>27 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Fireflies.ai_Notetaker_Miguel, Ingo_Wolf, Ivan_Herman, Ivo_Ladenius, M.-A._Wolf, Michael_Linck, Monika_Nowicki, Phillip_Long, Robert_David, Ronald_Koenig, Ted_Guild</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#77ee">Business Wallets And Verifiable Credentials</a></li>
+<li><a href="#d208">Business Wallet Differences</a></li>
+<li><a href="#0653">Organizational Wallet Architectures</a></li>
+<li><a href="#dac0">VCs Vs. Signed Documents</a></li>
+<li><a href="#b077">VCs And Digital Product Passports</a></li>
+<li><a href="#855c">Data Model Impact Of Business Wallets</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=8cf2 class="phone s01"><cite>Ingo_Wolf:</cite> Hello. She's into my page. Okay.</p>
+<p id=4498 class="phone s02"><cite>M.-A._Wolf:</cite> the wolf here.</p>
+<p id=b0f0 class="phone s02"><cite>M.-A._Wolf:</cite> Hello. Fireflies noteaker. Miguel. better switching to English, I think.</p>
+</section>
+
+<section>
+<h3 id=77ee>Business Wallets And Verifiable Credentials</h3>
+<p id=2841 class="phone s01"><cite>Ingo_Wolf:</cite> Okay, so it seems like we're not getting any more people. Kness is in vacation this week. Kolen as So last time we were talking about the TPP part last week of the last working group and as far as I can recap Carolyn</p>
+<p id=8998 class="phone s01"><cite>Ingo_Wolf:</cite> post questions on the usage of VCs in the context of digital product passports and wanted invited everybody to provide feedback on the page and for this week I prepared something similar for the second half of the work group so business wallet related where I try to gather remarkable points on how VC's differentiate compared to the use of signed documents or PKI signatures. I can present a slide set upon that.</p>
+<p id=874a class="phone s01"><cite>Ingo_Wolf:</cite> If there are no other agenda points for this week I would like to continue otherwise yeah please step in and suggest additional topics for today. All right, seems there is nothing else. then yeah, just let me share my screen and I will go through this with you. Okay.</p>
+<p id=4928 class="phone s01"><cite>Ingo_Wolf:</cite> All So as mentioned we are talking about business wallets today and how can they be secured by use of verify the credentials that's our main topic in this working group here and the big picture also with some relation to DPP can be drawn like this. So we have supply chains for examples where raw material producers hand over in processes to manufacturers which then continue in the value chain with distributors or retailers and at the end of the life cycle of a product there is usually also a recycler and all those actors in the supply chain for example</p>
+<p id=ffff class="phone s01"><cite>Ingo_Wolf:</cite> need a business wallet and as drawn here we have certification bodies that issues certifications and organizational VCs and we have market surveillance authorities which verify that certain operators in the value chain can take u specific market role and verifies these operators and DPPS produced by them. all this is relevant in different stages of the product life cycle and different product level credentials play a role.</p>
+<p id=69a1 class="phone s01"><cite>Ingo_Wolf:</cite> So for example, we can have that attest the origin of raw materials or VCs that provide proof for conformity or Cs that attest the existence of certain events in the custody chain. or as mentioned receives in the stage of recovery or recycling of materials from products. So all those actors benefit from having a business wallet and all those actors take different roles during the usage of ECS.</p>
+<p id=5600 class="phone s01"><cite>Ingo_Wolf:</cite> So for example, some of them issue invoices, DPPS, mandates in another role where you receive this VC and you hold it as a credential of the organization. then as an organization representative, you present those credentials to counterparties and authorities. and of course we have verifiers that do for example know your business partner checks on new suppliers of the supply chain. in comparison to personal wallets usually implement only a subset of these roles.</p>
+</section>
+
+<section>
+<h3 id=d208>Business Wallet Differences</h3>
+<p id=5afa class="phone s01"><cite>Ingo_Wolf:</cite> which boils down to holder and presenter functions. and yeah therefore there exists a kind of asymmetry if we look at all requirements specific to business wallets and some personal wallet assumptions that do not transfer to business wallets are listed here. So for example if you think of hardware security module custody you want to be able to rotate keys without validating issued credentials. For example, when employees keys leave the organization or the keys just outlive employees.</p>
+<p id=6944 class="phone s01"><cite>Ingo_Wolf:</cite> Then if you think of headless operations where no human is tapping a share button. instead we will have policy based disclosure that can be automized to a high degree and yeah one big difference is basically we have many users accessing one business wallet belonging to an organization and those users may issue present</p>
+<p id=45eb class="phone s01"><cite>Ingo_Wolf:</cite> credentials. and this can also be let's say differentiated who can do what based on role based concepts internal to the organization. for example yeah then if you think of companies that merge their products usually don't. So what happens to credentials of the predecessor entity? That's also an aspect not known to personal wallets I would say. And then of course liability and audit are two topics that are highly relevant if you think of enterprise communications.</p>
+</section>
+
+<section>
+<h3 id=0653>Organizational Wallet Architectures</h3>
+<p id=5cdc class="phone s01"><cite>Ingo_Wolf:</cite> So for example when a mandate is presented that is out of scope who is then liable in that process. So natural person wallets have actually no counterpart for these mentioned aspects here. And yeah, that's a summary of the differences. then if we think of organizational wallets, there are basically two architectural choices that we see today already.</p>
+<p id=1a71 class="phone s01"><cite>Ingo_Wolf:</cite> So an enter enterprise wallet of a legal person operated by a legal person can be completely server side we see here on the left side of the slide. where multiple employees authenticate to the wallet and also automated systems like enterprise relationship planning or B2P APIs can access the business wallet based on the policy that is configured and the counterparty of presentation of VCs</p>
+<p id=7011 class="phone s01"><cite>Ingo_Wolf:</cite> is yeah for example a verifier like a bank or a supplier or an authority and the business wallet presents those VCs directly to the counterparty and yeah therefore the credentials never leave the custody of the wallet and then the second architectural approach that you can see today already is a mandate model where an organization issues mandate VCs to an employee or agent personal wallet. this is also possible where then the natural person presents on an organization's behalf to a counterparty verifier.</p>
+<p id=960b class="phone s01"><cite>Ingo_Wolf:</cite> But yeah this is not necessarily useful let's say from my personal point of view my personal opinion I would say this is relevant if you think of offline presentable credentials like it is supported with MDO formats that we know today But yeah, frankly I would say that's the only difference in terms of credential presentation compared to the model on the left hand side. So if you have a situation where you present in an online circumstances of course this can be done only by using the business wallet and there is no need for a personal wallet agent.</p>
+<p id=10000 class="phone s01"><cite>Ingo_Wolf:</cite> Then if you think of older binding this can be layered So one layer would be the legal person layer where credentials that are issued to this business wallet can be bound to organizational keys. but there is also as mentioned before this second layer where from the business wallet grants mandate VCs that are verifiable time bounded and revocable can be issued to natural person wallets or agents and this is then presented</p>
+</section>
+
+<section>
+<h3 id=dac0>VCs Vs. Signed Documents</h3>
+<p id=e8a7 class="phone s01"><cite>Ingo_Wolf:</cite> together with an organization VC and a mandate VC such that the verifier can check both bindings basically. So first of all that the organizational VC is valid. Then it has to check that the mandate mandate is in scope and unexpired and that the presenter controls mandate keys and of course that the VCs are not revoked at the time of verification. So yeah and to summarize what VCs add beyond a signed document if you think of</p>
+<p id=16fc class="phone s01"><cite>Ingo_Wolf:</cite> PKI based digital signatures. the baseline that is common is of course authenticity, integrity, protection and non-repudiation. But VCs add to that a standard data model where a verifier passes unfamiliar registries credential. In addition, VCs have the capability to reveal claims selectively. So not the selective disclosure is very strong capability I would say. Then of course the revocation status can be implemented per issuer without bilateral integration needs.</p>
+<p id=03d3 class="phone s01"><cite>Ingo_Wolf:</cite> And yeah then of course we have composible delegation which is based on capabilities of JSON LD I would say where for example a mandate links to a credential where it deres from and last but not least and I think most important point here is data sovereignity. So the credential sits in the organizational wallet is controlled and managed by the organization and not a platform. So therefore this last sentence on the bottom makes it quite bold I would say. so redacting signed PDFs is an example where you cannot work with classic signatures.</p>
+<p id=10001 class="phone s01"><cite>Ingo_Wolf:</cite> So when a redacted PDF is shared then the signature is destroyed. redacting a VC does not necessarily break the proof. So therefore selective disclosure is in place to be able to selectively share VCs and therefore reducting some of the claims that you might not want to share. And yeah, that's so far for my presentation and for this task force</p>
+<p id=95e0 class="phone s01"><cite>Ingo_Wolf:</cite> I listed here five points which I think are relevant to be worked on. So concerning the credential subject we had the discussion already last week what identifier goes into the credential subject ID. So this can be for example a legal entity identifier, national registry number, dance or edit. I think there is lots of choice where we need to provide some guidance.</p>
+<p id=08d3 class="phone s01"><cite>Ingo_Wolf:</cite> I think and yeah then if we look into Eli for example which is built on AC/DC and carry so authentic change data containers and key event received infrastructure how they map onto the VCT vCDM or bridge to it would be a valuable guidance. I would say for the community then for organs authorization and mandate credentials we have no shared vocabulary that can be used at the moment.</p>
+<p id=b7e6 class="phone s01"><cite>Ingo_Wolf:</cite> So this would also fit into the scope of the working group and when bootstrapping for issuer trust is designed an important question is who vouches for the first credential in the chain. So the bootstrapping of the trust model I would say is definitely something we can deliver I would say and yeah so far we have no requirements yet numbered testable requirements.</p>
+<p id=eda0 class="phone s01"><cite>Ingo_Wolf:</cite> We started with a broad collection of use cases and requirements in the beginning of the working group but they were already quite detailed and maybe not the best fit to the scope of the working group. So to come up with requirements for vocabularies for DPP and business wallets. this is what we aim for and yeah I hope my presentation helps a little bit on the way towards that. and with this, I'm through my slid set and happy to receive comments or questions. Yes,</p>
+<p id=5b5a class="phone s01"><cite>Ingo_Wolf:</cite> Michael, please.</p>
+<p id=570a class="phone s03"><cite>Michael_Linck:</cite> Hi. …</p>
+</section>
+
+<section>
+<h3 id=b077>VCs And Digital Product Passports</h3>
+<p id=e009 class="phone s03"><cite>Michael_Linck:</cite> so first of all, thank you and I'm new here. I joined because Carolyn suggested it might be a good idea because Phil Archer from the parent verified private credentials group said it might be a good idea. I'm actually more involved in the digital park passport standards. I work as part of JTC 24 and I'll be working as part of JTC 5 as well. And so I'm kind of looking at the implications of verifiable credentials and DPP more from a perspective of how it should influence DPP schema because right now DBP schema is already relatively well defined, in terms of what people are imagining there in the standardization committees and I'm trying to understand some of the basics.</p>
+<p id=6f9a class="phone s03"><cite>Michael_Linck:</cite> So, I pardon if some of these questions are basic, but if there were no other questions, I figure I might as well. and so one of the big ones is the verifiable credential in this context always like a cryptographic wrapper around the context like the content is encrypted and the verifiable credential is necessary to decrypt it or is the verifiable credential in this case sometimes something that can be embedded alongside content like to say okay here's a bunch of content by the way here's a signature and you can go access the authority and verify that signature</p>
+<p id=adb4 class="phone s03"><cite>Michael_Linck:</cite> is authentic. Does that question make sense?</p>
+<p id=3ea3 class="phone s01"><cite>Ingo_Wolf:</cite> Yeah. to some extent.</p>
+<p id=d818 class="phone s01"><cite>Ingo_Wolf:</cite> Yeah. I mean in verify the credentials data model 2.0 I think it's very well defined. So actually the proof wraps the content of the credential. I would say that. and the credential subject is basically what content you find in the credentials. This from different namespaces can be mixed according to the link data capabilities.</p>
+<p id=2f92 class="phone s01"><cite>Ingo_Wolf:</cite> And you can send this along. however there is not only verifiable credential which is usually the part that is communicated from an issuer to a holder. but there's also verifiable presentations where the holder communicates one or more verifyable credential towards a verifier and yeah this can be as mentioned a combination of verifiable credentials. it can refer to things that are referenced in the credential. for example. and think</p>
+<p id=be06 class="phone s01"><cite>Ingo_Wolf:</cite> with things I mean also document artifacts like PDFs or so but it could also be a digital twin for example if you think of artifacts in an asset administration shell or other industry formats let's say Yes, Phillip.</p>
+<p id=10002 class="phone s04"><cite>Phillip_Long:</cite> Yeah, just to follow up on that comment, the verifiable presentation is effectively just a transport wrapper. and you can put PCs in it, but you could also put JSON objects in it. You could put any number of different things in it because the verification is just for the integrity of do we know who the sender is? Is that person controlling the key that's signed this etc. So that piece of flexibility is perhaps underutilized in the VC world at this point because we've been focused on it for just sending VCs.</p>
+<p id=10003 class="phone s04"><cite>Phillip_Long:</cite> And the other point I would make is that structured data that the VC is representing is being protected by the signature and because there are signature methods that allow selective disclosure, it can be done in ways that either do transport and encrypt the information or simply don't include it in the transport with the credential that's being sent. And lastly, there are methods for doing that with ways in which the traceability or the ability to distinguish that the senders is continually sending this particular signed credential to a third party can be identified by simply randomizing the way in…</p>
+<p id=9a73 class="phone s04"><cite>Phillip_Long:</cite> which those signatures are presented each time.</p>
+<p id=68f0 class="phone s03"><cite>Michael_Linck:</cite> So you could wrap effectively the content in a verifiable credential and…</p>
+<p id=d265 class="phone s03"><cite>Michael_Linck:</cite> send it with the verifiable credential as embedded as it were in the verifiable credential or you could resolve a verifiable credential separately in a handshake with the issuer and say okay yes this looks valid and you could receive a data packet from whoever showed you that credential separately from</p>
+<p id=1d53 class="phone s03"><cite>Michael_Linck:</cite> Mhm.</p>
+<p id=10004 class="phone s04"><cite>Phillip_Long:</cite> The terminology is kind of important in the precision of it. The verifiable presentation you can do that with the credentials inside are different in that all the verifiable presentation is doing is saying that this structure has been sent by this particular organization that the validity and Z. the tamper evidence of the individual elements is not a part of it.</p>
+<p id=fca2 class="phone s03"><cite>Michael_Linck:</cite> got it. understood.</p>
+<p id=cdaf class="phone s04"><cite>Phillip_Long:</cite> Otherwise, you're right.</p>
+<p id=d288 class="phone s03"><cite>Michael_Linck:</cite> Okay. No, but it is important for the distinction and I appreciate it. Keep in mind, like I said, I come from a different space.</p>
+<p id=8eb0 class="phone s03"><cite>Michael_Linck:</cite> I don't know that much about VC, but I think I really need to figure it out because at least enough of it to make sure that we're not building in the wrong direction, Because we have various schemas under discussion for DPSPs. I'm trying to help figure out what are realistic schemas for upcoming sectors. also work on some initiatives together with GS1 on this topic and at least we want to make sure that whatever we're advocating for isn't literally impossible to use verifyable credentials business wallets with later right so that's…</p>
+<p id=0498 class="phone s03"><cite>Michael_Linck:</cite> what I'm trying to cover the basis I is next so I'm just waiting</p>
+<p id=5c27 class="phone s01"><cite>Ingo_Wolf:</cite> All right. we had some outage shortly on your link,… Ingo Wolf:</p>
+<p id=5cd9 class="phone s05"><cite>Ivan_Herman:</cite> Yes, a totally different type of question.</p>
+<p id=dc7e class="phone s01"><cite>Ingo_Wolf:</cite> Michael, but all good. Yeah. Ian, you raised your hand as well. Yeah.</p>
+</section>
+
+<section>
+<h3 id=855c>Data Model Impact Of Business Wallets</h3>
+<p id=9e39 class="phone s05"><cite>Ivan_Herman:</cite> Ingo, you have listed a number of situations and characteristics where a business wallet is different from the personal wallets. And it is true that if I look at the various VC specifications, the examples that are used are usually from the personal wallet world and it's only lately that we have begun to take maybe more seriously other types of wallets.</p>
+<p id=10005 class="phone s05"><cite>Ivan_Herman:</cite> So my question is the differences that you perceive do they have any influence on the data model itself? Put it another way are there problems raised by these types of wallets which should lead to a modification of the data model. That's an absolutely crucial question here…</p>
+<p id=ce58 class="phone s01"><cite>Ingo_Wolf:</cite> …</p>
+<p id=b733 class="phone s05"><cite>Ivan_Herman:</cite> because this is the time when we can do any changes if it is justified.</p>
+<p id=d971 class="phone s01"><cite>Ingo_Wolf:</cite> so far I did not recognize any gaps anything that is not possible to express with the VC data model 2.0. I'm not quite sure if the continued discussion on what shall be in the credential subject might lead later on to additional let's say standard that we want to use for certain use cases, but this is pretty more like a gut feeling at the moment.</p>
+<p id=7511 class="phone s05"><cite>Ivan_Herman:</cite> That's good to hear.</p>
+<p id=ddb3 class="phone s01"><cite>Ingo_Wolf:</cite> So far I didn't recognize anything missing, but others feel free to add on</p>
+<p id=f913 class="phone s04"><cite>Phillip_Long:</cite> Ivonne, isn't that one of the I guess you could consider the benefits at context file allowing you to have industry specific terminology and…</p>
+<p id=0315 class="phone s04"><cite>Phillip_Long:</cite> such a part of that community. Done.</p>
+<p id=04e2 class="phone s05"><cite>Ivan_Herman:</cite> Yeah,…</p>
+<p id=48f4 class="phone s05"><cite>Ivan_Herman:</cite> Of course. but yeah, I could imagine that the data model in general has let's say some restrictions or whatnot that are standing in the way of business wallets. So it's not only the question of do we have all the right properties that are defined in the model. I mean that can be extended and every time there are some properties coming or claims if you like coming up then we can have a long discussion whether it deserves to be in the core model or whether it should be some application dependent vocabulary that's always a discussion but what I was more worried about is that there may be some restrictions here and…</p>
+<p id=9db6 class="phone s05"><cite>Ivan_Herman:</cite> there in the model which I don't know that stand in the way and What I hear is that the overall structure is okay and that's important.</p>
+<p id=dea3 class="phone s01"><cite>Ingo_Wolf:</cite> Yes, 100,…</p>
+<p id=776a class="phone s01"><cite>Ingo_Wolf:</cite> You're still muted.</p>
+<p id=dff8 class="phone s06"><cite>Ronald_Koenig:</cite> Sorry, I'm just muted.</p>
+<p id=c294 class="phone s05"><cite>Ivan_Herman:</cite> You are still muted.</p>
+<p id=24e5 class="phone s06"><cite>Ronald_Koenig:</cite> But I think in the VC data model there is no restriction which is standing in the way that we can use it in the business wallet. So I'm pretty sure that the VC data model is the most advanced credential format we are currently discussing for the u business wallet.</p>
+<p id=5590 class="phone s05"><cite>Ivan_Herman:</cite> Come on.</p>
+<p id=2f49 class="phone s06"><cite>Ronald_Koenig:</cite> But on the other hand, and this is nothing to do with the VC data model itself, there are three formats which currently are discussed in the European Union or in the project. This is the MDOT format for this mobile driver license, the SDJ verifiable credentials and the VCDM 2.0. My understanding is that the most advanced ones are the VCDM 2.0,</p>
+<p id=6ce7 class="phone s06"><cite>Ronald_Koenig:</cite> zero. But they are also not so simple. with respect for example that JSON ID has to be used and some guys are still reluctant to use JSON ID for expressing the content of the data I'd say W3C3 credentials but there is from my point of view it's not a good idea to let me say it to open or to watering the VCDM 2.0 zero format in a way that it goes closer to something…</p>
+<p id=23e8 class="phone s06"><cite>Ronald_Koenig:</cite> which is used in the sense of endoc or SD PCs.</p>
+<p id=7621 class="phone s05"><cite>Ivan_Herman:</cite> Yeah, I don't even want to enter the discussion about M do and…</p>
+<p id=83c1 class="phone s05"><cite>Ivan_Herman:</cite> ST Jot because it has a lots of shall we say mindly non-technical reasons of the discussions which I don't think that we should go there. these discussions do happen. They are sometimes They are sometimes disagreeable and let's do it at a different forum. But one specific question I would have as a kind of an example of what I was questioning.</p>
+<p id=f55f class="phone s01"><cite>Ingo_Wolf:</cite> Mhm.</p>
+<p id=6d36 class="phone s05"><cite>Ivan_Herman:</cite> Ingo, you refer to a number of possible identity schemes that are can be used to identify a subject. There is a restriction in the BCDM which says that the identifier which is there must be a URL. Is that for example a possible cause for friction or is this usually accepted that it has a URL? I mean, I just want to make sure that this is all working. And this is one thing that did come up at some point in another discussion that, they have identifier numbers and…</p>
+<p id=1b99 class="phone s05"><cite>Ivan_Herman:</cite> what the heck is a URL and why would I use a URL?</p>
+<p id=c60b class="phone s06"><cite>Ronald_Koenig:</cite> So from my point of view,…</p>
+<p id=a4fb class="phone s06"><cite>Ronald_Koenig:</cite> this is not a restriction at all because URLs with a schema. you can define a schema for URUDs or for URLs what we are doing or any proprietary schema you can generate for yourself so that you can express everything with it. I don't see any restriction with this one and currently we are also using for the ideas or for already different schemas like URU ids or…</p>
+<p id=778e class="phone s06"><cite>Ronald_Koenig:</cite> ds or urls or the http urls or I think there's no restriction from my point of view which should be thinking about that we are not using uris in this context</p>
+<p id=2e04 class="phone s05"><cite>Ivan_Herman:</cite> You don't have to convince me,…</p>
+<p id=dc6c class="phone s05"><cite>Ivan_Herman:</cite> Ronald. It's</p>
+<p id=791b class="phone s04"><cite>Phillip_Long:</cite> One thing I might ask is in the context of a business wallet that does introduce some possibility benefit of using capabilities as a mechanism of bounding or constraining what a member of the business organization's use of their particular cap their use of the wallet for actions that they might in fact engage in. And I'm thinking now of capabilities in the context of ZCAPS as an addition to this format, it's less relevant in user wallet context of individuals.</p>
+<p id=076c class="phone s04"><cite>Phillip_Long:</cite> But when you're thinking of this more in the context of sending credentials down to a division within the organization, there may be boundaries around which you would like the person re the entity receiving that in the role that they're in to be constrained within that a capabilities framework layered into this could be useful to. And that's probably the only place it could be,…</p>
+<p id=8a64 class="phone s04"><cite>Phillip_Long:</cite> but it may be valuable in this unique business wallet and context.</p>
+<p id=13a9 class="phone s01"><cite>Ingo_Wolf:</cite> Yeah, I think u authorization capabilities like Zcap LD or…</p>
+<p id=2522 class="phone s01"><cite>Ingo_Wolf:</cite> in verifiable credentials is one way to implement delegation of authorization within the company. we refer to that sometimes as power of attorney for example. But this is then rather used for presenting to external comp entities to enable a verifier to check the proof of delegated authorization in the power of attorney credential.</p>
+<p id=a343 class="phone s01"><cite>Ingo_Wolf:</cite> But the use case is as well valid that you mentioned Philillip. So if you think of internal organizational structures where you want to add boundaries within the organization such credentials that delegate authority might be used as well. And yeah, as I mentioned, one implementation opportunity is definitely provided by Zcap LD. it's probably not the only one I would say</p>
+<p id=f8a9 class="phone s01"><cite>Ingo_Wolf:</cite> All Any other questions or remarks? …</p>
+<p id=62ab class="phone s04"><cite>Phillip_Long:</cite> Would you probably provide a link to your slides in the notes be going forward?</p>
+<p id=ae15 class="phone s01"><cite>Ingo_Wolf:</cite> yes, I can provide that. Just a moment. have to adjust the settings to make it available.</p>
+<p id=87f6 class="phone s04"><cite>Phillip_Long:</cite> with respect to your schema content comments earlier the only in circumstance so far that I've been involved in where there was an issue was in the translation of verifiable credentials to represent human resource related data and that was not because of the schema of the VC per se. It was because of the version of JSON LD schema that the HR companies were using. they were not particularly contemporary.</p>
+<p id=3d53 class="phone s04"><cite>Phillip_Long:</cite> they were using JSON schema version 4…</p>
+<p id=f538 class="phone s04"><cite>Phillip_Long:</cite> which is probably what 15 years old and there are significant breaking differences but that was the only time we ran into that.</p>
+<p id=8a54 class="phone s03"><cite>Michael_Linck:</cite> Yeah. …</p>
+<p id=1943 class="phone s03"><cite>Michael_Linck:</cite> there's a lot of those kinds of landlines in the DPP standardization stuff because there's companies that want to keep JSON LD entirely out of DPP. There are rules that a backup service provider who is not necessarily the manufacturer that holds the DPP, he has to be able to reproduce the DPP. exactly as the manufacturer would have in case the manufacturer has an outage. I'm not entirely sure what happens in that scenario with the digital signatures. Do they just get, sent in and replicated by the backup service provider? Is that still count as authenticating the business? and then I have questions around, there's a couple of different options. You mentioned digital twins.</p>
+<p id=9fb7 class="phone s03"><cite>Michael_Linck:</cite> some of us some people in the group are pushing very hard to make sure that digital twins and AES don't infect the DPP schema at least not on the wire and that DPP remains neutral to whether you have a complex digital twin in the background or not or how you want to keep your product described in the simplest JSON possible for the purpose of DPPS. so there's a fair bit of that kind of circumstantial stuff going on in the DPP standardization bodies. and that's just to introduce myself by the way that's why I'm here. I'll be trying to learn more about this.</p>
+<p id=f76c class="phone s03"><cite>Michael_Linck:</cite> I'm trying to make sure that there's not going to be huge pitfalls or something that maybe people are unaware of on either side because it looks to me like a fiberable credentials will probably be some kind of part of the system in terms of businesses registering with the EC as economic operators and making sure that they can issue DPPs. And so I'm just trying to make sure I understand this piece better.</p>
+<p id=5bef class="phone s04"><cite>Phillip_Long:</cite> The content the concept that you just introduced of either an outage of the company or the company's sudden disappearance is an issue that has been plaguing I know institutions of a higher education in the US given the fact there's been a lot of colleges and universities that have gone out of business so to speak in the last few years and the question then how do you verify those</p>
+<p id=10006 class="phone s04"><cite>Phillip_Long:</cite> issued credentials or manage them. and one solution that has been done is to set those keys of the original organization in some kind of an escrow account well in advance so that unusual circumstance arrive, there is a plan in place where someone can take the original private keys and use them properly for whatever bounded circumstances.</p>
+<p id=5665 class="phone s03"><cite>Michael_Linck:</cite> Okay.</p>
+<p id=c59b class="phone s04"><cite>Phillip_Long:</cite> You've probably already seen that, but that's what has been done.</p>
+<p id=8087 class="phone s03"><cite>Michael_Linck:</cite> Yeah. This is why I was asking the questions about whether the verifiable potential is always actually encrypting the content or not, on whether there's cases where you could bypass that and just send content completely unencrypted or encrypted just via HTTPS whatever and then check a signature later but it's okay I'll read up more obviously and…</p>
+<p id=cfa8 class="phone s01"><cite>Ingo_Wolf:</cite> Welcome.</p>
+<p id=2e06 class="phone s03"><cite>Michael_Linck:</cite> again I appreciate your patience I wasn't going to ask anything during the session I just realized we have more time and so I might as well if no one else was chatting</p>
+<p id=82c9 class="phone s05"><cite>Ivan_Herman:</cite> no reason of apologizing.</p>
+<p id=a487 class="phone s05"><cite>Ivan_Herman:</cite> I mean that's why we are here. one thing to make very clear the verify credentials spec does not talk about encryption at all. That word is not used so to say. it's only about signature.</p>
+<p id=37f1 class="phone s03"><cite>Michael_Linck:</cite> Yeah. Yeah, Philip, I don't mean unencrypted in the sense that the DPP is a public document.</p>
+<p id=6909 class="phone s03"><cite>Michael_Linck:</cite> So anybody body can access and…</p>
+<p id=5d81 class="phone s03"><cite>Michael_Linck:</cite> pull it from your server at any time more or less. just like any web page. so it's more on that level. Yeah. Okay. Thank you.</p>
+<p id=d673 class="phone s05"><cite>Ivan_Herman:</cite> Okay, I misunderstood.</p>
+<p id=1899 class="phone s06"><cite>Ronald_Koenig:</cite> Great. But Michael,…</p>
+<p id=10007 class="phone s06"><cite>Ronald_Koenig:</cite> if you ask what verifiable credentials can do for you with respect to digital product passports, my understanding is that and we are also providing digital product passport and have a product for this one. Currently I think the situation is that most of our customers are not looking for veri digital product passports. They are looking for different product passports. And how you make them verifiable is the thing what you are adding with verifiable credentials by putting the DPP into the credential subject and…</p>
+<p id=bdb3 class="phone s03"><cite>Michael_Linck:</cite> Yeah. Yep.</p>
+<p id=a0e8 class="phone s06"><cite>Ronald_Koenig:</cite> then make assertion about it. So that someone can make assertion that the digital product passport is authentic and that the data are with according to the assertion. So that means to the issue of this digital product passport that the data at the time when the credential was created or if you ask credential status on relocation status later also anytime that the data are correct. From my point of view, a digital product passport which is not verifiable it's fine because most of the guys don't need verifiability in the sense that they really go through it and…</p>
+<p id=e494 class="phone s06"><cite>Ronald_Koenig:</cite> look that for example semen has make a proof or assertion that some product they have produced before is really with the specification…</p>
+<p id=cf09 class="phone s03"><cite>Michael_Linck:</cite> Yeah. If I can call Semens this domain and…</p>
+<p id=4515 class="phone s06"><cite>Ronald_Koenig:</cite> but if you need this one Yeah.</p>
+<p id=2f7b class="phone s03"><cite>Michael_Linck:</cite> Seammens tells me they did make that product, then that's probably good enough for me. but at the same time, I saw your examples of embedding, different certificates from different certification issuers, right? and then saying that okay your DPP in the end is a result of a number of certifications that you got plus some content that you added and I guess I will be looking to understand better how that fits together and how you have multiple DC. Yeah.</p>
+<p id=f750 class="phone s06"><cite>Ronald_Koenig:</cite> I can give you example where we are using really verifiable credential is for example for carbon footprint. So if someone like a certification body is certifying your production process and is asserting that this production process is generating per product this amount of carbon so that you can prove against the third party that during your production process your product was generated with this emission of carbon in this context.</p>
+<p id=3896 class="phone s06"><cite>Ronald_Koenig:</cite> Then you need verify the credential. So then your product is your production process and you need a statement of someone what you can take to someone else and…</p>
+<p id=10b9 class="phone s03"><cite>Michael_Linck:</cite> Yes. Yeah.</p>
+<p id=ae94 class="phone s06"><cite>Ronald_Koenig:</cite> then you are using it. But for example Yep.</p>
+<p id=4802 class="phone s03"><cite>Michael_Linck:</cite> Yeah. Yeah, I think for DOPC's for EPD kind of things and construction for mil test certificates and…</p>
+<p id=0e26 class="phone s06"><cite>Ronald_Koenig:</cite> That's Yeah.</p>
+<p id=adc6 class="phone s03"><cite>Michael_Linck:</cite> things like this there are definitely clear applications right I just want to make again my only eye is on since I'm in the schema working group I want to make sure we don't do something stupid that makes it difficult to part out the relevant part of a DPP and apply a verifiable credential to it individually from the rest of the DPP for example and things like that because in general the EP is served as a single response from a server so it's like okay here's my DPP it has a header</p>
+<p id=a277 class="phone s03"><cite>Michael_Linck:</cite> It has a bunch of basic product data like the length in this case let's take steel the alloy composition and so on and so forth and then it has the mil test certificate and obviously that thing is going to have a signature on it so this is but anyway I know I need to read up is…</p>
+<p id=5907 class="phone s03"><cite>Michael_Linck:</cite> what I'm saying and I will be reading but if you guys are telling me yeah that seems fine then it's probably good enough for</p>
+<p id=3f03 class="phone s06"><cite>Ronald_Koenig:</cite> And…</p>
+<p id=53a5 class="phone s06"><cite>Ronald_Koenig:</cite> another thing why we are verify a credential in the context of DPPs is if you have to prove your role inside or with respect or in the context of this DPP. Let me say for example, if you are the manufacturer or the economic operator of a product and you want to prove that the credential you are offering to someone is really presented by the manufacturer or really presented by the economic operator for example of a battery or something like that.</p>
+<p id=45ea class="phone s06"><cite>Ronald_Koenig:</cite> If you want to do this one then we are using presentations because this is the idea that you are bind this credential to someone who holds it and the holder for example the economic operator can present this credential and prove that he is really the economic operator. So that you have not to be the credential subject…</p>
+<p id=793f class="phone s03"><cite>Michael_Linck:</cite> Okay. Okay. Cool.</p>
+<p id=10008 class="phone s06"><cite>Ronald_Koenig:</cite> but if you are mentioned inside this credential subject for example as economic operator you can prove that you are the holder of this credential and send it over. This is what we are currently for example using and the other way for example we are also using DPPS in the context of data spaces. In this case, we are not providing any assertion proofs on it because we assume that the data provider is let me say authenticated by the data consumer and…</p>
+<p id=2e97 class="phone s06"><cite>Ronald_Koenig:</cite> is trusting that it comes from a trusted source and therefore trusting the data which are in the digital twin or asset or however we call it. And for me this is also a DPP and you can trust this DPP…</p>
+<p id=5d0e class="phone s03"><cite>Michael_Linck:</cite> Yeah, exactly.</p>
+<p id=10009 class="phone s06"><cite>Ronald_Koenig:</cite> because you got it from seammens and seammens was stating this is a valid DPP then you don't need any assertions any longer. So that means what I mean is you have to look where you really need it. And the really benefit you get from verifiable credentials that a third party is making a statement about something what you can present to a third party and…</p>
+<p id=8b39 class="phone s03"><cite>Michael_Linck:</cite> So that would actually be more applicable to the backup. So,</p>
+<p id=3983 class="phone s06"><cite>Ronald_Koenig:</cite> and unfair discussion.</p>
+<p id=cc4f class="phone s03"><cite>Michael_Linck:</cite> it would be more applicable even to the backup operator that might not be for example on Seaman's domain, But that's supposed to host a copy so it sounds like the scenario would more be that Seammens would certify that…</p>
+<p id=c9d1 class="phone s03"><cite>Michael_Linck:</cite> if you got this DPP from this backup operator that is in fact the one that Seammens passed with that job. Okay.</p>
+<p id=8526 class="phone s06"><cite>Ronald_Koenig:</cite> Yeah. Yeah.</p>
+<p id=fc39 class="phone s06"><cite>Ronald_Koenig:</cite> That's the more or less the idea behind this one and I can only say we are only using verifiable credential where it is necessary. if you just try to use verifiable credential if you in this use case you don't need it. It is just overhead you are adding. So that means you have every time to ask what the trust model is. Do you have some trust which you have to express against a verifier from a third party then verify the credential is the best thing but then you have also to make sure because you said you are in the JTC 24 and I'm a little bit concerned with this one because verify credentials using JSON ID and mandating using JSON ID with all the different proof types and the certain proofs we have because they are using the RDFS</p>
+<p id=1000a class="phone s06"><cite>Ronald_Koenig:</cite> as canalization and this stuff and I'm not so really sure currently…</p>
+<p id=30f2 class="phone s06"><cite>Ronald_Koenig:</cite> if with the JTC 24 really on the way that we are using JSON ID as a basic for everything or some Yeah.</p>
+<p id=6448 class="phone s03"><cite>Michael_Linck:</cite> …</p>
+<p id=2d33 class="phone s03"><cite>Michael_Linck:</cite> Jason LD, it's more a question of whether push for it to be allowed for interpreting a DPP or not because it's definitely not going to be required. the main question are people going to try to prohibit it? there's a large faction that would argue against it being prohibited,…</p>
+<p id=76d8 class="phone s03"><cite>Michael_Linck:</cite> of course. and</p>
+<p id=1154 class="phone s06"><cite>Ronald_Koenig:</cite> And this is something…</p>
+<p id=9a96 class="phone s06"><cite>Ronald_Koenig:</cite> which really hurts us a little bit because yeah we have this data integrity proofs and a lot of the data integrity proofs are based on for example BBS plus where we have the zero knowledge proofs in are based on RDF penalization so that you can really do it and get the messages but you can prove separately but if you are not using JSON ID. You have to for back to something like jot this SD jots or something like that. And this is then of course not as SD jot. Yes. And this is of course the cap you are losing a lot of cap capabilities which you have with more sophisticated proformats.</p>
+<p id=de6e class="phone s01"><cite>Ingo_Wolf:</cite> Thanks for the comprehensive summary, Ronald. very good. looking at the clock,…</p>
+<p id=9178 class="phone s06"><cite>Ronald_Koenig:</cite> Thank you.</p>
+<p id=9ab3 class="phone s01"><cite>Ingo_Wolf:</cite> we are, coming towards the end of our 60 minutes. are there any further for remarks, questions, suggestions seems no. Then yeah, I would thank you very much for the contributions and the questions today. I hope it was clarifying a little bit for you especially Michael.</p>
+<p id=9481 class="phone s01"><cite>Ingo_Wolf:</cite> So welcome also for the upcoming meetings to dig deeper into the topic might be helpful for also your JTC activities maybe yeah…</p>
+<p id=8a4a class="phone s03"><cite>Michael_Linck:</cite> Get him.</p>
+<p id=fda8 class="phone s01"><cite>Ingo_Wolf:</cite> then I would say let's close the round five minutes for the others and…</p>
+<p id=9a81 class="phone s06"><cite>Ronald_Koenig:</cite> PPP. What?</p>
+<p id=658c class="phone s05"><cite>Ivan_Herman:</cite> Byebye.</p>
+<p id=036c class="phone s01"><cite>Ingo_Wolf:</cite> welcome you next week to our topic DPP. Yes. Thank you. Bye.</p>
+<p id=bd48 class="phone s03"><cite>Michael_Linck:</cite> Awesome. Thank you. Bye.</p>
+<p id=a13c class="phone s04"><cite>Phillip_Long:</cite> Cheers. Meeting ended after 00:55:23 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

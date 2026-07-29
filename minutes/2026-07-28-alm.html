@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 28 July 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>28 July 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Dmitri_Zagidulin, Eric_Schuh, Eric_Schuh's_Presentation, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Patrick_St-Louis, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#0d4e">Spreadsheet For Progress Tracking</a></li>
+<li><a href="#14c4">Data Integrity Crypto Suite Versioning</a></li>
+<li><a href="#8e5f">Test Suite Pull Request</a></li>
+<li><a href="#6711">Pull Request Review</a></li>
+<li><a href="#d660">Threat Model Document Link</a></li>
+<li><a href="#0d62">Exchange Termination Issue</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=3175 class="phone s01"><cite>Kayode_Ezike:</cite> Everyone skip another minute or so started it.</p>
+<p id=5924 class="phone s01"><cite>Kayode_Ezike:</cite> 3 minutes past the hour. Go ahead and get started. hello everyone and welcome. Today is July 28th, 2026. This is the weekly call for the ver credentials API for life management task force. My name is Ky Desik. We'll be leading you through the call today u with support from Patrick because my computer is so acting a little bit. we have a pretty strong agenda today. A bunch of things to talk about but before we get started just really quickly as a reminder these calls are recorded and transcribed.</p>
+<p id=97a9 class="phone s01"><cite>Kayode_Ezike:</cite> supposed to be for folks who are in the working group and we are bound by the rules and policies at WTC policies as well as other conduct. so before we get started really quickly, I want to know if there are any community announcements, anything that we should know as a group thing and see all familiar faces, but if anyone wants to give an update or reintroduction, please feel free to do so now.</p>
+</section>
+
+<section>
+<h3 id=0d4e>Spreadsheet For Progress Tracking</h3>
+<p id=2c75 class="phone s01"><cite>Kayode_Ezike:</cite> Yes, totally great. So, today the main things we wanted to do are to get a quick update on the thread model. I think I saw some activity from Eric around swim lane issue that was up. And then I also wanted to talk through test suite. there's a outstanding PR that Patrick put together and would like to push that forward and then from there we wanted to distribute some issues and PRs. Anything else that folks want to cover today?</p>
+<p id=50f3 class="phone s01"><cite>Kayode_Ezike:</cite> I think at some point I haven't had a chance to look at this yet, but I want to put together a NES sort of spreadsheet for past leaders to track their progress on things. get the link for that right now in chat so that we can briefly touch on that as well. There it is. nothing else then we can go ahead and dive in. All right, I suppose we could start with that Patrick the link that you just opened.</p>
+</section>
+
+<section>
+<h3 id=14c4>Data Integrity Crypto Suite Versioning</h3>
+<p id=ffff class="phone s01"><cite>Kayode_Ezike:</cite> And I'll admit that I haven't had a chance to look at this yet, but essentially this spreadsheet we want to put it together just in order for us to keep track of where we're at the different specs in the process of recommendation for And so for VCOM that is in line on line six I see. And it looks like people actually have started filling this and I think this is accurate actually.</p>
+<p id=82f1 class="phone s01"><cite>Kayode_Ezike:</cite> more or less I would say the feature freeze we have a light version of that just that that's kind of being used with the tagging but in a way you can say as that's sweet as well we've made progress there too we have a first draft of that and I know that there's a bunch of issues that are open to sort of refine those but I'll put a check there as well for the other things related to horizontal review request. we're still working through all the issues. A few weekends ago I was able to go through every issue by the ones that I think are under the 10 and leave comments and questions under the ones that I feel still have open unresolved questions. And so at the very least we made an inventory of all the different issues that are currently out there.</p>
+<p id=6645 class="phone s01"><cite>Kayode_Ezike:</cite> And it's just a matter of continuing to march towards creating PRs for them. So I think I saw that monitor just joined. Mon, we just opened up the spreadsheet that you shared earlier today. and for the most part looks like it's up to date. I think feature freeze and test can possibly also use a checkbook. Go ahead.</p>
+<p id=500a class="phone s02"><cite>Patrick_St-Louis:</cite> I guess my question is…</p>
+<p id=10000 class="phone s02"><cite>Patrick_St-Louis:</cite> how will these data integrity suite 1.1 be signaled and a proof and a data integrity proof will they have a different crypto sweetite string? because we don't currently have a way to track this versioning. We only have the year.</p>
+<p id=4c70 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=1ca0 class="phone s02"><cite>Patrick_St-Louis:</cite> So would they be published with a new year that this new version is published?</p>
+<p id=e5e8 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Bye.</p>
+<p id=a532 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes.</p>
+<p id=fd65 class="phone s03"><cite>Manu_Sporny:</cite> If we made a breaking change yes we would publish a new cryptosweet string and that's how it would be done. V1.1 is not supposed to introduce any breaking changes. So we don't one for version 1.1 the cryptoeet string won't change we'll keep doing the same thing and so on so forth. So I think that's the current approach. If we release a 2.0 at that point we may do another date string.</p>
+<p id=40d3 class="phone s03"><cite>Manu_Sporny:</cite> So just to give an example there's the extended information crypto suite which came out of the verifiable credential barcodes work that is a totally separate crypto suite right now but it probably should be folded into the ECDSA crypto suite and we may do that two or three years from now but for right now I don't think we end up really doing it. So there's a mechanism for us to do this, but I don't think we lightly create new crypto sweet strings. We have to have a very good reason and typically we're expecting a breaking change of a deprecation of an old feature to trigger that.</p>
+<p id=8c36 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=d0a1 class="phone s03"><cite>Manu_Sporny:</cite> Did that answer your question Patrick?</p>
+<p id=b3e3 class="phone s02"><cite>Patrick_St-Louis:</cite> I think so. I thought we had data integrity 2.0. Am I imagining this?</p>
+<p id=aa09 class="phone s02"><cite>Patrick_St-Louis:</cite> Isn't that integrity 2.0 already a thing? Okay, it's just the thing I just made up.</p>
+<p id=af30 class="phone s03"><cite>Manu_Sporny:</cite> We do not know that it's not a thing and…</p>
+<p id=0e66 class="phone s03"><cite>Manu_Sporny:</cite> it probably won't be a thing for another two to three Your sin.</p>
+<p id=2a49 class="phone s04"><cite>Dave_Longley:</cite> The Yeah,…</p>
+<p id=9ae6 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=13dc class="phone s04"><cite>Dave_Longley:</cite> it's important not to conflate the context version with the spec version.</p>
+<p id=a93d class="phone s01"><cite>Kayode_Ezike:</cite> Any other questions or…</p>
+<p id=92e6 class="phone s04"><cite>Dave_Longley:</cite> The context version, I believe, says V2, but that's not the same thing as the spec version.</p>
+<p id=6cd9 class="phone s01"><cite>Kayode_Ezike:</cite> comments regarding this deliverable track here?</p>
+</section>
+
+<section>
+<h3 id=8e5f>Test Suite Pull Request</h3>
+<p id=da84 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks again, We'll continue to keep that updated as we make progress. Great. So, let's get into pull requests. I want us to start with the test actually and that one is in the decom testic here.</p>
+<p id=9e0b class="phone s02"><cite>Patrick_St-Louis:</cite> So I'll go ahead. So this has been open for a couple of weeks now. just had a call with Coyote before this call. So we went over I'm hoping to get his or someone's approval so we can go forward with this. I know I could just merge it, but I'd prefer to get at least one approval. again, this is just the scaffolding. It installs the dependencies. it adds a normative statement file which is a breakdown of the normative statements per their section.</p>
+<p id=b7b8 class="phone s02"><cite>Patrick_St-Louis:</cite> And the next PR will be starting to put test for mostly issuer envir verifier service as a first phase. something that coyote flag and I think it's an interesting distinction is this endpoint in our implementation.</p>
+<p id=d038 class="phone s01"><cite>Kayode_Ezike:</cite> Sorry.</p>
+<p id=bf2d class="phone s02"><cite>Patrick_St-Louis:</cite> So traditionally what we do in these implementations file is people they provide a very precise endpoint that's been called by the test suite. In the case of VCOM, this is not really a specific endpoint. It's more of the base endpoint of the service being called, right? So, an issuer service, you would give your issuer service base endpoint and then it will have the other thing. Coyote had the idea that perhaps we could add another element here that says base URL for this service so there's no conflation between endpoint and this base endpoint. this is something I was thinking as how to, not break existing implementation.</p>
+<p id=562d class="phone s02"><cite>Patrick_St-Louis:</cite> So it's very specific that when someone tags with VCOM, it's expected that it's going to be an API based testing. It's going to pay test for paths that exists as the base value. so I'm wondering if we should just reuse endpoint and delegate this to the tag or should we add another thing like a base service endpoint or base service URL to keep these two very separate. And in the case that you're tagged with VCOM, it would take the base URL value and you could still keep your other tags that would use the endpoint value. Yes, Mu.</p>
+<p id=4a04 class="phone s03"><cite>Manu_Sporny:</cite> I don't feel strongly about this, but let's just kind of keep using endpoint and have the tag let you know what happens with the endpoint, I don't think it's going to break anything to do that.</p>
+<p id=2031 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. No.</p>
+<p id=b041 class="phone s03"><cite>Manu_Sporny:</cite> Unless you found something. So, I'd prefer just to use the tag to help the driver figure out…</p>
+<p id=35c2 class="phone s01"><cite>Kayode_Ezike:</cite> I don't know. that. Manu Sporny:</p>
+<p id=28a1 class="phone s03"><cite>Manu_Sporny:</cite> what to do with the endpoint value. the danger with adding more and more like options and it makes it a little more complicated.</p>
+<p id=0755 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. …</p>
+<p id=de14 class="phone s03"><cite>Manu_Sporny:</cite> Sometimes you're using endpoint, sometimes you're using base When do you do one over the other? That kind of stuff. So I'd rather just use and in hindsight if we could time travel back what is it seven years or whatever maybe we should have just used URL or service URL or something else. But anyway, just a</p>
+<p id=40b0 class="phone s02"><cite>Patrick_St-Louis:</cite> Also I don't feel too strongly. I'm more of the option let's try one way and if there's a problem we're making this test suite so of course we can make change to this test suite. if it becomes a problem then could just be like this. yeah I'll stop the discussion for this for now. We may revisit this eventually…</p>
+<p id=05e7 class="phone s02"><cite>Patrick_St-Louis:</cite> if there's a need.</p>
+<p id=2b32 class="phone s01"><cite>Kayode_Ezike:</cite> And at the moment it's been open for two weeks now.</p>
+<p id=c0d1 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, that's pretty much all I had for this PR. there again, there's not much content on this PR. It's mostly read me, the packages, and the big thing is the normative statements. So, this is just a breakdown of the must and required statements in the spec kind of broken down by their section in the spec. So, this is just to give us a good place to look at for deciding if we have sufficient coverage. And each of these statements going to have at the minimum one test.</p>
+<p id=3ddd class="phone s01"><cite>Kayode_Ezike:</cite> I just subitted my review and given what we just decided we can ignore the comment on the end point versus URL. So yeah do we feel comfortable merging it or do folks want a little bit more time to go ahead.</p>
+<p id=2e05 class="phone s02"><cite>Patrick_St-Louis:</cite> I'll merge it.</p>
+<p id=5d53 class="phone s02"><cite>Patrick_St-Louis:</cite> We got some approval. again, there's no test in there, so I'm not too worried. This is mostly informative and packages. for the other one, the actual test, we might want to have a bit more time, but just given, it's already been two weeks, so we want to try to get some stuff moving forward if that's okay with the group, of course.</p>
+<p id=2460 class="phone s01"><cite>Kayode_Ezike:</cite> That's right.</p>
+<p id=863b class="phone s01"><cite>Kayode_Ezike:</cite> Okay, great. My name</p>
+<p id=2580 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to that. I'm test suites I think we can be a little more fast and loose with because you will definitely hear from implementers if they disagree with one of the tests you write, and they'll refuse to implement it or pass it if they disagree with it. So there is a good feedback loop for test suites…</p>
+<p id=23b4 class="phone s03"><cite>Manu_Sporny:</cite> which are implementers that if you do the wrong thing they will definitely let so I think that's, Thought are these all of the normative statements in the spec or did you just pick one for each section?</p>
+<p id=2c86 class="phone s02"><cite>Patrick_St-Louis:</cite> I think these,…</p>
+<p id=09c8 class="phone s02"><cite>Patrick_St-Louis:</cite> I can review again, but these are all the ones that we would be testing.</p>
+<p id=5748 class="phone s03"><cite>Manu_Sporny:</cite> Interesting. Yeah.</p>
+<p id=8eca class="phone s02"><cite>Patrick_St-Louis:</cite> we need to understand how they break down per section. So obviously the conformance section has this per issuer. but then in the issuance section there's going to be a couple more. this file is meant to be a living file.</p>
+<p id=ba76 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=a701 class="phone s02"><cite>Patrick_St-Louis:</cite> That means we need to be able to reproduce it ideally with a script or something by reparssing the spec. and yeah, that's a bit where it's at right now. Is your impression that there's not enough too much or</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> I've got a couple of thoughts. So the first one is I was expecting many more normative statements than this. I know that we should not be pulling the normative statements out of the JSON schema for the objects that are set and returned maybe right…</p>
+<p id=bc61 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=9a40 class="phone s03"><cite>Manu_Sporny:</cite> because it matters what you get back in the return. It matters what you send and it matters what you get back. And some of it is JSON schema for the VC itself and the other stuff is JSON schema for I was expecting payloads in the HTTP call to be included in the tests. and I don't know if those are there. And then the other thing is that we have a return code section and I'm wondering if we are testing those as well, so I'm openly wondering about it.</p>
+<p id=e9bc class="phone s03"><cite>Manu_Sporny:</cite> I reviewed it. I approved it. I think it's a good place to start. Just something for you to think about, Patrick, as we go through</p>
+<p id=803c class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I can review this and…</p>
+<p id=f611 class="phone s02"><cite>Patrick_St-Louis:</cite> give a more accurate response to this next time because this can also serve as a sort of do we have enough or too much statement, It can be not a quality check of the spec but just give a metric value of the spec how many normative statements we have and do they make sense? Are they testable?</p>
+<p id=8e9c class="phone s02"><cite>Patrick_St-Louis:</cite> So maybe what I can do is add a little parsing script or instruction to do this and give a more precise answer of how many normative statements we are testing in the spec breakdown par section. I had done kind of a graph breakdown before. I can maybe bring this back online so we can get a better understanding. Yep.</p>
+<p id=adf4 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think that would be good. The other thing that I would expect implementers vendors just implementers to look and see the end points right because we do define endpoints in the specification and we say a conforming implementation must implement XYZ section and that section contains a couple of end points there's end points</p>
+<p id=05a2 class="phone s03"><cite>Manu_Sporny:</cite> ratuments, there's end points for verification, there's end points for workflows.</p>
+<p id=f033 class="phone s03"><cite>Manu_Sporny:</cite> And so I would expect to see conformance statements for each one of those entries there, So if you are conforming issuer coordinator, you implement get this thing and post that thing,…</p>
+<p id=a978 class="phone s02"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=83e8 class="phone s02"><cite>Patrick_St-Louis:</cite> some of these are not normative, right? Some of these are optional inputs. Yes.</p>
+<p id=106f class="phone s03"><cite>Manu_Sporny:</cite> But some of them are normative and for the ones that are normative, I would expect those to be in there. And for some of the ones that are optional and we don't need to implement that as part of the W3C process, but I would imagine that, customers looking for implementers or…</p>
+<p id=f876 class="phone s03"><cite>Manu_Sporny:</cite> vendors would want to see that the vendor implements this feature that I really want and…</p>
+<p id=7e6f class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=7a56 class="phone s03"><cite>Manu_Sporny:</cite> they're conformant with the spec, right? Mhm.</p>
+<p id=251e class="phone s02"><cite>Patrick_St-Louis:</cite> I think that makes sense. And this is where it breaks it down it gives a clear must here for the interface describe an issue and then the other interface are a main right. So we may not want to pass this get thing and then it gets into thing with the storage service right which is also optional. Obviously if you don't have a storage service you cannot get credentials because you've not stored them. So there's a bit of overlap like but yeah this is good. So maybe surface a little bit more of endpoint information and the test results.</p>
+<p id=04a2 class="phone s02"><cite>Patrick_St-Louis:</cite> I'll keep that in mind and see how this could be just surfaced Any more questions. Let's not forget also to add to this outside of these normative statements we will be running open API validation. So this will be testing the OAS file. I'm still deciding how this is going to fit into there. Maybe it's going to be just like that testing each endpoint individually according to the OAS file.</p>
+<p id=1de0 class="phone s02"><cite>Patrick_St-Louis:</cite> And when we say that an endpoint must provide the interface, they must implement the OAS definition for that interface. Nate. Yes.</p>
+<p id=b291 class="phone s05"><cite>Nate_Otto:</cite> Can you hear me I mentioned a project that I was working on in the spring. I did end up releasing that two weeks ago at the badge summit. It's at least leer prettygoodskills.com. and it's one of the implementation tests that would be complimentary to the test suite that we're building sort of officially. There is a thing that I built in it that might be interesting to the group, which is this mechanism of selecting what that site calls additive profiles where you can highlight the specific workflows that you want to test one at a time and then select different options on top of them to be able to highlight as a vendor that you support certain sets of operations.</p>
+<p id=059e class="phone s05"><cite>Nate_Otto:</cite> And so overall I think maybe some of that sort of thing in the market could be complementaryary to the official W3C tests. And there might be some common core that is either just normative statements tested in our official tests or you might use a similar system of selecting additional workflows that you want to run through that have their own requirements that are local to the workflow.</p>
+<p id=9d96 class="phone s01"><cite>Kayode_Ezike:</cite> That's perfect.</p>
+<p id=305b class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, this will be really good. this test suite is not going to go in much detail about you must issue this credential with this crypto suite it's more going to make sure can you create a workflow and complete so it's going to be very surface level in here making sure your workflow service can create a workflow it can serve the workflow configuration and go through the exchange but from what I've heard I haven't looked at this but from what you presented before this goes a lot deeper right and is a lot more involved.</p>
+<p id=10002 class="phone s02"><cite>Patrick_St-Louis:</cite> So if I could see a correlation between both is that the VCOM is step one and then when you want to look for specific profiles. then you expand into credential like this one. I don't know if that's matches your framing or how you u sort of viewed it.</p>
+<p id=10003 class="phone s05"><cite>Nate_Otto:</cite> Yes, that's what I was thinking. and indeed this tool is very opinionated about specific sets of options that can be used together. But the benefit of that is that for multiple tools that are implementing those same things, they have a much deeper coverage across the integration surface of what's being tested. So it's more likely that they will actually be interoperable in practice. And so I think that some level of that is beyond what we want to do here in this group for</p>
+<p id=e4a5 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, I think this is a step further towards I actually want to test my production software even…</p>
+<p id=ce78 class="phone s01"><cite>Kayode_Ezike:</cite> Awesome.</p>
+<p id=ae39 class="phone s02"><cite>Patrick_St-Louis:</cite> though if they use test software as this with VCOM it's more like I want to test my libraries I want to test you my implementation and this is like I want to now test my implementation applied in this context with these specific things at least that's like how I would see the distinction but you still have your hand up so I wasn't sure…</p>
+<p id=daad class="phone s05"><cite>Nate_Otto:</cite> Yes. Thanks for taking a look.</p>
+<p id=9329 class="phone s02"><cite>Patrick_St-Louis:</cite> if you wanted to add something okay that's it for</p>
+<p id=1151 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you, Patrick, for that.</p>
+</section>
+
+<section>
+<h3 id=6711>Pull Request Review</h3>
+<p id=3d31 class="phone s01"><cite>Kayode_Ezike:</cite> And then next we can go back to the full request review. all right. So, basically, there's been a few new PRs opened by Eric and there's some that were opened by me some time ago. the really quickly for mine there's a few of them the first two 663 and 679 that are really just about applying minor things and they're good to be merged offline. I just haven't gotten a chance to get around to it yet. So we'll do that soon.</p>
+<p id=b0f7 class="phone s01"><cite>Kayode_Ezike:</cite> And then there's a few others that for example the one we discussed last week for the table registry the protocol table not registry decision we made around versioning and adding didcom for example I also need to update that as well and then I think there was a new comment for 681 and the reason why I'm not stopping because not getting into them deeply because there's really just a few that I have to do for them before we can close them. I think Ted made a comment about five days ago or so towards the bottom that I have to address. so nothing major here. that it's possible that there could be or at least two PRs merged.</p>
+<p id=e2e8 class="phone s01"><cite>Kayode_Ezike:</cite> between now and next poll. and then I'll have some other updates to post and look at, but we can move towards Eric's new PRs that he added recently. this. So, I'm going to add a quick subtopic for 684. Feel free, Eric, to take the floor.</p>
+<p id=536f class="phone s06"><cite>Eric_Schuh:</cite> If we're talking about 684 first this is a response to issue number 561 which asked for example swim lane diagrams for issuance verification and presentation. you'll see in that issue that I tried using the mermaid swim lane diagram and at least I tested it. but it seems like the mermaid renderer yeah, if you keep scrolling down, I think to the bottom of that issue, the mermaid renderer does not seem to know about the swim lane type mermaid diagram. I know it's a beta type diagram, so I imagine that just hasn't happened yet. so for now, I did just use sequence diagrams in place.</p>
+<p id=ecb1 class="phone s06"><cite>Eric_Schuh:</cite> But 684 adds an appendix with four examples. One for issuance, two for verification,…</p>
+<p id=6184 class="phone s01"><cite>Kayode_Ezike:</cite> Perfect.</p>
+<p id=60ff class="phone s06"><cite>Eric_Schuh:</cite> and one for presentation. the reason I ended up with two for verification is because I wanted to show both the credentials and presentations verify endpoints being used. as well as use those same examples for the holder service in terms of git credentials or git presentations. so I did leave a note there that I would definitely like someone to review those two verification sequence diagrams if possible just to make sure I showed the optionality correctly in each of those examples. the issuance example was basically what was provided on the original issue already.</p>
+<p id=ff26 class="phone s06"><cite>Eric_Schuh:</cite> I'm sorry I'm blanking on sorry Parth par's initial example with only some minor updates to just make sure everything is consistent in terms of functionality or…</p>
+<p id=bf44 class="phone s01"><cite>Kayode_Ezike:</cite> I love this.</p>
+<p id=9f42 class="phone s06"><cite>Eric_Schuh:</cite> format that is and then the presentation example shows a sequence diagram of an in-person presentation of a credential. and if it would help, I could probably pretty quickly pull up a render of that. yeah.</p>
+<p id=8512 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, At least that's what I was going to ask…</p>
+<p id=b511 class="phone s06"><cite>Eric_Schuh:</cite> Yeah. Okay, One second. Let me just get the right branch.</p>
+<p id=a066 class="phone s02"><cite>Patrick_St-Louis:</cite> if I may. I'm sorry I forget why we get this now. it's been a while and I know we had discussed it in the past.</p>
+<p id=7bf7 class="phone s01"><cite>Kayode_Ezike:</cite> Okay. I'm sorry.</p>
+<p id=d594 class="phone s03"><cite>Manu_Sporny:</cite> I can answer.</p>
+<p id=79e7 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Yes.</p>
+<p id=71a9 class="phone s03"><cite>Manu_Sporny:</cite> But sorry, I didn't want to. I was just saying I was queued up to do that. The were Sorry, were you done Patrick? problem. …</p>
+<p id=47f0 class="phone s06"><cite>Eric_Schuh:</cite> Okay.</p>
+<p id=3c45 class="phone s03"><cite>Manu_Sporny:</cite> Eric, regarding swim lane, I mistyped it. Sorry, I had sequence diagram. I have changed the issue to say sequence diagram. a board on the whole swim lane thing. we would need to upgrade the version of MermaidJS that we're using to support the new stuff. So, we don't need the second item, Patrick, we are throwing that error or a weird esoteric f spec robust open source project issue. I think I fixed it on the recognized entities spec.</p>
+<p id=10004 class="phone s03"><cite>Manu_Sporny:</cite> I can try and fix it in this repo. at some point. …</p>
+<p id=face class="phone s06"><cite>Eric_Schuh:</cite> All right.</p>
+<p id=6d3f class="phone s03"><cite>Manu_Sporny:</cite> so that was just what I put myself on the queue for mostly to say, Eric, it's not swim lane. sequence diagram did.</p>
+<p id=394b class="phone s01"><cite>Kayode_Ezike:</cite> time.</p>
+<p id=f969 class="phone s06"><cite>Eric_Schuh:</cite> And I am sharing my screen. I'm not sure if it auto switched or not, but this might be about max. Manu Sporny:</p>
+<p id=32ac class="phone s03"><cite>Manu_Sporny:</cite> We can see it now. If you can zoom any or get rid of the table of contents. It's very tiny.</p>
+<p id=af7a class="phone s06"><cite>Eric_Schuh:</cite> One second.</p>
+<p id=860d class="phone s03"><cite>Manu_Sporny:</cite> You can also right click on the diagram and say open a new tab.</p>
+<p id=6459 class="phone s03"><cite>Manu_Sporny:</cite> But that it'll be about as big as</p>
+<p id=5662 class="phone s06"><cite>Eric_Schuh:</cite> Yeah. Yep.</p>
+<p id=febe class="phone s06"><cite>Eric_Schuh:</cite> Go ahead.</p>
+<p id=614e class="phone s03"><cite>Manu_Sporny:</cite> My only suggestion here is that I know this is a complete thing.</p>
+<p id=4933 class="phone s01"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=10005 class="phone s03"><cite>Manu_Sporny:</cite> I'm wondering if we should break it up or not. it's useful to have a or we should keep it as The problem with full complete flows is it makes it look more complicated than it actually is. the other thing I was wondering about is here we kind of switch between URLs and then kind of descriptions of what's happening.</p>
+<p id=1b5e class="phone s03"><cite>Manu_Sporny:</cite> I don't know could you take us through kind of your thought process there is this every single when you get slash something that's the actual API described in the spec versus things outside of the spec.</p>
+<p id=1982 class="phone s06"><cite>Eric_Schuh:</cite> Yeah. Yes.</p>
+<p id=e911 class="phone s06"><cite>Eric_Schuh:</cite> Yeah, that's correct. I did somewhat follow Parth's example from the issue which only used the API endpoint calls effectively as being shown. so all of the spec calls should be in the post or git formats. as you'll see down here, Some of the get credentials/ ID. whereas any call that is not part of the spec got just a text description, but I think that's an easily change thing.</p>
+<p id=ea4e class="phone s06"><cite>Eric_Schuh:</cite> So, if we did want to, pick a different style, I'd be happy to update</p>
+<p id=3160 class="phone s03"><cite>Manu_Sporny:</cite> I think the style's good. I'm wondering if it's useful for us to say things like,…</p>
+<p id=3319 class="phone s01"><cite>Kayode_Ezike:</cite> Hey, come</p>
+<p id=9259 class="phone s03"><cite>Manu_Sporny:</cite> colorcoded so in this spec versus defined externally or implementation specific. I don't know how to do that without making it look like a Christmas tree. So, it's probably not useful to do that. and if it's in the appendix, the presumption is people have read the spec, but we know that's not going to be true. I think it's great for a first draft. Eric, I can't think of anything to really change right now other than taking a detailed look at it.</p>
+<p id=51b8 class="phone s01"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=b9fa class="phone s06"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=99d1 class="phone s06"><cite>Eric_Schuh:</cite> I think that would kind of be my main ask is obviously these were attempting to be very simple workflows. the issuing example that Parth originally had does do a O request as part of the workflow and starts off with an empty JSON object to initiate the exchange. and then for the verification I kind of shifted and chose workflows where the BP to be verified is included as part of the initial exchange and there is no additional kind of off loop. so that was a couple of minor differences. Those are kind of described in the introduction text for each of these. and I would just like, a second set of eyes to ver make sure that, I didn't go astray in any of those simple workflows.</p>
+<p id=35c3 class="phone s06"><cite>Eric_Schuh:</cite> Patrick though.</p>
+<p id=6092 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. No, I think simple workflows is what we need here. there's no point in, …</p>
+<p id=a7e4 class="phone s01"><cite>Kayode_Ezike:</cite> Excuse me.</p>
+<p id=10006 class="phone s02"><cite>Patrick_St-Louis:</cite> displaying these really advanced workflows which regardless are just going to need implementation work. I see this almost could recreate the type of workflows that are in the VC playground. These are fairly simple. it's right issuance with the data or VPR and I think this is kind of what has been done here…</p>
+<p id=c1f8 class="phone s02"><cite>Patrick_St-Louis:</cite> if I understand what I'm seeing so yeah I think plus one for simplicity in these examples we can leave more advanced examples for resource what Nate has been working on which has more advanced profiles maybe and</p>
+<p id=3636 class="phone s01"><cite>Kayode_Ezike:</cite> Great. So,…</p>
+<p id=9462 class="phone s01"><cite>Kayode_Ezike:</cite> anything else folks, please do feel free to get in there and leave some comments. And thank you, Eric, for putting this P together. Move on to the next one which is here in chat 685…</p>
+<p id=9d50 class="phone s01"><cite>Kayode_Ezike:</cite> which is also authored by Feel free Eric to walk us through this one.</p>
+<p id=f3e6 class="phone s06"><cite>Eric_Schuh:</cite> One second.</p>
+</section>
+
+<section>
+<h3 id=d660>Threat Model Document Link</h3>
+<p id=38eb class="phone s06"><cite>Eric_Schuh:</cite> I'm just switching branches so I can show this one as well. this one's pretty straightforward. it just adds a small text section to link to the current threat model document. I saw that Dave had put some suggestions in terms of I duplicated that this is a draft. so I think some minor language revisions of this first paragraph and updating I think the format to link out to the issues are the two suggestions Dave made that I think are both good. so either I can do that or if someone gets to it before I do obviously that's great.</p>
+<p id=93cb class="phone s06"><cite>Eric_Schuh:</cite> But the link just goes to the existing threat model in the repo.</p>
+<p id=54ee class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=e5ac class="phone s06"><cite>Eric_Schuh:</cite> And then the link goes to the issues with the label threat model as part of the search results. So someone that comes here would just see the related issues. and that's it.</p>
+<p id=a9f7 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, just a I guess comment on the contents of this section. So, this past weekend did the kicked off the horizontal review for recognized entities, and then found out that a lot of the horizontal review submission paperwork requires you to link to a privacy privacy and security consideration section in the Spec Robus auto publisher dings if you don't have a security considerations and privacy considerations section. So, just as a heads up, Eric, you're going to have to create a sec. Okay. So, those hold on.</p>
+<p id=94eb class="phone s03"><cite>Manu_Sporny:</cite> that's in.</p>
+<p id=b6d4 class="phone s06"><cite>Eric_Schuh:</cite> This is in the main VCOM spec.</p>
+<p id=bb9b class="phone s06"><cite>Eric_Schuh:</cite> We already have privacy consideration and security consideration sections. And then I just added the threat model as one of the subtopics under security considerations.</p>
+<p id=5efc class="phone s03"><cite>Manu_Sporny:</cite> Interesting. I thought we were supposed to completely get rid of the privacy considerations and security considerations sections and we were moving specs over to just have a threat model section. so I did something very different. I'm doing something very different on all the other spec specifications.</p>
+<p id=7326 class="phone s03"><cite>Manu_Sporny:</cite> Does it Right.</p>
+<p id=22e9 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> That is…</p>
+<p id=df8b class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> what the attack has voiced. That's the direction we're going in. The software dinging you. It was probably a thing that hasn't been updated yet and for the moment, I would suggest that we have basically empty sections for those which say look here.</p>
+<p id=8768 class="phone s03"><cite>Manu_Sporny:</cite> That is what I did. Hold on one second. If you don't mind, I'll screen share. of course, my video card is freaking out right now for some reason. So, this is what I did in the recognized entity spec. I created it.</p>
+<p id=162a class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yep. Heat. Manu Sporny:</p>
+<p id=10007 class="phone s03"><cite>Manu_Sporny:</cite> So, I don't know how long it's going to take us to fix Respect Ted, but I needed to submit it last weekend. So, I just put these sections in because I don't think the reviewers even know like that this is happening. So I put these sections into quiet respect and then explained we're migrating please look at this section threat model for docs and I put that in security and privacy considerations and then that takes you to the threat model section and Eric what I did here was highlighted I did some fairly deep linking into the threat model document by listing all of the threats</p>
+<p id=9a48 class="phone s03"><cite>Manu_Sporny:</cite> here right because Joe had mentioned something about putting in the table of contents so that people could just see that we have thought about these things and it's linked and we have tags on it's a security threat or a privacy threat threat or a market competition threat so I don't know I don't think there's clear guidance on what we should be doing here</p>
+<p id=84ef class="phone s03"><cite>Manu_Sporny:</cite> but I'm also wondering what happens if We submit, 15 specifications all with totally different formulations of threat model and security and consideration section. So, just something to keep in mind. I'm not saying change the I'm just saying this sounds like there's some alignment that we're going to have to do.</p>
+<p id=4ae2 class="phone s06"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=5ff8 class="phone s06"><cite>Eric_Schuh:</cite> that all seems reasonable. I guess Most of that is new to me. Joe and I did talk about indexing the part of the threat model section in the main spec as you've done here listing them. that's actually an issue that is raised on the respect threats repo to try to make that easier. I think Joe had some plans there and I guess my reasoning for not including that at this point was that threat model still needs a fair bit of work.</p>
+<p id=9a6d class="phone s06"><cite>Eric_Schuh:</cite> the threat list might be fairly stable. but I was just basically going to hold off on doing any manual indexing until that document, is being moved towards a more complete form. I would be fine, kind of taking the task of making the VCOM privacy and security considerations kind of match up with the pattern that you started to use. u, I guess my question for the group would be the content that currently exists there. where should it go or should it disappear? which feels somewhat weird to me. I suppose we could have appendixes in the threat model document itself that contains, the current context of those two sections.</p>
+<p id=36ed class="phone s06"><cite>Eric_Schuh:</cite> But I would guess without having read through those two sections in detail recently that there are probably a number of items brought up there that are not necessarily directly responded to by the threat model. which could imply that we need to create some new threats to handle the existing concern security and privacy considerations. but yeah, just that kind of triage there would be where my questions exist</p>
+<p id=4afc class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=35f7 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to all of those questions. I don't know if what I have done in the recognized entity spec is the right thing to do. So I have the same questions. I just tried to do something s consistent. I do know that we don't want to get rid of the sections until we don't want to get rid of so there's existing privacy and…</p>
+<p id=e969 class="phone s01"><cite>Kayode_Ezike:</cite> My god. Manu Sporny:</p>
+<p id=b406 class="phone s03"><cite>Manu_Sporny:</cite> security considerations in there. what I did in recognized entities is I made absolutely sure that there was a onetoone mapping with threats talked about in the threat model to the privacy and security considerations entry before deleting the privacy and security considerations entry in recognized entities.</p>
+<p id=abf2 class="phone s01"><cite>Kayode_Ezike:</cite> I don't think</p>
+<p id=25b7 class="phone s03"><cite>Manu_Sporny:</cite> So that is one thing that I could be done and it work fine for the recognized entity spec. I would expect it to work fine for VCOM. where it did not work was with the ECDSA and EDDDSA spec which Greg Bernstein went into a great amount of detail. about all of the pitfalls in implementing ECDSA specifically and it is pros that does not lend itself well to a threat model.</p>
+<p id=88fb class="phone s01"><cite>Kayode_Ezike:</cite> These people</p>
+<p id=c0be class="phone s03"><cite>Manu_Sporny:</cite> It's like nine paragraphs of text talking about the difference between existential and a forgeability and all that other kind of stuff that you have to care about specifically in ECDSA or EDDDSA right I think it's inappropriate to put that in a threat model because it's not something that you can have a two paragraph description of and have one sentence response to and be done with it for one paragraph response to it's like no we need to be very explicit about this stuff. So in those cases I think we continue to have the security and privacy consideration sections and explain in detail why this thing matters.</p>
+<p id=29a4 class="phone s03"><cite>Manu_Sporny:</cite> So I think there are places here, Eric, and you may want to take this back to Joe and Simony and the threat modeling working group that there are good reasons to have hybrid descriptions in the specs where we will have a threat model and say this is the threat model or it's an external threat model. But in addition to that, here's some very specific privacy and security considerations that we're highlighting here that are not ideally suited to put in a threat model. so I think it's going to continue to require some amount of refinement. but for VCOM,…</p>
+<p id=a713 class="phone s01"><cite>Kayode_Ezike:</cite> Got it.</p>
+<p id=470a class="phone s03"><cite>Manu_Sporny:</cite> I think we can move everything to the threat model eventually and eventually delete all of the privacy and security consideration sections…</p>
+<p id=b2fb class="phone s03"><cite>Manu_Sporny:</cite> because we've moved that completely over to the threat model.</p>
+<p id=58e1 class="phone s06"><cite>Eric_Schuh:</cite> Okay.</p>
+<p id=494b class="phone s06"><cite>Eric_Schuh:</cite> Yeah, all that makes sense. And, I'll definitely add that to the list of items. I do kind of coming out of this threat model work. I'm a little bit behind on this, but I do plan on raising some issues in the threat modeling guide basically with the learnings from the exercise done here. so I'll add that to my list of topics Manu to bring back to that group. and I guess my thoughts for now would be to leave the simple PR as I have it today so that at least the VCOM main spec links to the threat model and I'll basically create an issue in the spec to detail kind of the work that needs to happen around extracting threats from the existing privacy and security consideration sections</p>
+<p id=8d51 class="phone s06"><cite>Eric_Schuh:</cite> evaluating whether or not it makes sense for each entry to have threats listed in the threat model or if they're of this edge case you just described,… Manu. and basically that'll just be an issue that we need to handle at some point. and we'll see where it falls on the priority list, I suppose. Eric Schuh:</p>
+<p id=8d6a class="phone s01"><cite>Kayode_Ezike:</cite> Thank you,…</p>
+</section>
+
+<section>
+<h3 id=0d62>Exchange Termination Issue</h3>
+<p id=6ecd class="phone s01"><cite>Kayode_Ezike:</cite> Thank you, Everyone else contributed. We have at most 10 minutes, but I wanted to see if we can get through at least one or two issues. U I wanted to see if people who are here, for example, Demetri, there's a few that you wrote that I wanted to address. one of them is one that we have not yet discussed on a poll yet, but there's some activity from you and I and others on it.</p>
+<p id=388a class="phone s01"><cite>Kayode_Ezike:</cite> So here it is in chat issue 664 and has to deal with exchange termination. also do we have a screen share? We need that Patrick.</p>
+<p id=1d25 class="phone s08"><cite>Dmitri_Zagidulin:</cite> We don't</p>
+<p id=1a82 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, let me get back on that. Sorry, I removed my screen share since quite a few other people were sharing their screen. I can bring it up. sorry, what did you want me to show?</p>
+<p id=e3ee class="phone s01"><cite>Kayode_Ezike:</cite> Then chat 664.</p>
+<p id=8a8e class="phone s02"><cite>Patrick_St-Louis:</cite> So, we're going into issues. Let me give me one second. Just chasing my tabs. 664 Starting the share now.</p>
+<p id=869f class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Okay.</p>
+<p id=cfc1 class="phone s02"><cite>Patrick_St-Louis:</cite> We go. Sorry for that.</p>
+<p id=2d8a class="phone s01"><cite>Kayode_Ezike:</cite> Thank you. So, yeah, basically Demetri feel to walk through, but essentially we have the need to explicitly indicate the termination of an exchange from the wallet. if they choose not to engage with an exchange, but feel free to expound.</p>
+<p id=326b class="phone s08"><cite>Dmitri_Zagidulin:</cite> I mean, so I think the issue text describes it. There's no way for a user to decline the exchange. So basically this is asking for some kind of signal to be at with open ID for VP refusal.</p>
+<p id=1be4 class="phone s01"><cite>Kayode_Ezike:</cite> And so there's a decision that needs to be made as far as how you do that either a new property like a status or something or a new endpoint like you mentioned. So I think that's the main thing we're looking but also if we can agree because I did tag it as B10. I think that it's appropriate. and if folks disagree, feel free to speak up. Go ahead, Patrick.</p>
+<p id=ef03 class="phone s02"><cite>Patrick_St-Louis:</cite> I had also brought this up a while ago,…</p>
+<p id=21c2 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you. Patrick St-Louis:</p>
+<p id=768d class="phone s02"><cite>Patrick_St-Louis:</cite> sort of a problem report endpoint and we decided it was not 1.0. I feel this is kind of a similar way and it's just a way for a participant to signal to the other party anything that could have went wrong instead of just walking away from the exchange. if we'd want to is this the thing? Yeah. So this is the one thing we had discussed. so I'm okay.</p>
+<p id=066c class="phone s08"><cite>Dmitri_Zagidulin:</cite> So it's related but different because that one is server side. This is from client to server.</p>
+<p id=19e1 class="phone s02"><cite>Patrick_St-Louis:</cite> So my thing I wanted to handle here is that for example…</p>
+<p id=8905 class="phone s01"><cite>Kayode_Ezike:</cite> Which one is that? Goodbye.</p>
+<p id=1749 class="phone s02"><cite>Patrick_St-Louis:</cite> if a holder is interacting with an issuer and at some point the holder is unable to keep going in the workflow for any reason they can signal this to the issuer. That was kind of my angle or at least what I wanted to address here. does that still match what you had understood? the Dimmetry.</p>
+<p id=2a73 class="phone s08"><cite>Dmitri_Zagidulin:</cite> I think so. Hold on. Let me think. I'm trying to Uhhuh.</p>
+<p id=4d17 class="phone s02"><cite>Patrick_St-Louis:</cite> So you have the issuer which is the provider of the workflow. You have the holder which is the one interacting with the old Issuer wants to issue something.</p>
+<p id=5327 class="phone s02"><cite>Patrick_St-Louis:</cite> The holder for some reason is not able to complete the issuance process. And the goal here is for the holder to be able to signal to the issuer or…</p>
+<p id=2d90 class="phone s01"><cite>Kayode_Ezike:</cite> All right, Dave.</p>
+<p id=08c7 class="phone s02"><cite>Patrick_St-Louis:</cite> the workflow provider what happened so that the workflow provider can handle this accordingly.</p>
+<p id=4b23 class="phone s08"><cite>Dmitri_Zagidulin:</cite> then yes yes yes I think that would address my issue as well I</p>
+<p id=bcb7 class="phone s04"><cite>Dave_Longley:</cite> So, I do think those things are similar. We don't necessarily need to combine being able to express an error versus being able to express that you want to terminate an exchange. it just having an explicit flag that says I'm done. And that could be useful for both sides of the exchange. we have this built into the server mechanism today where if you respond with no verifiable presentation request at all then it means there's nothing more to do. But we could also make that explicit and keep some backwards compatibility for that. and so we might be talking about there are potentially still two different features here. I want to tell you an error. One of them is I'm done. And so, I just want to tell you I'm</p>
+<p id=5b97 class="phone s08"><cite>Dmitri_Zagidulin:</cite> Right. Agreed. Could be two different ones. for</p>
+<p id=b242 class="phone s01"><cite>Kayode_Ezike:</cite> Nate back.</p>
+<p id=783d class="phone s05"><cite>Nate_Otto:</cite> Yeah, plus one to what Dave said. I think we have overall a API mechanism that has a pretty strong parallels between the client sent messages and the server sent messages. And so we have to sort of know how much we want to lean into that plus one to the idea that the use cases are separate for expressing an error which could be from either side to the other or terminating the exchange which could be from either side to the other just like a redirect URI is sometimes a final message from an exchange that we've talked about theoretical cases where it could be sent in the opposite way that the sort of canonical most common case is used for that.</p>
+<p id=1bb2 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks. Thanks, Go ahead, Patrick.</p>
+<p id=f006 class="phone s02"><cite>Patrick_St-Louis:</cite> I just wanted to add like you what you said Dave just gave me a sort of a simple solution at least for this again keeping in mind this might not be version 1.0 but what about if at any point the workflow service should be able to accept a problem details at the current state that they should process without needing necessarily an external endpoint. at different state the wallet is meant to send different payloads but they can always just send a problem details key that signify something that happened. So, just kind of a passing thought I had that would not require a new endpoint. It's just a new capability that the workflow service would need to support accepting problem details.</p>
+<p id=b6de class="phone s01"><cite>Kayode_Ezike:</cite> Patrick, go ahead.</p>
+<p id=0b65 class="phone s05"><cite>Nate_Otto:</cite> Plus rick. And one more thing I want to tease apart is that sometimes the passing of a problem details some kind of error indicates that a terminal error has occurred and there will be no further attempts. I actually just ran across a use case recently where I needed to send an error from one part participant of an exchange to another. And it was not intended to be terminal. It was just intended, hey, could you please log this problem that I encountered as I was dealing with something on my side. because the other side was the error recording party.</p>
+<p id=0536 class="phone s05"><cite>Nate_Otto:</cite> So, I don't know if there's anything we have to do about that, but it was interesting that there was a use case for an error that wasn't like requiring a reaction or termination of the exchange.</p>
+<p id=4d56 class="phone s01"><cite>Kayode_Ezike:</cite> Sounds good.</p>
+<p id=10008 class="phone s01"><cite>Kayode_Ezike:</cite> So it sounds to me that what we're converting towards is we do want this and the way that we want to do it is not a new endpoint but rather a new field in the response body or I guess request body too and so at least we have a way to move forward with that issue and it's ready for PR. hands.</p>
+<p id=18d5 class="phone s01"><cite>Kayode_Ezike:</cite> That was my goal for this. thank you. And we don't have much time, but what I want to at least do is just have this be seated in your heads. So, we're not going to subtopic this, but these two issues I just put in chat are also from you, Demetri. This is the request for issuing the inbound request to a wallet so that they can issue a VC and then also a Zcap query as well. I know we had long discussions about that some months ago and I think it's very important at a certain point there were some comments made on those issues I was like yes we absolutely need this but we should basically read we address that and decide whether or not we do want to include that in V10 because those are some pretty substantial issues to address. either I left some comments on those issues feel free to respond to them and maybe we can discuss them next week.</p>
+<p id=0ea8 class="phone s01"><cite>Kayode_Ezike:</cite> Good morning.</p>
+<p id=e9af class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm trying to figure out when the feature freeze date for the spec is going to be. I know you've tagged a bunch of issues as version 1.0. I'm wondering if and there are 26 of those. I'm wondering if you mean that those are 26 new features that need to be done before we can go into horizontal review.</p>
+<p id=b38e class="phone s03"><cite>Manu_Sporny:</cite> So, I'm trying to figure out when we kick off horizontal review. we have a threat model now, but when do we feel that we're fairly stable from a feature perspective? Do we know…</p>
+<p id=ee75 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. Right.</p>
+<p id=8dbf class="phone s03"><cite>Manu_Sporny:</cite> how many more weeks that's going to take?</p>
+<p id=258e class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. Yeah, the original goal I guess for me was to at the very least address all and categorize all the issues by the end of July, which at this point we've done and I know that generally speak generally my understanding is that the issues need to be down to zero before we can go to our movie. Is that correct or is that.</p>
+<p id=440d class="phone s03"><cite>Manu_Sporny:</cite> No, that's not correct. if that were the case, we've totally blown our timeline, we need to decide which one of these issues is going to result in a new feature and how badly do we want that new feature and does adding that new feature drastically change horizontal review. what I would like to do is kick off horizontal review in the next ideally two to three weeks.</p>
+<p id=163b class="phone s03"><cite>Manu_Sporny:</cite> And I'm wondering if we are so far away from feature freeze that we can't do that there are big changes that we're expecting to the specification. really it's not a 10 flag coyote that we need. this is going to result in a new feature that drastically changes the specification or…</p>
+<p id=96c3 class="phone s03"><cite>Manu_Sporny:</cite> is significantly changes the specification. and…</p>
+<p id=ca8e class="phone s01"><cite>Kayode_Ezike:</cite> Thanks. Okay,…</p>
+<p id=8b7f class="phone s03"><cite>Manu_Sporny:</cite> we must get this done before we can say we're feature frozen, right? I'm trying to get under an understanding of how many of those issues we have left.</p>
+<p id=04d9 class="phone s01"><cite>Kayode_Ezike:</cite> that's a great way to think about it. I'll use that context and I review the issues again. so that because a lot of these are sure maybe like the new features, but they're not going to drastically change the import of the spec. And so I can re review all the issues and with that lens. Go ahead, Patrick. You have your hand if I know one pass yet.</p>
+<p id=a402 class="phone s02"><cite>Patrick_St-Louis:</cite> Just quickly, does that also cover non-normative feature? what if we just decide yeah we'll add this feature they're pretty important. We're just going to make them non-normative for now because we want to get this feature freeze and in a future ver version we might revisit the normiveness of them. Okay.</p>
+<p id=b140 class="phone s03"><cite>Manu_Sporny:</cite> It does not cover non-normative.</p>
+<p id=7095 class="phone s03"><cite>Manu_Sporny:</cite> For the horizontal review and for getting into candidate wreck. We don't care about non-normative stuff. We just care about normative features that are going to significantly impact how someone might review the specification.</p>
+<p id=1bab class="phone s01"><cite>Kayode_Ezike:</cite> All I have time left to say is thank you everyone and…</p>
+<p id=639b class="phone s01"><cite>Kayode_Ezike:</cite> Appreciate today. Meeting ended after 01:01:34 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
