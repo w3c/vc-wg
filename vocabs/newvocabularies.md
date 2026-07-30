@@ -1,5 +1,5 @@
 
-This a draft list for where the new terms would end up in the vocabularies and context files. The new vocabulary/context names are obviously to be agreed upon. See also [v2](https://github.com/w3c/vc-wg/blob/main/vocabs/v2.md) for the current situation.
+This is a draft list of where the new terms could end up in the vocabularies and context files. The new vocabulary/context names are obviously to be agreed upon. See also [v2](https://github.com/w3c/vc-wg/blob/main/vocabs/v2.md) for the current situation.
 
 
 - **Render method:**
