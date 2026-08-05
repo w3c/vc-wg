@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 05 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>05 August 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/b1a3e329-74d1-405d-ab47-2934b41c2ab4/20260805T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/08/05-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>brentz, denkeni, dlongley, dmitriz, Elaine, hsano, ivan, jennie, kezike, manu, michaelshea, olvis, olvisgil, pdl-asu, phila, saad, TallTed, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>Elaine</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#922d">Task Force Updates</a></li>
+<li><a href="#7c88">Placing the new terms in vocabularies and context files</a></li>
+<li><a href="#da94">DigestSRI - w3c/<wbr>vc-data-model#1629</a></li>
+<li><a href="#2299">TPAC</a></li>
+<li><a href="#5973">Request to amend short URL for confidence method</a></li>
+<li><a href="#f160">AOB</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=2ed1 class=summary>@brentz covers admin and agenda</p>
+<p id=2224 class=irc><cite>&lt;brent&gt;</cite> Tracker Doc: <a href="https://docs.google.com/spreadsheets/d/1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/edit?pli=1&amp;gid=67467047#gid=67467047">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/<wbr>edit?pli=1&amp;gid=67467047#gid=67467047</a></p>
+<p id=e1ed class="phone s01"><cite>manu:</cite> reviews need to proceed with horizontal review - we are behind schedule</p>
+<p id=2506 class="phone s02"><cite>dmitriz:</cite> asked to review PR1629</p>
+</section>
+
+<section>
+<h3 id=922d>Task Force Updates</h3>
+<p id=8952 class=irc><cite>&lt;michaelshea&gt;</cite> michaelshea+</p>
+<p id=1f47 class="phone s03"><cite>wes-smith:</cite> progress on barcode spec, threat models is good</p>
+<p id=6975 class=irc><cite>&lt;denkeni&gt;</cite> <a href="https://github.com/w3c/vc-confidence-method/issues/30">w3c/<wbr>vc-confidence-method#30</a></p>
+<p id=a121 class=irc><cite>&lt;denkeni&gt;</cite> <a href="https://w3c.github.io/vc-confidence-method/#assurance-levels">https://<wbr>w3c.github.io/<wbr>vc-confidence-method/#assurance-levels</a></p>
+<p id=74f8 class="phone s04"><cite>denkeni:</cite> issue whether to quote ISO or other policies</p>
+<p id=d2eb class=irc><cite>&lt;ivan&gt;</cite> qq</p>
+<p id=cb74 class="phone s05"><cite>brent:</cite> guidance from council is to avoid it unless necessary - just because there's a cost doesn't mean others can't obtain it</p>
+<p id=1eac class="phone s06"><cite>ivan:</cite> is there a public text? answer is yes</p>
+<p id=618f class=irc><cite>&lt;Zakim&gt;</cite> kezike, you wanted to provide update for VCALM TF</p>
+<p id=095a class="phone s07"><cite>kezike:</cite> VCALM - threat model merged / new test suite repo just merged in yesterday - over last month, worked to classify issues - will proceed with focusing on issues that are blockers for candidate rec</p>
+<p id=2ab3 class=irc><cite>&lt;manu&gt;</cite> <a href="https://github.com/w3c/vc-data-model/pull/1638">w3c/<wbr>vc-data-model#1638</a></p>
+<p id=d8bb class=irc><cite>&lt;phila&gt;</cite> I found the W3C Council Report on the Formal Objection to the use of Normative References to ISO/IEC 18013-7 Annex C in the Digital Credentials API specification which is at <a href="https://www.w3.org/2026/06/council-digital-credentials-report.html">https://<wbr>www.w3.org/<wbr>2026/<wbr>06/<wbr>council-digital-credentials-report.html</a></p>
+<p id=ee76 class="phone s01"><cite>manu:</cite> re vc data model - there's now a threat model - please review.  Will speak to status list and some post quantum stuff.  There's also a data integrity threat model that is hoped will work for other related specs.  Large number of threats will layer on top of that base. The threat models have broken the preview mode.  working with Ivan to fix it.</p>
+<p id=bc7a class=irc><cite>&lt;brent&gt;</cite> FO Council Report related to referencing ISO specs: <a href="https://www.w3.org/2026/06/council-digital-credentials-report.html">https://<wbr>www.w3.org/<wbr>2026/<wbr>06/<wbr>council-digital-credentials-report.html</a></p>
+<p id=862e class="phone s02"><cite>dmitriz:</cite> render method - have compressed road map to get to horizontal review - consensus on 3 categories - asks group for feedback about meeting frequency which is currently every other week - proposes each week  to get to review</p>
+<p id=1317 class=irc><cite>&lt;manu&gt;</cite> Yes, let's please meet every week for Render Method -- we need more time on spec to get it to horizontal review.</p>
+<p id=1801 class="phone s08"><cite>olvisgil:</cite> regarding deliverables tracker - suggests new item - verifiable credential for payment rails</p>
+<p id=0cd1 class=summary>group agrees every week is available for render method - dmitriz can update calendar</p>
+<p id=799c class=irc><cite>&lt;manu&gt;</cite> We really need to move the render method forward faster, would prefer not to delay until after August.</p>
+<p id=7389 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=5a55 class="phone s09"><cite>@ivan:</cite> perhaps wait until September to change render method meeting frequency / group agrees weekly is needed sooner</p>
+</section>
+
+<section>
+<h3 id=7c88>Placing the new terms in vocabularies and context files</h3>
+<p id=fc11 class="phone s05"><cite>brent:</cite> next topic new terms in vocabulary</p>
+<p id=c5a4 class=irc><cite>&lt;ivan&gt;</cite> See: <a href="https://github.com/w3c/vc-wg/blob/main/vocabs/newvocabularies.md">https://<wbr>github.com/<wbr>w3c/<wbr>vc-wg/<wbr>blob/<wbr>main/<wbr>vocabs/<wbr>newvocabularies.md</a></p>
+<p id=868a class="phone s06"><cite>ivan:</cite> number of TFs need update of context file - render method (already exists as a class), also confidence method Bitstring is here because there may be a new version due to barcode TF work.  Current situation is that bitstring status list has its own vocabulary.</p>
+<p id=f3f4 class=irc><cite>&lt;manu&gt;</cite> Agree with Ivan's proposal for render, confidence, bitstring... possibly disagree with forgery defense (should probably go in status), recognized entities (should probably go in VCDM), don't have a strong opinion about barcodes, but Wes might.</p>
+<p id=0521 class="phone s06"><cite>ivan:</cite> for forgery defence - follow the same model</p>
+<p id=9d34 class=irc><cite>&lt;dlongley&gt;</cite> forgery defense could also potentially go into the security vocab</p>
+<p id=2829 class=irc><cite>&lt;manu&gt;</cite> agree ^</p>
+<p id=ffff class=irc><cite>&lt;dlongley&gt;</cite> we've previously offered individual contexts and a &quot;batteries included&quot; context, i think we should probably keep doing that</p>
+<p id=bdde class="phone s09"><cite>@ivan:</cite> for recognized entities - should have separate context file not just build on VC / same with barcodes</p>
+<p id=26a5 class="phone s06"><cite>ivan:</cite> other option is to fold into the rest of the VCDM - need to discuss and make a decision</p>
+<p id=63ee class="phone s09"><cite>@ivan:</cite> once decision is made, then can set up framing and then repository</p>
+<p id=c0f2 class="phone s05"><cite>brent:</cite> reviews manu's IRC comments regarding Ivan's proposal</p>
+<p id=2a4b class="phone s10"><cite>dlongley:</cite> previously had individual contexts  - useful for those who need them / not related to vocabularies - need to continue that conversation</p>
+<p id=365c class="phone s05"><cite>brent:</cite> I will trust the experts on this</p>
+<p id=bc57 class="phone s11"><cite>phila:</cite> checking in re longley - can have the individual contexts PLUS an overarching one?</p>
+<p id=f899 class="phone s10"><cite>dlongley:</cite> yes</p>
+<p id=fb0f class="phone s09"><cite>@ivan:</cite> I am not sure about this because of messaging -</p>
+<p id=45e2 class="phone s10"><cite>dlongley:</cite> agree with ivan on this piece - if creating specific credentials of different types - that's a new context / using components of existing spec is not</p>
+<p id=e137 class=summary>group - discussions will continue</p>
+</section>
+
+<section>
+<h3 id=da94>DigestSRI - <a href="https://github.com/w3c/vc-data-model/pull/1629">w3c/<wbr>vc-data-model#1629</a></h3>
+<p id=8110 class="phone s10"><cite>dlongley:</cite> believe we cannot use a copy of something that's in another spec without processing rules applying</p>
+<p id=82b9 class="phone s02"><cite>dmitriz:</cite> goal for the PR was &quot;now what?&quot; - have reasoning for deprecating digest SRI / manu and shigeya prior conversation - no consensus and Shigeya's concerns are not addressed.</p>
+<p id=56d7 class="phone s05"><cite>brent:</cite> if not resolved by TPAC  - seek consensus there / doesn't feel urgent</p>
+<p id=40e2 class=irc><cite>&lt;dlongley&gt;</cite> hopefully a &quot;this is deprecated and language that says other specs shouldn't use it, but it won't be removed, it will still be in the next context, etc.&quot; is a good compromise</p>
+<p id=8291 class="phone s06"><cite>ivan:</cite> brent is now the master of the process - which doesn't have the term &quot;deprecate&quot; as such, right? This is more like we have it - if you use it, has to be this way - but don't use it.</p>
+<p id=dd51 class="phone s10"><cite>dlongley:</cite> idea is to keep it in the next version of the context - keep it around but with clearer guidance</p>
+<p id=6e77 class=irc><cite>&lt;ivan&gt;</cite> re deprecation see another spec: <a href="https://www.w3.org/TR/epub-34/#sec-obs-deprecated">https://<wbr>www.w3.org/<wbr>TR/<wbr>epub-34/#sec-obs-deprecated</a></p>
+</section>
+
+<section>
+<h3 id=2299>TPAC</h3>
+<p id=483f class="phone s05"><cite>brent:</cite> please register for TPAC / WG meetings thursday and Friday with Friday shorter / Will be a Tuesday joint session with payments and DC API - all invited</p>
+<p id=0705 class=irc><cite>&lt;brent&gt;</cite> <a href="https://www.w3.org/news-events/tpac/2026/registration/">https://<wbr>www.w3.org/<wbr>news-events/<wbr>tpac/<wbr>2026/<wbr>registration/</a></p>
+<p id=c173 class="phone s05"><cite>brent:</cite> planning to talk about CR and about CR  / if there are other topics, let Brent know</p>
+</section>
+
+<section>
+<h3 id=5973>Request to amend short URL for confidence method</h3>
+<p id=b04f class=irc><cite>&lt;denkeni&gt;</cite> <a href="https://www.w3.org/2026/03/vc-wg-charter.html#confidence">https://<wbr>www.w3.org/<wbr>2026/<wbr>03/<wbr>vc-wg-charter.html#confidence</a></p>
+<p id=592b class="phone s10"><cite>dlongley:</cite> maybe expand confidence method to include assurance levels - then does the name need to change / need to discuss in task force but there was no meeting last week</p>
+<p id=4db0 class=irc><cite>&lt;denkeni&gt;</cite> +1 to have more discussion in the task force</p>
+<p id=dbe5 class="phone s06"><cite>ivan:</cite> WG must have formal resolution to change short name / then need review as if it is an actual new working draft.  Used to be a bigger pain to publish, but forgot it thanks to echidna.  But now still needs to be done manually - requires actions by Ivan and the working group and editors.  Extra work.</p>
+<p id=cb61 class="phone s06"><cite>ivan:</cite> the title can be changed - it's the short name that's an issue</p>
+<p id=d69e class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to chip in if time allows</p>
+<p id=b481 class="phone s05"><cite>brent:</cite> new VC overview doc - please review / confidence method TF - come back with decision</p>
+<p id=b3ab class=irc><cite>&lt;dlongley&gt;</cite> +1 to phil, i feel similarly.</p>
+<p id=1180 class="phone s11"><cite>phila:</cite> confidence is too broad</p>
+</section>
+
+<section>
+<h3 id=f160>AOB</h3>
+<p id=a71b class=irc><cite>&lt;ivan&gt;</cite> <a href="https://www.w3.org/TR/vc-overview-1.1/">new version of overview</a></p>
+<p id=4c0c class="phone s12"><cite>michaelshea:</cite> mike jones is listed as an owner for the CID repo  / if not involved anymore, what needs to happen</p>
+<p id=6ca2 class="phone s05"><cite>brent:</cite> I will change it</p>
+<p id=1cf7 class=irc><cite>&lt;Olvisgil&gt;</cite> Thank you so much!</p>
+<p id=d12c class="phone s05"><cite>brent:</cite> good work</p>
+<p id=0268 class=summary>Thanks all!</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
