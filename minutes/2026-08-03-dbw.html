@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Product and Wallet Vocabularies &ndash; 3 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Product and Wallet Vocabularies</h1>
+<h2>3 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dr._Susanne_Guth-Orlowski, Fireflies.ai_Notetaker_Miguel, Ingo_Wolf, Ivan_Herman, M.-A._Wolf, Phil_Archer, Ronald_Koenig</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#2ede">Understanding GitHub PR Process</a></li>
+<li><a href="#fba7">Verifiable Credentials and Presentations</a></li>
+<li><a href="#b9ed">Linked Data Usefulness For DPPs</a></li>
+<li><a href="#433e">JSON Schemas Versus Shackle</a></li>
+<li><a href="#ad6a">VCs And RDF Graph Limitations</a></li>
+<li><a href="#f7b9">Semantic Work vs. JSON Schema</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=373b class="phone s01"><cite>Ingo_Wolf:</cite> Yes, that would come.</p>
+<p id=b1d1 class="phone s02"><cite>M.-A._Wolf:</cite> Can you actually hear me? Okay, because rophone the headphones don't work anymore.</p>
+<p id=0149 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Hello. Yes.</p>
+<p id=7c5f class="phone s02"><cite>M.-A._Wolf:</cite> Thank you. Then it uses this one from the laptop, I guess.</p>
+<p id=4838 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Ronald. Hello.</p>
+<p id=2329 class="phone s04"><cite>Ronald_Koenig:</cite> Hello. Yeah.</p>
+<p id=2a5f class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Rick and I have sign.</p>
+<p id=749d class="phone s04"><cite>Ronald_Koenig:</cite> Yeah, I know.</p>
+<p id=c053 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Meeting DPP wallet is vocabulary.</p>
+<p id=ce4e class="phone s04"><cite>Ronald_Koenig:</cite> What does DPP?</p>
+<p id=7a6f class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. PPP discrete the text. Hey, Ivon.</p>
+<p id=5a6e class="phone s01"><cite>Ingo_Wolf:</cite> So last week we discussed about the business wallet.</p>
+<p id=05b0 class="phone s01"><cite>Ingo_Wolf:</cite> So this week it's DPP and the alternating schedule.</p>
+<p id=1c25 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And for the DPP meeting, we would need Carolyn maybe not a drama either. But are we waiting for her? I didn't see a message that she isn't coming or…</p>
+<p id=fd30 class="phone s01"><cite>Ingo_Wolf:</cite> Yes.</p>
+<p id=3e08 class="phone s04"><cite>Ronald_Koenig:</cite> Thank you.</p>
+<p id=14d3 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> couldn't come. yeah. she said she wouldn't be here for the next three weeks,…</p>
+<p id=8691 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> didn't she?</p>
+<p id=00fc class="phone s02"><cite>M.-A._Wolf:</cite> Yeah. Yeah.</p>
+<p id=59c0 class="phone s02"><cite>M.-A._Wolf:</cite> She is detoxing from electronic devices for three weeks.</p>
+</section>
+
+<section>
+<h3 id=2ede>Understanding GitHub PR Process</h3>
+<p id=28b6 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So maybe what we can do last week I wasn't there because I was thinking the discussions were mainly around wallet vocabulary. but then afterwards I saw that there were comments made in the public document to me to complete a section in it which I did. and maybe it's something that we can look at. Evan, I don't know if you saw it. I did create A change request I think to the site. So this time I didn't immediately deploy it to the site. I created a change request with a note.</p>
+<p id=e40d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> and maybe it's good for everyone to know how this can then be approved or are we discussing this here and how the process works to get this in the document. Hi Phil.</p>
+<p id=e9fb class="phone s05"><cite>Phil_Archer:</cite> Sorry, I was a bit late. The drone is Mhm.</p>
+<p id=e525 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No, no problem. Ian, I don't know if you hear me. you're on mute as well in case you're talking. Yeah, he was here. we saw him on camera, then the camera went off and he went on mute. So maybe he's off for a bio break or…</p>
+<p id=f639 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> something. Okay.</p>
+<p id=8e88 class="phone s05"><cite>Phil_Archer:</cite> A grandson may be involved.</p>
+<p id=233d class="phone s05"><cite>Phil_Archer:</cite> You never know.</p>
+<p id=ffff class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Phil, can you help with how the pro process usually works in other working groups…</p>
+<p id=10df class="phone s05"><cite>Phil_Archer:</cite> Yes,…</p>
+<p id=9d76 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because I don't think we have a process here for the changes in GitHub.</p>
+<p id=0c0a class="phone s05"><cite>Phil_Archer:</cite> Yeah, the basic principle is that anyone in the group can write a PR that is a pull request or people are encouraged to do so. it only gets merged into the document by unless they wrote it themselves. basically everything that gets put in is reviewed by somebody else.</p>
+<p id=4357 class="phone s05"><cite>Phil_Archer:</cite> So typically what happens is lots of people contribute and the editor will merge it and usually after a discussion in the relevant call but if you write it you generally don't merge your own bul requests right yes it depends</p>
+<p id=c8ca class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So this time that means we have exactly the complicated case…</p>
+<p id=9090 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because I'm an editor of the document. I did write a pull request. I'm not allowed to merge it myself and there's also potential for discussion. Yeah. But I couldn't do it myself,…</p>
+<p id=ba89 class="phone s05"><cite>Phil_Archer:</cite> if it becomes silly Caroline's on holiday for a couple of weeks so it would be really unhelpful to stick to that kind of protocol in a situation where if everyone on the call is content with what you've written and I have no doubt that they will be then plug the button merge it go for it</p>
+<p id=407e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think.</p>
+<p id=84d0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm not sure. thing. I'm not entirely sure.</p>
+<p id=23fb class="phone s05"><cite>Phil_Archer:</cite> No. That's a different mountain.</p>
+<p id=05af class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Let me also open up the GitHub. I think we can discuss…</p>
+<p id=4fb0 class="phone s05"><cite>Phil_Archer:</cite> I can but yes please do that.</p>
+<p id=ca85 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because there's some interesting part to discuss on it. So I have to open up the file right and I didn't had different calls before this one. So it's not open yet. I have to find it first. you do maybe you can just share it.</p>
+<p id=98bd class="phone s05"><cite>Phil_Archer:</cite> I've got it on my screen if it helps. hang on a sec. which one is it that you're particularly interested in?</p>
+<p id=5dad class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think it's the update index MD.</p>
+<p id=0f2b class="phone s05"><cite>Phil_Archer:</cite> Yeah, this one so you've changed one file, which is this one. you've added some text there which I admit I haven't looked at but there we are. I mean generally speaking with this kind of thing it's much easier to merge it and then read it afterwards. but…</p>
+<p id=cc56 class="phone s05"><cite>Phil_Archer:</cite> what you're doing here so I'm looking at this very quickly. I hope other people will do the same. okay.</p>
+<p id=5599 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, please take your time.</p>
+<p id=49b7 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Basically Caroline asked me to clarify the first part on the issuing of DPSPs. Yeah, let me explain one thing…</p>
+<p id=cfc0 class="phone s05"><cite>Phil_Archer:</cite> Which you're done. So I mean from my point of view there's no reason not to merge this. I'm one voice. There are many others on the call. Sure.</p>
+<p id=915c class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because it's maybe something that we want to discuss. So if you scroll down a little bit. so I did make please go Back it up again. Yeah, here. So this is the different ways how digital product passport can be issued.</p>
+<p id=10000 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> two different wallets because we had that discussion last time. A DPP can be issued to the wallet Of the product itself or to an economic operator or maybe to the wallet of a marketplace. However, and this is the last point I made finally a VPP VC can simply made available on a product website not using wallets. and that's something that I want to discuss if everyone sees it in the same way because I believe that's the way where we will be seeing dish product passport VCs is probably as part of a web page that can be verified rather than really in a wallet of a product or at least that's also potentially possible.</p>
+<p id=5ae6 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because a digital product passport is signed by the economic operator and if you verify that signature you can see it's actually coming from the economic operator and…</p>
+<p id=ad94 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> that's all that you need to do. You don't have to have it in a wallet. You don't have to have this holder binding stuff. and therefore I believe it's an option that we should also list here. discussion opened. I don't see a queue.</p>
+<p id=2830 class="phone s05"><cite>Phil_Archer:</cite> Sorry, I can't see the queue.</p>
+<p id=65e4 class="phone s05"><cite>Phil_Archer:</cite> Okay. …</p>
+<p id=e97e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I think you can. It's just you. Yeah. Phil Archer:</p>
+<p id=d44d class="phone s05"><cite>Phil_Archer:</cite> I'll just jump in so, yes, this is very much a personal thing, have I come out in a rash whenever I see the term digital twin. because it's used by so many people to mean so many different things. It does have a specific definition. Yes. and when it's used to mean what it was originally defined to mean, that is a system that you can modify the parameters in a digital system to see how the real life system would respond. That's a digital twin. But you and I and everyone on this call is used to people saying digital twin. And sometimes they mean a PDF, which is not a digital twin. so it's purely a personal thing.</p>
+<p id=4929 class="phone s05"><cite>Phil_Archer:</cite> I hate the term digital twin. I never use it. but that's where I come out in hives when I see this. However, to your basic point, I think you're absolutely Of course, you're right that it could be in a wallet. It could just be published. It could be that the whole point about a variable credential is there are lots of ways to pass it around. And that's an important point…</p>
+<p id=cc09 class="phone s05"><cite>Phil_Archer:</cite> which you've made here. So, I'm happy with that.</p>
+<p id=ebbe class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And Phil,…</p>
+<p id=1826 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I actually have the same feeling when I read digital twin because it's not defined really and other people understand other words. I for some reason still used it in the sentence. So maybe that was stupid.</p>
+<p id=de1a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Maybe we find a better term. it's just we can also write a digital representation of the product on the web which maybe makes it Yeah.</p>
+<p id=76ac class="phone s05"><cite>Phil_Archer:</cite> That would do.</p>
+<p id=a9af class="phone s05"><cite>Phil_Archer:</cite> Yeah, I can hit it again,…</p>
+<p id=1a99 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay. how do I change my own pull request?</p>
+<p id=0480 class="phone s05"><cite>Phil_Archer:</cite> I think. hang on a sec. Let me see. Could I do it? I'm not sure I can. yeah.</p>
+<p id=61f5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I'm still learning the GitHub stuff to be honest. Mhm. Phil Archer:</p>
+<p id=10001 class="phone s05"><cite>Phil_Archer:</cite> Yeah, we all Just when I think I've got it. then something happens. I edit this? there's got to be a way. Yes, I can edit it. So, I can edit your edit.</p>
+<p id=3bf8 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay.</p>
+<p id=fa81 class="phone s05"><cite>Phil_Archer:</cite> So now I've lost me color coding and…</p>
+<p id=3118 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And why don't you further up?</p>
+<p id=4482 class="phone s05"><cite>Phil_Archer:</cite> I can't find where you were. Hang on. There we are.</p>
+<p id=8be9 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Did you remove digital twin? I'm actually very happy.</p>
+<p id=a18a class="phone s05"><cite>Phil_Archer:</cite> The product concept. okay.</p>
+<p id=a843 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> to a digital representation of a product. I think we said okay. Mhm.</p>
+<p id=ed08 class="phone s05"><cite>Phil_Archer:</cite> So, I can make my little change. which I meant to not try. Sorry, that was a typo. I'll go through the process here. I'm going to create a new branch that is a branch of your thing. So then you get to merge that request into your pull request. I think that's what it happens.</p>
+<p id=b0ae class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> But you didn't click on merge it directly to Susanna's branch. That's Aha.</p>
+<p id=34f6 class="phone s05"><cite>Phil_Archer:</cite> No, because I wanted to give you a chance to do that.</p>
+<p id=fc02 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I have to go back to mine thing. I don't know…</p>
+<p id=dbb0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what to do now. Files changed. I don't know what to do. I don't</p>
+<p id=1a8c class="phone s04"><cite>Ronald_Koenig:</cite> So then you have to request 13 and…</p>
+<p id=1b56 class="phone s05"><cite>Phil_Archer:</cite> Hopefully. Do you have this button here,…</p>
+<p id=ef27 class="phone s04"><cite>Ronald_Koenig:</cite> merge it.</p>
+<p id=362f class="phone s05"><cite>Phil_Archer:</cite> Susanna? Okay.</p>
+<p id=c189 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I think so.</p>
+<p id=81ca class="phone s05"><cite>Phil_Archer:</cite> See what happens.</p>
+<p id=540d class="phone s06"><cite>Ivan_Herman:</cite> But are you at the 13? Not another one.</p>
+<p id=0b06 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No. Aha.</p>
+<p id=4b94 class="phone s04"><cite>Ronald_Koenig:</cite> has request exploding.</p>
+<p id=6d67 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I have pull request Thank you. and I Confirm merge. I just do it. And then we can see what happens.</p>
+<p id=10ed class="phone s05"><cite>Phil_Archer:</cite> Great. Yep.</p>
+<p id=bfd9 class="phone s05"><cite>Phil_Archer:</cite> So, that's been done.</p>
+<p id=abd9 class="phone s05"><cite>Phil_Archer:</cite> Did I change yours or did I change the master? that wasn't the idea. I'm sorry.</p>
+<p id=744d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think you changed the master…</p>
+<p id=2fbb class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because you could have chosen merch to Susanna's pull request and then I think it would have looked differently.</p>
+<p id=9e24 class="phone s05"><cite>Phil_Archer:</cite> That's annoying. I'm sorry. Then I've made it.</p>
+<p id=dfce class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So it says Susanna merged one commit into Susanna Gutolski's patch one from Phil Archer's patch one.</p>
+<p id=958e class="phone s05"><cite>Phil_Archer:</cite> I'm sorry. yeah. Okay, then that's right. I've done it into yours.</p>
+<p id=0951 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I have no idea. what does the Mhm. Okay.</p>
+<p id=10002 class="phone s05"><cite>Phil_Archer:</cite> Look here. So, I'm looking at yours now and it says digital representation. It doesn't say digital twin. So yeah.</p>
+<p id=538f class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Amazing. Good.</p>
+<p id=3815 class="phone s05"><cite>Phil_Archer:</cite> So tell what I can do I can submit my review and I can do that. So it means okay so all right before I do it let me show you.</p>
+<p id=6853 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And what does that mean? Let go. Time is up.</p>
+<p id=e2f3 class="phone s05"><cite>Phil_Archer:</cite> So when you created this, it suggested two reviewers, Caroline and…</p>
+<p id=a197 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Mhm.</p>
+<p id=c209 class="phone s05"><cite>Phil_Archer:</cite> Revan. But I can add one as well. there's a way to add a review.</p>
+<p id=132a class="phone s05"><cite>Phil_Archer:</cite> I had it anyway. I can't remember. There was a way to I had it there. I could have hit a It was there.</p>
+<p id=7882 class="phone s06"><cite>Ivan_Herman:</cite> It was there.</p>
+<p id=ccd6 class="phone s06"><cite>Ivan_Herman:</cite> If you No,…</p>
+<p id=c6a3 class="phone s05"><cite>Phil_Archer:</cite> But then I moved away.</p>
+<p id=136f class="phone s06"><cite>Ivan_Herman:</cite> no. If you click on the cog wheel now on your screen and you are fill archer down there. You click on fill archer. the review.</p>
+<p id=105c class="phone s05"><cite>Phil_Archer:</cite> And then I do that. No, I don't want to do that. I know who he is. What I mean is I'm going to add my review.</p>
+<p id=1340 class="phone s06"><cite>Ivan_Herman:</cite> Your review Phil Archer:</p>
+<p id=6437 class="phone s05"><cite>Phil_Archer:</cite> That's So, I do this and I submit review.</p>
+<p id=dbd4 class="phone s05"><cite>Phil_Archer:</cite> I say it looks good to me. Approve. So, I do that. I submit the review. And Susanna, hopefully you can now merge that.</p>
+<p id=d24b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Merge my own number.</p>
+<p id=a538 class="phone s05"><cite>Phil_Archer:</cite> Have a look. if you can. Yeah, because you had it reviewed by somebody else. Yeah, makes sense.</p>
+<p id=6c29 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think I was able to merge it previously as but I didn't want to do that because I wanted to understand…</p>
+<p id=ee14 class="phone s05"><cite>Phil_Archer:</cite> Yeah. You've done it.</p>
+<p id=2976 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what the proposed it and…</p>
+<p id=4264 class="phone s05"><cite>Phil_Archer:</cite> That's it.</p>
+<p id=188c class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> then it should be on the main page as well.</p>
+<p id=a787 class="phone s05"><cite>Phil_Archer:</cite> That's it. Yeah. Yep. It should be there. don't know if it's instant, but it should be pretty much open up. I see. Right. There you go.</p>
+<p id=1cbc class="phone s06"><cite>Ivan_Herman:</cite> They take the time…</p>
+<p id=d537 class="phone s01"><cite>Ingo_Wolf:</cite> Yes.</p>
+<p id=da6f class="phone s06"><cite>Ivan_Herman:</cite> because it brings in markdown into HTML.</p>
+<p id=67fe class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think it's a different document.</p>
+<p id=a90b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> It's not that document.</p>
+<p id=c261 class="phone s05"><cite>Phil_Archer:</cite> This one.</p>
+<p id=648a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> The Yeah.</p>
+<p id=da46 class="phone s05"><cite>Phil_Archer:</cite> Thank you. Okay, good.</p>
+<p id=9736 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Good. Yeah. What I did seems to be there. Mhm. And …</p>
+<p id=9ed6 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what we can do now is to discuss any of the other topics. Maybe Engle.</p>
+<p id=b01f class="phone s01"><cite>Ingo_Wolf:</cite> Yeah, Susanna,…</p>
+</section>
+
+<section>
+<h3 id=fba7>Verifiable Credentials and Presentations</h3>
+<p id=a2ad class="phone s01"><cite>Ingo_Wolf:</cite> you were asking if need VCs or VPs in the context of DPP at all, right? …</p>
+<p id=9af4 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> What? Say that again. Are you breaking out or I'm breaking out?</p>
+<p id=0c83 class="phone s01"><cite>Ingo_Wolf:</cite> you were asking if we need VCs or…</p>
+<p id=615f class="phone s01"><cite>Ingo_Wolf:</cite> VPs. So, verify the credentials or verify the presentations for DPPs, right?</p>
+<p id=fe69 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> only you for verifiable credentials I'm pretty sure we can use them for verified presentations I'm not really sure…</p>
+<p id=b42e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> if we need</p>
+<p id=6a0b class="phone s01"><cite>Ingo_Wolf:</cite> Then I would like to understand if we need selective disclosure as a capability for those credentials</p>
+<p id=d9f0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, it's a good question. I think in the long run, yes, and maybe we have to make our, design decisions based on that. in short term, that's nowhere required really today. I think maybe others would say something different but I don't see it realistic that selective disclosures will be used at the moment raise his hand maybe you have a different opinion</p>
+<p id=2ebc class="phone s01"><cite>Ingo_Wolf:</cite> Because then I Yeah,…</p>
+<p id=daa3 class="phone s05"><cite>Phil_Archer:</cite> No, no,…</p>
+<p id=2687 class="phone s05"><cite>Phil_Archer:</cite> no. Cargo, carry on. You'll</p>
+<p id=4a7a class="phone s01"><cite>Ingo_Wolf:</cite> just to finish because if we would like to have that capability, there is linked verifiable presentations that might be used in the context of TPP. So you can publish those linked verifiable presentations on your web domain.</p>
+<p id=57d7 class="phone s01"><cite>Ingo_Wolf:</cite> can even link it to your economic operator did and still profit from elective disclosure mechanisms.</p>
+<p id=c345 class="phone s05"><cite>Phil_Archer:</cite> That's interesting. I'd like to see that develop.</p>
+<p id=f319 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No. Phil Archer:</p>
+<p id=836c class="phone s05"><cite>Phil_Archer:</cite> Thank you, this exact same conversation came up a couple of weeks ago in the recognized density work where Steve Capel was saying to Manu and Tulleand I'm not sure we need very parallel presentations in the world of supply chains and this kind of thing to which the people who've been working on this for years whose use cases are the driver's licenses the educational qualification ations and so on and the proof of age sort of automatically react saying no of course you need presentations of course you need balar presentations and it's interesting that it's come up in this conversation as well because some of us are thinking not sure we do all right nothing wrong with</p>
+<p id=b70e class="phone s05"><cite>Phil_Archer:</cite> but not sure we need them. so I think it's interesting that you're raising I don't have an answer. I'm just saying that it isn't that this question is being raised elsewhere and…</p>
+<p id=dc16 class="phone s05"><cite>Phil_Archer:</cite> it's being raised basically since we all turned up and started talking about use cases that are not to do with driving licenses, proof of age and educational certificates.</p>
+<p id=346a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think we maybe should leave verify presentations out of the use cases…</p>
+<p id=7fb5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> until we find a use case that is needed for digital product passports.</p>
+<p id=89c4 class="phone s05"><cite>Phil_Archer:</cite> The use case…</p>
+<p id=d488 class="phone s05"><cite>Phil_Archer:</cite> where I think it might be very relevant in our world is within the supply chain where you want to prove that something is organic, was not built through slave labor, was not cause of deforestation. But you don't want to reveal the name of the company that did the work. In other words, you can turn up at the back of a distribution center and prove that you are an authorized person to hand over the goods without them knowing who you are. so you true. Yep.</p>
+<p id=bfdf class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> But that's not the DPP use case for me. that's a identity company certificate use case and…</p>
+<p id=f866 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think wide also made a similar examples in one of the previous calls.</p>
+<p id=8f41 class="phone s04"><cite>Ronald_Koenig:</cite> I'm calling it Yeah,…</p>
+<p id=f323 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No, I just was mentioning that I think you made a similar example in one of the previous calls for verifiable presentations, but here it also was actually a verified representation for a company identity, not for a product identity.</p>
+<p id=97ab class="phone s04"><cite>Ronald_Koenig:</cite> I'm currently thinking about it…</p>
+<p id=e2d0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah.</p>
+<p id=7f8f class="phone s04"><cite>Ronald_Koenig:</cite> if we need for my understanding is the following. The verifiable presentations are used to provide cryptographic proof with the authentication proof that I'm the holder of this credential or at least I mentioned in the credential and I want to prove that I am or the claim inside the credential is related to me and I can prove that this person which is presenting this credential is really the person which is referenced to</p>
+<p id=0e91 class="phone s04"><cite>Ronald_Koenig:</cite> in this credential my understanding was always okay yes we need this one because for example I would like to know that the economic operator is presenting this credential to me and the economic operator for example is mentioned inside the product passport with his web decentralized identifier and…</p>
+<p id=730c class="phone s04"><cite>Ronald_Koenig:</cite> can use his private key to prove that he is the economic operator and is presenting this product passport to someone. In this case, you need a presentation.</p>
+<p id=4032 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, but presenting a digital product passport to someone is not a relevant use case and…</p>
+<p id=c5bb class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> that he has to prove that it's presenting it at this point in time when it is signed by this economic operator.</p>
+<p id=089b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> the DPP can lay everywhere and you can still prove that has been issued. and also the digital product passport at all times need to carry the identity of the issuer. So I'm not sure if that's the case for your driver's license or…</p>
+<p id=5b2a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but we don't have that use case that we need to prove that we're presenting it at the moment. that's just not existing because the British border passport credential can also be stored at your online marketplace for example it can be everywhere Yeah.</p>
+<p id=e0cb class="phone s04"><cite>Ronald_Koenig:</cite> I think we are confusing now issuer and…</p>
+<p id=10003 class="phone s04"><cite>Ronald_Koenig:</cite> and holder because the issuer is proving the credential with the assertion proof and the holder can then present this credential to someone else and proves that he was referred to in the credential itself. let me explain this way. So for example you are a company and you have a production process for example u manufacturing I take the example from the last time a rail right and you want to prove to someone else that you are the guy who is producing this one and you have received a credential from certifier that your production process is generating. this amount of carbon.</p>
+<p id=3e9a class="phone s04"><cite>Ronald_Koenig:</cite> Then in this case the certification entities is signing proving the credential by proving that at least for example 10 tons of carbon is generated and the manufacturer is presenting it for example to some verifier who wants to calculate in a verifiable session the overall footprint of this rail. then you need this one if you have the requirement that you need this and you need a producer of this one in this process. So what I mean with this is really every time the same.</p>
+<p id=8ee9 class="phone s04"><cite>Ronald_Koenig:</cite> If we don't need cryptographic verification of the holder of the credential then you don't need a presentation is my understanding…</p>
+<p id=8712 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah.</p>
+<p id=fc3a class="phone s04"><cite>Ronald_Koenig:</cite> because the only difference to a credential is that in the presentation you have this a author authentication proof which is attached to the list of credentials the list of credential is proofed with this authentication proof so that this guy who is presenting this one with this presentation can prove that this credentials are about him in any Hey, heat.</p>
+<p id=5753 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Probably good to look at a diagram at such discussion sometimes difficult to follow but Phil you raise your hand.</p>
+<p id=6814 class="phone s05"><cite>Phil_Archer:</cite> just only very briefly to Ronald's point,…</p>
+<p id=88d3 class="phone s05"><cite>Phil_Archer:</cite> the confidence method spec that Joe and Denan are working on is designed in a more general way to handle how can you have confidence that the person handing you this credential is either the subject or the credential is in some way authorized to present it to you which is where the whole concepts of a ver presentation and a credential and a confidence method and all this stuff they all actually overlap. so what we're working on here is one piece of the puzzle.</p>
+<p id=4cf8 class="phone s05"><cite>Phil_Archer:</cite> And so I think it may be maybe that the competence method work is relevant to what Ronald was saying, but if you think otherwise then okay</p>
+<p id=74a3 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. I mean,…</p>
+<p id=4a82 class="phone s04"><cite>Ronald_Koenig:</cite> What I really is maybe I can share my screen so that we talk everybody about the same.</p>
+<p id=107a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I don't know that.</p>
+<p id=10004 class="phone s04"><cite>Ronald_Koenig:</cite> You say it is easier to follow a diagram than my explanations. I'm referring to the VC data model 2.0 zero but more or less is some kind something of foundation we have right and the verifiable presentation is from my point of view nothing more than a verifiable list of verifiable credentials and a proof which is attached to this verifiable list of verifiable presentations if you look more detail these proofs are of course not the proof about the claims inside the verifiable credentials because these are part of the verifiable credentials</p>
+<p id=70ec class="phone s04"><cite>Ronald_Koenig:</cite> it is the authentication proof of the presenter of this verifiable presentation. Maybe I can also go to where it is encoded. Hopefully it is somewhere. Do we have it very presentation here? Basic structure. Okay, just a moment. I don't find okay unfortunately the proofs are not shown</p>
+<p id=4953 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I mean let's maybe can we do it for now that if we don't find a use case where we need that feature Down. then We leave it out as long as we don't have a use case where we need it. I think we can be more focused in our work for the moment and I really believe that the examples that you made and also Phil made is kind of a second layer check that you can do about a company.</p>
+<p id=67b5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> But then it's company identity and company attributes that you're checking. it's not a pure product passport use case in my view. You don't have to prove anyone that you really own the product passport that I don't think that's happening anywhere.</p>
+<p id=7e8d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And if we can live with that assumption for now, unless someone comes up with a use case where we actually need it, I would suggest that we leave it out.</p>
+<p id=4a5b class="phone s04"><cite>Ronald_Koenig:</cite> But from my point of view,…</p>
+<p id=96c8 class="phone s04"><cite>Ronald_Koenig:</cite> this is a very general statement because I would say then we don't need wallets at all. Right? because then I can really as you said issue or publish this credential somewhere because there is no need to have it which is in a wallet which is responsible to maintain the holder keys right so that means you can put it somewhere on the internet and you can verify the assertion proof of the issuer and you don't need it in a wallet and you don't need a presentation protocol or…</p>
+<p id=0baf class="phone s04"><cite>Ronald_Koenig:</cite> you can only retrieve it using a get http hi.</p>
+<p id=0717 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I mean I think we should leave open…</p>
+<p id=faf9 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> which exchange protocols people use to retrieve the data because it might be very handy if the battery has a wallet. and then you make a request for a certain credential of that wallet because then you can use your DICOM or your open ID for VC protocol. and if you want to use it, you can use it. You have it in a wallet.</p>
+<p id=6654 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> if you don't want to use it because no one has a wallet yet and that's honestly the migration path the verifiable credentials that sits somewhere where you can retrieve it and verify it I think that also should be possible the more sophisticated the technology gets and…</p>
+<p id=88af class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> the more people and companies and products have wallets I doubt that you won't use a wallet for these Yes. No, and…</p>
+<p id=e8ab class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. This is…</p>
+<p id=f402 class="phone s04"><cite>Ronald_Koenig:</cite> but what I'm saying if we make a statement here that we don't need presentations this is Okay.</p>
+<p id=5cb2 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I didn't say that. I said we leave it out for the moment or we not considering it for the moment because the use case is not clear and then we focus on how do we structure and make concepts for verify credentials.</p>
+<p id=1f18 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And if we're fine with that for today or…</p>
+<p id=5b6b class="phone s05"><cite>Phil_Archer:</cite> Let's go.</p>
+<p id=9cea class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> maybe for the next rounds, we can focus more on verify the credentials and handling them as digital passports and is someone against this approach? Then …</p>
+<p id=4916 class="phone s05"><cite>Phil_Archer:</cite> Little talk.</p>
+<p id=3cb4 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> why don't we decide that for today we can make a note that we think that we don't have to consider it or…</p>
+<p id=296d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> a nice sentence that maybe a native speaker or speak can much nicer than me and then we put it on the side and I make another pull request for it.</p>
+<p id=853b class="phone s05"><cite>Phil_Archer:</cite> Tall Ted will go through and…</p>
+<p id=3c08 class="phone s05"><cite>Phil_Archer:</cite> correct every construction of every sentence. He does a brilliant job at it. I mean shouldn't rely on him but he does a great job.</p>
+<p id=61e6 class="phone s05"><cite>Phil_Archer:</cite> He makes more commits than anyone else because he does that and he will don't worry he will clean up every language. Don't worry.</p>
+<p id=1d10 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay, good.</p>
+<p id=2b0a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So, I put that on my to- there were other yellow marked sections in this document. for example, why is link data useful for DPPS? I also added one section there and last time it seems you have list you have written down that elaboration is needed. Should we use that as the next topic to discuss if you don't mind maybe I can share my screen. I'm just on a small laptop here a bit reduced in functionality but I'm talking about this section here.</p>
+</section>
+
+<section>
+<h3 id=b9ed>Linked Data Usefulness For DPPs</h3>
+<p id=631d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And what I added to this one was this here and I think maybe we should elaborate of what we actually mean with linked data to be very concrete.</p>
+<p id=10005 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> My understanding is that we use the context element and connect JSON LD schemas to a document and then we describe what we do with it. Is that everyone's understanding in the context of DPSPs?</p>
+<p id=6597 class="phone s05"><cite>Phil_Archer:</cite> Yes. I just want to read something for you. Dr. Susanne Guth-Orlowski: Phil Archer:</p>
+<p id=fdd6 class="phone s05"><cite>Phil_Archer:</cite> And this might be directly relevant to our conversation here. Forgive me, Susanna. so, some of us are going to be in eva, in a month's time, and I am nervous about that event because I know that I'm going to be in front of people who, are going to be asking all sorts of awkward questions.</p>
+<p id=6b6b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. No. Mhm.</p>
+<p id=a089 class="phone s05"><cite>Phil_Archer:</cite> So, I've been preparing some answers to exactly the kind of question that you're raising, Susanna. because I think we're going to get asked this and I think I'm probably going to be challenged sometimes face to face and sometimes on stage. so there's a little Google doc that I've been putting together some answers to some of these questions which includes the one you're asking. Lisa said why is link data useful for VCs? It doesn't then talk about DPPs particularly but everything you're saying here is relevant. and again I think I mean I get asked what's the difference between a VC and just a simple signature. I get the usual complaints from various people about it doesn't scale, it's not secure and all the other things because apparently we're idiots know what we're doing. and all that kind of stuff. So what you're doing here is very interesting.</p>
+<p id=dd92 class="phone s05"><cite>Phil_Archer:</cite> Sorry, I just wanted to say that it's all part of the overall battle's too strong a word.</p>
+<p id=6b66 class="phone s05"><cite>Phil_Archer:</cite> I don't know. But we do have to write exactly this kind of thing because we do get attacked.</p>
+<p id=8fd8 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I will also be in Geneva by the way.</p>
+<p id=f8c5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So, if you need support in whatever you're doing or…</p>
+<p id=fc14 class="phone s05"><cite>Phil_Archer:</cite> Look forward to seeing you.</p>
+<p id=7b76 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> want to put on stage, please feel free to involve me.</p>
+<p id=604c class="phone s05"><cite>Phil_Archer:</cite> Yeah. Thank you.</p>
+<p id=400c class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So what I added to this one so first of all thank you for the document. do you want to incorporate maybe…</p>
+<p id=9dbf class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what fits into this document from your document.</p>
+<p id=0762 class="phone s05"><cite>Phil_Archer:</cite> If you find it useful,…</p>
+<p id=a8c8 class="phone s05"><cite>Phil_Archer:</cite> use it. If not, it's just purely there's some people who've helped write some answers to some of the kind of questions we get. And if it's useful, great. Not well,…</p>
+<p id=e6a6 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay. Okay…</p>
+<p id=91dc class="phone s05"><cite>Phil_Archer:</cite> I'm not upset.</p>
+<p id=5c33 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> then I can go through it and use what I find useful and write another pull request.</p>
+<p id=ec65 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> What I wanted to mention is that in the context of the DPP registry which now is available and also the regulation is available. the registry regulation says that it does checks for completeness of the DPP which is in my view also something that we can do with linked data. So the idea is that the DPP registry will have In that repository, we'll hopefully find a JSON LD file. and if you issue a digital product passport, you would have to provide all elements that are in this JSON schema.</p>
+<p id=d4e9 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So what it would also allow us is to check for data completeness in the DPP and…</p>
+<p id=c573 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> this is why I added this here. Mhm. Yeah. This is…</p>
+<p id=bda9 class="phone s04"><cite>Ronald_Koenig:</cite> Zuz I don't think that's true.</p>
+<p id=0b62 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah,…</p>
+<p id=ab89 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what I wanted to discuss because I wasn't sure because Yeah.</p>
+<p id=62cb class="phone s04"><cite>Ronald_Koenig:</cite> just but my understanding is okay linked data gives you the references to the semantic right. So therefore you get a reference to this one but you are not defining is it mandatory or optional something like that. So that means yeah</p>
+<p id=9c27 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. Yeah. but hang on and even I see you raised your hand. if it doesn't meet the file in the semantic repository of the registry, you won't be able to register your DPP. So it somehow for me is a means to check for completeness.</p>
+<p id=d4ea class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And please, tell me differently because that's not what I do every day. Ivan, you had raised your hand.</p>
+<p id=15e7 class="phone s06"><cite>Ivan_Herman:</cite> Ronald said more or…</p>
+<p id=2906 class="phone s06"><cite>Ivan_Herman:</cite> less what I wanted to say and link data is not for that. It does all kinds of wonderful thing but this is not one of them. I would almost say that it is the contrary because one of the basic feature of link data is what is called an open world. So there are statements which are outside a place but that's fine. I mean you never know whether you are complete so to say…</p>
+<p id=21cf class="phone s06"><cite>Ivan_Herman:</cite> because there might be also statement about your stuff on the link data somewhere on the other end of the globe. So it's not really relevant for this.</p>
+<p id=188e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, I see…</p>
+<p id=3fcf class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what you mean as well.</p>
+</section>
+
+<section>
+<h3 id=433e>JSON Schemas Versus Shackle</h3>
+<p id=10006 class="phone s06"><cite>Ivan_Herman:</cite> I'm not questioning the validity of your need for that. But if you want something like checking that then you would have to use JSON schemas some other tools which are not link data per se. So if you make these kind of statements then you can be sure that you will have people saying no you are not true and it would be very difficult to defend. Okay.</p>
+<p id=69fc class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Do you have an idea how you might maybe formulate it differently to explain that that is what the registry will be doing because they will have a schema definition somewhere and your DPP has to include all elements that are in the schema otherwise you're not complete and…</p>
+<p id=ec7b class="phone s06"><cite>Ivan_Herman:</cite> Then that's…</p>
+<p id=5983 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> that's Yeah.</p>
+<p id=c84a class="phone s06"><cite>Ivan_Herman:</cite> what JSON schemas are for example although they are relatively difficult to use in my case…</p>
+<p id=699a class="phone s04"><cite>Ronald_Koenig:</cite> Maybe I can.</p>
+<p id=764e class="phone s06"><cite>Ivan_Herman:</cite> but that's essentially what they do they describe your JSON file Then they have requirement which says a certain term is required etc. This is what you're looking for which is completely over data. Sorry Ronald</p>
+<p id=836d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=4832 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Mhm.</p>
+<p id=3510 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah, maybe I can add to this one was even saying because we are in the semantic hoop and are currently discussing this one because my understanding and the statement from Ian were completely right even the ontology definition which is defining the data model and not the JSON ID. It's really defining the data model or the semantic model is an open board assumption. So that means it is declaring something about the object but it is not meant to close the It is to define whatever it knows about this word and provide the semantic of the terms which are used but is not restricting the terms itself. and therefore also the JSON ID context is generated out of the ontology will not do this. What you can do are two things.</p>
+<p id=5e25 class="phone s04"><cite>Ronald_Koenig:</cite> The first one even has already mentioned is use JSON schema because they define a closed word.</p>
+<p id=6966 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Okay. Mhm.</p>
+<p id=ccf4 class="phone s04"><cite>Ronald_Koenig:</cite> So you go to a validator and the validator says you are all the data in or is the optional data missing something like a manditarian parameter missing or…</p>
+<p id=9cf4 class="phone s06"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=e9d0 class="phone s04"><cite>Ronald_Koenig:</cite> something like that. But I don't like it because if you do this one you are back again to structure definition and not to semantic definitions. what you can do in instead is using Shekele is defining constraints on top of ontology. And if you are doing this one, you can say okay you have for example a class in the ontology like a data product class and can say okay with a constraint on top of the ontology of the oval.</p>
+<p id=62c4 class="phone s04"><cite>Ronald_Koenig:</cite> You can say okay this attribute inside or…</p>
+<p id=7fd5 class="phone s04"><cite>Ronald_Koenig:</cite> this term inside this class have to be present otherwise it is semantically not complete.</p>
+<p id=2aed class="phone s06"><cite>Ivan_Herman:</cite> It brings</p>
+<p id=10007 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. So that means I would have a context element that points to a JSON LD file and…</p>
+<p id=3611 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I don't know where's the shekele file related in the</p>
+<p id=c141 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. The checker file is pretty simple. What you have if you look into the verifiable credential there is something like a credential schema and the credential schema. The first example is what Iban has already said is that it could be a JSON schema…</p>
+<p id=32f9 class="phone s04"><cite>Ronald_Koenig:</cite> which makes the things very explicit because then you have a data structure validation and your outcome of the credential has to follow this has to satisfy this credential schema or you put in a shekele file. What I would prefer because then you can make semantic constraints on No,…</p>
+<p id=cce1 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah.</p>
+<p id=84cc class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No, I understand. And I think I used it some time ago, but I'm not using it on a day-to-day business. So, I forgot where I have to connect Am I connecting the shekele file in the JSON ID file or where do I in the No.</p>
+<p id=eca2 class="phone s04"><cite>Ronald_Koenig:</cite> no, the JSON ID file is just a mapping.</p>
+<p id=d3da class="phone s06"><cite>Ivan_Herman:</cite> Excuse me.</p>
+<p id=60f8 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay. …</p>
+<p id=28d2 class="phone s04"><cite>Ronald_Koenig:</cite> So the</p>
+<p id=43ac class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but the other question is do we want to go down this route here or…</p>
+<p id=a2aa class="phone s06"><cite>Ivan_Herman:</cite> Yeah,…</p>
+<p id=421c class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> do we want to mention it at all or leave it out? sorry, Ivan. I see your hand.</p>
+</section>
+
+<section>
+<h3 id=ad6a>VCs And RDF Graph Limitations</h3>
+<p id=da4a class="phone s06"><cite>Ivan_Herman:</cite> I mean I have to put up some warning signs about shekele and I'm sorry to be the bearer of the bad news but it cannot properly be used with verifiable credentials in the entirey and they are only for the credential part there are some technical things that are there we are talking about RDF graphs and data sets etc. Shekele is not prepared to handle data sets and the very very precisely a verifiable credential consists of several RDF graphs. The credential itself and the signature is separated in this respect and shackle cannot handle that today.</p>
+<p id=d23f class="phone s06"><cite>Ivan_Herman:</cite> that's why we have never added a shackle representation of verify credentials to the lot only vocabularies and JSON ID context. that means that you can have a shekele which can check the credential which might be okay with you. so that might be enough but it cannot verify credential. So it cannot check the presence or not presence of proofs and whatever is within the proof…</p>
+<p id=2f05 class="phone s06"><cite>Ivan_Herman:</cite> because that's these two different RDF graphs and check cannot handle</p>
+<p id=8fd3 class="phone s04"><cite>Ronald_Koenig:</cite> This is pretty interesting…</p>
+<p id=289d class="phone s04"><cite>Ronald_Koenig:</cite> because even my understanding is that or maybe I'm wrong with the credential schema because my understanding is the credential schema can contain a lot of schemas and the schema can also define a part of the credential and in my case my understanding was that the credential</p>
+<p id=6345 class="phone s04"><cite>Ronald_Koenig:</cite> schema can be used to only address the credential subject so that I don't have only one graph or…</p>
+<p id=254b class="phone s04"><cite>Ronald_Koenig:</cite> this means that the credential subject should only be one that it means the main graph or the default graph how it is called right and I agree completely with you yes it is a problem with the verifiable credential for the entire credential because there we have different graphs right one for the credential subject and the one for the surroundings and so on. Yeah.</p>
+<p id=3bd0 class="phone s06"><cite>Ivan_Herman:</cite> Yes. not the credential subject for the credential.</p>
+<p id=b135 class="phone s06"><cite>Ivan_Herman:</cite> that all the metadata about the credential plus the subject plus whatever we say about the subject.</p>
+<p id=0224 class="phone s06"><cite>Ivan_Herman:</cite> These are all in the default graph and…</p>
+<p id=9884 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. Yeah.</p>
+<p id=c78a class="phone s06"><cite>Ivan_Herman:</cite> the proofs are into separate graphs. that's the one that is built up.</p>
+<p id=c535 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. On my understanding was that the credential schema is only describing…</p>
+<p id=2aad class="phone s06"><cite>Ivan_Herman:</cite> What is micro schema object?</p>
+<p id=15a3 class="phone s04"><cite>Ronald_Koenig:</cite> what the credential schema is or is called just a moment I have to look into it. Not that I'm using the wrong term so that you can is the term inside data schemas.</p>
+<p id=da4f class="phone s06"><cite>Ivan_Herman:</cite> That's what …</p>
+<p id=804d class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. Now it is called credential schema. It is a property inside the verifiable credential.</p>
+<p id=77ce class="phone s06"><cite>Ivan_Herman:</cite> but that's what you can assign to the credential.</p>
+<p id=37be class="phone s06"><cite>Ivan_Herman:</cite> You can assign a JSON schema,…</p>
+<p id=1589 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah, but you can also define others…</p>
+<p id=99f0 class="phone s04"><cite>Ronald_Koenig:</cite> because you have only to define the type, right?</p>
+<p id=e616 class="phone s06"><cite>Ivan_Herman:</cite> But I mean what do you want to use it for?</p>
+<p id=f45b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Maybe I can come in again.</p>
+<p id=787c class="phone s06"><cite>Ivan_Herman:</cite> Mhm. No.</p>
+<p id=3fc2 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> I would like to understand what is the best way to check if certain data fields are part of the verifyable credential. maybe mainly of the subject part but yeah we also need the issuer ID for example</p>
+<p id=7ef1 class="phone s06"><cite>Ivan_Herman:</cite> So I think Ronald is right that there is a separate specification which is not a recommendation at this moment yet…</p>
+<p id=c501 class="phone s04"><cite>Ronald_Koenig:</cite> This is this one.</p>
+<p id=97f3 class="phone s06"><cite>Ivan_Herman:</cite> which does that's from the data model actually but there is a separate specification for that which can assign JSON schema to credential.</p>
+<p id=d7ca class="phone s06"><cite>Ivan_Herman:</cite> Yeah, that's the one.</p>
+<p id=3cf1 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And that's…</p>
+<p id=df3a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> what you meant at the beginning, Ivan. And Bronard said it's very strict and then you cannot change the structure.</p>
+<p id=274a class="phone s06"><cite>Ivan_Herman:</cite> Yeah, that's what stop there. so you can see the credential schema. It says you have the credential there with all the subject and ID and type and blah blah. And you can assign a schema to it which is this schema email.json. And the verifier is supposed to check the consistency of the credential via this schema. That's the simplest setup which is there. and you can make it a little bit more complicated but let's not get there. So that's what there. the interesting point about this one is</p>
+<p id=10008 class="phone s06"><cite>Ivan_Herman:</cite> that it is a candidate recommendation because we have never received enough implementations for this spec to be used as a recommendation. So if you have an environment where you use this that would be very good for the working group because we can then go and publish it as a recommendation. But for the time being we have defined that and then somehow the community did not pick it up. But again if this community here needs something like that. This is what we are looking for. whether the same mechanism could be used to assign a shekele file.</p>
+<p id=d54f class="phone s04"><cite>Ronald_Koenig:</cite> Yep.</p>
+<p id=9302 class="phone s06"><cite>Ivan_Herman:</cite> probably yes but that's to require some sort of an extension of this thing but you are right the fundamental structure is there and could be used and…</p>
+<p id=12aa class="phone s06"><cite>Ivan_Herman:</cite> that's probably the answer for Susan's questions of where do you put the credential schema the answer is wherever you want as long as it has a URL and then you put the credential itself Yes.</p>
+<p id=29b5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. …</p>
+<p id=10009 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> just for me to repeat u making sure I understood it correctly. in my credential which is a DPP, I can use credential schema attribute to point at a DPP JSON which is then a JSON schema which is put on the DP registry semantic repository</p>
+<p id=1cba class="phone s06"><cite>Ivan_Herman:</cite> Yes. Yes. Yes. Yes.</p>
+<p id=ad77 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> where it's permanent and this is what the European</p>
+<p id=5e84 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> in commission defines and then I have to go and check it against that file. Okay. Yeah.</p>
+<p id=6fa6 class="phone s06"><cite>Ivan_Herman:</cite> And you can make it a little bit more complicated just to that instead of pointing to a schema, you can point to another verifiable credential which contains that schema. So you can essentially add signature structure to the indirectly schema as well…</p>
+<p id=3062 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. but…</p>
+<p id=9f98 class="phone s06"><cite>Ivan_Herman:</cite> which might be a more preferred way of doing that. But then that these are okay…</p>
+<p id=0a80 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> if the schema is placed on an EU site, then I think that's good enough. we hope that the EU keeps control over the domain.</p>
+<p id=7bb4 class="phone s06"><cite>Ivan_Herman:</cite> if you trust the EU then that's fine but okay…</p>
+<p id=2b7e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Not sure I should, but Ivan Herman:</p>
+<p id=1354 class="phone s06"><cite>Ivan_Herman:</cite> but for the time we Right.</p>
+<p id=8fdf class="phone s04"><cite>Ronald_Koenig:</cite> But here…</p>
+</section>
+
+<section>
+<h3 id=f7b9>Semantic Work vs. JSON Schema</h3>
+<p id=fe25 class="phone s04"><cite>Ronald_Koenig:</cite> but here are for my point the problem with this one. Yes, it works this way. That's right. You can do this with a JSON schema. But the next question What will be asked then is why you are not using JSON schema from the beginning on because you have to provide it anyway. So then why you are doing semantic work and…</p>
+<p id=6303 class="phone s04"><cite>Ronald_Koenig:</cite> all the other stuff if you have to provide JSON schema which is very limiting because it is a closed word to have to use it anyway.</p>
+<p id=6250 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, but…</p>
+<p id=c8d0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but I see where you're coming from entirely.</p>
+<p id=c347 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, no question.</p>
+<p id=19c7 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. Yeah.</p>
+<p id=1000a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Why I'm trying to at least have one solution here is because they have to make a concrete solution to the European Commission that they can use to make it very strict but just for the use case of ing EU regulated products under the EU DPP registry. We're not saying we have to do that for all DPPs and we can add additional other data as well.</p>
+<p id=d662 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> But it's one use case. Yeah. Yeah.</p>
+<p id=1a61 class="phone s04"><cite>Ronald_Koenig:</cite> But then we should not say it in general for DPPs…</p>
+<p id=bc70 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And yeah.</p>
+<p id=9476 class="phone s04"><cite>Ronald_Koenig:</cite> because DPP is one use case we are using to promote JSON ID and ontologies to describe it. So if you say DPP of course for DPPS we are defining anyway every time a JSON schema then I know what happens. So this is unfort this is the unfortunate circumstance we have this is just…</p>
+<p id=5019 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. Okay. so the discussion should be continued…</p>
+<p id=da55 class="phone s04"><cite>Ronald_Koenig:</cite> what I wanted to mention now We can yeah the others are…</p>
+<p id=ea18 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but at least for me that was very helpful. Run can you maybe make a suggestion for next time how we can use JSON LD with shackle or do we have other options that we want to promote?</p>
+<p id=9468 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Because this seems to be one option. do we have others?</p>
+<p id=5411 class="phone s04"><cite>Ronald_Koenig:</cite> then that institutes what you see here is the type is JSON schema you can also put in shekele but asan Ian has said that was never done before so that means this is already something…</p>
+<p id=606a class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah,…</p>
+<p id=9e3e class="phone s04"><cite>Ronald_Koenig:</cite> which was not used and therefore has no proving let me say it this way but to do this with shekele is more or less what we thought we can do and nobody has done before let me say it this Yeah.</p>
+<p id=05a5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but that doesn't matter. I do since five years things no one has done before. I'm not,…</p>
+<p id=a1e8 class="phone s04"><cite>Ronald_Koenig:</cite> Yeah. Yeah.</p>
+<p id=7430 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> …</p>
+<p id=5edb class="phone s04"><cite>Ronald_Koenig:</cite> Okay.</p>
+<p id=a854 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> it doesn't scare me away.</p>
+<p id=0e57 class="phone s04"><cite>Ronald_Koenig:</cite> Then if…</p>
+<p id=d22b class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah,…</p>
+<p id=b620 class="phone s04"><cite>Ronald_Koenig:</cite> then I can do it.</p>
+<p id=75d5 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> why don't you make a proposal and then maybe you come with a piece of code and we can discuss it next time.</p>
+<p id=2df3 class="phone s04"><cite>Ronald_Koenig:</cite> Because this is a long discussion in the semantic group because in the semantic group we are defining a vocabulary which is open world assumption. So that you are not doing any restrictions. By the way, this is also a way very easy to do selective disclosure because if you have a JSON schema in and you have a lot of mandatory parameters inside, then you cannot selective disclose anything because the result has to satisfy the JSON schema.</p>
+<p id=7836 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Which working group did you mean?</p>
+<p id=715e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> The one in JDC4.</p>
+<p id=c9c7 class="phone s04"><cite>Ronald_Koenig:</cite> we have the semantic working group inside from vbuild…</p>
+<p id=1000b class="phone s04"><cite>Ronald_Koenig:</cite> where we are defining this European business wallet vocabulary and…</p>
+<p id=c893 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=a8a0 class="phone s04"><cite>Ronald_Koenig:</cite> we are not using JSON schema because all the other guys defining SDVCs and I see the lot of troubles they have to defining all these for example pyc records using JSON schema and…</p>
+<p id=4140 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. I see. Yeah. Yeah.</p>
+<p id=9d3d class="phone s04"><cite>Ronald_Koenig:</cite> I don't want to go into this direction because then I'm really</p>
+<p id=4685 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. No. Okay. Great. Yeah. And then I can make the same proposal maybe in other working groups in JTC 24 which is where the discussion is coming up in August.</p>
+<p id=ffa0 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> So it would be really good if we had the at least two proposals maybe with a preferred one that we can introduce with examples that would be great. Okay. we have one minute left. I have three to-dos two for me. I'm going to write a sentence that VPs are out of scope for the moment because we didn't find a use case.</p>
+<p id=8c1f class="phone s06"><cite>Ivan_Herman:</cite> But one</p>
+<p id=7387 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> And then Donard is doing the example for the JSON LD schema with shackle maybe. and I'm also removing the part that I added which Phil accepted that we can check the completeness with the link data stuff because it's wrong. Those are the things that I noted down. Did I forget anything?</p>
+<p id=c6b3 class="phone s06"><cite>Ivan_Herman:</cite> thing before we go Susan the problem is the JSON schema works so that's all fine but this is not a good enough proof that link data is useful for DPP that's…</p>
+<p id=78d2 class="phone s06"><cite>Ivan_Herman:</cite> where we started with and for which we do not have yet the right set of arguments so and this is what Phil will have to defend in Geneva because that's exactly the kind of thing that you have to emphasize in the text.</p>
+<p id=64a8 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. know that I don't have a problem with defending that…</p>
+<p id=65ad class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> because luckily the digital product passport has a mandatory piece of data that it needs to provide but luckily the European Commission also is open to add additional data which is relevant for different actors in the supply chain which then can be added through the context element. Yeah.</p>
+<p id=290e class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, no problem. Maybe I can write additional stuff about that. but we also need one mechanism where we can give, the European Commission instrument to check if the military data is in the DPP. If we don't have that,…</p>
+<p id=4293 class="phone s06"><cite>Ivan_Herman:</cite> I understand Susan I didn't say that this tracking mechanism is without interest.</p>
+<p id=32bb class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> we also have a problem. Yeah. Yeah.</p>
+<p id=8ff6 class="phone s06"><cite>Ivan_Herman:</cite> The only thing is that we started with the link data arguments and this is not one of them.</p>
+<p id=98cf class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> No, that's clear. Sorry. it was completely my thinking about we have to solve this problem as well but we have enough use cases for using link data for all the other use cases which are not mandatory…</p>
+<p id=3d37 class="phone s06"><cite>Ivan_Herman:</cite> Bye-bye.</p>
+<p id=b311 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> but are also carried on the back of the DPP.</p>
+<p id=f435 class="phone s01"><cite>Ingo_Wolf:</cite> Thank you. Right.</p>
+<p id=458d class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay, so I think we are at the hour and…</p>
+<p id=e6ca class="phone s04"><cite>Ronald_Koenig:</cite> All right.</p>
+<p id=9065 class="phone s03"><cite>Dr._Susanne_Guth-Orlowski:</cite> thank you for the great discussion everyone. Bye-bye.</p>
+<p id=7630 class="phone s05"><cite>Phil_Archer:</cite> Thanks everyone. Meeting ended after 01:01:10 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

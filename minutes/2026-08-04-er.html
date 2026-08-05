@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 4 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>4 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Brent_Zundel, Dave_Longley, Elaine_Wooton, John_Phillips, Manu_Sporny, Parth_Bhatt, steve_capell, Ted_Thibodeau_Jr, Todd_Snyder</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4c03">Introduction and Agenda Overview</a></li>
+<li><a href="#b9f1">UN GRID and John Phillips Introduction</a></li>
+<li><a href="#ae29">UN GRID and John Phillips</a></li>
+<li><a href="#1fac">Refine UNGRID / UNTP / UNVTD Example · Issue #107 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#e930">UNP, UNCC, UNVTD, and GRID Explained</a></li>
+<li><a href="#63d3">Recognized Entities Spec and UN GRID Example</a></li>
+<li><a href="#f58a">Digital Identity Anchor and Recognized Entities</a></li>
+<li><a href="#8cfa">Diagramming Responsibility Boundaries</a></li>
+<li><a href="#c50a">UN GRID URL and Global Initiative</a></li>
+<li><a href="#365c">Identity Resolver Concept</a></li>
+<li><a href="#9350">Commercial Invoice JSON Context</a></li>
+<li><a href="#c1cd">Use Cases Document and Authorship</a></li>
+<li><a href="#cc83">Discovery model for recognised entity VCs · Issue #89 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#9b89">Deprecate/remove `use-cases.html` replace with inline use cases section. · Issue #91 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f3f7 class="phone s01"><cite>Manu_Sporny:</cite> Good day.</p>
+<p id=cd43 class="phone s02"><cite>John_Phillips:</cite> Good to see you,…</p>
+<p id=808d class="phone s02"><cite>John_Phillips:</cite> Good day, as we say in Australia.</p>
+<p id=cfa3 class="phone s01"><cite>Manu_Sporny:</cite> Apologies.</p>
+<p id=910e class="phone s02"><cite>John_Phillips:</cite> Go ahead.</p>
+<p id=de6d class="phone s01"><cite>Manu_Sporny:</cite> I don't have my camera on this machine. and we typically cameras off, but wonderful to see It's totally your choice. …</p>
+<p id=29a9 class="phone s02"><cite>John_Phillips:</cite> I'll switch camera off…</p>
+<p id=2182 class="phone s01"><cite>Manu_Sporny:</cite> we sure thing either way.</p>
+<p id=f9c1 class="phone s02"><cite>John_Phillips:</cite> because it puts less load on the machine. but I also want to respect the group's behavior. So, No worries. I think he likes his hats.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> Steve is usually cameras on so we're happy with any decision you want to go with. we are just getting off of another call. some of those people will be rotating in here.</p>
+<p id=c6c8 class="phone s02"><cite>John_Phillips:</cite> Yeah.</p>
+<p id=b185 class="phone s01"><cite>Manu_Sporny:</cite> It might be a bit of a light call today just…</p>
+<p id=6fcc class="phone s02"><cite>John_Phillips:</cite> Yeah, that's cool.</p>
+<p id=ed28 class="phone s01"><cite>Manu_Sporny:</cite> because I know that Phil Archer won't be able to be here but you're here and that means we can kind of discuss your things.</p>
+<p id=288e class="phone s02"><cite>John_Phillips:</cite> Yeah. Go ahead.</p>
+<p id=8950 class="phone s01"><cite>Manu_Sporny:</cite> We typically hold…</p>
+<p id=c7b0 class="phone s02"><cite>John_Phillips:</cite> Yeah.</p>
+<p id=f076 class="phone s01"><cite>Manu_Sporny:</cite> until about 4 to five past the hour before we get started to give people some time to jump over.</p>
+<p id=8a7d class="phone s02"><cite>John_Phillips:</cite> Very very familiar with that sort of pattern. And I thought we could do Mano, is work through your questions that you generated when you were looking at the changes I suggested. you can use that as a guide if you That'll be quite sensible.</p>
+<p id=da62 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, that sounds good. okay. we're going to hold for a couple of minutes until a couple more people jump in and…</p>
+<p id=2373 class="phone s02"><cite>John_Phillips:</cite> Excellent. Okay.</p>
+<p id=8f7e class="phone s01"><cite>Manu_Sporny:</cite> then we'll get started.</p>
+<p id=462d class="phone s02"><cite>John_Phillips:</cite> Thank you.</p>
+</section>
+
+<section>
+<h3 id=4c03>Introduction and Agenda Overview</h3>
+<p id=7414 class="phone s01"><cite>Manu_Sporny:</cite> All right, looks like we've got a healthy quorum. So, let's go ahead and get started. welcome everyone to the recognized entities call. This is August 4th, 2026. we do have an agenda today. we've got a guest, John Phillips, who has, raised some thoughts on some of our non-normative examples in the specification. and so we're going to spend a bit of time discussing his feedback to the specification and any updates or changes we might make to those examples. really looking forward to Steve Capel's feedback as well as Todd's on the matter as Of course want to hear from the rest of the group but this has to do with kind of UN grid style use cases.</p>
+<p id=10000 class="phone s01"><cite>Manu_Sporny:</cite> That's the first item and we'll spend as much time as we need to on that. once we cover that item we will take a look at our open pull requests. and then jump into issue processing with a focus on discuss issues. we are in a pretty good shape with the spec right now. we want to discuss issues to see if we're going to address those in the spec turn them into pull requests and then through the process. that's it for the agenda today. Are there any other updates or changes to the agenda that anyone would like to make?</p>
+<p id=7865 class="phone s01"><cite>Manu_Sporny:</cite> All right, hearing none. that's the agenda. let's start off with an introduction. John, if you'd like to introduce yourself,…</p>
+</section>
+
+<section>
+<h3 id=b9f1>UN GRID and John Phillips Introduction</h3>
+<p id=9730 class="phone s01"><cite>Manu_Sporny:</cite> give us some background on you. I know the group would appreciate that. So over to you.</p>
+</section>
+
+<section>
+<h3 id=ae29>UN GRID and John Phillips</h3>
+<p id=a161 class="phone s02"><cite>John_Phillips:</cite> Thank you very much,…</p>
+<p id=8595 class="phone s02"><cite>John_Phillips:</cite> Thank you to the group for inviting me as a guest. so John Phillips, I'm a lead of the UNC fact grid project, the global registry information directory. I've been working on the UNP spec u with Steve Capel for probably a couple of years. before that, I've also worked with trust over IP and a bunch of other things you've probably familiar with. more of I guess a technologist is kind of the background I'd normally give myself. and my other co-lead, it's probably important to give credit to is Alina Nika Gales from the Registradores of Spain the Spanish registar and she's a lawyer and a land asset registar.</p>
+<p id=3cba class="phone s01"><cite>Manu_Sporny:</cite> Wonderful. Thank you very much, John, for that introduction. let's see. Maybe it would be good for the group to understand. And just as a heads up, sorry, I forgot to mention this at the beginning of The call is recorded and autorcribed. everything that we're saying here is going to go down into a public record and we published publicly. let us know if you have any concerns about any of that. please don't share anything that is, private information. with that, maybe if you could give us a high level, I know Steve, you've done this a number of times on, kind of the UNP stuff.</p>
+<p id=4ef9 class="phone s01"><cite>Manu_Sporny:</cite> Could we get just up an understanding of the difference between grid, UNCCE and UNVTD in any other acronyms that we should be aware of?</p>
+</section>
+
+<section>
+<h3 id=1fac><a href="https://github.com/w3c/vc-recognized-entities/issues/107">Refine UNGRID / UNTP / UNVTD Example · Issue #107 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=32be class="phone s02"><cite>John_Phillips:</cite> I'm laughing…</p>
+</section>
+
+<section>
+<h3 id=e930>UNP, UNCC, UNVTD, and GRID Explained</h3>
+<p id=7dad class="phone s02"><cite>John_Phillips:</cite> because I once tried to pull through the UN and organization structure and credit graph of it and there's a lot right. but this I hope has a simpler explanation. So Steve in particular was the author of a crossber trade white paper that described the use of verifiable credentials. And I for one was delighted to see someone I hadn't yet met writing about verifiable credentials and that led to some work that Steve started in the So UNCFAC is the sort of focused on trade and commerce part of the UN.</p>
+<p id=5f08 class="phone s02"><cite>John_Phillips:</cite> it happens to be kind of curated held under another organizational body. It needs to have a place if you like. So its place is underneath the UNCE which is a geographically Europeanbased part of the UN but that doesn't mean that UNC fact is European focused actually has a global focus. Its work is for the world of trade and commerce despite the fact it has a UNCC sort of umbrella above it. the work that Steve led was really focused on the United Nations Transparency Protocol. and that had a sort of development path that led to other work being recognized as necessary. So along the path of creating deliberately as simple as possible specification with as few types of verifiable credentials as could be sort of sustainable a minimal viable product if you like for the spec.</p>
+<p id=f4d0 class="phone s02"><cite>John_Phillips:</cite> there was a work that was identified that could be better spawned off into other working groups. So about the same time grid and the verifiable trade documents projects were spawned off out of UNP. So UNTV is like the original gangster and then Grid and UNV. BTD are sort of children of that project. So for me, I've been working on the UNP spec. Steve sort of tapped me on the shoulder and said, would you mind leading with the work on grid, which we called at the time the global trust registry, which was somewhat fearsome as a title because the idea of having the trust of the world in one registry is a little bit challenging.</p>
+<p id=10001 class="phone s02"><cite>John_Phillips:</cite> But we've re redescribed this now as a global registry information directory and its purpose was to take a concept and still is in the UNP spec called the digital identity anchor and explore how that might be realized and what we were seeing as we worked on the spec was that pretty well all of the questions that you ask when you're looking at a trade supply chain follow a path that if I use my own company's name follow So a company claims to be from Spain says who you're from Spain and to answer that question you need to know who is the authoritative registar for the UN member state Spain or choose countries we're less familiar with. I don't know maybe Bolivia or something and that answer isn't very easy to find.</p>
+<p id=1b08 class="phone s02"><cite>John_Phillips:</cite> It's too easy to fake a URL and other things that mean that a naive explorer looking for a country information that they're not familiar with might go to the wrong place and might be easily misled. So, the idea of grid sort of growing it has parallels to the work you've may seen benefited from EO's PKD u where our passports are able to be waved at smart gates as we enter 107 countries participating in KOPKD and it has other parallels with work such as low code and things that are under the UNC fact banner. does that make sense? No.</p>
+</section>
+
+<section>
+<h3 id=63d3>Recognized Entities Spec and UN GRID Example</h3>
+<p id=44f9 class="phone s01"><cite>Manu_Sporny:</cite> Absolutely. Thank you. That was a great introduction. and highlights why we're very interested in using that as kind of one of the core examples in the recognized entities specification. so let me go ahead and screen share a bit here. Right. So we have been trying to put in ecosystem examples over the past couple of weeks into the specification. we are currently in what's called horizontal review which means that we have multiple different working groups at W3C looking at the specification trying to give us feedback from a technical architecture of the web perspective accessibility and privacy and security and all that kind of stuff. So the more concrete examples we have in the spec, the easier it is for them to do their work.</p>
+<p id=5bcb class="phone s01"><cite>Manu_Sporny:</cite> We have the GS1 federated identifier example as a way that you can use the recognized entity specification. And of course most recently we have the UN grid example. and when we put that pull request up, we thankfully both, Steve, and John provided input, on it. and when I was processing that input, I kind of scratched my head and I was like, I don't know which parts of this we should use and we don't and which part of it we need to split. And so we invited John to come on the call so that we could talk through the whole thing with him and Steve here. So that's what we're going to do right now. we did merge with both John and Steve's blessing.</p>
+<p id=fce2 class="phone s01"><cite>Manu_Sporny:</cite> we merged what was there kind of as just a starting point raised an issue saying hey we got to talk about this more we have an open issue on refining the UN grid UNP UNBTD whatever example and that is what we're currently discussing and then John I think you suggested that we just go over the questions that I asked before we do that any thoughts on kind of where you'd want any highle thoughts on this before we kind of jump into the detailed questions.</p>
+<p id=ce6b class="phone s03"><cite>steve_capell:</cite> No. as some may have seen in the ticket conversation, John put quite a bit of feedback into the initial proposal and then I jumped in and said, don't say all that.&quot; And it was really just a case of a little bit of John didn't have the context of what we were trying to achieve in this group because I thought one of the things we want to achieve here is by using two very different examples the GS1 hierarchy and the UN grid. What we're revealing I think to readers it's a very similar pattern. look how reusable and powerful and scalable this simple pattern is.</p>
+<p id=b2f8 class="phone s03"><cite>steve_capell:</cite> And so I wanted to try to keep the two examples similar to convey that message, whereas John's changes were going to make it look sufficiently different that a reader might not see that. And that was the reason I interjected quickly and I apologized to John for sort of saying slow down. but other than that, I know because I've spoken to John many times that we're 100% aligned on grid and how it should work.</p>
+<p id=68dc class="phone s03"><cite>steve_capell:</cite> It was just the context of the the description of grid in this specification, but it's</p>
+<p id=1aa3 class="phone s01"><cite>Manu_Sporny:</cite> Got it.</p>
+<p id=b7d3 class="phone s01"><cite>Manu_Sporny:</cite> Got it. All right. I mean go ahead, John.</p>
+<p id=161a class="phone s02"><cite>John_Phillips:</cite> I don't think there's probably another point as Steve's saying and…</p>
+<p id=f26b class="phone s02"><cite>John_Phillips:</cite> we are on the same page here. the reason I was I guess use the word sensitive.</p>
+<p id=5b15 class="phone s02"><cite>John_Phillips:</cite> The reason I was sort of sensitive to accuracy in my response is that we've just started a public review period So at the moment grid as a specification is being open for public review. So I'm kind of very in a sense concerned or interested in making sure people who are reading about grid have the right context for grid. And therefore I went into this with a little bit more of a detailed point of view than I would have if I thought about it. Okay, let's try and make this look like the same pattern…</p>
+<p id=bac7 class="phone s01"><cite>Manu_Sporny:</cite> Got it.</p>
+<p id=f64c class="phone s02"><cite>John_Phillips:</cite> which it does. It has a very very strong similarity.</p>
+<p id=a77a class="phone s03"><cite>steve_capell:</cite> And there's one other thing that I haven't told John…</p>
+<p id=fe71 class="phone s03"><cite>steve_capell:</cite> which is that we propose before UNTP 1.0 release to redescribe if you like the thing we call the digital identity anchor as a verified recognized entity credential profile if you like so and…</p>
+<p id=784c class="phone s03"><cite>steve_capell:</cite> so I hadn't told John that either which was a bit remiss of me so yeah that</p>
+<p id=91f0 class="phone s02"><cite>John_Phillips:</cite> It's good now though,…</p>
+<p id=058f class="phone s02"><cite>John_Phillips:</cite> Steve, because it makes some of these questions easier to answer, So, it's good. So,</p>
+<p id=7249 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. and…</p>
+<p id=1c2f class="phone s01"><cite>Manu_Sporny:</cite> that's why we're here, we want to kind of talk about that. We definitely want to make sure that we're not misrepresenting UN Grid and we're getting those details and nuances and so this is again open invitation to folks from that community that really know the details and nuances there to just you have full reign over this section please make sure that it conveys what's accurate. okay so I think to underscore what Steve's saying we're trying to give a few very different ecosystem examples to show people concretely how they can use the specification in these very different ecosystems and still end up effectively to use lack</p>
+<p id=4ff6 class="phone s01"><cite>Manu_Sporny:</cite> of a better phrase, a trust chain, a way of understanding whether or not you should trust this issuer or verifier or this entity to do the action that they're doing issuing a certain type of credential. we don't want to do too much here. our examples are already around 40% of the specification. So we have a really simple data model and just these two are 40% of the specification the more we add the more of the specification becomes examples and there's a point of diminishing returns I don't know what that is…</p>
+<p id=f96a class="phone s01"><cite>Manu_Sporny:</cite> but we're trying to stay away from that okay so that's kind of all the background John and what we're trying to do here …</p>
+<p id=b384 class="phone s02"><cite>John_Phillips:</cite> Okay. Chocolate.</p>
+<p id=2a0d class="phone s01"><cite>Manu_Sporny:</cite> but we do want to also talk about the things that are important so let's kind of jump into the questions. please go ahead.</p>
+<p id=2bc8 class="phone s02"><cite>John_Phillips:</cite> on that so I'm looking at that first question if that's okay we've already briefly I suppose talked about the relationship between grid UNP UNVTD and there is another spawned off project that's looking at the vocabulary that we use inside these credentials.</p>
+<p id=2c42 class="phone s02"><cite>John_Phillips:</cite> So in a sense the answer to that question is if it's important in the context of the way we're using the example in your specification and to the point you were just making about these examples risk overwhelming the volume that the focus that should be on their spec itself you don't need to have all those details in there where I was drawn into explaining that there was a thing called UNP and in fact UNVTD is because there's</p>
+<p id=435e class="phone s02"><cite>John_Phillips:</cite> an invoice example and it just so happens that inside the grid is focused on who are the authoritative registars the things of interest to trade supply chains as UN member states we don't issue invoices from grid that's not in our agreement it's not in the scope grid is part of this sort of fabric that is defined by UNP But the specification for a commercial invoice comes out of the work of the project UNVTD. So that was…</p>
+<p id=d54d class="phone s02"><cite>John_Phillips:</cite> why we got that sort of forest of UN asterisk projects coming out of my explanation. we don't need to present all that to readers I think of this example but that's what the reality is under the covers.</p>
+<p id=9b0a class="phone s01"><cite>Manu_Sporny:</cite> Got it.</p>
+<p id=3346 class="phone s01"><cite>Manu_Sporny:</cite> And I mean, those details do matter. I see here's why I think that detail matters a bit. I don't know if we try to tease it out in the language, but I think it's important especially for the recognized entity specification to understand that these are loosely coupled things and…</p>
+<p id=170b class="phone s01"><cite>Manu_Sporny:</cite> entities that you don't have to have this tightly coupled centralized registry to make this thing work,…</p>
+<p id=ee18 class="phone s02"><cite>John_Phillips:</cite> Mhm. Yeah.</p>
+<p id=0b0c class="phone s01"><cite>Manu_Sporny:</cite> so I think it's worth pointing that out. I mean let's see I think that's just a fact of the specification. It's meant to be loosely coupled and showing or it's meant to be possible to have it loosely coupled. You can always centralize everything and have a tightly coupled centralized registry and use the spec. I'm struggling with if we make that point here, if it we probably should make it further up in the specification. So,</p>
+<p id=15fa class="phone s02"><cite>John_Phillips:</cite> My thought would be if you want to introduce an example for the reader that includes for example issuance</p>
+<p id=1f92 class="phone s02"><cite>John_Phillips:</cite> of an invoice or something like that, then I'm kind of drawn into that introducing other things because it's not strictly grid that's doing that. But if we don't go down to the…</p>
+<p id=6c15 class="phone s02"><cite>John_Phillips:</cite> if we discuss the nature of the type of query that we want to resolve. Does this invoice come from a recognized company from Spain? we don't necessarily need to show invoice sort of specification detail if you see what I mean. we can talk. Okay.</p>
+<p id=2661 class="phone s01"><cite>Manu_Sporny:</cite> I definitely see…</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> what you're saying, but I think one of the things we want to show with the example is how you can, work yourself from this piece of paper that you got randomly out in the world and you can follow your nose goes all the way back to UN Grid,…</p>
+<p id=4da8 class="phone s02"><cite>John_Phillips:</cite> Yeah. Yeah. Cool.</p>
+<p id=4546 class="phone s01"><cite>Manu_Sporny:</cite> that is I think why we have the invoice in there in the first place. If it wasn't the invoice, it' be some other leaf document, right? I think that is one of the key things I think we're trying to show is for the GS1 use case, it's like how do you go from this, product that you picked up off a shelf in potentially, falling all the way back to G1 global, through the member organiz GS1 member organization, and then all the way back up to GS1 global.</p>
+<p id=77b8 class="phone s01"><cite>Manu_Sporny:</cite> So it is important I think to show that and I do think we want to show a commercial invo I don't know I mean is there a better document I don't think it really matters as much…</p>
+<p id=3d82 class="phone s01"><cite>Manu_Sporny:</cite> what the document is except that it's a leaf document that you have to kind of go at and then discover kind of up the chain from there.</p>
+<p id=563d class="phone s02"><cite>John_Phillips:</cite> I think even the most casual reader feels they understand an invoice.</p>
+<p id=d28c class="phone s02"><cite>John_Phillips:</cite> Whether they do or not is a different question, but the idea of an invoice I think is well understood. So I think it's a good type of example to use as the document type. So yeah, I still don't have a problem with the idea of using an invoice.</p>
+<p id=ecc1 class="phone s01"><cite>Manu_Sporny:</cite> Is there a better simpler thing?</p>
+<p id=9e28 class="phone s01"><cite>Manu_Sporny:</cite> I mean, I agree with you. I think invoice is the right thing to use, but is there a better, simpler thing that we could use?</p>
+<p id=3815 class="phone s02"><cite>John_Phillips:</cite> No, I think we can probably stick to invoice and just look to where we can reduce any unnecessary complexity what I provided because remember I was writing that in the sort of mindset of my projects under public review.</p>
+<p id=6e15 class="phone s02"><cite>John_Phillips:</cite> I need to be sure that it's expressed correctly in its sort of slope and so on. So, I'm pretty sure we can simplify the text that I provided, but if you prefer to keep the invoice, I'm happy. Yeah.</p>
+<p id=47f5 class="phone s01"><cite>Manu_Sporny:</cite> Okay. provided okay that sounds great.</p>
+</section>
+
+<section>
+<h3 id=f58a>Digital Identity Anchor and Recognized Entities</h3>
+<p id=e559 class="phone s01"><cite>Manu_Sporny:</cite> And so, when there's a pull request, John, Steve, let's see if we can, and again, completely up to each of you on what you think the right level of detail should be there, I don't think the group's going to have much of an opinion on that. The next thing I think we already touched on, which is the digital identity anchor. I think Steve you mentioned, maybe we try to align with recognized entities before you hit the next release.</p>
+<p id=ea12 class="phone s01"><cite>Manu_Sporny:</cite> Thoughts.</p>
+<p id=5276 class=irc><cite>&lt;steve_capell&gt;</cite> I like the invoice - it aligns well the unvtd.unece.org </p>
+<p id=fa26 class="phone s02"><cite>John_Phillips:</cite> I think this is good.</p>
+<p id=9769 class="phone s02"><cite>John_Phillips:</cite> I mean I've probably knows this. I don't think this is disclosure. the words digital identity anchor come with a bit of baggage. the word identity as we all know in this call has a whole bunch of things associated with it that would be quite complicated. so I'm happy to find a better term. What I do want to say something that I thought was interesting as I was going over this material that the words recognized entity also provide a picture or an image of what the scope of interest is and I think actually Ted you you raised a comment in the thread that we have on the issue where one of the things for example we're interested in grid is land right so the registars of interest from a supply chain point of view include a number of things but one of them classically is the organization</p>
+<p id=a62f class="phone s02"><cite>John_Phillips:</cite> are you a registered company in this country? But the other can be to do with land and I'm sure Steve's given this example, but the European Union has a deforestation regulation now. That means you have to prove…</p>
+<p id=1082 class="phone s02"><cite>John_Phillips:</cite> if you are selling beef into Europe that your cattle were reared on a paddock that wasn't deforested. So you've got to have a reference if you like to land.</p>
+<p id=8bc4 class="phone s01"><cite>Manu_Sporny:</cite> interesting. …</p>
+<p id=e0d6 class="phone s01"><cite>Manu_Sporny:</cite> but I think that's compatible meaning I would expect and you'll have to forgive me this is definitely not my market vertical. you would have a land deed of some kind and…</p>
+<p id=cd6e class="phone s02"><cite>John_Phillips:</cite> Yeah, exactly.</p>
+<p id=7311 class="phone s01"><cite>Manu_Sporny:</cite> maybe a certification on that land. That's the leaf document you're dealing with. And then in that leaf document that is going to point up the chain to okay, who issued the not deforested certification. And then you go from that organization up the chain to the next thing you know who's the business the organization registar and then you go up the chain further to potentially UN grid and so on. Is that how you expect that would work?</p>
+<p id=9e58 class="phone s02"><cite>John_Phillips:</cite> Exactly right. Exactly right.</p>
+<p id=45de class="phone s01"><cite>Manu_Sporny:</cite> Okay. Mhm.</p>
+<p id=0d7f class="phone s02"><cite>John_Phillips:</cite> You'd have kind of two paths being followed. One is the identifier for the land, the cadestral kind of geographic coordinates and size and so on for the land.</p>
+<p id=2c62 class="phone s02"><cite>John_Phillips:</cite> And then the ownership of the land and…</p>
+<p id=7ebc class="phone s02"><cite>John_Phillips:</cite> its use and the certification would reference the land that the certifier would attest that this land has not been deforested. and then there's a separate claim about I read these cattle on this land So yes you're right it's like layers of proof…</p>
+<p id=0553 class="phone s01"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=b72d class=irc><cite>&lt;steve_capell&gt;</cite> <a href="https://unvtd.unece.org/">UN Verifiable Trade Documents</a> is a list of 35 VC specificaitons for trade documents - for example <a href="https://unvtd.unece.org/docs/commercial-invoice/">Commercial Invoice</a> .  It also talks about why VC are far more scalable than traditional  EDI netowrk routing. <a href="https://unvtd.unece.org/architecture/portable-credentials/">Portable Credentials</a> </p>
+<p id=e45c class="phone s02"><cite>John_Phillips:</cite> but you need from a grid point of view it's important to know who is the authoritative registar for land in this country and that's kind of the thing.</p>
+<p id=ef24 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah,…</p>
+<p id=9ca3 class="phone s02"><cite>John_Phillips:</cite> So I'm very happy that I can mentally use the word entity to describe a thing that's referencing a land identifier. That's fine. As long as the readers</p>
+<p id=8850 class="phone s01"><cite>Manu_Sporny:</cite> absolutely. I think that that use case is aligned with the specification unless other folks on the call disagree. but feels like it slots right in which is good. Okay. So I think there's agreement to try and align as much as possible over the coming weeks to months and it's up to you guys to let us know what we can do if anything to help there is I guess let me ask explicitly is there anything more that you need from this group to achieve</p>
+<p id=8f43 class="phone s01"><cite>Manu_Sporny:</cite> that. Okay.</p>
+<p id=c758 class="phone s02"><cite>John_Phillips:</cite> …</p>
+<p id=33cb class="phone s02"><cite>John_Phillips:</cite> I guess I'm going to be watching the work quite closely. I'm sure Steve will be keeping me very much in the loop on it as well. So, no, I think that's good. I'm actually looking forward to replacing DIA.</p>
+<p id=83e4 class=irc><cite>&lt;steve_capell&gt;</cite> you may also be interested in this page - <a href="https://unvtd.unece.org/architecture/transferable-records/">Transferable Records</a> - which talks about the portial value of cryptographic event logs for certain types of trade docs </p>
+<p id=296a class="phone s01"><cite>Manu_Sporny:</cite> I mean, …</p>
+<p id=20b5 class="phone s01"><cite>Manu_Sporny:</cite> open invitation to come and collaborate on anything you need to achieve that. we're happy to have that discussion and…</p>
+<p id=f11b class="phone s02"><cite>John_Phillips:</cite> Thank you.</p>
+<p id=49b9 class=irc><cite>&lt;steve_capell&gt;</cite> and here about the potential business impact <a href="https://unvtd.unece.org/business-cases/">Business Cases — Overview</a> </p>
+<p id=d5ae class="phone s01"><cite>Manu_Sporny:</cite> make time for that important tive. responsibility boundaries in the diagram are useful. this was something and I wish I had I don't know,…</p>
+<p id=d6d1 class="phone s01"><cite>Manu_Sporny:</cite> John, if you could you have a preview of it, but you drew some boundaries around this diagram that I thought was interesting.</p>
+<p id=a388 class="phone s02"><cite>John_Phillips:</cite> Yeah. …</p>
+</section>
+
+<section>
+<h3 id=8cfa>Diagramming Responsibility Boundaries</h3>
+<p id=2ca7 class="phone s02"><cite>John_Phillips:</cite> let me again share my screen briefly…</p>
+<p id=d566 class="phone s01"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=497c class="phone s02"><cite>John_Phillips:</cite> if you like and then I'll come back to you.</p>
+<p id=172b class="phone s01"><cite>Manu_Sporny:</cite> please. Yeah,…</p>
+<p id=abd9 class="phone s02"><cite>John_Phillips:</cite> So this is the diagram that we're referring to. so, I'll zoom in a bit further maybe. basically,…</p>
+<p id=0def class="phone s01"><cite>Manu_Sporny:</cite> we can see.</p>
+<p id=8130 class="phone s02"><cite>John_Phillips:</cite> it's the same mermaid diagram structure you guys have been using. I can't remember the bit subgraph I think is the term that Mermaid uses for the ability to draw lines around blocks inside the agram. the interesting challenge to the words and your comed you can't overlap these subgraphs in Mermaid but you could obviously resolve that if you were to be very particular about this diagram I'm showing right now. You would possibly have sort of three sets.</p>
+<p id=fb71 class="phone s02"><cite>John_Phillips:</cite> one that's the pure scope of control for a grid, one that's to do with UNP, and perhaps one that's to do with the UNVTD specification of a invoice. but you just can't kind of overlap the areas, which is a bit of a shame. It's just a mermaid limitation. but that's the diagram. Should we go back to your list now?</p>
+<p id=e6b5 class="phone s01"><cite>Manu_Sporny:</cite> Happy to. let's keep your thing on the screen. So, ignoring mermaid, we don't have to use mermaid, we can use the graphical editing tools if we need to. we could, make those, graphical changes. The question of the group is it useful to show kind of what is it scope of authority is kind of between these different organizations or not I could see it going either way we need other folks to weigh in this is something you're like we absolutely want to see this in the diagram or…</p>
+<p id=f383 class="phone s01"><cite>Manu_Sporny:</cite> yeah it's useful but</p>
+<p id=f731 class="phone s03"><cite>steve_capell:</cite> I'm not sure that anyone cares too much…</p>
+<p id=6694 class="phone s03"><cite>steve_capell:</cite> how the UN has chosen to break up its specifications, Because it's true what's written there, One is grid, one is UNTP. But that's just feels to me a bit like that's just how we've chosen to say, we should spin that off into a group and John will lead that and there's also this other group and this other group.&quot; But really you could have just one big project and…</p>
+<p id=a095 class="phone s03"><cite>steve_capell:</cite> and then the diagram would be different. So I'm not sure we want to reflect sort of project distribution choices in there. That's just my instinct.</p>
+<p id=b779 class="phone s02"><cite>John_Phillips:</cite> And…</p>
+<p id=fca4 class="phone s02"><cite>John_Phillips:</cite> I agree with you, I mean, I obviously drew that diagram in the mindset of my projects in the public review. I need to be very clear about what it does and what it doesn't do. but in the interest of explaining what we're trying to do relates to recognized entities, we don't need that sort of clarification. But I do like drawing these graphs with those sort of subgraph areas. But that's just a particular quality of my personality.</p>
+<p id=142b class="phone s02"><cite>John_Phillips:</cite> So Manu, if you want, by all means, use this approach, of course. But, as Steve was saying, and I agree, we don't need to, if it distracts people from the intent that we have for the explanation,…</p>
+<p id=f269 class="phone s01"><cite>Manu_Sporny:</cite> I was coming I thought the boxes meant something different than…</p>
+<p id=da85 class="phone s02"><cite>John_Phillips:</cite> we don't need to include them.</p>
+<p id=ec98 class="phone s01"><cite>Manu_Sporny:</cite> what Steve and John just said. I thought they were domains of authority, not necessarily I was looking at maybe applying it to the GS1 use case as well.</p>
+<p id=2943 class="phone s01"><cite>Manu_Sporny:</cite> GS1 global has a certain domain of authority,…</p>
+<p id=253c class="phone s03"><cite>steve_capell:</cite> Yes. Yes,…</p>
+<p id=63f6 class="phone s01"><cite>Manu_Sporny:</cite> And it only extends so far and then the member organizations, have a domain authority that only extends so far and the company itself has a domain again of authority that only extends so far.</p>
+<p id=d767 class="phone s01"><cite>Manu_Sporny:</cite> And I thought it's neat to see that, but I'm wondering if it's it like readers,…</p>
+<p id=4b43 class="phone s03"><cite>steve_capell:</cite> that does make more sense to me. It</p>
+<p id=e988 class="phone s02"><cite>John_Phillips:</cite> Yeah. And that does make sense,…</p>
+<p id=dc8b class="phone s01"><cite>Manu_Sporny:</cite> right? Yep.</p>
+<p id=39d2 class="phone s02"><cite>John_Phillips:</cite> And you would draw the boxes slightly differently for this diagram, so these boxes are more sort of the project scope. as Steve and I are both thinking yes we would draw a similar sort of scope of authority boundaries in a similar way to the GS1 one you were just describing. one of the things for grid is that the UN member state registars remain absolute authority and</p>
+<p id=b7a4 class="phone s02"><cite>John_Phillips:</cite> responsibility for the content of their registers. They're not copied into Grid doesn't have the register details or anything. it's their responsibility to maintain them and in fact their responsibility to maintain the accuracy of the data that is represented by grid about them.</p>
+<p id=1083 class="phone s02"><cite>John_Phillips:</cite> They maintain their own data. We harvest it is the word we use.</p>
+<p id=dfa1 class="phone s01"><cite>Manu_Sporny:</cite> Exactly right.</p>
+<p id=10003 class="phone s01"><cite>Manu_Sporny:</cite> So I was imagining the domains of control for looking at what's on your screen right now, John, would the grid I don't know what we call it, but the grid domain of control is the UN grid and that recognized entity credential that it issues and the boxes just around those top two boxes.</p>
+<p id=4ffb class="phone s01"><cite>Manu_Sporny:</cite> And then the next domain of control is the utopian business registar and it issues which is the recognized entity credential.</p>
+<p id=17f1 class="phone s02"><cite>John_Phillips:</cite> Yeah. Yes.</p>
+<p id=008d class="phone s01"><cite>Manu_Sporny:</cite> And then the third domain of control is acme exports and the credential that it issues. that's what I was imagining but then I'm to argue against myself I'm like maybe people already get that right. Yeah.</p>
+<p id=a6d7 class="phone s02"><cite>John_Phillips:</cite> And I think that would mean this diagram changes, but we're looking at how we might improve the suggestions So I'm very happy to agree that we would change that this diagram along those lines. That makes sense.</p>
+<p id=0bd1 class="phone s01"><cite>Manu_Sporny:</cite> Thoughts from anyone else in the group? Is this kind of like, we really should update the diagrams with this kind of information or is this just kind of rounding error in the noise stuff not really that interesting to the reader?</p>
+<p id=b6d3 class="phone s04"><cite>Todd_Snyder:</cite> I think it's helpful to understand that there are different parties involved in issuing that's…</p>
+<p id=0b42 class=irc><cite>&lt;steve_capell&gt;</cite> UN authority is to say &quot;we assert that this is a register operated by one of our member states&quot;.  Toitally seaprate the member state authority says &quot;this is a legitimate registered business in our country&quot; </p>
+<p id=a083 class="phone s04"><cite>Todd_Snyder:</cite> what adds the complexity makes the chain necessary that just…</p>
+<p id=c55f class="phone s01"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=1f30 class="phone s04"><cite>Todd_Snyder:</cite> because I say you can do something when you do something you need to verify you did the right thing and you're following the expected outcome. So I think the dots help clarify that there are different boundaries.</p>
+<p id=cd71 class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Okay.</p>
+<p id=cd30 class="phone s04"><cite>Todd_Snyder:</cite> So that makes sense.</p>
+<p id=6081 class="phone s01"><cite>Manu_Sporny:</cite> let's say how about this?</p>
+<p id=b9e5 class="phone s01"><cite>Manu_Sporny:</cite> For this item, we can rework the diagrams in another PR to just try it out, see what people think. so update diagrams to show domains of control for each issuer and recognized entity three domains control and I'll try to find better language than domain of control. okay that's that item. Next one.</p>
+</section>
+
+<section>
+<h3 id=c50a>UN GRID URL and Global Initiative</h3>
+<p id=89aa class="phone s01"><cite>Manu_Sporny:</cite> This was more curiosity. is grid.c.org the actual URL that this stuff is going to live at. And if so, is it just a European thing? I don't think it is.</p>
+<p id=b599 class="phone s02"><cite>John_Phillips:</cite> It's no I think we probably discussed at the top of the meeting.</p>
+<p id=c5ad class="phone s02"><cite>John_Phillips:</cite> It's an artifact a result of the way the UN is structured. it doesn't imply that Europe is the master I suppose of UNCFAC's work as a global interest.</p>
+<p id=61da class="phone s02"><cite>John_Phillips:</cite> I think Steve previously I know I've had conversations about whether or not we can get things out out from under UNCCE but I mean that's really your domain not mine.</p>
+<p id=69bb class="phone s03"><cite>steve_capell:</cite> That's a whole another thing.</p>
+<p id=292c class="phone s03"><cite>steve_capell:</cite> Yeah, we'd wait. I mean, it'd be better if this whole lot was in UNIDO, which is the UN Industrial Development Organization, but it isn and it is going to take a general assembly decision to change that. So then that might well happen but right now unless we want to wait a year or two we just progress with you and ECE. Yeah.</p>
+<p id=5bb5 class="phone s02"><cite>John_Phillips:</cite> I have a feeling the UN is more preoccupied with other things right now.</p>
+<p id=516f class="phone s01"><cite>Manu_Sporny:</cite> that they are.</p>
+<p id=8a93 class="phone s02"><cite>John_Phillips:</cite> So yeah. Yeah.</p>
+<p id=afd3 class="phone s03"><cite>steve_capell:</cite> Rooting in a new leader,…</p>
+<p id=e2e9 class="phone s01"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=da00 class="phone s03"><cite>steve_capell:</cite> finding budget.</p>
+<p id=74af class="phone s01"><cite>Manu_Sporny:</cite> Okay, that's fine. so it's good that it's a global initiative and I don't know if it's a URL in an example in an appendix so I don't think we need to spend a lot of time explaining that.</p>
+<p id=da46 class="phone s03"><cite>steve_capell:</cite> Yeah, agreed.</p>
+<p id=5396 class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=365c>Identity Resolver Concept</h3>
+<p id=cc79 class="phone s02"><cite>John_Phillips:</cite> So this is interesting the identity resolver concept inside again that this is probably best explained by it was developed in isolation of the work you guys have been doing and…</p>
+<p id=23f2 class="phone s02"><cite>John_Phillips:</cite> from a purpose of un understanding for the reader of recognized entities. I don't think we need to introduce the kind of complexity of the words used from a UNP.</p>
+<p id=10004 class="phone s02"><cite>John_Phillips:</cite> That's my way of thinking about it. Steve, is that the way you see it too?</p>
+<p id=566f class="phone s03"><cite>steve_capell:</cite> Yeah, I think so.</p>
+<p id=59ac class="phone s03"><cite>steve_capell:</cite> The IDR part of UNP is basically given an idea of a thing, how do you find data about a thing? and it's needs to accommodate the current world of things like GS1 registers of products which has I don't know how many billions of products in it but it also needs to accommodate the future decentralized world of didbased discovery. So in fact this example here because the UNPR page does provide both of those pathways right you go to an authorative register like the GS1 and look up a product and find let's say a product passport or you can go to the did and do who is so actually also describes this credential discovery mechanism that you've got here it's a legitimate way of saying give it an idea.</p>
+<p id=8c83 class="phone s03"><cite>steve_capell:</cite> everything how do I find further information about it right that's exactly what who is endpoint is doing so yeah I don't think we need to call it ID…</p>
+<p id=53c3 class="phone s01"><cite>Manu_Sporny:</cite> Yep. Okay.</p>
+<p id=d437 class="phone s03"><cite>steve_capell:</cite> though it's just</p>
+<p id=bdbe class="phone s02"><cite>John_Phillips:</cite> Yeah. Yeah.</p>
+<p id=10005 class="phone s01"><cite>Manu_Sporny:</cite> I guess the question is do we need to mention R at all? I think the general concept of discovery is pretty well covered in the algorithm section.</p>
+<p id=993b class="phone s01"><cite>Manu_Sporny:</cite> What changes, if any, do we need to make to the specification?</p>
+<p id=5070 class="phone s02"><cite>John_Phillips:</cite> My sense Steve is that we move the content that I provided certainly…</p>
+<p id=2c84 class="phone s02"><cite>John_Phillips:</cite> what towards the content that already exists inside the recon identity spec.</p>
+<p id=d926 class="phone s02"><cite>John_Phillips:</cite> We don't mention R. we used I think you've got a who is service reference.</p>
+<p id=6f00 class="phone s02"><cite>John_Phillips:</cite> But I'm happy to do that. Is that your feeling too sick?</p>
+<p id=10006 class="phone s03"><cite>steve_capell:</cite> Yeah. The only question for the group is just as you it's useful to point at UN grid to say here's an example of a powerful use of recognized entity credentials.</p>
+<p id=84a4 class="phone s03"><cite>steve_capell:</cite> You could if you wanted to, I don't think you have to point at the IDR specification to say here's an example of this very credential based discovery mechanism. But I don't know that it matters that much.</p>
+<p id=ad95 class="phone s01"><cite>Manu_Sporny:</cite> It doesn't hurt us to point to other places that help people understand the ecosystem better.</p>
+<p id=f49e class="phone s01"><cite>Manu_Sporny:</cite> And R is a way to do it, right? I mean I think we Okay.</p>
+<p id=9a82 class="phone s03"><cite>steve_capell:</cite> Yeah, let me find a link for you.</p>
+<p id=f643 class="phone s01"><cite>Manu_Sporny:</cite> And maybe we just put it in</p>
+<p id=a1ac class="phone s03"><cite>steve_capell:</cite> No. All idea I would say is it actually talks more about a different use of DIDs for products identifiers. And so if you had a QR code on a box that was actually DID rather than a GS1G tin,…</p>
+<p id=5562 class="phone s01"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=9ff8 class="phone s03"><cite>steve_capell:</cite> how would you find the product passport?</p>
+<p id=0144 class="phone s03"><cite>steve_capell:</cite> It would be a service endpoint in the DID. So the ID spec is not exactly who is it's the same concept but I did has service endpoints it's just…</p>
+<p id=913c class="phone s02"><cite>John_Phillips:</cite> does Steve,…</p>
+<p id=422f class="phone s02"><cite>John_Phillips:</cite> one of the things that I've been aware of only more recently is that the R also allows you to get a kind of history of credential as a sort of not side effect but deliberately. Is that something that to Manny's point is worth sort of pointing people as sort of the particular way it was implemented yeah it turns out that's important when we look at things like the work I've been doing with the National Association of Testing Authorities.</p>
+<p id=0248 class="phone s03"><cite>steve_capell:</cite> because the IDR returns the link set, As opposed to a single credential. Yeah. …</p>
+<p id=b106 class="phone s02"><cite>John_Phillips:</cite> So accredititation bodies and the conformity credentials they issue the past is important. If was this steel 10 years ago put in this building was it green steel that kind of question. Okay.</p>
+<p id=bfaa class="phone s03"><cite>steve_capell:</cite> it shamelessly steals from the GS1 digital link specification, right, which is designed to avoid having 27 barcodes or QR codes all over a box because one points to a product passport, one points to some environmental disclosure declaration and so on and so forth, right? you just have one QR code and it resolves to a list with a default. Yeah.</p>
+<p id=2ec0 class="phone s02"><cite>John_Phillips:</cite> Yeah. Yeah.</p>
+<p id=41d4 class="phone s01"><cite>Manu_Sporny:</cite> What about this as a concept? So we do have algorithms in the specification about how discovery can be done crawling or identifier based crawling… Manu Sporny:</p>
+<p id=70b6 class="phone s03"><cite>steve_capell:</cite> Go away.</p>
+<p id=903d class="phone s01"><cite>Manu_Sporny:</cite> but maybe pointing out to IDR and GS1 digital link as ways that it has concretely been implemented would be a useful thing to do. So, let's say we're going to point out to that I'm hand waving quite a bit here because I don't really know what we'd say, but that's up to either of you if you want to add some text.</p>
+<p id=0ecb class="phone s01"><cite>Manu_Sporny:</cite> Because I do think it's important to note that look we can do discovery in a fully decentralized way and that's what the spec is really leaning towards and trying to demonstrate but that doesn't mean that you can't have systems out there that are convenient to use where you just go to the system and type in your identifier and it does all the crawling behind the scenes for you. So, let's kind of go with that. UNVTDs mentioned,…</p>
+<p id=2200 class="phone s01"><cite>Manu_Sporny:</cite> I think we answered this. this is for the commercial invoice and…</p>
+<p id=ffd9 class="phone s02"><cite>John_Phillips:</cite> Yeah, and…</p>
+<p id=2035 class="phone s02"><cite>John_Phillips:</cite> I think Steve's put in some comments in the chat with links to these projects, but there are 34 I don't know there's a number of these commercial documents that are being specified by UNVTD in sufficient detail that they could be used for trade.</p>
+<p id=1cc8 class="phone s01"><cite>Manu_Sporny:</cite> Yep. …</p>
+<p id=c1e8 class="phone s01"><cite>Manu_Sporny:</cite> identity resolver architecture.</p>
+<p id=3ba0 class="phone s02"><cite>John_Phillips:</cite> It's 35.</p>
+<p id=341e class="phone s02"><cite>John_Phillips:</cite> I just read the comments. 35. I remember 34.</p>
+<p id=174a class=irc><cite>&lt;steve_capell&gt;</cite> <a href="https://untp.unece.org/docs/specification/IdentityResolver">Identity Resolver | UN Transparency Protocol</a> </p>
+</section>
+
+<section>
+<h3 id=9350>Commercial Invoice JSON Context</h3>
+<p id=e765 class="phone s01"><cite>Manu_Sporny:</cite> And let me go ahead and just save these so we don't lose them.</p>
+<p id=815b class="phone s01"><cite>Manu_Sporny:</cite> This one,…</p>
+<p id=949b class="phone s03"><cite>steve_capell:</cite> I can put him in an email to you…</p>
+<p id=82e9 class="phone s03"><cite>steve_capell:</cite> if you want.</p>
+<p id=024a class="phone s01"><cite>Manu_Sporny:</cite> it's here in the chat and I'm copy pasting now and who knows.</p>
+<p id=6e3d class="phone s02"><cite>John_Phillips:</cite> Yeah, I'm in.</p>
+<p id=9d38 class="phone s02"><cite>John_Phillips:</cite> You're in the flow. Go. Yeah,…</p>
+<p id=2a2a class="phone s01"><cite>Manu_Sporny:</cite> That's all right. Might as well do this one, too. And then I got the other two at the bottom. last one the JSON context for commercial invoice didn't resolve u but I think it will in time or</p>
+<p id=dd7a class="phone s02"><cite>John_Phillips:</cite> it was just an example.</p>
+<p id=a650 class="phone s02"><cite>John_Phillips:</cite> So, I don't know whether or not we need one that does resolve. Steve, is there a way we is the work coming out of VTD that we can just lean on or…</p>
+<p id=0a64 class="phone s02"><cite>John_Phillips:</cite> do you just give it as an example? Yep.</p>
+<p id=0263 class="phone s03"><cite>steve_capell:</cite> There is a Yes,…</p>
+<p id=2dee class="phone s03"><cite>steve_capell:</cite> It's on the page. I'll post a link here. it's still a draft though, but I mean you can use it, but it will change its version number when we release the final</p>
+<p id=e9db class="phone s01"><cite>Manu_Sporny:</cite> And John, what we try to do is give people working examples so they're going to copy and paste it somewhere and we don't want it to blow up on them when they do. That's the only reason. And it's okay if it's, an older example.</p>
+<p id=96b0 class="phone s02"><cite>John_Phillips:</cite> A victim of his own success.</p>
+<p id=fc98 class="phone s01"><cite>Manu_Sporny:</cite> We try to update the examples as things go.</p>
+<p id=00f0 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> More importantly,…</p>
+<p id=846d class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> don't give us a site that will suddenly blow up because 50 people hit it.</p>
+<p id=3823 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=6e83 class=irc><cite>&lt;steve_capell&gt;</cite> <a href="https://unvtd.unece.org/commercial-invoice-context.json">https://<wbr>unvtd.unece.org/<wbr>commercial-invoice-context.json</a> </p>
+<p id=aaf8 class="phone s01"><cite>Manu_Sporny:</cite> So, while Steve finds that I think that's all the questions we had. and those are good answers. and then maybe we can refine at this point. John, I don't know if you or Steve want to take an action to one,…</p>
+<p id=7ed9 class="phone s01"><cite>Manu_Sporny:</cite> now that we've had this discussion, take another pass, and see what you want to change based on kind of all this context.</p>
+<p id=e9fa class="phone s03"><cite>steve_capell:</cite> Sure.</p>
+<p id=eccd class="phone s01"><cite>Manu_Sporny:</cite> Thoughts Okay.</p>
+<p id=8c14 class="phone s02"><cite>John_Phillips:</cite> I think it's a yes from me,…</p>
+<p id=1075 class="phone s02"><cite>John_Phillips:</cite> I think probably you and I probably should maybe I take first stab at it, but I'll share that with you, Steve, and then once we're both happy, we share it with the group.</p>
+<p id=2e42 class="phone s01"><cite>Manu_Sporny:</cite> This specification. Wonderful. thank you very much to both of you for that conversation. we are very excited about the work that each of you are involved in. I know we've got about let's say 12 minutes left in the call before it ends. So, let's try and tackle one of these discussed topics. Let's go ahead and go in oldest order. Let me see. That one we've kind of done just see that one.</p>
+<p id=6b3b class="phone s01"><cite>Manu_Sporny:</cite> I mean we can do federated choose one.</p>
+<p id=ecfb class="phone s03"><cite>steve_capell:</cite> There's one I'm keen on. Where is it? steve capell:</p>
+<p id=8b4f class="phone s01"><cite>Manu_Sporny:</cite> Which one?</p>
+<p id=5fe0 class="phone s03"><cite>steve_capell:</cite> the one that says please if you can separate the algorithms into the discovery and the verification.</p>
+<p id=1f95 class="phone s01"><cite>Manu_Sporny:</cite> Yes. Where is that one recognized? steve capell:</p>
+<p id=4b54 class="phone s03"><cite>steve_capell:</cite> I'm trying to find him myself. self. Okay.</p>
+<p id=b9ef class="phone s01"><cite>Manu_Sporny:</cite> I think that one, Steve, I was like, &quot;Okay, that makes sense. I'll do it.&quot; I don't know if we do we need to discuss it.</p>
+<p id=56d8 class="phone s03"><cite>steve_capell:</cite> So, we don't need to discuss it. No. Okay. Okay.</p>
+<p id=cdff class="phone s01"><cite>Manu_Sporny:</cite> I think I'll make an attempt at it. It felt very straightforward what you asked for. let's look at this one we have addressed because we have a section in the spec for it.</p>
+<p id=08c2 class="phone s01"><cite>Manu_Sporny:</cite> Jason Ellie federated. I thinking this one we probably need Kevin here for discovery model for recognized I think.</p>
+<p id=c34c class="phone s01"><cite>Manu_Sporny:</cite> Let's do this one. Steve. I think Okay.</p>
+<p id=22a4 class="phone s03"><cite>steve_capell:</cite> I think you can close this now.</p>
+<p id=e1c3 class="phone s01"><cite>Manu_Sporny:</cite> Yes,… steve capell:</p>
+<p id=1d91 class="phone s03"><cite>steve_capell:</cite> Is this 89? You me.</p>
+<p id=2313 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I suggested that we have added an algorithm section in let's see this I think every part of this is handled was the assertion</p>
+<p id=10007 class="phone s03"><cite>steve_capell:</cite> Yeah. because we have a separate issue anyway for that separation of algorithms.</p>
+<p id=af04 class="phone s01"><cite>Manu_Sporny:</cite> That's All right. So, I should have topic this is 89. okay, there we go. so we did discuss it and we are going to close this one. Thank you, Steve. Next one up. this one I've been wanting to chat with the group. there are two things that are kind of going on right now.</p>
+</section>
+
+<section>
+<h3 id=c1cd>Use Cases Document and Authorship</h3>
+<p id=24d0 class="phone s01"><cite>Manu_Sporny:</cite> One of them is, as folks probably know, we started this work six years ago, seven years ago, maybe eight at rebooting the web of trust workshop and we had a bunch of people participate in participate for a good two and a half years on a base set of use cases and then nothing happened for four years and then all of a sudden, the spec became popular again. we got some people involved but most of the people that are author on the spec were actually authors on the use cases document. So the question is the only people out of this list that have really participated in the recent spec I guess three is Isaac, David, myself. I guess she has been here as well, but Oscar Constantine</p>
+</section>
+
+<section>
+<h3 id=cc83><a href="https://github.com/w3c/vc-recognized-entities/issues/89">Discovery model for recognised entity VCs · Issue #89 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=7073 class="phone s01"><cite>Manu_Sporny:</cite> Lena Reeks haven't really been involved. So there's a question of do we keep them in authors? we'll ask certainly where they want to move to. So that was the first question. The second one is that use cases document has been split out into a use cases use cases. HTML document, this thing. and the current document is aligned with about I don't know 70% of it, but definitely reframes the language used and things like that. So, we still have this concept of a party that publishes a list and they share that list, with someone else on who's and not allowed to do things.</p>
+</section>
+
+<section>
+<h3 id=9b89><a href="https://github.com/w3c/vc-recognized-entities/issues/91">Deprecate/remove `use-cases.html` replace with inline use cases section. · Issue #91 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=d9c1 class="phone s01"><cite>Manu_Sporny:</cite> We had a bunch of kind of use cases that the group kind of came up with that are covered by the current specification conceptual model but this is a lot of just kind of bulleted list of thoughts and things like that right not very big I don't know if there's much here that we need to move over at this point and so the question is what do we do with the we did put use cases in the current document. We've have these use cases. Oops, no. Yeah, this is what Sorry, I am on the wrong document. let me go back. So, we have use cases here. Education, vital records, crossber trade, product conformity, federated identifiers. It's a pretty, comprehensive list.</p>
+<p id=99d5 class="phone s01"><cite>Manu_Sporny:</cite> There are more but it's just kind of more of the same. meaning for whatever market vertical we add we don't really change the requirements by adding the use case. So the assertion is our current use cases section is fine. We don't need to refer to the old use cases document. but let's make sure that we give credit where credit is due to that initial group that got together over the course of two years at rebooting and made the initial set of use cases So that's the current kind of proposal. What do folks think about that proposal or should we change Any concerns? We will of course reach out to all of those folks and ask them to review the PR and to see if they're okay with the PR.</p>
+<p id=f983 class="phone s04"><cite>Todd_Snyder:</cite> Yeah, I think it makes sense to get rid of stuff that's outdated.</p>
+<p id=7b43 class="phone s01"><cite>Manu_Sporny:</cite> And…</p>
+<p id=1e14 class="phone s01"><cite>Manu_Sporny:</cite> then we do have the use cases.html document in source control. So we can always go back to it and look at what was in it. Does anyone want to take a look at the use cases to make sure that we've captured everything or are we And thank you Ted for topicing the change to issue 91. Okay. So let's say that we are going to take action the group would like to remove the use cases.html</p>
+<p id=214f class="phone s01"><cite>Manu_Sporny:</cite> HTML credit the authors of that document and thank them in the acknowledge Request that the original authors of the document review the current cases and see if they have any requested R should be raised. that does all of these things. Okay. So is that and then I will take this action and this is ready for All right. That's that item and we will come back next week and keep processing the discuss items.</p>
+<p id=e7c2 class="phone s01"><cite>Manu_Sporny:</cite> I know Todd that you raised a new very interesting set of questions from GS1 US that we'll review in time and then John and Steve we look forward to your poll request or suggested changes in issue 107. Is there anything else that we need to discuss in the group before the call next week? All right, with that, thank you very much, for joining us, John. Thank you for all as always for waking up very early, you as well, John. And, I hope everyone has a wonderful rest of your week, and we will meet again next week at the same channel and time. Thanks all. Have a good one. Ch. Meeting ended after 00:56:22 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

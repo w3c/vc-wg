@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 4 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>4 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Brent_Zundel, Dave_Longley, Elaine_Wooton, Eric_Schuh, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, read.ai_meeting_notes, Rodrigo, Ted_Thibodeau_Jr, Vikas_Malhotra</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9dab">Normative Statements Review</a></li>
+<li><a href="#e3ba">Feature Freeze And Horizontal Review</a></li>
+<li><a href="#23cd">Graceful Disengagement And Problem Details</a></li>
+<li><a href="#d8e9">OAS Rendering Issues</a></li>
+<li><a href="#5372">OAS Accuracy And Rendering</a></li>
+<li><a href="#93e0">PR Review: Retrieve Current VPR</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=c34d class="phone s01"><cite>Patrick_St-Louis:</cite> Hi everyone, welcome to the call. We'll get started in about 1 minute.</p>
+<p id=abe0 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, let's slowly get started with the agenda today. If people join in late, they will be able to catch up without issues. Okay, welcome everyone to the VCOM call. today is the 4th of August 2026. This is a W3C verifiable credential working group call.</p>
+<p id=4b59 class="phone s01"><cite>Patrick_St-Louis:</cite> So all W3C policies and contribution agreements are into effect. This call is recording and transcribed. the VC API for life cycle management is a work item during which we discuss and we work through the specification to define credential life cycle operations. we discuss anything from operations to security to interoperability today for the agenda.</p>
+<p id=f19a class="phone s01"><cite>Patrick_St-Louis:</cite> Before I announce the topics, we're going to leave some time for folks who want to reintroduce themselves provide some community updates or suggest a topic they would like us to cover today. so if you want to mention something you're more than how we'll leave a moment for you to do so. Just pick up the microphone. Very well. in this case, let me present the topics we're going to cover today.</p>
+<p id=f3e7 class="phone s01"><cite>Patrick_St-Louis:</cite> So first of all we're going to have a quick review of the normative statements that are currently present in the specification. it was raised last time that it seemed like there was a low amount of normative statements. So I'll show the current status of this and the methodology that I use to fetch this list. This is mostly related to the test suite but also related to the horizontal review feature freeze that we want to get into. We're going to do a quick followup on the threat model afterwards.</p>
+</section>
+
+<section>
+<h3 id=9dab>Normative Statements Review</h3>
+</section>
+
+<section>
+<h3 id=e3ba>Feature Freeze And Horizontal Review</h3>
+<p id=ffff class="phone s01"><cite>Patrick_St-Louis:</cite> we're going to talk about the feature freeze horizontal review and what this entails and related to this feature freeze maybe we can quickly loop back in this topic around allowing participant to signal to the other participant any problem details or more specifically a graceful disengagement from an exchange. After this, we're going to go and review and issue threeing. unless there's any objection, I will get started with the normative statements review. So, this is the one. so I quickly went again. so in our test suite, we have the initial scaffolding.</p>
+<p id=c88a class="phone s01"><cite>Patrick_St-Louis:</cite> there is now a file that provides a tally of all the normative statements that needs to be tested meaning every normative statements that needs a minimum of two implementation. so I've now updated the script by which happening. So this is a respect native script meaning it is designed to work with a respect specification.</p>
+<p id=c9e2 class="phone s01"><cite>Patrick_St-Louis:</cite> It will be able to identify the normative statement classes in the spec divide them by their sections classify them by their importance required so on and it will also output a standalone HTML report to show how this works I've just did a copy paste of the HTML reports and</p>
+<p id=b769 class="phone s01"><cite>Patrick_St-Louis:</cite> a sort of a online HTML viewer. So this gives us a tally of how many statements the section and a sort of breakdown of statements per section. so at this moment this just takes all required statements right and we can see at the bottom we have 27 musts sort of a different little breakdown. and then I came up with this little thing on the bottom. so it captures a snapshot of the spec at the time the script was ran. And we can kind of click and it's going to take us to the section of that statement. So if we want to see only the must, we can kind of click and it's going to drag us to the spec where this is relevant.</p>
+<p id=9cbf class="phone s01"><cite>Patrick_St-Louis:</cite> I still don't think this picks up the must statements in the OAS description. So maybe that's something we could discuss. we do want to test this. however, we are testing the OAS with a open API Mocha testing tool. so probably what I can do if we feel like that these descriptive musts should be part of this tally I can just handle them and had a little bit to scrape these descriptions. I believe that my opinion is that the current way is sufficient.</p>
+<p id=9c38 class="phone s01"><cite>Patrick_St-Louis:</cite> The must statements from the OAS description are enforced by the OAS schema itself. obviously the schema needs to represent what is said and its description. If it says that a value needs to be a string, I'm expecting the OAS schema to require a string there. And this would be simply tested by The conformance section has a normative statement about providing the interfaces described and these interfaces. I don't know what happened here. I should not have clicked that. and these interfaces are the one that are going to provide these descriptions.</p>
+<p id=f6fd class="phone s01"><cite>Patrick_St-Louis:</cite> So I did this. I want to open the floor. Do we feel that? So what we want to look at is the required and the recommended. This gives us a total tally of 34 I which I personally really think is reasonable. but let's discuss this. yes, man.</p>
+<p id=3916 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, first of all, this is awesome work. Thank you, Patrick, for spending the time and putting all this together. Very much appreciated. I do also think that the way you're breaking it down makes a whole bunch of sense. also agree with we're going to depend on the OAS JSON schema definitions to check the actual payloads for the endpoints. the thing I'm still struggling with a bit is where do we identify the endpoints that are going to be called and they must statements in the spec? you're not required to implement every part of the spec, right?</p>
+<p id=a76a class="phone s02"><cite>Manu_Sporny:</cite> you can just implement the issuer backend services if you want to and just say you're conformant issuer whatever terminology we use for that so I'm wondering about that because I mean you just want to see API endpoints and whether or not the implementation is conformant to them that's at least one of the things that we want to see so do you know what the report for this is going to I'm presuming it's going to end up looking like all of our other reports and…</p>
+<p id=556e class="phone s02"><cite>Manu_Sporny:</cite> it's going to integrate into the Can I dashboard? do you have a run or of what that might look like?</p>
+<p id=a03d class="phone s01"><cite>Patrick_St-Louis:</cite> I had one I don't have it ready on hand.</p>
+<p id=e168 class="phone s01"><cite>Patrick_St-Louis:</cite> I can make sure I have one by next meeting yeah so the number one goal is that it's compatible with can that it breaks down the normative statement. the way we're going to define which endpoints are required is by just this conformance section. It really says they must implement section 3.2.1 which is the SL credential issue and they may implement the other information other interface which is like the get credential and update credential status.</p>
+<p id=4b86 class="phone s01"><cite>Patrick_St-Louis:</cite> Same thing for the verifier right it clearly defines that you need to implement the interface and when they talk about the interface it is talking about endpoints so this is the slashcredential verify presentation verify the other ones are a may where it gets tricky as always is if there's a may but if you choose to implement it then it comes with require statement so this just needs a bit of juggling in the test suite to make sure that if someone doesn't implement these, they're not penalized, but if they do implement them, they get a bit more points, But the other ones, they don't show as not passing. They just don't get these additional quote unquote points if we want to call them like that.</p>
+<p id=9592 class="phone s01"><cite>Patrick_St-Louis:</cite> For showing which endpoints are in the reporting let me run a first version of the reporting maybe we can have a more tangible discussion…</p>
+<p id=cfa4 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Before you go too much further,…</p>
+<p id=84a6 class="phone s01"><cite>Patrick_St-Louis:</cite> if we have yes yes yes please go we can discuss this.</p>
+<p id=d406 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> if I could just quickly, under your pie chart, you've got should not, and then required and recommended, which are usually the synonyms for must and should.</p>
+<p id=ff15 class="phone s01"><cite>Patrick_St-Louis:</cite> So these are all different normative statements in the spec these are very separated.</p>
+<p id=eab7 class="phone s01"><cite>Patrick_St-Louis:</cite> I think should and may they fall in the same category of things we do not want to normatively test I think required and…</p>
+<p id=472a class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> That'll disagree.</p>
+<p id=f8b0 class="phone s01"><cite>Patrick_St-Louis:</cite> must okay let's discuss that correct Yes.</p>
+<p id=97f5 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> So must and required are typically considered synonyms. And if you look at the RFC statements, they are exactly synonyms. should not and are antonyms. except they're both within the should category. And the is do it this way unless you have a really good reason not to and understand all ramifications. and then the may and optional, again, those are synonyms.</p>
+<p id=5a7f class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> they're supposed to be treated the exact same way. as far as the testing, I am generally of the opinion that if it's reasonably easy to test for the should or should not behavior, then it should be tested for and the same with the may because getting that out of a package can be really useful to people's choosing between things. Then we get into the conversation about what are we testing for the spec and its implementability or the software package and how they compare? That's a philosophical discussion and probably wings that we wind up with two test suites or…</p>
+<p id=7740 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> least two ways of running the test suite. I don't want to derail things into that argument but I want to drop it into people's heads that it's a thing that we need to think about. That's it.</p>
+<p id=a7c6 class="phone s01"><cite>Patrick_St-Louis:</cite> I can so I can say the first thing I can say …</p>
+<p id=3796 class="phone s01"><cite>Patrick_St-Louis:</cite> what we've been doing what exists in the other test suites we do not test should right so the main driver at least from my current understanding for this test suite is to get the spec to recommendation right that's the number one goal now this second use case about someone…</p>
+<p id=4d38 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Yep.</p>
+<p id=6125 class="phone s01"><cite>Patrick_St-Louis:</cite> who wants to browse solution and have a more feature-based value based on the report that's probably something that can IVC cers a bit</p>
+<p id=3b28 class="phone s01"><cite>Patrick_St-Louis:</cite> more too. So that's kind of a second bonus feature of having these test suites. I think the reason is if you have something that says you should do this and you don't do does that mean that you are now not conformant? So should it show up in the test as something that you've failed? probably a good in between that we could look at is they should if someone implements it they get more points…</p>
+<p id=e150 class="phone s01"><cite>Patrick_St-Louis:</cite> but someone that don't implement it do not get a failed point. If that makes sense.</p>
+<p id=c418 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Again this is the part…</p>
+<p id=c0ba class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> so again the two philosophies of testing if we are testing implementability of the spec which is part of the path direct theoretically then we should test all the shoulds because it's almost a must. It's really do it unless you have a damn good reason. And if it's that level of do it, then to my mind, testing implementability of that thing is If it wasn't important enough to be a should,…</p>
+<p id=833c class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> which is almost a must, then it should at least be a may, which is still something that we should test for implementability. And that's again a thing that belongs in the test suite in my mind. But I don't know if there's anybody arguing with me yet.</p>
+<p id=ce3d class="phone s01"><cite>Patrick_St-Louis:</cite> I'm certainly not arguing this.</p>
+<p id=d40c class="phone s01"><cite>Patrick_St-Louis:</cite> I think yes, it makes a lot of sense. is a very strong nudge that you should be doing that. I believe I would be willing to say that most no I don't want to say a statement but I could see a case where something is a must and there's one person that opposes us to it and so it becomes a should right I could see that as a scenario where something becomes a should. but maybe I'll let Manu speak a little bit about this.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I want to make sure that we use our very limited resources in this group to first do the bare minimum it takes to get us to recommendation and then if we have time do this nice to have stuff. So Ted, I'm not disagreeing with you about the stuff. I'm saying that most working groups, at least I've been a part of, have a very hard time getting through the shoulds because they can barely get to recommendation. I do agree that it's important to have and know and nice to see and all that kind of stuff. but I want us to I mean Patrick's got limited time and…</p>
+<p id=b1f2 class="phone s02"><cite>Manu_Sporny:</cite> is volunteering and I want to make sure that in that time we at least get the musts done. which Ted, we have, you've said that many times and I always chime in and say what I'm saying, which is like we'll get to the shoods when we can and we hardly ever do because, we're on to the next thing.</p>
+<p id=1539 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Yep.</p>
+<p id=21d9 class="phone s02"><cite>Manu_Sporny:</cite> So, I accept all of the issues with, know, what I'm saying, but our goal here is to get the wreck.</p>
+<p id=7d87 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah,…</p>
+<p id=c6fd class="phone s02"><cite>Manu_Sporny:</cite> Let's get the wreck and then hopefully expand later on knowing that we rarely find the time to do it. That's a</p>
+<p id=2f0b class="phone s01"><cite>Patrick_St-Louis:</cite> I can also add if we get into that discussion, we should consider this as a more global decision point. I don't know if it's okay if it happens, but would it make sense for one test suite to test the should and all the other ones they don't?</p>
+<p id=8167 class="phone s01"><cite>Patrick_St-Louis:</cite> I don't know what this would entail. I would probably capture that as I mentioned, it's a bit of a philosophical question. So far we've been doing it in a certain way and it certainly has been working. but yeah, these should right are potential place where there could be interrupt issues. Although something that causes interrupt issue should probably not be a should. but yeah, Manu</p>
+<p id=141f class="phone s02"><cite>Manu_Sporny:</cite> And I think this is where we're burning precious group time talking about a nice to have. again, if we start testing shows, no other test suite does it. We would have to redesign KIVVC and…</p>
+<p id=a0ae class="phone s02"><cite>Manu_Sporny:</cite> what that visual display looks like. we have dumped hundreds of thousands of dollars into that site just to get to where it is right now. And this is a non-trivial financial ask for the people that are working on that site.</p>
+<p id=3277 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Yeah…</p>
+<p id=1526 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> so I don't want to burn any more time than is absolutely necessary. the start of my question remains a thing and maybe it's just going to be an offline and we'll talk about it later. looking at the report page and seeing those labels being what they are, they need some rethinking and maybe that means some reclassification of some tests and I don't know what else. But you know what I'm saying, Manu that the RFC 2119 language Yep.</p>
+<p id=17b4 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, probably if I can, Ted, to maybe paraphrase what you're saying, we should combine these in some way…</p>
+<p id=10001 class="phone s02"><cite>Manu_Sporny:</cite> because what is it? Required and those need to probably fall into one category is…</p>
+<p id=d0a1 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Right. And the same with recommended and…</p>
+<p id=04f3 class="phone s02"><cite>Manu_Sporny:</cite> what Ted's saying. And I agree with that.</p>
+<p id=305e class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> should. And finally,…</p>
+<p id=80fc class="phone s02"><cite>Manu_Sporny:</cite> Correct. Yep. Agreed.</p>
+<p id=f6fe class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> the same with May and Arsenal.</p>
+<p id=7f52 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, there's definitely a duality there.</p>
+<p id=db24 class="phone s01"><cite>Patrick_St-Louis:</cite> No, I think the point you raised is important. and I just want to add so the description are actually counted in the stat. So I said earlier they weren't. It looks like they actually are here. So just want to point this out. let's leave it at this. Is there any further comments to this? so TLDDR there's a reproductible way to generate this thing. This script will the factor work on any respect specification document.</p>
+<p id=9a0d class="phone s01"><cite>Patrick_St-Louis:</cite> So we can include this on our test suite if we want to keep a sort of a tally. and this is It's meant to generate discussion. It gives a bit of an outline on a normative spec lens on the specification which be good. if you have a spec with no normative statements it's not very strong. And again my statement needs to be test perfect. so that. Thank you very much for all the comments. I think it's very relevant because I'm putting quite a bit of time thinking about this and it's a nice problem to solve. next I wanted to leave a little bit of time if there's any special thing we need to discuss about the threat model.</p>
+<p id=2633 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm keeping this as a steady little agenda reminder in our topics in case there's something we need to discuss that's a bit more than R reviews so I will leave the floor for people if they want to give any updates.</p>
+<p id=64a8 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, Eric.</p>
+<p id=a3d2 class="phone s04"><cite>Eric_Schuh:</cite> I just wanted to say from my side,…</p>
+<p id=2ae6 class="phone s04"><cite>Eric_Schuh:</cite> no updates. last week status is the same as this week. So no I've been focused on issues in the main specification not related to the threat model.</p>
+<p id=e5ab class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. thank you. Was there any action that you were pending on? or we're mostly reviewing looking at issues right now.</p>
+<p id=ea7c class="phone s04"><cite>Eric_Schuh:</cite> So my general plan is to return to the threat model kind of once we get into the CR review.</p>
+<p id=3344 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good.</p>
+<p id=107e class="phone s01"><cite>Patrick_St-Louis:</cite> If there's ever action that you're waiting on, don't hesitate to remind the group. I'm sure some people they have just a lot of things going on. So, don't feel you can't repeat it. anyone else has comments on threat feature freeze horizontal review. So we had a bit of a discussion about the schedule. I know there was a sort of a document or a chart shared last time with some timelines for the different anything we need to discuss around this? I think we wanted to get a sense of how close we are to saying we</p>
+<p id=d89b class="phone s01"><cite>Patrick_St-Louis:</cite> to change we don't want to keep introducing breaking check from what I understood we can still make change to the spec we just don't want to add or remove critical features that are currently there Kyote</p>
+<p id=79c4 class="phone s05"><cite>Kayode_Ezike:</cite> I have it on my queue for this week we'll do another pass through the issues. The first pass I did last month was just to classify the V10 features. I think give them honest feedback. The next goal is to identify the tickets issues rather that would lead to a major change and decide if we want to include it in V10. I do believe that that's going to be less of a lift because I think a lot of the issues that are out there right now are not really major breaking changes. There's only a handful of them and so I just have to find the time to do that. So I'm planning on doing that this week last weekend and…</p>
+<p id=5ceb class="phone s05"><cite>Kayode_Ezike:</cite> yeah so I think the result of that will be a new label in the issue space. yeah that's all. Thanks.</p>
+<p id=ce1e class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=2e1e class="phone s01"><cite>Patrick_St-Louis:</cite> yes, I know.</p>
+<p id=ce32 class="phone s02"><cite>Manu_Sporny:</cite> Plus one to that. Thank you Coyote for taking that both you and Patrick said breaking changes. it's okay to make breaking changes even after this. What we're trying to do is get the spec into a stable enough form where we're happy to ask the horizontal reviewers to take a look at it and know that the spec is largely stable which I believe it is. It's just Coyote, you're going to go through and make absolutely sure we don't have some massive feature that's missing from the spec. we can still add some stuff here and there. we will at some point in the future ask for another horizontal review and…</p>
+<p id=6b34 class="phone s01"><cite>Patrick_St-Louis:</cite> Is that</p>
+<p id=7e87 class="phone s02"><cite>Manu_Sporny:</cite> we will tell them these are the major things that change that you should pay attention to. But what you don't want the horizontal reviewers looking at is a largely unstable document document that's going to change. So, that's what we're trying to get to here. And, Coyote, with your new label, I think the real question is this something that we absolutely need to deal with before we ask for horizontal review or can we deal with it a little later? Right.</p>
+<p id=7747 class="phone s02"><cite>Manu_Sporny:</cite> The very next question we're going to ask is this something that we absolutely have to deal with before we go into candidate recommendation or is it something that we can deal with in candidate recommendation? so it's really like does this issue add a significant new feature that would change the way somebody would look at the API? That's what we need for horizontal review. And my hope is that your scan through the issues reveals very few of those issues. And then if it does, let's say you find three or four of them, then we've got to address those three or four before we ask for horizontal review. But my hope coyote is hopefully you only find two or three. …</p>
+<p id=007f class="phone s02"><cite>Manu_Sporny:</cite> but we'll see, I mean you're going to find however many you find. that's it.</p>
+<p id=49d0 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good.</p>
+<p id=3624 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you for that. any other comments regarding this process? so let's move on to our last topic before we get into PR reviews.</p>
+</section>
+
+<section>
+<h3 id=23cd>Graceful Disengagement And Problem Details</h3>
+<p id=0a26 class="phone s01"><cite>Patrick_St-Louis:</cite> So this is actually one of the thing we've discussed a few time that triggered a kind of questioning about are we ready for a feature freeze is this idea that a participant could communicate to the other participant mostly a disengagement from an exchange or report some sort of problem like a reason for their disengagement or so on for example I cannot store your credential because it's not passed ing the data model, Something like that. or I'm unable to I don't support your did authentication. I made my own did method or I'm not too sure. these kind of message I believe currently the behavior is just you just stop interacting with the exchange.</p>
+<p id=9a91 class="phone s01"><cite>Patrick_St-Louis:</cite> This is about allowing a sort of a communication, something that they can send to say, hey, I'm stopping this exchange pending if they need to provide details as to why or not, but at least to send a signal. I know Dimitry, who's someone that had this disengagement topic, brought it last time. I know Hayatt brought this problem details. is there so I guess number one question is this something like do we have a clear decision if this is something we need is something we want to support.</p>
+<p id=10002 class="phone s01"><cite>Patrick_St-Louis:</cite> Second question, can both things be bundled into the same kind of reporting a problem detail? I know this engagement is not necessarily a problem per se. but at the end of the day if someone needs to leave the exchange preemptively it's not the way the workflow was intended to go. So you could argue that this is a problem detail. coyote.</p>
+<p id=4bc9 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, just really quickly just to touch on the Dimmitri proposed challenge which was how does the wallet gracefully disengage basically was the question there. I think what we came to at the end of u it was in chat and I Dave documented it rather in the issue is to just add a new field in the exchange message that either side can send and the field is done and it's a boolean true or false and I guess we really would only include it whenever it's done and it borrows from another spec I forget which one Dave but that uses a similar pattern and so that's fairly webstream a fairly simple way to address that without the need to add a new endpoint or…</p>
+<p id=cec7 class="phone s05"><cite>Kayode_Ezike:</cite> anything like that. So that solves that problem of clear termin graceful termination. so that's what I'll say about</p>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think that's also…</p>
+<p id=e186 class="phone s01"><cite>Patrick_St-Louis:</cite> where I heard that we landed. It's just the coordinator or that received the message should at any moment on any state be able to accept something to say that the other is disengaging. So kind of a reserved keyword whether that's done or problem detail or message report. this seems like a minimal thing. I would ask probably if someone is to open a PR for this is this something that must be supported normatively?</p>
+<p id=5280 class="phone s01"><cite>Patrick_St-Louis:</cite> Probably I know we're going to hate this but probably would feel under a may at least for now that's how I support it like you may support this if you want h because at the end of the day it's the person sending the workflow it's for them right like the recipient of the workflow is sending this on a good fake measure if the sender wants to support this so they can do some business logic around that gracefully and an exchange. they should ask this feature, but it's not something that you should rely on. U so maybe along with this feature could have a little bit just descriptive spec text about when you serve an exchange there could be circumstances that the participant just stops engaging with the exchange.</p>
+<p id=2f30 class="phone s01"><cite>Patrick_St-Louis:</cite> if you want to be notified, you can support having this done keyword that can be sent. and that's pretty much all where I'll leave my comments here. is there any strong feeling for anyone objecting to this approach?</p>
+<p id=a3f7 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, could be. Sorry. Yes.</p>
+<p id=21d8 class="phone s02"><cite>Manu_Sporny:</cite> Is this tracked in an issue,…</p>
+<p id=ded9 class="phone s02"><cite>Manu_Sporny:</cite> Patrick? Okay.</p>
+<p id=cd22 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Yes. There is an issue. definitely I think there's two issues somewhat related. Yeah.</p>
+<p id=fb66 class="phone s02"><cite>Manu_Sporny:</cite> Just a heads up, if you just put topic or subtopic before you talk about that stuff, then the entire conversation is automatically merged into the issue. it won't happen this time, but just a heads up if you all are going to talk about an issue,…</p>
+<p id=3c31 class="phone s02"><cite>Manu_Sporny:</cite> just put topic or subtopic colon and then the URL to the issue and then everything you said will be added as a comment after the call.</p>
+<p id=f32d class="phone s01"><cite>Patrick_St-Louis:</cite> in the chat.</p>
+<p id=950c class="phone s01"><cite>Patrick_St-Louis:</cite> That's like a chat. Thank but I need to put topics and…</p>
+<p id=4fee class="phone s02"><cite>Manu_Sporny:</cite> No, everything we're saying out loud here and…</p>
+<p id=f2c8 class="phone s02"><cite>Manu_Sporny:</cite> everything in the chat will be integrated into the GitHub issue.</p>
+<p id=7eef class="phone s01"><cite>Patrick_St-Louis:</cite> call in the URL in the chat or… Manu Sporny:</p>
+<p id=1bc4 class="phone s02"><cite>Manu_Sporny:</cite> Yes, Correct. Yep.</p>
+<p id=23f9 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah. Okay. That could be good I think that's very useful. next time I'll try to keep that in mind and I will surely try any closing thoughts before we move on to reviews in that case, let's go have a look at our</p>
+</section>
+
+<section>
+<h3 id=d8e9>OAS Rendering Issues</h3>
+<p id=9dff class="phone s01"><cite>Patrick_St-Louis:</cite> It looks like me and Rick open the same fix at the same time.</p>
+<p id=c9e6 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, Eric.</p>
+<p id=730d class="phone s04"><cite>Eric_Schuh:</cite> Yeah, I was about to mention that.</p>
+<p id=62ae class="phone s04"><cite>Eric_Schuh:</cite> So actually the one of fix I think is a different one than the one the 12 that you addressed.</p>
+<p id=29c0 class="phone s01"><cite>Patrick_St-Louis:</cite> I think mine was olive.</p>
+<p id=e5e5 class="phone s04"><cite>Eric_Schuh:</cite> Yeah, yours was all of but I also pushed a fix to the respect OAS to fix the same olive bug that you updated the OAS EML files to correct.</p>
+<p id=53f4 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=11f9 class="phone s04"><cite>Eric_Schuh:</cite> So Yeah.</p>
+<p id=2329 class="phone s01"><cite>Patrick_St-Louis:</cite> Why don't we start with these are affecting the rendered spec. so let's discuss it. so okay, we ended up mixing some issue different ways.</p>
+<p id=6d9f class="phone s02"><cite>Manu_Sporny:</cite> Patrick, if you could zoom, we could see it's very tiny on your screen.</p>
+<p id=6ea2 class="phone s01"><cite>Patrick_St-Louis:</cite> Let me show yeah sorry.</p>
+<p id=10004 class="phone s01"><cite>Patrick_St-Louis:</cite> So I want to show so what happened is there's a render error and it's just showing the JSON instead of making it all pretty like this. the reason is the keyword olive needs to have a type at its same level. Right? So it cannot only rely on the type within at least from what I understood. so this is a sort of rendering component. The information is there. It's just not making it pretty. is an array and not an object. So you're saying that this can be solved on the respect side. Is that correct, Eric?</p>
+<p id=5446 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=8b0e class="phone s04"><cite>Eric_Schuh:</cite> Yeah, it was just another,…</p>
+<p id=5f48 class="phone s04"><cite>Eric_Schuh:</cite> if case in a couple of the functions. so it was a pretty straightforward It's basically the same chunk of code and two different functions. but I know that updating the respec OAS is a more involved process monu as we were just discussing. so I think the main choice here is if this pattern is more prevalent than just in the BCOM spec, it might be nice to update on the respect side. but if this is a pattern that we're only using here in VCOM, I think Patrick, your just straight updates to the OSVML file is probably the cleaner way to fix this. Eric Schuh:</p>
+<p id=6a0c class="phone s01"><cite>Patrick_St-Louis:</cite> That's my Okay,…</p>
+<p id=9d24 class="phone s02"><cite>Manu_Sporny:</cite> We should fix respect This is a bug there. and I'm reviewing your change request, Eric, and it looks good. so let me merge this. And then we have to tag it to do a new release, but that should fix the issue.</p>
+<p id=10005 class="phone s01"><cite>Patrick_St-Louis:</cite> I can add the VCON spec is at least currently to my knowledge it's one of the first that is very OAS reliant. there is probably in some spec little tidbits here and there but here it is the VC API.</p>
+<p id=9bcb class="phone s01"><cite>Patrick_St-Louis:</cite> So it's kind of 100% OAS based right there's other thing but it's mostly API. but for the test suite for these kind of respect thing there's adds a new layer of things to consider. So yeah I'm not sure if I'd call this a bug more than a requirement and limitation. but clearly the fact that it shows this is a bug so it could be handled a little bit cleaner. okay so if I understand correctly I'm going to keep this in draft. Let's wait for this respect to be published rolled out and see If the issue is addressed we can close this and say that it was fixed upstream.</p>
+<p id=56e2 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. So I will just commend I discussed the group will wait until the respect respect fix is pushed. If issues are resolved, this we go. Perfect. …</p>
+<p id=cf06 class="phone s01"><cite>Patrick_St-Louis:</cite> what about your other is this something same kind of situation. It would that be fixed upstream or is this something we need to have a look here?</p>
+<p id=206f class="phone s04"><cite>Eric_Schuh:</cite> So, The way I fixed it was simply through updating this kind of edge case. So the edge case was basically in different parts of the YAML. Patrick St-Louis:</p>
+<p id=e459 class="phone s04"><cite>Eric_Schuh:</cite> We had components that both used one of but the format of how the one of and required was being done previously was inconsistent. and there was one of the patterns which I mentioned in the comment sorry for the exchange participation client message as the component that seemed to have the proper or at least a formatting of this one of plus required case that didn't have any issues with rendering.</p>
+<p id=3bda class="phone s04"><cite>Eric_Schuh:</cite> So basically I took all of the other one of plus required cases and just updated the format to match that one. I believe that this is communicating the same I tried to make sure that things were communicating the same one of and required logic in the update. but it would be nice if someone could double check that. if the logic is not the same or there's something that is wrong, then this will require a respspec update. the challenge with the respect update is that it seems that this one of plus required formulation can have a wide variety of actual instantiations like…</p>
+<p id=e29c class="phone s04"><cite>Eric_Schuh:</cite> where you put the dash required and where things actually are defined is variable. so it would be a fairly involved respspec update to do this in the respect. which is why I chose not to at the moment,…</p>
+<p id=ddff class="phone s01"><cite>Patrick_St-Louis:</cite> And again,…</p>
+<p id=fa66 class="phone s04"><cite>Eric_Schuh:</cite> but no,…</p>
+<p id=7f6f class="phone s01"><cite>Patrick_St-Louis:</cite> it only happens on certain fields. and you said it's tent. And the inconsistent case, one of them seemed correct. The other one, did did it just render in a way that doesn't really reflect what we were trying to convey? Yeah.</p>
+<p id=10aa class="phone s04"><cite>Eric_Schuh:</cite> it would just render as JSON in both instances. so if you actually go down to get workflow configuration on the live page the live VCOM spec the git workflow configuration and…</p>
+<p id=5ef5 class="phone s04"><cite>Eric_Schuh:</cite> then if you scroll down a little bit you'll see that's the other one.</p>
+<p id=fc10 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it's the same.</p>
+<p id=766f class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=fb39 class="phone s04"><cite>Eric_Schuh:</cite> If you scroll down a little bit it issue requests is one of the formats of this. And if you scroll down a little bit more, you'll see the other one which is this open ID definition.</p>
+<p id=33e0 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah. That's weird. it's hard to know what's going on, right? Eric Schuh:</p>
+<p id=80c1 class="phone s04"><cite>Eric_Schuh:</cite> Yeah. Yeah.</p>
+<p id=3464 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Eric Schuh:</p>
+<p id=0fd3 class="phone s04"><cite>Eric_Schuh:</cite> But those two examples, the issue requests and this open ID are one of bugs that I updated. so these are the two and you can kind of see the formatting here. for this open ID originally it was using this one of required and then explicitly stating a not so this one is required but you can't use the other one or you use the other one and the first one cannot be used.</p>
+<p id=b858 class="phone s01"><cite>Patrick_St-Louis:</cite> It's I Okay, I see.</p>
+<p id=7641 class="phone s01"><cite>Patrick_St-Louis:</cite> It's one of, but depending which one you have, you need to have that one and not the other one.</p>
+<p id=0b60 class="phone s04"><cite>Eric_Schuh:</cite> Yeah. and…</p>
+<p id=3fee class="phone s04"><cite>Eric_Schuh:</cite> then the issue requests up above was a different format entirely. but then if you go down to participate in an exchange real quick and this is the example of something that actually works. If you scroll down, I think it's in the response 200 to this. so going sorry, I was trying to yeah,…</p>
+<p id=ff05 class="phone s04"><cite>Eric_Schuh:</cite> here if you scroll down, the end of this response body is a giant one of under this rendering error. Basically the reference ID verifiable presentation like these are listed as a one of and…</p>
+<p id=bc94 class="phone s01"><cite>Patrick_St-Louis:</cite> an object.</p>
+<p id=1f03 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=cf65 class="phone s04"><cite>Eric_Schuh:</cite> so that's an example of one of pattern with required functioning in terms of the rendering. so that's the one that I patterned the other two off to fix. yes.</p>
+<p id=7fc1 class="phone s01"><cite>Patrick_St-Louis:</cite> this seems a bit odd for me. Not too sure what's happening here because we have reference ID, right?</p>
+<p id=d164 class="phone s01"><cite>Patrick_St-Louis:</cite> So it's either giving a verifiable, So it's either this, or either this.</p>
+<p id=6518 class="phone s04"><cite>Eric_Schuh:</cite> Believe so.</p>
+<p id=0f2d class="phone s01"><cite>Patrick_St-Louis:</cite> Away, it's not very clear to me. it seems like there's something missing, but I think maybe we can think how to show it probably. I don't know. Does anyone have a feeling here? Dave</p>
+</section>
+
+<section>
+<h3 id=5372>OAS Accuracy And Rendering</h3>
+<p id=c451 class="phone s06"><cite>Dave_Longley:</cite> So I don't think that the original JSON schema was incorrect. if you ran it through a validator, it would do the right thing. So it just seems like we have a rendering problem. and maybe we don't want to make this schema change. I don't know which way to express this in this schema is better. it has the disadvantage of maybe duplicating information. one of previously just listed the fields that were required and not required. JSON schema is weird but that was a brief short way of expressing all effectively the one of was just some combination of required and…</p>
+<p id=bb91 class="phone s06"><cite>Dave_Longley:</cite> not required fields. This new change copies the properties and their entire descriptions into one of section which can create some duplication. and I don't think if we're doing that to try and make it look better when it's rendered, that's probably not the right way to do it. so that's my feedback.</p>
+<p id=bf3e class="phone s01"><cite>Patrick_St-Louis:</cite> No. Yeah,…</p>
+<p id=c4b5 class="phone s01"><cite>Patrick_St-Louis:</cite> I definitely agree. the OAS should be semantically correct and…</p>
+<p id=33d1 class="phone s01"><cite>Patrick_St-Louis:</cite> then we make it render properly. I don't think we should, move things around so that it does something else in the OS so it looks correct. that's kind of kills the whole point. Eric</p>
+<p id=add8 class="phone s04"><cite>Eric_Schuh:</cite> So I don't think there should have been duplication. I thought I had double checked that and what I ended up doing was moving the property definitions to be colllocated with the one of right so it should only be a single instance of each of the property definitions in the OAS as there was prior they're just in a slightly different location.</p>
+<p id=5d6b class="phone s01"><cite>Patrick_St-Louis:</cite> Rough.</p>
+<p id=749a class="phone s04"><cite>Eric_Schuh:</cite> And otherwise I completely agree. I guess my choice here was after looking at the respec for a couple of hours and trying to fix this bug through the respect I realized that I think it's three or four edge cases here in terms of this one of plus required combination. and so for the short term at least the cleaner way and faster way to get the rendering fixed was to move those property definitions to be collicated with the one of …</p>
+<p id=750a class="phone s04"><cite>Eric_Schuh:</cite> which I didn't think actually semantically changed the definition but rather just changed where some of the objects were located in terms of the definition. but obviously if that is wrong I can return to the edge cases in the respect OAS and try to work through that problem</p>
+<p id=10df class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it seems to me like it should be reference ID and…</p>
+<p id=c621 class="phone s01"><cite>Patrick_St-Louis:</cite> then one of these object, I think can probably change the wording here it must be one of the following object, right? Or Yeah. Anyway, man</p>
+<p id=338d class="phone s02"><cite>Manu_Sporny:</cite> Plus one to we should just get the JSON schema right and then totally feel your pain, Eric, of trying to fix the renderer. JSON schema is fantastically complicated. So what the renderer does is it tries to take JSON schema code and converted into readable pros English and it is really difficult to do that. that it must be an object of the following form is all autogenerated from code Patrick and so we fix it there and it breaks in 12 other places in the specification.</p>
+<p id=3cc2 class="phone s02"><cite>Manu_Sporny:</cite> So that's why this is a difficult problem. usually what I end up doing is just trying to fix the parts of the renderer that have to do with the way we've used JSON schema in this particular case. there I cannot tell you how many corner cases there are in JSON schema where they're weird combinations of things. so I think that's probably what needs to be done. Eric is I get the whole let's see if we can make the JSON schema simpler so it works with a simpler rendering path but sometimes you're just forced to try to fix the problem. and I will note that this is usually something that claude code is pretty good at chasing down and trying to fix.</p>
+<p id=328b class="phone s02"><cite>Manu_Sporny:</cite> Though sometimes you can burn lots and lots of tokens because it gets caught in a loop trying to plug one hole and another one opens up. but yeah, we should definitely not change the OAS to too certainly not. So it changes the meaning of the OAS.</p>
+<p id=bc5a class="phone s02"><cite>Manu_Sporny:</cite> And this might have just been wrong. Eric, I don't know how deeply you looked at this, but there may be some OAS JSON schema stuff that's just wrong when you take a look at</p>
+<p id=0860 class="phone s01"><cite>Patrick_St-Louis:</cite> U …</p>
+<p id=553b class="phone s01"><cite>Patrick_St-Louis:</cite> if that's okay with you, Erica, I'm happy to have a look at the PR and dig on it myself and maybe we can have a chat offline or something about the best way forward and but yeah definitely We want the OS file to represent the thing the correct behavior and this rendering it is kind of second nature. Maybe we can get around it by some descriptive text or…</p>
+<p id=085d class="phone s01"><cite>Patrick_St-Louis:</cite> something. okay, Eric</p>
+<p id=7cb3 class="phone s04"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=b4d1 class="phone s04"><cite>Eric_Schuh:</cite> that sounds good. did just want to respond to Dave that duplication so that was the object I was patterning off of. I believe that the actual changes I made, I omitted the reference ID portion of that so as not to duplicate in the portions of the OAS that I was changing. but I think I'm hearing you that the thing I copied off of may itself have bugs in terms of the JSON schema. So</p>
+<p id=cc19 class="phone s06"><cite>Dave_Longley:</cite> And the thing I linked to I think is that not even correct. doesn't allow and that might be a result of trying to use that pattern with one of the thing I linked to a client message should allow all those different properties and…</p>
+<p id=ecfd class="phone s04"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=1007 class="phone s06"><cite>Dave_Longley:</cite> the one of is trying to name all of the possible combinations of them but it fails to do So,</p>
+<p id=6d18 class="phone s01"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=eaba class="phone s01"><cite>Patrick_St-Louis:</cite> I'll just capture this favor OS accuracy. be mindful of the rendered OAS but not a priority. And we're just going to review. First thing is the way should represent the thing it is. and JSON schema is complex, but it's also very permissive. You can express a lot of things. That's just kind of a downside of any closing comments to this? we will look at one last pull request. I'm seeing the time. Let's try to at least see one more because there's quite a lot open. yes, Coyote, do you have a preference?</p>
+</section>
+
+<section>
+<h3 id=93e0>PR Review: Retrieve Current VPR</h3>
+<p id=8f07 class="phone s05"><cite>Kayode_Ezike:</cite> just put it in chat. 663.</p>
+<p id=3a4d class="phone s01"><cite>Patrick_St-Louis:</cite> 663. Yeah,…</p>
+<p id=b088 class="phone s01"><cite>Patrick_St-Louis:</cite> let's have a look at this.</p>
+<p id=dc4b class="phone s05"><cite>Kayode_Ezike:</cite> All right. So, this has to do with retrieving basically a new feature to retrieve the current VPR for an the current step of the exchange so that we can support future protocols like DC API for example that allows you to advertise that. I think there's only one question here that I had really minor…</p>
+<p id=284b class="phone s01"><cite>Patrick_St-Louis:</cite> 50.</p>
+<p id=1fa1 class="phone s05"><cite>Kayode_Ezike:</cite> which is that I had a question that I had asked about if a step does not release a VPR does what should we do and I think the response Dave gave was to just make it an empty object. my only question is must be an empty object or it should be an empty object and it's a minor right now I put must but I don't know how we feel about that. So that's all…</p>
+<p id=69e5 class="phone s05"><cite>Kayode_Ezike:</cite> but other than that it should be ready to go. great.</p>
+<p id=a863 class="phone s06"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=7fbd class="phone s06"><cite>Dave_Longley:</cite> Is fine. I think the spec says if you want to continue in exchange, you have to put that empty object there. So that seems like it's right. And if we find that's wrong, we can change it later.</p>
+<p id=eaa7 class="phone s05"><cite>Kayode_Ezike:</cite> That's the only delta from last week modulo. Another one editorial comment that Ted made as well. So, it should be good to go.</p>
+<p id=c31a class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=9bd5 class="phone s01"><cite>Patrick_St-Louis:</cite> very good. So, I know this has been open for 3 weeks. we had a lot of back and forth. We just made a resolution that at least we have discussed that it should be a must. this is what's in here currently. Giving that is there any objection to merging this? Someone's got a change. So I see Paul Ted has a pending change. did</p>
+<p id=3d14 class="phone s05"><cite>Kayode_Ezike:</cite> ending. Where…</p>
+<p id=85ea class="phone s05"><cite>Kayode_Ezike:</cite> where is that sir?</p>
+<p id=3b55 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm not sure. I'm just seeing here. I think all of Ted's requests have been addressed. So, if you're happy with this, Ted, I'll let you have another look and approve it and I can merge this out of band unless there's any objections.</p>
+<p id=364d class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> should be fine. I'll try and get to</p>
+<p id=6555 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. So, I'll send you a little reminder just to make sure that everything is cleanly resolved and I'll get this merged in sometime this week. so for next time we're going to have a few more PRs to have a look. and…</p>
+<p id=cb53 class="phone s05"><cite>Kayode_Ezike:</cite> That's an old one. Sorry.</p>
+<p id=a50e class="phone s01"><cite>Patrick_St-Louis:</cite> that will be it for today. any closing comments? Ky, do you still have your hand up?</p>
+<p id=a84d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, perfect. thank you all for attending today's call. let's review. if you have time, take on an issue. put a small PR. there's a lot of PRs here that are I think we do have a tag for a good first issue. so even if you're not sure, we have low effort. feel free to pick one up. Maybe a small text edit, not nothing too major, but it could really help if we could close some of these issues. with that being said, thank you all for attending and, we'll see you again next week. The meeting is adjoined.</p>
+<p id=3576 class="phone s05"><cite>Kayode_Ezike:</cite> Oops. Meeting ended after 00:58:40 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
