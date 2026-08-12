@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Product and Wallet Vocabularies &ndash; 10 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Product and Wallet Vocabularies</h1>
+<h2>10 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Carsten_Stöcker, Dr._Susanne_Guth-Orlowski, Eva_Blomqvist, Fireflies.ai_Notetaker_Miguel, Ingo_Wolf, Ivan_Herman, Ivo_Ladenius, Phil_Archer, Saad_Shams</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#8d88">Product and Wallet Vocabularies</a></li>
+<li><a href="#59f4">Business Wallet Architecture Models</a></li>
+<li><a href="#a599">Control and Data Plane Discussion</a></li>
+<li><a href="#e4ba">Repository Structure and Publication</a></li>
+<li><a href="#1a9e">Vocabulary Questions and Examples</a></li>
+<li><a href="#c743">W3C Inc. Strategy and Developments</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=8d88>Product and Wallet Vocabularies</h3>
+<p id=70b9 class="phone s01"><cite>Ivo_Ladenius:</cite> All right.</p>
+<p id=70ef class="phone s02"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=c4cf class="phone s01"><cite>Ivo_Ladenius:</cite> Good afternoon.</p>
+<p id=55e0 class="phone s03"><cite>Carsten_Stöcker:</cite> Hey guys,…</p>
+<p id=0894 class="phone s04"><cite>Ingo_Wolf:</cite> Hey, C.</p>
+<p id=ccc3 class="phone s03"><cite>Carsten_Stöcker:</cite> how are you doing?</p>
+<p id=d737 class="phone s04"><cite>Ingo_Wolf:</cite> Quite okay.</p>
+<p id=f9f9 class="phone s04"><cite>Ingo_Wolf:</cite> So far, I solved my family problems,…</p>
+<p id=012a class="phone s03"><cite>Carsten_Stöcker:</cite> Yeah,…</p>
+<p id=f762 class="phone s04"><cite>Ingo_Wolf:</cite> I would say. Yeah. So my parents moved.</p>
+<p id=b094 class="phone s03"><cite>Carsten_Stöcker:</cite> I know there's a lot of stuff, but that's good if it's kind of test and progress,</p>
+<p id=f48b class="phone s04"><cite>Ingo_Wolf:</cite> Yeah. There is definitely improvement. Hello. Yes.</p>
+<p id=ee55 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Hello there.</p>
+<p id=6be5 class="phone s03"><cite>Carsten_Stöcker:</cite> What are we doing Are we doing DPP or business world this week?</p>
+<p id=2bef class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I think the plan is business wallet.</p>
+<p id=bf17 class="phone s03"><cite>Carsten_Stöcker:</cite> Excellent.</p>
+<p id=3e16 class="phone s04"><cite>Ingo_Wolf:</cite> Thank you.</p>
+</section>
+
+<section>
+<h3 id=59f4>Business Wallet Architecture Models</h3>
+<p id=f5c9 class="phone s04"><cite>Ingo_Wolf:</cite> Yeah, last time Ken, I don't know if you have seen it, we were talking about the business wallet with the two architecture models incorporating personal wallets or…</p>
+<p id=2925 class="phone s04"><cite>Ingo_Wolf:</cite> not. …</p>
+<p id=f3b3 class="phone s03"><cite>Carsten_Stöcker:</cite> Mhm. No,…</p>
+<p id=945d class="phone s04"><cite>Ingo_Wolf:</cite> I uploaded the presentation that we were talking about to the git. I don't know if you have seen it yet.</p>
+<p id=fc52 class="phone s03"><cite>Carsten_Stöcker:</cite> I haven't seen it, but I will definitely look into this. Excellent.</p>
+<p id=16d1 class="phone s03"><cite>Carsten_Stöcker:</cite> What did you discuss? You discussed business wallets, personal wallets and then you distinguished employee identity and private citizen identity as well.</p>
+<p id=6d97 class="phone s04"><cite>Ingo_Wolf:</cite> I started to draft this as a web page So still not finished yet but I can share…</p>
+<p id=f581 class="phone s03"><cite>Carsten_Stöcker:</cite> Would be a good start,…</p>
+<p id=fe61 class="phone s04"><cite>Ingo_Wolf:</cite> if you want and we can see basically also the things discussed two weeks ago. and…</p>
+<p id=759d class="phone s03"><cite>Carsten_Stöcker:</cite> I guess, at least for me.</p>
+<p id=dfc0 class="phone s04"><cite>Ingo_Wolf:</cite> yeah, if nobody else, I can share my screen. So basically I oriented on the DPP side of our working group</p>
+<p id=6b3a class="phone s03"><cite>Carsten_Stöcker:</cite> Great.</p>
+<p id=a195 class="phone s04"><cite>Ingo_Wolf:</cite> where Carolyn started such a page from the angle of DPP and asked the following questions that you see on the left side and… Dr. Susanne Guth-Orlowski:</p>
+<p id=ffff class="phone s04"><cite>Ingo_Wolf:</cite> yeah I somehow picked them up and tried to answer them for the business wallet perspective. and yeah, basically this was one of the graphics that we were looking at.</p>
+<p id=8eb8 class="phone s04"><cite>Ingo_Wolf:</cite> Where first of all we see that in the ecosystem we have entities like certification bodies or…</p>
+<p id=e6d8 class="phone s03"><cite>Carsten_Stöcker:</cite> H. Okay.</p>
+<p id=019e class="phone s04"><cite>Ingo_Wolf:</cite> market surveillance authorities which have a business wallet on their own acting in the ecosystem as issuer of certifications or organizational VCs and the other entity as a verifier verifies as operator VCs and DPPS in for example a supply chain like it is pictured here and this is kind of a enabling infrastructure then for DPP product level credentials that's at least how we see it and we have basically the two models for deployment of business wallets</p>
+<p id=0026 class="phone s04"><cite>Ingo_Wolf:</cite> So on the left hand side, the model I make it a bit bigger is where the organizational business wallet interacts directly with the counterparty the verifier. whereas in the organizational Professional business wallet issues mandate VCs to a personal wallet of an employee or an agent for example which then presents this organizational VCs on behalf of the organization to a counterparty verifier.</p>
+<p id=2cd5 class="phone s04"><cite>Ingo_Wolf:</cite> So I think both models exist today and…</p>
+<p id=0788 class="phone s04"><cite>Ingo_Wolf:</cite> we have to take them into account and this is what we were right.</p>
+<p id=5e36 class="phone s03"><cite>Carsten_Stöcker:</cite> I think I…</p>
+<p id=ef14 class="phone s03"><cite>Carsten_Stöcker:</cite> what I don't understand because the employee model can be part of the business wallet infrastructure on the left hand side and on the right hand side it could be the private citizen wallet and…</p>
+<p id=41cd class="phone s03"><cite>Carsten_Stöcker:</cite> there are a lot of pros and cons. Yeah, but maybe it's too much for this paper, but we might want to add the pro cons. Yeah, kind of to use a private citizen wallet. I think there's a lot of cons. Yeah.</p>
+<p id=10000 class="phone s04"><cite>Ingo_Wolf:</cite> Yeah. I would say it depends on the citizen wallet. I mean looking at the regulation there is also the opportunity for private u person wallets or not provided by the state let's say like this so I would see that more generic so it's not necessarily the citizen wallet that we all think of putting our driver license and…</p>
+<p id=f44e class="phone s03"><cite>Carsten_Stöcker:</cite> No.</p>
+<p id=e37f class="phone s04"><cite>Ingo_Wolf:</cite> public transport tickets and such things. but it could be also a dedicated natural person wallet provided by another party.</p>
+</section>
+
+<section>
+<h3 id=a599>Control and Data Plane Discussion</h3>
+<p id=82aa class="phone s03"><cite>Carsten_Stöcker:</cite> It doesn't matter. we don't need to judge here. Excellent. what I'm wondering if we need to look into kind of let's say the control and the data plane. Yeah.</p>
+<p id=1906 class="phone s03"><cite>Carsten_Stöcker:</cite> in this questions and answers as well because we use the credentials on the control plane for authorization and…</p>
+<p id=8c6f class="phone s03"><cite>Carsten_Stöcker:</cite> the data plane. we use them for evidence problems.</p>
+<p id=0674 class="phone s04"><cite>Ingo_Wolf:</cite> Right. But would you see…</p>
+<p id=cd2e class="phone s04"><cite>Ingo_Wolf:</cite> then in the case of using it for data provenence on the data plane would you see that as a typical use case including credential presentation meaning presentation protocols as well because I think from my point of view this is rather situated in the control plane if we go with that architecture split.</p>
+<p id=c3d5 class="phone s04"><cite>Ingo_Wolf:</cite> Seems you disrupt Now it's better.</p>
+<p id=ceb2 class="phone s03"><cite>Carsten_Stöcker:</cite> I think this depends full plan and…</p>
+<p id=f409 class="phone s03"><cite>Carsten_Stöcker:</cite> the day protocol that was now I don't know…</p>
+<p id=ecd6 class="phone s06"><cite>Phil_Archer:</cite> We're losing a custom. We can't hear you.</p>
+<p id=d50c class="phone s03"><cite>Carsten_Stöcker:</cite> if it works but I was saying on the evidence of the data You lost connection was better said to me I lost my connection on school.</p>
+<p id=10001 class="phone s04"><cite>Ingo_Wolf:</cite> We can hear you at least.</p>
+<p id=8b53 class="phone s03"><cite>Carsten_Stöcker:</cite> But hey, we have some linked data about supply chain events as an evidence graph and this is what we need on the data plane. Yeah.</p>
+<p id=99dc class="phone s03"><cite>Carsten_Stöcker:</cite> And I think this is where the link data make a lot of sense. And yeah, I don't think we have a presentation protocol there, but at least there's huge value in having linked verifiable credentials bre. And this is what the people are discussing because they're discussing, hey, the TIFF needs to issue certificates. the notified body needs to issue something or whatever or tier one supplier needs to issue certain that goes into a DPP and then we have it verifiable along all these DPP events whether they come from testing inspection certification companies or from a workshops that updates something or from a BMS system or whatever I think this happens all on the data plan and…</p>
+<p id=033b class="phone s03"><cite>Carsten_Stöcker:</cite> that there's a lot of value for the VCs</p>
+<p id=8653 class="phone s03"><cite>Carsten_Stöcker:</cite> There's maybe one question about the data and control plan or whatever. By the way, my Google is still saying I lost my connection. Funny.</p>
+<p id=656e class="phone s04"><cite>Ingo_Wolf:</cite> Thank you.</p>
+<p id=2cf7 class="phone s04"><cite>Ingo_Wolf:</cite> Yes, please.</p>
+<p id=5457 class="phone s06"><cite>Phil_Archer:</cite> I'm trying to find this document.</p>
+<p id=29e3 class="phone s06"><cite>Phil_Archer:</cite> Is it in your own repo somewhere or is it somewhere else?</p>
+<p id=1a0b class="phone s04"><cite>Ingo_Wolf:</cite> No, not yet. that's still on my local machine. I'm just sharing from my local machine,…</p>
+<p id=7e38 class="phone s06"><cite>Phil_Archer:</cite> Right. Okay.</p>
+<p id=f34f class="phone s04"><cite>Ingo_Wolf:</cite> but I intended to commit that to the Git repository once it is mature enough.</p>
+</section>
+
+<section>
+<h3 id=e4ba>Repository Structure and Publication</h3>
+<p id=4cd6 class="phone s06"><cite>Phil_Archer:</cite> what I was Yeah, please do. But this is I guess mostly a question for Ivon. we currently have one repo for this group that's working on at least two documents. which things get very confused very quickly. and I wonder whether we can set up before people get too far down the rabbit hole. We get separate repo set up for this document that Ingo will be putting into the task force's GitHub and the one that Suzani and Caroline are working on. then we can move forward with that and set up the akidna and everything else because in my view I would be very pleased if these documents that this one you're showing in go and the one that Suzani and Caroline are working on that we looked at last week they're probably very close to being ready for first public working draft.</p>
+<p id=a824 class="phone s02"><cite>Ivan_Herman:</cite> I do whatever the task force asked me to do. At the very beginning of the task force, the decision was to keep one repository for everything. if the task force changes its mind, then I just follow again.</p>
+<p id=205b class="phone s06"><cite>Phil_Archer:</cite> I remember that discussion.</p>
+<p id=bc81 class="phone s06"><cite>Phil_Archer:</cite> I remember that being the decision. My recommendation to the task force is that they ask you two</p>
+<p id=0a23 class="phone s02"><cite>Ivan_Herman:</cite> I do whatever the task force asked me to do.</p>
+<p id=e175 class="phone s03"><cite>Carsten_Stöcker:</cite> H I don't know. DPPs and business models. Yeah.</p>
+<p id=3e9d class="phone s03"><cite>Carsten_Stöcker:</cite> I think Phil in principle you're fully right. But then at some point in time we have this intersection of DPPs and business models. Yeah.</p>
+<p id=1d4d class="phone s04"><cite>Ingo_Wolf:</cite> Mhm.</p>
+<p id=10002 class="phone s02"><cite>Ivan_Herman:</cite> It's a valid question.</p>
+<p id=3e9f class="phone s02"><cite>Ivan_Herman:</cite> I was just looking at the text that you have on the screening go and the impression I have that many statements which are there but Susanna can say that more that many thing that are there are equally valid for DPPS and for business wallet there is I don't see anything there which would be strictly business wallet thing I</p>
+<p id=4bcc class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah, when I read through it,…</p>
+<p id=10003 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I thought the same thing. Ivan</p>
+<p id=9e96 class="phone s02"><cite>Ivan_Herman:</cite> So that's…</p>
+<p id=59a4 class="phone s02"><cite>Ivan_Herman:</cite> why maybe feel we should wait for that …</p>
+<p id=10004 class="phone s02"><cite>Ivan_Herman:</cite> and to put your mind at ease setting up separate and parallel akidna lines for the different documents is possible.</p>
+<p id=3e08 class="phone s06"><cite>Phil_Archer:</cite> Okay.</p>
+<p id=b0c3 class="phone s06"><cite>Phil_Archer:</cite> All right.</p>
+<p id=7338 class="phone s02"><cite>Ivan_Herman:</cite> We have done that for the EPA working group. Phil Archer:</p>
+<p id=4b4b class="phone s06"><cite>Phil_Archer:</cite> All But yeah, if there's overlap in content, that shows unity of spirit, which is and opportunities for collaboration. Great. Yeah, absolutely. Yeah. I think my point was really that there's a lot of work that's been done before we ever got together in this group. I'm well aware of that. and I think the sooner we get something, there's a difference between being the public domain and being formally published by W3C. and what I would like. I think it would be in our interest to get something formally published by W3C however incomplete because I think there's already some work already very clear thinking and I just want to encourage you to get that step</p>
+<p id=037c class="phone s03"><cite>Carsten_Stöcker:</cite> What's</p>
+<p id=346b class="phone s02"><cite>Ivan_Herman:</cite> What was that?</p>
+<p id=6419 class="phone s04"><cite>Ingo_Wolf:</cite> You're getting hard Then core.</p>
+<p id=60b8 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> We lost you, casten.</p>
+<p id=847b class="phone s03"><cite>Carsten_Stöcker:</cite> Please separate. I was saying I was asking what Phil's conclusion now is to separate or to stay as is. Okay. Okay.</p>
+<p id=51c5 class="phone s06"><cite>Phil_Archer:</cite> My conclusion is to think about it,…</p>
+<p id=2227 class="phone s06"><cite>Phil_Archer:</cite> but not doing it yet. But not do it yet.</p>
+<p id=6bab class="phone s03"><cite>Carsten_Stöcker:</cite> You might want to do it later. Understood. Excellent.</p>
+<p id=39a2 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> a field maybe question. you recommend it because then we can publish something faster you think or…</p>
+<p id=851a class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> what was the thinking behind your suggestion?</p>
+<p id=4faf class="phone s06"><cite>Phil_Archer:</cite> Yeah, it's just…</p>
+<p id=ad10 class="phone s06"><cite>Phil_Archer:</cite> if you got separate documents and you're raising issues on the two, it's not always clear which one you're raising an issue about and what the labels refer to and everything else. But as has just been explained, there's so much commonality between this content. Maybe the way the two work together, maybe it makes sense to put them in one. And so let's wait. but as Ivan was saying, that doesn't have any effect on whether you want to formally publish any of this stuff. I mean, I'm not suggesting you do it now. I'm just suggesting that I think the first thing to do from what I'm hearing here is look at the commonality between the two. no point publishing the same thing twice.</p>
+<p id=ddfa class="phone s06"><cite>Phil_Archer:</cite> and then have a way forward that maybe as soon as next month maybe we can get something formally published that shows the direction. That's what the first public working draft is It's about showing the direction what the working group is doing and therefore in all the conversations that all of us have all the time we can point to it and say look that's what we're doing. You can see the direction which in the politically charged world that we are in. will be as important about…</p>
+<p id=6984 class="phone s04"><cite>Ingo_Wolf:</cite> Yeah. This was</p>
+<p id=9526 class="phone s06"><cite>Phil_Archer:</cite> what it does include than what it also makes it clear that stuff that's out of scope</p>
+<p id=f17b class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> so when I was working on the DPP document today and of course it has commonalities with what I see from Ingo now. However, it is written in the context of a DPP one document the DPP and I think it's very useful to relate the capabilities of verif credentials to digital product passport explicitly. In the same way, it is probably useful to do the same thing for wallets.</p>
+<p id=32a2 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> And if there was, a proper document, like Ingo just showed for wallets, it would be very easy for me to just point at that document when I say, if the issue is properly identified, by supporting material then we have this and this advantages and I can just point to document of Ingo which makes my document cleaner. So generally I'm in favor of keeping kind of both with the particular context of either DPP company identity credentials and wallets.</p>
+<p id=dc8a class="phone s06"><cite>Phil_Archer:</cite> I agree. Ingo, what do you want us to do now?</p>
+<p id=b161 class="phone s04"><cite>Ingo_Wolf:</cite> I would upload this first of all to the GitHub repository or…</p>
+<p id=f3c6 class="phone s04"><cite>Ingo_Wolf:</cite> commit it and yeah maybe then we can start identifying the commonalities overlap and Maybe Susanna mentioned cross reference or use both documents for further setting the direction of the group right.</p>
+<p id=c607 class="phone s06"><cite>Phil_Archer:</cite> Yep, sounds good to me. I mean, it's difficult to review when I'm looking at tiny on the screen like that.</p>
+<p id=05ed class="phone s04"><cite>Ingo_Wolf:</cite> Yeah, I can do that right now or…</p>
+<p id=4c41 class="phone s06"><cite>Phil_Archer:</cite> But yes, I do want to obviously look at it in detail as others will. I hope. Yeah. Okay. don't do it in house.</p>
+<p id=9ee0 class="phone s04"><cite>Ingo_Wolf:</cite> after the meeting. I have to have a look in the repository and commit it. Yeah.</p>
+<p id=9295 class="phone s06"><cite>Phil_Archer:</cite> Still with every best will in the world if it were me, I would mess it up. You may not. I would. But yeah, that cross referencing it also, I'm sorry to label the point, but that cross referencing becomes easier once you got a first public working draft because you get the persistent short URL, and you're linking to the published document, not the editor's draft in GitHub. All that then becomes doable. Yeah. Okay.</p>
+</section>
+
+<section>
+<h3 id=1a9e>Vocabulary Questions and Examples</h3>
+<p id=1ae4 class="phone s03"><cite>Carsten_Stöcker:</cite> What do we do in because I missed meetings. What do we do with the vocabulary from rebuild? Have we also kind of made decision how we deal with this? Do we want to use it as an example and reference it somewhere? Maybe also discussed the DPP vocabularies. We have a register of potential vocabularies. That's also European Commission that released the attributes of the DPP. How do we deal with all the vocabulary questions?</p>
+<p id=6757 class="phone s03"><cite>Carsten_Stöcker:</cite> By the way,…</p>
+<p id=26e8 class="phone s04"><cite>Ingo_Wolf:</cite> From we build this is still in the works.</p>
+<p id=72c3 class="phone s04"><cite>Ingo_Wolf:</cite> I believe end of August there is point in time where we consolidate all the inputs that are still arriving during August.</p>
+<p id=f7b3 class="phone s03"><cite>Carsten_Stöcker:</cite> I'm quick.</p>
+<p id=4d42 class="phone s04"><cite>Ingo_Wolf:</cite> And once we are there I think we can present the vocabulary that comes out of we as one example of a business wallet vocabulary.</p>
+<p id=b2b0 class="phone s03"><cite>Carsten_Stöcker:</cite> H. Okay.</p>
+<p id=e7aa class="phone s04"><cite>Ingo_Wolf:</cite> But yeah the relation to all the other vocabularies you mentioned that's an open question.</p>
+<p id=0605 class="phone s02"><cite>Ivan_Herman:</cite> So in the earlier discussions I think Carson you were not around but I may be wrong about that. it was not clear for me at least whether there is any vocabulary that is to be defined by this group. At least in the DPP world the impression and the message I got from Kim was the answer is there is not so I don't know whether the business vocabulary is different in this respect but at some point in time we would have to make a decision what I see arriving in a way that we may have whether it is two documents or one</p>
+<p id=f8f1 class="phone s02"><cite>Ivan_Herman:</cite> That's maybe besides the point at this moment, but we get documents that gives an insight into how VCs can be used in a highly complex but business from a business point of view very important area. and I'm still wondering about the question whether by doing that will we see new requirements coming in for VC or</p>
+<p id=437e class="phone s03"><cite>Carsten_Stöcker:</cite> Okay.</p>
+<p id=40eb class="phone s02"><cite>Ivan_Herman:</cite> not or as they are today they are okay as they are etc that to see a document like that which is sort of a giant use case document I think would be extremely important as I don't know who made that remark it may have been Ronald he's not here so it's easy to say he did it that most of the examples we have in the core specification are on an inverted traditional credential world of driving licenses and library cards. and although everyone in the group I believe has a clear idea that credentials can be used for much more complicated things.</p>
+<p id=6731 class="phone s02"><cite>Ivan_Herman:</cite> This group has not published any real example for that. And this document that we are talking about or these documents that we are talking about are therefore very important from a kind of a messaging point of End of speech. Susanna.</p>
+<p id=3ca9 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Yeah. Yeah. So I agree and coming to your question casten again…</p>
+<p id=60ae class="phone s03"><cite>Carsten_Stöcker:</cite> It's</p>
+<p id=54bb class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> what I would love to see is we have the vocabulary now for batteries or I heard voices that it's not complete and blah blah blah but let's use this vocabulary the terms that has been issued by the European Commission. C can't we make a JSON schema example and a JSON LD example and discuss it in this group what are the pros and cons how to map it to the data model that we need and then to answer Ian's questions do we need to extend the vocabulary generally of verifiable credentials yes no how can it be mapped to the data model of dish product passports.</p>
+<p id=9ecf class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> What's the best way to check completeness if we have a DPP that is a verifiable credential and we have some schema from the European Commission that it needs to validate against. It's not this group…</p>
+<p id=bed4 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> who can discuss it and put a recommendation down Yeah,…</p>
+<p id=1f1d class="phone s03"><cite>Carsten_Stöcker:</cite> I think we have already examples of the European Union vocabulary…</p>
+<p id=4dbb class="phone s03"><cite>Carsten_Stöcker:</cite> because we have the deans back vocabulary in JSON LD and this is very close to what the European Union did. I think they put some attributes out of scope for the time being because of missing implementing acts. I think we have examples. The question is how do we deal with them? Should we publish them as an example or not? But then we're back to the vocabulary question. But this could be done. Yeah.</p>
+<p id=00a0 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I mean we don't have to publish anything that we haven't discussed in this group but I would really like to see how does a DPP look like that is issued as a verifiable credential. How exactly do we point to a JSON schema file? And how do we solve the com com check for completeness because that will be an example that At least we can give recommendations that the experts in this group find reasonable. Yeah.</p>
+<p id=2829 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I don't think it's out there yet. And if we don't make the recommendation, someone just defined something else. But we can make a suggestion here.</p>
+<p id=6f28 class="phone s03"><cite>Carsten_Stöcker:</cite> I think we discussed this…</p>
+<p id=16f6 class="phone s03"><cite>Carsten_Stöcker:</cite> because then there was question how is this related top and they also do something and other people and then we have so many JSON ad vocabulies but at least so I think it's a clearly defined process to take whatever the European Union does and to develop an example</p>
+<p id=9f0b class="phone s03"><cite>Carsten_Stöcker:</cite> vocabulary but then we have it and then who's endorsing it this was the other question is there kind of an ecosystem endorsing it kind of let's say providing the example is not the problem I think was also about the process I think we had problems with the process yeah…</p>
+<p id=d188 class="phone s03"><cite>Carsten_Stöcker:</cite> because we can easily do this let's say provide such an example or you do it or whoever but then what's the process to get somehow endorsed or what yeah I think we were lost in the process last</p>
+<p id=8388 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> but…</p>
+<p id=10005 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> but yeah I don't know exactly what you mean with endorsing but not depending dependent on any endorsement we're just making an example and if a certain vocabulary is endorsed by the European Commission then that's good for their use case and we show them the way how to use it and then there is another vocabulary that is endorsed by someone else. maybe we don't have to worry about the endorsement we just worry about how do we technically recommend to build this stuff now yeah how do we connect the schemas with the JSON the verify the credentials and…</p>
+<p id=663a class="phone s03"><cite>Carsten_Stöcker:</cite> No, I think it Yeah,…</p>
+<p id=c3ca class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I mean the spec is now outdated kind of so I would like to use the new attributes that are out there from the European Commission. yeah. And in the Sorry, go ahead.</p>
+<p id=0eab class="phone s03"><cite>Carsten_Stöcker:</cite> I don't know because we have a JSON vocabulary exam.</p>
+<p id=062d class="phone s03"><cite>Carsten_Stöcker:</cite> example was Deans back and for the European Commission of course with some deltas but I think we start discussing this at the beginning I think we can put back on the agenda and at least have a look into this and then we can decide how to move this forward yeah should we do it like we put the example on the agenda for next the Jason.</p>
+<p id=1d6c class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Mhm. Yeah.</p>
+<p id=9ad3 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> It's an unsolved problem In any case, next week I won't be here. I will be offline but maybe the week So it maybe doesn't matter in which call we do it but I would really like to be part of that discussion. I mean or you can discuss it but I would like to learn from the discussion here in the Good.</p>
+<p id=edcb class="phone s04"><cite>Ingo_Wolf:</cite> Yeah, let's aim for that in two weeks. Right.</p>
+<p id=61be class="phone s03"><cite>Carsten_Stöcker:</cite> What do you think?</p>
+<p id=ef78 class="phone s03"><cite>Carsten_Stöcker:</cite> No. Okay, then we proceed in two weeks, I guess. Yeah, we publishing work on the G and take it from there.</p>
+<p id=6fe5 class="phone s04"><cite>Ingo_Wolf:</cite> I'll provide this today.</p>
+<p id=8135 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Ingo or…</p>
+<p id=7d5a class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> casten the 30 people or maybe others. Can you make a suggestion how you would make a working example from a DPP that is using a vocabulary even if you have the deans spec ready you can use that one. do you have a document that describes this how you exactly link to it and then maybe with a shackle file check the completeness of the document and checking the values and so forth because that's the way I think hun was suggesting also in the last call would it be possible to provide something that we can maybe publish as part of this work as a suggestion</p>
+<p id=2c13 class="phone s04"><cite>Ingo_Wolf:</cite> I think we can work on that. I'm not sure this will be finished in two weeks.</p>
+<p id=6d56 class="phone s03"><cite>Carsten_Stöcker:</cite> Mhm.</p>
+<p id=322e class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I don't think you have to finish it and…</p>
+<p id=c25e class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> it would be lovely if we would have a example that we can discuss in the group and then get all the knowledge that we have of the great minds here in this call on the table. What are also the pros and cons with JSON LD and shekele and JSON schema in contrast to that and what's the recommendation we want to give to That would be lovely.</p>
+<p id=3556 class="phone s04"><cite>Ingo_Wolf:</cite> Mhm.</p>
+<p id=df57 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> And we can, ex exchange offline. We don't have to wait two weeks. So if you have something or an idea or can point me to a document,…</p>
+<p id=40a7 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I would be happy to look at it.</p>
+<p id=90e3 class="phone s03"><cite>Carsten_Stöcker:</cite> Yeah. Excellent.</p>
+<p id=5a76 class="phone s03"><cite>Carsten_Stöcker:</cite> Maybe what I have another question, Phil and Ivan.</p>
+</section>
+
+<section>
+<h3 id=c743>W3C Inc. Strategy and Developments</h3>
+<p id=27bb class="phone s03"><cite>Carsten_Stöcker:</cite> So what happens to the W3C Inc. discussion and to all the strategy stuff? Yeah. So I think it's good kind of to get the ball rolling to make sure W3C gets more credibility, attention, reputation, impact, or however we call it.</p>
+<p id=0d33 class="phone s02"><cite>Ivan_Herman:</cite> I leave that to feel.</p>
+<p id=79ee class="phone s03"><cite>Carsten_Stöcker:</cite> But I think it's also important. Maybe have a short update. what's the key developments are there? Yeah.</p>
+<p id=af1d class="phone s06"><cite>Phil_Archer:</cite> I don't know any key developments. I mean it's obviously well known that Jeff is no longer around as is the CFO. W3C has an interim CEO…</p>
+<p id=fa48 class="phone s03"><cite>Carsten_Stöcker:</cite> Mhm. No.</p>
+<p id=2e8d class="phone s06"><cite>Phil_Archer:</cite> who is doing his very best. I have a lot of confidence in him by the way. I've known him for many years. but the organization clearly has to work out what differentiates it from other standards bodies. and it is the case in many working groups not just house that a very very few people are holding things together and carrying a huge amount of work. as I said in my post to the trajectory since I very first got in touch with W3C 22 years ago has been one of membership, declining revenues, declining heft in the marketplace, relevance to a lot of people. And for evidence for that, look at the number of people who take their work to Linux Foundation.</p>
+<p id=3bfd class="phone s06"><cite>Phil_Archer:</cite> Someone wrote very truthfully people saying okay I'm going to contribute to an open source project therefore that's the standard and so on. So there's a whole mindset shift and what is W3C for there was a lot of introspection when Tim retired which is several years in the past now and…</p>
+<p id=da2f class="phone s03"><cite>Carsten_Stöcker:</cite> Are we No. No.</p>
+<p id=53a5 class="phone s06"><cite>Phil_Archer:</cite> the whole establishment of W3C Inc. and it's been through a process of change. I have no idea what the future will be. I'm just very glad that people are looking at it very seriously. I think you'll have seen my intervention which is simply that whatever we're going to W3C needs money. Don't be afraid to ask for money. which, I mean, as you understand very well, you run a business. You're in the business of doing things that you get paid for and you make profit on. And sometimes it's not a dirty word. Against that, W3C does stand apart from many people. And the ethos of openness, the ethos of this for everyone is central to what the organization does.</p>
+<p id=3921 class="phone s06"><cite>Phil_Archer:</cite> it is completely fundamental. There are not multiple webs and so on. And so those ideals that Tim laid down and others back in the day are essential and we have to preserve those and fight for those against many people who would like to see them killed off. That's my rant. Sorry. …</p>
+<p id=8bf1 class="phone s03"><cite>Carsten_Stöcker:</cite> Very good.</p>
+<p id=2a8e class="phone s03"><cite>Carsten_Stöcker:</cite> And I think it's good that there is to WCC to the next stage I guess. Yeah.</p>
+<p id=ee08 class="phone s06"><cite>Phil_Archer:</cite> cut me open. I believe W3C I've been a GS1 now longer than I was there, but it is a fundamental part of me in all sorts of ways. It means a lot to me. and so I can't just let it go.</p>
+<p id=0cc7 class="phone s03"><cite>Carsten_Stöcker:</cite> What's up?</p>
+<p id=0d5c class="phone s06"><cite>Phil_Archer:</cite> And I know that's true of many people as Sorry, that's my ringing cry for W3C.</p>
+<p id=6d55 class="phone s02"><cite>Ivan_Herman:</cite> Yeah. Yeah,…</p>
+<p id=8ef6 class="phone s02"><cite>Ivan_Herman:</cite> I Thank problem is I have gone through so many discussions of that in the past 25 years that I am saturated and I Phil Archer:</p>
+<p id=ccbd class="phone s06"><cite>Phil_Archer:</cite> Yeah, of course. Yes. and you retired now. So there comes where you are. You just have to say that's it. Yeah. if we're chatting freely, Susanna, you've probably seen I've made a couple of minor comments on your pull request which I have added my approval to. a couple of places where you've asked questions in the text. it's easier if you raise an issue at that point so people can discuss them in an issue tracker.</p>
+<p id=6dc0 class="phone s06"><cite>Phil_Archer:</cite> So I converted a couple of your questions in your text to an issue. it may get resolved very quickly but it just helps to do it in that way. But my comment overall was there's lots of really good stuff here.</p>
+<p id=68f5 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Thank you Phil for explaining.</p>
+<p id=789e class="phone s06"><cite>Phil_Archer:</cite> It's going to be easier to make small comments afterwards and small amendments rather than trying to get it perfect before it's merged. So personally I love to see it merged. I was down as a reviewer.</p>
+<p id=421f class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> That's a question I would have had to you if we're now speaking freely. So, does that mean that you merged it or do I have to merge it? Phil Archer: Phil Archer:</p>
+<p id=2123 class="phone s06"><cite>Phil_Archer:</cite> I have approved. it. I think there's at least one other person needs to do that and then you can go ahead.</p>
+<p id=540f class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay.</p>
+<p id=9248 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> So, I incidentally assigned myself which I didn't want to do but then I couldn't revert it. I think I assigned it to Ian again. because Carolyn is still not here. or whoever has time and wants to review, please feel free.</p>
+<p id=db66 class="phone s06"><cite>Phil_Archer:</cite> And one other thing I would like to raise if this is all right with you and go this is your meeting not mine it's less than a month…</p>
+<p id=7468 class="phone s06"><cite>Phil_Archer:</cite> till GDC in Geneva apart from me is anyone on the call going to that right okay I'm only there for the first two days.</p>
+<p id=4d27 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> I will be there for three days for the entire time and…</p>
+<p id=77f0 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> there's the UN seact meeting after that. So I will be in Geneva the entire week.</p>
+<p id=a6a5 class="phone s06"><cite>Phil_Archer:</cite> Because I got to get back to turn around to go to Zurich the following week. okay, Cast, will you be there?</p>
+<p id=ec52 class="phone s06"><cite>Phil_Archer:</cite> There's a no. I don't know whether we need to. We probably don't. but okay,…</p>
+<p id=e552 class="phone s03"><cite>Carsten_Stöcker:</cite> I was just saying we are there with two people…</p>
+<p id=682b class="phone s03"><cite>Carsten_Stöcker:</cite> but I'm not there and we on a panel. So Martin Veester camp who's our product manager he's there and Bonus and Saga Falak there I think would be very good if you can meet them there as well I guess and Yes.</p>
+<p id=2ced class="phone s06"><cite>Phil_Archer:</cite> Yes, that does sound like a good contact. it won't happen unless we arrange it. it's a huge event and just wandering around in the hope we bump into each other that won't happen. So let's please facilitate an introduction so I can actually meet the relevant people and…</p>
+<p id=f451 class="phone s06"><cite>Phil_Archer:</cite> set a time otherwise it won't and I think it would be very good if it was me and Susan rather than just me.</p>
+<p id=e5ad class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay. Yeah.</p>
+<p id=5e80 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Excellent. The Phil, should we maybe talk offline of whom we want to meet and…</p>
+<p id=5238 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> and when? Yeah. Yeah,…</p>
+<p id=ac53 class="phone s06"><cite>Phil_Archer:</cite> Yes. Yeah,…</p>
+<p id=b9c0 class="phone s06"><cite>Phil_Archer:</cite> there's probably an agenda somewhere that I haven't seen. So, that might tell me when I'm doing what. I have no idea.</p>
+<p id=fd89 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> same here. And I do have online presentations during that week to other conferences. So I also still don't have my schedule fully aligned.</p>
+<p id=bb5f class="phone s06"><cite>Phil_Archer:</cite> Everybody wants you.</p>
+<p id=0e8f class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> You said that very charming. I'm flashing. Okay.</p>
+<p id=b2d5 class="phone s06"><cite>Phil_Archer:</cite> Hold on. No, it'll be good. I just can only go for two days because I'm organizing a workshop the following week and that's taking all my time.</p>
+<p id=0f8e class="phone s04"><cite>Ingo_Wolf:</cite> Thank you. Right.</p>
+<p id=1405 class="phone s06"><cite>Phil_Archer:</cite> That's it. Okay. All right.</p>
+<p id=4924 class="phone s03"><cite>Carsten_Stöcker:</cite> Okay, then we connect next week.</p>
+<p id=7228 class="phone s03"><cite>Carsten_Stöcker:</cite> Thank you. Just</p>
+<p id=c56a class="phone s06"><cite>Phil_Archer:</cite> Thanks everybody.</p>
+<p id=4417 class="phone s02"><cite>Ivan_Herman:</cite> Byebye.</p>
+<p id=ea39 class="phone s05"><cite>Dr._Susanne_Guth-Orlowski:</cite> Okay, you soon. Bye-bye.</p>
+<p id=84a8 class="phone s06"><cite>Phil_Archer:</cite> I look forward to reading your document in detail and go. Thank you. Meeting ended after 00:49:37 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

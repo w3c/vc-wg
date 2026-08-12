@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 11 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>11 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Phil_Archer, Stephen_Curran, steve_capell, Ted_Thibodeau_Jr, Todd_Snyder</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#bb59">Digest SRI vs Digest Multibbase</a></li>
+<li><a href="#4f0a">Valid Until Property</a></li>
+<li><a href="#bf16">Aligning GS1 Appendix</a>
+<ol>
+<li><a href="#4b50">Aligning the GS1 appendix by philarcher · Pull Request #108 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#8a0f">CRQC Threat Response</a>
+<ol>
+<li><a href="#8f88">Add reference to VC Forgery Defense in CRQC threat response. by msporny · Pull Request #113 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#cda6">Note that the spec is an application of the VC data model. by msporny · Pull Request #114 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</li>
+<li><a href="#3f21">UNTP Digital Identity Anchor Compatibility</a></li>
+<li><a href="#c0bb">Ensure compatibility with UNTP Digital Identity Anchor work · Issue #48 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#4ee5">Use Cases and Applications</a></li>
+<li><a href="#6648">Use Cases and Applications for this data model · Issue #51 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#4c30">Recognized Entities And Transfer Of Ownership</a></li>
+<li><a href="#494a">Recognized Entities and Transfer of Ownership · Issue #109 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#92ac">How are different `type`s supported for `recognizedIn`? · Issue #71 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#b52f">Recognized Entity Type Support</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=b2aa class="phone s01"><cite>Manu_Sporny:</cite> Hey folks, looks like we've got a good group of folks to start. So, let's go ahead and get started. welcome everyone. This is the recognized entities task force call. this is August 11th, 2026. on the agenda today is basically taking a look at our poll requests. we have taking a look at our discuss issues and I think Todd we wanted to focus on the GS1 item this week and then any other discuss items we can look at with a focus on getting every issue to ready for PR or we took care of that we're done there. so that's kind of the agenda for today.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> Before we get started, a reminder that these calls are recorded. if you are not comfortable with that, please let us know. we also operate under the W3C code of conduct and IPR. our policies. I think everyone here is a member of the group, so I think we're fine there. any other updates or changes to the agenda? Anything else we want to cover today? All right, then with that, let's go ahead and jump in to our agenda. Starting off with poll requests.</p>
+</section>
+
+<section>
+<h3 id=bb59>Digest SRI vs Digest Multibbase</h3>
+<p id=10000 class="phone s01"><cite>Manu_Sporny:</cite> We do need to process these. this one has been sitting out here for four months now. I think both, Shaga Sun and I, have said, GitHub's having a hard day today. I think we've said everything we're going to say on the topic. there. this is not going to work if GitHub's down. I'll see maybe if I try loading harder. There this is I think summarizing the positions. We had a discussion on whether or not we should support both Digest SRRI and Digest Multibbase.</p>
+<p id=30b0 class="phone s01"><cite>Manu_Sporny:</cite> I made a case for let's just support one since it's just both of them are a hash of the remote resource made a case that digest multibase supports everything that digests SRRI does so we have the ability to reduce to one disagreed and said our projects use digest SRRI and here are the reasons to use them and we went back and forth and we just disagree I think we had broad consensus us to deprecate the feature in the core spec. Shea son disagrees with that and is objecting to that R going in. and so we're at a bit of a stalemate. I don't know what to do other than we just don't have consensus to deprecate and we don't have consensus to add digest SRI to this spec. And so I think that's where we are.</p>
+<p id=3939 class="phone s01"><cite>Manu_Sporny:</cite> If somebody has a suggestion on what we could do at this point, that would be good. I am because we're trying to clean up all the PRs and issues and get the spec done. I am suggesting that we close the issue because there's no consensus to merge this.</p>
+<p id=d899 class="phone s01"><cite>Manu_Sporny:</cite> Thoughts No, it wasn't. It was like, we have a digest multibase example in the spec. Let's also do a digest SRRI example in the spec. Correct.</p>
+<p id=48ae class="phone s02"><cite>Benjamin_Young:</cite> was Shagaya's request for more than examples of using digest SR,…</p>
+<p id=0ee6 class="phone s02"><cite>Benjamin_Young:</cite> That's what I just asked is if he just wanted another example. So would a bridge in between be near the multibase digest SRRI is in VCDM 2.x X and can also be used, if you know how to use it. it's not like Chagayasan needs help to use digest SRI. He knows how to use it. and it's not coming out of VCDM as far as I can tell. But we don't need to cover every other feature of VCDM thoroughly with examples. So maybe just say, there are other hashing algorithms. this is the other one currently defined in BCDM. And maybe that's an olive branch.</p>
+<p id=55dc class="phone s01"><cite>Manu_Sporny:</cite> Plus one to that. Any other comments on it?</p>
+</section>
+
+<section>
+<h3 id=4f0a>Valid Until Property</h3>
+<p id=dbcc class="phone s03"><cite>Dave_Longley:</cite> So, this says it adds it to the general properties table. I assume that's in this spec for the VC recognized entity spec. do we need to have either of these in the general properties table? one of the things I proposed in the last VCWG call was to keep digest SRRI in both in the spec and also in the context if we produce a 2.1 context. but note that the recommended one is digest multibase and say that extending specs will use digest multibase.</p>
+<p id=093b class="phone s03"><cite>Dave_Longley:</cite> that enables anyone to continue using digest SRRI if they want to. And if they're using VC recognized entities if they're using that context on top of the VC 2.0 or 2.1 context, they would continue to have access to that field without having to define it in their own context. it just wouldn't come with spec recommending using that particular one. And I think that was somewhat of a middle ground for what was proposed over on the VCDM issue. I don't know if what might help here is for general properties that are already defined, we might instead of calling them out once again here in the table, we might say all of the properties that are in the VCDM are also defined here.</p>
+<p id=1f3b class="phone s03"><cite>Dave_Longley:</cite> And that might help avoid further entrenching something that a significant number of us think we should deprecate because there's two different ways to do it and one of them has the problems mentioned on that issue.</p>
+<p id=fbf2 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Phil. And you might be muted.</p>
+<p id=0385 class="phone s04"><cite>Phil_Archer:</cite> Sorry, I thought you were ahead of me in the queue, I do not have the technical knowledge to make any comment on the relative merits and demerits of the two methods under discussion. the proposal that Davis put forward to my point of view sounds fine but my view doesn't matter. What matters is that sheasan can live with the proposal whatever the proposal may be. So I really think whatever the future plan is, it must get the support of Shagayasan</p>
+<p id=b5e1 class="phone s01"><cite>Manu_Sporny:</cite> Is there anyone in this group that would like to chase that down? Because I've tried to do that and the only thing is leave everything exactly as So, I need somebody else to chase it down. To be clear, this is a hill I am willing to die on. I know it seems like a really dumb hill to die on, but there is no technical reason for us to keep it in the specification anymore other than someone is like,… Phil Archer:</p>
+<p id=18b2 class="phone s01"><cite>Manu_Sporny:</cite> But I want to use it.&quot; it is the exact same technical feature. So, I'll just point this out removing stuff from here makes the spec less readable.</p>
+<p id=5e44 class="phone s01"><cite>Manu_Sporny:</cite> We would delete all of this and people would not know that they can put these things on a recognized entity. we do say this is defined in VC data model and we point there for it. So we do that here. but I think digest SRRI is an anti-attern. We're not using it in the way it was intended to be used in browsers.</p>
+<p id=cf4a class="phone s01"><cite>Manu_Sporny:</cite> it is being abused right so it is not digest SRRI what we've done in BC data model it breaks from the spec it's non-inoperable for all those reasons I don't know if people are aware but that's the reason I'm so opposed to it is that we have invented our own thing in VC data model it is not digest SRRI but we continue to call it that it's just bad it's bad spec bad implementation leads the non-interoperable implementations,…</p>
+<p id=8a75 class="phone s01"><cite>Manu_Sporny:</cite> that sort of stuff. I'll be quiet.</p>
+<p id=7613 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I think…</p>
+<p id=8156 class="phone s02"><cite>Benjamin_Young:</cite> though where you started was that Shagay Assan has implemented it and is using it. So is like there are implementers on the ground that are using it. So unless there's some way to convince Chagayasan to change course either switching digest options or to more fully understand the interop problems. I don't expect him to not. So it's unfortunate he's not here and we're discussing it again without him but yeah it's usual pattern is if it has implementation we don't take it out.</p>
+<p id=7840 class="phone s04"><cite>Phil_Archer:</cite> I'm happy to take this on wearing my chairs hat. I'm happy to talk to Shagasan. so forgive as I often am at this time for me Tuesday evening walking the dog so I can't really see what's on the screen. but I think I understand that there is a PR ready to go and so I have the information I need to sort of a one-to-one call with Shagaya and Sandy.</p>
+<p id=7658 class="phone s01"><cite>Manu_Sporny:</cite> Thank you very much, Phil, for taking that on. So let's say that the next steps here are that the chairs of the BCWG will engage with Chaya to determine next steps here.</p>
+<p id=f685 class="phone s03"><cite>Dave_Longley:</cite> And I just wanted to give voice to what I wrote in chat so Phil could also hear it. I think what I propose does not actually break their implementation in any way. It just would mean that we don't recommend that path as one for other people to copy.</p>
+<p id=dfbe class=irc><cite>&lt;Dave_Longley&gt;</cite> it will not break their implementations to do what i suggested </p>
+<p id=2796 class="phone s04"><cite>Phil_Archer:</cite> Thank you, Dave.</p>
+<p id=db3a class=irc><cite>&lt;Dave_Longley&gt;</cite> it just won't be a recommended path for others to copy. </p>
+<p id=ae37 class="phone s05"><cite>Todd_Snyder:</cite> Yeah, that sounds like something that makes sense. if something's not standard or following what we think in the main spec specification, we really shouldn't be offering it as a solution if it's not because then people are just going to copy it. So, yeah,…</p>
+<p id=b5aa class="phone s05"><cite>Todd_Snyder:</cite> makes sense.</p>
+<p id=e2c9 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Sorry.</p>
+<p id=f45d class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Phil. Your hand's still up, maybe. Yeah.</p>
+<p id=bf15 class="phone s04"><cite>Phil_Archer:</cite> Sorry, my mistake. Sorry. No. Thank</p>
+<p id=10001 class="phone s01"><cite>Manu_Sporny:</cite> And to be clear, that was The proposal was to deprecate it, not make it so that people couldn't use it. It was to suggest that people shouldn't be using it anymore. And that is what got objection. I'll also note that just because one imple out there and as far as we know, there's only one implement that's saying that they really don't want this thing deprecated, not taken out, just suggested that people shouldn't use it. it doesn't mean the working group has to support it. do people implement all kinds of stuff out there in the wild and that does not mean that the working group needs to implement it. suggested as the right path forward. Okay, we've got a next step there. go ahead. and I think Phil, you'll take that forward.</p>
+<p id=754c class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Dave.</p>
+<p id=f417 class="phone s03"><cite>Dave_Longley:</cite> Yeah, just really quick briefly,…</p>
+<p id=a99b class="phone s03"><cite>Dave_Longley:</cite> my understanding, at least in some of the communications that I heard, was that the proposal was to leave it in the vocabulary, but you might have to make your own context to use it. And my suggestion was that you would not have to do that at all. and so it would just come baked in. It just wouldn't be recommended at spec</p>
+<p id=c71c class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I don't think that was the proposal, Dave. It was to leave everything but put the text as this is deprecated. It may get removed in a future version.</p>
+<p id=3e1e class="phone s03"><cite>Dave_Longley:</cite> Okay.</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> So there would be no change in 21. It's just we literally add the text like the working group doesn't recommend people use digest SRRA. it may be deprecated in future versions and there was an objection to even that language. So Phil, you've got an action. Thank you very much. we'll move on from here. all right.</p>
+<p id=8ea0 class="phone s01"><cite>Manu_Sporny:</cite> Let's see. Next from valid until. I think this one's ready to go. Unless Dave Longley, I know you had concerns about this. I think we discussed them. I don't think there was a change other than what's in there right now. and so I need to go and look at it and update it. But just to be clear, Dave Longley, you're not objecting to this being put in the spec.</p>
+<p id=258d class="phone s03"><cite>Dave_Longley:</cite> No, I think it needs to, have that other informative text that comes along with it. And we need to make sure that this only applies to the actions and so on. If we put these properties which is what if I read the diff correctly it's on recognized action right now it's not anywhere else because we put it somewhere else I think that would be objectionable and create issues and we talked either on the last meeting or the meeting before about how if there are changes to a did controller you would issue entirely different lists for points in time for who had control of those dids at those points in time. You would not try to issue valid until and valid from in the same list for a variety of different dits.</p>
+<p id=cf5a class="phone s03"><cite>Dave_Longley:</cite> I think that would just be way too much confusion.</p>
+<p id=d9e9 class="phone s01"><cite>Manu_Sporny:</cite> Okay. Okay.</p>
+</section>
+
+<section>
+<h3 id=bf16>Aligning GS1 Appendix</h3>
+<p id=5595 class="phone s01"><cite>Manu_Sporny:</cite> So, I'll try to get this merged ensuring that that's the case a bit later. the next PR 108 and I should be subtopping these link address topic 108 is just Phil a line with the GS1 appendix. It's in draft. and Phil, you say ignore this for now. We'll let you know when it's done. So I'm doing…</p>
+<p id=7222 class="phone s01"><cite>Manu_Sporny:</cite> what you said. Okay, awesome.</p>
+<p id=6bfc class="phone s04"><cite>Phil_Archer:</cite> Yes, correct.</p>
+<h4 id=4b50><a href="https://github.com/w3c/vc-recognized-entities/pull/108">Aligning the GS1 appendix by philarcher · Pull Request #108 · w3c/vc-recognized-entities · GitHub</a></h4>
+<p id=cc20 class="phone s04"><cite>Phil_Archer:</cite> Todd and I have a meeting tomorrow where we're going to be discussing this and we are working as fast as we can to get this result.</p>
+<p id=557b class="phone s01"><cite>Manu_Sporny:</cite> Thank you very much, Phil. looking forward to that.</p>
+</section>
+
+<section>
+<h3 id=8a0f>CRQC Threat Response</h3>
+<h4 id=8f88><a href="https://github.com/w3c/vc-recognized-entities/pull/113">Add reference to VC Forgery Defense in CRQC threat response. by msporny · Pull Request #113 · w3c/vc-recognized-entities · GitHub</a></h4>
+<p id=c57f class="phone s01"><cite>Manu_Sporny:</cite> next item up was an issue that you raised. Phil topic. which basically said, &quot;Hey, we should talk about the cryptographically relevant quantum computer threat and point to the forgery defense spec.&quot; that has been done. as Ted rightly pointed out, hardly anyone knows what a CRQC is. It's a cryptographically relevant quantum computer and we should spell that out in the spec. so we will do that.</p>
+<p id=8183 class="phone s01"><cite>Manu_Sporny:</cite> Thank you, for suggesting a change here. and we'll probably have to do that elsewhere. I also note that Ted, you raised an issue to do that in the spec. Yes, we should do that as well. So, try to modify this R to apply those changes. that's the forgery defense one. The other one is something that Avon Herman brought up which was that I think it was von. It might have been I think maybe Steve it was you said it and then Avon raised it as an issue or something like that but I'm going to go and look.</p>
+<p id=7287 class="phone s01"><cite>Manu_Sporny:</cite> So basically Avon wants us to point out that the recognized entity specification is a textbook example of why we built the VC data model in the way that we did right and so basically it wants us to state that hey this is just another verifiable credential there's nothing really special to it there's some</p>
+<h4 id=cda6><a href="https://github.com/w3c/vc-recognized-entities/pull/114">Note that the spec is an application of the VC data model. by msporny · Pull Request #114 · w3c/vc-recognized-entities · GitHub</a></h4>
+<p id=5e36 class="phone s01"><cite>Manu_Sporny:</cite> algorithm that you can run to kind of crawl the credentials, but everything else about it is basically bog standard verifiable credential. and so there's a little paragraph added to that effect. here, the language, Phil refine Ted updated it again, and I will merge all of those together into hopefully something all of you agree on. So, it's editorial. We'll process that. this weekend. That is it for all of our PRs and the attempt is to basically keep doing these PRs for any ready for issue. the other issues that are left that we need to discuss are marked with discuss and some of these discuss issues might be ones that we can close.</p>
+</section>
+
+<section>
+<h3 id=3f21>UNTP Digital Identity Anchor Compatibility</h3>
+<p id=c4cc class="phone s01"><cite>Manu_Sporny:</cite> So ensure compatibility with UNP digital identity anchor work that was raised in February. I think the question to you, Steve, is have we done this enough? …</p>
+<p id=ac95 class="phone s01"><cite>Manu_Sporny:</cite> to the point that you think I will note that we do have another issue that says refine the example. So I think so let me pause there. are we at the point where we can close this issue?</p>
+<p id=70c6 class=irc><cite>&lt;steve_capell&gt;</cite> Wasn’t from me.  But no objection </p>
+<p id=44f3 class="phone s06"><cite>steve_capell:</cite> Yeah, probably.</p>
+<p id=598a class="phone s06"><cite>steve_capell:</cite> I mean, what I haven't done yet is updated the DIA spec to be a profile of recognized entities. And in doing that,…</p>
+<p id=e594 class="phone s06"><cite>steve_capell:</cite> when you think something's fine, then when you actually do it, you go, &quot; I forgot about this.&quot; something might come up. I'm happy to raise another issue if it does. As far as I can see, it is closed.</p>
+<p id=da2d class="phone s01"><cite>Manu_Sporny:</cite> Yes, exactly.</p>
+<p id=c66f class="phone s01"><cite>Manu_Sporny:</cite> And that's what we would expect. So, we are done with it forever and you can't raise any more issues on it. we think we're done with the initial thing and…</p>
+</section>
+
+<section>
+<h3 id=c0bb><a href="https://github.com/w3c/vc-recognized-entities/issues/48">Ensure compatibility with UNTP Digital Identity Anchor work · Issue #48 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=a4ff class="phone s06"><cite>steve_capell:</cite> Yeah. We got a credit.</p>
+<p id=cb5f class="phone s01"><cite>Manu_Sporny:</cite> the next step is you've got to take a look at it, do some implementation work, see if it works out and then come back to the group so that we can update it if it doesn't. that you can do at any point before we go to a global standard. So you've got six monthsish probably at a minimum to do the work maybe up to nine months.</p>
+<p id=5a50 class="phone s01"><cite>Manu_Sporny:</cite> All right. first stage of this work which was requested. future issue will be raised. Okay.</p>
+<p id=11f9 class="phone s01"><cite>Manu_Sporny:</cite> So I'm going to say let's see discuss and then we did raise an issue for it and we can take the discuss label off. I did take that issue then that one's closed. Okay. Thank you Steve. let's see the VCI. Hold on one second. These are all pull requests. No, I got totally recognized the tease. All right, let's take a look at the other one.</p>
+</section>
+
+<section>
+<h3 id=4ee5>Use Cases and Applications</h3>
+<p id=0942 class="phone s01"><cite>Manu_Sporny:</cite> Are there any other ones that we could easily close? digest SRI is open, Phil, until you're able to chase that down with Chaya. use cases. and applications for this data model. Benjamin, you raised this I think based on a previous call in March. look for cross compatibility and means unify expressions. So we did the UNPDIA work.</p>
+<p id=e2e7 class="phone s01"><cite>Manu_Sporny:</cite> We haven't really done this stuff other than you can express X509 with it and in that way MDL's covered I guess the question is…</p>
+<p id=264d class="phone s01"><cite>Manu_Sporny:</cite> what more should we do here and who is going to do that work? go ahead, Ben.</p>
+<p id=4807 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I should have put more provenence details in this post.</p>
+<p id=65c4 class="phone s02"><cite>Benjamin_Young:</cite> It wasn't so much my idea. This was when I was cheering while you were away back in March. and these were things that the group had kind of listed off as things that existed in the space that would be good inputs and possibly be worth comparing and contrasting in the use cases. I don't know how many of them still make sense or like you just asked if anyone's motivated to actually write them up, but that is where this issue came from was collecting call time thoughts as I recall.</p>
+<p id=1a67 class="phone s01"><cite>Manu_Sporny:</cite> Got it. So I guess the question is do folks feel that if we are there any volunteers to do any of this stuff I guess is the first question. I know we I'm fairly convinced that we've got that covered. Someone from checked would need to do this thing. I don't know how the EPC stuff works. We'd need someone with specialized knowledge there. Open ID Federation. Dimmitri mentioned he'd take a look at it. I don't think he's been to these calls in a while. So we could ask Dmitri about this. And the UD wallet trust list stuff is not necessarily complete.</p>
+<p id=0afd class="phone s01"><cite>Manu_Sporny:</cite> But we do have an example of other things that are close to the wallet trust list stuff that we know works and we know that we're fairly convinced that DIA stuff works and the GS1 stuff works. So do we want to continue to pursue this or do we want to say we're pretty sure this is done? and if so who's going to volunteer to move it forward?</p>
+<p id=deb6 class="phone s01"><cite>Manu_Sporny:</cite> All right. So, not hearing any volunteers. let's say we've discussed this. I'm going to mark it pending close and then ask Dimmitri if he is going to do anything on Open ID Federation. we discussed this on the 2026 811 call.</p>
+<p id=2573 class="phone s01"><cite>Manu_Sporny:</cite> The group has looked at a out variety of systems that could use recogn and it works for those just one vital records MDL etc. there are no volunteers that want to you looking at the initial list.</p>
+<p id=988f class="phone s01"><cite>Manu_Sporny:</cite> As of today, Dimmitri, are you going to look into Open ID Federation?</p>
+<p id=9b50 class="phone s01"><cite>Manu_Sporny:</cite> If so, can you please raise an issue on that topic? if you to it, go ahead, Phil.</p>
+</section>
+
+<section>
+<h3 id=6648><a href="https://github.com/w3c/vc-recognized-entities/issues/51">Use Cases and Applications for this data model · Issue #51 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=9aef class="phone s04"><cite>Phil_Archer:</cite> Just very quickly,…</p>
+<p id=10003 class="phone s04"><cite>Phil_Archer:</cite> you mentioned MDL. I just want to let you know that an application has come in for an invited expert status for somebody who is a member of the MDL working group. He's a newly retired keen chap called Jim Richards. and it's likely his application will be approved. He won't be on the call tomorrow, but it's quite likely he'll be joining the group fairly soon. So, he may well have and the reason why we've said yes is because it opens up the possibility and I hope the reality of a much better connection between us and the MDL group. So just to let you know that we may be getting that kind of cross fertilization. I hope it works out.</p>
+<p id=0f5d class="phone s01"><cite>Manu_Sporny:</cite> Thank you very much, that would be And Dimmitri, good to see you on the call.</p>
+<p id=f03d class="phone s07"><cite>Dmitri_Zagidulin:</cite> Yeah, just joining late and wanted to ask this data model part is what the context for that comment.</p>
+<p id=e9a9 class="phone s01"><cite>Manu_Sporny:</cite> It's the recognized entities thing. I think we're basically saying open ID federation exists.</p>
+<p id=8146 class="phone s07"><cite>Dmitri_Zagidulin:</cite> Okay. Yes. Yes.</p>
+<p id=1b19 class="phone s01"><cite>Manu_Sporny:</cite> If you wanted to do what's being done in Open ID Federation using the recognized entity specification, could</p>
+<p id=10004 class="phone s07"><cite>Dmitri_Zagidulin:</cite> Yes, I believe so. rather I can add input there since the GCC team did a comparison of the existing specs including the then version of recognized entities. selected open AD federation subset for a issuer registry case. did an implementation along with credential engine and credential engine is currently operating a issuer registry based on the subset of open ID federation spec.</p>
+<p id=6a1d class="phone s07"><cite>Dmitri_Zagidulin:</cite> So yes, I do have some experience with it and I'm happy to what form would you like me to give input on?</p>
+<p id=6be9 class="phone s01"><cite>Manu_Sporny:</cite> I mean it's basically…</p>
+<p id=7758 class=irc><cite>&lt;Dave_Longley&gt;</cite> or even just &quot;how do you link to an OpenID Federation&quot; </p>
+<p id=dd8c class="phone s07"><cite>Dmitri_Zagidulin:</cite> Comments to the Uhhuh.</p>
+<p id=2371 class="phone s01"><cite>Manu_Sporny:</cite> what is your opinion that and Dave Longley added another thing you could do how would we link to an open ID federation declaration or can you just do open ID federation with the recognized entity?</p>
+<p id=b54b class="phone s01"><cite>Manu_Sporny:</cite> spec does a recognized entity spec have basically what you'd need to do a basic open ID federation. and…</p>
+<p id=7c65 class="phone s07"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=433d class="phone s07"><cite>Dmitri_Zagidulin:</cite> Got it. Okay. Yeah,…</p>
+<p id=4cfd class="phone s01"><cite>Manu_Sporny:</cite> and it's optional, right? I mean it's kind of like I can take pend and close off until you do that work or we can just close this and then open one specific to open ID federation if you're still doing that.</p>
+<p id=03f8 class="phone s07"><cite>Dmitri_Zagidulin:</cite> let's do that. Let's do that. Yeah. Sorry,…</p>
+<p id=1e76 class="phone s01"><cite>Manu_Sporny:</cite> All So let's take pend and close off of here.</p>
+<p id=4928 class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=5916 class="phone s07"><cite>Dmitri_Zagidulin:</cite> let's close that one and open a federation one because that sounds</p>
+<p id=be56 class="phone s01"><cite>Manu_Sporny:</cite> All right. is going to look at how open ID federation could be used with the recognized entities specification. and then this one will be closed and then we will open a new one to refer to this one. determine alignment with open ID federation.</p>
+<p id=5d82 class="phone s01"><cite>Manu_Sporny:</cite> And determine how someone using the recognized entities specification could either one perform the same basic functionality as open ID Federation or to link</p>
+<p id=edaa class="phone s01"><cite>Manu_Sporny:</cite> to an open ID federation a document to bootstrap into that ecosystem and then let's see I'll create this this is going to be assigned to Dimmitri and labels are right</p>
+<p id=744a class="phone s01"><cite>Manu_Sporny:</cite> No, do we need to discuss it? I think it's just an item for you, Dimmitri, and you just let us know when you make progress on that.</p>
+<p id=7115 class="phone s07"><cite>Dmitri_Zagidulin:</cite> Okay, copy</p>
+<p id=ad96 class="phone s01"><cite>Manu_Sporny:</cite> Okay, thank you very much, mitri. let's go back to the issues. all right. I just we dealing with our different types recognized in create vocabulary. We need to do that. thinking verifying recognition chains. I don't think we have Kevin on the call today. and then refine you and grid examples in process and let's deal let's process your one here. Todd, can you give us a brief introduction to this item so that we can discuss</p>
+<p id=a6e6 class="phone s01"><cite>Manu_Sporny:</cite> And you might be muted, Todd, can you hear us? Maybe he stepped away. I'll do my best to kind of go through this. I don't know Phil if you know anything about this transfer of ownership thing.</p>
+<p id=c75f class="phone s04"><cite>Phil_Archer:</cite> I'm just looking at it and I'm trying to get my head around it. Forgive me. It Todd has raised this and I'll ask him about it again tomorrow. But we have this weird pace that I mean if the tech can't support it then I think it's a weird one. So, being neutral, I think we just have to accept So, unconscious I'm walking and I think I was talking at exactly this point on my dog walk last week and it faded out. So, tell me if you're losing me. we have this weird thing where companies keep buying each other…</p>
+<p id=18ee class="phone s05"><cite>Todd_Snyder:</cite> I'm here by the way.</p>
+</section>
+
+<section>
+<h3 id=4c30>Recognized Entities And Transfer Of Ownership</h3>
+</section>
+
+<section>
+<h3 id=494a><a href="https://github.com/w3c/vc-recognized-entities/issues/109">Recognized Entities and Transfer of Ownership · Issue #109 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=00c5 class="phone s04"><cite>Phil_Archer:</cite> selling bits of themselves to other people and that has an effect on. Charlie, you there? Okay. Todd, can you take over…</p>
+<p id=0eef class="phone s05"><cite>Todd_Snyder:</cite> Yeah, I'm back.</p>
+<p id=d8b9 class="phone s04"><cite>Phil_Archer:</cite> because this is your thing?</p>
+<p id=de5f class="phone s05"><cite>Todd_Snyder:</cite> Yeah, yeah, just we started to have a discussion and let me to remember that we do have as Phil said this not a unique thing but a common thing that happens. someone purchase a prefix or identifier from us and over the course of time they can discontinue the identifier or the product associated with it but they also can sell those products off to somebody else. So in our system internally we have the process of transfer of ownership.</p>
+<p id=b741 class="phone s05"><cite>Todd_Snyder:</cite> So today, Healthy Tots owns the D set of gitins and this prefix it rolls up to in the future it could be traded over I forget the company name I put in here but it was XYZ cookies or something or XYZ baby products or something. So the idea was just trying to make sure that we are covering this use case and that anything we would introduce example wouldn't necessarily break because behind the scenes there would be a different ownership. And the unique thing about this is it's a point in time. So if something happens today and Healthy Tots owns it and then three weeks from now it's owned by the other company, technically for anything prior processing this data, this was still owned by Healthy Tots. So that's sort of high level.</p>
+<p id=1271 class="phone s05"><cite>Todd_Snyder:</cite> having spent more time in the meetings and looking over the specification, I imagine we're just issuing different recognized entities to different credentials and that will cover it. I think I threw in here the idea that maybe we need to deal with the valid from and too for tracking purposes. that's sort of the high level. Any specific questions? Good.</p>
+<p id=ebf5 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. No, the use case definitely makes sense, somebody effectively starts out with the identifier being owned by one organization and then they're subsumed into another organization. It's kind of transferred.</p>
+<p id=e3c2 class="phone s05"><cite>Todd_Snyder:</cite> Yeah.</p>
+<p id=80cb class="phone s01"><cite>Manu_Sporny:</cite> Two things come to mind. I mean this is talking about how driver's licenses which is in production your license number that's issued to you your literal driver's license number that's issued to you is not necessarily yours for your entire life. So if you move somewhere else that same license number can be put back into kind of a pool and then it can be reissued to someone else. And so the way we deal with this, use case in driver's licenses is we have revocation information on the license number. And so when that event happens, the credentials revoked and a new one is issued.</p>
+<p id=10005 class="phone s01"><cite>Manu_Sporny:</cite> I think the GS1 use case is different in that it is totally legitimate for you to issue multiple recognized entities that had the ability to issue under these G10 prefixes for a certain periods of time and having that as kind of like an audit record that goes back through time is a totally legitimate thing that you could do as well.</p>
+<p id=a2e2 class="phone s01"><cite>Manu_Sporny:</cite> So go ahead.</p>
+<p id=a97a class="phone s05"><cite>Todd_Snyder:</cite> Yeah, the license makes sense.</p>
+<p id=3dc0 class="phone s05"><cite>Todd_Snyder:</cite> It's a good example. The reality though is the license always has an expiration, Most states give you I think it's four years is pretty standard…</p>
+<p id=9bd9 class="phone s01"><cite>Manu_Sporny:</cite> Interesting.</p>
+<p id=779e class="phone s05"><cite>Todd_Snyder:</cite> where in our case I mean there are G10s that were created 50 some years ago. They're still owned by the entity. So Yeah,…</p>
+<p id=f464 class="phone s01"><cite>Manu_Sporny:</cite> So, you probably wouldn't have a valid So, I guess that's the question. How are you dealing with saying that something's changed or updated on that thing?</p>
+<p id=d05e class="phone s01"><cite>Manu_Sporny:</cite> Do you revoke it and just say, &quot;Sorry, this was valid at some point, but it's revoked now. You need to go back and get a new one from somewhere. We don't care where.&quot; Mhm.</p>
+<p id=72af class="phone s05"><cite>Todd_Snyder:</cite> we haven't reached that production level. I know that at one point Kevin was working with the reaggation group to add a third type. I think it wasn't suspended. It was like a different type and…</p>
+<p id=d562 class="phone s01"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=4d09 class="phone s05"><cite>Todd_Snyder:</cite> that was one way we were going to try to handle it because technically it's not Revoked, we felt revoked kind of meant you can never use this again.</p>
+<p id=eaf8 class="phone s05"><cite>Todd_Snyder:</cite> It's basically valid to a point in time and then it is no longer valid after a date, right? Or some event. So Mhm.</p>
+<p id=a4f7 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, another option is Yeah.</p>
+<p id=8997 class="phone s01"><cite>Manu_Sporny:</cite> So I remember that discussion I think it was an update exists for this thing like this is a valid credential.</p>
+<p id=10006 class="phone s01"><cite>Manu_Sporny:</cite> It was issued and we stand behind it still but hey some of the information has changed.</p>
+<p id=434c class="phone s05"><cite>Todd_Snyder:</cite> Yeah. Mhm.</p>
+<p id=8557 class="phone s01"><cite>Manu_Sporny:</cite> you really should get the latest information if you're going to do anything with this. So there was a status that wasn't revoked but it was a status changed or the credential has been updated and then there is this back burner specification we have in the group called the refresh service the re ability to refresh a credential. So you would be able to check to see, hey, is there a newer version of this credential that exists? You would see the bit flip to one. a new version of the credential exists. Okay, I'm going to go down to the refresh service and make a request to get new version of the credential. And then you may or may not have the right to get a new version of that credential, right? but that's one way that we could do that.</p>
+<p id=3811 class="phone s01"><cite>Manu_Sporny:</cite> for GS1 the refres update exists thing can be done today but then we don't have refresh completed except that it is actually deployed in production at scale in the US at least for age verification I would love to hear from other folks…</p>
+<p id=e3ec class="phone s01"><cite>Manu_Sporny:</cite> but I think that's the way that GS1 could address this use case. Is there any part of that that you think Todd wouldn't work?</p>
+<p id=9fe3 class="phone s05"><cite>Todd_Snyder:</cite> No, like I said,… we're still kind of working through our examples. So I think we just would issue another recognized entity pointing to the new company. and probably behind the scenes we would have to have something that the verifier could call to get the latest or the current state of things. So there are definitely some things we have to work out, but again it came up because we were having a conversation about switching things and I thought it made sense to at least go over it in the group as an example. Todd Snyder:</p>
+<p id=9faa class="phone s01"><cite>Manu_Sporny:</cite> Yeah, plus one to that. there is a part in the threat model that we should probably think about which is what does it mean to have a company prefix out there that doesn't have an update exists or…</p>
+<p id=9a1d class="phone s05"><cite>Todd_Snyder:</cite> All right.</p>
+<p id=69d3 class="phone s01"><cite>Manu_Sporny:</cite> revocation information. it would potentially allow an organization that has the private key, the old company to continue to issue things.</p>
+<p id=13b5 class="phone s01"><cite>Manu_Sporny:</cite> So I do think it's probably critical to your threat model to ensure that you have something to signal that an update exists and…</p>
+<p id=a785 class="phone s05"><cite>Todd_Snyder:</cite> Yeah, makes sense.</p>
+<p id=38a6 class="phone s01"><cite>Manu_Sporny:</cite> you really should update the credential because you're working with something that's out of date. Yeah, without that I think you've got an un unmanaged in your thread model. and then the JSON schema, I think, probably stays the same for the new credential because the prefix doesn't change, right? It's just owned by a different organization. So, the recognized entity would change. So, it's moving away from Healthy Tots to somewhere else.</p>
+<p id=0c2f class="phone s01"><cite>Manu_Sporny:</cite> So you're basically looking at,…</p>
+<p id=10007 class="phone s01"><cite>Manu_Sporny:</cite> this stuff changing, but the license value in the JSON schema doesn't yep.</p>
+<p id=aa7f class="phone s05"><cite>Todd_Snyder:</cite> And I think that the digest multibase would be different,…</p>
+<p id=10008 class="phone s05"><cite>Todd_Snyder:</cite> Because we'd issue a new JSON schema. But I guess the schema is the same, right? So we've talked a little bit about so today what we do is we have a lot of custom code. We actually verify the did. So we verify this healthy tot here. the subject is the issuer of other type of credentials. So that's something we've talked about briefly too.</p>
+<p id=8325 class="phone s01"><cite>Manu_Sporny:</cite> God. Mhm.</p>
+<p id=a2b0 class="phone s05"><cite>Todd_Snyder:</cite> Then maybe we also the did in there so we still have that validation which in that case it would be a different JSON schema.</p>
+<p id=10009 class="phone s01"><cite>Manu_Sporny:</cite> That's right. Yep. Yep.</p>
+<p id=c2cc class="phone s05"><cite>Todd_Snyder:</cite> So I think we can close this issue.</p>
+<p id=d288 class="phone s01"><cite>Manu_Sporny:</cite> Totally tracking. Yep. That makes sense to me at least. let's see. Todd Snyder:</p>
+<p id=0817 class="phone s05"><cite>Todd_Snyder:</cite> It is more about was a discussion point …</p>
+<p id=ad46 class="phone s05"><cite>Todd_Snyder:</cite> since we're at the time going over the GS1 stuff. So, I think it's fine to close this out now and once we come up with our version of these credentials, I'm sure we'll come back and review it with you what we came up with. So, Phil thinks it makes sense to keep it open.</p>
+<p id=57c9 class="phone s01"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=a641 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. okay.</p>
+<p id=1afe class="phone s05"><cite>Todd_Snyder:</cite> I don't think it makes sense.</p>
+<p id=1205 class="phone s01"><cite>Manu_Sporny:</cite> All right. That I think we can close it and everything that we just said will be injected into the issue when Avon runs his script. So I'm going to discuss this and explore several ways to ensure that this use case was covered by the technology and will do some further analysis and raise another issue if our initial analysis is problematic.</p>
+<p id=1000a class="phone s01"><cite>Manu_Sporny:</cite> At this point it seems like the group is working on technologies that would support a big caveat that we need to move on that refresh spec. okay that is closed. Thank you very much for the discussion. Great use case.</p>
+<p id=7fe3 class="phone s01"><cite>Manu_Sporny:</cite> Let us know if we need to do anything that we're not thinking of. okay. yes,…</p>
+<p id=64dd class="phone s04"><cite>Phil_Archer:</cite> Just very very quickly did have my hand up.</p>
+<p id=c66b class="phone s04"><cite>Phil_Archer:</cite> Just to I thought I had my hand up. I'm sorry. Obviously I didn't. I apologize.</p>
+<p id=6c0e class="phone s01"><cite>Manu_Sporny:</cite> no problem.</p>
+<p id=a033 class="phone s04"><cite>Phil_Archer:</cite> Yes in this discussion internally I did say there's this draft spec called refresh. This is the use case for refresh. And I could hear your voice as I said it matters.</p>
+<p id=641f class="phone s04"><cite>Phil_Archer:</cite> So yeah, I think it is indeed a use case for it one day.</p>
+<p id=0e23 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=21d9 class="phone s01"><cite>Manu_Sporny:</cite> And refresh is not that hard to do. It's just we haven't had a very strong reason to prioritize it. But if this feels a pretty strong reason to prioritize it, the good news is that it's a fairly simple straightforward implementation. the spec is so I wouldn't expect a ton of work there,…</p>
+<p id=c296 class="phone s04"><cite>Phil_Archer:</cite> Johnson.</p>
+<p id=dcfc class="phone s01"><cite>Manu_Sporny:</cite> but it's work. We should prioritize if GS1 needs it. All right. let's see. We've got about 10ish 8-ish minutes left. Let's take a look at this one. I feel like we've discussed it before, but let me topic this. All right.</p>
+<p id=d400 class="phone s01"><cite>Manu_Sporny:</cite> How are different types of external registries list supported with the current specification? For example, how are non Etsy nonx509 lists are referenced? and I guess we have utopian commission recognizing this let's see trust list service. So basically what happens if we don't have a type for this is the question I think.</p>
+<p id=4c87 class="phone s01"><cite>Manu_Sporny:</cite> Dave Longley, I vaguely remember you being the one that said we need to think about this, but maybe I'm misremembering.</p>
+</section>
+
+<section>
+<h3 id=92ac><a href="https://github.com/w3c/vc-recognized-entities/issues/71">How are different `type`s supported for `recognizedIn`? · Issue #71 · w3c/vc-recognized-entities · GitHub</a></h3>
+</section>
+
+<section>
+<h3 id=b52f>Recognized Entity Type Support</h3>
+<p id=1b93 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead.</p>
+<p id=f2ea class="phone s03"><cite>Dave_Longley:</cite> I'm trying to also remember…</p>
+<p id=724a class="phone s03"><cite>Dave_Longley:</cite> what my previous self might have had to say about</p>
+<p id=e5d3 class="phone s01"><cite>Manu_Sporny:</cite> I think it's basically we are hard coding a set of external types, right? So we don't have open ID federation in here and let's say we just went ahead and for whatever reason didn't take that into account and now this thing's out there and somebody wants to point to their trust list mechanism. What's the type for that?</p>
+<p id=1003 class="phone s01"><cite>Manu_Sporny:</cite> So one pattern we could use here is the whole crypto render suite pattern where we're just like this is an external trust list and then the specific type is Etsy or open ID federation or something else. I think that's what this issue is trying to get go ahead, Dave.</p>
+<p id=af08 class="phone s03"><cite>Dave_Longley:</cite> And I think that was the approach we wanted to take because we're going to fail to mention all these. So it was either some kind of suite or a media type sort of thing. So if you had a sub media type for that XML file, you could use that to distinguish it without having to reference dreference it First,</p>
+<p id=36a2 class="phone s01"><cite>Manu_Sporny:</cite> And there are not separate media types for these things. So I don't think Etsy's lottle is just an XML file. It doesn't do anything beyond that. so if we tried to do media type, I don't think it'd work out well,…</p>
+<p id=7e3a class="phone s03"><cite>Dave_Longley:</cite> We can always invent new media types.</p>
+<p id=7c0f class="phone s01"><cite>Manu_Sporny:</cite> which means that right register it on behalf of the European Union. as long as we have some Europeans here, maybe we can get away with that. I would,…</p>
+<p id=bac4 class="phone s04"><cite>Phil_Archer:</cite> I used to</p>
+<p id=e54f class="phone s01"><cite>Manu_Sporny:</cite> yes.</p>
+<p id=d95e class="phone s01"><cite>Manu_Sporny:</cite> Just like the USA used to have a good standing in the world Phil. without getting into any of that stuff let's say media's probably the wrong way to do it. maybe we just say it's an external trust list and that's the type or external trust list for lack of a better word. And then we have a list type or something like that that says Etsy or Open ID Federation or something along those lines.</p>
+<p id=1000b class="phone s03"><cite>Dave_Longley:</cite> And I mean at a minimum media type I think is available through VCDM. So it could be something that somebody would use to distinguish what they'd be retrieving. but we can also explore having some property that's more easily extensible and drop that in More easily extensible than I don't think we want to just make this based on type. I think that will lead to some trouble.</p>
+<p id=4180 class="phone s01"><cite>Manu_Sporny:</cite> Okay, we're agreeing I think.</p>
+<p id=a34f class="phone s01"><cite>Manu_Sporny:</cite> Is that Okay, so let's see. the group discussed this on May 681 and seemed to arrive at the census. use a generalized external trust list type or some variation of that concept type.</p>
+<p id=e3b3 class="phone s03"><cite>Dave_Longley:</cite> Yeah, I think</p>
+<p id=ec54 class="phone s01"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=b2e2 class="phone s03"><cite>Dave_Longley:</cite> Do we know if the web origin is a trust signal in that case? I mean maybe we just use an external trust list and we say if you don't have a media type you can rely on the web origin of the externalized list as your trust signal.</p>
+<p id=9ea1 class="phone s01"><cite>Manu_Sporny:</cite> It's a good point. I think probably in every case the origin matters, right? Yeah,…</p>
+<p id=750c class="phone s03"><cite>Dave_Longley:</cite> I mean, unless these lists are all being served with their own cryptography on them, they might be relying on TLS for delivery.</p>
+<p id=6da1 class="phone s01"><cite>Manu_Sporny:</cite> I think they all rely on TLS as well.</p>
+<p id=69fe class="phone s01"><cite>Manu_Sporny:</cite> Yeah, that's a good idea. So, signal that state that the origin the domain in ID, is the root of trust or the list, which it is.</p>
+<p id=6a77 class="phone s01"><cite>Manu_Sporny:</cite> I guess establishes the root of trust for the list. I mean, that any other concerns? Does anyone feel like there's a better solution for this? this feels good to me. raise the PR that go ahead Demetri.</p>
+<p id=148f class="phone s07"><cite>Dmitri_Zagidulin:</cite> I'm reluctant to bike shed, but could we at least have external registry list as opposed to trust list or external entity list? Perfect. we want to avoid trust in general.</p>
+<p id=ba01 class="phone s01"><cite>Manu_Sporny:</cite> I like entity more to bike shed it a bit more.</p>
+<p id=d793 class="phone s07"><cite>Dmitri_Zagidulin:</cite> Excellent.</p>
+<p id=e62b class="phone s01"><cite>Manu_Sporny:</cite> Anyone else feel strongly one way or the other? And then Coyote, I saw your hand go up. you Okay.</p>
+<p id=30ce class="phone s08"><cite>Kayode_Ezike:</cite> Yeah, I had the same question pretty much. Yeah, I don't lose trust.</p>
+<p id=8032 class="phone s01"><cite>Manu_Sporny:</cite> I think raise a PR that updates this. great. That one will be very easy to raise. I'm happy for somebody else Didn't mean to spoil anyone else's fun. any volunteers for this one? Should be a fairly easy one.</p>
+<p id=041c class="phone s07"><cite>Dmitri_Zagidulin:</cite> And the list of actions is to add that to the context and…</p>
+<p id=97e6 class="phone s08"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=13f3 class="phone s01"><cite>Manu_Sporny:</cite> And update the spec.</p>
+<p id=7694 class="phone s01"><cite>Manu_Sporny:</cite> So it says we currently have the Etsy trust service list type I think.</p>
+<p id=cecc class="phone s07"><cite>Dmitri_Zagidulin:</cite> back. Okay.</p>
+<p id=afdf class="phone s01"><cite>Manu_Sporny:</cite> And what do we have? Don't we have an X509 thingy? you'd have to Yeah, we let's see.</p>
+<p id=4cc8 class="phone s01"><cite>Manu_Sporny:</cite> I don't know if there's much that needs to be done to the spec. Yeah, I think it's just a quick scan of the spec to see if we have Etsy trust list in there that needs to turn changed to external entity list. and then a context change. I think that's all there is there. any takers? Go ahead,…</p>
+<p id=9e9f class="phone s08"><cite>Kayode_Ezike:</cite> Yeah, I can take a stab.</p>
+<p id=cdcc class="phone s01"><cite>Manu_Sporny:</cite> Co Thank you very much, sir. all right that it's ready for PR. at time. thank you all very much for the very productive discussion today. we are running out of things to talk about which is good.</p>
+<p id=6bd9 class="phone s01"><cite>Manu_Sporny:</cite> I'll also mention that we have our first horizontal review in. Addison Phillips, that wonderful man who is always the first to do a horizontal review just about any spec, has done an internationalization review. So, we can take a look at these during the next call. all right, that's it for the call today. thank you everyone very much. have a wonderful rest of your week and we will meet again next week. Ciao. Meeting ended after 01:05:44 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

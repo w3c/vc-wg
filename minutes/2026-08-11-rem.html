@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 11 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>11 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#71d2">VC Render Method Meeting</a></li>
+<li><a href="#60f7">Requesting Horizontal Review</a></li>
+<li><a href="#9d33">VC Render Method Threat Model</a></li>
+<li><a href="#4068">Class Hierarchy Discussion</a></li>
+<li><a href="#f4bf">PR Review And Updates</a></li>
+<li><a href="#65bb">Dynamic Updatability Of Templates</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=71d2>VC Render Method Meeting</h3>
+<p id=787c class="phone s01"><cite>Manu_Sporny:</cite> Hello.</p>
+<p id=14cb class="phone s02"><cite>Dmitri_Zagidulin:</cite> Hello Yes, thank you so much for All right.</p>
+<p id=636b class="phone s01"><cite>Manu_Sporny:</cite> Hey, Dimmri. just a Q plus before not agenda plus for the call. I have a draft verifiable credential render method threat model that I want to and I have to drop halfway through the call unfortunately but okay thank</p>
+<p id=945a class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, we'll start with that. thank you so much for making that Looks great. Yeah, we'll start with that.</p>
+<p id=535f class="phone s02"><cite>Dmitri_Zagidulin:</cite> And then we can hopefully briefly discuss the class hierarchy. since I know that's something Ivonne cares about and you touched on in another PR.</p>
+<p id=93dc class="phone s01"><cite>Manu_Sporny:</cite> I think the other thing we might try Demetri is requesting that the main group ask for horizontal review. I know we still have stuff to do…</p>
+<p id=b728 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Mhm. Yes.</p>
+<p id=0085 class="phone s01"><cite>Manu_Sporny:</cite> but I think the bones of the spec are in place meaning I think we're targeting three different types of render method thingy like static NFC and then the card view and then the HTML one and I don't think we're planning on adding anything else and if that's true, then we're probably ready for horizontal review…</p>
+<p id=4a36 class="phone s01"><cite>Manu_Sporny:</cite> if we've got a threat model to point them at, which means we have to officially ask the main working group and they have to get a resolution on record that we want to ask for horizontal review.</p>
+<p id=9d31 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes.</p>
+<p id=f98c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=ab36 class="phone s01"><cite>Manu_Sporny:</cite> And so we're trying to cue those up for tomorrow.</p>
+</section>
+
+<section>
+<h3 id=60f7>Requesting Horizontal Review</h3>
+<p id=9785 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got so I mean do we need to do a full on resolution for asking the main group for here?</p>
+<p id=a1cb class="phone s01"><cite>Manu_Sporny:</cite> Tomorrow? no. This one like Yeah,…</p>
+<p id=7125 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, we can just agree. Okay. …</p>
+<p id=13d8 class="phone s01"><cite>Manu_Sporny:</cite> we can't do resolutions, right? We can just pull people in this group,…</p>
+<p id=0913 class="phone s02"><cite>Dmitri_Zagidulin:</cite> yeah. Yeah, yeah, yeah.</p>
+<p id=ad75 class="phone s01"><cite>Manu_Sporny:</cite> but the main group has to do a proposal in a resolution ask for horizontal review.</p>
+<p id=8617 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thought I got it.</p>
+<p id=d866 class="phone s01"><cite>Manu_Sporny:</cite> So, we just need to see if everyone feels like we're ready to do that. And then tomorrow officially, you've got to ask the chairs to we need an official resolution passed because when you ask for horizontal review, you have to point to where you resolve to get horizontal review.</p>
+<p id=4018 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, All And with that, since it's 2 minutes past the hour, let's get started. welcome everyone every other week call of VC render method task force. but speaking of every other week, we do want to start it up weekly starting next week. So, I'll be editing the calendar.</p>
+<p id=4535 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So it'll be weekly at this time slot. So start your engines. and as Ted points out, this is sadly conflicting with Fed ID, which I would also love to attend, but scheduling is impossible. So we got what we got. as usual, we're under the W3C code of conduct and IPR restrictions agreements. let's kick it off. I want to start with looking at Manu's specifically VC render method threat model PR. Thank you so much Manu for submitting that. And so I want to take a look at that.</p>
+</section>
+
+<section>
+<h3 id=9d33>VC Render Method Threat Model</h3>
+<p id=c9c6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I want to talk about asking the main VC working group to kick off a horizontal review for our spec. and I want to talk about class hierarchy and other things. So let's start with the pull request number 60. So we've got wonderful everybody else diagrams as well as the actual model text. Manu do you want to do or say anything in introduction of it?</p>
+<p id=3c53 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, and if you don't mind me grabbing screen I've got okay so as everyone knows in order to get horizontal review we have to generate a threat model for our specs and…</p>
+<p id=a545 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Please please go ahead.</p>
+<p id=e6c2 class="phone s01"><cite>Manu_Sporny:</cite> some of the borrow from other specs threat models. what you're seeing on the screen right now is we have a verifiable credentials data model threat model right and it's got this docu this has this data flow diagram and this is kind of like the base for verifiable credentials so this is the data model a thread model it has some other stuff in there confidence method is up here and status list is down Here we're still playing around with where do the processes and the threats go, which threat model.</p>
+<p id=6a88 class="phone s01"><cite>Manu_Sporny:</cite> But this is kind of the basis for the verifiable credential extensions right like confidence and status and forgery defense and render method and those sorts of things. So we presume this threat model and we tell people in the rendering methods threat model this is the base that you're working from. and then in the rendering methods, threat model PR60, we basically gray out the portions, and we've already talked about this in a previous call. we gray out the portions of the base data model, and we're like, these things still exist, but the things that we really care about are in color here.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> And as Ted rightly pointed out in the other call, that is totally violating a whole bunch of accessibility things. And so what we're likely to do is deal with the threat models in a layered way. So in the spec, this is the rendering methods threat model. There's a data flow diagram and in here we're going to do The first tab is going to show the base data model So this is in tab one and it's going to say verifiable credential base threat model so that people can see it and get an understanding of what's in the base threat model. And then in the second tab there'll be another tab here.</p>
+<p id=7a42 class="phone s01"><cite>Manu_Sporny:</cite> It's going to just show the stuff in color here, issuer, holder, verifier. So when you go between both tabs, the same kind of system boundaries and containers The same issuer holder verifiers, exist, but what's in the boxes changes slightly. So this is, a layer up. This is the rendering threat model. And so we care about different things in this threat model. we care about the base threat model, but really we care about the render templates and where those render templates are stored and the rendering processes and the proc the flows for retrieving the render templates and the flows for someone observing the output video, graphics, audio, whatever it so that kind of stuff, goes here. so that's what we're thinking of how to break this stuff up.</p>
+<p id=4697 class="phone s01"><cite>Manu_Sporny:</cite> And again, we're experimenting, Because we've got multiple threat models. We don't want to duplicate information between them. We want to point to each one where it makes, and so that's what we're trying to do here. so we do have a DFD for the rendering methods, threat model. We've got five kind of top threats that we, have identified. Some of these point to other threat models like the this unsafe rendering of untrusted data. We have something in the VC data model that's like whenever you have an external link be careful when you use that you really want to make sure it's digest multibase or digest SRRI so that the thing you're retrieving is what the issue intended right.</p>
+<p id=95d2 class="phone s01"><cite>Manu_Sporny:</cite> And then we've got privacy threats that are also in the VC data model where we're like, hey, when you download that thing, someone might be tracking you, try to do it over O HTTP, try to permanently cache Issuers try to dump the value in the credential itself, so it doesn't need to be fetched from the internet. so we have that kind of here. And then we have, threats that are kind of specific to rendering methods, like, hey, the person that created the template might try to flash the screen or strobe it in an attempt to attack people that, could have epileptic seizures. as an example of something that could happen there.</p>
+<p id=51a1 class="phone s01"><cite>Manu_Sporny:</cite> And largely it's done accidentally because they weren't thinking about people that could have epileptic seizures. so we've got these base threats here and we've got kind of a base DFD that we've gotten some feedback on. I'd love to get more feedback from the group on this today or through the PR and then once that's in place we have another I think 11 threats total that go with render method that we brainstormed a month or two ago. So those be worked in after the base threat model is in place. I will probably get around to those this weekend.</p>
+<p id=10000 class="phone s01"><cite>Manu_Sporny:</cite> But with this base threat model in place, potentially as of this weekend, if there's no objections, then I think that makes it so that we can request horizontal review. I think we have everything else that we need to do that. so I'll stop there. any questions,…</p>
+<p id=d35a class="phone s01"><cite>Manu_Sporny:</cite> concerns, comments?</p>
+<p id=7d71 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, let's start with are there any broad objections either to this PR or…</p>
+</section>
+
+<section>
+<h3 id=4068>Class Hierarchy Discussion</h3>
+<p id=886b class="phone s02"><cite>Dmitri_Zagidulin:</cite> to the general idea of us asking the main group to kick off the horizontal review for this spec. That's question one. And then specifically my only question kind of intersects with this picture and kind of intersects with the class hierarchy. essentially since one of</p>
+<p id=01cf class="phone s02"><cite>Dmitri_Zagidulin:</cite> our render methods is pre-baked payloads essentially either a pre-rendered image or a preformed NFT binary payload. Can that still be called the template? Is that the right naming for it? Or do we need a different name for the static issue time rendered messages. the only reason I bring it up now is because it affects the diagram. but aside from that, I think this looks fantastic. Benjamin</p>
+<p id=7f9c class="phone s03"><cite>Benjamin_Young:</cite> Are you asking that because you think it affects the first questions you asked about is this mergeable and…</p>
+<p id=9883 class="phone s03"><cite>Benjamin_Young:</cite> do we go for horizontal review? are you wanting the template thing discussed and answered before we come back to those or…</p>
+<p id=2a56 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, I Yeah,…</p>
+<p id=c2e2 class="phone s03"><cite>Benjamin_Young:</cite> I just wasn't sure because the scope widened</p>
+<p id=f96c class="phone s02"><cite>Dmitri_Zagidulin:</cite> no, great question. Is the scope did widen? So no, let's treat those separately because that's just a wording tweak, but we should kick off horizontal review in general regardless. thank you for clarifying question. All right, so seeing a thumbs up from Benjamin. Does anybody have any objections or concerns?</p>
+<p id=6f69 class="phone s02"><cite>Dmitri_Zagidulin:</cite> If not then on the next upcoming call of verifiable credentials working group we'll ask for a group resolution to kick off horizontal review of the spec specifically. Go ahead.</p>
+<p id=e2d5 class="phone s04"><cite>Ivan_Herman:</cite> I have practical question to that.</p>
+<p id=4fde class="phone s04"><cite>Ivan_Herman:</cite> When would the radio start? What's the plan?</p>
+<p id=8f61 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, please.</p>
+<p id=a36b class="phone s01"><cite>Manu_Sporny:</cite> I mean as soon as we can, So we asked last week I think or…</p>
+<p id=58f6 class="phone s01"><cite>Manu_Sporny:</cite> two weeks ago for recognized entities and we already have our horizontal review from internationalization.</p>
+<p id=567f class="phone s04"><cite>Ivan_Herman:</cite> No, I understand that that…</p>
+<p id=44a4 class="phone s04"><cite>Ivan_Herman:</cite> which is great I didn't know that. Good news. but we have a number of I mean are we technically sort of complete because doing that is a question to me and…</p>
+<p id=825a class="phone s04"><cite>Ivan_Herman:</cite> and there are lots of technical issues that were still discussing on the whole class hierarchy etc. And until these are solved, it sounds to me a bit premature to run into a horizontal radio. that's one. And We will also have a practical question but this one is more important.</p>
+<p id=7b00 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=2a4b class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, there's Manu and Benjamin in the queue with my task force chair hat on. And I want to push back a little bit that the horizontal review really shouldn't be blocked on the class hierarchy. I don't think the internationalization group is going to care about whether we have one superass or two etc. Manu and then Benjamin.</p>
+<p id=7735 class="phone s01"><cite>Manu_Sporny:</cite> And Avon to address the question directly you can ask for horizontal review at any point and they ask you to do it when you do FPWD which we never do right because we're always like h I don't know if the architecture is baked or whatever. I think we have asked the question in this group I think the thing we were waiting for horizontal review happened two weeks ago or last week which do we feel we're feature complete and do we feel like the general thing that render methods going to do well how is it going to operate in CR do we have those big brocks in place and I think the answer to that is yes we were waiting on understanding what are</p>
+<p id=79b6 class="phone s01"><cite>Manu_Sporny:</cite> the set of render methods we're going to support in version 10. And I think the answer to that is we're going to have a static one, we're going to have a card-based one, and we're going to have an HTML based one, and at a high level, the way almost every single one of those work is kind of the same way, right? There's a render template of some kind or a static, payload of some kind. you either go out and retrieve it or it's embedded in the credential and then you render so from a design perspective, horizontal review,…</p>
+<p id=c9b5 class="phone s01"><cite>Manu_Sporny:</cite> I don't expect much to change. The details will change. Those matter, but Dimmitri said, I don't expect us to have a totally different way of doing one of these things, right?</p>
+<p id=242e class="phone s02"><cite>Dmitri_Zagidulin:</cite> No.</p>
+<p id=cb6b class="phone s04"><cite>Ivan_Herman:</cite> Okay. I accept that.</p>
+<p id=a648 class="phone s04"><cite>Ivan_Herman:</cite> I also have a practical question which we will not solve right now but we didn't realize akidna doesn't work on the reposition which means that on the official URL it's an atrial version of the document the editor's draft is 11 of August so it's of today yes you merged something I did not touch the repository management…</p>
+<p id=9488 class="phone s02"><cite>Dmitri_Zagidulin:</cite> God,</p>
+<p id=2f1f class="phone s04"><cite>Ivan_Herman:</cite> because you have other workflows going on but there is some problem. Sorry to be the bearer of the bad news.</p>
+<p id=c54e class="phone s01"><cite>Manu_Sporny:</cite> No, thank you.</p>
+<p id=0bfb class="phone s01"><cite>Manu_Sporny:</cite> I'll look into it.</p>
+<p id=c14d class="phone s04"><cite>Ivan_Herman:</cite> I checked that one and…</p>
+<p id=ea9c class="phone s04"><cite>Ivan_Herman:</cite> it still seemed Yeah. I mean, I don't know what happened.</p>
+<p id=4f15 class="phone s01"><cite>Manu_Sporny:</cite> So, I'll look into it and fix the akidna thing. So, no worries about that. And I didn't realize it was broken, but yes, we should fix it.</p>
+<p id=184c class="phone s04"><cite>Ivan_Herman:</cite> Akidna is great as long as it works.</p>
+<p id=7be5 class="phone s01"><cite>Manu_Sporny:</cite> No, it's fine. Thanks for letting us know.</p>
+<p id=1d92 class="phone s04"><cite>Ivan_Herman:</cite> And to make things even more complicated, I think that Deni is on vacation.</p>
+<p id=7987 class="phone s04"><cite>Ivan_Herman:</cite> So even if there is a problem that we don't understand, it will not be solved for the coming I don't know how in a sense,…</p>
+<p id=2be9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Just out of curiosity,…</p>
+<p id=ddd2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> does a kid not working block us from asking from horizontal review?</p>
+<p id=a8da class="phone s04"><cite>Ivan_Herman:</cite> yes, because I presume that they expect the official URL for the document and…</p>
+<p id=d4fe class="phone s04"><cite>Ivan_Herman:</cite> not the editor's draft.</p>
+<p id=91a0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=b070 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I can't imagine if we say, &quot;Okay, we're in the process of fixing a kid.&quot; here's the editor's draft,…</p>
+<p id=876f class="phone s04"><cite>Ivan_Herman:</cite> It must be solved.</p>
+<p id=c3de class="phone s02"><cite>Dmitri_Zagidulin:</cite> right? Of course.</p>
+<p id=0ae5 class="phone s04"><cite>Ivan_Herman:</cite> This must be solved.</p>
+<p id=9264 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Of course.</p>
+<p id=de9d class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, yeah. Yeah. Yeah. Might as well take a look at it. Benjamin, did you have a comment?</p>
+<p id=ad61 class="phone s04"><cite>Ivan_Herman:</cite> What song is it right now? Money.</p>
+<p id=e8ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> You were briefly on the queue.</p>
+<p id=50d2 class="phone s03"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=3c5e class="phone s03"><cite>Benjamin_Young:</cite> not about horizontal review. It was about the graph you had up earlier. but it's stuff where you can either take the issues or I didn't know if we were going to discuss the way that was laid out and where pieces were. and I didn't want to derail the horizontal review conversation.</p>
+<p id=2386 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thank you. good point. But it sounds like we're plus one on the horizontal review. hopefully fixing GINA either in parallel or in sequence. Manu keeping in mind your time pressure you got 12 minutes. Do you want to discuss the details of the diagram or do you want to tackle the class hierarchy first?</p>
+<p id=e747 class="phone s01"><cite>Manu_Sporny:</cite> Whatever is more important to the group. I'm happy with either,…</p>
+<p id=42bb class="phone s02"><cite>Dmitri_Zagidulin:</cite> I'm just okay. yeah,…</p>
+<p id=637d class="phone s01"><cite>Manu_Sporny:</cite> but I think we can only do one of them in 10</p>
+<p id=ff06 class="phone s02"><cite>Dmitri_Zagidulin:</cite> good point.</p>
+<p id=7aaf class="phone s02"><cite>Dmitri_Zagidulin:</cite> In that case, let's do the class hierarchy first and then if we have time, we'll come back to that if that's okay with you, Benjamin. Yeah.</p>
+<p id=4488 class="phone s03"><cite>Benjamin_Young:</cite> Fine by me.</p>
+<p id=ae75 class="phone s03"><cite>Benjamin_Young:</cite> Like I said, some of this is probably better than issues anyway.</p>
+<p id=10001 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Basically class hierarchy we're essentially talking about how many layers we have between the top level template class and the individual classes. So whether it's going to be basically a two layer or a three layer. Ivon, do you want to voice your thoughts, concerns?</p>
+<p id=0558 class="phone s04"><cite>Ivan_Herman:</cite> I want to keep it simple.</p>
+<p id=5cb0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, great. okay.</p>
+<p id=cfe4 class="phone s04"><cite>Ivan_Herman:</cite> I mean having a deep hierarchy for me is only when it's really necessary.</p>
+<p id=e3ea class="phone s02"><cite>Dmitri_Zagidulin:</cite> Mon, do you feel differently?</p>
+<p id=b074 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Please go ahead.</p>
+<p id=80c0 class="phone s01"><cite>Manu_Sporny:</cite> Which top? No, I agree with Avon. keep it simple and flat And what do we have an issue for this? I just want to make sure this conversation. Manu Sporny:</p>
+<p id=03ba class="phone s02"><cite>Dmitri_Zagidulin:</cite> No. this was sort of ongoing topic of discussion. It came up again in the for removing the embedded renderer method. I'll double check if we have an issue. I don't think we do, but just in case. Our great manner.</p>
+<p id=f514 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I think the core of the issue is a static renderer type of template renderer or should we reuse the template renderer and, a ic, template is just a static payload,…</p>
+<p id=ed17 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Uh-huh. Okay.</p>
+<p id=4d52 class="phone s01"><cite>Manu_Sporny:</cite> I think that's the, thing that was discussed. so I'm fine with there being just a base class of render method, which is what I think we have right now. And then if we have three different mechanisms if folks really want a different class for static renderer then we create a class for that and then if we have a template based render we create a class for that and so we have two subasses one for static and one for template based and maybe that works for everyone. the alternative is we just have a template based renderer and that's everything that we have right now. And the only and a static payload is just a no templated variables in it as an example. I'm fine either way I think.</p>
+<p id=0ed7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it. And we do have an issue for this or something very related which is issue 54 that I pasted in chat that helpfully opened. so part of the answer to…</p>
+<p id=ffe3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> what kind of hierarchy do we want depends on the answer to this question of how we're going to dispatch on suite or on type. Go ahead Ivon.</p>
+<p id=3278 class="phone s04"><cite>Ivan_Herman:</cite> What we have today in this pack and…</p>
+<p id=0a15 class="phone s04"><cite>Ivan_Herman:</cite> I'm looking at the editor to be on the safe side. we have one type the template render method and then we use an extra mechanism which is called the render suite for what in my mind are essentially subasses of temporal render methods. So it's a bit unclear for me why we have two mechanisms suddenly for what we have already a mechanism that has been used in other places in the specs which is types and I don't know what is the advantage of having another property which you highlight that on the screen that's my question in a way for</p>
+<p id=b96b class="phone s04"><cite>Ivan_Herman:</cite> me the natural but okay I am biased with my background but for me the natural thing is to say that there is a static render suite or whatever the type name is static and for data and for HTML as type…</p>
+<p id=10002 class="phone s04"><cite>Ivan_Herman:</cite> which is a subclass of the template render method. And that's a clean thing that we have done before.</p>
+<p id=b1a6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And just to be clear,…</p>
+<p id=f8a1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> there's precedents for both, right? The sweet based is the approach taken by data integrity. Put mono next on the kill.</p>
+<p id=10003 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, and the reason for that Ivon was we did not want to have to go back and update the JSONLDLD context for every new type of data integrity crypto suite. And in the same vein for every type of render suite, we don't want to have to go through and update the base context because it takes years, right, for it to get in the BC data model. and even if we have a separate context for the rendering methods that will be under control of the group and we'll have to go through the W3C process and it's really slow to add things and keep pace with how fast the market's moving. So that's the reason for render suite. I think it's a reason to have it. I don't think we can get rid of render suite without going back into that set of problems of having to update the context for every new type of rendering we want to</p>
+<p id=45d7 class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=c35e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thanks.</p>
+<p id=963a class="phone s05"><cite>Dave_Longley:</cite> So in addition to that another reason it was done is there was no need for additional properties for cryptographic suites because the properties that we had in the vocabulary in that data model were sufficient for any sort of extension where the extensions were done within the proof value field. because you wanted to layer the information differently where that proof value should only be dealt with at the implementation layer of cryptography. You didn't want to express it and extend it all the way up into the data model which can lead to a variety of problems. And we might have something similar here with render methods where you're going to be calling off into some template and you don't want to start breaking that template apart into subpropies that are then exposed in the data model here.</p>
+<p id=6eda class="phone s05"><cite>Dave_Longley:</cite> they should instead just be handled at that rendering layer. if you spread it apart, you get into issues where you now have to do validation. You have to make sure things are kept in sync. in the security work that introduced more security surface for more problems. and here there might be something similar. it wouldn't necessarily be a security problem, but you might introduce rendering problems. So it makes sense also from that perspective to do the extension where you're keeping the data cut up into the layers where it is meant to be processed and won't it makes no sense to process it anywhere</p>
+<p id=2f8a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Does that answer your question?</p>
+<p id=e4dc class="phone s04"><cite>Ivan_Herman:</cite> Let's put it this way that I am not happy with that…</p>
+<p id=17a1 class="phone s04"><cite>Ivan_Herman:</cite> but I won't lie down the</p>
+<p id=9f5f class="phone s02"><cite>Dmitri_Zagidulin:</cite> I mean I think the most weighty reason and…</p>
+<p id=af55 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think we can all agree is adding a new suite requires updating the VC render method context or even worse the C core data model context and we don't want that. Dave, go ahead.</p>
+<p id=5466 class="phone s05"><cite>Dave_Longley:</cite> Yeah, that's true. but it might also be the case. I think the only way we would get rid of render suite is if we find that there for example media types which also represent going off into some other data format would be sufficient in whatever we're doing. So we want this to be extensible and the extensibly easy to extend without having to go through that process. but we also know that the way that we expect people to be extending this is through these other data formats and so on. Someone after we publish this might say if we use this other template format we can accomplish this or that. and we want them to be able to use what we have here. We don't expect them to be coming in here and adding a bunch of new properties and designing something at the layer that we work at in this group.</p>
+<p id=5c34 class="phone s05"><cite>Dave_Longley:</cite> We're hoping to create all the terms that we think are needed. which should limit the need for anyone to add additional types. But we do need to consider…</p>
+<p id=de29 class="phone s05"><cite>Dave_Longley:</cite> where they might possibly extend and want to incubate things before the next working</p>
+<p id=b139 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, in the three minutes we have before Mono drops off,…</p>
+<p id=2605 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I'm curious to pull the group. Do we have enough information to make a decision between these two? It sounds like there's more weighty reasons for going with option one, dispatching off of the suite. we have Ivonne's sort of very understandable misgivings that it would be great to just be able to get away with dispatching on type. Does anybody else have any objection if we go with option one dispatching on render suite? Okay.</p>
+<p id=1e89 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So I'm going to drop that down in the comments here that we discussed it during this call and we will go with option one unless there is so test again Benjamin very stupidly points out. Let's implement and find out. But but we've implemented the sweet dispatching before with data integrity, this is a known pattern. It's not of all the problems before us. this doesn't seem to be a major one, plus one from Dave on the same question that let's get implementation feedback. Okay. go ahead Benjamin.</p>
+<p id=e508 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, you can keep typing,…</p>
+<p id=3723 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Yep.</p>
+<p id=2e35 class="phone s03"><cite>Benjamin_Young:</cite> but I think the thing to think through the crypto suites that you've invoked is how you want to do the modularity and extensibility and what you expect people to publish. If that makes sense. So, what does it look like to show up to the party late with a new render suite versus show up to the party late with a new render method Hype.</p>
+<p id=d499 class="phone s02"><cite>Dmitri_Zagidulin:</cite> This is progress where we're going to proceed with implementation feedback. And Mano. I know you have to drop off. Thank you so much for adding the threat model.</p>
+</section>
+
+<section>
+<h3 id=f4bf>PR Review And Updates</h3>
+<p id=10004 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, we will proceed with that. let's take another look at what PRs we have going. we've removed the embedded render method HTML suite. we made a pull request during the previous call answered the question from the original author of that suite that we're closing it due to phone home concerns. they said they understood.</p>
+<p id=6251 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, that one's out of the we have the rendering method thread model PR which Monu just presented at the beginning of the call. That's PR60. Please review and leave comments on it. And we also have a minor editorial PR number 59 to that just removes the JSON from the JSON card part. Several folks pointed out starting with Dave that plus one to removing JSON, but do we want to rethink even the card terminology and instead just do list view.</p>
+<p id=f490 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So I wanted to open up the discussion for that briefly on this call to see if other people agree if there's objections to calling it list view or data view as opposed to card. Go ahead Dave</p>
+<p id=bfa6 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I to be my suggestion was not to necessarily call it list view. I just wanted to point out that this rendering surfaces data in such a way that you could present things in a cardlike I. To be clear, that doesn't necessarily mean a credit card format. it's a UI terminology that something that's shaped might have a variety of different dimensions. but that format also lends itself well to putting things into lists and potentially other types of interfaces.</p>
+<p id=eb43 class="phone s05"><cite>Dave_Longley:</cite> I think the main thing about this renderer method is that you're exposing data that is easily integrable into an existing interface for your application where you're intended to have some existing look and feel for your application that this stuff can integrate nicely into which is a fundamentally different type of render method from the HTML one where the HTML one is expected to be given its own space for a single VC to display the details of a single VC however the issue issuer would have preferred with the only constraints being something like how much space you have to do to do that display. So this render method is about integrating into an existing display and…</p>
+<p id=3b5c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Agreed. Chaotic head.</p>
+<p id=3dbc class="phone s05"><cite>Dave_Longley:</cite> maybe the name should reflect that in some way. what I don't want us to do is try and constrain it to a specific type of UI component or something like</p>
+<p id=4e8f class="phone s06"><cite>Kayode_Ezike:</cite> Yeah, I left a comment to a similar effect. I think I had a few suggestions there that was also in the issue that I opened and one of them that I actually left out intentionally cuz I wasn't sure if it would capture the full purpose but it relates to what Dave said is something like native which is essentially saying in bed. it's intended to render within the native view of the application that's presented within. Other options that I had were item cuz it's supposed to be an item in a list or overview. Basically something that more captures what I feel is the essence of this render method which is to show the core details in a compact way in a native view. So, it's a lot of different things that we're trying to target here,…</p>
+<p id=69f8 class="phone s06"><cite>Kayode_Ezike:</cite> but not a lot, but there's multiple ways you can express that. But these are just some ideas that I had.</p>
+<p id=f24d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thanks K and…</p>
+<p id=2cf0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I agree item is also another strong candidate. So in the interest of momentum I would propose to the group that let's merge this PR which just removes the JSON part and then in a separate PR propose renaming it to something like item view or list view. Ivonne go ahead though if you're speaking you're muted.</p>
+<p id=92f4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=487b class="phone s04"><cite>Ivan_Herman:</cite> I am sorry I missed the button.</p>
+<p id=1c71 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Totally okay.</p>
+<p id=9c8a class="phone s04"><cite>Ivan_Herman:</cite> So I am okay merging it to avoid any misunderstandings. But I raised an issue separately on that part of the document so to say which is purely editorial I believe but important because as usual I am watchful of the vocabulary side and the vocabulary part and…</p>
+<p id=965a class="phone s04"><cite>Ivan_Herman:</cite> separate from what is not vocabulary issue and I put them in the issue I think it's 61 or 62 something like that…</p>
+<p id=6cdb class="phone s02"><cite>Dmitri_Zagidulin:</cite> 61 or…</p>
+<p id=2f1c class="phone s04"><cite>Ivan_Herman:</cite> which would deserve a separate point.</p>
+<p id=98d4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> 62. All right. Yep. Editorial comments.</p>
+<p id=f52f class="phone s04"><cite>Ivan_Herman:</cite> Yeah. But again,…</p>
+<p id=4f1a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wonderful. Sorry.</p>
+<p id=e7f7 class="phone s04"><cite>Ivan_Herman:</cite> it's meant for after PR merge.</p>
+<p id=8d18 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got him.</p>
+<p id=a7e0 class="phone s04"><cite>Ivan_Herman:</cite> All right. What's</p>
+<p id=29e9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> All so given that this is a fairly minor tutorial, we're going to merge. But Kyota, go ahead.</p>
+<p id=10005 class="phone s06"><cite>Kayode_Ezike:</cite> You can go ahead and merge. It's not a blocker for this. But since we're on it, I'm wondering one thing I was wondering as I was thinking about this is like do we still expect that even though this could be included in a list of view as an item that a few things one you have as a while you always have the option of whether or not you obey or not right but the very least when you click into the detail view of the credential you would still show the same thing that you would show in the list view or I guess would it be more freedom there like what's the intention or…</p>
+<p id=c2a3 class="phone s06"><cite>Kayode_Ezike:</cite> semantics around what the wallet should do when it clicks it presses into the actual detail view of the credential with this vendor method</p>
+<p id=a45e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Good question.</p>
+<p id=ccf3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Just it seems to me that should be left to implementers that we shouldn't give advice on this or normative statements. The list view is fairly basic without much guidance of what clicks on it should do etc. Dave go ahead</p>
+<p id=3e4c class="phone s05"><cite>Dave_Longley:</cite> Yeah, I don't think we're looking to tell implementers, how to build their interfaces or what should happen when the user interacts in different areas. We're just looking to surface display hints, preferences, metadata, colors, logos, important fields, summaries, detailed fields, stuff like that that is sort of organized for these kinds of displays. and then how you go about putting that information together is up to you. there is this sort of concept of expressing this these are the most important things is the sort of summary of this credential and then these are other details you might want to highlight that would be in sort of the semantics of what's being expressed when you render with this.</p>
+<p id=13bc class="phone s05"><cite>Dave_Longley:</cite> But where you put that information and how you opt to integrate that into different components in your digital wallet or other display software is entirely up to</p>
+<p id=e5f3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> You want to go ahead?</p>
+<p id=10006 class="phone s06"><cite>Kayode_Ezike:</cite> Yeah, I promise it's my last question. another reason why this came up is because I'm imagining in a credential container where while it has multiple of these credentials rather some of them might have the implementation of this new render type and some of them might not and so there could be an awkwardness in the list view where you show the card type of interface that you've implemented for that but then something different for those that don't have it. So, I think that was where I was trying to think of, okay, maybe for the wallet, they would just decide to not even maybe obey the list view in the list view and just use it for the detail view instead. ideas of some UX questions that I was kind of trying to think around and that's</p>
+<p id=912c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thanks, Dave.</p>
+<p id=24d7 class="phone s05"><cite>Dave_Longley:</cite> So I think digital wallets and displayers will have to have defaults for some time but I think we're also going to go through a transition period where we go from a situation where digital wallets and displayers it was their responsibility to come up with good ways to make credentials look good which was never going to scale. We all knew that in this community and that's why render method is on and we'll transition to a place where And if an issuer has not provided good render methods for their VCs, then their VCs are not going to,…</p>
+<p id=2172 class="phone s05"><cite>Dave_Longley:</cite> they'll just get sort of a default rendering. And so the responsibility will eventually fall on issuers to make sure that they provide a good way to render and show their credentials.</p>
+<p id=d120 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So speaking of sensible defaults,…</p>
+<p id=32e6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> being conscious of our time pressure and so on. I do want to put it out to the group. I've talked about in the past providing a data model or a concept of a community render template library based on let's say credential subtypes, right?</p>
+<p id=1697 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So this is a c of type verifiable credential comma driver's license credential and then here in this repository not necessarily governed by the issuer but by the community or by wallet vendors here if the issuer hasn't specified a specific template here is template you could use for this type do we want to tackle that as a use case for this version of the spec is the question And given the time pressure, could we get away with reusing the data model of the embedded and linked render method templates as much as possible? Yes. So f first question to the group is do you think this would be a useful deliverable of this task force?</p>
+<p id=0bb6 class="phone s05"><cite>Dave_Longley:</cite> When you say this task force, do you mean the iteration of this one? …</p>
+<p id=3ce3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=52e8 class="phone s05"><cite>Dave_Longley:</cite> we can put that at the end. I think we've got too much work to do and,…</p>
+<p id=749e class="phone s02"><cite>Dmitri_Zagidulin:</cite> If time Stretch goal. Okay. Okay.</p>
+<p id=416f class="phone s05"><cite>Dave_Longley:</cite> and so that's something we could look at as a stretch goal.</p>
+</section>
+
+<section>
+<h3 id=65bb>Dynamic Updatability Of Templates</h3>
+<p id=a490 class="phone s02"><cite>Dmitri_Zagidulin:</cite> All So, bringing it back to this issue 61 raised by Ivon, if I'm reading this correctly, you're advocating for tightening the language around whether we mean schema or…</p>
+<p id=a889 class="phone s02"><cite>Dmitri_Zagidulin:</cite> JSON schema using official terms for JSON property names and so on.</p>
+<p id=9eb9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Is that correct?</p>
+<p id=7b8c class="phone s04"><cite>Ivan_Herman:</cite> Yeah, that's correct.</p>
+<p id=169c class="phone s04"><cite>Ivan_Herman:</cite> There are some other minor things but essentially if you just visually look at the document you see definitions of terms and you are not clear whether these are JSONLDD/ RDF terms or a description of a JSON format which is used for the terms to be displayed etc. And these things are fundamentally different and…</p>
+<p id=7f6a class="phone s04"><cite>Ivan_Herman:</cite> they should be fundamentally different on the screen and…</p>
+<p id=01f4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, seems very reasonable.</p>
+<p id=0669 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Seems very clear. I would</p>
+<p id=ab9a class="phone s04"><cite>Ivan_Herman:</cite> the other thing which is technically understandable the reasons are technically understandable but nevertheless we have two tables which all are almost identical to one another except have that for one or two cases JSON pointers are allowed. And again, technically speaking, that that makes sense. that's a good reason. but somehow at first glance,…</p>
+<p id=4cdb class="phone s04"><cite>Ivan_Herman:</cite> you see repetitions. What the heck is going on?</p>
+<p id=b523 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=78df class="phone s02"><cite>Dmitri_Zagidulin:</cite> And these are the two temp tables that you're talking about.</p>
+<p id=4964 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, that's the one. And then that template schema and that's one.</p>
+<p id=5035 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it. Yep. Yep.</p>
+<p id=76df class="phone s04"><cite>Ivan_Herman:</cite> These are the same…</p>
+<p id=c7c6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=3db3 class="phone s04"><cite>Ivan_Herman:</cite> what is called property. the structure of the JSON is similar except that in the result case obviously there is no room for JSON pointers but somehow make these things more palatable would be helpful for the reader.</p>
+<p id=3e90 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay. Yep.</p>
+<p id=e57e class="phone s04"><cite>Ivan_Herman:</cite> Again, purely editorial things.</p>
+<p id=b4a8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That makes a lot of sense. if nobody objects, we'll mark this as ready for PR. we can definitely address this and unify the tables.</p>
+<p id=5d94 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Going And I can reach out to Nate to get a sense for what he had in mind. Why the two tables? but yes. Got it. let's see. There's some conversation in chat. Phil Long is saying as far as the data view card is UI agnostic no concept of a default view and Dave is pointing out that in the case of the discussion default view refers to what happens when the issuer doesn't specify a render method hint.</p>
+<p id=79c4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> What do the wallet implementers fall back on? Okay, let's take a look at some of the other. Let's see. So PR wise, we've got the threat model and we have the older overlay rendering method that during the previous call suggested that we either close this PR or suggest moving it to a non-normative append.</p>
+<p id=5559 class="phone s02"><cite>Dmitri_Zagidulin:</cite> appendix much like the mustachebased review. All right, so let's take a look at the issues to see if we need clarification on some of them. So hour ago Benjamin opened dynamic updatability. So that's Benjamin, this is a great question. we've touched on it briefly before on previous calls and it essentially has to do with whether or not a template is a embedded versus linked and if linked protected with a digest ash. So if linked without a digest then it's updatable because the issuer or the community who's hosting it can just update it no problem.</p>
+<p id=4b01 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And if it's embedded or digest hash then can't be updated. So it's fairly basic but go ahead.</p>
+<p id=b429 class="phone s03"><cite>Benjamin_Young:</cite> No, not at all.</p>
+<p id=8806 class="phone s03"><cite>Benjamin_Young:</cite> Just queuing up behind you. because this is also related to the graph you had up earlier from the threat model…</p>
+<p id=3031 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah Please. Uh-huh. Mhm.</p>
+<p id=ba69 class="phone s03"><cite>Benjamin_Young:</cite> where it shows render method storage or something existing in the issuer box. which may not always be the case. the issuer is obviously going to make the selection of where those URLs are from whatever, but they may not be stored at the issuer. They're probably stored at some other endpoint that may not even be at the same domain as where the issuance happens. but anyway that's an orthogonal one but render template storage is essentially what that issue is about. because we've handwaved that these are updatable or that that's one of the motivators.</p>
+<p id=7e55 class="phone s03"><cite>Benjamin_Young:</cite> But if you inline it obviously you have to reissue it but then also if you include a digest multibbase you have to reissue the credential that is and then if you then you are certainly dialing in maybe not every time you do a rendering…</p>
+<p id=0e96 class="phone s03"><cite>Benjamin_Young:</cite> but if you want updates you're going to check in webbby style you refresh the web page. So point being, I think the three of them probably need different threat models. because they are different.</p>
+<p id=807d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. …</p>
+<p id=c2bf class="phone s02"><cite>Dmitri_Zagidulin:</cite> what I'm hearing agreed.</p>
+<p id=52a7 class="phone s03"><cite>Benjamin_Young:</cite> They're very different lanes in my opinion. Go ahead.</p>
+<p id=56cc class="phone s02"><cite>Dmitri_Zagidulin:</cite> So what I'm hearing is an ask that we should probably capture either as a comment to this PR or as a separate issue that really what we're dealing with here is not one diagram but at least these three different ones where the main difference is here in where the template is stored and we got the three options.</p>
+<p id=bade class="phone s02"><cite>Dmitri_Zagidulin:</cite> We've got embedded in the credential one set of threat models linked and updatable not bound with the digest hash and then linked bound with an IPS hash which has implications on cachability and what are those things called content delivery network and a separate set of phone home threat models. Dave and then Ivonne.</p>
+<p id=a916 class="phone s05"><cite>Dave_Longley:</cite> So, I linked to a comment I put where we were talking about finalizing the names for different render method categories. because we talked about these three categories that we have. There might be a fourth one which is a fourth option to what you just said Dimmitri which is sort of similar to what we've done with the VC recognized entities work and…</p>
+<p id=0568 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Aha.</p>
+<p id=c9c7 class="phone s05"><cite>Dave_Longley:</cite> with status list credentials where a fourth type of render method here might actually just be a render method credential that you could link to and that then you don't include a digest multibase for that and when you go and fetch that it's credential subject or something along those lines represents all of the render methods that are available at that time of fetching that credential. So you can put a signature on it and check it and do all of those things. and that credential could also be served and provided in other places that help avoid the phone home problem. So we might want to consider that as another option here for externalizing render things in a ways in a way that is updatable and is very similar to…</p>
+<p id=e72e class="phone s05"><cite>Dave_Longley:</cite> what has been done two other places with the VC working</p>
+<p id=0833 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=28c1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, I really like this because it also targets the community sort of default random method template collection. I do want to say that and I see Ivon, you're up next on the queue. I do want to say that it still falls under the other three methods that we mentioned embedded hash linked versus regular linked because in a case of a standalone credential, you still have the threat model decision of whether hash linking to that credential or regular linking to that and if regular linking, it's updatable and if hash linking not.</p>
+<p id=8be9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Ivan, go ahead.</p>
+<p id=6e5b class="phone s04"><cite>Ivan_Herman:</cite> So I go one step further to what Dave said. This regularly is a regular pattern that we have on several places of the family which for me means that the core part of the threat model is identical to all of these and… Ivan Herman:</p>
+<p id=eb31 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes, good point.</p>
+<p id=2960 class="phone s04"><cite>Ivan_Herman:</cite> Therefore, it should be sorry that money is not here anymore, but it should be added to the core threat model in some way or other so that we order the other two other three documents could just refer to it. We would be repeating the same text and the same issues and the same spreads as for the other specifications.</p>
+<p id=d71d class="phone s02"><cite>Dmitri_Zagidulin:</cite> so if</p>
+<p id=132d class="phone s04"><cite>Ivan_Herman:</cite> It's not only the standalone credential.</p>
+<p id=10007 class="phone s04"><cite>Ivan_Herman:</cite> Sorry, I see what you type. it's the approach of using potentially remote or embedded or potentially remote resources for various purposes. whether we use digital the digest or…</p>
+<p id=6007 class="phone s04"><cite>Ivan_Herman:</cite> not whether we enclose the data into a separate verifiable credential this is the same pattern we have seen it all over the place now…</p>
+<p id=7868 class="phone s02"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=c24c class="phone s02"><cite>Dmitri_Zagidulin:</cite> if I'm understanding you correctly therefore we should address this in right Right.</p>
+<p id=e850 class="phone s04"><cite>Ivan_Herman:</cite> therefore it should be treated at one place in the thread model threat and not thread by the way it should be treated once in the threat model and…</p>
+<p id=80c3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=cf08 class="phone s04"><cite>Ivan_Herman:</cite> just referred from the recognizable entities from the status list from god knows the schema documents etc.</p>
+<p id=c989 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Yep. Entities, schema, status lists, etc. Yep. Agreed. Very good point.</p>
+<p id=c84c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Benjamin</p>
+<p id=0840 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, it seems…</p>
+<p id=21b4 class="phone s03"><cite>Benjamin_Young:</cite> however the planets were aligned for the last 24 hours had many of us thinking these thoughts. I left a comment just above yours. but I do like that a standalone credential opens the door to that architectural shift that I mentioned in my issue where the relationship is not solely about the issuer providing the render method because in many cases they may not be the ones to provide one.</p>
+<p id=d5d8 class="phone s03"><cite>Benjamin_Young:</cite> So I think what Dave's describing here dovetales with that pretty well.</p>
+<p id=a09f class="phone s04"><cite>Ivan_Herman:</cite> That's correct. Yes.</p>
+<p id=7f4a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Excellent. Okay.</p>
+<p id=dae1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, Ivon, we've captured your comment here, but for maximum effectiveness, it sounds like we should open a issue on the main threat model document repo. Is that what I'm hearing? So, let's U to do an issue about this on the main walk. And let me pull that up. We are four minutes till the top of the hour and we often like to leave a few minutes before between calls.</p>
+<p id=2f7f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Is there any other last minute questions or…</p>
+<p id=b65f class="phone s04"><cite>Ivan_Herman:</cite> Thank you everyone.</p>
+<p id=cda4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> concern This is a decent place for us to pause and get to our questions, concern going twice. then hopefully see you all next week at this time slot and I'll update the calendar entry. Thank you all. Cheers. Meeting ended after 01:05:48 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

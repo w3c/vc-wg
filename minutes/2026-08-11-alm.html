@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 11 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>11 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Elaine_Wooton, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Manu_Sporny's_Presentation, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#93d1">Task Force Policies And Announcements</a></li>
+<li><a href="#c64c">V1.0 Blocker Issue Label</a></li>
+<li><a href="#5400">Threat Model Updates</a></li>
+<li><a href="#bdac">Pull Requests Discussion</a></li>
+<li><a href="#85c4">Protocol Table Updates</a></li>
+<li><a href="#5dd6">Registering Interaction Schemes</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=84b4 class="phone s01"><cite>Kayode_Ezike:</cite> Hello everyone.</p>
+<p id=1178 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, we are three past the hour. We'll get started. Let me just first start by sharing my screen. Okay, I am on a new device today, but let me know if you can see everything or if you can't see anything, give me a yell. hello everyone, my name is Kyik. this is August 11th, 2026 and it's our weekly task force convening for the verifyers API for life cycle management Happy to be leading this call today.</p>
+</section>
+
+<section>
+<h3 id=93d1>Task Force Policies And Announcements</h3>
+<p id=81f3 class="phone s01"><cite>Kayode_Ezike:</cite> We have a number of things on our agenda to discuss today which we'll get into soon. But first I wanted to just remind everyone that this is a task force underneath the verified credentials working group opices. so we are subject to all of the policies that govern that group. Before we get started are there and also all these calls are recorded and transcribed as well. before we get started, are there any introductions or community announcements that folks would like to share? Just quickly shift over to see there's anything reintroductions. I think everyone here is familiar. so the main topics for today are the following.</p>
+<p id=c950 class="phone s01"><cite>Kayode_Ezike:</cite> So, as promised last week, I created a new label. So, for that indicates which issues I deem are blockers for candidate wreck for version 1.0 of ECOM. so we can get into that. And was able to review with a few folks ahead of this call and feeling good about that. so we'll get into that soon. And related to that, wanted to pull the group on our readiness for horizontal review. and then finally just wanted to see if there are any updates regarding that was not supposed to be test suite but I guess we can talk about that too. I went for that to be threat model but either way if there's any updates with the testuite as well Patrick we can maybe get into that a little bit if there's time I would say that it's not urgent to discuss that today there's other things we need to get into otherwise.</p>
+<p id=49ec class="phone s01"><cite>Kayode_Ezike:</cite> Any other items that folks want to discuss today before we get started?</p>
+<p id=bb99 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I just wanted to point out we have quite a few PRs open. So, it'd be good if we spend a good amount of time maybe going through this.</p>
+</section>
+
+<section>
+<h3 id=c64c>V1.0 Blocker Issue Label</h3>
+<p id=4b37 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Yes. I plan to get into those. in many ways that's still kind of subservient to the issue processing and ultimately to the candidate readiness because ultimately I want us to make sure that we're targeting PRs that are blocking those and so yes we'll be sure to get to that. but before we do that wanted to go to this new label. So I created this new label again the V10 B blocker essentially all the things that we should get in</p>
+<p id=e9ea class="phone s01"><cite>Kayode_Ezike:</cite> before we get started. in 16 it shouldn't be too alarming because five of these are really just the self-review questionnaires that are mandatory for us to do before for each of the different sort of sub horizontal review groups. And then a few of these are just threat model and horizontal review. So they're kind of referencing what the tag was for. and also a lot of these already have open PRs, So I think number of these have that and so I bring this up to say that we really just have I think five that don't have PRs that need discussion of there's been activities on a lot of these issues but I do believe that we are in a good position to at least begin the process of horizontal review given the status and just wanted to sort of open up the</p>
+<p id=e503 class="phone s01"><cite>Kayode_Ezike:</cite> in order to pull the group to get a sense if sanity check to see if folks are in alignment with that or if there's anything that we think really we must address right now before we get started. I can't see the queue. Go ahead. Manu</p>
+<p id=5fb4 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. I just look one first of all thank you coyote for going through and categorizing all of these stuff. It makes it way easier to kind of understand the amount of work in front of us for each stage. I took your URL and I added a subtracted all the PR exists thing. So presuming we're going to get those PRs merged down there and minus all of the self-re and horizontal review issues which there are five of we have a very small list and for each of those in that very small list asking the question if we make this change will it significantly modify the VCOM spec</p>
+<p id=9974 class="phone s03"><cite>Manu_Sporny:</cite> At least when I look at each one of those issues, I'm like, No.&quot; Meaning we're not going to significantly modify the architecture even if we address this blocker. which is awesome because I think that means we're ready for horizontal review finally.</p>
+<p id=4810 class="phone s03"><cite>Manu_Sporny:</cite> Which is awesome. plus one, I think I agree with you, I'm not seeing anything that would cause us to drastically change, the architecture.</p>
+<p id=7487 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, awesome.</p>
+<p id=fa28 class="phone s03"><cite>Manu_Sporny:</cite> That's it. Kayode Ezike:</p>
+<p id=3a59 class="phone s01"><cite>Kayode_Ezike:</cite> I wanted to open up the floor. Thank you, anyone else who has an opinion on this or any hard objections to starting the horizontal review for VCOM. And this is something that we'll probably bring up if there's time tomorrow on the BCWG call. So go ahead, whoever that was,…</p>
+<p id=01dd class="phone s01"><cite>Kayode_Ezike:</cite> which is Dave.</p>
+<p id=2f49 class="phone s04"><cite>Dave_Longley:</cite> Yeah. …</p>
+<p id=1f52 class="phone s04"><cite>Dave_Longley:</cite> in case you couldn't see it, I just thumbsed up what Manu said.</p>
+<p id=a71b class="phone s01"><cite>Kayode_Ezike:</cite> Okay, Great. I am hearing ground agreement or at least round not disagreement. so yeah I think then that if there's time to add it to the agenda maybe do we put forward a proposal for tomorrow to begin that is that how we should go about it go ahead</p>
+<p id=872c class="phone s03"><cite>Manu_Sporny:</cite> So we can't do proposals and resolutions in this group, unfortunately, because it's a task force.</p>
+<p id=4b4c class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. …</p>
+<p id=261d class="phone s03"><cite>Manu_Sporny:</cite> We can, poll to see if folks want to request that we request the main verifiable credential working group to request a horizontal review and do that as a proposal resolution in that group. But I think all we need is we just need to see that nobody objects to us going forward on that. but find to do a poll as well.</p>
+<p id=29c0 class="phone s01"><cite>Kayode_Ezike:</cite> F. does that look good?</p>
+<p id=a87a class="phone s03"><cite>Manu_Sporny:</cite> Yep. Looks great.</p>
+<p id=c6fe class="phone s01"><cite>Kayode_Ezike:</cite> Great. Nope. Should look interesting. feel free to give + one, minus one or zero if it matters if I say resolved. I'll just note that we're getting a good agreement here. Great.</p>
+<p id=cb11 class="phone s01"><cite>Kayode_Ezike:</cite> So, I can't copy right now. I can grab it from the minutes tomorrow or later and use that on the call tomorrow if there's time to start that. But at least it's exciting that we get to start this process that before now at least for me was daunting. I wasn't sure where we were but I think that we're in a good position which is good news. So thanks everyone who was involved with getting us to this point. Great. on that note, let's move I guess that covered two the next item really was supposed to be I don't know if we have Joe or Eric here just to quickly give an update. if there's any to give and if there's not, maybe I'll even stop asking about it. But as far as the threat model goes, sorry I'm just all over the</p>
+<p id=2698 class="phone s01"><cite>Kayode_Ezike:</cite> place right Sorry, trying to find the right tab. go ahead, Joe. I think I heard your voice.</p>
+<p id=cbf9 class="phone s05"><cite>Joe_Andrieu:</cite> Yeah.</p>
+</section>
+
+<section>
+<h3 id=5400>Threat Model Updates</h3>
+<p id=1fc6 class="phone s05"><cite>Joe_Andrieu:</cite> So Eric is not going to make it today unfortunately. I understand he's gotten a few more PRs in related to issues about the threat model. but I don't have a more detailed update on that. this is my first day back so I'm also still spinning up. I do know there are a couple issues that Eric created that deserve some discussion. one of…</p>
+<p id=6f96 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Okay.</p>
+<p id=4eff class="phone s05"><cite>Joe_Andrieu:</cite> which is the alignment between the security considerations and the threat model. So we could probably engage that productively without him and I see manu put his hand up. So go ahead man.</p>
+<p id=0380 class="phone s03"><cite>Manu_Sporny:</cite> Right first welcome back Joe and…</p>
+<p id=8c50 class="phone s05"><cite>Joe_Andrieu:</cite> Yeah, thanks.</p>
+<p id=6b2e class="phone s03"><cite>Manu_Sporny:</cite> let me we've been working on the VC data model threat model as well. There was one that was just five core threats and the core diagram which is here and then there is an ex another PR that tries to basically add everything in security and privacy considerations into the threat model to migrate all that content over.</p>
+<p id=b135 class="phone s01"><cite>Kayode_Ezike:</cite> Just</p>
+<p id=0d15 class="phone s03"><cite>Manu_Sporny:</cite> So there's a lot of stuff here in the document. and I'm just noting this. I don't think we need to align anything just yet, Because I think what we're trying to do is just like parallel do all the threat models and then try to figure out how to align later.</p>
+<p id=5a6d class="phone s03"><cite>Manu_Sporny:</cite> There's some amount of alignment that's going on in other groups meaning recognized entities and forgery defense and render method are trying to…</p>
+<p id=1e05 class="phone s05"><cite>Joe_Andrieu:</cite> Cool.</p>
+<p id=48f6 class="phone s03"><cite>Manu_Sporny:</cite> but double up on threat models. this is just a highlight for you Joe.</p>
+<p id=cb77 class="phone s01"><cite>Kayode_Ezike:</cite> Awesome. Thank you,…</p>
+<p id=d21a class="phone s03"><cite>Manu_Sporny:</cite> You and Eric might want to take a at Give us your thoughts on it. What do we need to change? Where are we diverging? and then maybe just have a discussion about next steps after that's it. just sharing information.</p>
+<p id=5328 class="phone s05"><cite>Joe_Andrieu:</cite> I'll let Eric know about that work.</p>
+</section>
+
+<section>
+<h3 id=bdac>Pull Requests Discussion</h3>
+<p id=1f48 class="phone s01"><cite>Kayode_Ezike:</cite> And It's glad to have you back here. so I guess this is a good time to start the topic topic Interesting. I have to fix that. and think what we want to start with. So we can just start from first I want to check to see I see that there's some activity from this Patrick. So maybe Patrick, do you want to give us an update on 625?</p>
+<p id=1b3e class="phone s01"><cite>Kayode_Ezike:</cite> Five here as I put a subtopic</p>
+<p id=ec8b class="phone s02"><cite>Patrick_St-Louis:</cite> So, I had three PRs that had been open for a while. I had issues with my GitHub account. It was resolved. but those PRs I was not able to get I think it was the IPR status to work. So, I've did the sample next thing which is to reopen the PR and close the previous one. So PR701 supersede I believe 624 and 626 700 is about query by example and JSON pointer conversion algorithm and then the other one was about workflow step processing algorithm section.</p>
+<p id=81c6 class="phone s02"><cite>Patrick_St-Louis:</cite> So, they're both algorithm related, and I'll leave it at that. Do we want to go over them? I did capture in the new PRs all the comments that were left on the old ones. so there's a bit of a summary there before we need to go back. Yes.</p>
+<p id=5a56 class="phone s01"><cite>Kayode_Ezike:</cite> I guess without having seen the PR content yet, I remember there was discussion around using the standard algorithm format that other specs use. does this include that or… Kayode Ezike:</p>
+<p id=f8a7 class="phone s02"><cite>Patrick_St-Louis:</cite> So this is exactly …</p>
+<p id=b421 class="phone s01"><cite>Kayode_Ezike:</cite> Okay. Yeah,…</p>
+<p id=b148 class="phone s02"><cite>Patrick_St-Louis:</cite> which one it is. let me just share quickly.</p>
+<p id=1525 class="phone s01"><cite>Kayode_Ezike:</cite> go ahead. Do That's it.</p>
+<p id=cf70 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=38c1 class="phone s02"><cite>Patrick_St-Louis:</cite> So I modeled it after I find a VCDI ECDSA algorithm is a good example because it has some advanced algorithm for all the different functions so this is the format that it was based on. yes yes yes sir definitely so this addresses two issues in one both focused around the query by example.</p>
+<p id=37b2 class="phone s03"><cite>Manu_Sporny:</cite> Can you zoom, Patrick? I can't see any of the text.</p>
+<p id=e0ec class="phone s02"><cite>Patrick_St-Louis:</cite> One of them was how to match a credential with the query by example and the other one is specifically about converting to JSON pointers. yes, I'm happy. I don't know if we want to go through the content now. It's not too big. It's about 400 line. I change it a bit from what was before, but the gist of it is the same thing. yeah, I did opt for normative requirement for some of these steps. I don't know. maybe that's a point at the house do we want to just say this algorithm needs to must be followed but remove these from The E.</p>
+<p id=8d65 class="phone s02"><cite>Patrick_St-Louis:</cite> each individual step and just focus around as long as the output is the same. manu.</p>
+<p id=320e class="phone s03"><cite>Manu_Sporny:</cite> Yeah, usually you want to cut down on normative statements in an algorithm because usually it's like every single statement is normative,…</p>
+<p id=5e0e class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=8318 class="phone s03"><cite>Manu_Sporny:</cite> And so you just say you must implement the algorithm and I think you had the right wording up there. you don't even need to implement the algorithm as it's described there. You need to make sure that the given set of inputs to the algorithm result in the given set of outputs and that's it. any optimizations the implement wants to do like they should be able to do, right? Patrick St-Louis:</p>
+<p id=51ec class="phone s02"><cite>Patrick_St-Louis:</cite> Because It's very difficult to test all of these in isolation. I think the things like this is normal. There's special fields, accepted issuers and So, I'll review with this lens of I don't think there's too many, but I'll see if it's good or not and, come back with a revised version.</p>
+<p id=a424 class="phone s01"><cite>Kayode_Ezike:</cite> I'm just</p>
+<p id=ffff class="phone s02"><cite>Patrick_St-Louis:</cite> I invite anyone to have a look in the meantime. yeah, so that's for the query by example. I've been testing a new GitHub feature which is called stacked PRs. I've been having a lot of fun with this. I don't know if it surfaces there, but it's a new feature that GitHub rolled out. okay, so this one is more of an informative reference on the issue.</p>
+<p id=71a8 class="phone s02"><cite>Patrick_St-Louis:</cite> There were suggestions to put it to the appendex and it's kind of where we resolved on. Again, I'm happy to review this again if we just need to move it. I've captured here some of the comments that people had made on the previous version and these comments whatever resolved them is still resolved in this one a little bit larger and so that's what it looks like. So it's beautiful. I'm just kidding. It's not loading for some reason. But yeah, it's just a appendix section about workflow step processing. covering only basic example it don't go into all these what if maybe. Nate</p>
+<p id=4e17 class="phone s06"><cite>Nate_Otto:</cite> I did have a com question about the actual expectations of the algorithm. on the type property specifically it says if no value in expected types is strictly equal to any value in credential types return false. What this seems to read as is that if you are requesting expected types of verifiable credential, open badge credential and The credential types are verifiable credential, some other type of credential. It seems it will return true. Is the expectation here that the am I right in understanding that or misreading it?</p>
+<p id=73a4 class="phone s06"><cite>Nate_Otto:</cite> And then second question would be is that what we want or is what the expected types you're supposed to send in are you supposed to omit verifiable credential and…</p>
+<p id=a972 class="phone s06"><cite>Nate_Otto:</cite> only include any one type that you might want to match?</p>
+<p id=841b class="phone s02"><cite>Patrick_St-Louis:</cite> What I think from…</p>
+<p id=3578 class="phone s02"><cite>Patrick_St-Louis:</cite> what I understand if you have a query by example and you don't put verifiable credential I read it as it must at least include this value for me the query by example is your credential needs to at least support what I'm looking for here. It cannot have less.</p>
+<p id=68ab class="phone s01"><cite>Kayode_Ezike:</cite> What happened?</p>
+<p id=230f class="phone s02"><cite>Patrick_St-Louis:</cite> So if I have a type array with only open badge and it's returning verifiable credential open badge for me that's okay. what you describe that happens now doesn't seem correct. if it's requesting an open badge and there's no open badge in the types then it should fail because it didn't meet this requirement. Right?</p>
+<p id=fcfb class="phone s02"><cite>Patrick_St-Louis:</cite> the user can still send a credential if they want, but the verifier will likely reject it. At least they should according to the presentation request. if you see something that is not clear,…</p>
+<p id=d802 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=b459 class="phone s02"><cite>Patrick_St-Louis:</cite> which it seems is the case here, make sure please leave a small comment and I'll review this. does that answer both questions and…</p>
+<p id=5f4a class="phone s06"><cite>Nate_Otto:</cite> Yeah, I'll go ahead and leave that as a comment.</p>
+<p id=8598 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. I wouldn't say that's a recommendation.</p>
+<p id=3cab class="phone s06"><cite>Nate_Otto:</cite> It sounds like maybe what you're saying is that the recommendation for using query by example would be to don't include the verifiable credential type in type. only include any type that you would want to match that is not</p>
+<p id=9208 class="phone s02"><cite>Patrick_St-Louis:</cite> I think it's more about understanding what the query by example is meant for. it's not meant to say this is the exact credential I want you to return, but it's meant to be used as a filter that make sure that any credential you return at least meets what is in this example here. you can put verifiable credential or not I think that's a specific case because verifiable credential needs to be there. So I see it as more of a redundant kind of field. but I wouldn't recommend not to put it necessarily.</p>
+<p id=1459 class="phone s02"><cite>Patrick_St-Louis:</cite> I think this puts a bit of emphasis on things that are not so critical. The point is really here's an example that needs to be the minimum information that needs to be in the credential you present. Perfect. Yeah.</p>
+<p id=df57 class="phone s06"><cite>Nate_Otto:</cite> Okay, I think there might need to be a rewrite on one of the sentences in this paragraph.</p>
+<p id=7553 class="phone s06"><cite>Nate_Otto:</cite> So, I'll leave a comment and we'll see…</p>
+<p id=7d41 class="phone s02"><cite>Patrick_St-Louis:</cite> More than happy to review this.</p>
+<p id=0c92 class="phone s06"><cite>Nate_Otto:</cite> if everyone agrees.</p>
+<p id=2d0e class="phone s02"><cite>Patrick_St-Louis:</cite> That's the whole point. Thank you very much.</p>
+<p id=e620 class="phone s01"><cite>Kayode_Ezike:</cite> This Awesome.</p>
+<p id=4314 class="phone s01"><cite>Kayode_Ezike:</cite> Is thanks Pat. Is that all for the I know you also had some updates according to this I'm not sharing my screen…</p>
+<p id=7743 class="phone s01"><cite>Kayode_Ezike:</cite> but the index allocator as well but I'm not sure if you wanted to get into Okay.</p>
+<p id=482a class="phone s02"><cite>Patrick_St-Louis:</cite> No, the index allocator.</p>
+<p id=6a6d class="phone s02"><cite>Patrick_St-Louis:</cite> I've not touched it. This one I think that's really just an informative thing.</p>
+<p id=33cc class="phone s01"><cite>Kayode_Ezike:</cite> Okay,…</p>
+<p id=7df6 class="phone s02"><cite>Patrick_St-Louis:</cite> I'll get back to this one at some point, but for me it was really the query by example and the workflow step processing. I think these are the most critical ones we want. and the excelicator is also important need to define it.</p>
+<p id=25b7 class="phone s02"><cite>Patrick_St-Louis:</cite> But that's not a main proponent of VCOM. So</p>
+<p id=8cb7 class="phone s01"><cite>Kayode_Ezike:</cite> sounds Great. Thank you for that. Let me reshare my screen because apparently I can't share alongside of All right. so now we're going to get into the remainder of these PRs. this is the next one that's up that's been around for a bit now.</p>
+<p id=70bf class="phone s01"><cite>Kayode_Ezike:</cite> going to go ahead and subtopic And this has to do about retrieving the current exchange VPR. essentially the idea here was to support protocols like DCPI which allow for you to advertise what will be requested from the wallet as far as credentials I believe I've addressed this is new. Yeah. So, think I've addressed most of the comments here. That one comment that was up there had to do about the convention around like references to DFNs.</p>
+<p id=4e31 class="phone s01"><cite>Kayode_Ezike:</cite> Sometimes I've seen different usages where you either include apostrophe s after within the reference to it. And I guess I can address that offline. it's not a huge deal but the essence of the PR has been addressed as far as the concerns and questions goes. for some reason I don't think all of the file is loading right now. Just double check. Maybe it is. Okay. Yeah. So, essentially everything has been addressed modular that one comment which I can resolve offline. But are there any other questions, comments, concerns that people want to discuss with this PR?</p>
+<p id=4633 class="phone s01"><cite>Kayode_Ezike:</cite> Wait to play this don't hear anything. So if not then I can address this sort out shortly after the call and merge it in and close the issue that's related to it. great. I think we can move on to the next one. which has to do with using an interaction as a redirect URL topic issue rather PR 679.</p>
+<p id=3fc0 class="phone s01"><cite>Kayode_Ezike:</cite> The idea here is that the red in the exchange participation message that you can send from the server or from the client. there is the redirect URL property in there that's typically used to take you to a URL in the browser but it can also be an interaction URL in which case you basically would just be directing the wallet to engage in a subsequent exchange from that interaction I've addressed all the comments here. One comment that was made a few weeks ago was that and I think this was spurred from a suggestion from Dave is that we keep the associated issue open in order to give more detail around interaction chaining. I've been thinking about that and I wonder if that is needed. I was thinking maybe of adding something briefly on that.</p>
+<p id=60c9 class="phone s01"><cite>Kayode_Ezike:</cite> I hadn't had the time to do so, but do we feel like we need to keep that issue open, Dave, to give more detail on interaction chaining or do you think that we're good enough? Go ahead.</p>
+<p id=7ec3 class="phone s04"><cite>Dave_Longley:</cite> It could be another issue, but I think what we want is probably a mermaid diagram that at least shows at least one additional interaction happening. otherwise I think people can miss the fact that this is a reusable primitive in that way.</p>
+<p id=f90e class="phone s01"><cite>Kayode_Ezike:</cite> Okay, got In that case, what if I use a feature I think that somebody mentioned before where you can create an issue from the comments. So, this is more or less the comment that we're interested in.</p>
+<p id=9724 class="phone s01"><cite>Kayode_Ezike:</cite> And I think what you're saying is that we would like to provide a mermaid diagram that illustrates interaction chaining. the issue.</p>
+<p id=dc6c class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> You might want to edit that title. Kayode Ezike:</p>
+<p id=609d class="phone s01"><cite>Kayode_Ezike:</cite> Yes, thank That's really where I wanted the title to be this. But yeah, thank you. So, this was good. I think it was that made me realize that even a feature to begin with. So thanks So whenever So in that case I don't think there's any other outstanding comments in the conversation tab. So any objections to me merging this in not then okay don't hear any. So I will go ahead and do that right now.</p>
+<p id=cb70 class="phone s01"><cite>Kayode_Ezike:</cite> This is for issue 619. Confirm every base. Great. Just refresh that. 25 one PR merg one issue closed. Thank you. Let's move on to the next PR which is yes.</p>
+</section>
+
+<section>
+<h3 id=85c4>Protocol Table Updates</h3>
+<p id=d10e class="phone s01"><cite>Kayode_Ezike:</cite> There's been a lot of activity in this one and I would like to talk about 680 back here. so this is the issue around adding a table for interaction protocols that we support in this spec. So there's been a bunch of updates since last call.</p>
+<p id=93dc class="phone s01"><cite>Kayode_Ezike:</cite> the ones that I guess really quickly I'll just say the main things I changed since the last call is that I basically further specified the exact value that each protocol entry should have. Before it was just explaining what it might be exactly given is it a URL, is it that. So did that. I also added an entry Pat for you added an entry for Dcom. I know you said you would have a followup PR but I figured it would just be easier to just include it all here.</p>
+<p id=8585 class="phone s01"><cite>Kayode_Ezike:</cite> Just a brief description there. feel free to give your own comments on it. it's relatively self-explanatory over here. And then I also added an oid for usage warning. so as you know there's been a lot of drift with that spec and so some implementations are using 18, draft 28, etc. etc. and some are using a 1.0. So I added a warning with that. and basically encourage folks to use version 1.0 O if they can, but also</p>
+<p id=d95c class="phone s01"><cite>Kayode_Ezike:</cite> I guess another update that relates to that as well is that I added the versioning basically tag where you say major point minor after the protocol key and as it relates to oid4 I suggested that when you use that you really should be using that tag to be very explicit about which version you're using. You will also notice something else here which is that ID for VCI and VP are lowerase. so there was a comment that I added earlier somewhere in this PR. I recommended that we switch everything over to lower case. but still keep the deprecated version of uppercase for backwards compatibility.</p>
+<p id=f289 class="phone s01"><cite>Kayode_Ezike:</cite> The idea here is that there's already been enough changes and drift u confusion around the only protocol keys that are using uppercase which are the RD4 ones. And so I think it's not a bad idea to just start using lowerase everywhere and encourage the modifiers for versioning wherever it's possible. And then a Basically, that's more or less it. one thing I noticed is that there was misalignment between the OAS and the protocol table. I noticed that there was this interact protocol that was in the OAS table that was not in the new table. after some clarification offline with Dave, I realized that that's something that we did want to include.</p>
+<p id=10000 class="phone s01"><cite>Kayode_Ezike:</cite> And that's really just a way to point to an interaction URL from that points to another exchange from within the protocols object. So, those are the main changes that I've introduced since the last call. I did hear a hand go up. So, I will give whoever that was the floor, Dave.</p>
+<p id=7144 class="phone s04"><cite>Dave_Longley:</cite> So I would recommend that we don't introduce for the non-versioned oid4 strings. I don't think we should introduce the lowercase. We should just have the uppercase and say it's deprecated and say if you're going to use oid4, use one of the lowercase ones that has the version because those protocols really are designed where you need to have the version number associated with them. And I don't think we should have anything that doesn't have the version on it. So I don't think it would be a good idea to introduce yet another way to do it without the version.</p>
+<p id=fd11 class="phone s04"><cite>Dave_Longley:</cite> So does that make sense or…</p>
+<p id=e1e2 class="phone s01"><cite>Kayode_Ezike:</cite> I see.</p>
+<p id=4c2d class="phone s01"><cite>Kayode_Ezike:</cite> So whenever basically you should only advise them to ever use versions for all the version protocols.</p>
+<p id=10001 class="phone s04"><cite>Dave_Longley:</cite> all the oid4 protocols because those are very highly version dependent and then with the only reason we'll keep the old unversioned ones around which happen to be uppercase is for deprecation purposes for backwards compatibility.</p>
+<p id=2deb class="phone s01"><cite>Kayode_Ezike:</cite> Okay. So I guess the way in which that changes this so the table will never have the versioning in there</p>
+<p id=f739 class="phone s01"><cite>Kayode_Ezike:</cite> because that's the base key basically. So that will stay the same. I guess what you're saying is that well for the advice as well I made it a point not to say basically to advise them basically they should use the version is what I was saying in the advice note here. Is there something here maybe that doesn't reflect what you're saying?</p>
+<p id=b47e class="phone s04"><cite>Dave_Longley:</cite> Maybe I didn't look that closely at the PR.</p>
+<p id=10002 class="phone s04"><cite>Dave_Longley:</cite> I would be worried that someone reading the PR might put the lowercase version without r with the lowercase variant of the oid4 protocol without a version. And now we've got e extra stuff to have to support. Just the advice should be…</p>
+<p id=e632 class="phone s01"><cite>Kayode_Ezike:</cite> Right. Right.</p>
+<p id=75ed class="phone s04"><cite>Dave_Longley:</cite> if you're going to use OID4, what you put in the protocols object should be the lowercase variant that has the version, nothing else. And the only reason you would ever have the old uppercase variant is for backwards compatibility.</p>
+<p id=4977 class="phone s01"><cite>Kayode_Ezike:</cite> Got which also wouldn't even have had the version to begin with…</p>
+<p id=1f6d class="phone s01"><cite>Kayode_Ezike:</cite> because that wasn't a thing at that time. So, I'll look over this again. See if that should be more explicit about what you just said, but I think mostly captures what you're saying, but maybe can be a little bit more clear. any other comments? Was there a hand raise? I'm not sure. Okay, go ahead. N</p>
+<p id=b40a class="phone s04"><cite>Dave_Longley:</cite> That's correct.</p>
+<p id=58a0 class="phone s06"><cite>Nate_Otto:</cite> Yeah, I came up with a couple comments here. one is I'm wondering how the strings that we are specifically identifying for these relate to the strings that describe oid for VP protocols for instance in the DC API spec. I put a link to the section of that spec. and then secondly who is the owner of these strings and who are I don't know responsible assigned whatever the framework is are there other people…</p>
+<p id=332b class="phone s06"><cite>Nate_Otto:</cite> who are informed of these things are there other people that we're waiting on the approval of the authors of specs that are external to W3C?</p>
+<p id=e51e class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. Yeah.</p>
+<p id=db84 class="phone s01"><cite>Kayode_Ezike:</cite> So, I guess I'll start with the second question cuz there's some text in here where I touched on that where I said ideally we would like to externalize this table. that we don't necessarily want to be the owners of it because of the fact that it's useful across multiple different verticals. I think Benjamin and others have been in calls where it's come up where they've wanted to be able to point to this resource but they couldn't cuz we didn't have anything available yet. so I think in ideal world it wouldn't live here. And I think there's a message here where I said that for it's here but eventually you should note that it may live somewhere else. And in that case that would be the authoritative reference. so that's a work in progress. It's just not something that we would be able to accomplish in this That answer</p>
+<p id=1090 class="phone s01"><cite>Kayode_Ezike:</cite> Second question at least.</p>
+<p id=1ab3 class="phone s06"><cite>Nate_Otto:</cite> Yes, although I'm interested in Monu's comment.</p>
+<p id=d347 class="phone s01"><cite>Kayode_Ezike:</cite> I see. Okay. Go ahead. Mon.</p>
+<p id=10003 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think Nate raises a very good question. and I don't think we're going to be able to manage this in the spec over the long term. we do have a VC extensions whatever the thing that we're not calling a registry, whatever that thing is. and so we may want to put it there and just put registrations around the protocols, the DC API strings are problematic because they don't mention the draft versions which are very broadly deployed and implemented now and</p>
+<p id=10004 class="phone s03"><cite>Manu_Sporny:</cite> used in production. They're using when we already know V1 has breaking changes in it 10 to 11 one. The HPK stuff's a breaking change and it really does matter which one you use. so there multiple breaking changes just in those strings alone. we don't have to align on the strings. It would be wonderful if we could all agree on that. But I don't expect that coordination to result in positive outcomes, but In the meantime, we should establish some strings that we know works for the ecosystem as it exists in production today.</p>
+<p id=2b42 class="phone s03"><cite>Manu_Sporny:</cite> And then maybe some of these DCAPI strings end up being aliases or something else of that nature. Let me stop there.</p>
+<p id=c576 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks, Monu.</p>
+<p id=c271 class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead, Nate.</p>
+<p id=ce1a class="phone s06"><cite>Nate_Otto:</cite> Yeah, I think it's sort of a thorny issue.</p>
+<p id=e378 class="phone s06"><cite>Nate_Otto:</cite> I can see many different possible pitfalls for what could go wrong if we either it's wrong There's no good way through it. if we align to the existing terms that are in DC API and then 1.1 of one of these specs comes out and…</p>
+<p id=c07f class="phone s01"><cite>Kayode_Ezike:</cite> That's</p>
+<p id=91fd class="phone s06"><cite>Nate_Otto:</cite> DC API makes a different decision than we would want to make that produces its own problem. If we start from completely not aligning to what's in DC API, that is also potentially confusing and a problem. If we get re wait for review from the open ID foundation or try to assign some external owner and then they don't actually step up and do what is necessary, then that is also a problem.</p>
+<p id=4f73 class="phone s06"><cite>Nate_Otto:</cite> So, overall I don't object to the approach of assigning some locally defined terms here with the warning that Coyote has put in there to indicate that maybe in the future there would be a different source of these strings.</p>
+<p id=0a0c class="phone s06"><cite>Nate_Otto:</cite> Yeah and overall just have some worry about the nut registry that is not very well controlled</p>
+<p id=75e6 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Yes.</p>
+<p id=10005 class="phone s01"><cite>Kayode_Ezike:</cite> Plus one to all the concern Waste my money on so basically we're doing the best we can at the moment and we'll just have continue to monitor the field to see where things are moving. But, yeah, such is just life. but any other comments, questions, concerns about the PR outside of that? I have a small homework assignment from Dave.</p>
+<p id=1593 class="phone s01"><cite>Kayode_Ezike:</cite> I discussed it earlier, but if there's no objections, I can maybe make that change, give it a quick pass on a review of that offline and emerge between now and the next call. Okay. So, I'll do that. I'll go ahead stenate or…</p>
+<p id=985b class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think it's me.</p>
+<p id=d340 class="phone s01"><cite>Kayode_Ezike:</cite> mon. Go ahead.</p>
+<p id=57ed class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean, plus one to that. I think a general general comment around maybe the editors should be more aggressive about merging these down. plus one to, making changes and…</p>
+<p id=43bc class="phone s01"><cite>Kayode_Ezike:</cite> Jesus. Awesome.</p>
+<p id=1e13 class="phone s03"><cite>Manu_Sporny:</cite> merging it down. We're just getting a pretty long back of PRs. I think we're in a fairly high trust environment in this group and we all know that, hopefully we can fix things if we don't get it, perfectly right. It's just some of these it's out there for 3 weeks and because we're doing horizontal review, we want to get them in.</p>
+<p id=c1a0 class="phone s03"><cite>Manu_Sporny:</cite> So, I would not object to the editors doing their best job to try and align as much as possible, raise other issues for things that they didn't quite get to in the PR and just, merge these so that we can at least get the spec into a better shape than we're in right now. That's it.</p>
+</section>
+
+<section>
+<h3 id=5dd6>Registering Interaction Schemes</h3>
+<p id=224e class="phone s01"><cite>Kayode_Ezike:</cite> Sounds good. Thank you, We'll do that. I was going to look at this one, but I think I should first look at another one that is actually a topic for the VCWG call tomorrow. So, we should probably get into it. and this has to do with registering the new interaction schemes. So big oops. So as you all know there are two new interaction schemes that colon and interaction</p>
+<p id=7fc7 class="phone s01"><cite>Kayode_Ezike:</cite> web plus interaction colon. so the realized that there was no reference prior to this PR. So I added a reference to that, added it to the ABNF definition as well over here and then added an Ayana registry information for it down here. These are both provisional schemes and I hadn't had a chance to go through all the comments yet but Manu, I'm not sure if there's anything that you wanted to discuss here, but the main thing here is that there's a requirement for these schemes to register them that you have to create a registration template for them. You need to submit them to Ayana. There's a whole process behind it.</p>
+<p id=8bba class="phone s01"><cite>Kayode_Ezike:</cite> And so we started that process by opening this PR and then tagging Ivonne Herman, one of the chairs of the VCGWG. And so, for the next step, I haven't had a chance to really gra these, but Manu, is there anything that you wanted to discuss about this? Go ahead, man.</p>
+<p id=d33d class="phone s03"><cite>Manu_Sporny:</cite> Yeah, there were just minor changes in the thing. I think the most important thing is that we get the information. We can submit I think a von sorry we have to get a resolution from the working group that we want to do the scheme registration. So we have to remember to ask for two things from this group tomorrow on the call. One of them is we want to go to horizontal review. we need to make a resolution for that. And the other one is we want to register the protocol URLs. We need a resolution for that. Once we get that done, then we need to give Avon what he needs to fill out on There is a form that we can go to on Ayanna and it's just like it has five or six fields in it.</p>
+<p id=b32b class="phone s03"><cite>Manu_Sporny:</cite> And Coyote, either you or me or Avon's going to do that. and the second we get the resolution tomorrow, we can execute on that. I will note that sometimes registering things at ITF is a very political process and…</p>
+<p id=4944 class="phone s03"><cite>Manu_Sporny:</cite> this might be one of those things and…</p>
+<p id=a861 class="phone s01"><cite>Kayode_Ezike:</cite> It does.</p>
+<p id=a576 class="phone s03"><cite>Manu_Sporny:</cite> it might kick it off. and so if we get a response back, don't respond. The working group will have to respond to it. and in some cases, if you look at the way they process registrations, some people give four fields of information and their registration goes through. And other people have to give three pages of written justification and their registration goes through. So, we're just doing a provisional registration minimum amount.</p>
+<p id=32e0 class="phone s03"><cite>Manu_Sporny:</cite> We're an official working group. It should go through no problem. Just wanted you to be aware of the process there, Coyote.</p>
+<p id=ef47 class="phone s03"><cite>Manu_Sporny:</cite> But we do want a resolution tomorrow in the group and we want to execute on it right after that.</p>
+<p id=8f05 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, great.</p>
+<p id=2732 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks for that context. I have two follow-up questions. one. Should we keep this PR around until we are sure that It's a pass through with the group tomorrow and the second I think one is escaping me right now but I had another question that will probably come to me soon. but go ahead whoever raise your hand.</p>
+<p id=ec84 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. No, merge it. we need to point to it in the spec and ideally we need to point to a static copy a timestamped sorry a date stamped copy of the ANA section and…</p>
+<p id=53e7 class="phone s03"><cite>Manu_Sporny:</cite> we need to refer to that in the request to register</p>
+<p id=0309 class="phone s01"><cite>Kayode_Ezike:</cite> Okay. …</p>
+<p id=6f09 class="phone s01"><cite>Kayode_Ezike:</cite> in that case, I wonder if I can apply the suggestions here right now. That's here. So, this first one. Okay. just do that now. And then the other question that I had that just came to me is do we So I wonder if during the call tomorrow the folks on there would ask for a justification as to why we want to register these two, right? I think it's good for us to have a cohesive response to thoughts? Go ahead.</p>
+<p id=0c41 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, if you…</p>
+<p id=07f7 class="phone s01"><cite>Kayode_Ezike:</cite> Yep. Yep.</p>
+<p id=0f84 class="phone s03"><cite>Manu_Sporny:</cite> if you don't have this URL, one of you can't invoke a wallet from a web page easily using a protocol scheme handler is one of the reasons in it's like the ecosystem doesn't have a unified way of doing this yet. doesn't, open ID just created an open ID protocol scheme, which means you have to use open ID. You can't use anything else.</p>
+<p id=10006 class="phone s03"><cite>Manu_Sporny:</cite> Whereas this interaction mechanism allows you to use any of the U protocol schemes, open ID or vidcom or VCOM or any other scheme. so it's an actual scalable solution to the problem.</p>
+<p id=381e class="phone s01"><cite>Kayode_Ezike:</cite> Okay, thanks man.</p>
+<p id=09fa class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead. I'm not sure…</p>
+<p id=6ffa class="phone s04"><cite>Dave_Longley:</cite> Yeah, I was just going to say additionally the current requirements on DC API are for a browser to implement just one protocol and…</p>
+<p id=5b14 class="phone s04"><cite>Dave_Longley:</cite> so that also does not cover the case of being able to perform requests using whatever protocols are available.</p>
+<p id=cc53 class="phone s01"><cite>Kayode_Ezike:</cite> if I follow.</p>
+<p id=650c class="phone s01"><cite>Kayode_Ezike:</cite> Could you repeat that?</p>
+<p id=eb91 class="phone s04"><cite>Dave_Longley:</cite> So, one reason the DC API was created was to avoid some of the problems with the aforementioned URLs,…</p>
+<p id=4c91 class="phone s04"><cite>Dave_Longley:</cite> clicking on a oid URL to directly go into a wallet. but with the way that spec is currently progressing. The only requirement on browsers there which also only ever reflects whatever browser implementers are willing to do is that they are willing to implement a single protocol. So to date in the Apple ecosystem there's an M mso or an ISOMSO I don't remember what the protocol tag is we actually just had up on the screen when we had the DC API up.</p>
+<p id=330c class="phone s04"><cite>Dave_Longley:</cite> That protocol is implemented in Apple browsers and then the oid for VP version one a few variants of it are implemented in blinkbased browsers from Google etc. and the only requirement is that at least one of those protocols be implemented. That does not include other protocols. it might need to in the future and there we'll see how that goes. But that would not include VC API, didcom any invite request, any number of other protocols that might find their way in there. and would require browser updates to do any sort of incubation or innovation in that space. So this approach better covers that without having to go through the DC API spec.</p>
+<p id=6521 class="phone s01"><cite>Kayode_Ezike:</cite> Got you.</p>
+<p id=34ac class="phone s01"><cite>Kayode_Ezike:</cite> That makes sense. go ahead. Ted</p>
+<p id=393e class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> I encourage anybody…</p>
+<p id=c3aa class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> who has feelings about the evolution of that stuff to join and participate in the community group andor the probably more effective in the working group. meeting things are in active motion and evolution and there has been representative of Apple they haven't been around recently Chrome people are there very actively Firefox less actively but still also OS and browser people are there and they understand that things need to evolve in a good way to make</p>
+<p id=c8d0 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> everybody happy. especially their quote unquote users. so nothing is carved in stone.</p>
+<p id=02c2 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Everything is mutable. It does take time and that's part of why I'm saying get involved as soon as you possibly can in order to make this point of view present there. I don't have enough of the technical chops to be representative in that way. but yeah, that's it.</p>
+<p id=4e29 class="phone s01"><cite>Kayode_Ezike:</cite> Sorry, I think I missed it.</p>
+<p id=2b3d class="phone s01"><cite>Kayode_Ezike:</cite> Are you going to the WRCG or something or Right. Right.</p>
+<p id=bf28 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> No, I'm referring to let me see if I have anything open right now that can tell me that the exact names.</p>
+<p id=b324 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> They're based on Fed ID and I'm sorry I don't have it handy and…</p>
+<p id=e93e class="phone s01"><cite>Kayode_Ezike:</cite> No Worries. It's been there.</p>
+<p id=c5ab class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> I was just in one of those meetings.</p>
+<p id=3f66 class="phone s01"><cite>Kayode_Ezike:</cite> No worries.</p>
+<p id=3ce9 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, Fed ID CG and Fed IDWG is the big ones.</p>
+<p id=9ce9 class="phone s01"><cite>Kayode_Ezike:</cite> Got you.</p>
+<p id=b614 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> And then there are tangential ones that are connected to that.</p>
+<p id=fb20 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, Yes, folks who are available, please do attend those. So, five more minutes, but I think it looks like we can merge this, but I don't have any approvals just for the sake of documentation. If anyone can approve this, I can merge this down now. I don't think there's any outstanding requests here. It's just clarifications that were made. Let me know if anyone is able to do that now. Just nope. No tickers.</p>
+<p id=690a class="phone s01"><cite>Kayode_Ezike:</cite> Just looking for one or two approvals before I actually Got longly. Thanks, All right. If there no objections, I will end monot. Great. We'rge. I don't think this matters, does it?</p>
+<p id=7e67 class="phone s03"><cite>Manu_Sporny:</cite> No, don't worry about</p>
+<p id=7602 class="phone s01"><cite>Kayode_Ezike:</cite> We will discuss this on the VCWG call tomorrow probably ask for request for a proposal on the call tomorrow along with the other one for hard to review. Great. We only have three more minutes so I think this is a good place to stop. Thanks everyone for a productive call and let's do this again next week. Cheers. Meeting ended after 00:56:54 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

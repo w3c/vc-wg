@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 11 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>11 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#fed7">Manu Sporny's Threat Model Work</a></li>
+<li><a href="#f0d5">VC Barcodes Horizontal Review</a></li>
+<li><a href="#d8a6">Forgery Defense Threat Model Discussion</a></li>
+<li><a href="#8ea5">Decoupling Witness Seed Property</a></li>
+<li><a href="#10002">Implementing Witness Seed Property</a></li>
+<li><a href="#6d86">Selective Disclosure Refactoring</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=eed6 class="phone s01"><cite>Wesley_Smith:</cite> Good morning, I'm going to give people a couple minutes to trickle in before we get started.</p>
+<p id=a8f2 class="phone s01"><cite>Wesley_Smith:</cite> All right, good morning everybody. Welcome to the August 11th meeting of the barcodes and data integrity task force. A reminder that this meeting is being recorded and transcribed. If you are not comfortable with that, please let me know. The agenda for today is much the same as it normally is. We will go through process introduction and announcement items and then talk about the BC barcodes, data integrity and forgery defense specs as needed. does anybody have any announcements, introduction or process items to discuss today? Manu, go ahead.</p>
+</section>
+
+<section>
+<h3 id=fed7>Manu Sporny's Threat Model Work</h3>
+<p id=2e86 class="phone s02"><cite>Manu_Sporny:</cite> A couple of things. I wanted to spend a little bit of time looking at I'm continuing to work on threat models and trying to figure out a way to put them together. and have a fairly complete VC data threat model together as a pull request and then a basic VC render method threat model…</p>
+<p id=23d7 class="phone s02"><cite>Manu_Sporny:</cite> which tries to build off of the VC data model threat model. The reason I bring that up is because we probably want to do the same thing for the forgery defense work. and so is this kind of like I'd like to get feedback from the group if this is the right direction or if we should be doing something else. just those as gender pluses.</p>
+<p id=491d class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Sorry.</p>
+<p id=0ecc class="phone s01"><cite>Wesley_Smith:</cite> Do you have a link to that you can happy to cover.</p>
+<p id=a1f8 class="phone s02"><cite>Manu_Sporny:</cite> I do I'll screen share whenever you want to cover it in the agenda.</p>
+<p id=a09b class="phone s01"><cite>Wesley_Smith:</cite> Actually, anybody else have process introduction or announcement items before we get into that? All right, go ahead.</p>
+<p id=caa5 class="phone s02"><cite>Manu_Sporny:</cite> So let's sorry I did not Give me one second. I got to find the pull requests. So this one is for the BCDM threat model and this one is for the VC render method threat model.</p>
+<p id=0f8f class="phone s02"><cite>Manu_Sporny:</cite> And let me share my screen. We'll zoom in. So the VC that's wrong. this is the pull request for the VCDM threat model. There are now I think 25 threats in the latest pull request. the diagram the DFD is here. and Ted I need to apply your contrast changes to this diagram as well. I forgot to do that. But I think these are the current set of DFDs that are being generated.</p>
+<p id=f836 class="phone s03"><cite>Ivan_Herman:</cite> What is this?</p>
+<p id=e4ef class="phone s02"><cite>Manu_Sporny:</cite> Fs are flows, E are entities, P's are processes, O's are objects, and S are storage. this is the base one for the VC data model. This has been pulled into the main spec. we went in and added a lot of new threats. and I'm finding that this threat numbering thing is a giant pain and we're probably going to want to redo the way that we do this. because as you add threats, they just become completely unordered and out of order. and as you refer to threats from one threat model to the other one, if you change the ordering in the other threat model, all of your links break. so this is just a tooling thing. we may want to chat with Joe about like this sucks and we want to fix it.</p>
+<p id=5e13 class="phone s02"><cite>Manu_Sporny:</cite> I do agree that having labels on the threats threat T8 is much easier than saying presentation attack attacks man in the middle replace spoofing having a short label is good…</p>
+<p id=ef4e class="phone s03"><cite>Ivan_Herman:</cite> No.</p>
+<p id=965e class="phone s02"><cite>Manu_Sporny:</cite> but anyway Yeah.</p>
+<p id=b40e class="phone s01"><cite>Wesley_Smith:</cite> At the very least, we could stratify by the class of threat to meaningfully cut the work down into a quarter or a fifth or whatever target him like I1 D1 E1 whatever…</p>
+<p id=419f class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=023f class="phone s01"><cite>Wesley_Smith:</cite> because I have the same problem right it's like I have a threat T3 there really should be a related threat I have to bump the numbering on T5 through 25 and…</p>
+<p id=b792 class="phone s02"><cite>Manu_Sporny:</cite> Exactly. Yes.</p>
+<p id=6e5d class="phone s01"><cite>Wesley_Smith:</cite> I run into the same</p>
+<p id=357b class="phone s02"><cite>Manu_Sporny:</cite> And then one second, Greg. the other thing here is that when you do cross sometimes in your document like VC data model, you want to go into the threat modeling section. where's our threat model? we don't have it yet in this one. But in there, you want to link to other threat models. and you can't do it easily because everything's labeled T1,…</p>
+<p id=c4a6 class="phone s03"><cite>Ivan_Herman:</cite> What the hell?</p>
+<p id=2461 class="phone s02"><cite>Manu_Sporny:</cite> T3. And so you've got four T4s, but they're all in different threat models.</p>
+<p id=b28e class="phone s02"><cite>Manu_Sporny:</cite> So you may even need to prepend it with VCDM, it for implementation threat one to do the cross referencing properly. Go ahead, Greg.</p>
+<p id=4a9b class="phone s04"><cite>Greg_Bernstein:</cite> I was just questioning that the data integrity threat model would refer to the data model threat model…</p>
+<p id=b98b class="phone s04"><cite>Greg_Bernstein:</cite> since it's kind of a subset, right? data integrity is with the embedded proofs. And so I was wondering if that's what you meant when you were talking about referencing</p>
+<p id=c670 class="phone s02"><cite>Manu_Sporny:</cite> Yes, especially when it comes to dependency threats. So, this is the VC data model and it's got a dependency threat on cryptographic suites going out. but here we should point to the data integrity spec and this might be you see what I'm saying this it's in here as a dependency threat we depend on data integrity or…</p>
+<p id=cab8 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah.</p>
+<p id=7a3e class="phone s02"><cite>Manu_Sporny:</cite> bc hosy cozy we should point to those threat models and not repeat all the content in here. So there's kind of a question of where should this content live? where's where it should live in one place ideally so we don't repeat ourselves and so in that case where is it yep so yeah that is one of the things I'm struggling with anyway that's a bit of a side thing I'm just discovering these things as we're trying to put the threat models together so we have a ton of threats in here which seem to be fine Avon I have not been able to refer to all of the specs yet I need to make a pass to do that. So, I'm still still doing that. but the render</p>
+<p id=5596 class="phone s02"><cite>Manu_Sporny:</cite> method rent model is the first one and this is similar to what we might do with forgery defense. This one I was basically like the render method threat model builds on top of the verifiable credential threat model and those things are in gray here. So we know that they exist and we point to the VCDM threat model and we're like, &quot;Hey, if you want to read about the gray boxes, go over to the verifiable credential data model threat model and read about it there.&quot; But the things in color here are the things that are introduced by this specification.</p>
+<p id=19d5 class="phone s02"><cite>Manu_Sporny:</cite> So render method in nder templates and render template storage and a rendering process and holders and verifiers observing the rendering the visual representation or the audio or whatever. And so one this is the only way I could think of to because if you just have the stuff in color it makes no sense right without the broader context. So, I would be interested to hear from folks if they feel like this is okay enough for horizontal review or if we should be doing something different here. And if we should be doing something different, what should it be? Because I'm out of ideas. and then, we do this and I think we point back to the BCDM threat model whenever we can.</p>
+<p id=5c56 class="phone s02"><cite>Manu_Sporny:</cite> So the previous diagram yeah let me zoom in here and…</p>
+<p id=511d class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Sorry.</p>
+<p id=66dc class="phone s01"><cite>Wesley_Smith:</cite> Man, could you reiterate exactly the relationship between this diagram and the previous? Is it just Yeah.</p>
+<p id=2072 class="phone s02"><cite>Manu_Sporny:</cite> put them side by side. Open image new tab. okay so this is the document flow diagram all color. This is the basis of the threat model for VCDM. largely tries to focus on data modeling things and pushes protocol things out and kind of does extension things out. But you can see here we talk about status list, So this is like we could have done a separate threat model for this but we didn't because if we did a separate threat model for it, it would only have these components here at the bottom</p>
+<p id=3055 class="phone s02"><cite>Manu_Sporny:</cite> So move the status stuff into the core verifiable credential data model threat model. and then the rest of this stuff is pretty like if you're issuing a verifiable credential, you're doing some variation of this process, right? U so for the extension render method's an extension and there's a semiarbitrary choice made where we're render method is enough of its own thing that it needs its own threat Status lists are not enough of their own thing. So, we're going to put it in the VC data model. We could have made a different decision there, but I'm just kind of still playing around with these ideas. So, status stuff, it's just about a lot of credentials are going to have status, so let's talk about it in the Cordet threat model. render, there are a bunch of different types of attacks we want to talk about with rendering. So, it's going to be in a separate threat model.</p>
+<p id=212b class="phone s02"><cite>Manu_Sporny:</cite> So the gray thing Wes was see these things up here like establish confidence verifiable credential issue deliver all this stuff that's kind of core to the verifiable credential threat model. It's arguable that should belong in the protocol stuff and…</p>
+<p id=497a class="phone s02"><cite>Manu_Sporny:</cite> not the core to threat model. but here see how they're all grayed out…</p>
+<p id=ff52 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=a265 class="phone s02"><cite>Manu_Sporny:</cite> where we're just kind of like Yeah,…</p>
+<p id=400f class="phone s01"><cite>Wesley_Smith:</cite> so I guess partially what I'm asking is this a strict subset of the previous one? it's just like the previous diagram with some of the boxes grayed out or is there anything added? no.</p>
+<p id=b52a class="phone s02"><cite>Manu_Sporny:</cite> but I…</p>
+<p id=997b class="phone s01"><cite>Wesley_Smith:</cite> It's some of it swapped.</p>
+<p id=be21 class="phone s02"><cite>Manu_Sporny:</cite> but I removed stuff like establish confidence I was like it's probably not very relevant.</p>
+<p id=78b0 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Right.</p>
+<p id=e643 class="phone s02"><cite>Manu_Sporny:</cite> Who cares, right? Yeah,…</p>
+<p id=41e2 class="phone s01"><cite>Wesley_Smith:</cite> And the status stuff has become this render template stuff. Okay.</p>
+<p id=4fbc class="phone s02"><cite>Manu_Sporny:</cite> that's Yeah. So if I switch back and forth, you can basically see that the status stuff is more or less sort of what we do with render. It's any kind of ternal, you have to fetch an external resource to do the thing is going to follow this pattern. Status follows the pattern. Render templates follow the pattern,…</p>
+<p id=a900 class="phone s02"><cite>Manu_Sporny:</cite> .</p>
+<p id=c7ce class="phone s01"><cite>Wesley_Smith:</cite> It seems from this example and…</p>
+<p id=d15e class="phone s01"><cite>Wesley_Smith:</cite> just generally that the commonality between all of these is the holder issuer verifier tricotomy and…</p>
+<p id=22a7 class="phone s02"><cite>Manu_Sporny:</cite> Yes. Yeah,…</p>
+<p id=fc8b class="phone s01"><cite>Wesley_Smith:</cite> perhaps it seems like what you're working towards is the base of all of these start models is somehow that And if we can figure out what the kernel is there that's shared among all of these threat models, we could maybe leave out the gray boxes, we can leave out everything. We can just say we assume the basic E3 threat model and then we add the boxes that are shown here or something to that effect. right. Yeah.</p>
+<p id=5dba class="phone s02"><cite>Manu_Sporny:</cite> potentially. I thought about doing it that way. I did do it that way in the beginning and when I looked at it, I was like, a random person, reviewing this thing would look at this and go like, there's not enough information here for me to reason about it. That was my big concern. Go ahead and bounce.</p>
+<p id=c1f5 class="phone s03"><cite>Ivan_Herman:</cite> I certainly prefer the way you did it, Mommy, because how should I say it gives you the context of what this rat model is talking about. If you had only the few fully colored part on your diagram, then it's out of context. and…</p>
+<p id=4f8d class="phone s03"><cite>Ivan_Herman:</cite> that's worse than having a relatively complex diagram here. So, I'm actually all in favor of what you chose to</p>
+<p id=3f5e class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I largely agree.</p>
+<p id=b46a class="phone s01"><cite>Wesley_Smith:</cite> At the risk of being a pain, I'll note that the exact confusion I had I would expect more people to have, which is that this visual language looks like you are highlighting a subset of the other diagram. and that's not true. It's neither a subset nor a superset nor anything. It's just a different diagram with some shared pieces. The graying out makes it look like it's the old diagram except you can ignore all this stuff.</p>
+<p id=dad2 class="phone s01"><cite>Wesley_Smith:</cite> But I don't have a better suggestion at the moment. It's just something to be aware of. Alan, go ahead.</p>
+<p id=292b class="phone s03"><cite>Ivan_Herman:</cite> So it may become a monster…</p>
+<p id=cf83 class="phone s03"><cite>Ivan_Herman:</cite> but what about doing what you say Wesley that we take the whole thing. So you keep the status part as well but grade out and sort of add vertically the additional things that you have for rendering. Now it might become a monster but might be I understand what you say Wesley I really didn't realize that so that makes sense. I don't know whether you try that money or does it become too big.</p>
+<p id=0c81 class="phone s02"><cite>Manu_Sporny:</cite> I did try that and it did become too big in that we end up having tons of lines crisscrossing over each other and it becomes visually difficult to follow. let me try and find where is it? Yeah. So this thing ends up becoming even more complicated looking. so I tried to cut out what I could. Meaning the things that were cut out is this established confidence thing. All of the P1 S1 things were cut out because if I left them in you'd have to talk about them and you couldn't really talk about them.</p>
+<p id=f613 class="phone s02"><cite>Manu_Sporny:</cite> So I tried to basically be like these this is what they're called in the other diagram, but we're going to not, start numbering at P12 or P13 and F5 and whatever, right? Because all of a sudden you start naming the names create dependencies on the previous diagram. And if you rename the names on the previous diagram, the labels, then it throws all of the numbering off. I know these are annoying details, but you have to deal with them when you're creating the diagram. So, I think the short is I tried that Avon and Wes and…</p>
+<p id=64ac class="phone s03"><cite>Ivan_Herman:</cite> It is good.</p>
+<p id=3c28 class="phone s02"><cite>Manu_Sporny:</cite> it looked like a really messy diagram and it made it look really scary. you're just like, &quot; no, this is so complicated. I can't, reason through it.&quot; Right? where it's not really. it's complete. and for example, this thing on the right here, there's a fairly clear flow like engage in the workflow, verify the presentation, verify the status, and then validate the credential. You go but, I'd have to make this box bigger,…</p>
+<p id=3438 class="phone s03"><cite>Ivan_Herman:</cite> Hey,</p>
+<p id=2d46 class="phone s02"><cite>Manu_Sporny:</cite> and you'd have all these steps in here that I don't know people really care about it when you're looking at render method,…</p>
+<p id=4015 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Can I jump in on that point…</p>
+<p id=c51a class="phone s02"><cite>Manu_Sporny:</cite> right? Yeah.</p>
+<p id=9598 class="phone s01"><cite>Wesley_Smith:</cite> because I have a proposal. So it occurs to me looking at this from an information content perspective, the only thing that actually matters here other than the boxes that you've added are the boxes in the existing diagram that are directly touched by the boxes that you've added.</p>
+<p id=f550 class="phone s02"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=d853 class="phone s01"><cite>Wesley_Smith:</cite> The frontier to speak. So what we could do is we could have two diagrams. We could have the base diagram and then we could have this second diagram which has all the boxes that you've added and the only boxes it includes from the other diagram are the boxes that are directly touched by one of the new boxes. So for example for C2 you could replace credential issue verifiable credential with dot right and the only box that would be there would be verifiable credential.</p>
+<p id=51bb class="phone s01"><cite>Wesley_Smith:</cite> And the same for for E3, you could remove essentially everything. and you could just, use an ellipsus or somehow indicate that this is the same as in the previous diagram. And then for all of these threat models that build off of the base E3 thing, you say, here's the base E2, E3, and then here is a diagram that is all the boxes we're adding and all of the parts of the base diagram that they explicitly touch. So it wouldn't be visually massive.</p>
+<p id=74b5 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> And yeah,…</p>
+<p id=b035 class="phone s03"><cite>Ivan_Herman:</cite> Peace.</p>
+<p id=3287 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> this is the sort of thing that's going to take us down a rabbit hole if we try and make these diagrams, even conceive them completely in a call. but a couple of things to throw in as long as we're doing that. strict subsets are going to be a lot easier to understand than this sort of hybrid of a subset and some additional stuff. So, I'm going to suggest not doing the hybrid going forward. I was also going to say something about Gray's anatomy style onion skins. So, at base you see the deepest layer and then you can lay an overlay of onion skin of the next layer up and then another of the next layer up.</p>
+<p id=4988 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> In the computer world, we have the advantage that we can make things infinitely transparent and subtract deeper layers that don't matter to what we're looking at right now. So, you can say, &quot;Show me, layer two, and layer 1.&quot; And that's going to be visible and it's not going to cause us to tear pages out of the book because it's computer graphics. figuring out which layers belong where is more difficult with this stuff because it's conceptual. It's not thinking of it in a physical way may help to get things in that direction. the last thing is unfortunately graying things out takes us again into the visual impairment land.</p>
+<p id=857c class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> There are not a lot of them, but there are a fair number of people who have color blindness in the sense that they don't see color. They only see So, graying things out doesn't gray anything. It's all gray already. It just changes how dark it is. I know this is a nightmare to deal with all the time, but it's the sort of thing that will come up when accessibility reviews and if we think about it at least and say, &quot;Yes, we tried that and we don't have a workable solution. What do you suggest?&quot; will get us further than just saying, &quot; we couldn't do it.&quot; I think that's all at the moment. Thanks.</p>
+<p id=ba09 class="phone s01"><cite>Wesley_Smith:</cite> Deon good.</p>
+<p id=835b class="phone s03"><cite>Ivan_Herman:</cite> The gray thing of Ted is worrisome…</p>
+<p id=d40f class="phone s03"><cite>Ivan_Herman:</cite> but I don't have any smart word to do that to add to that. Wesley, I was wondering whether I was saying I wanted to say the same as you. So maybe I will repeat it. But one possibility is that in the VCDM diagram we actually create two diagrams. So there is a core because There is a core But in the diagram that I have on the screen right now, there is a core plus the status list. which is a separate thing in a way.</p>
+<p id=9efa class="phone s03"><cite>Ivan_Herman:</cite> So if we take the core we publish the core as a diagram saying this is the core thing that happening and then we add different things and we add the publish status list and the others there together with graying out the core and we get sort of the similar effect than the render method one which is again graying out the core and adding its own things. So you have that core in a way here and what it means is that it's the VCDM diagram that may have to be cut visually to have two diagrams. One is the core and the other thing is render the list is which might be then more or less identical to what we have you show here.</p>
+<p id=df8c class="phone s03"><cite>Ivan_Herman:</cite> But again the graying god issue of Ted is frightening me to be honest. The other thing which frightened me is what the heck will be the odd text for all this.</p>
+<p id=4345 class="phone s01"><cite>Wesley_Smith:</cite> The what?</p>
+<p id=b8f2 class="phone s03"><cite>Ivan_Herman:</cite> the alt text.</p>
+<p id=dfc9 class="phone s01"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=97cb class="phone s02"><cite>Manu_Sporny:</cite> Noted plus one specifically what Ted said, which is we don't want to rat hole on this discussion. I'm just showing folks getting some feedback. We'll try to think about how to make this better. so I'm hearing if we create a three-dimensional diagram that can onion skin, not have any grays in it, and be dynamically renderable on the page, we'll be in a better place. kidding.</p>
+<p id=5897 class="phone s03"><cite>Ivan_Herman:</cite> But what are the tools for that?</p>
+<p id=7c53 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah. Yeah. Yeah. AI is pretty good at coming up with Avon, there's no way we can handr write all text for all of these diagrams. It would be an absolute nightmare. heard Wes, Ted, Avon, I'll think about how to do this better, but at the same time, please forgive me because I'm probably going to keep going at the same speed and…</p>
+<p id=d88e class="phone s03"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=4c80 class="phone s02"><cite>Manu_Sporny:</cite> pace I am because I just need to get these threat models together so we can do horizontal review. So, it may be that we need to come back to this during CR. because, it's not clear to me, what the best way forward here is. go ahead Dave.</p>
+<p id=0d9e class="phone s06"><cite>Dave_Longley:</cite> So, I just wanted to say I think what Ted suggested would be amazing and also not possible on our timeline. and I think we should leave that as a cool exercise to do in the future. Looking at this diagram that's on screen right now, if you just eliminated all of the gray stuff, I think it's a useful diagram. and I think we just have too much stuff to be graying things out and then we have all those concerns people brought up with accessibility. I think it would be totally fine just in each one of these threat models for the first version of this just keep 1, E2, and E3 and then put into the boxes what you want. and we could just see how that turns out for each separate spec.</p>
+<p id=4951 class="phone s01"><cite>Wesley_Smith:</cite> You want to go ahead?</p>
+<p id=9f6c class="phone s02"><cite>Manu_Sporny:</cite> One thing that might be easy is to actually have two diagrams. Put this into a tabbed pane where you've got layer two, and we have these DFDs as SVG files. We can just dump those into tab one and tab two. And that would at least help people see hey, here's the base threat model and then this threat model builds on top of it. And as they tab back and forth, the issuer, holder, and verifier boxes and everything stays the same. It's just the content changes from layer 1 to layer two. That would eliminate the gray boxes. we would get some kind of onion skinning, thing going on and people wouldn't</p>
+<p id=b97a class="phone s02"><cite>Manu_Sporny:</cite> have to jump back and…</p>
+<p id=b049 class="phone s02"><cite>Manu_Sporny:</cite> forth between two different threat models to kind of understand the base, threat model and how this threat model is building on top of it. Go ahead.</p>
+<p id=4e6b class="phone s03"><cite>Ivan_Herman:</cite> That sounds great,…</p>
+<p id=ffff class="phone s03"><cite>Ivan_Herman:</cite> But doesn't it mean that you will have to edit the SVG file for this manually?</p>
+<p id=c82d class="phone s02"><cite>Manu_Sporny:</cite> No, no, I think some simple claude code, Remember we had to do tabs for the crypto suite. on I can just reuse that code and instead of digitally signed stuff being put in the tabs it's going to be SVG diagrams put in the tabs Yeah,…</p>
+<p id=394e class="phone s03"><cite>Ivan_Herman:</cite> And I am a little bit worried about yet another tool that we introduce here. I would leave that for an extra release because it will be too much.</p>
+<p id=803e class="phone s03"><cite>Ivan_Herman:</cite> I mean and for the core graphics I don't know what tools you use Google or whatever but it's already enough of a work by itself.</p>
+<p id=64f1 class="phone s02"><cite>Manu_Sporny:</cite> I think there's a simple way to do this, Ivon. I agree with everything that you're saying. but let me try something and…</p>
+<p id=311a class="phone s03"><cite>Ivan_Herman:</cite> It's your time.</p>
+<p id=ef5c class="phone s02"><cite>Manu_Sporny:</cite> then see if it works out because I think we can address everyone's feedback if we take that approach and it's not a huge ask. Okay, I think that's it.</p>
+<p id=573c class="phone s02"><cite>Manu_Sporny:</cite> Macro</p>
+<p id=d904 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+</section>
+
+<section>
+<h3 id=f0d5>VC Barcodes Horizontal Review</h3>
+<p id=36f2 class="phone s01"><cite>Wesley_Smith:</cite> thanks for the good discussion. The threat modeling stuff is coming along very nicely. All so there's a couple things I want to talk about today. I'm going to move the topic over to BC barcodes. So, I have all the materials put together for requesting horizontal review for VC barcodes. there are two things that will need to happen before I can do that. Number one, tomorrow I don't know if we need to resolve or we just need to discuss on the BCWG call that we're planning to do that because the tag review request requires a link to the minutes of a demonstration of consensus by the group to put in the request. so we're going to do that tomorrow.</p>
+<p id=95a1 class="phone s01"><cite>Wesley_Smith:</cite> And then I also wanted to ask one second here if this is the review request for recognized entities. Under the where and by whom is the work being done section there are bullets. This work is being funded by organization project driving the specification and incubation and standards groups that have discussed the design. I don't know if this information is available somewhere through W3C if this is just knowledge that's in people on this call's heads. basically what do I do for VC bar codes here. Manu, go ahead.</p>
+<p id=d279 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, it's basically TAG wants to know who's paying for this to understand what biases there might be in what's happening here. clearly California DMV has deployed They're spending money on it. I don't think we can say that they're paying for it other than for their implementation and deployment of it. it is also widely known that National Association of Convenience Stores in Kexus have expended quite a bit of money and effort on this throughout the years. many years ago I don't know not many but three years ago DHS's Silicon Valley Innovation Program spent a bunch of money on VC barcodes.</p>
+<p id=5c2f class="phone s02"><cite>Manu_Sporny:</cite> So I think stating that those organizations have been paying for this. Digital Bazaar has expended quite a bit of money on this as so I think we can just list those entities.</p>
+<p id=4b93 class="phone s01"><cite>Wesley_Smith:</cite> Can you give me some insight on work is being funded by versus organization driving the specification?</p>
+<p id=de13 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. I mean organization driving it it's vague. What tag asks is vague. what does driving mean? Manu Sporny:</p>
+<p id=39be class="phone s01"><cite>Wesley_Smith:</cite> So, it sounds like the organizations you just listed,…</p>
+<p id=8fe6 class="phone s02"><cite>Manu_Sporny:</cite> They're spending money.</p>
+<p id=5764 class="phone s01"><cite>Wesley_Smith:</cite> to my knowledge, none of them are actually paying any of us to be here. So, it sounds like they're driving the specification but not funding it. Is that correct?</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> I mean they're spending money doing work that is putting this stuff into production and we are reflecting what they're doing in the specification here. So I would use a broad umbrella Wes and just list all of them because they're involved financially in some way right I think that's largely…</p>
+<p id=c8de class="phone s02"><cite>Manu_Sporny:</cite> what tag's looking for right and…</p>
+<p id=fc1c class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=cf14 class="phone s02"><cite>Manu_Sporny:</cite> there have been big tech companies that have tried to push certain solutions through W3C and you find out that this very much serves their interest and nobody else's. I think that's what TAG is looking for here. and so understanding the types of organizations that are interested and are spending money on this helps TAG understand is this for the public good and public benefit or is this a money-making scheme by a particular vendor that's trying to, corner the market.</p>
+<p id=d26f class="phone s01"><cite>Wesley_Smith:</cite> That sounds good. For now, I will treat funded by and driven by as essentially the same thing.</p>
+<p id=58e0 class="phone s01"><cite>Wesley_Smith:</cite> with respect to incubation and standards groups that have discussed the design some of this is before my time for example and what I linked there's workshop tops from 2022.</p>
+<p id=a30c class="phone s01"><cite>Wesley_Smith:</cite> I would welcome folks letting me know if there's anything that I should know about in the bad old days or AC barcodes. Evvon, go ahead.</p>
+<p id=7ad0 class="phone s03"><cite>Ivan_Herman:</cite> as an aside.</p>
+<p id=9de5 class="phone s03"><cite>Ivan_Herman:</cite> Some of these should or would appear in the acknowledgement section of the part of the final spec So this is not only for material you gather for the tag review…</p>
+<p id=addb class="phone s03"><cite>Ivan_Herman:</cite> but there is also an acknowledgement section. I mean this is far away when we will have that but at some point in time it will be</p>
+<p id=eb4b class="phone s01"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=6caa class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I forgot to mention the first responder community as well. they're pushing really hard for this across multiple states. so that should be kind of mentioned in the vital records community as well. I mean they should also be listed because both of them have expended personnel and effort to try and pilot these technologies. but I sorry I forgot your initial question there.</p>
+<p id=5270 class="phone s02"><cite>Manu_Sporny:</cite> There was right.</p>
+<p id=be2d class="phone s01"><cite>Wesley_Smith:</cite> My most recent question was about the</p>
+<p id=fd20 class="phone s01"><cite>Wesley_Smith:</cite> bullets. the sorry incubation and standards groups that have discussed the design</p>
+<p id=d3cc class="phone s02"><cite>Manu_Sporny:</cite> Incubation and standards these are ubation. So, credentialist community group has discussed it over many years. it got some light treatment at rebooting the seabore LD kind of portions of it. Got some light treatment there. it's certainly been talked about in the JasonLD community group and the Jason LD working group. I think we can say that there's a first responder community meaning it's not just one agency, it's multiple agencies. and then the general federal agency community not any specific agency right so I think we should mention those as well and…</p>
+<p id=77e4 class="phone s02"><cite>Manu_Sporny:</cite> internet identity workshop has also discussed rebooting and IW. …</p>
+<p id=bf8a class="phone s01"><cite>Wesley_Smith:</cite> Thank you very much.</p>
+<p id=5e69 class="phone s02"><cite>Manu_Sporny:</cite> and it has been discussed at some depth in various motor vehicle administration communities.</p>
+<p id=cae8 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=d88b class="phone s03"><cite>Ivan_Herman:</cite> We have to be careful not to be exhausted because it would become way too long. and in the review request I would keep it to the biggest two or…</p>
+<p id=c0a1 class="phone s03"><cite>Ivan_Herman:</cite> three and stop at that and if they ask more they ask more but let's not make a full huge section out of that because that has no end. It doesn't make any sense.</p>
+<p id=4946 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=20aa class="phone s01"><cite>Wesley_Smith:</cite> sounds good. Thank you, Thanks for the info there. I think that is what I need pending consensus by the group tomorrow. I will get that the requests for horizontal review out tomorrow.</p>
+<p id=b4c0 class="phone s01"><cite>Wesley_Smith:</cite> Anybody Von, go ahead.</p>
+<p id=6917 class="phone s03"><cite>Ivan_Herman:</cite> I'm sorry there will be a minor practical problem is that I am not around tomorrow and…</p>
+<p id=eba4 class="phone s03"><cite>Ivan_Herman:</cite> for the rest of the week I have a few days off so the minutes will not be cleaned up in time this week the minutes will be published on the W3C website But usually I make some clean up and… Wesley Smith:</p>
+<p id=8300 class="phone s03"><cite>Ivan_Herman:</cite> I usually put them to the website of the working group for a better reference. I don't do that. I am on private trip.</p>
+<p id=9d28 class="phone s01"><cite>Wesley_Smith:</cite> Ram. Go ahead.</p>
+<p id=2674 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, but that's okay because once we publish them the temporary minutes of there'll be a link there that we can refer to and…</p>
+<p id=98cb class="phone s02"><cite>Manu_Sporny:</cite> then Wes can update once you publish the final thing.</p>
+<p id=381e class="phone s03"><cite>Ivan_Herman:</cite> Yeah. Yeah.</p>
+<p id=2b7d class="phone s02"><cite>Manu_Sporny:</cite> Thing that's important is a stable reference.</p>
+<p id=51d4 class="phone s03"><cite>Ivan_Herman:</cite> I'm just warning you, don't wait for the final one.</p>
+<p id=f698 class="phone s01"><cite>Wesley_Smith:</cite> Sounds good.</p>
+<p id=c3d8 class="phone s01"><cite>Wesley_Smith:</cite> Thank you for the heads up. does anybody have anything else on the topic of VC barcodes that they would like to discuss today?</p>
+<p id=e0b7 class="phone s01"><cite>Wesley_Smith:</cite> Monu go ahead.</p>
+</section>
+
+<section>
+<h3 id=d8a6>Forgery Defense Threat Model Discussion</h3>
+<p id=f93e class="phone s02"><cite>Manu_Sporny:</cite> forgery defense threat model. was that on my plate, Wes? I can't remember. I'm happy to do it, but I don't think it needs to change.</p>
+<p id=e997 class="phone s01"><cite>Wesley_Smith:</cite> No. So the last time that we discussed this, we were going to see where we got with the data integrity and VCDM threat models and then ideally not have a standalone threat model, but just security and privacy considerations. with what you presented today maybe that should change given our subset structure. Monu go ahead</p>
+<p id=c462 class="phone s02"><cite>Manu_Sporny:</cite> So I think where we landed is VC data model has what we need and forgery defense should point to it. there were a number of interesting threats that you have in forgery defense that we want to make sure it maps generally to the VC data model and data integrity. So I think that's the gap that needs to be done right. So hopefully it's some light editing work to point to those specs and just say forgery defense is a specialization</p>
+<p id=f0b4 class="phone s02"><cite>Manu_Sporny:</cite> of addressing this threat and I think I also added an outgoing link from the recognized entities threat model to the forgery defense spec as well this is a way that you can protect against this attack u so I think that's right we don't need a new threat model for forgery defense we just need to enrich the document with some links to the BC the data integrity threat model and…</p>
+<p id=ee65 class="phone s02"><cite>Manu_Sporny:</cite> then if there's anything missing that would help forgery defense Enrich those other threat models with it so that you can point to them.</p>
+<p id=17d7 class="phone s01"><cite>Wesley_Smith:</cite> Sounds good.</p>
+<p id=2a38 class="phone s01"><cite>Wesley_Smith:</cite> I just raised an issue accordingly. something that I would like to discuss with the group with respect to forgery defense is issue number six. there's an open pull request for VC forgery defense which I'll talk about in a bit which generalizes witness seed the random bytes that you concatenate with the hash of the credential in order to derive the index or derive the witness.</p>
+<p id=10001 class="phone s01"><cite>Wesley_Smith:</cite> It occurred to me while writing this that we are going through a lot of effort to make this seed value truly random and unpredictable. but currently the specification requires the inclusion of the witness seed property in one of these lists. And the idea is if you don't want everyone to be able to rederive or recomputee these witnesses, don't publish the lists on the web. share them with discretion. I wonder if it would make sense to make the witness seed property Decouple them such that you can publish have a list that does not actually include the witness seed property where the witness seed property is treated as a separate value maybe secret that can be shared out of band.</p>
+<p id=1486 class="phone s01"><cite>Wesley_Smith:</cite> Does anybody have any thoughts on that? Go ahead.</p>
+<p id=d120 class="phone s02"><cite>Manu_Sporny:</cite> Yes, I'm trying to figure out what use case I mean it's useful meaning then you could publish this thing and only certain entities would be able to know whether or not you survived a key compromise.</p>
+</section>
+
+<section>
+<h3 id=8ea5>Decoupling Witness Seed Property</h3>
+<p id=e484 class="phone s01"><cite>Wesley_Smith:</cite> It's an architectural decoupling. So right now it's like the whole list either or is not a secret right and if you don't want anyone to be able to check this inclusion then the list is a secret and you restrict distribution. it were we to do what this issue proposes then you can separate out the witness seed. So now the list isn't the secret but you can't do anything with the list unless you have the witness seed property which is the secret.</p>
+<p id=d6f8 class="phone s01"><cite>Wesley_Smith:</cite> That's the concept. Money.</p>
+<p id=93e6 class="phone s02"><cite>Manu_Sporny:</cite> Plus one of the concept and the decoupling. I am concerned about the business layer where organizations are we're going to do the extra thing or we're not going to do it. We're going to give you an out of band way of getting the witness seed or we're going to do some other mechanism and then we have an interop problem because we have a bunch of people that are not publishing the witness seed. I think that's easily updatable right because if they're like we've got a thousand people complaining that they can't use our forgery defense stuff. at that point they just start publishing the witness seat and…</p>
+<p id=b2c9 class="phone s02"><cite>Manu_Sporny:</cite> they publish a new credential and it's fine right so I think it's recoverable yeah…</p>
+<p id=e745 class="phone s01"><cite>Wesley_Smith:</cite> right the only change would be literally making the witness seed property optional in the data model.</p>
+<p id=21d0 class="phone s01"><cite>Wesley_Smith:</cite> That's it.</p>
+<p id=182a class="phone s02"><cite>Manu_Sporny:</cite> but what's the use case…</p>
+<p id=c17b class="phone s02"><cite>Manu_Sporny:</cite> why would you do</p>
+<p id=f399 class="phone s01"><cite>Wesley_Smith:</cite> The use case is…</p>
+<p id=0fd2 class="phone s01"><cite>Wesley_Smith:</cite> if you want to be able to publish the lists via a mechanism where you don't have to worry about who can access them but you don't want arbitrary people to be able to perform the actual recomputation. probably something to do with potentially hostile verifiers verifier collusion things along those lines.</p>
+<p id=08fd class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=b872 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, but I get So I think that's a technical I'm trying to think of what's the business reason? why would you want to do that? if that I don't get the verifier collusion one but I don't understand what would be the driving do you see what I'm saying you gave me technical reasons I'm looking for yeah but why would an agency decide to do this for example why would you not just have the forgery defense stuff out there for anyone to use because you have no idea who's actually using your credentials and you want to make it broadly available because you want to make sure that your credentials survive a cryptographically relevant quantum computer. and it would by and…</p>
+<p id=f3a2 class="phone s02"><cite>Manu_Sporny:</cite> large be a really bad idea to not make everybody be able to have access to that list. Yeah,…</p>
+<p id=a90d class="phone s01"><cite>Wesley_Smith:</cite> potentially some notion of backwards compatibility isn't quite the right word,…</p>
+<p id=e022 class="phone s01"><cite>Wesley_Smith:</cite> but you start publishing these lists and then only in the event of a compromise do you publish the seeds such that people can, perform the checks or something to that effect. I don't know. I would have to think more about what the cost to the organization now would be if people started performing the checks. but heard understood. do you think that go ahead. One in.</p>
+<p id=13e5 class="phone s02"><cite>Manu_Sporny:</cite> I'm not going to minus one it and we could put it in as I should and we could warn people that we don't have a strong They're looking for strong reasons that people would do this. Otherwise, we might just make it a must, So, we're looking for a concrete real world use case that an agency is basically like, we really don't want to publish this seed value and here's why, right?</p>
+<p id=fa1c class="phone s01"><cite>Wesley_Smith:</cite> Devon, go ahead.</p>
+<p id=5eb7 class="phone s03"><cite>Ivan_Herman:</cite> actually we need two independent implementations of the features.</p>
+<p id=1ba3 class="phone s03"><cite>Ivan_Herman:</cite> It's more than what money says.</p>
+<p id=692a class="phone s01"><cite>Wesley_Smith:</cite> The feature here is just whether you are or…</p>
+<p id=277a class="phone s01"><cite>Wesley_Smith:</cite> not including this bite string. I mean, I don't think that from a technical perspective making this change would be right.</p>
+</section>
+
+<section>
+<h3 id=10002>Implementing Witness Seed Property</h3>
+<p id=dc69 class="phone s03"><cite>Ivan_Herman:</cite> I am not talking about technical perspective.</p>
+<p id=0136 class="phone s03"><cite>Ivan_Herman:</cite> I need about practical implementations that do that independently of one another.</p>
+<p id=85b5 class="phone s03"><cite>Ivan_Herman:</cite> What need I am not an expert in the area Wesley so I cannot</p>
+<p id=3754 class="phone s01"><cite>Wesley_Smith:</cite> Maybe I think we're miscommunicating on…</p>
+<p id=823f class="phone s01"><cite>Wesley_Smith:</cite> what is being proposed here. The only change from an implementation perspective is whether or not one property exists in the JSONLD. I would be surprised if there were essentially any implementation overhead to supporting the change. But hurt I understand that that is a consequence of making this sort of change. Manu go ahead.</p>
+<p id=39ed class="phone s02"><cite>Manu_Sporny:</cite> Yeah, Ivon, I don't think it would be a big deal to change this from a must to a should for the property. and of course, the second it changes to the likelihood that we're going to actually implement it in the test suite goes down. But what we do need is we do need a witness value to be able to test it at all. And so what we would be looking for is two independent implementations that use the witness value in some way to know that the thing wasn't forged, so again I don't think this is a big deal. We could go either I'd suggest that maybe we say this feature is at risk.</p>
+<p id=cfcb class="phone s02"><cite>Manu_Sporny:</cite> We're looking for imple feedback on whether or not they would want to always publish the witness value or if there are any use cases where you don't want to publish the witness value and just get feedback from the implementation community and then we don't have to make the decision…</p>
+<p id=e193 class="phone s02"><cite>Manu_Sporny:</cite> until we're in CR. So maybe put it at it could go either doesn't matter. and they just leave the door open so that when we get to implementations maybe an implementer says yeah I've got a really good use case where I don't want to publish the witness Tell you.</p>
+<p id=db8b class="phone s01"><cite>Wesley_Smith:</cite> That sounds good.</p>
+<p id=a978 class="phone s01"><cite>Wesley_Smith:</cite> I'm making that note in the issue All Thank you folks very much for the discussion. anything else on that subtopic? All right, I will briefly mention the PR that raised this issue. this is a PR that's been out for a couple weeks. It generalizes the witness seed structure. It's got a couple of reviews. I'd like to merge it soon.</p>
+<p id=1530 class="phone s01"><cite>Wesley_Smith:</cite> Mono, you requested some changes. I believe I've addressed them. go ahead and take a look at that if you are interested. I would like to get it merged down soon. the language in this goes to effort to make sure that witness seed is properly treated as a random bite string and is unpredictable and hence the issue of if it's unpredictable and so on should we be allowing folks to treat it more like a secret but that is what we just talked about.</p>
+<p id=0f59 class="phone s01"><cite>Wesley_Smith:</cite> So go ahead and take a look at this PR if you are interested and give it your review. All right. Anything else anybody would like to mention with the VC forgery defense work. All right. Greg Bernstein. want to go ahead.</p>
+</section>
+
+<section>
+<h3 id=6d86>Selective Disclosure Refactoring</h3>
+<p id=f9cc class="phone s02"><cite>Manu_Sporny:</cite> a performance question. I'm guessing that the way that we are generating the list, the witness seed is just a random value. and it's generated at generation time when you're signing the credential, let's say, and then you go through and you merge that in and you hash everything. So that's a very fast parallelizable process. And then once you have that big giant, base 64 value, you encode it and then it's a signal signature over the entire verifiable credential. that's effectively the process to create this?</p>
+<p id=3aed class="phone s01"><cite>Wesley_Smith:</cite> That's correct.</p>
+<p id=950c class="phone s02"><cite>Manu_Sporny:</cite> Okay, good. okay, that's it.</p>
+<p id=ab98 class="phone s01"><cite>Wesley_Smith:</cite> Anything else on VC for defense? All right. Greg Bernstein, but if there's any topic for data integrity you'd like to bring up in the last few minutes,…</p>
+<p id=3a1d class="phone s01"><cite>Wesley_Smith:</cite> the floor is yours.</p>
+<p id=7f40 class="phone s04"><cite>Greg_Bernstein:</cite> There's an outstanding PR on an explanation explanatory text on selective disclosure that's been out there for a while.</p>
+<p id=10003 class="phone s04"><cite>Greg_Bernstein:</cite> There's been a bunch of different comments and such on it. I'd like to be able to close it off. I'm kind of out of ideas. what else to write about it. So, if folks could take a look and put in text or help me close that off. There's just been long running discussions and such like that and I'm not sure what to do with it.</p>
+<p id=10004 class="phone s04"><cite>Greg_Bernstein:</cite> I sent out also an email to the group concerning the major refactoring of selective disclosure that there's prior to putting into PR I was looking for any feedback concerning the structure as far as how we want to do subsections and things like that it would be nice to have feedback prior to putting in a PR because that's a major change. Otherwise, I'll just go ahead with the PR. So, those are my two items.</p>
+<p id=9365 class="phone s04"><cite>Greg_Bernstein:</cite> No. I'm resistant.</p>
+<p id=0887 class="phone s02"><cite>Manu_Sporny:</cite> I think yeah, plus one to that. thank you Greg for putting those in. I still hadn't been able to review it, but definitely don't block on me. I think it's also worth mentioning, Greg, and Wes that we have interest from an impleer on the postquantum or the quantum what are we calling it? Thank you. Quantum resistant crypto suites. that's done a significant amount of work. that looks really positive especially around ski sign which is awesome. and they have started a ski sign ITF draft and have asked for us to kind of be co-authors on it. I think that's a great idea to kind of push it forward at ITF.</p>
+<p id=cebf class="phone s02"><cite>Manu_Sporny:</cite> I haven't looked at the draft in any amount of detail, but that would be good to kind of get that going through ITF. and…</p>
+<p id=6c4d class="phone s02"><cite>Manu_Sporny:</cite> then, they've done implementations on the quantum resistant crypto suites as well. I pinged Benjamin to try and get that integrated with the test suites as well. Greg, I totally forget where we are in test suites for the quantum set. I know you've done test vectors</p>
+<p id=9ddf class="phone s04"><cite>Greg_Bernstein:</cite> test factors,…</p>
+<p id=5346 class="phone s02"><cite>Manu_Sporny:</cite> but okay and…</p>
+<p id=10005 class="phone s04"><cite>Greg_Bernstein:</cite> but I don't think we've started any of the test suite type stuff.</p>
+<p id=fd92 class="phone s02"><cite>Manu_Sporny:</cite> we need to at least get that going …</p>
+<p id=c117 class="phone s02"><cite>Manu_Sporny:</cite> because it feels like we're close enough the design for the quantum resistant crypto suites isn't changing right I mean Okay.</p>
+<p id=d7c5 class="phone s04"><cite>Greg_Bernstein:</cite> No, the only thing that there will be some slight changes on selective disclosure based on discussions with Dave about some commonality with the refactoring,…</p>
+<p id=8777 class="phone s04"><cite>Greg_Bernstein:</cite> but</p>
+<p id=3557 class="phone s04"><cite>Greg_Bernstein:</cite> No, the core algorithms are there.</p>
+<p id=ee3c class="phone s02"><cite>Manu_Sporny:</cite> So, we should kick off. Okay. Yeah.</p>
+<p id=fe2b class="phone s04"><cite>Greg_Bernstein:</cite> They're solving</p>
+<p id=2054 class="phone s02"><cite>Manu_Sporny:</cite> Great. That means we should kick off horizontal review, Greg. So, maybe we should work together to kind of get that going. because the design's just there. we can say modulo some stuff for unselected disclosure. it's just more or less like the other data integrity crypto suites. so that's good news. And then the threat model which is what we were waiting on is the data integrity one. and there's some stuff around quantum resistance cryptoes in there and then the forgery defense stuff on top of it. And I think that's enough for the quantum safe at least do horizontal review on the quantum safe stuff.</p>
+<p id=10c7 class="phone s04"><cite>Greg_Bernstein:</cite> Okay. Hey</p>
+<p id=ef68 class="phone s02"><cite>Manu_Sporny:</cite> So yeah let's say we should kick off horizontal review on quantum resistant crypto suites shortly.</p>
+<p id=04ec class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=4059 class="phone s03"><cite>Ivan_Herman:</cite> Yeah, just for my understanding the plan is that the crypto suites including the quantum resistant would not have its own threat model…</p>
+<p id=dbce class="phone s03"><cite>Ivan_Herman:</cite> but it's all sort of bound into the BI threat model. Is that the idea? whoever deals with the threat model of the crypto suites,…</p>
+<p id=545c class="phone s01"><cite>Wesley_Smith:</cite> Sorry Ivan, who was that question directed towards</p>
+<p id=6d66 class="phone s03"><cite>Ivan_Herman:</cite> I don't know whether it's Greg or Manny. So,…</p>
+<p id=5195 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I put the base one together. all the crypto suites just reuse the base data integrity. yeah,…</p>
+<p id=0edc class="phone s03"><cite>Ivan_Herman:</cite> there are no threats.</p>
+<p id=8083 class="phone s04"><cite>Greg_Bernstein:</cite> And…</p>
+<p id=8fe9 class="phone s04"><cite>Greg_Bernstein:</cite> then they have their own security considerations that are particular to that crypto suite. Manu Sporny:</p>
+<p id=45b7 class="phone s02"><cite>Manu_Sporny:</cite> that's So this is where Avon we're having to do a hybrid of the model. Simony was just put everything in the threat model. And there's some things that are so specific to ECDSA that we're just going to talk about them in the ECDSA crypto suite and people thinking about the threats don't really need to take those really low-level cryptographic details into account. But we need to document them somewhere. So, we're documenting them in the security and…</p>
+<p id=d3e9 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=7ea3 class="phone s02"><cite>Manu_Sporny:</cite> privacy consideration section of the spec.</p>
+<p id=778b class="phone s03"><cite>Ivan_Herman:</cite> I was wondering about this situation,…</p>
+<p id=786f class="phone s03"><cite>Ivan_Herman:</cite> but I am not Simona. so I cannot judge whether this is acceptable for him or not. I don't whatever requires less work that's my only motivation here…</p>
+<p id=ee5e class="phone s03"><cite>Ivan_Herman:</cite> but hopefully it will be accepted that Okay.</p>
+<p id=f0cb class="phone s02"><cite>Manu_Sporny:</cite> I expect it to be okay with Simone.</p>
+<p id=e967 class="phone s02"><cite>Manu_Sporny:</cite> He has been very flexible in how he works with groups and the more documentation about security tends to make him happier. So, we're being very thorough and so he should be okay with that.</p>
+<p id=a55f class="phone s01"><cite>Wesley_Smith:</cite> All we are about out of time. Anybody have any last thoughts to share?</p>
+<p id=a58e class="phone s01"><cite>Wesley_Smith:</cite> All right, thank you very much for the time. I will see folks tomorrow next week. Meeting ended after 00:57:44 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
