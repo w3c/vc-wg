@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Weekly VCWG meeting &ndash; 12 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Weekly VCWG meeting</h1>
+<h2>12 August 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/357e607e-b4de-45ea-b9d5-9076f68f61e1/20260812T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/08/12-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, denkeni, dlongley, Elaine, JennieM, KevinDean, kezike, manu, michaelshea, pdl-ASU, phila, swcurran, TallTed, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>bigbluehat</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#eec7">task Force updates</a></li>
+<li><a href="#3309">test suites and implementations</a></li>
+<li><a href="#e517">CID</a>
+<ol>
+<li><a href="#b101">CID Issue 170 w3c/<wbr>cid#170</a></li>
+<li><a href="#f110">CID issue 167 w3c/<wbr>cid#167</a></li>
+<li><a href="#585a">CID issue 165 w3c/<wbr>cid#165</a></li>
+<li><a href="#02f5">CID issue 166 w3c/<wbr>cid#166</a></li>
+<li><a href="#d6ef">Issue 161 w3c/<wbr>cid#161</a></li>
+</ol>
+</li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=fb8e class="phone s01"><cite>phila:</cite> any other items for the agenda for today?</p>
+<p id=f48f class="phone s02"><cite>manu:</cite> there is a discussion over the last couple weeks around payments and digital credentials<br>
+<span id=db62>… EMVCo did a presentation at the W3C</span><br>
+<span id=3170>… some of us were there and noted that there are W3C VC community members doing payments work at other organizations</span><br>
+<span id=6023>… some of those other orgs are also hoping to visit on August 27th to present some of that work</span><br>
+<span id=ef27>… I can't make that call</span><br>
+<span id=b3bc>… but hopefully others here can</span><br>
+<span id=e69d>… there are some asks from FIDO and EMVCo</span><br>
+<span id=3241>… and folks here could contribute review</span><br>
+<span id=92aa>… as they've been asked to support W3C Verifiable Credentials</span><br>
+<span id=5866>… and it would be great for us to participate</span></p>
+<p id=0092 class="phone s01"><cite>phila:</cite> is that the FedID WG call on the 27th?</p>
+<p id=e128 class="phone s02"><cite>manu:</cite> yes.</p>
+<p id=f22e class=irc><cite>&lt;phila&gt;</cite> The meeting Manu is talling about is <a href="https://www.w3.org/events/meetings/d593c94a-0cc3-4a92-ae85-f4024adf1f16/">https://<wbr>www.w3.org/<wbr>events/<wbr>meetings/<wbr>d593c94a-0cc3-4a92-ae85-f4024adf1f16/</a></p>
+<p id=88ed class="phone s01"><cite>phila:</cite> I was under the wrong impression that it was only for chairs, but everyone is actually welcome<br>
+<span id=6f26>… I plan to be there and I hope others will join from this group as well</span><br>
+<span id=2bf8>… there are other events this fall where various standards will be being discussed together</span></p>
+<p id=12b1 class="phone s03"><cite>TallTed:</cite> that call is actually already on the VCWG calendar</p>
+<p id=6d5e class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say also at TPAC</p>
+<p id=9b78 class="phone s04"><cite>brent:</cite> there is also a joint meeting on the Tuesday of TPAC<br>
+<span id=af67>… if you've already registered, please consider attending that</span><br>
+<span id=1402>… one of the bolded options for you should be that joint session</span></p>
+<p id=b26e class="phone s01"><cite>phila:</cite> It's 1:30 PM on Tuesday--Ireland time<br>
+<span id=410c>… k. there's a list of things from manu for us to go through today</span></p>
+</section>
+
+<section>
+<h3 id=eec7>task Force updates</h3>
+<p id=f1d9 class="phone s01"><cite>phila:</cite> anyone else have other task force things to discuss?</p>
+<p id=6b07 class="phone s05"><cite>dmitriz:</cite> the Render Method Task Force agreed to ask the main group--this one--to do a resolution to start the horizontal review for our spec</p>
+<p id=1802 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note lots of work on threat models.</p>
+<p id=58e7 class="phone s01"><cite>phila:</cite> dmitriz can you draft that?</p>
+<p id=2cd5 class="phone s02"><cite>manu:</cite> I actually have resolutions drafted</p>
+<p id=313b class="phone s01"><cite>phila:</cite> great, let's use that/those</p>
+<p id=33f8 class="phone s02"><cite>manu:</cite> this isn't usually how we do it, but doing one proposal would simplify things</p>
+<p id=678d class="phone s06"><cite>wes-smith:</cite> that list should include VC Forgery Defense also</p>
+<p id=2525 class="phone s02"><cite>manu:</cite> k. adding that.</p>
+<p id=ffff class="phone s01"><cite>phila:</cite> so, some context for those who might be need<br>
+<span id=2d1c>… wide review is a W3C distinguishing feature</span><br>
+<span id=1016>… we have Accessibility, I18N (Internationalization), Security, Privacy, and the TAG (Technical Architecture Group) review every standard</span><br>
+<span id=1e41>… these things can take a bit, so we want to start them earlier than later</span><br>
+<span id=80e1>… these are valuable reviews since the Web is for Everyone (per Tim Berners-Lee)</span></p>
+<p id=ed48 class="phone s06"><cite>wes-smith:</cite> we will need to link to these minutes as part of the request to the TAG (at least) when doing horizontal review</p>
+<p id=e05a class=irc><cite>&lt;manu&gt;</cite> PROPOSAL: Request Horizontal Review for VC Rendering Methods, VC API for Lifecycle Management (VCALM), VC Barcodes, and VC Forgery Defense.</p>
+<p id=471a class="phone s01"><cite>phila:</cite> manu please post the proposal--I think we're ready to vote</p>
+<p id=72e1 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=b2e1 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=f2e1 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=f2e2 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f2e3 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=32e1 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=72e2 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=72e3 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=b2e2 class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=f2e4 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=32e2 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=32e3 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=f2e5 class=irc><cite>&lt;KevinDean&gt;</cite> +1</p>
+<p id=f4b3 class="phone s01"><cite>phila:</cite> simple resolutions only come from far too few people doing far too much work<br>
+<span id=9844>… thank you to those who have made this happen!</span></p>
+<p id=d5d1 class=resolution><strong>RESOLUTION:</strong> The VCWG requests Horizontal Review for VC Rendering Methods, VC API for Lifecycle Management (VCALM), VC Barcodes, and VC Forgery Defense.</p>
+<p id=04ed class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note I have one more for the registration</p>
+<p id=10000 class="phone s01"><cite>phila:</cite> for wes-smith and anyone else who needs it, there is the direct link to the vote above</p>
+<p id=0aa8 class=irc><cite>&lt;Elaine&gt;</cite> Post link again. Please. I was disconnected.</p>
+<p id=f1b4 class="phone s02"><cite>manu:</cite> it's good practice to register protocol and/or pseudo schemes at IANA<br>
+<span id=77e3>… we have one in VCALM called `interaction:`</span><br>
+<span id=7692>… and it supports multiple protocols</span></p>
+<p id=cefb class=irc><cite>&lt;manu&gt;</cite> <a href="https://w3c.github.io/vcalm/#iana-considerations">https://<wbr>w3c.github.io/<wbr>vcalm/#iana-considerations</a></p>
+<p id=3176 class="phone s02"><cite>manu:</cite> this should actually help the ecosystem by building a bridges from user agents (Wallets, browsers) to various protocols</p>
+<p id=db63 class="phone s01"><cite>phila:</cite> this is what goes at the front of the URI?</p>
+<p id=6ee1 class="phone s02"><cite>manu:</cite> yes</p>
+<p id=d9f8 class=irc><cite>&lt;Elaine&gt;</cite> Add me +1</p>
+<p id=aaeb class="phone s01"><cite>phila:</cite> is this contentious?</p>
+<p id=2670 class="phone s02"><cite>manu:</cite> who knows?! We don't think so.<br>
+<span id=ad46>… the `web+interaction` URL is for web apps to be registered as Wallets</span></p>
+<p id=418f class="phone s04"><cite>brent:</cite> as someone who is currently going through a failing URI attempt<br>
+<span id=f181>… I am not seeing the description of the URI itself</span><br>
+<span id=6960>… I see the scheme registration, but where is the description of what the URI actually looks like?</span></p>
+<p id=10001 class="phone s02"><cite>manu:</cite> are you asking about the ABNF?<br>
+<span id=10002>… I thought that was not needed until the final registration, not a provisional one</span></p>
+<p id=15c7 class=irc><cite>&lt;dlongley&gt;</cite> <a href="https://w3c.github.io/vcalm/#interaction-scheme-format">https://<wbr>w3c.github.io/<wbr>vcalm/#interaction-scheme-format</a></p>
+<p id=2981 class=irc><cite>&lt;manu&gt;</cite> <a href="https://w3c.github.io/vcalm/#interaction-scheme-format">https://<wbr>w3c.github.io/<wbr>vcalm/#interaction-scheme-format</a></p>
+<p id=9f6d class="phone s02"><cite>manu:</cite> kezike may know more</p>
+<p id=3960 class="phone s07"><cite>kezike:</cite> we do have ABNF</p>
+<p id=1aec class="phone s02"><cite>manu:</cite> we could provide that. We do have it.</p>
+<p id=27a2 class="phone s04"><cite>brent:</cite> all good. I just wasn't finding it.</p>
+<p id=b07b class="phone s02"><cite>manu:</cite> some registrations have very little info and others have pages...so who knows how this will go</p>
+<p id=8250 class="phone s07"><cite>kezike:</cite> we should probably put the full scheme names in the proposal</p>
+<p id=432f class="phone s02"><cite>manu:</cite> we mention that the spec talks about what they are<br>
+<span id=134c>… we could make it explicit</span></p>
+<p id=63ce class="phone s03"><cite>TallTed:</cite> yes, please do</p>
+<p id=55a4 class=irc><cite>&lt;manu&gt;</cite> PROPOSAL: Request the registration of protocol schemes listed in the IANA Considerations section, that is, interaction and web+interaction, of the Verifiable Credential API for Lifecycle Management (VCALM) specification via IANA.</p>
+<p id=b301 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=3301 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=3302 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=7301 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=7302 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=e5f9 class="phone s01"><cite>phila:</cite> thank you, manu</p>
+<p id=b302 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=b303 class=irc><cite>&lt;bigbluehat&gt;</cite> +1</p>
+<p id=b304 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=f301 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b305 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b306 class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=3383 class=irc><cite>&lt;Elaine&gt;</cite> +1</p>
+<p id=2972 class=resolution><strong>RESOLUTION:</strong> The VCWG requests the registration of protocol schemes listed in the IANA Considerations section, that is, interaction and web+interaction, of the Verifiable Credential API for Lifecycle Management (VCALM) specification via IANA.</p>
+<p id=2795 class="phone s01"><cite>phila:</cite> whether you were part of the work or not, you are part of the group that approved this resolution<br>
+<span id=4f45>… I understand that folks can't be in all groups, but we do act as a group for significant actions such as this one.</span></p>
+</section>
+
+<section>
+<h3 id=3309>test suites and implementations</h3>
+<p id=10003 class="phone s01"><cite>phila:</cite> we're heading into a few upcoming months where test suites need expansion or creation<br>
+<span id=10004>… with the number of things going on, it can be helpful to see who's actually using this stuff</span><br>
+<span id=0e54>… where can I see the W3C VC stack in the wild?</span><br>
+<span id=3a2a>… if you have or you know of an implementation of W3C VCDM, I'd be very interested to hear about that</span><br>
+<span id=bfb1>… so we can jot some of that down and talk about them at the conferences this fall</span></p>
+<p id=82e2 class="phone s02"><cite>manu:</cite> I can't mention all of our rollouts, but one of them is the CA DMV<br>
+<span id=8412>… all Driver's Licenses in CA are issued both as mDL and VCs</span><br>
+<span id=2504>… they also issue Vehicle Titles as only W3C VCs</span><br>
+<span id=2135>… there should be upcoming news about that</span><br>
+<span id=2276>… there has also been educationally focused VCs getting traction in CA</span><br>
+<span id=e8b0>… there are a number of pilots--such as the Career Passport pilot</span><br>
+<span id=a83d>… MOSIP has mentioned that they have 180 million _people_ using VCs--obviously even more VCs than people</span><br>
+<span id=6730>… several US states are issuing VCs for a wide range of government and educationally related use cases</span></p>
+<p id=3e0e class=irc><cite>&lt;dlongley&gt;</cite> additional note on CA DMV: all new physical licenses include VCBs.</p>
+<p id=f51a class="phone s02"><cite>manu:</cite> CONEXSUS and NACS are releasing several VC ecosystem-based deployments</p>
+<p id=20f1 class=irc><cite>&lt;wes-smith&gt;</cite> and ID cards!</p>
+<p id=58a0 class="phone s02"><cite>manu:</cite> I can't share all the timelines, but &quot;soon&quot;<br>
+<span id=11ff>… some of this surfaces on <a href="https://vcplayground.org/">https://<wbr>vcplayground.org/</a></span><br>
+<span id=6f97>… if you look at convenience.org's list of credentials, you'll find an entire retail store story there with VCs covering things such as gift cards, loyalty cards, etc.</span><br>
+<span id=4e64>… and many more announcements coming in the next 6-9 months</span></p>
+<p id=6b21 class="phone s01"><cite>phila:</cite> that's great data.<br>
+<span id=3e16>… does anyone else have data they can share?</span></p>
+<p id=d284 class=irc><cite>&lt;pdl-ASU&gt;</cite> I believe the California Career Passport also includes the Community Colleges and CA State University System, as well.</p>
+<p id=510f class="phone s08"><cite>michaelshea:</cite> I believe the UNTP work is getting traction in Australia<br>
+<span id=a5ff>… and is moving from pilot to production in the next 12-18 months</span><br>
+<span id=f806>… that's obviously outside the person identity space</span></p>
+<p id=3049 class="phone s02"><cite>manu:</cite> thank you michaelshea, lots more going on at the UN and in the supply chain world as well</p>
+<p id=8fe1 class=irc><cite>&lt;pdl-ASU&gt;</cite> ASU does issue W3C VC compliant OBv3 credentials as well</p>
+<p id=fa61 class="phone s02"><cite>manu:</cite> I also meant to call out VC Barcodes specifically<br>
+<span id=71fb>… a VC Barcode is going on all physical Driver Licenses in CA</span><br>
+<span id=bb37>… so VCs are in people's hands--with a 5-to-1 ratio opposite mDL technology in CA</span></p>
+<p id=7448 class="phone s09"><cite>denkeni:</cite> as manu mentioned, MOSIP has lots of adoption<br>
+<span id=03be>… we're going to propose a new task force under the CCG soon</span><br>
+<span id=a0d1>… we're using much of this technology in our own countries</span><br>
+<span id=4903>… and I'm hoping we can contribute to test suites, etc.</span></p>
+<p id=2b4f class="phone s01"><cite>phila:</cite> I believe there's also work going on in Brazil?</p>
+<p id=a8c2 class="phone s10"><cite>hxavier:</cite> what I know is that there are biometric, non-VC-based private implementers<br>
+<span id=dfa0>… but the government is working on a solution based on verifiable credentials</span><br>
+<span id=f2ee>… I know VCs have been applied to giving credit to farmers, but not sure of the specifics</span><br>
+<span id=dafd>… and for age assurance they are using VCDM</span><br>
+<span id=f476>… and also using the OID4* protocols</span></p>
+<p id=e7c5 class="phone s01"><cite>phila:</cite> anyone else have more to share?<br>
+<span id=86bc>… I and many others are going to be on the road talking about our work and pushing their own approaches</span><br>
+<span id=c994>… it always helps to have real world use cases to present</span></p>
+<p id=a3c0 class=irc><cite>&lt;pdl-ASU&gt;</cite> The Alabama Talent Triade is their statewide talent markplace has the W3C VC as a core pillar of its technology stack.</p>
+<p id=0233 class="phone s01"><cite>phila:</cite> it provides confidence<br>
+<span id=6fdc>… and in this spirit, GS1 is indeed implementing W3C VCs</span><br>
+<span id=ff85>… we are a federated organization, so we have to work out governance next</span><br>
+<span id=0123>… also, for the Recognized Entity folks, we are planning to get our docs up to date to share with that task force</span><br>
+<span id=78d3>… so, GS1 is certainly on board</span><br>
+<span id=437f>… which is a big deal for cross-border trade, etc.</span></p>
+<p id=ee1c class="phone s08"><cite>michaelshea:</cite> there is a great deal of activity going on with UNTP<br>
+<span id=5d23>… especially around mines</span><br>
+<span id=7b37>… and pilots around fashion and textiles</span><br>
+<span id=3e61>… and another around responsible businesses</span><br>
+<span id=76a3>… there's also a seafood traceability group forming</span><br>
+<span id=34ff>… and all these groups are bringing lots of attention to UNTP</span><br>
+<span id=ac38>… and UNTP is 100% W3C VC based technology</span></p>
+<p id=10005 class=irc><cite>&lt;pdl-ASU&gt;</cite> The Tennessee Board of Regents (TBR) through its CRED System (Comprehensive Record for Every Learner) uses VCDMs (via OBv3 and CLRv2s)to represent verified skills, course competencies, co-curricilar achievements and credit-for-prior-learning.</p>
+</section>
+
+<section>
+<h3 id=e517>CID</h3>
+<p id=ec8d class="phone s11"><cite>Elaine:</cite> just an FYI, I'm also in the ISO groups related to this work</p>
+<p id=8b9b class="phone s01"><cite>phila:</cite> great. I have nothing but respect for anyone working in standards</p>
+<p id=bbdf class="phone s11"><cite>Elaine:</cite> and just so you know, folks often think I'm the liaison for the W3C--which I am not</p>
+<p id=c197 class="phone s01"><cite>phila:</cite> yes...similar confusions about around GS1 here</p>
+<p id=fa70 class=irc><cite>&lt;brent&gt;</cite> +1 Elaine should feel free to give ISO folks an update on what we're doing</p>
+<p id=a54b class="phone s01"><cite>phila:</cite> michaelshea you wanted to discuss some specific things here</p>
+<p id=d495 class=irc><cite>&lt;pdl-ASU&gt;</cite> The State of North Dakota issues W3C VCs to all K12 students (focused on middle and high school) and a few technical schools have joined into project managed through the State Longitudinal Data Service.</p>
+<h4 id=b101>CID Issue 170 <a href="https://github.com/w3c/cid/issues/170">w3c/<wbr>cid#170</a></h4>
+<p id=3aba class="phone s08"><cite>michaelshea:</cite> this particular one probably needs Joe to be here</p>
+<p id=c562 class="phone s04"><cite>brent:</cite> this one is actually done</p>
+<h4 id=f110>CID issue 167 <a href="https://github.com/w3c/cid/issues/167">w3c/<wbr>cid#167</a></h4>
+<h4 id=585a>CID issue 165 <a href="https://github.com/w3c/cid/issues/165">w3c/<wbr>cid#165</a></h4>
+<h4 id=02f5>CID issue 166 <a href="https://github.com/w3c/cid/issues/166">w3c/<wbr>cid#166</a></h4>
+<p id=49c9 class=irc><cite>&lt;phila&gt;</cite> bigbluehat: It's bc we're using content-based hashes, line endings and so on can change the hash. We have to look through until we find a match...</p>
+<p id=128e class=irc><cite>&lt;phila&gt;</cite> michaelshea: That's outside my expertise - can you help please?</p>
+<p id=d860 class=irc><cite>&lt;phila&gt;</cite> bigbluehat: Has anyone gone through and checked all these? We may need to change how we share hashes so they don't get messed up.</p>
+<p id=f033 class="phone s01"><cite>phila:</cite> there are a couple of instances where it really matters where the hash in the spec matches<br>
+<span id=f05d>… I'm thinking the JSON-LD context file in the VCDM</span><br>
+<span id=3d70>… in that case, it really matters</span><br>
+<span id=c4a1>… in the examples, I think I've seen text that says we make no cryptographic promises around examples</span></p>
+<p id=246d class=irc><cite>&lt;phila&gt;</cite> bigbluehat: This is a topic in itself. Do we need non-normative hashes to be accurate?</p>
+<p id=f7a2 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to give context</p>
+<p id=6965 class="phone s04"><cite>brent:</cite> to give some context here...no pun intended<br>
+<span id=4fa5>… as we were preparing the last round of specs</span></p>
+<p id=f3c5 class=irc><cite>&lt;dmitriz&gt;</cite> @bigbluehat -- we really need to add a canonicalization attribute to digestMultibase..</p>
+<p id=6b78 class="phone s04"><cite>brent:</cite> we wanted to be able to normatively reference the context<br>
+<span id=6fc5>… I don't think removing the hashes is an option</span><br>
+<span id=30c2>… we need to fix this one way or the other</span></p>
+<p id=2d16 class=irc><cite>&lt;dlongley&gt;</cite> dmitriz: i think that already exists, the group just didn't have consensus to use canonicalization for these hashes in the past.</p>
+<p id=64d8 class="phone s01"><cite>phila:</cite> this maybe just needs a quick call with bigbluehat and pchampin</p>
+<p id=b6dc class=irc><cite>&lt;dmitriz&gt;</cite> @dlogley -- what's the mechanism? multihash?</p>
+<p id=793c class="phone s08"><cite>michaelshea:</cite> I'm happy to try and set one up</p>
+<p id=83e4 class="phone s01"><cite>phila:</cite> I know pchampin is on holiday<br>
+<span id=6634>… but basically, it's a bit of engineering to get it right</span></p>
+<p id=c5da class="phone s08"><cite>michaelshea:</cite> I will setup a separate call around 166</p>
+<p id=964b class=irc><cite>&lt;dlongley&gt;</cite> dmitriz: <a href="https://github.com/multiformats/multicodec/blob/master/table.csv#L595">https://<wbr>github.com/<wbr>multiformats/<wbr>multicodec/<wbr>blob/<wbr>master/<wbr>table.csv#L595</a></p>
+<p id=fa31 class=irc><cite>&lt;dmitriz&gt;</cite> @dlongley -- I'm familiar with multicodec mechanism in general, I'm more asking -- does digestMultibase support that notation</p>
+<p id=2415 class=irc><cite>&lt;dlongley&gt;</cite> dmitriz: yup, just use that header :) ... it's in the same namespace</p>
+<p id=b2fa class=irc><cite>&lt;dlongley&gt;</cite> (that's my understanding)</p>
+<h4 id=d6ef>Issue 161 <a href="https://github.com/w3c/cid/issues/161">w3c/<wbr>cid#161</a></h4>
+<p id=fce9 class=irc><cite>&lt;dmitriz&gt;</cite> @dlongley -- ahaa that's good. so we should bring up the issue to the group again. I suspect we can arrive at consensus now</p>
+<p id=2e7c class="phone s08"><cite>michaelshea:</cite> does this look closable?</p>
+<p id=34a3 class="phone s01"><cite>phila:</cite> michaelshea I would add the key people for CID as reviewers</p>
+<p id=9f65 class=irc><cite>&lt;dmitriz&gt;</cite> oh FANTASTIC news</p>
+<p id=cb57 class=irc><cite>&lt;phila&gt;</cite> bigbluehat: The JSON-LD WG, which is meeting at TPAC, is having a very similar discussion about hashes</p>
+<p id=8553 class="phone s01"><cite>phila:</cite> thank you everyone and bigbluehat for scribing<br>
+<span id=ea3b>… JennieM is up next for scribing</span><br>
+<span id=c555>… thanks all, bye</span></p>
+<p id=0551 class=irc><cite>&lt;Peter&gt;</cite> quit</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#d5d1">The VCWG requests Horizontal Review for VC Rendering Methods, VC API for Lifecycle Management (VCALM), VC Barcodes, and VC Forgery Defense.</a></li>
+<li><a href="#2972">The VCWG requests the registration of protocol schemes listed in the IANA Considerations section, that is, interaction and web+interaction, of the Verifiable Credential API for Lifecycle Management (VCALM) specification via IANA.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

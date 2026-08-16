@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 13 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>13 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Denken_Chen, Elaine_Wooton, Joe_Andrieu, Manu_Sporny, Scott_Jones, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f748">Reviewing Pull Requests</a></li>
+<li><a href="#eb75">Clarifying Confidence Method Language</a></li>
+<li><a href="#f910">Pull Request 43 Discussion</a></li>
+<li><a href="#256e">Add sections on cryptographic keys and controlled identifiers by msporny · Pull Request #43 · w3c/vc-confidence-method · GitHub</a></li>
+<li><a href="#fcde">Pull Request 45 Discussion</a></li>
+<li><a href="#0b3b">Align with the original VCDM 2.0 definition by denkeni · Pull Request #45 · w3c/vc-confidence-method · GitHub</a></li>
+<li><a href="#9df7">Biometric Image Section</a></li>
+<li><a href="#44b8">Add biometric image section by denkeni · Pull Request #44 · w3c/vc-confidence-method · GitHub</a></li>
+<li><a href="#7908">PR 47: Title and Assurance Level</a></li>
+<li><a href="#8ca0">Editorial cleanup: sections, title, tooling by denkeni · Pull Request #47 · w3c/vc-confidence-method · GitHub</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=f748>Reviewing Pull Requests</h3>
+<p id=62ea class="phone s01"><cite>Joe_Andrieu:</cite> Howdy folks. How's it been going without me?</p>
+<p id=94b1 class="phone s02"><cite>Scott_Jones:</cite> Hi. …</p>
+<p id=6f8e class="phone s02"><cite>Scott_Jones:</cite> the last one was cancelled, I believe.</p>
+<p id=8d11 class="phone s01"><cite>Joe_Andrieu:</cite> So it's been going horribly.</p>
+<p id=3a39 class="phone s03"><cite>Denken_Chen:</cite> Yeah, we have the conflict and…</p>
+<p id=9f73 class="phone s03"><cite>Denken_Chen:</cite> also I haven't got assigned as the host for this online meeting yet. the test has manual data. Yes.</p>
+<p id=5015 class="phone s01"><cite>Joe_Andrieu:</cite> I'm not sure what you mean about the host tanking.</p>
+<p id=b4ef class="phone s01"><cite>Joe_Andrieu:</cite> I think Dankin, you had mentioned you had a couple of PRs queued up for us.</p>
+<p id=32c1 class="phone s03"><cite>Denken_Chen:</cite> Today I think we can go through the four PRs and hopefully you can get consensus and merge them as early as possible and…</p>
+<p id=a4bf class="phone s02"><cite>Scott_Jones:</cite> It's crazy.</p>
+<p id=44a4 class="phone s03"><cite>Denken_Chen:</cite> so we can look at the juice and…</p>
+<p id=2997 class="phone s03"><cite>Denken_Chen:</cite> show screen or I can do that as One minute.</p>
+<p id=707b class="phone s01"><cite>Joe_Andrieu:</cite> If you could that would be appreciated.</p>
+<p id=16f1 class="phone s03"><cite>Denken_Chen:</cite> So we have this 43 inserts from manual helpers and…</p>
+<p id=1f09 class="phone s02"><cite>Scott_Jones:</cite> speaks about certain things.</p>
+<p id=c77f class="phone s03"><cite>Denken_Chen:</cite> also we review it a little bit and then the last one is raised by pet and that is available to speak about this a little it. Sure.</p>
+<p id=9d36 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I am not prepared to speak or anything but I can try to say what I was talking about. as written the sort of genericy text blurs things even to my mind and…</p>
+<p id=a0d0 class="phone s03"><cite>Denken_Chen:</cite> Thanks.</p>
+</section>
+
+<section>
+<h3 id=eb75>Clarifying Confidence Method Language</h3>
+<p id=35e7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I think I'm about as informed as anybody else in the group. and I think that blurring is going to be problematic for people coming to it.</p>
+<p id=d7a9 class=irc><cite>&lt;Scott_Jones&gt;</cite> Wow, cryptographic dog collars.  Fascinating! </p>
+<p id=be2f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It is not clear what role is actually being talked about and part of that is because we have the triple role right sub holder issuer and verifier and then we've got these other things that happen the subject of which there may be many the presenter the issue and none those three are part of the role goal set, but they sort of need to be talked about. And what we're doing with competence method still doesn't flow to me. So, that's the part I have the biggest problem. what it is that is where the confidence is being increased and why is not clear. It does not stay clear.</p>
+<p id=8193 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> We have a conversation, it becomes clearer for a bit and then we go away and it becomes blurry again and it gets worse with these generic term segments like the one that I was commenting on there specifically. And that's what I said in the end is fully generic text and something more like that dog hypothetical that Manu put in.</p>
+<p id=ca41 class="phone s03"><cite>Denken_Chen:</cite> Sure.</p>
+<p id=5ab5 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I'll leave it at that for now because I really didn't plan to speak.</p>
+<p id=5931 class="phone s05"><cite>Manu_Sporny:</cite> Plus one to what Ted's saying. I was struggling with the language here because confidence method is so kind of generic and generalized, you can use it on a human being, you can use it on a dog collar, you can use it on an AI, you can use it on a car. you can, put a confidence method on just about anything to raise your confidence that it is the thing that you think it is. And there's so many different types of confidence methods like a picture of the thing or a cryptographic key tied to the thing or a facial vector of the thing just a shape vector of the thing. it's very generalized and it's not necessarily the holder. which is why</p>
+<p id=ffff class="phone s05"><cite>Manu_Sporny:</cite> the issue which is why I didn't want to kind of put that in there It's just much more broad. So maybe what we do here is provide a concrete example that is more believable than a cryptographic dog collar. and maybe we go from there we use a gener generalized language and then we're like for example I don't know I can think of something but if that's the direction the group wants to go to. I do think Ted does have a point. It's so general that people reading it for the first time are just going to have a very hard time understanding what's actually being said there.</p>
+<p id=3919 class="phone s05"><cite>Manu_Sporny:</cite> And maybe the concrete example is we do talk about the holder being the subject and that is the most we expect use case today where holder shows up they prove a cryptographic binding to a private key and the issuer puts that public key binding in the credential that they issue. to the subject which is also the holder and then when the holder shows up at a verifier they do the same cryptographic binding proof ceremony there. So maybe that's our concrete example that we use here.</p>
+<p id=3707 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> &quot;cryptographic dog collars&quot; not far removed from &quot;cryptographic pet implants&quot; </p>
+<p id=7fae class="phone s06"><cite>Dave_Longley:</cite> I was hearing is it all right for me to jump in?</p>
+<p id=2ed3 class=irc><cite>&lt;Scott_Jones&gt;</cite> like a microchip? </p>
+<p id=4f8b class="phone s03"><cite>Denken_Chen:</cite> Please. Yeah,…</p>
+<p id=fd8a class=irc><cite>&lt;Dave_Longley&gt;</cite> confidence methods can be used during presentation to increase confidence that the presenter can authenticate as or on behalf of the subjects the confidence methods are for </p>
+<p id=17f1 class="phone s03"><cite>Denken_Chen:</cite> no problem. Please.</p>
+<p id=8418 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> yes, like a microchip. My cats are &quot;chipped&quot;. Dogs, parrots, various other &quot;prone to wandering&quot; pets get them. </p>
+<p id=a57d class="phone s06"><cite>Dave_Longley:</cite> I was hearing from Ted that it gets confusing about what we're increasing the confidence of and I tried to type something into chat here that might be helpful language. my understanding is that confidence methods can be used during presentation to increase confidence that the presenter can authenticate on behalf of the subjects the confidence methods are for. So I do think we need to focus on when you're using a confidence method, it's during presentation and you're doing it to increase confidence that the presenter can do this authentication and it could be as a subject or on behalf of a subject or multiple subjects in the credential.</p>
+<p id=595f class="phone s06"><cite>Dave_Longley:</cite> And that really is separate from holders and…</p>
+<p id=93fb class="phone s06"><cite>Dave_Longley:</cite> issuees and so on.</p>
+<p id=201a class="phone s03"><cite>Denken_Chen:</cite> Yeah, thanks.</p>
+<p id=c3f9 class="phone s03"><cite>Denken_Chen:</cite> Money, please.</p>
+<p id=204d class="phone s05"><cite>Manu_Sporny:</cite> I'm wondering if that's correct. because what about theam the case I think this still happens at presentation but let's say you have a business registry right and you've got a business listing and it's just available to the public and there's a confidence method listed against one of the businesses bound to a cryptographic key and then somebody else wants to figure out if you are associated you are operating on behalf of that business. And in that case, it does happen during presentation, but it's very much out of band. It's not like the business isn't necessarily the verifier already has the credential that's associated with the business. so there that's not presented, right?</p>
+<p id=2f51 class="phone s05"><cite>Manu_Sporny:</cite> and there's some kind of band ceremony where the verifier is like, &quot;Hey, prove that you have possession of this key where you don't even send the credential over during presentation.&quot; So, it's like corner cases like that that I'm concerned where the language kind of breaks Down.</p>
+<p id=6be2 class="phone s06"><cite>Dave_Longley:</cite> That did not seem to break anything in my mental model. there's still a presentation involved and the for that presentation. It doesn't matter. what the authentication process is that is you are authenticating and the authentication is related to that presentation not some other presentation.</p>
+<p id=32c3 class="phone s06"><cite>Dave_Longley:</cite> So if there's some phone call about that presentation that happens later and that's your confidence method, that totally seems like it fits the</p>
+<p id=c9a5 class="phone s03"><cite>Denken_Chen:</cite> Yeah, I would like to see from another angle.</p>
+<p id=8115 class="phone s03"><cite>Denken_Chen:</cite> I'm plus one to minus first paragraph mentioned that we don't use holder in this one. it seems weird at the first glance because in the VC ecosystem we mentioned it's a third party model is between the issue holder and verifier.</p>
+<p id=19a3 class="phone s03"><cite>Denken_Chen:</cite> However, since the beginning of this confidence back, Jordan and I decided to focus away from the holder but into the subject particularly when the subject is not an human entity could be a pet or multiple subjects. So the whole VC confidence method is really about the verifier and the subjects on the VCs and so for example when the holder is one of the subjects that's one use case but that's just one of them.</p>
+<p id=44d4 class="phone s03"><cite>Denken_Chen:</cite> So probably it would help that we add some wordings at the beginning of this spec mentioning that this spec will deal mostly about the subject and the verifier.</p>
+<p id=af22 class="phone s03"><cite>Denken_Chen:</cite> So we can move away from the thinking of that we are not just dealing with the holder itself. Yeah, please.</p>
+</section>
+
+<section>
+<h3 id=f910>Pull Request 43 Discussion</h3>
+</section>
+
+<section>
+<h3 id=256e><a href="https://github.com/w3c/vc-confidence-method/pull/43">Add sections on cryptographic keys and controlled identifiers by msporny · Pull Request #43 · w3c/vc-confidence-method · GitHub</a></h3>
+<p id=4606 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> The trouble with that is that the issuer is intimately involved…</p>
+<p id=3f39 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> because they have to put this verification method into the VC to start with. That's it.</p>
+<p id=67a2 class="phone s03"><cite>Denken_Chen:</cite> I don't see the problem there. But Joe, please go ahead.</p>
+<p id=c7e2 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I didn't see the problem either.</p>
+<p id=0870 class="phone s01"><cite>Joe_Andrieu:</cite> Ted, the issuer definitely sets everything in the VC and they are the one who is providing this confidence method which is a hint for something the verifier can do to verify that the subject of this VC is the same as some other entity in their system. It may be someone who's authenticating live. It may be someone who invoked a capability historically and they're looking to say, &quot;Hey, that someone signed this Zcap over here. Is that the entity that we had a confidence method for in this VC?&quot; those are all valid use cases and it applies to any RDF subject</p>
+<p id=85fe class="phone s01"><cite>Joe_Andrieu:</cite> in the subject claims. So it's not the notion that there's one subject of a VC, which was sort of a simplification that let us talk about this for driver's license. It's easy to think of one subject. if you were to think of a marriage license, there are probably four or five people who need to be identified as individual subjects. If you're recreating the ones I'm familiar with, you would have the officient, you would have two spouses or more depending on your jurisdiction, and you probably have some witnesses. So any of those subjects could have their own confidence method. And so it's really the subject in the RDF sense of it that we're using here.</p>
+<p id=e3b7 class="phone s03"><cite>Denken_Chen:</cite> Yeah, if you wor you can go ahead</p>
+<p id=e551 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I think where I struggle is that we're saying that this confident confidence method could be applied to any entity in the RDF subject sense of the subject. not necessarily the presenter, certainly not the verifier because they're out of play at that point.</p>
+<p id=78bb class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's the level of non-conrete that is going on and so whomever is trying to understand this as a verifier, right? it gets presented to me and there's a confidence method here somewhere that applies to something in the credential and this is what I said going back to the beginning of confidence method is that it seemed to me that it could be applied to any subject in the RDF sense that is mentioned in the VC that this could</p>
+<p id=1ed8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> confidence in that the entity being identified. Tongue twister there. I can't lie down on the road on this because I don't have a firm enough I don't have my feet firmly enough under me to say this is the problem. All I can say is this continues to reconfuse me. So that seems to me to be an ongoing issue. Go ahead, man.</p>
+<p id=2783 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I mean a plus one to that. I mean, like you said, Ted, you've been involved in this work for a very long time. So, if you are, struggling to understand what we're meaning with the words we're putting on the page, that's a problem, right? Because it means that most certainly other people will be as plus trying to address so that's one. statement too is what Joe said and Denin and Dave said aligns very much with my internal mental model of this thing that we're talking about. it really is meant to be about any subject in the verifiable credential and as we all know a verifiable credential can have multiple subjects.</p>
+<p id=f475 class="phone s05"><cite>Manu_Sporny:</cite> I think Joe, your example of a marriage license is a great example because it does have multiple subjects that it talks about. It's the officient each spouse each witness, right? So those are multiple subjects and each one of them might have a confidence method associated with them. that the issuer doesn't necessarily establish when it the issuer could have established that confidence method in the individual two five months before, a year a picture, the issuer might have a portrait image on file for a specific subject and they established that many months before they actually issued the credential and when they issue the credential they include the confidence method with it.</p>
+<p id=0afa class="phone s05"><cite>Manu_Sporny:</cite> Plus one to the concept of framing the spec as this applies to any subject in a credential right the holder can be one of them but that is a specific case of the more general case which this is meant to be attached to any subject in any verifiable credential there can be multiple subjects so maybe what we do we don't use the dog collar use case maybe We use a marriage license use case and we very clearly point out like these are the subjects there's the officient they're the spouses they're the witnesses and each one of them can have a confidence method on them and that's the concrete thing that we use to ground the text here.</p>
+<p id=a11d class="phone s05"><cite>Manu_Sporny:</cite> And then Ted hopefully that is concrete enough. and then if we need to make further changes, we make further changes later, Ted. But I think I'd need to understand from you this is what's wrong with the new text, So if I update this and I try to be very clear about when we say what a conference method is associated with it's the subject blah blah blah basically exactly…</p>
+<p id=2ada class="phone s05"><cite>Manu_Sporny:</cite> what I said if I put that in the PR would that be at least good enough for now Ted</p>
+<p id=3b64 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I think it's going in the right direction.</p>
+<p id=d35e class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And part of what needs to be clear This is subject in the VC sense. I think that will help.</p>
+<p id=8931 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I hope …</p>
+<p id=2f59 class="phone s05"><cite>Manu_Sporny:</cite> But it's not.</p>
+<p id=67a6 class="phone s05"><cite>Manu_Sporny:</cite> But It really is subject in the RDF sense. So, I'm wondering why you went there why do you think it's not subject in the RDF sense?</p>
+<p id=bc7a class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> because subject in the RDF sense could apply to any entity that is mentioned in any capacity within the VC.</p>
+<p id=e893 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's not just one of the subjects of the VC.</p>
+<p id=44ca class="phone s05"><cite>Manu_Sporny:</cite> You're right.</p>
+<p id=35de class="phone s05"><cite>Manu_Sporny:</cite> But that's true.</p>
+<p id=43ab class="phone s05"><cite>Manu_Sporny:</cite> The confidence method can be attached to any subject mentioned in the Full stop.</p>
+<p id=8ce5 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> which is not just subjects of the VC.</p>
+<p id=e6f9 class="phone s05"><cite>Manu_Sporny:</cite> It's not just correct. I thought you said this is about just subjects of the VC.</p>
+<p id=fa4e class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> that the text you wrote in the air that I heard was talking about the subjects of the VC, right? You had the witnesses, the participants, and the officients,…</p>
+<p id=95b9 class=irc><cite>&lt;Dave_Longley&gt;</cite> to give a non &quot;credential subject&quot; example, suppose the VC has software that was used to issue it -- and a company or developer mentioned who created that software </p>
+<p id=6389 class="phone s05"><cite>Manu_Sporny:</cite> Mentioned in the graph in the VC.</p>
+<p id=6a48 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> and but they are all in the VC sense of subject. it is not just that they appear in a subject position within the graph of VC because there can be other things right.</p>
+<p id=62e7 class=irc><cite>&lt;Dave_Longley&gt;</cite> attached to the VC (we need a better example, but just trying to talk about one) </p>
+<p id=1ec8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> You can have a graph in the BC which has a subject in the VC sense u attribute entity in the RDF world and that entity can be a subject of another statement C or rather in the VC graph but it is not a subject of the VC. Maybe it's too much in the air.</p>
+<p id=cb8a class="phone s06"><cite>Dave_Longley:</cite> So, I think we probably need another different example than just I think the marriage certificate one is very helpful in showing multiple credential subjects, but that doesn't get at the thing that's bothering d. I have a bad example that we shouldn't use, but I'm just bringing it up here so that we can distinguish it because it was the first one that came to mind. If for some reason in a VC you wanted to attach at the top level of the VC a claim that says this VC was issued by this software and this software was created by this developer and here's a confidence method for that developer.</p>
+<p id=fa1a class="phone s06"><cite>Dave_Longley:</cite> You could do all that. anyone can say anything about anything in a VC. And that would be such both the software and that developer would both be or subjects in the RDF sense that are not subjects of the credential. And you could put a competence method there would be a legitimate use of the term. We need probably a better example than that, but that would show that you can use it like that. And I don't know why this would be a prominent use case at all,…</p>
+<p id=a9d1 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I think that's not a bad example at all.</p>
+<p id=8eb1 class="phone s06"><cite>Dave_Longley:</cite> but you could imagine someone needing to assert, I've got this credential and it was issued by my company and I built the software and so now I can present that, for example.</p>
+<p id=2f89 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, that's a plus one to that. So, I don't know, if that's helping clear things up. the other approach is, the issuer. We could put confidence method on the issuer and that's not the credential subject in the VC, but it is a subject in the RDF sense and I think that would be a totally legitimate kind of use of the confidence method. What I am concerned about is showing people very like atypical non-standard things to make this point Ted right because if we show people and the software gets its own confidence method and the issuer gets its own confidence method I don't think we in the group think that that is going to be a very common use case at all and then I'm conf concerned about that confusing people where they're just like</p>
+<p id=903e class="phone s05"><cite>Manu_Sporny:</cite> I'm supposed to do this with my issuance software. and I guess I as an issuer have to include a confidence method. we're kind of teaching the wrong thing in the spec at that point. but I don't know, if that helps clear up when at least I say confidence method attached to a subject,…</p>
+<p id=ac2f class="phone s05"><cite>Manu_Sporny:</cite> I don't make the distinction that you're making a subject of the VC. I wasn't making that distinction, you had</p>
+<p id=9a92 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I think that is helpful in going in the right direction of…</p>
+<p id=071c class=irc><cite>&lt;Dave_Longley&gt;</cite> everyone gets a confidence method! </p>
+<p id=f545 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> what needs to be expressed. I think the software example again the handwavy parts it becomes possibly not what was originally meant but I think that if you consider the software example in the Linux kernel development world when you submit a line of code there's a level of confidence</p>
+<p id=bf5b class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> that the recipient needs to know that it's from you because of the licensing that's involved there and the potential for that code to actually be put into use managing a nuclear power plant. these various things and the confidence needs to be there that this line of code came from that coder because if something's going goes wrong they need to be able to trace it back and say where's the bug?</p>
+<p id=7aa0 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> What's wrong with this? Is this what you actually wrote that went in that kind of thing? I think if this gets fleshed out in words on screen, that will probably help not just me but others. So, I'll ask that yes, we go in that direction and…</p>
+<p id=19c0 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> see what happens next.</p>
+<p id=fe73 class="phone s03"><cite>Denken_Chen:</cite> Okay, thanks.</p>
+<p id=8125 class="phone s03"><cite>Denken_Chen:</cite> So, it's a nice conversation here and yeah, man, please</p>
+<p id=184d class="phone s05"><cite>Manu_Sporny:</cite> So, I'll take an action to try and update this and I'll try to put those concepts in there, Ted. And then if we can maybe iterate on it async, if the group's okay with us kind of like getting to the point where Ted's like, &quot;Yeah, this is good enough for now.&quot; I would like to merge this sooner than later. I've got a number of other questions around our timeline and whatever. And I think we need to get at least the things we need to get the core set of features we're attempting to get into the spec and move forward on thread model and ask for horizontal review. So that's kind of what's driving some of my I would like to see this stuff move forward. I don't want to spend another couple of weeks talking about this. so if that's okay with folks I will make another pass at this to try and incorporate language.</p>
+<p id=10000 class="phone s05"><cite>Manu_Sporny:</cite> I think that I'm hearing from you Ted and then if you can kind of engage as quickly as you can to iterate and the second Ted's like this is good enough for now I'll merge or if the editors can merge and we can move forward that would be… what I'd love to see. That's it. Manu Sporny:</p>
+<p id=f7b5 class="phone s03"><cite>Denken_Chen:</cite> Nice. Okay.</p>
+<p id=35cf class="phone s03"><cite>Denken_Chen:</cite> Thanks. let's move to another probably related things. So for this PR I'm trying to emphasize that Ted mentioned we originally has a broader definition of this confidence methods and so I bring it back and I also trying to make it clear that making sure the current presenter is the subject is one of the Man,</p>
+<p id=b1ba class="phone s03"><cite>Denken_Chen:</cite> use case for our BC competence method but we mentioned marriage we mentioned at certifications is also a use case so I'm wondering that this kind of origin is good enough for us to start with a kind of more gener generic description for this spec and down to specific several use cases we can elaborate it more in Manuel mentioned you'll be drifting some wording on it or probably we can add more concrete example for each of the example there. Yes.</p>
+<p id=62aa class="phone s03"><cite>Denken_Chen:</cite> So yeah,…</p>
+</section>
+
+<section>
+<h3 id=fcde>Pull Request 45 Discussion</h3>
+</section>
+
+<section>
+<h3 id=0b3b><a href="https://github.com/w3c/vc-confidence-method/pull/45">Align with the original VCDM 2.0 definition by denkeni · Pull Request #45 · w3c/vc-confidence-method · GitHub</a></h3>
+<p id=9a93 class="phone s03"><cite>Denken_Chen:</cite> please that right and…</p>
+<p id=f762 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> as that renders right now.</p>
+<p id=02c2 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I'm fine with it.</p>
+<p id=e89a class="phone s03"><cite>Denken_Chen:</cite> yeah menu and de mer soon.</p>
+<p id=1a20 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I already did a approval on the PR.</p>
+<p id=fbb6 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I also approved</p>
+<p id=d81c class="phone s03"><cite>Denken_Chen:</cite> Yeah.</p>
+<p id=db30 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, plus one to that. I do have other little nitpicks in the initial paragraph, but that's a separate PR. I think this is a good</p>
+<p id=45eb class="phone s03"><cite>Denken_Chen:</cite> Yeah. Yeah, it's Very nice. Thanks. Peace.</p>
+<p id=20c3 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And just so people know, there is something wrong with the Roy respect runs such that I don't get to see the pretty previews nor even the editor's draft.</p>
+<p id=f597 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> s nor not final publications anything on GitHub IO does not finish processing through respec for me I get to see the previous iteration of the code with the triple square brackets instead of the citation for instance so I don't get to see this until just now and that's why I can Okay, this right now looks good to me. I haven't looked at the source to say that's perfect, but that's fine. We'll go from now.</p>
+<p id=dc1c class="phone s03"><cite>Denken_Chen:</cite> Yeah, it's running</p>
+<p id=c662 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> That's it.</p>
+<p id=6cec class="phone s05"><cite>Manu_Sporny:</cite> Yeah, just a little side quest, but Ted, c can you not click on the preview and diff things in the PR? Denin, can you go to where you got to this page from?</p>
+<p id=3896 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I can click on them and I will do that now just to be doubly sure that the problem still exists. so when you click on either one of those links, you get to a page that starts off with some boilerplate and the title of the document and goes on Town.</p>
+<p id=9ca4 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I see that,…</p>
+<p id=3c15 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> but I don't see it styled. The CSS doesn't do the right thing. And I think that that's because of respec not doing the right thing. The only error that I find when doing this is there's a cause error associated with respect and that's the closest thing that I found to an identifiable problem. But other people have said that they see the thing render fine with a cause error. God knows.</p>
+<p id=06e8 class="phone s05"><cite>Manu_Sporny:</cite> And it shouldn't be running any respec it should be a completely static page that you're looking at. good data. all these tools are broken in various different ways and I'm trying to help LE3C fix it, but it's really hard to track down because we don't have access to any of the runtime environment or the logs or anything. So, it's a Manu Sporny:</p>
+<p id=64f8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I hear I just wanted to let folks know that I'm not intentionally being a problem.</p>
+<p id=f339 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's literally that I can't see the thing that you can.</p>
+<p id=518b class="phone s03"><cite>Denken_Chen:</cite> Okay.</p>
+<p id=2f0c class="phone s03"><cite>Denken_Chen:</cite> When I creating the PR, I will look closely about how this preview and div works correctly. So probably there were times that it will break. so whenever it happens you can I think different a message there probably just a new commit will rerun the whole deploying process to help fix that. Yeah, man. Please.</p>
+<p id=10001 class="phone s05"><cite>Manu_Sporny:</cite> That is unlikely to fix Ted's problem, but yes, you can try that. Denin, I don't think the issue is with anything you did. Dave did bring up a good point. Ted, are you running any extensions whatsoever? And have you tried running looking at it in private browsing mode with all extensions turned off? Extensions are a very common thing that breaks everything.</p>
+<p id=679f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I don't know an easy way to turn off all the extensions for a given tab. I have tried it in a private browsing window and that did not solve the problem.</p>
+<p id=a71a class="phone s05"><cite>Manu_Sporny:</cite> Okay, thanks.</p>
+<p id=85bc class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I have many I'll see…</p>
+<p id=5293 class="phone s05"><cite>Manu_Sporny:</cite> Usually I fire up a browser I don't use at all which has nothing installed on it and try that.</p>
+<p id=baff class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> if I can find one. Part of my glorious job is testing things in every browser that I can run.</p>
+<p id=1abe class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> So that's</p>
+<p id=bbe8 class="phone s03"><cite>Denken_Chen:</cite> Okay, thanks.</p>
+</section>
+
+<section>
+<h3 id=9df7>Biometric Image Section</h3>
+<p id=ecdc class="phone s03"><cite>Denken_Chen:</cite> Okay, and then we'll move on to biometric image section. I think there's problems here. so if there is no other issues raised about this, I will also merge this as well. So this part I just add a simple biometric samples for this. So we identify the properties there and expand the sample there.</p>
+<p id=df98 class="phone s03"><cite>Denken_Chen:</cite> So it should be pretty trivial and in this case we are really limiting to the biometric vitality to face only and we are in intended to do so because trying to limit the biometric image to phase and then we have Scott's biometric image vector method that could deal with some other things to keep people aware that biometric information should as private as possible. yeah, so that's for this So no problem for So the last one I think there will be some discussion over this.</p>
+<p id=a476 class="phone s03"><cite>Denken_Chen:</cite> Almighty priest.</p>
+<p id=aa87 class="phone s05"><cite>Manu_Sporny:</cite> I think we should hold on one second. I'm trying to make sure we topic this so it's attached to the PRs. so Denin, when you switch topics in the agenda, try to put topic colon and then the GitHub issue or the GitHub PR. Otherwise, our conversation doesn't get attached to the issue. just I put in chat just now. this one's fine. we can put it in, but one of the things you said is a little concerning to me. meaning the biometric image I think could be in the future iris or fingerprint as well because those are other biometric and maybe I don't know if those are biometric templates and not biometric images.</p>
+</section>
+
+<section>
+<h3 id=44b8><a href="https://github.com/w3c/vc-confidence-method/pull/44">Add biometric image section by denkeni · Pull Request #44 · w3c/vc-confidence-method · GitHub</a></h3>
+<p id=89e4 class="phone s05"><cite>Manu_Sporny:</cite> I don't know if you think you feel there's a difference there so it's fine as a first PR right but I'm want to make sure that we are crystal clear about are we just talking about pictures or are we talking about templates as well and maybe a fingerprint is a biometric vector and not a biometric image and so I'm</p>
+<p id=a6b7 class="phone s05"><cite>Manu_Sporny:</cite> wondering if other types of biometric images are full is potentially an iris because that includes color information not just vector information so thoughts on that Denin I thought we were doing various different types of images here but you're saying we're only supporting face …</p>
+<p id=fa71 class="phone s05"><cite>Manu_Sporny:</cite> I guess the expectation is that we would add other things like Iris in the future or thoughts</p>
+<p id=c774 class="phone s03"><cite>Denken_Chen:</cite> Yeah. the processing facial image is a strong request from various credentials out there you have face image from the passport from driving license etc things and…</p>
+<p id=5372 class="phone s03"><cite>Denken_Chen:</cite> it's a low hanging fruit for onsite verifications.</p>
+<p id=c5a8 class="phone s03"><cite>Denken_Chen:</cite> but for iris or several other fingerprint things it's a lot sensitive information that usually only used by the war coin is using it the border countries using fingerprints however when I'm researching about the IO digital travel credentials in their spec they deliberately limiting putting the biometric information to facial image only.</p>
+<p id=cb90 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> This is</p>
+<p id=8b72 class="phone s03"><cite>Denken_Chen:</cite> So this aligns with our in a foreseeable future if we are going to research how a format passport things can put it into a verifiable credentials the facial image is good enough for this. So I'm wondering if we got any requests from how could we make iris or fingerprints on the VC and is it good enough for our spec to protect with just sedative disclosure? I'm not sure about that.</p>
+<p id=562f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=8ff7 class="phone s03"><cite>Denken_Chen:</cite> Yeah, please.</p>
+<p id=f54b class="phone s05"><cite>Manu_Sporny:</cite> Plus one to all those concerns. I just don't want us to paint ourselves into a corner. So if we only think of the face the portrait image and we're building this around that we are going to paint ourselves into a corner when inevitably somebody else says I have a different type of biometric other than face that I want to use. if that happens we don't have to go through a completely different design. We don't want them creating another type for this.</p>
+<p id=0f6b class="phone s05"><cite>Manu_Sporny:</cite> it'll just lead to interrupt issues it will have to go through what is it called another standard cycle that sort of thing so I am concerned about not solving the problem in a generalized way for all biometric is. So that's Statement two is that I think we need to be very careful about the language we put in the spec and let people know how concerning andor dangerous these types of things are, right?</p>
+<p id=18c5 class="phone s05"><cite>Manu_Sporny:</cite> Ideally, you're not using any there are some use cases that require them, but we don't want them to fall into everyday usage. So, biometric portrait on a passport is and driver's license is what's done today. But I think we need to be very clear in the security and privacy consideration sections that these mechanisms can be abused. It may be that we say if you're going to do biometric image confidence method, you absolutely must not provide it in a full disclosure credential, you must use selective disclosure and software must u not provide this by default. I think we need to really tighten up the language around the usage of some of these confidence methods.</p>
+<p id=8f89 class="phone s05"><cite>Manu_Sporny:</cite> So a cryptographic keybased con confidence method I think we're largely okay with that image only for super high risk use cases where you absolutely need to know what the person looks like and you must not send it over a full disclosure mechanism and…</p>
+<p id=5e0a class="phone s03"><cite>Denken_Chen:</cite> Natural Peace. Manu Sporny:</p>
+<p id=e733 class="phone s05"><cite>Manu_Sporny:</cite> and so on and so forth. We'll stop there.</p>
+<p id=9c17 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I'm a little concerned by the scope that you've just increased here,…</p>
+<p id=eb7e class="phone s01"><cite>Joe_Andrieu:</cite> This was intended specifically just to be about images and it was intended to be simple and trying to solve this for all possible images is not something that we have in scope. we do have a biometric modality here. So there is a point of extensibility such that other items can be addressed. face is not retina and so I think the use case that Denin got involved in this work to address is to have a face in an image and I want that image in the VC and so how do we handle that? That said, I agree with all your concerns about privacy considerations and letting people know that you should be careful about using all of this in ways that we don't have to say quite the same things that we do for the cryptographic mechanisms.</p>
+<p id=504d class="phone s01"><cite>Joe_Andrieu:</cite> So I do think we need those sorts of considerations in here, but I don't think we need to define iris based biometric modalities in the specification. I think that's overkill.</p>
+<p id=c289 class="phone s06"><cite>Dave_Longley:</cite> So I agree that we don't need to go and define a bunch of these. I think we should just modify the biometric modality language here to not say that in this version of the specification the value must be face but instead it should be this specification defines the following modalities in this table and…</p>
+<p id=e771 class="phone s03"><cite>Denken_Chen:</cite> Yeah.</p>
+<p id=3794 class=irc><cite>&lt;Dave_Longley&gt;</cite> can the &quot;biometricModality&quot; section just say &quot;see this table for values defined by this specification&quot; -- and some language to allow other values to be created/used in the ecosystem </p>
+<p id=2617 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yes. Dave Longley:</p>
+<p id=a8f4 class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 to talking about privacy considerations, etc. </p>
+<p id=c4e9 class="phone s06"><cite>Dave_Longley:</cite> face can be the only one that's in there. and then make it clear that that can be a point of extension for people to innovate and do what they</p>
+<p id=8af2 class="phone s05"><cite>Manu_Sporny:</cite> Yes, plus one. Thank you, Dave. That was the point I was trying to make because the current language means that it's not extensible. right, Joe?</p>
+<p id=71b3 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, it is bad language. I mean, it's trying to say in future versions,…</p>
+<p id=89e5 class="phone s01"><cite>Joe_Andrieu:</cite> we'll amend it, but that is not quite the same level of extensibility.</p>
+<p id=40e8 class="phone s03"><cite>Denken_Chen:</cite> No far,…</p>
+<p id=ae42 class="phone s03"><cite>Denken_Chen:</cite> I will make the adjustment to this sentence and then let the folks know and reach it later. Thanks for your input. so for the last one, we have sections and the titles.</p>
+<p id=b565 class="phone s03"><cite>Denken_Chen:</cite> So we originally have the n competence method and then we rebrand ourself into VC confidence because we are adding assurance levels and so when we bring in that to VC working group I mentioned it would be a pain to really need to change the short URL there…</p>
+<p id=4270 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Sorry. What's the PR here?</p>
+</section>
+
+<section>
+<h3 id=7908>PR 47: Title and Assurance Level</h3>
+<p id=3721 class="phone s03"><cite>Denken_Chen:</cite> but the short URL is only matters with the URL not with the titles. So we can pick any title as we want. P is 47 or plish. Thank you for adding a topic. Yes. So I think The first is a title whether we should change a title. And the second thing I have to bring it whether that the assurance level should be at the same level of competence methods or it should be the child of it.</p>
+</section>
+
+<section>
+<h3 id=8ca0><a href="https://github.com/w3c/vc-confidence-method/pull/47">Editorial cleanup: sections, title, tooling by denkeni · Pull Request #47 · w3c/vc-confidence-method · GitHub</a></h3>
+<p id=1d56 class="phone s03"><cite>Denken_Chen:</cite> And from my understanding the assurance level is usually one level per is insurance. So it should be tied to one VC not to subject or confidence methods. So that's why I putting it into this say to look at this is we have confidence method and then we have assurance level should be separate and then about title now I'm putting it as confidence and then we keep the short URL as confidence methods. Is that okay with the group? Yeah.</p>
+<p id=d3c9 class="phone s03"><cite>Denken_Chen:</cite> increase.</p>
+<p id=a833 class="phone s05"><cite>Manu_Sporny:</cite> I suggested some changes. so the pattern that we followed in the render method specification was verifiable credential render methods plural version 1.0 IO. this specification does define multiple different methods. the concern I have is it also provides multiple different assurance levels. So the title might not be right. I'll mention that we don't have to follow the title in the charter and in fact often or on a regular basis groups sometimes rename the specifications as they work on them to get more accurate titles. so I don't know if anyway interested in…</p>
+<p id=85bf class="phone s03"><cite>Denken_Chen:</cite> That's</p>
+<p id=b7cb class="phone s05"><cite>Manu_Sporny:</cite> how the title resonates with the rest of the</p>
+<p id=340a class="phone s06"><cite>Dave_Longley:</cite> One of the concerns that was raised by the working group just briefly by Phil Archer was that just calling this verifiable credential confidence is too broad and I think I agree with that. there are many ways in which you can apply the term confidence and you could think of the recognized entities specification as something that helps establish confidence in whatever you're accepting in some sense. And so I think we're going a little too broad if we do that. And I also don't think it's a problem for us to put confidence methods in the title of what we're doing. And I don't think it's a problem that we say that, in this specification, we can use other elements of other things, evidence, whatever it is we want to do to accomplish things. I don't think that's a problem and…</p>
+<p id=3699 class="phone s03"><cite>Denken_Chen:</cite> Yeah, sure, please.</p>
+<p id=e55d class="phone s06"><cite>Dave_Longley:</cite> just because the title has confidence methods in</p>
+<p id=1cfa class="phone s01"><cite>Joe_Andrieu:</cite> Yeah,… I think If we were to get rid of confidence methods or if we were to put confidence methods in then I would like to also put assurance levels in confidence was meant to address all of those since we don't define just confidence methods. So I think it is overly constraining to have the methods in there without pointing out we're also defining these other things. Joe Andrieu:</p>
+<p id=10002 class="phone s06"><cite>Dave_Longley:</cite> If we say things in evidence, I'm not sure how we're going to model any of this yet. I worry about our title becoming a list of all the things that we currently say in this spec. so I think just using confidence is ly I think having to enumerate everything in the title that we're then going to put in the spec is not a good use of a title. And I don't know what the middle ground is there. But I felt like we're primarily talking about confidence methods and any other thing that we do is at least in some sense related to that. but I'm not going to die on this hill if we make a big long title that puts a comma separated list of everything we're defining. But I don't think that's a necessarily good thing.</p>
+<p id=82f9 class="phone s06"><cite>Dave_Longley:</cite> And I can see that list growing that if we make some new thing that's called assurance level we've got confidence method What…</p>
+<p id=49e0 class="phone s03"><cite>Denken_Chen:</cite> Next show, please</p>
+<p id=3428 class="phone s06"><cite>Dave_Longley:</cite> if we need to model something else and we add that thing? Now we've got to update the title.</p>
+<p id=ed11 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I agree that the laundry list is problematic,…</p>
+<p id=83cc class="phone s01"><cite>Joe_Andrieu:</cite> but that's why we went with just confidence. I mean if we want to do the work to come up with the aggregate term I could support that but deprecating assurance levels such that is not what this is clearly talking about makes me feel like a preamble to cutting that out of the spec entirely and I would oppose that.</p>
+<p id=aa03 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> +1 &quot;Method&quot; (or &quot;Methods&quot;) should be kept in the tile. </p>
+<p id=9f2a class="phone s01"><cite>Joe_Andrieu:</cite> So I think we still have work to do to come up with what's the aggregate term that really this document is saying here's how you can have some reliance on this data in different ways either reliance on a secondary method which is a confidence method that you're going to execute and trust or reliance on something the issuer is attesting to and…</p>
+<p id=78a2 class=irc><cite>&lt;Manu_Sporny&gt;</cite> Establish Confidence In Subjects :P </p>
+<p id=97f8 class="phone s03"><cite>Denken_Chen:</cite> Man, please</p>
+<p id=0237 class="phone s01"><cite>Joe_Andrieu:</cite> so you feel more comfortable relying on their attestations but I don't know that that's a direction to help either. That's all.</p>
+<p id=10003 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I mean plus one on that. I don't think anyone's arguing to remove the assurance stuff from the spectra. So I would also oppose that. I think it's good to have it in there. I'm, of course doing, AI based searches on trying to find words between that mean confidence and evidence at the same time. And it's, cogent, ta corroborated, justified, incontrovertible. none of them useful. So, we're in the middle of mic shedding exercise. Maybe we can just pause this and, think and come back to it and spread this out over multiple weeks. that's it.</p>
+<p id=8502 class="phone s06"><cite>Dave_Longley:</cite> Just to throw one more thing in there is maybe we're broadly talking about subject authentication in the specification.</p>
+<p id=fa94 class=irc><cite>&lt;Dave_Longley&gt;</cite> maybe this is just &quot;Subject Authentication&quot; </p>
+<p id=733d class="phone s03"><cite>Denken_Chen:</cite> I think I'm good with either way and I'm more inclined to add the methods back and see where we could go. And so like I mentioned the assurance table is usually issued per issuance not per subjects usually. So I'll keep it as I know that the overall concept is probably little bit messy there but we all agree that a competence method is not really useful without assurance level informations.</p>
+<p id=2cdb class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> *`property of a &quot;Confidence Method&quot;`, among other things </p>
+<p id=c1df class="phone s03"><cite>Denken_Chen:</cite> So for example, we push a little bit on visitor car that is actually one and that's pretty weak. but it's good enough for visitor management systems. But when it comes to driving license, the insurance level is important message to the verifier. So hopefully we got consensus over there. it's very productive. so thanks all for coming. do we have any other things to raise? Yeah, man. Please.</p>
+<p id=448d class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I want to know what the timeline for horizontal review So, if we get these things in there, the only thing that we don't necessarily have is a threat model. I can take an action to do that or I think maybe Joe you were going to do that. I can't remember. and in the assurance level bits feel like it's kind of a gap. We need to get that a little further along. I don't know if it's far enough along for horizontal review yet. So, if we're multiple weeks out from horizontal review, I kind of want to understand what are the things we're going to be focusing on to get us to horizontal review before TAC. That's it.</p>
+<p id=bac3 class=irc><cite>&lt;Joe_Andrieu&gt;</cite> Subject Authentication is pretty good </p>
+<p id=f525 class=irc><cite>&lt;Manu_Sporny&gt;</cite> &quot;Authenticating Subjects in Verifiable Credentials v1.0&quot; </p>
+<p id=2402 class="phone s03"><cite>Denken_Chen:</cite> Yeah, I would like to mention that and to merge these four PR within a week with some little modification there and with the biometric image and the cryptography keys</p>
+<p id=65b7 class="phone s03"><cite>Denken_Chen:</cite> if it's our current scope and so we should be ready for third model and Joe would you like to briefly talk about your strategy It's true.</p>
+<p id=6f38 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=10004 class="phone s01"><cite>Joe_Andrieu:</cite> I want to talk about something else. I didn't track what you just queued me up for. I think I want to help, the two editors, we've been very consistent that we'll be ready for horizontal review at TAC, which is 10 weeks from now. And I think we can get I do think we should enumerate what are the things that we need to do to get there. and the threat model is one of them. but you opened with the question of if you want to know what our timing was about horizontal review and the timing is we will be in horizontal review by TAC.</p>
+<p id=065a class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Let's go.</p>
+<p id=b1f0 class="phone s01"><cite>Joe_Andrieu:</cite> Okay. thumbs up on that. And then I guess Dankin,…</p>
+<p id=8e05 class="phone s01"><cite>Joe_Andrieu:</cite> we should take that on for our editor's call just to put together a punch list of what do we need to do to get into HR. because that would be useful. Cheers.</p>
+<p id=ace1 class="phone s03"><cite>Denken_Chen:</cite> Yeah, no problem.</p>
+<p id=078f class="phone s03"><cite>Denken_Chen:</cite> Okay, thanks for coming and see you in two weeks. Meeting ended after 01:00:23 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=bb89 class=irc><cite>&lt;Dave_Longley&gt;</cite> would be fine with that ^ </p>
+<p id=1928 class=irc><cite>&lt;Manu_Sporny&gt;</cite> (would be okay with VC Subject Authentication v1.0 as well) </p>
+<p id=dfaf class=irc><cite>&lt;Dave_Longley&gt;</cite> yup, also fine. </p>
+<p id=9af5 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> that can easily be read as versioning VC, rather than the itended AS (or ASinVC). </p>
+<p id=780a class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Complex version levels are hard to address in titling. </p>
+<p id=245d class=irc><cite>&lt;Dave_Longley&gt;</cite> agreed ^ </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
