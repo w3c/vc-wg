@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 18 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>18 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Elaine_Wooton, Ivan_Herman, Manu_Sporny, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#074a">Announcements</a></li>
+<li><a href="#01e5">Data Integrity Next Steps</a></li>
+<li><a href="#1d9f">Ski Sign One Decision</a></li>
+<li><a href="#4bc8">Threat Model Publication Process</a></li>
+<li><a href="#05d2">Multi-Chapter Specification Structure</a></li>
+<li><a href="#96e9">Documenting Threat Model Structure</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=074a>Announcements</h3>
+<p id=9a4b class="phone s01"><cite>Wesley_Smith:</cite> Good morning, Elaine.</p>
+<p id=9432 class="phone s01"><cite>Wesley_Smith:</cite> All right, I think we can go ahead and get started. Hi folks. welcome to the August 18th meeting of the barcodes and data integrity task force. a reminder that this meeting is being recorded and transcribed. If you are not comfortable with that, please let me know. The agenda for today is much the same as other days. we will go through announcement process and introduction items. and after that we will go through the three specifications under our purview and do issue processing poll request review and discussion as needed. announcements the call for horizontal review for VC barcodes went out last week. so that's good news.</p>
+</section>
+
+<section>
+<h3 id=01e5>Data Integrity Next Steps</h3>
+<p id=0bfe class="phone s01"><cite>Wesley_Smith:</cite> That's a good step. other than that, does anybody have any announcement, introduction, or process items they would like to share? All right. If not, we can go ahead and get into some content. I know that Greg Bernstein said he wasn't going to be able to make the call today. I will give his updates briefly for data integrity. he noted that he reopened a PR about explaining and defining selective disclosure as a draft PR in case there's content in it that's useful for others.</p>
+<p id=a199 class="phone s01"><cite>Wesley_Smith:</cite> He had a question. Let me I'll just copy paste this question in the chat. It says quantum resistant VCDI ECDSA EDDDSA could now be updated to use the cryptoe common algorithms of data integrity 1.1. when should we start incorporating these changes? I don't know a lot about that. Anybody on the call have input there we could share with Greg Dave Longley. Go ahead.</p>
+<p id=7923 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I would think as soon as we're,…</p>
+<p id=1bda class="phone s01"><cite>Wesley_Smith:</cite> Yeah, If you're talking about the PR that introduces the cryptosweet common algorithms,…</p>
+<p id=ffff class="phone s02"><cite>Dave_Longley:</cite> he's able to as editor. I don't think we have anything blocking that. I think I to did we merge the PR that brought those in? I remember approving that I think other people did as well. and it makes sense. I mean, that's the next thing to do with respect to the refactoring of the algorithms. right?</p>
+<p id=6c37 class="phone s01"><cite>Wesley_Smith:</cite> it's linked in the base spec. So I assume it has been merged unless they're All right.</p>
+<p id=7d39 class="phone s01"><cite>Wesley_Smith:</cite> This next question is about similarly for BBS ECSA and CL selective disclosure when should that be updated pending the merge of a poll request that is let me link that here Yeah,…</p>
+<p id=82a7 class="phone s03"><cite>Ivan_Herman:</cite> No, I wanted to say essentially the same thing.</p>
+<p id=4322 class="phone s01"><cite>Wesley_Smith:</cite> that is a selective disclosure refactor PR. I guess not the one that he referred to as a draft. Anybody have thoughts on sequencing there?</p>
+<p id=54ee class="phone s02"><cite>Dave_Longley:</cite> I don't know that the sequence,… sorry, I didn't get on key. I was just going to say I don't know that the sequence between those two necessarily matters, but go ahead Ivon. Dave Longley:</p>
+<p id=10000 class="phone s03"><cite>Ivan_Herman:</cite> By coincidence I have just reviewed the introductory part of that there are some minor comments from me and from Ted but whether it is merged now or later that's a different thing but it doesn't really influence the crypto refactoring I mean the change of the effective crypto suites so it can be done in parallel in I would think that the changes that Ted or I labeled are so minor that Greg will be able to merge this within one or…</p>
+<p id=c68b class="phone s03"><cite>Ivan_Herman:</cite> two days and then the question becomes N.</p>
+<p id=b798 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=9f79 class="phone s01"><cite>Wesley_Smith:</cite> that sounds good. he next asks about horizontal review.</p>
+<p id=9b26 class="phone s01"><cite>Wesley_Smith:</cite> For what specifications and versions is horizontal review required? okay.</p>
+<p id=d97e class="phone s03"><cite>Ivan_Herman:</cite> formally all of them.</p>
+<p id=a557 class="phone s03"><cite>Ivan_Herman:</cite> I mean we do normative changes as well as for all the crypto suites that were already recommendations and the quantum resistant is new So I am afraid that we have formally to do horizontal reviews for all of them from scratch.</p>
+<p id=ec55 class="phone s01"><cite>Wesley_Smith:</cite> I'm good.</p>
+<p id=11d0 class="phone s03"><cite>Ivan_Herman:</cite> In practice I would probably refer to the horizontal reviews that were done before the publication of the recommendations and emphasize the fact that normatively speaking I don't even know whether there were any changes but even if there were any changes they were minor and draw the attention on that and hope that the horizontal reviewers would take that into account.</p>
+<p id=38c9 class="phone s03"><cite>Ivan_Herman:</cite> We did that for EPUB where the changes are minimal and it went through pretty smoothly and…</p>
+<p id=0478 class="phone s01"><cite>Wesley_Smith:</cite> So the answer is all of them…</p>
+<p id=82b9 class="phone s01"><cite>Wesley_Smith:</cite> but note in the reviews that some of the specifications have only received very minor normative changes.</p>
+<p id=97e4 class="phone s03"><cite>Ivan_Herman:</cite> and Eddie Dorio mainly.</p>
+<p id=1a49 class="phone s01"><cite>Wesley_Smith:</cite> Sounds good. hey Manu, we are going through Greg Bernstein's questions on data integrity next steps. All right.</p>
+</section>
+
+<section>
+<h3 id=1d9f>Ski Sign One Decision</h3>
+<p id=b319 class="phone s01"><cite>Wesley_Smith:</cite> Lastly I will post the technical issue that you raised in the chat. Ski sign and select disclosure. Ski signatures come in different strengths and…</p>
+<p id=10001 class="phone s01"><cite>Wesley_Smith:</cite> corresponding lengths. I don't know that this is a point that needs the group's discussion today. He's not asking a direct question. just something that we might want to have in the back of our minds discuss on a future call when Greg is able to make it. Manu, go ahead.</p>
+<p id=762d class="phone s03"><cite>Ivan_Herman:</cite> 3.0. It's on the cryptos to the quantum test…</p>
+<p id=255a class="phone s04"><cite>Manu_Sporny:</cite> I don't remember where but in one of the issues there was kind of a direct question. He's like I don't know what we should be using for ski sign one. Right.</p>
+<p id=2151 class="phone s03"><cite>Ivan_Herman:</cite> which has been added by Anthony I don't remember his full sorted.</p>
+<p id=d785 class="phone s04"><cite>Manu_Sporny:</cite> And so I think we should just make a decision. ski sign one, which is the only thing that we're defining, should use salted individual signed individual claims.</p>
+<p id=1634 class="phone s03"><cite>Ivan_Herman:</cite> Act one.</p>
+<p id=cbc5 class="phone s04"><cite>Manu_Sporny:</cite> The thing that you and I agree on of about the ski sign stuff. the salted hash is unless somebody has a really strong argument for it, more complex, no reason for it. if you have small signatures, just sign each claim and you're done.</p>
+<p id=51f2 class="phone s03"><cite>Ivan_Herman:</cite> No, I am</p>
+<p id=ab35 class="phone s04"><cite>Manu_Sporny:</cite> The salted hash of claims approach is just, more complex and unnecessary when you have small signatures.</p>
+<p id=6e15 class="phone s01"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=a1ec class="phone s01"><cite>Wesley_Smith:</cite> Forgive my ignorance. Could you link the discussion that you're talking about? Was that on a pull request? where was that?</p>
+<p id=503d class="phone s04"><cite>Manu_Sporny:</cite> Yeah, it was.</p>
+<p id=82f0 class="phone s04"><cite>Manu_Sporny:</cite> Ivon, I don't know if you have a quick to it. Where was this?</p>
+<p id=0d05 class="phone s04"><cite>Manu_Sporny:</cite> This was I'm gonna have to find it in my email. Athology.</p>
+<p id=1710 class="phone s01"><cite>Wesley_Smith:</cite> No rush.</p>
+<p id=1ec1 class="phone s01"><cite>Wesley_Smith:</cite> Dave Longley. Go ahead.</p>
+<p id=30d4 class="phone s02"><cite>Dave_Longley:</cite> I agree. we should use the signed individual claims for this particular crypto suite. one other reason for using the salted version would be if the verification of signatures was extremely slow, but I don't think that's the case here. modern implementations of this are slower than some of the other postquantum signature schemes, but slower is the verification is still very fast and you could parallelize the verification of individual signatures. And typically when you're doing selective disclosure, you are revealing fewer statements and in many cases very few statements anyway.</p>
+<p id=b29c class="phone s02"><cite>Dave_Longley:</cite> So I think even if you were revealing hundreds of statements, you could still keep something in parallel under a second of verification time,…</p>
+<p id=e5c1 class="phone s02"><cite>Dave_Longley:</cite> which is more than sufficient for most use cases.</p>
+<p id=b0c3 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=882e class="phone s01"><cite>Wesley_Smith:</cite> So the sort of consensus is signed individual claims is what we should support for this version of the specification and Is that All right. money, go ahead. Right.</p>
+<p id=64a5 class="phone s04"><cite>Manu_Sporny:</cite> And specifically for ste one, I don't know if the same thing holds for larger things, but I don't think we're going to define the larger things because no one really knows if these things are going to survive for the first, several years that they're</p>
+<p id=20f9 class="phone s01"><cite>Wesley_Smith:</cite> Okay, that sounds good. I think that answers all of Greg's questions. I will send him a quick response email with those notes.</p>
+<p id=58c5 class="phone s01"><cite>Wesley_Smith:</cite> Does anybody else have anything they'd like to add or discuss about Greg's questions or about data integrity more generally? Ivon, go ahead.</p>
+<p id=be64 class="phone s03"><cite>Ivan_Herman:</cite> Yeah, there goes a up and…</p>
+<p id=b7e6 class="phone s03"><cite>Ivan_Herman:</cite> down for the other PR that he submitted a while ago on the introductory part of the selective disclosure Thanks. It is now reopened as a draft PR. and I have on my machine a PR on that PR which I will submit this week where I try to add my original comments to improve the section and it has to be changed quite a lot but I have that and it will come again as I said during the week.</p>
+<p id=98dc class="phone s03"><cite>Ivan_Herman:</cite> It would be good if Manu and Dave who are familiar with the details of selected disclosure would have a look. I don't know. I had the impression that Greg was a little bit upset with the comments that I gave. Maybe I am wrong, but it was not my intention at all to minimize the work that he did. But yeah, I wanted something that I can use as an explanation for lay people and…</p>
+<p id=6848 class="phone s03"><cite>Ivan_Herman:</cite> that's what was missing and what I tried to add to the section.</p>
+<p id=6625 class="phone s01"><cite>Wesley_Smith:</cite> Understood. Thank you very much.</p>
+<p id=91eb class="phone s01"><cite>Wesley_Smith:</cite> Manu, go ahead.</p>
+<p id=3e39 class="phone s04"><cite>Manu_Sporny:</cite> Plus one to that, I think Avon's suggestion on what the introductory section should do was good. It just kind of describes full disclosure, selective disclosure, and unlinkable disclosure. I suggested we add unlinkable disclosure to it. so that people kind of understood what we're trying to achieve with these crypto suites and why they're different from, other things like, Jots and even SD Jot. to some degree. so yeah, plus one. I think we do need that in there,…</p>
+<p id=3fa1 class="phone s03"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=964d class="phone s04"><cite>Manu_Sporny:</cite> Looking forward to reading your PR.</p>
+<p id=c2d5 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+</section>
+
+<section>
+<h3 id=4bc8>Threat Model Publication Process</h3>
+<p id=09fe class="phone s01"><cite>Wesley_Smith:</cite> sounds good. Any other items on data integrity generally? All right, hearing none. Mano Navan, I saw some discussion about threat modeling, the publication process for threat modeling, that sort of thing. is that a topic that you guys think we should discuss on the call today or not?</p>
+<p id=9a23 class="phone s01"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+<p id=62d4 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, we might as well touch on it. That's why I was late to the call. I got caught up responding to the email and forgot that this call was starting. so there's a response in your inboxes, Weson and Elaine. I think the gist of the issue was the threat model subdirectory wasn't being published for the barcode spec and…</p>
+<p id=4278 class="phone s03"><cite>Ivan_Herman:</cite> Sorry.</p>
+<p id=0a69 class="phone s04"><cite>Manu_Sporny:</cite> then I was like you just do this small thing and then we can publish it as a note in parallel and Avon reminded me that the process does not allow for that and I was trying to avoid tripping over an enormous amount of W3C process for these threat model documents. My understanding is at the face-toface meeting, we said, okay, what we're going to do is, one person's going to try to take a shot at the first threat model document. We're going to put that in a directory in a subdirectory on each specification that has the threat model.</p>
+<p id=1381 class="phone s04"><cite>Manu_Sporny:</cite> And then we'll publish that non-normatively. and in my mind, Avon, that was like, we're going to just publish it as a note, but we can't do that without some formal publication process and yada TR space. And I would really like to avoid all that because the threat model, is a living document. It's supposed to live with the spec. we could, point to the GitHub location for it, even though that's not necessarily permanent. I would much rather that when we publish the spec, we publish the current threat model, with it as well.</p>
+<p id=218c class="phone s04"><cite>Manu_Sporny:</cite> And I think the way that current W3C working groups operate you can keep a pretty fresh threat model published in TR space even as working graphs and things like that. and for people that really need to understand the latest threat model then they can manually go to the GitHub thing. so all this to say Avon, what do we need to do to do the multi-chapter publication of a spec where the spec is the main document and then the threat model is a separate side chapter whatever appendix that's published alongside the main document.</p>
+<p id=abb8 class="phone s03"><cite>Ivan_Herman:</cite> very honestly.</p>
+<p id=ab91 class="phone s03"><cite>Ivan_Herman:</cite> Sorry, Wesley. Thank you.</p>
+<p id=267a class="phone s01"><cite>Wesley_Smith:</cite> Yeah,…</p>
+<p id=39f3 class="phone s01"><cite>Wesley_Smith:</cite> really quick. as part of this answer to you both, I am just curious what value a separate note publication has that including the threat model as an informative appendix on the main document does not.</p>
+<p id=e843 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead one.</p>
+<p id=e1bd class="phone s03"><cite>Ivan_Herman:</cite> So, To be honest,…</p>
+<p id=f915 class="phone s03"><cite>Ivan_Herman:</cite> I don't have the answer money because in all my very much many years I have not published any specification which was multi-chapter like that. I know the SVG the HTML I think maybe the CSS working group did that and maybe some of the XML things. I've never done that so I don't know exactly what it entails. but that is just an editorious trick because whatever happens is that the threat model becomes integral part of the recommendation. Whether it is put in a separate file somewhere is almost invisible to the outsiders unless they look at the URLs. So I don't know whether this is really what we want to do.</p>
+<p id=0d99 class="phone s03"><cite>Ivan_Herman:</cite> The other possibility and I vaguely remember that I said that in Brussels but maybe I am wrong is to just leave it on GitHub and we would produce a series of URLs in date with redirecting to GitHub so that it has a URL on W3C space if something happens to GitHub then it saved and That is easy to set up. It requires a bit of time and agreeing on the URLs, but then we can do it quickly.</p>
+<p id=62f8 class="phone s01"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+<p id=c603 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. So, two things, West to maybe answer your question. A note doesn't really give us anything more than, an informative appendix that's published beside the specification. So the notes just a lot of extra process and you usually do them for these are best practices right that would be a note that you'd publish but I don't think it gives us anything it's just a whole bunch of process pain Ivon about the redirect stuff I don't want to create more work for staff or…</p>
+<p id=e001 class="phone s01"><cite>Wesley_Smith:</cite> Thank you.</p>
+<p id=2c8e class="phone s04"><cite>Manu_Sporny:</cite> editors meaning you are going to have to and manually set up all those redirects and future working groups are going to have to make sure that the redirects are appropriate for every variation of URLs and all that kind of so I'd rather just avoid all of that by just setting it up so the repository does the right thing when you publish using Akidna and then nobody has to touch or do anything related to minimizing W3C staff and editor work I think is at the top of my list of things I'd like to make sure we do here.</p>
+<p id=4e66 class="phone s04"><cite>Manu_Sporny:</cite> The thing about pointing it to GitHub, Avon, that's difficult is the threat modeling tooling is not where we want it to be. And the way you have to link the main spec to the threat model is highly susceptible to links breaking. And I have some ideas on what we could do to the tooling to fix that. But I don't think those changes unless somebody else does them is going to get in at any time in the next 6 to9 months. Right? So if we were to do that, someone would have to take an action to work on the tooling to make sure that the links don't break.</p>
+<p id=1628 class="phone s04"><cite>Manu_Sporny:</cite> Then you've got to figure out what the discussion with Simone and Joe are going to be about, labeling the threats as T2 and autolelabeling and, auto table of contents creation and all of the code fixes that need to go into the eight repositories now that, have copied and pasted code. It's like a mess. So that is why I'm suggesting let's just do a static snapshot and send it out with the spec because I don't think any of the tooling is where it needs to be for this to live on GitHub.</p>
+<p id=b697 class="phone s04"><cite>Manu_Sporny:</cite> The other thing that's beneficial is, to have a point in time snapshot of what the threat model was with, for example, versus VCDM4 something, if we, end up there. all this I'm trying to reduce work for everyone. So, whatever we can do to do that, I would like to optimize for that right now. and then maybe do something, better in the future.</p>
+<p id=d050 class="phone s01"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=e44c class="phone s03"><cite>Ivan_Herman:</cite> Yeah, obviously I appreciate your concern about the staff contact.</p>
+<p id=cc10 class="phone s03"><cite>Ivan_Herman:</cite> But that's what we did with the vocabularies. Remember the vocabularies leave on the GitHub repository and we redirect them from datace. But the threat model is much more complicated. I see the question of west some fromwhere. I don't know if this is so complicated then why don't we just put the threat model how is it called in respect and included or I think they include as an appendix in the main spec and…</p>
+<p id=cb8f class="phone s01"><cite>Wesley_Smith:</cite> What is that?</p>
+<p id=ebe2 class="phone s03"><cite>Ivan_Herman:</cite> that means after respect we get one giant document where the appendix is a shred model and let's get it over with. And that's it. Yeah.</p>
+<p id=73d9 class="phone s04"><cite>Manu_Sporny:</cite> So at least two reasons immediately spring to mind, Ivon. It would quadruple the size of some of our specifications. So I'd rather not do that because it just makes a simple specification look horribly complicated. the other issue is that we are having to cross-link threat models and pick threats out of different threat models to put in different specifications. and so for example VC data model does reference data integrity in bits and pieces here and there. it would probably end up referring to the render method one. So it's not as simple as doing an include.</p>
+<p id=7ca9 class="phone s04"><cite>Manu_Sporny:</cite> You would have to transclude very specific threats from very specific threat models. And again it's more work right.</p>
+<p id=7cf6 class="phone s03"><cite>Ivan_Herman:</cite> Let's propose something different then.</p>
+<p id=b0a7 class="phone s03"><cite>Ivan_Herman:</cite> As far as I could see up until now, we have how should I say, two significant size threat model document. and then we have some smaller ones for the barcode which is not a big one.</p>
+<p id=cfa4 class="phone s03"><cite>Ivan_Herman:</cite> So what about we buy the bullet we publish the big ones as separate notes and for the smaller ones we try to put them an appendix in let's say the barcode stuff which can refer to the note and let's do it this way and we just survive the pain to have to publish the documents formally I mean after all I'm speaking against myself But after all we are publishing the pain is only once. From that point on Akidna takes care of the rest. So how many documents are we talking about?</p>
+<p id=43e3 class="phone s04"><cite>Manu_Sporny:</cite> Seven glowing to about 12.</p>
+<p id=0243 class="phone s03"><cite>Ivan_Herman:</cite> 12.</p>
+<p id=b44e class="phone s04"><cite>Manu_Sporny:</cite> Because we have 20 specs under management.</p>
+<p id=8ea6 class="phone s03"><cite>Ivan_Herman:</cite> Why so much?</p>
+<p id=2018 class="phone s04"><cite>Manu_Sporny:</cite> About 12 of them have threat models of some kind. Sorry, I'm jumping here. Go ahead, west.</p>
+<p id=7502 class="phone s01"><cite>Wesley_Smith:</cite> No, that's okay.</p>
+<p id=4f37 class="phone s01"><cite>Wesley_Smith:</cite> I guess I'm trying to get to grips with the actual problem here. So, Mona, you stated a couple points that I didn't really understand. So, can you explain your second point about cross-pollination? Why does that apply to including threat models in an appendex versus publishing them as a standalone wreck or sorry a settle note,…</p>
+<p id=6b71 class="phone s01"><cite>Wesley_Smith:</cite> excuse me?</p>
+<p id=4422 class="phone s04"><cite>Manu_Sporny:</cite> Okay. …</p>
+<p id=10002 class="phone s04"><cite>Manu_Sporny:</cite> For example, the verifiable credential data model does talk about data integrity. And in there we want to state things like hey data integrity is one of the things that protects the data model. And in the threat model section in the VCDM, we want to be able to link to the data integrity threat model in the appendix in the threat model. I don't know how many of you have actually seen how this stuff's being linked in the specs, but there I'm replacing the security and privacy consideration sections at the bottom of the specification with a threat model section.</p>
+<p id=10003 class="phone s04"><cite>Manu_Sporny:</cite> And the threat model section does single sentence descriptions for all the threats that are applicable. And not all of those threats come from the threat model document for that document. So that we have a verifiable credential data model threat model, but some of the data integrity threats are relevant. And so instead of duplicating those threats in two places which we shouldn't do I'm starting to link to some things for example all the dependency threats like this is not this spec's issue it's dealt with another spec but it turns out that some of the other specs that it's dealt with are specs that we also work on where we have also created threat models for it.</p>
+<p id=4171 class="phone s04"><cite>Manu_Sporny:</cite> So for example, in the section of a document, you may not point to that document's threat model. You might point to other documents threat models. And so that's why when Avon's we can just transclude that document's threat model. No, we can't just do that because we have what we're doing today is referencing a whole bunch of other threat models as well. Did that answer your question,…</p>
+<p id=81fa class="phone s01"><cite>Wesley_Smith:</cite> My question is…</p>
+<p id=c95d class="phone s04"><cite>Manu_Sporny:</cite> Wes? Because…</p>
+<p id=1e61 class="phone s01"><cite>Wesley_Smith:</cite> why does it matter if that outgoing link points at the appendix of a different specification or…</p>
+<p id=f886 class="phone s03"><cite>Ivan_Herman:</cite> What?</p>
+<p id=a5b6 class="phone s01"><cite>Wesley_Smith:</cite> at a standalone note?</p>
+<p id=96fc class="phone s04"><cite>Manu_Sporny:</cite> if we transclude it, we can't do that.</p>
+<p id=0269 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, maybe I don't know what the word transclude means.</p>
+<p id=cf51 class="phone s04"><cite>Manu_Sporny:</cite> Let me go back. There's a really simple way to address this problem, and I feel like we're talking about all the complex ways to do it. I'm fine talking about it, but it's just kind of like all of these suggestions on transcluding the thing like I'm pretty opposed to pulling in the threat model and making these specs gigantic. we're trying to get away from doing that. So, I don't think that's the right thing to do. we could transclude the current threat model and then link to other</p>
+<p id=19e1 class="phone s04"><cite>Manu_Sporny:</cite> other documents. But then the index is a bit weird and confusing where it's pointing to some of the transcluded stuff and the other stuff's pointing, elsewhere. You would expect it to Yeah,…</p>
+<p id=62e4 class="phone s01"><cite>Wesley_Smith:</cite> Okay, understood. Manu Sporny:</p>
+<p id=d206 class="phone s04"><cite>Manu_Sporny:</cite> we could do that. I don't think I'd rather just have the index and have it point to a variety of other documents where the actual threat model is. it's just extra work for the editors. it's just managing all of this stuff. it's so much easier just to put it in a threat model directory, have an index.html file, have a kitten autopublish it, and be done with it. Everything else requires manual effort by staff and Increases the workload for the editors. I don't think results in a better document. It results in a more large document or more process that we have to go through and ultimately slows us down. We're spending all this time making the editors do a whole bunch of,…</p>
+<p id=5f61 class="phone s04"><cite>Manu_Sporny:</cite> rigomearroll instead of them spending time on the actual features we need to be spending time on. we're just doing W3C process for the sake of doing W3C process. And I'm right</p>
+<p id=38cf class="phone s01"><cite>Wesley_Smith:</cite> Understood.</p>
+<p id=1551 class="phone s01"><cite>Wesley_Smith:</cite> Taking a step back, I'd like to make sure that we're all on the same page about what the actual possibilities and alternatives that we're discussing are. So my understanding or what I thought the case was is that we weren't comfortable with the one note per threat model approach because that was too much work. Is that not true? Is that what we're proposing? No. Okay.</p>
+<p id=b4ab class="phone s04"><cite>Manu_Sporny:</cite> No, that is huge minus one to that.</p>
+<p id=3089 class="phone s01"><cite>Wesley_Smith:</cite> Right. So minus one to and…</p>
+<p id=2bcb class="phone s04"><cite>Manu_Sporny:</cite> I am very vehemently opposed to that approach.</p>
+<p id=a8ab class="phone s01"><cite>Wesley_Smith:</cite> minus one to putting the threat models in the appendices of the appropriate documents. Minus one to that as well.</p>
+<p id=ecd1 class="phone s01"><cite>Wesley_Smith:</cite> So the proposed solution is this not well understood by me and probably not others on the call solution where we include the threat models as a separate specification bundled together with the main specification such that it inherits the process promotions of the main specification while being a standalone document. Is that correct?</p>
+<p id=5a50 class="phone s04"><cite>Manu_Sporny:</cite> And maybe it would help to screen share and show what it actually looks like because this is what's implemented today.</p>
+<p id=79f0 class="phone s03"><cite>Ivan_Herman:</cite> Wait a minute. Wait, wait a minute.</p>
+</section>
+
+<section>
+<h3 id=05d2>Multi-Chapter Specification Structure</h3>
+<p id=0740 class="phone s03"><cite>Ivan_Herman:</cite> Let me just comment on something that I don't fully understand here.</p>
+<p id=b785 class="phone s01"><cite>Wesley_Smith:</cite> Come on.</p>
+<p id=12e9 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=3128 class="phone s03"><cite>Ivan_Herman:</cite> So, we don't want to put the strat model let's say to be precise. we don't want to put the threat model of the barcode document as an appendix of the threat of the specification itself. On the other hand, what you say is that we want to bind it somehow as a multi- spec document. But the barcode specification then formally will include the threat model whether it is in an appendix or a separate chapter or whatever we call it, it will be there.</p>
+<p id=11ff class="phone s03"><cite>Ivan_Herman:</cite> It's only a practicality whether we link to a separate chapter which is a threat model or whether it is included by respect.</p>
+<p id=535a class="phone s01"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+<p id=5945 class="phone s03"><cite>Ivan_Herman:</cite> So I don't really see the difference between these two from the end users point of view.</p>
+<p id=82b8 class="phone s04"><cite>Manu_Sporny:</cite> Let me screen share because that might hopefully make this a bit more clear. So, this is the recognized entity specification as it is published today in TR space. So, you can see that Let me delete this. the URL is in TR space it's VC recognized entities 1.0 Right. in this document we can see in the appendix we have an appendix for threat model and that threat model appendix has target threats implementation threats external threats dependency threats because W3C's migrating to this new mechanism it also has a security considerations and privacy considerations section which is required for the process but is not useful now that we have this new threat</p>
+<p id=07a8 class="phone s04"><cite>Manu_Sporny:</cite> model mechanism. So there's text that says W3C is migrating. Please refer to the threat model which takes you back to this thing, So this is kind of a listing of these are all the threats that we've thought about. these links here are incredibly brittle because the names that are generated and the other specifications will change and if we don't tightly couple the threat model with the document when we published a TR after about two or 3 months</p>
+<p id=300c class="phone s04"><cite>Manu_Sporny:</cite> all the links will be broken because of bad tooling and take it is not easy to fix that bad tooling right now I'll just state that I mentioned why earlier so what's happening right now today the current approach is we do have links here but they just go to a threat model directory right so there's a threat model thing on VC recognized entities And if we go here, if you look at the only difference here is /threat model and that is, the quote unquote multi-chapter thing. It's wrong today because it says it's a group note. We need to update it to say something else. and the other thing that's wrong with it is that this thing is, I can't get it to generate, properly.</p>
+<p id=eb13 class="phone s04"><cite>Manu_Sporny:</cite> But everything else, latest editor's draft, latest published version, …</p>
+<p id=c77b class="phone s04"><cite>Manu_Sporny:</cite> history, works. And in here,…</p>
+<p id=56ec class="phone s03"><cite>Ivan_Herman:</cite> Yeah, I am happy with…</p>
+<p id=c591 class="phone s03"><cite>Ivan_Herman:</cite> what I'm saying because we have broken the process u in a sneaking way we have broken the process and…</p>
+<p id=a1a7 class="phone s04"><cite>Manu_Sporny:</cite> it's sorry, I missed the first thing that she said. Avon, what…</p>
+<p id=f643 class="phone s03"><cite>Ivan_Herman:</cite> I don't like that we have published a note on a place…</p>
+<p id=22e3 class="phone s04"><cite>Manu_Sporny:</cite> what process Agreed.</p>
+<p id=b3fc class="phone s03"><cite>Ivan_Herman:</cite> which we should not have Yeah,…</p>
+<p id=7a59 class="phone s04"><cite>Manu_Sporny:</cite> So, I'm saying that should be fixed, But I don't know, what do we change this We could change it to an ED or something like that, right?</p>
+<p id=48f8 class="phone s03"><cite>Ivan_Herman:</cite> we can change it with a document that has how should I say no base document or whatever.</p>
+<p id=8edb class="phone s03"><cite>Ivan_Herman:</cite> But ideally the only way that should work is that this says recognizable entities.</p>
+<p id=8f75 class="phone s03"><cite>Ivan_Herman:</cite> So somehow it is part of the recognizable entities document logically speaking not physically. So if you look at the pointer I gave you for SVG if you can show that for a moment.</p>
+<p id=e4ee class="phone s04"><cite>Manu_Sporny:</cite> Mhm. Okay.</p>
+<p id=500e class="phone s04"><cite>Manu_Sporny:</cite> Pointer that you I don't have that link. this one SVG2 Mhm. Manu Sporny:</p>
+<p id=29aa class="phone s03"><cite>Ivan_Herman:</cite> search for HB SVG specification.</p>
+<p id=b922 class="phone s03"><cite>Ivan_Herman:</cite> Let's have Google work for us a bit. So if you look at that, it looks like a perfectly fine recommendation and of course it's a candidate, but that's besides the point.</p>
+<p id=fef0 class="phone s03"><cite>Ivan_Herman:</cite> But if you look at some of the chapters left on the table of content let's say rendering model then you see that it is in a different URL. It is not and that all it says it's chapter 3.</p>
+<p id=4f72 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. I mean, that's fine. I mean, I plus one to that. I'm fine with that. if that's…</p>
+<p id=c363 class="phone s04"><cite>Manu_Sporny:</cite> what we wanted.</p>
+<p id=a416 class="phone s03"><cite>Ivan_Herman:</cite> So if…</p>
+<p id=1623 class="phone s03"><cite>Ivan_Herman:</cite> if we could reproduce this I don't know…</p>
+<p id=38d6 class="phone s03"><cite>Ivan_Herman:</cite> how it works exactly for Akidna etc but then it will help us but maybe it works automatically actually because</p>
+<p id=8294 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I'll also point out that this is wrong too. This is what W3C editor's draft chapter published as you know this is SVG2 published in 2018 and…</p>
+<p id=7110 class="phone s03"><cite>Ivan_Herman:</cite> Yeah. yeah.</p>
+<p id=833c class="phone s04"><cite>Manu_Sporny:</cite> it's broken too like Yeah.</p>
+<p id=60f9 class="phone s03"><cite>Ivan_Herman:</cite> I mean, exactly. It's for more than 10 years or…</p>
+<p id=54b5 class="phone s03"><cite>Ivan_Herman:</cite> almost 10 years, but yeah.</p>
+<p id=fba5 class="phone s01"><cite>Wesley_Smith:</cite> So, does this chapter structure allow us to specify normative versus informative in the same way that a note is automatically completely informative?</p>
+<p id=6b4f class="phone s04"><cite>Manu_Sporny:</cite> Yeah. Yes,…</p>
+<p id=0c82 class="phone s04"><cite>Manu_Sporny:</cite> it could. But we're talking about threat models and I very strongly suggest we do not put any normative language in the threat models.</p>
+<p id=4806 class="phone s01"><cite>Wesley_Smith:</cite> I'm asking if that's possible. Manu Sporny:</p>
+<p id=a55e class="phone s04"><cite>Manu_Sporny:</cite> It's possible. Yes. Yeah.</p>
+<p id=bad1 class="phone s01"><cite>Wesley_Smith:</cite> Stop it.</p>
+<p id=66c9 class="phone s04"><cite>Manu_Sporny:</cite> So I'm fine with this multi-chapter approach, Javon, but even, the W3C specs in TR space as candidate Rex have gotten it wrong as well, right? …</p>
+<p id=9a81 class="phone s03"><cite>Ivan_Herman:</cite> Yeah. Yeah.</p>
+<p id=af9a class="phone s04"><cite>Manu_Sporny:</cite> so we need to figure out what this is. I would like us to have some stuff at the top here, but again, like Ivon, I'm just trying to get to it's easy on everyone versus Simone and…</p>
+<p id=774f class="phone s03"><cite>Ivan_Herman:</cite> I mean I mean we should not put there anything that suggests that this is a different document logically speaking.</p>
+<p id=8b41 class="phone s04"><cite>Manu_Sporny:</cite> Joe might disagree with that.</p>
+<p id=6e04 class="phone s03"><cite>Ivan_Herman:</cite> Pardon me.</p>
+<p id=566d class="phone s04"><cite>Manu_Sporny:</cite> That's the only reason I'm pausing is that they feel the threat models are different documents, but that's fine. let's go back to the structure. this is the current struct structure. We can change what all of this stuff says on the left and the right. What I'm trying to get to is there links from here to here. These names change and shift quite a bit and in fact they are tightly coupled. So referencing them, can be difficult. I'm just pointing that out as one of the difficulties, right?</p>
+<p id=a3fa class="phone s04"><cite>Manu_Sporny:</cite> The other thing is pulling all of these I mean if we look at the VC data I don't know if the VC data model thread models but we have 18 threats here there are some with that have 32 and this is just a start right these are going to grow in moving transcluding all of this content right all of it into the core data model the core spec I don't think would be a good move, I think it's fine. Let's have an, appendex here. It's got a little description if people want to go and read. And I think that's the limit to…</p>
+<p id=d007 class="phone s04"><cite>Manu_Sporny:</cite> what we should have in these base specifications.</p>
+<p id=1375 class="phone s03"><cite>Ivan_Herman:</cite> May I ask another question?</p>
+<p id=4139 class="phone s03"><cite>Ivan_Herman:</cite> Many can you go there to the threat model for a moment?</p>
+<p id=0f3c class="phone s04"><cite>Manu_Sporny:</cite> Yeah, please. Mhm. Yes,…</p>
+<p id=4aac class="phone s03"><cite>Ivan_Herman:</cite> So if I see the sign on the upper right hand corner, this is a respect document. And What should be in the TR is the HTML generated by respect.</p>
+<p id=8808 class="phone s04"><cite>Manu_Sporny:</cite> I agree. And I tried to get Akidna to do that and it did not do that.</p>
+<p id=4ba0 class="phone s03"><cite>Ivan_Herman:</cite> But the reason why you could not do that because you tried to do it by presenting it as a separate note. That's what I told you.</p>
+<p id=b367 class="phone s03"><cite>Ivan_Herman:</cite> you a separate note with a short name that Akidna does not recognize if it is integral part of the recognized entities back in this case the fact that you refer to it should trigger Akidna to bring everything together. Akidna the way it recognizes an image. It looks at the reference to the image. It sees that it is part of the main folder so to say where the document is and it will bring it by itself. The only thing is I don't know whether it will I don't think it will run the spec generator recursively.</p>
+<p id=a245 class="phone s03"><cite>Ivan_Herman:</cite> That's something that you have to ask Di Man,…</p>
+<p id=5071 class="phone s04"><cite>Manu_Sporny:</cite> Okay. Yeah.</p>
+<p id=f730 class="phone s04"><cite>Manu_Sporny:</cite> I mean, yeah. So, this is been tripping over this tooling for a month now, however we need to do this, but this is the structure I think would be the easiest for the editors and the staff, right? Because it's just published along with the links, stay stable throughout time, which we really do need for Rex. and that's it, right? Yeah, please.</p>
+</section>
+
+<section>
+<h3 id=96e9>Documenting Threat Model Structure</h3>
+<p id=dae3 class="phone s03"><cite>Ivan_Herman:</cite> may I propose something? let's write down what we just discussed and what we got to clearly what we want and contact Denny is one of the most helpful persons I know on the team and he will tell us what the possibilities are and how we can achieve that and what we should do.</p>
+<p id=69eb class="phone s03"><cite>Ivan_Herman:</cite> Let's trust in this sense.</p>
+<p id=440a class="phone s01"><cite>Wesley_Smith:</cite> Dave Lonely.</p>
+<p id=89e1 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead. Sorry.</p>
+<p id=fdee class="phone s02"><cite>Dave_Longley:</cite> Just a quick question about this approach.</p>
+<p id=b30d class="phone s02"><cite>Dave_Longley:</cite> When we create a datest stamped version of the main spec, will it automatically work proceed be a prefix for or will we automatically generate the same date stamp thing for the threat model</p>
+<p id=23ae class="phone s03"><cite>Ivan_Herman:</cite> Where you going? Dave,…</p>
+<p id=df34 class="phone s04"><cite>Manu_Sporny:</cite> In theory,…</p>
+<p id=fb95 class="phone s04"><cite>Manu_Sporny:</cite> in theory it should work, but I have not been able to figure out the right configuration for a kidna to make it actually</p>
+<p id=f0ae class="phone s03"><cite>Ivan_Herman:</cite> I believe that with the structure that Man is talking about, with all due respect, The question doesn't make sense because the date stamp is for the recommendation as such and what this structure means that logically speaking the threat model is part of the recommendation. There is no separate day. If we update the threat model then the whole specification with the threat model will be updated on.</p>
+<p id=3f36 class="phone s03"><cite>Ivan_Herman:</cite> If you change an image in a specification then the whole specification will be updated with a new date.</p>
+<p id=f0a7 class="phone s02"><cite>Dave_Longley:</cite> I get the abstraction there and that it's intended for it to travel that way. I was just wondering with the tooling…</p>
+<p id=83b4 class="phone s02"><cite>Dave_Longley:</cite> what would end up happening.</p>
+<p id=0ce9 class="phone s03"><cite>Ivan_Herman:</cite> The tooling as we said that all these headers…</p>
+<p id=10004 class="phone s03"><cite>Ivan_Herman:</cite> which are here which contain dates etc which are automatically done by respect in the final version should not appear in the final version because it's part of the document. The tooling will automatically handle all that.</p>
+<p id=1849 class="phone s03"><cite>Ivan_Herman:</cite> We can of course put our own trick to put a date in the threat model with a small JavaScript or whatever but that's then our private thing but the tooling itself will not do anything right</p>
+<p id=21aa class="phone s01"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+<p id=1860 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, and just to point out what happens today. So, this is what I've gotten it to do today. clearly the links at the top are broken, but I couldn't figure out how to, ask respect to do the right thing there.</p>
+<p id=04d4 class="phone s01"><cite>Wesley_Smith:</cite> All back to the point about writing things down. how do folks think the best way to do that is Email to the mailing list. Okay.</p>
+<p id=a203 class="phone s01"><cite>Wesley_Smith:</cite> I am happy to workshop that with the group and send that email, but I'm not confident that I fully understand some of the details. let me pull up that email.</p>
+<p id=c504 class="phone s01"><cite>Wesley_Smith:</cite> All right. So modeling structure group discuss publication process for start models only 886.</p>
+<p id=4acb class="phone s03"><cite>Ivan_Herman:</cite> In the initial discussion on finalizing attacks, I would propose supposed to get Brent in the loop right away. Ivan Herman:</p>
+<p id=04bc class="phone s03"><cite>Ivan_Herman:</cite> Not as a co-chair, but as an editor of the process document.</p>
+<p id=f9ec class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=9430 class="phone s01"><cite>Wesley_Smith:</cite> I will see I will add Brent to this email.</p>
+<p id=4068 class="phone s01"><cite>Wesley_Smith:</cite> Is that appropriate? This email is going to the BCDI task force group and friends. Right.</p>
+<p id=f4c4 class="phone s03"><cite>Ivan_Herman:</cite> No,…</p>
+<p id=c09f class="phone s03"><cite>Ivan_Herman:</cite> no, it is not a task issue. The structure that we are discussing here is valid for all the 20 documents that Manu was referring to.</p>
+<p id=1b06 class="phone s01"><cite>Wesley_Smith:</cite> So, when in the process do we want Brent's feedback? Do you want me to just send it to everybody right now or do you want to get Brent's feedback first?</p>
+<p id=ee3a class="phone s03"><cite>Ivan_Herman:</cite> I guess that we should have a discussion. money, me and Brent on whether this makes sense as far as we are concerned and then send it to Deny to see whether he agrees and when we have something that is coherent and with agreement with Denny and Brent, then we can go back to the group and…</p>
+<p id=b3be class="phone s03"><cite>Ivan_Herman:</cite> say this is where we got to this is we proposed to do by the working group and if somebody in the working group has a better idea then they can speak But we need a text among ourselves or</p>
+<p id=eecc class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=58fe class="phone s01"><cite>Wesley_Smith:</cite> that sounds as if there's nothing that I can be doing at the moment to progress this, which is fine. but let me know if that changes. So, we don't need an email sent to anybody at the moment because you folks Okay, so that sounds a lot like an email to the BCDI group. No.</p>
+<p id=99ea class="phone s03"><cite>Ivan_Herman:</cite> We keep it to money, Brent, myself, and maybe Dave who was active in the discussion. Whoever wants to be telled, if you want to be on the discussion, that's fine. But there are sending it to a mailing list where half of the people on the mailing list won't understand what we are talking about doesn't help us.</p>
+<p id=17dc class="phone s01"><cite>Wesley_Smith:</cite> All right, I'm gonna send an email to explicitly the people on this call. We'll start there.</p>
+<p id=90bc class="phone s03"><cite>Ivan_Herman:</cite> Plus Brent</p>
+<p id=db8c class="phone s01"><cite>Wesley_Smith:</cite> Plus, Brent one second. Ted,…</p>
+<p id=5835 class="phone s01"><cite>Wesley_Smith:</cite> I don't have your email. Forgive me. you can paste it in the chat…</p>
+<p id=a3fc class="phone s01"><cite>Wesley_Smith:</cite> if you'd like to be added to The content of this email, Pardon? Okay.</p>
+<p id=ed1c class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Can't hurt.</p>
+<p id=4eb7 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> One second.</p>
+<p id=351d class="phone s03"><cite>Ivan_Herman:</cite> Look at that.</p>
+<p id=ca14 class="phone s01"><cite>Wesley_Smith:</cite> So we're discussing the publication process for threat models on today's call.</p>
+<p id=0a99 class="phone s01"><cite>Wesley_Smith:</cite> We came to the conclusion that we would like to pursue, remind me the official name of this in chapter end quote structure multi-document publication in…</p>
+<p id=7f57 class="phone s03"><cite>Ivan_Herman:</cite> There is no such official name. I mean it's multi-document publication something like that.</p>
+<p id=eb85 class="phone s01"><cite>Wesley_Smith:</cite> which the threat model is officially a part of the main recommendation. that's not a separate document.</p>
+<p id=7d49 class="phone s01"><cite>Wesley_Smith:</cite> and a separate web page albeit what is the separation that we actually care about here because that's the core thing right that's the whole point this was the exact separation separate file in a separate file we believe that this best balances minimizing</p>
+<p id=794e class="phone s03"><cite>Ivan_Herman:</cite> separate fine people.</p>
+<p id=3bd8 class="phone s03"><cite>Ivan_Herman:</cite> That's what we are talking about.</p>
+<p id=1203 class="phone s01"><cite>Wesley_Smith:</cite> staff work and with keeping main recommendations accessible and concise. are there any other considerations here? We want to keep the recommendations concise. I want to keep tooling what clean. we want to the concern about linking between a million different places and so on. Whatever that's fine. We think that it balances minimizing staff work with keeping recommendations accessible.</p>
+<p id=b6a6 class="phone s01"><cite>Wesley_Smith:</cite> This needs further discussion and we would welcome input as a representative of the process groups. any issues with the words I just said? I'll put it in the chat as me.</p>
+<p id=d898 class="phone s03"><cite>Ivan_Herman:</cite> Yeah, I don't know whether we need something asking because at the end of the day this goes to Vinnie how do we use respect to produce a bare chapter?</p>
+<p id=7300 class="phone s01"><cite>Wesley_Smith:</cite> So, I'm sorry.</p>
+<p id=e124 class="phone s04"><cite>Manu_Sporny:</cite> We can probably just look at the SV.</p>
+<p id=4ba5 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=7cc3 class="phone s04"><cite>Manu_Sporny:</cite> I guess SVG2 is too old.</p>
+<p id=5876 class="phone s03"><cite>Ivan_Herman:</cite> No, the SPG was not done with respect.</p>
+<p id=4934 class="phone s04"><cite>Manu_Sporny:</cite> I'm saying look at the I don't know…</p>
+<p id=4744 class="phone s04"><cite>Manu_Sporny:</cite> if the SVG2 was done in respect, but if it was, that repository would maybe show us. But yeah, we could ask Denny as well.</p>
+<p id=f0b5 class="phone s01"><cite>Wesley_Smith:</cite> I'll note that.</p>
+<p id=6d81 class="phone s03"><cite>Ivan_Herman:</cite> Yeah, we can run a script that removes everything…</p>
+<p id=5e20 class="phone s03"><cite>Ivan_Herman:</cite> which is in the header. but that's ugly heck.</p>
+<p id=9223 class="phone s01"><cite>Wesley_Smith:</cite> If there's tooling work to be done as part of this, I'd be happy to do that work. that I'm quite unfamiliar with most of the tooling that we use, but I'm spending a lot of time working on the specifications these days. It would be good for me to get familiar and I'd be happy to write some code or whatever. so let me know if I can be useful there. Anything?</p>
+<p id=10005 class="phone s01"><cite>Wesley_Smith:</cite> Anything else? or can I just rip this email? All right, I'm going to rip this email. Okay, thank you guys for that discussion. I think that that's a good start and I'm looking forward to hearing the results of that next discussion. We're about out of time for today. anybody have anything brief that they'd like to talk about? All right. Thank you guys for your time. I will see all of you on other calls and see you at this time next week. Meeting ended after 00:58:03 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

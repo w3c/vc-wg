@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 18 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>18 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Brent_Zundel, Dave_Longley, Elaine_Wooton, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Patrick_St-Louis, read.ai_meeting_notes, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9dc1">Community Updates And Progress</a></li>
+<li><a href="#d444">Threat Model Status</a></li>
+<li><a href="#78a8">Test Suites And VCOM</a></li>
+<li><a href="#ff8a">VCOMM Demo With Biffold Wallet</a></li>
+<li><a href="#805e">Test Suite Progress</a></li>
+<li><a href="#c6b2">Horizontal Review Readiness</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0fff class="phone s01"><cite>Patrick_St-Louis:</cite> Hey guys, Got a cool 5D demo for five minute demo for us today. I think some people might find it interesting.</p>
+<p id=e802 class="phone s01"><cite>Patrick_St-Louis:</cite> Welcome everyone. We'll get started in about one minute.</p>
+<p id=1fce class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, we will slowly get started with today's meeting. Let me share my screen. Okay, welcome everybody to the VCOM task force call. Today is August 18, 2026. This is a W3C meeting.</p>
+<p id=8260 class="phone s01"><cite>Patrick_St-Louis:</cite> So all W3C policies are into effect as well as IP contributions. this call is recorded and transcribed and will be made available publicly. So if you have any objection, please let us know. as mentioned this is the VC API for life cycle management It's a call during which we discuss a open API specification for managing verifiable credential through their life cycles and across different exchange.</p>
+<p id=d58b class="phone s01"><cite>Patrick_St-Louis:</cite> a very lightweight agenda today. Before we announce the topic, I will leave some time for introductions or reintroductions as well as community updates or any topic suggestions people would like to cover today. So, I will leave a moment of silence for you to either raise your hand or just take the microphone. Yes, madam.</p>
+</section>
+
+<section>
+<h3 id=9dc1>Community Updates And Progress</h3>
+<p id=4898 class="phone s02"><cite>Manu_Sporny:</cite> Just some community updates. we are slowly but surely moving some of the other VC specs through horizontal review. So, we've got most of the threat models done at this point in good enough shape for horizontal review. A number of the specs are hitting feature complete. and we've, kicked off horizontal reviews for them. I think some of the other test suites that we want to create and some of the other task forces are going to reuse VCOM, which is good.</p>
+<p id=eb53 class="phone s02"><cite>Manu_Sporny:</cite> And I think we're at a point now where we feel like the core of it is pretty stable meaning we can write testuite software against the spec. so just kind of noting that as we may have some kind of cross group questions that end up happening as a result of that. So that's Item two is we had a good conversation with Avon this morning about threat models and how we're going to publish those.</p>
+<p id=4273 class="phone s02"><cite>Manu_Sporny:</cite> as a part of the specifications. This is just a heads up to you, Eric and Joe, that we're still working through the details. Brent's also on that thread. we're just trying to figure out a way to get a kidna to autopublish everything in a way that's kosher per W3C process. that results in the least amount of work for the W3C staff and…</p>
+<p id=fdcf class="phone s02"><cite>Manu_Sporny:</cite> chairs and editors because there's some ways of doing it that are a big burden on the number of task forces that we currently have. so I think just a heads I don't think there'll be big changes but just a heads up that there may be a few kind of publication changes that we need to figure out as a result of that. that's</p>
+<p id=8db3 class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, Rick.</p>
+<p id=df86 class="phone s01"><cite>Patrick_St-Louis:</cite> You're next on the queue.</p>
+</section>
+
+<section>
+<h3 id=d444>Threat Model Status</h3>
+<p id=60f1 class="phone s03"><cite>Eric_Schuh:</cite> Yeah, I missed last week's call and I saw that there was a threat model update requested. So I just wanted to fill that in 30 seconds. I'm currently working on the one issue that's marked as required for version 1.0 CR. I think there was only one threat model related issue that had been tagged that way. So I'm working on that one. Other than that, no changes to the threat model.</p>
+<p id=5b66 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you.</p>
+</section>
+
+<section>
+<h3 id=78a8>Test Suites And VCOM</h3>
+<p id=30cf class="phone s01"><cite>Patrick_St-Louis:</cite> I had my hand raised. Sorry I put it down. I just wanted to touch and you mentioned something about test suite using vcom and things. is it a fair assumption that most of what they're going to need is just a simple issuance or…</p>
+<p id=c710 class="phone s02"><cite>Manu_Sporny:</cite> Correct. Yep.</p>
+<p id=9e10 class="phone s01"><cite>Patrick_St-Louis:</cite> a simple presentation to test rendering and trust registries whatever the VC recognition. So So that's really good. I'm going to talk a bit more to that when I talk about test progress, but if that's the scope of it, should be in a real good shape. Brent</p>
+<p id=4b91 class="phone s04"><cite>Brent_Zundel:</cite> cubed for two things. first to say we're planning during our working group call tomorrow to touch on the threat model and what to do with it conversation I don't actually technically wear a process hat anymore but I still involved with the process doesn't talk about threat model documents so we're pioneering new methods and methodologies here and I think in short the working group will be able to do what it feels is best to do as it proceeds in meeting the security interest group's desire that we do threat models and respond to them. that was number one.</p>
+<p id=9e31 class="phone s04"><cite>Brent_Zundel:</cite> The second thing was regarding the test suites relying on vcom we are grateful for all those who support test suites by providing them for us to use. first and foremost, I do want to note that not all implementers of our specs will be implementing all of our specs. And so, expecting someone who supports render method to also necessarily support VCOM, in my personal opinion, chair off is wildly inappropriate, but I'm also not the one writing the test suites.</p>
+<p id=ad32 class="phone s04"><cite>Brent_Zundel:</cite> And so chair hat on. I'm grateful for test suites and glad that we have them however they may be formatted and formulated, right?</p>
+<p id=078f class="phone s01"><cite>Patrick_St-Louis:</cite> noted.</p>
+<p id=9de2 class="phone s01"><cite>Patrick_St-Louis:</cite> So when you mentioned planning working group called more on threat model across many specification it's not specifically for vcom correct yes so put a bit of consistency in behind this from…</p>
+<p id=8b1b class="phone s04"><cite>Brent_Zundel:</cite> We want to talk in general about how everyone should be ideally doing their threat model publishing so that we do it in the same way. Yeah, it's pretty</p>
+<p id=3193 class="phone s01"><cite>Patrick_St-Louis:</cite> what I understand is not a new process but a new process</p>
+<p id=c3e0 class="phone s01"><cite>Patrick_St-Louis:</cite> an existing process that wasn't official steps to it. about test suites so what you mentioned this obviously it's something that as someone who has worked on this test suite I have put a lot of thoughts into I had provided solutions for this. the main challenge is when we want to test software through some kind of automated job right that runs either daily it's a client versus software question right so the test suite becomes the client so usually the test suite will play a role in the interaction and the software will play the role of whatever is being.</p>
+<p id=88fc class="phone s01"><cite>Patrick_St-Louis:</cite> the main challenge is how to have that client interact with the system or the component under test if I want to call it like that and be able to derive meaningful information out of this to ultimately say did you pass that statement or not. so it's usually most of the time 95% of the cases it's an input output process. you give me something and I'm going to make sure that it's what the statements wants you to do. the caveat for when we're going to do maybe some workflow exchange testing which is not simply going to be input output but it's going to be many input output. so the question becomes how does the client interact with the component under test? obviously REST API is very easy to implement.</p>
+<p id=6695 class="phone s01"><cite>Patrick_St-Louis:</cite> and I don't think when they say they want to implement the VCOM, it means you need to implement the VCOM spec as a whole. It means probably if you have an issuing software, just have a rest endpoint that can issue a software and the VCOM I think is probably the simplest form of issuing that through a REST API. this being said, if there are other cases such as a common line interface that was a very common program that people wanted to do we have thought about some solutions in order to make this work. for different test suites of this specs it's difficult for me to make a statement.</p>
+<p id=1f4f class="phone s01"><cite>Patrick_St-Louis:</cite> I know for render method right I'm assuming most of the time it's going to be checking a presentation and making sure you can render it properly right so it becomes a matter of how do we show this probably for that doesn't need any kind of active exchange you can just have an issued credential that needs to be rendered a specific way but I'm not involved in the test suite process of that group yet although I'm involved in that group For some reason, I've been having a hard time attending. Anyway, I'll stop here. Let Manu kind of chime in.</p>
+<p id=7222 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean, plus one to everything said, including, Brent's comment. I think we're trying to get to minimum viable test suite spec for multiple specs. And what we need for a good chunk of them is we need a system to issue the credential, right? And so we've got an API to do it and we can, use that. thankfully, today we're in a bit of a better situation when it comes to how difficult is it to put together a test suite with AIS and LLM these days. It's way easier to add more options to the test suites. so the bar has been lowered there.</p>
+<p id=61e0 class="phone s02"><cite>Manu_Sporny:</cite> So previously, when people were like, &quot;Hey, I want you to add Docker support, and a CLI, interface to the test suite, some of the test suite authors are like, &quot;Yeah, that's nice. PR is welcome.&quot; And then we never saw the PR. This time around, it might be easier for people to raise that PR. And I think we collectively be fine with that understanding that we need to at least get to a minimum viable we've got at least two implementations doing something and passing and we know that there used to be at least about 14 implementations that did the basic issuance verification, workflows or the API, endpoints.</p>
+<p id=3859 class="phone s02"><cite>Manu_Sporny:</cite> So I think that's what we're talking about. and when it comes to stuff like confidence method and render method, I think we're still trying to figure out what does a test suite for that look does it mean that someone can come along and provide a credential and that's the input to the test suite and then we have to figure out some way of calling somebody's rendering thing to produce output from that clearly would not use VCOM to do that it would potentially be some kind of proprietary to the test suite type thing so I think we're just figuring it out. But specifically for the things where you're like, I want to rent, issue a VC, there's an endpoint that we can call, for a system to do that primarily as the easiest lowhanging fruit.</p>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> And then secondarily if somebody wants to come in and raise a PR to provide Docker image support or CLI support by all means we should allow that as well as long as it integrates into the test suite.</p>
+<p id=b1aa class="phone s02"><cite>Manu_Sporny:</cite> The ultimate thing being like we just need a credential that's signed to be able to do things with it. that's</p>
+<p id=c75f class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. …</p>
+<p id=a2de class="phone s01"><cite>Patrick_St-Louis:</cite> so I just want to add one other layer. So the goal of the test suite, I think it's something we talked on the last call or the one before. I think Ted actually brought up an interesting point. it seems like test suites they serve The number one critical purpose is to get the spec to candidate recommendation. They to be able to demonstrate that the spec has two plus implementation for every normative statement. That's the most imminent goal. and then there's the other part where it needs to support an impletor being able to assess their own software.</p>
+<p id=efd1 class="phone s01"><cite>Patrick_St-Louis:</cite> So they're able to run the test suite on their software. If they're building a credential render method software, they need to be able to run the credential render method test suites against their software locally, Or whatever. So that's the number one need. And then the second need is that they want to and that's optional for them. If they want to opt in, this needs to be something that can be ran on a nightly, weekly, whatever basis and orchestrate a call to every implementation. So they get up to-date result on can Ic right because this is where this gets surfaced. I know we have individual test suite reporting page.</p>
+<p id=4b89 class="phone s01"><cite>Patrick_St-Louis:</cite> These are nine nice but I think ultimately we want to end up on KI VC. So for the first part getting to candidate recommendation at least for BCOM is going to be true VCOM for the render method spec if adding VCOM endpoints meets that goal meaning that two people can pass the test suite using VCOM I think that's a good first step. then when it comes to people wanting themselves to demonstrate that they have conformance with the test suite, I'd see that as a second step. I don't think that's a primary driver for the test suite. It's kind of a second nice to have thing which is I say nice to have but it's quite important. these can be added and this is about adding other method of opting in the test suite beside standing up your endpoint. Right?</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> I had made a sort of a shim vcapi docker container that you could quite easily just plug in your library. It was working fairly well. I think this could be revisited. and we want to do this in a way that allows minimal effort to the Of course, implementing test is always going to require some amount of effort. you might have some details to iron out,…</p>
+<p id=5cca class="phone s01"><cite>Patrick_St-Louis:</cite> but people shouldn't have to rewrite their whole software basically is what I'm trying to get at. trying to find a balance between these two is kind of where my mind would be at. Brent, good. how do you take all this?</p>
+<p id=26f2 class="phone s01"><cite>Patrick_St-Louis:</cite> Do you have any followup on this kind of rational</p>
+<p id=b2d6 class="phone s04"><cite>Brent_Zundel:</cite> So again chair hat off. and recognizing that I am not an implementer of the test suites and recognizing the limits of the value of my opinions in light of that. it feels like trying to meet all of the goals that have just been stated takes us beyond…</p>
+<p id=0551 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm.</p>
+<p id=faf7 class="phone s04"><cite>Brent_Zundel:</cite> where we need a test suite in order to demonstrate implementation experience of the specification. we don't even need a test suite to do that. We just need to demonstrate implementation experience for the specification. We've elected to use a test suite for that we have also elected to make the test suite such that it can automatically feed into can IBC and all of those things. It's like I wonder if we're The first end in my mind is the most important and…</p>
+<p id=2d96 class="phone s04"><cite>Brent_Zundel:</cite> it feels like the second end is becoming the driver for the test suites. But like I said, I'm not writing test suites and I'm okay if I don't need to be reassured here that I'm just expressing an opinion and I'm fine if the meeting moves on.</p>
+<p id=36e2 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah,…</p>
+<p id=a866 class="phone s01"><cite>Patrick_St-Louis:</cite> I think that's good and I think it's very valid. It's things I talk about. if we focus just on the first test, I think basing it on VCOM will get sufficient implementations for all of the current spec. That's my quick opinion like looking who is involved in them. I have no doubt that we can get two implementation for every specification if it relies on VCOM to being tested.</p>
+<p id=4c66 class="phone s01"><cite>Patrick_St-Louis:</cite> enabling people to conform with the spec that do not implement VCOM if the goal of the testuite has been met. I see that as an extra feature of the test suite the same way that we fall into letting that person demonstrate that they are implementing this spec. I will keep that in mind if there's easy solution I will surely keep that in mind. Of course me working on the vehicle this week it will help be focusing on veon but yes I'm happy to engage if it creates any problem at any point and try to see solution we have been for the past test suites and I believe we were successful at getting people passing some testuite without having to implement this API. Okay.</p>
+<p id=88e6 class="phone s01"><cite>Patrick_St-Louis:</cite> Any other comments?</p>
+<p id=5d97 class="phone s01"><cite>Patrick_St-Louis:</cite> Kyote. the horizontal review.</p>
+<p id=4463 class="phone s05"><cite>Kayode_Ezike:</cite> completely unrelated…</p>
+<p id=3d08 class="phone s05"><cite>Kayode_Ezike:</cite> but I don't know if we've gotten to the point where we are asking for agenda item updates or additions. So I just want to quickly add two small things. one of them is an update on the registration for the Ayana URIs interaction and and web plus interaction. The other one is really an extension of the last item we have here. This is another addition but just an update with that I'm happy to provide when we get to that. Yeah.</p>
+</section>
+
+<section>
+<h3 id=ff8a>VCOMM Demo With Biffold Wallet</h3>
+<p id=e9ef class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, perfect. I was thinking about you when I put this on. So, we'll definitely do that. okay. I'm going to do my little demo first. Going to bring it up the wall. It's really simple. It's with the VC playground. so I've done demonstration before with Acupi.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> I made a wallet called the Pidentity wallet which was a cloud wallet using occupy as the wallet storage. it was a progressive web application and this was able to integrate with the playground. what I've done this time is there's another project called the biffold project at the open wallet foundation. this one is not a cloud wallet. It's a local native wallet that is based on the Credo framework. So, I'm just going to show what I did. It took me about 5 hours to put this together. and I think it looks good and I think it speaks a lot about interoperability and libraries. so I'm just going to go ahead.</p>
+<p id=348a class="phone s01"><cite>Patrick_St-Louis:</cite> So this is a fork of Biffold that's been rebranded with a simple sort of onboarding flow. So I'm just going to set up my wallet and I'm simply going to go through issuance and verification and show a little bit how this works. so I'm going to go ahead and issue myself a movie ticket with did o and I'm going to do this through this kind of QR code here. Okay, I'm going to scan this QR code. So now I get to choose the protocol I want to interact. It's showing me that this needs aid authentication. Hold on.</p>
+<p id=110a class="phone s01"><cite>Patrick_St-Louis:</cite> I'm actually going to just close this so we can see the feedback on the website. now it's confirming me if I want to share this data authentication. Now it's showing me a preview of the credential to be issued. I can flip this. I haven't implemented render method yet. but we can see on the website the exchange is done. And what I need to do is to accept this credential. It's looking at a couple things. exchange is complete and I now have a movie ticket credential in my wallet. I'm now going to go ahead and issue and present this movie ticket. We're going to request the verifiable presentation. Next. Don't see your wallet. Going to scan this QR code again. Choose the protocol that is returned by the protocols.</p>
+<p id=eab0 class="phone s01"><cite>Patrick_St-Louis:</cite> Biffold does support didcom. So when we get didcom in there, that will be possible given that there's an issue that supports this as well. Okay, we can see we have a We request a movie ticket credential and did authentication. I only have one, but here I would have a selection of the movie of the credential that meets this ry. Going to approve and Change is complete. And we can see here we have the presentation sent.</p>
+<p id=3ae6 class="phone s01"><cite>Patrick_St-Louis:</cite> So that's all I wanted to show. this is I believe a pretty good implementation of very basic. but it does implement VCOM with biffold which is interesting. for those who remember there was a guy named John who was aware here for some time a while ago he did like a VC API implementation of credo. So I had a quick look at that and picked up some of that work. it's only ED255 signature 2020 for now but this has interesting thing the only problem I'm not able to get the software to issue me a credential subject ID even though I do the dat but that's kind of a detail at least we can go to the end so I just wanted to show this took me five hours implementing the core and then kind of sometime just improving</p>
+<p id=b589 class="phone s01"><cite>Patrick_St-Louis:</cite> the I. so I think this talks that the spec is a pretty good state. Obviously this is using AI and stuff like that but regardless I think it speaks that people can at least get started fairly quickly here. yes.</p>
+<p id=7055 class="phone s02"><cite>Manu_Sporny:</cite> That's really awesome, Patrick. really cool to see it, all come together, especially the amount of time that it took you. Was that so, pointing the AI at it? What you do? Did you point it at the spec and say implement VCOM and interaction URLs or…</p>
+<p id=7455 class="phone s01"><cite>Patrick_St-Louis:</cite> So couple things to keep in mind.</p>
+<p id=f14d class="phone s02"><cite>Manu_Sporny:</cite> was more of that there or Mhm.</p>
+<p id=3f5d class="phone s01"><cite>Patrick_St-Louis:</cite> So when I use my ad I've been working with the VCOM spec it has a lot of context about VCOM and all these things because it's my subscription and I've built a bunch of skills and knowledge over the time. so that probably enter credit but it was very capable at looking at this bfold project right finding the appropriate libraries that needed to be implemented here in order to complete this thing. It was also very good at finding out what needed to be shown in the screen.</p>
+<p id=c052 class="phone s01"><cite>Patrick_St-Louis:</cite> There was a few things for example when a presentation request has two an array that you need to meet one of these two queries initially it took them as they're both required right because I think one of the crystal does that you can either present v1 or v2 so I had to kind of have a little bit of a conversation with it it has pre-nowledge of the specs I just gave it the exchange URL and it was kind of able to probe at it and figure out a bit what needs to happen. it even highlighted some incompatibility issue with biffold right there was some things in credo I needed to patch for example it was always signing presentation v1 with the presentation but going back and forth with the errors and the</p>
+<p id=8f72 class="phone s01"><cite>Patrick_St-Louis:</cite> wallet, the logs and giving it access to that. It was almost 95% of the time it was able to see what was the issue, right? There was no I don't know what to do now. it hit a lot of walls, but every time it hit a wall, it was very good at finding exactly what the problem is and moving further along. I think the presentation was the one that had a couple hiccups, but I think it's just because presentation requests are usually had a bit more complexity than just issuing a credential in a sandbox kind of concept. yeah, that's pretty much what I have there. Yes.</p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, super helpful. Thank you Patrick. we are seeing other people in competitions implementing VCOM as well and we were pretty surprised at how quickly people were able to they'd start the competition they're like we don't support VCOM and then within about two weeks they have a fullblown implementation of VCOM with interaction URLs and it working both in native and web modes.</p>
+<p id=bf71 class="phone s02"><cite>Manu_Sporny:</cite> So, it was neat to see that happen. I think, LLMs have made implementations of this stuff, across the board much easier. I'll note a couple of things on the UI that I saw.</p>
+<p id=647b class="phone s02"><cite>Manu_Sporny:</cite> So, clearly, you wouldn't ask a regular everyday everyday person using a digital wallet which protocol they want to select, right? Yeah.</p>
+<p id=0c47 class="phone s01"><cite>Patrick_St-Louis:</cite> No, no,…</p>
+<p id=af3a class="phone s01"><cite>Patrick_St-Louis:</cite> no, no, no, no, no, no. what when I make these tools, right, I don't sell solutions, right? I'm more in the testing spec.</p>
+<p id=ba74 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=4f55 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I do prefer more demonstrative tools that showcase features of different specs. And I think the protocol selection is quite a nice feature to show.</p>
+<p id=d7ec class="phone s02"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=5ec4 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm assuming if I was to do an implementation maybe there'd be some advanced developer settings that you can choose which protocol you want to use by default and have a kind of a priority list or I don't know some of the things would be kind of I think the thing that you need to present is consenting to storing kind of showing a credential preview and getting their consent on the offer.</p>
+<p id=b525 class="phone s01"><cite>Patrick_St-Louis:</cite> obviously consenting which credential you want to select for the proof right in a user friendly way and consent to sharing this and probably give some information about the query by example only require this field but you don't have something that allows you to selectively disclose it so just be mindful you're going to be sharing more these kind of things kind of privacy highle things that can be digestible for sure, but this demonstration is aimed at a group like this. So, does that make sense?</p>
+<p id=bfb5 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=0ced class="phone s02"><cite>Manu_Sporny:</cite> It's all great stuff, Patrick, as always.</p>
+<p id=7347 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Is there other things?</p>
+<p id=3bb9 class="phone s02"><cite>Manu_Sporny:</cite> Really? Cool to see it.</p>
+<p id=d383 class="phone s01"><cite>Patrick_St-Louis:</cite> Sorry. I don't know if I cut you off on the protocol thing. on the browser or…</p>
+<p id=62c8 class="phone s02"><cite>Manu_Sporny:</cite> There was the interaction URL code scanning on Chappie, looked a bit janky, so I'm wondering maybe you had minimized the window or something like that. I know it yeah. Go ahead, Dave.</p>
+<p id=bf4b class="phone s06"><cite>Dave_Longley:</cite> I was going to ask was that zoomed in did you have a zoom level set? that's what it's looked like.</p>
+<p id=3272 class="phone s01"><cite>Patrick_St-Louis:</cite> in the wallet like the chatty popup itself.</p>
+<p id=afa4 class="phone s06"><cite>Dave_Longley:</cite> Whenever that popup came up where that you scanned the QR code from the text that was in there was extra large. And so I was just wondering if that was zoomed in or it looked unusual and…</p>
+<p id=d53e class="phone s01"><cite>Patrick_St-Louis:</cite> Yes.</p>
+<p id=644a class="phone s06"><cite>Dave_Longley:</cite> I was wondering if that was at the local setting like that looks normal.</p>
+<p id=9ac3 class="phone s01"><cite>Patrick_St-Louis:</cite> this. Yeah,…</p>
+<p id=d121 class="phone s06"><cite>Dave_Longley:</cite> Yeah, that looks normal. And then it's not on screen.</p>
+<p id=64bc class="phone s01"><cite>Patrick_St-Louis:</cite> it was 150%. Is that better?</p>
+<p id=7233 class="phone s06"><cite>Dave_Longley:</cite> Okay. …</p>
+<p id=492a class="phone s02"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=f497 class="phone s01"><cite>Patrick_St-Louis:</cite> Hold on,…</p>
+<p id=5e24 class="phone s06"><cite>Dave_Longley:</cite> we Yeah,…</p>
+<p id=05f7 class="phone s01"><cite>Patrick_St-Louis:</cite> hold on. let me just reshare the screen.</p>
+<p id=0e3a class="phone s06"><cite>Dave_Longley:</cite> we can't currently see it. Yeah. Yeah.</p>
+<p id=6512 class="phone s01"><cite>Patrick_St-Louis:</cite> Talk about This thing here.</p>
+<p id=335d class="phone s06"><cite>Dave_Longley:</cite> Yeah, it looks normal now.</p>
+<p id=87ab class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it was like this.</p>
+<p id=241f class="phone s06"><cite>Dave_Longley:</cite> Yep. Yeah,…</p>
+<p id=56b2 class="phone s01"><cite>Patrick_St-Louis:</cite> It was 150%.</p>
+<p id=1bb3 class="phone s06"><cite>Dave_Longley:</cite> that's why it looked janky.</p>
+<p id=498c class="phone s01"><cite>Patrick_St-Louis:</cite> That's just browser.</p>
+<p id=bc86 class="phone s02"><cite>Manu_Sporny:</cite> Was making sure we weren't missing something.</p>
+<p id=2b74 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah. Yeah. I do I'll be honest, this process feels a little bit convoluted.</p>
+<p id=e0b7 class="phone s01"><cite>Patrick_St-Louis:</cite> this whole issue it opens this show wallet scroll to the bottom show this QR code in a demo my first feeling would be whoa that's a lot of steps right but I did this because I could do generate like this but we don't get the nice reactive thing that we saw right because what I like about this right when I go in here and I do this and then I close this this is pretty nice right because then we get to really see that something's really happening. I'm not just sending a presentation in the void, and the only way to get to this screen is to open that Moodle and get there, If this was natively supported with this generate a QR code, which I think is the exact same kind of QR code it generates. I think this would be interesting.</p>
+<p id=8171 class="phone s01"><cite>Patrick_St-Louis:</cite> I know you can have some reactive things like I know with come for example if we show a QR code and an invitation we can have dynamically kind of know when someone has taken action on that So maybe something could be done here that when someone has interacted with this exchange, it kind of dynamically puts a green checkbox and then move to the next stage this is now the state that it's at to kind of follow the state because right now the initial state so on so anyway that's kind of feedback. Yeah, manu.</p>
+<p id=10003 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, plus one. It's good feedback. we have of course been experimenting with DC API I and oid4, QR codes for a long time and new interaction URL QR codes and what's the best way to get this stuff on screen. and I think you're exactly right, Patrick, that kind of the state of where everything is needing to support all the variations of what's out there, especially in production, is a nightmare right now.</p>
+<p id=a6b5 class="phone s02"><cite>Manu_Sporny:</cite> But it's all seems to be boiling down to you're either on the same device and you can detect that. for something that's cross device, you can put a QR code on here. And I'll note that playground wasn't designed around user experiences. It was designed around to help developers implement and test all the different variations of, whatever they want to. So in an actual production website you would see much smoother experiences. You would be able to detect when someone has scan something. You would be able to update the interfaces stuff like that.</p>
+<p id=5501 class="phone s01"><cite>Patrick_St-Louis:</cite> I</p>
+<p id=9908 class="phone s07"><cite>Benjamin_Young:</cite> Yeah, I put something in chat.</p>
+<p id=67f4 class="phone s07"><cite>Benjamin_Young:</cite> Basically, the thing that the Chappie button is getting you is it's initiating the workflow service when you click that. So there's essentially a state machine if you cancel or scan the R code that isn't there when you click the generate QR code button because we're not assuming you're going to scan it.</p>
+<p id=10004 class="phone s07"><cite>Benjamin_Young:</cite> But I scanned it click that could be done or check state on this workflow or coming up with a sensible name.</p>
+<p id=eec0 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. Yeah,…</p>
+<p id=95cf class="phone s07"><cite>Benjamin_Young:</cite> That basically says I used the thing you gave me. Please tell me how it's going from here equation. you have that with Chappie again because Chappie is doing that. It's kicking it off assuming you're going to go via Chappie. And now that there's a QR code in Chappie, it feels like that is also got magic to it, but it really doesn't. It's the exact same QR code you're looking at here. The only difference is the issue button initiated the state machine. So, there could be some other button instead of just close, I scanned it button. I don't know that the words are right. That then just advances you to that next state machine page.</p>
+<p id=ed1e class="phone s07"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=31c0 class="phone s01"><cite>Patrick_St-Louis:</cite> that's like a manual.</p>
+<p id=931d class="phone s01"><cite>Patrick_St-Louis:</cite> old thing like the most advanc I know when we do it it's like a web hook based thing. So you would need to have the workflow service kind of send a web hook probably to this interaction service that says that I receive an advance in this exchange and…</p>
+<p id=d15e class="phone s07"><cite>Benjamin_Young:</cite> that could work,…</p>
+<p id=bc52 class="phone s01"><cite>Patrick_St-Louis:</cite> then it would detect that's me I'm going to move to the …</p>
+<p id=ed69 class="phone s07"><cite>Benjamin_Young:</cite> right? Right.</p>
+<p id=85d1 class="phone s01"><cite>Patrick_St-Louis:</cite> but again I think manu said this is a testing thing there's an interesting line between testing and demonstration because this is also used in demonstration sometime I think when it's purely demonstration these things they just add to the experience for testing this is useful you have the URL everything you need so good exactly right like we need this makes me think of the issue that I think Dimmitri</p>
+<p id=c3ba class="phone s07"><cite>Benjamin_Young:</cite> And that spinner page you're on will not do much more when it's done other than tell you go check your wallet. But yeah,…</p>
+<p id=a12d class="phone s01"><cite>Patrick_St-Louis:</cite> brought up how the wallet could send something I've stored it all is good or…</p>
+<p id=c1df class="phone s07"><cite>Benjamin_Young:</cite> yeah. Yeah.</p>
+<p id=4391 class="phone s01"><cite>Patrick_St-Louis:</cite> any kind anyway okay so just wanted to move this ad show a bit more into implementations and whatnot any closing thoughts on this before we move on just looking at the time here okay So next topic really quick testuite progress. So I was just working on it a bit more this morning. So I will bring the two issuer verifier coverage for the VCOM. So this will be basically porting the CCG test for VCPI issue and VCPI ri cover the required endpoints and processing for issuer and verifier services.</p>
+</section>
+
+<section>
+<h3 id=805e>Test Suite Progress</h3>
+<p id=10005 class="phone s01"><cite>Patrick_St-Louis:</cite> and this should show the pattern for if you just want to issue a simple credential an other test suites or so on. So this could probably unblock that and then I'll move on to the other section of the spec. So that's what I wanted to say is nothing to look at. Any other comments on this otherwise I'll leave it at that. Perfect. can I turn it to you, Coyote, for this horizontal review readiness? what do we need before we can trigger it?</p>
+<p id=c42b class="phone s05"><cite>Kayode_Ezike:</cite> A quick answer is that we have already started to work on that.</p>
+<p id=be79 class="phone s01"><cite>Patrick_St-Louis:</cite> Are we in a good place? Any updates?</p>
+<p id=7849 class="phone s05"><cite>Kayode_Ezike:</cite> So let me just quickly share a few things here. There is since you're sharing your screen Patrick…</p>
+<p id=a85a class="phone s05"><cite>Kayode_Ezike:</cite> if you can go to the issues page really quickly.</p>
+<p id=e050 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, hold on one second.</p>
+<p id=181f class="phone s01"><cite>Patrick_St-Louis:</cite> I'm just going to reshare the window here because I have my whole screen shared.</p>
+<p id=d5e8 class="phone s05"><cite>Kayode_Ezike:</cite> Okay, no problem.</p>
+<p id=6c49 class="phone s01"><cite>Patrick_St-Louis:</cite> So the issues you mentioned Okay.</p>
+<p id=ac14 class="phone s05"><cite>Kayode_Ezike:</cite> And what we're interested in is the horizontal review issue. Just give me one second. Just had it's just issue 627. I can also put it in chat here. Give me a Second. Fine.</p>
+<p id=d9f6 class="phone s01"><cite>Patrick_St-Louis:</cite> Horizontal review for VCOM 1.0.</p>
+<p id=a13e class="phone s05"><cite>Kayode_Ezike:</cite> Great.</p>
+<p id=ec42 class="phone s01"><cite>Patrick_St-Louis:</cite> I know.</p>
+</section>
+
+<section>
+<h3 id=c6b2>Horizontal Review Readiness</h3>
+<p id=07cc class="phone s05"><cite>Kayode_Ezike:</cite> Right. So, essentially for horizontal review we have the need to provide submit reviews to sub subgroups that have some sort of invested interest in this specification. So, this includes accessibility groupization group, privacy and security, so on and so forth. So last week what I was able to do with some help feedback support from Mu was able to submit two of those. So the internationalization one and the accessibility one. I'll put the links to those in the chat right here. so essentially what this is is a request from the subgroups to review our spec and assess it for readiness for candidate recommendation.</p>
+<p id=10006 class="phone s05"><cite>Kayode_Ezike:</cite> And for a lot of these subgroups, there's a need to, submit self-review questionnaire responses that they just want to see that we've actually put in the effort to do our own due diligence before they do their own. And so these two issues that I just posted are the official requests for review from them, but they also link to the self-re questions that we had in our own issue space in Envycom. so we've basically gotten through two of the last one at least that requires a self review that needs to be done. I'm hoping to do it this week if possible, no promises, but it will be for privacy and security. be working through that soon. And I think after that there's a tag one, a design review I believe that incorporates a lot of the aspects of these other ones.</p>
+<p id=e49d class="phone s05"><cite>Kayode_Ezike:</cite> And so just be working through these the next week or week or two and should have more updates in coming weeks. Go ahead Patrick.</p>
+<p id=9718 class="phone s01"><cite>Patrick_St-Louis:</cite> That's can I clarify something? You talked about self horizontal review for security and privacy. Does that mean that we are the one doing these reviews or will these need issues open like the other ones?</p>
+<p id=3b30 class="phone s05"><cite>Kayode_Ezike:</cite> So they'll eventually need issues open in those repos that you see there. but then there's also issues like if you go to issues again it's one of the main issues tab in VCOM quickly right I guess that's right so that's the accessibility one exactly And there's also internationalization one.</p>
+<p id=c4b1 class="phone s02"><cite>Manu_Sporny:</cite> It's linked At the bottom of the page there, they're associated. Up a little bit. Mhm.</p>
+<p id=d17f class="phone s01"><cite>Patrick_St-Louis:</cite> This one,…</p>
+<p id=f0ca class="phone s01"><cite>Patrick_St-Louis:</cite> the self-review questionire. It's a lot of text. And the security and privacy. Okay.</p>
+<p id=562e class="phone s01"><cite>Patrick_St-Louis:</cite> Who makes these questionnaire? Okay.</p>
+<p id=05fb class="phone s05"><cite>Kayode_Ezike:</cite> So the questionnaires are provided by the subgroups and then we provide the responses to them. So basically for internationalization accessibility I worked through those last week and essentially it's just a way for them to be sure that our own it's a prerequisite.</p>
+<p id=b148 class="phone s01"><cite>Patrick_St-Louis:</cite> I understand. they provide a questionnaire, we fill it and then this triggers their kind of review with a prefilled questionnaire. Is that more or less how it works? Yeah, exactly.</p>
+<p id=6b8e class="phone s05"><cite>Kayode_Ezike:</cite> Yeah. It isn't trigger but it's a prerequisite before we can submit a official review to the group. Yeah. Yeah.</p>
+<p id=8ec7 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Or review request more…</p>
+<p id=7df5 class="phone s01"><cite>Patrick_St-Louis:</cite> because we're submitting a request for a review, so for these two, we're waiting on them right now. That's it's submitted.</p>
+<p id=ab80 class="phone s05"><cite>Kayode_Ezike:</cite> Right. Yeah.</p>
+<p id=81dd class="phone s05"><cite>Kayode_Ezike:</cite> this currently has a pending status and…</p>
+<p id=d6bb class="phone s01"><cite>Patrick_St-Louis:</cite> We're waiting for a response.</p>
+<p id=3884 class="phone s05"><cite>Kayode_Ezike:</cite> reviewing requested So hopefully real hitches there.</p>
+<p id=eac3 class="phone s01"><cite>Patrick_St-Louis:</cite> And…</p>
+<p id=8b4b class="phone s01"><cite>Patrick_St-Louis:</cite> then for the other three,…</p>
+<p id=e1c6 class="phone s01"><cite>Patrick_St-Louis:</cite> we just need to fill the self assessment questionnaire and open the issue. Okay.</p>
+<p id=e7c7 class="phone s05"><cite>Kayode_Ezike:</cite> I believe security and…</p>
+<p id=94b0 class="phone s05"><cite>Kayode_Ezike:</cite> privacy has one and then the other one there's another I have to look more into that. I think monop has more he can say about that but</p>
+<p id=9d3c class="phone s02"><cite>Manu_Sporny:</cite> Yeah, security and privacy have their own and the tag will just ask you for the security and privacy link as well. they also have sections on what alternative designs did you consider tag does but we have a section in the spec that has that in there already so you end up linking to it. but going back thank you very much co for working on all of this stuff.</p>
+<p id=c738 class="phone s05"><cite>Kayode_Ezike:</cite> Where's Break up test.</p>
+<p id=c332 class="phone s02"><cite>Manu_Sporny:</cite> It is a lot of work. So really appreciate you putting in all that effort and moving that stuff forward. as well as the scheme registration stuff that you did.</p>
+<p id=52c4 class="phone s02"><cite>Manu_Sporny:</cite> I would let's see that we really do need to the security and privacy self-review coyote is going to ask you to link to the security and privacy consideration section which you'll end up linking to the threat model and we should really merge that threat model that renames the directory so that you've got stable links that you're giving them. Just noting there's an order of operations that needs to happen there. I would like us to try and merge some of these PRs that have been out there for more than a week. many of them definitely need to go in there. especially the add threat model section to security considerations you can't submit the horizontal review probably…</p>
+<p id=7c6f class="phone s05"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=fce8 class="phone s02"><cite>Manu_Sporny:</cite> until we merge just a note there.</p>
+<p id=f268 class="phone s02"><cite>Manu_Sporny:</cite> So we definitely need to do the rename and we should definitely merge any threat model stuff in before asking for security privacy review. I will also note Coyote that in the security and privacy review questionnaire, they do not contemplate a threat model in there and it still asked for the security and privacy consideration sections and direct links to them. And so I had to put some temporary links and other specs to just generate the anchor so that we could fill out their form and then remind them that hey your form hasn't been updated to contemplate threat models.</p>
+<p id=c79e class="phone s02"><cite>Manu_Sporny:</cite> we linked you to the appropriate sections and put redirects in there, but please update your requirements if folks have to submit threat models. that's it.</p>
+<p id=08cf class="phone s05"><cite>Kayode_Ezike:</cite> You said this.</p>
+<p id=ecc1 class="phone s02"><cite>Manu_Sporny:</cite> I think we're in really good shape, I think we just merge a couple of PRs, you finish up the security privacy, questionnaire, which should go pretty quickly because of the we've created threat models and…</p>
+<p id=c362 class="phone s02"><cite>Manu_Sporny:</cite> then submitting those last three. go pretty quickly. it's like you do security and…</p>
+<p id=78ac class="phone s02"><cite>Manu_Sporny:</cite> privacy at the same time and then you do tag after that. And if you can do one of them, you can do all of them pretty much.</p>
+<p id=b487 class="phone s05"><cite>Kayode_Ezike:</cite> I'll take a look into that and…</p>
+<p id=2d7b class="phone s05"><cite>Kayode_Ezike:</cite> if I have any questions or need feedback, I'll reach out hopefully this week.</p>
+<p id=2f64 class="phone s01"><cite>Patrick_St-Louis:</cite> That's a really good status update.</p>
+<p id=8a2e class="phone s01"><cite>Patrick_St-Louis:</cite> I understand any closing thoughts regarding horizontal review before we move on? Yes. Before can you just touch on this registration for Ayana URI real quick?</p>
+<p id=718b class="phone s05"><cite>Kayode_Ezike:</cite> I guess to the point that Mon just mentioned about the threat model …</p>
+<p id=8cb2 class="phone s05"><cite>Kayode_Ezike:</cite> it's probably a good place to start as far as PRs go. yes. Yes. Yes. so in the last VCWG call last week we resolved as a group that we are comfortable registering the interaction and web plus interaction schemes that we use for engaging applications that can understand interaction protocols or URLs. And so, moved forward and did that a few days ago. Basically went to Ayana, filled out their, forms for UR scheme registration, for those two. And right now, we're just waiting on a response. You're supposed to receive an automated response from them, that give us a ticket number and a copy of the application, but we have not. So, I've pinned them not long ago to ask them an update on that. Hopefully, they can get back to us soon.</p>
+<p id=10007 class="phone s05"><cite>Kayode_Ezike:</cite> According to them, they're supposed to get outside of the automated response. It's supposed to get back to us within one to two business days to give us a status update. and it's supposed to process within a week based on paper. hoping that that goes somewhat smoothly, but we're just looking for some sort of update from them at the moment.</p>
+<p id=0d42 class="phone s01"><cite>Patrick_St-Louis:</cite> Ready?</p>
+<p id=220c class="phone s05"><cite>Kayode_Ezike:</cite> That's all.</p>
+<p id=0b57 class="phone s02"><cite>Manu_Sporny:</cite> Coyote, when you did the registration, did you put in the working group's email address?</p>
+<p id=3cb9 class="phone s05"><cite>Kayode_Ezike:</cite> Yes, I did.</p>
+<p id=43e0 class="phone s02"><cite>Manu_Sporny:</cite> It's probably stuck in a moderation queue that either Avon or…</p>
+<p id=09e9 class="phone s05"><cite>Kayode_Ezike:</cite> That's what I suspected. Yeah. Okay,…</p>
+<p id=7a06 class="phone s02"><cite>Manu_Sporny:</cite> Pantoan needs to free up. that's probably what</p>
+<p id=b659 class="phone s05"><cite>Kayode_Ezike:</cite> that's enough. So, yeah, maybe I'll just let Ivon know then to check on that to see if there's anything that's hung up there.</p>
+<p id=641f class="phone s05"><cite>Kayode_Ezike:</cite> So, You'll know if there's any updates that's pertinent. other than that, nothing more to report there.</p>
+<p id=d2ea class="phone s01"><cite>Patrick_St-Louis:</cite> very good.</p>
+<p id=d7b6 class="phone s01"><cite>Patrick_St-Louis:</cite> So, no hard blockers, things are progressing. Just need to let the thing do its thing.</p>
+<p id=d40a class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, pretty much.</p>
+<p id=6a72 class="phone s01"><cite>Patrick_St-Louis:</cite> And by that I mean, kind of people moving us forward. any other comments regarding EA registration for interaction and web plus interaction protocols? not a lot of time left. I think from what I understand we really want to look at this threat model PR. So why don't we start with this? this has been open three weeks ago. we've had many people have a look.</p>
+<p id=4547 class="phone s01"><cite>Patrick_St-Louis:</cite> There has been a lot of good conversations.</p>
+<p id=4e01 class="phone s01"><cite>Patrick_St-Louis:</cite> I can see some thread still unresolved. could you give us a little update, Eric?</p>
+<p id=60cb class="phone s03"><cite>Eric_Schuh:</cite> yeah sure.</p>
+<p id=ecb5 class="phone s03"><cite>Eric_Schuh:</cite> So in terms of content based on the discussions I think the content is good to go for the most part. I believe the only outstanding question if you scroll down just a little bit to Coyote's comment there was the question of updating the folder name from using an underscore to using a dash. I guess Manu from your comment I think we could apply this suggestion here and merge this and then an editor could just go in and update the folder name. or…</p>
+<p id=f52a class="phone s01"><cite>Patrick_St-Louis:</cite> I any reason…</p>
+<p id=8657 class="phone s03"><cite>Eric_Schuh:</cite> if we want to do it the other way, we could reject this comment and I can submit a second PR after we accept this one that updates the folder name and updates this link.</p>
+<p id=911d class="phone s01"><cite>Patrick_St-Louis:</cite> why an underscore is not suitable? Okay, that's so good.</p>
+<p id=159f class="phone s05"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=cb0f class="phone s02"><cite>Manu_Sporny:</cite> PR space URLs that the group has don't use underscores. They use kebab case. That's one of the main reasons, Patrick, is that we've released a bunch of other stuff that use kebab case.</p>
+<p id=6d2c class="phone s01"><cite>Patrick_St-Louis:</cite> Good enough for me.</p>
+<p id=605e class="phone s02"><cite>Manu_Sporny:</cite> and then let's not close the PR right I think you're the first thing you said Eric is fine right like this just…</p>
+<p id=10008 class="phone s02"><cite>Manu_Sporny:</cite> if we accept this and move to kebab case then the group is deciding that that's the way they want to name the directory and then it's a purely editorial change to update the directory and that can be done without on</p>
+<p id=1cad class="phone s01"><cite>Patrick_St-Louis:</cite> What do we want to do with this?</p>
+<p id=1f07 class="phone s01"><cite>Patrick_St-Louis:</cite> Sorry, Do we want to leave it more time? from what I understand, this underscore is the only kind of unadressed thing going on right now.</p>
+<p id=27fa class="phone s01"><cite>Patrick_St-Louis:</cite> What's the consensus here?</p>
+<p id=5281 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, Eric.</p>
+<p id=ed9a class="phone s03"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=d4bd class="phone s03"><cite>Eric_Schuh:</cite> So I think it' accept Coyote's suggestion there of changing that link name and then the PR is good to go and an editor should update the folder name</p>
+<p id=c733 class="phone s01"><cite>Patrick_St-Louis:</cite> Just gonna in the meantime, Coyote</p>
+<p id=35ff class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, there was another comment that I left I want to say a week or two ago that I think it had to do with the level of confidence or lack thereof that was used in a language around it was something around there being a draft or I forget exactly which comment it was but it should be somewhere here. I wasn't sure if we wanted to keep that type of language in there or…</p>
+<p id=7664 class="phone s01"><cite>Patrick_St-Louis:</cite> Manual.</p>
+<p id=d40d class="phone s05"><cite>Kayode_Ezike:</cite> if to I guess there's a response to that. So, it's just just wasn't sure if that's something we want to have in the final version that we ended up publishing to V10 or what's the standard language that we use for their models and these specs that we publish. But that's all</p>
+<p id=e248 class="phone s02"><cite>Manu_Sporny:</cite> As Brent mentioned previously, there is no standard language because we are being guinea pigged through the threat model process right now. So, we can, do whatever the group is okay with. I would suggest we don't put stuff like that in there. there has been a significant amount of work on this threat model over the past couple of months. threat models are always, a work in progress because threats constantly change. and we're effectively just kind of stating the obvious here. And this is just for horizontal review, It's not like we're going into a wreck. And so we can adjust this language later.</p>
+<p id=10009 class="phone s02"><cite>Manu_Sporny:</cite> So, that's what I suggest we do here is I think we could leave the paragraph or I suggest delete it, but it shouldn't hold up the PR. I don't want us to see this delayed another week because, we've got to delete the paragraph. the other thing I wanted to mention is that I wanted to get the group's feedback on something that I did in the recognized entity spec and…</p>
+<p id=9485 class="phone s02"><cite>Manu_Sporny:</cite> if that's something that we want to do here. noting that it's a little difficult to do. let me go ahead and share my screen here. …</p>
+<p id=0655 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, just be mindful of time.</p>
+<p id=a0f3 class="phone s01"><cite>Patrick_St-Louis:</cite> There's four minutes left.</p>
+<p id=2555 class="phone s02"><cite>Manu_Sporny:</cite> thanks. yeah, real quick. So, this is the recognized entity spec. In it, we have a section on threat models. coyote, you are going to probably have to create these placeholder links for security considerations and privacy considerations and just link back to the threat model saying that hey we're experimenting with something new here. There's a threat model section and then this stuff where we list the threats out here was meant to align with some code Joe that you had in your threat modeling library that tries to spell things out and what I've tried to do here is spell out the threat one sentence description for it but then link to the threat model specs so people can see in here high level what are the threats that you should be aware</p>
+<p id=773a class="phone s02"><cite>Manu_Sporny:</cite> but if you want to actually go there, you click on the link and…</p>
+<p id=1000a class="phone s02"><cite>Manu_Sporny:</cite> it takes you to that section in the threat model. that's it. We can talk about it next time…</p>
+<p id=9681 class="phone s03"><cite>Eric_Schuh:</cite> I</p>
+<p id=7784 class="phone s02"><cite>Manu_Sporny:</cite> since we're out of time.</p>
+<p id=c31a class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=b97e class="phone s01"><cite>Patrick_St-Louis:</cite> quick, my god. Sorry, guys. can we maybe just come to a decision if we want to just remove this small paragraph right now and merge this on the call? is there any objection to this? So Dave Longley made the edit to just remove it one minute ago. this is only this little bit of text that talks about lack of response in draft state which I think as we mentioned this is an iterative process and this is just the current iteration of it.</p>
+<p id=35f2 class="phone s01"><cite>Patrick_St-Louis:</cite> So I'm going to go ahead and commit any objection to merging this branch with this PR and its current state of model going in one two three I'm going to come in this</p>
+<p id=5c02 class="phone s01"><cite>Patrick_St-Louis:</cite> first going to rebase and I think the history is fairly clean. So, I'm just going to merge this. I think we want to move quickly here.</p>
+<p id=f878 class="phone s01"><cite>Patrick_St-Louis:</cite> Someone has their raised hand. Someone was on the queue. do you still want to say something as the last chance? We're going to close the call pretty soon. I think it was you, Eric. or did I?</p>
+<p id=b936 class="phone s03"><cite>Eric_Schuh:</cite> No need.</p>
+<p id=7e3f class="phone s03"><cite>Eric_Schuh:</cite> Yeah, it's all good.</p>
+<p id=c169 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, perfect. So, we closed this. We add the thread model section. I think this from my understanding is going to unblock some of the horizontal review request. yeah, next week we're just going to keep going through this the most important stuff, making sure it's merged in the spec. but I have the feeling that we're in a pretty good space.</p>
+<p id=cae8 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you a lot for all your contributions, questioning and things you mentioned during this call. It's very useful in moving us forward. I will adjourn the meeting and I will see everyone again next week. thank you very much. Meeting ended after 01:00:26 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

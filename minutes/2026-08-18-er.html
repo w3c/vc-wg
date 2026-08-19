@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 18 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>18 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Elaine_Wooton, Manu_Sporny, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Todd_Snyder</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#552b">Embedding JSON Schema In Recognized Entities</a></li>
+<li><a href="#9926">Internationalization: USA-Centric Examples</a></li>
+<li><a href="#4f3c">Examples are USA-centric? · Issue #110 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#7241">Internationalization: Legal Name Language</a></li>
+<li><a href="#fdbf">`legalName` does not permit a &amp;quot;language value object&amp;quot; · Issue #111 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#b188">Show some non-ASCII/non-English examples and label the English · Issue #112 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#edb9">Normative References For DID Services</a></li>
+<li><a href="#0747">Normative references to WhoisService and PathService · Issue #117 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#5b4d">Refining UNGRID / UNTP / UNVTD Examples</a></li>
+<li><a href="#dba8">Refine UNGRID / UNTP / UNVTD Example · Issue #107 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#233f">Explaining CRQC In Specification</a></li>
+<li><a href="#05a9">CRQC is not in general nor wide use (yet) and should be included in each document · Issue #115 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0d37 class="phone s01"><cite>Todd_Snyder:</cite> Good afternoon everyone.</p>
+<p id=c2e2 class="phone s02"><cite>Manu_Sporny:</cite> Good afternoon.</p>
+<p id=4c83 class="phone s01"><cite>Todd_Snyder:</cite> We're getting started. Manuel, I have a question for you.</p>
+<p id=14e2 class="phone s02"><cite>Manu_Sporny:</cite> Just remember calls recorded.</p>
+</section>
+
+<section>
+<h3 id=552b>Embedding JSON Schema In Recognized Entities</h3>
+<p id=ffff class="phone s01"><cite>Todd_Snyder:</cite> Yeah, that's right. is it possible to embed the JSON schema for recognized entity inline? We didn't see an example.</p>
+<p id=c667 class="phone s02"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=078d class="phone s02"><cite>Manu_Sporny:</cite> Yes, it is technically possible. it is. Okay. So you</p>
+<p id=61a9 class="phone s02"><cite>Manu_Sporny:</cite> mean in the recognized entity credential for the field that talks about JSON schema is it possible to embed it directly the answer is yes you can always use a data URL for the ID or…</p>
+<p id=c2d3 class="phone s01"><cite>Todd_Snyder:</cite> Yes. Mhm.</p>
+<p id=8ded class="phone s02"><cite>Manu_Sporny:</cite> just use a data URL I don't think we have an example I started out with an example for that in the spec and…</p>
+<p id=419b class="phone s02"><cite>Manu_Sporny:</cite> took it out because I think I took it out because it felt a little too complicated but yeah, I think the answer is We should probably get clear about that and have an example in the spec around that.</p>
+<p id=f213 class="phone s01"><cite>Todd_Snyder:</cite> Okay. Yeah,…</p>
+<p id=66e7 class="phone s01"><cite>Todd_Snyder:</cite> it would be good to have an example. I know it's something we are considering because of the volume of company prefixes we have in the US.</p>
+<p id=87ba class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yep.</p>
+<p id=d280 class="phone s01"><cite>Todd_Snyder:</cite> So the idea of having millions and…</p>
+<p id=dbf4 class="phone s02"><cite>Manu_Sporny:</cite> Yep. Yeah.</p>
+<p id=abfa class="phone s01"><cite>Todd_Snyder:</cite> millions of JSON schema files sitting around. So we should be able to embed it. So yes at the top level that's well known.</p>
+<p id=1ced class="phone s02"><cite>Manu_Sporny:</cite> Yes. Exactly right.</p>
+<p id=49a1 class="phone s02"><cite>Manu_Sporny:</cite> That was one of my questions when I was putting together some of the GS1 examples. I was like, &quot; man, this could get pretty unwieldy pretty quickly.&quot; Right.</p>
+<p id=2684 class="phone s01"><cite>Todd_Snyder:</cite> Everybody knows that every country has a set of known entities from global. But once you get into the individual MOS like the US, we have millions and other places over the world,…</p>
+<p id=8d4e class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yep.</p>
+<p id=5375 class="phone s01"><cite>Todd_Snyder:</cite> Germany and stuff, they're going to have billions too. So, okay,…</p>
+<p id=5180 class="phone s02"><cite>Manu_Sporny:</cite> Yep. Okay.</p>
+<p id=f8f8 class="phone s01"><cite>Todd_Snyder:</cite> that is one of the things we were considering. So, it's good to know. Okay.</p>
+<p id=30cd class="phone s02"><cite>Manu_Sporny:</cite> So, let's make sure that we've got an example there. Basically, what that means, and let me go ahead and share my screen. basically what that means is actually let's talk about what that would mean. output validation, you could definitely do type JSON schema and then the ID could be a data URL.</p>
+<p id=01a6 class="phone s02"><cite>Manu_Sporny:</cite> I think that's one way that you could do it. The other one that I'm wondering about is if you could have output validation and…</p>
+<p id=44ee class="phone s02"><cite>Manu_Sporny:</cite> then just a string that's a data URL.</p>
+<p id=ce81 class="phone s01"><cite>Todd_Snyder:</cite> Yeah, I was specifically looking for the Jason schema.</p>
+<p id=3de5 class="phone s01"><cite>Todd_Snyder:</cite> Let me embed it in here.</p>
+<p id=85cd class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Does anyone have a strong preference?</p>
+<p id=f022 class="phone s02"><cite>Manu_Sporny:</cite> Dave Longley Benjamin Go ahead, Benjamin.</p>
+<p id=777d class="phone s03"><cite>Benjamin_Young:</cite> Yeah, the data URL is existing plumbing,…</p>
+<p id=2f55 class="phone s03"><cite>Benjamin_Young:</cite> stick it in the ID, but it is then a pain to work with because you have to have something to process it in and out of that. So if you were to put in an entire JSON schema though it's as an object then that's going to affect context itself and we probably would need a separate term to hold it…</p>
+<p id=953c class="phone s03"><cite>Benjamin_Young:</cite> which we could have a term and add JSON it into the graph.</p>
+<p id=68c9 class="phone s04"><cite>Dave_Longley:</cite> There's existing work.</p>
+<p id=d023 class="phone s04"><cite>Dave_Longley:</cite> from the previous iteration of this working group on JSON schemas and there's already a term and it might already be in the VC2O context called JSON schema or something that is defined as at JSON type where you could embed a schema directly and using that mechanism Yeah,…</p>
+<p id=a05a class="phone s02"><cite>Manu_Sporny:</cite> Where is this? Would that be in V2?</p>
+<p id=cd8c class="phone s02"><cite>Manu_Sporny:</cite> Right. …</p>
+<p id=7a8b class="phone s04"><cite>Dave_Longley:</cite> if you search for Jason Yeah,…</p>
+<p id=2917 class="phone s02"><cite>Manu_Sporny:</cite> yeah, it's here in the types JSON schema.</p>
+<p id=265b class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-data-model/blob/main/contexts/credentials/v2#L127">vc-data-model/contexts/credentials/v2 at main · w3c/vc-data-model · GitHub</a> </p>
+<p id=4060 class="phone s04"><cite>Dave_Longley:</cite> there it is. Yep.</p>
+<p id=451b class="phone s02"><cite>Manu_Sporny:</cite> So we already have it.</p>
+<p id=b53f class="phone s03"><cite>Benjamin_Young:</cite> Yeah. And it's done just…</p>
+<p id=3107 class="phone s03"><cite>Benjamin_Young:</cite> what I described.</p>
+<p id=254c class="phone s02"><cite>Manu_Sporny:</cite> Okay. yeah,…</p>
+<p id=cfb2 class="phone s01"><cite>Todd_Snyder:</cite> Yeah, send link there.</p>
+<p id=b076 class="phone s01"><cite>Todd_Snyder:</cite> Drop that in there. That would be good to look at.</p>
+<p id=d774 class=irc><cite>&lt;Benjamin_Young&gt;</cite> JSON Schema media type, fwiw: application/schema+json </p>
+<p id=f84a class="phone s02"><cite>Manu_Sporny:</cite> let me but I was thinking I mean yes we can do this right.</p>
+<p id=3a8c class="phone s02"><cite>Manu_Sporny:</cite> So 100% we can do this. I was wondering about output validation is a can be just a string that's a URL and we could do data colon application/json- schema and then a big B 64 URL included thing for output validation. Do we want to support something like that or…</p>
+<p id=61a8 class="phone s02"><cite>Manu_Sporny:</cite> not? Yeah.</p>
+<p id=20e3 class="phone s04"><cite>Dave_Longley:</cite> I would think it's going to be automatically supported.</p>
+<p id=6e90 class="phone s04"><cite>Dave_Longley:</cite> If somebody puts it in there, someone's going to consume it. It's already baked in. That's a valid URL.</p>
+<p id=9bcf class="phone s02"><cite>Manu_Sporny:</cite> I guess what I'm saying should we in the spec explicitly state that is one way you could do it. It's going to exist whether or not we allow it, right? Because it's just JSON LLDD and that it's legitimate and legal.</p>
+<p id=f8d2 class="phone s02"><cite>Manu_Sporny:</cite> Should we be telling people to do it that way? If you're going to embed it, just do it that way versus create an object,…</p>
+<p id=870d class="phone s02"><cite>Manu_Sporny:</cite> type JSON schema, and then JSON schema lowercase and then the value as JSON. Go ahead, Benjamin.</p>
+<p id=d94e class="phone s03"><cite>Benjamin_Young:</cite> Yeah, it really depends on…</p>
+<p id=4872 class="phone s03"><cite>Benjamin_Young:</cite> how implementers expect to work with the thing. because there's, round tripping in and out of B 64 or whatever escaping you've got to do if you don't base 64 if it's in the ID value. So having them as non-native JSON certainly feels super awkward when we've done it in the implementation details in the test suites. We do that with Zcaps. They're just inlined as escaped JSON blobs which means you can't really use JSON path on them or JSON pointer find them any other way than text search. and you can't manipulate them that way either. So if you were to inject them here,</p>
+<p id=46c2 class="phone s03"><cite>Benjamin_Young:</cite> You have to have some little bit of script somewhere that takes your JSON schema, stuffs it in the ID value with basically turns it into a data it's trivial code to write and run, but that becomes prerequisite for any time you touch the inverse is that now that actually becomes a graph identifier, which is kind of weird, but possibly fun and useful. so that you can then talk about that thing if you're plumbing the whole thing into a graph. whereas you don't get that with the JSON s at JSON value only side. you can't really talk about it because it's not a subject in triple terminology. It can only be the value.</p>
+<p id=28a2 class="phone s03"><cite>Benjamin_Young:</cite> I don't know if that last bit made sense, but p p p p p p pragmatically if you do stuff it in an ID and certainly if you base 64 encode that data L, it's illegible. It's not, encrypted or anything. It's just illegible. so be you have to think through what you want to touch or we do as a group and what you have to do to unpack being able to do stuff with it, which can be seen as a pro or a con depending on what you're trying to accomplish. So maybe Todd for your schema question, it might be good to talk more about…</p>
+<p id=9598 class="phone s03"><cite>Benjamin_Young:</cite> how you expect to use it or who you expect to use it. Go ahead, man.</p>
+<p id=b046 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I guess…</p>
+<p id=e85c class="phone s02"><cite>Manu_Sporny:</cite> what I was trying to get to is I mean yes, all of that is true. We should probably provide some guidance in the spec, meaning the first thing is do we suggest you can do either or do we strongly suggest one way version over the other? and if we say either or we have to say the benefits and drawbacks of it and maybe we should raise this as an issue to provide guidance related to base no to data urls when used with output validation and</p>
+<p id=68c1 class="phone s02"><cite>Manu_Sporny:</cite> other objects types. specification LD allows data urls to be used anywhere regular URL can be used. we should provide guidance. This is probably general guidance that should go in the VC. C data modeling not here but we can start it here. We should provide guidance on when and where to use data urls us JSON values versus base.</p>
+<p id=798f class="phone s02"><cite>Manu_Sporny:</cite> I can just start there and…</p>
+<p id=281a class="phone s01"><cite>Todd_Snyder:</cite> Yeah. So again,…</p>
+<p id=0461 class="phone s01"><cite>Todd_Snyder:</cite> I think for the GS1 use case, it's definitely something we want to explore instead of having the u a separate JSON schema file that basically also encodes the license value.</p>
+<p id=3cdb class="phone s02"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=3e03 class="phone s01"><cite>Todd_Snyder:</cite> So, yep.</p>
+<p id=19ed class="phone s02"><cite>Manu_Sporny:</cite> So, we're tracking it. we'll discuss it and come back to it and try to get a concrete answer back to GS1. all right. let's go ahead and kick off the call. welcome everyone to the recognized entities call. this is August 18th, 2026. this is a W3C verifiable credential workg groupoup task force call.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> all W3C policies apply to this Reminder that the call is being recorded. let us know if that is an issue for you. today on the agenda, we have a number of items to go through. It's largely going to be issue processing. We don't have any PRs. I know GS1 is working hard on this PR. Phil provided an update to note that they still need to do a couple of things to bring things in line with recognized entities. so that's totally fine and we'll do that before we go into CR. and the rest of today is largely going to be about issues. Does anybody have any updates or changes to the agenda? Any announcements? Anything else that we should cover today?</p>
+<p id=5abb class="phone s05"><cite>Phil_Archer:</cite> I will just note that an issue that was raised on this call recently I think last week possibly the week before about the multibase digest SRRI issue is on tomorrow's full working group meeting as an early agenda item in the hope that you can be there for that Yes.</p>
+<p id=cd37 class="phone s02"><cite>Manu_Sporny:</cite> Go ahead,…</p>
+<p id=4100 class="phone s02"><cite>Manu_Sporny:</cite> I will be there. Sorry, I just killed a window instead of unmuting. And thank you for chasing that down, Phil. All right. we have a set of issues to go through. basically, let's see. I'm going to try and put these in here.</p>
+</section>
+
+<section>
+<h3 id=9926>Internationalization: USA-Centric Examples</h3>
+<p id=27e9 class="phone s02"><cite>Manu_Sporny:</cite> list of issues try to cover today just in the chat channel. and so let's go ahead and start with issue 110. we have been getting horizontal review feedback which is great. Addison is on top of things as always. so we're gonna try to process internationalization looks at the specification with a particular mind around can people in other cultures in the world that speak other languages have other writing systems? can they use this specification? are there any potential issues with it?</p>
+<p id=29a1 class="phone s02"><cite>Manu_Sporny:</cite> So the first one that Addison raised is that he thinks our examples are a little too USAacentric. and he said specifically we say such as a county, city or state agency when we talk about vital records agencies and he said why don't you instead say city, regional or provincial agency. So we can update that. That's an easy change to make. would anyone object to that change being made? Just making the change that Addison want us to make. And I said we should be able to easily make all that's 11 next topic up is 111.</p>
+<p id=420a class=irc><cite>&lt;Manu_Sporny&gt;</cite> List of issues we can try to cover today: </p>
+</section>
+
+<section>
+<h3 id=4f3c><a href="https://github.com/w3c/vc-recognized-entities/issues/110">Examples are USA-centric? · Issue #110 · w3c/vc-recognized-entities · GitHub</a></h3>
+</section>
+
+<section>
+<h3 id=7241>Internationalization: Legal Name Language</h3>
+<p id=1544 class="phone s02"><cite>Manu_Sporny:</cite> Whoops. Not that one. 111. And It's a good catch. This is exactly why we have horizontal review. he said the legal name does not permit a language value object. so basically we say a legal name can be a string but Addison is like yeah but you don't specify the language or the direction of the string and therefore it's not compliant from an internationalization standpoint.</p>
+<p id=10001 class="phone s02"><cite>Manu_Sporny:</cite> I basically said, &quot;Yeah, you're right. we really should be saying something like internationalized string or something like that.&quot; And, Addison came back with a lot of good stuff. but he said, &quot;Why don't you say localizable string?&quot; and this is something that we may want to define in the VC data model as a exported definition because we say string in a lot of places where we don't actually mean localizable string because JSONLDLD allows strings to be localizable because we build on top of JSONLDLD we allow all of our strings to be localizable but we don't say it outright and Addison also pointed out something very good which he was like I was like localizable string for all the strings and he was like nope that's not actually right</p>
+<p id=7628 class="phone s02"><cite>Manu_Sporny:</cite> For example, types can be strings, except I think we say they're URLs. but we have enums and things like that that are not supposed to be localizable. So meaning like an enum string or something like that, we should use string. But if the thing is supposed to be localizable, we should use localizable string or language value object, which is a little more of a mouthful. so I'd suggest we create a definition in the verifiable credential data model, which is where we talk about localizable strings. and we then update the recognized entity spec to say that things like legal name are localizable strings.</p>
+</section>
+
+<section>
+<h3 id=fdbf><a href="https://github.com/w3c/vc-recognized-entities/issues/111">`legalName` does not permit a &amp;quot;language value object&amp;quot; · Issue #111 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=2436 class=irc><cite>&lt;Phil_Archer&gt;</cite> As a non-American, I often feel that our docs are very US-centric, so I agree with Addison. </p>
+<p id=10002 class="phone s02"><cite>Manu_Sporny:</cite> We have a number of other properties that localizable value as Dave Wley is saying in the chat channel. So that would be the proposal to address this issue. thoughts,…</p>
+<p id=4892 class="phone s02"><cite>Manu_Sporny:</cite> concerns, objections on taking that direction. Go ahead, Benjamin.</p>
+<p id=85f5 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, I think he's just calling out that…</p>
+<p id=ed6d class="phone s03"><cite>Benjamin_Young:</cite> if it's a string, the localizable addition of that lets you know that it can be in the overall language of the document, which might not be English, I think the key thing I would add is I don't want to lose the use of the language value objects because that is what provides our language credential capabilities. so we need to make sure that that hangs around for these values and not paint ourselves in the corner by only ever allowing strings for these values. But otherwise it sounds right.</p>
+<p id=8fbf class=irc><cite>&lt;Dave_Longley&gt;</cite> perhaps &quot;localizable value&quot; which is defined as a string or LVO </p>
+<p id=e018 class="phone s02"><cite>Manu_Sporny:</cite> I mean his issue was exactly what you said Benjamin and then he suggested we basically say it can be a local string or localizable value and then we define that in the VC data model as a string is a string as infred defines it and…</p>
+<p id=4d6a class="phone s02"><cite>Manu_Sporny:</cite> a localizable string is a language value object as defined by JSONLD or whatever the term is in JSONLD.</p>
+<p id=f95b class="phone s03"><cite>Benjamin_Young:</cite> So he's using that is synonymous. I got you.</p>
+<p id=074b class="phone s02"><cite>Manu_Sporny:</cite> He's saying So BCDM probably should have provided shorthand for string or localizable value object. And I'm saying yes, we agree with you.</p>
+<p id=2a26 class="phone s03"><cite>Benjamin_Young:</cite> I stand now. Yep.</p>
+<p id=902c class="phone s02"><cite>Manu_Sporny:</cite> We should do that in the BC data model. and then when we define whatever this term is we'll call this thing a localizable string is a string as defined by infra or a Localizable value object is effectively what JSONLDD's language thing provides.</p>
+<p id=c0f5 class="phone s02"><cite>Manu_Sporny:</cite> We'll define that in BCDM and then we'll call that thing a localizable string and then we'll update legal name to be a localizable string. It must be a localizable string. plus</p>
+<p id=bd4e class="phone s03"><cite>Benjamin_Young:</cite> Yeah, I think my one concern…</p>
+<p id=10003 class="phone s03"><cite>Benjamin_Young:</cite> then is that saying localizable string does not let my brain go to JSON object. It wants there to be some magic string, which this is not. but I understand that second paragraph now. plus one having a shorter phrase for string or language value object. Go ahead, dude.</p>
+<p id=cfce class="phone s04"><cite>Dave_Longley:</cite> Yeah, that's why I suggested localizable value and maybe it even needs to be language localizable value to be more specific. I don't know. But we can come up with some name for it and then use that in these</p>
+<p id=e311 class="phone s02"><cite>Manu_Sporny:</cite> And the other thing I'm a bit concerned about is why does the internationalization group not have a word for this thing? And maybe we could because they talk about Jason LD, maybe we can point to something that they have.</p>
+<p id=f142 class="phone s02"><cite>Manu_Sporny:</cite> But if they had something Addison go ahead, Benjamin.</p>
+<p id=d28f class="phone s03"><cite>Benjamin_Young:</cite> Yeah, Jason LD is…</p>
+<p id=10d3 class="phone s03"><cite>Benjamin_Young:</cite> what they have. in point of fact, Addison wrote a whole thing called string meadow where he went over all the W3C ways of doing, actually internationalizable strings in JSON. And, Jason LD won the day. it's at the bottom there you go. And he points to you could come up with your own JSON format that does exactly what JSONLD does, but maybe don't. So, there you go. Contain localizable text. And anyway, yeah, it was a deep analysis he did five, six years ago, and the JLD working group was doing 1.1</p>
+<p id=f391 class="phone s02"><cite>Manu_Sporny:</cite> And does he define anything in here that we could reuse.</p>
+<p id=ab73 class=irc><cite>&lt;Benjamin_Young&gt;</cite> +1 to localizable value </p>
+<p id=ca54 class=irc><cite>&lt;Phillip_Long&gt;</cite> Isn't LVO sufficient? </p>
+<p id=6b49 class="phone s03"><cite>Benjamin_Young:</cite> Not sure.</p>
+<p id=75c5 class=irc><cite>&lt;Dave_Longley&gt;</cite> LVO is insufficient because it doesn't cover &quot;string&quot; </p>
+<p id=a438 class="phone s03"><cite>Benjamin_Young:</cite> He mostly points to stuff done elsewhere. I don't know that he calls the JSONLD version anything else. If you search for at DI or something, there might be a better example.</p>
+<p id=b870 class="phone s02"><cite>Manu_Sporny:</cite> Use the language and direction fields to supply the document level defaults. That's document level. That's actually useful for a render method discussion.</p>
+<p id=4744 class="phone s02"><cite>Manu_Sporny:</cite> But language maps yeah. Okay.</p>
+<p id=a720 class="phone s03"><cite>Benjamin_Young:</cite> Yeah, which is another JSON know the option obviously and…</p>
+<p id=018c class=irc><cite>&lt;Phillip_Long&gt;</cite> That sounded like the brain problem (LOL) Benjamin was describing he was having. </p>
+<p id=e6f0 class="phone s03"><cite>Benjamin_Young:</cite> then this is the defaults.</p>
+<p id=53f0 class="phone s02"><cite>Manu_Sporny:</cite> I will raise the PR and we can fine-tune it in VC data model. so the group 68 LON and decided to take to attempt a PR that does the following. define an exported term.</p>
+<p id=ac3a class="phone s02"><cite>Manu_Sporny:</cite> That is along the lines of localizable. What word did you use? Dave localizable value local language localizable height.</p>
+<p id=050c class="phone s04"><cite>Dave_Longley:</cite> Yeah, I said localizable value or language localizable value.</p>
+<p id=d7df class=irc><cite>&lt;Phil_Archer&gt;</cite> LVO most commonly stands for Lieutenant of the Royal Victorian Order </p>
+<p id=f60e class="phone s02"><cite>Manu_Sporny:</cite> Let's try localizable value first. That the second one's a bit of a mouthful. as long legalizable value that states that is either a string or an object that follows the JSON LD lang.</p>
+<p id=4225 class=irc><cite>&lt;Dave_Longley&gt;</cite> it's important to remember that someone reading the requirements will frequently do so in a vacuum ... so it's got to be sufficiently rigorous to cover things just in terms of basic types </p>
+<p id=c0e0 class="phone s02"><cite>Manu_Sporny:</cite> language value language r pattern. How we refer to that exported term from any VC G specification that needs</p>
+<p id=dad9 class=irc><cite>&lt;Dave_Longley&gt;</cite> infra types, etc. </p>
+<p id=d2dc class="phone s02"><cite>Manu_Sporny:</cite> that supports lies of value. How does that sound to folks as Any objections to that as a path forward?</p>
+<p id=c26e class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, Phil. It does.</p>
+<p id=2539 class="phone s05"><cite>Phil_Archer:</cite> No objection man of course…</p>
+<p id=0dd9 class=irc><cite>&lt;Phillip_Long&gt;</cite> @Phil A  - LOL, I'm sure we'll see these local confusions with some frequency. </p>
+<p id=0657 class="phone s05"><cite>Phil_Archer:</cite> but I wonder whether that's something that needs to be ported across to other task forces in the group in general.</p>
+<p id=09fa class="phone s02"><cite>Manu_Sporny:</cite> How would you like to handle that, I'd suggest let's raise it as an issue on the BCDM. have a discussion in the BCWG,…</p>
+<p id=3999 class="phone s02"><cite>Manu_Sporny:</cite> and if the group is okay with it, then we tell the task forces to go forth and use the new exported term.</p>
+<p id=da70 class="phone s05"><cite>Phil_Archer:</cite> Exactly. …</p>
+<p id=310a class="phone s05"><cite>Phil_Archer:</cite> so when we get to the task force updates tomorrow, I hope you'll raise that.</p>
+<p id=ac6a class="phone s02"><cite>Manu_Sporny:</cite> I will try to yes I will raise it as an issue.</p>
+<p id=b0a4 class="phone s05"><cite>Phil_Archer:</cite> Mean,…</p>
+<p id=eb8c class="phone s02"><cite>Manu_Sporny:</cite> I will don't know</p>
+<p id=f81d class="phone s05"><cite>Phil_Archer:</cite> I mean, having all that I mean,…</p>
+<p id=f576 class="phone s02"><cite>Manu_Sporny:</cite> if I'll have the PR ready by then.</p>
+<p id=901c class=irc><cite>&lt;Phillip_Long&gt;</cite> thanks for the clarification @Dave L </p>
+<p id=108a class="phone s05"><cite>Phil_Archer:</cite> no, I mean, just mention it. hey,…</p>
+<p id=dfd5 class="phone s02"><cite>Manu_Sporny:</cite> Sure thing. Phil Archer:</p>
+<p id=c2c5 class="phone s05"><cite>Phil_Archer:</cite> there's something coming down the pipe. I don't mean have the issue raised and the PR written and all the cookies spokes and everything else. No, I just mean, hey, this is happening people. That's it.</p>
+<p id=1620 class="phone s02"><cite>Manu_Sporny:</cite> That is a reasonable request. go ahead Benjamin.</p>
+<p id=121d class="phone s03"><cite>Benjamin_Young:</cite> Yeah, for…</p>
+<p id=e1f7 class="phone s03"><cite>Benjamin_Young:</cite> what it's worth, some term already exported is value object. which is, what Addison's pointing at so value object is already a defined phrase to mean what this thing can be with value language and direction because it's a JSL document. It has those as well as others available. There's a link in the chat for that full definition.</p>
+<p id=eb72 class="phone s03"><cite>Benjamin_Young:</cite> So what we're I think aiming at defining here is the additional bit that says string or a JSON LD value object…</p>
+<p id=06f8 class="phone s02"><cite>Manu_Sporny:</cite> Yes, exactly right. Yep.</p>
+<p id=346e class="phone s03"><cite>Benjamin_Young:</cite> which just for those who don't know JSON LD is table stakes for using JSON LD pretty much everything can be a string or a value of</p>
+<p id=42ce class="phone s02"><cite>Manu_Sporny:</cite> Let's see. All So we'll get that PR raised and discussed on the call tomorrow. That is Anything else on this item before we move Issue 112 is next.</p>
+<p id=c030 class="phone s02"><cite>Manu_Sporny:</cite> And this is the last internationalization thing that was so show some nonasky non-English examples and label the English. so basically put together an example that includes some multilingual examples. typically we mix in English, French and Arabic. as the end of the example because that has text that's right to left text that is English and maybe we want to show English versus other Englishes around the world. and then I think it's just great an example. so maybe</p>
+<p id=383f class="phone s02"><cite>Manu_Sporny:</cite> Tiny Tots has a no that's not we'll use a different example because that's got a region that's tightly tied there. we'll figure out something. but basically raise an example so I can raise an example and then people can take a look at and see if they agree or disagree with it. and we usually raise the examples early in the spec as one of the more complex examples. so we do the simple examples first and then we're like and if you need to support multiple languages here's an example of a credential that you might use in Morocco for example. okay that is that item. any objections to just creating an example here?</p>
+<p id=f871 class="phone s02"><cite>Manu_Sporny:</cite> So, that'll be recorded there. Let me make sure that these are basically and discuss and they're ready for PR. This is 111. We discussed it and we're ready for And then 12. We discussed this and we're ready for PR there as well. All right.</p>
+</section>
+
+<section>
+<h3 id=b188><a href="https://github.com/w3c/vc-recognized-entities/issues/112">Show some non-ASCII/non-English examples and label the English · Issue #112 · w3c/vc-recognized-entities · GitHub</a></h3>
+</section>
+
+<section>
+<h3 id=edb9>Normative References For DID Services</h3>
+<p id=3552 class="phone s02"><cite>Manu_Sporny:</cite> Next topic is 117. So this one normative references to who is service and path service. So avon pointed out that we talk about this discovery mechanism in the specification and we even have algorithms on how to do the discovery. we don't have any normative references to who is service or the path service. the reason is because those things don't exist yet because the did working group is still working on them.</p>
+<p id=0b5d class="phone s02"><cite>Manu_Sporny:</cite> I am a little concerned we do describe it in detail here to the point that we don't need to refer to it normatively outside and that was done on purpose because we have no idea when the did resolution spec is going to go to wreck and that is if we make a normative reference to that specification it is going to hold up our specification until did resolution is at wreck and the timeline for that is unk and personally I would rather not put that spec in the path of this spec getting to wreck.</p>
+<p id=2864 class="phone s02"><cite>Manu_Sporny:</cite> So what we may do here is did working group if they can give us a timeline on when who is service and path service is going to be finalized and if they can't give us a date then we're going to define it as we do in the spec and we would love to hear their input on anything else that we should change to define it in this way and let them know that we're doing it because the spec's not there and complete and once they complete it then we can update the references but until that happens we don't really want to tie our spec to their spec it's on a different timeline. let me stop there.</p>
+</section>
+
+<section>
+<h3 id=0747><a href="https://github.com/w3c/vc-recognized-entities/issues/117">Normative references to WhoisService and PathService · Issue #117 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=bfb8 class="phone s02"><cite>Manu_Sporny:</cite> thoughts on that as an approach to address Avon's concern here?</p>
+<p id=3d78 class="phone s02"><cite>Manu_Sporny:</cite> Go ahead, I think the hope is they will be done in a matter of months,…</p>
+<p id=b9fb class="phone s05"><cite>Phil_Archer:</cite> I don't disagree that being dependent on someone else's wreck is something you only do…</p>
+<p id=cae5 class="phone s05"><cite>Phil_Archer:</cite> if you absolutely have to. But they are in So presumably they're already got a good idea of implementations and I don't know. I'm not active in that group. so I can't say but it sounds as if they may be done in a matter of months but I could be wrong. Yes. Okay,…</p>
+<p id=c966 class="phone s02"><cite>Manu_Sporny:</cite> Phil. and we have been hoping that for all more than a year.</p>
+<p id=0eb4 class="phone s02"><cite>Manu_Sporny:</cite> So being a regular participant in that group I am not as sure of that timeline as you might be.</p>
+<p id=5f94 class="phone s05"><cite>Phil_Archer:</cite> fair enough.</p>
+<p id=6092 class="phone s02"><cite>Manu_Sporny:</cite> You are right.</p>
+<p id=4142 class="phone s02"><cite>Manu_Sporny:</cite> they are in CR. they have not yet u defined how pad service works specifically and who is service is still up in the air and it's noted as things that are at risk and are going to change during CR but it's mush right now and…</p>
+<p id=4754 class="phone s05"><cite>Phil_Archer:</cite> Yeah. Yeah. Yep. Right up.</p>
+<p id=d409 class="phone s02"><cite>Manu_Sporny:</cite> people are arguing specifically over those things and anyway that's kind of the current state if you</p>
+<p id=15d3 class="phone s02"><cite>Manu_Sporny:</cite> If I were very sure about where we were on implementations with those features, I would definitely say yes, absolutely there in CR. We've got two implementations, no problem. I don't think we're there. what want do? do we want to just say, &quot;Hey, we'd love to refer to something. Can we do that? And if so, what's the timeline to get direct so that we can get direct? And if they can't give us timeline, then we keep it is. And we say, &quot;Hey, please.&quot; And if you can't give us timeline, please look at the algorithm we have and point out anything that we should update so that it will be compatible with whatever you, do when you get to Wreck.</p>
+<p id=2d62 class=irc><cite>&lt;Phillip_Long&gt;</cite> I agree with Manu  - but there remain some ... challenges that aren't clear will be resolved soon </p>
+<p id=2d30 class="phone s02"><cite>Manu_Sporny:</cite> …</p>
+<p id=783c class="phone s02"><cite>Manu_Sporny:</cite> notify the Go ahead, Phil. Yeah,…</p>
+<p id=a4e2 class="phone s06"><cite>Phillip_Long:</cite> Yeah, I would actually turn it around and…</p>
+<p id=9324 class="phone s06"><cite>Phillip_Long:</cite> present them with what you've got written there because that might speed up the process and at the end of that you could say if you can tell us when you're going to get to wreck then fine but would this suffice for now and does this align with what you're thinking of anyway?</p>
+<p id=ec66 class="phone s02"><cite>Manu_Sporny:</cite> that's a good idea.</p>
+<p id=2f32 class="phone s02"><cite>Manu_Sporny:</cite> Who is service? let's see.</p>
+<p id=db89 class="phone s06"><cite>Phillip_Long:</cite> It's too fractious a group that I think that…</p>
+<p id=44af class="phone s06"><cite>Phillip_Long:</cite> if you give them something simple like that, it might</p>
+<p id=51ec class="phone s02"><cite>Manu_Sporny:</cite> Yep. Agreed.</p>
+<p id=f695 class="phone s02"><cite>Manu_Sporny:</cite> like Mor and see if able to get adopted div reference and provide a timeline to the CG on The timeline is not then ask them to provide input on what we have. that will align with there.</p>
+<p id=75db class="phone s02"><cite>Manu_Sporny:</cite> normative reference time and at point future. Okay, how does that sound to folks? Any objections on us taking that approach? All right, then. That is discussion. Where are we? We're not quite ready for PR there.</p>
+<p id=2442 class="phone s02"><cite>Manu_Sporny:</cite> I guess it's ready for PR in that they can raise a PR using our text or we have effectively something there. I just don't want to come back and have to redisuss this. I don't know. What do we do here? This is in a weird state. I'll just mark it as ready for PR and then an editor will see it and go to write a PR for it and then see that now they actually need to move it forward.</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> Here maybe we can ping the chairs of that group and yep that's them. Okay. So that's that item. Let's see. Next issue 117. Is Kevin on the call today? Kevin not. So we can't process his issue 85. Next one up would be issue 107 then.</p>
+<p id=7f97 class="phone s02"><cite>Manu_Sporny:</cite> and All fine the UNVTD examples. we did get feedback from John which I have not had a chance to read in depth. So I'm just going to put this on the screen so everyone can read There we go. It's on the screen so folks can read it. I'm reading through it as</p>
+<p id=db8f class="phone s01"><cite>Todd_Snyder:</cite> I assume that the grid project or somewhere you can get more details about it. I know he talked a little bit about it when he presented this last week,…</p>
+<p id=7280 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=c212 class="phone s01"><cite>Todd_Snyder:</cite> I think it was, but I'm not familiar with what that is other than he was it was in the context of the UNP.</p>
+<p id=ceaa class="phone s02"><cite>Manu_Sporny:</cite> We do have this thing where I think they link to grid catch gtr.</p>
+<p id=f808 class="phone s02"><cite>Manu_Sporny:</cite> Where's the somewhere in here? Go ahead, Phil.</p>
+</section>
+
+<section>
+<h3 id=5b4d>Refining UNGRID / UNTP / UNVTD Examples</h3>
+</section>
+
+<section>
+<h3 id=dba8><a href="https://github.com/w3c/vc-recognized-entities/issues/107">Refine UNGRID / UNTP / UNVTD Example · Issue #107 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=ad23 class="phone s05"><cite>Phil_Archer:</cite> I'm not involved in grid,…</p>
+<p id=9ef8 class="phone s05"><cite>Phil_Archer:</cite> but I know what it is. and it's an offshoot of the UN Transparency Protocol that Steve Cabal has been running or working on for years. so Tom, this is a way to publish a list of recognized organizations that do things like accredit certification bodies and company registers and basically government registers of stuff. so it's kind of if you think of it as a list of people…</p>
+<p id=bee4 class="phone s01"><cite>Todd_Snyder:</cite> Gotcha.</p>
+<p id=6779 class="phone s05"><cite>Phil_Archer:</cite> who can recognize entities because the law says they can.</p>
+<p id=f32b class="phone s02"><cite>Manu_Sporny:</cite> And so there are two things he's saying we can do. The first one I understand which is John had suggested we put some dashed lines about around things to kind of establish the domains of control that each organization has and where their influence stops. that's fairly straightforward. I know how to run some, graphics experiments to see if we can get useful diagrams out of that. And if we're able to get it out of that for grid, we could probably apply the exact same thing to the GS1 case up to Phil, you and Todd to let us know if you find it valuable for your diagrams. So, this one's fairly straightforward. Know what to do there. I don't know what to do with number two. Does anybody else have any idea?</p>
+<p id=9f91 class="phone s05"><cite>Phil_Archer:</cite> I'm just reading it out for the first time. Sorry.</p>
+<p id=abe2 class="phone s04"><cite>Dave_Longley:</cite> I'm going to assume that responsibility for the data refers to who has made the claims not how you're managing or storing the information and other kinds of responsibilities and I can see how having some visual representation that someone could follow in these diagrams to see who has made the claims and who's verify ing what could be helpful. I'm not sure how easily it's accomplished. That doesn't mean it can't be done, but that I'm reading number two is very similar to number one.</p>
+<p id=59fd class="phone s04"><cite>Dave_Longley:</cite> I don't know what the necessary difference is other than there's verified seems to be different since you're just checking you you've determined who has made the claims and what claims they have made and that's just an assertion or…</p>
+<p id=48d3 class="phone s04"><cite>Dave_Longley:</cite> a check that what happened in number one matches I don't know…</p>
+<p id=1d01 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, maybe.</p>
+<p id=b4db class="phone s04"><cite>Dave_Longley:</cite> if any of that's helpful.</p>
+<p id=2995 class="phone s02"><cite>Manu_Sporny:</cite> I was thinking that he just wanted these to be listed on the credentials somehow as text,…</p>
+<p id=d21b class="phone s02"><cite>Manu_Sporny:</cite> but maybe not.</p>
+<p id=181a class="phone s04"><cite>Dave_Longley:</cite> One concern I have there,…</p>
+<p id=6011 class="phone s04"><cite>Dave_Longley:</cite> I mean that might be fine for the grid project, but I think authoritative, we've gone through great lengths in this spec to not refer to things as authoritative. but have a wide drawing a wider circle there where authoritative can be a reason that you accept things but anyone can accept anything and you don't have to accept some random person's list of things they accept on the internet. You don't have to use that. so I don't think we should introduce language like that. unless it's highly use case specific and then I think we're going to lose some value in the example.</p>
+<p id=fe54 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, Bill, go ahead.</p>
+<p id=6469 class="phone s05"><cite>Phil_Archer:</cite> I don't disagree with…</p>
+<p id=a861 class="phone s05"><cite>Phil_Archer:</cite> what Dave just said. I mean I kind of get where John Phillips is coming from. So That's John Phillips who not to be confused with John Phillips that works at PepsiCo. that's kind of grid specific. That sounds like an application and I'm very happy for our standards to remain a bit more abstract than that. So I agree with Dave and so I think we could say to John, that the difference between authoritative and verified. I mean I understand that authoritative as I say it's because the law says this is the authority. That's what he's getting at. This is the company registered because the law in this country says And in that sense it is authoritative. But I think that's a layer on top of what we're defining here.</p>
+<p id=c38f class="phone s02"><cite>Manu_Sporny:</cite> Yeah, definitely agree with both of you. okay, and it could be that we're misinterpreting what he's saying and so maybe we should ask him exactly what concrete changes would be made to the spec based on what you're saying. and then the rest of the conversation's going to be injected into the issue tracker for him to take a look at. So the group discussed this on the 268 call Pelon and came back with the following. we can do the first item mermaid diagram.</p>
+<p id=c53d class="phone s02"><cite>Manu_Sporny:</cite> and see how people react to the update. We will do that. for the second item, some of us are concerned that we might be misinterpreting what you are suggesting. And we'd love to hear about what concrete changes you think would be made specification as a result of applying your suggestions. the group was concerned about adding language such as</p>
+<p id=33a2 class="phone s02"><cite>Manu_Sporny:</cite> native to the specification. You've gone to great lens. Try and keep the more generic allowing for use cases and would be concerned that people would take the message away from reading the updates.</p>
+<p id=12cd class="phone s02"><cite>Manu_Sporny:</cite> You are suggesting as specification is meant for institution. This significant.</p>
+<p id=c691 class="phone s04"><cite>Dave_Longley:</cite> You could say legal backing. Yeah.</p>
+<p id=3173 class="phone s02"><cite>Manu_Sporny:</cite> You please</p>
+<p id=9240 class="phone s02"><cite>Manu_Sporny:</cite> Okay, that's that item. all right. So, it just needs more discussion. and it's somewhat ready for Half of it's ready for PR. The other bit we don't know. So, we can just mark it as ready for PR. It does need a little more discussion. final one here. I think this one we can just make the update.</p>
+</section>
+
+<section>
+<h3 id=233f>Explaining CRQC In Specification</h3>
+<p id=f830 class="phone s02"><cite>Manu_Sporny:</cite> Let me this as a next topic. Ted, you suggested that people don't know what a CRQC is. a cryptographically relevant quantum computer which most people don't. and so we should talk about it and spell it out in the specification. plus one to so we should do it. That is the suggestion. any objections? All right.</p>
+<p id=d9c1 class="phone s02"><cite>Manu_Sporny:</cite> Thumbs up.</p>
+<p id=fc2f class="phone s04"><cite>Dave_Longley:</cite> And just a yeah,…</p>
+<p id=bff2 class="phone s04"><cite>Dave_Longley:</cite> quick note that the quote there says breaks cryptography. That should say breaks the anchor link that's in the quote on line 1626. That should say breaks traditional cryptography. So that we can correct that at the same</p>
+</section>
+
+<section>
+<h3 id=05a9><a href="https://github.com/w3c/vc-recognized-entities/issues/115">CRQC is not in general nor wide use (yet) and should be included in each document · Issue #115 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=93e7 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, that's in the threat model, too. It needs to be updated there as well. All right, that's ready for I think that's it for our issues. There are some issues that are floating out there, but we are largely running out of issues to discuss, which is great. That's exactly where you want to get to as a working group. and once we run out of issues, we are effectively, unless somebody else can find another problem with the spec, which you can always find if you try really hard, we would be ready for, the candidate wreck phase, which means that we are then kind of stuck</p>
+<p id=fe08 class=irc><cite>&lt;Dave_Longley&gt;</cite> should say &quot;breaks *traditional* cryptography&quot; (not all cryptography) </p>
+<p id=670e class="phone s02"><cite>Manu_Sporny:</cite> waiting for our horizontal reviews. one thing that we could do is we could shift to talking about what a test suite looks like for this work and what you need to support and that sort of thing. So that might be where we have, discussions over the next, one or two calls, but frankly, we can maybe fill two to three calls with that and then we're out of content for that as so that's good. this is a lovely group. we love meeting with each other and talking about these things, but we might just have to end the group because we're more or less done.</p>
+<p id=c7ba class="phone s02"><cite>Manu_Sporny:</cite> We'll back way off, maybe meet once a month, but there wouldn't be a reason to meet because we've pretty much done what we set out to accomplish. okay, I think that's it for today. Anything else that we should keep in mind before the call next week? All right. with that, have a wonderful rest of your week and…</p>
+<p id=2ee2 class="phone s02"><cite>Manu_Sporny:</cite> we will see everyone here next week. Take care. Bye.</p>
+<p id=aa8f class="phone s05"><cite>Phil_Archer:</cite> Thanks, man.</p>
+<p id=5e2b class="phone s05"><cite>Phil_Archer:</cite> Thanks, everyone. Bye-bye. Meeting ended after 01:07:28 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
