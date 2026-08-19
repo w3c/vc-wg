@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 19 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>19 August 2026</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Aug/0019.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/08/19-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>bigbluehat, brent, brentz, carolynn, denkeni, dlongley, exe, ivan, JennieM, jimr, joe, JoeAndrieu, kezike, manu, michaelshea, pdl-asu, phila, saad, TallTed, wes-smith, will, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>manu, JimR, JennieM</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#cbe6">Internationalization issue</a>
+<ol>
+<li><a href="#8c31">w3c/<wbr>vc-data-model#1641</a></li>
+</ol>
+</li>
+<li><a href="#77e6">DigestSRI/DigestMultibase</a>
+<ol>
+<li><a href="#ad6f">w3c/<wbr>vc-data-model#1628</a></li>
+</ol>
+</li>
+<li><a href="#a96b">Task Force Updates</a></li>
+<li><a href="#1091">DPP + Rec Entities discussion</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=a00a class="phone s01"><cite>brent:</cite> Welcome everyone, we'll get started in a bit</p>
+<p id=bd97 class="phone s01"><cite>brent:</cite> This is the primary telecon for the week, we are meeting under the W3C following the IPR , code of conduct, and process of W3C.</p>
+<p id=cc81 class="phone s01"><cite>brent:</cite> Our agenda for today -- we will start with a brief look at the digestSRI issue, we will go into task force updates, we'll talk briefly about relationship between DPP and RecognizedEntities, a bit about TPAC and GDC, and then the primary focus is a conversation about threat models.</p>
+<p id=21ba class="phone s01"><cite>brent:</cite> please feel free to provide changes/additions to agenda</p>
+<p id=1273 class="phone s02"><cite>manu:</cite> There is an internationalization issue we should cover.</p>
+<p id=21ef class="phone s03"><cite>ivan:</cite> Perhaps we should have Jim introduce himself?</p>
+<p id=3d81 class="phone s04"><cite>JimR:</cite> I am Jim Richards, CISO for ONEPROOF, doing digital IDs and ISO and OpenID harmonization. Prior to thsi work 20+ years work in government, security architect of Wisconsin RealID, worked a lot in physical ID speace, some in digital ID space.</p>
+<p id=b8b7 class="phone s04"><cite>JimR:</cite> I have experince for European manufacturing company, UK, and Germany, dealt with privacy laws there.</p>
+<p id=aa01 class="phone s05"><cite>Carolynn:</cite> I have a question, can we ask about Recognized Entities work?</p>
+<p id=9e56 class="phone s01"><cite>brent:</cite> Yes, we have a RE and DPP item coming up, would it fit in there?</p>
+<p id=d2ee class="phone s01"><cite>brent:</cite> if it doesn't fit in that conversation, make sure to mention it.</p>
+<p id=714b class="phone s01"><cite>brent:</cite> Let's take the i18n issue first.</p>
+</section>
+
+<section>
+<h3 id=cbe6>Internationalization issue</h3>
+<h4 id=8c31><a href="https://github.com/w3c/vc-data-model/issues/1641">w3c/<wbr>vc-data-model#1641</a></h4>
+<p id=609b class="phone s02"><cite>manu:</cite> Re: 1641, the internationalization group gave feedback during the horizontal review, that we were being inconsistent in our use of string values , and we need to be specific about when strings are localizable.</p>
+<p id=0a61 class="phone s02"><cite>manu:</cite> the current proposal is to add a new term for a localizable value in the verifiable credential data model.</p>
+<p id=07b5 class="phone s02"><cite>manu:</cite> I can raise the pull request unless there is an objection, or if someone has a better way to address this issue.</p>
+<p id=9884 class="phone s03"><cite>Ivan:</cite> I have no objection, there is separate vocab specification.  The tool has been upgraded to address the features Manu expressed, but the work needs to be done</p>
+<p id=7d7e class="phone s06"><cite>JoeAndrieu:</cite> +1 to management proposals, coming up with a term for what is localizable. How do we deal with images, because it is not covered and there may be no solution.</p>
+<p id=b9ab class="phone s02"><cite>manu:</cite> +1 to that Joe, I think this one is specific to string values, hyper focused, trying to solve the hyper focused thing, we're vague when we say string, need to fix that</p>
+<p id=7d30 class="phone s02"><cite>manu:</cite> other can of worms problem, absolutely struggling with that in Render Methods spec, tag render template with thing  - images, audio, everything covered, person viewing has said they have arabic as localization, I'll go to arabic template . . .</p>
+<p id=9cba class=irc><cite>&lt;dlongley&gt;</cite> +1 that &quot;within the template&quot; using the HTML render method might solve a lot</p>
+<p id=996d class="phone s02"><cite>manu:</cite> other alternatives as well, active points of discussion in render method if you want to help there</p>
+<p id=19ad class="phone s01"><cite>Brent:</cite> sounds like we have a path forward, plus additional conversation . . .</p>
+</section>
+
+<section>
+<h3 id=77e6>DigestSRI/DigestMultibase</h3>
+<h4 id=ad6f><a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></h4>
+<p id=deab class="phone s01"><cite>Brent:</cite> issue recommends deprecating DigestSRI as related resource . . .<br>
+<span id=1e60>… right now the VC Data Model supports two options, DigestSRI and DigestMultibase, issue recommends deprecating to rely on Data model, significant pushback from dev is Japan making use of DigestSRI . . .</span><br>
+<span id=1989>… happy to take comments, Shigeya's schedule making it difficult to attend call, may be channeling his thoughts, and may need to put off to TPAC . . .</span></p>
+<p id=ffff class="phone s07"><cite>Phila:</cite> what to help group move forward, came up in our F2F in June, noted at the time Shigeya's response, which was impassioned . . .<br>
+<span id=01d0>… if I wear GS1 hat, no skin in game, approaching purely as Brent's co-chair, what I see is one very influential company pushing for something, and I see another member of the group, eminent professor in Japan, arguing against . . .</span><br>
+<span id=1b7c>… mentioned those features of Digital Bazaar and Shigeya, had one-to-one with Shigeya recently, thinks deprecating would be real problem, doesn't want it to happen. Others want it to happen, what would be middle ground, not forcing anyone to implement anything they don't want to, unless you get to a spec . . .</span><br>
+<span id=3ca7>… would Shigeya be willing to add open source code, he said yes, and in the last 24 hours has argued his case with evidence, Dave has responded, seems to me it is a feature in VCDMII, would cause harm if deprecated . . .</span><br>
+<span id=1e1a>… personal view is that DigestSRI should stay . . .</span></p>
+<p id=9fa2 class="phone s02"><cite>manu:</cite> thank you for the summary, only part I disagree with is the framing that this is coming from one org, discussed this in great depth during recognized entities call, +1s from lots of people on the call, deprication doesn't mean removal, just stop using it . . .<br>
+<span id=1436>… technical issues if we keep using it, more than one company weighing in on this, don't know anyone else fighting hard for this feature except for one org in IETF . . .</span><br>
+<span id=5826>… concern I have is that we are not making a technical decision if we keep it in the spec, making a political one, don't think it is a good thing to do. Will world explode if we keep it in the spec? no, and not a good thing to use too much of the group's time, but it will keep coming up if there is push to use DigestSRI, will just move into the task forces.</span><br>
+<span id=7cb0>… I'm happy to leave it alone if we should be making a political decision over a technical, but we should move on</span></p>
+<p id=10000 class="phone s01"><cite>Brent:</cite> just in general, the way we have tended to do things in the working group is to support people in the things they need to do their work, as long as it doesn't keep others. historically having more than one option to do things has been the way we've done things<br>
+<span id=5069>… I think it is technically better to choose one, but our path forward is to error correct, or to continue on. In other cases, for this spec we are using VC Data model, and must use DigestMultibase, is this an option, would this alleviate some of the difficulties</span><br>
+<span id=e328>… spend 5 more minutes</span></p>
+<p id=1f1b class="phone s08"><cite>Dave:</cite> that might alleviate some of these things, some may need their own guidance in what they should pick. Don't think it would be good to leave it open and have this come up with every other spec, would prefer us to say in VCDM to recommend one over the other...<br>
+<span id=6c9c>… that being said, DigestSRI may have a problem, linking to a spec in working draft status that is in perma-working draft status...</span><br>
+<span id=10001>… just incidental fact that hash algorithms in spec have been historically stable, if one removed, we'd have a gap. More or less what I made in my comment, really only have the appearance of compatibility because we don't use processing rules, will have this gap, won't work right...</span></p>
+<p id=c0c4 class="phone s01"><cite>Brent:</cite> would help to adjust to say that DigestMultibase is recommended, significant issues relying on DigestSRI</p>
+<p id=150d class="phone s07"><cite>Phila:</cite> Shigeya has volunteered to write more</p>
+<p id=97f6 class="phone s02"><cite>manu:</cite> +1 brent, do think profiling is the way we've done it, we should do it this time, what we tried to do in recognized entities spec; +1 to what Phil said, don't want to make decisions without people in the room...</p>
+<p id=abae class=irc><cite>&lt;phila&gt;</cite> phila: Also noted that the Rec Ent TF call is at 05:00 Tokyo time so an issue that is of particular interest to anyone in Japan can't be resolved at that time.</p>
+<p id=10002 class="phone s02"><cite>manu:</cite> not consensus to add DigestSRI, profiling may work, don't want to spend much time in the group talking about it, but if we don't come to a decision, it will continue</p>
+<p id=edde class="phone s01"><cite>Brent:</cite> timing-wise for spec, chair hat off, personally, I'm fine, and Phil is fine putting this off until TPAC when we can solve in a room together, but that feels like that may impact timelines, so final question is - is putting this off until TPAC an option?</p>
+<p id=3e69 class="phone s02"><cite>manu:</cite> we can put it off until TPAC, editors can say we haven't quite figured this out, but can go into candidate rec stating that...</p>
+<p id=fd76 class=irc><cite>&lt;ivan&gt;</cite> +1 to manu</p>
+<p id=cea4 class="phone s02"><cite>manu:</cite> most fair thing to do is wait until we have everyone the room</p>
+</section>
+
+<section>
+<h3 id=a96b>Task Force Updates</h3>
+<p id=cb64 class="phone s09"><cite>wes-smith:</cite> brief update for barcodes and data integrity, call for horizontal review is now out, data integrity is progressing at good clip, ongoing work on selective disclosure. Work also going on with forgery defence hope to get the call out in the next few weeks</p>
+<p id=1610 class="phone s10"><cite>kezike:</cite> main two things to note are that we've submitted requests for review for accessibility and internationalization, security and privacy in the next couple weeks, after resolution last week able to submit IANA registrations for “interaction” and “web+interaction” URI schemes, should resolve soon. After which, we should have URIs reserved for us</p>
+<p id=cb9c class="phone s01"><cite>Brent:</cite> possible request for Ivan to check on ianna</p>
+<p id=95aa class="phone s10"><cite>kezike:</cite> asked for a personal contact to use, seems like Ivan is best choice, only things outstanding for URIs to be reserved</p>
+<p id=aed7 class=irc><cite>&lt;dlongley&gt;</cite> +1 to get the registration and then make contact adjustments as needed</p>
+<p id=304b class="phone s03"><cite>Ivan:</cite> fine to use my name, or mine with Manu's, but not a long-term solution. once registered, we should put contact name back to working group.</p>
+<p id=9e37 class="phone s01"><cite>Brent:</cite> is there a W3C liaison address we can use?</p>
+<p id=7b62 class="phone s10"><cite>kezike:</cite> this is just for the request</p>
+<p id=a833 class="phone s02"><cite>manu:</cite> a number of us working on threat models are trying to figure out the right way to publish those, just a heads up to the group, trying to figure out publication process. Trying to make it easy on everyone, stay tuned</p>
+<p id=e9fe class="phone s11"><cite>denkeni:</cite> confidence methods, task force decided to keep original name, add assurance levels as well, and to keep short URL names. Almost finished with first draft, will hopefully start in to discuss threat modeling at the next meeting</p>
+</section>
+
+<section>
+<h3 id=1091>DPP + Rec Entities discussion</h3>
+<p id=25dc class="phone s05"><cite>Carolynn:</cite> so, Monday, in DPP task force, Ivan told us about the work going on in Rec Entities, discussed it, Ivan curious what is the relationship between the two...<br>
+<span id=6d20>… turns out the two examples provided in Rec Entities are very close/relevant, Ivan wanted to know if it would make sense to add a DPP specific example in spec...</span><br>
+<span id=d224>… don't have an opinion, would it make sense to add a DPP specific example...</span><br>
+<span id=afc7>… have one on GS1 and one on trade documents</span></p>
+<p id=10003 class="phone s02"><cite>manu:</cite> yes, we should do this. I think we should add a DPP use case to appendix, would love to get input on what it should be. Overlap, but it is not a replacement overlap. Related, but Rec Entities is focused on chain of entities to top root of trust. Would love to put examples in, just let us know how...<br>
+<span id=7fe4>… some of us are happy to come to DPP group, just let us know when to do that</span></p>
+<p id=d66a class="phone s05"><cite>Carolynn:</cite> I was reading the spec from Rec Entities, chapter 4 is on discovery algorithms, which may be a better name for the title of the chapter ...<br>
+<span id=93a0>… examples in appendix B illustrate to discovery algorithms, but real question is - is there a plan/discussion on the pros and cons of the two discovery algorithms? way to have the conversation, or place in the document? spec recommending two...</span><br>
+<span id=59f6>… have working relationship with people working on SDJot, asked them how they do discovery in their context, started to get some reactions from them...</span><br>
+<span id=34da>… could be interesting as we are considering pros and cons of different approaches</span></p>
+<p id=5657 class="phone s07"><cite>Phila:</cite> carolynn, let's chat offline, certifications certainly the big use case, I think an example in there...</p>
+<p id=5a17 class="phone s02"><cite>manu:</cite> two discovery algorithms, yes different appendices point to each one, trying to get implementers to tell us which they prefer and why, benefits and drawbacks in both. Afraid to say something to early as people are still figuring it out. Not an expert in SDJot, know in implementations we've had to do they tend to just depend on x509</p>
+<p id=7b4b class=summary>certificates, do speak to a bit of that in spec...<br>
+<span id=3dea>… vc data model, group exists because x509 certs have limitations, seeing these as they are deployed in trust infrastructure in mdoc and mdl, not going super great, but tends to be what sdjot and mdl rely on. Danger of putting a this is what is good and this is what is bad on it is that we end up in endless discussion and that burns a lot of time</span><br>
+<span id=a32c>… things have shifted, don't think anyone enjoyed the process, drove a wedge between the groups and I'm reticent to do that. Here are the reasons to use each, and mark that implementors decide, rather than picking a fight</span></p>
+<p id=63d9 class="phone s01"><cite>Brent:</cite> sounds like we have steps forward, last topic is TPAC</p>
+<p id=1083 class="phone s06"><cite>JoeAndrieu:</cite> my request is short, is there a way we could get the calendar to remove cancelled meetings? duplicate meetings, unsubscribed and resubscribed, get conflicts. Can we get the adjustment?</p>
+<p id=13f3 class="phone s01"><cite>Brent:</cite> option when you are importing by URL if subscribing to W3C calendar to not include cancelled events, my calendar hasn't quite figured out what is going on, but in theory, if you do that, cancelled things won't show up</p>
+<p id=962e class="phone s03"><cite>Ivan:</cite> the way I found it a while ago, go to your own calendar page, go to very end, then it will give you an ICS link with feature. checkbox is new</p>
+<p id=72bd class="phone s06"><cite>JoeAndrieu:</cite> i bet this will work</p>
+<p id=61ba class="phone s01"><cite>Brent:</cite> GDC is in a couple weeks, quite a few members of working group will be there, W3C official organizer. Opportunities to talk with governments and organizations looking to modernize digital identity infrastructure, both corporate and personal. If people from this group are going and would like to coordinate, please reach out...<br>
+<span id=6b30>… signal group called GDC Standards Track, I can add you to the group. and we are at time, so we will talk about TPAC and Threat Modeling next time</span></p>
+<p id=6945 class=irc><cite>&lt;TallTed&gt;</cite> fwiw, command-down gets you *straight* to the bottom of `my calendar` page</p>
+<p id=1650 class="phone s01"><cite>Brent:</cite> grateful to scribes, and to all the work being done in task forces, moving forward quite efficiently and it is great to see</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
