@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 26 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>26 August 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20260826T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/08/26-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony, bigbluehat, brent, Carolynn, dlongley, dmitriz, elaine, exe, hsano, ivan, JennieM, jimr, JoeAndrieu, kezike, michaelshea, pdl-asu, phila, saad, tallted, wes-smith, Wip8</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>Wip8, wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ed87">Threat Model meta conversation</a></li>
+<li><a href="#580b">Task Force Updates</a></li>
+<li><a href="#d565">GDC, TPAC</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<p id=413e class="phone s01"><cite>brent:</cite> Welcome to VCWG. We follow W3C IPR and other policies.<br>
+<span id=8f8c>… First up, agenda review</span><br>
+<span id=0acf>… We will talk about threat models. How we publish and incorporate those within our specs</span><br>
+<span id=bff5>… We will be getting task force updates</span><br>
+<span id=a9a9>… Also talking about GDC which is next week. Then TPAC in October</span><br>
+<span id=d3d0>… Before all that intros. ANyone want to introduce themselves?</span></p>
+<p id=de2d class="phone s02"><cite>antony:</cite> Hi I am Anthony, I live in New York. Work with machine learning, multi modal LLM. Passionate about progress and safeguarding the future from both bad actors and negative side of AI<br>
+<span id=adb9>… Heavily into coding etc. Was using a crypto algorithm that was not standardized. Wrote a draft. Got introed to manu and that led me here</span></p>
+<p id=12e2 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to encourage am tro join IRC</p>
+<p id=19ca class="phone s03"><cite>phila:</cite> anthony, could you please join IRC.</p>
+<p id=3e29 class=irc><cite>&lt;michaelshea&gt;</cite> not GS1, but W3C...</p>
+<p id=dd07 class=irc><cite>&lt;exe&gt;</cite> <a href="https://xkcd.com/1782/">https://<wbr>xkcd.com/<wbr>1782/</a></p>
+<p id=b581 class="phone s03"><cite>phila:</cite> IRC is how we do things at the W3C. where the minutes are taken etc</p>
+</section>
+
+<section>
+<h3 id=ed87>Threat Model meta conversation</h3>
+<p id=c2a2 class="phone s01"><cite>brent:</cite> We are talking about how are we going to publish these things, are we even going to, do we need to publish these things. What tools etc<br>
+<span id=999a>… a meta conversation about how we are dealing with threat models across task forces</span><br>
+<span id=81e5>… We are strongly encouraged to do these threat models in order to populate our security and privacy considerations</span><br>
+<span id=4326>… NOt sure we are required to publish the threat models themselves</span></p>
+<p id=3a0c class="phone s04"><cite>ivan:</cite> Let me give an overview of where we are now<br>
+<span id=f280>… All threat models we have right now are in a separate document. They are on github and can be served on github pages</span><br>
+<span id=4be6>… The question is what to do with them</span><br>
+<span id=af7f>… The expectation of the W3C, as far as I know, is to have the threat models published somewhere</span><br>
+<span id=d47f>… Two irreconcilable positions we could take. We publish each threat model as individual WG notes.</span><br>
+<span id=ac0f>… We are talking about something between 12-15 documents here</span><br>
+<span id=a6e0>… This is a one time big effort</span><br>
+<span id=b117>… The other side, is to have the threat model included as part of the specifications themselves</span><br>
+<span id=9569>… E.g. to add a new chapter specifications. This is viable alternative, although may need to configure and update echidna and tooling to support this</span><br>
+<span id=e826>… Think this is doable</span><br>
+<span id=c285>… The tooling used for the creation of threat model document are different from one task force to another. This is a pity</span><br>
+<span id=8b9c>… It would be good to have those aligned</span><br>
+<span id=93ba>… This tooling has been developed across the various task forces and the DIDWG</span><br>
+<span id=4565>… It would be good to have a common approach across WGs</span><br>
+<span id=f253>… Manu who developed the tooling and is the editor of many of these documents is unfortunately not here. We should wait for him before final decision</span></p>
+<p id=083b class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to nuance the &quot;requirements&quot;: SING has requested threat models be both created and published. The process is silent on the matter. And mention registry aspiration.</p>
+<p id=0496 class="phone s05"><cite>JoeAndrieu:</cite> Great summary ivan<br>
+<span id=38eb>… Wanted to nuance the requirements. SING has requested the threat models be created and published</span></p>
+<p id=78d0 class=irc><cite>&lt;Antony&gt;</cite> Antony for Ivan and phila : thanks for the summary</p>
+<p id=0f9c class="phone s05"><cite>JoeAndrieu:</cite> I support this as a direction to help upskill the security layer<br>
+<span id=ae8c>… The process itself is still silent on this matter</span></p>
+<p id=fd5a class="phone s05"><cite>JoeAndrieu:</cite> There is an understanding that threat models should be treated as living documents. Can be updated as we become aware of new threats<br>
+<span id=8b15>… Structurally these feel like they fit more in a W3C registry dynamic</span><br>
+<span id=2786>… I am a fan of the camp where we have a separate repo for the threat models</span><br>
+<span id=def1>… If we were to move these into W3C registry, having a separate repo makes this easier</span></p>
+<p id=3a80 class="phone s04"><cite>ivan:</cite> One process point to be clear. It is correct that if it is part of a recommendation, then updating the threat model requires a WG. This is true for Notes too</p>
+<p id=8a58 class="phone s05"><cite>JoeAndrieu:</cite> Yes, I was talking about the new W3C Registry artifact WGs can create</p>
+<p id=3b56 class="phone s01"><cite>brent:</cite> Any other opinions?</p>
+<p id=0030 class=irc><cite>&lt;Antony&gt;</cite> If the W3C group doesn't have tools, is this helpful (we find them useful!)l: <a href="https://owasp.org/www-project-threat-modeling/">https://<wbr>owasp.org/<wbr>www-project-threat-modeling/</a></p>
+<p id=ffff class="phone s06"><cite>Wip8:</cite> I want to suggest a middle path - I wonder if there is a sensible combination of some of the documents to avoid the high number of documents. In the DID working group we combined threat models into a single threat model for the ecosystem. Maybe there isn't one for this ecosystem, but we could still combine some.</p>
+<p id=5466 class="phone s04"><cite>ivan:</cite> Some of this has already happened - for example, the cryptosuites do not have individual threat models, just the DI threat model. On the other hand, binding all of them into one would be a huge document.</p>
+<p id=de29 class="phone s04"><cite>ivan:</cite> Some of the threat models already combine and address multiple specs. E.g. the cryptosuite specs<br>
+<span id=d0ce>… Combining all threat models into one would make the doc huge and pretty unmanagable</span></p>
+<p id=9f16 class="phone s03"><cite>phila:</cite> Slightly concerned that our decisions are being driven by a process that wasnt designed for this and tooling that hasnt been built for this<br>
+<span id=0a03>… JoeAndrieu is right we discover and document new threats all the time. It is something that is dynamic. It is like the errata part of a spec</span><br>
+<span id=2e36>… I think this is a very good feature. But it suggests that the process and the tooling need to be updated so that we can publish these threat models in a way that actually works for the people doing the work</span></p>
+<p id=39c6 class="phone s02"><cite>Antony:</cite> Trying to work out how this connects to the OWASP threat modelling approach. Have the group looked into this</p>
+<p id=6f94 class="phone s01"><cite>brent:</cite> Anyone have an answer?</p>
+<p id=398e class="phone s07"><cite>wes-smith:</cite> I don't know a lot of the details of this approach. What is currently happening, is the W3C is currently trialing the new approach from the Security interest group guidance around how to produce threat models<br>
+<span id=efd5>… It feels like the questions around OWASP fit more here</span><br>
+<span id=957d>… Today we are talking more about the process of publishing and maintaining threat models within this group</span></p>
+<p id=f86d class=irc><cite>&lt;ivan&gt;</cite> +1 to wes-smith</p>
+<p id=27ca class="phone s07"><cite>wes-smith:</cite> Recommend connecting to the SING group to discuss how threat modelling should be done</p>
+<p id=d704 class=irc><cite>&lt;Antony&gt;</cite> ok: got it, thanks</p>
+<p id=20cb class="phone s07"><cite>wes-smith:</cite> I think the VCWG is one of the first group to do threat modelling following this guidance</p>
+<p id=a334 class="phone s01"><cite>brent:</cite> We have done a good job of outlining where we are at, we have a few suggestions for where we want to go. Does anyone want to propose next steps?</p>
+<p id=01ba class="phone s04"><cite>ivan:</cite> I am neutral about how we publish these documents.<br>
+<span id=0d01>… What counts the most is what is comfortable for the people doing the work. This is a huge amount of wokr</span><br>
+<span id=945d>… We have a discussion on an email threat about this</span><br>
+<span id=0805>… I want to hear manu's opinion because he is the editor of many of these documents. Want something that is comfortable for him</span></p>
+<p id=41da class=irc><cite>&lt;Antony&gt;</cite> dlongley: I see, it's the actual logistics (storing publishing) of the docs, then maintaining that juggernaut...huge job and different.</p>
+<p id=8183 class=irc><cite>&lt;dlongley&gt;</cite> +1 Antony</p>
+<p id=10000 class="phone s05"><cite>JoeAndrieu:</cite> I agree. There is another conversation going on where we are trying to figure this out with staff and SING. Without manu's voice it is hard to believe we have consensus around any options we might pursue<br>
+<span id=8e78>… Think we should revisit this next week</span></p>
+</section>
+
+<section>
+<h3 id=580b>Task Force Updates</h3>
+<p id=3f7f class="phone s01"><cite>brent:</cite> good foundational conversation. More conversations necessary when other people are in the room</p>
+<p id=51c7 class="phone s01"><cite>brent:</cite> If you are leading a task force, please jump on the queue to let us know how things are going</p>
+<p id=afa0 class="phone s07"><cite>wes-smith:</cite> Update from the VC barcodes and data integrity task force<br>
+<span id=12fe>… Couple of weeks ago we got call for horizontal review out</span><br>
+<span id=efbf>… We are working to finalize the features, moving some things out of the spec</span><br>
+<span id=10001>… Data integrity is ongoing. Lots of work to improve readability and extract commonality across cryptrosuites</span><br>
+<span id=0490>… forgery defense is in a good place. Expect to put out a call for horizonal review for this soon</span></p>
+<p id=54ea class="phone s08"><cite>Carolynn:</cite> In recent vocabulary task force we agree to create a ecosystem example for the recognized entities use case<br>
+<span id=57b7>… We were hoping to model a DPP example with several trust anchors. This would go in Annex B</span></p>
+<p id=be43 class=irc><cite>&lt;Zakim&gt;</cite> kezike, you wanted to provide update for VCALM TF</p>
+<p id=de31 class="phone s09"><cite>kezike:</cite> Here to give an update on VCALM</p>
+<p id=0f38 class=irc><cite>&lt;kezike&gt;</cite> interaction provisional IANA URI registration: <a href="https://www.iana.org/assignments/uri-schemes/prov/interaction">https://<wbr>www.iana.org/<wbr>assignments/<wbr>uri-schemes/<wbr>prov/<wbr>interaction</a></p>
+<p id=10002 class=irc><cite>&lt;kezike&gt;</cite> web+interaction provisional IANA URI registration: <a href="https://www.iana.org/assignments/uri-schemes/prov/web+interaction">https://<wbr>www.iana.org/<wbr>assignments/<wbr>uri-schemes/<wbr>prov/<wbr>web+interaction</a></p>
+<p id=6380 class=irc><cite>&lt;kezike&gt;</cite> IANA URI schemes: <a href="https://www.iana.org/assignments/uri-schemes">https://<wbr>www.iana.org/<wbr>assignments/<wbr>uri-schemes</a></p>
+<p id=4a3e class="phone s09"><cite>kezike:</cite> We have officially gotten the two IANA schemes registered<br>
+<span id=4024>… These are provisional URIs at the moment. We hope to mmake them permanent down the line</span><br>
+<span id=d256>… Progress on horizontal review. Requested reviews for internationalization and accessiblity. Working towards security and privacy</span><br>
+<span id=6ca9>… Needed to refactor the spec to inline the threat model</span><br>
+<span id=0c75>… Progress on various issues and PRs</span></p>
+<p id=2c42 class="phone s03"><cite>phila:</cite> GS1 hat on. Regarded the recognized entities spec, we are very excited about this<br>
+<span id=d2a1>… adjusting our data model to match</span><br>
+<span id=4b7c>… We intend to offer an update and an implementation to the spec</span></p>
+<p id=fa03 class="phone s10"><cite>dmitriz:</cite> For render method task force. We have started internationalization and accessibility for horizontal reviw<br>
+<span id=b8d8>… continue to work through the threat modelling, where we have some naming decisions to make</span><br>
+<span id=439f>… On track for the three main render method suites</span></p>
+<p id=1349 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to speak to confidence method</p>
+<p id=cc02 class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://github.com/w3c/vc-confidence-method/pull/43">w3c/<wbr>vc-confidence-method#43</a></p>
+<p id=d940 class="phone s05"><cite>JoeAndrieu:</cite> PR 43 has active discussion in the group<br>
+<span id=b0a9>… Adding DID based authentication methods to confidence method</span><br>
+<span id=b927>… A good draft, needs some tweaking</span><br>
+<span id=6679>… This thursday we will be starting the groups discussion about threat modelling for this spec</span><br>
+<span id=1e23>… 7am Pacific</span></p>
+<p id=37b8 class="phone s01"><cite>brent:</cite> Thanks for these updates. Great to see things progressing</p>
+</section>
+
+<section>
+<h3 id=d565>GDC, TPAC</h3>
+<p id=d495 class="phone s01"><cite>brent:</cite> Global Digital Collaboration hapening next week in Geneva</p>
+<p id=23c9 class=irc><cite>&lt;phila&gt;</cite> <a href="https://globaldigitalcollaboration.org/gdc26?day=sept-1">https://<wbr>globaldigitalcollaboration.org/<wbr>gdc26?day=sept-1</a></p>
+<p id=449c class="phone s01"><cite>brent:</cite> TPAC happening in dublin in October<br>
+<span id=ee93>… W3C is an organizing member of GDC. Lots of people from the team and members of WG will be there</span></p>
+<p id=4631 class=irc><cite>&lt;Carolynn&gt;</cite> I will be at GDC</p>
+<p id=e1a5 class="phone s01"><cite>brent:</cite> Opening the floor to disucss what the goals should be for this conference. What would you like to see accomplished</p>
+<p id=1d83 class="phone s01"><cite>brent:</cite> I will be on a panel on day 3 to talk about holder binding<br>
+<span id=e55b>… Think there will be quite a bit happening on zero knowledge</span><br>
+<span id=1d7e>… A lot about use of VCs in trade</span></p>
+<p id=9af1 class="phone s03"><cite>phila:</cite> I am on a panel on day 3. With steve capell an the UN transparency<br>
+<span id=8b67>… I am apprehensive. People may be there advocating strongly for there own work and also dismissing the work from this group</span><br>
+<span id=2345>… Hoping the spirit of the event is collaborative</span><br>
+<span id=574e>… Three days of flying the flag for the group. What we do and why we do it</span></p>
+<p id=2fa3 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to inquire about Vocabulary Interest Group ideation</p>
+<p id=bf21 class=irc><cite>&lt;TallTed&gt;</cite> What exactly does &quot;holder binding&quot; mean in this context? I don't think it's yet meant the same thing to two speakers...</p>
+<p id=0eb0 class=irc><cite>&lt;dlongley&gt;</cite> +1 to all the work and flag flying too!</p>
+<p id=59a2 class="phone s05"><cite>JoeAndrieu:</cite> +1 to all the work. Appreciate that folks are going and carrying our conversations forward in this space<br>
+<span id=bec8>… In brussels we had talked about how we might create a registry for all sorts of different vocabularies that can be applied to VCs from around the world</span><br>
+<span id=27e9>… Rather than having the WG to be those experts. Perhaps we have the WG set up a registry and an interest group form to maintain that registry</span></p>
+<p id=b4ac class=irc><cite>&lt;Antony&gt;</cite> @Phila + @Carolynn : thanks for flying flag next week...cannot imagine how anyone could not be anything but open to other people's ideas...that's the point of conferences!</p>
+<p id=627c class="phone s05"><cite>JoeAndrieu:</cite> I think this is a good idea. A lot of moving parts to get this going. Encourage folks to use GDC and TPAC to coordinate and move this forward</p>
+<p id=5511 class="phone s08"><cite>Carolynn:</cite> wanted to ask brent and phila if there will be a moment to present the status of all the work from this group<br>
+<span id=6814>… Is there such a presentation planned</span></p>
+<p id=10003 class="phone s01"><cite>brent:</cite> Do not believe there is one planned with that topic</p>
+<p id=9f53 class="phone s03"><cite>phila:</cite> Agree it would be great if there were<br>
+<span id=ba32>… I didn't think of that. Not sure what to expect. Need to know in advance that is what you want to do. We didnt.</span></p>
+<p id=3051 class="phone s04"><cite>ivan:</cite> Wondering if Pierre Antoine is planning to do somethinbg around this. He was there last year and did something similar<br>
+<span id=0c45>… Not sure</span></p>
+<p id=a209 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention holder binding</p>
+<p id=7c0a class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://github.com/WebOfTrustInfo/rwot11-the-hague/blob/master/final-documents/identifier-binding.pdf">https://<wbr>github.com/<wbr>WebOfTrustInfo/<wbr>rwot11-the-hague/<wbr>blob/<wbr>master/<wbr>final-documents/<wbr>identifier-binding.pdf</a></p>
+<p id=46b9 class="phone s05"><cite>JoeAndrieu:</cite> Responding to TallTed question about holder binding. Feel that many people in this group have tried to move beyond this phrase<br>
+<span id=273a>… There was a paper that got written that moved from holder binding and initiated the recognized entity and confidence method work</span></p>
+<p id=bbe1 class="phone s01"><cite>brent:</cite> The work we are doing in the VCWG I intend to mention on the panel on holder binding<br>
+<span id=d053>… more of a Yubico panel than W3C panel</span></p>
+<p id=3e07 class="phone s06"><cite>Wip8:</cite> I'll also be there and am looking forward to it. It was collaborative last year. I'll be flying the flag for DIDs, but also interested to see the different places where these technologies have adoption and interest.<br>
+<span id=c16c>… It's good to hear from people who deal with identity problems but don't have technical backgrounds and often aren't in the same spaces.</span></p>
+<p id=e568 class=irc><cite>&lt;TallTed&gt;</cite> JoeAndrieu -- That paper appears to be 3 years old?</p>
+<p id=a5be class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/2026/ecommerce-agents/agenda">https://<wbr>www.w3.org/<wbr>2026/<wbr>ecommerce-agents/<wbr>agenda</a></p>
+<p id=9449 class="phone s03"><cite>phila:</cite> Some people speaking at GDC are going to be staying in Geneva to speak about agentic commerce and AI<br>
+<span id=3c8a>… Talking about AI agents and what is there agency. How can users retain control over agents that are spending there money</span><br>
+<span id=dbbf>… There is some overlap here which is interesting</span><br>
+<span id=78e7>… Thank you Will for saying that it was a collaborative atmosphere</span></p>
+<p id=93e8 class=irc><cite>&lt;JoeAndrieu&gt;</cite> TallTed -- Yep.</p>
+<p id=10004 class="phone s01"><cite>brent:</cite> I agree it really was a good conference last yeatr<br>
+<span id=6f9a>… Would like to shift focus to TPAC</span><br>
+<span id=6dbb>… We have WG meetings scheduled for thursday and friday that week</span></p>
+<p id=7901 class=irc><cite>&lt;Carolynn&gt;</cite> JoeAndrieu I agree that it may be a good place to gather interest around vocabularies.</p>
+<p id=22e0 class="phone s01"><cite>brent:</cite> Plus a joint session with payments on the tuesday<br>
+<span id=c0b2>… Anything that you think this group should be focused on at TPAC this year</span><br>
+<span id=d2fc>… From the chairs perpsective we are going to be helping people going through horizontal review get to CR. And have conversations that help specs get there</span></p>
+<p id=17eb class="phone s04"><cite>ivan:</cite> For TPAC, if we talk about CR we will also have to talk about testing<br>
+<span id=1247>… No idea where we are with this, but we will need testing information about new specs</span><br>
+<span id=c347>… Do not need the full test suite, but need information about how we plan to handle testing</span></p>
+<p id=bb49 class=irc><cite>&lt;kezike&gt;</cite> Don’t know if this is already  on the agenda for TPAC, but we really should get to the bottom of the digestSri vs digestMultibase debate.</p>
+<p id=4545 class=irc><cite>&lt;kezike&gt;</cite> +1 phila</p>
+<p id=75f2 class="phone s03"><cite>phila:</cite> We will be discussing the issue of the digestSRI and digestMultibase. We feel this needs f2f time to resolve this<br>
+<span id=5d6f>… Tomorrow we will be having a joint session with payments. It is tomorrow at 3pm. They want to discuss what should be discussed in the joiunt session at TPAC</span><br>
+<span id=b501>… One more thing. Social time is as important as anything else</span><br>
+<span id=d181>… Previous recent TPACs have lacked werewolf games. Fantastic game. Part of the culture. Happy to run games</span></p>
+<p id=7006 class=irc><cite>&lt;Antony&gt;</cite> @all (phila): + to social time...I'm down to play (I'll be at TPAC) and look forward to meeting some of you in person in Dublin!</p>
+<p id=ca55 class="phone s01"><cite>brent:</cite> Any other questions or comments<br>
+<span id=6dab>… Note, due to GDC we will not be having a regular WG call next week</span><br>
+<span id=be49>… We will meet again in two weeks time</span></p>
+<p id=ee54 class=irc><cite>&lt;TallTed&gt;</cite> fwiw, I have a long personal dislike of werewolf, and would be unlikely to participate were I attending TPAC.</p>
+<p id=b894 class="phone s01"><cite>brent:</cite> Okay lets close early</p>
+<p id=3114 class=irc><cite>&lt;phila&gt;</cite> yay Wip8!</p>
+<p id=4f36 class="phone s01"><cite>brent:</cite> Fantastic work folks. The Task Force working pattern has been astounding. Very impressive amount of work. Thanks everyone, pleasure working with you</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

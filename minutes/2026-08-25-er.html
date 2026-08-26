@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 25 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>25 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Elaine_Wooton, Kayode_Ezike, Manu_Sporny, steve_capell, Ted_Thibodeau_Jr, Victor_Lu</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#8320">Welcome And Agenda</a></li>
+<li><a href="#8a8c">Support For Arbitrary Entity Registry Lists</a></li>
+<li><a href="#27fe">External Entity Registry Lists</a></li>
+<li><a href="#11f0">Add support for arbitrary external entity registry lists by kezike · Pull Request #119 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#c17b">WhoisService And PathService Discussion</a></li>
+<li><a href="#c7e2">Normative references to WhoisService and PathService · Issue #117 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#8b43">Guidance On Data URLs For Validation</a></li>
+<li><a href="#c57a">Provide guidance related to data URLs when used with outputValidation and other object types · Issue #118 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#11c3">Test Suite Discussion</a></li>
+<li><a href="#878a">Test Suite</a></li>
+<li><a href="#25e9">Create test suite for VC Recognized Entities · Issue #120 · w3c/vc-recognized-entities · GitHub</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=8320>Welcome And Agenda</h3>
+<p id=261c class="phone s01"><cite>Manu_Sporny:</cite> Hey folks, we will get started in about three minutes.</p>
+<p id=90a0 class="phone s01"><cite>Manu_Sporny:</cite> All right, let's go ahead and get started. And some other people might trickle welcome to the recognized entities task force. this is a task force of the C verifiable credentials working group. this is August 25th, 2026. reminder that this group operates under the W3C code of conduct and intellectual property regime. which basically means you have to be a member of the group to participate and please pe treat people nicely and with respect and all that other good stuff. we have a fairly small agenda for today.</p>
+<p id=4d7b class="phone s01"><cite>Manu_Sporny:</cite> Today there are a couple of discuss items that we need to discuss. April requests that Coyote raised but other than that I don't think much. so let's see if there are any agenda additions any updates or changes to the agenda that would like to All right. If not, anyone new to the call? Victor, I know you've introduced yourself elsewhere before. I don't know if you want to introduce yourself again to, this group.</p>
+<p id=8cd4 class="phone s02"><cite>Victor_Lu:</cite> Sure you're an independent journalist been just basically participating in the JSRD group but refer credential there's another community that's talking about credentials and…</p>
+<p id=7e85 class="phone s02"><cite>Victor_Lu:</cite> I thought I'm here to listen a little</p>
+<p id=1e73 class="phone s01"><cite>Manu_Sporny:</cite> Welcome to the call.</p>
+<p id=51cf class="phone s01"><cite>Manu_Sporny:</cite> You are catching us probably towards the end of our, major work on the specification. It's in pretty good shape. but, it's in good shape. So, if you read it, it's more or less what we intended. agenda for today. I think we can, start off by taking a look at, the poll requests. and then, go into some of the issues, but we're running pretty thin on issues as well, which is a good thing. we may want to talk a little bit about test suite.</p>
+<p id=9575 class="phone s01"><cite>Manu_Sporny:</cite> But other than that we've got fairly open agenda. So let's see let me get this a bit bigger. we do have one new poll request. So the digest SRRI property is not going to get resolved until W3CT pack which is at the end of October. So the chairs and staff have scheduled a meeting to discuss what happens to rsus digest multibase. there is a lively discussion happening over in the verifiable credential working group on an issue there but I don't think we can't resolve this until that's done. GS1 continues to work on aligning the appendix stuff.</p>
+</section>
+
+<section>
+<h3 id=8a8c>Support For Arbitrary Entity Registry Lists</h3>
+<p id=ccdc class="phone s01"><cite>Manu_Sporny:</cite> But we do have a new PR and that is this one that Coyote raised to address issue 71 by adding a support for arbitrary entity registry list. So let's take a look at that. Looks like we've already got two reviews u plus ones there. And I have not had a chance to take a look at this yet. so I'm just going to give some time for people to read</p>
+<p id=708d class="phone s01"><cite>Manu_Sporny:</cite> So this looks like it's duplicative of something that's in the spec. So a weird merge. I think this is really the majority of the PR which is defining an external entity list. and saying it should conform to a valid entity registry specification and that URL establishes the root of trust and that if that list is a recognized entity credential you need to use this spec. Hey Coyote, we were just discussing your PR that you raised and…</p>
+<p id=b412 class="phone s01"><cite>Manu_Sporny:</cite> I have gone through it to review it. I don't know if you want to add anything.</p>
+<p id=a3ed class="phone s03"><cite>Kayode_Ezike:</cite> Okay. Yeah.</p>
+<p id=59e8 class="phone s03"><cite>Kayode_Ezike:</cite> I had just left a comment on it just now. So there was a comment that Dave made about whites space in there. strangely when I tried to copy exactly what's for that paragraph. I think it's the first paragraph on the top. It didn't seem to detect a difference. So, I don't know if we care that there's this awkward diff here. But other than that, if it's good with people, then it's good with me.</p>
+<p id=bb30 class="phone s01"><cite>Manu_Sporny:</cite> And I don't think we care now that you explained it. Yeah, it doesn't matter. It's just deleting the exact same content and readding it, which is, weird, but fine.</p>
+<p id=6725 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> that may be introducing the reality of the line end characters.</p>
+<p id=b05f class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=9235 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> They are invisible until they're a problem.</p>
+<p id=32f9 class="phone s01"><cite>Manu_Sporny:</cite> So, when did this go in? Three days ago, which means Coyote, yours went in before this fix went in. so you could try rebasing it,…</p>
+<p id=9abf class="phone s03"><cite>Kayode_Ezike:</cite> Right. Right.</p>
+<p id=3a40 class="phone s03"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=b3f6 class="phone s01"><cite>Manu_Sporny:</cite> but I don't think you might try rebasing it. That's the only thing I can think of.</p>
+<p id=bbd8 class="phone s03"><cite>Kayode_Ezike:</cite> Okay. Yeah,…</p>
+<p id=e021 class="phone s03"><cite>Kayode_Ezike:</cite> I can do that while we're on the call.</p>
+<p id=dfe1 class="phone s01"><cite>Manu_Sporny:</cite> Okay. …</p>
+<p id=42d5 class="phone s01"><cite>Manu_Sporny:</cite> I guess the big question is, does this address 71? feels a bit off to it. something feels a bit off, Coyote, but maybe I'm not something.</p>
+</section>
+
+<section>
+<h3 id=27fe>External Entity Registry Lists</h3>
+<p id=5f37 class="phone s03"><cite>Kayode_Ezike:</cite> Mhm. yeah. So, I can see it potentially being confused. So, this is I think what we agreed on, but I can see it potentially being tricky. I guess the assumption here is that every external list is going to basically have the similar format. You're going to need a URL that points to a list of some sort and we're going to use this sort of generic name to get the information for it and whoever understands this then they're able to know what to do for this particular type of registry spec. so yeah, as I was writing it, I also kind of felt like something maybe was missing, but I think we had mentioned This is the name that we wanted to use and text list and that we wanted to basically have that be the anchor into other specifications.</p>
+</section>
+
+<section>
+<h3 id=11f0><a href="https://github.com/w3c/vc-recognized-entities/pull/119">Add support for arbitrary external entity registry lists by kezike · Pull Request #119 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=79fb class="phone s03"><cite>Kayode_Ezike:</cite> I wonder if there's more that can be added here or in a future in another PR. But, yeah, this was roughly what I picked up from that discussion. Yeah.</p>
+<p id=f111 class="phone s01"><cite>Manu_Sporny:</cite> the thing I think you did the right thing, Coyote. I don't know if I'm trying to understand why we said what we did in determined this is the only thing we need to do. cuz so the thing that is bump jumping into my mind is we're like okay we have this general mechanism why can't we just apply to X50 or9 certificate authority lists and the Etsy trust lists. So let's just delete those because we have a generalized solution now. And so…</p>
+<p id=054c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Mhm.</p>
+<p id=2836 class="phone s01"><cite>Manu_Sporny:</cite> how would you use that?</p>
+<p id=b532 class="phone s01"><cite>Manu_Sporny:</cite> you would still point to the URL like you would in X509 and that does establish the root of trust and you have to know something about it which is true for both X59 or Etsy, the thing that you get when you fetch it, you kind of have to know about the format and the meaning and what the root of trust, is capable of doing. there's just a lot of outofband information in there, But that is true of X59 certificate authority list and Etsy trust list. there's a ton out of stuff that you have to know.</p>
+<p id=7457 class="phone s01"><cite>Manu_Sporny:</cite> You go and you read their specifications and that sort of thing. Manu Sporny:</p>
+<p id=af52 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah. …</p>
+<p id=a546 class="phone s03"><cite>Kayode_Ezike:</cite> And I guess there's also the question of I guess not to jump there's no cube but cuz if I recall correctly what I did here it's not like we're maintaining a registry I know that's a hacky term now but a registry of values that cuz we're just using this type name and then we're using the actual URL I believe is what we come on here. So there's no other additional metadata that's saying the type of schema that it is which means that we have to get off the information we want to get out of the URL field.</p>
+<p id=634a class="phone s03"><cite>Kayode_Ezike:</cite> which is that enough or is could that break down if somebody decides to use a URL that doesn't in any way give point to the fact that it's related to a particular specification unless there's another field that I'm missing here but that's the other thing. Yeah, go ahead.</p>
+<p id=c853 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. I mean looking at the example in the spec. So this is a recognized entity credential. it identifies this is effectively the European Commission and today it's recognized in this list of the lists XML file which you'd have to have special knowledge about and we mark it as an Etsy trust services list so that's the thing that tells you the typing information here but this is kind of not very useful right I mean I would argue that just knowing the type doesn't tell you anything about how to process this</p>
+<p id=cb43 class="phone s01"><cite>Manu_Sporny:</cite> you would have to know the type and then you would have to know an enormous amount out of band information to actually parse this thing and make sense of it. And so I'd argue this type isn't really doing us any good and we might as well just put external trust list and you either know how to process this file or you don't and that's no different than what we have in the spec today. So there's an argument here that we could just remove the Etsy trust service list and the X509 certificate types like we don't need them anymore. And then we can just talk about this supports Etsy trust list and this supports X509 certificate authority lists. and leave it at that.</p>
+<p id=3afb class="phone s01"><cite>Manu_Sporny:</cite> I don't have a strong opinion one way or…</p>
+<p id=7797 class="phone s01"><cite>Manu_Sporny:</cite> another whether that's better, or worse.</p>
+<p id=cf68 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, I guess I hear I think the one thing that I wonder is so do we expect for verifiers or…</p>
+<p id=e668 class="phone s03"><cite>Kayode_Ezike:</cite> grant to consumers generally to basically for all the different specs that they support? It seems to me that what they would have to do is to the fetch the file and determine what type of list this is without having any other information in the credential itself as to which spec is referring to. So is that the general expectation is that they'd have to figure out hopefully there's something in this list that differentiates it when they fetch so that they know which type they're deal they're dealing currently with the design we have, there's no way for them to know just from this list here or this credential here.</p>
+<p id=c491 class="phone s01"><cite>Manu_Sporny:</cite> It depends on what you mean If you mean by external entity list yes there's no way for them know Etsy trust lists and X509 certificate authority lists there are types for that and that's how they would know but frankly they could fetch the file and sniff the file and understand immediately whether it's an Etsy trust list or an X59 certificate authority list and they have to know the format in order to process it right so I don't think this is really buying these types</p>
+<p id=79a4 class="phone s01"><cite>Manu_Sporny:</cite> Etsy trust list and X509 certificate authority list are not really buying them much of anything. The reason they're in here is because we had, folks that felt very strongly about Etsy trust lists being mentioned in the specification. And the same thing with X59 certificate authority lists. Are people actually going to use those features of the specification? I highly doubt and if they do want to use it, they could just use external entity list. I don't think anything's lost there.</p>
+<p id=367f class="phone s03"><cite>Kayode_Ezike:</cite> Guess the last thing I'll say that</p>
+<p id=bbee class="phone s01"><cite>Manu_Sporny:</cite> But I'm concerned about, what I mean, David Chadwick wanted the Etsy trust list stuff in here and then I as a group decided if we're putting Etsy trust lists in here as a special case, then we might as well put X509's to good authority list in here as a special case.</p>
+<p id=5a77 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Kyle.</p>
+<p id=ffff class="phone s03"><cite>Kayode_Ezike:</cite> is assuming that nobody is using currently the Etsy or the X509 ones then I would be comfortable removing them and sort of allowing external entity lists subsume those and then doing two things one letting people know that you can still support these two different types we can call out maybe a few others and then also calling out the fact that they would need to which maybe is obvious but maybe it could be good to give guidance to say that they would need to fetch the list to determine which basically to dispatch on which type of list that they're processing so that they know how to proceed with the verification. So those are the two things that I would propose for changes to this PR. Go ahead.</p>
+<p id=95ee class="phone s01"><cite>Manu_Sporny:</cite> plus one. I think that sounds good to me. Coyote, sorry about the having to do another rev on this, but I don't know…</p>
+<p id=7221 class="phone s03"><cite>Kayode_Ezike:</cite> worries.</p>
+<p id=02db class="phone s01"><cite>Manu_Sporny:</cite> if we really were thinking about what gets replaced if we get this in there. So that's good and that's cleaner and that'll work for just any type of external list, and…</p>
+<p id=e17a class="phone s03"><cite>Kayode_Ezike:</cite> Oops.</p>
+<p id=fa56 class="phone s01"><cite>Manu_Sporny:</cite> yeah, plus one. I think coyote, we need to have examples of this is exactly how you would refer to an X509 certificate list an Etsy trust lists and we should have non-normative links to them and examples and plus all that stuff. Okay. Thank you Coyote for doing the revision. That is PR19. All right. and that's all of our PRs for this week.</p>
+<p id=6ccc class="phone s01"><cite>Manu_Sporny:</cite> Looking at the issues list, we have just looking at ready for PRs, we have 14 issues that are ready for which means that anyone, on here could jump in and start writing PRs. this one actually exists for this one. It's just blocked. so we have 14 that, need PRs. and hopefully we can get some PRs on those, in the next couple of weeks. Thank you very much, Coyote for, working on, that PR. I am very busy with the render method specification. That's where all my attention's going in.</p>
+<p id=22ba class="phone s01"><cite>Manu_Sporny:</cite> So, you're probably not going to see PRs from me for this spec for a couple of weeks. we do have a plan on the internationalization stuff, but we need to sort some stuff out in BC data model before that's on around language value objects, which we talked about, last time. So, that' needs to be done. So, let's look at our discuss issues. let's talk about this one. so we talk about who is service and path service in the specification. some of us had an action to discuss this with the did working group.</p>
+</section>
+
+<section>
+<h3 id=c17b>WhoisService And PathService Discussion</h3>
+</section>
+
+<section>
+<h3 id=c7e2><a href="https://github.com/w3c/vc-recognized-entities/issues/117">Normative references to WhoisService and PathService · Issue #117 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=ba2b class="phone s01"><cite>Manu_Sporny:</cite> And I think the did working group is suggesting that we have three potential options. who is service another one is you to use linked VPs and the other one is to talk about the path approach. There are no normative references for these at this moment. and they're suggesting that we evaluate each one of these. that said that there's nothing for us to point to and I don't think that there's going to be anything for us to point to.</p>
+<p id=da42 class="phone s01"><cite>Manu_Sporny:</cite> in the next little bit. I think Marcus said, there is a version 10 for the linked VP Pierre Antoine said that we could normatively reference that. and they're tracking the issue. I think one of the concerns I had is this is I don't know we would have to take a look at this, so that's kind of where we are and it's not clear. I think that Steven Kern said he'd much rather look at a path-based approach rather than the linked VP uses a new service type. I don't think that is who is it's something else.</p>
+<p id=10000 class="phone s01"><cite>Manu_Sporny:</cite> Where is this? Yeah, you have to have a linked verifiable presentation service in your did cume and then that'll take you to a VP that will potentially contain the recognized entity. So, I don't know, Steve, if you have any strong feelings one way or another, on this item. And so I think Stephen was saying Marcus was saying this is consistent with the web VH and…</p>
+<p id=45c9 class="phone s05"><cite>steve_capell:</cite> I don't know. consistency with web VH or whatever might find its way into a W3C did spec.</p>
+<p id=a8cf class="phone s01"><cite>Manu_Sporny:</cite> Stephen was saying it's not I think and…</p>
+<p id=b130 class="phone s05"><cite>steve_capell:</cite> …</p>
+<p id=42e2 class="phone s01"><cite>Manu_Sporny:</cite> that he would like to take a different approach.</p>
+<p id=23d6 class="phone s01"><cite>Manu_Sporny:</cite> But I don't know any of the details and it would be much better to have Stephen, on a call to walk through that and who knows what's going to end up in dead method specs, Because we don't even have an active working group for that yet, which leaves this group in a bit of a weird place,… steve capell:</p>
+<p id=e84d class="phone s05"><cite>steve_capell:</cite> if you don't which is I believe</p>
+<p id=f461 class="phone s01"><cite>Manu_Sporny:</cite> Because we're probably going to be in CR and wreck before any of this other stuff is settled. So not the end. we got our feedback which is we for you unless you use link VP and I believe Stephen was like that is not what WebVH is using. but I might be misremembering.</p>
+<p id=4781 class="phone s01"><cite>Manu_Sporny:</cite> If Steven comes back and says yes this is exactly what WebVH is using then we can do that. the concern there is that if other DID methods don't use this…</p>
+<p id=3135 class="phone s01"><cite>Manu_Sporny:</cite> then we're not in a good state right Stephen wanted a mechanism that was unified across did methods not just one in this Yeah.</p>
+<p id=4779 class="phone s05"><cite>steve_capell:</cite> Yeah. …</p>
+<p id=d680 class="phone s05"><cite>steve_capell:</cite> whatever we do, we're guessing what will come in a future. W3C did method spec. then we just have to make a best guess, don't we? I'm leaning towards whatever Steven Curran says,…</p>
+<p id=7efd class="phone s05"><cite>steve_capell:</cite> but not for any strong reason, I have to say.</p>
+<p id=67ad class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I mean I tend to lean towards whatever Stephen wants to do for whatever the solution is that works across multiple DI methods,…</p>
+<p id=ab49 class="phone s05"><cite>steve_capell:</cite> Stand I don't know.</p>
+<p id=2b5b class="phone s01"><cite>Manu_Sporny:</cite> that's what I think the right right thing to guess and then that'll kind of force multiple did methods to kind of work together and adopt that path forward. we don't have to guess we can make the entire algorithm non-normative and say it's premature but you should pick whatever you think the right thing to do at that moment in time is and then adjust accordingly as the market matures.</p>
+<p id=42af class="phone s01"><cite>Manu_Sporny:</cite> That's a totally per perfectly fine thing to say in a spec people get cranky when you do stuff like that…</p>
+<p id=efbf class="phone s05"><cite>steve_capell:</cite> Yeah. Yes.</p>
+<p id=e763 class="phone s01"><cite>Manu_Sporny:</cite> but if it is not the right time to standardize it then we shouldn't standardize it. So that's another option, Steve. it's don't guess because when we guess it will force the market to implement that thing. And if it's not the ideal good thing,…</p>
+<p id=0f1f class="phone s01"><cite>Manu_Sporny:</cite> then we've just, made a bunch of people implement something that's not good.</p>
+<p id=8d7a class="phone s05"><cite>steve_capell:</cite> Stop.</p>
+<p id=bfdb class="phone s01"><cite>Manu_Sporny:</cite> This is not bad, it is a VP. You get a recognized entity credential. Problem solved.</p>
+<p id=2d14 class="phone s01"><cite>Manu_Sporny:</cite> But this spec is not broadly deployed across multiple DID methods and…</p>
+<p id=f674 class="phone s01"><cite>Manu_Sporny:</cite> likely I don't think it's actually going to be implemented across multiple DID methods. whereas the path service might get much more adoption because it's simpler. Okay, that's perfectly fine.</p>
+<p id=296f class="phone s05"><cite>steve_capell:</cite> Right. …</p>
+<p id=a648 class="phone s05"><cite>steve_capell:</cite> I have to look at an example of each. I haven't informed myself well enough. that's perfectly,…</p>
+<p id=c864 class="phone s01"><cite>Manu_Sporny:</cite> I mean, so we got an answer back. They're tracking it. We don't have a normative dependency to point to other than linked VP. which would be, fine.</p>
+<p id=842c class="phone s05"><cite>steve_capell:</cite> fine. Why does Steven not linked VP?</p>
+<p id=cc63 class="phone s01"><cite>Manu_Sporny:</cite> And we could warn people we may be transitioning to something more generalized in the future as an example. And I don't Yeah.</p>
+<p id=2270 class="phone s05"><cite>steve_capell:</cite> Because it's not the same as diff webph basically.</p>
+<p id=99b3 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. I don't know.</p>
+<p id=57d8 class="phone s05"><cite>steve_capell:</cite> I think</p>
+<p id=0787 class="phone s01"><cite>Manu_Sporny:</cite> Let me see. I don't know if this is the latest thing.</p>
+<p id=2abb class="phone s01"><cite>Manu_Sporny:</cite> Let's see. Yeah. I mean, it's pathbased one. So that's what's different. It does return back a verifiable presentation, but the way you get to it is you get through a path. You don't get to it through the Using a standard did service that follows the link VP specification. It's just you don't get through slash that's the delta I think.</p>
+<p id=4ae2 class="phone s05"><cite>steve_capell:</cite> with the other approach…</p>
+<p id=0e77 class="phone s05"><cite>steve_capell:</cite> but with you you do get it through who is I mean there…</p>
+<p id=6772 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=ca80 class="phone s05"><cite>steve_capell:</cite> here's the name of the thing reveals its purpose right I mean And…</p>
+<p id=47bc class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah. So the delta is pretty small. So, what we could do is we could just restate what's in the WebVH spec to make it align perfectly with WebVH. And I do expect that the thing that I'm not sure is if other specs are going to do the linked VP thing, but that's just speculation. maybe they do. And then what happens when you have multiple of these?</p>
+<p id=2d63 class="phone s05"><cite>steve_capell:</cite> then what happens?</p>
+<p id=2436 class="phone s01"><cite>Manu_Sporny:</cite> Do you go and fetch all of them and what happens when the links are it supports IP IPFS?</p>
+<p id=3f51 class="phone s01"><cite>Manu_Sporny:</cite> Do you have to implement that it okay so I think there's enough here for us to say something normatively.</p>
+<p id=ad6f class="phone s05"><cite>steve_capell:</cite> I think we just need to determine that this is the normal balance.</p>
+<p id=10001 class="phone s01"><cite>Manu_Sporny:</cite> We just need to determine if this is the normative thing we want to say. So we can basically say this is…</p>
+<p id=3ef1 class="phone s05"><cite>steve_capell:</cite> So we can basically say this is…</p>
+<p id=01e0 class="phone s01"><cite>Manu_Sporny:</cite> how you get to it.</p>
+<p id=c0d0 class="phone s05"><cite>steve_capell:</cite> how you</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> You go and you fetch slash who is and you use the link VP spec to get the presentation one or more presentations.</p>
+<p id=b730 class="phone s01"><cite>Manu_Sporny:</cite> And that's how you do discovery. And we can normatively link to the link VP spec and have a stable reference per W3C. And Pier Antoine said that he can look into it and he's pretty sure we'll be fine there. And if that's the case, then the only new information we're adding is …</p>
+<p id=10003 class="phone s01"><cite>Manu_Sporny:</cite> how you get to it, which is through slash who is. And while we can't link to the webv spec normatively, we'll just let Steven current know that this is what we're doing. So whatever you do in the future, please make sure that these things line up. and he'll either say yes, I think I can do that or no, you've got a problem. Right?</p>
+<p id=be85 class="phone s01"><cite>Manu_Sporny:</cite> How about this?</p>
+<p id=3e12 class="phone s05"><cite>steve_capell:</cite> And when you say we can't link to web VH spec.</p>
+<p id=cfb0 class="phone s05"><cite>steve_capell:</cite> Is that a W3 policy that you can't link to nonW3C specs?</p>
+<p id=029b class="phone s01"><cite>Manu_Sporny:</cite> You can't link to things that don't have final versions and is WebVH a version 10? Is there static version of it?</p>
+<p id=b5cf class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It doesn't have to be a final version. It can be one level of maturity behind whatever that is.</p>
+<p id=abef class="phone s01"><cite>Manu_Sporny:</cite> But I don't know what that is at diff, right, Ted? yep.</p>
+<p id=a82e class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah. just for clarity.</p>
+<p id=3dd5 class="phone s01"><cite>Manu_Sporny:</cite> Yep. Yeah. Yeah. Yeah. Ted is right.</p>
+<p id=7ff2 class="phone s05"><cite>steve_capell:</cite> Hey, that's fine. Okay.</p>
+<p id=1019 class="phone s01"><cite>Manu_Sporny:</cite> This spec is a version 10. It's got a static thing. The expectation is that the spec's not going to change, Steve. That's what we need to be able to link to anything elsewhere.</p>
+<p id=ef44 class="phone s01"><cite>Manu_Sporny:</cite> you need to make sure that that thing that you link to is not going to change because you're building another spec on top of it. I don't know and this is a diff ratified specification and the presumption is it's under the W3C IP and copyright regime. though it doesn't have anything about patent policy or copyright or anything in it. I don't know If it did exist for WebVH, Steve, we would just link to it directly. but I believe Stephen was on that call and he was at a loss as to what to do as so let me try this just to move this issue forward.</p>
+<p id=960f class="phone s05"><cite>steve_capell:</cite> Wow.</p>
+<p id=a89d class="phone s01"><cite>Manu_Sporny:</cite> This on the 2026 0825 telecon. So raise a PR that specifies that the way you do discovery is effect is the same way does discovery which is dreference who is path using the linked BP specification V1.0.0</p>
+<p id=645a class="phone s01"><cite>Manu_Sporny:</cite> O from diff and then process the resulting presentations according to the algorithm in the recognized entities specification. Does that seem okay to folks?</p>
+<p id=338e class="phone s05"><cite>steve_capell:</cite> Thanks to me anyway.</p>
+<p id=b9b3 class="phone s01"><cite>Manu_Sporny:</cite> Any objections if we were to try and do something like that from anyone else in the group? All right.</p>
+<p id=63c6 class="phone s01"><cite>Manu_Sporny:</cite> Then I will mark this as ready for PR. Does not need discussion anymore. and then we'll go from there. All that's that item. all right. Let's take a look at this. And then DigSR we can't talk about this future work. Kevin is not on the call today. Any updates for the UNVD example stuff, Steve, that you wanted to share?</p>
+<p id=7e54 class="phone s05"><cite>steve_capell:</cite> I'm leaving that to John. So, I don't have any now.</p>
+<p id=36a0 class="phone s01"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=ac59 class="phone s01"><cite>Manu_Sporny:</cite> And then okay,…</p>
+<p id=13a5 class="phone s05"><cite>steve_capell:</cite> I'll encourage him to get him done and attend the next call.</p>
+<p id=aac0 class="phone s01"><cite>Manu_Sporny:</cite> that sounds good. we did have a discussion about it.</p>
+</section>
+
+<section>
+<h3 id=8b43>Guidance On Data URLs For Validation</h3>
+<p id=310c class="phone s01"><cite>Manu_Sporny:</cite> I think we agreed to the first thing and said the second thing was problematic. it's linked in the issue. And then the final issue that we have is provide guidance related data URLs when used with output validation other objects. I was supposed to get back to GS1 on this and I have not done that yet. So that still needs to be done. Paul from GS1 did send along a GS prefix license example.</p>
+<p id=5617 class="phone s05"><cite>steve_capell:</cite> God.</p>
+<p id=cef9 class="phone s01"><cite>Manu_Sporny:</cite> And these are helpful and useful not loading. One second. Let me see if I can get this to all a little difficult to see, but let me see if I can share my screen.</p>
+<p id=bb8c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, it's X.</p>
+<p id=afdb class="phone s01"><cite>Manu_Sporny:</cite> And apologies if this is hard to read. Can folks see that? let me see. Of course, scrolling does not I was trying to zoom scroll, but it's not working. So, this is a GS1 prefix credential, and it's the JSON schema. wait a second. No, this is the prefix credential.</p>
+<p id=b8db class="phone s01"><cite>Manu_Sporny:</cite> And the good news here is that we can include the vast majority of this stuff in the recognized entity. and the prefix JSON here, let's see, is this one I think. Let me open this So, this is the prefix JSON schema. And this is the thing that would go in the data the important part being right here the license value right. then let me find the ID key credential. is this thing and just note that it's got two zeros for the eight instead of I think one zero or whatever.</p>
+<p id=d04f class="phone s01"><cite>Manu_Sporny:</cite> But pretty straightforward stuff like this is we B64 encode most of this and then it would go directly in the credential I think is basically what we'd have to show an example of. So that's on me to create that and show it. or anyone else can do that. we should I guess show what both look like using a data URL versus ajson value. But that's kind of that item there. And that is our entire discuss issues list. we said last week that we'd talk a bit about test suite.</p>
+<p id=40da class="phone s01"><cite>Manu_Sporny:</cite> This, Coyote, you said, &quot;Do we have an issue to track that?&quot; But I did not see when that came in,…</p>
+<p id=641e class=irc><cite>&lt;Kayode_Ezike&gt;</cite> Do we have an issue to track that? </p>
+<p id=90d8 class="phone s03"><cite>Kayode_Ezike:</cite> Sorry, I may have missed it. I was so the prefix credential you said someone has to put up a PR to his own example or something. Is there an issue?</p>
+<p id=0751 class="phone s01"><cite>Manu_Sporny:</cite> issue 118.</p>
+<p id=de9c class="phone s03"><cite>Kayode_Ezike:</cite> Okay, great. Thanks.</p>
+</section>
+
+<section>
+<h3 id=c57a><a href="https://github.com/w3c/vc-recognized-entities/issues/118">Provide guidance related to data URLs when used with outputValidation and other object types · Issue #118 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=392f class="phone s01"><cite>Manu_Sporny:</cite> Sorry, should have put that in there. one second. Let me do this. copy and address. Yeah. So for issue 118, someone needs to create an example of a recognized entity credential for the entire GS1 chain using the example files that they provided. that's what we're waiting on there. And we need to do a data URL version and at JSON value version.</p>
+</section>
+
+<section>
+<h3 id=11c3>Test Suite Discussion</h3>
+<p id=de31 class="phone s01"><cite>Manu_Sporny:</cite> just to kind of look at both credentials to see if we have any feelings about one way or the other of doing it. okay, so that's 118. Next up is test suite. And for the test suite, this is something we have not talked about before. we do need a test suite for the recognized entity specification. so this is just kind of like to discuss that what it could look like.</p>
+<p id=10004 class="phone s01"><cite>Manu_Sporny:</cite> One fairly complex way that we could do this is to have implementers create a VCOM workflow that takes in a specification for example the UNCCE credentials or the GS1 credentials.</p>
+</section>
+
+<section>
+<h3 id=878a>Test Suite</h3>
+<p id=0fcb class="phone s01"><cite>Manu_Sporny:</cite> So you get in a G10 product credential or a valid commercial invoice and your workflow will work through either the recognized entities we have recognized stand in the issuer and the credential or it'll do discovery and then the workflow will only succeed meaning it issues a success credential or something like that if the recognized entity chain is valid. Right?</p>
+<p id=7108 class="phone s01"><cite>Manu_Sporny:</cite> So the way you test that endpoint is you send it a good credential and a bad one and then that endpoint can tell you yes it worked or no it didn't. and you can basically send an arbitrary number of good and bad credentials and you do that enough times and you can verify that the validation software running in the workflow is doing the right series of checks. So that is one way that we can really test the specification. I can imagine that it's to do that. It's going to be hard to find implementers that have the time to set up a validation flow in a workflow to do that.</p>
+<p id=a3a9 class="phone s01"><cite>Manu_Sporny:</cite> I think Dish Bazaar would certainly do that but until we have another organization that's willing to do that I don't think that would be a good path forward. the other approach is to just say do people support the data model and do they swear that they are going to implement this correctly that al that can also be done at W3C. it's not necessarily a good way to do specs because people can lie or they can want to do that but they actually don't end up implementing it correctly and you don't know until it's out in the field and wrong and you've got all kinds of interoperability issues. So those are the two major ways I can see of testing this thing.</p>
+<p id=f309 class="phone s01"><cite>Manu_Sporny:</cite> Any other thoughts on our ideas about how we test this? If not, of those two approaches, any thoughts or ideas on what we should try and do? Go ahead, K.</p>
+<p id=1215 class="phone s03"><cite>Kayode_Ezike:</cite> I'm just thinking out loud. I wonder if there's a version of the first solution that is lighter weight that is just I guess I'm thinking a little bit of what was done for plugfest for example was they use validation tool or whatever to check that it fits the schema whatever but I'm wondering if there's something like an endpoint that just returns an example of what they would retrieve even though again this is something that anyone can just generate</p>
+<p id=7d31 class="phone s03"><cite>Kayode_Ezike:</cite> but a lighter weight version than actually performing verification on the credential or anything of that sort. But just that more so just validates the schema of the credential. It's just a thought. Yeah.</p>
+<p id=1c90 class="phone s01"><cite>Manu_Sporny:</cite> The only challenge with that coyote is we have algorithm sections that are supposed to be run that do the discovery and we need multiple independent implementations of those. So the algorithms in the spec are normative. just as a reminder, we have credential based discovery right although I guess we don't really have any maybe we decided explicitly to not put normative language in there which could be a bit Correct. Yeah.</p>
+<p id=7e86 class="phone s03"><cite>Kayode_Ezike:</cite> I guess to that point, don't we usually say with those algorithms that it's more about the out making sure you get the same output as that algorithm than actually executing the exact algorithm that's light laid out.</p>
+<p id=a7dc class="phone s01"><cite>Manu_Sporny:</cite> I mean the important output of the algorithm is like you either get a yes we know…</p>
+<p id=a1b1 class="phone s01"><cite>Manu_Sporny:</cite> who we recognize this issuer or no we do not right but it happens during a ver a business rules validation process and the easiest way to do that is a workflow</p>
+<p id=58b3 class="phone s03"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=6fd9 class="phone s01"><cite>Manu_Sporny:</cite> I'm saying workflows are you have to implement VCOM right but really it's the VCOM thing is basically the way the workflow works is the workflow asks for a product credential with a G10 on it and the test suite driver post the GS1 credential and then the endpoint workflow basically tells you success or failure.</p>
+<p id=a5f7 class="phone s01"><cite>Manu_Sporny:</cite> It's just a true false yes this was good you got through the workflow or no rejected you didn't get through the workflow and the test suite is basically going to probe to make sure that you say yes you get through the workflow appropriately u meaning you get through the workflow for something that is a recognized issuer and then you don't for something that's not recognized. So it's a really easy endpoint. literally it's just you do a presentation and you get back whether or not you succeeded.</p>
+<p id=413c class="phone s01"><cite>Manu_Sporny:</cite> So it's a single API call. We could create another type of API for it, but we have one already. go ahead, Coyote.</p>
+<p id=52b6 class="phone s03"><cite>Kayode_Ezike:</cite> So I guess the compliance that we're testing for is the flow you described is like you're testing that the holder is able to present sorry might be crossing wires here…</p>
+<p id=2b11 class="phone s03"><cite>Kayode_Ezike:</cite> so you're expecting that different issuers would stand up their own issuers coordinators that can or services that are able to or workflow services rather that have these workflows set up or would it be because at the end of the day I guess all of these trying to think through this a little bit but yeah is your expectation in the first solution that you proposed is that each issuer would design a workflow</p>
+<p id=10005 class="phone s03"><cite>Kayode_Ezike:</cite> that essentially is the same. You can even give the exact template or workflow design for it and they would just have to have the appropriate software to deploy that or it would be more so we provide the template for the workflow as a whole and they provide the entity credential that would go in that template. Is that what you were thinking?</p>
+<p id=d8ac class="phone s01"><cite>Manu_Sporny:</cite> So this isn't about issuers,…</p>
+<p id=6707 class="phone s01"><cite>Manu_Sporny:</cite> it's about verifiers, so you just set up a verifier coordinator. that's it. And in fact, this might be super simple, right? Meaning you just set up a verifier coordinator. You don't even have to implement VCOM workflows. You just have to implement a couple of HTTP endpoints. So if you really dislike VCOM or you don't want to implement it, or any of that stuff, like the HTTP call is literally, a host which then returns back you need to present a GS1 G10 credential to me and then you present that G10 credential and then the response back is like thumbs up, you made</p>
+<p id=265a class="phone s03"><cite>Kayode_Ezike:</cite> Right, right, right.</p>
+<p id=fa3d class="phone s01"><cite>Manu_Sporny:</cite> or HTTP error code and it's two HTTP posts that the verifiers need to implement and if you have a VCOM thing in a workflow and you can do all of this the right way or if you have something else the only thing that matters is that you took in and you read the credential properly you got all the recognized in things properly and then you executed and looked those entities up and you checked to make sure that the issuer was somewhere in somebody's list.</p>
+<p id=e2c0 class="phone s01"><cite>Manu_Sporny:</cite> But all that happens behind the scenes. The only thing that you as the V verifier coordinator return is like it worked or no it didn't.</p>
+<p id=5d58 class="phone s03"><cite>Kayode_Ezike:</cite> …</p>
+<p id=e392 class="phone s03"><cite>Kayode_Ezike:</cite> since in that case I think then that's fair at the very least if we can require that folks implement those two endpoints and we can even say that it' even VPR can be deco or something else as far as the query language goes but if that doesn't complicate things but if we feel that verifiers wouldn't want to use DPR for whatever reason we could potentially add support for returning different types queries too. But I don't think that that's at the end of the day if you are implementing those are I think tables take things to support anyway as a verifier. So yeah. This one.</p>
+<p id=ef01 class="phone s01"><cite>Manu_Sporny:</cite> Plus one, I agree with that. I don't think we need to put in DAL support unless someone's like, I really want DAL support in there. And at that point, it's like, okay, please implement it, here's the test server, whatever. yeah. it's up to them, it's up to the verifier. So, whatever the verifier, it's really the driver, the thing's testing so We're testing verifiers. So, anyone that wants to implement this spec has to implement a verifier. that does validation on, the recognized entity.</p>
+<p id=6220 class="phone s01"><cite>Manu_Sporny:</cite> The task force that's writing the test suite is writing a driver and the driver is basically going to post known good and bad verifiable credentials that have recognized entity information in it. We're going to do some for credentialbased discovery and other ones for identifier based discovery. But as the driver of the test suite, all we're going to do is we're just going to post good credentials and bad credentials. And then we're going to see what the verifiers do, if they give us back a success or an error code, and that's it. we don't have to get any fancier than that. And I think that probably gets us to fully</p>
+<p id=bf32 class="phone s01"><cite>Manu_Sporny:</cite> I think that gets us to like something that just works. go ahead,…</p>
+<p id=6b70 class="phone s01"><cite>Manu_Sporny:</cite> Kylie. No,…</p>
+<p id=2e19 class="phone s03"><cite>Kayode_Ezike:</cite> When we say good and…</p>
+<p id=5c64 class="phone s03"><cite>Kayode_Ezike:</cite> bad, we're really just saying that we have determined that this issuer is indeed recognized or are there other outcomes that we'd have to test for as well?</p>
+<p id=4c67 class="phone s01"><cite>Manu_Sporny:</cite> we have to have a positive negative test, we have to have So we tell all the verifiers these are the roots of trust that you need to configure your software for that stuff and…</p>
+<p id=cc23 class="phone s01"><cite>Manu_Sporny:</cite> then we're going to send something that will chain up to that root of trust and we're going to send something else that will not does not right and so we expect the first one to succeed and we expect the second one to fail with an error code as an example like that's I think the minimum viable test suite</p>
+<p id=a42d class="phone s03"><cite>Kayode_Ezike:</cite> Okay. f***.</p>
+<p id=ef96 class="phone s03"><cite>Kayode_Ezike:</cite> Right. That's kind of…</p>
+<p id=8872 class="phone s01"><cite>Manu_Sporny:</cite> and then whether or…</p>
+<p id=01bb class="phone s01"><cite>Manu_Sporny:</cite> not they support, all the properties in here. I'm looking atation.</p>
+<p id=8985 class="phone s03"><cite>Kayode_Ezike:</cite> what I was wondering if you want to get that deep into those leads. Right.</p>
+<p id=692b class="phone s01"><cite>Manu_Sporny:</cite> They have to, output validation needs to be run so we'd want to test that test the output validation we'd want to maybe do something that had test the validity dates so one of the tests could be like here's a credential that has an issue that you should know here's a credential that has an issuer that you should not know and you should fail this</p>
+<p id=cd57 class="phone s01"><cite>Manu_Sporny:</cite> a recognized entity with a validation schema that is good and it should pass. Here's one with output validation that should fail. here's one that is within a good date range. Here's one that is outside the date range. I'm looking through the spec of the tests those are the major tests I think have. So, we only have a handful of these that we need to test. And I think that's largely it.</p>
+<p id=1d46 class="phone s03"><cite>Kayode_Ezike:</cite> And yeah, let's create an issue for if we don't have one already then.</p>
+<p id=76b6 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Let me new issue.</p>
+<p id=060a class="phone s01"><cite>Manu_Sporny:</cite> Create test suite for you see recognized entities right. Let me get this in a topic. All right. And then what did we just say we were going to do? the group</p>
+<p id=36a8 class="phone s01"><cite>Manu_Sporny:</cite> test driver that contains a set of CDs. is that how we do sub? No, that's not</p>
+<p id=27af class="phone s01"><cite>Manu_Sporny:</cite> Got to be kidding me.</p>
+</section>
+
+<section>
+<h3 id=25e9><a href="https://github.com/w3c/vc-recognized-entities/issues/120">Create test suite for VC Recognized Entities · Issue #120 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=388e class="phone s01"><cite>Manu_Sporny:</cite> How do you do nested lists? Thought it was double.</p>
+<p id=c682 class="phone s03"><cite>Kayode_Ezike:</cite> I think you just do two spaces or something after.</p>
+<p id=8123 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Can't see…</p>
+<p id=4700 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> what you're typing. Can't tell you.</p>
+<p id=9b14 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, that's</p>
+<p id=946c class="phone s01"><cite>Manu_Sporny:</cite> Sorry. I thought I was sharing. My bad. Never mind. I got it. Okay. Isn't this…</p>
+<p id=b3b9 class="phone s01"><cite>Manu_Sporny:</cite> how you do? One,…</p>
+<p id=84e7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Need one more space on the second one.</p>
+<p id=231c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yep. It's easier to see…</p>
+<p id=5049 class="phone s01"><cite>Manu_Sporny:</cite> two. Yeah. Thank you. gota All right.</p>
+<p id=aadd class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> if you have a mono space for those text entry boxes.</p>
+<p id=e7b6 class="phone s01"><cite>Manu_Sporny:</cite> Let's Create a test driver that contains a set of VCs.</p>
+<p id=3359 class="phone s01"><cite>Manu_Sporny:</cite> Unknown. Known issuer. with valid What is this thing called? output validation. You see that has an output validation test that passes. You see that</p>
+<p id=c836 class="phone s01"><cite>Manu_Sporny:</cite> fails. And then add verifier coordinators implementers to the test suite that request AVC.</p>
+<p id=3242 class="phone s01"><cite>Manu_Sporny:</cite> that contains a recognized custo verify EC validates that the VC is from a known on or shore in</p>
+<p id=977b class="phone s01"><cite>Manu_Sporny:</cite> from a known recognized entity or I guess that's just that return successfully if it is return error the sure is so I think does that look right to everyone?</p>
+<p id=6b90 class="phone s03"><cite>Kayode_Ezike:</cite> I think you have to do a similar thing for the output validation for the checks and verify that the issuer is known or unknown and then verify that the output validation passes…</p>
+<p id=e6ca class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> All right.</p>
+<p id=f370 class="phone s03"><cite>Kayode_Ezike:</cite> if it needs to four and then two sub notes on the floor unless you want to include Yeah,…</p>
+<p id=2ba5 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> What clever thing did you do to make it get you the lowercase Roman numerals and the letters?</p>
+<p id=acc8 class="phone s03"><cite>Kayode_Ezike:</cite> I was wondering too actually.</p>
+<p id=ba95 class="phone s01"><cite>Manu_Sporny:</cite> just went in a little bit more.</p>
+<p id=fec3 class="phone s01"><cite>Manu_Sporny:</cite> Right. Yep,…</p>
+<p id=8412 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> So that's just your indenting.</p>
+<p id=82e5 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> God damn.</p>
+<p id=bff8 class="phone s01"><cite>Manu_Sporny:</cite> that's right. Yep. …</p>
+<p id=d39f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> GitHub silently upgraded this because those did not exist a few weeks ago.</p>
+<p id=805c class="phone s01"><cite>Manu_Sporny:</cite> there you go. And it might not exist tomorrow. That's the wonderful thing about SAS.</p>
+<p id=da43 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> True.</p>
+<p id=6c3b class="phone s01"><cite>Manu_Sporny:</cite> Okay. I'm going to save that. we're over time. thank you everyone for thinking through this. much appreciated in Coyote for your input especially.</p>
+<p id=4ed3 class="phone s01"><cite>Manu_Sporny:</cite> We will, I think, meet again next week, but I will note that I think we're almost 100% out of topics. we will start pulling back on these calls when we meet and we don't fill the hour, we'll talk about that next week. hopefully we're able to get through some of the GS1, examples, but we may go into a mode here where we just meet once a month and people work on the test suites and we check in once a month. and this is all a good All right, that's it for the call today. Thank you everyone very much.</p>
+<p id=f077 class="phone s05"><cite>steve_capell:</cite> Thanks, mother.</p>
+<p id=018e class="phone s01"><cite>Manu_Sporny:</cite> Have a great rest of your week and we will chat again next week. Take care. Bye. Meeting ended after 01:03:31 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

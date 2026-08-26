@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 25 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>25 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Ivan_Herman, Manu_Sporny, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#15b6">Time Zone Conflict Discussion</a></li>
+<li><a href="#f400">Publishing Threat Models</a></li>
+<li><a href="#41dc">VC Forgery Defense</a></li>
+<li><a href="#d76b">PR Review And Merge</a></li>
+<li><a href="#ead2">Data Integrity Updates</a></li>
+<li><a href="#b7a7">VC Barcodes Updates</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=15b6>Time Zone Conflict Discussion</h3>
+<p id=4083 class="phone s01"><cite>Ivan_Herman:</cite> Thanks.</p>
+<p id=bb56 class="phone s02"><cite>Wesley_Smith:</cite> Hey folks, I'm g to give it a minute or two for people to trickle</p>
+<p id=6c76 class="phone s02"><cite>Wesley_Smith:</cite> All right. Hi everybody. Welcome to the August 25th, 2026 meeting of the barcodes and data integrity task force. the agenda for today is much the same as normal. We will go through announcement process and introduction items. and then we will spend time on the barcodes for defense and data integrity specs as time allows. does anybody have any process introduction or announcement items for the group today? All right. does anybody have any Mon, go ahead.</p>
+<p id=8085 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, sorry.</p>
+<p id=47a2 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, sounds good.</p>
+<p id=c327 class="phone s03"><cite>Manu_Sporny:</cite> I didn't know where to put this, but maybe under pro we've lost Greg because he's semi-retired and he's like I don't want to wake up this early and come to this call, which I can totally appreciate. I am wondering I've asked him…</p>
+<p id=36a7 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=4a74 class="phone s03"><cite>Manu_Sporny:</cite> if us moving the call would get him here. it would have to be, 9:00 a.m. to 12 p.m. Pacific, which then moves it a bit late for our European friends. just I'm wondering if the group should talk about that today. and that's it.</p>
+<p id=9b89 class="phone s02"><cite>Wesley_Smith:</cite> Any other announcement, process or introduction or similar items? All right, let's go ahead and talk about that then.</p>
+<p id=9844 class="phone s02"><cite>Wesley_Smith:</cite> Anybody have thoughts on the zone time conflict issue?</p>
+<p id=ff8d class="phone s02"><cite>Wesley_Smith:</cite> I will note that I'm happy to move this call personally. I have a pretty flexible schedule on Tuesdays if the hope is for it to remain on Tuesdays. M. Go ahead. Sorry, Ivon. Go ahead.</p>
+<p id=d353 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I don't want to compete with Greg,…</p>
+<p id=ea0b class="phone s01"><cite>Ivan_Herman:</cite> but I'm also semi-retired and I am not really willing to have a call after 6:00 my time in the evening. for all kinds of reasons. I try to keep my evenings free. I know this sounds crazy because this means it you guys have to choose between myself and Greg, but I think Greg is more important.</p>
+<p id=b8dd class="phone s02"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=1e5c class="phone s01"><cite>Ivan_Herman:</cite> But I'm just saying</p>
+<p id=0d99 class="phone s03"><cite>Manu_Sporny:</cite> I don't know about more important Avon, but yes, she having to choose, which is not good. We're having to choose between two completely reasonable requests from two semi-retired people. So, I think that's it. I mean, the only reason I'm concerned about Greg not being on the calls is because he is actively editing some of these documents. but he might basically be like, I don't need to be on the calls to make progress and that's what he's been doing and it hasn't really slowed him down. at the same time Ivonne it's very useful to have you on these calls especially on the first call because we end up talking about a variety of things like threat model and how are we going to get the publication process done and it's important for you to be there.</p>
+<p id=e831 class="phone s03"><cite>Manu_Sporny:</cite> I think everyone else can move probably the calls around, but So, I think we should just wait to hear back from Greg and see if he's like, &quot;Yeah, the time is just not working for me.&quot; But if you moved it, I would show up. I'll note that Tuesdays are completely packed with standards calls. I can't move it to any other time on Tuesday. I will not be able to make it.</p>
+<p id=ca24 class="phone s03"><cite>Manu_Sporny:</cite> The only other days that are open for me are Mondays and Fridays. sorry. If we move it to noon Eastern, I can make most of the days, but it conflicts with the CCG call on Tuesdays. do Mondays, could do Wednesdays, could do Thursdays. so …</p>
+<p id=ffff class="phone s03"><cite>Manu_Sporny:</cite> I suggest let's hear back from Greg and then if he's like, &quot;Yes, I want to come to the calls. It's just a bad time for me.&quot; Then we can send out a doodle poll and maybe we find a time, but almost certainly we will not find a time that works for go ahead 10.</p>
+<p id=8e29 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I was going to suggest that the doodle poll be started with the information that we know from Ivonne and…</p>
+<p id=4395 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Greg. And that gives sort of a much smaller window of things for the rest of us to be clicking from instead of some of us having to click, 37 yes or 37 no. I know my calendar is relatively packed most days.</p>
+<p id=4749 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> But there's always a window somewhere and knowing the importance of some things I could shuffle things around. But it would be based on the prime movers in this case,…</p>
+<p id=a0b1 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> which is Ivon and Greg. Thanks.</p>
+<p id=874a class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I so plus one to…</p>
+<p id=ec7c class="phone s02"><cite>Wesley_Smith:</cite> what you folks said. I was just going to add to what Mono said. Ivon Manu essentially said this, but it is worth noting that you are an active part of basically all of the discussions this group has. First of all, Greg's effort is much more focused on one of the specifications. I also will note that I'm happy if we can't find a time that works for everybody. potentially Greg might be open to coming to the calls once in a while. and if we can ahead of time know that there are some data integrity issues that need to be discussed on a certain day. we can try to, pack that into a single call, have Greg show up to that call, get a lot of data integrity work done, and the rest of the time I'd be happy to, kind of do what I've been doing the last couple weeks, which is sort of giving brief updates that he sends over via email in hisstead. So, a lot of decent options here, I think.</p>
+<p id=e3d1 class="phone s01"><cite>Ivan_Herman:</cite> Yes, I wouldn't count on that.</p>
+<p id=c734 class="phone s02"><cite>Wesley_Smith:</cite> Want to go ahead</p>
+<p id=9960 class="phone s03"><cite>Manu_Sporny:</cite> is Avon, I'm sorry, I'm forgetting where X is on the time zones. is a 12:00 p.m. Eastern call 6 pm for you. Okay. Yeah, that's unfortunate. And so maybe the US can change their daylight savings position and that solves things neither unfortunately.</p>
+<p id=2642 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=720a class="phone s03"><cite>Manu_Sporny:</cite> I think this is good. we know what we need to do and so we'll just try to get some data from Greg and then try to get some data from a doodle poll.</p>
+<p id=133e class="phone s02"><cite>Wesley_Smith:</cite> sounds good. any other process announcement, introduction, that sort of thing items for today? All right. So, last week we talked quite a bit about publishing threat models and…</p>
+</section>
+
+<section>
+<h3 id=f400>Publishing Threat Models</h3>
+<p id=f79f class="phone s02"><cite>Wesley_Smith:</cite> regularly on this call we kind of workshop that process. I saw there's been quite a lot of back and forth with is it Denise Dennis?</p>
+<p id=4d2b class="phone s01"><cite>Ivan_Herman:</cite> Denny. I think while man and…</p>
+<p id=e725 class="phone s02"><cite>Wesley_Smith:</cite> Thank you. with Denise on the topic and it seems like we are in agreement on the direction which is to publish these things as quote unquote multi-chapter specifications. now there remains some technical hurdles which is how do we update our existing tooling to support that concept? Ivon go ahead.</p>
+<p id=7738 class="phone s01"><cite>Ivan_Herman:</cite> I have had our conversation, I think we also have a fair idea of how this can be done from the akidna/W3C point of view. The question is how to slightly reorganize the spec repository. I leave that to money where we will have to separate the file which is in respect and the file which is the static version of respect because Akidna can take care of the second one by just copying onto whatever it has to copy it to.</p>
+<p id=5225 class="phone s01"><cite>Ivan_Herman:</cite> but these two have to be separated in the spec which repository which is not nice but I think we can live with The other issue which was discussed for a while is that the threat model at the moment is published as a note which is not good. I would try to leave with the base format that respect gives that could work and it has some useful meta information but I am afraid that what is usually referred to as history might go wrong. So we might have to remove that section by</p>
+<p id=7caf class="phone s01"><cite>Ivan_Herman:</cite> relatively simple JavaScript to be done in cooperation with respect.</p>
+<p id=9a86 class="phone s01"><cite>Ivan_Herman:</cite> That's where we are.</p>
+<p id=4128 class="phone s02"><cite>Wesley_Smith:</cite> Thanks Ivon.</p>
+<p id=4343 class="phone s02"><cite>Wesley_Smith:</cite> Ma go ahead.</p>
+<p id=78d1 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to what Avon said. I think we're very close to a technical solution. Some minor modifications to what you said, and these are I think just details that, we'll figure out Avon Deni and myself. Avon, I don't One of the things where Denise was basically like, you have to check in the static copy and you have to have two files. I definitely don't want to do that. because we don't have to do that, that is I think he was kind of trying to think out loud about how we could do it. Remember that the way that the specs are created today we have a build process that runs when a kidna runs and our index.html file during that build process is completely overwritten by a static copy and then that is what akidna takes and publishes. So that's how it works today.</p>
+<p id=1106 class="phone s03"><cite>Manu_Sporny:</cite> We can apply that same in theory. I'm pretty sure this should work especially based on what you found Ivon. we can run the exact same process on the threat model is a respspec file. It's dynamically rendered and all that kind of stuff. But during the build process what Akidna does or the spec process does is it literally just uses the command line version of respspec to render the specification into a static copy. It names it as index.src.html and in that exact same GitHub action it then takes index.s src.html copies it to html completely overwriting and destroying the respspec file. But that is the static copy that akidna then picks up and publishes to trspace. So I think we can just do the exact same thing that's happening today to the index.html</p>
+<p id=7cbe class="phone s03"><cite>Manu_Sporny:</cite> html file for the spec to the threat model/index.html HTML and then if we do that Avon we can run all of the other tooling like link checking at least the format syntax checking and all that kind of stuff on the file as well which I think von you mentioned you wanted to do as well I think that's a good idea too and then we're done right I think we can do it in a way… where all of those details are just completely hidden by the tooling instead of editors having to now understand, how to do, this thing. Manu Sporny:</p>
+<p id=25cc class="phone s01"><cite>Ivan_Herman:</cite> I did not know about the details of Akidna.</p>
+<p id=7852 class="phone s01"><cite>Ivan_Herman:</cite> If that works then that's fine. I don't know how you set up the GitHub thing now for the DIP spec which is more complicated because I know that you have used the GitHub possibility to separate the page feature from the source and that's how you generate the vocabulary files for example so the vocabulary files are generated and are never part of the real GitHub repository</p>
+<p id=a0ac class="phone s01"><cite>Ivan_Herman:</cite> Is it the same mechanism that is used by Akidna and that's what we want to use?</p>
+<p id=18be class="phone s03"><cite>Manu_Sporny:</cite> Unfortunately, that's a different process with other complexities that don't allow us to use a kid.</p>
+<p id=e3d9 class="phone s01"><cite>Ivan_Herman:</cite> That's what I was afraid of. Yeah, that's… Manu Sporny:</p>
+<p id=61a3 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=6aea class="phone s01"><cite>Ivan_Herman:</cite> what I was afraid of.</p>
+<p id=b039 class="phone s03"><cite>Manu_Sporny:</cite> We have to run I think YAML to vocab on it and kidna is and spec are completely unaware of YAL to we can figure this out I think we have a direction and…</p>
+<p id=3f29 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=7d2b class="phone s03"><cite>Manu_Sporny:</cite> what we want and…</p>
+<p id=bdfb class="phone s01"><cite>Ivan_Herman:</cite> We have Yes.</p>
+<p id=3d70 class="phone s03"><cite>Manu_Sporny:</cite> it's just a matter of writing some code to make it happen. I'm not concerned about it at this</p>
+<p id=a15c class="phone s01"><cite>Ivan_Herman:</cite> One more minor thing I think we have an agreement on that as well manu is that this structure should be used for all our threat models. We should not have separate tools or separate features for others.</p>
+<p id=e3df class="phone s01"><cite>Ivan_Herman:</cite> I don't know whether you said I think last time when we discussing you said that the confidence method people with Joe use a slightly different process for the threat modeling and I am worried whether this can be transferred without problems for that one as well.</p>
+<p id=97fc class="phone s03"><cite>Manu_Sporny:</cite> Agree with we want it to work the same way across all these repositories. Having different mechanisms is just going to make it really hard on anyone that needs to work on any of this stuff. plus one to unified tooling across all of our repositories. it was the VCOM specification of on that they had an external threat model.</p>
+<p id=ee4e class="phone s03"><cite>Manu_Sporny:</cite> Since that happened, I think they've merged it into the way we do all the other threat models. so I think that that issue is resolved. yeah,…</p>
+<p id=c325 class="phone s01"><cite>Ivan_Herman:</cite> Are you said that Joe is using a different tool,…</p>
+<p id=2400 class="phone s01"><cite>Ivan_Herman:</cite> not Okay.</p>
+<p id=10e9 class="phone s03"><cite>Manu_Sporny:</cite> that is the respect-threats tool. That thing's being copied all over the place. But that is a respspec plugin and is Yeah.</p>
+<p id=2c17 class="phone s01"><cite>Ivan_Herman:</cite> Besides the point. Yes. Okay. Okay.</p>
+<p id=5ca9 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. it's just respspec runs So whatever if we run respec on the spec, it automatically runs all that other complicated code to do what it needs to do. so yeah, luckily we don't have to worry about that. The thing we need to worry about there is that tooling has been copied and pasted in five different places and has evolved based on experiments we've run on the threat model. So we have to reconsolidate that code.</p>
+<p id=10000 class="phone s01"><cite>Ivan_Herman:</cite> Let's move to something more interesting.</p>
+<p id=adbb class="phone s03"><cite>Manu_Sporny:</cite> Joe does have a respect threats repository. It is. a very very low priority for me to reconcile everything right now. We're just trying to get to horizontal review. Once we get past horizontal review, hopefully we'll have some extra time to clean things up.</p>
+</section>
+
+<section>
+<h3 id=41dc>VC Forgery Defense</h3>
+<p id=8a2f class="phone s02"><cite>Wesley_Smith:</cite> That's very interesting stuff. Thank you both for the time and thinking through this process. I'll reiterate briefly that there seems to be somewhat of a bus factor problem with this tooling stuff and I'm happy to help where possible. I don't know how any of it really works, but if anyone in the group feels like at any point it would be a good time for somebody else to jump in and, pay the overhead to get up to speed, happy to do that. All right. next let's talk about VC forgery defense.</p>
+<p id=d095 class="phone s02"><cite>Wesley_Smith:</cite> Not a lot to talk about today. I do want to briefly bring up I'm not going to link it directly for bot reasons, but there was a spam issue raised. I'll link the closed issues in the chat. question is any other action needed from me or others in the group? are there any W3C process things that need to be done or…</p>
+<p id=40b0 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=e19c class="phone s02"><cite>Wesley_Smith:</cite> GitHub buttons that I should press other than just marking an issue as appearing to be spam and Delete it from orbit. Manu, go ahead.</p>
+<p id=7a77 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to nuking it. I don't know if we can. I can't do that.</p>
+<p id=0a44 class="phone s03"><cite>Manu_Sporny:</cite> I do have a spam marker. wow, this one's really good. Pictures and everything.</p>
+<p id=516f class="phone s02"><cite>Wesley_Smith:</cite> Yeah. …</p>
+<p id=e59d class="phone s02"><cite>Wesley_Smith:</cite> the reason I didn't immediately delete it was because that seemed like editorial overstep or something. I don't know. I wanted to at least this is pretty clearly spam, but it seemed like bad practice to delete something immediately instead of commenting that it appears to be spam and giving somebody a chance to say no, it isn't spam even though it looked like it. Sorry, Manu. Go ahead.</p>
+<p id=7612 class="phone s03"><cite>Manu_Sporny:</cite> I mean this thing is clearly spam right they're right so in that case you can delete it I mean this is super spam and…</p>
+<p id=efa4 class="phone s02"><cite>Wesley_Smith:</cite> Hey, I'm with you.</p>
+<p id=247e class="phone s02"><cite>Wesley_Smith:</cite> You don't got to convince me, but</p>
+<p id=73fa class="phone s03"><cite>Manu_Sporny:</cite> there's delete issue in the bottom right and if we do it by accident, the person just comes back in and reres The danger with keeping spam around is that it provides positive referrals, which boosts, search scores and all that kind of stuff. we do not want to contribute to that, bot ecosystem. So, we can do our part to combating these back links.</p>
+<p id=11fc class="phone s03"><cite>Manu_Sporny:</cite> That's</p>
+<p id=6b99 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=ef0c class="phone s02"><cite>Wesley_Smith:</cite> Ted. Go ahead.</p>
+<p id=2f32 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah,…</p>
+<p id=8f08 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> while I agree deleting it gets it out of our way, there is a process for reporting content and…</p>
+<p id=bb4f class="phone s01"><cite>Ivan_Herman:</cite> How do you do Okay.</p>
+<p id=8095 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> and spam posts, etc. to GitHub. they're not the fastest to deal with anything, but it's the only way for GitHub to get any better at preventing it or closing spam accounts or that sort of thing. So, I would say don't Do tag it as spam. Do report it to this to GitHub. you're obviously the repo admin, so don't report it to yourselves. That's it. one second.</p>
+<p id=05af class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Upper right there's three dots and it says report content</p>
+<p id=d230 class="phone s02"><cite>Wesley_Smith:</cite> The three dot money.</p>
+<p id=e558 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=b655 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one. I think Ted's got the better idea here. we should report this. So, this is basically you're reporting the user for generating spam, which means that they'll go after the account. plus one did that. I wish we could just delete it after or maybe they'll come back in and delete it. I don't think we need to spend plus one. Let's report it at spam as spam and then, close the issue, mark it as spam, and then maybe at some point in six months, we go through all of our spam issues and bulk delete them.</p>
+<p id=3f6d class="phone s01"><cite>Ivan_Herman:</cite> I would propose to report content and…</p>
+<p id=e25a class="phone s01"><cite>Ivan_Herman:</cite> also block the user.</p>
+<p id=62dd class="phone s02"><cite>Wesley_Smith:</cite> sounds good.</p>
+<p id=34a1 class="phone s02"><cite>Wesley_Smith:</cite> I just reported the issue. Block the user. Is that going to be me personally blocking the user or is there a repository block?</p>
+<p id=2a32 class="phone s01"><cite>Ivan_Herman:</cite> I think the repository it blocks the user.</p>
+<p id=10bd class="phone s02"><cite>Wesley_Smith:</cite> Okay, I'll look into that off the call. I think we are good. Thank for the guidance. Mona, go ahead.</p>
+<p id=03ed class="phone s03"><cite>Manu_Sporny:</cite> Yeah, The problem of with blocking the user is that if it is a legitimate thing, they will be unable to reerraase the issue. Maybe, two or three infractions and we block them. But my expectation is that GitHub will act on the spam thing and then block them and hopefully delete their content and…</p>
+<p id=c1e3 class="phone s03"><cite>Manu_Sporny:</cite> all that kind of stuff. And if they don't, we'll go back and delete the content in six months.</p>
+<p id=d4c4 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+</section>
+
+<section>
+<h3 id=d76b>PR Review And Merge</h3>
+<p id=89da class="phone s02"><cite>Wesley_Smith:</cite> Anybody else have anything on that topic? All right. Moving on. next up, there's a PR. Please review this PR. Hang on. not properly topic this in a second.</p>
+<p id=94b8 class="phone s02"><cite>Wesley_Smith:</cite> Please review this R if you are a contributor or you've been part of that discussion at Manuspornney.</p>
+<p id=9237 class="phone s01"><cite>Ivan_Herman:</cite> as a kind of a of method.</p>
+<p id=a76a class="phone s02"><cite>Wesley_Smith:</cite> You requested some changes. Please when you have a second go and look at the changes they're pretty brief. anyone else interested in the specification take a look at this PR. it's not a big PR. It's a pretty small PR. It just generalizes the format for a piece of randomness in the specification and now adds an example for why the format is defined the way that it is. Ivon, go ahead.</p>
+<p id=8d43 class="phone s01"><cite>Ivan_Herman:</cite> methodology so to This PR has been around for a while. It says last months and we are at the end of August. So that means several weeks. It has been approved by two people and it has been commented by one and was acted upon. So I would consider that there is a third one that has approved it.</p>
+<p id=d25f class="phone s01"><cite>Ivan_Herman:</cite> I think you can just go ahead and then merge it. There is no reason to keep it for open for so long. My personal opinion of that</p>
+<p id=c020 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=ab97 class="phone s02"><cite>Wesley_Smith:</cite> I certainly hear what you're saying and agree with the sentiment. my hesitation is that I would be making personally a judgment call whether I had addressed the person's comments to their satisfaction. And in this case, I think I have because the ask was pretty clear and I acted upon it in a pretty clear way. But if the feedback was a little bit less definfined do exactly X, then it would be a judgment call whether or not the other person was satisfied. Is that a concern?</p>
+<p id=1962 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=3a34 class="phone s03"><cite>Manu_Sporny:</cite> It is your right as an editor to merge if you feel like you've addressed the person's commentary. plus one to what Ivonne's saying. There are things that you want to of course take into consideration is the commenter a hostile actor? I hope I'm not. So, …</p>
+<p id=888b class="phone s02"><cite>Wesley_Smith:</cite> Am I hostile?</p>
+<p id=b89d class="phone s03"><cite>Manu_Sporny:</cite> and I'm sure that you, addressed the plus one. I mean, I'm looking at it right now, but I would have been fine with you merging it. even without looking at it, and then, if it didn't actually address the concern I had, Wes, I'd just raise another issue, And so there's a response cycle that allows for correction on the editors making the wrong judgment call. so you want to be pretty sure but you don't need to be 100%. especially if something's waited out there for weeks you're waiting on me. 3 weeks ago you added the example. I am so overloaded right now. I just can't get back to reviews. So, I am certainly not going to be upset</p>
+<p id=0623 class="phone s03"><cite>Manu_Sporny:</cite> ever if you merge something if you feel like you've addressed the concern and I think that goes for just about anybody else providing input the things that I think about as an editor is like one was this person's request clear enough for me to act on it and if the request was vague then too bad I tried my best I'm going to merge it because I think I addressed it to the best of the ability the other thing is like I asked you to Did you respond in a week? If not, too bad. I need to move on as an editor. I tried to address your issue, in good faith. and I'm merging it, asserting that I believe I've addressed your issue. finally, and this is very very rare, but if the person is hostile or argumentative, and that happens, only then do I kind of try and wait for their response.</p>
+<p id=c7c4 class="phone s03"><cite>Manu_Sporny:</cite> And I usually ping them every three days I need a response, I need a response. and only after gathering enough, evidence that I tried to get, them to respond and they were unresponsive for a week or two and I went ahead and merged it. Usually you want to just build your case for like I did my best as an editor but as a working group need to move forward and letting PRs hang out here for three weeks is just not that big of an issue.</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> The other thing that comes into play is are you modifying normative language because if it's just editorial stuff like an example doesn't matter right meaning you don't have to make them happy right it's an example it's non-normative they can't raise process objection over it but if you're touching normative text and it's a highly contentious topic that's when you have to be a little more careful. So hopefully those things kind of help make the judgment call, but it's always your right as an editor Wes to determine that you have done your best to address their concern and…</p>
+<p id=c856 class="phone s03"><cite>Manu_Sporny:</cite> you need to move on and you need to merge something.</p>
+<p id=a427 class="phone s02"><cite>Wesley_Smith:</cite> Thank you for the guidance.</p>
+</section>
+
+<section>
+<h3 id=ead2>Data Integrity Updates</h3>
+<p id=1706 class="phone s02"><cite>Wesley_Smith:</cite> All right. With that in mind, I see Dave Longley just added a wording tweak. So, I will go ahead and get that stuff incorporated and get this merged after the call today. anybody else have anything on VC forgery defense for the group? All right. moving on to data integrity. Greg Bernstein sent an email to this group's mailing list with his updates for data integrity. Would it be useful for folks if I briefly went through those?</p>
+<p id=b0a9 class="phone s02"><cite>Wesley_Smith:</cite> Are you all happy to read that email on your own time? What do folks think? I got thumbs up at two different parts of that sentence.</p>
+<p id=777f class="phone s02"><cite>Wesley_Smith:</cite> So, I need some words. everybody read that email on your own time.</p>
+<p id=4951 class="phone s01"><cite>Ivan_Herman:</cite> Read it.</p>
+<p id=2213 class="phone s01"><cite>Ivan_Herman:</cite> No, no, I said read.</p>
+<p id=1c18 class="phone s02"><cite>Wesley_Smith:</cite> I read it.</p>
+<p id=5313 class="phone s01"><cite>Ivan_Herman:</cite> You read it.</p>
+<p id=ecf2 class="phone s02"><cite>Wesley_Smith:</cite> All so, Greg Bernstein noted a few things for his work on data integrity. he noted that there are three outstanding PRs that he's created to I believe this is part of the generalizing the common algorithms among the crypto suite work. he has some PRs out that try to explain the selective disclosure work. He says he prematurely merged one of them. I assume he's fixing whatever issues that incurred.</p>
+<p id=e10e class="phone s02"><cite>Wesley_Smith:</cite> He also is fighting with the same GitHub EOL bug that is taking many hours out of many of our lives these days. next steps he says he wants to do selective disclosure refactoring updates to ECDSA quantum resistant and BBS test vector updates in quantum resistant readability improvements for data integrity 111 readability improvements for some of the crypto suites based on the changes to 11 one and…</p>
+<p id=59f7 class="phone s02"><cite>Wesley_Smith:</cite> five other items. Those are steps. Ivon go ahead.</p>
+<p id=4e95 class="phone s01"><cite>Ivan_Herman:</cite> So I am not sure I understand the mail…</p>
+<p id=d96f class="phone s01"><cite>Ivan_Herman:</cite> because the data integrity lists only one PR open not three. I think what happened was that he had a PR on the explanatory stuff which I created a PR with a version which was approved somehow both of them and…</p>
+<p id=800f class="phone s01"><cite>Ivan_Herman:</cite> merge and I think it's okay to be merged. So there is only one PR that is open on the DIP spec which is a selective disclosure refactor.</p>
+<p id=6f46 class="phone s02"><cite>Wesley_Smith:</cite> Right. I think the merged PR in the base data integrity specification yielded some progyny PRs in a bunch of the specific crypto suites…</p>
+<p id=13bc class="phone s02"><cite>Wesley_Smith:</cite> which are where those other PR Let me go ahead drop a link in the chat so everyone knows…</p>
+<p id=89e0 class="phone s01"><cite>Ivan_Herman:</cite> Okay, that's a separate one so on the DIP spec there is one open which is the selected disclosure refactor on specifically that one my opinion is that it should be merged it has I'm sorry so I should subtopic it or…</p>
+<p id=b776 class="phone s02"><cite>Wesley_Smith:</cite> what we're talking about. Give me one sec. That is okay. Ivan Herman:</p>
+<p id=8308 class="phone s01"><cite>Ivan_Herman:</cite> to no topic Right.</p>
+<p id=e20a class="phone s02"><cite>Wesley_Smith:</cite> Here I'll topic DI and then use that works too. Okay.</p>
+<p id=e9f1 class="phone s01"><cite>Ivan_Herman:</cite> So, it has been reviewed by people. So, it's not like it's there without review. and this is typically the kind of thing that will be reviewed again indirectly when we get to see our space because after all these are the algorithmic steps and maybe at somewhere some algorithm is wrong and there is no way I will find it now but when someone begins to really implement the spec then this will come up on the other hand this PR is important because it is with this merged that all the other</p>
+<p id=5915 class="phone s01"><cite>Ivan_Herman:</cite> PRs on the crypto suites become valid because all of them no that's incorrect the other PRs on the crypto suites are on the refactoring of the full disclosure part but the work on the other documents will be finalized when this PR is merged and it's just too much in the air and it's better if we have everything merged and done and put in the spec. The spec is not yet finalized and it will be reviewed as I said during implementation but it makes a much cleaner slate right now with all the documents that we have around to be just done.</p>
+<p id=0f32 class="phone s01"><cite>Ivan_Herman:</cite> That's my view. Leaving it in P just leaves too much things up in the air.</p>
+<p id=bd2b class="phone s02"><cite>Wesley_Smith:</cite> Avon, I'm apologies.</p>
+<p id=46f3 class="phone s02"><cite>Wesley_Smith:</cite> I lost the thread when you were speaking.</p>
+<p id=7b0b class="phone s02"><cite>Wesley_Smith:</cite> What action are you recommending the group take?</p>
+<p id=2d61 class="phone s01"><cite>Ivan_Herman:</cite> I am recommending to merge the 358 and…</p>
+<p id=4347 class="phone s01"><cite>Ivan_Herman:</cite> together with that I also recommend to merge the other PRs which are for specific crypto suites refactored on the full disclosure.</p>
+<p id=dc92 class="phone s01"><cite>Ivan_Herman:</cite> Do that and then do the same for the selective disclosure in the case of the crypto suites.</p>
+<p id=fcd6 class="phone s02"><cite>Wesley_Smith:</cite> heard. I will note that it seems that there is still an outstanding whites space problem in that PR.</p>
+<p id=999f class="phone s02"><cite>Wesley_Smith:</cite> Do you still think that PR should be merged or that con the content from that PR should be somehow merged elsewhere? Monty, you have your hand up and you're emoting aggressively.</p>
+<p id=8ae6 class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=93bd class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=10002 class="phone s03"><cite>Manu_Sporny:</cite> I very rarely use thumbs down, but this is a good time to do it. yeah, we need to fix the whites space issue just a entire rewrite of the file. Greg said he tried but he doesn't know how to do it. Someone needs to go in there and just do a rebase and rewrite the commit that does all the whites space changes. I know what to do. I just don't have the time to do it. I also don't know how to push it to Greg's branch because the way he's editing these specs is off of his own one instead of just raising PRs on the spec directly, which makes it harder to do a history rewrite.</p>
+<p id=2769 class="phone s03"><cite>Manu_Sporny:</cite> right, like this. So, it may be that someone needs to basically check out Greg's branch, fix it up, and then push it to a new PR without destroying any of Greg's legitimate changes. And then once we do that, I completely agree with Avon. Let's just merge this because, it's an improvement and we can iterate towards a better future. I do note though that there are still some outstanding things that I don't know…</p>
+<p id=c272 class="phone s02"><cite>Wesley_Smith:</cite> Ted, go ahead.</p>
+<p id=100f class="phone s03"><cite>Manu_Sporny:</cite> I don't know if it's been addressed by Greg or not. that's it.</p>
+<p id=5797 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> No argument with any of that,…</p>
+<p id=3350 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> but I will ask one more time that whomever is appropriate in W3 staff,…</p>
+<p id=6c89 class="phone s01"><cite>Ivan_Herman:</cite> I intend to raise it on the global meeting we have on every Thursday.</p>
+<p id=8ce9 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> hint hint, could raise this as a thing. I believe W3 is paying GitHub for the services they are providing and this is causing a lot of cost on volunteer side. it's not just this work group, it's not just this spec, it's everywhere in GitHub and it really needs to be addressed.</p>
+<p id=4797 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=e247 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Please do.</p>
+<p id=3ba9 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=e2a3 class="phone s02"><cite>Wesley_Smith:</cite> That sounds good. I'll poke at this PR and see if I can get it fixed up. anything else on data integrity?</p>
+<p id=87c7 class="phone s01"><cite>Ivan_Herman:</cite> for the records.</p>
+<p id=5272 class="phone s01"><cite>Ivan_Herman:</cite> I love what Greg did.</p>
+<p id=a303 class="phone s02"><cite>Wesley_Smith:</cite> Changing all the white space in the file to be wrong.</p>
+<p id=d6ae class="phone s01"><cite>Ivan_Herman:</cite> No, no, no. but the work that he did for the refactoring etc. and the result that we get super simple document for the crypto suites it's just absolutely great work.</p>
+<p id=150a class="phone s02"><cite>Wesley_Smith:</cite> Yeah, it's good stuff.</p>
+<p id=4cac class="phone s01"><cite>Ivan_Herman:</cite> More power to retired people.</p>
+<p id=cd3b class="phone s02"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=4b03 class="phone s03"><cite>Manu_Sporny:</cite> Yes, plus one to that.</p>
+<p id=eb24 class="phone s03"><cite>Manu_Sporny:</cite> I totally forgot what I put myself in the queue for. yes,…</p>
+<p id=be6b class="phone s02"><cite>Wesley_Smith:</cite> I said anything else about data integrity.</p>
+<p id=1e1a class="phone s02"><cite>Wesley_Smith:</cite> Hey, Manu Sporny:</p>
+<p id=77a6 class="phone s03"><cite>Manu_Sporny:</cite> thank we have had a contribution from an individual that's doing postquantum. It's the ski sign thing. Ivon, I think he's suggested he'd become an invited expert. He is.</p>
+<p id=d087 class="phone s01"><cite>Ivan_Herman:</cite> is …</p>
+<p id=0b96 class="phone s03"><cite>Manu_Sporny:</cite> Okay, great. So, we just need to figure out a way to get him on these calls. He's been contributing. I think it's a rust implementation of all the DI specs of specifically the postquantum one specifically ski which we're very interested in. would be, wonderful to have him on the calls. I think he's based out of New York City. so just wanted to make sure that that was proceeding upon you're saying it is. okay.</p>
+<p id=b2a2 class="phone s01"><cite>Ivan_Herman:</cite> yeah, we approved it the day before. Yesterday, I believe.</p>
+<p id=40f6 class="phone s03"><cite>Manu_Sporny:</cite> So, we just need to fold him into this meeting. so, maybe we can do some f …</p>
+<p id=2fd3 class="phone s01"><cite>Ivan_Herman:</cite> I don't know whether he joined. That's something he has to do. Manu Sporny:</p>
+<p id=70dc class="phone s03"><cite>Manu_Sporny:</cite> All So maybe we need to ping him. I'm not going to have any time to do that this week, I don't think. But I'm just want to make sure we don't drop and that OS is relevant to data integrity because I think he might be able to help Greg with some of those specs as well.</p>
+<p id=61cf class="phone s02"><cite>Wesley_Smith:</cite> Yeah, And anything else on that topic?</p>
+<p id=0dc0 class="phone s01"><cite>Ivan_Herman:</cite> Hello.</p>
+<p id=1d41 class="phone s02"><cite>Wesley_Smith:</cite> I think we're all in agreement there. Yeah. …</p>
+<p id=1134 class="phone s03"><cite>Manu_Sporny:</cite> Are you on that email, Chain Wes?</p>
+<p id=5a43 class="phone s02"><cite>Wesley_Smith:</cite> I don't think so. can we say this person's name?</p>
+<p id=60af class="phone s03"><cite>Manu_Sporny:</cite> One second.</p>
+<p id=1aed class="phone s03"><cite>Manu_Sporny:</cite> Yeah. Anthony.</p>
+<p id=5d28 class="phone s02"><cite>Wesley_Smith:</cite> If I am,…</p>
+<p id=7285 class="phone s02"><cite>Wesley_Smith:</cite> I'm not aware. I will also note that I just offered to fix the data integrity spec. I just realized I'm not an editor of the data integrity spec. So, I can fix it by cloning the repo and raising a PR that way. I don't know if that's the simplest way. Okay.</p>
+<p id=10003 class="phone s03"><cite>Manu_Sporny:</cite> Yes. it's not ideal but yes that you can do that it'll just show up as another PR hopefully without all the whites space errors.</p>
+</section>
+
+<section>
+<h3 id=b7a7>VC Barcodes Updates</h3>
+<p id=10004 class="phone s02"><cite>Wesley_Smith:</cite> If it still has the white space errors, I don't know what I will have been doing. sounds good. Have commit referenced here. Thank you. Anything else on data integrity for today? All right. on to VC barcodes. I don't have much further group to talk about today for VC barcodes. horizontal review calls are out and have been for a week or two. and that. There's some editorial work still to be done. but I think we're in a pretty good space,…</p>
+<p id=74eb class="phone s02"><cite>Wesley_Smith:</cite> pretty good place on that specification. Have anything there? Ivon, go ahead.</p>
+<p id=5b7a class="phone s01"><cite>Ivan_Herman:</cite> So there are two things which are pending and I think they are beginning to be timely and I think I raised issues for both of them is to move out one of the XI crypto suite and…</p>
+<p id=2d2d class="phone s01"><cite>Ivan_Herman:</cite> to move out I don't remember the name for the bit.</p>
+<p id=023a class="phone s02"><cite>Wesley_Smith:</cite> the ter bit string status list entry.</p>
+<p id=6e73 class="phone s01"><cite>Ivan_Herman:</cite> So these two should be moved out and…</p>
+<p id=d5e4 class="phone s02"><cite>Wesley_Smith:</cite> Yep. Yes.</p>
+<p id=b1eb class="phone s01"><cite>Ivan_Herman:</cite> to put in the right place because it's better if to be done with before the horizontal reviews really start. for the exi thing then it's a technical question to which I don't have an answer is that does the XI feature if on the lack of a better word is something that should be folded into the generic algorithm of the DIP spec or…</p>
+<p id=71d9 class="phone s01"><cite>Ivan_Herman:</cite> is it something that should be folded into the ECDSA crypto suite spec which is now refactored so It's not clear to me what the direction should be. The only thing I know that it should move somewhere on that area.</p>
+<p id=1613 class="phone s02"><cite>Wesley_Smith:</cite> Right. So the relationship between the XI crypto and…</p>
+<p id=7550 class="phone s02"><cite>Wesley_Smith:</cite> the other cryptoes is that the XI crypto suite is exactly ECDSA RDFC 2019 with the addition of an additional hash value. right.</p>
+<p id=c15c class="phone s01"><cite>Ivan_Herman:</cite> I know Another possibility is to put the XI feature into the generic algorithm that Greg put into the EIP spec and…</p>
+<p id=87bc class="phone s02"><cite>Wesley_Smith:</cite> So I would argue that it would make sense for it to go in the ECDSA crypto suite document. if there are reasons why it needs its own document, I would love to hear them.</p>
+<p id=35ea class="phone s01"><cite>Ivan_Herman:</cite> therefore the XI extra feature should be automatically valid for other crypto suites as well.</p>
+<p id=10fc class="phone s01"><cite>Ivan_Herman:</cite> It may be complete stupidity what I'm saying. I'm just idea</p>
+<p id=49df class="phone s02"><cite>Wesley_Smith:</cite> So, I would have to look at the abstractions that are there more closely,…</p>
+<p id=5ace class="phone s02"><cite>Wesley_Smith:</cite> but how it's unclear to me whether or not a quote unquote extra hash could be cleanly added as a feature to those generic algorithms and not to an instantiated algorithm for the crypto suite. Manu, go ahead.</p>
+<p id=57b1 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, that was the same concern I had. plus one to Avon's general desire, I am hoping that we can integrate this as a general feature to the base algorithms in the crypto suites. it would be wonderful if we could figure out a way to make it backwards compatible, but I'm also concerned that if we try to do that,…</p>
+<p id=558e class="phone s03"><cite>Manu_Sporny:</cite> we might introduce some security vulnerabilities. so we would have to do that, very carefully. I don't know if we can make an argument that our charter clears us to do that. so for now I think is it really a security issue or…</p>
+<p id=ef0d class="phone s01"><cite>Ivan_Herman:</cite> Why? modify specifications…</p>
+<p id=f91e class="phone s03"><cite>Manu_Sporny:</cite> vulnerability? No. we are supporting new P.</p>
+<p id=c9bf class="phone s01"><cite>Ivan_Herman:</cite> if the new specifications raise an issue that has to be solved.</p>
+<p id=43fc class="phone s03"><cite>Manu_Sporny:</cite> I just didn't know how much we could put underneath that umbrella. I'm a bit concerned about how can we do this in two phases? The first phase is getting it into the ECDSA thing just as is and not changing anything and then the second phase is determine if we can generalize it safely. Okay.</p>
+<p id=4c8c class="phone s01"><cite>Ivan_Herman:</cite> That's fine.</p>
+<p id=824f class="phone s01"><cite>Ivan_Herman:</cite> That's fine. Of course. That's fine.</p>
+<p id=134e class="phone s02"><cite>Wesley_Smith:</cite> Yeah, that sounds good.</p>
+<p id=c0bf class="phone s02"><cite>Wesley_Smith:</cite> And on a practical more mundane short term, what's the order of operations here for me as an editor of the VCB spec? I mean, should I wait until it's safely in another spec before I just nuke it out of this spec? I mean, okay, it needs to exist in at least one place at all times or something. Okay.</p>
+<p id=5b97 class="phone s03"><cite>Manu_Sporny:</cite> That's right.</p>
+<p id=791d class="phone s02"><cite>Wesley_Smith:</cite> Okay, sounds good.</p>
+<p id=cf5c class="phone s02"><cite>Wesley_Smith:</cite> So Avon I am curious what …</p>
+<p id=ab38 class="phone s02"><cite>Wesley_Smith:</cite> why you feel this is becoming timely. I thought when we had discussed previously we were like worst case scenario this stuff just gets reviewed by horizontal review multiple times. What's the pressure you're feeling?</p>
+<p id=fd3f class="phone s01"><cite>Ivan_Herman:</cite> We are talking about CR and…</p>
+<p id=cc1e class="phone s01"><cite>Ivan_Herman:</cite> in CR by CR this must be done and we are end of August and…</p>
+<p id=b4c7 class="phone s02"><cite>Wesley_Smith:</cite> All understood. I will get the ball rolling on that work. Ivan Herman:</p>
+<p id=0300 class="phone s01"><cite>Ivan_Herman:</cite> Another one is even more of a problem but more practicality…</p>
+<p id=9fe2 class="phone s02"><cite>Wesley_Smith:</cite> What's the other?</p>
+<p id=d361 class="phone s01"><cite>Ivan_Herman:</cite> because the one which modifies the B string specification…</p>
+<p id=4c21 class="phone s02"><cite>Wesley_Smith:</cite> Right. Right.</p>
+<p id=d058 class="phone s01"><cite>Ivan_Herman:</cite> because that one has to be then officially reopened as a new version. So that even more time.</p>
+<p id=9b31 class="phone s02"><cite>Wesley_Smith:</cite> That there's extra work. Yeah. Okay.</p>
+<p id=7db9 class="phone s02"><cite>Wesley_Smith:</cite> So I may need help from Ivon Monument or someone because I don't know exactly what needs to happen there. We need to do a first public working draft of Bitstream status lists 1.1 or something and…</p>
+<p id=aff4 class="phone s01"><cite>Ivan_Herman:</cite> Yes. Yes.</p>
+<p id=961d class="phone s02"><cite>Wesley_Smith:</cite> then after we do the first public working draft then we can add new features. So that needs to happen in a vacuum before anything to do with R I have some instructions somewhere in my email inbox for how to do the first work stuff. I can go get that started. Mon, go ahead.</p>
+<p id=23ec class="phone s03"><cite>Manu_Sporny:</cite> Do we have a resolution to pass to publish FPWD? We'd need that, Avon. I can't remember. I don't think we did a res.</p>
+<p id=185c class="phone s01"><cite>Ivan_Herman:</cite> No, we need the resolution but not here but on the burkin group…</p>
+<p id=bdd1 class="phone s03"><cite>Manu_Sporny:</cite> Right. Exactly.</p>
+<p id=de61 class="phone s02"><cite>Wesley_Smith:</cite> So, tomorrow I'll raise that as something that we would like to get resolved or put up a proposal. and then once that's done, I'll go push some FPWD buttons and then get going.</p>
+<p id=bdb4 class="phone s01"><cite>Ivan_Herman:</cite> if it was simpler…</p>
+<p id=791f class="phone s02"><cite>Wesley_Smith:</cite> I just take you for granted,…</p>
+<p id=64de class="phone s01"><cite>Ivan_Herman:</cite> then if that's done then I have to do some boring administration.</p>
+<p id=7d8e class="phone s02"><cite>Wesley_Smith:</cite> All sounds good. I think that's a good plan. Anything else on VC barcodes for today? All right. I'm out of material. Anybody else have any topics that will fit in seven minutes? Man, go ahead.</p>
+<p id=6ffa class="phone s03"><cite>Manu_Sporny:</cite> No, I think we're fine. I think it's worth mentioning that we heard that Bannon has maybe deployed and the World Bank has maybe deployed verifiable credential barcodes at scale. I don't know if anyone has any more information on that. I know we've looked at some screenshots, but some of this stuff was back in 2024 where I'd be surprised if they used verifiable credential barcodes. I know that Simone connected some of us to World Bank people. but I don't really know.</p>
+<p id=1ab7 class="phone s03"><cite>Manu_Sporny:</cite> World Bank was very interested in verifiable credentials and did five years ago and then I think people moved around and we didn't hear anything from them and now all of a sudden we're hearing that, potentially 7 million people in Benon are walking around with verifiable credentials in their pockets. the barcode stuff. So, I don't know…</p>
+<p id=dc1e class="phone s02"><cite>Wesley_Smith:</cite> Ela, go ahead.</p>
+<p id=13b0 class="phone s03"><cite>Manu_Sporny:</cite> where we would find out or if anybody knows or if Avon Simone has said anything about this. Okay.</p>
+<p id=7579 class="phone s01"><cite>Ivan_Herman:</cite> No idea.</p>
+<p id=c87e class="phone s01"><cite>Ivan_Herman:</cite> No Maybe somebody in Geneva will know about that. Wow. Okay.</p>
+<p id=dd4f class="phone s05"><cite>Elaine_Wooton:</cite> Yes.</p>
+<p id=10005 class="phone s05"><cite>Elaine_Wooton:</cite> So I'm the person who saw the slide by the World Bank in Bangkok that said specifically W3C verifiable credential signed code. and I did not manage to take a picture of it. So, I will endeavor to get more information. but I think everybody should be on the lookout. I don't know how we're going to find out for it'd be great to find out what the heck is going on with that.</p>
+<p id=b9ac class="phone s02"><cite>Wesley_Smith:</cite> And that does sound extremely cool. all right.</p>
+<p id=1800 class="phone s02"><cite>Wesley_Smith:</cite> Anything else for today? We got five minutes left. Lane, go ahead. Or is that old hand? All right. Ivon, go ahead.</p>
+<p id=32e7 class="phone s01"><cite>Ivan_Herman:</cite> So, something totally different is just a kind of an FYI.</p>
+<p id=9e91 class="phone s01"><cite>Ivan_Herman:</cite> I saw some males passing on a workshop that seems to be created by W3C maybe together with IETF but I am not sure on reopening the XML signature work and specifically by adding quantum resistant keys and methods to XML signature which is obviously something good to do. But during the discussion I saw passing by what they are discussing what algorithms should be used and accepted for that spec and there are some overlaps with what we have and some other acronyms that are completely unknown to me etc.</p>
+<p id=40d1 class="phone s01"><cite>Ivan_Herman:</cite> So I was just wondering whether it's worth somehow to talk to people who are close to that work and find out ideally the algorithm that I use for XML signature should be the same eventually than the one we use and…</p>
+<p id=df16 class="phone s02"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+<p id=a2fa class="phone s01"><cite>Ivan_Herman:</cite> I know that the list we have now is sort of temporary anyway so I don't know whether anyone has heard about this at</p>
+<p id=e967 class="phone s03"><cite>Manu_Sporny:</cite> I have been following the threads. I feel like it would be a pretty big distraction for us at this point to engage because they're talking about some fairly esoteric, things. I think when they get to last call which will be sometime from now at that point we should pay attention. but until then a lot of the discussions they're having are two years ago one year ago it's rehashing things we've already discussed.</p>
+<p id=abcf class="phone s03"><cite>Manu_Sporny:</cite> So yes, Savon, I'm like tracking that conversation, but I feel like we,…</p>
+<p id=5b17 class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=48e5 class="phone s03"><cite>Manu_Sporny:</cite> it'll be a very big distraction for us because there's a lot of politics between W3C and IETF when it comes to XML digital signatures. And I don't think we need to get wrapped up, in that. We are very interested in what they pick at the end, but they've already said more or less they're going to end up picking the things that we've picked.</p>
+<p id=f398 class="phone s01"><cite>Ivan_Herman:</cite> No, that's fine with me.</p>
+<p id=b747 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=0d4e class="phone s01"><cite>Ivan_Herman:</cite> I just wanted to be sure that something is happening and I am not in position to give any opinion on the technicalities here. That's all.</p>
+<p id=293a class="phone s02"><cite>Wesley_Smith:</cite> Thanks for bringing it to the group's attention. Anything else for today? Two minutes All right. Thank you all for the time as always folks and I will see some of you later this week and the rest of you next week. Meeting ended after 00:53:38 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

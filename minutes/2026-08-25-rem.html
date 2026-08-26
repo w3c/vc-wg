@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 25 August 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>25 August 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9c1f">VC Render Method Weekly Meeting</a></li>
+<li><a href="#c9b3">Clarifying Internationalization/Accessibility in Renderers</a></li>
+<li><a href="#74ba">Editorial Changes to JSON Card</a></li>
+<li><a href="#04d4">Origin of the Card Render Method</a></li>
+<li><a href="#826d">Horizontal Review Progress and Concerns</a></li>
+<li><a href="#f900">Render Methods Provided by Non-Issuers</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=9c1f>VC Render Method Weekly Meeting</h3>
+<p id=34f7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, welcome everyone. It is 3 minutes past the hour, so let's get started. this is the task force averifiable credential working group dealing with the VC render method. this was a weekly task force but as discussed in previous calls. we're switching it to weekly starting this weekend next. So I updated the task force calendar to be weekly.</p>
+<p id=f5e1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So you should be able to see the same meeting slot right now for next week's Tuesday. as always, we're under W3C code of conduct and IP restriction agreement. you need to be member of the working group to contribute and so All right. let's see. before we dive into pull requests and issues, what are our time constraints? Mana, do you have to disappear at the bottom of the hour?</p>
+<p id=8c93 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And Ivon,…</p>
+<p id=7442 class="phone s02"><cite>Manu_Sporny:</cite> I'm good.</p>
+<p id=cf5e class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see you on the queue. Manu Sporny:</p>
+<p id=310e class="phone s02"><cite>Manu_Sporny:</cite> I'm good for the all today.</p>
+<p id=8d7b class="phone s01"><cite>Dmitri_Zagidulin:</cite> You're Okay, fantastic.</p>
+<p id=a61a class="phone s02"><cite>Manu_Sporny:</cite> Yeah, you're muted.</p>
+<p id=de1b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ivan, go ahead, though you may be muted.</p>
+<p id=d929 class="phone s03"><cite>Ivan_Herman:</cite> Sorry Sorry about that.</p>
+<p id=cc59 class="phone s01"><cite>Dmitri_Zagidulin:</cite> No worries.</p>
+<p id=3a36 class="phone s03"><cite>Ivan_Herman:</cite> Just looking at the calendar and…</p>
+<p id=6a37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> noise. …</p>
+<p id=09ab class="phone s03"><cite>Ivan_Herman:</cite> I don't see the weekly call set up.</p>
+<p id=050e class="phone s01"><cite>Dmitri_Zagidulin:</cite> could be a propagation delay. Let's see. One second.</p>
+<p id=6b96 class="phone s03"><cite>Ivan_Herman:</cite> I get automatically the mails from the W3C calendar. It seems that being changed now.</p>
+<p id=1472 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think I may have updated the wrong calendar.</p>
+<p id=d7d2 class="phone s03"><cite>Ivan_Herman:</cite> Okay. Yeah,…</p>
+<p id=46ee class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'll deal with it after the call.</p>
+<p id=cae2 class="phone s03"><cite>Ivan_Herman:</cite> exactly. Not right now.</p>
+<p id=1514 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you for the heads up though, Martin. Go ahead.</p>
+<p id=5b6e class="phone s02"><cite>Manu_Sporny:</cite> No, just to confirm, I have it still as every other week on my calendar as well. from the W3C subscription.</p>
+<p id=bd6a class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, Got it. then user error. I'll fix it after the call. All right.</p>
+<p id=1b8d class="phone s01"><cite>Dmitri_Zagidulin:</cite> So we have a handful of PRs to go over and some new issues to discuss and I see we have a number of issues that Mona opened regarding the internationalization accessibility horizontal review and so on. So we'll give the floor for that a bit. all right. So, let's look at the poll requests.</p>
+</section>
+
+<section>
+<h3 id=c9b3>Clarifying Internationalization/Accessibility in Renderers</h3>
+<p id=e63b class="phone s01"><cite>Dmitri_Zagidulin:</cite> I opened polar request 72 to address issue 70 to make it clear that the HTML rendering environment must expose internationalization accessibility settings and other such alternate rendering environments also must expose the</p>
+<p id=4322 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So this pull request adds a must and gives some examples of what kind of accessibility settings that it must expose. points out that the current sandbox iframe method meets it and requires that alternate rendering requirements must do the same. So it should be fairly simple. This is boyquest 72. and here it is in All next up so if there's any questions please raise your hand as always otherwise I will move on to the next PR.</p>
+<p id=c1fe class="phone s01"><cite>Dmitri_Zagidulin:</cite> H yes man.</p>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> This is great. Thank you, Dimmitri, for the PR. I'm wondering if we all agree with it. So, I based on some internal discussion at BB, I took a stab at trying to find ways that this information is typically exposed in an iframe and learned a whole bunch of new things about it. do we feel in so let's see I think the first must statement is testable right so we can test it by seeing if any of those things navigator language is exposed and…</p>
+<p id=28d5 class="phone s02"><cite>Manu_Sporny:</cite> then if prefers reduced motion is exposed I don't know how you set that in a browser but I think that's testable …</p>
+<p id=79be class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm. Yes.</p>
+<p id=7319 class="phone s02"><cite>Manu_Sporny:</cite> are we sure that the sandboxed iframe meets the requirements by default? I don't know. We're POS. Okay, great.</p>
+<p id=6be5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I mean, ju just according to my research,…</p>
+<p id=7a0a class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm 99% sure, but we can triple check. Uh-huh.</p>
+<p id=86ea class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I was thinking,…</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> yeah, I think it's like something I would feel much better about is if we tested it to make absolutely certain because there's some and I don't know what you can turn off with iframe sandbox settings can you turn off prefers contrast and prefers reduce motion because what it can be used to profile people, but maybe it doesn't matter because the thing can reach out to the outside world, it's those kinds of things that I want to make sure we're thoughtful of because this is going to be reviewed by accessibility and internationalization and I make sure they look at it and they're like, &quot;Yep, that looks perfect to us.&quot; So, just wanted to be thoughtful about, the language we're putting in here. I think what you wrote is great, Dmitri. I just don't know if it's good enough.</p>
+<p id=1451 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, sounds good, Dave. All right.</p>
+<p id=10001 class="phone s04"><cite>Dave_Longley:</cite> I was just going to say that I experimentally confirmed a few of those things as working. I did not check the two things that Mona just mentioned. I was not aware that you could turn those off in an iframe sandbox.</p>
+<p id=0606 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I don't think you can, but we'll double check. Okay. Right.</p>
+<p id=459d class="phone s02"><cite>Manu_Sporny:</cite> And if all…</p>
+<p id=2962 class="phone s02"><cite>Manu_Sporny:</cite> if that's all we're at right now, I think we're good. Meaning they accessibility will tell us that we're wrong. right.</p>
+<p id=8a88 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. That's</p>
+</section>
+
+<section>
+<h3 id=74ba>Editorial Changes to JSON Card</h3>
+<p id=5e63 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's the whole point. At least we're showing that we tried. next up, if Von raised some editorial comments on the JSON card pull request, in issue 61. So, pull request 73 attempts to address those. Here it is. link in chat.</p>
+<p id=4e88 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So it changes the terminology instead of JSON template schema calls it the card object does provide an explicit card template JSON schema moves it to a non-normative appendix merges the two tables. So Ivon pointed out that we have the input and the output tables and they're exactly the same. So can we merge it into one? So this does that pulls the examples into a separate section and…</p>
+<p id=a6cd class="phone s01"><cite>Dmitri_Zagidulin:</cite> adjusts the data URL rows. so again take a look review leave comments.</p>
+<p id=b56b class="phone s03"><cite>Ivan_Herman:</cite> Yeah, I was not put on the review list and…</p>
+<p id=01d1 class="phone s03"><cite>Ivan_Herman:</cite> somehow I miss So the bottom line is I haven't seen this PR yet…</p>
+<p id=ea99 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, let's add you to the review list.</p>
+<p id=d1e3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's in the code owners. So let me make a note to myself. Do you add Ivon to code owners on the stack? problem. let me see if we can add you.</p>
+<p id=0e2f class="phone s03"><cite>Ivan_Herman:</cite> but these are all editorial changes. There is no issue of so…</p>
+<p id=f38e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Correct. Yeah.</p>
+<p id=6ce8 class="phone s03"><cite>Ivan_Herman:</cite> if you feel okay with it as an editor I don't have a problem. Okay.</p>
+<p id=45ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, So, I just added you to the reviewers list and we'll Yeah, there's no rash. I'll give some time for people to review and merge it afterwards. Benjamin points out that in a meeting of great minds, I think you may also have been working on that section.</p>
+<p id=662a class="phone s05"><cite>Benjamin_Young:</cite> I Yeah,…</p>
+<p id=2b3a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=3774 class="phone s05"><cite>Benjamin_Young:</cite> but I didn't address any of what you did. So, what I think the actions it certainly is all editorial that you just merge yours in. And whenever you do, I'll rebase mine on top of that. these are more changes to the core of it that are well worth discussion.</p>
+<p id=9173 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, fantastic.</p>
+<p id=dccb class="phone s05"><cite>Benjamin_Young:</cite> And as you can see, there's a dump of other questions there that might need to be issues,…</p>
+<p id=dc29 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Excellent. Yeah.</p>
+<p id=0250 class="phone s05"><cite>Benjamin_Young:</cite> but yeah,…</p>
+<p id=3d22 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do you want to say a few words about this one about pull request 74?</p>
+<p id=fbd3 class="phone s05"><cite>Benjamin_Young:</cite> So it does fix one editorial thing…</p>
+<p id=7cc2 class="phone s05"><cite>Benjamin_Young:</cite> which maybe you fixed in the second commit. there was a pros line that said checking the schema that you should check the schema on the input and…</p>
+<p id=28e8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. …</p>
+<p id=c18a class="phone s05"><cite>Benjamin_Young:</cite> it needed to be a must. So that's the one.</p>
+<p id=92a2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, in my PR, I kept here it is. One sec. Yeah, I kept it as I should and…</p>
+<p id=c98d class="phone s05"><cite>Benjamin_Young:</cite> Yeah, it's towards the top or was then the section farther down about processing already had it as a must.</p>
+<p id=e5fa class="phone s01"><cite>Dmitri_Zagidulin:</cite> in the non-normative section if we want to change the toast, I'm absolutely happy to do that as Okay.</p>
+<p id=61c0 class="phone s05"><cite>Benjamin_Young:</cite> So I was trying Yeah,…</p>
+<p id=b3dd class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, we need to All right.</p>
+<p id=ad00 class="phone s05"><cite>Benjamin_Young:</cite> I forget…</p>
+<p id=5583 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let me leave a comment to myself.</p>
+<p id=aa7b class="phone s05"><cite>Benjamin_Young:</cite> where and I'm not going to be able to find it on your order.</p>
+<p id=cdc0 class="phone s05"><cite>Benjamin_Young:</cite> So one it just needs resolving one way or…</p>
+<p id=891d class="phone s01"><cite>Dmitri_Zagidulin:</cite> check to make sure that the good apply the JSON schema matches reprocessing direct…</p>
+<p id=44db class="phone s05"><cite>Benjamin_Young:</cite> the other which is also sure.</p>
+<p id=6c35 class="phone s01"><cite>Dmitri_Zagidulin:</cite> which might loh to you about the changes in this guy. I</p>
+<p id=1d3d class="phone s05"><cite>Benjamin_Young:</cite> So other than that one the most notable thing is that it tries to remove the card language and uses a highlights term instead which is one we've used internally in what we call our card designs file and there's public code I can link folks to that one the card design system that we use in various wallet is across all kinds of credial and it's not provided by the issuer. So, it does a good bit more than this one does, but ultimately the same thing in that it's labeling fields and…</p>
+<p id=7bdc class="phone s05"><cite>Benjamin_Young:</cite> selecting their value from elsewhere in the credential using JSON pointers. So, in that way it's very similar. so some of this,…</p>
+<p id=bb94 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=0735 class="phone s05"><cite>Benjamin_Young:</cite> the initial commit is just moving from card to highlights, which of course we can bike shed that, but trying to get rid of the card language because you could use that same list of fields to make a table, right? …</p>
+<p id=49a0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, that's a good point.</p>
+<p id=7552 class="phone s05"><cite>Benjamin_Young:</cite> so it's not mandatory that it's a card.</p>
+<p id=d5db class="phone s01"><cite>Dmitri_Zagidulin:</cite> So yeah,…</p>
+<p id=e54c class="phone s05"><cite>Benjamin_Young:</cite> Go ahead.</p>
+<p id=5ee2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> you bring up a really good point. Personally, I'm torn about the card language because on the one hand, you're absolutely right. This is not just for card displays. This is for tables, any kind of textbased list, any kind of data view, on the other hand, the card view is familiar to</p>
+<p id=bca5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> or…</p>
+<p id=4997 class="phone s01"><cite>Dmitri_Zagidulin:</cite> may be familiar to developers from things like Apple Wallet and Google Wallet, right? and other similar render method specs.</p>
+<p id=b4c8 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, but I think I would push that that's a UX choice and…</p>
+<p id=5e8d class="phone s05"><cite>Benjamin_Young:</cite> that will probably continue to drift over time and…</p>
+<p id=f9a8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's a good point.</p>
+<p id=5b85 class="phone s05"><cite>Benjamin_Young:</cite> that the skumorphism may eventually die when it's just appearing in your consciousness thanks to some AI bot shoving it in front of your eyeball.</p>
+<p id=3fbf class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's a very good point. And yeah, man. Go ahead.</p>
+<p id=9f4b class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I think a plus one to that argument. Benjamin, I think naming the thing I guess through semantically what we're trying to do I think is good which is why I think highlights is better than card. this is the first time I've seen it so I'm reacting as we're reading. I did like the concept of card because that is how it is rendered most likely to be rendered across most of the devices that we're talking about but I think Benjamin you make a solid point that's just we're in the 20s and by the 30s that might change right plus one that are there other</p>
+<p id=cda2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right.</p>
+<p id=f72f class="phone s02"><cite>Manu_Sporny:</cite> changes to this dimension or this is just largely like a hey this is a</p>
+<p id=3ab8 class="phone s05"><cite>Benjamin_Young:</cite> not the third change is removing valid from and…</p>
+<p id=5d2a class="phone s05"><cite>Benjamin_Young:</cite> valid to because it was allowing you to override those on the template level, not just select them. I think maybe Nate's not here for one thing, so we can't ask him. But, I think his initial thinking was that this could be used in the VC 1.1 space, and therefore having those around would let you select those, which is valid. Haha.</p>
+<p id=1895 class="phone s05"><cite>Benjamin_Young:</cite> But he also had it that they could be string values which would then mean an issuer for whatever reason could do those out of sync which would be strange. in that they could provide a string value or even one of his examples nullified valid too without the surrounding credential ephemera in the example. So it became pretty unclear about why you would do that at a template level. the selection side makes sense I guess. but I think any VC ecosystem is going to already have those selectors. and already be putting those in pretty prominent spaces where the wallet thinks they matter.</p>
+<p id=42e3 class="phone s05"><cite>Benjamin_Young:</cite> And it would be kind of weird if the issuer has to go out of its way to say hey, this is when this expires. and there's always the fields fallback. If somebody really does want to select one of those and…</p>
+<p id=5712 class="phone s05"><cite>Benjamin_Young:</cite> stick it in the highlights list, that's still an option.</p>
+<p id=aabd class="phone s01"><cite>Dmitri_Zagidulin:</cite> I agree.</p>
+<p id=764b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mano, go ahead.</p>
+<p id=9334 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, plus one to for its removal. going back to the highlights language, other things that we might consider. So I think it's a good iteration in a positive direction. So I think we should take it. the only other things I'm wondering about are concrete use cases for example for an open badge what's it called? it's a student transcript. the highlights might actually be the entire what they got in every single class, listed out explicitly. We've seen that happen, in a couple of pilots. I don't know if that quite meets the highlights criteria. people might say &quot; no, that's not a highlight. That's like a full-blown credential that you're viewing in there.&quot;</p>
+<p id=d064 class="phone s02"><cite>Manu_Sporny:</cite> I think the counterargument that might be like if you want that thing if you want a rendering of every single class the person use the HTML one because that's the thing that's going to actually give you the ability to lay those things out in a way that makes sense highlights is not for that right so I think we may want to provide some guidance in the spec about are we really talking about highlight here and I think we are and we should tell people be minimal with the information that you put in here,…</p>
+<p id=1cbd class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. I see you in the queue,…</p>
+<p id=7ffd class="phone s02"><cite>Manu_Sporny:</cite> Because if you put every single field in the credential in this thing, it kind of goes beyond what it's supposed to do. you might want to use the HTML one, instead. that's</p>
+<p id=eb75 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I just want to say so I agree with you that we should probably add some guidance. I do think that we need to talk about compound credentials separately such as the transcript that you mentioned and…</p>
+<p id=0259 class="phone s01"><cite>Dmitri_Zagidulin:</cite> that we do need to be clear how if we do support complex compound credentials how that interacts with the highlights field and that you're right that that's not what it's for. Benjamin go ahead.</p>
+<p id=b3dc class="phone s05"><cite>Benjamin_Young:</cite> Yeah. So there's some forcing functions in…</p>
+<p id=4ee7 class="phone s05"><cite>Benjamin_Young:</cite> how this is laid out already. the fields list is a list and as yet it's not been mentioned to be itself hierarchical. So it really is ills suited to anything of much complexity because you're essentially flattening whatever might be in a transcript into a handful of fields. You could do a thousand, But than just and undoubtedly UI designers are going to practically l li limit that.</p>
+<p id=cb8c class="phone s01"><cite>Dmitri_Zagidulin:</cite> agreed Dave.</p>
+<p id=77f7 class="phone s05"><cite>Benjamin_Young:</cite> I'm not sure that we need to. there was a second thing. Yeah, just that it'll resurface.</p>
+<p id=935d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=a08d class="phone s04"><cite>Dave_Longley:</cite> I think we should be careful to be too prescriptive with this. I think there will be issuers who would prefer to list lots of fields maybe all the fields in their credential. and we should not try to tell them that they can't do that. That doesn't mean that the consuming party won't maybe limit it to the first three fields. So, that should be kept in mind, but you might offer some button that allows you to view all the fields or, scroll through them or whatever it is.</p>
+<p id=ddef class="phone s04"><cite>Dave_Longley:</cite> I'm concerned that we're trying to tell people too much about what to do for this very important render method which is for make this d give me all the display hints that you to make it so that I can integrate this into an existing interface and style and so on that I have. That's the purpose of this render method. And if we start saying you have to make it look like a card or you have to only highlight three things or I think that's a problem.</p>
+<p id=89c2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, man.</p>
+<p id=4160 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=9d7f class="phone s02"><cite>Manu_Sporny:</cite> Yeah. …</p>
+<p id=f030 class="phone s02"><cite>Manu_Sporny:</cite> my concern with that is that then this is not highlights that we're talking about, I get the whole like you are we don't want to be overly prescriptive, but if the semantic understanding of this thing is highlights, then what you just described is not highlights, right? And so, then what are we telling people? if you want to list every single attribute in your credential, you're abusing the highlights thing. we can say that we can stay quiet about it. But, without guidance, I think people are going to be a little confused about what one is used for over the other. what's the difference then between, HTML and highlights if I can list every single, property using highlights, right?</p>
+<p id=d683 class="phone s02"><cite>Manu_Sporny:</cite> And we can always say, you get visual,…</p>
+<p id=f7a0 class="phone s02"><cite>Manu_Sporny:</cite> yada out of the HTML one. so now I'm concerned that we're picking the wrong semantic thing. Is this actually highlights, or is it something else? Maybe card's better in that case, right?</p>
+<p id=c350 class="phone s01"><cite>Dmitri_Zagidulin:</cite> …</p>
+<p id=2d54 class="phone s01"><cite>Dmitri_Zagidulin:</cite> an argument could be made that if you're going to list all of them, then just use the raw verifiable credential. The whole point about this thing is that it picks just a few fields.</p>
+<p id=df89 class="phone s03"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=b91e class="phone s01"><cite>Dmitri_Zagidulin:</cite> But go ahead Dave and then Mono again.</p>
+<p id=3584 class="phone s04"><cite>Dave_Longley:</cite> Yeah. …</p>
+<p id=5efd class="phone s04"><cite>Dave_Longley:</cite> I also think highlights is not the right name. And I think the differentiator between whether you use the HTML render method or whatever we call this is whether or not you're integrating this into an existing interface with your own look and feel or whether you've farmed that out entirely to an issuer. that's the primary difference. And so there's what this render method does is it's giving and you display data that you can then use to style and make appear in using whatever components you want to whatever creativity you have there. That's what it's there for. And that's fundamentally different from give me a sandbox and the issuer is going to say exactly…</p>
+<p id=6943 class="phone s03"><cite>Ivan_Herman:</cite> Okay. Awesome.</p>
+<p id=10002 class="phone s04"><cite>Dave_Longley:</cite> how it's supposed to be rendered over here. That's the difference. I don't know what name we want for that, but I think those are the two main render methods.</p>
+<p id=9100 class="phone s04"><cite>Dave_Longley:</cite> ignoring the NFC case or whatever. Those are the two main render methods that I think consumers are looking to have. One where they have control and one where they hand over control to the issuer.</p>
+<p id=69e9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right, man.</p>
+<p id=c968 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=25c1 class="phone s02"><cite>Manu_Sporny:</cite> And so highlights is better than card. So I agree with that. But this thing doesn't sound It sounds like it's a summary or an overview, which is what Coyote is saying in the chat channel, that the semantics are wrong with highlights if that's you know what we're saying. the other thing I wanted to kind of point out is I don't know if highlight is a culturally broad enough term. I don't know, if highlight is something it's definitely a western, ism. I don't know.</p>
+<p id=3e7e class="phone s02"><cite>Manu_Sporny:</cite> It's a minor thing, but it's kind of like that can lead to misunderstanding about what it's for versus summary, which I think is a lot more clear about,…</p>
+<p id=da92 class="phone s02"><cite>Manu_Sporny:</cite> what this thing is for. this is used to render summaries in a platform or application native way. What's up?</p>
+<p id=3148 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. Nate,…</p>
+<p id=2d6d class="phone s01"><cite>Dmitri_Zagidulin:</cite> go ahead.</p>
+</section>
+
+<section>
+<h3 id=04d4>Origin of the Card Render Method</h3>
+<p id=80a4 class="phone s06"><cite>Nate_Otto:</cite> Yeah, just maybe some history sources. I contributed the original card concept. this was not intended to be a flexible sort of highlight or summary of the credential. It was intended specifically to enable rendering of many different credentials into a very common format whose UX is already being used in digital wallets, which was the appearance of a sort of little credit card. They would each have a background color and maybe a highlight and a few essential fields and then a space for a couple other fields. And I looked at actual sort of credit card designs and digital wallets to see what limited pieces of data they were selecting to be displayed in that specific format.</p>
+<p id=2b0a class="phone s06"><cite>Nate_Otto:</cite> And so the idea was sort of to enable a list view of a bunch of different credentials where plus one to Dave's distinction between rendering that is fully under control of the issuer versus rendering that's more or less fully under control of the application. the original design for cars. fell firmly in that latter camp that the interface would already have a template in whether it's native or HTML or whatever how it would render a credit card- thing and this was really just about shuttling the data that would populate the fields that they already had in their template.</p>
+<p id=e478 class="phone s06"><cite>Nate_Otto:</cite> So I don't really have a very strong preference as to whether that an original design survives, and whether that is the thing that the group decides to go with. but I think that is a potentially useful render method. especially for those apps that really don't feel like giving full rendering control with all the risks that entails over to, the issuers of credentials that have come in.</p>
+<p id=7138 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, And that historical context is a really good point and I do agree with you. And though Benjamin makes a good point about possible schemorphism and sort of future compatibility,…</p>
+<p id=b311 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but that's a problem for future us. And if other wallets have an overwhelming UI paradigm other than the sort of credit card, then that's what a new suite is for. Benjamin, you're up next.</p>
+<p id=10b2 class="phone s05"><cite>Benjamin_Young:</cite> yeah,…</p>
+<p id=c654 class="phone s05"><cite>Benjamin_Young:</cite> I'm going to ignore the mic shedding around the name because I do think there's serious issues with baking in a UX expectation into an issue or…</p>
+<p id=764c class="phone s05"><cite>Benjamin_Young:</cite> list of data because we right…</p>
+<p id=5855 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, but…</p>
+<p id=f755 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but this is about UX though. The whole point about render method is that it's a forward UX facing thing.</p>
+<p id=72c4 class="phone s05"><cite>Benjamin_Young:</cite> but this one to Dave's point is about the fact that we are providing a way for the issuer to share information in a deliberately more constrained fashion where it's like these are the things you should care about if you have limited display options rendering ing system which might be a watch. these are the fields that as the issuer in order of importance are telling you you need to show the user somewhere and the issuer can say that and the issuer can totally be ignored right because the wallet doesn't have to use render meth it doesn't have to do HTML display it doesn't have to even care that there's a whole section for these it has the JSON and it could come up with some other heristic on what it tells the user</p>
+<p id=b26e class="phone s05"><cite>Benjamin_Young:</cite> So this is the issuer having a way without having to design anything these are the important fields. most wallets because they're trying to bridge physical to digital and they're using a word called wallet which usually has a smell to us when we say the word and it's leather in most countries or plastic. that while that bridge is being built, it's probably going to look like a card. But I dare say in the open badges space where things do get complicated, we're already seeing the card stuff fall away. because that's not the predominant paradigm for a transcript or a CV. So you're going to see a different display.</p>
+<p id=e96a class="phone s05"><cite>Benjamin_Young:</cite> Regardless of what the wallet or the renderer decides to make the thing look like, this is the opportunity for the issuer to say, this is a list of things I care about in the order of preference. So that is connected to the bike shedding bit but I think we should center this particular render method whatever it's called is center that on the order of these fields have importance in this order method.</p>
+<p id=fd65 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I don't know.</p>
+<p id=b19d class="phone s02"><cite>Manu_Sporny:</cite> Yeah, a plus one to all that. the historical context is important and yes, I think, we were starting out thinking that this stuff would be laid out as a card, but that's definitely not the use cases at least digital bizaar has. So, I'll just kind of talk from kind of what our company's, trying to do here. we have hard-coded things in our wallet right by credential type today and we have been hand selecting things to show up when you go to the detail display and that is clearly not scalable. we cannot do that for every single type of credential that is going to exist in the world.</p>
+<p id=10003 class="phone s02"><cite>Manu_Sporny:</cite> We're having a hard time even keeping up with current set which is really small compared to what we see coming down the pipeline and we need to provide a mechanism so that the issuers can pick the most important fields that they want to display on screen in order as Benjamin was saying. So super important for us to address that and that layout is not a credit card layout right it is unworkable other than for kind of a really quick visual display. we are not really struggling with the credit card based layout right now. We are struggling with the longer list of things that need to be described.</p>
+<p id=5ace class="phone s02"><cite>Manu_Sporny:</cite> So I agree that we should not tie this render method to a perceived output modality or the out output modalities might be a credit card or it might be a much longer list of things or it might be some kind of innovation that we really should not cut off at this point. so all that to say to this is not a card-based render and it's not intended for credit cards. You can choose.</p>
+<p id=f3f7 class="phone s02"><cite>Manu_Sporny:</cite> to render it like that. If there's a small enough bit of information, maybe you can do some heristics around it. But a lot of the credentials that we're seeing don't fall into that category.</p>
+<p id=91f9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Dave.</p>
+<p id=eca4 class="phone s02"><cite>Manu_Sporny:</cite> We need to summarize them so that the most important information is there for the individual without requiring the issuer to go full-blown like HTML for the credential. that's it.</p>
+<p id=afc5 class="phone s04"><cite>Dave_Longley:</cite> Plus one to the historical stuff being important here for us to make sure that we're using information about how people are currently writing wallets today to inform this. But I don't think it should become a onetoone we're making a render suite for exactly what people are currently doing in wallet UIs. I think that won't scale very well just because the standard making timeline is just totally out of sync with the possibility for UIs to evolve. I think what we keep coming back to here is that we're asking issuers to prioritize their information. So as a digital wallet, if you're just handed a blob of data, you don't know necessarily what should go on the screen, what the issuer thinks is going to be most important to the user who's holding this credential.</p>
+<p id=300a class="phone s04"><cite>Dave_Longley:</cite> And so you're asking the issuer for that information. And I think if we make this in this abstract enough so it's a render method where the issuer is providing display hints and information about in an easily consumable way in the priority order that they would prefer this stuff to show up. then that is sufficient for a wallet or other kind of consumer to take that information in and then show that information on screen based on whatever space and look and feel I have. So if the issuer said these are the top three, these are the top 100 important things and I'm a wallet and I need to display three, I'll take the top three. If I need to display 10, I'll take the top 10 that the issuer said.</p>
+<p id=7b82 class="phone s04"><cite>Dave_Longley:</cite> And it seems to me like that's more like what's going on and the issuer should not be prescribing to the user to the consumer who's going to display this what component they might use and so on. they're just saying this is the priority of the information that's important. If you want to summarize it, use this. If you want to put the fields, these are the fields in order,…</p>
+<p id=9ad6 class="phone s04"><cite>Dave_Longley:</cite> priority order. that seems like it makes sense for what we're looking for.</p>
+<p id=70c8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I wanted to hop on the queue to say I agree with sort of both sides of the argument that focusing on cards specifically possibly scamorphic possibly may be outdated soon and…</p>
+<p id=b166 class="phone s01"><cite>Dmitri_Zagidulin:</cite> doesn't address some of the use cases where we do need to prior we do</p>
+<p id=a70e class="phone s01"><cite>Dmitri_Zagidulin:</cite> rather clients would need to find a prioritized list of fields useful. So agreed on all of that. However, on the other hand, as a wallet implement, just having an ordered list of fields and priority still doesn't help you put together a card display. So my proposal and I'm wondering if there's any objections from the group is for example we can make the data priority render method although an argument could be made that at that point it's no longer a render method it's literally just issuer saying these are relative semantic priority in the field but putting that aside I wonder if there's any objections from the group if we if we standardize</p>
+<p id=8d66 class="phone s01"><cite>Dmitri_Zagidulin:</cite> as the yields priority list render method in place of this card and also have a non-normative optional appendix just like we did with the mustache template that is okay you have the data priority list but should you want to match the should</p>
+<p id=d061 class="phone s01"><cite>Dmitri_Zagidulin:</cite> If you want to do a card view, this is how you would do it. So Dave, in chat, you're saying minus one, two different render methods for this seems unnecessary. I want to challenge that. how would you derive the necessary information just from a ordered list of fields to create a card view? And Manu, you're up next.</p>
+<p id=9ac0 class="phone s02"><cite>Manu_Sporny:</cite> We could potentially do other things like tagging to say hey this render method is meant to be rendered as a card and so the icon and name and description and whatever. I think that that's one way that we could combine the two. I am nt to suggest that. I'm also hesitant to split it into two different things because now we're definitely it like I know the card rendering is popular today. with some of the UX feedback we've gotten, it's not very useful when you get a ton of different types of credentials, in your wallet.</p>
+<p id=b121 class="phone s02"><cite>Manu_Sporny:</cite> It's very useful if the types of credentials you have in your wallet match up to real world credentials that are cards. but I think we're going to rapidly see that that is not, the primary use cases for these things, overoptimizing for that now feels like not the right thing to do. we could say non-normatively Dimmitri in the appendix as you were saying hey if there is something and it only has an icon and it only has four fields and in this order wallets may render it and we would have to I think almost literally show a graphical depiction of a card in the spec</p>
+<p id=0559 class="phone s02"><cite>Manu_Sporny:</cite> and tell people exactly where things are going to be placed because without that there's not going to be any kind of universal kind of design heristic around what the card is actually going to look like. So some thoughts there. I think I'm also a minus one to creating a different render method because I think we're overoptimizing for some current skeomorphic thing that is going to go out of favor plus one to keeping it to one thing and focusing on this is a list of issuer supplied information if there is a way for us to tag that so that it does result in a cardbased layout if wallets want to</p>
+<p id=1958 class="phone s02"><cite>Manu_Sporny:</cite> render it that way, maybe we should focus, on that. these are the summary fields you should use, and have those map cleanly to the card. and maybe, for example, if we do that, we have to start thinking about position information, where does the logo bottom left, bottom right. designers need to know because the type of logo that you design is going to be different…</p>
+<p id=087a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Dave.</p>
+<p id=78b7 class="phone s02"><cite>Manu_Sporny:</cite> if it's a top placement versus a top right placement maybe. just some notes.</p>
+<p id=5919 class="phone s04"><cite>Dave_Longley:</cite> So to clarify what I think would be I think it would be good to have a single render method that includes summary information, issuer information and fields in priority order. I think providing that information is close to if not sufficient for wallet designers to take that and render it in a variety of different places. So if you can render that as a card, you can render that in a list, you can render detailed views of the fields in priority order. I think you can do all of those things. And there the burden on issuers is pretty low to create a single render method that just expresses the information in that way. And a lot of UI design is around here's an overview, here's details and issuer.</p>
+<p id=1122 class="phone s04"><cite>Dave_Longley:</cite> ers can say so here's my summary here's the information about the issuer here are the fields and…</p>
+<p id=d964 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks. Thanks, Benjamin.</p>
+<p id=6402 class="phone s04"><cite>Dave_Longley:</cite> priority order we should explore that and see if that is good enough to do list displays and other things and if it is then I think that's a pretty good first version for this iteration of the standards standardization process</p>
+<p id=10004 class="phone s05"><cite>Benjamin_Young:</cite> So, I'm curious u for those who want something more cardy what's missing in this approach that doesn't let you display it as a card? I don't think it shuts the door on it. I mean there's other data you might use in the credential as a renderer to say I have a credit card credential type and it's got five important fields and maybe you're going to do some heavy lift to make sure that as a wallet it comes out looking right.</p>
+<p id=27bf class="phone s05"><cite>Benjamin_Young:</cite> But also as an issuer, you're likely going to get specifications like the one I linked to in chat where it's like this is what Varys wallet supports of these credit card credential fields and probably we don't even need the issuer to provide something which is another conversation I'd like us to come back to. but when they are provided and the wallet really wants to show a card is name, description and icon sufficient for giving the user a card shaped something that's currently currently carved out I think in as these top level fields in example too.</p>
+<p id=adc4 class="phone s05"><cite>Benjamin_Young:</cite> And then the fields list is additive,…</p>
+<p id=db9e class="phone s05"><cite>Benjamin_Young:</cite> so not necessarily expected to show up in a tiny thing because you don't know what they're going to be. but I'm just curious if the concern that keeps coming back to but cards like what's missing from this to solve for that design choice?</p>
+<p id=c723 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=11ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, I see Nate on the queue. I do want to point out though we are 15 minutes till the top of the hour. I do want to have put aside a few more minutes to look at other issues and PRs. so we'll take quick comments from Nate and I want people to think about okay what's the takeaway here? we need to decide the shape of this method and a different name it for it.</p>
+<p id=2617 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Card highlights, summary, prioritize. ized fields and so on. Nate, go ahead.</p>
+<p id=e15f class="phone s06"><cite>Nate_Otto:</cite> So to that question from Benjamin, is there anything that else that this needs to do? If you did want to render a card, I think this is sufficient plus one to removing the date fields as shown on the screen. and it's not specifically a question of does this enable the issuer the renderer to render a credit interface. that is a one use case that they might choose and that they are commonly choosing today. but anything in a list view basically what is the most important information that you would render about this if you did not have the ability to sort of show all of the data in the credential as makes sense at a list view. And so someone might choose a credit interface.</p>
+<p id=c8f9 class="phone s06"><cite>Nate_Otto:</cite> they might choose something else, whatever arrangement they want of a main title, a short chart description perhaps and some essential fields. I would want us to caution about just going full priority order in that letting people choose every single field in the credential because then you're just recapitulating data that is already in the credential making it twice as big for dubious reasons. of course we couldn't stop them from doing so, but maybe a caution in the name and choosing names wisely that help people understand that they don't necessarily need to highlight every single thing in the credential. So, I looked up the etmology of highlights. It does seem like it would fit fine. came from painting, the bits of tint that are the light bits that you can sort of see because they're light.</p>
+<p id=1c02 class="phone s06"><cite>Nate_Otto:</cite> And then it got a figurative sense in the 1800s of outstanding feature or…</p>
+<p id=7b4a class="phone s06"><cite>Nate_Otto:</cite> characteristic, which is sort of what we're looking at here.</p>
+<p id=b569 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=cca2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> In that case, I encourage folks to add their comments to PR74 to make sure we've captured all of this. So, we need to reconcile how can we not overindex I hate the word not overoptimize on card specifically but still support the card view for those implementers who do want that and I do think we can get there so let's put some more thought on this all right in the remaining time</p>
+<p id=2e26 class="phone s01"><cite>Dmitri_Zagidulin:</cite> similar bike shed opening season would be the R76. plus one to the link that Benjamin posted earlier about the past creator. I think reading that page is really helpful to inform. Go ahead, Mon. Yeah,…</p>
+<p id=5fff class="phone s02"><cite>Manu_Sporny:</cite> I would like to highlight to the group what's going on with the internationalization accessibility thing. I feel like that's a much higher priority versus another bike shedding thing…</p>
+<p id=c7cf class="phone s01"><cite>Dmitri_Zagidulin:</cite> Please go ahead.</p>
+<p id=10005 class="phone s02"><cite>Manu_Sporny:</cite> if that's okay. I mean I Okay.</p>
+<p id=d428 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Please. Yeah, do that.</p>
+</section>
+
+<section>
+<h3 id=826d>Horizontal Review Progress and Concerns</h3>
+<p id=c2b1 class="phone s02"><cite>Manu_Sporny:</cite> Ju just real quick I have started submitting our horizontal reviews. so here is the tracker for our horizontal reviews. in submitting those to internationalization and accessibility, I found a number of things that are vague in the spec or not addressed or are going to result in multiple comments from accessibility on the condition of our spec. specifically with the highlights thing, there's some things there that we need to talk about with respect to internationalization. We don't support it for name and description. and for accessibility and internationalization, we are not clear about how those things are supported in for example the HTML render method.</p>
+<p id=9f7a class="phone s02"><cite>Manu_Sporny:</cite> I opened an issue that I think Dimmitri you raised a good PR for, but I don't know if we're done. there you had to write a lot in the internationalization accessibility self-review on things that we have not necessarily, discussed in the group. So, I am moving through those and who is it? Addison has already engaged on the horizontal review eight hours after I submitted it. He's usually really quick to do it and he's very concerned about the amount of work that's involved here. and wanted to set the group's expectation that this might take a while. So anyway, all that to say there's work here for us to do.</p>
+<p id=4634 class="phone s02"><cite>Manu_Sporny:</cite> I want to make sure that we are actively doing that work so that when accessibility internationalization get around to re reviewing the spec,…</p>
+<p id=dc48 class="phone s02"><cite>Manu_Sporny:</cite> they're like, yeah, they've got this covered now.&quot; versus the state that the spec is in, which doesn't really address a variety of the concerns in the self- reviews.</p>
+<p id=210f class="phone s01"><cite>Dmitri_Zagidulin:</cite> What is it?</p>
+<p id=5464 class="phone s02"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=10006 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, what's the takeaway? read the self summary. put some more thought into this.</p>
+<p id=9fcf class="phone s02"><cite>Manu_Sporny:</cite> It's yes as a starting point we should become aware of what was written in the self- reviews and then have concrete answers. So there are places where we need your help. Please tell us what to do. I think people in this group have ideas on what we should do and ideally we do those things and we put them in the spec so that they don't have to write and do a bunch of research and take a long time to get back to us. so I think active time during the group to like this is exactly how we're addressing X and Y and…</p>
+<p id=be26 class="phone s02"><cite>Manu_Sporny:</cite> Z. so that maybe I can update the self-review so that it's not as verbose on these are the things we're concerned about.</p>
+<p id=0824 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=4748 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, everybody read through issue 67 and we need to work through this as a group. Thank you so much for doing this. This is huge and important work. Anything else on this topic in the time we've got? All right. Yeah. Go ahead, Mona.</p>
+<p id=3c13 class="phone s02"><cite>Manu_Sporny:</cite> One thing for the group to think about for example, is a template is it a one template per local this is the French template and this is the German template and this is Korean or is it one template and that template has French, German, and Korean all in there, as an example of there's a design decision that needs to be made there and…</p>
+<p id=6d4a class="phone s02"><cite>Manu_Sporny:</cite> I don't know if we've actually made it in the group. So, please think about it. We definitely need to talk about it, ideally next</p>
+<p id=1800 class="phone s01"><cite>Dmitri_Zagidulin:</cite> so no,…</p>
+<p id=79cf class="phone s01"><cite>Dmitri_Zagidulin:</cite> we've definitely not made that decision. I know what my preferences are, but let's open an issue on All So to do an issue about that one.</p>
+<p id=b686 class="phone s02"><cite>Manu_Sporny:</cite> I think it's a issue 70. I opened one. actually, no, Never mind. That's a different Yeah,…</p>
+<p id=b263 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. That one doesn't quite All right.</p>
+<p id=1703 class="phone s02"><cite>Manu_Sporny:</cite> you're right. Yeah.</p>
+<p id=5f27 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=f65a class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, in the couple minutes that we have, I just want to direct people's attention to a couple of new issues. one has to do with That's not it. So, pull request 76 is first pass the thing we discussed during the previous call dispatching on render suite not on type. So, it updates the spec to use sweet render method as opposed to template render method leaving the optional superass that Ivon brought up.</p>
+<p id=949a class="phone s01"><cite>Dmitri_Zagidulin:</cite> it takes first pass at naming the suites data HTML and but part of the reason I bring it up is opened issue 77 that I think we all agree that we don't necessarily need a separate NFC suite that we should be able to cover it with static. However, in order to do that, we need at least one more field to be able to say, &quot;Yes, this is a static, but this is the content type and intended usage mode for the static template.&quot; and specifically content type doesn't work because NFC doesn't have a content type. And access mode might also not work here because this is transmission mode, mono.</p>
+<p id=be3a class="phone s02"><cite>Manu_Sporny:</cite> Don't we have output preference? And could we say electromagnetic - NFC?</p>
+<p id=643a class="phone s01"><cite>Dmitri_Zagidulin:</cite> We do so this is…</p>
+<p id=643e class="phone s01"><cite>Dmitri_Zagidulin:</cite> what this issue is about choosing the output preference is a bucket term in which we have things like access mode. but Tactile is braille. this is more transmission mode. So basically this issue is exactly about this which field inside output preference should we dispatch NFC on? So something to think about for next week.</p>
+<p id=c05f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Similarly related to this is issue 75 which is just where we're going to put the render suite values and we have a couple of options such as we can just have it plain strings. We can add name spacing. So no registry is needed. But we do need to decide right since we've decided we're going to dispatch on sweetite We need somewhere to put a registry like mechanism for suites or explain why registry is not needed. so that's issue 75. and then Benjamin just opened non-issue provided render methods. So let's take a look at that real quick.</p>
+<p id=a33b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin, do you want to introduce it or man? Go ahead.</p>
+</section>
+
+<section>
+<h3 id=f900>Render Methods Provided by Non-Issuers</h3>
+<p id=9cbd class="phone s02"><cite>Manu_Sporny:</cite> We have a VC extensions repo just we have a registry and we can add it to that. That was all I was mentioning.</p>
+<p id=e6ca class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=12b7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead, Benjamin.</p>
+<p id=11d3 class="phone s05"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=e489 class="phone s05"><cite>Benjamin_Young:</cite> no worries. yeah, so that issue it keeps surfacing in my head and I thought I'd filed an issue about apologies if somebody finds it previous me doing the same work. we keep talking about render methods as provided by issuers. This issue writes up the idea that issuers may not always and in fact in many cases will rarely be the ones to who are likely to define a render method as in consortiums or standards bodies or whomever. yeah, I went digging and couldn't find it. I'm sure I had.</p>
+<p id=196a class="phone s05"><cite>Benjamin_Young:</cite> At any rate these other groups are the ones often defining the credential type and…</p>
+<p id=08c7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> It's</p>
+<p id=0b7a class="phone s05"><cite>Benjamin_Young:</cite> especially when we think about highlight fields and things like that they are also likely the groups who will say these are the fields that are important and that other people should render. So this has potentially one big architectural effect that render methods that are common case we were just talking about credit card shape rendering. if that is a must from Visa or Mastercard or whatever and the consortium that those folks deal with and they do already have physical standards around card shape and size to fit in devices and whatever and they've all agreed to these things right so if you imagine that same thing playing out in a digital space where they're collectively and maybe they already have said this is what it has to look like in Samsung wallet and Google wallet and anybody else wallet</p>
+<p id=ef53 class="phone s05"><cite>Benjamin_Young:</cite> Then you have these non-issuer entities providing a render method and ostensibly those might trend with the credential type. So there are other examples like an accreditation body might say this is what these are the requirements for presenting and printing out essentially not a CV but your college These are the requirements for a college transcript. You may university put your logo here and your colors here and whatever else, but the rest of this has to be consistently standardized and we've already done the sausage making with the governments to make sure that they're compliant with all the regulations blah blah blah.</p>
+<p id=423c class="phone s05"><cite>Benjamin_Young:</cite> Again, this is a non-issuer entity saying this is what this thing has to look like potentially both digitally and physically. and therefore that group needs a means I think to provide render methods without every issuer having to be like here's that standard thing again.</p>
+<p id=487e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=0191 class="phone s05"><cite>Benjamin_Young:</cite> So that's it.</p>
+<p id=04ae class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. All right.</p>
+<p id=d10d class="phone s05"><cite>Benjamin_Young:</cite> Sorry, we're past</p>
+<p id=d9ae class="phone s01"><cite>Dmitri_Zagidulin:</cite> Excellent topic for discussion. We are past time. thank you so much and see you all next week at same time and place. Cheers. Meeting ended after 01:03:47 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
