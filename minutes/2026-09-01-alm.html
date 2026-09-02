@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 1 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>1 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Patrick_St-Louis, read.ai_meeting_notes, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#96fa">Open Wallet Foundation Transition</a></li>
+<li><a href="#0f6e">Threat Model Publication Path</a></li>
+<li><a href="#a79a">Horizontal Review Update</a></li>
+<li><a href="#eea0">VCOM Pull Request Review</a></li>
+<li><a href="#f1c6">Query By Example Matching Algorithm</a></li>
+<li><a href="#3c7c">Exchange Presentation Type Option</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=010d class="phone s01"><cite>Patrick_St-Louis:</cite> Welcome everyone. We'll get started in a minute.</p>
+<p id=80ee class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, we're going to get started. we have pretty good attendance. If people join, they will be able to catch up. So, welcome everyone to the VCOM call. this is a W3C meeting. All W3C policies are into effect. This call is recorded and it will be transcribed and made available publicly. today is September 1st, 2026. the VCOM meeting is a meeting during which we discuss the VCOM specification which is for life cycle managements of verifiable credential through an API.</p>
+<p id=3bb1 class="phone s01"><cite>Patrick_St-Louis:</cite> Today I did not list any topic on the agenda. I think things are going and most of the concerns we have will be able to be addressed in PR reviews. However, if anyone has suggestions, things they would like to discuss or follow us to do, please let us know and we'll add it to the topics. I will leave some time right now for introductions or reintroductions as well as relevant community updates. I will share a community update that can be somewhat related.</p>
+</section>
+
+<section>
+<h3 id=96fa>Open Wallet Foundation Transition</h3>
+<p id=06b4 class="phone s01"><cite>Patrick_St-Louis:</cite> So the open wallet foundation will be winding down its operations fairly soon. all the projects currently hosted at the open wallet foundation will migrate towards the Linux foundation decentralized trust LFDT. so this is being posed as a positive significant difference is that the open wallet foundation is hosted under as the Linux Foundation decentralized trust is not under that company. So we should see these change into effect in January 2027.</p>
+<p id=4942 class="phone s01"><cite>Patrick_St-Louis:</cite> most active project like Akapai and Credo will remain in operation. The maintainers will keep maintaining the project. The project will just be hosted under a different foundation. I don't have more details than that but more details is available. This was made public about four days ago. so nothing will change on this. It's just the sort of legal framework behind it will change. Again, I don't have many of the details as to the exact reasoning. I'm not part of the advisory board, but this is a decision that's been made. So, pretty exciting.</p>
+<p id=8dca class="phone s01"><cite>Patrick_St-Louis:</cite> there was a shift couple years ago from the Hyperledger Foundation towards open wallet foundation and now it's another similar shift and sort of organizational structure. so that's it for me. I'll leave a bit of time if other people want to share some updates. Yes, man.</p>
+</section>
+
+<section>
+<h3 id=0f6e>Threat Model Publication Path</h3>
+<p id=ad4d class="phone s02"><cite>Manu_Sporny:</cite> This is kind of an agenda plus because Joe and Eric are on the call. I want to spend a bit of time talking about path forward with threat model. We were able to talk with Ivon a little bit this morning just when we don't have a verifiable credential working group call later this week because of GDC. So maybe if we can spend 10 minutes to figure out a plan for it there, I think that would be good.</p>
+<p id=8176 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, we can definitely spend some time on the topics. Is this something we want to time box or take as much time as we want?</p>
+<p id=75e9 class="phone s02"><cite>Manu_Sporny:</cite> I think 10 minutes hopefully we can come to a path forward. and…</p>
+<p id=d4e6 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, sounds good.</p>
+<p id=406b class="phone s02"><cite>Manu_Sporny:</cite> if we don't, we've got other things to do in this call specifically.</p>
+<p id=6c1e class="phone s01"><cite>Patrick_St-Louis:</cite> Let's put 15 minutes. Coyote,…</p>
+</section>
+
+<section>
+<h3 id=a79a>Horizontal Review Update</h3>
+<p id=1cee class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, another agenda plus was just to give an update on how horizontal review is going.</p>
+<p id=c1cf class="phone s01"><cite>Patrick_St-Louis:</cite> Can you repeat that? I didn't understand.</p>
+<p id=575b class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, just to give an update on horizontal review requests for</p>
+<p id=5639 class="phone s01"><cite>Patrick_St-Louis:</cite> Horizontal review request. Yes, for sure.</p>
+<p id=d8e4 class="phone s01"><cite>Patrick_St-Louis:</cite> So threat model horizontal review very good other relevant committee updates I know there's an event in Geneva this week it's mostly around supply chain UNP</p>
+<p id=ffff class="phone s01"><cite>Patrick_St-Louis:</cite> which is sort of parallel not too far this related to verifiable credential there's no direct mention of VCOM in the UNP since they do not do exchanges but it's not too far okay so two topics were added we're going to start discussing the threat model. We're going to time box this to 15 minutes and then we'll discuss the residental review probably a similar time box. so Manu, do you want to just break the ice for this topic and then let other people talk?</p>
+<p id=d94d class="phone s02"><cite>Manu_Sporny:</cite> Just so everyone has some background, multiple task forces have been working on threat models. we had a plan to kind of publish them. it required some extra work and I think most recently Joe you raised the question of why don't we just use the current tooling we have and the current process and I think proposed can't we just publish this under a different TR space so we can I think to cut to the chase I think as long as PL H.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> gives us just blanket authority to publish threat models. So for every spec if it needs a threat model we can publish the threat model as a note then that gets us unstuck and is the least amount of effort. plus one to that approach to get us unstuck. Avon was I don't remember if he was pushing back or not on notes as the mechanism and I didn't really care one way or the other. We just needed to publish it. I agree that Threat models are not Rex. and so if Avon agrees to that then we can just go forward.</p>
+<p id=4f4c class="phone s02"><cite>Manu_Sporny:</cite> So I think the things that we need now is for Avon and PLH and Francois and Denise and whoever else at W3C needs to agree that we can just blanket publish threat model so we don't have to keep making resolution after resolution and FPWD after do that whole process song and dance if we can get that out of the way then we can publish. I would like to at least for the specs that I'm an editor of keep the threat models in the same directory for now.</p>
+<p id=e1ce class="phone s04"><cite>Joe_Andrieu:</cite> Thanks.</p>
+<p id=2a83 class="phone s02"><cite>Manu_Sporny:</cite> Joe, I know that you've got, plans for the future with respect to registries and how it's managed after the working group and all that kind of stuff. I would like to not pull all of that into the conversation just because we just need a static document, published on TR space so that we can link to it. there's one minor downside to publishing it in this way, but I think the editors can deal with it. I'm largely just trying to reduce the amount of W3C process and paperwork and paper pushing that we ended up would have to do.</p>
+<p id=5c7b class="phone s02"><cite>Manu_Sporny:</cite> and Avon was suggesting that we would have to do an enormous amount of process and whatever. So I think that's the proposal is and then we can publish to TR space without it being in a different repo. There's respspec does support that so that can be decoupled from the future decision. So, I think that's sort of…</p>
+<p id=a05d class="phone s02"><cite>Manu_Sporny:</cite> what you proposed, Joe, in a thread. I just wanted to check in to make sure that That's it.</p>
+<p id=6b2e class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, I thought so that mostly makes sense.</p>
+<p id=414b class="phone s04"><cite>Joe_Andrieu:</cite> where I'm not following is I thought part of the conversation with the new tooling that was needed was because publishing two specs from the same repo i multi-chapter specification caused</p>
+<p id=c25d class="phone s04"><cite>Joe_Andrieu:</cite> Some problems.</p>
+<p id=b193 class="phone s02"><cite>Manu_Sporny:</cite> R space causes problems. Publishing two specs to two different TR locations is totally fine and is supported.</p>
+<p id=ebf4 class="phone s04"><cite>Joe_Andrieu:</cite> Okay, cool.</p>
+<p id=0f58 class="phone s02"><cite>Manu_Sporny:</cite> That's what Francois said. He was like, &quot;Why don't you just do this?&quot; And I was…</p>
+<p id=a142 class="phone s02"><cite>Manu_Sporny:</cite> &quot;Okay, we'll do that.&quot; I guess it turns out they totally broke multi- chapter support. And maybe multi chapter support was never in there and people were just make files to do it before.</p>
+<p id=0b4d class="phone s04"><cite>Joe_Andrieu:</cite> Yeah. Right.</p>
+<p id=3639 class="phone s04"><cite>Joe_Andrieu:</cite> So that all sounds good. I do appreciate the call out for, eventually it probably wants to live in a registry, but we're so far away from any registries that it feels like too much overhead to deal with that now.</p>
+<p id=18b7 class="phone s04"><cite>Joe_Andrieu:</cite> So what you propose looks great. and so the pattern then is still let's just use a folder. but we will publish to a unique location in TR space. So we'll need a short name, right, for each of these then. And so there's some process related to that, I guess.</p>
+<p id=7ede class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I didn't know if I interrupted you.</p>
+<p id=1e95 class="phone s04"><cite>Joe_Andrieu:</cite> No, no, that was all. Good.</p>
+<p id=b315 class="phone s02"><cite>Manu_Sporny:</cite> The proposal I think that Francois said was if we can just settle on a pattern for those, we don't have to make it on a case-byase basis. And so if the spec is named, then the threat model would be threat. So if we can agree on a pattern like that, then it's just that blanket pattern applies to everything. It will result in long URLs. But I mean, I don't think we care that deeply. that's it.</p>
+<p id=e3d3 class="phone s02"><cite>Manu_Sporny:</cite> I think that was the main thing is that Avon was saying no we have to go through the W3C process for every single one of these things. The group has to decide that they're going to publish the document. They have to decide what format note or not. They have to decide what the short name is. They have to decide on the publishing date. They have to decide on the FB. It's just like no I don't want to do all that stuff let's just publish it. and so Francois said there is an option as long as PL agrees we can just make one resolution to publish all of our threat models using that pattern. that's</p>
+<p id=e1f0 class="phone s01"><cite>Patrick_St-Louis:</cite> If I don't understand correct as for immediate action, there's none. We keep going the way that we started. I'm assuming this is the threat model directory we were referring to. which was the original idea. So that's my first assumption. Is that correct, Manu? Okay.</p>
+<p id=34f3 class="phone s02"><cite>Manu_Sporny:</cite> Yes, We keep everything kind of in the directories that we have right now.</p>
+<p id=45b1 class="phone s01"><cite>Patrick_St-Louis:</cite> Is that why you raised your hand or did you have something else to say?</p>
+<p id=7545 class="phone s02"><cite>Manu_Sporny:</cite> No, I raised my hand because the next step is to get Avon and PL and Francois to work together to agree that is an acceptable approach. And if they agree then the step after that is get the verifiable credential working group to pass that resolution and then we can start publishing all these documents in space.</p>
+<p id=ccf3 class="phone s01"><cite>Patrick_St-Louis:</cite> And is this a step that you will take yourself to communicate with Ivonne and…</p>
+<p id=5ee5 class="phone s01"><cite>Patrick_St-Louis:</cite> France?</p>
+<p id=1cf0 class="phone s02"><cite>Manu_Sporny:</cite> Yes. Yep.</p>
+<p id=3fc3 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=05e2 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Yeah. Along with Joe and whoever else is on that thread. There are a number of people on that thread.</p>
+<p id=cdaa class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. Joel</p>
+<p id=876c class="phone s04"><cite>Joe_Andrieu:</cite> Yeah. …</p>
+<p id=0eb6 class="phone s04"><cite>Joe_Andrieu:</cite> I just want to note, and I was about to add it as an issue to the VCOM, which is probably the right place to follow it. This readme really doesn't belong here. and there may be still some more edits of that nature. this is a read me for the respect threats library. and so although it's useful for the folks who are working on this, it's not part of the threat model itself. it's how you use that library, not what should be published. so let me just make an issue and…</p>
+<p id=56c7 class="phone s04"><cite>Joe_Andrieu:</cite> we can get that in the queue to make an edit to bring that read me into something more reasonable.</p>
+<p id=e4e5 class="phone s01"><cite>Patrick_St-Louis:</cite> Just a question like so this index.html this is…</p>
+<p id=4e29 class="phone s01"><cite>Patrick_St-Louis:</cite> what needs to be published. This is the spec. does it matter…</p>
+<p id=357e class="phone s01"><cite>Patrick_St-Louis:</cite> if there's a readme here? it does. Okay. Yeah.</p>
+<p id=b1d4 class="phone s04"><cite>Joe_Andrieu:</cite> It' probably be good to have it be a read me that's about threat modeling,…</p>
+<p id=8d85 class="phone s04"><cite>Joe_Andrieu:</cite> just to speak to,…</p>
+<p id=cee9 class="phone s04"><cite>Joe_Andrieu:</cite> hey, we've got this folder set up and that's where we're keeping track of threats, Yeah.</p>
+<p id=c32a class="phone s01"><cite>Patrick_St-Louis:</cite> Right, right,…</p>
+<p id=046a class="phone s01"><cite>Patrick_St-Louis:</cite> right, right. Okay. Yeah. So, this readme should be its own kind of repo that just explains…</p>
+<p id=d086 class="phone s01"><cite>Patrick_St-Louis:</cite> how this model works and then it gets referred to in here. Eric</p>
+<p id=e850 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I mean I left this in originally…</p>
+<p id=d735 class="phone s05"><cite>Eric_Schuh:</cite> because the respect threats was new and if anyone else wanted to work with this from the VCOM, I thought this would be agree with Joe, this is not really relevant to this specification. and Joe, I think maybe what would be nice would be to have even a second readme of some type in the respect threats that's kind of a generic explainer that a group could use and, insert the specific specifications name and…</p>
+<p id=ad58 class="phone s01"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=c6b3 class="phone s05"><cite>Eric_Schuh:</cite> everything like a template of some kind.</p>
+<p id=1fd1 class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, agreed.</p>
+<p id=f03b class="phone s04"><cite>Joe_Andrieu:</cite> We should also export I think there is a template somewhere that we created that's a GitHub template that we should also put in that library. But those are just notes for you and me to update that library.</p>
+<p id=1661 class="phone s01"><cite>Patrick_St-Louis:</cite> a bit of cleanup to do but nothing critical for what we want to achieve. And then the second assumption I want to say just to make sure I understand is that there's going to be some kind of engineext config somewhere that's going to publish both the VCOM spec here at the location and the VCOM threat model spec here at a adjacent location by just appending thread model to whatever the existing spec name in the URL.</p>
+<p id=0d1c class="phone s01"><cite>Patrick_St-Louis:</cite> Just want to make sure I understood that correctly. Joe.</p>
+<p id=c10c class="phone s04"><cite>Joe_Andrieu:</cite> Something you said didn't sound quite right,…</p>
+<p id=5404 class="phone s04"><cite>Joe_Andrieu:</cite> but the general thing I believe is correct. it's just a different config file for the respect config properties in this index which then should pull in akidna and publish it to the short name. And that's the work that Manner just mentioned. We need to get a proposal formally adopted da yada.</p>
+<p id=263f class="phone s01"><cite>Patrick_St-Louis:</cite> I mentioned engine X because I thought I remember there was a project somewhere that kind of puts an kind of proxy for all these repo but I'm not 100% familiar with the backend pipeline here. I have a vague memory of seeing that at some point in the past when looking at the test suites and stuff.</p>
+<p id=f68e class="phone s04"><cite>Joe_Andrieu:</cite> Yeah, that there may or may not be engine X involved in the TR space, but for us it's just changing that respspec config and…</p>
+<p id=8caa class="phone s04"><cite>Joe_Andrieu:</cite> getting staff to bless that this is the right place in TR space and getting Akidna set up then that should all take care of itself.</p>
+<p id=be20 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. what's that term you said?</p>
+<p id=bd23 class="phone s01"><cite>Patrick_St-Louis:</cite> Getting what set up?</p>
+<p id=74dd class="phone s04"><cite>Joe_Andrieu:</cite> Akidna, it's E C H I DNA.</p>
+<p id=982c class="phone s01"><cite>Patrick_St-Louis:</cite> Akidna. What is that? just Okay,…</p>
+<p id=8a79 class="phone s04"><cite>Joe_Andrieu:</cite> I don't know what it stands for. Thanks Dave. but it is the real time publishing to R space from GitHub that a lot of these specs already use. so that might have been an accident in it to be fair…</p>
+<p id=527d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. okay.</p>
+<p id=3902 class="phone s04"><cite>Joe_Andrieu:</cite> but who know I don't know Nice.</p>
+<p id=3bd6 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I'll make some research. I should be able to find mode most more information. Mu</p>
+<p id=e8b0 class="phone s02"><cite>Manu_Sporny:</cite> I'm just going to share a cute picture of an akidna. that's the akidna.</p>
+<p id=614e class="phone s01"><cite>Patrick_St-Louis:</cite> A cute.</p>
+<p id=a2df class="phone s02"><cite>Manu_Sporny:</cite> That's what it stands for. It's cute, isn't it? going back to where is this is the kit file that we're talking about. there's not a lot here, So it's a GitHub workflow Patrick and…</p>
+<p id=785f class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=e59c class="phone s02"><cite>Manu_Sporny:</cite> it will publish a spec to a particular directory in W3CTR space. There's some extra options you can use to point it to a different file. And what we would do is we'd take, autopublish and we'd split it into two things. Autopublish the spec and autopublish the threat model. And I think that's Yeah,…</p>
+<p id=3468 class="phone s01"><cite>Patrick_St-Louis:</cite> And I guess the short name here is what ends up in the URL.</p>
+<p id=d043 class="phone s01"><cite>Patrick_St-Louis:</cite> 12. Awesome. Manu Sporny:</p>
+<p id=0f44 class="phone s02"><cite>Manu_Sporny:</cite> So be like vom threat-model and there probably wouldn't be a version on it. that's effectively…</p>
+<p id=26f0 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay,…</p>
+<p id=f2f3 class="phone s02"><cite>Manu_Sporny:</cite> what we'd be doing.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> perfect. So, it doesn't sound too complicated. That sounds like a lot of the Yeah.</p>
+<p id=bdc4 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, the spec status would be a dnote draft note and then when we're quote unquote done, which thread models are never done, we'd publish it as a note. So that's like to be figured out in the future though.</p>
+<p id=9aef class="phone s01"><cite>Patrick_St-Louis:</cite> Any other comments or closing thoughts for the threat model before we move on to the horizontal review discussion?</p>
+<p id=25ce class="phone s01"><cite>Patrick_St-Louis:</cite> In that case, let's move on to the horizontal review. Kyod, do you want to introduce us to this topic and get us started?</p>
+<p id=9eec class="phone s03"><cite>Kayode_Ezike:</cite> Just put a topic in a chat really quickly. so just as a reminder, I think maybe three or so weeks ago, we completed accessibility and internationalization reviews. rather submitted them. I'm still waiting for responses. Since the last week, I completed the self review we have to do for all of these reviews prior to when we submit them, right? So we have issues tracking all these in fcom. So the three that were remaining were for security obviously and tag which is a design architecture review that's managed by tag which is a technical architecture group.</p>
+<p id=a64d class="phone s03"><cite>Kayode_Ezike:</cite> So filled out the self- review questionnaire last week which basically covers all three of those security, privacy and architecture and I have basically created the text for the design the security and privacy ones. I'm ready to submit Modulo, one small thing that I need to do, which is the latest spec has not been deployed that I released today. The latest a push to main and that needs to be in there because there was a bunch of edits that we made recently. And also, we may want to I don't know if we do want to wait for this, but there's some stuff in Eric's most recent PR as well that may need to be included.</p>
+<p id=7aaa class="phone s03"><cite>Kayode_Ezike:</cite> So that's the only thing holding up those two security and privacy and the tag one. I'm just completing the questionnaire or rather there's more to the tag one than the other one. So I'm just finalizing the content for that issue.</p>
+<p id=4560 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good, man.</p>
+<p id=2328 class="phone s03"><cite>Kayode_Ezike:</cite> So that's the main update. I expect for all this to be resolved this week, next day or two at most. That's all.</p>
+<p id=5a14 class="phone s02"><cite>Manu_Sporny:</cite> That's great, Thanks for working on that. did I hear you say that you might hold off on raising the horizontals until PRs are in? I think you can just do it. it's going to be months before they get to it.</p>
+<p id=74f1 class="phone s02"><cite>Manu_Sporny:</cite> And I know it changes the self-review questionnaire, but you can always go in and revise it or update it so that they see the newest one whenever it happens.</p>
+<p id=f430 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, I guess I was mostly concerned about and…</p>
+<p id=0abf class="phone s03"><cite>Kayode_Ezike:</cite> maybe this would be resolved because I guess the URL based off of the date I suppose but there's the most recent one that I published that should have 91 in there it hasn't been published yet and</p>
+<p id=d591 class="phone s03"><cite>Kayode_Ezike:</cite> So I was wondering should I just put that date sort of presumptively and then you expect it to resolve eventually or u and maybe modify even in the future whenever Eric is in as well. is that what you suggest is just sort of guess…</p>
+<p id=e75f class="phone s03"><cite>Kayode_Ezike:</cite> what it's going to be.</p>
+<p id=2507 class="phone s02"><cite>Manu_Sporny:</cite> Spec prod has an outage coyote.</p>
+<p id=da4e class="phone s02"><cite>Manu_Sporny:</cite> So I wouldn't wait on that to resolve. all spec publishing is down at W3C the spec ref database is down…</p>
+<p id=45fb class="phone s03"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=3004 class="phone s02"><cite>Manu_Sporny:</cite> because some deal with, Heroku or Cloudflare or something went south and they're trying to figure it out. So, I wouldn't speculate on it. Just use an existing URL and then you can come in and update it if a new URL exists. If that makes sense. it's way more important to establish a date early on what we requested for horizontal review especially because TAC is right around the corner versus waiting which might take a week or two or three to get Eric's PR in and…</p>
+<p id=f1ac class="phone s02"><cite>Manu_Sporny:</cite> resolve the publication thing and just I think you just need to fire and forget for now and then we'll come back and clean it up</p>
+<p id=b7e2 class="phone s03"><cite>Kayode_Ezike:</cite> Okay. Yeah,…</p>
+<p id=f1c4 class="phone s03"><cite>Kayode_Ezike:</cite> I'll do that then. I'll submit the security and privacy one soon with the most recent published URLs and then just keep an eye on whenever a prod is resolved so that I can update them as soon as possible. so that's about it. I should be able to I think the only thing only real work that's left are just a few more questions on the tag issue for raising a horizontal review request. So, I'm going to hopefully finish that today and then that's all.</p>
+<p id=78e3 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good. Any other thoughts on this topic before we move to pull requests? that case, let's start reviewing our poll request. So, there's 11 poll requests opened. let's go unless people want to focus on a specific one. If there's a priority, I'm just going to go from the oldest to the newest one. this one here, I will close it and probably reopen it like I've been doing with the other ones.</p>
+</section>
+
+<section>
+<h3 id=eea0>VCOM Pull Request Review</h3>
+<p id=c841 class="phone s01"><cite>Patrick_St-Louis:</cite> So yeah, I'm just going to go ahead go from the oldest to the newest. If there's a special PR you would like us to prioritize, just let us know and we'll be able to address that an appendex with issuance, verification, and presentation. This was open on July 28, so about a month ago.</p>
+<p id=f758 class="phone s01"><cite>Patrick_St-Louis:</cite> There's been several rounds of review. couple typos here to apply. and a comment from Dave that is yet to be addressed.</p>
+<p id=e535 class="phone s01"><cite>Patrick_St-Louis:</cite> So Eric, I don't know if you want to take us through this Okay, that's it.</p>
+<p id=5e3e class="phone s05"><cite>Eric_Schuh:</cite> Yeah, sure.</p>
+<p id=784a class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I think the main thing I missed, Dave's comment. so I think I just need to handle that. yeah,…</p>
+<p id=be77 class="phone s01"><cite>Patrick_St-Louis:</cite> As simple as that.</p>
+<p id=67f0 class="phone s05"><cite>Eric_Schuh:</cite> I think that's it. Yep.</p>
+<p id=99f9 class="phone s01"><cite>Patrick_St-Louis:</cite> I'll let you apply these suggestions. I can do it now or I can let you just click the button here.</p>
+<p id=47e9 class="phone s01"><cite>Patrick_St-Louis:</cite> they see in just fixing a very small typo. and I'll let you Seems to be mostly about the diagram. So, I'll let you decide what we do here, where to cut it off, and it's going to be that. Perfect. Next one. So, I remember There was a render error on some fields and I believe that there we were pending a respec fix meaning we need to update the respect what is the status for this? I think Eric you had opened the respect to fix this.</p>
+<p id=697a class="phone s01"><cite>Patrick_St-Louis:</cite> I have some kind of recollection of seeing discussion about a new release being made.</p>
+<p id=6eab class="phone s01"><cite>Patrick_St-Louis:</cite> Where does the VCOM spec stand in relation to that? can you refresh Eric Okay,…</p>
+<p id=d94e class="phone s05"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=4b37 class="phone s05"><cite>Eric_Schuh:</cite> So I think there is another PR actually linked right below the update respspec OS to version 102 is published. I've been using it when I've been doing my local work so to fix the rendering issues. so I think it's ready to merge. It just updates from version 101 to 102 and 102 is published. So,</p>
+<p id=b5df class="phone s01"><cite>Patrick_St-Louis:</cite> there's one question you put in. it seems to just be a question about the spec.</p>
+<p id=3307 class="phone s01"><cite>Patrick_St-Louis:</cite> Unless there's any objection, I would go ahead and merge this and just have a look at these once it's merged in and see what gives. we skipped to 706. I'm just going to go ahead and merge this. I'm seeing a few thumbs up. I don't think there's any objection. It's going twice. Let's merge it. And I will just put myself a note here discussed after merge revisit the spec and see if this is still made up.</p>
+<p id=617d class="phone s01"><cite>Patrick_St-Louis:</cite> So I'm just going to have a look what was done here and see if the update of the spec fixed the issue. from my understanding I'll make sure that it did. So fix one of required rendering. this was also I think kind of fixed to that. from my recollection one of the topic here is do we update the OS so that it looks right on the rendered spec or should it be faithful to what the spec says.</p>
+<p id=fda4 class="phone s01"><cite>Patrick_St-Louis:</cite> We wanted to review the semantics here 706 I think is the one we just merged.</p>
+<p id=a082 class="phone s01"><cite>Patrick_St-Louis:</cite> Are you able to answer this question right now, Eric, or do you want to also kind of just have a look offline to resolve this? Yes, Eric.</p>
+<p id=b234 class="phone s05"><cite>Eric_Schuh:</cite> I can answer it now.</p>
+<p id=9595 class="phone s05"><cite>Eric_Schuh:</cite> This PR is independent of the 706 PR. and I don't believe it has anything to do with 691. one. …</p>
+<p id=c5f1 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, perfect.</p>
+<p id=e0ea class="phone s05"><cite>Eric_Schuh:</cite> I have to look at 691 deeper to be 100% confident with that, but</p>
+<p id=7bcd class="phone s01"><cite>Patrick_St-Louis:</cite> So let's get this in. I see.</p>
+<p id=08cf class="phone s01"><cite>Patrick_St-Louis:</cite> We would need some approval. yes, Dave. So,…</p>
+<p id=e812 class="phone s06"><cite>Dave_Longley:</cite> I'm trying to remember Doesn't this do things like move? We used to have a pattern that said one of and we put required and then we said which combinations of properties you could use and then we kept the property definitions separate so that they were only expressed once. I think this PR is one of the ones that changed that to move the entire property definitions underneath one of instead of just what the possible combinations were.</p>
+<p id=86a6 class="phone s01"><cite>Patrick_St-Louis:</cite> you're saying this might need to be changed?</p>
+<p id=2c48 class="phone s01"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=fe83 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I think it potentially results in duplication of property definitions. putting it under one of instead of independently from that.</p>
+<p id=6ecd class="phone s05"><cite>Eric_Schuh:</cite> A If…</p>
+<p id=e461 class="phone s01"><cite>Patrick_St-Louis:</cite> Eric Okay.</p>
+<p id=7c84 class="phone s05"><cite>Eric_Schuh:</cite> if I remember correctly, I know that you had brought that up because I referenced what I had patterned things after, but I believe the duplication only occurred in of the object that I used as a pattern for the one of but I don't believe that I added any duplication. so the duplication that you're talking about does exist if I'm remembering correctly, but this PR shouldn't add any duplication and the duplication existed before this PR. but I would have to double check. Sorry, it's been a couple weeks since I've looked at this one.</p>
+<p id=f32e class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Go ahead, Dave.</p>
+<p id=f781 class="phone s06"><cite>Dave_Longley:</cite> Yeah. yeah,…</p>
+<p id=77fe class="phone s06"><cite>Dave_Longley:</cite> we should take another look because I see things like lines that take out things like not required create authorization request and then I see the definition of that create authorization request getting nested somewhere. so even if we maybe don't add new duplication here we are changing that pattern and the pattern that seems to be in this PR if copied elsewhere would generate that duplication. So it seems like we're trying to express something with JSON schema. we have a set of properties and then we have a one-of- conditions that say what combinations there are. And one way of expressing that is Another way of expressing that is move the property definitions themselves underneath one of and then hope that no combination shares the same</p>
+<p id=4caa class="phone s06"><cite>Dave_Longley:</cite> property because then you'll have duplication. So it is conceivable that you'll have situations where acceptable combination would share that property but as soon as you do you have duplication. So it seems like the better pattern is to just put the required flags underneath one of and then keep the properties separate.</p>
+<p id=bc02 class="phone s06"><cite>Dave_Longley:</cite> I don't know if that holds up for all combinations but it seems like that would work. So we're trying to write JSON schema…</p>
+<p id=df71 class="phone s01"><cite>Patrick_St-Louis:</cite> Can you repeat that?</p>
+<p id=cc01 class="phone s01"><cite>Patrick_St-Louis:</cite> S</p>
+<p id=10002 class="phone s06"><cite>Dave_Longley:</cite> which is always fun to express which combinations of different properties are acceptable and we can either define those properties independently of which combinations are acceptable and so we put just by referencing the property names under one of section for the different combinations or…</p>
+<p id=1611 class="phone s06"><cite>Dave_Longley:</cite> under one of we can define everything and that includes all the property descriptions. Go ahead, Eric.</p>
+<p id=02a5 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, that makes sense.</p>
+<p id=bc82 class="phone s05"><cite>Eric_Schuh:</cite> I guess one thing that did happen is that this required not pattern which is what I replaced was I think just superfluous in some ways at least the not part because one of in OAS is explicitly defined as an exor. so you don't have to say that the other one is not required if the first one is requ if you pick the first one.</p>
+<p id=2587 class="phone s06"><cite>Dave_Longley:</cite> I think not required in JSON schema means you can't have it.</p>
+<p id=5561 class="phone s05"><cite>Eric_Schuh:</cite> Okay.</p>
+<p id=e209 class="phone s06"><cite>Dave_Longley:</cite> It's not what you would expect from reading it as English, but I think that's actually what it might mean. So the requirement just to repeat that here on the call.</p>
+<p id=5582 class="phone s05"><cite>Eric_Schuh:</cite> Okay.</p>
+<p id=c6fa class="phone s06"><cite>Dave_Longley:</cite> Think when you say one of not required means it's required that you do not have it.</p>
+<p id=2f49 class="phone s05"><cite>Eric_Schuh:</cite> I guess that is in terms of this duplication problem. Dave, I believe that this pattern exists not only in what this PR is addressing, but in a few other places at the very least in the spec.</p>
+<p id=1d28 class="phone s05"><cite>Eric_Schuh:</cite> So I wonder if the best path forward might be to accept this PR with this pattern that we know we want to change and then come through and…</p>
+<p id=a703 class="phone s01"><cite>Patrick_St-Louis:</cite> We're safe.</p>
+<p id=9322 class="phone s05"><cite>Eric_Schuh:</cite> kind of do a more holistic check for the pattern across all of the OAS files and fix it more generally. so just a thought Yeah,…</p>
+<p id=4d83 class="phone s06"><cite>Dave_Longley:</cite> Yeah, that's totally fine with me. I just think it might be that we could just close I just don't know if the only thing this thing does to switch from one pattern to another. If it's also fixing something, that's fine.</p>
+<p id=2c25 class="phone s05"><cite>Eric_Schuh:</cite> it's fixing the patterns that I moved away from currently have rendering issues with resp so that was the reason for moving away from those patterns and I believed that semantically</p>
+<p id=9894 class="phone s05"><cite>Eric_Schuh:</cite> the other pattern was saying the same thing. based on what you said, maybe I'm not as convinced of that at the moment. so another option would be to update respspec OAS to handle all of these patterns. when I was doing that, I think there were three different patterns I was going to end up having to update respec to handle and some of the complexities and how that was being dealt with in respec were kind of just chewing some time. So, this felt like the simpler way to get us through the rendering issues that are happening. which as I said, I thought semantically it was the same. So,</p>
+<p id=9dee class="phone s01"><cite>Patrick_St-Louis:</cite> Sorry, I'm trying to read. So, it was an ID credential template index were both listed on this object. But now we want to give one or the other.</p>
+<p id=004e class="phone s01"><cite>Patrick_St-Louis:</cite> And if we give one or the other, they're required. is that right, Eric?</p>
+<p id=8011 class="phone s05"><cite>Eric_Schuh:</cite> so the original right was saying I believe either of the objects…</p>
+<p id=1b53 class="phone s05"><cite>Eric_Schuh:</cite> but it was the way I read it was it was trying to say if you have one of these you cannot have the other one.</p>
+<p id=c616 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. That's…</p>
+<p id=9ce4 class="phone s05"><cite>Eric_Schuh:</cite> But semantically when I looked it up one of in OAS is an exor. So just saying one of these two things is saying if you have one of these you cannot have the other. which is…</p>
+<p id=3446 class="phone s01"><cite>Patrick_St-Louis:</cite> what I think for Yeah. Mhm.</p>
+<p id=138a class="phone s05"><cite>Eric_Schuh:</cite> why but that doesn't address Dave's duplication issue. so there might be a better pattern to use across all of this.</p>
+<p id=15ec class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think Nate put it right? It's says one of these. So, the biggest thing is we want to remain consistent with the OAS definitions when it comes to we want to have the same patterns to say the same things across the spec. So where are we landing here? I'm hearing two different proposal. One wants to merge this. The other one says let's not merge this and address this another PR. do we want to leave this one up a little bit?</p>
+<p id=4920 class="phone s01"><cite>Patrick_St-Louis:</cite> maybe reflect on it or do we want to just merge it and then have another pass or what would we like to do here? Dave</p>
+<p id=74e6 class="phone s06"><cite>Dave_Longley:</cite> my mental engine for processing JSON schema while looking at a diff it skill level is low. I'm happy for this to be merged and for us to sort out the duplication problem separately. I do think it is a problem that we have but maybe we holistically and separately handle</p>
+<p id=a361 class="phone s01"><cite>Patrick_St-Louis:</cite> is how you spell holistically?</p>
+<p id=34a8 class="phone s06"><cite>Dave_Longley:</cite> No W.</p>
+<p id=03cf class="phone s01"><cite>Patrick_St-Louis:</cite> Thought it was the whole thing. Maybe not. holistically.</p>
+<p id=8e51 class="phone s06"><cite>Dave_Longley:</cite> English is weird.</p>
+<p id=0c41 class="phone s02"><cite>Manu_Sporny:</cite> It's English.</p>
+<p id=52a2 class="phone s02"><cite>Manu_Sporny:</cite> It doesn't make any sense.</p>
+<p id=9d28 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think I got it. So, I captured the original intent. but now we're saying we're going to merge this. This fixes an immediate UI rendering issue. And then we'll need to review based on this.</p>
+<p id=91ea class="phone s05"><cite>Eric_Schuh:</cite> Yeah, just wanted to mention I'll add an issue to track the duplication problem.</p>
+<p id=fc0b class="phone s01"><cite>Patrick_St-Louis:</cite> mostly for the duplication. Is that correct? And we might decide that it's fine. Doesn't need anything else if it lands correctly. if you can add an issue, feel free to come and link this issue on this PR that's going to be closed merge as well. and we can put that what would we classify this issue as just it sounds to me like it's just about aligning a little bit the OAS and won't have much of a big technical impact like this is not wrong it's just maybe we want to make it more consistent. Is that Any objection?</p>
+<p id=ba76 class="phone s01"><cite>Patrick_St-Louis:</cite> Going three, two, one. Let's merge this. Perfect. We're closing PRs. I like it. Okay, let's refresh where we're at. we went from 11 to 9 the next one. So let's go into So these are two of my PRs. Let me see where we were at. so this one was adding a query by example matching and JSON pointer conversion algorithm. there is a suggestion here. I will approve this first of the example is present.</p>
+</section>
+
+<section>
+<h3 id=f1c6>Query By Example Matching Algorithm</h3>
+<p id=1bd9 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, this is Update matching script text. Very good. And then Dave suggested a real code implementation to give us a tangible example to maybe refine the algorithm a little bit.</p>
+<p id=4e8a class="phone s01"><cite>Patrick_St-Louis:</cite> So I will discuss have a look at the proposed to identify gaps in the other ribbon. Can we tag an organization? I don't know. Just here. I'll go. So, I'm just going to do that thing here. I I'll have a look at this.</p>
+<p id=078d class="phone s01"><cite>Patrick_St-Louis:</cite> Make sure that the text matches this. And that's going to be any other comments here? I'll look what's going on with this. this is bothering me. Just want to have a quick look. Okay, I'll have to look. Maybe I need a respect version updates or think okay so this one is also sort of a algorithm but this one is more non-normative so it's the expected algorithm to process a workflow step the normative part of this is simply the input output the processing step itself is not really something we can be normative about it's not something we can really test but we can still provide</p>
+<p id=3f6f class="phone s01"><cite>Patrick_St-Louis:</cite> a reference in context the ummary. Okay, so it looks like there's good feedback from Nate that I will need to come back and just have a look and provide response to. it's about adding a little bit of a summary. It's not going to appear. yeah, so I did try to carry the conversation here. It's a little bit messy.</p>
+<p id=3e47 class="phone s01"><cite>Patrick_St-Louis:</cite> But I can review if we want to capture a bit more this actual PR. I tried in the PR description to be kind of transparent that it supersedes another one and point to it. So the history is not closed right the comments are still on the other PR. if we want to capture them here verbatim we can look at this if we feel it's necessary discussed okay needs to address comments so I will look at this and probably be able to close this next time okay let's try to go through at least two more the credential</p>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> offer VPR. Let's see this one 51 line. So that's fairly small. the state of it, couple minor typos and tweaks proposed. Eric, do you want to talk to us a little bit about this PR?</p>
+<p id=5d4e class="phone s05"><cite>Eric_Schuh:</cite> Yes. So, just open up the original issue real quick. yeah. So basically this feature is to allow someone to essentially advertise which types of credentials are they could provide during issuance. I think it's fairly straightforward in terms of the changes. I sorry apparently I have some email stuff I'm not getting notifications.</p>
+<p id=6708 class="phone s05"><cite>Eric_Schuh:</cite> …</p>
+<p id=57d3 class="phone s05"><cite>Eric_Schuh:</cite> but yeah, I think we discussed this last week or two weeks ago. I think that there's some editorial comments from TED that we need to resolve and other than that I believe this is pretty good to go.</p>
+<p id=5087 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. So this is about a VPR that is to do something like either a didoth or…</p>
+<p id=fbdb class="phone s01"><cite>Patrick_St-Louis:</cite> a prerequisites to binding credential. So when you ask for a dot, you give a preview of what the data is for and what will be issued or in the case of I believe I saw some BBS example,…</p>
+<p id=d8da class="phone s01"><cite>Patrick_St-Louis:</cite> you want to give a preview of what will be the result after so that the user knows what they're signing up for. Is that correct?</p>
+<p id=b1fd class="phone s05"><cite>Eric_Schuh:</cite> So I'm not sure.</p>
+<p id=617e class="phone s05"><cite>Eric_Schuh:</cite> Something you just said made me think you might be talking about the PR I just pushed and not this one. but I believe that this was specifically so that during an exchange prior to issuing a credial a issuer could offer a list of available credentials so that the requesting whatever entity is coming to ask for a could select the credential that best matches the form that they wish. so…</p>
+<p id=b248 class="phone s05"><cite>Eric_Schuh:</cite> if you're offering three different types of equivalent credentials effectively you could pick the one that you want to use. yeah.</p>
+<p id=5f29 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Picks…</p>
+<p id=3567 class="phone s01"><cite>Patrick_St-Louis:</cite> what you support or what you prefer. So I'll leave this. I think if we agree since PR is in good state and these are just small editorial things. once you've approved this, we can just merge it. no need to wait for next meeting. unless there's any objection. Okay, This is good. this one I'm hoping we can just approve this today. I don't think we need to say more. This is just a typo link.</p>
+<p id=97e2 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I'm going to go ahead going to prove this and we're going to merge it. No condone. for this one. I think it's unnecessary. let's try one more if we can. All right, let's try this one. No, maybe not. There's 64 64 comment. If it's okay, I'm going to skip this one. there's 64 comment. I think that's going to take a lot of time. We can just dedicate time for this next time. Let's see if we can address this one here.</p>
+<p id=7597 class="phone s01"><cite>Patrick_St-Louis:</cite> This scares me for a or…</p>
+<p id=0f2e class="phone s01"><cite>Patrick_St-Louis:</cite> minute left. can you do us a quick rundown of this I know it was just pushed one hour ago. So maybe just break the ice so next meeting we can focus on it.</p>
+</section>
+
+<section>
+<h3 id=3c7c>Exchange Presentation Type Option</h3>
+<p id=3ddd class="phone s05"><cite>Eric_Schuh:</cite> Yep. Yeah.</p>
+<p id=d50c class="phone s05"><cite>Eric_Schuh:</cite> So, this was a long outstanding issue. but effectively what this PR does is it adds a new verifiable presentation type option called an exchange presentation which is now sorry it adds this as an option during the participation of an exchange steps and effectively the exchange data property that is added here is intended to allow for exchange specific data that is not contained in the VCs to be sent.</p>
+<p id=8d47 class="phone s05"><cite>Eric_Schuh:</cite> So this is where you could have BBS support added. if Zcaps were being issued identifiers could be exchanged through any payment data that is needed and I suppose generically any exchange specific data that is not contained in one of the VCs could be added to this object.</p>
+<p id=e8f7 class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=6010 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=d2ad class="phone s01"><cite>Patrick_St-Louis:</cite> I think that's a good preview. We'll leave time to people to read it a little bit. I'm sure it's going to generate a lot of interesting conversations here. but I think this should be very useful. Yes, sir.</p>
+<p id=10004 class="phone s05"><cite>Eric_Schuh:</cite> I did just also want to mention for the group that I believe this was the last issue that had the version 1.0 0 CR blocker tag that did not have a PR. so unless there's something else outstanding, just let everyone know. theoretically once we get through the existing set of PRs,…</p>
+<p id=905b class="phone s05"><cite>Eric_Schuh:</cite> we are past the CR1 blocker or the CR blockers.</p>
+<p id=5cfb class="phone s01"><cite>Patrick_St-Louis:</cite> That's really good news.</p>
+<p id=e856 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you for bringing that to our attention. That's really really good news. so once we close the set of PR, we're in a good shape and we can start looking at our issues. But knowing that, we're in good shape for the CR. are so yeah that's all I have. Is there any closing thoughts before we finish the meeting?</p>
+<p id=e58f class="phone s03"><cite>Kayode_Ezike:</cite> Just a quick one.</p>
+<p id=d5c2 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Awesome.</p>
+<p id=5986 class="phone s03"><cite>Kayode_Ezike:</cite> It just sense in the chat, but basically I submitted the re hard to review requests for security and privacy during this call. So only thing left now is the tag one. So wrapped that up soon.</p>
+<p id=5462 class="phone s01"><cite>Patrick_St-Louis:</cite> Really good.</p>
+<p id=b2d2 class="phone s01"><cite>Patrick_St-Louis:</cite> In that case, thank you everyone for Very productive meeting. We closed a few PRs and some are in a good shape. next meeting we're going to discuss the threat model again because we like doing that. so until then I hope you have a good week. And that's it. Meeting ended after 01:01:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

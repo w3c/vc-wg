@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 1 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>1 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#f77f">ANNOUNCEMENTS AND PROCESS ITEMS</a></li>
+<li><a href="#395f">SPEC REFACTORING ISSUES</a></li>
+<li><a href="#9627">BITSTRING STATUS LIST SPEC</a></li>
+<li><a href="#6e40">CRYPTO SUITE NAMING AND OPTIONS</a></li>
+<li><a href="#f961">PULL REQUEST REVIEW</a></li>
+<li><a href="#a806">CALL TIME CHANGE</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=357f class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=f77f>ANNOUNCEMENTS AND PROCESS ITEMS</h3>
+<p id=7ba3 class="phone s02"><cite>Wesley_Smith:</cite> All right, good morning folks. Welcome to the Tuesday, September 1st meeting of the barcodes and data integrity task force. this call is being recorded and transcribed. So please let me know if you are not comfortable with that. The agenda for today is much the same as normal. We'll go through announcement, introduction, and process related items. and then we will spend time as needed on the barcodes, data integrity and defense specifications as needed. focusing on poll request review and issue process sign. Does anybody have any announcement, introduction or process related items for today? Monu go ahead.</p>
+<p id=b985 class="phone s03"><cite>Manu_Sporny:</cite> just I want to make sure that we get people to fill out the time poll. I sent that out to the mailing list. I am trying to find the right URL for that. but just setting aside some time to do that today, Wes, I think would be good.</p>
+<p id=8169 class="phone s02"><cite>Wesley_Smith:</cite> on the call. You're saying?</p>
+<p id=ce98 class="phone s03"><cite>Manu_Sporny:</cite> Yep. because some very small number of people have filled it out and we need the people on this call to fill it out.</p>
+<p id=3a9e class="phone s02"><cite>Wesley_Smith:</cite> Yeah, that sounds good. Go ahead and if you can find it and drop the link in the chat, that would be great. Ivonne, go ahead. thank you.</p>
+<p id=8ced class="phone s01"><cite>Ivan_Herman:</cite> Just…</p>
+</section>
+
+<section>
+<h3 id=395f>SPEC REFACTORING ISSUES</h3>
+<p id=f847 class="phone s01"><cite>Ivan_Herman:</cite> if you are editor of any document don't be surprised that all respspec is having problems because specraph whatever it doesn't work…</p>
+<p id=6787 class="phone s01"><cite>Ivan_Herman:</cite> which means that we cannot publish as long as this is still No,…</p>
+<p id=34b1 class="phone s02"><cite>Wesley_Smith:</cite> Sounds good.</p>
+<p id=b860 class="phone s02"><cite>Wesley_Smith:</cite> It sounds terrible.</p>
+<p id=2742 class="phone s01"><cite>Ivan_Herman:</cite> it's not good.</p>
+<p id=cdc2 class="phone s02"><cite>Wesley_Smith:</cite> Do you know the approximate timeline for resolution?</p>
+<p id=43dc class="phone s01"><cite>Ivan_Herman:</cite> No idea. That's a kind of a dispute between the author of the tool, Tony, and which one? Hioku.</p>
+<p id=8bce class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I think one of the servers…</p>
+<p id=f4ec class="phone s01"><cite>Ivan_Herman:</cite> which is now I think part of crowdfair.</p>
+<p id=894c class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=f92b class="phone s02"><cite>Wesley_Smith:</cite> Is it discrete break points it'll have to be on a Tuesday when it gets fixed or anything like that or could it kind of All right.</p>
+<p id=65cf class="phone s01"><cite>Ivan_Herman:</cite> No idea. Sorry.</p>
+</section>
+
+<section>
+<h3 id=9627>BITSTRING STATUS LIST SPEC</h3>
+<p id=7616 class="phone s02"><cite>Wesley_Smith:</cite> That is okay. I see a comment from understood Ted. Thank you. I have a question related to process. So we're doing an iteration on bit string status list as a result of reorganizing the content in The barcode spec introduces tourist bitstring status list entry which really should go with the bitstring status list spec.</p>
+<p id=1367 class="phone s01"><cite>Ivan_Herman:</cite> I am afraid that's the case. Wesley Smith:</p>
+<p id=74de class="phone s02"><cite>Wesley_Smith:</cite> So we're doing a version. Is that going to fall under the purview of this task force when it's an active item? If you're afraid of that, which would be better, go ahead.</p>
+<p id=7c2e class="phone s03"><cite>Manu_Sporny:</cite> I think yes I share Avon's trepidation but it's best to put the specs into the groups that are going to be using it and need it actively developed the most and that is this group. So until somebody else some other task force starts working on that spec I think we'll just work on it here.</p>
+<p id=4537 class="phone s02"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=bf5b class="phone s03"><cite>Manu_Sporny:</cite> I mean it'll follow the same process that we do for everything, which is pull requests, review, waiting a week for feedback and all that kind of stuff. So, that's</p>
+<p id=f2c3 class="phone s01"><cite>Ivan_Herman:</cite> Yeah. I wonder we discuss later…</p>
+<p id=47dd class="phone s01"><cite>Ivan_Herman:</cite> but I wonder whether we can sort of get by the all terrible thing about threat models etc for that document by saying that it's one section that we have added one feature I mean otherwise this has been reviewed before it's just sounds crazy to go through the same hoopla for one section…</p>
+<p id=9d6f class="phone s01"><cite>Ivan_Herman:</cite> but</p>
+<p id=c1cb class="phone s02"><cite>Wesley_Smith:</cite> Come on.</p>
+<p id=eb2a class="phone s02"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=f36e class="phone s03"><cite>Manu_Sporny:</cite> Avon, are you saying are you concerned that we might have to publish a threat model for the bitstring status list? because it's okay.</p>
+<p id=6306 class="phone s01"><cite>Ivan_Herman:</cite> Yes. Okay.</p>
+<p id=9aa8 class="phone s03"><cite>Manu_Sporny:</cite> I think the agreement we came to be a couple of weeks ago was that the VC data model will include threats around status list and that is how I have added stuff to VC data model. So we shouldn't have to go through that for bitstring status list.</p>
+<p id=06e2 class="phone s01"><cite>Ivan_Herman:</cite> Thank you. Indeed.</p>
+<p id=78d4 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=2878 class="phone s02"><cite>Wesley_Smith:</cite> sounds good. I think we have a plan there. the timeline is somewhat uncertain because of any other process items for today? Monu go ahead.</p>
+<p id=c3a4 class="phone s03"><cite>Manu_Sporny:</cite> There is an email that's bouncing around about changing how we publish threat models. since Savon is here,…</p>
+<p id=25a0 class="phone s03"><cite>Manu_Sporny:</cite> I wonder if we should talk about it. Unfortunately, Joe and Simona have some ideas as well. They're not here, but I mean, okay, we'll talk about it during the working group, I guess,…</p>
+<p id=64a4 class="phone s01"><cite>Ivan_Herman:</cite> I think that's the working group issue.</p>
+<p id=6af8 class="phone s03"><cite>Manu_Sporny:</cite> which is not happening this week. Okay, that's fine. I agree with you, Avon.</p>
+<p id=ffff class="phone s01"><cite>Ivan_Herman:</cite> I know I had one more idea in the meantime to create one repository for all threat models that would make at least the management a little bit easier.</p>
+<p id=be61 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm minus one to that, for various reasons. I think Joe and Simone are kicking around a number of ideas that are going to result in enormous amount of work for us and I am very much against that. We are burning so much time on threat models that we are not able to work on the specs. I think I've hit at least my limit on the experiment. I think we're good enough for now and we need to move on. I think probably Ivon and not to get too deep into it. we can just publish these as notes as Simony and Joe seem to suggest as long as what Francois said holds which is that PL can basically give us a blanket approval to publish all the threat models.</p>
+<p id=dfde class="phone s03"><cite>Manu_Sporny:</cite> So we only have to do that once instead of for every single one. And then we publish the threat models out of the repositories that they are currently in which the publication process supports. and that will at least get Joe and Simone happy with respect to that stuff. We don't have to write any new tooling.</p>
+<p id=6ff9 class="phone s01"><cite>Ivan_Herman:</cite> Another working group is</p>
+<p id=a0b8 class="phone s03"><cite>Manu_Sporny:</cite> That was what I was hoping to be able to talk about at the working group. I'll respond to the email with that. but I mean, this is getting kind of ridiculous. I know. Yep. I'm just giving you a heads up on thoughts on resolving this and…</p>
+<p id=3baa class="phone s03"><cite>Manu_Sporny:</cite> moving on. that's</p>
+<p id=83c2 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=81d9 class="phone s02"><cite>Wesley_Smith:</cite> that sounds good. as noted, there's a link to a poll in the chat. If you have not, filled that out, please do before the end of the call. looking at the list of people who have filled it out, it maybe is just me. but if anyone else hasn't filled it out, please do so. We can move on to the main specifications. I believe Greg Bernstein, did you want to take some time for data integrity?</p>
+<p id=c4f7 class="phone s02"><cite>Wesley_Smith:</cite> Starting now.</p>
+</section>
+
+<section>
+<h3 id=6e40>CRYPTO SUITE NAMING AND OPTIONS</h3>
+<p id=5aa1 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, in reviewing as we started moving the common functionality back into the specific crypto suite specs.</p>
+<p id=9311 class="phone s04"><cite>Greg_Bernstein:</cite> started noticing some things concerning crypto suite naming options and such like that and published that as a issue mostly just for discussion because it kind of has implications.</p>
+<p id=17bf class="phone s04"><cite>Greg_Bernstein:</cite> So mostly was discussing this with Dave, but what started happening was with the quantum resistance specs, we started naming things like MLDDSA44- RF DC- and a date like 2024 that includes specifics about the security level. Okay.</p>
+<p id=d9ff class="phone s04"><cite>Greg_Bernstein:</cite> Back in ECDSA land we support two security strengths but implicitly you can use the P one elliptic curve called P256 which is used for most everything or a stronger curve known as P384. Now, we didn't put that into the name of the crypto suite. We said very implicitly that you look at the size of the public key and that indicates to you what crypto suite to use. So that's how we did it before.</p>
+<p id=10000 class="phone s04"><cite>Greg_Bernstein:</cite> So then we started seeing how should we indicate which approach is used for selected disclosure. We have three approaches. Then we said, &quot;What happens if we have some additional options that we'd like to do committed disclosure where we provide what I call sub claim level type things where we do like a range proof to say, you got a assigned bank statement, you want to go</p>
+<p id=3e18 class="phone s04"><cite>Greg_Bernstein:</cite> then prove to somebody that you have at least $200 in your bank account. But you don't want to let them know exactly how much you have in your bank account. So that's something we call a range proof you could use to say this thing a form of zero knowledge proof, etc. And I've been working with people that want to add that kind of capability in a unlinkable fashion to BBS. But I've also just had the discussion with some of those same people is that if you're not worried about unlinkable disclosure cases, you could do the same thing with any of our selective disclosure mechanisms or signage visual claims and things like that. So we got into this thing about how should we add optional stuff?</p>
+<p id=c8a7 class="phone s04"><cite>Greg_Bernstein:</cite> How should we deal with different strengths? Because every quantum resistant one you comes in at least two if not three strengths and we kind of said no no we're only going to deal with the lowest level strengths and so we started putting the exact signature name parameter set into the name. And we kind of said wait a gives us a huge number of crypto suite names. It makes it more difficult for publishing things.</p>
+<p id=6673 class="phone s04"><cite>Greg_Bernstein:</cite> So Dave and I think were the most the people that were discussed this the most where we said Wesley not Wes.</p>
+<p id=8e54 class="phone s02"><cite>Wesley_Smith:</cite> You said Weley. I'm wondering no,…</p>
+<p id=b13b class="phone s02"><cite>Wesley_Smith:</cite> Wesley is good. Uninformed question. Is there a property defined in the integrity data model that kind of all property that could be included in a proof that would give this specificity without having to add it to the name of the crypto suite?</p>
+<p id=6859 class="phone s04"><cite>Greg_Bernstein:</cite> You mean …</p>
+<p id=7a29 class="phone s04"><cite>Greg_Bernstein:</cite> what the options are mean that goes in with the proof. Wesley Smith:</p>
+<p id=299f class="phone s02"><cite>Wesley_Smith:</cite> Yeah. Yeah. Yeah. so you have a proof object and you have a cryptosweet string and that you have options strength level one or whatever right I'm wondering if this could be specified yeah I'm wondering if such a property exists that could be used for that purpose as defined by the integrity data model I don't know off the top of my head</p>
+<p id=6c98 class="phone s01"><cite>Ivan_Herman:</cite> at this moment.</p>
+<p id=9fed class="phone s01"><cite>Ivan_Herman:</cite> No. I said at this moment the answer is no.</p>
+<p id=69be class="phone s04"><cite>Greg_Bernstein:</cite> What was that?</p>
+<p id=498a class="phone s04"><cite>Greg_Bernstein:</cite> Ivonne. Yes.</p>
+<p id=61e2 class="phone s01"><cite>Ivan_Herman:</cite> I believe</p>
+<p id=c00b class="phone s04"><cite>Greg_Bernstein:</cite> In what we were discussing u me and Dave in the selective disclosure case we use seabore encoding so it is not difficult to add in an indicator of options optional fields that could follow required fields in the signed individual claim case where we have we</p>
+<p id=3514 class="phone s04"><cite>Greg_Bernstein:</cite> have signatures for every claim, every in that case, we have a bunch of required data. If we wanted to add something to it, we could put in an indicator saying what option type it is and then you can put in as many optional fields as possible because eore handles that indicate I kind of agree that it was not nice to make people go look at the public key…</p>
+<p id=78b3 class="phone s04"><cite>Greg_Bernstein:</cite> but they have to go get the public key.</p>
+<p id=e73f class="phone s04"><cite>Greg_Bernstein:</cite> So, me and Dave were thinking about for signature strength. Ivonne,…</p>
+<p id=d026 class="phone s01"><cite>Ivan_Herman:</cite> hiding something like that into seabboard.</p>
+<p id=f456 class="phone s01"><cite>Ivan_Herman:</cite> I am not really sure I like that in some.</p>
+<p id=bb02 class="phone s04"><cite>Greg_Bernstein:</cite> the strength or the options Yeah.</p>
+<p id=68c6 class="phone s01"><cite>Ivan_Herman:</cite> options. I mean this is something that I may use in crypto suites which are not bound to seabboard the full disclosure version of ECDSA it doesn't use seabboard</p>
+<p id=ab0c class="phone s04"><cite>Greg_Bernstein:</cite> No, it doesn't.</p>
+<p id=4c24 class="phone s04"><cite>Greg_Bernstein:</cite> So that's why right now we've got this case that if you're going to use ECDSA and you want the stronger strength or there's the P256 curve and the P3854 curve, you look at the public key size and that lets mono</p>
+<p id=c95f class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think Ivon on your point going back up to kind of the high level what we're trying to do here. there's kind of a different design philosophy with the data integrity stuff versus IETF. So is largely I would say very cryptographic engineer focused and their identification strings are things like 59er whatever right and…</p>
+<p id=6539 class="phone s04"><cite>Greg_Bernstein:</cite> Yep.</p>
+<p id=174a class="phone s03"><cite>Manu_Sporny:</cite> they mean absolutely nothing most the application developers have really no concept of what all of those things mean they just copy and paste it. and what that has resulted in some cases are some pretty terrible security vulnerabilities where the application developers don't know the type of cryptography that they're actually selecting and then they pick the wrong thing and the system breaks. So we have this kind of evidence over the last 20 years that application engineers really should not be messing with these options and parameters because they create security vulnerabilities. I think my personal opinion is that unfortunately this group was nudged into doing some of that initially.</p>
+<p id=d569 class="phone s03"><cite>Manu_Sporny:</cite> Meaning the difference between JCS and RDFC ends up in the identification string and who knows or cares what that is when you're at the application layer, right? it's kind of this detail that probably shouldn't have been in the string. What we were trying to do with the years is just basically tell people like, hey, you're using cryptography from the year 2019 or you're using cryptography from the year 2026 and at some point if you see a really old date, then you should probably think about upgrading, that was kind of the design philosophy that went into it. These strings were never meant to expose the details of the cryptographic environment all the way up to the string, right?</p>
+<p id=e392 class="phone s03"><cite>Manu_Sporny:</cite> So all that said, there are different options that we could pick for MLDDSA and stateless sorry MLDDSA with selective disclosure or BBS with certain types of other properties that application engineers will misunderstand and they will probably end up using the wrong thing. And so that's why we're trying to kind of hide these details at the way down in the depths because the only people that really need to know are the cryptographic engineers. They're the only ones that really understand what those things are and how to select them and for everyone else, it's just, a detail that they probably shouldn't care about.</p>
+<p id=1eb1 class="phone s03"><cite>Manu_Sporny:</cite> So this is largely an application developer safety thing. where we just push and it's an thing, a good abstractions hide things that the people at the higher end of the abstraction don't need to know. And I think that's partly what's going into this is we're hiding this whoa an application developer really doesn't need to know whether we're doing hashing per statement or hashing over the entire or we're doing salted hashes, so that is kind of an implementation detail that the cryptographic engineers need to know, but the application engineers don't care.</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> there's just like I want selective disclosure I don't or care about the details of how you're achieving that based on the signature size right application developers really shouldn't be exposed to that their main thing is I want selective disclosure and I want the signature size to be as small as possible and then the cryptographic engineers are the ones that end up choosing the correct options for them through the standard. Sorry, that was very long-winded, but that's kind of I think the design philosophy that's going into the selection of these names and…</p>
+<p id=8faf class="phone s04"><cite>Greg_Bernstein:</cite> Wesley West. Sorry.</p>
+<p id=b814 class="phone s03"><cite>Manu_Sporny:</cite> where we put the options and things of that nature.</p>
+<p id=b7b1 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, it's fine. I largely agree with what you said, I think especially with respect to selective disclosure, implementation details. I think that sort of thing is definitely fine to hide from application engineers. one thing I'm not sure about is something like curve selection. having that be the default behav or having that behavior be based on the size of the public key that is located elsewhere seems strange to me. it's also not futurep proof. It won't work once we have a public key. So once we need to do data integrity for a scheme for which there is a collision that won't work. yeah that feels strange to me.</p>
+<p id=670f class="phone s04"><cite>Greg_Bernstein:</cite> Come on.</p>
+<p id=3586 class="phone s02"><cite>Wesley_Smith:</cite> I largely agree with the other points that you made about selective disclosure, but having the information about which curve is being used implicitly and located elsewhere defined seems odd.</p>
+<p id=2eb2 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, and other folks that know much more about this should chime in, but we did that on purpose. The reason we did that is because of There were key truncation failures, multiple of those over 15 years because application developers would be they would select this is a P256 algorithm in and in and key and then they would end up linking to a public key that was a 384 key or vice versa, right? they would say this is 384 but then they would end up feeding a 256 key into the algorithm which created all kinds of security vulnerabilities.</p>
+<p id=aafe class="phone s03"><cite>Manu_Sporny:</cite> So the reason we say you need to look at the public key and use whatever is matched with the public key is to avoid that key truncation security failure. And there tons of CVEes that had that as a problem in the 2000s. that's the reason we do that. hope that makes sense. Go ahead, Dave.</p>
+<p id=a812 class="phone s05"><cite>Dave_Longley:</cite> I more or less thought I was going to say the approach here is use the metadata from the key. and the keys identifier is signed over. And that's supposed to help avoid these invalid combination attacks and so on where if you make all of the various parameters or too many of the parameters independent from one another so that you can express them in a variety of different ways that can be invalid or that could be attacker controlled that can create a variety of problems. So instead you should be using the metadata that's associated with using a key resolution algorithm that you trust.</p>
+<p id=e1fe class="phone s04"><cite>Greg_Bernstein:</cite> The one thing I was going to add, it's not that we're very specific about the curves we use. is the one I say the P256 curve that means a very specific NIST approved curve same with the P84 so that's very specified that would be in the spec for example we did have an issue where somebody came back and asked us I think from the security team what about P 521 okay what would we do about that and we haven't included</p>
+<p id=53cf class="phone s04"><cite>Greg_Bernstein:</cite> that we haven't said we're going to do anything. That's why at the same time we've got these parameter sets for the quantum resistance where they come in security level five, and all those keys, we put in the spec right now tables that say what those keys look like. And I started going down the road of putting it into the cryptosweet name. And then I said, &quot; that's not what we did before, Dave. Go ahead.</p>
+<p id=66d1 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I just want to clarify that as well that the key metadata includes the key type which for ECC keys that would include curve and so on. So that other information is there and…</p>
+<p id=c075 class="phone s04"><cite>Greg_Bernstein:</cite> We're asleep.</p>
+<p id=4051 class="phone s05"><cite>Dave_Longley:</cite> it's travels along with the key.</p>
+<p id=4207 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, heard and thanks for the perspective. I'll just briefly note it sounds and maybe this is uninformed, but this is feeling like a kind of three-party responsibility blurring. It doesn't seem like the material that the holder of a credential is in posses obviously that material is not sufficient to perform verification because you need a public key.</p>
+<p id=2cbf class="phone s02"><cite>Wesley_Smith:</cite> But it doesn't even tell you how to perform the verification by itself. some of the material that tells you how to perform the verification is under the control of a different party. that seems strange to me. but I'll leave it there.</p>
+<p id=6751 class="phone s04"><cite>Greg_Bernstein:</cite> This does get us into algorithm classes and…</p>
+<p id=3ee1 class="phone s04"><cite>Greg_Bernstein:</cite> things like that because we could indicate</p>
+<p id=97ab class="phone s04"><cite>Greg_Bernstein:</cite> I mean the question and this is what man's discussion before and that's why I'm not this trying to make a decision because I started going down one direction with the quantum resistance and I started putting those things and I was starting at a very large table of names of crypto suites and then I would match them to the parameters that you used with one more thing I wanted to say is for the option thing particularly Ivonne, we started hitting this with the selective disclosure suites because those seem to be the ones that people want to add extensions to.</p>
+<p id=7327 class="phone s04"><cite>Greg_Bernstein:</cite> Then we had holder binding via blind BBS, then we had pseudonyms. And I go, &quot; yeah, those specs aren't even as close to being done as BBS. I really want to make it so I don't have to tear up everything.&quot; And I started adding in for these options by specifying proof header for each different option. So we could tell them that way. And it's like, my gosh, we're not going to be able to finish any specs if we don't have an extension mechanism that we could do addendums from easily or something.</p>
+<p id=b723 class="phone s04"><cite>Greg_Bernstein:</cite> And that's part of this question right now because we've got some of these and most of these things go with selective disclosure. so that's kind of sorry to be blurring all these things but they all kind of hit at the same time. We got different security strengths in the quantum resistance and we've got a bunch of quantum resistant. We've got selective disclosure and we've got different approaches. little act of disclosure that influence primarily Your base proof is going to be going from the issuer to the holder and differently how big it is going from the holder to the The two different approaches signed individual claims and salted hash of claims are different that way. Right?</p>
+<p id=084f class="phone s04"><cite>Greg_Bernstein:</cite> Going from the holder to the verifier with salted hash, It's as big as came from Going from signed individual claims from the holder to the verifier can be very small because it's whatever you choose to reveal. deal. So, we've got kind of these things that we're trying to help. We're in doing the cryptoengineering, but we're trying to also help provide information also and choices to the applications. The people above the cryptographic level may be concerned about sizes of things and processing time and such like that.</p>
+<p id=436e class="phone s04"><cite>Greg_Bernstein:</cite> So that's why I put in down those issues, Dave.</p>
+<p id=10002 class="phone s05"><cite>Dave_Longley:</cite> I was trying to not interrupt your train of thought with my h raising hand sound. I just wanted to be responsive to what Wes said and I put this in chat as well. the party that provides the key which is the issuing party is also the one that provides the key metadata. So when in order to perform verification, you have to be able to retrieve that key and you also have to be able to retrieve the metadata about that key and those things should be bound and used together to help avoid these other security concerns that have cropped up over the years. And so I don't think that that process is fundamentally different in the way that you were describing this. I think there's that external information.</p>
+<p id=883f class="phone s04"><cite>Greg_Bernstein:</cite> West</p>
+<p id=ab06 class="phone s05"><cite>Dave_Longley:</cite> The external information is both the key material and the metadata about that</p>
+<p id=19e6 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, understood. it seems as if you could make the argument that what the material the holder holds should be enough that anyone would understand how to perform a verification modulo the actual value which is hosted by public key by host by the issuer. You can make the argument that that's still the case even if some other metadata around the key is it's just changing your routing through which algorithms are used, which logic is used. I'd have to think more about if that's actually the same or if that's relying on something being not adversarial. I'm not totally sure. yeah, it's something I'll think about more. Thanks for the discussion.</p>
+<p id=8ce3 class="phone s04"><cite>Greg_Bernstein:</cite> But this is an issue that I started putting down in some of my comments on this issue is then what would that mean about who has to…</p>
+<p id=526a class="phone s01"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=3e20 class="phone s04"><cite>Greg_Bernstein:</cite> who should be supporting what? We never said that somebody has to support an ECDSA P384, did we?</p>
+<p id=cbb7 class="phone s04"><cite>Greg_Bernstein:</cite> I always assume I did test vectors for both P256 and P384 mono this and…</p>
+<p id=1c95 class="phone s04"><cite>Greg_Bernstein:</cite> think about this with quantum resistance too because I started doing test vectors for all the levels of security. Then Mono goes, &quot;That's so many test vectors. That's so many cipher suites.&quot; I'm going to turn it over to Mono now.</p>
+<p id=6809 class="phone s03"><cite>Manu_Sporny:</cite> I think we do say…</p>
+<p id=e631 class="phone s03"><cite>Manu_Sporny:</cite> if you support that for ECDSA, I'm looking it up now. I'm almost positive we said you have to support both 256 and 384. let me try and find the language, but I'm pretty sure we required</p>
+<p id=bdd2 class="phone s05"><cite>Dave_Longley:</cite> While you're looking I think for each one of these crypto suites we should say…</p>
+<p id=8eb8 class="phone s05"><cite>Dave_Longley:</cite> what must be supported and that's just the baseline for interoperability. Okay.</p>
+<p id=dab7 class="phone s04"><cite>Greg_Bernstein:</cite> I mean we have tables I started instead of me having a name for each variant I have just right now in the quantum resistance I'll go we say…</p>
+<p id=21cf class="phone s04"><cite>Greg_Bernstein:</cite> what MLDDSA 44 is 65 87 and what its corresponding hash</p>
+<p id=4753 class="phone s04"><cite>Greg_Bernstein:</cite> is what we didn't do is we didn't say you had to use any others besides ML44 which we gave a name crypto suite to but instead we could have a generic name for the crypto suite and say you've got to support MLDDSA 44 and it's for the future to say if we're going to support the others or we say you have to support this you can support the higher level ones but then should I give test vectors? So that comes up to that question what about the people that are super paranoid and want to use MLDDSA 87. we have the mechanisms for them to do it.</p>
+<p id=5f3e class="phone s04"><cite>Greg_Bernstein:</cite> I've even produced test vectors, but you don't want to make it required because it's like, wow, that if it's as good as people say, that security level is super duper high. Manu</p>
+<p id=10003 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I don't think we need to cater to people that cannot back up why they're using parameters. that's the same reason we said we're not supporting 521. Apple doesn't support 521 in their HSM, So, if Apple doesn't support it, we don't have to support it. They've got really good cryptographic engineers that looked at the problem. I think the same thing's true with 87. A lot of these highlevel parameters come from overzealous militaryindustrial complex,…</p>
+<p id=7961 class="phone s03"><cite>Manu_Sporny:</cite> companies that have a product that they want to sell. they are largely it is…</p>
+<p id=4558 class="phone s04"><cite>Greg_Bernstein:</cite> It was a missed requirement too,…</p>
+<p id=79a4 class="phone s04"><cite>Greg_Bernstein:</cite> when they did the competition, you had to have the scheme be able to achieve that many bits,…</p>
+<p id=a088 class="phone s03"><cite>Manu_Sporny:</cite> which has a large number of military-industrial complex companies that want to have these crazy requirements that the commercial industry just sees no reason to support.</p>
+<p id=4b54 class="phone s04"><cite>Greg_Bernstein:</cite> right? Yeah. Exactly. Yeah. Yeah.</p>
+<p id=0cdf class="phone s03"><cite>Manu_Sporny:</cite> I think the most important thing is that it is not science-based. it is fearbased parameters. and I don't think if we do need to support it in the future, we can always, put out another crypto suite. there's nothing to stop anybody else from creating another crypto suite with a higher parameter set. especially because of the way that we do kind of key detection and stuff like that. but making it optional means less interoperability. and we are trying to get as strong interoperability as possible which means that you need to implement these curves. I think w with ECDSA we made an exception for both 256 and 384 and the only reason we made that exception is that we had someone that was very loud in the working group that insisted that 384 was required and that.</p>
+<p id=bbe0 class="phone s03"><cite>Manu_Sporny:</cite> So I don't unless there is a good scientific basis for using these different key strengths, especially with the new postquantum or the quantum resistance stuff where we have no idea if these algorithms are actually going to stand the test of time. We should start out with the lowest possible and keep going with that until it becomes clear that there is a break and we need to move up,…</p>
+<p id=073e class="phone s04"><cite>Greg_Bernstein:</cite> You on Manu Sporny:</p>
+<p id=359d class="phone s03"><cite>Manu_Sporny:</cite> in strength. that's it.</p>
+<p id=8b4f class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I tried to go through the ECDSA spec by blindly searching 256 all around.</p>
+<p id=7b2e class="phone s01"><cite>Ivan_Herman:</cite> So far I haven't found any statement which says this is the basis that you must implement unfortunately where the logical place you would look as is the conformance requirement and there is nothing about the choice it's everywhere choose between this or that and if you choose that this is what happens this is the hash size etc. I may have missed something money but I don't think we have that which is maybe a problem and we have to put that minimal requirement if there are options then we have to put a minimal requirement on all of them but actually the other thing which is not on the same category…</p>
+<p id=1338 class="phone s04"><cite>Greg_Bernstein:</cite> JCS.</p>
+<p id=a251 class="phone s01"><cite>Ivan_Herman:</cite> but do we say that implementers must implement RDFC or GSC What are the fors? do we say that for example or is it also a kind of a free flowing parameter?</p>
+<p id=9dbf class="phone s03"><cite>Manu_Sporny:</cite> So I think you did miss something in section 3.2.4 For the ECDSA spec,…</p>
+<p id=de32 class="phone s01"><cite>Ivan_Herman:</cite> And yeah,…</p>
+<p id=46ec class="phone s03"><cite>Manu_Sporny:</cite> we say one must use the hash algorithm appropriate in the security level of the curve used for curve P256. One uses shot 256. For 384, one uses shot 384. in the appropriate algorithm. The must though is lowerase not uppercase. So we should probably fix that.</p>
+<p id=9d37 class="phone s01"><cite>Ivan_Herman:</cite> but that only means I'm sorry to interrupt money.</p>
+<p id=e5c9 class="phone s01"><cite>Ivan_Herman:</cite> That only means that even if the muscle was uppercase, if you use this curve, then you have to use that one. But it doesn't mean that you must implement this curve. It doesn't mean that you must implement P56.</p>
+<p id=9ca3 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm fine with putting in stronger language that says you must support both.</p>
+<p id=70af class="phone s03"><cite>Manu_Sporny:</cite> But if you don't do that today, it will break, right? I mean you can't shove in a 384 hash into a 256 ECDSA algorithm. Yeah.</p>
+<p id=c5d0 class="phone s01"><cite>Ivan_Herman:</cite> No, no, I understand that. But this is a different statement.</p>
+<p id=91eb class="phone s04"><cite>Greg_Bernstein:</cite> No, no,…</p>
+<p id=7d05 class="phone s04"><cite>Greg_Bernstein:</cite> this is concerns what curve are you to say that you're conformant with ECDSA. Do you have to do P256 or P256 and P384 to claim conformance?</p>
+<p id=34bf class="phone s01"><cite>Ivan_Herman:</cite> Yes. And that is</p>
+<p id=ec22 class="phone s04"><cite>Greg_Bernstein:</cite> And it's the same thing if we have an MLDDSA crypto suite. Do you have to do the 44 level,…</p>
+<p id=10004 class="phone s04"><cite>Greg_Bernstein:</cite> the 65 level, 87? We probably should specify that. And it's something that we could update if something gets broken and you can't use 44 anymore. Mono</p>
+<p id=e521 class="phone s03"><cite>Manu_Sporny:</cite> Yeah. to be clear,…</p>
+<p id=e9f3 class="phone s03"><cite>Manu_Sporny:</cite> I understand what we're trying to figure out here. I'm saying that if you don't support for ECTSA,…</p>
+<p id=7b9f class="phone s03"><cite>Manu_Sporny:</cite> if you don't support both P25 256 and 384, you will be non-conformant based on the way the spec is written today…</p>
+<p id=5785 class="phone s04"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=7073 class="phone s03"><cite>Manu_Sporny:</cite> because of the side effects of calling the algorithms in the way that we call them. I do agree that we should be explicit about that and for ECDSA maybe one thing makes it explicit that you must support 256 and 384 full stop for MLDDSA 44 only for now right I don't think there's any argument for the higher security levels at this point in</p>
+<p id=66e6 class="phone s04"><cite>Greg_Bernstein:</cite> I mean because I</p>
+<p id=eeed class="phone s01"><cite>Ivan_Herman:</cite> While we are at it because I agree that this should be made clear in probably the confirmance statement.</p>
+<p id=4a92 class="phone s01"><cite>Ivan_Herman:</cite> What about the choice of RDFC and GCS? You must implement both.</p>
+<p id=ece9 class="phone s04"><cite>Greg_Bernstein:</cite> I know.</p>
+<p id=90da class="phone s03"><cite>Manu_Sporny:</cite> No. because we have different crypto suites like you have to each one has its own set of conformance statements.</p>
+<p id=c979 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, we and…</p>
+<p id=dd03 class="phone s01"><cite>Ivan_Herman:</cite> No,…</p>
+<p id=c02e class="phone s03"><cite>Manu_Sporny:</cite> There are people that will refuse to implement the RDFC version of it…</p>
+<p id=4b46 class="phone s01"><cite>Ivan_Herman:</cite> I understand. I understand. Manu Sporny:</p>
+<p id=8bc0 class="phone s03"><cite>Manu_Sporny:</cite> which is fine,…</p>
+<p id=f5d1 class="phone s01"><cite>Ivan_Herman:</cite> We have different name.</p>
+<p id=e642 class="phone s03"><cite>Manu_Sporny:</cite> right? Yep,…</p>
+<p id=0222 class="phone s01"><cite>Ivan_Herman:</cite> These are different crypto switches. You are right. Okay.</p>
+<p id=53d8 class="phone s03"><cite>Manu_Sporny:</cite> that's right.</p>
+<p id=41f6 class="phone s04"><cite>Greg_Bernstein:</cite> so you can see when we get into the selective disclosure crypto suites and we've got at least two approaches that may apply to some of them</p>
+<p id=b78d class="phone s04"><cite>Greg_Bernstein:</cite> will want to furnish a table to say what you should do. But we also have a proposed mechanism of using the proof header bytes that we've been using for all the SD crypto suites to differentiate between the approaches that so this was the discussion I think I wanted to have so I thank folks for u doing that I didn't mean to take</p>
+<p id=5cca class="phone s04"><cite>Greg_Bernstein:</cite> all the time. But this cryptosweet naming important what they have to do where we tell people how they understand the variations important but not having a million names important too. I'll turn it back over to you.</p>
+<p id=f8b7 class="phone s02"><cite>Wesley_Smith:</cite> yeah so yeah definitely thank you for leading that discussion it's good valuable discussion and…</p>
+<p id=518f class="phone s04"><cite>Greg_Bernstein:</cite> Go ahead.</p>
+<p id=a31f class="phone s02"><cite>Wesley_Smith:</cite> it's important to use call time to do that you haven't been on the last couple of calls so I'm happy to yield the rest of the time today if there's anything else for data integrity that you'd like to talk about? I don't think there's anything super pressing for barcodes or forgery defense. so anything else you'd like to talk about today? Wesley Smith:</p>
+<p id=f176 class="phone s04"><cite>Greg_Bernstein:</cite> I've got,…</p>
+<p id=0c0a class="phone s04"><cite>Greg_Bernstein:</cite> excuse me, I've got three PRs. let's see…</p>
+<p id=68b9 class="phone s04"><cite>Greg_Bernstein:</cite> if I can share my screen. Okay, let's see…</p>
+<p id=c4b5 class="phone s02"><cite>Wesley_Smith:</cite> Could you type the word subtopic and…</p>
+<p id=b2ae class="phone s02"><cite>Wesley_Smith:</cite> then colon and the link to the PR as you talk about them in the chat.</p>
+<p id=ded8 class="phone s04"><cite>Greg_Bernstein:</cite> if I can even Okay, so let's go to</p>
+</section>
+
+<section>
+<h3 id=f961>PULL REQUEST REVIEW</h3>
+<p id=e8ac class="phone s04"><cite>Greg_Bernstein:</cite> Oops. this is quantum resistance. I think the part of these questions are one, how long do we wait? can we consider it approved?</p>
+<p id=a6b9 class="phone s04"><cite>Greg_Bernstein:</cite> Let me put this. Okay, I'm going back to the meeting. You want me to type what again? So okay,…</p>
+<p id=5288 class="phone s02"><cite>Wesley_Smith:</cite> just…</p>
+<p id=19e5 class="phone s02"><cite>Wesley_Smith:</cite> what I put in the chat there. subtopic with a capital S colon space and then paste the link. Yep, that looks great. Thank you.</p>
+<p id=019f class="phone s04"><cite>Greg_Bernstein:</cite> so this has two reviewers reuse common algorithms for EC data integrity.</p>
+<p id=10005 class="phone s04"><cite>Greg_Bernstein:</cite> This is got two reviewers. no, this is the one that has conflicts. I don't know what those conflicts are. That's was one of my questions. merge conflicts. So, this was the one about every time I see those things sometimes these trying to resolve the conflicts, things go bad for me. so I get very concerned about trying to merge conflicts. so for those that are more aware of get and…</p>
+<p id=685e class="phone s04"><cite>Greg_Bernstein:</cite> get hub how to deal with those is my question on that one. Okay. So that's the question on that PR.</p>
+<p id=418a class="phone s02"><cite>Wesley_Smith:</cite> M has his hand up.</p>
+<p id=7b2c class="phone s04"><cite>Greg_Bernstein:</cite> It's a pro.</p>
+<p id=3858 class="phone s02"><cite>Wesley_Smith:</cite> Craig Greg Greg can't hear…</p>
+<p id=5a3c class="phone s04"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=3a0c class="phone s03"><cite>Manu_Sporny:</cite> Yeah, the way you deal with this,…</p>
+<p id=739a class="phone s03"><cite>Manu_Sporny:</cite> Greg, is pretty simple,…</p>
+<p id=d26f class="phone s04"><cite>Greg_Bernstein:</cite> Go back and…</p>
+<p id=60b3 class="phone s04"><cite>Greg_Bernstein:</cite> look. Mono.</p>
+<p id=a762 class="phone s03"><cite>Manu_Sporny:</cite> straightforward. you check out main,…</p>
+<p id=93ce class="phone s04"><cite>Greg_Bernstein:</cite> Mono. Stop presenting.</p>
+<p id=f8f1 class="phone s03"><cite>Manu_Sporny:</cite> you do a get pull on main, then you check out your branch,…</p>
+<p id=e87e class="phone s04"><cite>Greg_Bernstein:</cite> I'm not hearing Monet.</p>
+<p id=dfb4 class="phone s03"><cite>Manu_Sporny:</cite> you do a get rebase …</p>
+<p id=a64b class="phone s04"><cite>Greg_Bernstein:</cite> Did I break my</p>
+<p id=79e7 class="phone s03"><cite>Manu_Sporny:</cite> main, and then you do and usually it just fixes everything and everything's fine. And then you do a get push force. …</p>
+<p id=d20c class="phone s02"><cite>Wesley_Smith:</cite> what you're saying right now. he muted his tab.</p>
+<p id=33fa class="phone s04"><cite>Greg_Bernstein:</cite> Oops. Sorry,…</p>
+<p id=5379 class="phone s03"><cite>Manu_Sporny:</cite> Greg.</p>
+<p id=968d class="phone s04"><cite>Greg_Bernstein:</cite> my tab got There's so many ways to do this.</p>
+<p id=c722 class="phone s03"><cite>Manu_Sporny:</cite> Thanks.</p>
+<p id=053e class="phone s04"><cite>Greg_Bernstein:</cite> I sorry to make you repeat the procedural stuff,…</p>
+<p id=50c3 class="phone s03"><cite>Manu_Sporny:</cite> Wes, I totally missed that.</p>
+<p id=8914 class="phone s04"><cite>Greg_Bernstein:</cite> but if you could Sorry.</p>
+<p id=2a4c class="phone s03"><cite>Manu_Sporny:</cite> No, that's fine. Can you hear me now? it's pretty straightforward to deal with those resolve conflicts. You do a get checkout on Maine. You do a get pull. That gives you the latest on Maine. Then you check out your branch. So you switch to your B branch, you do a get rebase main. So that'll rebase your branch on top of main. And that will likely remove all the resolved conflicts. Sometimes if there's a true conflict, you will have to figure</p>
+<p id=1183 class="phone s03"><cite>Manu_Sporny:</cite> out, what to merge in and what not to merge in. That's where things get a little more complicated. but after you do that, you can just get push-force for your branch and it'll write the new history and…</p>
+<p id=6db9 class="phone s03"><cite>Manu_Sporny:</cite> your merge conflicts will disappear. So, it's only three commands that you run. It largely, takes care of the issue. That's typically what I end up doing. Okay.</p>
+<p id=6458 class="phone s04"><cite>Greg_Bernstein:</cite> …</p>
+<p id=7869 class="phone s04"><cite>Greg_Bernstein:</cite> so what I'm gonna not do is you not use the web interface and I want to make sure I can back out in case something goes wrong. Dave, you're good.</p>
+<p id=e075 class="phone s05"><cite>Dave_Longley:</cite> So you can always get rebase-abort to undo what you were doing. But if you're worried about that, all before you even start, you can make a new branch that's a copy of your existing branch. But what I wanted to say is Manu Greg is not creating branches in the repository here. He has a fork.</p>
+<p id=c877 class="phone s05"><cite>Dave_Longley:</cite> So he will also need to fetch his upstream changes from main. But I assume that's something how to do already, Greg.</p>
+<p id=4d38 class="phone s04"><cite>Greg_Bernstein:</cite> Yeah, I started using a separate fork for safety when I get paranoid when we were getting some of those EOL things.</p>
+<p id=3187 class="phone s04"><cite>Greg_Bernstein:</cite> It's like or I was getting a little ahead of things as far as my writing. I did my own fork because yes, I have permission to go mess with the W3C repo, but that doesn't mean I want to break it. Mono</p>
+<p id=10006 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I was going to say I can just give you access to write. I don't think you have access to write. no. Members do. Never mind. I think yep, you've got access to write, but noted on why you don't do that. it's a little more complicated the way you're doing it, but how to deal with it. So, I think that</p>
+<p id=b13d class="phone s04"><cite>Greg_Bernstein:</cite> So, I will tackle that and I will ping folks. But once again, I will not use the web interface to I mean…</p>
+<p id=e7b1 class="phone s04"><cite>Greg_Bernstein:</cite> because they say, use the web interface.&quot; as I go. that subtopic. Here's the next one. Oops, Ivonne.</p>
+<p id=a222 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, if you make you film any better,…</p>
+<p id=4de3 class="phone s01"><cite>Ivan_Herman:</cite> I am as scared of rebates etc as you are even after all these years. and I almost never use the web interface for things like that. Anyway, a totally different thing. You may hit problems with merge as a result of the spec ref problem…</p>
+<p id=be57 class="phone s01"><cite>Ivan_Herman:</cite> because respspec may complain, may raise errors and then everything stops. So it's a major pain everywhere.</p>
+<p id=8a3e class="phone s04"><cite>Greg_Bernstein:</cite> This is bad.</p>
+<p id=2ca4 class="phone s04"><cite>Greg_Bernstein:</cite> So it's like this is stopping work.</p>
+<p id=e148 class="phone s01"><cite>Ivan_Herman:</cite> This is very bad. I fully agree. But there may be problems even with emerge or the IPR check or these kind of things that it does. So hopefully it will go away soon. But it is really a major problem.</p>
+<p id=207a class="phone s04"><cite>Greg_Bernstein:</cite> on it.</p>
+<p id=e942 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I wouldn't I mean plus one to what Ivonne said, but I would not let that stop you from merging. the merges are fine.</p>
+<p id=3ea9 class="phone s04"><cite>Greg_Bernstein:</cite> Oops.</p>
+<p id=09cc class="phone s03"><cite>Manu_Sporny:</cite> It's just all the side effects from the merges, will probably blow up, but we need this code into the spec. We can always rerun the GitHub actions.</p>
+<p id=2712 class="phone s01"><cite>Ivan_Herman:</cite> Can you move down to the merge part, Greg? No,…</p>
+</section>
+
+<section>
+<h3 id=a806>CALL TIME CHANGE</h3>
+<p id=17d2 class="phone s04"><cite>Greg_Bernstein:</cite> Go back to the All right,…</p>
+<p id=a1c1 class="phone s01"><cite>Ivan_Herman:</cite> no, no, no. On the roll down, scroll down.</p>
+<p id=8f97 class="phone s04"><cite>Greg_Bernstein:</cite> that's a different one. That's this I was hitting this is for eddsa pull…</p>
+<p id=4773 class="phone s01"><cite>Ivan_Herman:</cite> I'm sorry. Yeah. Okay. So, the For example,…</p>
+<p id=8ed0 class="phone s04"><cite>Greg_Bernstein:</cite> because I don't have enough reviewers. was this the one where I need codeowner review is required by reviewers with right access. So that means I think Okay,…</p>
+<p id=30e5 class="phone s01"><cite>Ivan_Herman:</cite> the internal server error, this big thing there is the same problem as I was referring to. And</p>
+<p id=d10f class="phone s04"><cite>Greg_Bernstein:</cite> for this EDDDSA I need Manu or Dimmitri to review. Is there owners? Different issue. I have three different poll requests. So this is the second one.</p>
+<p id=fa65 class="phone s02"><cite>Wesley_Smith:</cite> Craig m his hands up.</p>
+<p id=45f1 class="phone s04"><cite>Greg_Bernstein:</cite> I don't think this is awaiting approval but I don't think it has any conflicts. man,…</p>
+<p id=8ba6 class="phone s04"><cite>Greg_Bernstein:</cite> go ahead.</p>
+<p id=95b3 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, that's fine.</p>
+<p id=afbc class="phone s03"><cite>Manu_Sporny:</cite> I can review it. Greg, just ping me repeatedly until I do it, please. I'm just under a heavy workload. So I</p>
+<p id=915e class="phone s04"><cite>Greg_Bernstein:</cite> Okay, And there's one last one. Let's see. This one is for ECDSA. Remember this is factoring in the common algorithms. And let me go put that in because I'm just trying subtopic not topic topic.</p>
+<p id=b05d class="phone s04"><cite>Greg_Bernstein:</cite> I'm just trying to get these things merged so people can go ahead with additional things.</p>
+<p id=ef0f class="phone s04"><cite>Greg_Bernstein:</cite> We're seeing these server errors. So, I'm glad it wasn't me. I'm very sad that it's this bigger thing. We've got two reviewers able to merge.</p>
+<p id=ce40 class="phone s02"><cite>Wesley_Smith:</cite> I'm check Greg.</p>
+<p id=f1aa class="phone s02"><cite>Wesley_Smith:</cite> We're about out of time, so wrap up.</p>
+<p id=bfa4 class="phone s04"><cite>Greg_Bernstein:</cite> How long am I supposed to wait till after somebody approves process-wise?</p>
+<p id=3727 class="phone s02"><cite>Wesley_Smith:</cite> Mon, go ahead.</p>
+<p id=4b5d class="phone s03"><cite>Manu_Sporny:</cite> Seven days to approvals,…</p>
+<p id=10007 class="phone s03"><cite>Manu_Sporny:</cite> Greg. So you wait for raise the PR. No. yeah. Seven days for so one week from when you raise the PR. You can merge it as long as you have at least one independent review. ideally from someone that really knows the spec and…</p>
+<p id=4c2d class="phone s04"><cite>Greg_Bernstein:</cite> Seven days from when I do the poll request.</p>
+<p id=2d88 class="phone s04"><cite>Greg_Bernstein:</cite> Not seven days from the review. Okay.</p>
+<p id=6c4c class="phone s03"><cite>Manu_Sporny:</cite> then a code owner one of the editors. It's seven days from the moment you raise it.</p>
+<p id=e3c9 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, go ahead.</p>
+<p id=012f class="phone s03"><cite>Manu_Sporny:</cite> I mean, it's a judgment call. if there is anyone that is not happy in the don't merge it because they're just going to ask you to unmerge it, So, usually it's a judgment call. If you think you've addressed everything and everyone's going to be happy with the changes you made, you can go ahead and merge it after 7 days. I do have one thing I put myself on the queue which is to share the current state of the meeting.</p>
+<p id=530f class="phone s03"><cite>Manu_Sporny:</cite> How hard is this 12:00 p.m. Wednesday blocker for you?</p>
+<p id=97ea class="phone s02"><cite>Wesley_Smith:</cite> That is the Jason LD working group meeting.</p>
+<p id=f29b class="phone s03"><cite>Manu_Sporny:</cite> All It's going to be Monday at 12 then. That's what we're moving this call time to.</p>
+<p id=b014 class="phone s03"><cite>Manu_Sporny:</cite> So hopefully that works for everyone. Thank you, Avon, for being a squiggly line here. But clearly we do not expect you to eat into your dinner time in Europe to join these calls.</p>
+<p id=a703 class="phone s04"><cite>Greg_Bernstein:</cite> Yes. All right.</p>
+<p id=bf42 class="phone s03"><cite>Manu_Sporny:</cite> I'll announce this to the mailing list and then I'll update the meeting things events.</p>
+<p id=dd31 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=74c5 class="phone s04"><cite>Greg_Bernstein:</cite> I think we're out of time.</p>
+<p id=5ef5 class="phone s02"><cite>Wesley_Smith:</cite> we are indeed. Thank you everybody for the time today. I will see some of you later this week and most of you next</p>
+<p id=b3a3 class="phone s04"><cite>Greg_Bernstein:</cite> Okay, thanks Wes. Meeting ended after 01:01:28 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
