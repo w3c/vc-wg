@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 8 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>8 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike's_Presentation, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9c36">VCWG VCALM Meeting</a></li>
+<li><a href="#34a6">Horizontal Review For Candidate Recommendation</a></li>
+<li><a href="#4014">Threat Model Tooling Status</a></li>
+<li><a href="#5e20">Credential Preview Before DID Proof</a></li>
+<li><a href="#8ff7">Privacy Considerations of Credential Offers</a></li>
+<li><a href="#9222">BBS Crypto Suite And Exchange Data</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=18f7 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Hey everyone, we'll just wait another minute before we get started.</p>
+</section>
+
+<section>
+<h3 id=9c36>VCWG VCALM Meeting</h3>
+<p id=2e2b class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> right share on my screen. Right. hello everyone and Today is Tuesday, September 8th, 2026, and this is the weekly task force call for verified credentials API for life cycle management task force. my name is Kzik and I'll be guiding us to the call today.</p>
+<p id=e6b9 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Just as a reminder, these calls are recorded and transcribed and we welcome contributions from everyone who is a member of the task force and working group. so to get started, first I wanted to open the floor, see if there's any community updates that anyone has to share the group. I know that GDC was a big event that happened last week. There was also identity week and maybe one or two other big events. So, I wonder if anyone who attended any of those events wants to report anything relevant for this task force. See if there's any raised hands here. Okay, that's fine too.</p>
+</section>
+
+<section>
+<h3 id=34a6>Horizontal Review For Candidate Recommendation</h3>
+<p id=a60e class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So today just wanted to mostly just going to be the normal flow of reviewing PRs and issues but ahead of that I want to give a quick update on horizontal review for candidate recommendation and I also wanted to check to see if there's any relevant updates regarding the threat model tooling that we discussed last week. Any other items that folks want to touch on today outside of these Okay, that's fine with me. So, I will go ahead and dive in. So, towards the end of last call, I had an update for security and privacy horizontal review requests. I had just since then, later that same day, submitted the tag architecture design review.</p>
+<p id=3e79 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So that was the last of the five reviews from the different subgroups and interest groups that are relevant. So we wait for those responses. And in the meantime, obviously there's tons of things to do. But that's just a relevant update that I figure was worth sharing for those who are interested in following along with that or on that. What you would need to do is just go to the issue that is about horizontal to review which is this one. And here you'll see all the basically is linked all the five questionnaire issues that we have submitted or rather that we completed for ourselves prior to the review.</p>
+<p id=fb73 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> And then in each of those' to for example if I click into I8N1 you'll linked to it is the actual request with that within that group. So for example if I click on this one you'll see this will be actually submitted to the internaliz internationalization group. so that's just for anyone who's interested in following along as they make progress here. As you see, this one for example was assigned 3 weeks ago. So that's all that there is to report with that. Any questions, comments, concerns regarding that. Okay, I don't think there are. So that's fine. We'll move on.</p>
+</section>
+
+<section>
+<h3 id=4014>Threat Model Tooling Status</h3>
+<p id=4eec class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> The next thing I want to check on is the state of the threat model tooling. This based off discussion we had last week. Mano, you had some things you had reported on with that. so go ahead.</p>
+<p id=eaa3 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. I think based on the discussion we had, I don't know in this group or some other group, we went back to the discussion thread. and I think we have agreement, correct me if you think differently, Joe, but I think we have agreement to basically get W3C management to approve a blanket, threat models publication process. so we don't have to do seven to 10 different resolutions. So that means that PL would review or Francois or whoever would review our desire to publish as notes and then we would set up a kidna to autopublish to those new TR spaces.</p>
+<p id=3415 class="phone s02"><cite>Manu_Sporny:</cite> We're still waiting for them to acknowledge that they saw that. Maybe we will, pass a resolution during the verifiable credential call tomorrow to do that.</p>
+<p id=87c8 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> All right.</p>
+<p id=469a class="phone s02"><cite>Manu_Sporny:</cite> And then I think that'll be that in the meantime, know. so I think that's what we're doing long term or at least in the next six months term. I did also I was getting some publication failures on the VC data model threat model thing and I did implement multi-chapter publication as four lines of script in the akidna workflow. it's not perfect.</p>
+<p id=13a1 class="phone s02"><cite>Manu_Sporny:</cite> that's not what we want to do long term, but it did work. which means it really wouldn't be that much effort to update respect to do multi- chapter,…</p>
+<p id=79b2 class="phone s02"><cite>Manu_Sporny:</cite> but we decided that we're not going to do that. so that's it. I think we just wait for W3C management. We have to pass a resolution on the call tomorrow and then wait for W3C management to approve publication of the threat models as notes and then we'll just move all the repos over to do that. That's it.</p>
+<p id=8d82 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks, can I rely on you to draft the context for that resolution for tomorrow?</p>
+<p id=b51f class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I can come up with something. I don't know Joe if you've heard anything. We asked the chairs to do it.</p>
+<p id=0fa2 class="phone s02"><cite>Manu_Sporny:</cite> So in theory the chairs and staff contact will have it done but if not I can draft something during</p>
+</section>
+
+<section>
+<h3 id=5e20>Credential Preview Before DID Proof</h3>
+<p id=2f7f class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks, so we're feeling good about deploying threat models. Is that a hand raised? go ahead, Patrick.</p>
+<p id=cfa9 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, I just had I guess a topic or a question and I'm not sure if it's been already addressed in a PR or discuss. I can't remember. I thought I saw something about it. so my question is regarding exchange where the goal is to issue a credential but there is a did request that comes beforehand. so currently I think the user the wallet cannot see a preview or an offer of the credential without did first.</p>
+<p id=15f3 class="phone s03"><cite>Patrick_St-Louis:</cite> And I was wondering if this is something we would want to look into. Meaning before the holder proves control of it did, they can receive a sort of a preview of what the issuer intends to issue. I know with yes, I think this is kind of it here. So yeah maybe we can discuss this while we discuss this PR.</p>
+<p id=368a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yeah, go ahead, Dave. Okay,…</p>
+<p id=7dc8 class="phone s04"><cite>Dave_Longley:</cite> We can discuss it when we get there.</p>
+<p id=17bb class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> we are entering into discussions of PR. So, guess why don't we just start with this one? go ahead, Quick subtopic as well.</p>
+<p id=32dd class="phone s04"><cite>Dave_Longley:</cite> Waiting for you to topic it.</p>
+<p id=bab4 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay, here we go.</p>
+<p id=cfc6 class="phone s04"><cite>Dave_Longley:</cite> Yeah, thank you. yes. So that is one of the reasons for this PR Patrick is so that…</p>
+<p id=94ab class="phone s04"><cite>Dave_Longley:</cite> if an issuer wants to express information which have may or may not be fully filled out but they could at least minimally express the type of credential and…</p>
+<p id=c90b class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> It's almost Thank you,…</p>
+<p id=23b5 class="phone s04"><cite>Dave_Longley:</cite> and so that is on offer if the user elects to fulfill a particular query that is in the VPR. so that what you just described where the holder might want to see what credential they will get if they respond to a certain query is what this feature is one of the things that this feature is intended to provide.</p>
+<p id=334c class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead, Patrick. Jesus.</p>
+<p id=63a2 class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=535f class="phone s03"><cite>Patrick_St-Louis:</cite> I think this answers it very so yeah obviously it would be a very slim content of the credential it wouldn't have a status list but it could say what status method it would use would have some values provided. yeah, I think this answers it because I've been experimenting a lot with the oid for VCI last couple of weeks and that's one of the big distinction between both is that with oid for VCI, you get to see the credential to be issued before you need to engage with the did. You need to prove control over a did. and this was kind of something I thought was missing so that both flows couldn't be very similar.</p>
+<p id=60c9 class="phone s03"><cite>Patrick_St-Louis:</cite> That's all.</p>
+<p id=3159 class="phone s04"><cite>Dave_Longley:</cite> Yeah, hand I think this covers the same case that oid for VCI covers,…</p>
+<p id=ffff class="phone s04"><cite>Dave_Longley:</cite> but it also importantly covers expressing that information within an exchange after you've already started communicating with a wallet. So one thing that's important here is there are issuer coordinators who would not want to advertise certain VCs that they have on offer through publicly discoverable endpoints. because this travels within the exchange they can decide how much to reveal or how much not to reveal and they can also do that on the basis of being on a certain step. So step one maybe they'll say a little bit and if you get through step one and maybe you receive something then you can receive something else at step two because you've met some requirement.</p>
+<p id=4f42 class="phone s04"><cite>Dave_Longley:</cite> So I think that's also an important part of this journey.</p>
+<p id=1a49 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks Dave.</p>
+<p id=4d8c class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead, man.</p>
+</section>
+
+<section>
+<h3 id=8ff7>Privacy Considerations of Credential Offers</h3>
+<p id=e84d class="phone s02"><cite>Manu_Sporny:</cite> Yeah, and to add to what Dave's saying, this is really important if you are a part of a vulnerable population. meaning I believe the way OID4 VCI works is it would just advertises it to the public. which then allows people to kind of understand the types of populations a certain website serves. whereas putting it within the flow itself can only exposes that information potentially after you've hit a certain gate to establish that you're part of that vulnerable population. So I think it's really important these are not equivalent features.</p>
+<p id=7ba2 class="phone s02"><cite>Manu_Sporny:</cite> I think one of them has very different privacy characteristics from the other one.</p>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> And I don't know if we should say something to that effect in the spec about it. Maybe in the threat model. That's it.</p>
+<p id=64c0 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks, Mono.</p>
+<p id=4f29 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> potentially could be worth calling out in a separate PR. I know that there's based off of the most recent activity in this PR, there's already at least one issue that's created off of this, which was to add an example of what it would look like. So I guess for the question for Eric is …</p>
+<p id=22b6 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> where are we at with this Looks like I think you've addressed most if not all comments so far. Go ahead, Eric.</p>
+<p id=60d6 class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=d2a7 class="phone s05"><cite>Eric_Schuh:</cite> as far as I'm concerned, I think the outstanding comments have been addressed. the build issue is one that I think Monu last week you had mentioned that that's kind of pervasive at the moment. I'm not sure if this is a similar one or not. I was just noticing that the autobuild system was throwing an error and when I looked at it, it's not clear to me what the error is. but when I run this all locally from local files and…</p>
+<p id=fdc2 class="phone s05"><cite>Eric_Schuh:</cite> render it, it all seems to work fine. so I think that's my only concern at the moment.</p>
+<p id=6b53 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Got you.</p>
+<p id=eeb1 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks, Go ahead, Patrick.</p>
+<p id=792c class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah a bit in the same idea. do we need to define this credential offer or we sort of just say it's a part of a credential is this enough because when I look at the spec right we have the HTTP API we have is verifying requesting a presenting workflow exchange and interact initiating interactions.</p>
+<p id=979c class="phone s03"><cite>Patrick_St-Louis:</cite> Do we need offering a credential equivalent to the requesting a presentation here or is it sufficient to just say we have this credential offer object which is a mix of something that kind of looks like a VC.</p>
+<p id=1417 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Meaning are you asking…</p>
+<p id=3f87 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> if we should have not just like this field but a flow or a pro basically call out Yeah, my friends are entirely</p>
+<p id=15cc class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah, because I can see this being useful in some different crypto suite where further exchange is needed you can't just ask for a data then issue like there are I'm thinking of something like anon for example right where the holder needs to create a credential request based on a credential offer these are very specific things. and this kind of exchange I don't see right now in the spec</p>
+<p id=f00f class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I'm sorry.</p>
+<p id=3fd9 class="phone s03"><cite>Patrick_St-Louis:</cite> where it would happen. the spec right now is just I issue There's no further sort of attribute binding or anything of the sort. and credential offer is kind of being added as just this optional thing you can add to presentation request essentially. I'm just wondering if and…</p>
+<p id=132e class="phone s03"><cite>Patrick_St-Louis:</cite> again knowing we want to get to recommendation like not saying it's something we want to have here but is this something that could have its own space in the spec just the way that we have requesting a presentation which has the different query by example the authentication etc. we could have offering a credential, which has kind of the same similar equivalent.</p>
+<p id=ad8f class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Got you.</p>
+<p id=3059 class="phone s03"><cite>Patrick_St-Louis:</cite> Was it</p>
+<p id=ea7d class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay. Thanks, Patrick. Go ahead, man.</p>
+<p id=3bc9 class="phone s02"><cite>Manu_Sporny:</cite> Two responses. The first one to I looked at the spec produ issue and it looks like it's a transient issue, So, don't worry about it. blowing up. it looks like they're still having struggles with spec ref and some of that other stuff. to Patrick's point, I think we need to be careful to not try to get feature parody with other protocols. especially when the other protocol might be doing something that's not good.</p>
+<p id=8783 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thank you.</p>
+<p id=f3b9 class="phone s02"><cite>Manu_Sporny:</cite> So there is this kind of desire to push more and more making logic into another protocol meaning like the presentation the workflows and the exchanges. I think there is a point of diminishing returns. when we first started all of this stuff, the presumption was that you would go through a lot of that, sensemaking through an interface for the individual a web page.</p>
+<p id=cb47 class="phone s02"><cite>Manu_Sporny:</cite> Basically, you would go in and you would log in and then you would be like, I want an X type of credential and you would do a lot of that sense making through a UI and only when you're pretty you've got it narrowed down pretty completely do you, move over to the workflow API stuff. I would still suggest that we stick to that. So this concept that because didcom has a bunch of stuff around credential offers and oid has a bunch of stuff around it but I'm gonna argue pretty heavily that a lot of that is overkill and unnecessary and complicates the protocol beyond the 8020 rule.</p>
+<p id=b332 class="phone s02"><cite>Manu_Sporny:</cite> And so I'd be concerned about adding that feature, Patrick, to the spec, especially at this point. it's not clear to me that it's really that useful. and the places I've seen it used lead to completely centralized wallet experiences,…</p>
+<p id=9623 class="phone s02"><cite>Manu_Sporny:</cite> which is something we should not be, promoting or and for those reasons, I would like us not to go all the way down the credential offer rabbit hole. that's it.</p>
+<p id=7628 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks M.</p>
+<p id=b4c9 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I'll also say Patrick to respond to that is that Eric created this issue to add an example. So, at the very least, we'll have an example of what it will look like to include this. if not as prodigious as maybe what you're asking. but hopefully that will at least give good guidance to reviewers of the spec on how to request or to review what credentials are being offered. not sure if there was a hand raised.</p>
+<p id=d24a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yes, go ahead, Dave.</p>
+<p id=d815 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I just wanted to plus one …</p>
+<p id=440a class="phone s04"><cite>Dave_Longley:</cite> what Mon was saying. I think we want to keep the number of primitives that wallets need to be able to speak very low small so that we don't recreate all the richness you can do on the web that you would express on an issuer or verifier coordinator website that allows them to provide whatever unique experience they want for picking up a credential or presenting them or whatever.</p>
+<p id=10001 class="phone s04"><cite>Dave_Longley:</cite> I think we want to keep as much of that there as possible. And if you need to do anything more rich than sending VPs and V and VPRs because there's some piece of information that's in your wallet that you need to the workflow service. If you need to do more rich interface than that then the redirect URL that sends you to some other place to do some other interaction is the way to go. and that other place…</p>
+<p id=8302 class="phone s04"><cite>Dave_Longley:</cite> if all it's going to do is speak VPs and VPRs, you don't need to leave the wallet. you can just stay there and bounce around as much as you need to. But if you're going to introduce other primitives and need special interfaces and type and put stuff into fields, we really should not be trying to recreate that inside of digital wallets because we'll make digital wallets have to be far more complicated than they are today. You're turning them into web browsers.</p>
+<p id=7be5 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks, Dave.</p>
+<p id=89d3 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead, Patrick.</p>
+<p id=b138 class="phone s03"><cite>Patrick_St-Louis:</cite> So does this workflow has been demonstrated currently to successfully issue something with So I'm looking at the BBS crypto suite,…</p>
+<p id=4c1e class="phone s03"><cite>Patrick_St-Louis:</cite> And there's a bunch of features. Do we have what it needs right now to successfully enable all these features to be replicated with air? So I'm looking at pseudonyms right like holder bounding all these kind of things also I don't think BBS enables predicates I'm not sure but these are quite important features in my opinion for ideal credentiing and privacy can we do these things right now or is there a missing</p>
+<p id=3499 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Great question,…</p>
+<p id=fc9e class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Parick. I know that we actually have an outstanding issue for that recently assigned to himself. So, I'm sure Eric you have your hand to address that. Go ahead.</p>
+<p id=12e7 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, we actually I think took a quick look at this last week,…</p>
+</section>
+
+<section>
+<h3 id=9222>BBS Crypto Suite And Exchange Data</h3>
+<p id=ad3c class="phone s05"><cite>Eric_Schuh:</cite> but Patrick, I think some of what you're looking for is addressed by PR 713 which was a very old outstanding issue that Monu created in regards to BBS, but this is effectively adding an exchange verifiable presentation type as another option when participating in an exchange.</p>
+<p id=7429 class="phone s05"><cite>Eric_Schuh:</cite> Which this presentation type has this exchange data field that is intended to allow for the exchange of any of the pseudonyms or Zcap ids that might need to be passed in addition to the credentials.</p>
+<p id=594b class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Let's go.</p>
+<p id=358e class="phone s05"><cite>Eric_Schuh:</cite> So I believe that 713 is trying to address at least part of what you're asking for in addition to this credential offer</p>
+<p id=bc8e class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> We'll take a look at that soon.</p>
+<p id=4637 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead, Dave.</p>
+<p id=b220 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I just want to say 713 I think is laying the foundation for where this goes. but we do still need to specify clearly what does it look like when you're asking when you're providing what is necessary and commitments and such to get a credential that has a BBS proof on it that is pseudonym enabled. So we have to express that information but we do have a PR for where that information goes. I don't think it's a direct recreation of that.</p>
+<p id=62b3 class="phone s03"><cite>Patrick_St-Louis:</cite> And isn't that recreating this credential request mechanism just with a different name? doesn't that add in itself these primitives?</p>
+<p id=cb16 class="phone s04"><cite>Dave_Longley:</cite> Since when we talk about credential offer, I think credential offer as a concept is probably too abstract.</p>
+<p id=0d77 class="phone s04"><cite>Dave_Longley:</cite> It is a fact that information needs to go into the security layer of the credential and that has to get in there somewhere. and that's something that has to be exchanged directly between the wallet and the workflow service. But that's a little bit different from how much are you crafting and deciding what goes into your credential as data on that's a little different. if you're on an issue coordinator website and…</p>
+<p id=9d6f class="phone s03"><cite>Patrick_St-Louis:</cite> Yeah. Yes. Okay.</p>
+<p id=9f08 class="phone s04"><cite>Dave_Longley:</cite> you're figuring out what information is going to go into your credential, that's a specific situation or scenario or experience. And that's different from these cryptographic bits of information That have to get in there.</p>
+<p id=0268 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Great. Thank you all.</p>
+<p id=bd77 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So I think we're ready to merge. The only thing is I'm wondering is it looks to me after the most recent acceptance of Dave's suggestion that we may have added these changes.</p>
+<p id=d1ac class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> It looks a little bit like what we were seeing before with changes that were unrelated. Unless I'm missing something here. I don't know if we have to redo this, but go ahead.</p>
+<p id=d878 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I have a suspicion that something might be going on with GitHub…</p>
+<p id=2e31 class="phone s05"><cite>Eric_Schuh:</cite> because earlier today when I was updating another PR, it did this exact same thing for the entirety of index.html. HTML and…</p>
+<p id=b43f class="phone s04"><cite>Dave_Longley:</cite> We know what this problem We know… Eric Schuh:</p>
+<p id=ebda class="phone s05"><cite>Eric_Schuh:</cite> it confused me enough. Okay,</p>
+<p id=704a class="phone s04"><cite>Dave_Longley:</cite> what this problem is. this is the end of line problem and this repository I guess has not get attributes fix or…</p>
+<p id=10002 class="phone s04"><cite>Dave_Longley:</cite> whatever that was done in some other repos. And so Okay.</p>
+<p id=05bc class="phone s02"><cite>Manu_Sporny:</cite> Unfortunately, it has that.</p>
+<p id=7272 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yeah. Yeah.</p>
+<p id=7005 class="phone s02"><cite>Manu_Sporny:</cite> And so this is a new bug,…</p>
+<p id=de7c class="phone s04"><cite>Dave_Longley:</cite> Great.</p>
+<p id=114f class="phone s02"><cite>Manu_Sporny:</cite> I think. I mean, I'm get attributes in VCOM that was put in last month.</p>
+<p id=9d3e class="phone s04"><cite>Dave_Longley:</cite> Does it apply to YAML files? Okay.</p>
+<p id=68de class="phone s02"><cite>Manu_Sporny:</cite> Yes. I'm looking at it right now.</p>
+<p id=9649 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So yeah,…</p>
+<p id=801d class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> it was added before everyone else's was and before we got the advice from Ivon and such, but I do believe it still includes what was recommended there if not mistaken.</p>
+<p id=665a class="phone s02"><cite>Manu_Sporny:</cite> I think it does. So, this is a new thing GitHub has decided to unleash on the world.</p>
+<p id=afa0 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> That's I guess we'll have to revisit this then, unfortunately. Yeah. we'll need to investigate that offline then. And in the meantime, I guess Eric, if you have any time, we can maybe try to fix that for this particular PR at some point. But which means for now all the PRs we process will mostly be the ones that don't need to have any more suggestions and such on the call. but thanks this is one of those that we can merge offline whenever we resolve the issue. Any other questions, comments about this before we move on? If not, we can move on. All right.</p>
+<p id=99ab class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Do we want to look at any of yours older ones or is that still under construction?</p>
+<p id=5db5 class="phone s03"><cite>Patrick_St-Louis:</cite> Let's skip it for today.</p>
+<p id=3284 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay, no problem. Next up, we want to Okay, so model. That's a big one. Why don't we Sorry, there's a hand raise. Go ahead, Eric. Let's check this.</p>
+<p id=89f2 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I did just want to mention that I believe the fixed respect OAS render error PR can be closed as we updated the respec OAS version to 102.</p>
+<p id=f6cf class="phone s05"><cite>Eric_Schuh:</cite> And I'm fairly certain I double checked the live version of the spec and all of these render issues were fixed by the respect 102</p>
+<p id=e3e1 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks. Close with comment.</p>
+<p id=d16e class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> And is there an issue I guess that this relates to or I guess it would have been maybe I'm not sure if this related to this or not but that's the other PR did okay to it okay great that's a</p>
+<p id=4697 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, they did link to the issue.</p>
+<p id=d411 class="phone s05"><cite>Eric_Schuh:</cite> It was 691, I believe, is what I saw there. the other That's the other.</p>
+<p id=513b class="phone s05"><cite>Eric_Schuh:</cite> It might have been the second link I put there.</p>
+<p id=5624 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay. …</p>
+<p id=2cb1 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Got you. So, this is fixed by another PR, I guess.</p>
+<p id=be83 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> PR. I will have to find is that PR already merged, Eric?</p>
+<p id=1374 class="phone s05"><cite>Eric_Schuh:</cite> Yes. 706 is merged and…</p>
+<p id=a1a5 class="phone s05"><cite>Eric_Schuh:</cite> I believe both of those have merged.</p>
+<p id=65f8 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Great. Thank you.</p>
+<p id=a4f3 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So, let's just quickly refresh this. Go ahead,…</p>
+<p id=fd7a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Patrick. I suspect…</p>
+<p id=d808 class="phone s03"><cite>Patrick_St-Louis:</cite> …</p>
+<p id=035c class="phone s03"><cite>Patrick_St-Louis:</cite> has this been deployed this fix? Because I'm still seeing render error on the spec. Just want to make sure..</p>
+<p id=0f06 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> what might be happening is I know there's been publication issues with the kit and specraph. I know that it still hasn't deployed from I think last week actually it deployed something. I don't think it's reflected yet. So, it could be that. But go ahead, man.</p>
+<p id=e466 class="phone s02"><cite>Manu_Sporny:</cite> You might have a try hard reloading,…</p>
+<p id=4114 class="phone s02"><cite>Manu_Sporny:</cite> Pa I did This is the VCOM spec, right, And if I do a hard reload, I get zero errors and I don't see any render errors show up. What was the exact thing that was blowing up, Just so I can look for it.</p>
+<p id=358f class="phone s05"><cite>Eric_Schuh:</cite> So you would have seen it …</p>
+<p id=a5f8 class="phone s05"><cite>Eric_Schuh:</cite> if you just go to just issuing credential the very first property there was render error section 3.2.1 Yeah I was Yep.</p>
+<p id=9a53 class="phone s02"><cite>Manu_Sporny:</cite> Section or…</p>
+<p id=d532 class="phone s02"><cite>Manu_Sporny:</cite> search. 321.</p>
+<p id=e453 class="phone s03"><cite>Patrick_St-Louis:</cite> So, the latest draft is fixed. The latest published version still has these. So, I'm assuming Okay.</p>
+<p id=f14f class="phone s02"><cite>Manu_Sporny:</cite> Correct. Yeah.</p>
+<p id=b121 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Right. Okay.</p>
+<p id=8937 class="phone s03"><cite>Patrick_St-Louis:</cite> Perfect. Okay. I just found Yeah. So, the editors dropped there are gone.</p>
+<p id=bd87 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thank you,…</p>
+<p id=52ea class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Next, we'll come back to the start model one soon. Let's go to this one since we were just discussing it. 7:13. I realize I have not been doing topics. So, let me do that. go ahead, Eric. Okay.</p>
+<p id=8bbf class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I can just start speaking as you switch topics.</p>
+<p id=c2c0 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead.</p>
+<p id=a4d2 class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=10003 class="phone s05"><cite>Eric_Schuh:</cite> so this Dave, you might be able to give a more clear picture of all of the intent behind this. but essentially, I think it lays the groundwork for a mechanism to allow for data that is not contained in a VC, but is needed as part of a particular exchange, whatever that data might be. whether it's for BBS pseudonyms or Zcap issuance or payment information of some kind. but effectively this lays the groundwork to have a mechanism to exchange that data within an exchange. and Dave, I saw that your comment was mentioning updates to the VC data model.</p>
+<p id=d806 class="phone s05"><cite>Eric_Schuh:</cite> I guess I don't believe that we're blocked here by that, but I just wanted to make sure that there was no actions that needed to be taken before this gets merged.</p>
+<p id=df97 class="phone s04"><cite>Dave_Longley:</cite> There is an action we do need a context because we're declaring a new property called exchange data. So we need a context that define in creating that context it will make it so that we can use this with the existing 2.0 context or…</p>
+<p id=51b9 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay.</p>
+<p id=b3ce class="phone s04"><cite>Dave_Longley:</cite> existing version two context for the VC data model. and we can ask the group if they might include whatever terms we define in there in the 2.1 context so that if you're using that context, you get the exchange data property for free. But I think whenever we do this, we always create a new context so you can use it with the older versions.</p>
+<p id=6c18 class="phone s04"><cite>Dave_Longley:</cite> And I think this also implies we could have a conversation about this, but I think it implies we're going to need another type as well. So, the type is not just a verifiable presentation. It's some other type name that we come up with. One was suggested in the issue. We could use that. but we need a context that defines those two terms, a type and the exchange data property. and then obviously you would include that context whenever creating a presentation that carries this kind of data.</p>
+<p id=9c73 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Great so then that is one blocker. There's also a question here, but go ahead.</p>
+<p id=c31d class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I'm trying to think of what needs to be done over in the BC data model. I'm trying to figure out if we can get away by not having to define a new type in using at least for the 21 context. I think we'd have to create a new type for the separate context. I'm wondering if we need that for the 21 context and I realize that creates a problem.</p>
+<p id=fa68 class="phone s04"><cite>Dave_Longley:</cite> If we don't do that,…</p>
+<p id=c0ac class="phone s04"><cite>Dave_Longley:</cite> we will make it so that the two contexts are incompatible with each other,…</p>
+<p id=2f36 class="phone s04"><cite>Dave_Longley:</cite> which or may not be a problem, but the term definitions will no longer line</p>
+<p id=d95e class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I'm trying to figure out…</p>
+<p id=9bb3 class="phone s02"><cite>Manu_Sporny:</cite> what the ideal thing is,…</p>
+<p id=a73a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I don't know</p>
+<p id=3e5c class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> what Go ahead, Patrick.</p>
+<p id=03bf class="phone s02"><cite>Manu_Sporny:</cite> having to do this all over again from scratch. This would have been in a verifiable presentation from day one, right? So, I'm trying to land us there. and if the cost for that is the two contexts can't be used with each other,</p>
+<p id=2f17 class="phone s02"><cite>Manu_Sporny:</cite> I think that's fine. unless I'm missing something.</p>
+<p id=8a08 class="phone s03"><cite>Patrick_St-Louis:</cite> Is this something that could go in the proof or…</p>
+<p id=bf7e class="phone s03"><cite>Patrick_St-Louis:</cite> does it need to be at the presentation level? Can it go in the presentations proof object? Okay.</p>
+<p id=cef2 class="phone s04"><cite>Dave_Longley:</cite> it does not belong in the proof. It's not strictly about cryptography. if you wanted to include other things in your exchange like ZCAP reference identifiers and…</p>
+<p id=8221 class="phone s04"><cite>Dave_Longley:</cite> things like that, that's where it would go. And I did answer Nate's question on the PR that it is intended to go inside of the verifiable presentation so that it can optionally be signed. So if you put it in there and you have a signed presentation, your signature covers that this exchange data as</p>
+<p id=668a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Got it.</p>
+<p id=dfc3 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So we need to first question is do we want that contest creation to block this or are we okay with merging this and…</p>
+<p id=b139 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> having a separate PR for that.</p>
+<p id=6a1b class="phone s04"><cite>Dave_Longley:</cite> It will be invalid…</p>
+<p id=233b class="phone s04"><cite>Dave_Longley:</cite> if we don't define the term. So, we probably should not urge the PR because it will create something invalid. Kayode Ezike's Presentation:</p>
+<p id=a5d0 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> All So in that case Eric we will need to create a new context with this term and for the VP21 context I guess you would have to create an issue inside of the VC data model spec is that correct to include this okay …</p>
+<p id=ef49 class="phone s04"><cite>Dave_Longley:</cite> Yeah, if we want to include it in that context, we would create an issue or bring it to the group.</p>
+<p id=0981 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I think there wasn't a hand. Okay. go ahead, Eric.</p>
+<p id=4e0f class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I …</p>
+<p id=c65e class="phone s05"><cite>Eric_Schuh:</cite> I think that makes sense. I suppose if we're adding the context outside of the VC data model group, which I feel like I heard was an option. I guess my struggle here is I haven't dealt with context before myself. So just some direction would be helpful in terms of what needs to be added where.</p>
+<p id=2080 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yes. another go.</p>
+<p id=fe5b class="phone s04"><cite>Dave_Longley:</cite> I think we followed this pattern in for bitst string status list and some other ones. So there might be a pattern that we can look at</p>
+<p id=4c52 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I guess there's a bunch of different contexts that use this format of static context that I know digital bazar helps to manage. maybe we can dig up an example of that and include it in the comment here and that can be a starting point for you I can take a test to dig that up too. perfect. Yeah, exactly. Yeah. So, that jump way back there, but hold on. Let me just add those two.</p>
+<p id=6362 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So there's a few things about standing tasks create exchange data. I'll link to the examples after. the other thing is to add an issue in what's the syntax for this? I'll fix it later.</p>
+<p id=16f8 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> The C data model to add exchange data to C1 text. and I think that's it. Once we do that, we should be all set to where it's just PR. Go ahead.</p>
+<p id=a154 class="phone s03"><cite>Patrick_St-Louis:</cite> Just want to add a bit. So this is something that needs to addited to presentation. Does it apply for envelope verifiable presentation as well? the reason I'm asking more specific ically is I believe…</p>
+<p id=93fd class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Good question.</p>
+<p id=ae6c class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> All right. Good.</p>
+<p id=10004 class="phone s03"><cite>Patrick_St-Louis:</cite> if I read it correctly in the VCDM 2.0 for envelope presentation the type is not an array but it's just the string envelope verifiable presentation. So this exchange data would need to be scoped to the type string exactly. It cannot add a new type in the array. the Dave</p>
+<p id=6ac0 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> What happened?</p>
+<p id=3e70 class="phone s04"><cite>Dave_Longley:</cite> …</p>
+<p id=07d0 class="phone s04"><cite>Dave_Longley:</cite> depending on what we want to do with enveloped presentations, that might be a reason to just define exchange data as a property. It's pretty unlikely that anyone would have used the exchange data term in any of their VCs, but whenever you attach a verifiable credential to a presentation, we clear all context terms. So, I don't think we even have a problem there. So, I think we might define exchange data globally.</p>
+<p id=c943 class="phone s04"><cite>Dave_Longley:</cite> or define and what I'm running a processor in the back of my brain even if we defined it globally the context that you bring in for VCs would define it globally so we have two paths forward here one of them is to define exchange data as a global term the other one is to pin it to a type and…</p>
+<p id=9a28 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> That's okay.</p>
+<p id=62c8 class="phone s04"><cite>Dave_Longley:</cite> then there are two paths for the type. Either we're going to change the existing types. So, we would put this both on verifiable presentation and envelope presentation if we wanted on an envelope presentation, or we would create a new type. for this context that we're creating, since it's is meant to be used with a 2.0</p>
+<p id=10005 class="phone s04"><cite>Dave_Longley:</cite> context. I imagine we would define this globally or we would add a new type that could be added to a verifiable presentation and it would not work with envelope presentations.</p>
+<p id=b714 class="phone s04"><cite>Dave_Longley:</cite> I think those are the only options.</p>
+<p id=a883 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> And so the question becomes…</p>
+<p id=25b4 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> which is the best option? it's pros and cons. So we either add it directly to the VP type or we add a separate type that can be pulled in. I don't have a strong opinion at the moment but are there any objections to any of those options? Go ahead.</p>
+<p id=9925 class="phone s02"><cite>Manu_Sporny:</cite> Let me try leading with a strong opinion. we put it under verifiable presentation full stop. We don't define a new term in the VC data model 21 context. What does that prevent us from doing?</p>
+<p id=10006 class="phone s03"><cite>Patrick_St-Louis:</cite> with envelope verifiable presentation. I think do we want it in envelope presentation would be is that a yes or no? Maybe I don't know I think this is</p>
+<p id=941f class="phone s02"><cite>Manu_Sporny:</cite> I'm wondering what is that use case, Patrick? I get that it doesn't allow us to do that, but what use case can we not now accomplish…</p>
+<p id=c338 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I did. Good.</p>
+<p id=e1ac class="phone s02"><cite>Manu_Sporny:</cite> because of that?</p>
+<p id=7677 class="phone s04"><cite>Dave_Longley:</cite> I wanted to point out that if we're creating a new context to work with the 2.0 context, we can't do that. so just noting that that's not a thing we</p>
+<p id=6374 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I wasn't talking about that use case, Dave. I was talking about the other one. plus one. I get that. I don't know how many people are actually going to end up using that extra context. I don't think it's a lot of people. And we can, create whatever type we want there. And then maybe the side effect of that is that if you really want to use it with an envelope context, then you use that other context instead of the 21 context. I don't know. I'm sure that was hard to follow, but did you understand what I was saying?</p>
+<p id=4158 class="phone s04"><cite>Dave_Longley:</cite> a little I mean we could define it globally with this new context. Fewer people will use that and going forward they could just use 2.1 and then whatever happens in 2.1 is what we have to discuss. Yeah, I don't know…</p>
+<p id=3793 class="phone s02"><cite>Manu_Sporny:</cite> So let's assert in 2.1 we are not going to define it globally. There's not going to be a new type. It's going to be under verifiable presentation that type. And that makes it so that we can't use it in an envelope presentation and do we care? And I'm asserting we don't care unless we've got a really good use case that we can't do because of that.</p>
+<p id=e11f class="phone s04"><cite>Dave_Longley:</cite> what the use case is for putting in an enveloped presentation. trying to come up with it. It's something like a holder is presenting and they have to put a hosy cozy signature on their presentation and when doing that they also have exchange data that has to be transferred.</p>
+<p id=bbd8 class="phone s04"><cite>Dave_Longley:</cite> I don't know what that use case is. That seems like a very uncommon use Six.</p>
+<p id=acda class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> All right.</p>
+<p id=bd38 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So I don't hear any strong objections just including this exchange data property directly within the ver presentation type in the VC21 context. And for the new context, we would just have that term independently, which we can use this example up here to craft. Any other questions, How do you have a good sense of…</p>
+<p id=9a8a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> what needs to be done here?</p>
+<p id=ba53 class="phone s03"><cite>Patrick_St-Louis:</cite> Sorry, I thought the idea of adding it to verifiable presentation would make it impossible to use it with VCDN 2.0.</p>
+<p id=0d08 class="phone s03"><cite>Patrick_St-Louis:</cite> What's happening with that?</p>
+<p id=aab0 class="phone s04"><cite>Dave_Longley:</cite> So, here's how you would use this with VCDM 2.0. You would use the new context that we're creating here and the globally defined exchange data property. That's how you would use it with VCDM 2.0. for VCDM The 2.1 context will define the exchange data property and specifically scope it to verifiable presentation, nothing else. So there would be slightly different term definitions where you could technically put exchange data on anywhere you wanted with this glo globally defined term.</p>
+<p id=d8ea class="phone s04"><cite>Dave_Longley:</cite> But we won't talk about that in the spec but it wouldn't stop somebody if they really wanted to do it but that's not really a interoperable supported use</p>
+<p id=a840 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thank you,…</p>
+<p id=93e2 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Go ahead, Eric. Sounds good.</p>
+<p id=27bf class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=a2e7 class="phone s05"><cite>Eric_Schuh:</cite> I think I have what I need. there's still some muddiness for myself just because I haven't gone through this process before, but I think there's enough here that if needed, I'll just reach out offline and get some help.</p>
+<p id=10007 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thank you everyone. I think let's look at the threat model one really quickly.</p>
+<p id=37a2 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I know that there's been a lot of things going on here, discussions. I know you made a major update not long before the call,…</p>
+<p id=ffa3 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> so go ahead and give us the breakdown there.</p>
+<p id=f6b7 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, sure.</p>
+<p id=ed96 class="phone s05"><cite>Eric_Schuh:</cite> So I guess it was a few weeks ago now that we kind of took a more detailed look at this. since then Coyote's update to what had been in the threat model as well as the appendex for the threat model was pushed. so this PR currently handles all the merge conflicts from that work including the index of the threats in the main document as a list in the appendix rather than just a link to the threat model. and it also handles all of the editorial changes from TED as well as the updated content suggestions from Coyote, there were just a couple of outstanding things that I'd like you to take a second look</p>
+<p id=f63b class="phone s05"><cite>Eric_Schuh:</cite> that just in terms of me handling some of the comments that you left. but other than that, I think that this should be, in a fairly clean state. even though there were a lot of comments and…</p>
+<p id=30f4 class="phone s05"><cite>Eric_Schuh:</cite> a good number of commits, I suppose. at least when I'm looking at it locally, I think everything looks pretty good. I suppose as part of this I also handled the discussion in terms of the couple of sections of the old security consideration section that I'd moved to an appendix of the threat model.</p>
+<p id=4306 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> That's it.</p>
+<p id=25d7 class="phone s05"><cite>Eric_Schuh:</cite> One of those sections the secure coding practices one I believe I ended up adding as a note to the conformance spec section of the main specification. the other one which was just titled I believe other security considerations has been moved to the introduction of the threat model document. so there's no longer an appendex called security considerations in the threat model document itself.</p>
+<p id=837d class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Okay, perfect. Great. Thank you, Eric.</p>
+<p id=f2cf class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Obviously I've not had a chance to look since you made the updates today, but yeah, I'll take another pass and hopefully we can get this in soon. I know there's a lot of suggestions there, so I appreciate you taking the time to go through Any other questions, comments about this And then you added another hour ago.</p>
+<p id=58c3 class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=98b9 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> So you take us through this one as well.</p>
+<p id=d2ef class="phone s05"><cite>Eric_Schuh:</cite> so this was a consequence of that I guess new feature that we saw earlier where when I was trying to edit the old PR GitHub decided that the entire index.html had been changed. instead of spending too much time trying to debug what was happening there at just fault cleaner to open a new one. so this PR adds an appendix with examples for issuance verification of a single credential verification of multiple credentials and the presentation of a credential in person so phone to phone in person as sequence diagrams.</p>
+<p id=99a9 class="phone s05"><cite>Eric_Schuh:</cite> Dave, the main task here was to handle I guess your comments that a number of these were incorrect in terms of having some of the coordinators doing some of the work that the workflow service I believe that has been fixed. and also the preview is now working for this version of the PR. I really don't know what happened with that other one. but yeah this should be in thank you. You can just that if you'd like, but …</p>
+<p id=167c class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> I'm sure. Sorry. …</p>
+<p id=a23d class="phone s05"><cite>Eric_Schuh:</cite> but yeah,…</p>
+<p id=8c44 class="phone s04"><cite>Dave_Longley:</cite> the second real quick.</p>
+<p id=c403 class="phone s05"><cite>Eric_Schuh:</cite> Dave, it'd be …</p>
+<p id=d8fe class="phone s04"><cite>Dave_Longley:</cite> The second you hit that commit button, it might do…</p>
+<p id=d322 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> right. Right.</p>
+<p id=b75e class="phone s04"><cite>Dave_Longley:</cite> what happened before.</p>
+<p id=8d3a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yes. Fair enough.</p>
+<p id=692f class="phone s05"><cite>Eric_Schuh:</cite> okay. Yeah,…</p>
+<p id=1804 class="phone s04"><cite>Dave_Longley:</cite> So maybe wait…</p>
+<p id=eadc class="phone s05"><cite>Eric_Schuh:</cite> maybe don't Maybe we don't.</p>
+<p id=4280 class="phone s04"><cite>Dave_Longley:</cite> until we get that fixed.</p>
+<p id=8219 class="phone s05"><cite>Eric_Schuh:</cite> But Dave, it would be great if you could take another quick look at the diagrams as they exist.</p>
+<p id=92ef class="phone s04"><cite>Dave_Longley:</cite> I Yes,…</p>
+<p id=6e18 class="phone s05"><cite>Eric_Schuh:</cite> Right now Okay.</p>
+<p id=fb8b class="phone s04"><cite>Dave_Longley:</cite> I did. so I got on the queue. I already looked over them. They look good. I did leave a comment that so the last diagram shows an example of someone using all the services to go fetch a presentation and then put it in a QR code. We should probably have one that shows putting a VC in a QR code…</p>
+<p id=f5b8 class="phone s04"><cite>Dave_Longley:</cite> because that's actually quite common and might even be more common than putting a VP into a QR code.</p>
+<p id=721d class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I can read that pretty easily. I expect</p>
+<p id=3eff class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Great.</p>
+<p id=bac2 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Thanks thanks We will give this at least another week before we emerge it in. But it's looking good. And that is all the PRs that we can look at today. We have three more minutes. Wondering if it's worthwhile to get into issues at the moment. I know that there was one that had had a discussion that was there. I think Ditri opened it. since it already had a discussion, I wonder if and it's been open for two weeks now.</p>
+<p id=bf04 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> if you'd like to give a quick rundown of this and then maybe I mean this is kind of large. I don't know how much we can get into today…</p>
+<p id=ede4 class="phone s06"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=bb10 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> but just give us Yeah. Yeah.</p>
+<p id=1620 class="phone s06"><cite>Dmitri_Zagidulin:</cite> So run down here scroll down to I just want to refresh my memory on what the comments were. Any and let me see Dave's scroll up one more. Right. So unless I'm misunderstanding something, I could not see how to achieve this behavior with the current workflow infrastructure. Part of the issue is an inversion of authorization.</p>
+<p id=e53e class="phone s06"><cite>Dmitri_Zagidulin:</cite> Right now, in order to customize or create a workflow, an app needs to have a Zcap essentially needs to access token. Whereas the thing with this workflow is an app with no prior relationship with the Exchange service needs to be able to create it unauthenticated.</p>
+<p id=c39a class="phone s06"><cite>Dmitri_Zagidulin:</cite> And that's part of the gap.</p>
+<p id=2588 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yeah, I think I'm realizing this may have been an ambitious thing to get into…</p>
+<p id=f8e2 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> because we hadn't even given a breakdown of what the issue was about because yeah, not everyone has the context that's necessary. So maybe we should Yeah,…</p>
+<p id=10008 class="phone s06"><cite>Dmitri_Zagidulin:</cite> No problem. Yeah, we'll come back to it. But I am curious what folks on the queue wanted to say.</p>
+<p id=1ca8 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> go ahead, Patrick. I think you were the first to one.</p>
+<p id=c009 class="phone s03"><cite>Patrick_St-Louis:</cite> I'll let their time in</p>
+<p id=10009 class="phone s04"><cite>Dave_Longley:</cite> I was just going to say you can fully templatize that workflow and make it so you can drive it with whatever variables you want including changing the entire work like defining the entire workflow itself could be the variable that you pass. So if you want to make it so that you have some coordinator website…</p>
+<p id=3ed3 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Oops.</p>
+<p id=074d class="phone s04"><cite>Dave_Longley:</cite> where you have an editor page and someone type this is how the VC playground works. and they type in the whole step for the workflow. You can send that as a variable and…</p>
+<p id=519e class="phone s06"><cite>Dmitri_Zagidulin:</cite> But is that creation authenticated or not?</p>
+<p id=1000a class="phone s04"><cite>Dave_Longley:</cite> it will create a workflow with that step. You can make it as strict or as loose as you would like to with the way the spec works. It is authenticated in that the playground itself ends up creating the workflow but that the playground provides an interface where it's willing to accept any inputs from whoever's on the website.</p>
+<p id=676b class="phone s04"><cite>Dave_Longley:</cite> So from that respect it's not authenticated show up at the website type whatever you want and…</p>
+<p id=ff2d class="phone s04"><cite>Dave_Longley:</cite> the back end of the playground will send that on to a workflow.</p>
+<p id=c82c class="phone s06"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=1000b class="phone s06"><cite>Dmitri_Zagidulin:</cite> This is specifically for backendless applications that need to be able to create the workflow unauthenticated That's all.</p>
+<p id=2837 class="phone s04"><cite>Dave_Longley:</cite> So if you put up some API that they can hit and send a variable to then they can forward that on and create a workflow. we're way over time.</p>
+<p id=9fa9 class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> Yes, I probably shouldn't have introduced it,…</p>
+<p id=ec3a class="phone s01"><cite>Kayode_Ezike's_Presentation:</cite> but yeah, thanks thanks Demetri and Dave for giving us a preamble and thanks everyone for your participation on this This is a great call. Looking forward to continuing discussions next week. Cheers everyone. Bye. Meeting ended after 00:59:26 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

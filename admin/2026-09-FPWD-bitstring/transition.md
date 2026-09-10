@@ -3,7 +3,7 @@
 - Title: Bitstring Status List v1.1
 - Draft ready for publication: https://w3c.github.io/vc-bitstring-status-list/transitions/2026/FPWD/
 - Short name: vc-bitstring-status-list-1.1
-- Estimated publication date: September @@
+- Estimated publication date: September 22
 
 # Abstract
 
@@ -15,7 +15,8 @@
 
 # Is it a delta specification intended to become a W3C Recommendation?
 
-No, it is a new version of Bitstring Status List 1.1, but with only minor addition brought forward by the work on VC Barcode. See relevant part of the charter:
+No, it is a new version of Bitstring Status List 1.1, with only minor addition brought forward by the work on VC Barcode. See relevant part of the charter:
+
 - https://www.w3.org/2026/03/vc-wg-charter.html#scope
 
 # Link to group's decision to request transition
@@ -26,7 +27,7 @@ No, it is a new version of Bitstring Status List 1.1, but with only minor additi
 
 n/a
 
-For IPR of the current versions, see https://www.w3.org/groups/wg/vc/ipr/
+For IPR of the current version, see https://www.w3.org/groups/wg/vc/ipr/
 
 # Issues
 
@@ -37,3 +38,5 @@ For IPR of the current versions, see https://www.w3.org/groups/wg/vc/ipr/
 See the implementation report of version 2.0
 
 - https://w3c.github.io/vc-data-model-2.0-test-suite/
+
+There is already an internal implementation for the new feature, too.

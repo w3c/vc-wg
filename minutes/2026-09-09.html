@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 09 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>Verifiable Credentials Working Group Telco</h1>
+<h2>09 September 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/mid/69dd7d722cea187c8fca8acbae37e5d4@w3.org"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/09/09-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>am, bigbluehat, brent, dlongley, dmitriz, elaine, eva, exe, hsano, ingo, ivan, jennie, JennieM, jimr, joe, KevinDean, kezike, manu, michaelshea, msporny, pdl-ASU, saad, tallded, wes, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>wes-smith, kezike</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#b397">Task Force Updates</a></li>
+<li><a href="#3e82">Threat Model publishing</a></li>
+<li><a href="#7a8b">Global Digital Collaboration Conference (GDC26) Report and Q&amp;A</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=e0c1 class="phone s01"><cite>brent:</cite> Welcome to today's meeting. Is there anyone who would like to introduce themselves?<br>
+<span id=7960>… Our agenda today - we will get updates from the task forces, discuss a proposal about publishing a suite of threat models, and do some reporting on the Global Digital Collaboration Process (?)</span></p>
+</section>
+
+<section>
+<h3 id=b397>Task Force Updates</h3>
+<p id=432b class="phone s01"><cite>brent:</cite> If you lead a task force please let us know how it is going. If there are issues or PRs that this group should pay attention to, please let us know.</p>
+<p id=aae8 class=irc><cite>&lt;manu&gt;</cite> VCWG Task Force deliverables tracker: <a href="https://docs.google.com/spreadsheets/d/1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/edit?pli=1&amp;gid=67467047#gid=67467047">https://<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/<wbr>edit?pli=1&amp;gid=67467047#gid=67467047</a></p>
+<p id=ffff class="phone s02"><cite>manu:</cite> At a high level, we're doing well from a horizontal review request perspective. We have multiple requests out, for Render Method, VCALM, barcodes, and recognized entities.<br>
+<span id=22cd>… I have a question to the group around when we want to send out the requests for minor version specs.</span><br>
+<span id=27f5>… Also note feature freezes - not every spec that we requested horizontal review for is at feature freeze right now.</span><br>
+<span id=10000>… For recognized entities, we are down to the last set of issues to go into candidate rec. We can put that as a feature at risk - it is trying to address a need from GS1/the supply chain traceability work.</span><br>
+<span id=81a2>… Isaac has not been able to edit that spec as much as we would prefer. Stephen Curran is a potential editor, who I believe is in the group as an IE.</span><br>
+<span id=a164>… Recognized Entities is a couple weeks away from going into CR if we want to go that route. We have only heard back from i18n.</span></p>
+<p id=c60b class="phone s03"><cite>michaelshea:</cite> Is the expectation that controlled identifiers should be going to horizontal review, or is that not appropriate given where it is?</p>
+<p id=a957 class="phone s01"><cite>brent:</cite> the updated version of controlled identifiers should go through horizontal review, but only the diff need to be reviewed, generally.</p>
+<p id=57e3 class="phone s04"><cite>ivan:</cite> In my recollection, there were no technical changes to that document so far. If there are only editorial changes we may have to notify the horizontal groups but will not have to do anything major.</p>
+<p id=4660 class="phone s03"><cite>michaelshea:</cite> What is the deadline for that?</p>
+<p id=5370 class="phone s04"><cite>ivan:</cite> Let's table that since it is one of many minor versions.<br>
+<span id=f6cd>… My personal take is to postpone that until after the others have gone to CR.</span></p>
+<p id=8cb7 class=irc><cite>&lt;Zakim&gt;</cite> kezike, you wanted to discuss VCALM update</p>
+<p id=6c7c class=irc><cite>&lt;kezike&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues/1649">w3c/<wbr>vc-data-model#1649</a></p>
+<p id=8e17 class="phone s05"><cite>kezike:</cite> We are in a good place w.r.t horizontal review. Just yesterday, we added a new issue that might be good to discuss. It's relevant to the VCDM spec, where we want to add a new term in the 2.1 context to support BBS and other features.<br>
+<span id=1a21>… Another more general thing is that there are still failures with the deployments - they are not updating when we push to prod. I want to make sure W3C folks are looking behind the scenes, as we are having to use outdated links.</span><br>
+<span id=f904>… TR space is still not getting updated when we push to main for our specs.</span></p>
+<p id=8a5d class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to discuss confidence-method update</p>
+<p id=3ace class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://github.com/w3c/vc-confidence-method/pull/43">w3c/<wbr>vc-confidence-method#43</a></p>
+<p id=ef4a class="phone s06"><cite>JoeAndrieu:</cite> Two things related to this chart. The feature freeze and threat model should be half. There is some debate on a current PR that could use attention from the group. We have started a threat model - the key trick we are working through is, within confidence method we have different confidence methods and assurance levels.<br>
+<span id=5670>… Our diagram either needs to address all of it or we need to have multiple diagrams. We are teasing out the best structure here. Our intention is to have the spec text and our submissions for review request in place by TPAC.</span></p>
+<p id=c0f3 class="phone s02"><cite>manu:</cite> To respond to kezike, I have been able to push things to TR space, so what is broken may be specific to VCALM (or a transient error). We can take it offline.</p>
+<p id=6d58 class="phone s07"><cite>wes-smith:</cite> VC Barcodes/ DI update: we are in a fairly good place. Review is requested for barcodes. Still ongoing work for DI, given that there are other related specs in it. Planning to put out review for VC Forgery spec. Doing update for Biststring Status List.</p>
+</section>
+
+<section>
+<h3 id=3e82>Threat Model publishing</h3>
+<p id=790b class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to propose something</p>
+<p id=7995 class="phone s01"><cite>brent:</cite> Next topic is threat model publishing. Is there more to it than publishing threat models as notes?</p>
+<p id=8d6f class="phone s02"><cite>manu:</cite> There is just a bit more. We have to decide what the short names will be as well as publication dates.</p>
+<p id=027a class="phone s07"><cite>wes-smith:</cite> Is the threat model coupled to the version of the underlying document?</p>
+<p id=507c class="phone s02"><cite>manu:</cite> They shouldn't be versioned since they are living documents.</p>
+<p id=4d48 class="phone s04"><cite>ivan:</cite> The note can be a living document that is still bound to a versioned document.</p>
+<p id=d56f class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to discuss version and multiplicity</p>
+<p id=debf class="phone s06"><cite>JoeAndrieu:</cite> +1 to the framing, but I think we should have versions on the model itself. It is not a registry which is a living document. As soon as the WG goes away we can't edit that document any more. The other thing I wanted to point out as a point of socialization is that, one thing we want to be careful of is imagining there is only one threat model for every spec. There could be multiple documents with different focuses.<br>
+<span id=c73b>… Those tend to want to have different documents and diagrams. We are streamlining a way to publish so that each spec has an easy way to get through the publication process. This is making it easy to get a first version out.</span></p>
+<p id=8851 class="phone s04"><cite>ivan:</cite> is the version in the proposal the version of the document or version of the threat model?</p>
+<p id=11f5 class="phone s06"><cite>JoeAndrieu:</cite> There are two relevant versions - the underlying spec and the threat model</p>
+<p id=98ff class=irc><cite>&lt;wes-smith&gt;</cite> +1 Joe, there are two relevant versions, don't know the best way to express that in a short name.</p>
+<p id=f2f8 class="phone s02"><cite>manu:</cite> I think threat models should not be versioned, but these things are meant to live more broadly.<br>
+<span id=ce12>… There could be tooling issues with putting versions in the middle of a shortname.</span></p>
+<p id=4623 class=summary>Even if we claim that every version of a spec should have a threat model, I don’t imagine that one spec version would have multiple threat model versions. For this reason, if we MUST add a version to the shortname of the threat model note, I think we can just borrow the same version of the spec.</p>
+<p id=243c class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say that general threats are fine. but the model is spec-specific</p>
+<p id=c072 class="phone s06"><cite>JoeAndrieu:</cite> You've convinced me that having it in the middle is too awkward, but I push back against the idea that threats are for a generic version of the spec. That would make them ungrounded. The value of threat modeling is that it is embodied.</p>
+<p id=93b2 class=irc><cite>&lt;manu&gt;</cite> I would suggest that the test suite URL made the wrong decision :)</p>
+<p id=c544 class="phone s01"><cite>brent:</cite> If we update the threat model for the VC data model 2.1, do we just update the threat model?</p>
+<p id=9327 class="phone s06"><cite>JoeAndrieu:</cite> I think we should version the threat models, I don't know that the versions need to propagate into the shortnames/URLs</p>
+<p id=bbed class=irc><cite>&lt;manu&gt;</cite> Let's not do two versions in a URL. :)</p>
+<p id=ebf7 class=irc><cite>&lt;manu&gt;</cite> Agree w/ Joe's proposal.</p>
+<p id=3ffe class="phone s04"><cite>ivan:</cite> +1 to Joe, we can change the title and version number without changing the URL</p>
+<p id=8fde class=irc><cite>&lt;brent&gt;</cite> PROPOSAL: Publish all Threat Models created by the VCWG as NOTEs. The shortnames for the threat models should start with the unversioned shortname of the associated specification, and then &quot;-threat-model&quot;, and then &quot;-&lt;VERSION&gt;&quot; (where VERSION is the version of the associated specification). The threat models should be published at the soonest reasonable publication date as determined by Editors, Chairs, W3C Staff, and Management.</p>
+<p id=33bf class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=b3bf class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=f3bf class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=73c0 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=f3c0 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=f3c1 class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=33c0 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=33c1 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=f3c2 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=33c2 class=irc><cite>&lt;exe&gt;</cite> +1</p>
+<p id=73c1 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=fd92 class=resolution><strong>RESOLUTION:</strong> Publish all Threat Models created by the VCWG as NOTEs. The shortnames for the threat models should start with the unversioned shortname of the associated specification, and then &quot;-threat-model&quot;, and then &quot;-&lt;VERSION&gt;&quot; (where VERSION is the version of the associated specification). The threat models should be published at the soonest reasonable publication date as determined by Editors, Chairs, W3C Staff, and Management.</p>
+<p id=f573 class="phone s01"><cite>brent:</cite> hearing no objections and seeing nothing but +1s, we are resolved.</p>
+<p id=1a62 class="phone s04"><cite>ivan:</cite> One request is to send me three URLs for three threat model documents so it's not too abstract.</p>
+</section>
+
+<section>
+<h3 id=7a8b>Global Digital Collaboration Conference (GDC26) Report and Q&amp;A</h3>
+<p id=b92c class="phone s01"><cite>brent:</cite> Our last topic is GDC report and Q/A. Last week was Global Digital Collaboration in Geneva and attended by more than 2000 people - which is a 3x increase from last year. This is a conference that attempts to be a little bit of everything digital identity, primarily on the use case side.<br>
+<span id=5365>… Largely the conference was focused on mDL rollout - there were sessions that talked about ZKPs, age assurance, and identity for AI.</span><br>
+<span id=ed8e>… There was also substantial discussion about trade modernization.</span></p>
+<p id=7775 class=irc><cite>&lt;Ingo&gt;</cite> how was the discussion on SD-JWT vs. JSON-LD based credential formats going - if at all?</p>
+<p id=10001 class="phone s01"><cite>brent:</cite> There was very little conversation about data formats - most presentations just said &quot;Digital Verifiable Credential&quot;. Most specifics were around mdoc.</p>
+<p id=59f7 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to ask if there are any actions for us from the conference?</p>
+<p id=c1e7 class="phone s02"><cite>manu:</cite> What we (Digital Bazaar) are experiencing is that people are moving beyond talking about  data formats/protocols - there is an expectation that everyone will support everything. That is at least our experience in North America.<br>
+<span id=dffa>… I'm curious what W3C said as an organizer? I know PA was there, I think I saw a picture of Dom on stage - I'm curious to hear what W3C was saying. Question 2 is whether there are any actions from the conference.</span><br>
+<span id=547c>… Is there anything actionable happening, or is it just yet another identity conference where people talk about latest learnings but without movement on the technical side?</span></p>
+<p id=5d51 class=irc><cite>&lt;brent&gt;</cite> GDC 2026 Book of Proceedings: <a href="https://docs.google.com/document/d/1fPR-C59zIIARzcfLnyFrSq1SASGkocJCbbh0uKPY3bc/edit?tab=t.0">https://<wbr>docs.google.com/<wbr>document/<wbr>d/<wbr>1fPR-C59zIIARzcfLnyFrSq1SASGkocJCbbh0uKPY3bc/<wbr>edit?tab=t.0</a></p>
+<p id=2fc9 class=irc><cite>&lt;Elaine&gt;</cite> i was there - i saw simone talk about age assurance - nothing profound</p>
+<p id=178a class="phone s01"><cite>brent:</cite> I didn't attend most of the W3C centric sessions, so I wasn't in the room for a lot of that - but much of it was DC API conversations. The W3C took part in some threat modeling exercises for age assurance.</p>
+<p id=c7a2 class=irc><cite>&lt;TallTed&gt;</cite> Did any attendee notice, was there any distinction drawn between W3C (D)VCs and EU D(V)Cs?</p>
+<p id=b960 class="phone s01"><cite>brent:</cite> As far as what this group should do, one difference that I noticed between (and this is systemic more than anything) W3C vc OIDF - the OIDF was very deliberate in the things that they supported and the sessions they proposed, whereas W3C had things that team members wanted to touch on, but for the most part sessions were left to W3C members to propose.<br>
+<span id=d539>… There was less top-down-organized &quot;here is how the W3C is going to engage with this conference&quot;.</span><br>
+<span id=38db>… Next year it may be beneficial for at least our group to say &quot;here is what we want to happen at this conference&quot;.</span></p>
+<p id=060f class="phone s03"><cite>michaelshea:</cite> I wasn't able to attend the GDC this year, but your description sounds spot on. I was there last year. Historically it's very focused on personal identity, but what you are describing sounds very much what I would expect.</p>
+<p id=ebf3 class=irc><cite>&lt;Zakim&gt;</cite> TallTed, you wanted to ask whether there was any distinction drawn between W3C (D)VCs and EU D(V)Cs</p>
+<p id=32ff class="phone s08"><cite>TallTed:</cite> Wondering if there was a distinction drawn between W3C VCs and the EU's Digital Credentials, which have been blurred a lot over time.</p>
+<p id=10002 class="phone s01"><cite>brent:</cite> For the most part they were not talking about what we are talking about.</p>
+<p id=1b25 class=irc><cite>&lt;michaelshea&gt;</cite> unless in the trade area.</p>
+<p id=b17c class="phone s08"><cite>TallTed:</cite> That is problematic, especially given that W3C was one of the organizers.</p>
+<p id=b6fc class=irc><cite>&lt;Elaine&gt;</cite> my internet went out - of course</p>
+<p id=7a0f class=irc><cite>&lt;manu&gt;</cite> I think that's by design Ted :)</p>
+<p id=2810 class=irc><cite>&lt;michaelshea&gt;</cite> manu +1</p>
+<p id=0035 class="phone s09"><cite>pdl-ASU:</cite> the Swiss Digital ID had some pragmatic discussion previously at the conference.</p>
+<p id=599f class="phone s02"><cite>manu:</cite> To reflect on what TallTed said - the coopting of the term &quot;Verifiable Credentials&quot; was an intentional choice. The umbrella term appears to be &quot;Digital Verifiable Credentials&quot;, which include all the formats.<br>
+<span id=608b>… There is a group that is trying to dilute what the term Verifiable Credential means.</span></p>
+<p id=10003 class=irc><cite>&lt;Elaine&gt;</cite> I went to the interop Sunday and Monday before GDC at IATA - it's all mDOC - if W3C wants to be seen, there needs to be a way to participate - I don't know what that is - someone from MOSIP came to the one in Bangkok and of course, there was no &quot;interop&quot; for them</p>
+<p id=5d0b class="phone s02"><cite>manu:</cite> That said, note that California talks about its digital credential program as &quot;the mDL program&quot; - but most of the credentials they issue are W3C VCs.</p>
+<p id=d569 class=irc><cite>&lt;Elaine&gt;</cite> If Credence can read the CA DL then we should show up with that physical document and have it succeed</p>
+<p id=7859 class=irc><cite>&lt;dlongley&gt;</cite> +1 an &quot;mDL&quot; can be (and often is) a W3C Verifiable Credential -- the terminology is quite fluid in the space.</p>
+<p id=b75d class="phone s02"><cite>manu:</cite> Item two is that I am, as a W3C member, displeased with the lack of W3C leadership around the W3C Verifiable Credential work. Leadership is not engaging with opportunities, the messaging is sloppy, and the OIDF is doing an excellent job. I am disappointed with the way W3C has engaged with GDC, and there are many lost opportunities there.</p>
+<p id=18fb class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to voice things</p>
+<p id=59cb class=irc><cite>&lt;TallTed&gt;</cite> problem is that the two (or more) are not interoperable</p>
+<p id=b681 class=irc><cite>&lt;michaelshea&gt;</cite> particularly since they were a sponsor...</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#fd92">Publish all Threat Models created by the VCWG as NOTEs. The shortnames for the threat models should start with the unversioned shortname of the associated specification, and then &quot;-threat-model&quot;, and then &quot;-&lt;VERSION&gt;&quot; (where VERSION is the version of the associated specification). The threat models should be published at the soonest reasonable publication date as determined by Editors, Chairs, W3C Staff, and Management.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>

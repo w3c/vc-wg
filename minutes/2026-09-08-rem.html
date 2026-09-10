@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 8 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>8 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#3656">VC Render Method Call</a></li>
+<li><a href="#6d24">Pending PRs and Issues</a></li>
+<li><a href="#2183">Renaming &quot;Card&quot; to &quot;Highlights&quot;</a></li>
+<li><a href="#d4e3">Discussion on &quot;Highlights&quot; Terminology</a></li>
+<li><a href="#7134">Clarity of Render Method Intent</a></li>
+<li><a href="#1161">Render Method Control and Normalization</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=3656>VC Render Method Call</h3>
+<p id=106d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Welcome everyone.</p>
+<p id=897b class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, welcome everyone to the VC render method task force of the verifiable credential working group call that is now weekly for Those you in the US, I hope you had a good Labor Day. now it's time for more standards labor. As always, we're under W3C code of conduct and IP restriction agreements. You need to be member of the group, So, today we have a fairly open agenda.</p>
+</section>
+
+<section>
+<h3 id=6d24>Pending PRs and Issues</h3>
+<p id=f484 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I would like to go through a couple of the pending PRs and some of the issues that have recently been addressed just to make sure that we close them. I want to talk a bit about the security and privacy self questionnaire that Mana opened. and of course feel free to add other items to the agenda. Going to the request First, we have the poll request number 74 by our very own Benjamin here in link in chat.</p>
+</section>
+
+<section>
+<h3 id=2183>Renaming &quot;Card&quot; to &quot;Highlights&quot;</h3>
+<p id=e9e0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We had a couple of wording suggestions that Benjamin just addressed. we need to resolve conflicts. But aside from that, does anybody have any other comments or objections from for the spoiler request which just renames card to highlights and also tweaks some of the language renaming card to Go ahead.</p>
+</section>
+
+<section>
+<h3 id=d4e3>Discussion on &quot;Highlights&quot; Terminology</h3>
+<p id=4bb0 class="phone s02"><cite>Ivan_Herman:</cite> Yeah, I am a little bit lost in all the discussions we had, but I don't think that we had a full agreement on using highlight as a term.</p>
+<p id=009b class="phone s02"><cite>Ivan_Herman:</cite> I don't want to spend too much time on bike shedding, but there was a disc discussion somewhere, frankly, I don't remember exactly where.</p>
+<p id=1da0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. …</p>
+<p id=360a class="phone s01"><cite>Dmitri_Zagidulin:</cite> there was a discussion on the August 25th call where you said that there was no agreement about highlights as the possible Other suggestions such as summary and priority fields were brought up. So on this call, I wanted to sort of refresh</p>
+<p id=9fb1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> people's memory since it's been a couple of weeks on hey this is still pending. We know it's not going to be cards highlights of suggested but it doesn't have fully consensus. So we have other two working suggestions summary and priority. go ahead Nate and then Dave.</p>
+<p id=ee70 class="phone s03"><cite>Nate_Otto:</cite> I was just hoping to hear maybe from Benjamin and Dave, if your summary of the changes, the highlights of the changes to this was complete or if there was any significant, change to what actual data was displayed. I'm scanning through the PR now.</p>
+<p id=50ea class="phone s01"><cite>Dmitri_Zagidulin:</cite> D. Go ahead.</p>
+<p id=27d3 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I'd have to go back and doublech check line by line. okay.</p>
+<p id=5c22 class="phone s05"><cite>Benjamin_Young:</cite> I can speak to that real quick,…</p>
+<p id=ece9 class="phone s05"><cite>Benjamin_Young:</cite> Dave, and then I did not intend to change any functionality.</p>
+<p id=7a4c class="phone s04"><cite>Dave_Longley:</cite> Got it.</p>
+<p id=6af6 class="phone s05"><cite>Benjamin_Young:</cite> I do think it does include the removal of valid from and valid to however, but everything else should have just been renamed.</p>
+<p id=ca90 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. confirmed Dave</p>
+<p id=8fc3 class="phone s04"><cite>Dave_Longley:</cite> Yeah, that was my memory as because we also had some other proposals for making it a little clearer where things are JSON pointers and I think that would be a subsequent change. I still don't know if highlights is the name we ultimately want to go with, but I do think it's an improvement on card because it's a little more abstract and we didn't want to signal to people that they had to literally build a very specific UI component if they use this. And so, in that respect, I think it is definitely heading in the right direction. Maybe it will end up being what makes the most sense.</p>
+<p id=d617 class="phone s04"><cite>Dave_Longley:</cite> My main problem with it is I do expect people to want to use this not just for highlights but for prioritizing everything if they want to. and that I don't think there's a problem with people electing to do that. People being issuers they can put everything in they can prioritize everything and make everything a highlight. But I think if the name says highlight that they might think they can't do that. and I also understand that some of us would prefer to signal that they should only highlight some things, but I also don't know if that's really the right thing to do. so those are my main things about thoughts on the name highlight.</p>
+<p id=435d class="phone s04"><cite>Dave_Longley:</cite> I do think it's better than card and for that reason we should probably rename it so it's at least heading in the right</p>
+<p id=f751 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Dave.</p>
+<p id=19a0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I wanted to hop on the queue to say to advocate for summary instead of priority for a couple of reasons. The most common use case for this field is to display it on a list or to summarize to do a subset somehow which does not at all require prioritizing the Asking issuers and template designers to put fields in priority order when it's not may be too confusing.</p>
+<p id=798c class="phone s01"><cite>Dmitri_Zagidulin:</cite> We can add a priority field just in case they want to, but I don't think we should put that front and center. Manu</p>
+<p id=c8a9 class="phone s06"><cite>Manu_Sporny:</cite> Plus one to summary. so, given only two choices between card and highlight, let's do highlights, So, that's clearly better, but I feel we're just going to change the name again in the future. So, can we maybe spend the time to bite shed it today and get a final decision on this if we can get there? between highlights and summary, I would be a minus one on highlights. primarily for the reasons that you mentioned Dimmitri. I'm not making a comment about, I'm not taking position on the priority order, whatever, but I pro presume that it would be in whatever order they provided, if there is such an order, and we can kind of chat more about, if that's something that is a separate flag that we put on each field. plus one to summary.</p>
+<p id=ffff class="phone s06"><cite>Manu_Sporny:</cite> I think most people will kind of understand, what they're supposed to do there. there can be people that are like, my summary is every single field in the credential and that's a bit of an abuse of the thing, but is allowable and, I don't think we should block on that. So, there have been a variety of other things. I think Coyote mentioned overview at some point. abstract has been mentioned gist all those types of things I think are kind of not as good as summary plus one to summary if we can rename it to that I'd be a pretty strong pro plus one to</p>
+<p id=992c class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=a261 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Anyone else? Dave</p>
+<p id=5aa8 class="phone s04"><cite>Dave_Longley:</cite> I think summary has similar problems to highlight similar to… what I mentioned before. it both helps and Summary seems to much more clearly ex exclude any details. just summary is how that reads to me whereas highlights let you highlight whatever you wanted to highlight which summary information might be other things. So highlight felt a little more flexible in trying to cover other things. Dave Longley:</p>
+<p id=f0ea class="phone s04"><cite>Dave_Longley:</cite> My main objection to any of these is as an issuer or someone building this I want to know what I'm supposed to put in here and I don't want to feel like I'm abusing it or that if I use it a certain way that no one will have any interest in using it the way I used it. So I'm not looking to just provide an overview. That is one kind of UI component that might be used with how I express this information. I'm not looking to only provide a summary. I'm saying I've organized this data so it is easy for anyone to render this on the screen. Whether they're rendering a summary, an overview, a list of fields that I think are important all the way down as many fields as I want to list.</p>
+<p id=2bd1 class="phone s04"><cite>Dave_Longley:</cite> If they have a display that can list up to 10, then they take the first 10. If they can do 20, they get all 20. And I've set up the data and expressed it in a way so that they don't have to think about any of that. I've put it all in sort of priority order and that also includes a summary and overview. and I don't know what a good name is to capture all of that, but I worry that…</p>
+<p id=7f80 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, man.</p>
+<p id=5c08 class="phone s04"><cite>Dave_Longley:</cite> if we give it a specific name and we get some of those features, we're not really capturing the whole render method, and then someone will feel the need to invent another On.</p>
+</section>
+
+<section>
+<h3 id=7134>Clarity of Render Method Intent</h3>
+<p id=0988 class="phone s06"><cite>Manu_Sporny:</cite> Yeah I don't think a single word will capture everything you just said Dave. So I don't think we can do that in a single word. so I think we should do what we normally do in specs which is explain in pros what we mean by summary whatever. but unless something highlights to me does not have that at least to my understand my view of highlights it does not do the things that you mentioned in your paragraph right so it is not necessarily a good word based on the things that you said that it does.</p>
+<p id=449f class="phone s06"><cite>Manu_Sporny:</cite> And I think no matter what word we pick, I mean, plus one to your description of it, I think we should write that down. but I am concerned that highlights does not describe that thing. And in highlights may be much more difficult for someone that is, for example, a non-native speaker to understand versus, summary. and of course, really hard to back up any of these arguments with data because we're trying to figure out how people, understand a single word. so the suggestion is whatever we do, it's clear that that word is not going to, express all of the things we want it to do. And so, we should write it out in pros exactly what the intention is with this field.</p>
+<p id=2554 class="phone s06"><cite>Manu_Sporny:</cite> And we should make it clear that the concerns, the misinterpretations of that of the word will have clear descriptions about…</p>
+<p id=b615 class="phone s06"><cite>Manu_Sporny:</cite> what we mean that you can and can't do. that's it.</p>
+<p id=f138 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, man.</p>
+<p id=23a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, I want to say plus one to what Manu said that we're unlikely to pick a word that will capture all of the connotations, especially since it seems that where we have several different aspects that we're prioritizing, so to speak.</p>
+<p id=10000 class="phone s01"><cite>Dmitri_Zagidulin:</cite> For example, one of my points is that prioritizing or highlighting is a much smaller subset of the use case whereas summarizing and the list view is sort of the primary emphasis of this. however given that we have an overview or rather an overall superass template not template sweet render method that has fields in common. We can have a priority field in that overall superass that can be used in any of the suites including this one to prioritize should people find that useful.</p>
+<p id=1500 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Von and then Benjamin.</p>
+<p id=e0f6 class="phone s02"><cite>Ivan_Herman:</cite> So maybe I am one of those people normally referred to as non-native English.</p>
+<p id=2566 class="phone s02"><cite>Ivan_Herman:</cite> So maybe that's my mistake. But for me the term highlight has a kind of a visual aspect to it. when I highlight a text when I annotate it or something like that which is definitely not the case and that's mainly what bothers me when I hear highlight in this respect. so that's why I'm more in favor of summary. I know that during the discussion we also had at the much more neutral alternative which says data or something like that data extract or maybe it just data it's very neutral maybe that can work as well just to add one more to the mess.</p>
+<p id=066d class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I'd like to jump queue and remind folks that data by itself is we don't need it because the verifiable credential is the data. If somebody wants to enumerate all of the fields,…</p>
+<p id=43ba class="phone s01"><cite>Dmitri_Zagidulin:</cite> they can just do that. They can just enumerate the fields of a verifiable credential. They don't need a special render method for it.</p>
+<p id=b3bc class="phone s02"><cite>Ivan_Herman:</cite> That's</p>
+<p id=9b4a class="phone s01"><cite>Dmitri_Zagidulin:</cite> So it is already data. Go ahead, Benjamin. And then</p>
+<p id=10001 class="phone s05"><cite>Benjamin_Young:</cite> Yeah. I put selections in the chat,…</p>
+<p id=996a class="phone s05"><cite>Benjamin_Young:</cite> but it's kind of based on I actually thought what Abon was going to say was the inverse of what he said. because for me, if I were to have a physical form and hand it to you and say, to use the sentence, select the stuff you want me to care about, I'm probably not going to say select. I'm probably going to say highlight and hand you a highlighter. If I'm tell me what is important for me to care about in this bigger document. If I'm a realtor or a lawyer or a passport agent or any of these people, they're going to be in some way annotate the document and point at the fields. Typically, that's called highlighting. could also be called selecting, but that…</p>
+<p id=a88b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead. mono.</p>
+<p id=10002 class="phone s05"><cite>Benjamin_Young:</cite> then runs us into other weird vagaries. In no case is it So I think summary is right out a bad choice personally because it's reductive from a hole which is not what this is. This is selecting out of a hole. totally open to things that point towards selection and subselection. Not a fan of anything that makes it sound reductive which is very different.</p>
+<p id=e70f class="phone s06"><cite>Manu_Sporny:</cite> I provided some other options. curation might be the closest one. because a selection doesn't necessarily mean that you're prioritizing order. And from what I heard Dave said, there is a prioritized ordering here. that is explicit. unless we want to take that out. I we have to do that, I mean that's one of the goals of this thing. don't necessarily agree that summary is strictly the definition that you use, Benjamin.</p>
+<p id=ca3d class="phone s06"><cite>Manu_Sporny:</cite> But what I think the problem here is that any single word has a bunch of positives and negatives to it. but seeing as Dave's fine with curation, does anyone else have any strong feelings against it? Curation is you take a set of things and you select among them and you try to specify which ones an individual should take a look at. that's it. Go ahead, Nate.</p>
+</section>
+
+<section>
+<h3 id=1161>Render Method Control and Normalization</h3>
+<p id=2c6f class="phone s03"><cite>Nate_Otto:</cite> Thanks. I don't think that choosing which things are the most important is the key aspect of this render method that is interesting. sure. Yes, highlights is okay. summary is maybe slightly better. the thing that I was trying to get at when I proposed this method originally was not the selection process of what is the most important stuff to display. It's a type of render method that is where the rendering is still under control of the renderer, not the issuer.</p>
+<p id=10003 class="phone s03"><cite>Nate_Otto:</cite> It picks data and regularizes the format of that data into a set of fields that are the things that you want to display. Yes, sure it's the most important data to put in front of the user. But the key part of it really was which we kind of have lost by going to highlights. Not that I really care about it that much, but curation takes us even farther from this. the thing we've lost is just the notion that this is a thing that is under control of the issuer. It is not a beautiful HTML interface. It is whatever the renderer wants to make it. And the card was the sort of the main metaphor that was being picked by a bunch of different wallets that were doing these generic renderings.</p>
+<p id=909a class="phone s03"><cite>Nate_Otto:</cite> And so the idea was just this is a regularish data structure that you can put into your own template for displaying that data structure and we can fit many different credentials into this type of output shape in JSON. So normalization as Dave says in the chat although that doesn't make for a very good render method name. So I don't really have a solution.</p>
+<p id=8b68 class="phone s03"><cite>Nate_Otto:</cite> I don't really have a lot of strong preferences in this, but hearing curation definitely made me think we were getting farther away from the target than closer.</p>
+<p id=cd33 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=41c7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank I want to hop on the queue to say I agree with what you just said that curation doesn't quite have to me it's slightly too abstract and I wonder if we can offer selection as a synonym that is slightly planer and more understandable.</p>
+<p id=7175 class="phone s04"><cite>Dave_Longley:</cite> I did want to strongly plus the concept that Nate was saying that what we want out of this render method is the issuers organizing the data in some way that makes it easy for you to fit it in with your existing look and feel in your application. They're not telling you how to make things look and feel. They're saying, &quot;I've put this into a regular shape. That should make it really easy for you to build your own UI components and integrate this into your own user interface. So I agree normalization isn't great, but maybe words around integration. how do I feel about selection?</p>
+<p id=7c1b class="phone s04"><cite>Dave_Longley:</cite> I don't think selection fully communicates this stuff that was just said. It feels like yet another word that is kind of okay.</p>
+<p id=f084 class="phone s04"><cite>Dave_Longley:</cite> And it sounds like you're picking out specific things. that is only one aspect of all these other it doesn't capture any of these other concepts.</p>
+<p id=186f class="phone s01"><cite>Dmitri_Zagidulin:</cite> But that is…</p>
+<p id=220d class="phone s01"><cite>Dmitri_Zagidulin:</cite> what we're doing here. We are picking out specific things such as what</p>
+<p id=c669 class="phone s04"><cite>Dave_Longley:</cite> And I think it doesn't capture that you're turning something into a regular form. it is true that you're going to part of being able to express a selection in a sensible way is that you're like really what you're doing is you're saying here's a regular normalized shape and I'm selecting what fits in this shape for you and then use that shape to build your UI components. it's something like that and integrate that into your system. But selection on its own doesn't do that. selection might be here's the list of fields and that's it. what does that even mean?</p>
+<p id=f52f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mana.</p>
+<p id=ab2b class="phone s04"><cite>Dave_Longley:</cite> That's what a selection is to me. So it doesn't capture the rest of everything else that we've talked about here.</p>
+<p id=dd11 class="phone s06"><cite>Manu_Sporny:</cite> I was listening to Nate what you said about the thing I'm trying to figure out now and maybe I've totally misunderstood this the entire time. I thought the issuer was providing a priority order it's not like these things are a random set in and the wallet can just show it in whatever order they want. I mean they can but there is a definite explicit ordering of these things in to least important order.</p>
+<p id=653c class="phone s06"><cite>Manu_Sporny:</cite> At least I thought that's what is are we not doing that anymore? I thought we were doing that.</p>
+<p id=7d85 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I want to clarify that's not quite…</p>
+<p id=b858 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what we're doing. I think out of all of these what Dave said about normalizing is the key bit here because for example just let's talk specifics. We're requiring a name, meaning any sort of list component, any sort of we're trying to project the full verifiable credential into that's that somebody can say okay the date is priority field number one. That doesn't matter for the use case. We need a normalized name. Go ahead.</p>
+<p id=4cb7 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, but I don't know Dimmitri if that answers my question. there is an explicit ordering is there not because if there isn't then how does wallet software know what field to render in what order right as an issuer for example as an issuer and I'm issuing fairly large credential let's say a student transcript as an issuer have a pretty strong feeling about</p>
+<p id=5b95 class="phone s06"><cite>Manu_Sporny:</cite> what I want displayed in what order and the wallet has no clue whatsoever I thought we were trying to get away from that.</p>
+<p id=f1b1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But that's…</p>
+<p id=b618 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's what the HTML detail view is to give Yes.</p>
+<p id=e453 class="phone s06"><cite>Manu_Sporny:</cite> Is it</p>
+<p id=5af8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> to give issuers control over displaying. This view here is to say there is a number of constrained use cases where the things that those constraints use cases have in common is they need normalized required fields.</p>
+<p id=4886 class="phone s01"><cite>Dmitri_Zagidulin:</cite> for example on a text terminal to display on a v what is it called fed ID browser mediated selector So the normalization is the key here. Mano No,…</p>
+<p id=d0f8 class="phone s06"><cite>Manu_Sporny:</cite> So this has no order to it.</p>
+<p id=eac7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the order can happen, but a priority order can be a superass field that can be used by any render method,…</p>
+<p id=68eb class="phone s01"><cite>Dmitri_Zagidulin:</cite> not just this one.</p>
+<p id=0754 class="phone s06"><cite>Manu_Sporny:</cite> I don't know</p>
+<p id=65b7 class="phone s06"><cite>Manu_Sporny:</cite> if anybody else is confused by that, but I'm very confused at this point.</p>
+<p id=0a1c class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I'm completely confused. Demetri has as defined fields is just an array and it says array of custom data fields in display order.</p>
+<p id=398a class="phone s05"><cite>Benjamin_Young:</cite> Those are the custom ones. And Nate's here. Nate can tell us where did he drop?</p>
+<p id=7ac2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> My point is that …</p>
+<p id=1931 class="phone s01"><cite>Dmitri_Zagidulin:</cite> if we add a property display order,…</p>
+<p id=3a69 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we can reuse it in the HTML render suite as well as this one as well as any other ones that we come up with Exactly. No,…</p>
+<p id=3f57 class="phone s05"><cite>Benjamin_Young:</cite> So that would be on the render method sorting the entire render method.</p>
+<p id=16a0 class="phone s05"><cite>Benjamin_Young:</cite> Doesn't that widen the scope of what we've been discussing about field ordering or I don't know.</p>
+<p id=9a77 class="phone s01"><cite>Dmitri_Zagidulin:</cite> it just makes it reusable.</p>
+<p id=1033 class="phone s05"><cite>Benjamin_Young:</cite> I've lost a lot.</p>
+<p id=d70a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Field ordering is a property that all the suites can reuse is my only point here. So it doesn't need its own separate render suite, whatever this one turns out to be called. It can be</p>
+<p id=dbaf class="phone s01"><cite>Dmitri_Zagidulin:</cite> The field ordering is a useful enough property that all suites should have access to it. Exactly. Display order in shared by all of the suites just content type is shared between all of the suites. Just like all of the fields here Go ahead. Who's next?</p>
+<p id=97bf class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, all these fields are shared between all of the suites. So, display order would go in here.</p>
+<p id=457d class="phone s06"><cite>Manu_Sporny:</cite> Yeah, Demetri, I understand that it's a separable thing. and I am questioning whether it's actually useful in HTML because you have full control like that. the issuer has full control over display order and all that kind of stuff, So, I don't think it's useful in static and it's not useful in The only one where it is useful is this one, but you could argue that maybe there's a future render suite that uses it as well.</p>
+<p id=10004 class="phone s06"><cite>Manu_Sporny:</cite> But going back to what Benjamin mentioned, currently we do have an explicit ordering and I don't know if we are now saying there is no explicit ordering unless you have a display order. and the reason I'm struggling here is because that part of it kind of matters for the naming maybe. yeah. it feels like we're growing scope while trying to name something. And that's a difficult thing to do because then all of a sudden our core reasons we name the thing are not holding right. We've got to fix some of these things in place in order to pick a word that describes it.</p>
+<p id=1f3d class="phone s06"><cite>Manu_Sporny:</cite> That's</p>
+<p id=3fe8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right,…</p>
+<p id=5d6c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin, go ahead.</p>
+<p id=07e6 class="phone s05"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=227a class="phone s05"><cite>Benjamin_Young:</cite> I agree with Manu that the scope is widening massively and concerningly and we've lost a lot. At least I did. but I also am hearing us operate on assumptions about render methods being in an order and They look like it at the JSON level, but they're not in actually any order because we haven't defined that render methods are a list or…</p>
+<p id=d36d class="phone s05"><cite>Benjamin_Young:</cite> whatever in the which means if you shoved them in a graph and got them back out, you can't guarantee that order is going to be consistent.</p>
+<p id=08f1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Just to be clear,…</p>
+<p id=1c97 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we're not saying render methods themselves are in order.</p>
+<p id=d143 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We're saying the fields within this form artist formerly known as card here.</p>
+<p id=acde class="phone s05"><cite>Benjamin_Young:</cite> I haven't right.</p>
+<p id=506f class="phone s05"><cite>Benjamin_Young:</cite> There's just JSONLDD stuff to turn that array into an order thing is all I'm well.</p>
+<p id=804d class="phone s01"><cite>Dmitri_Zagidulin:</cite> And we could that's a trivial fix.</p>
+<p id=fe97 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, but we have also been operating the render methods are in some sort of priority order.</p>
+<p id=7571 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I don't think anybody has though.</p>
+<p id=168e class="phone s05"><cite>Benjamin_Young:</cite> Maybe not on this call, but we have historically. so I'm just calling it out that if we want order, we need to do it some way. It could be with a field like you mentioned, but that's on top of three or…</p>
+<p id=2d78 class="phone s05"><cite>Benjamin_Young:</cite> four other potential options for saying the array is ordered. yeah, just wanting to highlight the fact that arrays even…</p>
+<p id=b38c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Make sense?</p>
+<p id=162e class="phone s05"><cite>Benjamin_Young:</cite> if we say in the pros these are in an order unless we do extra technical plumbing to make sure they are. That was it.</p>
+<p id=6216 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Makes sense. we'll make sure to remember the technical plumbing. Mono</p>
+<p id=10005 class="phone s06"><cite>Manu_Sporny:</cite> I'm wondering if we need to fall back to a rank choice, ordering of these options among us and then, the VCWG or CCG or whatever, which is how we tend to pick things if we don't seem to be converging. in order to do that, we do need to suggest what this thing is trying to do. Dave provided four items there. so typically we need a description of what the thing is trying to do and then we need a list of options for people to rank choice. I don't know…</p>
+<p id=1609 class="phone s06"><cite>Manu_Sporny:</cite> if folks feel that we're there or if we feel like if we keep talking on this call we'll converge on something.</p>
+<p id=1f78 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So to address Kyote's question in the chat Coyote is asking…</p>
+<p id=65d7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> if we had a field like display order wouldn't it remove the need for this render method? No because ordering the fields is not the only thing that this render method does. It also normalizes. That bit is key. Again, recall how this got started. most of the current mainstream wallets ha have this notion of a card. we went through the fact that it's very skeomorphic that it may change in any number of months or years.</p>
+<p id=72df class="phone s01"><cite>Dmitri_Zagidulin:</cite> But the reason that the wallets have settled on this is to solve the need for this use case of a small subset of normalized fields. And notice by the way with with cards the issuer doesn't get to pick priority. they normalize it. They pick here's the background color, but it has nothing about priority. So, we are trying to fit two very different use cases into one render One about normalizing and the other one is about sorting the field in priority order.</p>
+<p id=cbca class="phone s01"><cite>Dmitri_Zagidulin:</cite> I like what man has said about putting together a rank choice of suggestions to the field provided we can agree on the purpose of the suite and…</p>
+<p id=ff93 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I like Dave's items except for item three. Dave, go ahead.</p>
+<p id=78b2 class="phone s04"><cite>Dave_Longley:</cite> right? Trying to get to agreement on…</p>
+<p id=467c class="phone s04"><cite>Dave_Longley:</cite> what we're trying to accomplish. so we had those four items I wrote down. the other thing I've just generally been thinking about is that I think we're trying to take NEVC and plug its data into slots where slots are about some meta shape that is easily reusable and pluggable in anyone's interface. So this isn't really about the data itself. there's some basic set of meta shapes that we're coming up with summaries. we've talked about some kind of summary which is a name and a description or something for the VC maybe a picture an image and then individual fields which themselves have names for the fields and things like that.</p>
+<p id=7be8 class="phone s04"><cite>Dave_Longley:</cite> And so we're really describing some set of metadata about the VC and slots where those things plug in. so I'm just trying to describe what we're looking for and…</p>
+<p id=1bf9 class="phone s04"><cite>Dave_Longley:</cite> hoping that that triggers some additional names or feedback.</p>
+<p id=c6f8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks Dave.</p>
+<p id=1c7b class="phone s01"><cite>Dmitri_Zagidulin:</cite> So actually providing field labels is another item to add to. So if I had to tweak dates for items, it would be normalization, priority order, labels, and summary information. I think falls under normalization. So I think those three things</p>
+<p id=9a25 class="phone s06"><cite>Manu_Sporny:</cite> I mean in color, it's we have to describe this thing to people that have not been here and aren't thinking deeply about this.</p>
+<p id=e575 class="phone s01"><cite>Dmitri_Zagidulin:</cite> that's under normalization I think.</p>
+<p id=4995 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, good point.</p>
+<p id=75f4 class="phone s06"><cite>Manu_Sporny:</cite> So I think we're going to have to be a bit more explicit than normalization. or we have to spell out exactly what we mean by normalization it is a summary name description and icon along with a set of fields that each have a label and a value driven by the data in the verifiable credential. so that's really item one.</p>
+<p id=a96c class="phone s06"><cite>Manu_Sporny:</cite> That's what we mean by I guess a regular shape. prior to orderer and…</p>
+<p id=48fc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Dave…</p>
+<p id=10006 class="phone s06"><cite>Manu_Sporny:</cite> then ease of integration into renderers UI is kind of a subset of the label and value items. yeah, I get what we mean by the list, but that list needs to train be transformed into something that people that don't have a very loose idea about what we're trying to do</p>
+<p id=6715 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what about the go latest three goals that I mentioned that's very concrete for the developers and other people can</p>
+<p id=e64e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Send.</p>
+<p id=10007 class="phone s04"><cite>Dave_Longley:</cite> So, I think if we set out So, first of all, I disagree with the goal of trying to put all this together in a short enough email for people who are not here to then pick names to go with it. I think that's just going very easily could give us a bad name. I agree with the goal for us here to come up with exactly what we want this thing to do because I think even in this conversation some of us have learned more about what other people were thinking in this group. so I think we should continue this exercise but I don't think the end goal should be to then send out an email with a really tur list. anything longer I think is going to be hard for anybody to read where people don't have the rest of the context or things we might have forgotten to then go vote somewhere.</p>
+<p id=ed21 class="phone s04"><cite>Dave_Longley:</cite> I think we internally should get a better idea of everything we think this render method should be and we might find that the name reveals itself from there and if not then we can pursue this other method.</p>
+<p id=0970 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I'm fine. The issue is everyone on this call has minus one, at least one of the things in a fairly strong way. as far as I can see. so, rank choice is typically the only way to get past that. Otherwise, we're just going to go into a death spiral of trying to pick a name.</p>
+<p id=b717 class="phone s06"><cite>Manu_Sporny:</cite> And everything being minus one. plus one to Dave to your, let's write it down. But, I think did we have you and Dmitri disagreeing on the goals? I think I can't track.</p>
+<p id=88df class="phone s01"><cite>Dmitri_Zagidulin:</cite> are we…</p>
+<p id=5780 class="phone s01"><cite>Dmitri_Zagidulin:</cite> though because I think at this point there is a bit of convergence. yeah.</p>
+<p id=7a88 class="phone s06"><cite>Manu_Sporny:</cite> So, let's write it down because it's not clear to me. it sounds like both of you are disagreeing to me.</p>
+<p id=1c59 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Mano, u just to address you're absolutely right that if this was just about naming everybody minus one's rank choice voting is the only way to get past that but in order for us to present a rank choice vote list we need to be clear about what the goal of this render method is which is the bit that we're possibly converging on.</p>
+<p id=9e48 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So this has been actually really helpful and productive Dave. the three goals normalization with a specific items, field order and labels, do those capture all of the emphasis that you want or do you feel something is missing?</p>
+<p id=dd8b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, so Dave's three items regular shape. Go ahead.</p>
+<p id=da5e class="phone s04"><cite>Dave_Longley:</cite> Yeah. …</p>
+<p id=a9d3 class="phone s04"><cite>Dave_Longley:</cite> So, I was typing what I think my items are to try and compare that to your goal. Then I put that in the chat. So normalization I think is in common it's a regular shape and the main reason for that is as a renderer you just want to grab a bunch of stuff and stuff it into slots. You don't want to be thinking about the VC specifics at all. So that's what the normalization is for. That is to enable you to easily integrate it into one of your components. there's some regular meta shape that you can grab stuff and plug it in. it is good for the issuer to list out fields in issuer priority order and provide field metadata. So, this is things like labels. There might also be icons or other things that go with individual fields that could be useful for people and you could include that information.</p>
+<p id=1436 class="phone s04"><cite>Dave_Longley:</cite> And again, that's just more metadata about the fields so that if anyone has a field display, they can plug it in there. And the fact that it comes in priority order means it makes it easy for you to know which things to show first, even if you have a scrolling thing or something that might show more or whatever. and then there's summary information which I have separated out from the regular shape. it does fit into a regular shape but it's important that it's summary information about the C type the name that you might display for that credential that name might appear in a variety of different languages as well and so I separated that as its own metadata category about the VC type information and…</p>
+<p id=7f98 class="phone s04"><cite>Dave_Longley:</cite> so those are the three things that I think that this render method is trying to provide …</p>
+<p id=fff5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Can you say more about VC type?</p>
+<p id=7ac3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> What does that mean? That seems weird.</p>
+<p id=0380 class="phone s04"><cite>Dave_Longley:</cite> is it a driver's license? Is it a birth certificate? Is it this or…</p>
+<p id=f849 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But that's literally VC.ype I failed…</p>
+<p id=d1f2 class="phone s04"><cite>Dave_Longley:</cite> that? and…</p>
+<p id=32dd class="phone s01"><cite>Dmitri_Zagidulin:</cite> which we already have as nothing.</p>
+<p id=7219 class="phone s04"><cite>Dave_Longley:</cite> no, it is. No, it's not. VC.type field is a URL it's a component of a URL. And that is not sufficient for someone who doesn't know someone who's writing an interface who one doesn't know how to go fetch that URL and then read RDF labels about it. or someone who doesn't know whether or not they should take a string that is in some context and apply a normalization to split it on camel case or…</p>
+<p id=1654 class="phone s04"><cite>Dave_Longley:</cite> something on B that information is simply external you either have to go fetch it and know to follow your nose or it would be provided in a render method. So type is totally insufficient for that on its own.</p>
+<p id=2f1f class="phone s01"><cite>Dmitri_Zagidulin:</cite> But this is a new feature that you're talking about.</p>
+<p id=c464 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do you mind outlining it in a separate issue?</p>
+<p id=0ccc class="phone s04"><cite>Dave_Longley:</cite> When I say I don't think this is a new feature. I don't remember…</p>
+<p id=d568 class="phone s01"><cite>Dmitri_Zagidulin:</cite> is a new feature because we haven't heard about this before.</p>
+<p id=2c68 class="phone s04"><cite>Dave_Longley:</cite> if we go to card render suite. I don't know that we haven't heard about this before. It's been discussed in the issues around this render method. But if you were to perhaps click on card render suite, I don't remember if there's already something in there that talks about this name and…</p>
+<p id=281b class="phone s01"><cite>Dmitri_Zagidulin:</cite> There is not we're looking at it here.</p>
+<p id=9e1e class="phone s04"><cite>Dave_Longley:</cite> description. I think name will pro probably be used for exactly that.</p>
+<p id=4254 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But name is not type.</p>
+<p id=f16e class="phone s01"><cite>Dmitri_Zagidulin:</cite> name is just So if you just mean name that's fine you're right name has been in here from the start. So it sounds like we are converging normalized shape with specific field order and labels monos. I mean I would ask to tweak…</p>
+<p id=7d96 class="phone s06"><cite>Manu_Sporny:</cite> So is one, two, three there correct? is that what everyone believes we're creating here? Because would anybody object to what Dave wrote in one 123?</p>
+<p id=f18c class="phone s01"><cite>Dmitri_Zagidulin:</cite> because in Dave's list one and three are very similar regular shape is the summary information.</p>
+<p id=5473 class="phone s06"><cite>Manu_Sporny:</cite> I think it means is regular data shape, right? Meaning you have to have input into a processor and one is more about regular data shape. Where is three one is for machines three is for humans.</p>
+<p id=b023 class="phone s04"><cite>Dave_Longley:</cite> One is saying the data shape is regular. You take any VC and you will end up expressing this information about it in this specific shape. Three what is some of that information that might not even be present in the VC itself…</p>
+<p id=ebd3 class="phone s04"><cite>Dave_Longley:</cite> which is name and description of the type of VC. So one is about saying that you want to shape things a certain way that and…</p>
+<p id=5992 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm not sure I fully understand.</p>
+<p id=0592 class="phone s04"><cite>Dave_Longley:</cite> that is a separable concept from okay what are you going to put in the shape? How many corners is it going to have?</p>
+<p id=ef3d class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I think when describing this to developers and the list, we can just combine those two. I think that's getting too fine grained.</p>
+<p id=6ed2 class="phone s04"><cite>Dave_Longley:</cite> We could combine them all into one big list. But I think it's useful to have it to separate out the concept of summary information from for example fields and…</p>
+<p id=8678 class="phone s02"><cite>Ivan_Herman:</cite> Perfect.</p>
+<p id=32b1 class="phone s04"><cite>Dave_Longley:</cite> from the fact that it's a regular shape. I feel like those are three independent ideas.</p>
+<p id=86be class="phone s01"><cite>Dmitri_Zagidulin:</cite> A regular shape is too abstract though. that's too abstract. can we say what we mean by regular shape? Can we specify the shape?</p>
+<p id=8e28 class="phone s04"><cite>Dave_Longley:</cite> Maybe what we would say is every VC has its own data model behind it and its own expression that could be anything at all. And the whole idea is to normalize that to a common shape that's really useful for rendering. And so it is the issuer's job to take any arbitrary shape that the VC is expressed in and turn it into this singular shape that is the only shape that the renderer has to %.</p>
+<p id=3996 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=b7b8 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I think it's more about data structure. number one is a concrete data structure for the purposes of rendering, And it's probably more specific than that, but Three is about, human readable information,… summary information. Regardless of shape,</p>
+<p id=37fa class="phone s01"><cite>Dmitri_Zagidulin:</cite> In any case,…</p>
+<p id=3daf class="phone s01"><cite>Dmitri_Zagidulin:</cite> those are fine grain details. I'm not hearing any major objections to these three. does anybody feel that some of these three goals are missing an important item disagrees with one of them? Let's gauge convergence here.</p>
+<p id=8bae class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank. Excellent.</p>
+<p id=9c9c class="phone s03"><cite>Nate_Otto:</cite> As we mentioned earlier, I think the branding information, the sort of color that the issuer selected is one possible additional category that we're subsuming into a regular shape. And I don't mind at all, but it is subsumed there. This seems fine.</p>
+<p id=1dc3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So let's see. Let me write things yields in priority order with labels summary whatever that means.</p>
+<p id=3ad8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Still not clear what you mean by summary as opposed to a regular shape though Dave.</p>
+<p id=8db2 class="phone s04"><cite>Dave_Longley:</cite> Yeah, but that's because regular shape now has icon name and description in there and that is not relevant.</p>
+<p id=872e class="phone s01"><cite>Dmitri_Zagidulin:</cite> We need to specify though.</p>
+<p id=5fb3 class="phone s04"><cite>Dave_Longley:</cite> I think that's saying the concept of regular shape is you take any VC and it will have the same shape. You only have to understand one shape as a renderer. That does not say…</p>
+<p id=fedc class="phone s01"><cite>Dmitri_Zagidulin:</cite> But then here you've described the concept of a render method.</p>
+<p id=ac73 class="phone s04"><cite>Dave_Longley:</cite> that doesn't say what the shape is. And then in some sense I'm trying to map that to an HTML render method.</p>
+<p id=2e69 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the words that you just described. That's a render method.</p>
+<p id=8802 class="phone s04"><cite>Dave_Longley:</cite> It is not the same. An HTML it does surface that a specific shape for the HTML render method but the rendering itself and the information that's in there is not exposed to you as a renderer. it is totally opaque. So you put this in a sandbox and something will show up the end. That's very different from here's exactly what you can go render.</p>
+<p id=3e9b class="phone s04"><cite>Dave_Longley:</cite> Here's all the information in a single shape and you can always expect it to be in this shape. Now you go decide how to render that. That's quite different.</p>
+<p id=43de class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait. So we are diverging though.</p>
+<p id=13ef class="phone s01"><cite>Dmitri_Zagidulin:</cite> You're saying we don't want to specify the subset of the fields in this render suite.</p>
+<p id=7ab9 class="phone s04"><cite>Dave_Longley:</cite> I did not say that.</p>
+<p id=15b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We don't want to specify icon and background and</p>
+<p id=37da class="phone s04"><cite>Dave_Longley:</cite> No, I did not say that we don't want to do that. I'm saying those are the specific things that is The fact that we want a single shape is itself important to highlight. If I just hand you a VC, it could be in any shape. And now you have to know the VC type or you have to have a generalized processor that can do the normalization yourself for your own interface. we're eliminating the step where you need to do that by having the issuer do that.</p>
+<p id=f9c6 class="phone s04"><cite>Dave_Longley:</cite> The issuer is going to offer you a normalized shape. That's a different item in our list. Here's what's going to be in that shape.</p>
+<p id=480e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=32d1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, let me see if I can Okay.</p>
+<p id=3851 class="phone s04"><cite>Dave_Longley:</cite> name, description that's summary information about the VC. What else? Fields in priority order, etc.</p>
+<p id=10008 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, would you say Mon just pasted? Does that capture what you said? Excellent. Does anybody else feel that's missing something or…</p>
+<p id=53ae class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think so. the only thing that I think is that's missing in one is there's no mention of normalization or…</p>
+<p id=9c31 class="phone s01"><cite>Dmitri_Zagidulin:</cite> object to that? Go ahead.</p>
+<p id=d9eb class="phone s04"><cite>Dave_Longley:</cite> it does not say that every date JSON data structure will be the same. that's really what we're trying to do and that's what normalization does or…</p>
+<p id=aa7a class="phone s01"><cite>Dmitri_Zagidulin:</cite> How about a normalized JSON data structure?</p>
+<p id=3181 class="phone s04"><cite>Dave_Longley:</cite> if we don't want to use the word normalize we can say no let's use that word I guess normalize to a single JSON data structure</p>
+<p id=0e9f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Does anybody object to this format changing rather concrete to normalized once twice the exact was this …</p>
+<p id=fc26 class="phone s06"><cite>Manu_Sporny:</cite> I'm trying to retype it out. What was the exact the VC? okay.</p>
+<p id=e701 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what I just typed? Yeah.</p>
+<p id=41e1 class="phone s06"><cite>Manu_Sporny:</cite> You typed it out. Okay. All right.</p>
+<p id=8d61 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I had previously captured things like colors using the word style. but it's I mean, style is a little more specific because you might want to separate out which color goes where and so on. But go</p>
+<p id=c82c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=1811 class="phone s06"><cite>Manu_Sporny:</cite> The thing that Yeah,…</p>
+<p id=fa16 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And we can tweak the exact fields. Go ahead.</p>
+<p id=eec5 class="phone s06"><cite>Manu_Sporny:</cite> the thing that threw me off with that, Dave, is you put it on the fields list, which doesn't specify style information other than maybe language if you want to view that as a style, which probably shouldn't.</p>
+<p id=d8c4 class="phone s04"><cite>Dave_Longley:</cite> I don't know what we I could imagine that an individual field might also have metadata an icon which might imply it has some other style as and so I just put it there as a catch all.</p>
+<p id=c15a class="phone s06"><cite>Manu_Sporny:</cite> Note Are we doing that for version 10? Because if we are, we should put it in here, I'm concerned that Okay.</p>
+<p id=4812 class="phone s01"><cite>Dmitri_Zagidulin:</cite> L. Okay.</p>
+<p id=6c41 class="phone s04"><cite>Dave_Longley:</cite> I think in this conversation we can write it down and then we can weed that</p>
+<p id=7870 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I'm still not hearing any major objections to these three items. So This is progress. that then we'll capture this in the issue and…</p>
+<p id=d38c class="phone s01"><cite>Dmitri_Zagidulin:</cite> or the PR and I'll make a concrete proposal for the next bill. Benjamin, go ahead.</p>
+<p id=a1da class="phone s05"><cite>Benjamin_Young:</cite> Yeah, in the spirit of concrete proposals,…</p>
+<p id=d382 class="phone s05"><cite>Benjamin_Young:</cite> I've spent the last half hour trying to rebase that PR.</p>
+<p id=64f4 class="phone s05"><cite>Benjamin_Young:</cite> It's not worth the lift cuz There were quote unquote editorial changes that massively shifted the corpus in the last six months of us bike shedding this or…</p>
+<p id=8c08 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=2b8f class="phone s05"><cite>Benjamin_Young:</cite> three months or however long it's been.</p>
+<p id=8fc2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. We can just redo them.</p>
+<p id=c4b9 class="phone s05"><cite>Benjamin_Young:</cite> I guess it's only been two weeks,…</p>
+<p id=4d41 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, sounds good.</p>
+<p id=47c1 class="phone s05"><cite>Benjamin_Young:</cite> but whatever it shifted. So yeah, the amount of work that's actually done in here is easier to redo than it is to replace. Yeah. So,</p>
+<p id=e4c0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, so we can close this PR and so We have the goals. We have these three items.</p>
+<p id=705d class="phone s01"><cite>Dmitri_Zagidulin:</cite> We just need a sweet name to fit them. And there if we don't have consensus, we can go to rank choice mode to the list. but it's the goals alignment part that's important. All right. I think this is a good place to stop since we're close to the top of the hour. Ivonne, go ahead.</p>
+<p id=f2b8 class="phone s02"><cite>Ivan_Herman:</cite> Just to your last comment, in my view the most important thing is to create a PR which captions all these things and…</p>
+<p id=30a8 class="phone s02"><cite>Ivan_Herman:</cite> we can leave the card the naming is a question mark once everything is really described there. Don't worry about the name for the time being in my view.</p>
+<p id=705a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Can do yeah,…</p>
+<p id=28c6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we can do that. thank you so much I appreciate everybody's patience. This is a finicky but really important issue and I think we're close to having something where we can all live with. in that case, see you all next week at the same bad time and bad channel. Cheers all. Meeting ended after 00:59:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
