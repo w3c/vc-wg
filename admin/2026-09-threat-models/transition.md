@@ -2,12 +2,12 @@
 
 This is a slightly unusual transition request for a _series_ of WG NOTE transitions on behalf of the Verifiable Credentials WG. Instead of issuing now 10+ almost identical transition requests, and others to come later, this request is for a pattern-based transitions for a series of WG Notes, all for the same purposes, namely the publication of specification threat models.
 
-- Title: <associated specification title without version> Threat Model
-- Short name: <unversioned shortname of the associated specification>-threat-model-<version of the associated specification>
+- Title: [associated specification title without version] Threat Model
+- Short name: [unversioned shortname of the associated specification]-threat-model-[version of the associated specification]
 - Draft ready for publication: depends on the repository setup
 - Estimated publication date: As soon as the document is available
 
-Examples covering the first batch of threat models to be published:
+Examples covering the first batch of threat models to be published (more will come):
 
 - [Verifiable Credentials Data Model v2.1](https://www.w3.org/TR/vc-data-model-2.1/) with short name `vc-data-model`
   - Title: Verifiable Credentials Data Model Threat Model
@@ -41,11 +41,11 @@ Examples covering the first batch of threat models to be published:
 
 # Abstract
 
-- <URL of the Note>/#abstract : A standard, essentially boilerplate text, mostly identical for all threat-model documents, see [example](https://w3c.github.io/vc-data-model/threat-model/#abstract)
+- [URL of the Note]/#abstract : A standard, essentially boilerplate text, mostly identical for all threat-model documents, see [example](https://w3c.github.io/vc-data-model/threat-model/#abstract)
 
 # Status
 
-- <URL of the Note>/#sotd : A standard, essentially boilerplate text, mostly identical for all threat-model documents, see [example](https://w3c.github.io/vc-data-model/threat-model/#sotd)
+- [URL of the Note]/#sotd : A standard, essentially boilerplate text, mostly identical for all threat-model documents, see [example](https://w3c.github.io/vc-data-model/threat-model/#sotd)
 
 # Link to group's decision to request transition
 
@@ -56,4 +56,4 @@ Examples covering the first batch of threat models to be published:
 No.
 
 
-/cc @tidoust @simoneonofri @msporny @brentzundel@philarcher
+/cc @tidoust @simoneonofri @msporny @brentzundel @philarcher

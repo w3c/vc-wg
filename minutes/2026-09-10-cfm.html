@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 10 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>10 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Denken_Chen, Elaine_Wooton, Joe_Andrieu, Manu_Sporny, Phillip_Long, Scott_Jones, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#05e1">Add sections on cryptographic keys and controlled identifiers by msporny · Pull Request #43 · w3c/vc-confidence-method · GitHub</a></li>
+<li><a href="#6156">Discussing Guardian Of The Subject Phrase</a></li>
+<li><a href="#652e">Usable By Or On Behalf Of Subject</a></li>
+<li><a href="#eac6">Non-VP Confidence Method Use Cases</a></li>
+<li><a href="#404f">Type Of Multikey Object</a></li>
+<li><a href="#0039">Dislike Of SIDS Spec</a></li>
+<li><a href="#0448">Test Suite Discussion</a></li>
+<li><a href="#0b97">Test Suites</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=505d class="phone s01"><cite>Joe_Andrieu:</cite> Howdy, folks.</p>
+<p id=3312 class="phone s02"><cite>Scott_Jones:</cite> Hi. Very well.</p>
+<p id=830a class="phone s01"><cite>Joe_Andrieu:</cite> How you doing, Scott? All right.</p>
+<p id=5a01 class="phone s02"><cite>Scott_Jones:</cite> How about you?</p>
+<p id=b691 class="phone s01"><cite>Joe_Andrieu:</cite> Hey, Lane.</p>
+<p id=f901 class="phone s03"><cite>Elaine_Wooton:</cite> Good morning everybody.</p>
+<p id=fb96 class="phone s01"><cite>Joe_Andrieu:</cite> Where in the world is Elaine Wooden today?</p>
+<p id=35c6 class="phone s03"><cite>Elaine_Wooton:</cite> I'm sitting in my house in Gaithersburg, Maryland. Perfect.</p>
+<p id=9c50 class="phone s01"><cite>Joe_Andrieu:</cite> Lovely. How'd you like GDC?</p>
+<p id=5c85 class="phone s03"><cite>Elaine_Wooton:</cite> GDC was great.</p>
+<p id=286f class="phone s03"><cite>Elaine_Wooton:</cite> Yeah, it It was nice to see Scott there. Scott greeted me.</p>
+<p id=ea19 class="phone s01"><cite>Joe_Andrieu:</cite> Cool. …</p>
+<p id=d9ea class="phone s01"><cite>Joe_Andrieu:</cite> you went too Scott. How'd you enjoy it?</p>
+<p id=7091 class="phone s02"><cite>Scott_Jones:</cite> Yeah. I enjoyed it.</p>
+<p id=98cb class="phone s02"><cite>Scott_Jones:</cite> It's the scale of it versus I IW as an example was pretty remarkable. What was IIW like 300 people?</p>
+<p id=37ad class="phone s02"><cite>Scott_Jones:</cite> Am I making that up?</p>
+<p id=7d37 class="phone s01"><cite>Joe_Andrieu:</cite> That's about right. So,</p>
+<p id=ae9d class="phone s02"><cite>Scott_Jones:</cite> This was 2,000 or 3,000 I think they actually said.</p>
+<p id=e735 class="phone s03"><cite>Elaine_Wooton:</cite> Yeah, it was hard to know…</p>
+<p id=e2fb class="phone s03"><cite>Elaine_Wooton:</cite> who to connect with. And at some point I can't remember who it was, and I introduced whoever it was that I'm thinking about. to somebody I'd met that deals with product ID and the guy was on a script and I don't know jetlagged I don't know and he filibustered us for 10 minutes straight no break in so hard to know who to talk to yeah</p>
+<p id=c820 class="phone s01"><cite>Joe_Andrieu:</cite> Right. Indeed. Hey, Phil.</p>
+<p id=d5a5 class="phone s02"><cite>Scott_Jones:</cite> Got to use that filibustered. That's awesome.</p>
+<p id=c186 class="phone s01"><cite>Joe_Andrieu:</cite> It's definitely a tactic that happens in these conversations.</p>
+<p id=381f class="phone s02"><cite>Scott_Jones:</cite> Yeah. Or an energy vampire kind of analog where they're just like I'm gonna attach to you.</p>
+<p id=c933 class="phone s03"><cite>Elaine_Wooton:</cite> Yeah. …</p>
+<p id=37a5 class="phone s01"><cite>Joe_Andrieu:</cite> Welcome, Den.</p>
+<p id=b75d class="phone s03"><cite>Elaine_Wooton:</cite> know who it was? It was Phil Archer. And this guy was lecturing Phil Archer about product ID.</p>
+<p id=6d77 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. Hey, that's D level mansplaining.</p>
+<p id=63a2 class="phone s03"><cite>Elaine_Wooton:</cite> It was incredible. and Phil just standing there like nodding his head.</p>
+</section>
+
+<section>
+<h3 id=05e1><a href="https://github.com/w3c/vc-confidence-method/pull/43">Add sections on cryptographic keys and controlled identifiers by msporny · Pull Request #43 · w3c/vc-confidence-method · GitHub</a></h3>
+<p id=a126 class="phone s02"><cite>Scott_Jones:</cite> Hey, heat.</p>
+<p id=6f27 class="phone s03"><cite>Elaine_Wooton:</cite> It was great.</p>
+<p id=706f class="phone s01"><cite>Joe_Andrieu:</cite> Please tell me about product identifiers. Hey, Manny. Welcome. All right.</p>
+<p id=b809 class="phone s04"><cite>Manu_Sporny:</cite> Asia.</p>
+<p id=d34b class="phone s01"><cite>Joe_Andrieu:</cite> I don't know that I'm expecting anyone else in particular, so I think we can go ahead and get started. Denin, did you have any thoughts other than looking at manage PR for today?</p>
+<p id=974a class="phone s05"><cite>Denken_Chen:</cite> Yeah, I think we should look at that first.</p>
+<p id=6cee class="phone s01"><cite>Joe_Andrieu:</cite> Okay, I do have some work to do on the data flow diagram that we got started on our last call. but it's really not mature enough to get coherent feedback. But I've been refactoring if you recall we had the bits about</p>
+<p id=0a79 class="phone s01"><cite>Joe_Andrieu:</cite> the livveness check server and the evaluator context and so I've been thinking through how we can resolve that but I don't know that it's quite ready to present yet today but let's go through that order so let's first look at manu's and then maybe we could see if there are other issues we want to pull up if we get through that today I does that sound good to anyone else have auggest suggestion for the agenda. thumbs up for Manu and e. go ahead, man.</p>
+<p id=ed4e class="phone s04"><cite>Manu_Sporny:</cite> If we have time, I would like to spend a little bit kind of talking about Joe, and Denin need from us to make progress on anything else. I think we have any issues we need to talk about? just you asked for thoughts. I'm seeing a number of things that are not tagged issues that are not tagged with do we need discussion? Is it if there were more things that were ready for PR, I might be able to start tackling them primarily…</p>
+<p id=d683 class="phone s04"><cite>Manu_Sporny:</cite> because I think my work on recognized entities is wrapping up. So I have some spec editing time coming up. That's it.</p>
+<p id=1dee class="phone s01"><cite>Joe_Andrieu:</cite> Okay, cool.</p>
+<p id=db5a class="phone s01"><cite>Joe_Andrieu:</cite> So, that triggered two things for me, Manny. one maybe we can get to when we talk about issues, which is we should triage those and label them so that we can decide if we need more discussion or if they're ready for PR. and then I don't know if we've had any coherent conversations about test suite and how we want to approach that. I think we initially had some hopes that maybe we could leverage the VC test suite etc. but that's something we need to get concrete with and start moving towards resolution about how we're going to test these things. so I'll just put that in the queue as something we can talk about later.</p>
+<p id=535c class="phone s01"><cite>Joe_Andrieu:</cite> All Anyone else? So, I happen to be having a weird thing. I don't want to use all this time for customer support, but I cannot check out that branch on my local clone. The branch for your PR menu. I can see it live, but I wanted to see it rendered, right? And the PR preview has been problematic. So I was like, I'll clone it and I'll switch to the branch and, render it locally. but the branch doesn't check out when I try to do it. And I…</p>
+<p id=51c4 class="phone s01"><cite>Joe_Andrieu:</cite> if anyone has any lowhanging fruit,…</p>
+<p id=54d8 class="phone s04"><cite>Manu_Sporny:</cite> Are you working off of your own branch?</p>
+<p id=1538 class="phone s01"><cite>Joe_Andrieu:</cite> I'll try it because I would like to share the rendered version, but maybe I'll have to defer to someone else to do this screen sharing. Go ahead, man. Manu Sporny:</p>
+<p id=7ab9 class="phone s04"><cite>Manu_Sporny:</cite> Your own clone of the repo or the main one.</p>
+<p id=04b1 class="phone s01"><cite>Joe_Andrieu:</cite> So, I'm …</p>
+<p id=1996 class="phone s01"><cite>Joe_Andrieu:</cite> that's a good thing to check.</p>
+<p id=b656 class="phone s04"><cite>Manu_Sporny:</cite> Cuz if you're not, maybe you just need to resync your local forked copy.</p>
+<p id=397b class="phone s01"><cite>Joe_Andrieu:</cite> Okay.</p>
+<p id=8dae class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> to minimize the live tech support part.</p>
+<p id=406c class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> The preview issues so far as I know have all been resolved. So pushing a fresh commit to Manu's branch should get a rerendered thing. And so the extra checkout issue should be not a problem right now.</p>
+<p id=6746 class="phone s04"><cite>Manu_Sporny:</cite> And the preview for this particular one looks to be working for me as far as I can tell.</p>
+</section>
+
+<section>
+<h3 id=6156>Discussing Guardian Of The Subject Phrase</h3>
+<p id=93ac class="phone s01"><cite>Joe_Andrieu:</cite> So, we'll use the preview and Manny, you nailed it. it was one of those kinds of are you plugged into the right port thing. So, my local clone was off of my fork. and so my fork doesn't have your branch, the main one does, right? So, thanks for that. so let me just share screen with my two files here. One on the PR preview and one on the PR All so, Manuel, I made a bunch of comments a couple of weeks ago. I saw you were able to get in and process that a little bit today. do you want to open us up with where you think we're at after your engagement this morning?</p>
+<p id=ffff class="phone s04"><cite>Manu_Sporny:</cite> Sorry it took so long to get around to it. I had just forgotten about it. until you reminded me yesterday and then I forgot about it until 15 minutes before the call. so I did take a look. I think I merged most everything. you had made specific recommendations for Joe. I did try to mix in some of coyotes like hey this isn't exactly accurate in a guardian use case concern that he had. So, I took your text, Joe. added a comma or…</p>
+<p id=bded class="phone s04"><cite>Manu_Sporny:</cite> a guardian, text in there. and then I think that would address both Coyote and your concern, but please take a look through that to make sure it works for you.</p>
+<p id=06e7 class="phone s01"><cite>Joe_Andrieu:</cite> Which section is it?</p>
+<p id=5a5c class=irc><cite>&lt;Dave_Longley&gt;</cite> &quot;agent of the subject&quot;? </p>
+<p id=4beb class="phone s04"><cite>Manu_Sporny:</cite> Just search for the text line 649. Yeah, there we go. That ora guardian of the subject is what I added because coyote was like it might not be the subject that has control over the keys. and I know we don't define guardian, but hoping it's self-explanatory Enough.</p>
+<p id=997d class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I actually don't agree with that framing. I'm not sure where we should resolve around it, but let's open it up for some discussion.</p>
+<p id=74cc class="phone s01"><cite>Joe_Andrieu:</cite> My concern is that part of it is we don't define guardian. So it's unclear what that means either from a semantic or a technical perspective. but the meaning of the confidence method is so that you could have confidence that some party you're interacting with in some context. It could be out of time, A log file of a signature. So it may not live, but the party in question is the subject of that RDF triple.</p>
+<p id=7568 class=irc><cite>&lt;Dave_Longley&gt;</cite> or a &quot;delegate of the subject&quot;? </p>
+<p id=7e48 class="phone s01"><cite>Joe_Andrieu:</cite> And so if you have a VC where there's a guardian involved what you don't want to do is say that the way we have confidence in the child if we go with a parent child relationship just have a relationship to talk about there could be a confidence method for the child and that should be what the child controls and so a confidence method for the guardian should be attached to a subject that says this person is the guardian of that other of the child. and I think that is a clean way to get the semantics. And it feels like this is conflating the two. So I can't tell with the proposed language here whether or not the person satisfying the confidence method is a subject or just someone who is a guardian. and I have no mechanism to understand who decided that they're a guardian. Is it my state of California? Is it the United States of America? Is it someone else? etc. Go ahead, Manny.</p>
+<p id=08b1 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I'm fine with that. I was just trying to align something with Coyote, but what she said makes sense to me. there's some other proposals in the chat. Dave is saying agent subject. Denkins plusing delegate but I think those create the same problem that you're concerned about Joe in that they're kind of like it's not the subject it is very much associated with the subject and subject in the RDF sense the confidence method and we are kind of like we don't care how that thing's exercised the presumption here is that there's an association with the subject so it's an abstraction I</p>
+<p id=66bc class=irc><cite>&lt;Denken_Chen&gt;</cite> +1 to delegate, or represents the subject </p>
+<p id=10000 class="phone s04"><cite>Manu_Sporny:</cite> I think Joe is what you're effectively saying is how it's used is abstracted away. but ultimately we're presuming that that thing is associated with that subject in some way and is being used. So I'm fine with striking it. I wouldn't expect Coyote would push back too hardly based on the discussion that we just had. and I can do that now unless there are other people that are like,…</p>
+<p id=4e64 class="phone s04"><cite>Manu_Sporny:</cite> &quot;No, we really should talk about delegates and guardians.&quot; I want to avoid doing that because it opens a can of worms. Joe, as you mentioned,</p>
+<p id=ee80 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, plus one.</p>
+<p id=1764 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead, Dave.</p>
+<p id=7896 class="phone s07"><cite>Dave_Longley:</cite> Yeah, I think the public key has to be presumed to be minimally we don't have to put the word in there in the minimally minimum I can't even say the word has to be usable by that subject if something else can use it that's not necessarily even relevant here and that I think that goes to Joe's point…</p>
+<p id=1de7 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> A minor person doesn't delegate to their parent/guardian... </p>
+<p id=35b2 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, cool.</p>
+<p id=72c6 class="phone s07"><cite>Dave_Longley:</cite> what you're putting in the VC is about the subject associated with the sub subject so that's what it has to be usable at least by that subject</p>
+<p id=786d class="phone s04"><cite>Manu_Sporny:</cite> So I am putting in a change right now to just delete that a guardian of the subject phrase. So it will read, &quot;The issuer records a public key presumed to be usable by the subject at the time of issuance proof of use.&quot; I'm fine with that…</p>
+<p id=5cba class="phone s04"><cite>Manu_Sporny:</cite> if everybody else is. And if you refresh,…</p>
+<p id=aa84 class=irc><cite>&lt;Dave_Longley&gt;</cite> &quot;usable by the subject&quot; is a minimum bar, +1 to just leaving it at that </p>
+<p id=6003 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> I Yeah,…</p>
+<p id=c8bd class="phone s04"><cite>Manu_Sporny:</cite> it should come up on screen. Joe, the Sorry,…</p>
+<p id=1e77 class="phone s01"><cite>Joe_Andrieu:</cite> It's going to take a while to build. I think this is preview. Manu Sporny:</p>
+<p id=06cf class="phone s04"><cite>Manu_Sporny:</cite> I didn't apply I just did the change command. It won't show up on that screen. It'll show up on the code preview, the GitHub code changes thingy.</p>
+<p id=f009 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> &quot;usable by the subject&quot; is similarly problematic where the subject is a pet or a minor person </p>
+<p id=10dd class="phone s01"><cite>Joe_Andrieu:</cite> Right. Yeah.</p>
+<p id=e3ba class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> it won't show up on the preview until it's speaking because my hand is usable by the subject is similarly problematic…</p>
+<p id=1138 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=ee37 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> if the subject is a pet or a minor person. They can't use that. There's another entity which could use it on their behalf But similarly to the problem of definition of guardian, I think we run into similar problems with definitions here.</p>
+<p id=210c class="phone s01"><cite>Joe_Andrieu:</cite> So, I actually think there use cases where you could have a pet who has a cryptographic key in particular if they have an not an RC chip, but if they're chipped,…</p>
+<p id=99ea class=irc><cite>&lt;Dave_Longley&gt;</cite> it's still even &quot;usable&quot; by a pet -- perhaps, for some definition of &quot;usable&quot;, i.e., walking through a doggy door with the key embedded in their collar </p>
+<p id=3924 class="phone s01"><cite>Joe_Andrieu:</cite> they could actually have a secure element and you could Right.</p>
+<p id=e794 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> You would agree that's true,…</p>
+<p id=ed69 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> but you're not chipping your kid. I'm pretty sure. Sorry, I'm speaking out.</p>
+<p id=c0b2 class="phone s01"><cite>Joe_Andrieu:</cite> But the point is that you can say things that are nonsensical and so you can put things in here that are not usable by a child. So you would not do that, I think, is my reaction. like I agree with you.</p>
+<p id=acaf class="phone s01"><cite>Joe_Andrieu:</cite> If a child because they're 2 years old or whatever doesn't have their own cryptographic capability then you shouldn't add a confidence method that's going to let someone use a cryptographic method to have confidence in that subject Because they're isn't one that would satisfy the lema, if you will. Go ahead, David. I think you're next.</p>
+<p id=263e class="phone s07"><cite>Dave_Longley:</cite> Yeah, I was just going to say I think what you said, is logically consistent with what we were saying before that you would not put such a confidence method into a VC because it's not usable by the subject. we could have some language in there that could potentially be usable in the future by the subject. So, you're just trying to get ahead of it. And so you want to give someone a VC that has this confidence method for a minor who can't use it now but maybe in two years they can and that's maybe a use case but I think generally speaking the point is that is of the reason why you would not put that in to if it's not usable by the subject you would not put it in the VC except for that special use case I just</p>
+</section>
+
+<section>
+<h3 id=652e>Usable By Or On Behalf Of Subject</h3>
+<p id=8d4d class=irc><cite>&lt;Manu_Sporny&gt;</cite> what about &quot;on behalf of&quot;? </p>
+<p id=3029 class="phone s01"><cite>Joe_Andrieu:</cite> there's an interesting So Dave,…</p>
+<p id=0740 class="phone s04"><cite>Manu_Sporny:</cite> I'm wondering if on behalf of would address your concern, Ted. So, we would change it to the issuer records a public key presumed to be usable by or on behalf of the subject at the time of issuance. Proof of use.</p>
+<p id=9755 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Us knowing it's nonsensical doesn't save the later reader/user of this tech from doing what they think is sensical. </p>
+<p id=e4e9 class="phone s01"><cite>Joe_Andrieu:</cite> your use case, it took me in a direction that the rest of the text sort of breaks, which I just want to speak to is you could have a confidence method that is presumed to be usable by the user even if they can't use it today. for example, they may have something that they are bequeafd upon turning 21.</p>
+<p id=920b class="phone s01"><cite>Joe_Andrieu:</cite> and when they get this thing from their grandfather then they will have the key and then they can presume it. but the language here says at the time of issuance and I'm actually suggesting there is this weird edge case where at the time of issuance maybe it's not usable but when it is usable then it can be used right it's not a catch22…</p>
+<p id=16a4 class="phone s01"><cite>Joe_Andrieu:</cite> but the usleness is when that confidence method can be actualized if you will Ted go ahead</p>
+<p id=ef60 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> Yeah. …</p>
+<p id=f6c7 class=irc><cite>&lt;Denken_Chen&gt;</cite> +1 to “on behalf of” </p>
+<p id=aea2 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> I did speak the words on behalf of and that might be viable. the framing of this as being confident that the subject that has identified is the entity that you're looking at or considering. puts again some of the limits that don't make sense to me for confidence. it's only applicable to a subject is what I'm hearing. and said that might be enough to resolve the issues.</p>
+<p id=1561 class=irc><cite>&lt;Dave_Longley&gt;</cite> &quot;can be used at the time of presentation&quot;? </p>
+<p id=bc4d class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> that I've had about the other things, but I don't know that that does anything on behalf of or The subject doesn't necessarily have to be an adult. They don't have to have capacity to enter into contracts to be a subject. They don't have to know that the VC exists to be a subject. that's why pets can be subjects. And the cat who inherits her humans millions of dollars to live out her days in the palace hotel. That's great because you can check their chip against the identifier that you have for them. But again, you're not going to check the chip of the kid because the kids aren't chipped usually yet.</p>
+<p id=c7ef class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I've got too much raw thought and not enough words around it. I'll leave it there.</p>
+<p id=5604 class="phone s01"><cite>Joe_Andrieu:</cite> Okay. …</p>
+<p id=3991 class="phone s01"><cite>Joe_Andrieu:</cite> maybe some more will come out. what you triggered for me is to me think I maybe use the term catch22, but I think there's an innate relationship here where if the subject can't leverage keys for whatever reason because they're one years old or they're pet or they're an inanimate object because subjects can be anything then I think it's simply a null set. those keys that are usable by the subject become a null set and therefore you cannot use a keybased confidence method to help a verifier increase their confidence that the subject is the party they're looking at. So we're not trying to satisfy everything for all subjects.</p>
+<p id=0cba class="phone s01"><cite>Joe_Andrieu:</cite> We're saying that when you have this mechanism available called the cryptographic key and this asymmetric private public key thing that we can do then you can use this confidence method. Go ahead there.</p>
+<p id=0736 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's how I was thinking about it and we don't necessarily have to resolve that the language here to address that. But I get Ted's concern that we might not be explicit enough about that null set concept. The other suggestion I put into the chat here is to replace at the time of presentation. You'll note that the sentence that follows immediately after this also says issuers should verify the use of the private key before issuance. And so you should do that, but there might be use cases where you don't do that. And really this is only effective if the subject can use this key at the time of presentation.</p>
+<p id=6001 class="phone s07"><cite>Dave_Longley:</cite> And that would also cover these other use cases of bequething things and so</p>
+<p id=308f class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, I like that with one caveat.</p>
+<p id=f723 class=irc><cite>&lt;Phillip_Long&gt;</cite> Seems like we're trying avoid the challenges of guardianship. Can this simply be narrow in this spec and push these guardianship-like questions for quardianship when it is addressed directly? </p>
+<p id=d408 class="phone s01"><cite>Joe_Andrieu:</cite> But I think you're right. the second sentence there issuers should verify that is about encouraging closing the loop so that you test the confidence method before and so when the confidence method is tested again we have two ends of that being tested but they can't always test the confidence method so that's why the second sentence is there but I like if this is at the time of presentation with one caveat which touches on actually the next topic on the thread list which is</p>
+<p id=bb52 class="phone s01"><cite>Joe_Andrieu:</cite> we may not be in the context of a presentation for example checking a log file to see if a particular authentication action or whatever was done by the party you think it was done by and so I think there's another word instead of presentation but I'm not quite sure what that is and maybe we can talk about the other thing and figure out how we want to generalize beyond just the proof of use flow man, go ahead.</p>
+<p id=ae46 class="phone s04"><cite>Manu_Sporny:</cite> If you could show the GitHub code. I updated it. I hopefully based on what Ted and Joe and Dave y'all were saying and did an amalgamation. Maybe this works.</p>
+<p id=7c20 class="phone s01"><cite>Joe_Andrieu:</cite> Plus one this, just to comment on it. I'm not seeing any other hands on our virtual queue. we could potentially get rid of the time of issuance and just say at presentation. I mean that gets back to this other conversation I want to have about, what is the nonVGVP way to talk about the valuation layer. but it is presumed to be usable. So This is not a conformance statement. We're saying, hey, the idea here is that it's presumed to be usable at time of issuance and presentation. So if it is usable at the time of issuance, then you should verify it, right? So I think that does flow. I think that's coherent.</p>
+<p id=10001 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> &quot;Confidence method can be used in some situations about some subjects&quot;, none of which &quot;some&quot; we have good definitions for? Makes me wonder how much value there ultimately is in this &quot;confidence method&quot;. </p>
+<p id=1157 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead.</p>
+<p id=5186 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, a plus one to that and noted on the presentation thing and we need to get to that discussion next. I think my only question is this better and does this address your concern, At least is it better, not is it perfect?</p>
+<p id=0d98 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> I think it's better. Yes. I'll keep chewing on it.</p>
+<p id=0dba class="phone s04"><cite>Manu_Sporny:</cite> Okay, I'm gonna commit it then.</p>
+<p id=88ac class="phone s01"><cite>Joe_Andrieu:</cite> right. Okay.</p>
+<p id=e9f2 class=irc><cite>&lt;Dave_Longley&gt;</cite> ^i think if you invert that focus to the cases where it's clear, you see the value more easily; it's the corner/special cases that are tricky here. </p>
+<p id=5c5a class="phone s04"><cite>Manu_Sporny:</cite> So that Ted Thibodeau Jr:</p>
+<p id=a912 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> It's fine. Yep.</p>
+<p id=d593 class="phone s01"><cite>Joe_Andrieu:</cite> All right.</p>
+</section>
+
+<section>
+<h3 id=eac6>Non-VP Confidence Method Use Cases</h3>
+<p id=10002 class="phone s01"><cite>Joe_Andrieu:</cite> No other hands. U been giving man moment to commit so the issue about presentation is that most of these confidence methods may or may not happen during presentation. you could be out of a context where there isn't a back and forth with a VPR and a VP where you have a challenge and the VP is how you sign over the challenge. it could be a standalone interaction on a web page where you're uploading something that is the proof of signing over. and I think what I want to do is have our language cover both of those use cases without making it limited to just VPs. So to your most recent question about the VP and nonVP.</p>
+<p id=6bc1 class="phone s01"><cite>Joe_Andrieu:</cite> So, I think it is useful and important for us to explain, hey, with a VP workflow where you get a VPR and you respond to that with a VP. I think we want to explain and show how that works. but if it's not a VP, if it's like looking at a log file, then we don't have a presentation, we don't have a presenter, the language needs to be generalized in a way that, I'd like to figure out how to talk about. Go ahead, Matt.</p>
+<p id=1a97 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, plus one to it. I just needed something concrete to latch on and I'm happy to write text to that. so I'm wondering if the most prevalent use case might be I'm just making this up. So, you use your digital driver's license to create an account on a website, noting that that's a horrible thing potentially to do in many use cases. and in there, it's got a confidence method that for authentication. and every time you log into that website afterwards, you just did off to do it. and the website when you signed up for the account noted that a confidence method was in the driver's license and it allows you to continue to use that confidence method to log in.</p>
+<p id=0ce0 class="phone s04"><cite>Manu_Sporny:</cite> Did off being the alternate thing, right? So, you identify yourself to the website using a verifiable credential that has a confidence method that points to an authentication mechanism.</p>
+<p id=7be1 class="phone s04"><cite>Manu_Sporny:</cite> And then the website every time you log in after that just has you do a did off to log in as a concrete but that's a presentation. I</p>
+<p id=69b3 class="phone s01"><cite>Joe_Andrieu:</cite> That the loop is that we often talk about these in a conflated way right so did off has come to mean it's in a presentation …</p>
+<p id=977b class="phone s01"><cite>Joe_Andrieu:</cite> but I don't know that it should in some concept doesn't have to be in a VP flow, which is what I'm trying to tease out here,</p>
+<p id=10003 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, the only other thing I can think of is authorization to an HTTP endpoint based on a Zcap. because it's kind of weird because you're not really raising confidence in the subject. you're kind of raising confidence that the subject has gotten an authorization to do something and you see like that it was hard for me to try and…</p>
+<p id=7796 class="phone s04"><cite>Manu_Sporny:</cite> fit a simple example into the spec. I'm concerned about people being able to understand this nonVP example. gotcha.</p>
+<p id=c568 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=01f7 class="phone s01"><cite>Joe_Andrieu:</cite> what about the log file? I mentioned that but you didn't pick up on it for some reason. but the log file has a nice feature that it is necessarily expected to be separated in time, a week later or a month later, someone's doing a security analysis on our log files as a matter of course. and there is not a presenter who's presenting something to you right now. You have a historical fact that's in the log. and so we're trying to make sure that the party who engaged with that at that point in time, may not have been a VP related interaction, is the person today. Go ahead, M.</p>
+<p id=10004 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I'm trying to think of how that would have resulted in not a VP having been presented at that time in the past, what protocol did we actually use for you to show up in the log?</p>
+<p id=2375 class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead there.</p>
+<p id=c2be class="phone s04"><cite>Manu_Sporny:</cite> That's what's missing.</p>
+<p id=9145 class="phone s04"><cite>Manu_Sporny:</cite> At least as far as I can see.</p>
+<p id=4bb1 class="phone s07"><cite>Dave_Longley:</cite> A couple of comments here.</p>
+<p id=b301 class=irc><cite>&lt;Ted_Thibodeau_Jr&gt;</cite> Perhaps. But those corner cases are where the value is most needed. </p>
+<p id=9150 class=irc><cite>&lt;Dave_Longley&gt;</cite> can we separate the non-VP bit into another PR? </p>
+<p id=b467 class="phone s07"><cite>Dave_Longley:</cite> One, I do think we should find some language for this. two, I do think we should make it a separate issue and not hold the P up for it. Three, I don't know that we are going to be able to describe something that's testable with a log file that would also be interoperable. So I think one of the ways out of this is to say one way to do this is this and then describe the verifiable presentation mechanism and say there might be other ways to accomplish that involve log files this or that but that's not necess that does not sound like it's going to be something that we're going to interoperably specify and I think we should separate this issue out so we can get some good language for</p>
+<p id=95d1 class="phone s01"><cite>Joe_Andrieu:</cite> Plus one to that and…</p>
+<p id=beb8 class="phone s04"><cite>Manu_Sporny:</cite> I'm raised in you right</p>
+<p id=6784 class="phone s01"><cite>Joe_Andrieu:</cite> I started making a note so that we can do that. I think we should add a separate issue rather than hold up this PR. but something you just said I wanted to disagree with which was that I do think the Wait.</p>
+<p id=6859 class="phone s01"><cite>Joe_Andrieu:</cite> we can define yeah the problem is about testability and we're right back into the algorithm issue with that we're having over in the resolution in terms of how do we describe these things we do not want to define a wire protocol or data format that would do some other new arbitrary kind of flow so I totally agree with you Dave that we want to stay away from that potential rat hole. but the algorithm bit that's nipping at me I mean I think maybe having an example saying there are other ways is the easiest way to do it.</p>
+<p id=b5a2 class="phone s01"><cite>Joe_Andrieu:</cite> is that we can simply say look if you can perform a ceremony in which the candidate subject is able to prove use of a private key that's associated with this identifier then you've set aside a proof of but I guess we're not standardizing any particular proof of use ceremony is the challenge here. okay so it feels like we should just give a particular example and then the other question is let's find language to generalize it. that are folks following with me? Is that the consensus we seem to be getting up at?</p>
+<p id=69a9 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I'm adding a issue 48 is now raised for that item. Show.</p>
+<p id=0a96 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, All moving on to the next one. Back to the use case. yeah. This was interesting. So, I had not tracked this.</p>
+<p id=bb4e class="phone s01"><cite>Joe_Andrieu:</cite> What's the easiest way to pull that up? Maybe that did not jump to the section. Do you know what line it's on this example? Here it is. I see it did highlight it.</p>
+<p id=df04 class="phone s04"><cite>Manu_Sporny:</cite> I know it's light. We can add more if we want to.</p>
+<p id=0dcc class="phone s01"><cite>Joe_Andrieu:</cite> I think I have a different challenge here.</p>
+</section>
+
+<section>
+<h3 id=404f>Type Of Multikey Object</h3>
+<p id=a647 class="phone s01"><cite>Joe_Andrieu:</cite> But I'm happy to be educated. this object here does not seem to be a multi key. So, one of the things I was confused about, it was one of my comments and about types. I was expecting a different type for we're specifying a C or we're specifying a verification method in a C. but you've got a different strategy about how to handle types and you're far more experienced with JSON LD. So maybe I'm just thinking about it wrong. Go ahead, Manny.</p>
+<p id=f06e class="phone s04"><cite>Manu_Sporny:</cite> Yeah, it's let me go back to the beginning. So, you could have a confidence method with a colon in just that did example meaning a text string, no multi key, no anything else. And you could argue that that is totally legitimate because you're pointing by reference to something over there and you need to go to that something over there to figure out what it is and whether or not you can use it. So that is from a JSON LD perspective legitimate. the next step is this object that we're seeing on the screen. So you specify the ID and you're like, hey, this is a multi key.</p>
+<p id=ba75 class="phone s04"><cite>Manu_Sporny:</cite> So the system can have a little more assurance that okay I'm going to go out there and I'm expecting to find a multike key because it's a multikey I'm guess I'm expected that there is going to be a public key multibase expression there when I go to the reference they didn't put it in here for some reason there can be number of legitimate reasons people didn't do that but here I'm going to go out and it's typed as a multi key and then the third thing</p>
+<p id=6864 class="phone s04"><cite>Manu_Sporny:</cite> you can do is that I guess it's not necessarily above because this is doing it by value…</p>
+<p id=e631 class="phone s04"><cite>Manu_Sporny:</cite> if you put ID in that example above there ID type and then public key multibase sorry keep going down 668 line 66 yeah starting from line 668 through 672 that object …</p>
+<p id=b342 class=irc><cite>&lt;Dave_Longley&gt;</cite> from a JSON-LD perspective, you can omit / add as many properties as you'd like -- the ID signals where to &quot;follow your nose&quot; if you want to potentially get other properties. </p>
+<p id=f261 class="phone s01"><cite>Joe_Andrieu:</cite> Down or…</p>
+<p id=6028 class="phone s01"><cite>Joe_Andrieu:</cite> Here's 68.</p>
+<p id=f593 class="phone s04"><cite>Manu_Sporny:</cite> if you add ID there type and multike key that's the full expression including ID. So it is a legitimate expression of a controlled identifier. now the question does the group feel the…</p>
+<p id=14f1 class="phone s01"><cite>Joe_Andrieu:</cite> Wait. Hold on. That is not a controlled identifier. Manu Sporny: Manu Sporny:</p>
+<p id=b0e5 class="phone s04"><cite>Manu_Sporny:</cite> if you put the I D. …</p>
+<p id=5495 class="phone s01"><cite>Joe_Andrieu:</cite> I'm just saying we have a C spec that defines…</p>
+<p id=14d8 class="phone s04"><cite>Manu_Sporny:</cite> I see what you're saying. Yeah. Yeah.</p>
+<p id=e82a class="phone s01"><cite>Joe_Andrieu:</cite> what a C is and we're not using CIS here.</p>
+<p id=6c42 class="phone s04"><cite>Manu_Sporny:</cite> Sorry, I misspoke. It's not a C. It's a key that exists in a C. Yeah.</p>
+<p id=0bcc class="phone s01"><cite>Joe_Andrieu:</cite> In this case it doesn't though, but these are two slightly different use cases, So one is we're embedding which multi key might work. I still had some type related questions about it. But for this multike key, we are not embedding the key. And so when I look at this data object, I'm like how do I get this is not a key. This is a reference to a key.</p>
+<p id=3bbf class="phone s04"><cite>Manu_Sporny:</cite> Yeah. the verification method pointer is effectively that that's what I thought you were asking for, Joe. So if I misunderstood, but I think that's still legitimate and we want to support it.</p>
+<p id=ad54 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, plus one.</p>
+<p id=5467 class="phone s01"><cite>Joe_Andrieu:</cite> Dave, I'm gonna queue you up. plus one, I do want to support this structure. how we do it, I'm not sure. My concern is these two data objects are not semantically the same kind of data object. So, I think they need different types. Dave</p>
+<p id=1a15 class="phone s07"><cite>Dave_Longley:</cite> So I put this into the chat, but from a JSON LD perspective, you can add or omit as many properties or you can refer to these as triples as you would like in an object, an ID just signals where you can go to follow your nose if you want to potentially get more properties. So all of this from the lowest level data modeling perspective is a totally legitimate way to express this. and so there's no problem there. if you layer anything in your spec that says for someone reading your spec that you have to have this property or that property, then that's something that you have to do to be conformant with whatever spec you've written.</p>
+<p id=1233 class="phone s07"><cite>Dave_Longley:</cite> But if this is found data, they discover it or it is handed to them and they're just processing it as JSON LLD or as linked data generally. There's absolutely nothing wrong with this approach. And it's commonly used to say, I've got a few things to say about this and if you want to go fetch it, you can get more. and the few things I had to say about this might help you decide whether or not you want to bother going to fetch it. Because if you only understand multi key, for example, and you don't understand JSON webkey, maybe you won't go fetch it. Or if we're talking about some other thing like render methods I understand this render method type and now I want to go fetch dreference all the other information that doesn't mean by the time you dreference a thing you still need to confirm that the type that you found is still what you wanted because that there could have been a mismatch…</p>
+<p id=f1f3 class="phone s07"><cite>Dave_Longley:</cite> but this is a way to signal to someone whether or not they want to bother following their nose to get the rest of the information. and then the ID that you follow then becomes the source that you have to decide whether or not you trust for that operation.</p>
+<p id=fa8c class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, that's really interesting.</p>
+<p id=951f class="phone s01"><cite>Joe_Andrieu:</cite> I think I'll just need to get my mental model on the other side. but it's not there yet. and I just want to voice what feels weird to me, Dave, is I want an identifier for this object in this graph, in this VC.</p>
+<p id=c0ed class="phone s01"><cite>Joe_Andrieu:</cite> and you're saying no the ID entangles all the references to that ID and so even though the object in this VC is not actually a multike key because we can go retrieve it somewhere else which I guess is part of the open world sensibility around these data structures</p>
+<p id=31f9 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's right. If you want something in this particular graph, you'll have to put it in this particular graph because this particular graph does not exist outside of this document. but that's what the embedded use case is for. If you don't want that use case and you want to say there's this information can be fetched elsewhere in some other graph, here's the ID for you to go fetch it. That's just a different use case. But it's all legitimately follows the data modeling and…</p>
+<p id=b34e class="phone s07"><cite>Dave_Longley:</cite> spec the low-level specifications for this.</p>
+<p id=05b1 class="phone s01"><cite>Joe_Andrieu:</cite> Except that you can't tell by the ID or…</p>
+<p id=d3ae class="phone s01"><cite>Joe_Andrieu:</cite> the type whether or not you need to fetch anything. that's my sort of conceptual quagmire. I'm</p>
+<p id=80d9 class="phone s07"><cite>Dave_Longley:</cite> As an implementer of this I would know that I would see that the type is announced as a multikey. first of all as an implementer I would look and see what the type is. If the type tells me that this thing is a multikey and I support multikey and the material is not asserted in the document itself then I would use the ID to fetch it. If there is no ID and there's only a type then there's no way for me to use that. won't use it. If there's no type provided and there's a DID provided and it's a bare DID,…</p>
+<p id=5eee class="phone s07"><cite>Dave_Longley:</cite> then I know that it's for a DID document and I can decide to fetch that DID document. So that there's a number of ways as an implementer that I could know whether or not I want to use what's</p>
+<p id=8256 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. …</p>
+<p id=7ef4 class="phone s01"><cite>Joe_Andrieu:</cite> I think we need to write something about that up. because when I look at this as an impleer, I'm very confused by how am I supposed to know that I'm supposed to do that? and so we need to write up exactly where they're supposed to do that. in particular, multi keys don't need to be have did based identifiers. So it just triggers a whole bunch of, what are the generalized things going on here? go ahead, man.</p>
+<p id=4625 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, that's fine. I mean, I can add some explanatory text to the PR. one I'm wondering if it's more generalized. the thing I'm struggling with, Joe, is like Jason LD RDF makes this pretty clear. But I don't think we should presume that people implementing this stuff at this level understand any of that. which is why what you're saying Joe resonates with me on just at least explain it and maybe point to other places where people can read more about this. and this thing we're describing is not specific to cryptographic keybased identifiers, right?</p>
+<p id=aada class="phone s04"><cite>Manu_Sporny:</cite> It's not specific to this thing. It could just as easily apply to not that I think this is a good idea, but biometric templates and a variety of other objects in the DI document or the verifiable credential and so on so forth. So it feels like maybe this is general advice that we should put into the VC data model. it's not necessarily something that should go into this specification and maybe we point to that section in the confidence method thing to describe what Dave just covered. So I am wondering again if this is another issue and…</p>
+<p id=8a41 class="phone s04"><cite>Manu_Sporny:</cite> maybe it is an issue for the VC data model or there's an issue somewhere that we need to raise to address this more holistically. that's</p>
+<p id=a1e1 class="phone s07"><cite>Dave_Longley:</cite> Couple points.</p>
+<p id=8b7b class="phone s01"><cite>Joe_Andrieu:</cite> Go ahead,…</p>
+<p id=fc86 class="phone s01"><cite>Joe_Andrieu:</cite> D. Yep.</p>
+<p id=29b3 class="phone s07"><cite>Dave_Longley:</cite> First again I think we found something that we can decide what to do about as a separate issue. I wouldn't want that to hold up the PR that is doing a lot of useful things. and the second thing is I having some deja vu about this sort of thing. I think this has come up before and people have said that's what f reading the JSON LD specs which are already linked to is for I don't necessarily agree that that's so straightforward given Joe's reading this he's like hey…</p>
+<p id=e358 class="phone s07"><cite>Dave_Longley:</cite> what do I do but maybe when we do something about this we can more directly have a little bit of text and directly link to those specs or something along those lines.</p>
+<p id=7891 class="phone s01"><cite>Joe_Andrieu:</cite> cool. …</p>
+<p id=7a4a class="phone s01"><cite>Joe_Andrieu:</cite> I do think some language here would be helpful. Let's not hold up this PR. and it might be lightweight language here and more detailed language somewhere else if there's a more appropriate place to put it. but I want to push back against that this is expected for JSONLDLD because I actually fundamentally disagree with the appropriateness of downloading by default. I use DIDs as identifiers which identify this thing right now that you're dealing with. and you don't necessarily need to go DID to get the other data elements related to that. So the expectation that someone's going to access the network to get the rest of the data about this object creates a security dynamic. I'm really not comfortable with.</p>
+<p id=d216 class="phone s01"><cite>Joe_Andrieu:</cite> But that's sort of a meta note that as we unfold this, I just want to try and help people understand the trade-offs about those choices. Go ahead, Dave. cool.</p>
+<p id=ab62 class="phone s07"><cite>Dave_Longley:</cite> Yeah, I wanted to in case this was unclear, I also don't support download by default. I did not mean to imply that that's something that should be done. Rather, there are situations where if you want to use something or want more information, you have to download. that doesn't mean you should do that by default. just means you're making a choice to do it and it comes with different security considerations and it should be framed that</p>
+<p id=c69e class="phone s01"><cite>Joe_Andrieu:</cite> Should I note here? I lost our thread on which issue we were on.</p>
+<p id=9658 class="phone s01"><cite>Joe_Andrieu:</cite> Yes,…</p>
+<p id=f53e class="phone s04"><cite>Manu_Sporny:</cite> Joe, I have raised issue 49 to track that if you want to make a comment about it somewhere in the PR.</p>
+<p id=8f2c class="phone s01"><cite>Joe_Andrieu:</cite> I wanted to do that. but I think we just lost it cuz didn't you respond to this comment, Manny? Yes,…</p>
+<p id=1bf7 class="phone s04"><cite>Manu_Sporny:</cite> Was this example already exists comment I think all the way at the bottom potentially. I did also I did also Yeah,…</p>
+<p id=6033 class="phone s01"><cite>Joe_Andrieu:</cite> you can. Okay.</p>
+<p id=ace1 class="phone s04"><cite>Manu_Sporny:</cite> there you go.</p>
+<p id=ecfe class="phone s01"><cite>Joe_Andrieu:</cite> And what number was it?</p>
+<p id=f6a3 class="phone s01"><cite>Joe_Andrieu:</cite> M Okay. Okay. Was that actually the last comment from you, That engagement.</p>
+<p id=9c07 class="phone s04"><cite>Manu_Sporny:</cite> Issue 4949.</p>
+</section>
+
+<section>
+<h3 id=0039>Dislike Of SIDS Spec</h3>
+<p id=9159 class="phone s04"><cite>Manu_Sporny:</cite> Yes, I think so. There's also this I didn't wanted to get a feedback on the SID thing. okay.</p>
+<p id=8aaf class="phone s01"><cite>Joe_Andrieu:</cite> Yeah. I was honestly confused about that.</p>
+<p id=5772 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I think my position on the SID spec is clear. I hate it and I wish we never did it. And the only reason we did it was because we had a gun pointed to our head in the working group and people were threatening to fork the spec and we did the work and those people forked it anyway. So now we're stuck with this crappy,…</p>
+<p id=6eac class="phone s04"><cite>Manu_Sporny:</cite> spec. I know some people like SIDS, but I think they're just centralizing bad. We shouldn't suggest that people use them.</p>
+<p id=ec9a class="phone s01"><cite>Joe_Andrieu:</cite> Your P. Manu Sporny:</p>
+<p id=8e9a class="phone s04"><cite>Manu_Sporny:</cite> We should be using s everywhere. The end. And it makes me sad every time I have to write a PR…</p>
+<p id=956d class="phone s01"><cite>Joe_Andrieu:</cite> Right. And right.</p>
+<p id=b975 class="phone s04"><cite>Manu_Sporny:</cite> where I have to ref that spec.</p>
+<p id=ac77 class="phone s01"><cite>Joe_Andrieu:</cite> So, I appreciate that. What was confusing to me is that you would rather not suggest repeating using SIDS, but your PR does exactly that. So, I was trying to reconcile your own comments with the PR you submitted,…</p>
+<p id=4832 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, it's…</p>
+<p id=2fbd class="phone s01"><cite>Joe_Andrieu:</cite> and I was</p>
+<p id=b4d1 class="phone s04"><cite>Manu_Sporny:</cite> because I can't site the DIDS The thing that has the citations lives in the SIDS spec.</p>
+<p id=eec2 class="phone s01"><cite>Joe_Andrieu:</cite> But my point is I couldn't understand…</p>
+<p id=277d class="phone s04"><cite>Manu_Sporny:</cite> That's the reason. And because people would complain if we didn't just mention SIDS in there and did subset that.</p>
+<p id=d9c9 class="phone s01"><cite>Joe_Andrieu:</cite> how I might be responsive to your comment without getting rid of the…</p>
+<p id=ed4d class="phone s04"><cite>Manu_Sporny:</cite> Yeah. I gotcha.</p>
+<p id=e3c4 class="phone s01"><cite>Joe_Andrieu:</cite> what you put in the PR. Okay.</p>
+<p id=d921 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, what's there. I don't think we can do it any other way because the citations exist in the SIDS spec. I think…</p>
+<p id=a0f9 class="phone s04"><cite>Manu_Sporny:</cite> what I'm trying to get across is let's just use DIDs as examples everywhere and not use an HTTPS URL for a SID because Yeah.</p>
+<p id=9d1c class="phone s01"><cite>Joe_Andrieu:</cite> For that I'm good with you on that.</p>
+<p id=aeec class="phone s01"><cite>Joe_Andrieu:</cite> I think from a spec standpoint it needs to go to the SIDS spec,…</p>
+<p id=483f class="phone s04"><cite>Manu_Sporny:</cite> Yeah. That's right.</p>
+<p id=0ab9 class="phone s01"><cite>Joe_Andrieu:</cite> but I agree with you from an example perspective.</p>
+<p id=454e class="phone s04"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=dead class="phone s01"><cite>Joe_Andrieu:</cite> Let's just use SIDS instead of HTTPS. However, I need to socialize my rebuttal to your dislike of SIDS. I think SIDs should be used for centralized identifiers. For example, WebVH shouldn't be a decentralized identifier because it has a centralized control structure just like a URL.</p>
+<p id=0f02 class="phone s04"><cite>Manu_Sporny:</cite> Yep. Yeah,…</p>
+<p id=7541 class="phone s01"><cite>Joe_Andrieu:</cite> So, I actually think the folks behind the web stuff and…</p>
+<p id=3375 class="phone s04"><cite>Manu_Sporny:</cite> I agree with that.</p>
+<p id=8180 class="phone s01"><cite>Joe_Andrieu:</cite> are there multiple different efforts trying to do it in different ways. One of them should pick up the CI and say, &quot;Hey, we want to take this to the next level and add certificate transparency to a CI standard.&quot; That I would get behind.</p>
+<p id=10005 class="phone s01"><cite>Joe_Andrieu:</cite> I think if we're going to have a centralized root authority but we want to be able to expose verification methods in this manner let's standardize it I don't think we have the appetite of people who want to go do that so we are sort of just in this broken state in terms of that the people who care about this are not necessarily the people who are driving the standard around it sadly. Okay, cool.</p>
+<p id=2933 class="phone s04"><cite>Manu_Sporny:</cite> Angry with all</p>
+<p id=1378 class="phone s01"><cite>Joe_Andrieu:</cite> All right. we have roughly 10 minutes left and we got through most of this. Is there So, should we just merge it? Are we good enough for that? Go ahead, M.</p>
+<p id=8936 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I'm happy to do that after the call. I was going to try to capture the last five minutes to talk about test suite and…</p>
+<p id=d3ca class="phone s04"><cite>Manu_Sporny:</cite> just put an idea in people's heads and then maybe we talk about it next time around.</p>
+<p id=14e4 class="phone s01"><cite>Joe_Andrieu:</cite> Okay, that sounds good.</p>
+<p id=0027 class="phone s01"><cite>Joe_Andrieu:</cite> Yeah, we did have test suite and potentially triage,…</p>
+</section>
+
+<section>
+<h3 id=0448>Test Suite Discussion</h3>
+</section>
+
+<section>
+<h3 id=0b97>Test Suites</h3>
+<p id=10006 class="phone s01"><cite>Joe_Andrieu:</cite> which we're not going to get to, but let's talk about testuite and I'll go ahead and stop sharing. Excellent.</p>
+<p id=6f1f class="phone s04"><cite>Manu_Sporny:</cite> Yeah,…</p>
+<p id=4e98 class="phone s04"><cite>Manu_Sporny:</cite> just real quick, we had a discussion in the VC recognized entities call two weeks ago about what are we doing for the test suite there because it requires kind somewhat of not a complex back and forth but at least an exchange of credentials to see if you did the right thing. So in recognized entities it's effectively the minimum case is like hey give I am the verifier I want you to go through a workflow you're going to give me a recognized entity credential maybe one or more as the holder and you're going to give me a VC. I'm going to receive it into my workflow.</p>
+<p id=7830 class="phone s04"><cite>Manu_Sporny:</cite> I'm going to do verification and then I'm going to do a bunch of validation and then I'm going to tell you whether or not you were successful by maybe issuing a credential to you erroring out, I'm wondering if we can use the same pattern for this spec. because I know we can off mechanism using that. I think we could do a keybased one. I am struggling on the biometric I mean I think we could do a biometric based a static image profile photo based one. I don't think we could do a video based one easily. what are the thoughts there? I heard some push back from Brent.</p>
+<p id=e20c class="phone s04"><cite>Manu_Sporny:</cite> He said it would be quote wildly inappropriate for us to require VCOM as a part of the test suite. I don't know if I agree with that statement because the working group is working on VCOM. but I'm sensitive to people, getting cranky about that. that's the proposal.</p>
+<p id=a054 class="phone s04"><cite>Manu_Sporny:</cite> Could we make this a really simplified workflow where we have the holder present a VC and another thing in the presentation that demonstrates that they got through the workflow successfully. That's it.</p>
+<p id=7d11 class="phone s01"><cite>Joe_Andrieu:</cite> So mostly that sounds pretty good.</p>
+<p id=0954 class="phone s01"><cite>Joe_Andrieu:</cite> I wanted to rebut Brent's position which is that the test suite is not something that every imple should use to try out their implementation. the test suite is something we run to demonstrate that every feature in the specification has an implementation that's interoperable.</p>
+<p id=10007 class="phone s01"><cite>Joe_Andrieu:</cite> So if we have enough implementations that DIDCOM or VCOM or whatever transport protocol we want to use, then I think it's perfectly legitimate to build a test suite that uses a technology that lets us do it. In the same way that if we write our test suite in Python or JSON or JavaScript or whatever, those things don't matter. we're not making people use VCOM for any particular thing. But if you want to demonstrate through the test suite that you have implemented the features, we need a way to do it. so I think your proposal is pretty good, Manny. I do have the same questions about how do we get real biometric workflows in there? but on the surface, it sounded like it started well.</p>
+<p id=2bfd class="phone s01"><cite>Joe_Andrieu:</cite> Scott, what thoughts do you have about how could we get a real biometric template check in some sort of flow? Have you thought about sort of the test suite side of this yet? Scott, if you're trying to reply, you're still on mute. All right, we may have lost Manny, what's the next step then for the test suite thread?</p>
+<p id=10008 class="phone s04"><cite>Manu_Sporny:</cite> probably working through the details with Dave Longley to see if this is something that we can easily do. I'd have the same questions on recogn if it works for recognized entity it'll work for this group.</p>
+<p id=f746 class="phone s04"><cite>Manu_Sporny:</cite> So I just need to work through details with Dave. and I think Stephen Curran might be trying to help us out on test suites as well. So it's just some detail work that we need to just work through the details is next.</p>
+<p id=6f38 class="phone s01"><cite>Joe_Andrieu:</cite> …</p>
+<p id=9039 class="phone s01"><cite>Joe_Andrieu:</cite> next step is let the entities work settle and then hopefully we can adopt it. And I guess we'll need to get folks volunteering to maintain that.</p>
+<p id=37bd class="phone s01"><cite>Joe_Andrieu:</cite> But let's get that work to the next point where we can look at it.</p>
+<p id=4c3f class="phone s04"><cite>Manu_Sporny:</cite> Sounds good.</p>
+<p id=7594 class="phone s01"><cite>Joe_Andrieu:</cite> Any other thoughts before we Just got a couple minutes left. with that, let me thank you all for your contributions. U Manny, feel free to merge that PR. and we'll work through the rest of those issues in good time. And thanks for that contribution, Manny. I appreciate it. All right. Thanks everyone.</p>
+<p id=c764 class="phone s05"><cite>Denken_Chen:</cite> Thanks.</p>
+<p id=be3e class="phone s03"><cite>Elaine_Wooton:</cite> Wow. Meeting ended after 00:56:36 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
