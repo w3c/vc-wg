@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 14 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>14 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony_Mott, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Manu_Sporny, Ted_Thibodeau_Jr, University_of_Quantum_Science, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#fc35">Physical Document Revocation</a></li>
+<li><a href="#7667">W3C VC Barcodes For ISO</a></li>
+<li><a href="#e20a">ISO Path For W3C Standards</a></li>
+<li><a href="#35a7">ISO Working Group 10 Discussion</a></li>
+<li><a href="#8e4a">Cryptosweet Naming Conventions</a></li>
+<li><a href="#0878">Extensions For Selective Disclosure</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=3d13 class="phone s01"><cite>Wesley_Smith:</cite> Hi I will give it a couple minutes before we get started to let people join. University of Quantum Science. Hi. Could you unmute and tell us who you are?</p>
+<p id=5907 class="phone s02"><cite>University_of_Quantum_Science:</cite> on. Yes.</p>
+<p id=60f2 class="phone s01"><cite>Wesley_Smith:</cite> Yes. Hi.</p>
+<p id=19d3 class="phone s02"><cite>University_of_Quantum_Science:</cite> Hi, this is Anthony.</p>
+<p id=9ba8 class="phone s01"><cite>Wesley_Smith:</cite> This is All right,…</p>
+<p id=362c class="phone s02"><cite>University_of_Quantum_Science:</cite> Some reason my name isn't coming up. I might try and rejoin. I'm Anthony M. but I think my other Zoom handle has joined, but it's me.</p>
+<p id=6ea9 class="phone s01"><cite>Wesley_Smith:</cite> that sounds Good to see you again,…</p>
+<p id=41e2 class="phone s02"><cite>University_of_Quantum_Science:</cite> Sounds Good to see you again.</p>
+<p id=78e7 class="phone s01"><cite>Wesley_Smith:</cite> Anthony. …</p>
+<p id=393a class="phone s02"><cite>University_of_Quantum_Science:</cite> Thank you.</p>
+<p id=f8df class="phone s01"><cite>Wesley_Smith:</cite> Ivon, are there any process reasons why people's, Zoom needs to match their identity or…</p>
+<p id=c777 class="phone s01"><cite>Wesley_Smith:</cite> anything along those lines?</p>
+<p id=582d class="phone s02"><cite>University_of_Quantum_Science:</cite> close. All right.</p>
+<p id=6427 class="phone s03"><cite>Ivan_Herman:</cite> No, Anthony is a member of the working group. That's all that counts.</p>
+<p id=9549 class="phone s01"><cite>Wesley_Smith:</cite> All right, sounds good. Thank you, Anthony. Yeah,…</p>
+<p id=3af6 class="phone s02"><cite>University_of_Quantum_Science:</cite> Thank you.</p>
+<p id=ff38 class="phone s03"><cite>Ivan_Herman:</cite> But there is a big echo coming from somewhere. I wonder whe</p>
+<p id=0145 class="phone s01"><cite>Wesley_Smith:</cite> I think it's all right. I'm still getting that echo. Anthony, could you mute your mic maybe? Thank you very much. All right.</p>
+<p id=b4ad class="phone s02"><cite>University_of_Quantum_Science:</cite> Sorry about that.</p>
+<p id=a063 class="phone s01"><cite>Wesley_Smith:</cite> No problem.</p>
+<p id=e8d3 class="phone s02"><cite>University_of_Quantum_Science:</cite> I think I had my mic mute. Sorry about that.</p>
+<p id=93e5 class="phone s01"><cite>Wesley_Smith:</cite> All welcome to the September 14th meeting of the barcodes, data integrity, forgery, defense, and bing status task force. Woohoo. Our purview is continuing to grow, which is good. We get to work on lots of cool stuff. the agenda for today is much the same as normal. we will go through announcement, introduction and process items and then we will spend time on poll request review issue processing and other discussion as needed. Anybody have any agenda changes for today? Elaine, go ahead. Yeah.</p>
+<p id=6550 class="phone s04"><cite>Elaine_Wooton:</cite> Yeah, maybe put on the agenda.</p>
+<p id=3530 class="phone s05"><cite>Greg_Bernstein:</cite> Yep.</p>
+<p id=3b9a class="phone s04"><cite>Elaine_Wooton:</cite> Can you hear me? there's some interesting motion over at ISO about revocation of physical documents and…</p>
+<p id=3ab6 class="phone s04"><cite>Elaine_Wooton:</cite> I just want to clue everybody in that that's happening.</p>
+<p id=1885 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, absolutely.</p>
+<p id=86f3 class="phone s04"><cite>Elaine_Wooton:</cite> Yeah. Okay.</p>
+<p id=ffff class="phone s01"><cite>Wesley_Smith:</cite> we willhead and make that the first topic then after announcements etc. anybody have any announcements process items or introductions for today go ahead</p>
+<p id=fe97 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, just a process item. Since we're a working group and we operate under the tasks, who's whose University of Quantum Science you might want to change your name? are you in the group?</p>
+<p id=99ce class="phone s02"><cite>University_of_Quantum_Science:</cite> Yes, that's Anthony Mart.</p>
+<p id=663f class="phone s02"><cite>University_of_Quantum_Science:</cite> I'm gonna pop back out and…</p>
+<p id=3794 class="phone s06"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=1ba7 class="phone s02"><cite>University_of_Quantum_Science:</cite> if I can pop back in as Anthony Mart so that doesn't look so okay.</p>
+<p id=1536 class="phone s06"><cite>Manu_Sporny:</cite> Wonderful. Thank you.</p>
+<p id=b907 class="phone s02"><cite>University_of_Quantum_Science:</cite> Wonderful. Thank you. Okay. Hi</p>
+<p id=7406 class="phone s06"><cite>Manu_Sporny:</cite> Good to see you here, Anthony.</p>
+<p id=68db class="phone s01"><cite>Wesley_Smith:</cite> I think Anthony is gonna make that change out of self-preservation so people stop asking him.</p>
+<p id=e53c class="phone s01"><cite>Wesley_Smith:</cite> I asked him the same thing. Greg Bernstein, you have your hand up. Go ahead.</p>
+<p id=ad0c class="phone s05"><cite>Greg_Bernstein:</cite> I did send out an email.</p>
+<p id=070a class="phone s05"><cite>Greg_Bernstein:</cite> There were two general items that I wanted to discuss at some point today.</p>
+<p id=cd64 class="phone s05"><cite>Greg_Bernstein:</cite> That's all.</p>
+<p id=2894 class="phone s01"><cite>Wesley_Smith:</cite> Sorry,…</p>
+<p id=0b35 class="phone s01"><cite>Wesley_Smith:</cite> those were general items for data integrity or…</p>
+<p id=f03b class="phone s05"><cite>Greg_Bernstein:</cite> No, there are general items. data integrity. One had to do primarily with cryptosweet naming and the other had to do with extensions for modularizing selective disclosure. So Wesley Smith:</p>
+<p id=9e2d class="phone s01"><cite>Wesley_Smith:</cite> sounds good. we'll push data integrity to be the first topic after Elaine's topic. Then Ted, you have your hand up.</p>
+<p id=f62a class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Just a request to have the expanding perview included in the calendar items so that …</p>
+<p id=442b class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> if I'm prepping for a meeting I can actually see all of the things because I didn't think about the last two.</p>
+<p id=b5d4 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that's a good idea. I'll poke around the various settings pages and…</p>
+<p id=c6c8 class="phone s01"><cite>Wesley_Smith:</cite> things in a few minutes here. All right.</p>
+<p id=46d6 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=94f9 class="phone s01"><cite>Wesley_Smith:</cite> Any other announcement? so I guess to be clear, so Ivonne, we have sort of informally adopted the Bitstring status list work in this task force.</p>
+<p id=f1aa class="phone s01"><cite>Wesley_Smith:</cite> Is there any groupwide resolution that would need to happen or something to that effect to explicitly to have that work? Okay, cool.</p>
+<p id=3ba8 class="phone s03"><cite>Ivan_Herman:</cite> I don't think so.</p>
+<p id=7f55 class="phone s03"><cite>Ivan_Herman:</cite> I don't see so no just one minor things Wednesday.</p>
+<p id=c621 class="phone s01"><cite>Wesley_Smith:</cite> All right, that sounds good. so I'll make sure that materials for this call No worries.</p>
+<p id=722f class="phone s03"><cite>Ivan_Herman:</cite> Sorry to interrupt you. just say it on Wednesday.</p>
+<p id=94cd class="phone s01"><cite>Wesley_Smith:</cite> We'll do. I'll note that better to ask forgiveness than permission.</p>
+<p id=c812 class="phone s03"><cite>Ivan_Herman:</cite> Don't ask authorization. what is the saying? Do it and then you can ask for forgiveness later or something.</p>
+</section>
+
+<section>
+<h3 id=fc35>Physical Document Revocation</h3>
+<p id=10000 class="phone s01"><cite>Wesley_Smith:</cite> All right. I will do so. Thank you very much. Anybody else have any other announcements, introduction, process items, or changes to the agenda for today? All right, hearing none. let's go ahead and move to Elaine's topic, which I will call physical document reication.</p>
+<p id=10001 class="phone s01"><cite>Wesley_Smith:</cite> Elaine, go ahead.</p>
+<p id=3fa7 class="phone s04"><cite>Elaine_Wooton:</cite> Okay, I'll try to do this quickly and…</p>
+<p id=7ccd class="phone s04"><cite>Elaine_Wooton:</cite> I want to say at the beginning that I have a pretty high amount of ignorance about how some of this stuff actually works. So, I may have injected completely wrong information into the universe and this is a chance to sort of fix it. not too long ago, the American Association of Motor Vehicle Administrators put out a draft to require digital signature in the PDF 417s in driver's licenses in my comments for that. it was a request for comment. I discussed revocation using bitstring status list like they're using California and emphasized how important it is to be able to revoke physical documents and they dismissed my comment and my concern and they went ahead the final draft does not obviously include they said we'll take that up later.</p>
+<p id=595c class="phone s04"><cite>Elaine_Wooton:</cite> So, in the meantime, we have 153 million license images that have leaked. and all of a sudden now, people are interested in revocation. I just got an email half an hour ago from working group 10 that they want to have a meeting to talk about revocation for physical licenses. So, I don't know if I'm right that it would be possible to use the digital signature structure. they've already developed and to separately do the bitstring status list. that's what I want to suggest in those meetings. but I need to know technically whether that actually works. we don't have to do that during this call. I'm just raising that this is a conversation that's going to happen in the next few weeks.</p>
+<p id=3721 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that's a good note. I think it's probably worth briefly discussing on this call. so, Want to go ahead?</p>
+</section>
+
+<section>
+<h3 id=7667>W3C VC Barcodes For ISO</h3>
+<p id=ed91 class="phone s06"><cite>Manu_Sporny:</cite> I mean the fastest path for ISO to get that functionality would be to just use the VC barcodes mechanism. W3C does have a liaison relationship with ISO where there is a process that can create an out of a W3C specification. we're already doing that for W3C verifiable credentials and it would be a fairly light lift to do that for the barcode stuff once it gets to I forget what stage it has to get to, but we could probably run that work in parallel. that would be something that the chairs and W3C staff</p>
+<p id=5854 class="phone s06"><cite>Manu_Sporny:</cite> I see Ivon has his hand up. would have to do. so that's Elaine as far as the existing digital signature approach that AMBA is doing I don't know if any of that is public and so we don't know and we can't comment on whether or not what they're doing or have done is going to work. my expectation is that probably not given that the digital signature mechanisms that we've seen used on driver's licenses to date are not nearly as capable as the mechanism that California DMV uses. So I think that's where we are. They could just reuse the VC barcodes approach.</p>
+<p id=0b5e class="phone s06"><cite>Manu_Sporny:</cite> it would work just fine. And that includes revocation and what they probably are not thinking of is the postquantum break that is coming within the next potentially couple of years. which VC barcodes is also resistant to. my fear of course is that, they're going to do a not invented here thing and create their own thing and effectively steal everything that VC barcodes has done. but we'll see. I mean, that's a harder path because then all of a sudden they have to run an entirely parallel standards path to the thing that we've already been doing for, many years. just some thoughts there.</p>
+<p id=7001 class="phone s06"><cite>Manu_Sporny:</cite> I think we should definitely say the W3C group would love to coordinate with ISO on that solution given that we've already built and…</p>
+</section>
+
+<section>
+<h3 id=e20a>ISO Path For W3C Standards</h3>
+<p id=10002 class="phone s06"><cite>Manu_Sporny:</cite> deployed that solution into production in California with many millions of driver's licenses with it enabled as of since last year. that's</p>
+<p id=934f class="phone s04"><cite>Elaine_Wooton:</cite> Yeah. …</p>
+<p id=61eb class="phone s04"><cite>Elaine_Wooton:</cite> I had my hand up. Let me go real quick. no. Ivonne first. Sorry, Ivon.</p>
+<p id=1a40 class="phone s03"><cite>Ivan_Herman:</cite> error the wrong button. just one thing is as far as I remember I may be wrong on that there are normative references from the barcode to the DIP spec as well. and if so then we have a problem with the ISO route money because we would have to get the DIP spec also somehow into the picture. But on the positive side what money is saying is absolutely correct. We can submit it through the PAS process. formally we can do that when it is a recommend.</p>
+<p id=0d43 class="phone s03"><cite>Ivan_Herman:</cite> recommendation which is still far away. But what we have successfully done already in another group for EPUB is that we have an agreement with the corresponding GCT1 group that submitted informally the CR we just did it a few days ago. and that group will look at the document and review it already. So any comment that they have that would require any kind of change on the document would come before we go to recommendation during the phase. This is something that we can definitely do to speed up the process. if the corresponding iso group is receptive to this approach, which I can't charge. That's it.</p>
+<p id=7556 class="phone s01"><cite>Wesley_Smith:</cite> All right, Elaine, go ahead.</p>
+<p id=9008 class="phone s04"><cite>Elaine_Wooton:</cite> …</p>
+<p id=9307 class="phone s04"><cite>Elaine_Wooton:</cite> a couple of things. Mono, I think that the final document is not unlike the one that was public so that draft was public on their website for comment. And then the digital signature part of it. It's a little bit different, but it's pretty much the same, but it does not have anything obviously for revocation. And I commented again that it needs revocation. we're going to have an uphill battle. They've got some kind of bee in their whatever bonnet about W3C.</p>
+<p id=ea0a class="phone s04"><cite>Elaine_Wooton:</cite> I don't know that on my own without a whole bunch of technical updating from you all will be able to go to-toe with these folks, I'm willing to do it, but I'm going to need, a bunch of support and talking points or something before this call that's getting scheduled now before it gets scheduled.</p>
+<p id=a844 class="phone s01"><cite>Wesley_Smith:</cite> want to go ahead.</p>
+</section>
+
+<section>
+<h3 id=35a7>ISO Working Group 10 Discussion</h3>
+<p id=c49b class="phone s04"><cite>Elaine_Wooton:</cite> And I know none of us has time to do that, but this isn't going to happen unless we push back with the working group 10. that's it.</p>
+<p id=ae71 class="phone s06"><cite>Manu_Sporny:</cite> So maybe the way to do this Elaine and Ivonne, this is something to be discussed on the Wednesday call. is going back to Elaine what you said. if it's the same thing that was in for public comment like no that doesn't support it and it can't work. it needs to be modified. and even if it were modified, it doesn't achieve the same things that VC barcodes does. So that's point one is that they would have to do some significant changes to that document out for public comment. the next you</p>
+<p id=2177 class="phone s06"><cite>Manu_Sporny:</cite> item to state is that I WG10 if they try to work on this problem is effectively going to redo the same work that we have done over the past four plus five plus years on this and so they will be redoing the work with effectively the same outcome</p>
+<p id=7b52 class="phone s06"><cite>Manu_Sporny:</cite> It may be Avon useful for us as a working group state that we already have a solution for this that we could just ratify at ISO in a much faster speed than they would creating a new work item, gathering the experts, all that kind of stuff.</p>
+<p id=9bfb class="phone s06"><cite>Manu_Sporny:</cite> and that we'd be happy to work with them on that. I am looking at our latest charter and it has a liaison relationship with WG10 So we're supposed to be liazing with them and in theory or ideally they'd leaz back with us about driver's licenses and things like that. So, it may be that the chairs and staff should reach out and…</p>
+<p id=5785 class="phone s06"><cite>Manu_Sporny:</cite> let ISO know that they're getting ready to redo work that we've already done. back over to you, Elaine.</p>
+<p id=3645 class="phone s04"><cite>Elaine_Wooton:</cite> So, this is sort of a far out idea,…</p>
+<p id=7f7d class="phone s04"><cite>Elaine_Wooton:</cite> but given the leak of the 153 million licenses, and the fact that W3C has a spec that would allow for the revocation of those licenses if they had been issued under the spec. I would think this is a time to actually be assertive about the capabilities of W3C and say this leak has happened and of all these licenses had been issued using this spec. We could revoke them all right now.</p>
+<p id=a9b3 class="phone s04"><cite>Elaine_Wooton:</cite> So that may be an approach to just let's go full out and say we have this and then it's not us telling ISO we have it. It's like making it clear that the technology exists.</p>
+<p id=7b1b class="phone s06"><cite>Manu_Sporny:</cite> I think that is a brilliant approach, I like it better. And this would require Ivon W3C management to, something. It would require the working group to potentially nudge W3C management and then W3C management to make a press release,…</p>
+<p id=10003 class="phone s06"><cite>Manu_Sporny:</cite> a timely press release that, hey, we saw this coming And we have a technology that could be used to prevent this. Exactly as Elaine said, let's make a press release. W3C should say that. Yep. Yep.</p>
+<p id=52a1 class="phone s04"><cite>Elaine_Wooton:</cite> Yeah. and…</p>
+<p id=e81a class="phone s04"><cite>Elaine_Wooton:</cite> Pile it on. Yeah. just an idea.</p>
+<p id=dc31 class="phone s01"><cite>Wesley_Smith:</cite> Ivon gohead.</p>
+<p id=cc3c class="phone s03"><cite>Ivan_Herman:</cite> Yeah, press releases are very rarely done these days,…</p>
+<p id=0311 class="phone s03"><cite>Ivan_Herman:</cite> but having some wellmade blog that can be done at any time and doesn't require some sort of a very complicated management issue at W3C. So this one thing then and yes I think that's a great idea. So that can be done. Somebody has to write the blog which cannot be me. the other thing there was something else I wanted to say but I forgot. Silly Okay it will come back hopefully.</p>
+<p id=0717 class="phone s01"><cite>Wesley_Smith:</cite> All plus one to…</p>
+<p id=d0cb class="phone s03"><cite>Ivan_Herman:</cite> Yeah.</p>
+<p id=10004 class="phone s01"><cite>Wesley_Smith:</cite> what we're saying. I will volunteer myself as someone who can at least help write the technical material in a blog post. something I wanted to note, I put this in chat, but just in case anybody missed it, with respect to the previous discussion topic of could we use bitstring status list on a different kind of credential structure, even if you could put the bitstring status list entry into a different credential structure, it wouldn't even get you much because you'd still have to be able to perform VC verification on the actual Bitstring status list credential. So in order to do it in a fully nonVC way, you'd also have to design how you're going to sign and secure the status information and run authy checks and all that sort of thing on it.</p>
+<p id=4231 class="phone s01"><cite>Wesley_Smith:</cite> So even if you could put an index and a location into a arbitrary nonVC credential, you'd still have to do VC verification, which means the verifiers performing these checks would need the ability to do VC verification, which then argues what's the point of not just using</p>
+</section>
+
+<section>
+<h3 id=8e4a>Cryptosweet Naming Conventions</h3>
+<p id=d12a class="phone s01"><cite>Wesley_Smith:</cite> because your verifiers already support them. I want to give your hand up.</p>
+<p id=0704 class="phone s03"><cite>Ivan_Herman:</cite> So I think I know…</p>
+<p id=7540 class="phone s03"><cite>Ivan_Herman:</cite> what I wanted to say. so on the liaison thing I don't know who is officially the liaison between us and the SC harmony. I don't remember the numbering. it's certainly not me. I might expect it is Philillip but I am not sure that I presume that Phil knows that because he did most of the work on converting to ISO everything and so he's probably closer to that.</p>
+<p id=e886 class="phone s01"><cite>Wesley_Smith:</cite> So I think we need to nail down some concrete next steps for this blog post. Is this so I guess for my own information I'm not understanding the relationship between this liaison structure what it means and…</p>
+<p id=10005 class="phone s01"><cite>Wesley_Smith:</cite> the press release that we're describing and then this meeting that Elaine is describing that's being set up for sometime in the near future.</p>
+<p id=698a class="phone s03"><cite>Ivan_Herman:</cite> the two things are independent of one another.</p>
+<p id=280a class="phone s03"><cite>Ivan_Herman:</cite> Wesley, you can just create a blog post along the lines of what we discussed that had you been wiser you wouldn't be in a problem now or something like that. Of course not in these words but something like that.</p>
+<p id=11ca class="phone s03"><cite>Ivan_Herman:</cite> So that's a blog post and then this has to be reviewed by Kohali because she is the communication person and she's always extremely helpful so that shouldn't be a problem and that can go out the lizo is important if we really go down the route of putting our document into ISO as an ISO standard whether this is necessary for that purpose or…</p>
+<p id=10006 class="phone s03"><cite>Ivan_Herman:</cite> I don't know. I am not familiar with all the intricacies of ISO myself either. But that comes into play only if we really want to go down that route. The first thing is to have the blog post and see the reaction.</p>
+<p id=8043 class="phone s01"><cite>Wesley_Smith:</cite> I wonder…</p>
+<p id=70e1 class="phone s03"><cite>Ivan_Herman:</cite> It's an olive branch by saying yeah you can refer to the fact that we have several documents that are on the way to get submitted to ISO both in our VC area and…</p>
+<p id=a52d class="phone s01"><cite>Wesley_Smith:</cite> if the blog post could contain a sort of olive branch. …</p>
+<p id=799a class="phone s03"><cite>Ivan_Herman:</cite> This is a fact and then that can be a solution to their problem.</p>
+<p id=fa39 class="phone s01"><cite>Wesley_Smith:</cite> so okay,…</p>
+<p id=40d5 class="phone s01"><cite>Wesley_Smith:</cite> just to be clear, and I'm jumping Q and I was quite a queue. My understanding is that the current documents that are on track to be also published via ISO have nothing to do with the VC barcodes stuff. So I'm wondering if the blog post,…</p>
+<p id=3980 class="phone s03"><cite>Ivan_Herman:</cite> the VCDM is on its</p>
+<p id=387b class="phone s01"><cite>Wesley_Smith:</cite> right? Yeah.</p>
+<p id=2330 class="phone s03"><cite>Ivan_Herman:</cite> Hey, something like that.</p>
+<p id=01a2 class="phone s01"><cite>Wesley_Smith:</cite> So I wonder if the blog post should be explicit, say, hey, we're already going to be publishing these things. we'd be happy to also publish VC barcodes in this way. and we think that would solve the problem off the shelf blah blah blah. it seems offering a constructive path forward rather than just wagging our fingers at them and…</p>
+<p id=057e class="phone s03"><cite>Ivan_Herman:</cite> Something like that.</p>
+<p id=71c4 class="phone s01"><cite>Wesley_Smith:</cite> saying you should have chosen stuff.</p>
+<p id=ebe7 class="phone s03"><cite>Ivan_Herman:</cite> But am I wrong or am I right? And I hope to be wrong that the barcode does have a normative reference to DI.</p>
+<p id=6f06 class="phone s01"><cite>Wesley_Smith:</cite> You're right. I don't think it particularly matters here.</p>
+<p id=2ff9 class="phone s01"><cite>Wesley_Smith:</cite> I think that some slightly informal language such as we're happy to publish whatever ever documents through ISO are required to get the VC barcode stuff blah blah blah. we don't need to explicitly list exactly which documents those would be. At least that's my opinion.</p>
+<p id=4410 class="phone s03"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=0e2f class="phone s03"><cite>Ivan_Herman:</cite> Let's leave it that way. Yeah. I'm sorry, Malia. I interrupted you several times.</p>
+<p id=a55f class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=94ad class="phone s06"><cite>Manu_Sporny:</cite> No, that's totally fine. That you were asking about next steps. plus one and everything said and what you just said. I think next steps is we should bring this up on the main call. because it is something that the working group should probably have some consensus around doing. so I think that's the immediate next step is in parallel the blog post could be written but the working group should also decide if it's going to engage on this. there are two liaison that matter here. Elaine is our first one because she's actually in WG10 right so she is unofficial leazison because she participates in that group. and then of course Avon the official one I think is or somebody at W3C management. The other thing I wanted to kind of highlight here Avon is I think a blog post is too weak.</p>
+<p id=01c2 class="phone s06"><cite>Manu_Sporny:</cite> I think and this goes to I mentioned that I am somewhat disheartened by W3C's lack of management's lack of talking about the capabilities that W3C members have created through the consortium this is a capability we have that we could have prevented this giant leak and we didn't tell the world anything about this stuff right now this one probably not but the next one abs</p>
+<p id=fa8d class="phone s06"><cite>Manu_Sporny:</cite> Absolutely so I think W3C should remind the world that it creates really important technologies for the world. it's not in a blog post in a press release. there's not enough marketing around W3C's brand going around. So that's why I suggest yes, let's do the blog post, but it should come along with a press release where we explicitly say we have a solution for the world. It's to really close to being ready to go as a global standard and it's deployed to 10 million plus people already in production. here's something you could pick it up and use it right. So I think I'd rather W3C management leadership take a more active role in reminding the world why W3C exists. that's it.</p>
+<p id=d827 class="phone s03"><cite>Ivan_Herman:</cite> and this goes way beyond my pay grade if there is something like that. I mean what I know is that press releases are very rarely used these days.</p>
+<p id=087f class="phone s03"><cite>Ivan_Herman:</cite> For what reasons, I don't know. but it's okay to raise that with the management, but I can only act as a go between here.</p>
+<p id=c178 class="phone s01"><cite>Wesley_Smith:</cite> …</p>
+<p id=1793 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I mean sorry jumping Thank you. The loss of 152 million people's identity documents,…</p>
+<p id=c53b class="phone s04"><cite>Elaine_Wooton:</cite> Yep.</p>
+<p id=bbad class="phone s06"><cite>Manu_Sporny:</cite> I think, warrants a press release. it's a lot of people just lost their identities. Yeah.</p>
+<p id=5a64 class="phone s03"><cite>Ivan_Herman:</cite> money again you don't have to convince me I am happy…</p>
+<p id=3d12 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Yeah.</p>
+<p id=5e62 class="phone s03"><cite>Ivan_Herman:</cite> if you talk to Kohali on that but I cannot do</p>
+<p id=a614 class="phone s01"><cite>Wesley_Smith:</cite> So, let's talk explicit next steps on that particular item then. So, you have a contact higher up at W3C staff that you're going to talk to about. do you think that Okay.</p>
+<p id=0030 class="phone s03"><cite>Ivan_Herman:</cite> I think man can talk to Kali at any time.</p>
+<p id=65fd class="phone s03"><cite>Ivan_Herman:</cite> You don't need me for that, do you?</p>
+<p id=6a05 class="phone s01"><cite>Wesley_Smith:</cite> please loop me in on those discussions. I think maybe what we should do then is in the next couple of days I'll try to put together some persuasive language that will be the backbone of some number of documents released to the public and some of that language can be included in the communications with W3C saying hey is this is a really critical point for whatever these technologies whatever so does that sound good all right so</p>
+<p id=b807 class="phone s03"><cite>Ivan_Herman:</cite> Sounds good.</p>
+<p id=af8a class="phone s01"><cite>Wesley_Smith:</cite> The next level is Yeah.</p>
+<p id=60bb class="phone s03"><cite>Ivan_Herman:</cite> Nothing. I'm sorry, Just to forget that we should not go out and communicate with anyone before Wednesday. The working group has to be involved with that. Yeah.</p>
+<p id=58c6 class="phone s01"><cite>Wesley_Smith:</cite> So, I'm going to work with people on this call privately to get some language together. and then on Wednesday, we're going to talk about So, yeah, we'll talk about this with the working group. see if the working group is interested in directly engaging with what we are putting together. and then we will go from there and then Ivon and Vanu and myself will do some communication of some form with W3C hireups related to the whole process and…</p>
+<p id=0946 class="phone s01"><cite>Wesley_Smith:</cite> I expect that will be after the working group call on Wednesday. All good.</p>
+<p id=3f89 class="phone s04"><cite>Elaine_Wooton:</cite> Yeah. …</p>
+<p id=bf7d class="phone s04"><cite>Elaine_Wooton:</cite> let me jump in. as of right now, the possible dates for that meeting, the ISO discussion meeting are October 8th and 9th. So, that's our sort of time scope. And the other thing I want to tell you all, I forgot that I think I did it in the middle of the night. I already posted on LinkedIn some of this stuff. there was a post this morning by W3C asking for donations and I reposted it saying, &quot;Hey, donate to W3C. Go check out the scope of W3C specs. The web works because of both long-standing and constantly updated specs.&quot; My fave are the verifiable credential specs. One in particular lets a relying party tell if a new version California driver's license has been revoked.</p>
+<p id=597e class="phone s04"><cite>Elaine_Wooton:</cite> You can't do that with any other US driver's license. folks can just keep using stolen or revoked credentials. Smart, effective specs. I posted that on LinkedIn apparently in the middle of the night.</p>
+<p id=7956 class="phone s01"><cite>Wesley_Smith:</cite> Love it. Elaine Wooton:</p>
+<p id=fbab class="phone s04"><cite>Elaine_Wooton:</cite> So nobody sees He's my s*** anyway. But anyway, that's out there.</p>
+<p id=a5b9 class="phone s01"><cite>Wesley_Smith:</cite> So, I think we're good on next steps there for the next few days. and I think everybody knows what they need to do. Anything else on that particular topic? Greg, is your hand about this topic?</p>
+<p id=7cff class="phone s05"><cite>Greg_Bernstein:</cite> Yeah, I was just going to say that the anformational blog post is kind of what we did explaining cryptographic pseudonyms with diff. We wrote up about the problem, the solutions we were working on, and we used that to influence what was happening with the pseudonyms, drafts, and blind BBS. Same kind of thing. Blog posts was good information.</p>
+<p id=697b class="phone s05"><cite>Greg_Bernstein:</cite> then you can do the rest of the politicizing u or lobbying around that. So that's</p>
+<p id=7ac0 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I do wonder and…</p>
+<p id=459d class="phone s01"><cite>Wesley_Smith:</cite> maybe this is not a discussion for this conversation, but I wonder if some of the prominent implementers of the BC barcodes technology would have anything to say about press releases or signing a press release or anything along those lines. obviously people in California in positions of power support the technology as they've chosen to plant to production as one example.</p>
+<p id=aa25 class="phone s01"><cite>Wesley_Smith:</cite> But I wonder if impleers in general could be related to this publicization work. Ted, you have your hand up.</p>
+<p id=0799 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah. …</p>
+<p id=9827 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> I was going to say that before Elaine said what she did, I was going to say that doing that sort of thing, what Elaine did is perfectly reasonable, perfectly There is no reason that any of us actually need to wait on a blog post on W3 website. We can say, &quot;Hey, here's the spec that we worked on that I worked on and it would have a solution to this horrible leak that I just heard about.&quot; I might also suggest that True Age might want to publicize the same sort of thing.</p>
+<p id=c834 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> That's it.</p>
+<p id=005f class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=10007 class="phone s01"><cite>Wesley_Smith:</cite> Thank you for bringing this to the group's attention. I think that although of course the late leak of all these documents is a horrible thing being the exact kind of attack that our stuff is designed to present or means that it's a good opportunity to get people thinking about how they can prevent this sort of problem in the future. Anybody else have anything to say on this topic before we move on to data integrity? All right, sounds good. Greg, over to you to talk about data integrity.</p>
+<p id=a428 class="phone s05"><cite>Greg_Bernstein:</cite> Hi folks. couple updates. I try and send out emails on what's happening. So we refactored and merged what we now call full disclosure refactoring. So we had a set of common algorithms. We moved them into the data integrity spec and now DSA, EDDDSA and quantum resistance all use those common algorithms for the full disclosure case.</p>
+<p id=da96 class="phone s05"><cite>Greg_Bernstein:</cite> In process, we've got pull requests for refactoring selective disclosure based on the refactored selective disclosure algorithms in the data integrity spec and I've updated BBS and quantum resistance and ECDSA selective disclosure and those are yet to be merged. those are fresher. some of those are just five days old. So I would like to thank Dave very much for reviewing those because there's some issues that came up about I had a bunch of technical issues I posted all at once.</p>
+<p id=5b8c class="phone s05"><cite>Greg_Bernstein:</cite> Let me just remind folks and I'll go back site window. Sorry, we're going to get the Okay. Can you see my screen? Yes, you can. You don't. I put down a bunch of thoughts when we were doing this refactoring. So, it was a lot of general things, some of which were very detailed. and I know some folks said, why don't you split this up?&quot; I go, &quot;When I had the ideas, I put them down because otherwise I lose them.&quot; It's an old brain. It doesn't work so well anymore. but what it comes down to on the higher level, was how do we handle naming? Okay.</p>
+<p id=d395 class="phone s05"><cite>Greg_Bernstein:</cite> And we had a set of naming conventions that were pretty wellthought out and well written up. We discussed this last time and Manu reminded us of these things. We had some hard lessons learned. one of the things is we talked about was how do we support multiple security levels? because currently obviously with quantum resistance each one of these specs coming out of NIST or going into NIST and hoping to come out of NIST like Falcon. They come with at two or at least two but usually three security levels. The highest of which, are kind of crazy as Mono was pointing out.</p>
+<p id=d61a class="phone s05"><cite>Greg_Bernstein:</cite> are kind of more the defense industrial complex type of stuff or unless we find out there's maybe some kind of weakness and then we'd have to change quickly. in ECDSA we had two different curves we supported. We did not explicitly put that into for our names. And the way you tell which curve you're using, the strength you're using, is you would look and see what the resulting public key would be. You could also look and see the size of the signature, too.</p>
+<p id=60e7 class="phone s05"><cite>Greg_Bernstein:</cite> In quantum resistance, we started down the road of putting the name in there like MLDDSA4, which 44 indicates a certain parameter set at a certain security category level. And the question is if we have to move and change then we need to MLDDSA 87. and so the question is, did I make a mistake by starting to name those things that and should we use MLDDSA, RDFC, blah blah blah, the year like our conventions?</p>
+<p id=7580 class="phone s05"><cite>Greg_Bernstein:</cite> And then tell the security level one in the spec we would specify what levels you need to do to say you're going to do MLDDSA you got a credential you're going to sign it with that what level do we expect you to support okay and then we could always update a table or something in the spec to say now we're going to say that you should support MLDDSA 65 rather than just 44. But not explicitly put it in the similar naming kind of came up with selective disclosure because we have ECDSA SD which lets us know it's selective disclosure but BBS we did not.</p>
+<p id=f6c5 class="phone s05"><cite>Greg_Bernstein:</cite> And now we're going to be getting more selective disclosure things. So instead of MLDDSA4 SD, shouldn't it just be MLDDSA SD? Okay. M. I thought we were getting close to some agreement on this, but I see Philillip was concerned. I mean, I know I wasn't particularly happy about going and getting the key to figure out what EDCSA curve I should use. But as far as not having a gazillion different crypto suite names so this is the decision we're kind of looking at.</p>
+<p id=d8a1 class="phone s05"><cite>Greg_Bernstein:</cite> So with all these quantum resistant was that a question Ivonne sorry go ahead Ivon you're staying up late for us so I thank you very in the multi key of the public key.</p>
+<p id=0682 class="phone s03"><cite>Ivan_Herman:</cite> That's all right. Don't worry about that. Am I wrong that in the case of ECDSA, you could look at the size of the signature, but you could also look at the format used in the multike key version of the signature.</p>
+<p id=bbf4 class="phone s05"><cite>Greg_Bernstein:</cite> Exactly. Yes.</p>
+<p id=dd93 class="phone s03"><cite>Ivan_Herman:</cite> And isn't it that something that you can repeat for the quantum</p>
+<p id=22dc class="phone s05"><cite>Greg_Bernstein:</cite> Every one of the keys has a multi key. we did this with the multicodex people. We went through this every different MLDDSA level SLHDSA level every different public key gets its own multikey prefix and…</p>
+<p id=8a50 class="phone s05"><cite>Greg_Bernstein:</cite> and they've already been assigned for MLDDSA and SLHDSA. So that is true.</p>
+<p id=0d70 class="phone s03"><cite>Ivan_Herman:</cite> But that isn't that an answer to the issue to the comment that Philip said put there.</p>
+<p id=5442 class="phone s03"><cite>Ivan_Herman:</cite> Can you roll down?</p>
+<p id=561d class="phone s05"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=798f class="phone s05"><cite>Greg_Bernstein:</cite> Simplifying the underlying implementation and assert size for both issuing and…</p>
+<p id=6d87 class="phone s03"><cite>Ivan_Herman:</cite> He only talks about key size.</p>
+<p id=7cab class="phone s05"><cite>Greg_Bernstein:</cite> fying. So I could point out to him the multi key Okay.</p>
+<p id=87e3 class="phone s05"><cite>Greg_Bernstein:</cite> I don't know.</p>
+<p id=03c2 class="phone s08"><cite>Dave_Longley:</cite> And…</p>
+<p id=10008 class="phone s08"><cite>Dave_Longley:</cite> I think also point out that the signature size is an indication of strength as well.</p>
+<p id=8c0a class="phone s05"><cite>Greg_Bernstein:</cite> Okay. any other comments on this issue? any folks I mean these cryptosweet naming conventions I mean A lot of this stuff was written up by learning these hard lessons and Mono was reminding us of those and I had to go review them myself.</p>
+<p id=d233 class="phone s05"><cite>Greg_Bernstein:</cite> I will handle the comments back to things, but after this SD refactoring changes through, I can start putting in PRs to update things because the last thing for Anthony who's been helping out with test vectors and things like that, everything impacts the test vectors. We change the crypto suite name. It changes the proof configuration options which changes the signature. Right? So everything that's why sometimes the last thing I do is update the test vectors and such like that question.</p>
+<p id=cff5 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I guess the question is how far we go with wrapping all the parameters into the signature. It is possible for us to basically wrap every parameter into the signature header, right? So that we end up with just MLDDSA-2024 and whether you use JCS or RDFC is the key size potentially is The SD options are in the signature the proof value sorry and we just stuff absolutely everything into the proof value which I think is fine.</p>
+<p id=88c1 class="phone s06"><cite>Manu_Sporny:</cite> There is a downside there where it makes the proof values potentially much larger and uncompressible from a seabboard LD perspective. I don't know if the tradeoff is that great there. but it could change the signature sizes by a couple of bytes. which is significant on if your bite budget is only 140 bytes which is what it is on the back of driver's licenses. so food for thought. I certainly don't have any strong feelings against MLDDSA dash and then the canonicalization scheme dash the date.</p>
+<p id=3d2f class="phone s06"><cite>Manu_Sporny:</cite> That feels fine to me but I'm wondering if we can just drop the canonicalization scheme as a part of the signature since we're creating these new suites.</p>
+<p id=10009 class="phone s08"><cite>Dave_Longley:</cite> So to speak to that if you do so the critical thing that's different here is proof header bytes are not signed they're not covered by the signature. as unlikely as it would be that there would be some kind of overlap in two totally different format expressions, JCS versus RDFC, I think it's better to have that value be signed number than to just allow that to be attack an attacker controlled value. I think the likelihood of that being an attack is zero plus epsilon or whatever but it's better to I think include that in the crypto suite name. The other things are not something that I think just logically could ever result in some kind of confusion</p>
+<p id=70b5 class="phone s05"><cite>Greg_Bernstein:</cite> There is a major difference between the full disclosure and the selective the full disclosure schemes are way simpler and they don't use Seabore and coding so the selective disclosure schemes we do have that's one of the things about Dave go ahead the selective disclosure schemes</p>
+<p id=b782 class="phone s08"><cite>Dave_Longley:</cite> Sorry, I'm not trying to interrupt you. Just trying to get on the queue.</p>
+</section>
+
+<section>
+<h3 id=0878>Extensions For Selective Disclosure</h3>
+<p id=8402 class="phone s05"><cite>Greg_Bernstein:</cite> naturally need this additional information to go with them. And now Dave got me a little worried about the fact that those pieces aren't signed over. But we'll have to look at it from a cryptographic point of view to see if in essence they are because they what goes into verifying things and such like that.</p>
+<p id=b1bd class="phone s05"><cite>Greg_Bernstein:</cite> But I was eyeing the seabore mechanism for extensions. I wanted to see for selective disclosure the next step after right selective disclosure at the statement level is the substatement level. And how would you do that? You could do it with a ZKP by adding a ZKP zero knowledge proof. And what you do as some folks have been talking about and we put in BL extension the blind BBS for an anonymous version of this. What you do is you have somebody do what's called a commitment to a value. We include that.</p>
+<p id=6f9a class="phone s05"><cite>Greg_Bernstein:</cite> It kind of hides the value, but then people can prove with these zero knowledge proofs information about that value. So let's say you got a bank statement. So you want to use that to show proof that one, you bank at a bank. You have this bank account, but then you don't want to reveal too much about how much you have in there, but you want to prove to somebody that you have over 200 bucks or something in there. And that's perfect for what we call range proofs of zero knowledge proofs. So you commit to that value. We add that You can see this requires some extra information to go along with it.</p>
+<p id=3a87 class="phone s05"><cite>Greg_Bernstein:</cite> And we started seeing this with our BBS extensions anonymous holder binding for pseudonyms but also for this kind of subclaim level thing. And so that was let me show see if I can get okay the second item to get people to start thinking about was share was I I put it over with BBS, but this really also applies to selective disclosure in general is how do we bring in these optional features in BBS? We had anonymous holder binding pseudonym or a combination of the two.</p>
+<p id=a998 class="phone s05"><cite>Greg_Bernstein:</cite> Plus, we've got folks over in Europe that want to add in proof of possession of a hardwarebased key and that comes as a addition to blind BBS with an additional proof and such like that. So I kind of looked at here I described generally these features how we do what we add additional information to the base proof or the derived Recall selective disclosure has three steps rather than just two steps. You create a base proof. The issuer does the holder creates a derived proof where they select what they're going to reveal.</p>
+<p id=8e85 class="phone s05"><cite>Greg_Bernstein:</cite> Then the verifier verifies the derived proof. Along each of these paths of creating the base proof and the derived proof, you may bring in extra information. So I wrote up question.</p>
+<p id=e847 class="phone s08"><cite>Dave_Longley:</cite> before we got a little bit too farther I was on the queue to talk briefly about the cryptosweet name thing that we were on. So I just wanted get that in there before we moved on too much.</p>
+<p id=ecf6 class="phone s05"><cite>Greg_Bernstein:</cite> Please please. That's okay.</p>
+<p id=02d4 class="phone s08"><cite>Dave_Longley:</cite> I just want to say that the cryptosweet name is important for interop and that covers two different things that covers enabling verifiers to announce what they support so that they can say I support this crypto suite or that crypto suite but also for us to be able to say what verifiers must support to enable wide interop and if we make too many of those I think we're going to create a ecosystem where in effect all of them have to be implemented to get wide interrop or we're just going to see a lot of differentiation and harms to the ecosystem which we don't want. so it's good to have the ability to have different crypto suites but we also don't want there to be so many of them that it becomes hard for there to be interop.</p>
+<p id=1000a class="phone s08"><cite>Dave_Longley:</cite> And so that's another reason to have groups to group things as well as we can and then say within that group you must implement that and that also helps govern our decision-making process around whether we include things like SD in a cryptosweet name or not because if we think it's a good thing to enable simpler use cases where SD doesn't make sense or isn't needed and people can have simpler implementations for those cases then it makes sense to include SD in a crypto suite name or not. because then you can have verifiers who only work with the non-SD or verifiers who could do either one and there are different use cases for non-SD cases. You might have something really simple that travels across a QR code and that's not intended to ever do SD.</p>
+<p id=7b0c class="phone s08"><cite>Dave_Longley:</cite> Now that's getting a little more dicey with larger signatures, but that's a different issue. and then as we started talking about optional features and how the expression of those are not covered by signature, I think that's actually important because I think the optional features should be considered holder features primarily. they're options that a holder can choose to have and to use or to not use. And that's an important concept. architecturally, but also in support of the three-party model with holder independence and choice. we don't want these features to be things that issuers are effectively commanding holders to have to as opposed to offering them to holders who can then decide to use them…</p>
+<p id=9274 class="phone s08"><cite>Dave_Longley:</cite> where verifiers are willing to accept them.</p>
+<p id=366d class="phone s05"><cite>Greg_Bernstein:</cite> I like it.</p>
+<p id=9541 class="phone s05"><cite>Greg_Bernstein:</cite> All right. I always look to you, Dave, because you've got a little bigger perspective. I'm a little bit more down in the mud of the cryptography. So if for example MLDDSA in the selective disclosure case we would name the crypto suite MLDDSA SD 2024 and then in the text we indicate that right now we are only using ML DSA</p>
+<p id=1cdf class="phone s05"><cite>Greg_Bernstein:</cite> 44 signature The parameters are with the corresponding hash set by the security level blah blah blah. And this is…</p>
+<p id=58d1 class="phone s05"><cite>Greg_Bernstein:</cite> what we mean to do L. LDSASD 2024 in this version of the spec. Okay, that doesn't mean</p>
+<p id=255e class="phone s01"><cite>Wesley_Smith:</cite> Time check.</p>
+<p id=2efd class="phone s01"><cite>Wesley_Smith:</cite> Greg, we're supposed to be wrapped up about now.</p>
+<p id=6cc4 class="phone s05"><cite>Greg_Bernstein:</cite> Sorry.</p>
+<p id=c691 class="phone s01"><cite>Wesley_Smith:</cite> Head towards the</p>
+<p id=3000 class="phone s05"><cite>Greg_Bernstein:</cite> Okay, so if folks, so we want to resolve that and Dave's inputs and everybody's inputs are good.</p>
+<p id=dfb2 class="phone s05"><cite>Greg_Bernstein:</cite> The other one is I wrote out a general steps for this flows or optional features. Hopefully this is as much from the holder because a lot of things happen. so please take a look to see if I left out some things because this is starting to have a shape up where we could have a feature option at different points in the process.</p>
+<p id=ff2e class="phone s05"><cite>Greg_Bernstein:</cite> We include different inputs or different stuff and we would move optional features to be self-contained and just have certain hooks where we go out to them. So we don't have a mess all over the place like we have with the BBS spec where the creating base derived everyone is all the optional features get talked about right there. So, sorry we're out of time, but I thought I put it in the email that I sent out. Please take a look. See if you can see missing steps that might be useful.</p>
+<p id=c15c class="phone s01"><cite>Wesley_Smith:</cite> All right. thanks folks. We are about out of time for today. I will note very very briefly that there is a open on Bitstring status list that gets the 1.1 version ready to go to FBWD. It contains some narrative changes. we're hoping to get that merged in the next couple of days. So please take a look at that if you are interested. Other than that, thanks folks. thank you for the time as always. Have a good rest of your day. We'll see lots of you later this week and some of you next</p>
+<p id=f398 class="phone s05"><cite>Greg_Bernstein:</cite> Next Meeting ended after 00:56:21 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

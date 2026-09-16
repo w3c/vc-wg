@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 16 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>Verifiable Credentials Working Group Telco</h1>
+<h2>16 September 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20260916T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/09/16-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>antony, bigbluehat, brent, carolynn, dlongley, dmitriz, elaine, exe, hendrypoh, hsano, ivan, JennieM, joeandrieu, kezike, manu, phila, saad, TallTed, wes, will, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brentz</dd>
+<dt>Scribe</dt><dd>JoeAndrieu, manu, wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4113">VCDM PR</a>
+<ol>
+<li><a href="#510d">w3c/<wbr>vc-data-model#1645</a></li>
+</ol>
+</li>
+<li><a href="#27ac">Joint meeting planning</a></li>
+<li><a href="#83f4">Moving CID to DID WG?</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=2e69 class="phone s01"><cite>brent:</cite> welcome.<br>
+<span id=ea77>… we follow code of conduct, IPR, and policies of W3C.</span><br>
+<span id=6885>… Please join if you haven't.</span><br>
+<span id=7be8>… Today is task force updates, then PR for VCDM, a meeting to plan a meeting, and then moving CID to DID WG</span></p>
+<p id=cf55 class="phone s02"><cite>ivan:</cite> just a short thing to say.<br>
+<span id=83be>… Last week we made a resolution for threat models</span><br>
+<span id=6b6f>… It has been accepted</span><br>
+<span id=b67a>… Transition is approved</span><br>
+<span id=0efc>… So, manu, I think the onus is on you to get it into the first batch.</span></p>
+<p id=ad25 class="phone s03"><cite>manu:</cite> you mean manually create FPWDs?</p>
+<p id=2625 class="phone s02"><cite>ivan:</cite> yes, exactly.</p>
+<p id=749a class="phone s03"><cite>manu:</cite> will do, but will take time</p>
+<p id=e50c class="phone s02"><cite>ivan:</cite> that's ok. Not a hurry, but we need to do it.</p>
+<p id=5dda class="phone s01"><cite>brent:</cite> anyone want to help Manu?</p>
+<p id=c92a class="phone s03"><cite>manu:</cite> I like that plan.<br>
+<span id=0c28>… I'll do the spec I'm editing. Other editors will do those others.</span></p>
+<p id=4c98 class="phone s02"><cite>ivan:</cite> but we need a date</p>
+<p id=8706 class="phone s03"><cite>manu:</cite> we do it when its ready<br>
+<span id=2b01>… editors should just prep it</span></p>
+<p id=28f3 class="phone s02"><cite>ivan:</cite> I'm the one who has to process all of these. One a day would not be great.</p>
+<p id=8933 class="phone s03"><cite>manu:</cite> let's move through it, but we don't want to bottleneck for everyone</p>
+<p id=bd00 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to say Yes for confidence method and to ask about FPWD</p>
+<p id=1b80 class="phone s04"><cite>JoeAndrieu:</cite> Just want to clarify - we're talking about an FPWD for each of the threat models and we'll need a snapshot now and then all of them are just NOTEs, from that point forward, Echidna, and running live?</p>
+<p id=f7ae class="phone s02"><cite>ivan:</cite> that's the only painful thing. Once they are published, echidna kicks in.</p>
+<p id=aaba class="phone s04"><cite>JoeAndrieu:</cite> To be clear, there is not another set of gates we have to go through?</p>
+<p id=4228 class="phone s05"><cite>Antony:</cite> I'm willing to volunteer. I'm new. Only done one PR, but I know how much work that could be.<br>
+<span id=ae55>… Caveat: I'll need guidance</span></p>
+<p id=d7e5 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note Antony could do the Data Integrity one and I can help him through it.</p>
+<p id=11db class="phone s03"><cite>manu:</cite> yes. Thank you, Antony. I'm happy to try and help<br>
+<span id=8bcc>… I suggest doing the data integrity one</span><br>
+<span id=7f3c>… this will take a bit longer, but it will be worth it</span></p>
+<p id=dfd7 class="phone s04"><cite>JoeAndrieu:</cite> I am nodding yes, we'll get an FPWD for our threat model as soon as we can, we're not as far along, but we can take on that task.</p>
+<p id=7aac class="phone s01"><cite>brent:</cite> great, Manu, hopefully you can take that on<br>
+<span id=7d6c>… and share the misery</span><br>
+<span id=efc8>… back to agenda: task force updates</span></p>
+<p id=a08c class="phone s06"><cite>wes-smith:</cite> update for bar code and data integrity. progress is good. next week FPWD for one of them.<br>
+<span id=ec8a>… also a potential action for this group.</span><br>
+<span id=ddb0>… a dark web site recently was found with millions of drivers' license data.</span></p>
+<p id=2c83 class=summary><a href="https://techcrunch.com/2026/09/10/id-verification-giant-idscan-confirms-data-breach-with-more-than-150-million-drivers-licenses-stolen/">https://<wbr>techcrunch.com/<wbr>2026/<wbr>09/<wbr>10/<wbr>id-verification-giant-idscan-confirms-data-breach-with-more-than-150-million-drivers-licenses-stolen/</a></p>
+<p id=5568 class="phone s06"><cite>wes-smith:</cite> this is a great use case context for why VC barcodes is awesome (because of revocation feature)</p>
+<p id=aff4 class=irc><cite>&lt;Carolynn&gt;</cite> p+</p>
+<p id=cfc4 class="phone s06"><cite>wes-smith:</cite> Maybe we write a blog post to explain how VC Barcodes could help.<br>
+<span id=5da5>… Question to the group: is this something we want to engage with?</span></p>
+<p id=daa7 class="phone s03"><cite>manu:</cite> other things to consider: does the group say something, does the W3C say something, does W3C put out a press release?</p>
+<p id=5bbc class="phone s06"><cite>wes-smith:</cite> also, whether or not that blog post explicitly liases with similar work in other standards groups</p>
+<p id=46f9 class="phone s01"><cite>brent:</cite> as chair, blog post makes sense<br>
+<span id=0cb2>… overhead may well be worth it</span><br>
+<span id=0533>… and if we don't get there, individuals can always leverage the work</span></p>
+<p id=8a68 class="phone s04"><cite>JoeAndrieu:</cite> The confidence method group pulled in some edits to establish cryptographic confidence methods - based on DIDs or embedded keys.<br>
+<span id=fd66>… We still have a few edge issues to clean up.</span><br>
+<span id=357c>… We have started on our diagram for a joint threat model.</span><br>
+<span id=ee5f>… We need to figure out the evaluation part of the process, which may include things like liveness checks.</span><br>
+<span id=4a23>… I am confident we will get to readiness for FPWD of the threat model in a couple weeks.</span></p>
+<p id=370e class="phone s07"><cite>Carolynn:</cite> I just meant to say I'm present, but while I'm on the queue. a few words on the dpp task force<br>
+<span id=ddaf>… we are working on a relatively complex example for real world entities, with multiple trust anchors</span><br>
+<span id=407d>… cleaning up diagram, a bit complicated about who recognizes whom.</span><br>
+<span id=531a>… That will be presented to the recognized entity task force and we'll together decide if we want to make it a full blown example</span></p>
+<p id=cae9 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note privacy review of render methods, security review of entity recognition.</p>
+<p id=7577 class="phone s03"><cite>manu:</cite> that's great, Carolynn.<br>
+<span id=5e71>… I'm the one that queued you accidentally. (sorry)</span><br>
+<span id=a50d>… RE work items, we have a privacy review on Render Method. No concerns</span><br>
+<span id=ab49>… on Recognized Entity spec, internationaltion is done.</span><br>
+<span id=d562>… we did get a security review back. It's pretty significant, asking for substantial structural changes</span></p>
+<p id=d177 class=summary><a href="https://github.com/w3c/security-request/issues/141#issuecomment-5637921865">w3c/<wbr>security-request#141 (comment)</a></p>
+<p id=ffff class="phone s03"><cite>manu:</cite> I'd like to figure out how we are going to format things. Simone is asking to change. We discussed yesterday, but I'm hesitant to rewrite WIP until the group can figure out what we want to do<br>
+<span id=383e>… that link is the horizontal review. it is thorough, which is good. Seems partially AI generated, which means there is lot of content to review.</span><br>
+<span id=5c87>… It is specific about the changes desired. I'm not happy about the extra work that is proposed here.</span><br>
+<span id=bfa9>… It feels like 60% of the time is involved in threat models</span></p>
+<p id=ae4f class="phone s06"><cite>wes-smith:</cite> I have questions back to blog post press release<br>
+<span id=d0f8>… as of today, I have a draft of language that might form the basis of such a post</span><br>
+<span id=1c65>… what can we do on the call today to advance this?</span><br>
+<span id=b5d6>… and (b) is this something that edits need group review and final sign off</span><br>
+<span id=690a>… or is there a more streamlined option?</span><br>
+<span id=8394>… There is time sensitivity to thist.</span><br>
+<span id=c115>… Other SDOs are meeting to discuss the future of security of physical documents in the next few weeks.</span></p>
+<p id=89c0 class="phone s02"><cite>ivan:</cite> what I want to add is that we should not forget that the plan is go through the W3C blog, which means the communications team has to look at it.<br>
+<span id=cc5d>… That shouldn't be a problem, but it will take time</span></p>
+<p id=b993 class=irc><cite>&lt;Carolynn&gt;</cite> About the note in the zoom chat by Antony Mott about the IEEE activity on DPP, I am aware of this work.</p>
+<p id=1946 class="phone s02"><cite>ivan:</cite> Another thing, about the text itself, I believe that the solution we are proposing is not only the barcode spec, it's also the bitstring spec.<br>
+<span id=6f87>… maybe we could also mention the forgery defense spec.</span><br>
+<span id=34f7>… not just on one spec, but on several</span><br>
+<span id=44fb>… which implicitly supports the family of specs addressing the problem</span></p>
+<p id=bee4 class="phone s01"><cite>brent:</cite> my suggestion is that Wes, you share the draft on the mailing list. Give the group 1 week for comments and suggestions. Next week we'll ask if anyone objects to passing on to coms.<br>
+<span id=1415>… does that sound reasonable?</span></p>
+<p id=72d1 class="phone s06"><cite>wes-smith:</cite> Yes, that sounds great. What mailing address should I use?</p>
+<p id=85d8 class="phone s07"><cite>Carolynn:</cite> I wanted to reply to Antony, with a zoom chat comment.<br>
+<span id=ced7>… you talked about two things: the incident (the topic of the blog post) but you also mentioned IEEE product passport work</span><br>
+<span id=8403>… related to IEEE work. We are aware of this activity. It's led by Chinese, very different than what we are doing, which is VC based and vocabulary based.</span><br>
+<span id=edc4>… There are dozens of such efforts around the world</span></p>
+<p id=c6ee class="phone s02"><cite>ivan:</cite> maybe to speed up blog process. maybe its worth contacting Coralie now and let her know what we are working on. a summary a sentence or two<br>
+<span id=5b88>… that might speed up processing</span></p>
+<p id=b384 class="phone s01"><cite>brent:</cite> sounds like a good idea, can you take that action item?</p>
+<p id=cbc6 class="phone s02"><cite>ivan:</cite> it should be one of the chairs.</p>
+<p id=834f class="phone s01"><cite>brent:</cite> Ok. I'll take it on. If I can get a two sentence summary.</p>
+<p id=df5a class="phone s06"><cite>wes-smith:</cite> ok, will send out later today</p>
+<p id=10000 class="phone s05"><cite>Antony:</cite> my friend is fascinated by what we're doing at W3C related to IEEE.<br>
+<span id=35e3>… what's interesting is that over there its behind a locked paywall.</span><br>
+<span id=85c1>… people are confused about which items can be revoked, etc.</span></p>
+<p id=6acc class=irc><cite>&lt;Carolynn&gt;</cite> Yes, many locked paywall SDOs...</p>
+<p id=e5af class="phone s05"><cite>Antony:</cite> Is it useful perhaps to send this blog post to someone at the IEEE?<br>
+<span id=9198>… He said he could help spread the word at IEEE. Just offering to connect</span></p>
+</section>
+
+<section>
+<h3 id=4113>VCDM PR</h3>
+<p id=7938 class=irc><cite>&lt;Carolynn&gt;</cite> I had a meeting today with the IEEE main authors of that standard.</p>
+<p id=92e5 class=irc><cite>&lt;Carolynn&gt;</cite> Antony, you can share the link to the DPP vocab task force <a href="https://www.w3.org/groups/tf/vc-dbw/">https://<wbr>www.w3.org/<wbr>groups/<wbr>tf/<wbr>vc-dbw/</a></p>
+<h4 id=510d><a href="https://github.com/w3c/vc-data-model/pull/1645">w3c/<wbr>vc-data-model#1645</a></h4>
+<p id=4f10 class="phone s01"><cite>brent:</cite> We have a pull request<br>
+<span id=bf4b>… it's rephrasing things (non-normatively)</span><br>
+<span id=4a7e>… the change is the result of a lot of conversation.</span><br>
+<span id=0ccf>… This change is likely to happen, and you all should look at it.</span><br>
+<span id=8e4e>… we could take a comment or two now, but also great if we don't in the interest of time</span></p>
+</section>
+
+<section>
+<h3 id=27ac>Joint meeting planning</h3>
+<p id=8d53 class="phone s01"><cite>brent:</cite> we have a joint meeting scheduled during TPAC with the payment security interest group, on Tuesday<br>
+<span id=5e18>… there is a meeting next week to plan that meeting at TPAC. Everyone in this group should have an invite to that planning meeting</span><br>
+<span id=cdd9>… Next Tuesday 22 at noon ET.</span><br>
+<span id=5678>… If that isn't showing up on your calendar and you want to be there, let me know.</span><br>
+<span id=78b6>… folks from federated identity space, FedId folks. This is an opportunity to continue to insist that the VCDM as an exisiting web standard is viable for digital credentials</span><br>
+<span id=dc49>… If anyone has any questions or comments, please jump on q</span></p>
+<p id=b8d8 class="phone s08"><cite>phila:</cite> I'm a bit out of touch, but I'm delighted to hear progress.<br>
+<span id=1138>… last week, Brent reflected on experiences at GDC, so I won't repeat that. (I was also there)</span><br>
+<span id=e272>… To me, this meeting at TPAC on Tuesday is an occasion where, as astonishing as it may seem, we need to set the record straight within our own standards body that what information is being given is wrong.</span><br>
+<span id=7c59>… and we need to ask them to stop repeating incorrect information and start acting like we are part of the same organization</span></p>
+<p id=36d3 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to note I'm not on that invite and would like to be there.</p>
+<p id=04c5 class="phone s08"><cite>phila:</cite> respect for work done is vital</p>
+<p id=946a class="phone s03"><cite>manu:</cite> +1 to all that.</p>
+<p id=f26a class=irc><cite>&lt;Antony&gt;</cite> Carolynn, thank you, I'll share that link.</p>
+<p id=aa8e class="phone s03"><cite>manu:</cite> We, as a working group, do need to become more active in helping W3C management in how to relate to other groups</p>
+<p id=ce3a class="phone s01"><cite>brent:</cite> definitely will add you Manu to the Tuesday next call.</p>
+<p id=7678 class=irc><cite>&lt;TallTed&gt;</cite> brent -- link to the meeting that's being planned?</p>
+<p id=9fb4 class="phone s01"><cite>brent:</cite> please join if you have strong thoughts about what the TPAC meeting should be<br>
+<span id=40e8>… we have been invited to share our voices</span></p>
+<p id=46f8 class="phone s09"><cite>TallTed:</cite> I don't feel strongly, but I'd like to confirm that I see it on my calendar.</p>
+<p id=b07c class="phone s01"><cite>brent:</cite> the TPAC meeting?<br>
+<span id=dc6d>… if you don't see it on your TPAC schedule and look at Tuesday, then indicate that you are planning to attend (it should be bolded because you are a member).</span></p>
+<p id=84f5 class="phone s09"><cite>TallTed:</cite> is there a link that can help me or do I have to go do that research?</p>
+<p id=82a1 class="phone s03"><cite>manu:</cite> there's no easy link to drop in</p>
+<p id=be89 class="phone s01"><cite>brent:</cite> [navigates the w3.org site to see what he might find]<br>
+<span id=5e76>… I see a bunch of joint meetings on 27th of October at 13:15 GMT.</span></p>
+<p id=3cd5 class=irc><cite>&lt;TallTed&gt;</cite> <a href="https://www.w3.org/events/meetings/7f5ffe2d-c418-47f1-880a-36710212b347/">https://<wbr>www.w3.org/<wbr>events/<wbr>meetings/<wbr>7f5ffe2d-c418-47f1-880a-36710212b347/</a></p>
+<p id=6574 class="phone s01"><cite>brent:</cite> if you don't see that, you'll want to adjust your reservation at w3c event site</p>
+<p id=4414 class="phone s09"><cite>TallTed:</cite> is this the meeting?</p>
+<p id=b51e class="phone s01"><cite>brent:</cite> yes.<br>
+<span id=a594>… so if you click on that link and are not shown as a participant, you want to go fix that.</span></p>
+</section>
+
+<section>
+<h3 id=83f4>Moving CID to DID WG?</h3>
+<p id=498e class="phone s01"><cite>brent:</cite> next up: CID spec movement to DID WG</p>
+<p id=3adb class=summary><a href="https://github.com/w3c/did-wg-charter/pull/37">w3c/<wbr>did-wg-charter#37</a></p>
+<p id=111b class="phone s01"><cite>brent:</cite> might be a PR on the DID WG draft charter, which would include the CID specification within the work items of the DID WG which would effectively remove it from our puurview</p>
+<p id=10001 class="phone s03"><cite>manu:</cite> I think I pasted the right link.<br>
+<span id=7873>… +1 to doing this. I think the spec belongs to the DID WG. We caught it because the DID WG prevented that.</span><br>
+<span id=948b>… A lot of the content of that spec was actually written by the DID WG.</span><br>
+<span id=e2a3>… It is true what our group depends on the CID spec, but as is being discussed, I believe we have mitigated most concerns</span><br>
+<span id=a8ca>… the expectation is that VCWG can continue to work on it.</span><br>
+<span id=3024>… when the new charter activates, the DID WG would be able to take it over</span><br>
+<span id=77f5>… The charter includes liason roles that will help ensure a smooth transition</span><br>
+<span id=0f86>… +1 this is a good move. Reduces our work. The DID WG which contains many members of this group, and their are quite capable</span></p>
+<p id=2245 class=irc><cite>&lt;Wip&gt;</cite> +1 to moving this across to DID WG when it makes sense</p>
+<p id=655e class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about DID WG doing more than maintain</p>
+<p id=b758 class="phone s01"><cite>brent:</cite> thanks for clarification. my main question is: we have two pull requests open on CID right now.<br>
+<span id=d0bb>… one is fixing something clearly in scope. The other one is class 3 changes. Does the DID WG want to do more than maintaining? I want to consider that?</span><br>
+<span id=ca34>… So v2 might be appropriate. Is that on the table?</span></p>
+<p id=7c2c class="phone s03"><cite>manu:</cite> I think that's an excellent question<br>
+<span id=bffe>… expectation is its just maintenance mode</span><br>
+<span id=42a2>… no class 3 changes allowed unless there are changes</span></p>
+<p id=f1ca class="phone s10"><cite>wip:</cite> just to echo manu. The DID WG is looking to go into maintenance mode, but if we move the CID spec, then we can have it picked up for work in a future charter</p>
+<p id=769b class="phone s02"><cite>ivan:</cite> I'm looking at the charter, if we do that, then the charter should also give the details of the CID in the deliverables section</p>
+<p id=988f class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention CID feature options</p>
+<p id=ed83 class="phone s01"><cite>brent:</cite> thanks, Joe.</p>
+<p id=e69b class="phone s02"><cite>ivan:</cite> its always possible in the charter to say we are just maintaining, but the security clause is fairly enabling,<br>
+<span id=de0a>… so we might want to think about nuanced language for maintenance</span><br>
+<span id=dc1c>… for example, what happens if new entries in the table are required? That would not be allowed under the current draft.</span></p>
+<p id=676f class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to say we could say &quot;could explore new class 3/4 changes/features&quot; or something like that... but argue for maintenance mode.</p>
+<p id=eb9c class="phone s03"><cite>manu:</cite> to that point, Ivan, I put a change to the charter that would allow the group to restructure the work, and possibly convert to a registry, which would enable updating the document to become a registry<br>
+<span id=66b3>… we could also put in the charter to say we are going to work on that PR</span></p>
+<p id=f261 class=irc><cite>&lt;dlongley&gt;</cite> +1 to ensure that maintenance allows the CID spec to incorporate new table entries for multikeys (one way or another)</p>
+<p id=0c35 class=irc><cite>&lt;dlongley&gt;</cite> (as pulled from data integrity cryptosuites / other related specs)</p>
+<p id=d408 class="phone s03"><cite>manu:</cite> Let me come down on the side of &quot;mostly maintenance&quot; because the rest of the DID WG is in maintenance, and having that aligned would be preferable. if we want to do class 3/4 we should be specific. we can recharter later on.<br>
+<span id=b249>… I just don't think we have the bandwidth to run a class 3/4 DID WG in the next 6-9 months</span></p>
+<p id=6629 class="phone s01"><cite>brent:</cite> I appreciate that. Take my suggestion as a &quot;yes, and&quot; . So, yes, let's transition. Either way its a good thing</p>
+<p id=56ca class="phone s01"><cite>brent:</cite> with that, we are through the agenda.<br>
+<span id=233b>… thank you all.</span><br>
+<span id=59bc>… Thanks to Joe and those that joined us for the first time.</span></p>
+<p id=d8f3 class=summary>scribe out</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
