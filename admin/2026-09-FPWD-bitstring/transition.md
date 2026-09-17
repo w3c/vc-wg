@@ -3,7 +3,7 @@
 - Title: Bitstring Status List v1.1
 - Draft ready for publication: https://w3c.github.io/vc-bitstring-status-list/transitions/2026/FPWD/
 - Short name: vc-bitstring-status-list-1.1
-- Estimated publication date: September 22
+- Estimated publication date: September 24
 
 # Abstract
 
@@ -35,8 +35,8 @@ For IPR of the current version, see https://www.w3.org/groups/wg/vc/ipr/
 
 # Information about implementations known to the Working Group
 
-See the implementation report of version 2.0
+See the implementation report of version 1.0
 
-- https://w3c.github.io/vc-data-model-2.0-test-suite/
+- https://w3c.github.io/vc-bitstring-status-list-test-suite/
 
 There is already an internal implementation for the new feature, too.
