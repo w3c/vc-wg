@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 15 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>15 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Phillip_Long, Stephen_Curran, steve_capell, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#6a19">Refactoring Recognition Validation Algorithm</a></li>
+<li><a href="#11a3">Refactor Algorithms to extract Recognition Validation algorithm. by msporny · Pull Request #128 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#c552">Explain most-to-least privacy preserving way to fetch a recognized entity credential by msporny · Pull Request #129 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#4657">Privacy Implications Of Fetching Credentials</a></li>
+<li><a href="#45ec">Grid In Gdc Geneva Update</a></li>
+<li><a href="#ed92">GRID in GDC Geneva</a></li>
+<li><a href="#6e40">Security Review Feedback Discussion</a></li>
+<li><a href="#f090">Rethinking Verifying Recognition Chains</a></li>
+<li><a href="#42cf">Rethinking verifying recognition chains · Issue #85 · w3c/vc-recognized-entities · GitHub</a></li>
+<li><a href="#4547">Addressing Specification Gaps For Use Cases</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=4d8c class="phone s01"><cite>Manu_Sporny:</cite> All right, let's go ahead and get started. Welcome everyone to the recognized entities. call. This is September 15th 2026. on the agenda today is our standard agenda which is basically pull request ing followed by issue processing. we do have one extra item today which is we got our second horizontal review in hooray.</p>
+<p id=dd70 class="phone s01"><cite>Manu_Sporny:</cite> but it is a doozy of a response. So I expect we're going to spend a decent bit of time today talking about that or how we want to address it. and we also had started the discussion around GS1's proposal although I'm not seeing anyone from GS1 here today so maybe we won't pick that up today. and maybe do a summary around that. I think that's largely it for the agenda today. I don't know if anybody has any strong feelings about which one of those items we cover first or not. Otherwise, I'll just go in pull request to horizontal review to issue order. Any other updates or changes to the agenda today? Anything else we should discuss?</p>
+<p id=8e8d class="phone s01"><cite>Manu_Sporny:</cite> All with that, let me go ahead and share my screen and let's get into the issues. there were a number of PRs that were merged that we had discussed last week. That was the language value object stuff around legal using different languages in an example removing the use cases document and revising the editors and author's list and adding the holderbased delivery section of the specification. we got held up on a couple of PRs.</p>
+</section>
+
+<section>
+<h3 id=6a19>Refactoring Recognition Validation Algorithm</h3>
+<p id=2a2a class="phone s01"><cite>Manu_Sporny:</cite> due to just comments that we need to address. I will note that GS1 is still working on their appendix. That's poll 108. And then Avon still working on the draft vocabulary. I don't know necessarily where he is on that, but we expect that to be merged at some point. okay so first up is this refactoring of the recognized recognition validation algorithm. let me put this in as a topic. so Steve you had asked us to separate out the recognition validation algorithm from the discovery of the document.</p>
+<p id=cae4 class="phone s01"><cite>Manu_Sporny:</cite> payments. there's a big PR that does that. that's been raised. here, let me try and see if I can pull up a preview. look, preview works. so now we have, algorithms for credential-based discovery, which, does this shows you some examples. And then we have an algorithm for identifier based discovery. and that kind of goes and does its thing and both of those algorithms result in a chain of credent so it just generates a chain of credentials and then the recognition validation algorithm will process that chain of credentials in the same So I believe Steve this is what you asked for. I think it seems to work.</p>
+<p id=cfa7 class="phone s01"><cite>Manu_Sporny:</cite> I did actually do an LLM implementation of the algorithms just a verbatim implementation and that seemed to do the right thing based on what was written in the spec. we do have some comments that process. I did merge in Ted's Dave, your Ted's comment did yours and then some, which is why I merged his one. but we have Thon went ahead and asked a question that I didn't quite know how to answer here. so we say if the issure is equal to a couple of times in the specification and he was like can you define what equal to means?</p>
+</section>
+
+<section>
+<h3 id=11a3><a href="https://github.com/w3c/vc-recognized-entities/pull/128">Refactor Algorithms to extract Recognition Validation algorithm. by msporny · Pull Request #128 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=98a2 class="phone s01"><cite>Manu_Sporny:</cite> Do you mean simple string equality like you take one issue or URL and you check it against another issue or URL or are we talking about doing some kind of canonicalization or normalization based on the scheme to get a canonical form of the identifier? I really hope we're not doing that by and he was like, &quot;So then with that equality thing, how do you do membership tests? How do you match issuer ID against?&quot; I think he meant the although I guess you could also do it, and then how do you use it? the string quality for scene.</p>
+<p id=ad9e class="phone s01"><cite>Manu_Sporny:</cite> And so he's basically saying you should document the algorithm for identifier comparison and then use that throughout the algorithm. So let me pause here see what people think. What should we do here?</p>
+<p id=4ac7 class="phone s02"><cite>steve_capell:</cite> It's an interesting question. I'd always imagined that we were checking that these recognized entity subject is the same as the whatever credential is you're verifying, an invoice, whatever. if you they're both so they would both have what happens when someone gets a new did and they're the same entity? They just have to get another recognized entity, wouldn't they?</p>
+<p id=ef5e class="phone s01"><cite>Manu_Sporny:</cite> At least that was the operating thinking. go ahead Dave.</p>
+<p id=15c9 class="phone s03"><cite>Dave_Longley:</cite> I would just recommend specifying simple string equality seeing how far that gets us. That's the easiest thing to do and I think it's what most people expect it to be. There will be edge cases where some URIs might be expressed in certain ways that could potentially be normalized or canonicalized to the same value. But I don't think we should worry about</p>
+<p id=5e16 class="phone s01"><cite>Manu_Sporny:</cite> Plus one did that. That was what I was hoping where we'd land. so just to be explicit about this, if somebody accidentally puts a fragment identifier in their DID, that is not going to do a simple string match. if somebody puts a path there, it won't match. If somebody uses a SID like an HTTP URL and they use a query parameter in one place and not the same query parameter in the other place that won't match. I think all of those are fine for not matching, just make sure they don't do that. and then we'll get some implementation feedback to see if that's working for everyone.</p>
+<p id=c0c8 class="phone s01"><cite>Manu_Sporny:</cite> We can always implement identifier canonicalization. I'm pretty sure we can always implement identifier canonicalization later. The problem with identifier canonicalization is the canonicalization rules for every URL scheme may be different and it would introduce a massive amount of complexity into the comparison functions to do something like that. And so that's why I'm hoping nobody thinks identifier canonicalization is something we should be doing here. plus one. I think we're saying simple string match. If they don't match,…</p>
+<p id=970b class="phone s01"><cite>Manu_Sporny:</cite> too and we're going to move on from that. Okay.</p>
+<p id=733f class="phone s02"><cite>steve_capell:</cite> Just quick question.</p>
+<p id=1303 class="phone s02"><cite>steve_capell:</cite> If it were a did I know not even sure it's a registered method yet, but your did sell where the location is, if I remember right, a query string parameter. is that how if these were dead cells,…</p>
+<p id=e910 class="phone s02"><cite>steve_capell:</cite> how would you express them to get a match?</p>
+<p id=e6e9 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, exactly.</p>
+<p id=b08f class=irc><cite>&lt;Phillip_Long&gt;</cite> Describing some examples of things that don't match, as you just described, would be helpful in the spec. </p>
+<p id=612f class="phone s01"><cite>Manu_Sporny:</cite> So when you use that did sell value in the document you would likely not specify the URL meaning discovery is separated from did cell right you can use it in the protocol but using it as an identifier especially in a recognized entity document is something that you wouldn't likely do.</p>
+<p id=f1d9 class=irc><cite>&lt;Kayode_Ezike&gt;</cite> Should we capture this in the threat model </p>
+<p id=40ff class="phone s01"><cite>Manu_Sporny:</cite> It is a sharp edge Steve I think is what you're identifying but that would be the result of this decision that we're making is we wouldn't do any normalization</p>
+<p id=6887 class="phone s02"><cite>steve_capell:</cite> Yeah. But…</p>
+<p id=e2c2 class="phone s02"><cite>steve_capell:</cite> then if the mechanism by which you discover the credentials the first part of the algorithm is you've got an invoice signed by a did cell and you discover the recognized entity from the issuer did of the invoice.</p>
+<p id=9c6d class=irc><cite>&lt;Phillip_Long&gt;</cite> what's the threat that this opens? </p>
+<p id=ffff class="phone s02"><cite>steve_capell:</cite> And it's the very same did that you're using for discovery that you're using for entity matching, isn't it? So you can't have your cake and eat it. Anyway, Yeah,…</p>
+<p id=1819 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, that is something that we would need to reason through for did sell. meaning that even if it is a downside I don't think it's something that should force our hand for this spec specific I think that's a problem with it cell it's not a problem with the recognized entity spec if that makes sense</p>
+<p id=1315 class="phone s02"><cite>steve_capell:</cite> I'm not sure it's a problem with did cell, but it does it mean maybe we address it later as you say or is there something we can say that depending on the DID method, the verifier may</p>
+<p id=4496 class="phone s02"><cite>steve_capell:</cite> apply some normalization or canonicalization or whatever. But we're not going to specify how you do that for every method in this document. Are you?</p>
+<p id=892d class="phone s01"><cite>Manu_Sporny:</cite> All good points.</p>
+<p id=d5e2 class="phone s01"><cite>Manu_Sporny:</cite> Go ahead, Phil.</p>
+<p id=e7a2 class="phone s04"><cite>Phillip_Long:</cite> Yeah, you just gave a couple examples earlier about the context within…</p>
+<p id=00b0 class="phone s04"><cite>Phillip_Long:</cite> which matching would not work that people might try if they weren't reading carefully. And I think those would be wise to put into the spec that emerges from this so that you just head that off at the pass. Exactly. Exactly.</p>
+<p id=2f15 class="phone s01"><cite>Manu_Sporny:</cite> Meaning just clearly in a note specify hey if you've got a fragment identifier or a query parameter in here there's a high chance that your match is fail. Okay.</p>
+<p id=10000 class="phone s04"><cite>Phillip_Long:</cite> And you gave a couple of things that I could imagine Tan is thinking, what if I did that? And they're pretty straightforward, So, I don't think, once you get the person's thinking that it's a straight match and anything that won't work, they may have a legitimate reason to come back and say, &quot;But what about this on an edge case as you described, but that's to be taken up later.</p>
+<p id=804c class="phone s01"><cite>Manu_Sporny:</cite> Okay, sounds good. And Steve, I'll do some thinking about what you do in did cell's case. there are the immediate thing that comes to mind is that there are all kinds of places where you can hint to the verifier where to go find the identifier, right? It doesn't have to be in the recognized and there ways to do hinting outside of the recognized entity credential and that's where I would expect that hinting would occur. there are also expectations that things like did cell might have services where they just are simple lookup query services. has anyone seen this did type stuff. but those are optional and very specific to that ecosystem.</p>
+<p id=0583 class="phone s01"><cite>Manu_Sporny:</cite> All right, good input. Thank you everyone very much. That gives clarity on 128. I will apply that fix and get that merged as soon as we can. next up is poll 12 and in 129 sorry Kyota and Phil I totally missed your comment. about it in the threat model.</p>
+<p id=74b5 class="phone s05"><cite>Kayode_Ezike:</cite> Yeah, I was just about to respond. I may have been crossing wires. I guess I was thinking in terms of if there is the potential for a consumer of these credentials the issuer to use one of the pass the CIW or the other option that you mentioned if there's ever a way that could lead Two. to ambiguity or issue with the verification process, but I might be crossing my words a little bit middle of bunch right now. So, sorry.</p>
+</section>
+
+<section>
+<h3 id=c552><a href="https://github.com/w3c/vc-recognized-entities/pull/129">Explain most-to-least privacy preserving way to fetch a recognized entity credential by msporny · Pull Request #129 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=ef86 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, it's a good question to ask.</p>
+<p id=ad4e class="phone s05"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=d49e class="phone s01"><cite>Manu_Sporny:</cite> I think with simple string comparison, we eliminate a number of threats. I can't think of threats that we introduce because we're doing simple string comparison. the second we go to canonicalization of URLs, there's a chance that, two parties don't canonicalize to the same value or have the same algorithm. so I think we pick the simpler case and I don't think we need to mention anything in the threat model unless anybody else thinks otherwise. all right, poll. let's see.</p>
+</section>
+
+<section>
+<h3 id=4657>Privacy Implications Of Fetching Credentials</h3>
+<p id=cfa8 class="phone s01"><cite>Manu_Sporny:</cite> There was an issue where we said we should really talk about the privacy implications of retrieving the verifiable recognition credential from from a centralized location or who is location because the threats are different in each case and who is threatened is different in each case as well. let's see. I think There was just not enough review on this. Just Dave reviewed it. We need another set of eyes or three or four on this before feel comfortable merging it. So, this is just a request for those of you on the call.</p>
+<p id=b14e class="phone s01"><cite>Manu_Sporny:</cite> if you could click through to that, take a quick look and see if you agree or disagree with this. Although, why is the holder base delivery thing in here? this should probably be rebased. this needs to be re Where's the rebase button? It's not here. It's like maybe it's here now.</p>
+<p id=d158 class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> I think they moved it. It's within a drop down.</p>
+<p id=659b class=irc><cite>&lt;steve_capell&gt;</cite> just a related &quot;FYI&quot;, we had a good sesion on GRID in GDC Geneva and switched on some lightbulbs  - including from representatives from China busines register and German bundesanzeiger (who are also EU BW leaders).  Also HMRC/Companies house. </p>
+<p id=a53c class="phone s01"><cite>Manu_Sporny:</cite> All right, I'll rebase The only thing worth looking at the whole base discovery thing has already been merged.</p>
+<p id=ed6f class="phone s01"><cite>Manu_Sporny:</cite> The only thing that you should really look at is this leakage via list fetch new threat there. So just two paragraphs of text. that's that item. It's waiting on a poll request or on more reviews. I think that's for pull requests. so that's good. Steve, do you want to vocalize some of that? I think it would be good to know how it went in Geneva.</p>
+</section>
+
+<section>
+<h3 id=45ec>Grid In Gdc Geneva Update</h3>
+<p id=10001 class=irc><cite>&lt;steve_capell&gt;</cite> And, for those one the call unfamiliar with GRID - it will recommend W3C recognized entities to national busines registers as a means to empower their registered businesses with verifiable proof of membership </p>
+<p id=128d class="phone s02"><cite>steve_capell:</cite> So I saw some of our colleagues there. We ran about four sessions all on verifiable credential stuff in some form or another and one on the thing called grid which I know is referenced in this spec as an example which is a directory of global business registers run by the UN and a recommendation in grid is that each register issues</p>
+</section>
+
+<section>
+<h3 id=ed92>GRID in GDC Geneva</h3>
+<p id=7409 class="phone s02"><cite>steve_capell:</cite> their members with evidence of membership in the form of a W3C recognized entity and when we were first socializing grid we're initially getting a little bit of we don't need that and then everyone has gradually come around and we had quite a good session where we managed to get representatives from Europe Bundes and Saiga to present with us did basically attesting that this is not competing with the European business wallet.</p>
+<p id=10002 class="phone s02"><cite>steve_capell:</cite> this is actually complementing it and providing a mechanism for crossber recognition of identity and also I won't say it was the China business register but it was CIC which is the organization that runs the PKI framework that they use in China today as a kind of recognized entity right there is a mechanism where China can issue registered businesses with a PKI certificate that's traced to their membership and they know that the future is dids but they're also on board and I've just also heard from HMRC which is UK government with an introduction to Company's House.</p>
+<p id=14fa class="phone s02"><cite>steve_capell:</cite> It turns out that the guy at Company's House is also the general secretary of an existing member organization that I actually hadn't heard of, but it's a member organization of country level business registers who also want to talk to us about grid and there's not every country's on it and there's some notable ones missing but there's I don't know hund 100 something. So, yeah, if we start to get traction, then it'll mean, half the world's National business registers will be aware of W3C recognized entities as a means to empower their membership proof of membership. That's it.</p>
+<p id=ac9d class="phone s01"><cite>Manu_Sporny:</cite> That's fantastic news, and thank you very much for running those tracks at GDC. It's so vital that, our community has, people such as yourselves going out into the world and representing, the work that we're doing here. So, deeply appreciated, all that work that, you did. is there anything that we can help with, that you can think of? As you know, we're ready and willing to help if something comes up, if any of those folks has want to want to directly engage with us, we're happy to do that and set aside call time or…</p>
+<p id=ea01 class="phone s01"><cite>Manu_Sporny:</cite> even move a call to meet them in their time zone. just let us know.</p>
+<p id=1b7d class="phone s02"><cite>steve_capell:</cite> Yeah. …</p>
+<p id=6810 class="phone s02"><cite>steve_capell:</cite> there might be two kinds of engagement. What one is sort of talk to people more than Steve and join this call or something like this. when for organizations that are thinking about it there's also some that are a bit further ahead the Indian government has advised us that they haven't publicly announced it yet but that they will be empowering Indian exporters with verbal proof of their export ID which is linked to their adhar for those familiar</p>
+<p id=4da0 class="phone s02"><cite>steve_capell:</cite> with the Indian identity framework. it's the world's largest obviously because it's a huge population. they're further ahead and have committed to implement. So there may be a point where we go how can we help you with running pilots connected to a grid</p>
+<p id=550e class="phone s01"><cite>Manu_Sporny:</cite> Yeah, absolutely. that would be huge. It u when you said in what Committed to recognized entities or committed to just a general concept of doing a digitally signed credential of some kind for a business? okay.</p>
+<p id=3b76 class="phone s02"><cite>steve_capell:</cite> which itself will point to recognized entities as their credential type that the register should issue their members.</p>
+<p id=6659 class="phone s01"><cite>Manu_Sporny:</cite> That's awesome news. okay. I mean, just let us know what we can do. that is super exciting news. Steve, thank you again,…</p>
+<p id=3b2f class="phone s02"><cite>steve_capell:</cite> Yeah. And thank you back at you,…</p>
+<p id=91e9 class="phone s02"><cite>steve_capell:</cite> because it helps a lot to be able to say look both the UN and W3C are recommending the same thing they reference each other in their specs this is the way forward it gives extra extra momentum and you've done a lot of work right on writing this spec</p>
+<p id=253c class="phone s01"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=af3e class="phone s01"><cite>Manu_Sporny:</cite> Yeah. everyone in this group. certainly. that also kind of brings up I am speaking with the W3C CEO next week about what can W3C do to further support the work here? And I will hope I'll remember to bring that up. Steve, that's a pretty big thing. because he was at GDC as well. Were you able to meet Dom while he was at GDC? Steve, maybe not.</p>
+<p id=10003 class="phone s02"><cite>steve_capell:</cite> I think we passed each other. He was in one of our sessions I think. but I don't think it had a formal introduction or…</p>
+<p id=af2b class="phone s01"><cite>Manu_Sporny:</cite> Okay. Yep.</p>
+<p id=18a1 class="phone s02"><cite>steve_capell:</cite> may have done maybe the larger there's so many people there that something like 2,000 right so I feel like I couldn't walk 10 paces without somebody saying hello so I just lost</p>
+</section>
+
+<section>
+<h3 id=6e40>Security Review Feedback Discussion</h3>
+<p id=50e7 class="phone s01"><cite>Manu_Sporny:</cite> That's great. that was great. we'll keep moving forward. all right. Next item on the agenda is our horizontal reviews and how they're going. I believe we're out in front as the spec that has had the most number of horizontal reviews so far at two. we got our internationalization review in because Addison is a beast and just did it within 48 hours. he provided some input. we responded to that input with PRs.</p>
+<p id=b76d class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/vc-recognized-entities/issues?q=is%3Aissue%20state%3Aclosed%20label%3Ai18n-needs-resolution">Issues · w3c/vc-recognized-entities · GitHub</a> </p>
+<p id=a42e class="phone s01"><cite>Manu_Sporny:</cite> Those PRs have been merged and I have asked them as of just a few minutes ago. and he's already responded. So He's got to be an AI. so five minutes ago I asked him, &quot;Are we done?&quot; And he said, &quot;Hey, check this out.&quot; this is the thing they'll pay attention to. and I think we're done. believe non-aski we've done both of these things. So, their tracker just hasn't updated itself yet. Okay.</p>
+<p id=0af3 class="phone s01"><cite>Manu_Sporny:</cite> So that's good news. I think we're past the ization so that's the internationalization gate. next up is we got our review comments in from security. and it is a very very long response. Nothing terrible in there. A lot of it has to do so this is Simony took a look. I am pretty sure this is AI assisted because there is an enormous amount of content here. we do have to respond to all of this. and I think maybe we can spend a little bit of time today thinking about how we want to respond to this.</p>
+<p id=430f class="phone s01"><cite>Manu_Sporny:</cite> He split his feedback into editorial feedback. So these are just suggestions on what we could do. and then feedback on the model which is like hey I think I found some gaps in your model. Can you please fix these? and I don't think it's not bad stuff, but it is asking us to do a significant amount of more work by crossreerencing just about everything that we're saying in the threat model back to the specification with cross links and all that kind of stuff.</p>
+<p id=10004 class="phone s01"><cite>Manu_Sporny:</cite> writing new sections in the specification to talk about components that we potentially didn't mention and so on and so forth. So I imagine this is going to take weeks more of work. one way that we could respond here is we could break every single one of these things up into a separate pull request. how many would we have? We would end up with 10 new pull requests, one per issue that he raised. That would keep it nice and tight and focused. Each nice and tight and focused.</p>
+<p id=3b0a class="phone s01"><cite>Manu_Sporny:</cite> I could take a shot at that if I feel like there's a very clear approach here because he does make concrete suggestions. and sometimes it's a significant amount of, change and cross-linking and I could just see how far I can get here. it's a significant amount of work. I'm not going to. It's just, even more work than what we've already dumped into the threat model. But I guess we could in theory, do the work because we don't have a lot left in the spec to go ahead, Phil.</p>
+<p id=71a0 class="phone s04"><cite>Phillip_Long:</cite> The way you describe it, excuse me, suggests that the question that comes to mind is what is absolutely necessary to get this past the finish line in this first goround and what can we actually put in the docket for enhancing later. It sounds like a lot of the cross referencing and stuff would be nice, but I'm not sure it's absolutely essential at this stage. So, I guess that my first reaction is there a way to parse this into a much smaller to-do list than just answering every question he has? and the second is what's the precedent we're setting if we do answer everything he has for all the rest of the horizontal reviews, which is sort of the flip side of the first question. Thanks.</p>
+<p id=89eb class="phone s01"><cite>Manu_Sporny:</cite> Yeah, they're all good questions. I don't think I've ever been able to get through a horizontal review without responding to every single thing that was raised because usually if you don't respond to it and then triaging them requires you to go back to them and ask them to triage it and usually they're kind of like we said what we said, this is our review. feel free to respond to it in any way you seem fit and it's up to them to, accept it or not. I think going back to Simone and asking him, okay, what do you want actually, fixed will take longer than just making an attempt at all of these things. so there is that because I think there was significant LLM usage in here.</p>
+<p id=0c8a class="phone s01"><cite>Manu_Sporny:</cite> the suggestions are pretty targeted which means I could just point my LLM back at him or at the PRs and just see what the LLM's come up with as a first pass and clearly with review and refinement and all that kind of stuff. that is one approach that we could take here that might help us get through this a bit faster. I think the most critical thing here is I don't think he found any new vulnerabilities in the specification.</p>
+<p id=30d2 class="phone s01"><cite>Manu_Sporny:</cite> is just a lot of this is like I shouldn't say that there's some anyway sorry yeah I should have linked to the security review here so I haven't looked through this it's let me ask the question a different way do we want to go through this issue by issue and talk about it on the call or do we want me to take a cut at responding to this and then everyone just looks at the PRs to see if they agree with the PRs or not. …</p>
+<p id=448e class="phone s06"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=bd54 class="phone s01"><cite>Manu_Sporny:</cite> one of those is going to take a lot more time than the any thoughts, feelings on how we process this? Go ahead, Steve.</p>
+<p id=f279 class=irc><cite>&lt;steve_capell&gt;</cite> link to the security review? </p>
+<p id=a78e class="phone s02"><cite>steve_capell:</cite> I think we're entering the world of LLMs giving us a lot of content to deal with and I'll raise you my LLM type dealing with them and that's not necessarily a bad thing if it increases the quality of the spec and the subsequent implementation of the spec. But my question is really how do we pull out of the big pile any issues that are genuinely topics for discussion, right? Because reading glancing through it, most of it is uncontroversial, right? it's not something that needs a deep consideration, but I haven't figured out out of the big dump which bits are.</p>
+<p id=dd0c class=irc><cite>&lt;Manu_Sporny&gt;</cite> <a href="https://github.com/w3c/security-request/issues/141">Recognized Entities v1.0 2026-07-26 &amp;gt; 2026-10-12 · Issue #141 · w3c/security-request · GitHub</a> </p>
+<p id=69a2 class=irc><cite>&lt;Phillip_Long&gt;</cite> The first multi-volume spec given dueling LLMs </p>
+<p id=fa92 class="phone s02"><cite>steve_capell:</cite> So, I mean, I feel like go ahead and throw your lamb at it, but somehow find out what subset of things we really need to talk about maybe for the next meeting.</p>
+<p id=cec2 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I think that sounds good. we can spend the rest of this meeting doing knee-jerk reactions to these and just spending maybe five minutes per and then I can kind of take a look at it or we could go to issue processing because we do have a number of discuss issues that we need to cover and maybe people take a little bit of time to look through this and then we'll talk about it next week. that might be the better option.</p>
+<p id=8b73 class="phone s01"><cite>Manu_Sporny:</cite> So unless they're go ahead Dave.</p>
+<p id=31d5 class=irc><cite>&lt;Phillip_Long&gt;</cite> /point your LLM at his and let 'em have it </p>
+<p id=5410 class="phone s03"><cite>Dave_Longley:</cite> That seems like the better option. it might be good to let your LLM do a first pass on this before figuring out what might need to come back to the group for discussion.</p>
+</section>
+
+<section>
+<h3 id=f090>Rethinking Verifying Recognition Chains</h3>
+<p id=df4b class="phone s01"><cite>Manu_Sporny:</cite> Okay, sounds good. I will probably just read through it. All right, that's that item. So, let's go to issues. we have a number of discuss issues. and Kevin, since you're on the call, we've been looking to process this issue, but we haven't had you on the call. Maybe we should start off with that and take advantage of you being</p>
+<p id=e515 class="phone s07"><cite>Kevin_Dean:</cite> Sure.</p>
+<p id=f0a7 class="phone s01"><cite>Manu_Sporny:</cite> let me topic this. So this is rethinking verifying recognition chains. why don't you give us a quick introduction to this Kevin and then we can go from</p>
+<p id=f55b class="phone s07"><cite>Kevin_Dean:</cite> The basic idea behind this is that we need a link back to a root ultimately. in any business process in which verifiable credentials are being used it ultimately must be traceable to some root of trust. that route of trust could be just did a well-known DID.</p>
+<p id=4167 class="phone s07"><cite>Kevin_Dean:</cite> the fact that this credential was issued by this well-known did and of this type means that we can accept it and from that the subject of that credential can issue other credentials the subject of those credentials can issue other credentials and this is demonstrated actually in the GS1 use case for those who don't know I used to be with GS1 and I wrote the original VC data model for GS1 where we used the term</p>
+</section>
+
+<section>
+<h3 id=42cf><a href="https://github.com/w3c/vc-recognized-entities/issues/85">Rethinking verifying recognition chains · Issue #85 · w3c/vc-recognized-entities · GitHub</a></h3>
+<p id=10005 class="phone s07"><cite>Kevin_Dean:</cite> extends but it was just a pointer back to a previous credential basically saying I am issuing this credential because of this other credential and it's not necessarily a blanket authorization either as was discussed by Paul when he was going over the GS1 use case the GS1 system is a hierarchical distributed numbering system. So for example GS1 Canada is given the range of 754 to 755. They can issue licenses that start with 754 and 755.</p>
+<p id=6309 class="phone s07"><cite>Kevin_Dean:</cite> They get from GS1 global office grants them the ability to issue license credentials of a specific type but it constrains those credentials to a range of values. They can't just arbitrarily issue GS1 company prefix license credentials. They have to be credentials that start with 754 or 755. and what this is about here is saying is refining the way that we say recognized in or recognized so I am issuing this credential because I have the following and there could be multiple credentials that give me the authority to do what to issue this credential that I'm issuing. so for example again</p>
+<p id=3566 class="phone s07"><cite>Kevin_Dean:</cite> Going back to the GS1 use cases one of the challenges is getting the data right. if you think of anybody who works in consumer package goods my wife for example works at a company called Kagra which has a very large consumer package good product line multiple brands. the data that she needs to provide to the buyers is data that she doesn't necessarily have because it's things like the packaging dimensions. those dimensions are very important because they need to be accurate so that you can put them on the right size shelf.</p>
+<p id=d5cf class="phone s07"><cite>Kevin_Dean:</cite> If the dimensions you provide are too small and the store goes and puts it on the shelf and finds that it doesn't fit, you've got a problem because your product is not getting out there. And getting access to some of this data is sometimes very difficult because within large organizations, you don't necessarily know who to ask, especially when some of this is contracted out. So GS1 has what's called a measurement standard which says if you're going to measure packaging depending on the type a box is really easy but how do you measure say a bag of dog food? what are the dimensions for that? and there are different shapes of that need to be considered.</p>
+<p id=0a74 class="phone s07"><cite>Kevin_Dean:</cite> And it's fairly complex and there are companies out there that will do this for you that will take your product and measure it and provide you with the data that you could not get because you don't necessarily have access to the packaging designers who so if I am going to so if I'm one of these companies I'm packaging measurement companies in order to be pretty sure in order to be really sure that I'm doing the job right, maybe there's a certification process. Maybe the GS1 member organization in my country has a certification process that says yes, this company is following the GS1 packaging measurement standard. So, I've got a VC that says I could do that. I'm certified to do that.</p>
+<p id=d567 class="phone s07"><cite>Kevin_Dean:</cite> you come to me and say I would like you to measure my packages and provide that data to Amazon to my local retailer to anybody. So you give me a credential that says I have permission to represent your products to provide data for package measurement and that includes information about the product identifiers which is traceable to GS1. So now we've got really two chains of authorization.</p>
+<p id=5471 class="phone s07"><cite>Kevin_Dean:</cite> one saying that I am competent to do the package measurement according to the GS1 standard and a permission which is traceable to my local GS1 member organization and I have permission to provide it for the following products which is traceable to the company which is in turn traceable ultimately to GS1 global office to verify that those identifiers are complete and correct and within the range that company is authorized to use and therefore that I am authorized to represent.</p>
+<p id=8113 class="phone s07"><cite>Kevin_Dean:</cite> And that's what this is about that is laying out the idea that we provide an array of recognized because that state what I'm permitted to do and we need all of these chains to verify this particular use case.</p>
+<p id=10006 class="phone s07"><cite>Kevin_Dean:</cite> the examples that I gave in here were the education one which is familiar which we're familiar with if I'm an accredited university who am I'm accredited not just by the province in which I live the Ontario government but I'm also accredited by the various professional associations whose courses I teach so if my school teaches engineering I have to have not only the university charter but I also have to have acknowledgement from professional engineers Ontario that this school does grant recognized engineering degrees.</p>
+<p id=a536 class="phone s07"><cite>Kevin_Dean:</cite> So that's another example of essentially authorization from two different sources, both of which have to be followed to prove my right to an engineering degree.</p>
+<p id=2ca3 class="phone s01"><cite>Manu_Sporny:</cite> Got it. Thank you. Kevin, Steve, you're on the queue.</p>
+<p id=10007 class="phone s02"><cite>steve_capell:</cite> Yeah, I just wanted to I ask about scope. I think not sure but I think what Kevin's describing is the reality that there are lots of things you might want to check that are if you like graph relationships between data across multiple credentials. Right? So in our supply chain use cases, if someone issues a conformity credential saying your steel is tested to meet the Australian structural steel requirements and somebody else issues the digital product passport saying these are the qualities of my steel. You'd want to make sure that the product in other words, the conformity assessment body is talking about the same thing that the manufacturer of the steel is talking about.</p>
+<p id=c0a3 class="phone s02"><cite>steve_capell:</cite> and similarly is the conformity body accredited and so on so forth and what you quickly discover is a complex graph and that's a reality in my mind at least the recognized entity spec is not trying to solve how would you verify any graph but specifically how would you establish in a consistent way one type of link in the graph. So, are we overloading the purpose of recognized entity here or are we adding an extension point something useful to it to help validate more complex graphs?</p>
+<p id=4a47 class="phone s07"><cite>Kevin_Dean:</cite> I think we're giving it the ability to validate more complex graphs. the idea to me of a single recognition chain is it's not enough. there are simply too many use cases where my authority to make this declaration is the result of multiple of authorization paths.</p>
+<p id=b8e3 class="phone s07"><cite>Kevin_Dean:</cite> And all we're doing here is instead of saying for this one to link we're just now doing a loop for each recognized…</p>
+<p id=d3a8 class="phone s02"><cite>steve_capell:</cite> But now this Yeah.</p>
+<p id=8fb1 class="phone s07"><cite>Kevin_Dean:</cite> because validate it's Yep.</p>
+<p id=2caf class=irc><cite>&lt;Dave_Longley&gt;</cite> +1 to scoping -- the spec here, I think, only needs to make sure that the necessary information can be expressed to accomplish the use cases (with complex validation rules) </p>
+<p id=1a2d class="phone s02"><cite>steve_capell:</cite> Just to clarify though in my mind in your example of the engineering school is accredited both as a school by the state and…</p>
+<p id=e3c7 class="phone s02"><cite>steve_capell:</cite> to teach that course by the institute of electrical engineers or something. those are two separate recognized entity credentials, right?</p>
+<p id=4bfb class="phone s07"><cite>Kevin_Dean:</cite> Yes. Yes.</p>
+<p id=46d3 class="phone s02"><cite>steve_capell:</cite> Yeah,…</p>
+<p id=16f7 class="phone s07"><cite>Kevin_Dean:</cite> That have been granted to the school. But when the school issues a diploma for engineering, that diploma has to link to the state and…</p>
+<p id=4578 class="phone s02"><cite>steve_capell:</cite> it points to both of them.</p>
+<p id=544c class="phone s07"><cite>Kevin_Dean:</cite> to the engineering association.</p>
+<p id=70bc class="phone s02"><cite>steve_capell:</cite> So I thought our understanding was that one way to do that is to say I'm issuing a diploma.</p>
+<p id=de0f class="phone s02"><cite>steve_capell:</cite> It's issued by the school, the school has a did and…</p>
+<p id=90d7 class="phone s07"><cite>Kevin_Dean:</cite> Yes. Okay.</p>
+<p id=5c61 class="phone s02"><cite>steve_capell:</cite> and this is a discovery mechanism we're talking about here right where given the did of the school I can go and find a verifiable presentation I think was the discussion that included a service endpoint that points at a verifiable presentation</p>
+<p id=8cac class="phone s02"><cite>steve_capell:</cite> that includes both of those recognized entity credentials. Isn't that the mechanism that this group discussed earlier? I don't mind having more than one mechanism to discover by the way…</p>
+<p id=7753 class="phone s07"><cite>Kevin_Dean:</cite> Yeah. Mhm.</p>
+<p id=c26d class="phone s02"><cite>steve_capell:</cite> because I think discovery is separate from graph validation, right? You can have 100 signs pointing at the same thing and what you're validating isn't the discovery link. It's the content of the thing you discover, right? So, yeah.</p>
+<p id=d019 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I'm yeah,…</p>
+<p id=4501 class="phone s07"><cite>Kevin_Dean:</cite> Sorry. Go ahead, What do you think?</p>
+<p id=6317 class="phone s01"><cite>Manu_Sporny:</cite> I mean plus one to that. I think I'm hoping I'm not missing a detail of the use case, but recognized in can be an array of values, right? And they don't have to and they can be an array of values that have totally different purposes where one is for recognizing the university and the other one is for recognizing a certain course that's being taught and another one is lead certification for the university. Right?</p>
+<p id=f9fc class="phone s01"><cite>Manu_Sporny:</cite> Those are to totally different kind of entities that recognize different things about the same entity and I think effectively express why they're recognized as a result of it, so I'm wondering why recognized in can't address this use case. Kevin because you can have an array there and then on top of that what Steve said even you can have multiple recognized recognition credentials as a result of that from multiple different bodies so I guess my question is…</p>
+<p id=f803 class="phone s01"><cite>Manu_Sporny:</cite> what use case can't we solve with the current structure Sure.</p>
+<p id=753c class="phone s07"><cite>Kevin_Dean:</cite> Yeah, I'd have to go back and…</p>
+<p id=4c34 class="phone s07"><cite>Kevin_Dean:</cite> and take another look because it's been a while since I wrote this one up. that's issue the 85 sorry. Yeah.</p>
+<p id=5ca5 class="phone s07"><cite>Kevin_Dean:</cite> At the time that I wrote it, I felt that the document wasn't clear about how that could be used. and when you look at the recognition section there's some bullets about the verifier has to check as part of the example is confus is confusing. So it's really for only looking for clarification in this and some of that may have been addressed in later updates because this was posted in June.</p>
+<p id=72b0 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, on that point there. Yeah, we have written a lot about this since June and this might be I don't think we had the level of detail that we have in the spec today, especially once we merge in the binding the algorithm for recognition chain verification out.</p>
+<p id=2ab2 class="phone s07"><cite>Kevin_Dean:</cite> Yep. Yeah.</p>
+<p id=32a0 class="phone s01"><cite>Manu_Sporny:</cite> And kind of, the best outcome here is that we do have a solution for the use case you're concerned about. we just don't document it very clearly, And so maybe we could get into the details there, but I think the spec technically supports this through a variety of different mechanisms.</p>
+<p id=8d1d class="phone s07"><cite>Kevin_Dean:</cite> Right. Mhm.</p>
+</section>
+
+<section>
+<h3 id=4547>Addressing Specification Gaps For Use Cases</h3>
+<p id=efff class="phone s01"><cite>Manu_Sporny:</cite> I think what we need at this point, Kevin, is for you to take a look, at the spec plus the pending PRs to see if there's a gap here or…</p>
+<p id=ede4 class="phone s07"><cite>Kevin_Dean:</cite> Yeah.</p>
+<p id=dd88 class="phone s01"><cite>Manu_Sporny:</cite> what specifically we could kind of add to the spec to make what you just said clearer about how you address that use case. Okay.</p>
+<p id=b691 class="phone s07"><cite>Kevin_Dean:</cite> Yeah, I'll take another look. because what I want to be sure of is that we have options. This could be done. when you're dealing with a large graph discovery can be complex and…</p>
+<p id=29fb class="phone s07"><cite>Kevin_Dean:</cite> can take time but if as the presenter already have all the necessary credentials I should be able to just provide a presentation and…</p>
+<p id=6473 class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Yep.</p>
+<p id=c7a4 class="phone s07"><cite>Kevin_Dean:</cite> you should be able to run the links through the content of the presentation and not do discovery reduce the amount of discovery you need to Manu Sporny:</p>
+<p id=1d31 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, exactly and yes that is definitely something that we have tried to make clear in the spec over the last month. okay so next step here I think if you don't mind Kevin I'm going to assign this to and our discussion will show up in the issue automatically. next we discussed the staring 26 9 15 call and I think that the specification already supports this use case. Kevin is going to take another look</p>
+<p id=10008 class="phone s01"><cite>Manu_Sporny:</cite> at the spec to see what more we might add to make it clear that this use case. all right. And with that, we are out of time, but that was, time well spent. thank you Kevin for walking us through that. and, we will meet again, next week we are going to probably focus a significant amount of time on responding to the threat model feedback from the security review. if folks want to take a look at that please do before next week. Also remember that we have a pull request that needs more reviews.</p>
+<p id=40d6 class="phone s01"><cite>Manu_Sporny:</cite> poll 129 the least privacy preserving ways to fetch a recognized entity credential.</p>
+<p id=aadc class="phone s07"><cite>Kevin_Dean:</cite> for today.</p>
+<p id=d45e class="phone s01"><cite>Manu_Sporny:</cite> All right that is it for today. Thank you all very much for the time and attention and we will see everyone here at the same time next week. Thanks all. Bye. Meeting ended after 00:58:23 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+<p id=f90d class=irc><cite>&lt;Phillip_Long&gt;</cite> +1 to Steve's representation of entities in the array that provide the information a verifier would want to see. </p>
+<p id=dc6e class=irc><cite>&lt;steve_capell&gt;</cite> I 100% agree that there are all kinds of complex relationships that a verifier might want to check.  Kevins examples are real.  But, at least for supply chain use cases, our thinking is that verifiers pour a firehose of credentials into their graph and then run validaitons across the graph.  Only some of the graph node links are from things like recognised entity credentials. There are also graph links between other kind of credentials (eg product passports and conformity credentials).  So this is a scope question? </p>
+<p id=e37b class=irc><cite>&lt;steve_capell&gt;</cite> I see - bundle up at presentaiotn time as opposed to discover and assemble at verification time.  I gues both have relevance </p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

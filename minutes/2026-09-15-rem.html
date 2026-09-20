@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 15 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>15 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#5b60">Converging On A Name For JSON Card Suite</a></li>
+<li><a href="#e9e1">NFC Suite Dispatch Property</a></li>
+<li><a href="#c276">Defining A Dispatch Property For NFC</a></li>
+<li><a href="#e184">Render Properties And NFC Payloads</a></li>
+<li><a href="#3d4c">PR 76 Sweet Render Method</a></li>
+<li><a href="#d666">Internationalization For NFC Data</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=0510 class="phone s01"><cite>Benjamin_Young:</cite> Hey, Demetri.</p>
+<p id=aed8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Hey, hey, you mentioned</p>
+<p id=ffbc class="phone s02"><cite>Dmitri_Zagidulin:</cite> Hey we're going to give it another minute or two for people to join. We may not have enough folks for quorum this week.</p>
+<p id=3153 class="phone s02"><cite>Dmitri_Zagidulin:</cite> All it's three minutes passed. I guess the question for the group is do we have enough folks for quorum?</p>
+<p id=2e43 class="phone s02"><cite>Dmitri_Zagidulin:</cite> This geek or shel postone.</p>
+<p id=ffff class="phone s03"><cite>Manu_Sporny:</cite> No, I mean six is enough, I think. I mean decisions we make here are final, right? I mean we don't have complete decision-m authority. I think we still have some things to talk through and we should use the time since we've got the people here that I need to provide input.</p>
+<p id=30a0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> All in that case, let's get to it.</p>
+</section>
+
+<section>
+<h3 id=5b60>Converging On A Name For JSON Card Suite</h3>
+<p id=dd0f class="phone s02"><cite>Dmitri_Zagidulin:</cite> So welcome to the weekly VC render method topic we're under our W3C code of conduct and IP registration ment. So today we have three main goals or win conditions. first is to possibly hopefully converge on a name for the JSON card suite. Number two is we need to figure out a dispatch property for the NFC suite. And number three, we want to talk about our internationalization dispatch strategy. let's start with maybe a slightly easier one, the NFC property.</p>
+</section>
+
+<section>
+<h3 id=e9e1>NFC Suite Dispatch Property</h3>
+</section>
+
+<section>
+<h3 id=c276>Defining A Dispatch Property For NFC</h3>
+<p id=3979 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Topic issue number 77 let me share screen so that folks know what we're talking about.</p>
+<p id=1fcd class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> And just quickly, briefly, could I beg please that going forward we try and…</p>
+<p id=c20a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. I will do my best.</p>
+<p id=10000 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> have these topics in the agenda ahead of time? I'm barely keeping my nostrils above water with some of this deep tech and…</p>
+<p id=722c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> reading ahead would have been better. That's all.</p>
+<p id=9cb8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, I will do my best to do that.</p>
+<p id=bb20 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Thank you, All what's the problem with NFC suite?</p>
+<p id=af86 class="phone s02"><cite>Dmitri_Zagidulin:</cite> As a group we've settled on the overall strategy of shipping three overall suite, a static render suite, a thing to be renamed from JSON card and an HTML detail The existing NFC suite that we have in the spec sort of naturally fill falls under static. the only problem with it is that the only dispatch field the static suite is a media type and meaning to differentiate the static content from let's say a pre-baked image or I don't know an audio wave file something.</p>
+<p id=522d class="phone s02"><cite>Dmitri_Zagidulin:</cite> The only problem is NFC payload doesn't have its own media type. The example in the spec currently use application octad stream and NFC payloads don't have an ion media type nor do I think this group wants to deal with registering one. The other sort of dispatch field that we have registered in the common types is access mode. which again talks about how a student accesses the rendering but not the transmission channel. Right?</p>
+<p id=8905 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So with NFC the access mode could be visual if the contents of the NFC gets displayed on the screen sometimes but that still doesn't indicate to the consuming code that hey this is an incoming NFC payloads right so does everybody understand the problem I see clearly static we don't have a field to indicate that this is an incoming. The only thing that we could probably do is maybe a subclass of the static render suite, but that seems like a hack. what are some options? right, we can keep NFC as its own suite, maybe as a subclass of static or maybe separate. So just leave it as that.</p>
+<p id=d70c class="phone s02"><cite>Dmitri_Zagidulin:</cite> we can fold it into static and add an additional field and the option that we don't want which is to register a dedicated media type. all right Dave</p>
+<p id=2257 class="phone s05"><cite>Dave_Longley:</cite> So, we might want to invert this problem a little bit and ask the question, is a static render method meaningful? and that's sort of related to some of the options here at the bottom. If it makes sense to make a render suite something like NFC, what does static actually buy us or do for us? Maybe static is not a good render suite. Maybe that's not capturing whatever static was meant to capture. And maybe we will repeat this problem for other types of things that we would have previously put under static.</p>
+<p id=0804 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, great point. So let's see if I can remember what the goal for static is. If I remember correctly, it's meant to say you don't need to do substitution processing on the payload or you don't need to fire up a JavaScript app to do the idea is that it is a fixed binary payload. You don't need to do anything with it. and you can lock it down with a digest hash although I suppose that's true for all the rest. So never mind about that part.</p>
+<p id=78e2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Dave, right?</p>
+<p id=b4c4 class="phone s05"><cite>Dave_Longley:</cite> I think that's true,…</p>
+<p id=f287 class="phone s05"><cite>Dave_Longley:</cite> but it also doesn't tell us what you do do with the payload.</p>
+<p id=644a class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, realistically at the moment we have two or three current specific serializations for Number one is NFC payload. Number two is a pre-baked image. And number three is a pre-rendered PDF. So with the image in the PDF, it's easy enough to dispatch off the media type, right? It's a static there's some sort of rendered pre-baked thing. You can go off of the media type to advise how to display it. Less so for the NFC.</p>
+<p id=275f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go on.</p>
+</section>
+
+<section>
+<h3 id=e184>Render Properties And NFC Payloads</h3>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> I'm wondering some examples would help. I'm looking at the spec. Do we want to do something like there's access mode electromagnetic which might not work because visual is part of the electromagnetic spectrum. we could be very specific NFC versus Bluetooth. …</p>
+<p id=d55b class="phone s02"><cite>Dmitri_Zagidulin:</cite> We could add a transfer mode property.</p>
+<p id=e511 class="phone s03"><cite>Manu_Sporny:</cite> I'm trying to think of Bluetooth beaconing, being one potential way that we could do static, payloads in the future. so I'm wondering if I'm trying to keep the number of properties down, right? I mean, we could add a whole bunch of properties and just solve the problem, right away because we could just use very specific properties. I think what we're trying to do is come up with a standard model. a transfer mode is yet another thing like okay then why do we have Access mode visual isn't that a transfer mode? Like that that those are the questions it raises in my head. we could change access mode to transfer mode.</p>
+<p id=7171 class="phone s03"><cite>Manu_Sporny:</cite> I don't know if that works. I'd have to go through all the things that we currently, put in that property. and then getting back to kind of what does this object look like? if it looks very different from…</p>
+<p id=9072 class="phone s03"><cite>Manu_Sporny:</cite> what we do for a PNG and a PDF, we may be doing it wrong. Right. yeah…</p>
+<p id=aee2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right.</p>
+<p id=580f class="phone s02"><cite>Dmitri_Zagidulin:</cite> And so it doesn't, It would just be like a payload and a data stream for both of those.</p>
+<p id=cb07 class="phone s03"><cite>Manu_Sporny:</cite> but you just used the word payload. Do you mean template? Because we template for the other things we use template for HTML.</p>
+<p id=dab1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, we don't mean template because we've gone away from the template terminology. So no, we would be renaming this to payload and only for HTML and… Manu Sporny:</p>
+<p id=5d64 class="phone s03"><cite>Manu_Sporny:</cite> So what yeah.</p>
+<p id=a299 class="phone s02"><cite>Dmitri_Zagidulin:</cite> it's also not really accurate for HTML either.</p>
+<p id=8544 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Separate topic.</p>
+<p id=2bc6 class="phone s03"><cite>Manu_Sporny:</cite> So I guess what are we doing why are we changing Renaming template payload. it matters because we're selecting property names and we want them to have reusability across the multiple render suites. We don't want to create a whole bunch of new properties for every single render suite.</p>
+<p id=e4fd class="phone s02"><cite>Dmitri_Zagidulin:</cite> We do.</p>
+<p id=bef8 class="phone s03"><cite>Manu_Sporny:</cite> That's why I bring it up. So, okay.</p>
+<p id=fceb class="phone s02"><cite>Dmitri_Zagidulin:</cite> We do. Absolutely. So if anything,…</p>
+<p id=28db class="phone s03"><cite>Manu_Sporny:</cite> So, I'm fine with payload, just to be clear. I'm fine with payload…</p>
+<p id=f2a1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> right? Right.</p>
+<p id=0743 class="phone s03"><cite>Manu_Sporny:</cite> if we want to move to that. But I think we move to that because we're saying we are going to use payload for all of these things. at least HTML and the static, whatever it is. and so what would this be type? And Dave, I'm going the opposite direction from what you just suggested. I get what you're saying. I'm just trying to come up with a first approximation here. So, we're saying type is static render method.</p>
+<p id=1b5d class="phone s03"><cite>Manu_Sporny:</cite> Is that what we're saying? And then the render suite is static,…</p>
+<p id=b649 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Correct.</p>
+<p id=49cc class="phone s03"><cite>Manu_Sporny:</cite> which is duplicates what the type is and it's kind of weird. or…</p>
+<p id=41ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=3d4c>PR 76 Sweet Render Method</h3>
+<p id=2a93 class="phone s03"><cite>Manu_Sporny:</cite> you don't have render suites for static methods and you only have a payload.</p>
+<p id=4768 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wait. So,'s hold on. if that's the question, let's step back for a second and take a look at pull request number 76, which is sort of So, the main open PR right now.</p>
+<p id=769b class="phone s02"><cite>Dmitri_Zagidulin:</cite> So let me paste it into chat so this is a pull request based on the discussion in 54 and 55 and b based on our previous calls. And what it does is it renames the superass template into sweet render method. So all of the NFC HTML and card are all going to be type sweet render method and the suite dispatches off of the suite.</p>
+<p id=8090 class="phone s03"><cite>Manu_Sporny:</cite> Okay, so it's sweet.</p>
+<p id=0539 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes.</p>
+<p id=eec2 class="phone s03"><cite>Manu_Sporny:</cite> So the type suite render method the render suite is static. Then we have a name and a dis name and then we have payload and…</p>
+<p id=b473 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. That's correct.</p>
+<p id=0579 class="phone s03"><cite>Manu_Sporny:</cite> then we have an array of render properties just so that we can help the person understand what's being transmitted even though we can't force that.</p>
+<p id=21dc class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's correct.</p>
+<p id=791c class="phone s03"><cite>Manu_Sporny:</cite> I mean that to me sounds fine…</p>
+<p id=6f1b class="phone s03"><cite>Manu_Sporny:</cite> unless I'm missing something. looks like Benjamin and Dave agree as well.</p>
+<p id=1b00 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Excellent.</p>
+<p id=ef75 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Any Okay. Excellent.</p>
+<p id=6923 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So would anyone object to one renaming the template property into payload?</p>
+<p id=8e2e class="phone s02"><cite>Dmitri_Zagidulin:</cite> All objections. let's talk about access mode.</p>
+<p id=acb3 class="phone s03"><cite>Manu_Sporny:</cite> we I'm sorry question…</p>
+<p id=4e00 class="phone s03"><cite>Manu_Sporny:</cite> because we're trying to lock all this in,…</p>
+<p id=7de2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, please.</p>
+<p id=bed6 class="phone s03"><cite>Manu_Sporny:</cite> right? in card slashsum whatever we're calling this thing,…</p>
+<p id=6fe7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Of course. Go ahead.</p>
+<p id=61ca class="phone s03"><cite>Manu_Sporny:</cite> there's a field. are we renaming that the payload?</p>
+<p id=9608 class="phone s05"><cite>Dave_Longley:</cite> I think we have to come back and look at that thing. but it might be all of that everything under field and everything might actually live underneath payload. I don't remember how that's modeled or how it's currently modeled or… where we want to go with it. So the Dave Longley: Manu Sporny:</p>
+<p id=a154 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, that's No, I think you're right. I think we would put it under payload, wouldn't it? We Okay.</p>
+<p id=b49f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes, I think so too.</p>
+<p id=0d6f class="phone s03"><cite>Manu_Sporny:</cite> And now I'm coming back to okay, so we rename this thing the payload.</p>
+<p id=41ff class="phone s02"><cite>Dmitri_Zagidulin:</cite> Mhm. be…</p>
+<p id=aa9d class="phone s03"><cite>Manu_Sporny:</cite> Why are we not use reusing ID?</p>
+<p id=b941 class="phone s02"><cite>Dmitri_Zagidulin:</cite> because it's awkward to have ID of</p>
+<p id=d2aa class="phone s02"><cite>Dmitri_Zagidulin:</cite> data URL because we want to be able to link to it potentially from other parts of either the VC or…</p>
+<p id=2f40 class="phone s02"><cite>Dmitri_Zagidulin:</cite> the verifiable presentation and it's awkward to use a giant data URL as a link. That's fine. Okay. Yeah.</p>
+<p id=2f38 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm raising it as a concern, not an objection. because we're doing it elsewhere,… Manu Sporny:</p>
+<p id=fb3f class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, that's very val valid concern.</p>
+<p id=2785 class="phone s03"><cite>Manu_Sporny:</cite> that's my major concern here is there are good reasons to do it elsewhere like pairing it with digest multibase.</p>
+<p id=7162 class="phone s02"><cite>Dmitri_Zagidulin:</cite> But we shouldn't do it elsewhere then.</p>
+<p id=ad02 class="phone s03"><cite>Manu_Sporny:</cite> Actually sorry not pairing it with digest multibase. I can't remember the reasons we're doing it elsewhere…</p>
+<p id=6a92 class="phone s03"><cite>Manu_Sporny:</cite> but I would not want to remove that as a mechanism because you can't embed if you don't use ID then you can't embed it and now we need to create a whole bunch of new properties for all the places where we're embedding data URLs</p>
+<p id=444b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=e144 class="phone s02"><cite>Dmitri_Zagidulin:</cite> But All right. So, looking at the current NFC example, it does bring up the question of it's instead of in addition to the payload, it's convenient to also list the fields that are contained in the payload.</p>
+<p id=9050 class="phone s02"><cite>Dmitri_Zagidulin:</cite> much like in the summary slashcard suite, right? And if we're putting those fields into the payload suite, basically this argues for a separate field for render properties. go ahead, man.</p>
+<p id=a75c class="phone s03"><cite>Manu_Sporny:</cite> What's in the spec today, we don't put the render properties down into the payload/template. We keep it up above. I'm thinking through moving it in there. it feels like something that's …</p>
+<p id=ae48 class="phone s02"><cite>Dmitri_Zagidulin:</cite> up above…</p>
+<p id=b570 class="phone s02"><cite>Dmitri_Zagidulin:</cite> where not in the render method.</p>
+<p id=45ac class="phone s03"><cite>Manu_Sporny:</cite> if you look it is in the render method…</p>
+<p id=af9e class="phone s05"><cite>Dave_Longley:</cite> It makes no sense for us to do that.</p>
+<p id=c4c1 class="phone s03"><cite>Manu_Sporny:</cite> but it is not in the payload. I thought you were saying we should render property into the payload object.</p>
+<p id=5f1d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes, that's what I'm proposing. Dave Longley:</p>
+<p id=c1b8 class="phone s05"><cite>Dave_Longley:</cite> That would be highly problematic. Payload is currently carrying a template which you need to have the render properties be separate from. I don't think we should even consider doing that. I imagine that will immediately be a problem.</p>
+<p id=70e1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, wait. let's step back. So, what Mono was earlier pointing out is that the artist formerly known as card suite has a fields property that's an array of fields.</p>
+<p id=bbda class="phone s02"><cite>Dmitri_Zagidulin:</cite> And the question was, should we instead of having a fields property move this into the payload?</p>
+<p id=10002 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, Demetri, I was wrong. we have a payload and that payload includes all of the stuff that's on the screen right now. So, we should not use payload for fields. That's where I thought we landed.</p>
+<p id=cbeb class="phone s02"><cite>Dmitri_Zagidulin:</cite> It's okay.</p>
+<p id=89c7 class="phone s01"><cite>Benjamin_Young:</cite> the render method formerly known as card is confusing…</p>
+<p id=8764 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=f246 class="phone s01"><cite>Benjamin_Young:</cite> because its own payload is a JSON blob that turns into a data URL.</p>
+<p id=c8a8 class="phone s01"><cite>Benjamin_Young:</cite> So none of what you see there actually goes in the JSON LD. It gets turned as you see here into a data Consequently, its fields is not related to render property and…</p>
+<p id=b0e3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right.</p>
+<p id=1e01 class="phone s01"><cite>Benjamin_Young:</cite> it's always been this sort of confused turducken thing where you have them both maybe and…</p>
+<p id=458b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=a68b class="phone s01"><cite>Benjamin_Young:</cite> they're out of sync probably.</p>
+<p id=274a class="phone s02"><cite>Dmitri_Zagidulin:</cite> That does seem odd.</p>
+<p id=5832 class="phone s01"><cite>Benjamin_Young:</cite> It's odd and…</p>
+<p id=06fa class="phone s02"><cite>Dmitri_Zagidulin:</cite> That does seem odd.</p>
+<p id=e070 class="phone s01"><cite>Benjamin_Young:</cite> broken and we spent too much time talking about its name rather than actually working on the thing.</p>
+<p id=1438 class="phone s01"><cite>Benjamin_Young:</cite> And…</p>
+<p id=3cb0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay. Right.</p>
+<p id=1576 class="phone s01"><cite>Benjamin_Young:</cite> if we revisit it, it's going to change shape. So, it doesn't break the payload situation. but it does have a whole lot of other warts and weirdness.</p>
+<p id=e073 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it. Understood. So, whatever the case, we will still want the fields property for art suite.</p>
+<p id=a337 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Going back to the NFC, we can just reuse that same fields for the NFC fields being rendered in the Go ahead.</p>
+<p id=97ec class="phone s03"><cite>Manu_Sporny:</cite> I don't think that's correct either. …</p>
+<p id=c7af class="phone s02"><cite>Dmitri_Zagidulin:</cite> Add that. Yes.</p>
+<p id=ca04 class="phone s03"><cite>Manu_Sporny:</cite> because that the template changed to payload and the payload is the raw binary string that is sent over NFC. There's some layer thing.</p>
+<p id=ff2a class="phone s03"><cite>Manu_Sporny:</cite> The render property can't be put into that payload. It'll mess things up. we need to keep it separate from correct.</p>
+<p id=ae6d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Correct.</p>
+<p id=df87 class="phone s02"><cite>Dmitri_Zagidulin:</cite> It would be sibling to it. It would be in parallel.</p>
+<p id=42d1 class="phone s03"><cite>Manu_Sporny:</cite> Okay. If Is that what you were saying? I thought you were saying.</p>
+<p id=7068 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's what I'm saying. Yeah. No,…</p>
+<p id=6770 class="phone s03"><cite>Manu_Sporny:</cite> Okay. Sorry.</p>
+<p id=09ef class="phone s02"><cite>Dmitri_Zagidulin:</cite> no, no,…</p>
+<p id=ac59 class="phone s03"><cite>Manu_Sporny:</cite> I thought you were saying put it into the payload and I was like a and…</p>
+<p id=5ff3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> no, no, no. we could just use fields here and…</p>
+<p id=6120 class="phone s03"><cite>Manu_Sporny:</cite> you're not okay,…</p>
+<p id=510e class="phone s02"><cite>Dmitri_Zagidulin:</cite> payload here.</p>
+<p id=97ef class="phone s03"><cite>Manu_Sporny:</cite> but you're saying rename render property to fields.</p>
+<p id=8b4f class="phone s02"><cite>Dmitri_Zagidulin:</cite> The fields. Yeah. to match the card. Sweet.</p>
+<p id=42ed class="phone s03"><cite>Manu_Sporny:</cite> But that's at the wrong layer. The card, as Benjamin was saying, is a Sorry, I'll put myself on the queue.</p>
+<p id=ab38 class="phone s02"><cite>Dmitri_Zagidulin:</cite> It's wait just to be specific.</p>
+<p id=9d7f class="phone s01"><cite>Benjamin_Young:</cite> Yeah. No,…</p>
+<p id=530b class="phone s02"><cite>Dmitri_Zagidulin:</cite> It's at the exact same layer. It's at Uh-huh.</p>
+<p id=514b class="phone s01"><cite>Benjamin_Young:</cite> it's really not. So everything you see up one example go up one that turns into a Jason blob which includes fields.</p>
+<p id=c8e8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay. So, that's weird.</p>
+<p id=4ba0 class="phone s01"><cite>Benjamin_Young:</cite> It is thousand% weird.</p>
+<p id=66a1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And we should change that. Yum.</p>
+<p id=8d9f class="phone s01"><cite>Benjamin_Young:</cite> It's totally your ducking if you've ever eaten that. It inside of stuff. Yeah, it's good, right? but yeah, so ignore fields like This whole thing needs re render property or even if we renamed it or whatever in the case of the NFC thing is just informative to tell the user this is you're about to tap and I'm going this NFC ostensibly only encodes these properties but it's optional in this NFC one and it could be left out because really what's in that NFC payload which can't really be dissected as far as I Benjamin Young:</p>
+<p id=9179 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=922c class="phone s03"><cite>Manu_Sporny:</cite> Sorry, what Benjamin said?</p>
+<p id=6b2e class="phone s02"><cite>Dmitri_Zagidulin:</cite> And then Dave.</p>
+<p id=8bb0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> right. Agreed. Okay.</p>
+<p id=cd50 class="phone s05"><cite>Dave_Longley:</cite> I just wanted to strongly minus one having render property be optional.</p>
+<p id=90b4 class="phone s05"><cite>Dave_Longley:</cite> That's a necessary thing at a certain layer.</p>
+<p id=fc58 class="phone s05"><cite>Dave_Longley:</cite> It's the only part of that that's optional is a deceitful or erroneous issuer could mismatch their payload with their render property.</p>
+<p id=29fb class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Agreed.</p>
+<p id=ac9b class="phone s05"><cite>Dave_Longley:</cite> But that's a trust model security model problem. Not this needs to be present so that to be a wallet or other application can render what is expected to be transmitted. So, it's got to be there.</p>
+<p id=002f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Plus one to that.</p>
+<p id=e49d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Benjamin and then Mono.</p>
+<p id=c148 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, I'm fine to say it's required,…</p>
+<p id=c72b class="phone s01"><cite>Benjamin_Young:</cite> but the reality is that the two things do not as in the payload and the render property thing especially when they're static, but even when they're templates, don' there's not many forcing functions. There are none when it's a static thing to guarantee that those surface in the payload.</p>
+<p id=1750 class="phone s02"><cite>Dmitri_Zagidulin:</cite> We're getting</p>
+<p id=ee88 class="phone s01"><cite>Benjamin_Young:</cite> So the reality is that if you've got a designer making you pretty static credentials or whatever and you're stuffing them in there and then some other team or whoever wires it up and doesn't list every render property. you could require the field and somebody might put in a thing. sure it can go in the threat model, but the reality is sort of like how open AI I require summary and description and people use them both incorrectly all the time because you really only need one. I get why you need and want render property, but they are inevitably going to be out of sync somewhere by somebody.</p>
+<p id=e44e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=6e83 class="phone s03"><cite>Manu_Sporny:</cite> I think the forcing function for that is, you mark issuers as bad or you contact them, There is a forcing function but that's just on the forcing function. I'm wondering the other kind of DX issue. you will know Benjamin because there are entities and organizations that look at these credentials verifiers that look at them privacy and human rights organizations that look at them and if somebody does an NFC thing and it doesn't match it's a great story for a security researcher right there are incentives to report on issuers</p>
+<p id=3411 class="phone s03"><cite>Manu_Sporny:</cite> that are lying about the data that's being transmitted when you tap to share. in some states it's illegal to transmit something that you did not get consent from the individual to mit. deceptive practices are things that you can sue people over. So I think there plenty of forcing functions here. I don't think that's correct. However, my concern is that render property alone without an internationalization mechanism to translate that path to a human readable thing may not be the best thing.</p>
+</section>
+
+<section>
+<h3 id=d666>Internationalization For NFC Data</h3>
+<p id=e1b8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Heat.</p>
+<p id=64be class="phone s03"><cite>Manu_Sporny:</cite> I am wondering if instead we should have a human readable string that conveys what is being transmitted. when you click NFC tap to share your subway token ID 1 2 3 4 5 will be transmitted to the turn style. Right? That's a bad example. But that type of thing where we can have multilingual these are the various things that you say in various languages. you can be explicit about the data being shared rather than this XML datetimes being shared.</p>
+<p id=2219 class="phone s03"><cite>Manu_Sporny:</cite> I don't know that's probably not a good example but this completely obtuse bit string is being shared that doesn't mean anything to someone but if you're like hey this is a subway token ID your ID is 1 2 3 4 when you tap that number is going to be sent to the receiving device.</p>
+<p id=a835 class="phone s02"><cite>Dmitri_Zagidulin:</cite> honest proposal.</p>
+<p id=82bc class="phone s03"><cite>Manu_Sporny:</cite> I'm wondering if we should do that instead. in here And then that means that go ahead.</p>
+<p id=f55b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Could we use description for that?</p>
+<p id=aa41 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I think that would probably be the natural thing we'd use, right? But…</p>
+<p id=2576 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So then the question is that</p>
+<p id=70bb class="phone s03"><cite>Manu_Sporny:</cite> then it's like what's the des yeah is the description how do you know I guess what is it render what is it access mode is NFC or…</p>
+<p id=99ca class="phone s03"><cite>Manu_Sporny:</cite> render suite is NFC then to show the description on the screen when you start transmitting an NFC is that what we're thinking And…</p>
+<p id=585a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes, that's the proposal.</p>
+<p id=62e4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. …</p>
+<p id=8c53 class="phone s03"><cite>Manu_Sporny:</cite> since it's static, since it's a static thing,…</p>
+<p id=7a55 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Exactly.</p>
+<p id=9b51 class="phone s03"><cite>Manu_Sporny:</cite> it's like you've has the data when they create the credential.</p>
+<p id=5556 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Pay to go ahead.</p>
+<p id=697b class="phone s06"><cite>Kayode_Ezike:</cite> Yeah, a potential problem with description is that basically we're adding an extra restriction or constraint for issuers to this is not just a free form string. It's going to be like you have to include this information inside of this free form string if I understand correctly which sounds to be more something you would put into a data type type of property instead of a more structured property instead of a free form string. I feel we could make it added to the third model,…</p>
+<p id=a8c9 class="phone s06"><cite>Kayode_Ezike:</cite> but I feel like it's probably just not the right place to do that in my opinion.</p>
+<p id=cabb class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wait. So,…</p>
+<p id=ba30 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I'm not sure what you're saying. You're saying we shouldn't Go ahead.</p>
+<p id=9ddf class="phone s06"><cite>Kayode_Ezike:</cite> Basically, this field that was designed to be like a free form string that can have anything in there. And now we're saying no issuers actually if you want to convey these fields that are human readable you need to do that in this free form string which technically is okay but in terms of the issuer is understanding the semantics of this not just being a free form description…</p>
+<p id=4ddd class="phone s06"><cite>Kayode_Ezike:</cite> but actually something that needs to include property information in a similar way that rental property does. I don't know that I feel like that that might be something that issuers again might not know to do or just basically I can see it messing up.</p>
+<p id=569a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Just to be clear,…</p>
+<p id=81b4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So I get what you're saying, but it's up to us in the spec to emphasize because regardless of what we do, description has to be loadbearing, right? it's UI facing. If it's a static image, then the description is the image text for blind readers, if it's a NFC, then it's the thing describing what's in the NFC.</p>
+<p id=d1fa class="phone s02"><cite>Dmitri_Zagidulin:</cite> FC. So it is regardless of what we do, it has to be loadbearing and we just need to emphasize that manu</p>
+<p id=1c61 class="phone s03"><cite>Manu_Sporny:</cite> And we could go to extremes. I don't know if we, should do this, but we could say the issuer must describe what information is being shared with in a way that enables reasonable consent by the individual. It's fuzzy, right? But I'm talking about the must statement there. doing a lot of lifting.</p>
+<p id=4d61 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Mhm.</p>
+<p id=c25b class="phone s03"><cite>Manu_Sporny:</cite> And again, it's not super enforceable other than us saying you really should tell the person what you're transmitting if you're going to do it over wireless</p>
+<p id=efe6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right, right, right, right,…</p>
+<p id=1b80 class="phone s05"><cite>Dave_Longley:</cite> So I think we have several different tensions here.</p>
+<p id=9716 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Dave. And then</p>
+<p id=10003 class="phone s05"><cite>Dave_Longley:</cite> One of them is we're exploring this fields concept that we're going to end up modeling and using I'm sure in some way or another in the render method formerly known as guard which has the kind of information that you would want to show in the NFC case. one of the tensions here is it would also be somewhat potentially painful to have to express this twice in two different render methods. if you want to offer NFC and card rendering, and in fact, before you even get to the NFC page in a rendering application, my guess is a card rendering is going to be used to show you anything to press on or do anything with.</p>
+<p id=8d65 class="phone s05"><cite>Dave_Longley:</cite> So there's sort of this idea that both of these might be present in most of the cases so maybe it's worth exploring telling people to provide the card rendering methods and let rendering applications match on the render property against fields. but we could explore including fields in the NFC render method. and then we have this other tension that's sitting in the background, which is out of all this stuff, what do we externalize? So, it doesn't have to all be in the VC and you fetch it and check the digest multibase hash or you fetch an external VC and you check the signature on it. We've got to resolve all those different tensions. and creating duplicate information across those things might not be a good way to do</p>
+<p id=518c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Great point. And we'll come back to the externalizing part. Right. so for this discussion, I just want to focus on the problem of we need a transmission mode property or to decide to reuse access mode except as Benjamin pointed out access mode is tightly controlled by this vocabulary and…</p>
+<p id=aa63 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I don't have think we have the ability or we shouldn't overload that but Ivonne next.</p>
+<p id=4c4b class="phone s07"><cite>Ivan_Herman:</cite> Yeah, there's another problem I have with the usage of description…</p>
+<p id=658e class="phone s07"><cite>Ivan_Herman:</cite> because description is defined as a single string.</p>
+<p id=5637 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=4435 class="phone s07"><cite>Ivan_Herman:</cite> and I am afraid that eventually developers will want to add some structure to it emphasis cursive whatever so they will hit the problem that this is just a structureless string and that can lead to all kinds of problems I'm sure that some developers will come with the idea of putting HTML into it and…</p>
+<p id=de3e class="phone s07"><cite>Ivan_Herman:</cite> make it displayed as HTML and things of that sort Yeah.</p>
+<p id=b565 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, we can frontr run that and…</p>
+<p id=49cd class="phone s02"><cite>Dmitri_Zagidulin:</cite> allow markdown in it. In fact, we probably should not literally add markdown.</p>
+<p id=4215 class="phone s07"><cite>Ivan_Herman:</cite> I mean, yeah. where is the end of that?</p>
+<p id=8642 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's the end.</p>
+<p id=02db class="phone s07"><cite>Ivan_Herman:</cite> Okay. Maybe</p>
+<p id=1338 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And there's precedent in the OBV3 description properties allowing markdown specifically. Mano, you're up next.</p>
+<p id=542a class="phone s03"><cite>Manu_Sporny:</cite> Yeah, minus one for expanding scope at this stage. I hear you Avon, markdown on we have not done that for any other properties yet and that is a whole big other can of worms that I'd rather us not open here. we do have to allow for internationalization here, for description. and if people want to put HTML and markdown in there, we can't stop them. or if they want to type it as RDF, what is it? RDF col HTML is a type.</p>
+<p id=79f8 class="phone s03"><cite>Manu_Sporny:</cite> We can't really stop them from doing that. But we're just talking about these are going to create major interoperability pain points.</p>
+<p id=6fd0 class="phone s07"><cite>Ivan_Herman:</cite> Yeah. Yes.</p>
+<p id=1833 class="phone s03"><cite>Manu_Sporny:</cite> So let's not do that yet. I don't think we have enough implementation experience to do anything beyond the most basic thing which to me right now is just description and if description doesn't work out then we can try to do something more complicated like the fields and the cross referencing and all that kind of stuff but I'd re really rather not go down that path until we know description is just not going to work</p>
+<p id=9a6a class="phone s07"><cite>Ivan_Herman:</cite> to make it very clear, I didn't mean that we have to do that. What I'm afraid of is that the implementers will misuse this All right.</p>
+<p id=183e class="phone s02"><cite>Dmitri_Zagidulin:</cite> then we'll need to deal with that.</p>
+<p id=a1f9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> But I do want to bring back the discussion to our main pain point which is transmission mode. Go ahead, Benjamin.</p>
+<p id=2cac class="phone s01"><cite>Benjamin_Young:</cite> Yeah, just wanted to voice the idea of using alt instead of description here…</p>
+<p id=5de9 class="phone s01"><cite>Benjamin_Young:</cite> since that's actually the service it's purposing that we're attempting to say This is text about…</p>
+<p id=a2cd class="phone s01"><cite>Benjamin_Young:</cite> what you can't see right now, whether it's an NFT or…</p>
+<p id=8266 class="phone s02"><cite>Dmitri_Zagidulin:</cite> in addition or…</p>
+<p id=d7d9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> instead of description…</p>
+<p id=59a4 class="phone s01"><cite>Benjamin_Young:</cite> instead of description…</p>
+<p id=c539 class="phone s02"><cite>Dmitri_Zagidulin:</cite> because we for all suites and…</p>
+<p id=1ebb class="phone s01"><cite>Benjamin_Young:</cite> because description is going to be not for all suites, probably just for the static ones…</p>
+<p id=5677 class="phone s02"><cite>Dmitri_Zagidulin:</cite> that seems sub-optimal.</p>
+<p id=d111 class="phone s01"><cite>Benjamin_Young:</cite> because Okay.</p>
+<p id=3ee8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Then we're trying to keep the number of fields to a minimum. Then we'll have two fields that essentially do the same thing.</p>
+<p id=87a8 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, I get that. what you have now is one field. that's going to be expected to do different service. So, …</p>
+<p id=6bf8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Is it actually different though?</p>
+<p id=476d class="phone s01"><cite>Benjamin_Young:</cite> yeah, you're going to get descriptions like an image of your driver's license, maybe not here's all the fields that you're about to display to the recipient, but you should care about whether you're blind or it's just going to be like driver's license NFC,</p>
+<p id=8c41 class="phone s01"><cite>Benjamin_Young:</cite> that is a description of what it is, but it tells you nothing of what you need to know, which is why we're saying, &quot; yeah, just we'll tell everybody to say all the right words in this,&quot; So,…</p>
+<p id=5390 class="phone s02"><cite>Dmitri_Zagidulin:</cite> The name of the field and…</p>
+<p id=4417 class="phone s02"><cite>Dmitri_Zagidulin:</cite> the instructions that we leave for developers are two separate things because there are lots of cases of people doing the exact same thing in the alt field.</p>
+<p id=96b4 class="phone s01"><cite>Benjamin_Young:</cite> no, I get that, But the invocation of calling it the alt field and mapping it ontologically to HTML's alt field is that we invoke the B power of WAG or…</p>
+<p id=f463 class="phone s01"><cite>Benjamin_Young:</cite> we can and section 508 and all the wonderful things that come with that. and we wouldn't want to do that with the description field necessarily, but it doesn't have to be a popular idea. It's just an idea.</p>
+<p id=b711 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, makes sense.</p>
+<p id=5373 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Marlin, go ahead.</p>
+<p id=f9a8 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I'm hesitant to add yet another field that could be used because then the argument becomes, okay, why aren't we just using alt fields everywhere, right? for any data field. and then we have to have that much bigger discussion. I 508 applies for things that are not alt description fields included. and I do agree with what Dimmitri said. I think it really matters what we write in the spec here, these are how this object is expected to be used. You're expect this is a static or this is the sweet method the description in it.</p>
+<p id=4b4d class="phone s03"><cite>Manu_Sporny:</cite> if there's an NFC, if the output preference is the description is meant to be shown or expressed to the individual as they go to share the thing over NFC, and you should talk about the information that will be transmitted. Those are things we can write in the spec. And if people don't read the spec or they're unaware of it, it's there we're being very explicit about what the fields meant to do. as far as the accessibility thing, the access mode, I get that, it's covered in the accessibility vocabulary, but maybe we ask them what should we do here?</p>
+<p id=c185 class="phone s03"><cite>Manu_Sporny:</cite> Because NFC tab it is something that does need to be described from an accessibility standpoint.</p>
+<p id=6c70 class="phone s03"><cite>Manu_Sporny:</cite> I don't know what the current guidance is, but it is an access mode. and so getting their feedback on is this missing? What should we use here? would be good. accessibility we need to specify that the access mode for this thing is NFC.</p>
+<p id=1ac4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wait, wait.</p>
+<p id=478f class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, let me make sure I capture that. So, you're saying we should ask</p>
+<p id=1275 class="phone s03"><cite>Manu_Sporny:</cite> How do we do that? Should we use Should we use NFC? Is it missing from your vocabulary?</p>
+<p id=c7d6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=b56a class="phone s03"><cite>Manu_Sporny:</cite> And then we see if they think we should extend it. We could ask them the description, thing as well. And the other argument against alt is that Arya exists because alt, largely failed. TML 5, shoot People abuse it all the time. there are variety of arguments against alt in HTML, and I would expect those same things to kind of reappear here. I don't want that,…</p>
+<p id=b43d class="phone s03"><cite>Manu_Sporny:</cite> Benjamin. But that's where it ended up, right?</p>
+<p id=fa46 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=17ba class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. sounds good. All right. So, let's summarize. what the NFC fields is shaping up, the consensus shaping up so far is we continue using type for all of these as sweet render method dispatch off of sweet.</p>
+<p id=2c14 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So we're still deciding whether NFC is its own suite or we Preferably we can fit it under static so we can have three suites instead of four. we need to decide what property to put the binary payload into. If it's not template then payload or ID have been brought up. the question about ID touches upon embedding versus referencing external. So we'll come back to that. we talked about whether we need an additional field in an NFC render method that outlines the fields being listed.</p>
+<p id=10004 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Dave said that minus one to have image be optional meaning we want it to be required in which case we should use the same property as the card suite since it does the same thing. we talked about the sort of the main question of we need to denote the transmission mode. Manu mentioned that basically we should ask accessibility about this whether we can reuse access mode or extend it to be able to handle NFC or use a separate property. And also we should ask them about description versus alt. yes, somebody had their hand up.</p>
+<p id=030a class="phone s05"><cite>Dave_Longley:</cite> I was just going to comment that render property and…</p>
+<p id=c4b3 class="phone s05"><cite>Dave_Longley:</cite> fields don't do the same thing. They have some overlap. so we need to be careful with that.</p>
+<p id=5b40 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Can you say more?</p>
+<p id=6991 class="phone s02"><cite>Dmitri_Zagidulin:</cite> What do you feel is the overlap? Okay.</p>
+<p id=aefa class="phone s05"><cite>Dave_Longley:</cite> The overlap is pointers into the data structure for…</p>
+<p id=d6de class="phone s05"><cite>Dave_Longley:</cite> what is expected to be the render method is pointers into the data structure into the credential for what's expected to be in a payload or what is expected to be passed to a payload so that it can be in there for the template case and fields is different. It's a larger structure that has label information that is internationalizable and some other potential meta fields around the field. Sorry to reuse the word, but there's significantly more there.</p>
+<p id=9df8 class="phone s05"><cite>Dave_Longley:</cite> And if it were a strict subset or superset we could consider you just using fields in the absence of other considerations. But other considerations are things like we want to externalize a lot of that information. You don't want it to have to always present in the VC, especially all those extra labels in potentially many different languages. And so render property is highly optimized for specifically identifying…</p>
+<p id=49c8 class="phone s05"><cite>Dave_Longley:</cite> what is going to go into the payload or what needs to go into the payload. And that's not the same thing as what fields provides.</p>
+<p id=de64 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=4979 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see. Manu and then Benjamin</p>
+<p id=6fd3 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, plus one to that. we're probably going to have to make another pass. my big concern about this is that we're going to further delay updating the spec to something more reasonable because we're waiting for all of these other questions to settle. I am wondering if we can just put something in and put an issue marker on it that we're still discussing. And I'm trying to figure out if there's a way for us to iterate towards a better thing instead of just delaying this for potentially months while we wait for resolution on accessibility or other things like that.</p>
+<p id=4131 class="phone s03"><cite>Manu_Sporny:</cite> So meaning put this in the,…</p>
+<p id=be7b class="phone s02"><cite>Dmitri_Zagidulin:</cite> I'll check</p>
+<p id=72d4 class="phone s03"><cite>Manu_Sporny:</cite> put issue 77 in the PR and say we're still discussing this, but let's agree I think sweet render method Sweet static done. what else? Payload. Yes. don't know about fields versus description yet. So just say we're still discussing that. and then set access mode to NFC and tell accessibility that we're hoping to this, please tell us what else we should do. So, we go in with a concrete, request. and hopefully that will get them to be like that is the worst idea ever.</p>
+<p id=0e39 class="phone s03"><cite>Manu_Sporny:</cite> Do this instead and we'll do the other thing.</p>
+<p id=4d2c class="phone s02"><cite>Dmitri_Zagidulin:</cite> I agree with you.</p>
+<p id=2eac class="phone s02"><cite>Dmitri_Zagidulin:</cite> I really like the emphasis on rapid iteration of locking down things that we have more or less consensus for while flagging the stuff to decide. So big plus one I will make a PR on this today. give plus ones specifically dispatching on this type to PR76. all right, Ben Shimman and then Ivon</p>
+<p id=4bc1 class="phone s01"><cite>Benjamin_Young:</cite> Yeah, just something I put in chat of maybe render meth or render property could be a list of it could be an object that contains JSON pointer keys that…</p>
+<p id=47a1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I like it.</p>
+<p id=e338 class="phone s01"><cite>Benjamin_Young:</cite> then have objects that look like what's currently in fields. So essentially it serves both purposes where you've got essentially key keys run on render property is going to get you the list of pointers you need to do the extraction and then each one has an object. that said when you need it to say you could also just not assign a thing to it. there's some shape shifting that's going to have to happen to get this right with JSON LB and cases where you may not want to provide all that extra data. and ordering is another question mark that was assumed to be implicit in the fields list…</p>
+<p id=caa1 class="phone s01"><cite>Benjamin_Young:</cite> because it wasn't actually part of the data model. and that was consequently just punted out to Jason. so …</p>
+<p id=e0db class="phone s02"><cite>Dmitri_Zagidulin:</cite> Excellent.</p>
+<p id=b96a class="phone s01"><cite>Benjamin_Young:</cite> there's more to do there,…</p>
+<p id=18de class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wait. So, Benjamin, so I like that.</p>
+<p id=971f class="phone s01"><cite>Benjamin_Young:</cite> but generally go ahead.</p>
+<p id=91f6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I like that idea. I want to make sure we capture that in keeping the spirit of what Manu just said earlier.</p>
+<p id=9927 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Let's not delay until that. Can you open an issue proposing merging render property and fields into the one thing like you said and either mentioning ordering in that or…</p>
+<p id=fd89 class="phone s01"><cite>Benjamin_Young:</cite> Yeah. Yeah.</p>
+<p id=1a02 class="phone s02"><cite>Dmitri_Zagidulin:</cite> opening a separate issue for ordering that that would be great just to make sure that we don't lose that stuff.</p>
+<p id=4f60 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Ivon and then Dave.</p>
+<p id=a0b9 class="phone s07"><cite>Ivan_Herman:</cite> Yeah. So I am very uneasy in the text you wrote there…</p>
+<p id=2ecf class="phone s07"><cite>Ivan_Herman:</cite> which sort of says that the name can be either ID or payload as if these two things were sort of equal. And I just remind you that ID in JSON is just a key in JSONLD. It has a fundamentally different role than a property like payload. So these two things should not be mixed up. it radically changes the model that we are talking about because ID becomes a resource in RDF term on…</p>
+<p id=af26 class="phone s07"><cite>Ivan_Herman:</cite> which you can make further claims. Payload is just a URL that can be used to whatever you want but from RDF point of view it doesn't necessarily mean too much.</p>
+<p id=8621 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, I agree with you.</p>
+<p id=9c1f class="phone s02"><cite>Dmitri_Zagidulin:</cite> And by the way,…</p>
+<p id=9fe3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> that's the reason even though it's fairly settled, we should raise an objection about using ID as the payload in the envelope verifiable credential case because that same reasoning applies. I agree with we're using the ID field as the payload elsewhere in the enveloped verifiable credential property and…</p>
+<p id=be23 class="phone s07"><cite>Ivan_Herman:</cite> So, I am not sure I understood…</p>
+<p id=aeb5 class="phone s07"><cite>Ivan_Herman:</cite> what you said. where when Yeah,…</p>
+<p id=9fb9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think that's wrong too. Basically, I'm violently agreeing with but we'll hold on. So,</p>
+<p id=48b6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> We will discuss that separately. I hope I just changed what was said to reflect what you just said. So I'm hoping to have captured your concern.</p>
+<p id=afef class="phone s07"><cite>Ivan_Herman:</cite> that's fine. Yeah, that's fine.</p>
+<p id=7ab8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Excellent. I think it was Dave next.</p>
+<p id=fc2e class="phone s05"><cite>Dave_Longley:</cite> I was just noting that if we try to combine those two properties, we're going to have the external data problem to discuss. that's fine. We can do that over on that issue.</p>
+<p id=5d09 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, I agree with you.</p>
+<p id=b5f0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> We can discuss that there. Excellent.</p>
+<p id=a37c class="phone s05"><cite>Dave_Longley:</cite> We might somewhere want to keep track of…</p>
+<p id=9d84 class="phone s05"><cite>Dave_Longley:</cite> what are the things that you need to have before you go fetch some external payload and we should understand what those things are and make sure that we keep them separate from whatever you then need to go fetch. And so there are two considerations there. One is what you need to be able to make decisions about whether or…</p>
+<p id=2362 class="phone s05"><cite>Dave_Longley:</cite> not you want to even use something and how to best minimalize the data that's in a VC so that doesn't all have to be present there all the time.</p>
+<p id=b3b0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yep. Agreed.</p>
+<p id=fad6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Agreed. That's an excellent point. I tried to capture that here and also be sure to weigh in with that on that issue. All right. So, we got five minutes till the top of the hour. we are making some progress here in the sense that we have rough consensus that we want to use static for NFC instead of having a fourth NFC suite. So that alone is huge. we have rough consensus about renaming template to payload.</p>
+<p id=5030 class="phone s02"><cite>Dmitri_Zagidulin:</cite> At the moment we're going to be reusing an access mode to NFC but checking with accessibility. We have a discussion pending about one or two fields for the render properties and fields and what to do about referencing and embedding with all the excellent points Dave brought up and we have a pending discussion about description versus alt which we'll also ask accessibility about. is there anything else that we're missing about the NFC suite specifically? Yes.</p>
+<p id=0115 class="phone s03"><cite>Manu_Sporny:</cite> No, just a request that my presumption is that Dimmitri, you said you're going to raise a PR to ab to do the consensus thing and…</p>
+<p id=e409 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Fantastic.</p>
+<p id=80e5 class="phone s03"><cite>Manu_Sporny:</cite> at the very latest by next week we should merge into the spec. I think that's my hope is the goal for the group.</p>
+<p id=41fb class="phone s02"><cite>Dmitri_Zagidulin:</cite> Fantastic. Then I will try and ping you all for plus All right. so this is great. we didn't get to too much of discussion of the card JSON, but actually a lot of the discussion that we did here for NFC directly applies to the card suite as the notion of payload versus template, the notion of what are we going to do with the render property versus fields about referencing them and embedding them about description versus alt being loadbearing. So this is good this is great progress.</p>
+<p id=ad92 class="phone s02"><cite>Dmitri_Zagidulin:</cite> All Any other last moment things before we So, Jason working group coming up. Benjamin, thank you so much. And thank you everyone. you see you next week. Meeting ended after 01:04:17 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

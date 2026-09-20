@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 15 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>15 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Nate_Otto, Patrick_St-Louis, read.ai_meeting_notes, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#15f9">Nate Otto's New Role</a></li>
+<li><a href="#8fb1">Pull Request Reviews</a></li>
+<li><a href="#eb5e">Git Renormalize Command Fix</a></li>
+<li><a href="#8e06">Threat Model: Shoulder Surfing QR Codes</a></li>
+<li><a href="#e24f">Threat Model Translation PR</a></li>
+<li><a href="#3ec2">Security Review Of Recognized Entities</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=97f9 class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, we're Ron, welcome to call. We'll get started in a minute.</p>
+<p id=0e09 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, let's get started with today's welcome everyone to the VC API for life cycle management task force call. Today is 15 September 2026. this is a W3C verifiable credential group meeting. So all W3C policies are into effect. this call will be recorded and be mindful of this. If you have any objections, please let us know.</p>
+<p id=69d9 class="phone s01"><cite>Patrick_St-Louis:</cite> In this call we will discuss the life cycle management for verifiable credentials over an API and everything that relates to this when it comes to parties interacting around credential exchange. small agenda today. as usual, we'll give some room if people have a spec special topic they would like to add. so I will let some time for any introductions or reintroductions, any community updates or special topics that people would like to cover before we get into pull request reviews.</p>
+<p id=c80a class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, mate.</p>
+</section>
+
+<section>
+<h3 id=15f9>Nate Otto's New Role</h3>
+<p id=bd2a class="phone s02"><cite>Nate_Otto:</cite> Hey topic of reintroductions. I just wanted to reintroduce myself because I have a new role. I have joined the digital credentials commons which is a division of strata education foundation and I'm going to be a standards architect and a software developer there. So, I've got even more time on my schedule for the upcoming year or two to focus on standards contribution and…</p>
+<p id=62e2 class="phone s02"><cite>Nate_Otto:</cite> implementation in our open-source JavaScript TypeScript stack that really focuses on verifiable credentials.</p>
+<p id=901d class="phone s01"><cite>Patrick_St-Louis:</cite> Congratulations,…</p>
+<p id=0c95 class="phone s01"><cite>Patrick_St-Louis:</cite> Thanks for sharing this. standards. I would assume this goes broader than just W3C. We'll also look at other standardization bodies, correct?</p>
+<p id=e8db class="phone s02"><cite>Nate_Otto:</cite> Yes, I am also currently the work group chair of the open badges and work group at 1D tech and I'm also contributing to various standards at open and…</p>
+<p id=49f4 class="phone s01"><cite>Patrick_St-Louis:</cite> Thanks a lot for this clarification.</p>
+<p id=b610 class="phone s02"><cite>Nate_Otto:</cite> open to some other work as</p>
+<p id=05b9 class="phone s01"><cite>Patrick_St-Louis:</cite> This is great. you've been a key participant in this call and this role will I think allow you to keep playing this role and make really relevant contributions here as well as implementation from what I can hear. anyone else has anything they would like to share? So, in this case going to get in PR reviews. I know usually we spend a bit of time talking about threat model and the horizontal review process.</p>
+</section>
+
+<section>
+<h3 id=8fb1>Pull Request Reviews</h3>
+<p id=0774 class="phone s01"><cite>Patrick_St-Louis:</cite> I figured today if there's anything to discuss these should be highlighted in R reviews or someone would have brought it. So we will skip the topic So PR reviews we will go from the oldest to the new one again. I need to get back to these. I've not had the time. but I can see that Eric put in one of them here I think we'll need to spend some time on. it's been open ago, but there's quite a lot of history.</p>
+<p id=eda0 class="phone s01"><cite>Patrick_St-Louis:</cite> But why don't we start with this credential offer which I think the last time we said we might be okay to merge.</p>
+<p id=56d8 class="phone s01"><cite>Patrick_St-Louis:</cite> Just needed to address the comments. would you like to give us an update on the state of this VR? Eric</p>
+<p id=cb26 class="phone s03"><cite>Eric_Schuh:</cite> Sure.</p>
+<p id=6263 class="phone s03"><cite>Eric_Schuh:</cite> I don't believe I've done anything with it since last week. So, talked about last week is where this stands. and Sorry, I don't remember if I had an outstanding task.</p>
+<p id=0b1b class="phone s03"><cite>Eric_Schuh:</cite> I don't think I did. as far as I'm concerned, this was ready to merge. I guess, need to address comments. yeah, I thought we talked about this last week and said that it was good to go because the comments were nonblocker, but I might be misreme remembering, I suppose.</p>
+<p id=a643 class="phone s01"><cite>Patrick_St-Louis:</cite> I remember the same thing as you,…</p>
+<p id=32b1 class="phone s01"><cite>Patrick_St-Louis:</cite> Coyote.</p>
+<p id=5fdb class="phone s04"><cite>Kayode_Ezike:</cite> If I recall correctly,…</p>
+<p id=0e38 class="phone s04"><cite>Kayode_Ezike:</cite> there was an the GitHub issue with the spaces or CRF versus LF in this one. Yeah, I think that was the only thing that was blocking it.</p>
+<p id=b22d class="phone s01"><cite>Patrick_St-Louis:</cite> do you want to expand a little bit that okay and…</p>
+<p id=7326 class="phone s04"><cite>Kayode_Ezike:</cite> So basically deleting adding every line that issue in GitHub is I believe why we didn't merge it last time.</p>
+<p id=404e class="phone s01"><cite>Patrick_St-Louis:</cite> has this been resolved?</p>
+<p id=3684 class="phone s04"><cite>Kayode_Ezike:</cite> It …</p>
+<p id=6dec class="phone s01"><cite>Patrick_St-Louis:</cite> Is this a problem? Okay.</p>
+<p id=9a5f class="phone s04"><cite>Kayode_Ezike:</cite> and if I was changed, I'm not sure if it Looks like it's doing the same thing still. it's something we've been trying to fix. I think that's the only reason that was blocked from last week if I recall correctly. But I know we generally try to prevent</p>
+<p id=27ab class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Do we know what fix was applied here? Because I thought the solution I posted a bunch of places did the job.</p>
+<p id=4501 class="phone s04"><cite>Kayode_Ezike:</cite> Could you repeat that?</p>
+<p id=464f class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Yeah, I'm wondering what was attempted to fix and prevent this cuz I thought I had posted the correct solution in various places. Maybe I didn't bring it here yet.</p>
+<p id=e644 class="phone s04"><cite>Kayode_Ezike:</cite> You did. we implemented that even before that. There was a get attributes file that we added that should have prevented this.</p>
+<p id=0609 class="phone s04"><cite>Kayode_Ezike:</cite> Apparently it didn't. I So yeah, not really sure what next steps are aside from.</p>
+<p id=099a class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> There are two configuration files and…</p>
+<p id=e4a9 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> there's also a command that needs to be run by somebody who's running a local git.</p>
+<p id=8465 class="phone s04"><cite>Kayode_Ezike:</cite> The editor config one maybe is what you're talking about.</p>
+<p id=2d93 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> Maybe manual has clue. Yeah.</p>
+<p id=7194 class="phone s04"><cite>Kayode_Ezike:</cite> Okay. yeah, go ahead.</p>
+</section>
+
+<section>
+<h3 id=eb5e>Git Renormalize Command Fix</h3>
+<p id=19fd class="phone s06"><cite>Manu_Sporny:</cite> Yeah, it's the renormalize command, Coyote. So, Ted, we did put the fix in place in advance of this thing happening. Get changed GitHub changed something yet again that broke things in different ways. but in theory, Coyote, you should be able to get something renormalize a command on your local branch. And in theory, that might work. And then you'd have to do a force push or something like that. You have to go to the commit that broke everything and do a renormalize and that might fix it.</p>
+<p id=9f62 class="phone s04"><cite>Kayode_Ezike:</cite> So should I Okay, I guess I can look into this. Yeah, that's</p>
+<p id=9d1f class="phone s06"><cite>Manu_Sporny:</cite> My I Eric will have to do that from the command line.</p>
+<p id=60cc class="phone s01"><cite>Patrick_St-Louis:</cite> So…</p>
+<p id=ce82 class="phone s01"><cite>Patrick_St-Louis:</cite> what does Eric has to do?</p>
+<p id=ecea class="phone s06"><cite>Manu_Sporny:</cite> Something like that. Get Full disclosure, I have not actually ever run this command. get add-malize is the command I think and just</p>
+<p id=2d83 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> I just put a link to the full details…</p>
+<p id=51ff class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> which I posted in another thread someplace else.</p>
+<p id=f358 class="phone s01"><cite>Patrick_St-Louis:</cite> Do you think you'll be able to run this, ic? All right.</p>
+<p id=1790 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> It's …</p>
+<p id=4155 class="phone s03"><cite>Eric_Schuh:</cite> Yeah. …</p>
+<p id=aa7f class="phone s03"><cite>Eric_Schuh:</cite> just to be clear, it's just the terminal command that I should need to run. I don't need to touch any of the git attribute files in theory.</p>
+<p id=1f25 class="phone s06"><cite>Manu_Sporny:</cite> Correct.</p>
+<p id=16cc class="phone s03"><cite>Eric_Schuh:</cite> Depending on how much I get pulled into other discussion I should have that before the end of this call hopefully but if not shortly after.</p>
+<p id=4ff0 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. Okay.</p>
+<p id=aee4 class="phone s05"><cite>Ted_Thibodeau_Jr:</cite> note that it's a bit more complex to be sure it does the right thing. I'll just paste into the three steps. It's actually four line commands.</p>
+<p id=20eb class="phone s03"><cite>Eric_Schuh:</cite> Perfect. I will take a look. Thank you.</p>
+<p id=5123 class="phone s01"><cite>Patrick_St-Louis:</cite> While Eric is doing this, maybe we can quickly just chat about Manu's R here about threaten mitigation for document code shoulder surfing. so do you want to take us through the…</p>
+<p id=ce1e class="phone s06"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=9817 class="phone s01"><cite>Patrick_St-Louis:</cite> what is happening here ma'am? Yeah.</p>
+</section>
+
+<section>
+<h3 id=8e06>Threat Model: Shoulder Surfing QR Codes</h3>
+<p id=d355 class="phone s06"><cite>Manu_Sporny:</cite> Happy to. This was actually an issue that Dave Longley noted a while ago. Dave, you're more than welcome to go through this if you want. but I think the general concern here is that when you show so we have these things called interaction URLs in VCOM and it's just a regular HTTPS URL it's just a link to a website and we can encode that website link as a QR code.</p>
+<p id=ffff class="phone s06"><cite>Manu_Sporny:</cite> And when we put that in a QR code and we put it on screen, what we expect will happen is somebody that has a secondary device, mobile phone, tablet will use their digital wallet to scan the QR code and if it understands interaction URLs, the software understands interaction URLs, it will kick off a VCOM a workflow and a bunch of exchanges and all that kind of stuff. So these QR codes are used to initiate That process can go into a variety of different protocols. it can redirect you to a website. it can do a variety of different things.</p>
+<p id=3467 class="phone s06"><cite>Manu_Sporny:</cite> But one of the things that could happen that we're concerned about is that it kicks you into a credential pickup flow and it allows the digital wallet to just go through the entire VCOM flow and pick up the credential. and this can be dangerous if, for example, you are on a computer in your library and you're sitting there and you've got somebody behind you also with a digital wallet that is going to shoulder surf over you and take a capture of that QR code.</p>
+<p id=b4eb class="phone s06"><cite>Manu_Sporny:</cite> You can also replay this over the internet if you're screen sharing and somebody could, basically use that QR code to basically pick up your credential, right? that's the attack that we're concerned about. there have been a number of attempted mitigations for this attack. in the open ID protocols there's strong credential wallet binding bouncing the individual back to reauthenticate and that can be there are variety of downsides with doing those things ultimately they don't really solve the problem at hand and so what this is doing is it's documenting the risk it's providing a couple of mitig</p>
+<p id=afed class="phone s06"><cite>Manu_Sporny:</cite> ations things that you could do. and one of the things it is suggesting is if you have a super high value credential and you're worried about somebody shoulder surfing, an individual and picking the credential up through that mechanism, don't do the pickup through a QR code. don't do the cross device thing and so on and so forth. so there are other mitigations if you get two pickup attempts within a short time frame just revoke the credential and tell the person to pick it back up again.</p>
+<p id=ce2f class="phone s06"><cite>Manu_Sporny:</cite> you can using the QR code redirect the individual to a website where they have to again just for that purpose reauthenticate and do a same device pickup there are variety of different ways of addressing this but we're trying to suggest one of the ways open ID has decided to do this is just not a good user experience and it doesn't actually address the problem so we're trying to be clear about you how this should be mitigated if you're use going to use a interaction URL QR kit. that's it. Back over to you, Patrick.</p>
+<p id=38d9 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, you kind of touched on my question at the end. I was just going to ask exactly in the case of open ID or oid for VCI how is this mitigated? That was my question. or it sounds like it's just the same classic cuz we very often see in demos a QR code initiated exchange that's been kind of one of the main thing that's been done for interrupt demonstration or any kind of these things even with withcom it works in a similar way at least to kickstart the connection.</p>
+<p id=5cc0 class="phone s01"><cite>Patrick_St-Louis:</cite> So this is a problem that's apparent across the different technologies. but my specific one was about oid for VCI specifically what is done there? How is it different etc.</p>
+<p id=ae3c class="phone s07"><cite>Dave_Longley:</cite> So, some of your options,…</p>
+<p id=e5c0 class="phone s01"><cite>Patrick_St-Louis:</cite> Little nave if you wanted. Yeah. Okay.</p>
+<p id=588e class="phone s07"><cite>Dave_Longley:</cite> yeah, some of your options there are to include an additional PIN code that is displayed on the screen anyway and then enter that into your wallet. But that doesn't solve for shoulder surfing for anyone who could read could enter the same PIN code. because anyone who can see your screens that you're interacting with can do whatever you're doing. So, that doesn't necessarily solve this problem. it might help close some gaps. and then o other options that get a little bit more invasive include redirecting you back to the issuing website where you would be shown an oath style authorization page to authorize your wallet and register your wallet with the issuing website.</p>
+<p id=3ef0 class="phone s07"><cite>Dave_Longley:</cite> And so you're taken back to a screen which may not result in potential fishing problem if the QR code that you can bring in other threats in this situation that can now become more likely to happen because you're scanning codes. but ignoring that, you go back from your wallet back to the website to authorize the use of your wallet at this issuing place and then you're bounced back to your wallet again. Now all of that also involves potential moving cross device.</p>
+<p id=ad5e class="phone s07"><cite>Dave_Longley:</cite> It also means that there's a lot of extra complexity involved in trying to solve this problem, including registering and including issuers having to register and know about your digital wallet, which can create other threats that are linked to in the threat model, including closing up the wallet centralizing the wallet ecosystem, creating barriers in gatekeepers. and then when you're done with all that, it might not necessarily even end up solving your problem. There are other ways that the bad software that could be running on your device that could get access to whatever it is. whether that's get access to authentication cookies that you can use to get into the website so they could get your credentials through some other means.</p>
+<p id=d0f5 class="phone s07"><cite>Dave_Longley:</cite> whether it's being able to read the traffic that's going across the wire through a variety of different software attacks. And so a lot of these things are hard create other dependencies and other threats and don't necessarily close the gap where the gap that's involved here is mostly don't be picking up a high value credential using screens where people might be looking over your shoulder or recording what you're doing.</p>
+<p id=8bc8 class="phone s07"><cite>Dave_Longley:</cite> And it's a much simpler fix without all of these additional threats that come into the mix to just not put yourself in that situation or as an issuer offer the ability to get into a same device scenario which mitigates it again not completely but it mitigates the shoulder surfing aspect of it but there still I've got bad software installed on my device and…</p>
+<p id=733f class="phone s07"><cite>Dave_Longley:</cite> those are other threats.</p>
+<p id=de0f class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=0c7a class="phone s01"><cite>Patrick_St-Louis:</cite> yeah, that's really interesting. so the pin code is an interesting one. Reminds me of it's not quite the same quite similar. if you are try to sign in on a website and basically when you use a 2FA application that they ask you to scan the QR code and then enter the pin that the website shows. So it sounds like a very similar process than this.</p>
+<p id=fb9f class="phone s01"><cite>Patrick_St-Louis:</cite> I could see this working in a way that before showing the pin it ask the user to confirm that their wallet has engaged and is asking for a pin and then you reveal it on the screen. So the user would then reveal the pin before their wallet has cut up and if the wallet has cut up it means that they're the one that ingested the invitation. But that could be interesting. Yes, m</p>
+<p id=0f01 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I was going to mention your first comment. p entering a pin code is a far more complex process than I think a lot of people realize. so for example, when you do Bluetooth pairing and you enter a pin code, that has a very different attack model than someone doing P for a PIN code which has a very different attack model from the thing that you just outlined, so saying we could do a pin code we have to get very deep into the details there.</p>
+<p id=52d2 class="phone s06"><cite>Manu_Sporny:</cite> this response stuff doesn't get into, those details. I guess we could, but I guess that the fundamental point here though with this threat model edition is effectively saying all of the complexity that Open ID has around this stuff doesn't actually work in a wide variety of the cases.</p>
+<p id=61d1 class="phone s06"><cite>Manu_Sporny:</cite> So instead of doing all of that extra, complexity in the protocol and all that kind of stuff, just don't do it, …</p>
+<p id=b3cb class="phone s01"><cite>Patrick_St-Louis:</cite> What's up?</p>
+<p id=1e2e class="phone s06"><cite>Manu_Sporny:</cite> if you have a cross device, you have the capabil the issuer, have the capability of deciding whether or not you're going to do a QR code or not. If you are issuing a passport or a driver's license or some other high-v value credential like that, don't do it cross device using these things, do it same device. So if you create a …</p>
+<p id=7f5f class="phone s01"><cite>Patrick_St-Louis:</cite> Come on.</p>
+<p id=8c51 class="phone s06"><cite>Manu_Sporny:</cite> if you create a scanning that QR code should push the person scanning it into a flow…</p>
+<p id=10000 class="phone s06"><cite>Manu_Sporny:</cite> where they have to reauthenticate with the issuer website and…</p>
+<p id=b5dd class="phone s01"><cite>Patrick_St-Louis:</cite> What's this?</p>
+<p id=3f35 class="phone s06"><cite>Manu_Sporny:</cite> then do the pickup same device. One other I think I don't know if we should talk about in the threat model is DC API and how that kind of comes into play. I don't think you can use DCPA DC API on a library computer unless you pair your device with the machine. I don't know if that's true, I don't know if Dave. go ahead Nate.</p>
+<p id=f73a class="phone s02"><cite>Nate_Otto:</cite> I don't know if we want to go into a full discussion right now, but there is a proximity detection is part of the phto handoff. and DC API more or less inherits the same security as pass keys for cross device handoffs. And so the devices do not have to be paired and known to one another but they have to be proximal as part of the transition.</p>
+<p id=d469 class="phone s01"><cite>Patrick_St-Louis:</cite> I don't</p>
+<p id=0a05 class="phone s02"><cite>Nate_Otto:</cite> And Android and Apple have implemented this differently.</p>
+<p id=10d3 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=05a6 class="phone s06"><cite>Manu_Sporny:</cite> So, there is what is it? a black hat conference you've got an antenna in Bluetooth where you could do the attack from across the library if you wanted right so there's all this to kind of say is the QR code process is fraught in a variety of different ways there are a couple of ways to mitigate it and we may want to talk more about if you really really want to use a QR code Here are two ways that are fairly, decent. One of them is redirect the person to the website and have them do it same device. The other one have the individual present a known good strong credential to get the other credential.</p>
+<p id=1191 class="phone s01"><cite>Patrick_St-Louis:</cite> side of the cards certificate.</p>
+<p id=6ea1 class="phone s06"><cite>Manu_Sporny:</cite> I don't know not that a library card is high value but if they're picking up what's a semi highv value credential if they're picking up a credit card so sorry if they're picking up a credit card have them authenticate with a driver's license in the protocol before they pick up the credit card as an example example, So, you can go cross device, but you're not going to end up picking up somebody else's credit card if you have the wrong driver's license. but I don't know. I mean, even those things might be a bit fraught. Anyway, just some background on this PR.</p>
+<p id=47af class="phone s07"><cite>Dave_Longley:</cite> Yeah, I think one of the main things we wanted to highlight in this PR hopefully we're doing it is some risks if realized can be significant problems but even in those cases some of those risks are really unlikely to be realized and if such a risk is really unlikely to be realized and it can be mitigated by simple user behavior including intuitive user behavior That might be better than trying to build complex solutions to close gaps that are unlikely to happen where the complex solutions create more problems than they're worth. There are a number of these potential solutions that attempt to close the gap, whether or not they successfully do, that can create more harm and more prevalent harm than Give.</p>
+<p id=b740 class="phone s07"><cite>Dave_Longley:</cite> a user were instead instructed to check over their shoulder before they pick up their credential or redirected into a flow it redirect to a same device flow where it matters or an an extra presentation is required during the pickup. All of those things don't change any of the fundamental ways that the existing protocols work. They don't add anything new. they are a difference in the user experience. and that's different from adding additional complexity that can create these gatekeeping, centralization problems, market problems that end up actually harming users much more because they lose their choice in the ecosystem.</p>
+<p id=8395 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think this is all interesting, all valid. I like the idea of the same device flow, and the example of scanning a QR code to kind of initiate the same device flow. I'd be interested eventually to discuss exactly how this looked from a workflow templating perspective. it sounds like it would be a redirect URL towards a second workflow kind of situation, at least the way I understand it, where the first QR code would still need to be scanned with a wallet and then the wallet would embed a web view to serve the redirect URL or however this needs to happen.</p>
+<p id=e16a class="phone s01"><cite>Patrick_St-Louis:</cite> If the intention is that this QR code can be scanned with anything I' again bring up the issue of wallet selection on device which is another thing that has caused a lot of complications with OS behavior when it comes to selecting apps to process something. yeah, these are some of my thoughts I had. as for this PR here, there's still some comments that can be looked at. I'm not getting the sense that maybe we want to merge this right away. I think we just had a lot of discussion.</p>
+<p id=3b78 class="phone s01"><cite>Patrick_St-Louis:</cite> I don't know if the intent was to get this in right now or if we're okay with letting it one more week so we can think about it and maybe make it a thing so that next week once all this has been addressed and we have a clearer idea of the solution we'd like to see mentioned or the proposed solution we'd like to see and the VCOM would be a good thing. quick question use case that R code could be valid. So, I'm going to the office to renew my driver's license, right? I have an appointment. I'm I pick up my little ticket with the number. I'm being called on the kiosk. since this is a controlled environment, there's a person I'm interacting with. they potentially have a device that can show me a QR code.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> Maybe the device has some kind of protector around it. A bit like how numpads right on the payment terminals they have protector around it. Could that be then a good use case to show a QR code or even then would you see this risk being elevated? yes manu.</p>
+<p id=d958 class="phone s06"><cite>Manu_Sporny:</cite> Yeah, I put myself on the queue to say it's fine to let this sit another week. but to the question you asked yeah I mean I don't know how likely these shoulder surfing QR code attacks are in real life what's the chances that somebody is picking up their driver's license through a public library computer. that said there are populations where that happens.</p>
+<p id=04b2 class="phone s06"><cite>Manu_Sporny:</cite> And so, in those cases, I think it's good advice. as far as the pin pad protector stuff, yeah, I mean, the other thing that, DMVs, is, I mean, they're all trained in watching out for people that are trying to lift other people's information in the DMV. that's, part of the training of being an employee there, as well as, showing information. And so those devices that they sometimes show on purpose have the screens pointed up instead of towards the lobby or the individual or they're always shown with the person that's standing there. not everyone pays attention to their training.</p>
+<p id=0f5c class="phone s06"><cite>Manu_Sporny:</cite> But even then that use case specifically Patrick if you're renewing your driver's license if they're going to do cross device they might ask you for you to present your old driver's license right and that is something that the attacker wouldn't be able to do and that would allow you to show a QR code and then get it automatically right so that's an example where it's in that case if this is driver's license renewal and they click on driver's license renewal. then they should have their old driver's license in some way either they scan their physical driver's license using their mobile phone or they present their digital driver's license before they pick up the new one. So, all that to say, there are ways of using a QR code safely, and we're just trying to document what some of</p>
+<p id=b639 class="phone s06"><cite>Manu_Sporny:</cite> those ways are that's</p>
+<p id=7d09 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think this made sense. As for the question, if this is something you see out there, my gut feeling, it would be probably not right now, but give it a few years when this technology gets knowledgeable, people that do fraud are just going to try to look at ways to do this. Then if they see that people tend to go to the library to request credential it could just become a thing that happen. So I think with new technology risk is low but as these things are used and critical system more the knowledge is making it out there maybe this attack vector could become a bit more something to pay attention to. Dave</p>
+<p id=d7d2 class="phone s07"><cite>Dave_Longley:</cite> Yeah, other approaches like the one I put in the chat here.</p>
+<p id=0139 class="phone s07"><cite>Dave_Longley:</cite> If you're picking up a driver's license, you might be in a situation…</p>
+<p id=6d4a class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah,…</p>
+<p id=02e3 class="phone s07"><cite>Dave_Longley:</cite> where that issuer already knows your phone number. You're willing to share your phone number with them. You could have a phone, you could have a link texted to you and to get it onto your device. So, there are other ways to get links onto devices where you can do the pickup. And so there's probably a lot of space for people to experiment with doing secure pickups where they're worried about codes being read off of screens.</p>
+<p id=9c9d class="phone s01"><cite>Patrick_St-Louis:</cite> I agreed. Okay. yeah, this was a good discussion. is there any further comments on this before we're going to leave it open and next week should be in a good place.</p>
+<p id=7cdb class="phone s01"><cite>Patrick_St-Louis:</cite> once these comments have been addressed and we can do a sort of a roundup discussion next week and have it merged in. Any closing thoughts on this topic?</p>
+<p id=9a73 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, ma'am.</p>
+<p id=30ca class="phone s08"><cite>Benjamin_Young:</cite> Yeah, I was just thinking through all this.</p>
+<p id=e032 class="phone s08"><cite>Benjamin_Young:</cite> Is it explicitly tied these attack vectors to the capability Dave saying yes. but we're calling it out in the threat model as the risk I guess oid and…</p>
+<p id=d44b class="phone s01"><cite>Patrick_St-Louis:</cite> Is capability URL the same as interaction? Okay.</p>
+<p id=a6cf class="phone s08"><cite>Benjamin_Young:</cite> other things don't use capability they require authentication which of course moves things around in different often bad ways. but it is kind of implicit in capability URLs that if somebody gets one that they shouldn't have then bad things can happen by definition of what they are. So, it was great they were calling it out in the threat model, but I didn't know if there was more we could do to protect them or if it's something we should consider modeling for in the future.</p>
+<p id=217b class="phone s07"><cite>Dave_Longley:</cite> We might want to do a better job of explaining how these URLs are all capability URLs, but this is a layering situation. the fact that other mechanisms have URLs that are not capability They're discoverable just means that anybody can find them and use them. The capability URL means that it's not a discoverable URL. You have to be given the URL to use it. But that doesn't preclude additional protections being used on top of that. It just gives you yet if you don't need additional protections, it's good enough. but it's giving you the capability feature itself is an additional protection above and beyond discoverable URLs. So if we were to draw this as an onion or something, the discoverable URLs have the least amount of they have protection whatsoever.</p>
+<p id=dab0 class="phone s07"><cite>Dave_Longley:</cite> Then you can layer capability URLs on top of that and then you can layer additional things like asking for VCs or did off or whatever it is you want inside of the protocol of choice. And so each one of those things can make it more and more challenging for someone to successfully p pass whatever gates you've set up.</p>
+<p id=b632 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good. Okay, let's try to get to some PRs. not that we're not, but get to the other ones. Eric, I see I didn't quite follow the text.</p>
+<p id=4e13 class="phone s01"><cite>Patrick_St-Louis:</cite> you've been trying to run the commands. is it okay?</p>
+<p id=27a4 class="phone s03"><cite>Eric_Schuh:</cite> Yeah, I ran the commands and…</p>
+<p id=1834 class="phone s03"><cite>Eric_Schuh:</cite> it ended up changing every single file. It looks like so don't know. I'm not sure where things fell apart, but I think the clean Yeah,…</p>
+<p id=bfd0 class="phone s01"><cite>Patrick_St-Louis:</cite> This is not what we want, right?</p>
+<p id=1735 class="phone s03"><cite>Eric_Schuh:</cite> the cleanest way is maybe for me to just redo this from scratch.</p>
+<p id=4e6d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. …</p>
+<p id=39de class="phone s03"><cite>Eric_Schuh:</cite> I'm not sure unless someone has a better suggestion.</p>
+<p id=ee1c class="phone s08"><cite>Benjamin_Young:</cite> No, I think your plan is right.</p>
+<p id=6f1d class="phone s08"><cite>Benjamin_Young:</cite> I think what it's surfacing is that the line endings were probably inconsistent the whole time and now it's making them consistent. although it does look entire.</p>
+<p id=ecf2 class="phone s01"><cite>Patrick_St-Louis:</cite> we're starting to spec over.</p>
+<p id=2200 class="phone s08"><cite>Benjamin_Young:</cite> So, maybe what was selected was super different. I don't know.</p>
+<p id=cbf8 class="phone s01"><cite>Patrick_St-Louis:</cite> That's what's happening at night.</p>
+<p id=10002 class="phone s02"><cite>Nate_Otto:</cite> There should just be a separate issue open for inconsistent line endings or just a separate PR open that resolves them outside of the context of adding a new feature and then this PR can be rebased on successfully merged line ending fix. It looks like a few files are mixed up. I wasn't able to do adequate research to determine if it was all of them or just three of them initially. seen Maybe it was just three, including the file that the PR renames to exchange verifiable presentation.</p>
+<p id=7132 class="phone s01"><cite>Patrick_St-Louis:</cite> Is someone able to create this issue?</p>
+<p id=ad0f class="phone s02"><cite>Nate_Otto:</cite> I can do</p>
+<p id=cff4 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you. Thanks a lot, I'm just going to put in an objection here for good pending fix to let's leave this one then. okay.</p>
+<p id=fad9 class="phone s01"><cite>Patrick_St-Louis:</cite> We got to tackle this one. let's do it. We got a lot of time. So, this is an issue. It's been open three weeks ago. There's been quite some discussion on it. We have probably discussed it before.</p>
+<p id=75d3 class="phone s01"><cite>Patrick_St-Louis:</cite> A lot of it is suggestions. why don't you give us a little status update for this?</p>
+</section>
+
+<section>
+<h3 id=e24f>Threat Model Translation PR</h3>
+<p id=da5e class="phone s03"><cite>Eric_Schuh:</cite> Yeah. …</p>
+<p id=e17e class="phone s03"><cite>Eric_Schuh:</cite> since it's been open a while, I'll just give a quick refresher. this, PR is attempting to translate from our old privacy and security consideration sections into the threat model. So I took the existing text of the privacy and consider privacy and security considerations and did my best to translate them into threats with responses to capture these same concepts. ended up with 11 new threats here. I see there's maybe some new comments since I last looked at this earlier today. but I think maybe pending hopefully just some editorial changes that are being suggested there. I don't have any more content here. I believe Coyote has been able to take a pass and did an update. we also resolved kind of the two outstanding sections of the security consideration that weren't transformed into threats.</p>
+<p id=cc00 class="phone s03"><cite>Eric_Schuh:</cite> One of those was added to the conformance section of the main specification as a note and the other was added to the introduction of the threat model itself. so yeah, unless someone has other content revisions that they'd like to see. I think pending I guess looks like there was some duplication. I think that resulted from some weird GitHub behavior at some point, but Coyote, go ahead.</p>
+<p id=8f1a class="phone s04"><cite>Kayode_Ezike:</cite> Yeah, again thanks a lot for your work on this. Yeah, that was one of the issues was that it was duplication for some of the suggestions but also I think one of the bigger ones is that in the latest version of the spec we started to basically outline all the threats in line from the main landing page. So before it was just like we just linked to the external document and now we're outlining it. So that used to be added here. I know we discussed eventually having a solution…</p>
+<p id=c80e class="phone s04"><cite>Kayode_Ezike:</cite> where we wouldn't have to actually do that ownorous work but now just for consistency we would have to also add that section …</p>
+<p id=e864 class="phone s03"><cite>Eric_Schuh:</cite> those should already be added.</p>
+<p id=a251 class="phone s03"><cite>Eric_Schuh:</cite> When we merged your PR which was the threat model revision itself that added those inlines. I did resolve the merge conflicts here and I believe I did add the new threats to that inline list on this PR already.</p>
+<p id=22da class="phone s04"><cite>Kayode_Ezike:</cite> interesting. I didn't see that. Okay, I'll have to Maybe I didn't expand it.</p>
+<p id=0f9e class="phone s03"><cite>Eric_Schuh:</cite> Would have been in the main index.html.</p>
+<p id=5e9c class="phone s04"><cite>Kayode_Ezike:</cite> Maybe that's what it was that case. Never mind. the only other thing I'll give a comment about it. first let's just look at what Patrick's looking at. Yeah. Anyways, the only other thing that I was going to say, there's one of I think T38. Yeah. Mish handle status. If you click on that one, there was one comment I left there. I don't see the comment anymore. But basically, this was one of the ones that I felt was a little confusing and I think the new language you have there is better, but the import of the actual threat is not what I I thought it was a privacy concern. It sounds to be more like a denial of service.</p>
+<p id=e71f class="phone s04"><cite>Kayode_Ezike:</cite> For example, basically whenever you delete a credential and you also delete the status entries for that credential, what happens in the verification flow? And it's a similar that I think threat T7 is not in this PR, but it's a similar thing where if the status service is down what do you do? So it's a similar flavor to that. That's more of like a denial of service attack. I left the suggestion for that earlier but I don't see here anymore. Basically that would change that taxonomy class and that can be added but also would change both the name of the threat as well as the file name which is important because it want derived from the other and in the actual render rendering but that's the only other thing that I think stood out and…</p>
+<p id=8718 class="phone s04"><cite>Kayode_Ezike:</cite> I can I guess just read the comments that I added earlier. I'm not sure what happened to them, but go ahead.</p>
+<p id=e90e class="phone s03"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=8c9c class="phone s03"><cite>Eric_Schuh:</cite> That sounds good. So I guess in my head the only thing left is it looks like there was some duplication so that needs to be resolved. that coyotes pointed out And then Coyot if you could get your suggestions, I guess, back in from whatever happened. I'll go through those and, ping you again, Coyote, for a final review. And hopefully we can get this merged maybe before next week's call if, no one else has any content changes.</p>
+<p id=716f class="phone s03"><cite>Eric_Schuh:</cite> it's kind of just been out there for a few weeks and we have other people pushing threat model updates that are somewhat dependent on the threat indices. and since the tooling doesn't handle the reumbering of the threats automatically as of yet, it's going to cause more headaches the longer we leave this u languishing. So, …</p>
+<p id=4e8b class="phone s03"><cite>Eric_Schuh:</cite> yeah, Coyote, I'll keep an eye out for your suggestions and try to follow you quickly, to get the last few changes in.</p>
+<p id=aaa0 class="phone s04"><cite>Kayode_Ezike:</cite> Great. Thanks a lot.</p>
+<p id=b5c6 class="phone s04"><cite>Kayode_Ezike:</cite> And I did notice that you added the inline outlining.'m about that. So, thanks for that.</p>
+<p id=76da class="phone s03"><cite>Eric_Schuh:</cite> Yep, no worries.</p>
+<p id=3c5f class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. yeah. Okay. …</p>
+<p id=423c class="phone s01"><cite>Patrick_St-Louis:</cite> just need to Yes, man.</p>
+<p id=12a3 class="phone s06"><cite>Manu_Sporny:</cite> U plus I wanted to merging this as soon as possible…</p>
+<p id=cdef class="phone s06"><cite>Manu_Sporny:</cite> but because we're talking about threat models I had a question given that both I thought Joe and Eric are here but I wanted to wait until we move on to the next topic.</p>
+<p id=a6bd class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, all I was going to say is yeah, so there's just some rebates needed address the last comments and we'll get this merge as soon as possible. There's something failing with the CI here. Not too sure. Maybe I'll look at that. I'm not sure you did you want to just talk about something or was it related to another PR?</p>
+</section>
+
+<section>
+<h3 id=3ec2>Security Review Of Recognized Entities</h3>
+<p id=5233 class="phone s06"><cite>Manu_Sporny:</cite> It was related to what Eric said and it does involve this PR but this is not to say that we should modify this PR in any way before merging it other than what we've already t talked about. I wanted to talk about so we got a security review on one of the VC data model the recognized entity specs and there is some guidance in there Joe Eric that I'm curious to hear your take on so specifically let me just do a new topic and provide a link to this commentary this is the security review that was done on recognized entities. and it is a significant amount of feedback. I don't know if Simone spent this much time doing this or this was AI assisted.</p>
+<p id=0682 class="phone s06"><cite>Manu_Sporny:</cite> But in one of the things he basically says that we need to put the security and privacy considerations back, make it show up in the appendex, and then put the thread model in that single section. he did note this is an editorial suggestion. I don't know how much of a suggestion is. It seems like he's got some pattern in his head on potentially something that the threat modeling group has decided on and it would require us to redo all of our kind of references the way we're referencing the threat model in across all the specs. So Joe, do you know what's going on here? Is this like a new Yeah,…</p>
+<p id=8a0d class="phone s09"><cite>Joe_Andrieu:</cite> Which section in the comment are you referring to?</p>
+<p id=12ef class="phone s06"><cite>Manu_Sporny:</cite> Let me grab the screen real quick.</p>
+<p id=9d05 class="phone s06"><cite>Manu_Sporny:</cite> So this section title and purpose thing where we have this boilerplate language where we're like hey W3C is moving to a holistic threat modeling approach here are the threat models here's the high level sections threats identified in the threat model and brief descriptions of them and then in the security and privacy consideration section We're like, &quot;Hey, you should take a look at the threat model because that's where we talk about security and privacy considerations now.&quot; but Simone is asking us to put it back. and so I don't know what to do here because if we have to do this for recognized entities, we're going to have to do it for VCOM and all the other specs.</p>
+<p id=4ebf class="phone s06"><cite>Manu_Sporny:</cite> So do you have any insight into why he's asking us to put this back they're just not No,…</p>
+<p id=57f4 class="phone s09"><cite>Joe_Andrieu:</cite> I'm pulling up the version that he's commenting on.</p>
+<p id=79fb class="phone s09"><cite>Joe_Andrieu:</cite> I think so I was a little confused when you introduced it about the appendix and not the appendix. So right now the threat model is in the appendix but there is no security and privacy consideration sections right</p>
+<p id=9033 class="phone s06"><cite>Manu_Sporny:</cite> they're not put in the table of contents, So, you can go to them. We had to put those anchors in there because the, security and privacy review documents haven't been updated and they asked for them. So, I created them. So, if you go there, you can see here there's security security and privacy considerations, but we say hey, you should look at the threat model. And then you click here and that takes you to the threat model thing.</p>
+<p id=d1d9 class="phone s06"><cite>Manu_Sporny:</cite> and that describes …</p>
+<p id=e550 class="phone s09"><cite>Joe_Andrieu:</cite> Yep.</p>
+<p id=f774 class="phone s06"><cite>Manu_Sporny:</cite> what this thing is. it points to other documents security and privacy or threat models you should take a look at and then it goes into highle descriptions of target implementation threats and stuff like that. And I think he's saying put it back. combine security and privacy into one section. and then dump this text into it. I'm pretty sure I disagree strongly with that approach.</p>
+<p id=c67c class="phone s06"><cite>Manu_Sporny:</cite> Because it doesn't use the old format, It's yet another new thing. and then it kind of buries the threat model in something called security and privacy considerations.</p>
+<p id=e3ac class="phone s09"><cite>Joe_Andrieu:</cite> So, one thing I know,…</p>
+<p id=085f class="phone s09"><cite>Joe_Andrieu:</cite> not because I've talked to him about this particular feedback, I specifically said, &quot; don't talk to me about it, Simone. I want your input as a security guy independent of me as a threat modeling guy because I'm too close to the data. So I have not spoken with him about this in detail. But the process does require the security considerations and privacy considerations. and I think they should be in the table of contents because I think people do use a table of contents to jump to those sections. so I agree with them that was a minor error, to make those no talk for whatever reason.</p>
+<p id=56e1 class="phone s09"><cite>Joe_Andrieu:</cite> The sense that I had of how a group might navigate this is that in the security considerations and privacy consideration section and it's interesting that he proposes merging them together that I really don't have an opinion about whether or not they're merged but we do need sections and in those sections to introduce the threat model and what it means to introduce I think is an open issue. and so I don't think there's clear guidance there. One of the things we've talked about and that respspec threats tried to provide as a mechanism but I think it's only halfway there given how I've seen you use it I think in maybe a version of this where you had an alternate table of contents that had a little bit more detail in it. as opposed to the talk that was just the name and the tag.</p>
+<p id=10003 class="phone s09"><cite>Joe_Andrieu:</cite> So you could put a talk in here, a table of contents, for the security related threats, right in the security consideration section. which is then linking to the actual threat model that has a detailed discussion of those threats. and how much information you put in the security consideration section is to my view an editor's choice. how do we want to direct people to understand what the major threats are? And it may be that I mean my sensibility is if you just throw the threat model at them depending on the sophistication of the threat model people may be able to follow it. but it may also deserve a couple of paragraphs.</p>
+<p id=a242 class="phone s09"><cite>Joe_Andrieu:</cite> I think in one of our bits of work, Manny, we were talking about, there are a bunch of threats that happen on the web, you should be familiar with how the web works, Something along those lines you have to have good robust software that's conformant, and in addition to that, this spec has these particular considerations. I don't know if that helps.</p>
+<p id=f12d class="phone s06"><cite>Manu_Sporny:</cite> I mean it kind of right this is the things that are confusing are he's suggesting something that we don't do at W3C per process. So that's issue one. if he's suggesting do a separate security considerations and privacy considerations section then the editors have to go in and I mean I guess hand place these target threats implementation threats into their own you end up duplicating the talk in that case or you lose the fact that it's a target threat or an implementation threat</p>
+<p id=ee40 class="phone s06"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=752b class="phone s09"><cite>Joe_Andrieu:</cite> So hold let me…</p>
+<p id=9509 class="phone s09"><cite>Joe_Andrieu:</cite> if I could interrupt man I didn't follow why I didn't follow what was not processed like what is process is you need a security consideration section and</p>
+<p id=0b60 class="phone s06"><cite>Manu_Sporny:</cite> A separate security consideration section and a separate privacy consideration section per the W3C process. and per the review requirements, the horizontal review forms all give us a link to your security consideration section,…</p>
+<p id=93c0 class="phone s09"><cite>Joe_Andrieu:</cite> I Yeah,…</p>
+<p id=1976 class="phone s06"><cite>Manu_Sporny:</cite> give us a link to your privacy consideration section.</p>
+<p id=7868 class="phone s09"><cite>Joe_Andrieu:</cite> …</p>
+<p id=f7fb class="phone s06"><cite>Manu_Sporny:</cite> Are they separate? Right.</p>
+<p id=101a class="phone s09"><cite>Joe_Andrieu:</cite> plus one to that. I agree that merging them is pushing the process a little bit and I don't think there's benefit to us to try and do that. we have enough complications with process about this threat modeling to let's try and keep it simpler but if we have a separate security considerations and privacy considerations which maybe have a short version talk like what's happening here is you actually have two different threat models or you have this extended table of contents that you are calling a threat model I think</p>
+<p id=77c6 class="phone s09"><cite>Joe_Andrieu:</cite> That's a misnomer,…</p>
+<p id=c4e9 class="phone s09"><cite>Joe_Andrieu:</cite> A threat model should have all the structure that the threat modeling guide talks about. And these table of content listings is just a listing. It's not the threat model itself. if you scroll down, are the actual detail threats in that appendix?</p>
+<p id=d7a3 class="phone s06"><cite>Manu_Sporny:</cite> No, no,…</p>
+<p id=fb22 class="phone s06"><cite>Manu_Sporny:</cite> no, no. This is just linking to the threat model. It's summarizing. So, this could say, table of contents for threat model or something like that, right? …</p>
+<p id=77b3 class="phone s06"><cite>Manu_Sporny:</cite> but if we separate this into a separate security considerations and privacy considerations section, we're going to end up repeating target threats, implementation threat. Do you see what I'm saying? they're Going to list target threats twice.</p>
+<p id=8089 class="phone s09"><cite>Joe_Andrieu:</cite> I don't…</p>
+<p id=e0a4 class="phone s09"><cite>Joe_Andrieu:</cite> because I think you would move it from here to security considerations like No,…</p>
+<p id=2624 class="phone s01"><cite>Patrick_St-Louis:</cite> We're at the top of the hour. sounds like this discussion is very engaged. so I will just propose to resume it on next week.</p>
+<p id=e553 class="phone s06"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=7d26 class="phone s01"><cite>Patrick_St-Louis:</cite> I have a meeting to go sorry too. I didn't want to intervene.</p>
+<p id=5af2 class="phone s09"><cite>Joe_Andrieu:</cite> no, that's a good chair's call.</p>
+<p id=6097 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=671d class="phone s09"><cite>Joe_Andrieu:</cite> I appreciate it actually.</p>
+<p id=0e9d class="phone s03"><cite>Eric_Schuh:</cite> Yeah, I'm here.</p>
+<p id=cba9 class="phone s01"><cite>Patrick_St-Louis:</cite> We'll make sure to put this on the topic for next week.</p>
+<p id=87f9 class="phone s09"><cite>Joe_Andrieu:</cite> Cool. Cheers.</p>
+<p id=c12f class="phone s01"><cite>Patrick_St-Louis:</cite> Thanks everyone for attending. Really good discussions today and we'll resume these next week. Bye.</p>
+<p id=4800 class="phone s04"><cite>Kayode_Ezike:</cite> Eric, if you're there. Yes. So, I found the comment. For some reason, it got buried in the review that it was a response to a comment I made in a previous review. But in any event, this is the comment I'm posting in chat right here that has the suggestions that I had for threat T38.</p>
+<p id=39f8 class="phone s04"><cite>Kayode_Ezike:</cite> So basically just to rename it change the tags and the taxonomy class and the file name change as well. Let me know if you can see that.</p>
+<p id=f0a8 class="phone s03"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=5153 class="phone s03"><cite>Eric_Schuh:</cite> Okay, there it just loaded.</p>
+<p id=d5c2 class="phone s04"><cite>Kayode_Ezike:</cite> Okay. Awesome.</p>
+<p id=c2d6 class="phone s03"><cite>Eric_Schuh:</cite> Okay. Yeah, I will take a second look at that. let me save that somewhere so back to … Kayode Ezike:</p>
+<p id=9f05 class="phone s04"><cite>Kayode_Ezike:</cite> And that's in addition to of course all the other comments that I just left throughout the last hour or so. But thanks again.</p>
+<p id=ea48 class="phone s03"><cite>Eric_Schuh:</cite> Yep, sounds good. Yep. just so I'll probably try to do this first thing tomorrow morning. So, I'll ping you when I'm done.</p>
+<p id=3a4d class="phone s04"><cite>Kayode_Ezike:</cite> Okay, perfect. Thank you.</p>
+<p id=c244 class="phone s03"><cite>Eric_Schuh:</cite> Have a good one. Bye.</p>
+<p id=fff8 class="phone s04"><cite>Kayode_Ezike:</cite> You too. Cheers everyone. Meeting ended after 01:01:59 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
