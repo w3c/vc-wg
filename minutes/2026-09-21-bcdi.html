@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 21 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>21 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony_Mott, Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Kevin_Dean, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#9cc1">Blog Post and Press Release Discussion</a></li>
+<li><a href="#10002">Data Integrity Issues and Optimizations</a></li>
+<li><a href="#11ff">BBS Specification Progress at IETF</a></li>
+<li><a href="#e2a2">Bitstring Status List Publication</a></li>
+<li><a href="#f2f1">VC Barcodes Internationalization Review</a></li>
+<li><a href="#7f60">Forgery Defense Status</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=838b class="phone s01"><cite>Ivan_Herman:</cite> Sorry, I'm late.</p>
+<p id=ed8d class="phone s02"><cite>Wesley_Smith:</cite> Hey folks, sorry I'm had a call run slightly welcome to the September 21st meeting of the barcodes data integrity. and now also bitstring status list and forgery defense task force. the agenda for today is much the same as normal. We will go through agenda, process, introduction, announcement items and then as needed we will do pull request review and issue processing for the previously mentioned specs as needed. with that in mind, does anybody have any announcement, introduction, agenda requests or process items they'd like to discuss?</p>
+<p id=680b class="phone s02"><cite>Wesley_Smith:</cite> All right. It doesn't sound like Ivonne, I know you and Manu were discussing the publication of the threat models extensively on the mailing list.</p>
+<p id=65a7 class="phone s02"><cite>Wesley_Smith:</cite> Is that a topic that could use some call time today?</p>
+<p id=71fb class="phone s01"><cite>Ivan_Herman:</cite> Not for me.</p>
+<p id=b735 class="phone s01"><cite>Ivan_Herman:</cite> Money is not yet here. Maybe Wesley Smith:</p>
+</section>
+
+<section>
+<h3 id=9cc1>Blog Post and Press Release Discussion</h3>
+<p id=d454 class="phone s02"><cite>Wesley_Smith:</cite> All right, that sounds good. I suppose one agenda item I'd like to briefly discuss the blog post press release content that we shared last week as that came about because of a discussion on this task force call. I think we should reiterate that a little bit and make sure we're kind of all on the same page going into the larger working group call on Wednesday.</p>
+<p id=1d5e class="phone s02"><cite>Wesley_Smith:</cite> No hand.</p>
+<p id=f75a class="phone s01"><cite>Ivan_Herman:</cite> Yeah. No,…</p>
+<p id=10db class="phone s01"><cite>Ivan_Herman:</cite> it will be on the agenda for the global call. I've just come out of the chair's code. That's why I'm saying</p>
+<p id=ae28 class="phone s02"><cite>Wesley_Smith:</cite> That sounds good. all right. So, if there are no other items for the beginning of the call today, we can go straight into that. so last week after the main working group call I sent out a draft of some text to be potentially published by the working group andor W3C. if you have not read and reviewed that text, I would very much appreciate it if you would do so. It's a short persuasive piece arguing that BC barcodes are uniquely well equipped to deal with the kind of attacks that these data breaches allow. specifically with the combination of a digital signature and a real-time revocation mechanism.</p>
+<p id=7a71 class="phone s02"><cite>Wesley_Smith:</cite> We note extensively in that piece that breaches of the form that we just saw with hundreds of millions of images of physical documents, highquality, high resolution scans of these documents, digital signatures don't do much. because a high resolution image of a digital signature embedded in a barcode will pass verification just like the original. and so there are attacks that you can do with those leaked images that a digital signature does not stop but a revocation mechanism does. Ela, go ahead.</p>
+<p id=bfb7 class="phone s03"><cite>Elaine_Wooton:</cite> Yeah, I hate to even use time for this, but I just wanted to thank you for writing that up,…</p>
+<p id=20a9 class="phone s03"><cite>Elaine_Wooton:</cite> and I think you did a great job.</p>
+<p id=7638 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=96ae class="phone s02"><cite>Wesley_Smith:</cite> thank you, Lane. Much appreciated. I'm seeing lots of nice emojis. Thank you all. I assume that means that most of you have read it. that's great. If you have not, please do. and any feedback at all, please let me know. Much appreciated.</p>
+<p id=0ea7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Could you possibly paste a link to that?</p>
+<p id=e1fe class="phone s02"><cite>Wesley_Smith:</cite> Okay. Yeah, let me go find that for you. Phil, go ahead while I do that.</p>
+<p id=51dd class="phone s05"><cite>Phillip_Long:</cite> Yeah, I should have said this request for announcements. there is a meeting in November in the US in Park City, Utah associated with the SETI project SEDI which is working on state endorsed digital identifiers where they will be announcing a coalition of US states that are interested in following Utah's lead. it is coincident with the National Governor's Association in the US which is also in Park City that same week and that's no coincidence as they're hoping to get as many governors and other state officials to come over to the SETI meeting. and I mention it mainly because one of the main topics is fraud and the threat of fraud…</p>
+<p id=da60 class="phone s01"><cite>Ivan_Herman:</cite> Oops.</p>
+<p id=97a8 class="phone s05"><cite>Phillip_Long:</cite> related to the announcements that you just asked us reminded us to reread.</p>
+<p id=748d class="phone s05"><cite>Phillip_Long:</cite> And so if anybody's interested in that meeting, let me know and I can give you details.</p>
+<p id=7f85 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, thank you for the heads up there.</p>
+<p id=8d00 class="phone s02"><cite>Wesley_Smith:</cite> It sounds like there are quite a lot of these meetings coming up between, powerful organizations that are very interested in things like physical document fraud and security. all of that is I think good motivation for us to be more engaged with the world on what we're doing. So with that note, I think maybe would it be worth discussing what the next steps are? Ivonne, I know that we had talked about a blog post. We had talked about a more formal press release. We're going to discuss with the working group. and any decision we make needs to be approved by the working group for the working group to engage.</p>
+<p id=fd20 class="phone s02"><cite>Wesley_Smith:</cite> However before that call I am curious what you think the realistic next steps are going to be if the working group agrees to our proposed text.</p>
+<p id=89e0 class="phone s01"><cite>Ivan_Herman:</cite> Blog is already accepted by Kohali.</p>
+<p id=44a9 class="phone s01"><cite>Ivan_Herman:</cite> She was asking for some metadata which we have to agree probably on Wednesday. but this is absolutely clear that it will go through press release frankly I don't believe so we can ask her when we submit we can ask her…</p>
+<p id=4801 class="phone s02"><cite>Wesley_Smith:</cite> Understood.</p>
+<p id=d02a class="phone s01"><cite>Ivan_Herman:</cite> but as I said I don't even know when we had a press release for the last</p>
+<p id=26c0 class="phone s02"><cite>Wesley_Smith:</cite> So, is it possible that potentially we could set up a meeting to discuss that option? I'd be happy to get on a call with W3C staff and advocate for the kind of the immediacy of the problem and…</p>
+<p id=10b7 class="phone s01"><cite>Ivan_Herman:</cite> The problem is the problem.</p>
+<p id=6eb0 class="phone s02"><cite>Wesley_Smith:</cite> Sorry. Go ahead.</p>
+<p id=e4db class="phone s01"><cite>Ivan_Herman:</cite> The problem is simply that I have no idea how the comm team organizes press releases these days.</p>
+<p id=2bac class="phone s02"><cite>Wesley_Smith:</cite> So I …</p>
+<p id=c2c4 class="phone s01"><cite>Ivan_Herman:</cite> It's nothing against this topic.</p>
+<p id=a42e class="phone s02"><cite>Wesley_Smith:</cite> sorry. Understood.</p>
+<p id=3714 class="phone s01"><cite>Ivan_Herman:</cite> It's not the problem with this topic at all.</p>
+<p id=4240 class="phone s02"><cite>Wesley_Smith:</cite> It really sounds like we need to do some kind of discovery then. Would the best way to do that be getting the comm's team on a meeting? So we can ask say hey and we don't need to even overfocus on a press release. We can say we're going to do a blog post on this. That's wonderful. the iron is extremely hot on this particular topic right now. These organizations are going to be meeting in the next month to discuss this. There was recently the largest ever security vulnerability of its kind in the wild and it's what our technology solves. That sort of thing.</p>
+<p id=1a4d class="phone s02"><cite>Wesley_Smith:</cite> I think if we can make that kind of argument on the call with the comm's team and say, if we can do a press release, great. If we can't do a press release, what can we do? We want to get the word out here. The iron's hot.</p>
+<p id=f49a class="phone s02"><cite>Wesley_Smith:</cite> What can we do besides a blog post to have, W3C staff and leadership more actively engaged with this work? Does that sound like something we could do?</p>
+<p id=cf2e class="phone s01"><cite>Ivan_Herman:</cite> We can try.</p>
+<p id=9d45 class="phone s01"><cite>Ivan_Herman:</cite> Let's not focus on press release. Wesley Smith:</p>
+<p id=594c class="phone s02"><cite>Wesley_Smith:</cite> Yeah, that's totally fine. we can say, &quot;Hey, the blog post is great. We want to do more. How can we better distribute this, platform it, so on and so forth.&quot; and I'm happy to do that kind of advocacy. set up that meeting, whatever's necessary. So let me know.</p>
+<p id=09c5 class="phone s01"><cite>Ivan_Herman:</cite> Once we have the stuff ready, which should be Wednesday evening my time, then we will have to contact her. I don't know…</p>
+<p id=35df class="phone s02"><cite>Wesley_Smith:</cite> Right. Yep.</p>
+<p id=c5b7 class="phone s01"><cite>Ivan_Herman:</cite> who will do that.</p>
+<p id=6001 class="phone s01"><cite>Ivan_Herman:</cite> probably the chairs if it is something which is in the name of the burking group and we can formulate something on Wednesday on what else we should say kali but then we'll see…</p>
+<p id=7936 class="phone s01"><cite>Ivan_Herman:</cite> what she replies I don't know…</p>
+<p id=e3a6 class="phone s02"><cite>Wesley_Smith:</cite> That sounds good. and I'll try to make clear to them that we're interested in, platforming this in any way possible. and working with the comm's team to do so.</p>
+<p id=36bb class="phone s01"><cite>Ivan_Herman:</cite> what the mechanism they have these days. yeah,…</p>
+<p id=40b2 class="phone s02"><cite>Wesley_Smith:</cite> That sounds like what we need to have that meeting to find out. right,…</p>
+<p id=b0f9 class="phone s01"><cite>Ivan_Herman:</cite> I wasn't involved in the com team for many years now. So that's…</p>
+<p id=6785 class="phone s02"><cite>Wesley_Smith:</cite> that sounds good.</p>
+<p id=d5e4 class="phone s01"><cite>Ivan_Herman:</cite> why I'm a bit evasive because I just simply don't know.</p>
+<p id=7922 class="phone s02"><cite>Wesley_Smith:</cite> So you'd mentioned that you said the blog post was very likely to happen.</p>
+<p id=067c class="phone s02"><cite>Wesley_Smith:</cite> Has the comms team so that the text has already been reviewed by the comm's team?</p>
+<p id=a6fd class="phone s01"><cite>Ivan_Herman:</cite> No, it's not very likely to happen.</p>
+<p id=e601 class="phone s01"><cite>Ivan_Herman:</cite> It has been accepted. It will happen. she already saw the text and she was asking for some code that they could reuse somewhere and she was asking whether we produce I was wondering whether the pictures you have in the spec can be shared as part of the blog post,…</p>
+<p id=09eb class="phone s01"><cite>Ivan_Herman:</cite> things like that.</p>
+<p id=aa0c class="phone s02"><cite>Wesley_Smith:</cite> Yeah, sorry.</p>
+<p id=5fc5 class="phone s02"><cite>Wesley_Smith:</cite> Was there an email from you that I missed on that topic?</p>
+<p id=bdc3 class="phone s01"><cite>Ivan_Herman:</cite> I was wondering why there was an email from her.</p>
+<p id=f4af class="phone s02"><cite>Wesley_Smith:</cite> If I missed it, I apologize. let's work that out off the call.</p>
+<p id=ab02 class="phone s01"><cite>Ivan_Herman:</cite> I see what happened. She sent it to the chairs only. Okay.</p>
+<p id=227e class="phone s01"><cite>Ivan_Herman:</cite> So where should I send it to you only okay I do that now and…</p>
+<p id=4252 class="phone s02"><cite>Wesley_Smith:</cite> Yeah,…</p>
+<p id=45fc class="phone s02"><cite>Wesley_Smith:</cite> that's fine. maybe CC Monu.</p>
+<p id=3bed class="phone s01"><cite>Ivan_Herman:</cite> then we can involve whoever as we think that's…</p>
+<p id=890e class="phone s02"><cite>Wesley_Smith:</cite> That sounds good. Yeah, we can work that out.</p>
+<p id=4d86 class="phone s01"><cite>Ivan_Herman:</cite> what I'm saying she has already agreed that's not the …</p>
+<p id=7060 class="phone s02"><cite>Wesley_Smith:</cite> Okay, wonderful. yeah, and maybe if that's an active thread with her, then we could broach the topic of other publication venues and Understood.</p>
+<p id=ffff class="phone s01"><cite>Ivan_Herman:</cite> I know that the blog is spread over various social sites which we do as the members or whoever else is around and W3C does it sort of officially on Masttodon on I think blue sky I am not</p>
+<p id=3b00 class="phone s01"><cite>Ivan_Herman:</cite> But I forward it to blue sky. So that's easy. I don't think that we are communicating through X for various reasons that you can imagine.</p>
+<p id=10000 class="phone s01"><cite>Ivan_Herman:</cite> U so those things will happen almost automatically as part of the blog post. So that's not a question. I don't know what else is out there that could be done this way.</p>
+<p id=af0f class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=46f3 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> My god.</p>
+<p id=29a5 class="phone s02"><cite>Wesley_Smith:</cite> I will make sure I get in touch with her to find that out. And Ivon,…</p>
+<p id=d275 class="phone s01"><cite>Ivan_Herman:</cite> Yeah. Cool.</p>
+<p id=b8d7 class="phone s02"><cite>Wesley_Smith:</cite> thank you so much for …</p>
+<p id=10001 class="phone s02"><cite>Wesley_Smith:</cite> prosecuting this through to this point and getting that blog post ready to go. Ted, do you have your hand up?</p>
+<p id=2a41 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, once that blog post live on the W3 site. Each and every one of us should post pointers back to it from our ex or Twitter or Blue Sky or LinkedIn or whatever social site.</p>
+<p id=e2dd class="phone s01"><cite>Ivan_Herman:</cite> Yes, absolutely.</p>
+<p id=ee61 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Together we have a lot more reach than any of us individually including W3 individually.</p>
+<p id=4513 class="phone s01"><cite>Ivan_Herman:</cite> I agree. I don't think that the press release would have more effect.</p>
+<p id=3368 class="phone s02"><cite>Wesley_Smith:</cite> That sounds good.</p>
+<p id=683d class="phone s02"><cite>Wesley_Smith:</cite> Plus one. We should definitely do that. All anybody have anything else to note on that topic? or are we good to Ah,…</p>
+<p id=031d class="phone s01"><cite>Ivan_Herman:</cite> So I had this question about the illustrations.</p>
+<p id=b531 class="phone s01"><cite>Ivan_Herman:</cite> She's asking that is it something that we can share.</p>
+<p id=0ed6 class="phone s02"><cite>Wesley_Smith:</cite> I don't know. I have to double check exactly what's there to see how useful that stuff will be. But yeah, for I mean right I mean I guess…</p>
+<p id=c600 class="phone s01"><cite>Ivan_Herman:</cite> It's only illustration. it's the driving license with our stuff on it.</p>
+<p id=6024 class="phone s02"><cite>Wesley_Smith:</cite> what I'm saying is it will be an image of a driver's license with a slightly bigger barcode and…</p>
+<p id=6721 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Any picture increases pickup and…</p>
+<p id=e90e class="phone s01"><cite>Ivan_Herman:</cite> Yeah. I understand the Yes,…</p>
+<p id=302c class="phone s02"><cite>Wesley_Smith:</cite> then we'll say trust us this is a special barcode.</p>
+<p id=0b66 class="phone s06"><cite>Greg_Bernstein:</cite> But it's a picture.</p>
+<p id=f004 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. Yeah.</p>
+<p id=885d class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> actual reading of the post etc.</p>
+<p id=606c class="phone s01"><cite>Ivan_Herman:</cite> it's all touching. Okay.</p>
+<p id=4076 class="phone s02"><cite>Wesley_Smith:</cite> Absolutely. I will want to verify that the exact pictures used are the most up-to-date in case technical folks want to dissect that blog post and point out problems and that sort of thing. so I'll make sure that the right images are used. but that should be totally fine. Yeah. All right. Anything else on that topic? All right, thank you all for the engagement thus far. Greg Bernstein, I saw you posted links to some data integrity issues. Would you like to take the floor for a data integrity discussion now?</p>
+<p id=2353 class="phone s06"><cite>Greg_Bernstein:</cite> that would be great.</p>
+<p id=fc23 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=a628 class="phone s06"><cite>Greg_Bernstein:</cite> …</p>
+<p id=2507 class="phone s02"><cite>Wesley_Smith:</cite> over to you.</p>
+</section>
+
+<section>
+<h3 id=10002>Data Integrity Issues and Optimizations</h3>
+<p id=d618 class="phone s06"><cite>Greg_Bernstein:</cite> we've been proceeding as usual. we've had PRs that we've been incorporating and updating and things like that, but, a couple issues just got posted. one is a bug in our salted hash approach which can lead to revealing data. Basically, I think I made a mistake and overprotected some of the fields which led to having to reveal more than we needed to with the things called the salts. So, there was a very good issue posted by somebody named Devin out of Beijing. and so I'm updating the shock</p>
+<p id=750a class="phone s06"><cite>Greg_Bernstein:</cite> approach right now and I think I haven't confirmed yet there may be an indexing issue. so I still have to double check on that. The other one is I never looked into this before but for reducing an optimization for reducing the size of the alted hash approach when we have a lot of claims he's saying hey why don't we consider what's known as a Merkel tree encoding I don't know if anybody had looked at that before he cited some references even some W3C work that might have looked gone down that road. So I was going to look in that.</p>
+<p id=f60e class="phone s06"><cite>Greg_Bernstein:</cite> Dave, did we ever anybody look at any Merkel pre-based encoding of stuff?</p>
+<p id=3372 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's been explored over time. it has additional complexity. It may not be worth the additional complexity. so that's something to consider especially for larger credentials like student transcripts. once we had the the filtering signature approach or signing individual claims, that's what we call it today.</p>
+<p id=24b9 class="phone s06"><cite>Greg_Bernstein:</cite> Yep. Yeah.</p>
+<p id=80b0 class="phone s07"><cite>Dave_Longley:</cite> Once we had that approach, we didn't have to worry about all that extra complexity. So we might want to reconsider it now that we're looking at adding the salted hash stuff back in. So we might want to look and see how challenging it would be to do a Merkel tree with it.</p>
+<p id=4097 class="phone s06"><cite>Greg_Bernstein:</cite> Yeah, his issue posts were fairly complete with fixes. And then he actually asked if about looking into it. And I said, &quot; if you got some time to help me look into the complexity of that.&quot; let's see. But if you read the guy this person's posts, they were quite good at analyzing the bug in the salted hash and then he did a separate post on optimization. So I thought that was very encouraging because that also means more people are getting hands on and checking these things. so that's actually what I'm looking at.</p>
+<p id=f75f class="phone s06"><cite>Greg_Bernstein:</cite> I wanted to note that Ivonne had you notice some inconsistencies in some of our tables. I am happy to update the tables to put in the fields as long as they look okay when they get formatted and I didn't make them too many columns. But I really like having all the information in one place as much as possible. I mean, sometimes you need extra information details, but any of those kind of things, please just post the issue and suggestion about what you want Ivana has done and I can put it in or post an issue and do a PR. But I know some people don't like to do PRs.</p>
+<p id=a618 class="phone s06"><cite>Greg_Bernstein:</cite> So they just edit on them but that it'll get rolled in.</p>
+<p id=2979 class="phone s06"><cite>Greg_Bernstein:</cite> So that's what's happening there. If I okay,…</p>
+<p id=e1a2 class="phone s01"><cite>Ivan_Herman:</cite> I am not shy creating a PR…</p>
+<p id=8d10 class="phone s01"><cite>Ivan_Herman:</cite> but there were information that I am not sure about. that's why I would prefer you do that because there are some extra information in one of the I don't remember it was the hash size or something similar that I simply technically do not know. So I prefer not to go there. That's why I didn't raise a PR directly.</p>
+<p id=65a2 class="phone s06"><cite>Greg_Bernstein:</cite> no worries.</p>
+<p id=b689 class="phone s06"><cite>Greg_Bernstein:</cite> I have the one issue that's overhanging for me is I have not heard any updates from my European partners. somebody did say it was proposal season or something in Europe and so everybody's heads down writing proposals. I don't really know if that's done yet or not, but I've heard completes. I haven't heard anything. And I was just getting ready to try and update how we handle options and I was going to use BBS as my test case. This is for selective disclosure. We can have additional proof things added. there is a nice paper written about how you'd go about doing this.</p>
+<p id=d5a2 class="phone s06"><cite>Greg_Bernstein:</cite> I even saw there's going to be a NIST thing that uses a similar technique. This kind of notion of what we call committed disclosure. That means you don't reve you reveal a commitment to the thing. So it's binding to whatever value or statement you've made, but it's also hiding. And so you can use it in these zero knowledge proof things. The NIST seminar coming up has to do with verifiable voting which is very strange for NIST to be talking about now but given the current politics but this concept of committed disclosure where you then do additional proofs on it. It's a natural for</p>
+<p id=c405 class="phone s06"><cite>Greg_Bernstein:</cite> any combining with any of our selective disclosure schemes to add additional proofs about things which I call below the statement level because right now we do things at the statement level and that's where the U JSONLD RDFC stuff really shines. It breaks us down into nice consistent statements that we can work with. And that's how all the magic that we use for making selective disclosure work. But you may say, what if I want to go below the level A statement saying, I've got a bank account with X amount of dollars in it.</p>
+<p id=4727 class="phone s06"><cite>Greg_Bernstein:</cite> Instead, you want a statement that says, &quot;I've got a bank account that has at least x amount of dollars in it at least to as little as you'd like.&quot; And so that's where we're at. I published Wesley. Go ahead.</p>
+<p id=b21b class="phone s02"><cite>Wesley_Smith:</cite> I have a question about the Merkel tree topic from earlier.</p>
+<p id=2395 class="phone s06"><cite>Greg_Bernstein:</cite> That was the thought is I'd like to make it easy for us to add options through addendums or easy add just a block of text. This is an optional feature.</p>
+<p id=4745 class="phone s06"><cite>Greg_Bernstein:</cite> It all gets done in one place and we have a good hook from the selective disclosure procedures into an optional feature so we don't have to mess with the main text or we even just publish a separate document with this optional feature. That's what I'm kind of doing. So I'm looking at this structure. I was kind of using BBS as my example, but the BBS saga as far as trying to get the authors of the core draft to move forward and sometimes we get a lot of help from Europe trying to put pressure on them and sometimes Europe goes silent. So that was it.</p>
+<p id=6b82 class="phone s02"><cite>Wesley_Smith:</cite> Back to the Merkel Street topic,…</p>
+<p id=4e14 class="phone s06"><cite>Greg_Bernstein:</cite> Back to you, Wesley.</p>
+<p id=d172 class="phone s02"><cite>Wesley_Smith:</cite> I just read through, the issue that you linked. my first question and forgive my ignorance is that it seems like that would require pretty extensive protocol work because there's a tremendous amount of structure in the Merkel tree solution that isn't required in other solutions. is that the case or does what we have from a protocol perspective already sharing over the set of Merkel tree components needed to do the reconstruction and verification.</p>
+<p id=1fa0 class="phone s06"><cite>Greg_Bernstein:</cite> I let mono chime in unless he's not going to hit this issue.</p>
+<p id=8779 class="phone s08"><cite>Manu_Sporny:</cite> No, not on this issue.</p>
+<p id=4b91 class="phone s06"><cite>Greg_Bernstein:</cite> Okay. Dave, did you want to take on the Merkel tree?</p>
+<p id=1f90 class="phone s06"><cite>Greg_Bernstein:</cite> I mean,</p>
+<p id=9ff7 class="phone s07"><cite>Dave_Longley:</cite> Yeah, I don't think there's any additional protocol work that's required.</p>
+<p id=10003 class="phone s07"><cite>Dave_Longley:</cite> My understanding is when you do the issuance, you can assemble the Merkel tree. and when you're doing a derived credential, you select all the claims you want. you would produce a Merkel tree proof from from the leaves all the way up to the base Merkel thing and whoever is doing the verification has to understand that it is that the structure of that proof and that you're going from the leaves to the base but I don't think there's any additional protocol work that has to happen in order to do issuance or to ask for something or to do presentation I think everything can be done at the ends…</p>
+<p id=71f7 class="phone s07"><cite>Dave_Longley:</cite> unless there's Something I'm forgetting. I haven't looked at it in a</p>
+<p id=3cb2 class="phone s02"><cite>Wesley_Smith:</cite> So just jumping here really quick.</p>
+<p id=5d9b class="phone s02"><cite>Wesley_Smith:</cite> My understanding of what you just said is that the protocols that we have allow for appropriately abstract concept of a proof such that what can be shared over that protocol now includes things like a Merkel tree inclusion proof. So the protocol doesn't need to change, but there would need to be specification on the presenter and the issuer side for what the structure is of a Merkel tree inclusion proof, how to process how to reconstruct it and recomputee it, that sort of thing.</p>
+<p id=a725 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's right. It mean internal to the crypto suite or if we make it generalized in some way to data integrity. Wesley Smith:</p>
+<p id=39b7 class="phone s02"><cite>Wesley_Smith:</cite> Okay, cool. Thanks.</p>
+<p id=c5bc class="phone s06"><cite>Greg_Bernstein:</cite> On that note,…</p>
+<p id=d3fb class="phone s06"><cite>Greg_Bernstein:</cite> Wesley, when we started with selected disclosure, we had to carry more information about the proof to set up the proof structure. And so we did that with some seabore encoding. Once we did that, we had lots of hooks for it established the hooks we needed for BBS and the shot the salted hash approach. It also gives us hooks for options if we wanted to add feature options like these extra types of proofs. So that's where that kind of comes from.</p>
+<p id=9dda class="phone s06"><cite>Greg_Bernstein:</cite> I don't know if it gets small enough for use with barcode work because you're adding in more structure. Monu …</p>
+</section>
+
+<section>
+<h3 id=11ff>BBS Specification Progress at IETF</h3>
+<p id=a591 class="phone s08"><cite>Manu_Sporny:</cite> Yeah, I wanted to get back to the comment, Greg, that you made about BBS being stuck again at ITF. is it administrative and would it be possible to put you as an author on that document to get it to move forward? It feels like we're just stuck in administrative hell in ITF.</p>
+<p id=56b7 class="phone s06"><cite>Greg_Bernstein:</cite> I would love to say it was administrative health.</p>
+<p id=d3b1 class="phone s06"><cite>Greg_Bernstein:</cite> is the core author's lack of the IETF is driven by the authors, not the working group. So, it's harder than when we took over the W3CBS spec where the authors had kind of just abandoned things and we said, so I guess I could drop a note to the chairs. you are</p>
+<p id=5a60 class="phone s08"><cite>Manu_Sporny:</cite> It would not just be you dropping a note to the chairs. It would be the verifiable if we can have a discussion about this tomorrow in the verifiable credential working group. it would be the entire working group or at least a good chunk of it saying we need the ITF spec to move forward. it is clear that the current set of authors are not progressing it at the rate that we need it to move.</p>
+<p id=bf17 class="phone s08"><cite>Manu_Sporny:</cite> We are requesting as the W3C working group for Greg to be put in place as an author on that specification to continue to move the document through the W3C process.</p>
+<p id=1eb3 class="phone s08"><cite>Manu_Sporny:</cite> Because it's been like months of you waiting on the current authors to do something. I think we need to empower you to</p>
+<p id=5531 class="phone s06"><cite>Greg_Bernstein:</cite> Yes. and…</p>
+<p id=0cfe class="phone s06"><cite>Greg_Bernstein:</cite> and we've got cryptographic help because I mean my European partners like Anna Layman at the HPI Institute they just told me that ISO is going to start back up with BBS but I don't know if the ISO is going to be pointing ISO had to wait because BBS got updated based on a paper in 2020</p>
+<p id=8ece class="phone s06"><cite>Greg_Bernstein:</cite> 23 from our friends up at the University of Washington. and so that's the basis of the current BBS as far as the proofs and such. O I guess that's something you have to wait three years but I don't know if ISO is going to still be pointing to the IETF document too, but that's what I heard from the last thing I heard from our European people.</p>
+<p id=b9ba class="phone s06"><cite>Greg_Bernstein:</cite> But I could ask them to check in with you even.</p>
+<p id=d880 class="phone s08"><cite>Manu_Sporny:</cite> …</p>
+<p id=c062 class="phone s08"><cite>Manu_Sporny:</cite> let's I suppose neither here nor…</p>
+<p id=80da class="phone s06"><cite>Greg_Bernstein:</cite> I hate us.</p>
+<p id=3abd class="phone s08"><cite>Manu_Sporny:</cite> there. …</p>
+<p id=6dc2 class="phone s06"><cite>Greg_Bernstein:</cite> Yeah, I know.</p>
+<p id=e394 class="phone s08"><cite>Manu_Sporny:</cite> they're going to do their thing. I don't think we need to worry about it.</p>
+<p id=4a6e class="phone s06"><cite>Greg_Bernstein:</cite> Worry about it. Okay. Manu Sporny:</p>
+<p id=9f64 class="phone s08"><cite>Manu_Sporny:</cite> If they use the ITF spec, great. I think we need to worry about the specs that we have on our docket and this is one of them in the IETF. the current set of authors are enabling us to proceed.</p>
+<p id=d7bd class="phone s06"><cite>Greg_Bernstein:</cite> Yeah, they just kind of abandoned things. Yeah.</p>
+<p id=be11 class="phone s08"><cite>Manu_Sporny:</cite> So this is an official working group request to have you Greg added as an author so that you can shepherd that document through the rest of the process with support from Anna and her team and Anna Lassinskia and we have plenty of cryptographic the problem is the authors and so we need to make an official request so that we can start making progress again. so I'm suggesting that as a proposal in this group and then I'm suggesting we come to some kind of consensus today so that we can take that into the main call on Wednesday.</p>
+<p id=cc7d class="phone s08"><cite>Manu_Sporny:</cite> That's it.</p>
+<p id=c51d class="phone s06"><cite>Greg_Bernstein:</cite> I am perfectly happy with that…</p>
+<p id=eb57 class="phone s06"><cite>Greg_Bernstein:</cite> because like I said, we've had the cryptographic experts on our side wanting this to happen and so it's an editorial thing. it's finishing the editorials and the knits, cleaning up the knits. I mean, some of those may be cryptographic nets, but that's what the working group, the CFRG is good at pointing those out. So, it's just editial Ivonne, sorry, I'm turning it back over to Wes, but Ivonne, go ahead.</p>
+<p id=0a35 class="phone s01"><cite>Ivan_Herman:</cite> I just wonder whether it helps to do it via W3C leaison. I don't know the IETF word really. So I'm just airing an idea because involving Philip who is as far as I know these days the official leazison to IATF as an organization might help or might not help. I have no idea but it may be possible to talk to Philillip either in the coming weeks or…</p>
+<p id=5efb class="phone s01"><cite>Ivan_Herman:</cite> at the most at TPAC which is not that far away and see whether something can happen with his help.</p>
+<p id=d8ac class="phone s06"><cite>Greg_Bernstein:</cite> Who is this person?</p>
+<p id=bea0 class="phone s06"><cite>Greg_Bernstein:</cite> There's a lot of different Philipses.</p>
+<p id=3062 class="phone s01"><cite>Ivan_Herman:</cite> Philip is a team member and he is the official le liazison to IATF for as from W3C.</p>
+<p id=e839 class="phone s06"><cite>Greg_Bernstein:</cite> On it.</p>
+<p id=9f96 class="phone s08"><cite>Manu_Sporny:</cite> Yeah, plus one. He's way up in management. I think these are two separable things. Avon, one of them is getting the consensus of the group that we want somebody to ask or we want the request to be made and…</p>
+<p id=8d3d class="phone s01"><cite>Ivan_Herman:</cite> Yeah. Yeah,…</p>
+<p id=b6d3 class="phone s08"><cite>Manu_Sporny:</cite> the second one is to get to do the outreach. Plus one von to what you said. I think that would be great and provide even more weight to the request.</p>
+<p id=ea96 class="phone s01"><cite>Ivan_Herman:</cite> that's what I thought. Yeah. Okay.</p>
+<p id=5779 class="phone s08"><cite>Manu_Sporny:</cite> Plus one to that. But we want to do this in this group, an explicit yes,…</p>
+<p id=cbd4 class="phone s01"><cite>Ivan_Herman:</cite> True.</p>
+<p id=f01a class="phone s08"><cite>Manu_Sporny:</cite> we want to do this and then send that to BCWG, get it down as a proposal and resolution tomorrow and…</p>
+<p id=0208 class="phone s08"><cite>Manu_Sporny:</cite> then ask PL to execute if possible.</p>
+<p id=ae53 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, I don't know…</p>
+<p id=3eab class="phone s06"><cite>Greg_Bernstein:</cite> To tell you…</p>
+<p id=e582 class="phone s01"><cite>Ivan_Herman:</cite> if Philip Simona these days the ITF person one of the two but anyway</p>
+<p id=8505 class="phone s06"><cite>Greg_Bernstein:</cite> how extreme this has gotten, the core BBS draft</p>
+<p id=34c0 class="phone s06"><cite>Greg_Bernstein:</cite> is two months expired now while the blind BBS draft and the BBS pseudonyms which I am co-author on are current and so it's like how can you have the followon drafts go forward when the core is but I can't touch the gore so I have brought this up a number of times with at least one of the core authors, but they keep I'm gonna get to it, but they're not. Okay, back over to Wesley.</p>
+<p id=5d74 class="phone s02"><cite>Wesley_Smith:</cite> All right, sounds good. so other specifications of course ving status list BC barcodes and BC forgery defense. is there anything on any of those specifications folks want us to discuss today?</p>
+<p id=948b class="phone s02"><cite>Wesley_Smith:</cite> Monu go ahead.</p>
+<p id=1e01 class="phone s08"><cite>Manu_Sporny:</cite> Hold on. We need a poll and…</p>
+<p id=5393 class="phone s02"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=437c class="phone s08"><cite>Manu_Sporny:</cite> we need people on this call to plus one if we are in agreement. We need to take that into the call tomorrow to move on this. So Wednesday,…</p>
+<p id=2cc4 class="phone s01"><cite>Ivan_Herman:</cite> on a Wednesday,…</p>
+<p id=d5c5 class="phone s01"><cite>Ivan_Herman:</cite> not tomorrow.</p>
+<p id=a769 class="phone s08"><cite>Manu_Sporny:</cite> So the poll would be request that the IETF CFRG add Greg Bernstein as an author. to core BBBS to move that document forward at the ITF.</p>
+<p id=6e8d class="phone s02"><cite>Wesley_Smith:</cite> Okay. Poll request that the VC work group.</p>
+<p id=6878 class="phone s08"><cite>Manu_Sporny:</cite> I've typed it out, I can emote it right.</p>
+<p id=53ce class="phone s02"><cite>Wesley_Smith:</cite> Okay.</p>
+<p id=4a25 class="phone s08"><cite>Manu_Sporny:</cite> So there Wes feel free to take over that thing.</p>
+<p id=1ca9 class="phone s02"><cite>Wesley_Smith:</cite> Yeah. Request the ITC and who is doing this request? The BCWG.</p>
+<p id=f293 class="phone s08"><cite>Manu_Sporny:</cite> Yes, the BCWG should request that</p>
+<p id=4292 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=ee99 class="phone s01"><cite>Ivan_Herman:</cite> Come on.</p>
+<p id=cf9a class="phone s02"><cite>Wesley_Smith:</cite> What does CFRG stand for?</p>
+<p id=b1d4 class="phone s08"><cite>Manu_Sporny:</cite> Cryptoform Research Group.</p>
+<p id=648c class="phone s02"><cite>Wesley_Smith:</cite> 4 BBS can that be either a link to a specification or…</p>
+<p id=5abe class="phone s06"><cite>Greg_Bernstein:</cite> I'm getting you the link.</p>
+<p id=dc67 class="phone s08"><cite>Manu_Sporny:</cite> Sorry, I didn't understand…</p>
+<p id=3223 class="phone s02"><cite>Wesley_Smith:</cite> core BBS?</p>
+<p id=cbeb class="phone s08"><cite>Manu_Sporny:</cite> what you just said.</p>
+<p id=89b9 class="phone s02"><cite>Wesley_Smith:</cite> What is core BBS?</p>
+<p id=efe1 class="phone s08"><cite>Manu_Sporny:</cite> It's the core BBS specification.</p>
+<p id=debc class="phone s02"><cite>Wesley_Smith:</cite> Is there a link to a document? You're right. I'm just trying to be rigorous about how this poll is. Thank you. and to move that document forward. I get okay.</p>
+<p id=8ad2 class="phone s02"><cite>Wesley_Smith:</cite> All please vote on the poll that has been added to chat.</p>
+<p id=0654 class="phone s06"><cite>Greg_Bernstein:</cite> How do…</p>
+<p id=8dae class="phone s06"><cite>Greg_Bernstein:</cite> how do we do that? Just plus one.</p>
+<p id=2dcb class="phone s02"><cite>Wesley_Smith:</cite> Plus one zero minus one in chats.</p>
+<p id=a46a class="phone s06"><cite>Greg_Bernstein:</cite> And it's worse than I said. It expired in July 12th. It's like</p>
+<p id=cbc4 class="phone s02"><cite>Wesley_Smith:</cite> So that's not resolved. do we note that the poll has been widely supported in the minutes or…</p>
+<p id=ca46 class="phone s08"><cite>Manu_Sporny:</cite> It's just a poll. it'll be obvious…</p>
+<p id=7a7d class="phone s02"><cite>Wesley_Smith:</cite> something? Okay.</p>
+<p id=c6a4 class="phone s08"><cite>Manu_Sporny:</cite> because all those things will show up.</p>
+<p id=73fb class="phone s02"><cite>Wesley_Smith:</cite> All there seems to be clear consensus support for that concept in this task force. We will broach it with the working group on Wednesday. All right. Anything else on that topic?</p>
+<p id=86fa class="phone s08"><cite>Manu_Sporny:</cite> Thank you, Greg, for being willing to take up the authorship role in that doc as well.</p>
+<p id=4c8b class="phone s06"><cite>Greg_Bernstein:</cite> It's like I've been Yes.</p>
+<p id=6ea9 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Anyone who shares a link to that,…</p>
+<p id=e3d9 class="phone s06"><cite>Greg_Bernstein:</cite> I'm a contributor listed on it. It's like I just finish it.</p>
+<p id=b96c class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> it's better to share the one that Longly had which is in the poll than the one that Greg posted because it shows the history and the stall.</p>
+<p id=3ddf class="phone s06"><cite>Greg_Bernstein:</cite> Yes. Yes. Tyranny's rule.</p>
+<p id=4dac class="phone s02"><cite>Wesley_Smith:</cite> Sounds like a win proposition to have you working on that document and…</p>
+<p id=9857 class="phone s02"><cite>Wesley_Smith:</cite> hopefully others see it that way as well.</p>
+<p id=ac06 class="phone s02"><cite>Wesley_Smith:</cite> All right. So, we have about 15 minutes left today. is there any topic from Brian status list forger defense and BC barcodes that anybody particularly would like to cover today? Ivon, go ahead.</p>
+</section>
+
+<section>
+<h3 id=e2a2>Bitstring Status List Publication</h3>
+<p id=2e72 class="phone s01"><cite>Ivan_Herman:</cite> I forgot to say as part of the announcement that the bitst string status list should be published the day after tomorrow no Thursday.</p>
+<p id=f5bc class="phone s02"><cite>Wesley_Smith:</cite> Woohoo. I heard.</p>
+<p id=5e3f class="phone s01"><cite>Ivan_Herman:</cite> Everything is done in there and Wesley I will have to set a new GitHub a secret to have a kid now working again for the time being it does not work</p>
+<p id=298e class="phone s02"><cite>Wesley_Smith:</cite> Thank you. Kevin, go ahead.</p>
+<p id=5f47 class="phone s09"><cite>Kevin_Dean:</cite> Yeah, just to say as the editor of the bitstring status list, I'm now just started making my way through the issues.</p>
+<p id=8208 class="phone s09"><cite>Kevin_Dean:</cite> I have cycles this weekend next to work on it.</p>
+<p id=9e4a class="phone s01"><cite>Ivan_Herman:</cite> Keep</p>
+<p id=fc7a class="phone s09"><cite>Kevin_Dean:</cite> So, we'll see some progress soon. Yep. Yeah.</p>
+<p id=f248 class="phone s02"><cite>Wesley_Smith:</cite> Great. I think add you to that document on the editor's list.</p>
+<p id=c37f class="phone s02"><cite>Wesley_Smith:</cite> The working group passed that a while back. I know here. Give me one second.</p>
+<p id=7fb6 class="phone s09"><cite>Kevin_Dean:</cite> I volunteered for it back in August and</p>
+<p id=9d03 class="phone s02"><cite>Wesley_Smith:</cite> I'm missing a space in there. That might not work. that updates the editors. I noted that Dave Longley should be readded to that document now that we have support for this former structure. I will also note that Kevin Dean should also be added. Kevin, what's your GitHub handle?</p>
+<p id=2e16 class="phone s09"><cite>Kevin_Dean:</cite> A 18- Dolphin. deal. Yep.</p>
+<p id=82e4 class="phone s02"><cite>Wesley_Smith:</cite> Thank Also, and you were added for the V1.1 of the specification, Not earlier.</p>
+<p id=5265 class="phone s09"><cite>Kevin_Dean:</cite> Yep. Correct.</p>
+<p id=9d1f class="phone s02"><cite>Wesley_Smith:</cite> All right, Von, go ahead.</p>
+<p id=1426 class="phone s01"><cite>Ivan_Herman:</cite> Just be careful if any PRs that are out there should stay PR between now and the update of Akidna the new GitHub.</p>
+<p id=c1fd class="phone s01"><cite>Ivan_Herman:</cite> So don't do a merge…</p>
+<p id=1b0f class="phone s02"><cite>Wesley_Smith:</cite> Sounds good.</p>
+<p id=9f19 class="phone s09"><cite>Kevin_Dean:</cite> Duly noted.</p>
+<p id=4353 class="phone s01"><cite>Ivan_Herman:</cite> because God knows what will happen.</p>
+<p id=676e class="phone s09"><cite>Kevin_Dean:</cite> Thank you.</p>
+<p id=149b class="phone s02"><cite>Wesley_Smith:</cite> only one way to find out.</p>
+</section>
+
+<section>
+<h3 id=f2f1>VC Barcodes Internationalization Review</h3>
+</section>
+
+<section>
+<h3 id=7f60>Forgery Defense Status</h3>
+<p id=10004 class="phone s02"><cite>Wesley_Smith:</cite> How exciting. All right. I think that is good on that particular topic. what else have we got? the VC barcodes internationalization review came in which is good. I didn't look super closely but it appeared to be not large in scope just kind of the things you'd expect them to want us to improve. So that's a good piece of progress. there are no open PRs on forgery defense. wow. We're in pretty good shape. We could take the last 10 minutes of this call and do some issue processing and triage, I suppose.</p>
+<p id=db4d class="phone s02"><cite>Wesley_Smith:</cite> So, need to pull up I'm going to say let's take the last 10 minutes and take a look at the internationalization review from BC barcodes. I think that would be a worthwhile way to spend a few minutes of the call. so there are Can I subtopic multiple issues? Is that a thing I can do or is that crazy talk?</p>
+<p id=7fd9 class="phone s02"><cite>Wesley_Smith:</cite> I'm hearing nothing.</p>
+<p id=8f0d class="phone s02"><cite>Wesley_Smith:</cite> So, I'm going to try messy minutes.</p>
+<p id=2d89 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> You can do it.</p>
+<p id=10005 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It'll just make them minutes messy and probably it will not post the talking to those issues. But we don't do that So that's fine.</p>
+<p id=619e class="phone s02"><cite>Wesley_Smith:</cite> All right. So, internationalization raised three issues. Number 71. First is references to the new line character should use internationalization standard character reference In this case, since new line is an invisible character, it should use the image version of The image can be obtained from spec. I don't fully understand the details there, but I certainly understand the general desire of the issue.</p>
+<p id=8955 class="phone s02"><cite>Wesley_Smith:</cite> For clarity on what we mean when we talk about a new lion character, I'll have to look into what they mean by this image version of the number 72, VCB example and nonasky. The example of creating a barcode uses the data from the driver's license. All the data encoded in the license is ASI. Specification does require UTF8 for non-ASKI string values, but none are shown anywhere. Some countries,…</p>
+<p id=42ff class="phone s02"><cite>Wesley_Smith:</cite> regions, languages do not desire a flattening to such a restrictive set of characters. Can the example show at least one non-asky value? Or failing that, can there be a reminder somewhere in the example that UTF8 is required? Yeah, I don't see…</p>
+<p id=a530 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, that's a good point.</p>
+<p id=ff2a class="phone s02"><cite>Wesley_Smith:</cite> I don't see why we couldn't have such an example in the example,…</p>
+<p id=d17b class="phone s01"><cite>Ivan_Herman:</cite> The ideal would be to have it in the picture as well, but it comes back to your remark about the image being up to date or…</p>
+<p id=dcee class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Excuse me.</p>
+<p id=4819 class="phone s01"><cite>Ivan_Herman:</cite> The only problem I see is that at least the driving license is very much an American model.</p>
+<p id=edb9 class="phone s02"><cite>Wesley_Smith:</cite> A bit what?</p>
+<p id=00a8 class="phone s01"><cite>Ivan_Herman:</cite> So combining with god knows Hebrew characters becomes a bit awkward. art.</p>
+<p id=2045 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I mean yes and no. I think there are in these driver's license kind of key value structures, there are sort of discretionary substructures that can be used for whatever the issuing organization wants. So in an example, I don't see any reason why we couldn't find a way to include a non well I'll have to think about a little bit more what the cleanest way to do this would be.</p>
+<p id=b365 class="phone s01"><cite>Ivan_Herman:</cite> right?</p>
+<p id=6470 class="phone s02"><cite>Wesley_Smith:</cite> We would want the example to be actually useful. so for example, we wouldn't get a lot of use of including a non-asky character that wasn't digitally signed over. but again, I'll have to think of a way to make this useful. Mon, go ahead.</p>
+<p id=6689 class="phone s08"><cite>Manu_Sporny:</cite> I think there multiple kind of serializations that we have to care about. One of them is the standard code BCB and CoreLDD thing which is fine. That's UTFA full support for all the things. I think we're okay there. I think the challenge comes in when we're talking about any kind of ISO or based structure. I don't remember what the encoding character set is there. and I don't know how much it differs from the internationalized character sets like for example, Norwegian, governmentissued identification card.</p>
+<p id=bce1 class="phone s08"><cite>Manu_Sporny:</cite> And so I hate to say it but we may want to take a look at that understanding that it may take several hours to track that down understand what's possible there because we do want it to be globally useful. another way to go about it is to just say it's a series of I don't know if we can say that. I was going to say it's just a series of bites,…</p>
+<p id=4d42 class="phone s02"><cite>Wesley_Smith:</cite> Ivon, go ahead.</p>
+<p id=4738 class="phone s08"><cite>Manu_Sporny:</cite> but I don't know, if I forget exactly what we do for the canonicalization thing and if it's as simple as that.</p>
+<p id=77c1 class="phone s01"><cite>Ivan_Herman:</cite> The Norwegian example just gave me a question. I don't know what the US setup is. If someone comes in from let's say Iceland where they have characters as part of the language which are not esy characters and if somebody's name carries that what happens in the US is he or…</p>
+<p id=f2eb class="phone s01"><cite>Ivan_Herman:</cite> she forced to turn it into ASI or you could put that name there with these funny characters which are not esy characters in Iceland that maybe If this works,…</p>
+<p id=aafd class="phone s02"><cite>Wesley_Smith:</cite> Go ahead, Ted.</p>
+<p id=5fc8 class="phone s01"><cite>Ivan_Herman:</cite> that may be the simplest thing to do.</p>
+<p id=dcd0 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> This is going to vary.</p>
+<p id=10006 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> The US does not have one driver's license issuer. There's one per state, I believe, and there's probably one per territory, although that I'm not sure as for special characters, I'm betting that's also going to be I know that it has been region specific to how they handle people who have multiple last names particularly without hyphens also hyphenated names also names of large numbers of characters which vary depending on the region how large is too large they truncate in in other places they wrap around to the next line it's a real mess and…</p>
+<p id=b5e3 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> this is partly because hey the programmers for the states also believe the things that programmers believe that are wrong.</p>
+<p id=f234 class="phone s01"><cite>Ivan_Herman:</cite> Yeah, but our driving licenses in the example are in a non-existing state called utopia.</p>
+<p id=11c1 class="phone s01"><cite>Ivan_Herman:</cite> Which is largely US image inspired but there we can be as liberal as possible. just leave it out there for West as an alternative</p>
+<p id=dd4f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> I suppose</p>
+<p id=18a2 class="phone s02"><cite>Wesley_Smith:</cite> Understood. I have been poking through the AMA standard document for Ricard designs. I believe their requirement is asky characters in data items. Although there are values that it will appear in Anvil compliant barcodes that are not ASKI values.</p>
+<p id=665b class="phone s02"><cite>Wesley_Smith:</cite> Yeah, I need to look into it more. I'm not sure. Elaine, go ahead.</p>
+<p id=a596 class="phone s03"><cite>Elaine_Wooton:</cite> Yeah. So the states,…</p>
+<p id=38ce class="phone s03"><cite>Elaine_Wooton:</cite> some of the states in particular kind of take the AMVA standard as a suggestion. So it might be useful to say something like to the extent that a state or…</p>
+<p id=b747 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=10007 class="phone s03"><cite>Elaine_Wooton:</cite> a jurisdiction follows a standard some of them just don't. Just saying.</p>
+<p id=ea50 class="phone s02"><cite>Wesley_Smith:</cite> We are running low on time. Phil, I see you commented. UTF8 MDLs are structured using Seabor. All text in strings are strictly required to be UTF8 encoded.</p>
+<p id=c20f class="phone s02"><cite>Wesley_Smith:</cite> internationalization support for special characters. All right. Thanks for the pointer there, Phil. We're about out of time for today.</p>
+<p id=2ad6 class="phone s01"><cite>Ivan_Herman:</cite> Bye-bye.</p>
+<p id=0743 class="phone s02"><cite>Wesley_Smith:</cite> I think this is a topic that will need some future discussion and some thought put into it. thank you all for the discussion today. and we have a couple things to talk about with the larger group on the call on Wednesday. appreciate the time and see you folks soon.</p>
+<p id=ee6e class="phone s06"><cite>Greg_Bernstein:</cite> Bye.</p>
+<p id=d455 class="phone s03"><cite>Elaine_Wooton:</cite> Hi. Meeting ended after 00:54:44 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

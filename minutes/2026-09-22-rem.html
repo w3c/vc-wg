@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 22 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>22 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Ivan_Herman, Kayode_Ezike, Manu_Sporny, Nate_Otto, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#7e8f">Pull Request Review</a></li>
+<li><a href="#666b">Renaming The Card Method</a></li>
+<li><a href="#b55c">Combining Fields And Render Property</a></li>
+<li><a href="#e232">Issuer Role In Display Logic</a></li>
+<li><a href="#8ad0">JSON LD Vs JSON Object</a></li>
+<li><a href="#f379">Data URL Approach</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=23e1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right,…</p>
+<p id=8dea class="phone s02"><cite>Ivan_Herman:</cite> You're not</p>
+<p id=8b86 class="phone s01"><cite>Dmitri_Zagidulin:</cite> welcome Going to give it another minute folks to assemble and we'll get started.</p>
+<p id=df33 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, 3 minutes past the hour. Let's get started. so welcome everyone to the weekly render method task force call of the verifiable credential working group. We are under W3C code of conduct and IP restriction agreements. basically all familiar faces. these calls are recorded. let's jump in. So we have couple things to discuss as our main topics on this call.</p>
+</section>
+
+<section>
+<h3 id=7e8f>Pull Request Review</h3>
+<p id=6486 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I do want to highlight as an editor of the spec that I would really like a bit more support and engagement from the group in the sense that for example we have a fairly uncontroversial pull request number 76 dispatch render suites that we've discussed during last call. we don't have a single review. Let's like it sounded like there's broad consensus. This is going over various editorial issues that were brought up by Ivonne and others. let's get some green check marks so we can merge this. Yeah, Mano, go ahead.</p>
+<p id=8c84 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean plus one to that. I think typically…</p>
+<p id=4f7f class="phone s03"><cite>Manu_Sporny:</cite> what I do to get reviews, Dimmitri, is I tag at least 15 reviewers on every PR and I see you've tagged only a handful and…</p>
+<p id=b9ac class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=39b0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=2560 class="phone s03"><cite>Manu_Sporny:</cite> many of them aren't active in the group. So, …</p>
+<p id=0920 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. So, this is the automatic.</p>
+<p id=6424 class="phone s03"><cite>Manu_Sporny:</cite> that is what it is.</p>
+<p id=e050 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I believe this is just going off of the code owners. Okay, I can got it. Manu Sporny:</p>
+<p id=31fb class="phone s03"><cite>Manu_Sporny:</cite> Yeah, it is. And I tend to have to go much further than that to get, so if I tag 15 people, I might get three reviews in a week.</p>
+<p id=e525 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Yep, That makes perfect sense. I will be monitoring that more carefully. all right. But if anybody wants to review here while call least</p>
+</section>
+
+<section>
+<h3 id=666b>Renaming The Card Method</h3>
+<p id=8614 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Here it is. All right. So, where are we? we still need to make a couple of decisions. We need to rename the card method. So, I think this week I'm going to take another attempt at reaching consensus here on the group. if we don't have rough consensus, we can do what's it called? A ranked choice a vote on the larger working group mailing list. Again, naming is No name is perfect. We just need something so we can ship the first iteration of the spec.</p>
+<p id=d87c class="phone s01"><cite>Dmitri_Zagidulin:</cite> There's an open issue specifically on what we're going to call the formerly artist formerly known as card as Benjamin points out in chat. so that's decision number one we need to make. decision number two is one</p>
+</section>
+
+<section>
+<h3 id=b55c>Combining Fields And Render Property</h3>
+<p id=8ae3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Then has to do with what we're calling and what we're intending to use this render property andor fields property so let's start with that one. that's slightly easier to deal with than the rename method. So I think both the problem and the challenges with this are nicely summarized in issue 81. so let's actually use the nice topic commands which is this.</p>
+<p id=30fa class="phone s01"><cite>Dmitri_Zagidulin:</cite> So Benjamin brought up the point that hey we've got this render property top level u field in common and perhaps in addition from the artist formerly known as cards we have this fields method and Benjamin very reasonably said hey we should combine it on the two and one of the comments that I think of illustrates the possible confusion in this manner is here from Dave that's saying I imagine that each render method is going to have to repeat this information.</p>
+<p id=847b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Reason I highlight this comment is we still I think after so many weeks and months of this discussion are not aligned on the fundamental purpose of the render method which is to provide several options for the consumer whoever needs to display software, whoever needs to interface with it to select on the basis of use case, language, device limitations and user preference.</p>
+<p id=85c0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'd like to push back on this interpretation that the same field list is going to be reused by multiple properties and say that imagine for example a pre-baked image a minimal NFC transmission payload and HTML view a I frame sandbox JavaScript app render method. so we have this verifiable credential and we have three very different render methods.</p>
+<p id=21a1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the pre-baked image can have five fields and so their render property is going to look very different from the small NFC payload whereas the iframe JavaScript either might not need the render property fields because it's already there laid out in the application or if it does it's going to display all of them. So my proposal to the group is we combine fields and render property and just reuse it among all of the render method suites. Let's go to the queue. Dave</p>
+<p id=cff1 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think something that's come out of implementations and a number of these conversations is that I think it's always going to make sense if you're going to be providing a render method. It's almost always and it'll be hard to find an exception to this. I think going to be the case that you want to provide this at least and That card render method or meta or summary or whatever we end up calling that thing provides the information that any digital wallet or many other displayers are going to need to show around in any interface that might show more than one credential to allow you to find or search for credentials or drill down into whatever you need to do with a particular credential.</p>
+<p id=8274 class="phone s04"><cite>Dave_Longley:</cite> So having that render method, if we were writing a best practice document, I think we would say if you're going to put a render method on a PC, you should at least have one of those. And then you might also optionally have other render methods. So even in the description in the thing you just described, I think it would be problematic to not also include that render method. And now if you have that other render method, it has all the metadata about the labels and whatever else that any digital wallet might need to display. And for one of those fields where you might want a wallet to be able to display that label information, you will inevitably repeat that information in multiple render methods.</p>
+<p id=8c06 class="phone s04"><cite>Dave_Longley:</cite> And so it seems to me that if this model makes sense where you should always have one of these that maybe we should consider writing things a little differently so that's where you put all your metadata. That thing's always available. It's always an integraable render method with you with whatever displayer digital wallet that you have. And then the other ones are sort of auxiliary that allow you to do other interesting powerful things that you might get to as you drill down into a VC or as you surface the ability to do NFC or as you surface the ability to show a pre-baked image. it seems like there's a slight dependency on this other render method being there to provide all that kind of information.</p>
+<p id=a632 class="phone s04"><cite>Dave_Longley:</cite> And it also means you don't have to worry about anything being duplicated in the other space because you follow this pattern.</p>
+<p id=28a0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=ffff class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, I think I see your vision here and it slightly ing. my main concern is that the thing you're describing is not what we sign up here for VC render method. it's fundamentally refactoring and changing the suite based render method that we're dealing with. you're envisioning a sort of comprehensive meta description of</p>
+<p id=10000 class="phone s01"><cite>Dmitri_Zagidulin:</cite> everything in the card and then the other render suites somehow projections of it and so this looks like an entirely different spec than what we're working with. and two I don't think it's quite accurate. If I have a pre-baked image or a pre-baked PDF and it only has three of the fields, its render property array is going to be very different from a full detail one that has all of the fields for example in the card. So no, it's not going to be repeated.</p>
+</section>
+
+<section>
+<h3 id=e232>Issuer Role In Display Logic</h3>
+<p id=9e93 class="phone s01"><cite>Dmitri_Zagidulin:</cite> These are very specific to the modality and the language mon</p>
+<p id=b327 class="phone s03"><cite>Manu_Sporny:</cite> I didn't read Dave's suggestion as I think extremely as you put it, Dimmitri. I don't think it changes the entire, specification. I think the concern here is the duplication of content between something that we expect most if not all VCs to have that have to be rendered to an individual meaning like a summary card display.</p>
+<p id=ba38 class="phone s03"><cite>Manu_Sporny:</cite> As an issuer you do not provide that information, you're in the situation that you're in today, which is you have no idea which one of these fields to show on a UI,…</p>
+<p id=1d40 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Perfect.</p>
+<p id=081a class="phone s03"><cite>Manu_Sporny:</cite> how to order it, and you end up putting a whole bunch of custom display logic into your wallet, that's as a vendor, that's what we do today. and it is totally not scalable and we really want to stop doing that. And the only way we're going to be able to do that is if issuers start providing that information themselves, which they have the ability to do. and so that I think gets to Dave, if you scroll down, Demetri, all the way to the bottom, Dave's point is like, we should be urging issuers to always provide a highlight summary, whatever.</p>
+<p id=71ec class="phone s03"><cite>Manu_Sporny:</cite> Because if they don't do that, they're totally beholden to whatever the wallet does and the wallet by and large might not do anything. It might do a crappy job of displaying your credential, right? So issuers, it's in your best interest to provide, multiple render suites for your credial. the referencing thing I'm a bit on the fence about, which is what Dave is suggesting, maybe we do. I don't know if there's a good way to do that. I also look at the example that you have up that I guess Benjamin put here up at the top.</p>
+<p id=79b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ignore that part.</p>
+<p id=ff54 class="phone s03"><cite>Manu_Sporny:</cite> I don't feel super great about that either. style color orange. I don't know if wallet providers I think primary color and secondary color are hold on it's a part of the example are we doing it or…</p>
+<p id=09af class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ignore that part. So I think the thing specifically being discussed is combining.</p>
+<p id=6871 class="phone s03"><cite>Manu_Sporny:</cite> not if everyone's okay so…</p>
+<p id=8ffe class="phone s01"><cite>Dmitri_Zagidulin:</cite> We're not No, no, no.</p>
+<p id=9bae class="phone s03"><cite>Manu_Sporny:</cite> why is it in there going back so I'm going through these one by one,…</p>
+<p id=4639 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The Benjamin edit the description. remove that. The main topic is can we combine fields and render property</p>
+<p id=b1db class="phone s03"><cite>Manu_Sporny:</cite> if people think style was a total mistake and we shouldn't do that within this please object to that because I think it's a mistake and we shouldn't do that. so if we're getting rid of that then that puts us back to pointer which is what we have today. Totally fine right? Order is this really annoying weird thing we have to do because of JSONLDLD. I don't know if we can get around that by making it a list type. If we do that, the RDF gets all funky and weird and horrible. so order one I don't think is a good idea. I think people are going to mess it up. They're going to do orders with the same number or something like that. So, I'm concerned about that. there also depending on the layout.</p>
+<p id=1e01 class="phone s03"><cite>Manu_Sporny:</cite> If you have multiolumn layout, maybe you won't order one for two items. It creates too much I think design surface to shoot yourself in the foot with name we need to support LVOS's language value objects there.</p>
+<p id=76f8 class="phone s03"><cite>Manu_Sporny:</cite> And…</p>
+<p id=b90e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, wait.</p>
+<p id=4eb9 class="phone s03"><cite>Manu_Sporny:</cite> so you want to call it fields and…</p>
+<p id=8f56 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mono, could I step in again? I think we're focusing on the wrong thing. this issue is not about the fields that go inside the render property. This issue is about this top level, what we're going to call this thing right here. It's just about com no,…</p>
+<p id=0052 class="phone s03"><cite>Manu_Sporny:</cite> make it equivalent to fields.</p>
+<p id=9638 class="phone s01"><cite>Dmitri_Zagidulin:</cite> it's currently fields.</p>
+<p id=7f91 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think what Benjamin is proposing is instead of having separate fields for the JSON card method, can we just render property for the field array of JSON pointers?</p>
+<p id=f17f class="phone s03"><cite>Manu_Sporny:</cite> I am confused about this issue…</p>
+<p id=e594 class="phone s03"><cite>Manu_Sporny:</cite> because I thought we were talking about other things other than the cards render method. so we're saying we're going to replace fields with render property.</p>
+<p id=9e6c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes, because we already have render property and…</p>
+<p id=25ef class="phone s01"><cite>Dmitri_Zagidulin:</cite> cards has this additional thing called fields and go ahead.</p>
+<p id=10001 class="phone s04"><cite>Dave_Longley:</cite> So, I wait. Benjamin's already on the queue. Go ahead.</p>
+<p id=4045 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, go ahead. Yeah.</p>
+<p id=48af class="phone s05"><cite>Benjamin_Young:</cite> That's fine.</p>
+<p id=70f0 class="phone s05"><cite>Benjamin_Young:</cite> Dave, if you want to go first. I was just gonna,…</p>
+<p id=9840 class="phone s05"><cite>Benjamin_Young:</cite> we're discussing my issue, so I thought I'd speak up.</p>
+<p id=d11c class="phone s04"><cite>Dave_Longley:</cite> I was just going to comment that if we're doing what you're saying, Demetri, I think what we would want is before So we could see render method right now is a simple array of JSON pointers.</p>
+<p id=aa87 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm. I think Benjamin</p>
+<p id=f884 class="phone s04"><cite>Dave_Longley:</cite> And I think what we would want to see is that that's what fields is today. But if we go to where render property is and look at an example of that presumably that will also change become a list of objects that just have pointer in them except people will also put those other properties in there and…</p>
+<p id=d35b class="phone s04"><cite>Dave_Longley:</cite> that's where my comments came in around duplication and confusion.</p>
+<p id=9ba3 class="phone s05"><cite>Benjamin_Young:</cite> So that there's a few tangents here,…</p>
+<p id=4b8a class="phone s05"><cite>Benjamin_Young:</cite> but certainly dduplication is a core one that is this thing that you're looking at that I pasted in that issue was at the end of I think our last call came up about the redundancy and there was chatter at least in the sidebar about maybe we should get rid of that etc. So that's why it looks like this sort of strange animal that's doing both things.</p>
+<p id=9be7 class="phone s05"><cite>Benjamin_Young:</cite> And the further conversation that's happened in the last week up until the last 17 minutes ago where Dave's saying maybe there's not a required but an assumed or a should provide a card rendering a details whatever it's going to be called thing that is essentially render property plus some other things and that's all the question marks come up, Which is where Manu was, picking apart the JSON that is now associated with each property selector. If we don't overlap them, then we have what's in the spec now, which is render property is just a list of fields for matching and then you restate them all whenever you use them in something else and maybe they match.</p>
+<p id=51e0 class="phone s05"><cite>Benjamin_Young:</cite> because you have to map them somewhere and so you're going to have to restate them if you annotate them with anything whether it's a name or style or whatever and I'm sorry I put so many other things in there but the whole point of this was to surface the fields capabilities into that object so it kind of also needed to happen because render property is currently an array. So, it's unordered as expressed right now in the JSON LD. Manu mentioned some of the pain that exists if we try and make it ordered more intuitively. I called out the tab index nightmares, but all of that like the style mattered.</p>
+<p id=eb48 class="phone s05"><cite>Benjamin_Young:</cite> Does even multiple language Does whatever matter becomes a question of who's in charge of the display of the credential at all, which is, sort of the elephant in the room for this entire specification. And the pendulum keeps swinging back and forth between the wallets in charge or the issuers in charge. We're trying to enable issuers to provide stuff, but we're mostly wallet vendors. Some of us also do issuance, but the tension becomes like I don't know where to put any of this and I'm not going to care about order or practically it's not going to matter because I'm still going to have to display something when this doesn't show up. So, how much do I trust the issuer? How much do I want the issuer to tell me?</p>
+<p id=96cf class="phone s05"><cite>Benjamin_Young:</cite> how much does the issuer want or demand that the wallets allow them to do? that's going to remain attention regardless of how we shape this. So, I apologize that the topics are mixed again, but we have some boundary border lines that we haven't really set well.</p>
+<p id=ee84 class="phone s05"><cite>Benjamin_Young:</cite> So, that's why that keeps happening.</p>
+<p id=30b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Manu Nick,…</p>
+<p id=ff6f class="phone s03"><cite>Manu_Sporny:</cite> Maybe going back to first principles why is fields in that adjacent object and I kind of want to hear from Nate. we've been going down that just presuming that's an invariant. why are we doing that? is it a big deal if we make it a JSON LD thing or not? Is there a specific reason it's a JSON object? That's</p>
+<p id=1b62 class="phone s01"><cite>Dmitri_Zagidulin:</cite> go ahead.</p>
+<p id=8c1e class="phone s06"><cite>Nate_Otto:</cite> Yeah,…</p>
+<p id=a6b5 class="phone s06"><cite>Nate_Otto:</cite> no objections if it became a JSON LD object. it was presumed last November that it might be a little bit easier in plain JSON,…</p>
+<p id=2818 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait. I don't think one second.</p>
+<p id=f180 class="phone s06"><cite>Nate_Otto:</cite> but yeah, if that's getting in the way more than it's helping, great.</p>
+<p id=bf55 class="phone s01"><cite>Dmitri_Zagidulin:</cite> One second. I want to understand Manu's question more. What do you mean? Why is it a JSON versus JSON LD object?</p>
+<p id=7610 class="phone s03"><cite>Manu_Sporny:</cite> Currently the card object is a pure JSON object, right? It's in the spec. the card object is a JSON object,…</p>
+<p id=44c1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay.</p>
+<p id=2bb5 class="phone s03"><cite>Manu_Sporny:</cite> right? …</p>
+<p id=8d37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Versus</p>
+<p id=c219 class="phone s03"><cite>Manu_Sporny:</cite> versus a JSON LD object. And I let's establish that.</p>
+<p id=7d24 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Can I ask what's the difference?</p>
+<p id=f26b class="phone s03"><cite>Manu_Sporny:</cite> I thought that was a fact.</p>
+<p id=cf25 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, what's the difference? these Jason, what are we talking about?</p>
+<p id=3a63 class="phone s03"><cite>Manu_Sporny:</cite> Ordering is different. There's an example where JP is not the same J. Yeah.</p>
+<p id=7944 class="phone s05"><cite>Benjamin_Young:</cite> The important part that you can't really see here is that this JSON object ends up in a data URL.</p>
+<p id=a6d8 class="phone s05"><cite>Benjamin_Young:</cite> It is farther down. So it is JSON but it's not even being treated as an atjson value. it's the turducken thing we talked about last week. it's JSON in its own data model unrelated to the VC data model stuffed inside a data URL ultimately and then living living.</p>
+<p id=06e9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> You're talking about this thing.</p>
+<p id=5d72 class="phone s05"><cite>Benjamin_Young:</cite> Yeah. Yeah.</p>
+<p id=5452 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see. Okay. Got it.</p>
+<p id=6b33 class="phone s05"><cite>Benjamin_Young:</cite> That's actually what's going into the credential.</p>
+<p id=5c2c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=f9ff class="phone s05"><cite>Benjamin_Young:</cite> Not any of…</p>
+<p id=0973 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=4191 class="phone s05"><cite>Benjamin_Young:</cite> what you look at above there.</p>
+<p id=5bf5 class="phone s05"><cite>Benjamin_Young:</cite> just for clarity. Sorry.</p>
+<p id=72e4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Nope. Understood. Thank you so much. David and</p>
+<p id=8ed6 class="phone s04"><cite>Dave_Longley:</cite> So unless we define here's a two good reasons to use JSON that is not JSON LD would be for ordering and if we are not going to be defining everything that might appear in a theme or a style location. if we define everything that you can possibly use there then and we solve for the ordering problem then there are benefits to using JSONLDD. if we're not going to find…</p>
+<p id=3c38 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=a018 class="phone s04"><cite>Dave_Longley:</cite> if we're not going to define every possible thing that might appear in a style field or if we want to solve ordering with ordered arrays then using JSON is a simpler way to accomplish that.</p>
+<p id=e8c4 class="phone s03"><cite>Manu_Sporny:</cite> And the reason I brought this up also is that do we support language value objects or If it's pure JSON, there's no such thing really. And I know that's a topic of debate, but it's not formally defined anywhere. And if we use JSONLDD, then it's formally defined, And so there are things that matter. The decision to make this a JSON object means that we can't easily pull in the useful things from JSONLDD. and it also means that it doesn't have the kind of annoying warts that JSON LD has such as the default is a set not an array and the array matters for the fields property.</p>
+<p id=10a4 class="phone s03"><cite>Manu_Sporny:</cite> So, the reason I'm kind of going back to basics on this is to figure out if there was, I think Nate you said, potentially it would be easier to deal with this as a Jason law, but I'm questioning if there are benefits and…</p>
+<p id=778a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. …</p>
+<p id=10002 class="phone s03"><cite>Manu_Sporny:</cite> drawbacks and we should make a concrete decision before we move on to higher level conversations which we'll then need to take into account the fact that it's a rsus JSON LD object. Check.</p>
+</section>
+
+<section>
+<h3 id=8ad0>JSON LD Vs JSON Object</h3>
+<p id=7eee class="phone s01"><cite>Dmitri_Zagidulin:</cite> thanks I agree with you. I think this is a great place to start untangling the ball of yarn. does anybody want to advocate strongly for this approach because I think so far all I hear and I agree with this is that this is not idiomatic to the rest of the spec let's not do this.</p>
+<p id=16a7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Benjamin you the queue and then Dave Got it.</p>
+<p id=6827 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, we kind of moved on and…</p>
+<p id=0f08 class="phone s05"><cite>Benjamin_Young:</cite> just kind of plus fewer data models that we do this for HTML and images put them in data URLs but putting JSON in a data URL inside of JSON LB is going to just confuse people. So, I think we've gotten there.</p>
+<p id=0db4 class="phone s04"><cite>Dave_Longley:</cite> I think another reason it was done this way is to better fit with our model for externalizing things. so we have to bring that consideration that constraint in when we look at this. We definitely want to be able to externalize this. and we have two different ways that we have considered externalizing that this kind of information. one is put it actually in another credential itself that could itself have a signature on it and you could pull in use it and the it's just an external URL somewhere with an optional multibase hash on it. and I'm not a huge fan of that part being optional. I think if you want to have updates to your render method, you should probably use the credential method for that.</p>
+<p id=b76a class="phone s04"><cite>Dave_Longley:</cite> But that is a consideration in why it was done this way, I think, was to continue fitting with that. And, if we had a best practice document, I think we'd probably recommend that credentials that are based on templates where you are inserting the data from the credentials itself and the render method is shared. there's group privacy across lots of different users. that stuff should be externalized from VCs to keep them small and to help make it clear that everybody's reusing the same render method.</p>
+<p id=a37f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got That said, does anybody actually want to strongly advocate for this B 64 URL encoded approach? can we ditch this and have this be a JSON object mono?</p>
+<p id=2da7 class="phone s03"><cite>Manu_Sporny:</cite> I don't think we can get rid of it…</p>
+<p id=34e1 class="phone s03"><cite>Manu_Sporny:</cite> because it's legal JasonLD. I think all we can do is advocate for one form or…</p>
+<p id=cead class="phone s01"><cite>Dmitri_Zagidulin:</cite> What do you mean we can't get rid of it?</p>
+<p id=c1ca class="phone s03"><cite>Manu_Sporny:</cite> the other. I'm concerned about saying no, we're never going to do that. meaning if it's JSON LD object just a subgraph that's fine. We would have to think through Dave Longley's digitally signed VC as template render method would be what you would find when you is that what would happen render method would be a URL and you'd go No,…</p>
+<p id=1a3a class="phone s03"><cite>Manu_Sporny:</cite> I don't even know how that would work. yeah,…</p>
+<p id=0e28 class="phone s04"><cite>Dave_Longley:</cite> We have to work through the details of…</p>
+<p id=161e class="phone s04"><cite>Dave_Longley:</cite> what it looks like.</p>
+<p id=db4b class="phone s03"><cite>Manu_Sporny:</cite> but fundamentally it externalizes the template itself.</p>
+<p id=b99b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, but can we get rid of the B 64 encoding part?</p>
+<p id=680a class="phone s01"><cite>Dmitri_Zagidulin:</cite> I think we all agree that we need to be able to externalize render methods, but is this really the approach we want to advocate for? all right.</p>
+<p id=e8d5 class="phone s03"><cite>Manu_Sporny:</cite> We're miscommunicating.</p>
+<p id=1a01 class="phone s03"><cite>Manu_Sporny:</cite> U Dmitri, I'm saying you can't get rid of that.</p>
+<p id=3f62 class="phone s05"><cite>Benjamin_Young:</cite> It's just that we wouldn't apply it here, Demetri.</p>
+<p id=9905 class="phone s03"><cite>Manu_Sporny:</cite> If you're going to have an ID there, a data URL is a completely legitimate ID. The only thing we can do is advocate. Yep.</p>
+<p id=1545 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's …</p>
+</section>
+
+<section>
+<h3 id=f379>Data URL Approach</h3>
+<p id=159c class="phone s01"><cite>Dmitri_Zagidulin:</cite> hold on. Let's go to the queue. we've got Phil and then Dave. Go ahead, Phil.</p>
+<p id=7802 class="phone s07"><cite>Phil_Archer:</cite> I'm out of my depth here a little bit,…</p>
+<p id=32fc class="phone s07"><cite>Phil_Archer:</cite> but I'm just hearing the possibility of removing the use of a data URL here. I'm thinking in our use case as a GS1, we kind of think those are going to be important. Now, we wouldn't necessarily do it in the render method. we might not. but just as a semioutsider on this, I think that's a really nice way to put the data within it. It reduces the number of calls externally. It feels It may not be more secure, but it feels more secure to put everything you can in the credential itself, including that render method template.</p>
+<p id=2160 class="phone s07"><cite>Phil_Archer:</cite> …</p>
+<p id=10003 class="phone s07"><cite>Phil_Archer:</cite> I hope I'm not speaking out of term, but I understand why it doesn't make sense in this particular case, but picking up on what Matt is saying, Jason LD allows it. So, you may not want to highlight it, you may not want to promote it. I don't think you can just get rid of it.</p>
+<p id=8436 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, folks.</p>
+<p id=ccda class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hold on. I feel like there's a fundamental gap in communication.</p>
+<p id=dc0a class="phone s07"><cite>Phil_Archer:</cite> So we'll understand.</p>
+<p id=8086 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The problem with this approach is that we're taking some nice JSON right here and we're encoding it and for whatever reason stuffing it into a single opaque field like this doesn't make sense.</p>
+<p id=df23 class="phone s07"><cite>Phil_Archer:</cite> All Okay. I get you.</p>
+<p id=f64b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, Dave and…</p>
+<p id=a439 class="phone s07"><cite>Phil_Archer:</cite> I get you. Sorry.</p>
+<p id=35a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> then Benjamin</p>
+<p id=0cbb class="phone s04"><cite>Dave_Longley:</cite> So yeah, so when you were saying B 64, Demetri, I didn't know if you're talking about you you still wanted a data URL but without the B 64 encoding. there were a lot of different things. I'm not sure what specifically you're talking about, but with the template field, the value of that is a URL. And so you can always put a data URL in there. I would also point out that it's a good thing to have some encapsulation here. we don't necessarily want the data model from the render method mixing with the rest of</p>
+<p id=39b9 class="phone s04"><cite>Dave_Longley:</cite> the VC and there are also considerations around selective disclosure and how that would work when you go and put a signature on this and what do you selectively disclose out of there? how does all of that work having an using encapsulation has in this spot because we have completely separate concepts and separate things that we're working with. this template that we're talking about is a separable concept from the credential itself. has benefit to it. And so we should be careful with that.</p>
+<p id=00b9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> My god, I feel like I'm going crazy here. what we're not talking about encapsulation though. we're for example, take credential subject. What we don't do in verifiable credential is take the entirety of credential subject and all of its field that could be in there. We don't base 64 encode it and stuff it into the credential subject field. that makes no sense.</p>
+<p id=5a70 class="phone s01"><cite>Dmitri_Zagidulin:</cite> We instead just have this right here. We have JSON LD. Okay. Benjamin and then</p>
+<p id=2c48 class="phone s05"><cite>Benjamin_Young:</cite> …</p>
+<p id=99fe class="phone s05"><cite>Benjamin_Young:</cite> yeah, the problem is we're juggling all the possible ways in which this could be done without zeroing in on some decisions that would guide which one we should pick. Long's pointed to a handful of different reasons why any of these could be good options and there's always pros and cons to each thing. but I think we're going to continue to get wrapped around the axle without some decisions around sort of.</p>
+<p id=02c8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's what we're trying to do. I agree with you.</p>
+<p id=751c class="phone s05"><cite>Benjamin_Young:</cite> But we're like I don't know.</p>
+<p id=de7b class="phone s05"><cite>Benjamin_Young:</cite> I think the core decision looks like…</p>
+<p id=4292 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right.</p>
+<p id=a0b7 class="phone s05"><cite>Benjamin_Young:</cite> if you go back to the example there's no the one you just had up as currently written this is just stuffed in the data just like an HTML one and…</p>
+<p id=e035 class="phone s01"><cite>Dmitri_Zagidulin:</cite> This example right Yes. And that's bad.</p>
+<p id=cdfb class="phone s05"><cite>Benjamin_Young:</cite> that right and that can be a thing that we litigate right and say okay if we do it this way What does that take away? Two data models was where we started discussing things of. And the issue that kicked this whole thing off that you had just brought up about moving in part was about undoing that and making whatever we're defining here.</p>
+<p id=c441 class="phone s05"><cite>Benjamin_Young:</cite> this selection of fields into the JSON LD landscape that is based on the verifiable credentials data model and not an extra data model and not an extra data model tucked inside a data URL. So the hope of mine at least was to simplify it by getting us back to there is a single data model,…</p>
+<p id=e55b class="phone s01"><cite>Dmitri_Zagidulin:</cite> I agree with you wholeheartedly.</p>
+<p id=20f0 class="phone s05"><cite>Benjamin_Young:</cite> there is a single surface that you don't have to change realities when you find this thing and you certainly don't have to decode it that's a description of the shift. maybe and you've been asking for a while and I don't think anyone We just keep spinning out. is there a reason to keep it as a data URL? I think not.</p>
+<p id=1bf9 class="phone s05"><cite>Benjamin_Young:</cite> I think that data models alone says we shouldn't also have something using the adjson primitive in JSON LD because again you're switching lanes and you're making devs not know what they're getting into each time you do that. and these two worlds are similar. So my preference for something that looks like JSON is that we plummet into the main JSONLD structure that is the verifiable credential. I think as much as possible we should pick which thing we want to litigate thoroughly and then put it to bed before we toss the salad again.</p>
+<p id=3e8c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Mano, I think you're up next.</p>
+<p id=8065 class="phone s03"><cite>Manu_Sporny:</cite> Largely agree with Benjamin. I think we're shifting we're asking too many questions simultaneously. it depends Demetri you keep interrupting people are talking and…</p>
+<p id=edfa class="phone s01"><cite>Dmitri_Zagidulin:</cite> Just to be clear, I was hoping to ask just this one question first. Can we get rid of this part? Let's start with that as a Im So, I'm really sorry.</p>
+<p id=5c7a class="phone s03"><cite>Manu_Sporny:</cite> I know you get excited and…</p>
+<p id=b5c4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, you're absolutely right.</p>
+<p id=ae9e class="phone s03"><cite>Manu_Sporny:</cite> you interrupt and then people can't finish their thought. so I appreciate you've got to manage the meeting but it's difficult to get so for example maybe just like asserting this thing the card object is going to be JSONLDD and…</p>
+<p id=2b3b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Sorry about that. Please continue.</p>
+<p id=845f class="phone s03"><cite>Manu_Sporny:</cite> we need to refactor it so it's JSLD and that would at least pin one thing down so that we could see what everything else would look meaning if we did that we could explore Dave Longley's this is an external credential. we could explore what the example update might look like without having to have the discussion about data urls just yet right because I think the response to your Dmitri data URL question is like no it's going to be a data URL if it can be a URL you can have a data URL there we can't prevent that from happening make it JSON LD and…</p>
+<p id=771e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, the thing that you just proposed is exactly what I was saying. Yes. Yes.</p>
+<p id=7095 class="phone s03"><cite>Manu_Sporny:</cite> go from there. Okay. That's okay.</p>
+<p id=f4ae class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. I think. Exactly. It excellent.</p>
+<p id=5ab7 class="phone s03"><cite>Manu_Sporny:</cite> That Okay. If is that So if we hone in on that, I really want to hear from Nate to hear what goes off the rails if we do</p>
+<p id=a0aa class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead, Nate.</p>
+<p id=f9b2 class="phone s06"><cite>Nate_Otto:</cite> So, first of all, yeah, we note that the usage of a data URI is not specific to this card or highlights render method. It is also the same thing that's used for L or Whenever a template property exists, it's at that layer that it says it may be a data URI. So separate question is what is the content of the card or highlights template and I don't have any strong opinions here. The historical reason why I picked JSON for this in the original poll request was to make it compatible with the JSON schema for really easy validation.</p>
+<p id=a6b4 class="phone s06"><cite>Nate_Otto:</cite> Because the idea is that this data is going straight to the screen not to complicated semantic processing more. We hadn't covered any multiple language cases at the time. For instance, the rationale was that because it's going straight to the screen, we want to have a very nice clean regular schema that we can verify that the template is a thing that the processor can handle. rapidly and so I picked plain JSON so that it was compatible with SON schema. we could keep the JSON schema capability even if we used JSON LD as a data model making it a little bit more complicated. but I'm not sure that the usage of JSON schema really is the right tool to be able to do the thing to the renderer to ensure that the right properties are present is possible for them to perform the rendering.</p>
+<p id=567e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. So I agree with Mona that starting as a decision, as a proposal of can we make this JSON LD is a decent starting point. I see both Nate and…</p>
+<p id=b801 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dave in chat are proposing counterarguments. go ahead Dave.</p>
+<p id=33e3 class="phone s04"><cite>Dave_Longley:</cite> Yeah, just to air some of the reasons not to use embedded JSONLDD for render method templates.</p>
+<p id=9eb2 class="phone s04"><cite>Dave_Longley:</cite> This will make the selective disclosure messier. it'll inject a lot of blank notes into the data model just based on what we already have today. Unless we're going to change that and eliminate blank nodes. that can mess with privacy and the understanding of the information. we will also potentially have a harder time with ordering. not that that's mountable the selector disclosure and privacy considerations can be solved by always externalizing the template. So there is a pathway for that.</p>
+<p id=3fff class="phone s04"><cite>Dave_Longley:</cite> But these are things to consider when you're mixing all of this extra template information into your otherwise pure verifiable credential which usually has a lot of other design considerations around it especially for personal information. I guess this is one reason why encapsulation is good and having a separation of concerns. a temp render template is a fundamentally different thing to think about and consider than your credential design itself.</p>
+<p id=81a3 class="phone s04"><cite>Dave_Longley:</cite> And if you don't have a good separation there, then you have to consider all of these things when you're working on both problems.</p>
+<p id=af43 class="phone s01"><cite>Dmitri_Zagidulin:</cite> got it,…</p>
+<p id=2732 class="phone s01"><cite>Dmitri_Zagidulin:</cite> CL</p>
+<p id=b0c1 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I mean to go at it from that direction, I'm arguing against myself, we wouldn't try and express an HTML template in JSONLDD in the credential, we wouldn't do that. and so the question is, is this card object more HTML than JSONLDLD</p>
+<p id=d876 class="phone s03"><cite>Manu_Sporny:</cite> I'm trying to think forward towards the card object. It's like okay so Dave going down you're like okay maybe it points to another verifiable credential and it's digitally signed and all that kind of stuff. if we're going to do that then the thing needs to be a verifiable credential and needs to refer to a verifiable credential and we need to stuff a verifiable credential into the template and that means the entire card object ends up changing to look like a verifiable credential. I don't like the sound of that. and what are we really getting out of it? we get to express it as JSLD but it's got all these kind of downsides. which puts me back to the let's just leave it as JSON. and if you want to sign over it you just add a digest multibase when you point to it and externalize it.</p>
+<p id=4eb6 class="phone s03"><cite>Manu_Sporny:</cite> If you want to turn it into a data URL and embed it, which is, GS1 is using for some of their use cases, maybe not this, but others, you can do that. and I think we may be in a better state than going full-blown JSONLDD with this thing because it is a fundamentally different thing, right? like an HTML file. that's a</p>
+<p id=10004 class="phone s04"><cite>Dave_Longley:</cite> Yeah, I agreed with some of that. I think the main thing I agree with is we should be thinking about these templates as something fundamentally different and separate from your VC that you're attaching to your VC. and if we have that separation of concerns, then we can independently think about each individual template and what it should be like. that allows us to make choices like hey this template should be JSON or JSONLDLD or YAML or HTML but we're not doing that in light of the VC itself being JSONLDD so let's jam them together the fact that we're exploring a template that might be best expressed in JSON or JSONLDD or whatever it might be is incidental with the fact that our existing VC data</p>
+<p id=6391 class="phone s04"><cite>Dave_Longley:</cite> model is Jason or JSON. I don't think we should make a special decision about that particular template just because they happen to overlap. we should be considering them like we do any other template. And I think that was my takeaway from your comment that was a really important point. We would not be thinking about how do we make this HTML into JSONLDLD I don't think that's the right choice.</p>
+<p id=1ba2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And just to be clear though, we're not talking about the HTML that we're talking about the JSON card property.</p>
+<p id=5606 class="phone s04"><cite>Dave_Longley:</cite> Yes, I'm suggesting we should make the same decision about separation of concerns about every template regardless of what format makes most sense for that particular template. We should not be trying to make a temp have a certain format it may not more naturally fit into a VC because they happen to share the same format. templates are independent from the rest of the VC. and if we separate that then we can separate all of these other concerns and…</p>
+<p id=a5e1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Man, go ahead.</p>
+<p id=ec7c class="phone s04"><cite>Dave_Longley:</cite> make sure that we make the right choice.</p>
+<p id=c181 class="phone s03"><cite>Manu_Sporny:</cite> Yeah, the other way to, say that is templates are their own in specific language. Full stop. The thing that we're looking at just so happens to kind of look like JSONLDLD and we could potentially make it into JSONLDLD, but it's just because of the very specific example that we're looking at. The more general form is it is a specific A template is always a domain specific language and…</p>
+<p id=596e class="phone s03"><cite>Manu_Sporny:</cite> we can't make any presumptions about that domain specific language. Therefore, the separation of concerns</p>
+<p id=c7e6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=dbda class="phone s01"><cite>Dmitri_Zagidulin:</cite> And by separation of concerns we mean we don't have consensus on rather so we had a proposal should we make the card method JSON LD So the answer from this discussion is no. it's going to remain adjacent. Bob, go ahead, Dave.</p>
+<p id=cdfe class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think that's true. And even if we had made that decision, the way you would externalize it would probably be either with a VC or with a data URL that then has a media type of JSONLDD and base 64 encoded JSLD. You'd end up just seeing that same thing all over again…</p>
+<p id=c4b5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Mother.</p>
+<p id=0f92 class="phone s04"><cite>Dave_Longley:</cite> because of the separation of concerns and encapsulation.</p>
+<p id=efd7 class="phone s03"><cite>Manu_Sporny:</cite> So, if we lock that in place, and I'm not saying we are, but if we lock that in place, then all of a sudden a bunch of design decisions become easier for the card easier, I don't know. I'm going to assert some things that I'm sure people are going to hate. I'm talking about internationalization here. So the card object has a language that's associated with it and all of the fields that are strings in there are attached to the language. that is the other approach is we use language value objects which I think I would be opposed to.</p>
+<p id=454e class="phone s03"><cite>Manu_Sporny:</cite> I know that would be a controversial thing. so I'm trying to nail down the if this thing's going to be a JSON object, it means we're designing a domain specific language, and that domain specific language has to have accessibility and internationalization built into it. And I'm trying to figure out what's the simplest thing that we can do so I'm highlighting that as an example of all of these decisions all of a sudden become much more crisp if we make a decision here on what we're doing.</p>
+<p id=273a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks.</p>
+<p id=cbaa class="phone s02"><cite>Ivan_Herman:</cite> Yeah, I was referring to that in the chat.</p>
+<p id=2c0f class="phone s02"><cite>Ivan_Herman:</cite> But to avoid any kind of misunderstanding because it's very easy to misunderstanding things, let's not use JSON for the cards in the first place.</p>
+<p id=0707 class="phone s02"><cite>Ivan_Herman:</cite> I was putting YAML as an alternative it's functionally identical but we can use that as examples of template languages that can be used out there which are not to be mixed up with our JSON LD for the time being it's really messed up when you read the spec you don't know in…</p>
+<p id=9a93 class="phone s02"><cite>Ivan_Herman:</cite> which world you are in the JSON LD word or in the JSON</p>
+<p id=480f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=ce79 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Power. personally I'm not sure I'm understanding the current discussion for example what man said about card if the card object remains a JSON blob we can have a language attached to it my counter example to that is we can still have a language attached to it if they were JSONLDD as well to each project I'm not sure how YAML would work in this array of fields. but I'm probably not understanding something. go ahead Benjamin.</p>
+<p id=d8ea class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I think the biggest thing that's showing up in all of this is that scope is expanded ly widely from this issue. I think we should make a multi- language issue and yeah,…</p>
+<p id=09ba class="phone s01"><cite>Dmitri_Zagidulin:</cite> There was one already.</p>
+<p id=83e3 class="phone s05"><cite>Benjamin_Young:</cite> move the conversation there and don't end up in that swamp right now,…</p>
+<p id=5db0 class="phone s02"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=3f4e class="phone s05"><cite>Benjamin_Young:</cite> I guess, is what I'm saying. In terms of I think I missed part of this, but I think the sound of what's happening since I've been back is one way or the other, we want to keep the render method template out of the main JSONLDD structure of the document.</p>
+<p id=7f14 class="phone s05"><cite>Benjamin_Young:</cite> At least that's what I'm picking up from at Jason blob mentions. Gavon, I think putting Jason inside Jasonld, but somehow having it be magically a different animal is super dangerous and confusing. and not a big fan at JSON even existing, but it does for valid reasons. so doing something like making it obvious with the HTML or SVG or in this possible case that it's not where you thought you were. you've now moved into a different space and this thing has its own little micro spec about what you can and can't do within it.</p>
+<p id=3a90 class="phone s05"><cite>Benjamin_Young:</cite> would be a huge help to developers and then it's not going to be a shock that they have to either escape that thing or stuff it in a data URL or whatever we end up having them do. if we do use YAML LV then we get multi- language stuff for free which again we should push off to another space. But there are in terms of the boundary line between the parent document and the render method thing a lot of reasons to make sure that the developer at the keyboard completely understands that they're phase switching and they're no longer in the main document. they're now developing a separate document that is for a separate purpose. And the more distinct we make that shift, the less likely people are going to be like, &quot; I can do this here because I can do this up there.&quot; which is already not true.</p>
+<p id=d8a5 class="phone s05"><cite>Benjamin_Young:</cite> but not clear that it's not true in the card thing…</p>
+<p id=dfee class="phone s05"><cite>Benjamin_Young:</cite> unless you read it top to bottom. so</p>
+<p id=9fa9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Benjamin.</p>
+<p id=6c06 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Anyone else? All right. we are a few minutes till the top of the hour. probably want few minutes between our next spec call. So I encourage everyone to please let's continue this discussion in the PRs and the specs and we'll talk to you all again next week. Thanks all. Meeting ended after 00:58:18 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

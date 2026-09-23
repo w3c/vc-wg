@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 23 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>23 September 2026</h2>
+
+<nav id=links>
+<a href="https://lists.w3.org/Archives/Public/public-vc-wg/2026Sep/0058.html"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/09/23-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony, brent, dlongley, dmitriz, Elaine, exe, hsano, ivan, JennieM, jimr, JoeAndrieu, kezike, manu, michaelshea, pdl-ASU, phila, TallTed, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>brent, manu, wes-smith</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#e031">Introductions</a></li>
+<li><a href="#1c14">Task Force Updates</a></li>
+<li><a href="#31e2">Blog Post</a></li>
+<li><a href="#db2d">Data Integrity re-structuring overview</a></li>
+<li><a href="#8b8e">TPAC, goals etc.</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+
+<section>
+<h3 id=e031>Introductions</h3>
+<p id=88a7 class="phone s01"><cite>Antony:</cite> Hello</p>
+<p id=50ef class="phone s02"><cite>phila:</cite> reviewing agenda, nothing one additional topic (DC-API)</p>
+</section>
+
+<section>
+<h3 id=1c14>Task Force Updates</h3>
+<p id=88c6 class="phone s03"><cite>manu:</cite> DI, Barcodes, Bitsring, Forgery Defense are all making progress<br>
+<span id=2fee>… One request: BBS specification at W3C is relying on IETF Crypto forum. That spec is not progressing, not a lot of author involvement</span><br>
+<span id=041a>… this is a big risk for us. Greg is in the VCWG, has good relationships with the BBS Authors. Greg has volunteered to help push things forward.</span><br>
+<span id=acfe>… Could we resolve to ask the IETF to add Greg as an author.</span><br>
+<span id=9cda>… everything else is going well</span></p>
+<p id=299b class="phone s04"><cite>brent:</cite> I agree that greg should be added as an author - this group passing a resolution asking the IETF to add someone as an author would be unusual, and I'm not sure that the IETF would know how to respond to such a resolution. Though not quite as decisive, it could be more effective to get the existing authors to add him as an author. Even without him added as an author, he can fill the role that he is currently filling.</p>
+<p id=36e3 class="phone s02"><cite>phila:</cite> I was a bit surprised to hear we might make a resolution for this</p>
+<p id=ffff class="phone s05"><cite>ivan:</cite> I have not heard of this and of resolution, but I also have not run into this problem. What we could do is that the WG could agree that this is what needs to happen, but without passing a formal resolution, and with that we could talk to the liaisons to the IETF.</p>
+<p id=88c0 class="phone s05"><cite>ivan:</cite> I'm not familiar, I don't know. What we could do is agree on what would be good to happen and talk to Simone and Philippe who are the liaisons</p>
+<p id=2fc1 class="phone s02"><cite>phila:</cite> The liaisons should be brought into this conversation. It would be useful to have a resolution in the minutes.</p>
+<p id=8417 class="phone s03"><cite>manu:</cite> We need someone who can make changes to the specification in a timely manner. Greg is willing to do that.<br>
+<span id=c46f>… It has more weight when we as a working group make the statement. Saying we want it to move forward and we want Greg added as an author.</span><br>
+<span id=73ce>… Our ability to get BBS done is at risk.</span></p>
+<p id=7812 class="phone s02"><cite>phila:</cite> the motivation is clear, and we should take a resolution. That's not enough, we also need the liaisons involved.. I take the action to move it forward with Philippe.</p>
+<p id=0e0e class="phone s04"><cite>brent:</cite> I think we should resolve to urge the IETF to move the BBS document forward and encourage reaching out to the authors and gain additional support. I would not be able to +1 a resolution directly calling for Greg's addition - that would be an overstep.</p>
+<p id=3be0 class=irc><cite>&lt;ivan&gt;</cite> +1 to Brent</p>
+<p id=ec16 class=irc><cite>&lt;Antony&gt;</cite> I'm author on an IETF draft, admittedly with zero other authors at present, so not experienced much. Perhaps a small and friendly step before a resolution or official channel, might be for Greg simply as an individual just to contact one or more of the authors and just ask if they're willing to add him as author. As Gret's already a contributor,</p>
+<p id=ef2b class=irc><cite>&lt;Antony&gt;</cite> this low-key approach maybe will get the job done!</p>
+<p id=a7d5 class=irc><cite>&lt;dlongley&gt;</cite> +1 to saying we have a WG member willing to help as an additional author.</p>
+<p id=7b3a class=irc><cite>&lt;brent&gt;</cite> +1 to that proposal</p>
+<p id=c34f class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: We urge the IETF to move the BBS spec (<a href="https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/">https://<wbr>datatracker.ietf.org/<wbr>doc/<wbr>draft-irtf-cfrg-bbs-signatures/</a>) forward by all means available. We have a WG member willing to help as an additional author</p>
+<p id=b2f0 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=f2f0 class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=f2f1 class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=32f0 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=72f0 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b2f1 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=b2f2 class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=b2f3 class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=b2f4 class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id=f2f2 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=72f1 class=irc><cite>&lt;Antony&gt;</cite> +1</p>
+<p id=72f2 class=irc><cite>&lt;pdl-ASU&gt;</cite> +1</p>
+<p id=72f3 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=457f class=resolution><strong>RESOLUTION:</strong> We urge the IETF to move the BBS spec (<a href="https://datatracker.ietf.org/doc/draft-irtf-cfrg-bbs-signatures/">https://<wbr>datatracker.ietf.org/<wbr>doc/<wbr>draft-irtf-cfrg-bbs-signatures/</a>) forward by all means available. We have a WG member willing to help as an additional author</p>
+<p id=b2f5 class=irc><cite>&lt;Elaine&gt;</cite> +1</p>
+<p id=5747 class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to note something else about the VCB/DI TF</p>
+<p id=d8da class=irc><cite>&lt;Zakim&gt;</cite> kezike, you wanted to provide update for VCALM TF</p>
+<p id=0cfe class="phone s06"><cite>kezike:</cite> brief update on VCALM. Two things: first we are getting some review from internationalization. Second, big threat model update is in place.<br>
+<span id=86d7>… keeping an eye out for the new Threat Model protocol, we will be moving to that.</span></p>
+<p id=960b class="phone s02"><cite>phila:</cite> How likely you will be ready for VCALM to move forward at TPAC?</p>
+<p id=a24e class="phone s06"><cite>kezike:</cite> Fairly confident, we're relying on getting timely review.</p>
+<p id=b82e class="phone s02"><cite>phila:</cite> We are hoping to move into CR with all specs at TPAC</p>
+<p id=10000 class="phone s03"><cite>manu:</cite> It is becoming unliekly that we will get to CR with anything by TPAC.<br>
+<span id=6e81>… Threat model work and lack of reviews are both holding things up.</span><br>
+<span id=d507>… still need TAG reviews</span><br>
+<span id=e022>… without that we can't really move forward</span><br>
+<span id=dfb9>… Recognized Entities is making progress. Privacy review is coming in. They are not resonating with using a threat model to develop Privcy considerations. Did get security review, lot's of work.</span></p>
+<p id=facc class="phone s03"><cite>manu:</cite> I think there is a bit of uncertainty on exactly what good enough is with regards to the threat model</p>
+<p id=fab2 class="phone s07"><cite>JoeAndrieu:</cite> Simone and I are engaged productively. Between us three, we can find a reasonable place to land.<br>
+<span id=3748>… there's a route we can get there with SING. Simone will help us talk with PING</span></p>
+<p id=742b class="phone s05"><cite>ivan:</cite> Recognized Entities is also testing out a Vocabulary, that is available for review.</p>
+<p id=f39e class=irc><cite>&lt;JoeAndrieu&gt;</cite> confidence-method has nothing significant to report. working towards starting horizontal review by TPAC.</p>
+<p id=db53 class="phone s02"><cite>phila:</cite> There iwll be more coming from GS1 for Recognized Entities.</p>
+</section>
+
+<section>
+<h3 id=31e2>Blog Post</h3>
+<p id=938a class=irc><cite>&lt;phila&gt;</cite> -> <a href="https://lists.w3.org/Archives/Member/member-vc-wg/2026Sep/0000.html">Blog post</a></p>
+<p id=139b class="phone s02"><cite>phila:</cite> Not sure who's reviewed</p>
+<p id=c5e0 class="phone s08"><cite>wes-smith:</cite> Hopefully folks have looked at the draft. It is fairly short, arguing VC Barcodes is uniquely positioned to address attacks such as we've seen lately with millions of drivers licenses. Digital signatures and real-time revocation mechanisms are key.<br>
+<span id=8938>… It asserts that you should use VC-Barcodes to mitigate from attacks like this.</span><br>
+<span id=7037>… we've discussed with the comms team, they will have some review. Haven't heard anything from the group requesting changes.</span><br>
+<span id=41da>… can we resolve to publish modulo any changes requested by comms? This discussion is happening elsewhere so publishing soon is important.</span><br>
+<span id=b102>… also talking with comms team about publicizing the blog</span></p>
+<p id=ff3a class=irc><cite>&lt;manu&gt;</cite> I have read it and looks good to me.</p>
+<p id=e7cb class="phone s02"><cite>phila:</cite> does anyone have comments on the blog post?</p>
+<p id=8edd class=irc><cite>&lt;JimR&gt;</cite> I have also read it and think it is good as well.</p>
+<p id=2d27 class="phone s09"><cite>pdl-ASU:</cite> I have read it. It seems a bit longer than it needs to be. I suggest an edit after the section that ends with &quot;as Cyberattacks grow in frequency&quot;<br>
+<span id=19c9>… the text after that has a lot of repetition</span></p>
+<p id=a660 class="phone s02"><cite>phila:</cite> does that edit sound reasonable?</p>
+<p id=7c0f class="phone s08"><cite>wes-smith:</cite> can we still resolve to publish today, even with those changes?</p>
+<p id=6eaa class=irc><cite>&lt;Elaine&gt;</cite> go for it Wes!</p>
+<p id=821e class="phone s09"><cite>pdl-ASU:</cite> I will put suggested change in IRC</p>
+<p id=f5b1 class=irc><cite>&lt;phila&gt;</cite> PROPOSED RESOLUTION: The VCWG seeks publication of the text in <a href="https://lists.w3.org/Archives/Member/member-vc-wg/2026Sep/0000.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Member/<wbr>member-vc-wg/<wbr>2026Sep/<wbr>0000.html</a> as a W3C blog post no later than Tuesday 29th September, modulo minor changes to be made following suggestions made during the meeting and any editorial changes required by the Comms team</p>
+<p id=a06b class="phone s02"><cite>phila:</cite> any comments?</p>
+<p id=33a9 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=73a9 class=irc><cite>&lt;manu&gt;</cite> +1</p>
+<p id=f3a9 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f3aa class=irc><cite>&lt;michaelshea&gt;</cite> +1</p>
+<p id=f3ab class=irc><cite>&lt;dlongley&gt;</cite> +1</p>
+<p id=f3ac class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=33aa class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=b3a9 class=irc><cite>&lt;hsano&gt;</cite> +1</p>
+<p id=f3ad class=irc><cite>&lt;Antony&gt;</cite> +1</p>
+<p id=f3ae class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=73aa class=irc><cite>&lt;Elaine&gt;</cite> +1</p>
+<p id=b3aa class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=b3ab class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id=7dd8 class=irc><cite>&lt;pdl-ASU&gt;</cite> End the post text at the line &quot;W3C Verifiable Credential Barcodes are the solution - and the technology is</p>
+<p id=bcb6 class=irc><cite>&lt;pdl-ASU&gt;</cite> open and free for all to use.&quot;  What follows then is the list of links and whatever minimum explanation of them is requireds</p>
+<p id=10001 class=resolution><strong>RESOLUTION:</strong> The VCWG seeks publication of the text in <a href="https://lists.w3.org/Archives/Member/member-vc-wg/2026Sep/0000.html">https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Member/<wbr>member-vc-wg/<wbr>2026Sep/<wbr>0000.html</a> as a W3C blog post no later than Tuesday 29th September, modulo minor changes to be made following suggestions made during the meeting and any editorial changes required by the Comms team</p>
+<p id=2c7a class=irc><cite>&lt;ivan&gt;</cite> thanks to Wes for spearheading this</p>
+<p id=c741 class="phone s02"><cite>phila:</cite> thanks everyone</p>
+<p id=daf2 class="phone s10"><cite>TallTed:</cite> I will be making suggested changes during the meeting</p>
+</section>
+
+<section>
+<h3 id=db2d>Data Integrity re-structuring overview</h3>
+
+<p id=67ec class="phone s03"><cite>manu:</cite> This is all credit to Greg Bernstein. When we published DI 1.0 and the suites there was a lot of duplicate text. Greg re-factored all of that and unified. For example, the selective disclosure mechanism is now generalized and available for use by all of the cyphersuites.<br>
+<span id=9258>… There is also work around single individual hashing and selctive disclosure. There are a number of options to take, hashing together vs hasing individual items. The takewaya is this is good and important work that Greg has done. This will help future cryptosuite authors to re-use these common algotirhms.</span><br>
+<span id=9d1c>… had a discussion around cryptosute identifiers and where certain parameters will go, decided to put them in the identifier string.</span><br>
+<span id=b8d9>… also some BBS optionality stuff has been covered. It's in really good shape now.</span></p>
+<p id=10002 class=irc><cite>&lt;pdl-ASU&gt;</cite> Wes Smith While I didn't realize that was a heading (W3C Verifiable credentials are the solution...&quot;  I think that's a good closing sentence to the post. Followed by the URLs with whatever context for them is needed.</p>
+<p id=67fd class="phone s02"><cite>phila:</cite> all editorial?</p>
+<p id=fce9 class="phone s03"><cite>manu:</cite> yes</p>
+<p id=2511 class="phone s05"><cite>ivan:</cite> I want to emphasize something. The current documents are frightening to add new cryptosuites. With the new format, adding new crypto algorithms will be relatively easy.<br>
+<span id=750c>… outsiders will be able to create their own cryptosuites more easily and comprehensively than before</span><br>
+<span id=262d>… this was agreat thing to do</span></p>
+</section>
+
+<section>
+<h3 id=8b8e>TPAC, goals etc.</h3>
+<p id=df87 class=summary><a href="https://www.w3.org/register/tpac2026/registrants">https://<wbr>www.w3.org/<wbr>register/<wbr>tpac2026/<wbr>registrants</a></p>
+<p id=606d class="phone s02"><cite>phila:</cite> There's a link of who has registered. We want as many as possible there. We are meeting Thursday and Friday.<br>
+<span id=8f5c>… Wednesday there are a bunch of breakouts. Lot's of initial proposals.</span><br>
+<span id=3528>… If anyone wants to suggest a breakout, now is the time.</span><br>
+<span id=dc57>… They are always exciting. Threat modeling, for example could be a good breakout.</span></p>
+<p id=df63 class=irc><cite>&lt;pdl-ASU&gt;</cite> Wes-Smith That's fine.  My suggestion is just that, a suggestion, in an attempt to make it a bit more succinct (aka shorter :-)</p>
+<p id=99e7 class=irc><cite>&lt;phila&gt;</cite> Joint meeting detauils <a href="https://www.w3.org/events/meetings/7f5ffe2d-c418-47f1-880a-36710212b347/">https://<wbr>www.w3.org/<wbr>events/<wbr>meetings/<wbr>7f5ffe2d-c418-47f1-880a-36710212b347/</a></p>
+<p id=46f0 class="phone s02"><cite>phila:</cite> Need to report on joint meeting agenda planning meeting from yesterday. Lots of groups meeting together. There is a joint meeting Tuesday during TPAC.<br>
+<span id=cc1e>… this is an important route to make sure the work we are doing is recognized and used elsewhere.</span><br>
+<span id=eeab>… As far as I know no one here is involved in the DC API, and no one there is involved here.</span></p>
+<p id=96f1 class=irc><cite>&lt;Antony&gt;</cite> manu, related to earlier topic of Greg's editorial refactoring the two specs - another shoutout to Greg who opened the 'linkability' discussion here <a href="https://github.com/w3c/vc-data-integrity/issues/363">w3c/<wbr>vc-data-integrity#363</a>. Will likely be useful to many.</p>
+<p id=89dc class="phone s02"><cite>phila:</cite> this joint meeting is one way to address that.</p>
+<p id=0cb9 class="phone s02"><cite>phila:</cite> This is important to us and others need to recognize that. It is important to our companies.</p>
+<p id=10003 class="phone s03"><cite>manu:</cite> To make that concrete, I think this group should raise issues on the DC-API around the fact that is doesn't support VCALM and isn't headed in that direction. In implementations, the only thing that can be passed is ISO MDoc, though supposedly supported, W3C VCs aren't supported.<br>
+<span id=d9e5>… I can write up the technical concerns for interoperability to put before ths group. The goal is to raise these issues before TPAC.</span></p>
+<p id=17d9 class="phone s02"><cite>phila:</cite> Do you want to draft them and discuss them here before raising them?</p>
+<p id=20c1 class="phone s03"><cite>manu:</cite> yes</p>
+<p id=6a23 class="phone s02"><cite>phila:</cite> in light of your workload, do you have time to get this together by next week?</p>
+<p id=7f4a class="phone s03"><cite>manu:</cite> no.</p>
+<p id=0d70 class="phone s02"><cite>phila:</cite> I can help as a chair and as GS1.</p>
+<p id=6f2b class="phone s03"><cite>manu:</cite> maybe in a few weeks.</p>
+<p id=9578 class=summary>those registered to Joint PTAC meeting: <a href="https://www.w3.org/register/tpac2026/registrants#meeting-465">https://<wbr>www.w3.org/<wbr>register/<wbr>tpac2026/<wbr>registrants#meeting-465</a></p>
+<p id=98b4 class="phone s02"><cite>phila:</cite> important to note that these people are not opposed to us, they just don't know us.<br>
+<span id=9612>… hoping this can be a positive discussion. We are all W3C working groups and should work together.</span><br>
+<span id=fcac>… It was a very positive call yesterday.</span></p>
+<p id=2286 class="phone s02"><cite>phila:</cite> any other business?</p>
+<p id=cedc class="phone s08"><cite>wes-smith:</cite> Am I blocking on reviews from anyone here? I'm in touch with Phil, anyone else?</p>
+<p id=99d9 class=irc><cite>&lt;phila&gt;</cite> acl pdl-ASU</p>
+<p id=e58c class="phone s10"><cite>TallTed:</cite> I will email you my suggestions</p>
+<p id=54a0 class="phone s09"><cite>pdl-ASU:</cite> those changes look good to me</p>
+<p id=95cf class="phone s02"><cite>phila:</cite> If you are an AC rep, don't forget to get your Board votes in. Election closes tomorrow. I felt this was very important to do. The makeup of the board matters today.</p>
+<p id=e3d7 class=irc><cite>&lt;JimR&gt;</cite> thank you all!</p>
+<p id=d6a8 class="phone s02"><cite>phila:</cite> Thaks all, thanks Brent, see you all next week.</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#457f">We urge the IETF to move the BBS spec (https://<wbr>datatracker.ietf.org/<wbr>doc/<wbr>draft-irtf-cfrg-bbs-signatures/) forward by all means available. We have a WG member willing to help as an additional author</a></li>
+<li><a href="#10001">The VCWG seeks publication of the text in https://<wbr>lists.w3.org/<wbr>Archives/<wbr>Member/<wbr>member-vc-wg/<wbr>2026Sep/<wbr>0000.html as a W3C blog post no later than Tuesday 29th September, modulo minor changes to be made following suggestions made during the meeting and any editorial changes required by the Comms team</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+
+</body>
+</html>
