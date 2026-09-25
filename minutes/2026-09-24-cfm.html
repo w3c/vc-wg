@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Confidence Method &ndash; 24 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Confidence Method</h1>
+<h2>24 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dmitri_Zagidulin, Elaine_Wooton, Joe_Andrieu, Manu_Sporny, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1ced">W3C Election Discussion</a></li>
+<li><a href="#bb40">Delegated Authority Specifications Evaluation</a></li>
+<li><a href="#fa06">Ucan And Zcaps Implementation Challenges</a></li>
+<li><a href="#1ac8">Capability System Choices</a></li>
+<li><a href="#3bfb">Implementing Zcaps On Top Of Vcs</a></li>
+<li><a href="#b544">Confidence Method Call Status</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=1ced>W3C Election Discussion</h3>
+<p id=ba38 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hey, Ted.</p>
+<p id=a57c class="phone s02"><cite>Ted_Thibodeau_Jr:</cite> Morning.</p>
+<p id=790c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Good morning. Whoa, it's Hey, Joe.</p>
+<p id=db41 class="phone s03"><cite>Joe_Andrieu:</cite> Hey guys.</p>
+<p id=346e class="phone s03"><cite>Joe_Andrieu:</cite> Denin and I made a mistake. We didn't realize this was scheduled against the consortium members meeting that's going on right now.</p>
+<p id=dd5e class="phone s01"><cite>Dmitri_Zagidulin:</cite> No.</p>
+<p id=eeb6 class="phone s03"><cite>Joe_Andrieu:</cite> And…</p>
+<p id=6c8f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. s***.</p>
+<p id=0252 class="phone s03"><cite>Joe_Andrieu:</cite> this is about this contention election that's happening. so yeah,…</p>
+<p id=c94c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Should we direct people there or what? Yeah,…</p>
+<p id=ffff class="phone s03"><cite>Joe_Andrieu:</cite> if you could, that's why I got on was to let you guys know. I apologize for the disruption. it's the consortium members meeting.</p>
+<p id=5b78 class="phone s01"><cite>Dmitri_Zagidulin:</cite> no problem. and…</p>
+<p id=8214 class="phone s04"><cite>Phillip_Long:</cite> Can you came in late?</p>
+<p id=bf63 class="phone s01"><cite>Dmitri_Zagidulin:</cite> remind me two words.</p>
+<p id=f0da class="phone s01"><cite>Dmitri_Zagidulin:</cite> What's the contentious election thing? Consortium members meeting.</p>
+<p id=f913 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, got it. and can you do me a favor and paste the link to it here in chat so that I can refer people to it?</p>
+<p id=fb99 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah. Yes. Okay. No,…</p>
+<p id=8482 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks, Appreciate it. No, no, no. You didn't come in late. so this is about to start the delegated authorization meeting but Joe points out that there's another sort of all hands diff meeting about something about a consolidated election.</p>
+<p id=3871 class="phone s04"><cite>Phillip_Long:</cite> A deflection.</p>
+<p id=7233 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Diff election.</p>
+<p id=8966 class="phone s03"><cite>Joe_Andrieu:</cite> no, this is W3C consortium member meeting not difficult.</p>
+<p id=996d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=6920 class="phone s04"><cite>Phillip_Long:</cite> …</p>
+<p id=196f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=4d6b class="phone s04"><cite>Phillip_Long:</cite> this is the deflection.</p>
+<p id=9972 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=bbb9 class="phone s04"><cite>Phillip_Long:</cite> Yeah, this is a somewhat contentious election.</p>
+<p id=78a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> to W3C. Right, right, right, right, right, but this is specifically for W3C members. got All So, I'll give heads up to people…</p>
+<p id=0ad3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> who are W3C members. And then, thanks, Joe.</p>
+<p id=ea68 class="phone s04"><cite>Phillip_Long:</cite> And that meeting is taking place concurrently.</p>
+<p id=418f class="phone s03"><cite>Joe_Andrieu:</cite> Thank you.</p>
+<p id=4132 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah. Yeah,…</p>
+<p id=c8f5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, concurrently,…</p>
+<p id=cd59 class=irc><cite>&lt;Joe_Andrieu&gt;</cite> <a href="https://www.w3.org/events/meetings/dcc1426a-525e-41c8-a0f8-3789bcc4fdce/">W3C Authentication Platform | W3C</a> </p>
+<p id=88bc class="phone s03"><cite>Joe_Andrieu:</cite> it's just starting and…</p>
+<p id=6b7e class="phone s01"><cite>Dmitri_Zagidulin:</cite> right? opposite of and…</p>
+<p id=768b class="phone s03"><cite>Joe_Andrieu:</cite> thanking it. I didn't realize that or we would have let people know.</p>
+<p id=9498 class="phone s04"><cite>Phillip_Long:</cite> I got to let the folks at ASU know because they're the voting rep, not me.</p>
+<p id=bba0 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah, the voting ends in 1 hour and this is a formal meeting in which there's going to be the last discussion that might influence it, but I think most people will have cast their votes, Phillip Long:</p>
+<p id=cdad class="phone s04"><cite>Phillip_Long:</cite> I don't know if they have or not. I gave him my recommendation, but I don't know if they've done it,…</p>
+<p id=903a class="phone s03"><cite>Joe_Andrieu:</cite> It'd be good reminder if I just got mine in.</p>
+<p id=c538 class="phone s01"><cite>Dmitri_Zagidulin:</cite> what's the topic like what's the election on toilets I haven't followed</p>
+<p id=4f3c class="phone s04"><cite>Phillip_Long:</cite> the new CEO,…</p>
+<p id=b73a class="phone s03"><cite>Joe_Andrieu:</cite> This is technically the board and…</p>
+<p id=2661 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The new CEO straight up. Phillip Long:</p>
+<p id=7176 class="phone s04"><cite>Phillip_Long:</cite> is the board,…</p>
+<p id=3993 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=3c77 class="phone s03"><cite>Joe_Andrieu:</cite> and…</p>
+<p id=e533 class="phone s04"><cite>Phillip_Long:</cite> Who will then be involved in the Greetings.</p>
+<p id=84cd class="phone s03"><cite>Joe_Andrieu:</cite> one of the things that's been contentious in the board election on the AC forum and members only communication but to share with you the impact has been transitions in the CEO and why didn't the board hold them accountable last time and how will we know that our new candidates are going to be able to hold the new CEO accountable. So, it's certainly the most exciting election…</p>
+<p id=aa7b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. that's</p>
+<p id=ba6b class="phone s03"><cite>Joe_Andrieu:</cite> since I've been involved in the W3C. Not that I want excitement here. …</p>
+<p id=40bb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Damn, that is exciting.</p>
+<p id=1c81 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right, right,…</p>
+<p id=ae2b class="phone s03"><cite>Joe_Andrieu:</cite> let me bounce over that other meeting.</p>
+<p id=3200 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you so much.</p>
+<p id=c02a class="phone s03"><cite>Joe_Andrieu:</cite> I appreciate Dimmitri you willing to pass on the torch. Thank you. Cheers.</p>
+<p id=c1b4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you so much. Thanks. Hi, Joe. Whoa, drama. I like it. Phil. Hi, Lane.</p>
+<p id=94f5 class="phone s05"><cite>Elaine_Wooton:</cite> Good wanted.</p>
+<p id=f0ec class="phone s01"><cite>Dmitri_Zagidulin:</cite> Good morning…</p>
+<p id=fce3 class="phone s04"><cite>Phillip_Long:</cite> So he put that link in chat. Is that…</p>
+<p id=2d9d class="phone s01"><cite>Dmitri_Zagidulin:</cite> case you see it.</p>
+<p id=a5be class="phone s04"><cite>Phillip_Long:</cite> I see it. Yeah.</p>
+<p id=8696 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> <a href="https://www.w3.org/events/meetings/dcc1426a-525e-41c8-a0f8-3789bcc4fdce/">W3C Authentication Platform | W3C</a> </p>
+<p id=56a9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, great. right now. Phillip Long:</p>
+<p id=43e5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Hey, Manu.</p>
+<p id=035b class="phone s06"><cite>Manu_Sporny:</cite> Hey, Dimmitri. How you doing? Phil. Hey, Lane.</p>
+<p id=bdeb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Joe just joined and…</p>
+<p id=9600 class="phone s04"><cite>Phillip_Long:</cite> Greetings.</p>
+<p id=6cc9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> said that the exciting W3C election is also happening right meeting is happening right now.</p>
+<p id=a23a class="phone s06"><cite>Manu_Sporny:</cite> No thanks.</p>
+<p id=c097 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. at over here if you want to go over there instead.</p>
+<p id=17c3 class="phone s06"><cite>Manu_Sporny:</cite> I'd like my morning drama free.</p>
+<p id=a5e8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Excellent. Right on. wow.</p>
+<p id=382f class="phone s04"><cite>Phillip_Long:</cite> As long as you got your votes in.</p>
+<p id=5234 class="phone s06"><cite>Manu_Sporny:</cite> I did. Yeah, it's gonna be a doozy.</p>
+<p id=38ef class="phone s01"><cite>Dmitri_Zagidulin:</cite> Who can I ask? So I haven't followed the excitement at all. Who's the new CEO? I see.</p>
+<p id=b931 class="phone s04"><cite>Phillip_Long:</cite> Hasn't been hired.</p>
+<p id=78e7 class="phone s06"><cite>Manu_Sporny:</cite> Dom is interim CEO,…</p>
+<p id=563b class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> <a href="https://identity.foundation/delegated-authority-evaluations/">Delegated Authority Evaluations</a> </p>
+<p id=0c8b class="phone s04"><cite>Phillip_Long:</cite> Interum, right?</p>
+<p id=8cb5 class="phone s06"><cite>Manu_Sporny:</cite> which Dom's great. but you're right, Philly. the new CEO is I think they're still searching and it took a long time to find the last CEO so I expect to take an equivalent amount of time to find the new CEO.</p>
+<p id=769b class="phone s01"><cite>Dmitri_Zagidulin:</cite> I see. Right.</p>
+<p id=fc71 class="phone s06"><cite>Manu_Sporny:</cite> That's right.</p>
+<p id=e6d4 class="phone s04"><cite>Phillip_Long:</cite> And if this board election is happening now, then the new board will be involved in that selection.</p>
+<p id=c160 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=3e37 class="phone s04"><cite>Phillip_Long:</cite> That's what the criticality is at the moment. She's Manu Sporny:</p>
+<p id=ed4c class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah. Yeah. And all this is member confidential stuff that we should not be talking about on a recorded call. Just as a heads up.</p>
+</section>
+
+<section>
+<h3 id=bb40>Delegated Authority Specifications Evaluation</h3>
+<p id=8122 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yep. I mean, I just keep forgetting this is Very exciting. I'm glad you're joining us. so we're fairly low attendance today. I think in conjunction with the W3C meeting we've been away for a couple of weeks so let's catch you up if you haven't had a chance to look at this is the overall paper that we've been working on here in chat and…</p>
+<p id=cb4b class="phone s01"><cite>Dmitri_Zagidulin:</cite> so what it is it is evaluating various delegated authority spec</p>
+<p id=1bdd class="phone s01"><cite>Dmitri_Zagidulin:</cite> specifications through the lens of specifically how useful is this for LLM agents or any kind of agentic authorization and it takes up a rubric. Yeah, Go ahead.</p>
+<p id=5b48 class="phone s04"><cite>Phillip_Long:</cite> Yeah, …</p>
+</section>
+
+<section>
+<h3 id=fa06>Ucan And Zcaps Implementation Challenges</h3>
+<p id=50c9 class="phone s04"><cite>Phillip_Long:</cite> I was just going to say for context, I've been working with ASU on this very topic for the last a month and a half or so. because they have huge pressure to make these agents available to students as well as faculty and u and we have looked at the various options all the way down including macaroon and god knows what else. and one of the problems appears is at the moment that the only capabilities framework that is actually implemented in any in and other than I believe Manu in your organization implemented in any degree is the UKAN implementations.</p>
+<p id=9377 class="phone s04"><cite>Phillip_Long:</cite> and…</p>
+<p id=37a4 class="phone s04"><cite>Phillip_Long:</cite> UKAN unfortunately is not something that Chaos OS supports at the moment. So they're hesitant to go down the other path.</p>
+<p id=2fb2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wait, I missed…</p>
+<p id=072d class="phone s04"><cite>Phillip_Long:</cite> Go ahead.</p>
+<p id=214c class="phone s01"><cite>Dmitri_Zagidulin:</cite> what you said about the sentence before Ukans. So, they've evaluated a bunch and</p>
+<p id=4b39 class="phone s04"><cite>Phillip_Long:</cite> And there's only really two options that have that make any sense. Ukan is one and I'm blanking on the initials. the one that you're using in the Zcaps LD is natively supported or…</p>
+<p id=2852 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Z capsuh.</p>
+<p id=79d3 class="phone s04"><cite>Phillip_Long:</cite> least has some support in KAS OS which has now been integrated into as MCP identity.</p>
+<p id=5d4b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Mhm.</p>
+<p id=94e2 class="phone s04"><cite>Phillip_Long:</cite> But the problem that the institution at ASU has is as far as we know there's only one place and that's that digital bazaar that has implemented it and so they're looking for an alternative that has at least some other implementations and…</p>
+<p id=6e3b class="phone s04"><cite>Phillip_Long:</cite> a third party that's maintaining it from the community and that happens to be UKAN.</p>
+<p id=da77 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=7c72 class="phone s04"><cite>Phillip_Long:</cite> But the problem with Ukan is that you can't pass the capabilities restrictions in the credential itself and it won't go through using the fields as a means of passing that information that's not supported. so,…</p>
+<p id=fa03 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, you</p>
+<p id=3abd class="phone s04"><cite>Phillip_Long:</cite> so effectively I've got a pull request that's been put together to the diff folks that would enable it to implement Ukan if they followed it. So, we're waiting to submit that to Chaos,…</p>
+<p id=e047 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Go ahead, man.</p>
+<p id=46d9 class="phone s06"><cite>Manu_Sporny:</cite> submitted to the chaos folks.</p>
+<p id=5e67 class="phone s04"><cite>Phillip_Long:</cite> Because they're the ones that have to great.</p>
+<p id=1bdb class="phone s06"><cite>Manu_Sporny:</cite> Because I'm talking directly with Rosalyn and Dylan about chaos and Cs and Zcaps and things of that nature. our initial feedback to Dillian was basically hey got some concerns about you using a verifiable credential as a capability it might be better off that you use a capability to do some of the stuff that you're doing and they were like okay we have deployed what we have and it's out there and…</p>
+<p id=ddad class="phone s04"><cite>Phillip_Long:</cite> Right. …</p>
+<p id=e6c9 class="phone s06"><cite>Manu_Sporny:</cite> they were very willing to modify change I think route using ZCAPS instead.</p>
+<p id=269f class="phone s04"><cite>Phillip_Long:</cite> that's And would they be open doing something to enable Ukan to be in there?</p>
+<p id=bb78 class="phone s06"><cite>Manu_Sporny:</cite> So yeah,…</p>
+<p id=f5ae class="phone s01"><cite>Dmitri_Zagidulin:</cite> minus out.</p>
+<p id=d57e class="phone s06"><cite>Manu_Sporny:</cite> that and I think Dylan's going to be at TAC, so there'll be time to sit down and chat with him a bit about it.</p>
+<p id=edb1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Fantastic.</p>
+<p id=9889 class="phone s06"><cite>Manu_Sporny:</cite> Don't know. Have to talk with them.</p>
+<p id=3c05 class="phone s04"><cite>Phillip_Long:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=1ac8>Capability System Choices</h3>
+<p id=c36c class="phone s06"><cite>Manu_Sporny:</cite> I mean, the problem is picking two capability systems,…</p>
+<p id=8f8c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, I mean Ukanss are a lot less sort of stable and…</p>
+<p id=375b class="phone s06"><cite>Manu_Sporny:</cite> right? And</p>
+<p id=8d28 class="phone s04"><cite>Phillip_Long:</cite> …</p>
+<p id=10000 class="phone s01"><cite>Dmitri_Zagidulin:</cite> and developed than for example even Zcaps even though they themselves need a lot of work.</p>
+<p id=4cb8 class="phone s04"><cite>Phillip_Long:</cite> the thing that runs into is that ZCAPS is still…</p>
+<p id=8fe2 class="phone s04"><cite>Phillip_Long:</cite> what 0.4 or something like that.</p>
+<p id=2d8e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah,…</p>
+<p id=edf7 class="phone s04"><cite>Phillip_Long:</cite> And…</p>
+<p id=aa25 class="phone s01"><cite>Dmitri_Zagidulin:</cite> but right.</p>
+<p id=cdf5 class="phone s04"><cite>Phillip_Long:</cite> and Ukan has been implemented commercially for a while by three or four different companies. And that's the problem I'm running into.</p>
+<p id=bd63 class="phone s06"><cite>Manu_Sporny:</cite> Is it…</p>
+<p id=7b14 class="phone s04"><cite>Phillip_Long:</cite> That's the problem I'm running into.</p>
+<p id=bdb5 class="phone s06"><cite>Manu_Sporny:</cite> where's…</p>
+<p id=6fa3 class="phone s04"><cite>Phillip_Long:</cite> I can send you the list.</p>
+<p id=23a9 class="phone s06"><cite>Manu_Sporny:</cite> where Yeah,…</p>
+<p id=b0ea class="phone s04"><cite>Phillip_Long:</cite> I understand that.</p>
+<p id=fcad class="phone s01"><cite>Dmitri_Zagidulin:</cite> I mean,… Manu Sporny:</p>
+<p id=d033 class="phone s06"><cite>Manu_Sporny:</cite> it'd be interesting Good.</p>
+<p id=c745 class="phone s01"><cite>Dmitri_Zagidulin:</cite> the problem with Ukans though is that it's not even in a standards body. It's Phillip Long:</p>
+<p id=4ba8 class="phone s04"><cite>Phillip_Long:</cite> I understand that.</p>
+<p id=10001 class="phone s04"><cite>Phillip_Long:</cite> But they're looking it's got implementations out there and it's got an organization that is running an open-source community around it. It's not a Hang on.</p>
+<p id=831f class="phone s01"><cite>Dmitri_Zagidulin:</cite> But it's got a couple of implementations.</p>
+<p id=bcfb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Which is what?</p>
+<p id=d591 class="phone s06"><cite>Manu_Sporny:</cite> Which organization is that?</p>
+<p id=75af class="phone s04"><cite>Phillip_Long:</cite> I'll have to go pull it up. I don't have it in front of me. Why don't we continue the conversation? I'll stick it in chat.</p>
+<p id=a86d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Thanks. Yeah, that's really interesting. in Manos. So, a couple of members of this group of course the KSOS folks there's another team headed by Agy Count I keep forgetting what their name is, but Juan would know. but it's a different implementation.</p>
+<p id=d40a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Basically several people as over the years but especially now are trying to implement ZCAPS on top of VCs right and…</p>
+<p id=cd4d class="phone s06"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=16c3 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+</section>
+
+<section>
+<h3 id=3bfb>Implementing Zcaps On Top Of Vcs</h3>
+<p id=10002 class="phone s01"><cite>Dmitri_Zagidulin:</cite> so what we wanted to do is to add a chapter to this paper on here's why you probably shouldn't implement Zcaps on top of VCs but if you're going to here's how to do it best practices so that's one of the things we're working on.</p>
+<p id=5655 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah. Yeah. I mean, yeah. I Yeah.</p>
+<p id=2dbc class="phone s01"><cite>Dmitri_Zagidulin:</cite> I would love your feedback on that.</p>
+<p id=fc07 class="phone s06"><cite>Manu_Sporny:</cite> I mean, don't do it, But I mean, we can't stop people from doing stuff like that. And I mean people are reaching for this hammer and…</p>
+<p id=ba2b class="phone s01"><cite>Dmitri_Zagidulin:</cite> And I think Yeah.</p>
+<p id=3179 class="phone s06"><cite>Manu_Sporny:</cite> and I agree Demetri if people are going to do it we need to warn them hey by the way there be dragons here and here are all the ways of shooting your foot off</p>
+<p id=e7b8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And we can Yeah.</p>
+<p id=24ac class="phone s06"><cite>Manu_Sporny:</cite> if you use a VC as a Zcap.</p>
+<p id=654e class="phone s06"><cite>Manu_Sporny:</cite> Mhm.</p>
+<p id=fbef class="phone s01"><cite>Dmitri_Zagidulin:</cite> But also we can slowly guide it towards convergence.</p>
+<p id=5f76 class="phone s01"><cite>Dmitri_Zagidulin:</cite> we can say that okay if you're going to do VCs then here's how you do the target field here's how you do the actions field right here's the thing basically we can b just have VC Zcaps with a different hat but let me step back for a second and I don't know whether you've had a chance to read this paper or how much you're familiar with our work. just a couple of words of introduction.</p>
+<p id=ff32 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So what we've tried to do with Alan Karp's help is to sort of take the classic capability authorization rubrics or…</p>
+<p id=bb06 class="phone s01"><cite>Dmitri_Zagidulin:</cite> or…</p>
+<p id=8e5d class="phone s01"><cite>Dmitri_Zagidulin:</cite> criteria and evaluate several specs against them including ZCAPS UKAP UKANs ooth 2 and 2.1 off Zen and a couple of other things right and…</p>
+<p id=77e1 class="phone s06"><cite>Manu_Sporny:</cite> Thank you.</p>
+<p id=dcfa class="phone s01"><cite>Dmitri_Zagidulin:</cite> so the o overall criteria are. no. What? hold on. Juan, I think there might be a split between there might my god. Okay.</p>
+<p id=038f class="phone s04"><cite>Phillip_Long:</cite> What's that?</p>
+<p id=2d87 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Wow.</p>
+<p id=7b77 class="phone s06"><cite>Manu_Sporny:</cite> I mean,…</p>
+<p id=84b8 class="phone s06"><cite>Manu_Sporny:</cite> I thought I was going to the VC confidence call. That's where I thought I was.</p>
+<p id=af87 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Before you go to the museum, before you hop over …</p>
+<p id=689b class="phone s06"><cite>Manu_Sporny:</cite> No, this is the VC confidence method call.</p>
+<p id=20d3 class="phone s04"><cite>Phillip_Long:</cite> This is the She cast.</p>
+<p id=1eec class="phone s01"><cite>Dmitri_Zagidulin:</cite> I don't know why. I'm so sorry for the Okay, so I think what instead happened is I clicked on the wrong link. I clicked on the VC hot confidence thinking that it's the delegated authorization, which now it makes more sense that Joe hopped in here and…</p>
+<p id=cfef class="phone s01"><cite>Dmitri_Zagidulin:</cite> says, &quot;Hey, send everybody to the elections thing.&quot; Okay. so I'm going to go over to the proper</p>
+<p id=48e3 class="phone s04"><cite>Phillip_Long:</cite> What is Hold on.</p>
+<p id=61a8 class="phone s06"><cite>Manu_Sporny:</cite> I think you have an outdated entry.</p>
+<p id=4cbc class="phone s04"><cite>Phillip_Long:</cite> There is no U authorization. That's not on this meeting time.</p>
+<p id=713c class="phone s01"><cite>Dmitri_Zagidulin:</cite> It is.</p>
+<p id=ed0f class="phone s01"><cite>Dmitri_Zagidulin:</cite> It is the No,…</p>
+<p id=1762 class="phone s04"><cite>Phillip_Long:</cite> I think Yeah, I do. I agree.</p>
+<p id=ff80 class="phone s06"><cite>Manu_Sporny:</cite> .</p>
+<p id=f174 class="phone s01"><cite>Dmitri_Zagidulin:</cite> sorry. Sorry. There's a diff delegate authorization weekly meeting to work on this paper.</p>
+<p id=3f48 class="phone s06"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=c7ce class="phone s04"><cite>Phillip_Long:</cite> This</p>
+<p id=0164 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=3f5c class="phone s06"><cite>Manu_Sporny:</cite> Okay.</p>
+<p id=a467 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yeah. Yeah. Yeah. my deep apologies.</p>
+<p id=1738 class="phone s06"><cite>Manu_Sporny:</cite> And then I guess Joe canceled the meeting today…</p>
+<p id=b398 class="phone s06"><cite>Manu_Sporny:</cite> because of the WTC election.</p>
+<p id=fbbc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes, that's…</p>
+<p id=a70e class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's what it is. I'm so Okay.</p>
+<p id=5fa0 class="phone s06"><cite>Manu_Sporny:</cite> right. Look at that.</p>
+<p id=001d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Apologies for the confusion. Mon, you really should Yeah,…</p>
+<p id=dca7 class="phone s06"><cite>Manu_Sporny:</cite> Hey, it was good to learn about this paper. Thank you, Demetri. I was like,…</p>
+<p id=6e40 class="phone s01"><cite>Dmitri_Zagidulin:</cite> absolutely. my god.</p>
+<p id=ef87 class="phone s06"><cite>Manu_Sporny:</cite> I guess this is what we're talking about today.</p>
+<p id=5b06 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm apologies for the confusion.</p>
+<p id=56b4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm going over there.</p>
+<p id=89ff class="phone s01"><cite>Dmitri_Zagidulin:</cite> Manu, I think this is interesting to you because a bunch of people are trying to reimplement Zcaps as always.</p>
+<p id=dcb3 class="phone s06"><cite>Manu_Sporny:</cite> Okay. Yeah.</p>
+<p id=5632 class=irc><cite>&lt;Dmitri_Zagidulin&gt;</cite> <a href="https://us02web.zoom.us/j/88294866670?pwd=8yKtqIHawYG3cusqNwy3KjjykhcKwm.1">Launch Meeting - Zoom</a> </p>
+<p id=ffce class="phone s06"><cite>Manu_Sporny:</cite> I Yeah.</p>
+<p id=a85f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, We'll chat separately.</p>
+<p id=236a class="phone s06"><cite>Manu_Sporny:</cite> I love that people are excited about this space, but I can't be in every single place that people are reinventing the wheel.</p>
+<p id=1440 class="phone s04"><cite>Phillip_Long:</cite> Right. Yeah.</p>
+<p id=1b69 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yep. Yep. Cheers. …</p>
+<p id=2716 class="phone s04"><cite>Phillip_Long:</cite> In chat I put Storch is the place that's got it for you can implement it in production and has been maintaining it.</p>
+<p id=8f28 class="phone s01"><cite>Dmitri_Zagidulin:</cite> good god.</p>
+<p id=5327 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yeah. A Beno was part of that team. It's a tiny team. I can't believe Arizona is even looking at this. But all right, we'll talk about it. I got to run over and run the actual meeting.</p>
+<p id=fa98 class="phone s04"><cite>Phillip_Long:</cite> This is formerly protocol labs when Okay,…</p>
+<p id=d0a1 class="phone s06"><cite>Manu_Sporny:</cite> Good luck, Demetri. Bye.</p>
+<p id=b63a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thanks all. Cheers.</p>
+<p id=e215 class="phone s04"><cite>Phillip_Long:</cite> goodbye everyone.</p>
+<p id=c70d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Please feel free to hop over there. By the Zoom link in chat. all right.</p>
+<p id=ac43 class=irc><cite>&lt;Phillip_Long&gt;</cite> UCAN is implemented in production at Storacha (formerly web3.storage, from Protocol Labs) </p>
+<p id=d7ce class="phone s06"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=a43f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Cheers. Bye.</p>
+</section>
+
+<section>
+<h3 id=b544>Confidence Method Call Status</h3>
+<p id=c40b class="phone s06"><cite>Manu_Sporny:</cite> Thanks. All anything we should talk about confidence method wise before we drop? I mean, clearly we don't have quorum for the meeting today, but okay.</p>
+<p id=f419 class="phone s04"><cite>Phillip_Long:</cite> probably not.</p>
+<p id=020b class="phone s04"><cite>Phillip_Long:</cite> I've got people working on a hole in the roof right now.</p>
+<p id=29ed class="phone s06"><cite>Manu_Sporny:</cite> Jeez. …</p>
+<p id=813f class="phone s04"><cite>Phillip_Long:</cite> It's been a hole that's been there for…</p>
+<p id=b019 class="phone s06"><cite>Manu_Sporny:</cite> good luck.</p>
+<p id=8c16 class="phone s04"><cite>Phillip_Long:</cite> since August. it's leaked all the way down through two floors at this point.</p>
+<p id=3da9 class="phone s06"><cite>Manu_Sporny:</cite> No. No. it's always not good when you find out many weeks after it.</p>
+<p id=8861 class="phone s04"><cite>Phillip_Long:</cite> And it's also right next to my solar array implementation. So, I had to remove one of the panels and… Manu Sporny:</p>
+<p id=50d7 class="phone s06"><cite>Manu_Sporny:</cite> Jeez.</p>
+<p id=d7bb class="phone s04"><cite>Phillip_Long:</cite> I may have to remove the whole damn frame.</p>
+<p id=241e class="phone s06"><cite>Manu_Sporny:</cite> No.</p>
+<p id=eac8 class="phone s04"><cite>Phillip_Long:</cite> And my company went out of business. So, they're not there anymore for the solar.</p>
+<p id=5ad4 class="phone s06"><cite>Manu_Sporny:</cite> No. no.</p>
+<p id=cc17 class="phone s04"><cite>Phillip_Long:</cite> And everybody else that comes to it wants to charge you an $800 safety check before they will touch it.</p>
+<p id=8288 class="phone s06"><cite>Manu_Sporny:</cite> Jeez. no. Yeah. Yeah. Yeah. Yeah. That sounds about right.</p>
+<p id=a45b class="phone s04"><cite>Phillip_Long:</cite> They got you by the shorthairs. all right.</p>
+<p id=d108 class="phone s06"><cite>Manu_Sporny:</cite> Yeah. All you all have a wonderful rest of your day and…</p>
+<p id=18f2 class="phone s05"><cite>Elaine_Wooton:</cite> That was fun. Bye.</p>
+<p id=afea class="phone s06"><cite>Manu_Sporny:</cite> we'll chat again,…</p>
+<p id=6f71 class="phone s04"><cite>Phillip_Long:</cite> We'll talk to you again.</p>
+<p id=b538 class="phone s06"><cite>Manu_Sporny:</cite> I'm sure, on a future call.</p>
+<p id=98fe class="phone s04"><cite>Phillip_Long:</cite> Okay. Bye. Manu Sporny:</p>
+<p id=a89b class="phone s06"><cite>Manu_Sporny:</cite> Take care. Bye. Meeting ended after 00:20:08 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
