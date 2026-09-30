@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 30 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>30 September 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/mid/c0179e94aeb10bc23ecbc5f6bb6c964d@w3.org"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/09/30-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>brent, dlongley, dmitriz, Elaine, exe, hsano, hxavier, ivan, JennieM, JoeAndrieu, kezike, lucy, manu, michaelshea, pdl-ASU, phila, TallTed, will, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>wes-smith, dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ad10">CID Open issues and PRs</a>
+<ol>
+<li><a href="#a9a8">w3c/<wbr>cid#178</a></li>
+<li><a href="#9987">w3c/<wbr>vc-data-model#1645</a></li>
+<li><a href="#439c">w3c/<wbr>vc-data-model#1652</a></li>
+<li><a href="#ec34">w3c/<wbr>vc-data-model#1583</a></li>
+</ol>
+</li>
+<li><a href="#4ba9">VC-Jose-Cose</a>
+<ol>
+<li><a href="#580f">w3c/<wbr>vc-jose-cose#345</a></li>
+</ol>
+</li>
+<li><a href="#fc67">What does your TF need at TPAC?</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<p id=af0c class="phone s01"><cite>brent:</cite> Anyone who would like to introduce themselves?</p>
+<p id=674e class="phone s02"><cite>LucyYang:</cite> Hi, it's Lucy - this is my first time here. Thanks to the W3C team for approving my Invited Expert status.<br>
+<span id=6936>… My name is Lucy Yang - I've been in the digital credential space for around 8 years.</span><br>
+<span id=0288>… I'm interested in identity credentials and trade credentials, and all of my work with clients leverages W3C VCs. I provide field tested experience and feedback as someone who works across many different use cases.</span></p>
+<p id=dedc class="phone s01"><cite>brent:</cite> Please queue if you have a task force update.</p>
+<p id=814d class="phone s03"><cite>manu:</cite> On the status of threat model publication, we were able to successfully publish the VCDM threat model and get Echidna set up. We've sent out instructions to other editors to prepare their specs.<br>
+<span id=348e>… Recognized Entities, Data Integrity, VCALM are in place or on their way. Please get a static snapshot ready to go by this Friday.</span><br>
+<span id=6066>… We plan to publish on Oct. 8th.</span></p>
+<p id=a7e4 class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to discuss confidence method, threat model diagram</p>
+<p id=e65b class="phone s04"><cite>JoeAndrieu:</cite> The confidence method work is proceeding - we do not yet have a threat model. At next weeks meeting we hope to lock some threat modeling work down to have a threat model by TPAC.</p>
+<p id=01f0 class="phone s05"><cite>ivan:</cite> A practicality: Friday afternoon my time (France) I will be AFK over the weekend. Please have anything needed on my desk by Friday morning my time.</p>
+<p id=11f3 class="phone s06"><cite>wes-smith:</cite> Things are good in the barcodes, Data Integrity, Bitstring status list, forgery defense. We're on track for TPAC, with various initiatives, etc.</p>
+<p id=fdfc class="phone s01"><cite>brent:</cite> Also note that the blog post related to VC Barcodes has been upgraded to a press release by the W3C comms team. If you are interested in that process please reach out.</p>
+<p id=ffff class="phone s03"><cite>manu:</cite> Thank you folks for getting work unblocked by approving Greg Bernstein's editor status on the BBS spec at CRFG.</p>
+</section>
+
+<section>
+<h3 id=ad10>CID Open issues and PRs</h3>
+<p id=3369 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/cid/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>cid/<wbr>pulls</a></p>
+<p id=38bb class="phone s01"><cite>brent:</cite> Here is a list of PRs for CID. I think that 168 has been open for a while - it is a PR that will be in scope for the DID working group when they take over the CID spec.<br>
+<span id=4f32>… The other PR is #178.</span></p>
+<p id=2d86 class="phone s07"><cite>phila:</cite> I'm curious - I'm also cognizant that Michael offered to help edit the CID spec. We are now moving this to another group - do we have to close all these issues and resolve the PRs, or do the people taking it over inherit them?</p>
+<p id=be7e class="phone s05"><cite>Ivan:</cite> formally, the repository will be transferred to that group with the related issues - nothing will be lost. The question is more if we want to make textual changes to the document right now.<br>
+<span id=f552>… Per charter, we can do only editorial changes, and we are not supposed to make any major changes. If we wanted to make a major change we have to reopen the whole thing from scratch.</span><br>
+<span id=08f5>… I don't know how far along the DID charter is right now, when it will be reviewed, and when it is realistic to expect that group to be up and running.</span></p>
+<p id=aadb class="phone s08"><cite>michaelshea:</cite> with this transfer, does it mean that I'll no longer be considered editor?</p>
+<p id=5084 class="phone s01"><cite>brent:</cite> Officially, the DID WG would need to name you as an editor in that group of this document. I'd be happy to reach out to the chairs.</p>
+<p id=99bd class="phone s08"><cite>michaelshea:</cite> I'm not in the DID WG</p>
+<p id=da3f class="phone s01"><cite>brent:</cite> do you want to continue</p>
+<p id=6c38 class="phone s08"><cite>michaelshea:</cite> mostly editorial changes, I'd be happy to continue, do I need to join another call</p>
+<p id=2f8b class="phone s01"><cite>brent:</cite> If you were to continue helping with this document you would need to join another call</p>
+<p id=576d class="phone s03"><cite>manu:</cite> To respond to Ivan about the DID WG charter, my understanding is that PA was going to put the charter up for a vote before TPAC, so in theory we are 2-3 months away from a transfer happening. I don't think we need to process all the issues and PRs before the transfer.</p>
+<p id=a768 class=irc><cite>&lt;michaelshea&gt;</cite> As a note, I will not be offended if someone in the DID WG takes over editorial responsibilities.</p>
+<p id=30f2 class=irc><cite>&lt;michaelshea&gt;</cite> Happy to do so.</p>
+<p id=57be class="phone s09"><cite>Wip:</cite> I talked to PA on Tuesday and he said the same thing, he wants to get it out for a vote ASAP. michaelshea, we would love to have your continued help, but it would mean attending some DID WG calls, so we can discuss that more. There are some changes we would like to see in the DID WG.</p>
+<h4 id=a9a8><a href="https://github.com/w3c/cid/pull/178">w3c/<wbr>cid#178</a></h4>
+<p id=0646 class="phone s01"><cite>brent:</cite> PR 178 removes the canonical mapping as we discussed.<br>
+<span id=4ebb>… It's a simple PR with a couple of approvals. If you would like to review it you are welcome to - it is the removal of 5 lines, and will be merged soon.</span></p>
+<p id=10000 class="phone s05"><cite>ivan:</cite> When you say merged, merged into what?<br>
+<span id=fbf8>… Did we reopen the recommendation in the first place?</span></p>
+<p id=1abf class="phone s01"><cite>brent:</cite> I don't believe we have published an ED or FPWD for CID 1.1</p>
+<p id=4579 class="phone s03"><cite>manu:</cite> correct, this will be a merge into the editor's draft.<br>
+<span id=6bc8>… The PR looks good to me, I think it's fine to remove the language. It is complicated to try to specify.</span></p>
+<p id=9b28 class="phone s01"><cite>brent:</cite> Closing out this type of PR before the transfer is part of being good stewards of the document.<br>
+<span id=9495>… Moving to VCDM.</span></p>
+<p id=2e2f class=irc><cite>&lt;brent&gt;</cite> Topic VCDM issues and PRs</p>
+<p id=167f class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pulls</a></p>
+<p id=bd84 class=irc><cite>&lt;Antony&gt;</cite> +present</p>
+<h4 id=9987><a href="https://github.com/w3c/vc-data-model/pull/1645">w3c/<wbr>vc-data-model#1645</a></h4>
+<p id=751d class="phone s01"><cite>brent:</cite> There are three open PRs, two of which are on the table for us to look at. Starting with <a href="https://github.com/w3c/vc-data-model/issues/1645">#1645</a>.<br>
+<span id=3e43>… This PR has been open for over a month, with three approvals. It does tinker with some language that was much discussed in a previous iteration of the WG.</span><br>
+<span id=6e59>… Now is the time to discuss this PR.</span></p>
+<p id=409a class="phone s03"><cite>manu:</cite> We are waiting on the resolution of merge conflicts to merge this.</p>
+<p id=3b9b class="phone s01"><cite>brent:</cite> This PR will be merged when the merge conflicts are resolved.</p>
+<p id=6f7d class="phone s10"><cite>TallTed:</cite> I will review after the merge conflicts.</p>
+<p id=c634 class="phone s04"><cite>JoeAndrieu:</cite> There are physical technologies that we cannot recreate in digital form, I think there is a way to edit this language to be less zealous.</p>
+<p id=2529 class="phone s11"><cite>dlongley:</cite> That's some result of the conflict - it's not part of the PR.</p>
+<p id=8dc0 class="phone s01"><cite>brent:</cite> A rereview from everyone would be worthwhile after the merge conflict resolution.</p>
+<p id=4b0a class=irc><cite>&lt;dmitriz&gt;</cite> yeah, I agree with Joe's point on the existing text.</p>
+<p id=a87c class=irc><cite>&lt;dmitriz&gt;</cite> (suggestions on alternate phrasing welcome)</p>
+<h4 id=439c><a href="https://github.com/w3c/vc-data-model/pull/1652">w3c/<wbr>vc-data-model#1652</a></h4>
+<p id=67da class="phone s01"><cite>brent:</cite> The other pull request is from Ivan, this is the first version of the 2.1 version of the vocabulary.</p>
+<p id=2d80 class="phone s05"><cite>ivan:</cite> The title makes the PR clear - I started to review the vocab changes due to validFrom and validUntil, I took the opportunity to rework the vocabulary.<br>
+<span id=fe2e>… What I did last is use a tool to regenerate the JSON-LD context file, the goal being that in the future, instead of having humans produce JSON-LD contexts, automated tooling can do it.</span></p>
+<p id=1574 class=irc><cite>&lt;TallTed&gt;</cite> goodness... +3616 lines across 7 files!</p>
+<p id=bccc class="phone s01"><cite>brent:</cite> One of the difficulties in review this is that there are new files. Would it be possible to generate some sort of diff?</p>
+<p id=87fb class="phone s05"><cite>ivan:</cite> I can do that, but the diffs are so big, all the terms in the JSON-LD Context that are not in the vocabulary had to be added to the vocabulary to make the tool work.<br>
+<span id=ddf1>… One thing to review is the YAML file. Everything else is generated - review the YAML and the context file.</span></p>
+<p id=1d0f class="phone s01"><cite>brent:</cite> Please comment in the PR providing pointers to what should be reviewed vs what is generated.<br>
+<span id=d493>… Even just a statement listing changes would be useful.</span><br>
+<span id=88b2>… Process and intent.</span><br>
+<span id=a1bf>… This PR is in need of review - please review it!</span><br>
+<span id=4b16>… Those are the PRs. We still have a bit of time to look at issues.</span></p>
+<p id=e237 class="phone s03"><cite>manu:</cite> I have a general question about the threat model for VCDM. We don't have an issue for this. I feel weird being the only person listed on that document - I suggest we put all of the authors of the VCDM on it, since it inherited the security and privacy considerations of the document.</p>
+<p id=6f02 class="phone s01"><cite>brent:</cite> I think this makes sense - do others have thoughts?</p>
+<p id=3d8e class=irc><cite>&lt;Antony&gt;</cite> makes sense !</p>
+<p id=ebcf class=irc><cite>&lt;Elaine&gt;</cite> Didn’t we do a brainstorm. Maybe people involved in that</p>
+<p id=13f6 class="phone s07"><cite>phila:</cite> Yes, it is a group effort, unless there is an objection, please add the other names.</p>
+<p id=81a0 class=irc><cite>&lt;TallTed&gt;</cite> suggested issue sort order -- <a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue+state%3Aopen+sort%3Aupdated-asc">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues?q=is%3Aissue+state%3Aopen+sort%3Aupdated-asc</a></p>
+<p id=1409 class="phone s06"><cite>wes-smith:</cite> If we migrate the authors over should they be added as authors to the threat model, not editors.</p>
+<p id=73af class="phone s03"><cite>manu:</cite> +1</p>
+<p id=b334 class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-data-model/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues</a></p>
+<p id=5400 class="phone s01"><cite>brent:</cite> There are some open issues for VCDM.<br>
+<span id=bd70>… We are going to look at <a href="https://github.com/w3c/vc-data-model/issues/1649">#1649</a> for what time we have.</span><br>
+<span id=7cd3>… Instead let's start with <a href="https://github.com/w3c/vc-data-model/issues/1583">#1583</a>.</span></p>
+<h4 id=ec34><a href="https://github.com/w3c/vc-data-model/issues/1583">w3c/<wbr>vc-data-model#1583</a></h4>
+<p id=5279 class="phone s01"><cite>brent:</cite> This came in, for those who remember, at the tail end of getting the VCDM 2.0 out.</p>
+<p id=29ad class=irc><cite>&lt;TallTed&gt;</cite> updated list link (bypass class 4) -- <a href="https://github.com/w3c/vc-data-model/issues?q=is%3Aissue+state%3Aopen+sort%3Aupdated-asc+-label%3A%22class+4%22">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>issues?q=is%3Aissue+state%3Aopen+sort%3Aupdated-asc+-label%3A%22class+4%22</a></p>
+<p id=ae19 class="phone s01"><cite>brent:</cite> We deferred it to future work. Does this still need to be done?</p>
+<p id=5fb9 class="phone s03"><cite>manu:</cite> I just this past weekend did an editorial refactor of the security and privacy considerations section. In the VCDM we have readded the security and privacy considerations sections and link out to the threat model.</p>
+<p id=b3ba class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id=c9bb class="phone s03"><cite>manu:</cite> I believe JoeAndrieu, simone, and I think this is the best way to proceed.<br>
+<span id=7e10>… I will reference the commit for this issue and close it, barring objections.</span></p>
+<p id=7770 class="phone s01"><cite>brent:</cite> any objections?<br>
+<span id=4ed7>… manu, clear to proceed.</span><br>
+<span id=83ed>… Let's now look briefly at jose-cose</span></p>
+</section>
+
+<section>
+<h3 id=4ba9>VC-Jose-Cose</h3>
+<p id=28aa class=irc><cite>&lt;brent&gt;</cite> <a href="https://github.com/w3c/vc-jose-cose/issues">https://<wbr>github.com/<wbr>w3c/<wbr>vc-jose-cose/<wbr>issues</a></p>
+<h4 id=580f><a href="https://github.com/w3c/vc-jose-cose/issues/345">w3c/<wbr>vc-jose-cose#345</a></h4>
+<p id=af16 class="phone s01"><cite>brent:</cite> There are two issues, one of which is out of scope (as it talks about refactoring the SD-JWT section), so we will look at the other - <a href="https://github.com/w3c/vc-jose-cose/issues/345">#345</a>.<br>
+<span id=f470>… We accidentally left some CR text in the status section of our rec. This is clearly errata and needs to be addressed. Is there anyone who would be willing to raise this PR?</span></p>
+<p id=543a class="phone s07"><cite>phila:</cite> I'll take care of it.<br>
+<span id=7a3b>… Another question that arises from what you were saying - if the other issue is no longer relevant, should we close it?</span></p>
+<p id=6a5e class="phone s01"><cite>brent:</cite> It's not that it's irrelevant, it's that it's not in our charter to address it.</p>
+<p id=76fc class=irc><cite>&lt;TallTed&gt;</cite> addressed does not always mean closed</p>
+<p id=b758 class="phone s01"><cite>brent:</cite> One of the tasks on my plate is to describe a mapping between a VCDM 2.0 signed as an SD-JWT and an SD-JWT-VC.</p>
+<p id=589c class="phone s06"><cite>wes-smith:</cite> I have a best practices question related to what Phil asked. In our task force the other day, we were looking at old bitstring status list issues. These are not in our charter to address, I would love guidance on how to proceed with those, left them tagged as future issues but left them alone. They are valuable, but is there something else to be done than tag it with a future tag and let it sit for years?</p>
+<p id=67c1 class="phone s01"><cite>brent:</cite> Nope, that's where we're at. I'd love to hear suggestions but that's what we've been doing.</p>
+<p id=8a68 class="phone s01"><cite>brent:</cite> People like to look at the ancient issues and do something about them, but we aren't chartered to deal with them, so we just shepherd things forward until a future charter allows.</p>
+<p id=abe8 class="phone s01"><cite>brent:</cite> If there are issues that you feel you should close, mark them pending close and inform the broader group.<br>
+<span id=3302>… Switching to our final topic - what do the task forces need at TPAC?</span></p>
+</section>
+
+<section>
+<h3 id=fc67>What does your TF need at TPAC?</h3>
+<p id=7da7 class=irc><cite>&lt;phila&gt;</cite> <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit">Skeleton agenda is at</a></p>
+<p id=10001 class="phone s03"><cite>manu:</cite> Just a question, we hoped to move a handful of specifications into the candidate recommendation phase. Recognized Entities might be ready, although we might not have all required horizontal reviews.<br>
+<span id=9379>… We don't have a TAG review - should we still attempt to transition? What bar are we trying to hit with all the specs to go into CR?</span></p>
+<p id=4701 class="phone s07"><cite>phila:</cite> We don't know. The hope when we began the current charter was that everything at TPAC was going to go to CR. We all knew that was ambitious. In the skeleton agenda, the skeleton begins with a link to the progress tracker.</p>
+<p id=9e0e class=irc><cite>&lt;dmitriz&gt;</cite> is the goal that all the Task Forces have a session at TPAC? Or only specific ones?</p>
+<p id=df8f class="phone s07"><cite>phila:</cite> All I did when I put that skeleton together was to go through the documents that are not in a task force, many of which have open issues and PRs.<br>
+<span id=898c>… Other than that, trying to avoid bigger collisions with TPAC events.</span><br>
+<span id=b16a>… The remaining time has been allocated between the task forces.</span><br>
+<span id=e9b9>… There is an hour or so per task force - if you need longer let us know.</span></p>
+<p id=68e7 class="phone s03"><cite>manu:</cite> Based on that feedback, I think if there are issues blocking us from getting into CR for Recognized Entities, those will be on the agenda. If there are no such issues we will request transfer to CR.</p>
+<p id=5a83 class="phone s07"><cite>phila:</cite> If you are attending remotely, that must and should affect what slot your task force gets.</p>
+<p id=a656 class=irc><cite>&lt;dmitriz&gt;</cite> (I'm attending remotely)</p>
+<p id=0a4e class="phone s04"><cite>JoeAndrieu:</cite> I wanted to note that on Friday morning I am going to be coopted with SING.</p>
+<p id=5af9 class="phone s03"><cite>manu:</cite> Two things to note - we are scheduled in conflict with FedID WG, and there is going to be a meeting on Tuesday about VCs and DC API.<br>
+<span id=a407>… I don't know if we are lagging or not on horizontal reviews for the minor versions of the spec.</span><br>
+<span id=97e7>… thoughts if we should be kicking those off?</span></p>
+<p id=2ced class="phone s05"><cite>ivan:</cite> In another WG we had a similar situation, where the core specification has not changed much. We should make this clear to reviewers to expedite things.</p>
+<p id=efd2 class="phone s03"><cite>manu:</cite> Does the group want the editors to prepare horizontal review for the minor versions?</p>
+<p id=10002 class=irc><cite>&lt;phila&gt;</cite> <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/<wbr>edit</a></p>
+<p id=1f10 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to be v quick</p>
+<p id=dd41 class="phone s07"><cite>phila:</cite> Here are some draft proposals for what to talk about on Thursday given group member's constraints.</p>
+<p id=b465 class=irc><cite>&lt;dmitriz&gt;</cite> sounds wonderful, thank you so much!</p>
+<p id=38fb class="phone s01"><cite>brent:</cite> manu, my take is that we should request reviews and let them know that changes have been minimal.</p>
+<p id=db9a class=irc><cite>&lt;dmitriz&gt;</cite> @phila - and just to double-check, Day 1 is Thurs?</p>
+<p id=6910 class="phone s01"><cite>brent:</cite> yes, day 2 is Friday, but there are conflicts on Friday afternoon.</p>
+<p id=a746 class="phone s07"><cite>phila:</cite> Yes, we have less F2F time at TPAC than in Brussels.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 249 (Tue Sep 29 16:09:09 2026 UTC).</address>
+
+</body>
+</html>

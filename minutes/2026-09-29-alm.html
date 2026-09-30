@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 29 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>29 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Patrick_St-Louis, read.ai_meeting_notes, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#1c5d">BC Supply Chain Verifiable Credentials</a></li>
+<li><a href="#2b24">VC Data Model Threat Model Publication</a></li>
+<li><a href="#3aad">Exchange Data Feature PR Review</a></li>
+<li><a href="#6484">Document QR Code Shoulder Surfing</a></li>
+<li><a href="#8552">Name Ontology Change</a></li>
+<li><a href="#532e">Adding Credential Offer Parameter</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f94b class="phone s01"><cite>Patrick_St-Louis:</cite> Hey everyone, welcome to the call today. We'll get started in about two or three minutes. Let people join it. So hang on tight.</p>
+<p id=da5c class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, going to get started nice and slowly. Let me just open the meeting page.</p>
+<p id=223e class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, welcome everybody to this week's VCAPI for life cycle management call, also known as VCOM. Today is the 29th of September, 2026. This is a W3C meeting. So all W3C policies are into effect. The meeting is recorded and transcribed. so if you would prefer not to just be aware of this. The VCOM is a meeting in which we discuss API specification for managing credential and credential exchange.</p>
+<p id=958c class="phone s01"><cite>Patrick_St-Louis:</cite> We have a small agenda today but small but with important topics that we need to make sure we follow along. Before I present the topics and agenda, I would like to leave some time if anyone would like to introduce themselves or reintroduce themselves, share some community updates and add any topics they would like to discuss. so I will let you right now. yes, man.</p>
+<p id=8185 class="phone s02"><cite>Manu_Sporny:</cite> Just wanted mention the threat model and of course maybe some discussion with both Eric and Joe over that. I put one out for VC data model taking some preliminary input from Simone and Nick Dodie to refactor it into something hopefully both of them I know doing that's risky because things are still in discussion there. but we also need to prep this threat model for publication in two weeks by the end of this week. Avon has asked us to get everything ready and so I just want to make sure that you've got everything that you need to make that happen.</p>
+<p id=1f61 class="phone s02"><cite>Manu_Sporny:</cite> So maybe a agenda plus 10 minutes, maybe up to 15 minutes, Patrick, for that topic.</p>
+</section>
+
+<section>
+<h3 id=1c5d>BC Supply Chain Verifiable Credentials</h3>
+<p id=d782 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I'm sure we can fit that. So, I had a global threat model discussion. I have the feeling this can fit into that. Perfect. thank you very much for this. I do have a small community updates I can share which is pretty fun. so this is some work we're doing in British Columbia. it has to do with supply chain and the mines act permit and the UNP so unfortunately British Columbia announced the surprise election I think last week. So all the work is kind of on ice right now.</p>
+<p id=353e class="phone s01"><cite>Patrick_St-Louis:</cite> So we were planning to go with production but it was unfortunate timing but I can still share some more of our development work because it's now in a place that can be finished. so this touches a couple different things that's related to this group. First of all this is all using W3C verifiable credential 2.0 data model. it's using both enveloped and embedded securing mechanism. So the idea is that we sign with the data integrity proof and then we wrap this document and with VC Jose cos and serve it as a envelope verifiable credential. so the way it works we have a service here that can ingest data and then publish it as verifiable credential.</p>
+<p id=a0b7 class="phone s01"><cite>Patrick_St-Louis:</cite> So these are more proof of permit issuance and ownership. It does not represent the mine permit. It's just more of a proof that you do have a valid permit and give some information to where you can get it. so we have a model that it can update and manage the life cycle of many different versions. so for example unfortunately The dates are all the same here because this was just a dev batch upload. But if there's a change on the permit, we can revoke previous one and enable the new one. we had proposed in the bitst string status list of the refresh status mechanism and this is what we use for this.</p>
+<p id=0845 class="phone s01"><cite>Patrick_St-Louis:</cite> So this is a status that only says is this the latest version of this credential or is there a new one available and it's usually tied with a refresh service. and then the fun part is the rendering and the verification that we did here. so for this we used kind of where the VC render method is at and we just add a render suite. we can see here a bit of the different OCA bundle semantics that are used to fill this information.</p>
+<p id=e226 class="phone s01"><cite>Patrick_St-Louis:</cite> It does support multi- language at least when it comes to labels and field description. Obviously values they stay intact. this is a bit of a sideline with VC render method but we are having internal review and we are currently comparing our OCA bundle approach with the card render suite. we want to identify the differences and we believe that the direction the VC card rendering method could suffice for these use case. the thing that is holding it back is and it seems to come up quite a lot is multi- language support.</p>
+<p id=1bef class="phone s01"><cite>Patrick_St-Louis:</cite> I've seen a lot of discussion about this and it sound like there is still some discussion to be had around how this can be supported because obviously it's critical at least in BC to be able to represent these credential for various communities yeah so we added kind of a list of different checks that happens verify the envelop UNTP data model the JSON LD</p>
+<p id=1e04 class="phone s01"><cite>Patrick_St-Louis:</cite> the data integrated proof we validate that the issuer is in a trust registry validity period this one is revoked this is one question I would have eventually for the VC render method what should the behavior be when you have a credential that's revoked should you still render the credential but show that it's revoke or should you refuse to render the credential or is this kind of up to the implementation things to decide. At the moment, we captured this in the checks.</p>
+<p id=9916 class="phone s01"><cite>Patrick_St-Louis:</cite> but I say I didn't feel the need to show this on this page because when we think about purely rendering a credential it's mostly about the information in the credential and in the credential itself you have the status index and thing but to get the actual status this require another process right and you don't have a direct value in the credential to point for the status it's kind of derived from a process</p>
+<p id=24db class="phone s01"><cite>Patrick_St-Louis:</cite> is so it sits at an interesting place when it comes to showing the credential right same thing I'm showing is the proof valid and so on because when you render a credential it's mostly to show the information and the credential but kind of validation that happens part of it where does that sit in that process should I just say the proof doesn't verify I don't even want to render this should I render it but with a big warning</p>
+<p id=e238 class="phone s01"><cite>Patrick_St-Louis:</cite> that says proof doesn't verify and if the proof doesn't verify you cannot know what is you basically can't trust anything in the credential revocations it's a bit usually would depend on the reason for the revocation if it's revoked just because there's a new version available there's still some historical value that's interesting you might still want to see the credentials just to see a past version but if it's been revoked because it contained fake information. in that case, you might not want to show it. But the revocation reason is not really part of the status. I think maybe the message status could carry this. But I just wanted to show this. I've been working on some time for this. we have the PDF version that can be downloaded. I showed some snippets over the time.</p>
+<p id=e04b class="phone s01"><cite>Patrick_St-Louis:</cite> It's fully compliant with UNTP 0.7. there are some bugs in UNTP0.7 that I had to make concession. for example, the status index needs to be represented as a string and they look for an integer. So I had to unfortunately make a concession put an integer. So it's technically not 100% conformant with bitstring status list. but as soon as they fix this upstream we will fix it in here. This is purely a limitation of their JSON schema that enforces it. yeah so I just wanted to share this we have the JSON version that's available here. obviously this is a envelope verifiable credential.</p>
+<p id=f367 class="phone s01"><cite>Patrick_St-Louis:</cite> So if I copy my URL, it would render me the envelope version. so yeah, that's all. menu. So it's a thing that happens.</p>
+<p id=1402 class="phone s02"><cite>Manu_Sporny:</cite> This is awesome stuff. Patrick, could you zoom in? It's super tiny on my screen and I can't see anything. awesome. And then, could you go through the checks again? And it'd be neat to see. Yeah.</p>
+<p id=819c class="phone s01"><cite>Patrick_St-Louis:</cite> So the first thing after it verifies the envelope, it just runs a VCD DM2.0 JSON schema check, then a UNP7.0</p>
+<p id=80c7 class="phone s01"><cite>Patrick_St-Louis:</cite> schema check. It validates the context, right? Make sure it's safe. It checks the data integrity proof. It looks up the issuer in a trust registry, make sure it's resolved. A lot of this is a bit, obviously when you check the proof, you make sure the issuer is It checks the validity period. It checks the status. And then this one, so there same kind of thing. their spec is a bit behind. So they point to the VC render method but the JSON schema expects one of the older things. So it doesn't allow the render suite field for example. so in this case the render method is not in the credential. It's kind of in the software right so this is the software hosting the credential. So we just comment it out for now.</p>
+<p id=8a99 class="phone s01"><cite>Patrick_St-Louis:</cite> Obviously, we just needed to demonstrate to the people that we are fully conformant with UNP 0.7. That was the main thing. And we use this exercise to report to them, these small misalignment. And they're small things, but that, at the end of the day is just you need to change it. even if this should be a string, not an integer or you should allow these fields. it sounds minor but it's very important because if you build software that is conformant to the spec technically would not be able to check the status here right we can check it because we're like okay we're going to allow the integer in this case but it's not right right and we don't want to propagate these kind of thing in the ecosystem but if we don't do this we're not compatible with UNP 0.7 and that was kind of our goal so it's a bit of a unfort</p>
+<p id=ed9e class="phone s01"><cite>Patrick_St-Louis:</cite> fortunate situation. Yes, man.</p>
+<p id=135c class="phone s02"><cite>Manu_Sporny:</cite> The next question is around the proof. So it's a VC jot at the top level and then you also did an embedded proof. Why? I'm wondering…</p>
+<p id=c407 class="phone s01"><cite>Patrick_St-Louis:</cite> So a few people came this up.</p>
+<p id=4fb5 class="phone s02"><cite>Manu_Sporny:</cite> what the thought process was</p>
+<p id=e769 class="phone s01"><cite>Patrick_St-Louis:</cite> The reason is so we need to support They make jot a must and they also say may support data integrity.</p>
+<p id=8f17 class="phone s01"><cite>Patrick_St-Louis:</cite> So I'm like okay I'm talking the UNP specification right I just added this…</p>
+<p id=8d24 class="phone s02"><cite>Manu_Sporny:</cite> Who's we?</p>
+<p id=6ee7 class="phone s02"><cite>Manu_Sporny:</cite> Who's they? the Got it.</p>
+<p id=c3b8 class="phone s01"><cite>Patrick_St-Louis:</cite> because we already have the setup for it.</p>
+<p id=1bac class="phone s01"><cite>Patrick_St-Louis:</cite> This is the crypto suite for webvh right we did web here however this has it also known as relationship with webvh UNP does recommend webv as well at did web we just did web here because they're kind of test suite playground cannot verify did webvh at the moment but this is backed by a webv log history right and you can make sure that the content of this document is backed by this log. We just don't have the skid part in this identifier. so yeah the principle is that we want to issue with eddsa GCS in the credential and wrap this in adding the proof in the credential I think it shouldn't affect anything.</p>
+<p id=27f1 class="phone s01"><cite>Patrick_St-Louis:</cite> And it allows us down the line if we just want to get rid of the wrapper, we still just have, the credential itself and we can return it. And I didn't want to remove data integrity completely from our process. I don't know, it was just an idea. A lot of people have questioned it. They say there's no point. I'm like, yeah, I don't know. So, it was kind of a gut feeling that, we should probably keep that integrity in the process. Does that answer your question?</p>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> It does. Thank you. Yeah. I mean, another argument for it is it allows you to strip off the VC jot and still have data integrity or the payload and then you can dump it directly in databases, any kind of document-based database and work with it. He's</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, exactly. You do that and for me it's just like you're going to need proof sets, right?</p>
+<p id=7236 class="phone s01"><cite>Patrick_St-Louis:</cite> for proof chains especially for supply chain it does feel like something that will be very relevant when you have audits and some of these things having kind of self attested credentials that you get an auditor to attest right and endorse so anyway we wanted to keep the mechanism there so we don't lose it and we also do the same thing with our bitstring status list credential right so we have boat mechanism there and it allows us down the line if we want to move away from VC Jot because we need proof set or something we just need to comment out the envelope part we don't need to redesign the whole pipeline because we put quite a few validation and checks in place for the transformation of the data.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, and this is going to be linked directly from it's not out yet because we can't put it live right now because of the political situation in BC. but we will have this site with the mines and the authorizations here and the mines act we're going to put a link to the credential right so it's going to add because here is where you have all the mining information you have the actual permits and we're going to put a link so that if a mine operator of this mine they want to issue a product passport as well they're going to be able to come in here grab their permit and include that in their</p>
+<p id=35e0 class="phone s01"><cite>Patrick_St-Louis:</cite> product passport, right? So, it kind of speaks to provenence of critical raw material. That's kind of the angle that is happening here. and there's all this nice data and it's very fascinating because all the data is there right to put on credential on top of it it just made sense everything was very naturally fit in there. They have the legal act in place that we can reference. They have a clear identified issuer entity, right?</p>
+<p id=d550 class="phone s03"><cite>Joe_Andrieu:</cite> Thank you.</p>
+<p id=65c8 class="phone s01"><cite>Patrick_St-Louis:</cite> chief permitting officer. So, putting all these things together and building a sort of trust registry layer with WebVH just kind of made sense here. so yeah, that's what I wanted to show. I believe Nancy presented some of this in Geneva a couple weeks ago. Okay, any question before we move on?</p>
+<p id=58c7 class="phone s01"><cite>Patrick_St-Louis:</cite> Just I would love to try my best to make some time to attend that call.</p>
+<p id=a8b7 class="phone s02"><cite>Manu_Sporny:</cite> I did have questions around render method and…</p>
+<p id=662f class="phone s02"><cite>Manu_Sporny:</cite> the printing thing, but I think we could probably leave that till later. I do want to come back around to that to make sure that the render method folks are hearing from Patrick, you and the Minds folks to make sure that whatever we're doing there works for you long term. Mhm.</p>
+<p id=d3e6 class="phone s01"><cite>Patrick_St-Louis:</cite> Cuz I did go on a tangent and I think there's a lot of thing about language and what I would really like to do is to make this comparison between OCA bundle and the render card or render I don't know there was a new name for it highlights I want to present just a very neutral opinion of what matches and what's missing and just have a discussion if we</p>
+<p id=e19c class="phone s01"><cite>Patrick_St-Louis:</cite> find that it supports everything we need. I think at this point we're ready to get rid of OCA. it is super powerful, but I was talking with Stephen a little bit and he did mention that he had to fight a bit with the authors of the OCA to kind of use it for rendering. So he was pretty keen on looking at the VC card and if there are some features that are not there just kind of discuss can we put them in? Should we look at OCA bundle? Should we put it in or so on? And it kind of closed the page on that. Yes.</p>
+<p id=79a1 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, and now is definitely the time to engage on that because that is exactly what we're talking about in the group. today's call was around that. It was around internationalization and how complex, should we make it and what features are missing. So, if you can join us, next week it's at 11:00 a.m. Eastern every week.</p>
+<p id=f12c class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, on Tuesdays.</p>
+<p id=a8a3 class="phone s02"><cite>Manu_Sporny:</cite> I guess I'm going to be traveling, but the rest of the group will be meeting. You should definitely on Tuesdays at 11:00 a.m. Eastern. Okay.</p>
+<p id=a0f6 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it's just such a Okay, I'll see what I can do. Manu Sporny:</p>
+<p id=d48e class="phone s02"><cite>Manu_Sporny:</cite> All right.</p>
+<p id=14d9 class="phone s01"><cite>Patrick_St-Louis:</cite> It's just been very difficult for me to I wanted to…</p>
+<p id=d428 class="phone s02"><cite>Manu_Sporny:</cite> Yeah.</p>
+<p id=f05e class="phone s01"><cite>Patrick_St-Louis:</cite> because I signed up for it, but it's just, one of these unfortunate things. yeah, that's good. I mean, I have a lot more I could say, but I think it's better to talk about that in that call. we're gonna spend a lot of time on this. so I wanted to give an update on the test suite and the update is that there's no update. I still have a lot of work I need to commit. So I had a pretty good blitz a while ago. I broke down the work, open a few PRs. I just need to take the time and get this work in.</p>
+<p id=10002 class="phone s01"><cite>Patrick_St-Louis:</cite> So I had the test for the issuer and verifiers. I had an implementation that was passing. so yeah that's pretty much the update. I just wanted to say still in my mind I'm still thinking about it. I just need to take some time and it doesn't even take a lot of time. Just need to take a couple hours clean up and send that so we can push this forward. but I still feel good about the test suite. Do we have kind of a timeline we want to aim for these or it's just kind of whenever we can how does this fit within we're talking about horizontal review threat model how does this fit in the process was yesterday is the time coming or is it now? Yes.</p>
+<p id=98ab class="phone s02"><cite>Manu_Sporny:</cite> the time was yesterday. typically you want to have a test suite before you go into candidate wreck. You don't have to like we could stretch it out for another year, and it would still be within process. However, when you go into candidate recommendation, it's good to have a good idea of what you need to get out of candidate recommendation and the test suite is kind of the clearest signal of that. all of the tests that you have, if you have impleers that run against the test suite and they're like, we, succeed against 95% of the tests and you've got two impleers saying that, you have a very good chance of getting out of candidate wreck quickly. it's us almost never the case, right?</p>
+<p id=1a49 class="phone s02"><cite>Manu_Sporny:</cite> Usually you have people that are at 50% or 60% and the test suite's halfway done. but it's better to have a test suite it's better to have the test suite as soon as you have feature stability in the spec.</p>
+<p id=50b0 class="phone s02"><cite>Manu_Sporny:</cite> So I mean the sooner the better, but it's not going to stop us from going into candidate wreck.</p>
+<p id=bd12 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=cd0c class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, that sounds good. Thanks. I'll make sure I set some time aside to do this. It's really just a matter of putting the time in.</p>
+</section>
+
+<section>
+<h3 id=2b24>VC Data Model Threat Model Publication</h3>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> Any other questions or comments about test suite? anyone have something they'd like to share? Tourett model. So this is becoming our favorite topic. So I will turn it over. I don't know if you want to start, Manuel. I know you mentioned something or I don't know if Joe or Eric would like to chime in. So maybe I'll turn it over to you, Manuel, and you can get the ball rolling.</p>
+<p id=10004 class="phone s02"><cite>Manu_Sporny:</cite> Sure thing. Thanks. And I'm going to grab the screen real quick. we have published verifiable credential data model threat model version 2.1. This is based on a whole bunch of kind of consensus based decisions we've made over the past couple of weeks. to basically, name the threat model after the spec. So VC data threat model to put oops a version on the threat model that matches the spec to have date stamped releases and things of that nature.</p>
+<p id=ceb9 class="phone s02"><cite>Manu_Sporny:</cite> So this document is out there and follows the same kind of format here DFD and things like that. so this for the VC data model is published and it's on Akidna and it's autopublishing and we have a new publication scripts that run in the main spec we got some feedback from ping that basically said a threat model is not a replacement for privacy considerations please put privacy considerations back and we went back and forth on how could we structure it taken a new cut at structuring it so I've put security considerations and privacy considerations back.</p>
+<p id=bacc class="phone s02"><cite>Manu_Sporny:</cite> I've taken all mentions of the threat model out except in the security considerations section we're like hey we talk about we summarize some security threat considerations here …</p>
+<p id=d60f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's okay.</p>
+<p id=2d5f class="phone s02"><cite>Manu_Sporny:</cite> but really look at the threat model if you want detail and for each section we basically say here's a single sentence threat description of it is and if you want to learn go over to the threat model which explains it in more detail here. And so that's how I've done the new linking. It seems to work fineish, but I still have not heard back from Ping or Singh on if this works for them. go ahead, Joe. You might be double muted.</p>
+<p id=e322 class="phone s03"><cite>Joe_Andrieu:</cite> Yeah, thanks. I did have a brief chat with Simone. He's encouraged by this particular version. and he thinks it does address privacy's issues and he's had some conversations with them. So hopefully that will bubble up and we'll get a commentary. he and I both looked at this today and I agree. I think this addresses what Ping has said frustrated them. Both Simone and I are a little frustrated with Ping right now, but I think this is pretty good. Although I had thought that the short name of the threat model was going to have the version of the spec in the URL,…</p>
+<p id=1995 class="phone s03"><cite>Joe_Andrieu:</cite> which this does not have. So that's just a question, Ted, I guess.</p>
+<p id=e9c7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, that's the direction my question was in.</p>
+<p id=7d04 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> We've got versioning on two things and I think that both are important. the threat model is a version but it's based on a spec version. So I think we have to say data threat model 2.1 or whatever</p>
+<p id=abcb class="phone s01"><cite>Patrick_St-Louis:</cite> Run it.</p>
+<p id=ba02 class="phone s02"><cite>Manu_Sporny:</cite> We explored that, My understanding is the group said no, we should not do that. because having two versions in the title would confuse people possibly.</p>
+<p id=9ec9 class="phone s02"><cite>Manu_Sporny:</cite> to so let's talk about the short name there's an alias which is this URL right yeah there's an alias and…</p>
+<p id=d3a1 class="phone s03"><cite>Joe_Andrieu:</cite> I see.</p>
+<p id=9ab6 class="phone s03"><cite>Joe_Andrieu:</cite> Yep. That's great. That does map to what I was expecting. It was that the short run didn't have it. So,</p>
+<p id=f4b6 class="phone s02"><cite>Manu_Sporny:</cite> the alias is supposed to redirect they keep changing this at W3C but it does bring up the 21 and the actual URL is</p>
+<p id=802e class="phone s02"><cite>Manu_Sporny:</cite> the versioned one. so I think it's set up correctly based on what the group came to consensus on. Ted, I'm pretty sure we discussed the VC data model-2.1 threat model-10 potential and…</p>
+<p id=2bcd class="phone s02"><cite>Manu_Sporny:</cite> the group was like, &quot;No, that's too confusing to have two versions in a single short name.&quot; If that's what you meant. Okay,…</p>
+<p id=db50 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> that is…</p>
+<p id=5ebc class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> what I meant lacking that I think there needs to be some more detail in the content that says this applies to data model 1.0 0 which is and not a problem in 2.1 or whatever.</p>
+<p id=6d52 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah,…</p>
+<p id=c0e1 class="phone s02"><cite>Manu_Sporny:</cite> we'll bring that up in the main call, I</p>
+<p id=bd1c class="phone s01"><cite>Patrick_St-Louis:</cite> That's one thing I thought was confusing this to two, thread model 2.0 over Fal Crucial data model. There's the data model 2.0 0 itself that's being worked on and if 2.1 is for VC data model 2.0 and then when 2.1's going to come out there's going to be 2.2 or I could see this maybe becoming confusing.</p>
+<p id=4943 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=fa32 class="phone s02"><cite>Manu_Sporny:</cite> H hold on.</p>
+<p id=8959 class="phone s02"><cite>Manu_Sporny:</cite> Yes, that is confusing. But the version of the threat model always tracks the version of the spec. they should never deviate.</p>
+<p id=6bd0 class="phone s03"><cite>Joe_Andrieu:</cite> No No sir.</p>
+<p id=b62a class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.,</p>
+<p id=69cb class="phone s03"><cite>Joe_Andrieu:</cite> But I'm on the queue to speak to that if you want me to. So this was explicitly talked about. The threat model is actually going to outs survive the specification. We're going to have iterations on this threat model while the spec is staying static. And so we do need a version within the contents of this spec saying this is threat model 1.1 that applies to the VC data model 2.1. so I mean our group is not going to resolve this but that was my understanding man. Yeah.</p>
+<p id=aaca class="phone s02"><cite>Manu_Sporny:</cite> We should talk about it on the main call. putting that to the background because as you said, we're not going to resolve it here. There are a couple of other updates that I did that I thought might be useful to others. And one of them was this concept of mixing in some of the threat model stuff with some basically handwritten bits. So in VC data model the privacy considerations these three did not move over to the threat model because they weren't necessarily threat model stuff like talking about the spectrum of privacy that VCs are trying to address wasn't really a threat model thing but it was a privacy considerations thing and in the spec what we do here is partially I'm gonna have to</p>
+<p id=10005 class="phone s02"><cite>Manu_Sporny:</cite> There is some respect additional stuff that hold on one second. Let me see if I can try and find it. Not that. It's down here at the bottom. Okay, this thing will basically pull in the threat section as data. So the summary and the title and all that kind of stuff, it'll pull it in by reference.</p>
+<p id=5edd class="phone s02"><cite>Manu_Sporny:</cite> What that lets you do is it lets you put content around it if you want to the spectrum of privacy thing here is we talk about it here but then when you get down into the other things in the threat model they're just included in this way. again respspec editions and again apologies Joe and Eric I continue to have to refactor the code here to try and get some of these things working quickly. desire still to put it into respect threats once it stabilizes but it just continues to not stabilize. just thought I'd mention that that's so with all that said, Eric, do you have enough to put it into this general shape?</p>
+<p id=aae0 class="phone s02"><cite>Manu_Sporny:</cite> Noting,…</p>
+<p id=53ce class="phone s02"><cite>Manu_Sporny:</cite> the concern Joe mentioned,</p>
+<p id=ca3e class="phone s05"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=599f class="phone s05"><cite>Eric_Schuh:</cite> I mean I can certainly, somewhat undo the work I did to get rid of the security and privacy consideration sections. reorder that and transform, the relevant parts to be closer to this in terms of instead of maybe the whole section that we had previously, a shorter description that links to the threat model. that doesn't sound too difficult. I guess outside of that is that the work that needs to happen by I guess Friday in its totality or is there other process related things I would need to also do since</p>
+<p id=626b class="phone s02"><cite>Manu_Sporny:</cite> So all of the instructions are typed up on the VCWG mailing list. So there's a list of things you have to do.</p>
+<p id=2660 class="phone s05"><cite>Eric_Schuh:</cite> Okay. …</p>
+<p id=7efa class="phone s02"><cite>Manu_Sporny:</cite> You do not have to modify the main spec. You don't have to touch the VCOM spec at all. The only thing that we're trying to do is just publish the threat model under its own R space and for that you don't have to rewrite this threat model security privacy consideration section in the BCOM spec.</p>
+<p id=6362 class="phone s05"><cite>Eric_Schuh:</cite> That's for the future CR.</p>
+<p id=1df8 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, that's right. I mean, it's an editorial change that you can basically do at any point,…</p>
+<p id=bf34 class="phone s02"><cite>Manu_Sporny:</cite> right? but the threat model itself is the thing that we need to publish and that has the instructions on how to do that. It's just like publishing an FPWD. And so the instructions on how to do that step by step is on the BCWG mailing list.</p>
+<p id=f864 class="phone s05"><cite>Eric_Schuh:</cite> Okay. …</p>
+<p id=f118 class="phone s05"><cite>Eric_Schuh:</cite> then yeah, I believe the only work that is really needed is to make sure those links up at the top are correct.</p>
+<p id=6648 class="phone s05"><cite>Eric_Schuh:</cite> I think the form of the threat model is already in the form that you've shown. There might be an extra section here or there that we included but I don't think it's any breaking changes in terms of the content. I guess my final question is in terms of content this isn't cons like this is just a publication we can do it again in the future right so I don't need to worry about any of we have a few threats that still don't have responses and…</p>
+<p id=13d9 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> That's it.</p>
+<p id=fe19 class="phone s05"><cite>Eric_Schuh:</cite> things of that nature that I have a PR that is working on that started but I don't know that I'd get through it by Friday and regardless the group wouldn't have time to discuss</p>
+<p id=501f class="phone s05"><cite>Eric_Schuh:</cite> and approve the content by Friday. So, as long as we're good with the content that's currently in there going into this first published version, then I think I have what I need or I can find what I need in terms of the mailing list.</p>
+<p id=4a71 class="phone s02"><cite>Manu_Sporny:</cite> The content doesn't matter as much. It's going to be published as a draft node. And the main reason we're doing all of this stuff is because the W3C tooling is weird. we're just putting it out there so that we can turn Akidna on so we can get continuous static publishing working.</p>
+<p id=6eb7 class="phone s05"><cite>Eric_Schuh:</cite> Then I think I have what I need or I can reach out to relevant parties if I get stuck somewhere.</p>
+</section>
+
+<section>
+<h3 id=3aad>Exchange Data Feature PR Review</h3>
+<p id=69d8 class="phone s01"><cite>Patrick_St-Louis:</cite> Any further comments on this topic before we move on to reviews. You'll see our pull request. Trying to collapse look So, let me review this one we did talk about the last time.</p>
+<p id=4d7d class="phone s01"><cite>Patrick_St-Louis:</cite> I do remember that there was some outstanding thing to do. Yes,…</p>
+<p id=f996 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, if you just wanted me to go through what's happened…</p>
+<p id=27cc class="phone s05"><cite>Eric_Schuh:</cite> since last week real quick.</p>
+<p id=df38 class="phone s01"><cite>Patrick_St-Louis:</cite> I would love that.</p>
+<p id=81a3 class="phone s05"><cite>Eric_Schuh:</cite> That's easier.</p>
+<p id=8289 class="phone s01"><cite>Patrick_St-Louis:</cite> Can you quick</p>
+<p id=8e02 class="phone s05"><cite>Eric_Schuh:</cite> Yeah. So last week we talked about this exchange data feature there were a couple of items on the list that needed to be updated. I believe Dave had put in corrections to the context and definition urls. so those were accepted. there were some minor editorial changes by TED. and then I also moved the JSON LD file in the context folder to point to the specified location that Manu mentioned in the comments. So, I believe in terms of the to-do list from</p>
+<p id=193c class="phone s05"><cite>Eric_Schuh:</cite> past week. everything here is done. and then we do have an issue open over in the credentials working group or…</p>
+<p id=fabd class="phone s05"><cite>Eric_Schuh:</cite> sorry the data model working group to get this added over there I guess when that happens.</p>
+<p id=3f3d class="phone s01"><cite>Patrick_St-Louis:</cite> This one here,…</p>
+<p id=088c class="phone s01"><cite>Patrick_St-Louis:</cite> my concern is the test failing.</p>
+<p id=e17f class="phone s05"><cite>Eric_Schuh:</cite> So I believe as far as to list from last week everything has been done for this issue. and if I remember correctly Monu you had said that there's no reason to hold up this PR in terms of waiting for the VC data model group to resolve that other issue. so I believe it's ready for merge unless someone has a new concern. hard for me to say.</p>
+<p id=c190 class="phone s01"><cite>Patrick_St-Louis:</cite> Is this okay?</p>
+<p id=18a8 class="phone s05"><cite>Eric_Schuh:</cite> I took a look at these I guess with the akidna issues I guess yeah monu…</p>
+<p id=ef24 class="phone s05"><cite>Eric_Schuh:</cite> if you have something please go ahead.</p>
+<p id=ab4a class="phone s02"><cite>Manu_Sporny:</cite> Don't worry about it. It'll be an editorial fix if we need to fix What errors get throwing? yeah,…</p>
+<p id=e97b class="phone s01"><cite>Patrick_St-Louis:</cite> something about the broken local reference.</p>
+<p id=4de3 class="phone s02"><cite>Manu_Sporny:</cite> don't worry about that. We would have to fix it, but that's an editorial change. I don't know which local reference it's talking about, but Akidna tries to make sure that your HTML is wellformed.</p>
+<p id=60d2 class="phone s01"><cite>Patrick_St-Louis:</cite> And then we're here.</p>
+<p id=5e7a class="phone s02"><cite>Manu_Sporny:</cite> In some runs that it does, and that's what it's doing here. And so there is something probably syntactically wrong with the spec. yeah.</p>
+<p id=f14e class="phone s01"><cite>Patrick_St-Louis:</cite> It seems to be looking for Exchange verifiable presentation.</p>
+<p id=65e8 class="phone s01"><cite>Patrick_St-Louis:</cite> which this PR should be including.</p>
+<p id=ebf0 class="phone s02"><cite>Manu_Sporny:</cite> It's there.</p>
+<p id=0f84 class="phone s01"><cite>Patrick_St-Louis:</cite> Are we okay? Any objection that we merge and if something goes wrong we address it. Want a quick edit?</p>
+<p id=0bce class="phone s01"><cite>Patrick_St-Louis:</cite> I think not a big fan but I think we all in agreement content seems correct. perfect.</p>
+<p id=5dc9 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I will say everything looks pretty rendering fine and…</p>
+<p id=01b0 class="phone s05"><cite>Eric_Schuh:</cite> linking fine when I run it locally.</p>
+<p id=a1fc class="phone s01"><cite>Patrick_St-Louis:</cite> Let's give it a good shot.</p>
+<p id=10006 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, plus one emerge. And I think' the GitHub actions on here are ancient.</p>
+<p id=92f6 class="phone s02"><cite>Manu_Sporny:</cite> We may want to take a look at them and give them a refresh.</p>
+<p id=ba18 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, maybe some updates.</p>
+<p id=6a1d class="phone s01"><cite>Patrick_St-Louis:</cite> It's cuz we don't have dependabot or anything like this. Sometime they kind of let you know if your actions need to be updated but that's a good thing to do. So this is merge. We'll keep an eye. I'm assuming it's going to kick off some stuff. So we'll keep an eye on this. if there's a problem, we'll need to come and address it. Okay.</p>
+<p id=50e4 class="phone s01"><cite>Patrick_St-Louis:</cite> This is the issue I opened. This is the same thing. This is the actions. The appendex with the swim lane example.</p>
+<p id=feba class="phone s01"><cite>Patrick_St-Louis:</cite> What's the update on this one? Eric, there's a few suggestion from Ted.</p>
+<p id=8640 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I missed those.</p>
+<p id=414a class="phone s05"><cite>Eric_Schuh:</cite> I mean, assuming these are mostly editorial in nature,…</p>
+<p id=c75d class="phone s05"><cite>Eric_Schuh:</cite> I think I can probably accept these on this call.</p>
+<p id=310d class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, most of my</p>
+<p id=e8b4 class="phone s05"><cite>Eric_Schuh:</cite> Yeah.</p>
+<p id=52cb class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, they were requested yesterday. So</p>
+<p id=7f65 class="phone s05"><cite>Eric_Schuh:</cite> Content wise I think this has been stable for a couple of weeks now. so it adds four sequence diagrams to show basic examples of issuing verifying and…</p>
+<p id=ccdf class="phone s05"><cite>Eric_Schuh:</cite> presenting a credential in person as well as presenting a presentation in person.</p>
+<p id=28f9 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. So,…</p>
+</section>
+
+<section>
+<h3 id=6484>Document QR Code Shoulder Surfing</h3>
+<p id=2e94 class="phone s01"><cite>Patrick_St-Louis:</cite> I'll let you go through these suggestions, apply them or reject them and argue with Ted and we'll be able to merge this after. So, we'll come back in the last couple minutes of the call. document cure code shoulder surfing. have you had a chance manually to have a look at this a little bit?</p>
+<p id=48f0 class="phone s02"><cite>Manu_Sporny:</cite> Unfortunately, no.</p>
+<p id=3dce class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, let's see if there's been any update on the last week.</p>
+<p id=8ac1 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, I think everything was a couple weeks ago, some editorial stuff, but it seems like there are some question that needs resolving from Eric Simony. do we want to discuss about this where it's at or just put it on bright log a little bit for another week?</p>
+<p id=10007 class="phone s02"><cite>Manu_Sporny:</cite> Let me make a pass because there's a lot to review here and I don't know what's open. I think last was the numbering was off. and Eric, you took an action to update the numbering to fix that. thank you for doing that. I forget if there was anything other than that that was outstanding. on that topic though, I will note that and Joe, you might not like this, Joe and Eric. I went to an auto numbering scheme on the other threat models and it worked out really nicely. meaning that, the thrashing on the numbering kind of went away when I did that. we can discuss that at some other point, but just a heads up like that prevents Eric having to do the type of PR here that he did. that's it.</p>
+<p id=c7a8 class="phone s01"><cite>Patrick_St-Louis:</cite> Anything else to add? you're good. replace first name with given name. yes, I think that's good. Can someone tell me why is given name more correct to use?</p>
+<p id=3dea class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Because first or rather family names are not always fast.</p>
+<p id=f02b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, interesting. That makes sense.</p>
+<p id=4e26 class="phone s01"><cite>Patrick_St-Louis:</cite> But doesn't given name and family name cuz this is replacing first name with given name and…</p>
+<p id=3db8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Right. Yeah.</p>
+<p id=2d30 class="phone s01"><cite>Patrick_St-Louis:</cite> I believe that if I look on schema.org they use given name and family name correct?</p>
+<p id=6381 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Schema.org is not a source of truth. Your first name is Patrick.</p>
+<p id=14bf class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Yeah.</p>
+<p id=cd37 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> But if you were in China, then your last name would be Patrick and…</p>
+<p id=c7ec class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> your given name would still be Patrick.</p>
+<p id=6894 class="phone s01"><cite>Patrick_St-Louis:</cite> That's very interesting.</p>
+<p id=a813 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. I absolutely love that. thanks.</p>
+<p id=9dcf class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Yeah, somewhere around here there's a link to that fabulous list of things programmers believe about human identity.</p>
+<p id=5a6a class="phone s01"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=eb94 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Put it to good use.</p>
+<p id=c6e3 class="phone s01"><cite>Patrick_St-Louis:</cite> because I definitely know that I see given name and family name used together and first name and last name used together, but I didn't know the reason why. And what you just explained to me makes a lot of sense. what's the state here? I think it looks pretty good. It should be a very small change.</p>
+</section>
+
+<section>
+<h3 id=8552>Name Ontology Change</h3>
+<p id=51e4 class="phone s06"><cite>Kayode_Ezike:</cite> I think you had Benjamin on the queue.</p>
+<p id=c356 class="phone s06"><cite>Kayode_Ezike:</cite> I'm not sure.</p>
+<p id=4ffb class="phone s01"><cite>Patrick_St-Louis:</cite> Benjamin.</p>
+<p id=1590 class="phone s01"><cite>Patrick_St-Louis:</cite> Sorry. Yeah.</p>
+<p id=27ad class="phone s07"><cite>Benjamin_Young:</cite> Yeah. No,…</p>
+<p id=0234 class="phone s07"><cite>Benjamin_Young:</cite> I was just going to hear one comment about should first name be given at this point it's just an ontology change for something we haven't really yet shipped. But if you had data, it's going to depend on who you are and where you're sitting, whether or not you cared about the ordinality of the naming in terms of if you were in Japan and…</p>
+<p id=706e class="phone s07"><cite>Benjamin_Young:</cite> was working with Japanese data and you did first name and you put it in the order that you use in Japan, then you'd have a data migration problem,…</p>
+<p id=ea21 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it's going corrupt hackers.</p>
+<p id=3771 class="phone s07"><cite>Benjamin_Young:</cite> which is why getting this right is so important. And yeah, it's still a mystery why most people refuse to get it right.</p>
+<p id=9a8b class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, because I do see both in the wild in various official documents, It seems like there is no alignment, but I think a given name sounds to me is probably the best option. Any objection to merging this?</p>
+<p id=c496 class="phone s01"><cite>Patrick_St-Louis:</cite> So, I think it's fairly straightforward. Good. I learned something today.</p>
+</section>
+
+<section>
+<h3 id=532e>Adding Credential Offer Parameter</h3>
+<p id=5da5 class="phone s01"><cite>Patrick_St-Louis:</cite> Adding credential offer parameter to the verifiable presentation request. This is a new one. can you take me through this, okay.</p>
+<p id=0544 class="phone s05"><cite>Eric_Schuh:</cite> It's actually not a new one.</p>
+<p id=535b class="phone s05"><cite>Eric_Schuh:</cite> This is the, replacement PR for the End of line issue. I put end file there, crossed my wires a little bit. But, I think the, only new thing here is that Dave, you had suggested that we could add possibly this group feature to, the credential offer. I don't think I have an issue with that. I was looking through this before the call. didn't quite get around to updating, but Dave, I was wondering in terms of where that parameter should go, is that part of the credential object that goes inside of the credential offers? yeah, go ahead.</p>
+<p id=3853 class="phone s08"><cite>Dave_Longley:</cite> No, it would just go underneath the credential offer, not in the credential itself. So, it's already optional in a VPR to include a group property if you want to group things together and…</p>
+<p id=34ab class="phone s08"><cite>Dave_Longley:</cite> you could tag the offer with those that same group so that those things are related to each other. So, it's a way of connecting this credential offer to things in the query that are also grouped.</p>
+<p id=b5cd class="phone s05"><cite>Eric_Schuh:</cite> So each credential offer would…</p>
+<p id=8280 class="phone s05"><cite>Eric_Schuh:</cite> then have a single group property.</p>
+<p id=95b8 class="phone s08"><cite>Dave_Longley:</cite> Optionally have a group property.</p>
+<p id=fd50 class="phone s08"><cite>Dave_Longley:</cite> Yep.</p>
+<p id=9a1e class="phone s05"><cite>Eric_Schuh:</cite> Does that feel right? because it feels like what you would actually want to be able to say with that type of feature would be to say I have a credential offer. It can be, using the andor logic, right?</p>
+<p id=0590 class="phone s05"><cite>Eric_Schuh:</cite> one of this group and one of this group type of logic which It would just be advertising that we have a set of credentials that all belong to this one group.</p>
+<p id=0f29 class="phone s08"><cite>Dave_Longley:</cite> I couldn't sorry I would have hit the button I didn't know you were going to get on the queue coyote I didn't quite follow in a VPR you can optionally tag different queries with a group indicating that whole group needs to be satisfied and…</p>
+<p id=15c9 class="phone s05"><cite>Eric_Schuh:</cite> Yeah. Sorry.</p>
+<p id=dce4 class="phone s08"><cite>Dave_Longley:</cite> you can choose any one of the groups to fy. and tagging the offer with the same group would indicate that if you satisfy that query that offer is associated with that group and so you should get the same logic that you also get out of the queries. So every different group in a VPR is and everything within the same group is and the same would apply to credential offers.</p>
+<p id=976d class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=89a2 class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, So…</p>
+<p id=eee9 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I guess my confusion comes that right now I would believe the way this is structured the credential offer is a singular parameter,…</p>
+<p id=5a95 class="phone s05"><cite>Eric_Schuh:</cite> That would imply that there would be an array of credential offers or…</p>
+<p id=67ea class="phone s05"><cite>Eric_Schuh:</cite> something that you could yeah I wrong level.</p>
+<p id=7a51 class="phone s08"><cite>Dave_Longley:</cite> It's currently an array and…</p>
+<p id=41d5 class="phone s08"><cite>Dave_Longley:</cite> you can put as many in there as you would like in the same way that the query is. Yep.</p>
+<p id=080d class="phone s05"><cite>Eric_Schuh:</cite> Yep. Sorry. I think…</p>
+<p id=75e6 class="phone s01"><cite>Patrick_St-Louis:</cite> where does that leave this PR? Is it in a good state or do you need to make some adjustment based on this conversation?</p>
+<p id=fed2 class="phone s08"><cite>Dave_Longley:</cite> I was just going to say we could either merge this and…</p>
+<p id=455e class="phone s05"><cite>Eric_Schuh:</cite> if Go ahead. I think now that I better understand…</p>
+<p id=bcb5 class="phone s08"><cite>Dave_Longley:</cite> could have a se another PR that adds the group optionally or we could just put it in here. It's up to Eric.</p>
+<p id=3cc9 class="phone s05"><cite>Eric_Schuh:</cite> what this is asking for, it would be a fairly simple update to this PR.</p>
+<p id=5cf3 class="phone s05"><cite>Eric_Schuh:</cite> But if we just want to clear this out, I'd be fine merging and opening up a new one.</p>
+<p id=a645 class="phone s01"><cite>Patrick_St-Louis:</cite> That's …</p>
+<p id=580e class="phone s01"><cite>Patrick_St-Louis:</cite> but I propose to add it in this PR so it's nice and close the loop. is that And let's add the group feature completed. okay, there we are running out of time. were you able to get the recommendation from Ted in</p>
+<p id=6bd4 class="phone s05"><cite>Eric_Schuh:</cite> Yep. Works for me.</p>
+<p id=c4c0 class="phone s05"><cite>Eric_Schuh:</cite> on the other PR.</p>
+<p id=698d class="phone s05"><cite>Eric_Schuh:</cite> Yes. Y</p>
+<p id=5dca class="phone s01"><cite>Patrick_St-Louis:</cite> So I think it was this one,…</p>
+<p id=1259 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Any objection to merging the new swim lane example And I think that's going to be our last one for today. Maybe we can just have a quick look at the other ones. Probably not going to engage in. So the only last one was this specify proper format for datetime properties. Actually we might be able to merge this in KOD. Do you want to take us quickly through this?</p>
+<p id=c599 class="phone s06"><cite>Kayode_Ezike:</cite> Yeah, this is a fairly simple one. This was the results of the internationalization review or one of the three that were outstanding which is just that we never really specified the format for one of the date fields. I forget which one valid till or something. And so I decided to just apply it to all the date fields that it could apply to which turned out to not be that many.</p>
+<p id=736f class="phone s06"><cite>Kayode_Ezike:</cite> And so yeah, it's really just making sure that we specified that it's the date timestamp format which is the same format that is used in VC data model. That's all Yeah,…</p>
+<p id=64f5 class="phone s01"><cite>Patrick_St-Louis:</cite> And when we say…</p>
+<p id=baec class="phone s01"><cite>Patrick_St-Louis:</cite> if not provide. sorry Go ahead.</p>
+<p id=95a5 class="phone s02"><cite>Manu_Sporny:</cite> No, no problem.</p>
+<p id=3564 class="phone s02"><cite>Manu_Sporny:</cite> Coyote, did you check to see what we said in the VC data model? Because I think we go beyond saying it's just a date timestamp. I think we have other requirements on top of it and we may need to explicitly state go and read about, X Y and Z.</p>
+<p id=10008 class="phone s06"><cite>Kayode_Ezike:</cite> I actually did refer to it. I mean I noticed one thing that was interesting which is that it referenced the date time like fragment of the source of XML schema sorry and I guess I just made sure that I was referencing a daytime standpoint. Beyond that, I'm not sure if there was anything else that I may have missed. I can double check to see, but yeah, I didn't notice anything else beyond that.</p>
+<p id=3f11 class="phone s01"><cite>Patrick_St-Louis:</cite> I'm confused about this part here if not provided what will make it default to the current system.</p>
+<p id=7807 class="phone s06"><cite>Kayode_Ezike:</cite> I think this was just a carryover from what was removed current system some time. So just saying if a value for this is not provided it would just use whatever the date now right the current time for that value.</p>
+<p id=5d4d class="phone s01"><cite>Patrick_St-Louis:</cite> Which shouldn't this be a separate must like saying…</p>
+<p id=e72c class="phone s06"><cite>Kayode_Ezike:</cite> Yeah. No,…</p>
+<p id=a78f class="phone s01"><cite>Patrick_St-Louis:</cite> if you don't provide the created timestamp you must include the default to the current system.</p>
+<p id=d461 class="phone s06"><cite>Kayode_Ezike:</cite> no, it's more so saying how the system will interpret a missing created value.</p>
+<p id=d466 class="phone s01"><cite>Patrick_St-Louis:</cite> But I believe created in itself is optional in data integrity, right? Kayode Ezike:</p>
+<p id=10009 class="phone s06"><cite>Kayode_Ezike:</cite> It's not specifying. It's saying you could leave that value out if you want to but the default behavior of a VCOM I guess component that's consuming this would be to use the current day time so it's not a specification on what it is basically this last sentence that was removed above I'm pretty much just putting that last thing that was there default current system time in the red 34 it's just re rename re stating that in a sentence</p>
+<p id=6d33 class="phone s06"><cite>Kayode_Ezike:</cite> This is basically saying this is…</p>
+<p id=d577 class="phone s06"><cite>Kayode_Ezike:</cite> this is how you should interpret a missing created value is you should use the current date.</p>
+<p id=6e93 class="phone s01"><cite>Patrick_St-Louis:</cite> That's it.</p>
+<p id=0430 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Thank you.</p>
+<p id=be74 class="phone s06"><cite>Kayode_Ezike:</cite> Yeah I guess I could double check.</p>
+<p id=afa4 class="phone s01"><cite>Patrick_St-Louis:</cite> At time. I'm not going to ver we just had a question about looking at the other spec and…</p>
+<p id=cf2b class="phone s06"><cite>Kayode_Ezike:</cite> Yeah. Yeah.</p>
+<p id=d6e1 class="phone s01"><cite>Patrick_St-Louis:</cite> let's just look back in this at the next meeting. just make sure that it matches the other spec and stuff. Should be quick. other than that, we're at time. Thank you a lot for attending. good progress today. Closed a few PRs and we'll talk again next week. Thank you very much. Meeting ended after 01:01:20 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

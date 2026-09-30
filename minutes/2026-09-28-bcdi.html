@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 28 September 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>28 September 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony_Mott, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Ivan_Herman, Phil_Archer, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#3eb9">Upcoming Blog Posts</a></li>
+<li><a href="#9a40">Threat Model Publication</a></li>
+<li><a href="#771e">Data Integrity Specification Issues</a></li>
+<li><a href="#fb88">Bitstring Status List Issues</a></li>
+<li><a href="#8552">Bitstring Status List Clarifications</a></li>
+<li><a href="#722d">Alternative Compression Algorithms</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=8f7f class="phone s01"><cite>Greg_Bernstein:</cite> I could s***.</p>
+<p id=ac1b class="phone s02"><cite>Wesley_Smith:</cite> Hello folks. I'm going to give people a couple more minutes to trickle in and then we can go ahead and get started.</p>
+<p id=8afe class="phone s02"><cite>Wesley_Smith:</cite> All right, that's probably enough everyone. Welcome to the September 28th, 2026 meeting of the barcodes, data integrity, forgery, defense, and bitstring status list task force. That is getting to be quite a mouthful. but it's cool that we're getting to do work on so many cool technologies. The agenda for today is much the same as normal. we will talk about process announcement introduction items first and then as needed we will go through the various specifications under our purview and do issue processing poll request review as needed.</p>
+</section>
+
+<section>
+<h3 id=3eb9>Upcoming Blog Posts</h3>
+<p id=fd60 class="phone s02"><cite>Wesley_Smith:</cite> Today on the agenda before we get into the as needed work, I want to talk a little bit about a couple of the things we have in the pipeline outside of the core threat models and the upcoming W3C blog post are the two that come to mind. So with that in mind, does anybody have any announcements, introductions, or changes to the agenda slashpolicy items for today? All right, that sounds Good. So, I think then first we can talk about the upcoming blog posts.</p>
+<p id=b8e1 class="phone s02"><cite>Wesley_Smith:</cite> So where we are currently at is that the W3C communications team has agreed to publish the blog post relating to VC barcodes as a technology to address the kind of data breach that happened with 150 million driver's licenses. they still need to review the exact text and they may have change requests. we are just about at consensus on the final text there. a few folks had change requests and feedback on what we had written. So I've incorporated all of those and I've gotten a final approval from all but one of those people who I'm hoping to hear by the end of the day.</p>
+<p id=0f8b class="phone s02"><cite>Wesley_Smith:</cite> So all that to say by the end of today I'm hoping that we will have the finalized texts from the working group so the comm's team can do their final review and so on and so forth. So that's really good news. I also broached the topic of other ways in which the communications team can help publicize this text or this issue or the VC barcodes work more generally. they noted a few things. they said a press release is an option. I'll find exactly what they said, but they said they often want press releases. Basically they said press releases are held to a high standard, which is understandable. and that they usually do press releases about technologies that are, through the standardization process, which of course makes sense.</p>
+<p id=fe4f class="phone s02"><cite>Wesley_Smith:</cite> But they also said that they would discuss with the other folks on the communications team to they'll discuss it and get back to us basically. so that is about it there. we're hoping to hear back from them in the next couple of days and that's pretty exciting stuff. Phil or Ivonne or anyone else for that matter? Anything I'm missing about the blog post material that should be communicated?</p>
+<p id=cbd2 class="phone s03"><cite>Phil_Archer:</cite> No, it's good to get it done.</p>
+<p id=497a class="phone s03"><cite>Phil_Archer:</cite> Thank you.</p>
+<p id=4f3b class="phone s04"><cite>Ivan_Herman:</cite> No, nothing.</p>
+<p id=1588 class="phone s04"><cite>Ivan_Herman:</cite> Nothing from my side.</p>
+<p id=7377 class="phone s02"><cite>Wesley_Smith:</cite> All right, sounds great. Okay. I think next we can talk about threat models.</p>
+</section>
+
+<section>
+<h3 id=9a40>Threat Model Publication</h3>
+<p id=dee4 class="phone s02"><cite>Wesley_Smith:</cite> So I saw some emails on the mailing list. Manu has put together the materials to publish one of the threat models as a note the recognized entities. So he's gone through the preparation process, the snapshotting and so on to publish that as a dnote to your draft note. Anthony, I saw that you had volunteered to prepare the data integrity threat model as a note part of the process that Manu shared. Is that still something you're willing to do?</p>
+<p id=1ad7 class="phone s02"><cite>Wesley_Smith:</cite> I can't hear you if you're talking, Anthony. You're unmuted on Google.</p>
+<p id=3d3b class="phone s04"><cite>Ivan_Herman:</cite> You're on.</p>
+<p id=dfbe class="phone s02"><cite>Wesley_Smith:</cite> Perhaps a double mute.</p>
+<p id=5a26 class="phone s01"><cite>Greg_Bernstein:</cite> Triple mute.</p>
+<p id=9ced class="phone s02"><cite>Wesley_Smith:</cite> Just yell loud enough and I'll hear you through the air.</p>
+<p id=eb7c class="phone s01"><cite>Greg_Bernstein:</cite> because we have this nice solution for the …</p>
+<p id=7e2d class="phone s05"><cite>Antony_Mott:</cite> No, you guys can't hear me.</p>
+<p id=46f5 class="phone s02"><cite>Wesley_Smith:</cite> There we go.</p>
+<p id=ded2 class="phone s01"><cite>Greg_Bernstein:</cite> he's Okay.</p>
+<p id=e4ae class="phone s02"><cite>Wesley_Smith:</cite> Can hear you now.</p>
+<p id=25dc class="phone s05"><cite>Antony_Mott:</cite> Okay. …</p>
+<p id=5d20 class="phone s04"><cite>Ivan_Herman:</cite> No. …</p>
+<p id=86d2 class="phone s05"><cite>Antony_Mott:</cite> thank you so much. I'm happy to volunteer. I'll do the best I I did look through it. Definitely some new processes, but I'll do the best I</p>
+<p id=6730 class="phone s02"><cite>Wesley_Smith:</cite> Yeah, that sounds great.</p>
+<p id=0646 class="phone s02"><cite>Wesley_Smith:</cite> And please, reach out if you need help. whether on the mailing list, you can also reach out to me privately. if you have other questions, that's all fine. yeah. Ivan Herman:</p>
+<p id=a153 class="phone s04"><cite>Ivan_Herman:</cite> excuse Just The only thing is that I am out starting Friday afternoon my time here in France until Monday evening. So I have a family trip. so if you have any question it should be right before or after but not during this period.</p>
+<p id=5a05 class="phone s05"><cite>Antony_Mott:</cite> Thank you.</p>
+<p id=37f1 class="phone s05"><cite>Antony_Mott:</cite> I've noted that.</p>
+<p id=a0b8 class="phone s02"><cite>Wesley_Smith:</cite> To be clear,…</p>
+<p id=934f class="phone s04"><cite>Ivan_Herman:</cite> Okay. No,…</p>
+<p id=9b39 class="phone s02"><cite>Wesley_Smith:</cite> Ivon, is that Friday to Monday over the span of one weekend or with a week in between?</p>
+<p id=358a class="phone s04"><cite>Ivan_Herman:</cite> no, no. One weekend.</p>
+<p id=17d8 class="phone s02"><cite>Wesley_Smith:</cite> Okay, wonderful.</p>
+<p id=c078 class="phone s04"><cite>Ivan_Herman:</cite> And I'm sorry. And the other thing is that that should not be a problem. We set the publication date on the 8th, which is Thursday, which is fine. To make things a little bit more complicated, I have a medical appointment on the 8th, which I cannot move. But by that time, it should be in the hand of the web masters. We have nothing to do with it. So things have to be ready on Tuesday at the latest. Okay.</p>
+<p id=30a2 class="phone s05"><cite>Antony_Mott:</cite> To be practical, I will definitely not just do my best, but I'll read the one that Manu posted to help me guide me.</p>
+<p id=0879 class="phone s05"><cite>Antony_Mott:</cite> I guess that's why you did that, Manu, so I'll do the best I can. I got some travel coming up is the only thing. So, I will don't want to make promises I can't keep, but I'll do my best.</p>
+<p id=24c4 class="phone s02"><cite>Wesley_Smith:</cite> and please,…</p>
+<p id=6234 class="phone s02"><cite>Wesley_Smith:</cite> reach out for help Anthony again on the mailing list privately if you have questions that you would be embarrassed to put on the mailing list.</p>
+<p id=eb16 class="phone s05"><cite>Antony_Mott:</cite> Okay, that's funny.</p>
+<p id=fc19 class="phone s02"><cite>Wesley_Smith:</cite> All right. sounds good. Thank you for volunteering in there, Anthony. much appreciated. I am sure I'm on the hook not the data integrity for the VC barcodes threat model publication. I don't expect I will get to that this we go on.</p>
+<p id=fb0a class="phone s02"><cite>Wesley_Smith:</cite> So perhaps a later publication date there, the week after or something to that effect. All right, Elaine post.</p>
+<p id=e2a9 class="phone s04"><cite>Ivan_Herman:</cite> Sorry,…</p>
+<p id=edfc class="phone s02"><cite>Wesley_Smith:</cite> Excellent. Thank you for continuing to do good work in publicizing what we do here, your outreach is much appreciated. Yep. Ivan Herman:</p>
+<p id=6cca class="phone s04"><cite>Ivan_Herman:</cite> just a minute. your stuff is probably relatively small,…</p>
+<p id=2cfd class="phone s04"><cite>Ivan_Herman:</cite> right? Yeah.</p>
+<p id=1fef class="phone s02"><cite>Wesley_Smith:</cite> the VC barcode start model.</p>
+<p id=ce77 class="phone s02"><cite>Wesley_Smith:</cite> No, it's quite large. I think it's about the same size as Pardon.</p>
+<p id=a68e class="phone s04"><cite>Ivan_Herman:</cite> Quite large. No, but in what stage is it? Because I can help in getting that one done.</p>
+<p id=7ea3 class="phone s02"><cite>Wesley_Smith:</cite> I'm not sure I understand the question.</p>
+<p id=f0de class="phone s04"><cite>Ivan_Herman:</cite> I mean in what status is it now? it is finished but has to go through the publishing hooplas or is it still something that you have to finalize contentwise.</p>
+<p id=12e7 class="phone s02"><cite>Wesley_Smith:</cite> I believe the content is ready to go through the initial stages of the publication process correct me if I'm wrong here the note structure that we're doing isn't precluding the kind of live document update stuff that we're planning for these threat models is that correct</p>
+<p id=cd0e class="phone s04"><cite>Ivan_Herman:</cite> And now it's my turn not to understand what you are asking.</p>
+<p id=4c4b class="phone s02"><cite>Wesley_Smith:</cite> So can these things change?</p>
+<p id=c7dd class="phone s02"><cite>Wesley_Smith:</cite> Basically the notes because we're publishing wonderful yeah so I think that we're good to go forward with publication as a draft note for the barcodes threat model.</p>
+<p id=ba22 class="phone s04"><cite>Ivan_Herman:</cite> No, the notes can change at your heart's content. If you want to change a note every day, it's your job. It can be done.</p>
+<p id=e650 class="phone s02"><cite>Wesley_Smith:</cite> The content is fine. it may not be completely up to date with the kind of rapidly evolving best practices for the threat models this group is creating…</p>
+<p id=4c8b class="phone s02"><cite>Wesley_Smith:</cite> which change sort of week to week. but I</p>
+<p id=a304 class="phone s04"><cite>Ivan_Herman:</cite> That's all fine.</p>
+<p id=bb0f class="phone s04"><cite>Ivan_Herman:</cite> What is really a problem usually and that's also goes for Anthony. What really is a problem for the publication stuff is whether it goes through the link checker and the publication rule checker. Usually these are the tough ones. The rest is just mechanics with respect and then we can refresh the document without problems. It's really the testing which is usually the kind of thing where the editor has to step in if there's a problem. Okay.</p>
+<p id=88e9 class="phone s02"><cite>Wesley_Smith:</cite> I heard and…</p>
+<p id=2d01 class="phone s02"><cite>Wesley_Smith:</cite> yeah, I'll handle that for VC barcodes when it's time. Greg Brenstein First working draft.</p>
+<p id=d554 class="phone s01"><cite>Greg_Bernstein:</cite> When this gets published with other first person working group I mean FPWDs…</p>
+<p id=cb6a class="phone s01"><cite>Greg_Bernstein:</cite> what is that public working in first person. we had to do a PR and such like that. We've got some PRs that are kind of stuck in the chain. This takes priority.</p>
+<p id=b044 class="phone s01"><cite>Greg_Bernstein:</cite> So, I just wanted to make sure that we've got ran into issues on a couple existing PRs with CRLF kind of things, but this sounds like this takes priority. So, I don't want to mess with the repo is my understanding then.</p>
+<p id=03b9 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, probably. I mean, I would think it's possible to make merges because you work on the DI course spec and that's in parallel with the other one. there will be a point where we have to change something but when everything is published. So in my view if you have PRs that you can merge for the dispect itself…</p>
+<p id=dcc6 class="phone s01"><cite>Greg_Bernstein:</cite> It's a separate file,…</p>
+<p id=eefa class="phone s04"><cite>Ivan_Herman:</cite> then that it's a separate I don't think there is a Hold it on crack.</p>
+<p id=8222 class="phone s01"><cite>Greg_Bernstein:</cite> right? H at least that's a little better than how we've been doing it.</p>
+<p id=242a class="phone s01"><cite>Greg_Bernstein:</cite> We do everything. I forgot it's a separate file. Okay. Thanks. Oops.</p>
+<p id=ae24 class="phone s02"><cite>Wesley_Smith:</cite> All right.</p>
+</section>
+
+<section>
+<h3 id=771e>Data Integrity Specification Issues</h3>
+<p id=6b1d class="phone s02"><cite>Wesley_Smith:</cite> Anything else on the topic of threat model publication? I believe neither the bitst string status list nor the VC forgery defense specification are intended to have standalone threat models but instead refer out to others. so I don't think we need to worry about either of those. sounds good. I think we can probably go ahead to looking at issues and pull requests on specs. Greg Bernstein, I could pass it over to you to do some data integrity discussion if you'd like.</p>
+<p id=d7b2 class="phone s01"><cite>Greg_Bernstein:</cite> Let's see. Should I share my screen? Let me do that. Screen Allow window to share. not the We've got two PRs as Ted noticed on this was supposed to be a simple fix where we left off for the signed individual claims.</p>
+<p id=20c0 class="phone s01"><cite>Greg_Bernstein:</cite> I left off the key fact that we filter out the signatures between the holder and the verifier. It's a key step there. It's a single line step. However, somehow in doing that, we've got the CRLF thing. So it makes it look like the entire document changed. I tried to look at where it happened. It seemed to happen when I merged in some previous stuff. I am not a good expert and really don't intend to. So I don't know what's going on there. I asked Dave when he maybe take a look at it, but that's kind of stalled us out there. I can back if it looks too complicated, I guess, and back out all the changes and start the thing again.</p>
+<p id=b011 class="phone s01"><cite>Greg_Bernstein:</cite> Is that a Is that a hand going up? Okay,</p>
+<p id=8b10 class="phone s06"><cite>Dave_Longley:</cite> I saw this. I haven't had a chance to look at it. I think this happened in another group where even after we had put the fixes in place to deal with this problem. we had not run some renormalize command or something whatever that is will make all the end of line characters the same needs to be run before trying to fix any of these other PRs otherwise I think this is just going to keep coming up so</p>
+<p id=8bde class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, it triggers on the commit when you make the next commit, GitHub notices that the repo contains a mix of end of lines and…</p>
+<p id=29d9 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> then normalizes it to the CRLF, which is not desired.</p>
+<p id=cf30 class="phone s06"><cite>Dave_Longley:</cite> Yeah.</p>
+<p id=45b5 class="phone s01"><cite>Greg_Bernstein:</cite> I will wait.</p>
+<p id=5bae class="phone s01"><cite>Greg_Bernstein:</cite> So, I won't back it all out and start again. I'll wait until I hear. I mean, it'd be good to get this together in the next couple of weeks. But if we can find the real fix for this,…</p>
+<p id=efaf class="phone s01"><cite>Greg_Bernstein:</cite> that would be wonderful because I mean, last time I did what you told me to do to fix things and that worked. But that would be great.</p>
+<p id=2e93 class="phone s06"><cite>Dave_Longley:</cite> Yeah, I don't.</p>
+<p id=b9cd class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Yeah, it's like a fourstep process per repo.</p>
+<p id=bb6e class="phone s06"><cite>Dave_Longley:</cite> I don't Yeah. And what I gave you before,…</p>
+<p id=ec0f class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> Sorry. Go ahead.</p>
+<p id=1e18 class="phone s06"><cite>Dave_Longley:</cite> Greg, was like a surgical fix, and we're just going to have to keep redoing that surgical fix if we don't fix this other thing. So, …</p>
+<p id=5ea4 class="phone s01"><cite>Greg_Bernstein:</cite> The other that's outstanding was this was noticed by Devon who's out of Beijing.</p>
+<p id=edb6 class="phone s06"><cite>Dave_Longley:</cite> we'll fix this other thing, and then get back to you and see what needs to be</p>
+<p id=d738 class="phone s01"><cite>Greg_Bernstein:</cite> I haven't met him, but he's been putting in some very good issues and comments. when we sign things make our credentials good we protect both the metadata that means the proof configuration everything but the proof value.</p>
+<p id=d0d7 class="phone s01"><cite>Greg_Bernstein:</cite> So if anybody's tried to read how we do data integrity in general it's generic form you always see us talking about doing proof config and normalizing that and sign and hashing it and things like that. So what we try and do is we try and hash up all the metadata and sign it along with the hashes of the data. And that's a general approach to making sure we've secured our credentials because there was a way back there was a big poll in what was it?</p>
+<p id=6900 class="phone s01"><cite>Greg_Bernstein:</cite> JWTs where you could just change the option saying this thing isn't signed and you could then send out a JWT that wasn't signed and that they would accept it because it wasn't signed and people could just fake JWTs. What we do is we protect the meta metadata and such like that. However, if you go overboard, which I did in my initial shock implementation, I made it so that you had to send a bunch extra information, too much information. So, what this fix was backing off that we sign didn't hash everything as part of that metadata.</p>
+<p id=253d class="phone s01"><cite>Greg_Bernstein:</cite> What I did also start writing up which I don't know where we would go because as a cryptographer when we look at these things we really try and break it up into what is it that we have to protect as far as the data and the metadata and what things we don't because they're implied other ways. So that's what that fix is about. and so that's gone in.</p>
+<p id=3b96 class="phone s01"><cite>Greg_Bernstein:</cite> I think yeah, Dave took a look at I put it down for Anthony to look at it, too, since he's kind of involved with the details. we have a couple key issues that have come up. This was also Devon noticed that we can save a lot of space by not sending a list of what are called salts. These are random values that are used to obscure the values of the unrevealed statements. Particularly let's say you have a bunch of answers or something where you don't have a lot of entropy in the claims.</p>
+<p id=04b0 class="phone s01"><cite>Greg_Bernstein:</cite> It's easy for somebody if you don't add in some entropy via salt, they can easily kind of go through and just do an enumeration and look at the hashes of things and match things back. So these salts are very important. They need to look like random values. However, there's a technique for doing this called u cryptographically secure pseudo random number generation or also known as deterministic random bit generation. The idea here is instead of sending a whole array of salts between the issuer and the holder like we do in other places, we send a key.</p>
+<p id=7342 class="phone s01"><cite>Greg_Bernstein:</cite> a key what for a secure random bit generator. And NIST has a bunch. So I said okay we can use one of these random things. Other people started suggesting the problem with some of these shortcuts they look particularly maybe a little simpler. their cryptographic properties aren't established. they're not necessarily designed explicitly for that purpose. If people know the history of detministic random bit generators, it is full of missteps, including a case way back when the NSA tried to sneak in a not so deterministic algorithm that they knew how to crack.</p>
+<p id=ea7d class="phone s01"><cite>Greg_Bernstein:</cite> So I really kind of trying to recommend that we stick with things. I know the NIST spec can look a little complicated and getting the details down can be particular, but in this case, NIST actually does have test vectors published. There are some reference libraries that I tried that recreated it. There's two different standards and there was a slide set from NIST prior to the standardization that kind of explains some things. So hopefully we can resolve this. This is kind of a conversation going between Philillip Dave and myself and Devin. So if we can try and resolve that that would be great.</p>
+<p id=6a63 class="phone s01"><cite>Greg_Bernstein:</cite> The other issue that we've got which is yet another very good optimization. So this saves a lot of space to solve. Because we need one for every claim in the so think about and everybody's hitting the same issue as we go to postquantum signatures that could be long. Everybody's rethinking how they do things. So we're able to piggyback on other</p>
+<p id=0a84 class="phone s01"><cite>Greg_Bernstein:</cite> people's work and they're doing similar things. so the other one comes up is can we reduce the size of what we say? Do we have to send this whole list of salted hashes between the holder and the verifier? And the answer is that gets very big. There's techniques called Merkel trees that can help reduce this. However, in proving one thing is very short. Proving multiple things takes a little bit of more effort.</p>
+<p id=ffff class="phone s01"><cite>Greg_Bernstein:</cite> And so there's a standard algorithm in one of the RFC's over at IETF that produces say and we had an example in our test vectors of a list of 20 statements. This is the Merkel tree that corresponds to those 20 statements. leaves zero through 19 blah blah blah. And the question comes up is if you do an individual proof you have to add five more entries or so to prove one of these statements. They call them Merkel inclusion proofs.</p>
+<p id=8c80 class="phone s01"><cite>Greg_Bernstein:</cite> So for example in this case this tree we got 20 statements takes five extra pieces of information these hash values per proof and that's really good if you have just one thing because that's much shorter than 20. But as soon as you hit five items that you want to reveal then it starts getting bigger than what have had to do. if we kind of do simplistic just use the existing algorithms. However, after doing some digging in the literature and this Devon agreed came back with something similar is there's something called a multi-proof. So here's what happens if we need to reveal we're revealing only two statements and shown in red here and red here.</p>
+<p id=997d class="phone s01"><cite>Greg_Bernstein:</cite> It turns out we only have to send in one, two, three, four, five, six additional pieces of information rather than five each. So, there's some potential optimizations. We don't have a handy already standardized algorithm for it. However, the cryptographic concerns have to do with the tree construction and you constructing the tree in the appropriate way. And that's already standardized. How you do these proof algorithms and verification, you're allowed to do what you'd like. So that's going on. I've got a lot more notes if for anybody who's interested in participating. I draw pictures with graph viz and such like that so I can see what's going on.</p>
+<p id=a49b class="phone s01"><cite>Greg_Bernstein:</cite> I know I've seen Dave come up with some very good u fancy algorithms and such like that. I think more visually. One thing you can see is when I look at these things, every non-revealed statement is covered by one of these blue nodes. So all these guys aren't revealed. These two are revealed. And so you can start seeing patterns when we look at these things. So an algorithm exists. We'll see how complicated it gets. But the savings is really huge and we can make sure it doesn't get any bigger than the worst case of full disclosure. So I'm kind of optimistic whether we want to go that far with it. Depends on how complicated the algorithm looks like.</p>
+<p id=ce87 class="phone s01"><cite>Greg_Bernstein:</cite> Security-wise, once again, the security is in the tree construction and that is done in an approved way based on what we see in this RFC. So, that's where we're at. so besides the problems with Git, we've got some real good problems that are being addressed as far as getting proof size down. And this is the same thing that people are facing with the certificate verification for the u internet as people switch to postquantum signatures because they're big and so they're looking at different u so a lot of this comes with tree transparency and something called Merkel certificates that's currently being worked on</p>
+<p id=c936 class="phone s01"><cite>Greg_Bernstein:</cite> at the IETF they have a special group. Okay, so this is Merkel tree certificates. So, they're not doing this the exact same type of thing. We're doing slightly different purpose, but they're using Merkel trees to help reduce the size of these proofs and things like that. So, that's where we're kind of at. I'll turn it back over to folks. any questions?</p>
+<p id=0dbd class="phone s01"><cite>Greg_Bernstein:</cite> And how do we turn off presentations? Dave, hopefully you can grab a little bit of time to at least come up to speed with what we're doing. Yes, it's been a while since I've gotten out graph viz and started looking at I don't think recursively. So I have to look at the pictures and then look at the algorithms from the point of view of a non-recursive algorithm. Then somebody hopefully we'll figure out something nice and compact. Okay, over to you Wesley or Wes.</p>
+</section>
+
+<section>
+<h3 id=fb88>Bitstring Status List Issues</h3>
+<p id=1033 class="phone s02"><cite>Wesley_Smith:</cite> All thank you very all right. So, we're kind of in as needed time for VC barcodes, forgery, defense, and bitstring status lists. Let's take a peek where we stand there. Don't see any outstanding pull requests on these barcodes. I don't think there are any for defense either. And I don't think there are any bit string status either. So we probably can spend the rest of the time doing issue Confirm that. I see a pull request on bit status list by mistake.</p>
+<p id=af21 class="phone s02"><cite>Wesley_Smith:</cite> Ivonne, this appears to be an administrative PR. Let me drop the link in the chat. do you want to talk us through what's happening here? It looks to be pretty Ivon isn't here. My mistake. here he is back again.</p>
+<p id=2c2a class="phone s04"><cite>Ivan_Herman:</cite> I got disconnected for a moment.</p>
+<p id=b5f8 class="phone s04"><cite>Ivan_Herman:</cite> I don't think it needs discussion.</p>
+<p id=d367 class="phone s02"><cite>Wesley_Smith:</cite> No worries.</p>
+<p id=8d5d class="phone s02"><cite>Wesley_Smith:</cite> You have a pretty concise administrative PR that I linked in the chat. I will link it again in case you've lost chat history. Did you want to discuss this on the call today or do you think it doesn't need call time?</p>
+<p id=d38d class="phone s04"><cite>Ivan_Herman:</cite> This is just a usual thing to get a kidna working.</p>
+<p id=64b1 class="phone s02"><cite>Wesley_Smith:</cite> All right, that sounds good.</p>
+<p id=b749 class="phone s04"><cite>Ivan_Herman:</cite> I don't think there is anything to discuss there. Money should look at it because he understands also what happens on the actions and it's always good to have a second pair of eyes. But apart from that, if he agrees with what's there,…</p>
+<p id=96c4 class="phone s02"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=c682 class="phone s04"><cite>Ivan_Herman:</cite> then it can be just merged and don't worry about The good thing is if this gets merged then the automatic publishing of the next working draft will happen.</p>
+<p id=c6f3 class="phone s02"><cite>Wesley_Smith:</cite> that sounds good. Thank you, Avon. I think we Let's take a peek.</p>
+<p id=d6da class="phone s04"><cite>Ivan_Herman:</cite> And there was also another one which I opened 215 which I believe you could merge right away. So What happened there is when I published I get to publish the third public working draft then I got an error message because per rules and by default every editor has to be member of the working group and who was the person who is not there anymore anyway so I had to do a last minute change on the document before going to publishing which I did</p>
+<p id=738b class="phone s04"><cite>Ivan_Herman:</cite> and it's published but to make it proper and not a last minute hack there is some changes that has to happen in the respect configuration that's all…</p>
+<p id=95a1 class="phone s04"><cite>Ivan_Herman:</cite> which I did and this is what the PR is all about and…</p>
+<p id=fa41 class="phone s02"><cite>Wesley_Smith:</cite> Yep. I just Thank you,…</p>
+<p id=58f2 class="phone s02"><cite>Wesley_Smith:</cite> Ivon. I just tossed an approval on that.</p>
+<p id=10000 class="phone s04"><cite>Ivan_Herman:</cite> you can merge it I don't think that money is interested in all the details he already gave his opinion I don't remember Now That's what you wanted to do, I added Dean as well.</p>
+<p id=7e1a class="phone s02"><cite>Wesley_Smith:</cite> Yep. That sounds good.</p>
+<p id=bd17 class="phone s04"><cite>Ivan_Herman:</cite> I think you can simply merge it and forget about it.</p>
+<p id=e7d2 class="phone s02"><cite>Wesley_Smith:</cite> Any objection to merging that as it stands right now? All right, we'll merge that down administrators.</p>
+<p id=c0ac class="phone s04"><cite>Ivan_Herman:</cite> This will not be published on the website or…</p>
+<p id=3267 class="phone s04"><cite>Ivan_Herman:</cite> I mean on the W3C site yet because for that the other PR has to be merged as well. The one Money has to have a look at that one will update the GitHub action so that it would be operational again.</p>
+<p id=3260 class="phone s02"><cite>Wesley_Smith:</cite> Okay, that sounds good.</p>
+<p id=1f56 class="phone s02"><cite>Wesley_Smith:</cite> I will go ahead and Okay, that sounds good. That rge Thank you, Ivon, for handling that. So I think there are a handful of outstanding issues</p>
+</section>
+
+<section>
+<h3 id=8552>Bitstring Status List Clarifications</h3>
+<p id=0bec class="phone s02"><cite>Wesley_Smith:</cite> on bitst string status lists that were previously tagged as some things like future work that sort of thing and I think as we are reopening v1.1 of that spec it is our job to make sure we have taken a look appropriately so let's do it starting from the oldest we have issue number 2011 probably abusing this subtopic structure a little bit it's Issue An example. This person is struggling to decode a list. This has been tagged with editorial and future work.</p>
+<p id=fc83 class="phone s02"><cite>Wesley_Smith:</cite> So it seems that the folks are having trouble interfacing with the example given such that it's unclear what it's supposed to decode to all that sort of thing. It looks that when this person tried to use the digital bizarre implementation library creates a binary array of bits and it is not a string which helps the explainer elaborates a little when giving examples. The unencoded list below is a binary value representing statuses of 13 credentials.</p>
+<p id=58ee class="phone s02"><cite>Wesley_Smith:</cite> I think it helps if we can clarify that the list should be created in binary format, not a binary representation of bits in an ASI string. Okay, so there are a couple issues here, I guess. One is clarity surrounding exactly what is in the encoded list property, which I would have thought we were clear about. Well Let's look at exactly what the definition of Encoded list property of the credential subject must be a multibase encoded representation of the gzip compressed bitstring values for the associated range of verifiable credential status values.</p>
+<p id=782a class="phone s02"><cite>Wesley_Smith:</cite> The uncompressed bit string must be at least 16 kilobytes in size. So this is saying it must be gzip compressed before it is multi-base encoded. I would have thought that was sufficient to clear up the ambiguity that the issue is suggesting, but I'm not totally sure. Issue two 2011.</p>
+<p id=d757 class="phone s02"><cite>Wesley_Smith:</cite> One says it's not clear that what bit string has been encoded. It'll help if clarify the list should be created in binary format, not a binary representation of bits in an asy string. I don't even understand what they're confused about.</p>
+<p id=7e47 class="phone s02"><cite>Wesley_Smith:</cite> They long way.</p>
+<p id=57c7 class="phone s06"><cite>Dave_Longley:</cite> I think they might have been thinking that the bitst string value was a string of asky characters with zeros and…</p>
+<p id=10001 class="phone s06"><cite>Dave_Longley:</cite> and if you keep reading on encoded list where you were reading before, it says the bit string must be encoded such that the first index with a value of zero is located at the leftmost bit in the bitst string and the last index with a value of less than the length of in the bitst string. I imagine we could probably say a little bit more. I thought we also had another informative section that better explain this. I understand it's informative. I thought we have some pictures down in 7.1 that describe the encoding of the bit strength,…</p>
+<p id=f554 class="phone s04"><cite>Ivan_Herman:</cite> You mean 7.1</p>
+<p id=eeb6 class="phone s06"><cite>Dave_Longley:</cite> but it is marked non-normative.</p>
+<p id=4bb9 class="phone s06"><cite>Dave_Longley:</cite> But maybe we want to link from the normative section to say, for a visual expression of this, go here. Yeah. I don't know what I said. 7.1. Yeah.</p>
+<p id=9f4a class="phone s02"><cite>Wesley_Smith:</cite> Yeah, plus one.</p>
+<p id=6eee class="phone s02"><cite>Wesley_Smith:</cite> Guess I'm trying to separate out this issue seems to be raising two concerns. One is clarity of the examples and the other is underspecified normative content.</p>
+<p id=7f5e class="phone s02"><cite>Wesley_Smith:</cite> I certainly agree that, improving the examples and, by extension, linking to the images that you're describing will help. I'm just trying to make sure we don't need to do something with our normative definition of the encod property. I should go check, I guess, what the gzip RFC says.</p>
+<p id=90a1 class="phone s02"><cite>Wesley_Smith:</cite> But I would expect that saying it must be gzip compressed and then multibase encoded should clear up any ambiguity regarding serial. go ahead.</p>
+<p id=ecb2 class="phone s04"><cite>Ivan_Herman:</cite> So I just wonder whether it would help taking a specific example to get through the various steps…</p>
+<p id=7a77 class="phone s04"><cite>Ivan_Herman:</cite> which are put here in the encoded list specification. So, you get this is the bits you compress it by gzip you do that you do that and that's what you get so these steps which are in a very condensed form the step in the spec might be helpful to be shown on a real example step by step just…</p>
+<p id=e58d class="phone s04"><cite>Ivan_Herman:</cite> what I think maybe that would help the guy in any the example is shows…</p>
+<p id=1304 class="phone s02"><cite>Wesley_Smith:</cite> I'm taking a look at the examples that we have in the appendices,…</p>
+<p id=a73c class="phone s02"><cite>Wesley_Smith:</cite> but I don't think those don't show the process. They just show what look Yeah.</p>
+<p id=4185 class="phone s04"><cite>Ivan_Herman:</cite> what they at the end that's</p>
+<p id=10002 class="phone s02"><cite>Wesley_Smith:</cite> Sounds good. I will note that is the next step to address this issue. and I will mark it as ready for PR discussed on the 26 98 task force call steps here to improve clarity examples and property descriptions what you</p>
+<p id=15c3 class="phone s02"><cite>Wesley_Smith:</cite> is to raise APR. The given example string this list credential to show encoded list processing as well. All right, I think that is ready for PRP. I will remove the future tag. All right, thank you guys.</p>
+</section>
+
+<section>
+<h3 id=722d>Alternative Compression Algorithms</h3>
+<p id=b473 class="phone s02"><cite>Wesley_Smith:</cite> We have number 202 alternative compression algorithms. GZIP is not exactly the latest or greatest at compressing sparse data. When working with big status lists which have few bits flipped, gzip performance severely degrades compared to newer algorithms. this person has some comparisons for different kind of list sizes and bits flipped for what the compression ratios that the algorithms achieve is currently gz hardcode isn't the standard. Could it be possible to have a prefix or something that specifies which algorithm the data is compressed with?</p>
+<p id=e328 class="phone s02"><cite>Wesley_Smith:</cite> I see Dave Longley responded yes however that adds interoperability complex complexity which has to be justifiable and obviously we need Dave Longley that we have to hold the algorithms that we choose to a high standard with respect to interoperability and that sort of thing. more rigorous discussion and quantification in the spec for what's good enough compression given the existing use cases and whatever extrapolation we can do for future unknown innovative ones. zip the current standard choice is more or less just zlib with a different header. Okay.</p>
+<p id=0e30 class="phone s02"><cite>Wesley_Smith:</cite> So it sounds like Dave Longley like your answer you didn't specifically mention the Broley scheme that the person proposed or any of the other alternatives. You just noted what the kind of requirements are. I would expect that next steps here would be to look into if there are suitably widely deployed and…</p>
+<p id=9706 class="phone s02"><cite>Wesley_Smith:</cite> standardized schemes that make sense to put into our own standard. Ivon, go ahead.</p>
+<p id=7e1c class="phone s04"><cite>Ivan_Herman:</cite> So I'm sorry to take the administrative hat that I also have.</p>
+<p id=440e class="phone s04"><cite>Ivan_Herman:</cite> As far as I know by the charter we are only allowed to make technical changes on the published certifications when they hit security issue So if security issue come up somewhere…</p>
+<p id=54be class="phone s04"><cite>Ivan_Herman:</cite> then we can change the spec and if one of the other new developments create a re reason to reopen the spec we can reopen it which we did for this one but this change is a significant normative change of the standard I don't think we are chartered to touch That's only only change we can do on only work we can do on the published specifications can have two reasons.</p>
+<p id=4f20 class="phone s02"><cite>Wesley_Smith:</cite> …</p>
+<p id=bfa5 class="phone s02"><cite>Wesley_Smith:</cite> I guess the one question I have regarding the charter, and I should pull up the text to see exactly what it says. The charter does it say that the only new additions to u an existing specification can be as a result of a security vulnerability or does it say that we can only do a new version of an existing specification in response to</p>
+<p id=e9e9 class="phone s04"><cite>Ivan_Herman:</cite> If there is a security issue that's clear and the other one if one of the new work that we do raises issues on the old specs which have to be reconciled these are the way…</p>
+<p id=557d class="phone s02"><cite>Wesley_Smith:</cite> Which is what?</p>
+<p id=52b7 class="phone s04"><cite>Ivan_Herman:</cite> which we did which that's why we reopened this specification…</p>
+<p id=ccf1 class="phone s02"><cite>Wesley_Smith:</cite> Right. Okay.</p>
+<p id=4437 class="phone s04"><cite>Ivan_Herman:</cite> but this changing the gzip to something else I think go beyond that right okay If there's a vulnerability in Jzip…</p>
+<p id=0c9f class="phone s02"><cite>Wesley_Smith:</cite> I'd have to find a vulnerability in gzip to justify including Right.</p>
+<p id=76dc class="phone s04"><cite>Ivan_Herman:</cite> then it goes without saying but then the whole world collapses. Wesley Smith:</p>
+<p id=2bac class="phone s02"><cite>Wesley_Smith:</cite> Thank you, Much appreciated. Ted, go ahead.</p>
+<p id=7d56 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> And this is already tagged as future work.</p>
+<p id=10d8 class="phone s07"><cite>Ted_Thibodeau_Jr:</cite> So, I think we can just leave it at that.</p>
+<p id=ed4f class="phone s02"><cite>Wesley_Smith:</cite> Yes, I will put a comment there and note that what we just said. so we know we don't need to keep talking about it. While investigating alternative correction techniques is potentially valuable work not fall under current ECW charter and as such this issue will remain open and tag as all right.</p>
+<p id=10003 class="phone s02"><cite>Wesley_Smith:</cite> We can probably get to one more issue in the last five minutes. this might be an exciting one. This is one that's near and dear to my own heart. Issue 203 suggested improvement for using ZKPs to prevent the revocation index from being revealed to the verifier. So right off the bat, I'm almost certain that this will be in the same class as the previous issue. We won't be able to work on it for our charter. essentially this person is proposing a ZKP based scheme in which you could check a status in zero knowledge essentially. this is an interesting thing and it would be a very valuable addition to the BT ecosystem.</p>
+<p id=e1e2 class="phone s02"><cite>Wesley_Smith:</cite> where and I'm not sure if this is exactly what this person is proposing but in general at a high level such a technology where a holder of a credential could present their credential to a verifier and do a zero knowledge proof that their credential contains a status entry that corresponds to a valid credential without revealing the index of that credential which is a unique identifier. ifier which could be used to track presentations of that credential across verifiers as well as it could break link some unlinkable cryptography that was used on that credential such as there are a lot of potential u benefits there. It is certainly out of scope of the current charter as we just described it.</p>
+<p id=119a class="phone s02"><cite>Wesley_Smith:</cite> So I don't think that there's much to do on this particular issue but it is something good for us as a group to have in the back of our heads is that when appropriate such technology could be very valuable to the ecosystem. I'm going to leave this particular issue alone because to leave it open as potential future work, I would want to be able to endorse some of the technical content of the proposal. which I don't know. So I think I will leave that one alone for now and we can revisit in the future as needed.</p>
+<p id=4699 class="phone s02"><cite>Wesley_Smith:</cite> What the issue raiser proposed I'm not sure if it makes sense and it would Any other thoughts on that particular topic? did what I said make sense about the value that such a scheme would bring to All right. I will take that as a tacit agreement that it didn't make sense to Dave Longley, yes, you were not one of the people I was unsure about. We've talked about this many All that sounds good. We are about out of time for today. I don't think we have time to get into any other issues. thank you all for your time and contributions. I will see many of you on other calls this week and have a good rest of your</p>
+<p id=10004 class="phone s01"><cite>Greg_Bernstein:</cite> Y'all. Meeting ended after 00:53:05 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
