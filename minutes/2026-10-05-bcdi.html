@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 5 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>5 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony_Mott, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Greg_Bernstein's_Presentation, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#7255">Meeting Logistics</a></li>
+<li><a href="#4eca">TPACT Scheduling</a></li>
+<li><a href="#14c3">General Meeting Announcements</a></li>
+<li><a href="#c697">W3C Press Release</a></li>
+<li><a href="#4a86">Data Integrity Salted Hash Approach</a></li>
+<li><a href="#3f3c">Data Integrity Merkel Tree Approach</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=7255>Meeting Logistics</h3>
+<p id=b6fb class="phone s01"><cite>Wesley_Smith:</cite> Good morning to you, Good afternoon to you, Phil Archer. Let's give folks a couple minutes to trickle in here before we get started.</p>
+<p id=0df7 class="phone s02"><cite>Phil_Archer:</cite> Good morning, I've just got a very quick question for Greg. are you east coast or somewhere else, Greg? Sorry.</p>
+<p id=7a0a class="phone s01"><cite>Wesley_Smith:</cite> Greg, you are muted.</p>
+<p id=4f86 class="phone s03"><cite>Greg_Bernstein:</cite> getting off od. Sorry, I had a query from Europe right now. I'm on the West Coast,…</p>
+<p id=35b9 class="phone s02"><cite>Phil_Archer:</cite> Okay.</p>
+</section>
+
+<section>
+<h3 id=4eca>TPACT Scheduling</h3>
+<p id=ddbe class="phone s03"><cite>Greg_Bernstein:</cite> California.</p>
+<p id=8b4a class="phone s02"><cite>Phil_Archer:</cite> So, yeah,…</p>
+<p id=e283 class="phone s03"><cite>Greg_Bernstein:</cite> So yes, that's…</p>
+<p id=3e51 class="phone s02"><cite>Phil_Archer:</cite> the reason I'm asking this is…</p>
+<p id=03d8 class="phone s03"><cite>Greg_Bernstein:</cite> why we'll do it…</p>
+<p id=ffff class="phone s02"><cite>Phil_Archer:</cite> because I'm just setting up the agenda for TPACT so the best I can do for you in terms of scheduling this topic for TAC is to make it as late as I can on the Friday, which is still not late because it's at 9:30 Eastern. but it's the latest I can do. Okay, thank you. Yeah.</p>
+<p id=b4f1 class="phone s03"><cite>Greg_Bernstein:</cite> if I'm needed. I will be there. That's a once in whatever thing. That's like the IETF meetings. Last where was it? It was in Europe someplace. It was like something in the morning.</p>
+<p id=897a class="phone s03"><cite>Greg_Bernstein:</cite> This coming one in November is San Francisco.</p>
+<p id=b1de class="phone s02"><cite>Phil_Archer:</cite> So, how's that old putting your feet up and retiring thing going then with all these meetings in the middle of the night?</p>
+<p id=7703 class="phone s03"><cite>Greg_Bernstein:</cite> Yes. My retired thing.</p>
+<p id=f730 class="phone s02"><cite>Phil_Archer:</cite> Yeah. …</p>
+<p id=4b64 class="phone s03"><cite>Greg_Bernstein:</cite> Yes. Okay.</p>
+<p id=5b83 class="phone s02"><cite>Phil_Archer:</cite> that's what I done. So, the last topic we're going to talk about in the whole two-day meeting day and a half is this one. Barcodes and DI as late as I can make it so that you could join without being horrendously early. Thank you. I'm not sure.</p>
+<p id=d020 class="phone s03"><cite>Greg_Bernstein:</cite> For remoting in, I wasn't sure if there's fees or things like that or does that not apply to remoting or…</p>
+<p id=f1f4 class="phone s02"><cite>Phil_Archer:</cite> I Right.</p>
+<p id=3ea1 class="phone s03"><cite>Greg_Bernstein:</cite> invited experts. I can't remember what happened at what we did because I attended in person and the one in Anaheim.</p>
+<p id=1f1b class="phone s03"><cite>Greg_Bernstein:</cite> I can't remember what happened there.</p>
+<p id=33af class="phone s02"><cite>Phil_Archer:</cite> It says standard rate for remote participation is 100 USD.</p>
+<p id=b0cf class="phone s03"><cite>Greg_Bernstein:</cite> Okay, that's not a big deal.</p>
+<p id=0672 class="phone s02"><cite>Phil_Archer:</cite> That's it.</p>
+<p id=1764 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, we'll work it out.</p>
+<p id=ff2a class="phone s02"><cite>Phil_Archer:</cite> Okay, thank all the details and I will stop talking a minute, Wes, and taking over your meeting. I apologize.</p>
+<p id=5473 class="phone s01"><cite>Wesley_Smith:</cite> You're the chair.</p>
+<p id=0479 class="phone s01"><cite>Wesley_Smith:</cite> This is your meeting.</p>
+<p id=a19c class="phone s02"><cite>Phil_Archer:</cite> No, no, no, no, no. It's your meeting, not mine. I'm just here listening in. There's the link there, for all the details. Okay. Thank you.</p>
+<p id=5cda class="phone s02"><cite>Phil_Archer:</cite> Thank you, Wes. Thanks,</p>
+<p id=1b89 class="phone s01"><cite>Wesley_Smith:</cite> You are most welcome.</p>
+</section>
+
+<section>
+<h3 id=14c3>General Meeting Announcements</h3>
+<p id=c31c class="phone s01"><cite>Wesley_Smith:</cite> Okay. We have a good number of people, so I think we're good to go ahead and get started. Welcome folks to the October 5th, 2026 meeting of this task force with a very long name. we have much the same agenda today as announcements, introduction, process items. I want to talk briefly about the upcoming W3C press release that the BC working group at large has been working on and…</p>
+<p id=46d0 class="phone s03"><cite>Greg_Bernstein:</cite> Thank you.</p>
+<p id=10000 class="phone s01"><cite>Wesley_Smith:</cite> that we're working with the W3C comm's team on and then other than that we will go through the other specification or the specifications under our view as needed to do poll request review and issue processing. Does anybody have any announcement, introduction or process items for the group today? Okay, I'll note that Ivon is not here. I know that he had slated to press the buttons for various draft note publications for threat models. I don't know if that has happened. Does anybody know the status of those things as it relates to this task force?</p>
+<p id=ab36 class="phone s01"><cite>Wesley_Smith:</cite> Specifically, for example, the BC barcodes threat model,…</p>
+<p id=1e9e class="phone s02"><cite>Phil_Archer:</cite> I do not.</p>
+<p id=10ad class="phone s02"><cite>Phil_Archer:</cite> Can we have a look on the cano and see?</p>
+<p id=0379 class="phone s01"><cite>Wesley_Smith:</cite> right? I had prepped that and presumably I am the person who should know the answer to that question, but that's not a huge issue. It's not blocked anything for us. Just curious if that has happened or not. Either way, I think in this group we are in a good spot with respect to the Anthony, do you want to give a brief update on the data integrity threat model where you're at with that? If you need any help,…</p>
+<p id=f5ad class="phone s03"><cite>Greg_Bernstein:</cite> We're double muted there.</p>
+<p id=d93f class="phone s01"><cite>Wesley_Smith:</cite> you may be muted, Anthony, if you're talking. still no audio from you,…</p>
+<p id=7e81 class="phone s01"><cite>Wesley_Smith:</cite> Anthony. no worries. We can circle back. there you are. That sounds great.</p>
+<p id=dd50 class="phone s04"><cite>Antony_Mott:</cite> How about that?</p>
+<p id=6c1d class="phone s04"><cite>Antony_Mott:</cite> Sorry about that. I think Greg's right.</p>
+<p id=0265 class="phone s01"><cite>Wesley_Smith:</cite> No problem.</p>
+<p id=9dae class="phone s04"><cite>Antony_Mott:</cite> Double muted. yes. not a huge progress except we did do with great help from Ivan and Manu. We did get not the barcodes one of course the one that I was helping those two with and I believe it's published and errorfree and going great and even though they're not on the call I want to say how nice it was to work with them and super fun. Ivan did point out that perhaps you already know this of course because're caring you're coordinating this meeting but it's going to become a lot easier.</p>
+<p id=c86e class="phone s03"><cite>Greg_Bernstein:</cite> Yeah,</p>
+<p id=b122 class="phone s04"><cite>Antony_Mott:</cite> So some of the tedious work I think is going away…</p>
+<p id=cc26 class="phone s04"><cite>Antony_Mott:</cite> but I really appreciate working with the team on something like that and I think we got it out two days ahead of time.</p>
+<p id=7875 class="phone s01"><cite>Wesley_Smith:</cite> Wonderful.</p>
+<p id=44a8 class="phone s01"><cite>Wesley_Smith:</cite> Thank you so much, Thanks for the update and thank you for the hard work there. Agreed. Ivon and Manu are both wonderful people to work with. and it sounds like the generalization of…</p>
+<p id=990b class="phone s01"><cite>Wesley_Smith:</cite> what you're running into is that the tooling relating to all of these specs and process and everything is very much dynamic and alive. And we often work …</p>
+<p id=eb22 class="phone s04"><cite>Antony_Mott:</cite> Yeah, I mean…</p>
+<p id=6d99 class="phone s04"><cite>Antony_Mott:</cite> if Sorry, I didn't at all mean to cut you off. I thought you finished.</p>
+<p id=fbb6 class="phone s01"><cite>Wesley_Smith:</cite> no worries. I was just saying it evolves and grows as we work on these specifications. The tooling grows with it. So,</p>
+<p id=9fd3 class="phone s04"><cite>Antony_Mott:</cite> Yeah. I did realized that because I've done some of that work. It was really interesting the way it pulls in stuff. You probably know if you've done it yourself, it's quite technical, but at the risk of offering I hope I was helped to those two. I think I was in the end, but it was a bumpy ride a little bit of the way. But now that I've done one probably paving the road, no good deed goes unpunished, but if there was another eight to go, I could happy to help with another one because it looks like Ivan's fixed it for the future. So, point of the story was I could tell they really need these things out. And if anyone else wants a hand,…</p>
+<p id=039b class="phone s04"><cite>Antony_Mott:</cite> least I've done one. So, I'm offering again to if anyone wants help.</p>
+<p id=a777 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that's hugely appreciated.</p>
+<p id=0f31 class="phone s01"><cite>Wesley_Smith:</cite> And as you're running into a lot of that work regarding the tooling for our specifications and the publication process is really aggressively bottlenecked, bus factored on a people like Ivon and Manu. and so spreading that knowledge around is great.</p>
+<p id=56d7 class="phone s01"><cite>Wesley_Smith:</cite> Thank you for the offer. I don't know of another threat model that needs help with that process, but you could totally bring this up on the working group call on Wednesday and offer your help and thank you very much for the engagement.</p>
+<p id=84ea class="phone s04"><cite>Antony_Mott:</cite> And it was really nice working with people too.</p>
+<p id=16b1 class="phone s04"><cite>Antony_Mott:</cite> Such a nice group. It's important to tell that for a newcomer.</p>
+<p id=aefc class="phone s01"><cite>Wesley_Smith:</cite> It is.</p>
+<p id=4244 class="phone s04"><cite>Antony_Mott:</cite> It was really really nice. Okay.</p>
+<p id=bcf6 class="phone s01"><cite>Wesley_Smith:</cite> The group very much appreciates, newcomers that are interested in engaging and helping beyond just attending calls, helping with, some of the more the tedious button pushing and that sort of thing because it has to get done. All right.</p>
+</section>
+
+<section>
+<h3 id=c697>W3C Press Release</h3>
+<p id=6244 class="phone s01"><cite>Wesley_Smith:</cite> Thank you for the progress update there. I submitted V the VC barcodes throughout static snapshot for publication. I don't see anything that indicates that it's happened, but that's fine. It has a million of these things do and it will happen soon, I am sure. All right. I think that is that. Let's talk briefly about the upcoming press release. So, a lot of this will be repeat info for folks on this call, just so we're all on the same page, the W3C communications team has agreed that the topic of the blog post that we had written a couple weeks back, is topical, immediate, big enough to warrant a press release instead of a blog post. and so they're upgrading it as such.</p>
+<p id=3d66 class="phone s01"><cite>Wesley_Smith:</cite> and we are working with them to nail down what the final language in that blog post is going to or excuse me in that press release is going to be noting that press releases have to adhere to a higher standard of all of the various things you might expect in a blog post. So we're finalizing that. No Archer, I guess a question to in a thread that you are on with the communications team, they ask who has the authority to perform final review of the document containing the change requests and suggestions and discussions.</p>
+<p id=7b26 class="phone s01"><cite>Wesley_Smith:</cite> I've noted that I am happy to help with the technical and pushing the buttons and writing and all of that stuff, but as far as I know, I don't have any authority to perform final review on behalf of the working group.</p>
+<p id=e418 class="phone s01"><cite>Wesley_Smith:</cite> Is that something you can do?</p>
+<p id=5dd1 class="phone s02"><cite>Phil_Archer:</cite> I'm not sure…</p>
+<p id=10001 class="phone s02"><cite>Phil_Archer:</cite> what the answer to that is, I have looked through it myself again today and I've indicated my approval. I don't know whether Brent has had a chance to I know he read it originally. but that was last week. I think ultimately surely it's Curly. She's head of coms for W3C. so I mean for what it's worth, I'm not sure it's worth very much. I've said I'm good with it. I'm obviously very grateful to you Wes for not only writing this but for driving it. I think it's a very positive step and I'm very grateful to you. as I'm sure the rest of the group is.</p>
+<p id=8e28 class="phone s02"><cite>Phil_Archer:</cite> But as far as I'm concerned it's done but currently it's the head of coms not me. Yeah.</p>
+<p id=9e79 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=f908 class="phone s01"><cite>Wesley_Smith:</cite> That sounds good. So, I made clear to her that I'm available to help in whatever capacity I am able to help. but noting that I don't know the ins and outs of the process and requirements and authority and all of that things all that stuff surrounding this sort of thing. Okay, So that's it for that I think. we will see how that goes and hopefully have something to share on the mailing list pretty soon. That's exciting stuff. All right. anybody have anything they would like to add to the agenda today before or just briefly discuss before we get into specific discussions? All right. Greg Bernstein, would you like to take call time for data integrity today?</p>
+</section>
+
+<section>
+<h3 id=4a86>Data Integrity Salted Hash Approach</h3>
+<p id=a082 class="phone s03"><cite>Greg_Bernstein:</cite> Particularly since Dave's here, we've got some issues on data integrity.</p>
+<p id=cbe2 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=3d2f class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=4773 class="phone s01"><cite>Wesley_Smith:</cite> that sounds great. Over to you. you can take as much call time as you'd like is useful. we have nothing pressing to discuss that I know for the other specifications. so anything that's high priority for you, take as much time as you</p>
+<p id=37aa class="phone s03"><cite>Greg_Bernstein:</cite> And we've got some stuff from Anthony that I actually haven't reviewed yet. So, let's look at I want to share screen window. Getting better at doing this. Now, we're going to have infinite feedback for a second. And we're gonna go over to our issues.</p>
+<p id=7ef9 class="phone s03"><cite>Greg_Bernstein:</cite> Wrong wrong draft. That's a different story. Okay. Our issues, data integrity. Do we actually have two pull requests still? No. We were able to resolve the end of line CRLF thing. I think Monu fixed that. so we have a couple things going on with the salted hash approach. This is an efficient way to do selective disclosure with postquantum signatures because postquantum signatures most of them get quite large.</p>
+<p id=1793 class="phone s03"><cite>Greg_Bernstein:</cite> So the signed individual claim SIC sick approach which we do for EDSA doesn't work as well. So what we do is we do what's known as the salted hash approach. This has been done in SDJWT. and it's a reasonable way to do things. there were two suggestions. issue whatever number this is, issue 372, derive the salts in the holder from a salt seed instead of carrying the full array of salts. This can greatly reduce the size of the base proof when we have a lot of statements.</p>
+<p id=1710 class="phone s03"><cite>Greg_Bernstein:</cite> Okay, so that's one issue related to And the other issue related to this is using what's known as a Merkel tree to reduce the derived proof size. so those are the two issues. both add some complexity. I would say that deriving these salts, the approach to do it, this is my recommendation is to use standardized what we call a dist deterministic random bit generator.</p>
+<p id=d021 class="phone s03"><cite>Greg_Bernstein:</cite> These are specs by NIST and they're either based on hash functions or they're based on u u symmetric key cryptography and they've been standardized and they're fairly well known. Dave had some comments on these. Dave, would you like to indicate? what is that? Dave, hand up. Dave,</p>
+<p id=5712 class="phone s05"><cite>Dave_Longley:</cite> Yeah. yeah. To took a look at this. my preference would be for us to try and minimize the number of additional primitives we have to bring into it. That doesn't mean that we can't go with some spec that's published in NIST and use that to solve the problem. what I was mostly talking about in that issue was hey if we reimagine how we describe this particular problem does that enable us to more easily go with fewer primitives and make it easier on implementers. I'm always thinking ahead to how much people have to implement to accomplish this and every extra new piece they need to implement is raises that bar.</p>
+<p id=6b17 class="phone s05"><cite>Dave_Longley:</cite> I realize that the particular primitive you're talking about is not necessarily a super complex thing to implement.</p>
+<p id=ccb6 class="phone s05"><cite>Dave_Longley:</cite> I know you asked Claude to do it or something and it was 120 lines in some language like JavaScript. Mhm.</p>
+<p id=83e9 class="phone s03"><cite>Greg_Bernstein:</cite> No, actually for that one I found one implementation in JavaScript and…</p>
+<p id=8c89 class="phone s03"><cite>Greg_Bernstein:</cite> then I found another implementation in Python and they were both around that size and they had tested against NIST vectors. they were probably that long because they were doing the full general use versus a specific case we would not include all they take some extra parameters in some of these DRBG things.</p>
+<p id=3bbd class="phone s03"><cite>Greg_Bernstein:</cite> And so somebody doing the full implementation would have to have more parameters and a little bit more documentation about how they take those extra parameters. if we wanted to we could write up something in an appendix on how to do it. there was a slid set from NIS that recommended why they had four of these things initially and only so I think three made it into the N spec but it kind of justified some of these things.</p>
+<p id=7b2f class="phone s03"><cite>Greg_Bernstein:</cite> Some of them were designed to get very efficient for very large scale secure random number generation. others were basically the one based on a HMAC is kind of an output feedback thing. So it's just iterated and such with a particular setup. So, it's not horrendous, but they're very specific about the procedures because they want to make sure that they can't be broken and that people don't mess up. Dave</p>
+<p id=441e class="phone s05"><cite>Dave_Longley:</cite> So, if we're going to go with this other additional primitive, I don't think there's a whole lot of extra text we're going to add or that we would need to add just to use it. I think it's mostly linking to the specification. I think the text we're going to write and what someone will have to implement ignoring that extra primitive is the same or almost the same whether we have that extra primitive or whether we use HMAC directly. And I think the only hangup on whether or not we can use HMAC directly is how we define or express the problem.</p>
+<p id=711f class="phone s05"><cite>Dave_Longley:</cite> If we express the problem in a similar way to however we've expressed other places where we have only used HMAC for non-reversible unpredictable outputs …</p>
+<p id=6adb class="phone s03"><cite>Greg_Bernstein:</cite> a shuffle. Yeah.</p>
+<p id=c0e0 class="phone s05"><cite>Dave_Longley:</cite> if we can define the problem that way I think we could probably just reuse what we have done before we've used HMAC and HMAC keys to deterministically generate blank node identifiers. And so if we can define the problem that way, I think we can save implementers having to implement this thing. If we feel like we really can't get there, the way I'm thinking about this in my head is there's something extra here that if we can cut out, it will be a better spec. If we can't cut it out, it's okay, but it's extra work. And so I think we should write everything up that we have to put in the spec And then we can figure out whether or not we need this additional primitive because we're either going to be calling this additional primitive with a key and an index or…</p>
+<p id=2a8f class="phone s05"><cite>Dave_Longley:</cite> we're going to be calling HMAC with a key and an index. I don't think mean when it comes down to what you have to implement for our spec, you're going to be doing that either way.</p>
+<p id=940c class="phone s03"><cite>Greg_Bernstein:</cite> Okay. …</p>
+<p id=10002 class="phone s03"><cite>Greg_Bernstein:</cite> as far as wanting to do this, it seems like a very smart thing to do. I don't know why we wouldn't do this. Is there any argument against bringing this in right now? Approach.</p>
+<p id=c523 class="phone s05"><cite>Dave_Longley:</cite> no I so just some additional history before we decided to do in the previous work before we were doing the postquantum stuff where we always had nice small signatures we examined using, the salted hash approach. And, …</p>
+<p id=f67a class="phone s05"><cite>Dave_Longley:</cite> we realized we could do better than that by doing selectively disclosed individual signatures on individual claims. And yeah,…</p>
+<p id=0e55 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah, it is quite efficient for I mean it's good in all directions,…</p>
+<p id=47ba class="phone s03"><cite>Greg_Bernstein:</cite> right? Between the holder and…</p>
+<p id=cb94 class="phone s05"><cite>Dave_Longley:</cite> and when we Yeah.</p>
+<p id=5f6a class="phone s03"><cite>Greg_Bernstein:</cite> the verifier and it's fine between the issuer and the holder. Yeah.</p>
+<p id=155f class="phone s05"><cite>Dave_Longley:</cite> before we were made that decision when we were looking at salted ashes we always had the idea of using an hmac to deterministically generate them but make them unpredictable non-reversible so that concept was in the mix back way back before we abandoned doing the salted hash stuff and I pretty sure back then everyone thought that was a good idea and so now that we're bringing this back I think we're also bringing back that concept and I think it has a number of different advantages that we've talked about and…</p>
+<p id=77a2 class="phone s05"><cite>Dave_Longley:</cite> are listed in these issues and it's not challenging to implement. though. I do think we should do</p>
+<p id=666a class="phone s03"><cite>Greg_Bernstein:</cite> Okay, second question.</p>
+</section>
+
+<section>
+<h3 id=3f3c>Data Integrity Merkel Tree Approach</h3>
+<p id=eac2 class="phone s03"><cite>Greg_Bernstein:</cite> We then had the Merkel tree discussion and I looked into it some more and I did get an algorithm going during the weekend that would produce what's known as mult multi-proof. So here we want to reveal all the statements that we would reveal form the leaves of this tree and so here I'm revealing three statements and to do that instead of having to do three times five for each of these paths through the tree you do one combined proof and it only involves the</p>
+<p id=10003 class="phone s03"><cite>Greg_Bernstein:</cite> sending the additional blue statement hashes 1 2 3 4 five. So it's quite efficient. However, it wasn't a It uses another recursive algorithm to build the tree and I haven't put together the full proof algorithm. the folks that kind of proposed this and that were participating in the discussion kind of ducked out after some little bit of contentious issues on what is a binary tree and what's a Merkel tree which are wellestablished concepts. So I'm not quite sure what that was about but it's an optimization.</p>
+<p id=5261 class="phone s03"><cite>Greg_Bernstein:</cite> It could be very advant advantageous if we get to large credentials. However, it's more implementation complexity. I would be inclined to do it as an optimization or as an advancement on top of the other if we got a call for it. I mean, I don't mind working through it kind of a little bit more, but I don't know. I'd like your opinion and any others about the complexity versus should we do it now, because I think we can generate the salt thing. We can evaluate that. Dave, go ahead. I should stop sharing again.</p>
+<p id=10004 class="phone s05"><cite>Dave_Longley:</cite> So I think we got to think about use cases at a top level. and sometimes we can fail to be imaginative enough but some of the use cases for sele most of the use cases for selected disclosure that people have encountered thus far generally involve revealing relative to the total number of statements in a much smaller number of And we should keep that in mind when we're looking at how much savings we're actually going to get out of this. if the additional complexity you're talking about, Greg, is very low and I don't know, I haven't implemented</p>
+<p id=bf86 class="phone s05"><cite>Dave_Longley:</cite> in this. But if it's very low and…</p>
+<p id=d4a8 class="phone s03"><cite>Greg_Bernstein:</cite> Yeah.</p>
+<p id=074d class="phone s05"><cite>Dave_Longley:</cite> we get significant savings out of it, then it might make sense to do. But if it's significant complexity, I don't know how much extra savings we're actually going to get in the majority of use cases and whether or not that's really worth the value. It is important to remember that extra complexity is probably only going to be paid for by 8 to 10 libraries that end up getting into the ecosystem and then you get the advantages of that complexity everybody else using it forever gets all that advantage. But how much advantage is it really for most of the use cases…</p>
+<p id=6d74 class="phone s05"><cite>Dave_Longley:</cite> where you actually use the select or disclosure feature to reveal some statements? it might not be a huge</p>
+<p id=3bf7 class="phone s03"><cite>Greg_Bernstein:</cite> Anthony, I can't hear you.</p>
+<p id=5bbe class="phone s03"><cite>Greg_Bernstein:</cite> Anthony. Yeah.</p>
+<p id=4e82 class="phone s04"><cite>Antony_Mott:</cite> How about now?</p>
+<p id=4415 class="phone s04"><cite>Antony_Mott:</cite> Hi. yeah. I just want to say I might be able to help here a little bit. You know how I had the PR I sort of owe everybody that's the wrong word, but I'm redoing the SIC's for the examples. while doing that, I discovered exactly what you're both leading around to. Firstly, the Merkel tree. I think right, Greg, it's from 15 to 7. It's fantastic. But as Dave points out,…</p>
+<p id=45d3 class="phone s03"><cite>Greg_Bernstein:</cite> Okay.</p>
+<p id=a878 class="phone s04"><cite>Antony_Mott:</cite> if it's two to three claims, these are things that might be maybe helpful after I push up the SIC for two or three claims because there's a whole bunch of other stuff for link unlinkable that's so exciting and also you'll want to look at that makes sense. And as Dave says, if most verifier situations that I've seen in the wild are often one, two, or three claims, maybe we can add that. although it's very exciting Greg what you did finding the way you can do it so efficiently and I'd also throw in I think it was Dave said about the discussion about HMAC alternative I would also suggest that I just use HMAC because that's what we were doing before as you probably expected and then if it can be substituted by the NIST approved better system I think as one person already said yes we can just bold that on or switch that out so I only wanted to suggest that I think by the end of the week I should have the</p>
+<p id=8b54 class="phone s04"><cite>Antony_Mott:</cite> which I'm sure will have a whole bunch of issues that you'll all look at. But it reveals itself at least in the example I gave that we need to focus on larger things than optimization first in terms of the claim number and…</p>
+<p id=828d class="phone s04"><cite>Antony_Mott:</cite> then implementers who have more complicated or numerous claims will look to the things Greg is talking about. Does that make sense?</p>
+<p id=35b6 class="phone s03"><cite>Greg_Bernstein:</cite> I think so.</p>
+<p id=12b4 class="phone s04"><cite>Antony_Mott:</cite> I think so. let me</p>
+<p id=2f82 class="phone s03"><cite>Greg_Bernstein:</cite> Let me try and put some choices in perspective. We've got salted with the salted hash of claims, Right now, Let me see if I got this right. Has what has to be sent between the issuer and the holder would be the salt key and obviously the credential. Okay.</p>
+<p id=a1f6 class="phone s03"><cite>Greg_Bernstein:</cite> With the solid hash of claims otherwise what has to be sent between the holder and the verifier is actually the complete list of salted hashes because that's what's get signed. Okay. So, however many statements we have u non-mandatory all those get salted and hashed by the holder and sent to the verifier because it's that list that gets signed. So, that can get large as large as the optional claims or non-mandatory claims in the Merkel tree approach.</p>
+<p id=04dc class="phone s03"><cite>Greg_Bernstein:</cite> If you only want to reveal what one claim, you don't send the whole list of salted hashes, what you send is the root of the tree hash plus a inclusion proof that includes the whatever claim you're going to do and intermediate nodes up the tree so they can verify that thing works. that can be quite efficient. Let's say you had a hundred claims. so that's the Merkel tree approach. If you go with the Merkel tree approach, it makes sense to do what these things called multi-proofs in our case because we're not sending just one claim.</p>
+<p id=f930 class="phone s03"><cite>Greg_Bernstein:</cite> We're going to send two out of a 100 five out of a 100 and those individual little trips up the trees can be combined. And so people haven't used them this way because they're mostly using them for all the stuff is being actively pursued for dealing with certificates for websites under postquantum signatures that are large. So they're putting together Merkel trees and doing things like that, but they prove things one at a time. This multi-proof thing is kind of an extra thing on top of the Merkel tree construction standardized so that we're getting just a little bit innovative.</p>
+<p id=154a class="phone s03"><cite>Greg_Bernstein:</cite> So to me there's a choice between do we use the miracle tree approach to produce that set of stuff that's sent between the holder. Do we send the whole list of salted ashes or do we send the Merkel tree root hash plus this proof stuff? And as long as that doesn't get bigger than the list of all those salted hashes and such like that. So if we're thinking about using Merkel tree, I recommend we take the time out to look at this if we're going to use Merkel tree we should look at multi-proof because it's very efficient unless it proves otherwise because I did a algorithm for it.</p>
+<p id=8ce7 class="phone s03"><cite>Greg_Bernstein:</cite> It was recursive, which always gives me a headache thinking about those things, but it was like, I don't know, 10 lines of code. And so then I need a corresponding proof algorithm that takes the additional information that gets combines it with the multi-tree proof thing, and then runs the hashes on it. But that's kind of where we're at. Do we use Merkel tree or not? Because if we use Merkel tree, we should probably go with these multi-proofs. I said, I don't think recursively. So when I have to sit down and do a recursive tree algorithm thing, I just have to sit there, draw pictures, write it up, do it slowly, produce little outputs. Maybe if I had taught data structures, but I taught cyber security and networking.</p>
+<p id=10005 class="phone s03"><cite>Greg_Bernstein:</cite> So, it's not in my head, but it can be done. So, I can show folks offline things like that. so that's to me Dave and Anthony edition. Do we want to bring in the Merkel tree? The algorithms aren't that long. they're compact and hard to gro. I mean, when I got one from this RFC that's being looked at by the certificate people. Initially, it looked very strange. So, being my son, I had him put it into Claude and it generated line by line. It said, I'm doing, this very short 140line bit of JavaScript so I could put it in with my examples.</p>
+<p id=10006 class="phone s03"><cite>Greg_Bernstein:</cite> So I let the AI help generate the tight little code and then I started instrumenting and seeing how it worked and how to extend it. So I mean this stuff is not super long. But anytime I look at tree algorithms or recursive algorithms, I never love to say that I am not the one to say that it's not complex because it always gives me a headache walking through tree algorithms and recursive algorithms. However, they're very tight and short.</p>
+<p id=dafd class="phone s03"><cite>Greg_Bernstein:</cite> So you can't say that they're complex as far as lines of code, but …</p>
+<p id=940a class="phone s03"><cite>Greg_Bernstein:</cite> neither are encryption algorithms, and we know you got to be real careful when you work on those. Anthony</p>
+<p id=36fe class="phone s04"><cite>Antony_Mott:</cite> I don't know</p>
+<p id=0eed class="phone s04"><cite>Antony_Mott:</cite> if I'm off mute. I love the idea and I actually think even so far as it'll end up some in the spec I don't know if that's the right thing to say here for the actual thing that you're talking about reg. The reason why I suggest this is that I think there's going to be use of the spec immediately towards trying to make it fit into small things like QR codes where people are just going to solve it themselves if we don't do it for them. Does that make sense? And with someone like Greg already noodling it out, we've already got Python and TypeScript, you said. I can see it being a very very useful spec. Sounds narrow but it'll be useful and even if it has recursion provided I don't know is that right?</p>
+<p id=af3e class="phone s04"><cite>Antony_Mott:</cite> if it can be in some sample TypeScript or Python even so that people can just grab it, copy and…</p>
+<p id=b0fa class="phone s03"><cite>Greg_Bernstein:</cite> Dave. lot. Yeah.</p>
+<p id=3a66 class="phone s04"><cite>Antony_Mott:</cite> paste and it works. Is that outrageous to suggest that or it just would be so useful though?</p>
+<p id=02a9 class="phone s04"><cite>Antony_Mott:</cite> It is. So</p>
+<p id=b98c class="phone s05"><cite>Dave_Longley:</cite> So, we're definitely going to put the algorithms in the spec.</p>
+<p id=fea9 class="phone s05"><cite>Dave_Longley:</cite> And if we have an appendix, we can have an appendix that might give a short implementation of something if that's helpful. I think it is a good idea to take a look at things like a student transcript use case that might have a lot of claims and what you would save and then compare that against, we're going to have to write these algorithms. we would do them instead of doing the alternative salted hash approach. I think we would just have one of these. and so there would be one thing to implement. it might be a little more complex. We need to look at it. We need to see what the savings is.</p>
+<p id=6703 class="phone s05"><cite>Dave_Longley:</cite> I don't want to be too much of a wet towel on the QR code thing,…</p>
+<p id=a652 class="phone s05"><cite>Dave_Longley:</cite> but if we're you think one signature at all blows the QR code for a lot of these post things. Yeah. it's got to be ski sign and…</p>
+<p id=766f class="phone s03"><cite>Greg_Bernstein:</cite> for post…</p>
+<p id=d910 class="phone s03"><cite>Greg_Bernstein:</cite> unless it's ski sign. Yeah. Yeah.</p>
+<p id=98f1 class="phone s05"><cite>Dave_Longley:</cite> we're going to use selective signature stuff for ski sign. and so that's how you're going to fit something in a QR code. That's your choice. so if somebody invents some super awesome multicolored some other 2D barcode that gets popular, then maybe we can cram some more stuff in there. But right now I think that's really the only viable option for that. But understanding these student transcript use cases where right now I think the only viable way forward would be for them to use Ski Sign.</p>
+<p id=39d3 class="phone s05"><cite>Dave_Longley:</cite> And so if there's an alternative that I don't know viable is maybe the wrong word. There's tons of extra overhead and we should really have put some numbers to it and say this is what would happen. This is what the savings would be and then we can analyze that to see what's practical and again I just want to remind people we're pro you if we end up doing this extra complexity it's probably only going to be eight to 10 times and then everybody gets the benefit of it. and…</p>
+<p id=120c class="phone s03"><cite>Greg_Bernstein:</cite> Wesley.</p>
+<p id=8545 class="phone s05"><cite>Dave_Longley:</cite> the downside to that is making sure that all the security proofs and everything work out and we don't want to introduce new interesting terrible security problems because of the additional complexity.</p>
+<p id=f833 class="phone s01"><cite>Wesley_Smith:</cite> So, I have a quick question slashsuggestion regarding the proposed comparison. not my area, so this might not make sense, but it seems to me that, we're talking about comparing options for these different use cases that have different parameters. this all sounds to me like something that can be simply expressed as a closed form function that can be evaluated for any use case. if that is indeed the case I would recommend that as a path forward maybe not to express in the specification as it's might be complicated but at least for this group internally to reason about what the actual trade-offs are I think a simple closed form solution that expresses the behavior of the options across all use cases would be the best thing.</p>
+<p id=e475 class="phone s03"><cite>Greg_Bernstein:</cite> Hello. Okay.</p>
+<p id=0f20 class="phone s01"><cite>Wesley_Smith:</cite> So we know as opposed to just reasoning about a couple data points in a vacuum. That's it.</p>
+<p id=8a02 class="phone s02"><cite>Phil_Archer:</cite> Just very briefly,…</p>
+<p id=ab6e class="phone s02"><cite>Phil_Archer:</cite> Dave talked about different possible data carriers rather than QR. I thought, that's a subject I don't know a little bit about. the great thing is of course that you'll have a device in your hand that recognizes QR codes out of the box. there are options available that carry more data in the same space. data matrix is one you see that quite a lot on a letter proform letter that's often there might be four quadrants one of the most compact actually is a thing called the handshin code. which is developed in China by some people I know. and there are options. The thing to watch out for, as I think you mentioned, Dave, was the proprietary side of things. because for the only version that is not proprietary is the vanilla one that you all know and love.</p>
+<p id=9719 class="phone s02"><cite>Phil_Archer:</cite> Once you start putting colors in it, then You start putting logos in it, you're in proprietary world. You change it to circles rather than squares. You're in proprietary and so on. So the range of stuff you can use is broader than you might think, but that doesn't mean to say that it's completely open because a lot of what you might want to use ends up being proprietary. So yes, there are options and if you end up having to look for an option because isn't good enough, we might be able to help. But even so can you change the laws of physics captain and there's a limit to how much you can put in an optical code in a limited space.</p>
+<p id=8066 class="phone s03"><cite>Greg_Bernstein:</cite> Does anybody know exactly where some of the student record what is those Comprehensive learner records. What were they stood for? I can't remember. I looked at those when I first started looking into verifiable credentials and selective disclosure, but it's been quite otherwise I guess I'll have to go see what Do we still have an education subgroup?</p>
+<p id=6ce3 class="phone s05"><cite>Dave_Longley:</cite> We definitely have a number of people that are part of that, including Phil, who just put his hand</p>
+<p id=f198 class="phone s03"><cite>Greg_Bernstein:</cite> So, I mean, if we're going to fish for examples, where should we go fishing for</p>
+<p id=d7c0 class="phone s06"><cite>Phillip_Long:</cite> One edtech is the standards provider for the CLRV2 …</p>
+<p id=9617 class="phone s03"><cite>Greg_Bernstein:</cite> Okay. I'm taking notes.</p>
+<p id=c5e2 class="phone s06"><cite>Phillip_Long:</cite> which is the VC compatible version of the comprehensive learner record. It's kind of a mashups to some extent between a transcript in its formal in its format including the rules associated with what you have to comply with and in what order that registars are so fond of usually only valuable to another registar. But it also include right it's called number one the URL is number one edtech al together and…</p>
+<p id=281b class="phone s03"><cite>Greg_Bernstein:</cite> What you just said, the edtech with CLR V2.</p>
+<p id=4f79 class="phone s06"><cite>Phillip_Long:</cite> they're the ones who are the responsible for the open badge version three and the CLR standards along with others used in the education world. and in fact the CLR V2 workg group is going to begin looking at…</p>
+<p id=a8a4 class="phone s06"><cite>Phillip_Long:</cite> what it to do with the next version of it since adoption has been relatively low. the universities are always questioning why they can't just continue to use signed PDFs.</p>
+<p id=e79a class="phone s03"><cite>Greg_Bernstein:</cite> Yeah.</p>
+<p id=bb8c class="phone s06"><cite>Phillip_Long:</cite> That's if you have any other questions just let me know or just ask. I'll be happy to answer. I sit on the work group for both.</p>
+<p id=b2f3 class="phone s03"><cite>Greg_Bernstein:</cite> Assign PDF. Yes. Let me know everything about you. Yes, that's in this day and age. …</p>
+<p id=710d class="phone s06"><cite>Phillip_Long:</cite> Yep. Sorry about that.</p>
+<p id=ddec class="phone s03"><cite>Greg_Bernstein:</cite> I understand. I mean, when I saw the CLR, it was big and a bit hard to gro, for an outsider.</p>
+<p id=8683 class="phone s03"><cite>Greg_Bernstein:</cite> that was the first stuff I looked at because I had been teaching and during COVID and I got very interested in verifiable credentials as applied to CO and so the first thing I started looking at was academic records. But I go, &quot;Wow, it was a handle everything kind of spec, but it definitely was intimidating.&quot; I was going, &quot;I understand class records. I've seen them, but I'm having trouble understanding this.&quot; Yes. Okay.</p>
+<p id=10007 class="phone s03"><cite>Greg_Bernstein:</cite> That gives me motivation to try and take the ne finish up this represents courses is OBV3s. I'm gonna thank you. this definitely makes this the Merkel approach sound worthwhile to look into. I mean and I think Dave's right. once somebody we get a couple good open source libraries out there for doing some of these fundamental things. I mean I did my own implementation of selective disclosure functions but I use the digital bizaar version for all my other work because there's a lot more people with eyes on that than my own personal version.</p>
+<p id=f742 class="phone s03"><cite>Greg_Bernstein:</cite> So it's kind of true that when you've got some good open source libraries, everybody starts using them and that, they're open source. So it's not the same as having to be bug compatible with some proprietary implementation if you recall for those of us who worked in networking, everybody had be bug compatible with Cisco. their stuff had bugs, but if you wanted to work in the certain ecosystems, you had to be bug compatible. So, that gives me my marching orders. one other thing to note is, for those who are interested in privacy preserving stuff, some of the log jam, and stalling of BBS has somewhat been resolved.</p>
+<p id=10008 class="phone s03"><cite>Greg_Bernstein:</cite> the chairs over at the cryptographic forum research group of the internet resource task research task force which is part of the IETF. it's finally gotten back to us about cryptographic review of that. They got the message that people really want to see these things finished and the core draft authors who have gone on to do other things have put me as a co-author so I can finish spec. So that's what's happening over in BBS land so we can get a privacy preserving cryptography before things are made out of date by quantum computers.</p>
+<p id=4217 class="phone s03"><cite>Greg_Bernstein:</cite> And that's a kind of the headlines here. and I will turn it back over to Wes unless there are any questions about any of the data integrity things and such like that. I think I owe Anthony a review of some of his postings over on Unlinkable Disclosure.</p>
+<p id=4162 class="phone s01"><cite>Wesley_Smith:</cite> All right. noting we have about five minutes left. I don't think it's worth jumping into a new topic which would be issue and pull request review on our other specifications. anybody have something for discussion for which the last five minutes would be appropriate? All right. thank you folks very much for your time today. as always, I will see many of you on calls later this week. And have a good rest of your Monday.</p>
+<p id=8425 class="phone s02"><cite>Phil_Archer:</cite> Thanks everyone. Good night.</p>
+<p id=9ea7 class="phone s03"><cite>Greg_Bernstein:</cite> Bye. Meeting ended after 00:50:04 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
