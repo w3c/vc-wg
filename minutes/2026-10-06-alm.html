@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 6 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>6 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Nate_Otto, Patrick_St-Louis, Patrick_St-Louis's_Presentation, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#0019">VCWG VCALM Meeting</a></li>
+<li><a href="#bd27">Test Suite Updates</a></li>
+<li><a href="#77fa">Spec Rendering Issues</a></li>
+<li><a href="#5743">CRLF Line Ending Issues</a></li>
+<li><a href="#d459">Test Suite Updates &amp; Reporting</a></li>
+<li><a href="#9b46">Spec Rendering Issues Discussion</a></li>
+<li><a href="#d147">Threat Model Draft Review</a></li>
+<li><a href="#ccf6">Credential Offer PR Review</a></li>
+<li><a href="#b7dd">VPR Group Processing Clarification</a></li>
+<li><a href="#8530">1.0 Issues Review</a></li>
+<li><a href="#cbef">Protestification &amp; Collapsible Sections</a></li>
+<li><a href="#e3d4">Multi-Step Workflow Example</a></li>
+<li><a href="#dc9a">Error Handling In Workflows</a></li>
+<li><a href="#0603">Index Allocator PR</a></li>
+<li><a href="#46cf">Template Type Discussion</a></li>
+<li><a href="#7ed9">JSON Reference Discussion</a></li>
+<li><a href="#1aa4">Handling Unregistered Media Type</a></li>
+<li><a href="#7849">Cross-Device Communication Use Case</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=0019>VCWG VCALM Meeting</h3>
+<p id=4799 class="phone s01"><cite>Kayode_Ezike:</cite> Hey everyone, we'll just wait a few more minutes before we get started.</p>
+<p id=0b4a class="phone s01"><cite>Kayode_Ezike:</cite> All right, I think we can get started now. I'll take a small crowd, but we'll just get started and see if anyone else joins. Let me share my screen quickly. All righty. Hello and welcome everyone. Today is Tuesday, October 6th, and this is the verified credentials API for life cycle management task force call. my name is Ky Desik. I'll be leading us to the call today.</p>
+<p id=699b class="phone s01"><cite>Kayode_Ezike:</cite> Quick reminder that everyone here should be a part of the W3C BCWG which I think is the case. in order to make substantive contributions on this call, this call will be recorded and transcribed as well as a heads up. And we are all subject to the rules of good conduct and IPR protections. Before we dive into the meeting today, I wanted to see if anyone has any reintroductions, community announcements that they'd like to share. Anything else they'd like to add on to the agenda? Go ahead, Patrick. Okay, good.</p>
+</section>
+
+<section>
+<h3 id=bd27>Test Suite Updates</h3>
+<p id=b25e class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I'll be happy to show a followup on the test suite updates. so I have a 2PR open and…</p>
+<p id=8b8c class="phone s02"><cite>Patrick_St-Louis:</cite> I have a reporter that I can show that running the test of what we have so far against an implementation. so I'll be happy to show this whenever we have the time.</p>
+</section>
+
+<section>
+<h3 id=77fa>Spec Rendering Issues</h3>
+<p id=252c class="phone s01"><cite>Kayode_Ezike:</cite> Exciting.</p>
+<p id=39bf class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, second topic I wanted to discuss, I still feel like there are some rendering issues with the specs. So I don't know if we could spend a couple minute just having a look at the rendered spec and seeing if there's further step required. I know we had some change that were put in there were some rendering error with the open API component and there was some change to thing to respec but I still feel like something is not quite right. So maybe if we can discuss this a little bit.</p>
+<p id=331f class="phone s01"><cite>Kayode_Ezike:</cite> Okay, great. Thank you, Anyone else before I update this agenda? Looks like</p>
+</section>
+
+<section>
+<h3 id=5743>CRLF Line Ending Issues</h3>
+<p id=fc89 class="phone s01"><cite>Kayode_Ezike:</cite> If not, Thank you. So, today there's a few things that I put had on the agenda as I was preparing it. This first one is something I've been noticing the last few weeks and actually has become like a blocker for dev a little bit. for the time that I have had to, make progress. I've been wasting it on trying to get past some of these issues. specifically just noticing CRLF keeps sneaking in even though I'm not changing anything locally and even the latest experiment that I did was to completely start with the new repo just pull down new repo and brand new and it's not showing the same files with problems But</p>
+<p id=6ffb class="phone s01"><cite>Kayode_Ezike:</cite> It's showing that the index HTML still has those issues. So, I'm just wondering if anyone else is seeing those issues and if it's just me and yeah, I just wanted to open up for just a few minutes on that.</p>
+<p id=f4ee class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead, Ted.</p>
+<p id=2f6e class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> It won't be just you.</p>
+<p id=fd8d class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> And it shouldn't be a blocker. There are two configuration files that should be added to the repos on GitHub and at least one of them should be added to your local config. basically you need to force everything to be line If GitHub detects a mix of line endings, some of which may be CRLF and some of which may be CR, I don't think there's anything else. it will normalize the repo to CRLF, which is Windows form, which is not what pretty much anybody in their right mind want. so the config files need to be there to force the LF and then you won't have this problem anymore.</p>
+<p id=1ac3 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, thanks.</p>
+<p id=e351 class="phone s01"><cite>Kayode_Ezike:</cite> So, you're referring to I guess get attributes and what is the editor config or something, right?</p>
+<p id=b6a5 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> There's also a command to run to normalize the existing repo so there's no mixed line endings going forward.</p>
+<p id=3113 class="phone s01"><cite>Kayode_Ezike:</cite> All So, I did run that normalize command and there's this ls files command I think too that was able to help me remove the mixed stuff in a feature branch. But then I guess when I went to main I was still seeing some of these things. But I will say I don't think we have an editor config. We have the attributes but if you're saying that we need that too then maybe that's part of it. But okay.</p>
+<p id=2acd class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> you do need both config files and after you put those config files in place that's when you run the fix command. that should be all you need to do. I haven't heard otherwise from anybody who's actually done those three things.</p>
+<p id=7949 class="phone s01"><cite>Kayode_Ezike:</cite> So maybe what has to happen is I just have to force push to make to remote a new editor config file or something and see if that resolves the issue. Okay. Thanks. Thanks, Dad. That's all I had with that. And the next thing that I want to talk about, so why don't we talk about Patrick, I give you the floor to talk about the test speed updates.</p>
+</section>
+
+<section>
+<h3 id=d459>Test Suite Updates &amp; Reporting</h3>
+<p id=ffff class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah sure we can do that right now. so I'm just going to share my screen. I'm going to show the reporting so what's implemented at this point is the issuer and verifier service test for the required endpoint and these can be used to deprecate the existing CCG issuer and verify fire test. the reporter includes all of the statement that we will test. but most of them are marked as skipped for the time but it will allow to give an overview about what will be tested. So the PR is in draft right now. one thing I'm going to do, I'm going to break these down into subsections.</p>
+<p id=0119 class="phone s02"><cite>Patrick_St-Louis:</cite> I want to regroup the services. So the verifier service, holder workflow and status and then have another section for the more specific test. so when it comes to the issuer in the spec we have in the con conformance section it says each service what endpoints are required for them to implement. So this includes the credential presentation verify and the status update.</p>
+<p id=c01f class="phone s02"><cite>Patrick_St-Louis:</cite> So all of these are tested. There's the test does one negative test and a open API testing on the response. So we will look at the open API spec that we publish and we'll answer the response based on that. then in the actual issuer section there might be some more specific normative statement that we give. for example there is one here about I set where multiple proof needs to be attached. so this one I did not implement it yet. This will be the what's interesting to see here is where most of the normative statements are located.</p>
+<p id=75fd class="phone s02"><cite>Patrick_St-Louis:</cite> So we have some sparse normative statement. there is the service client which is listed in the conformance. I'm going to have to think how we will test this because in our case the client is the test suite and we're testing their implementation. this will probably end up as some kind of interopability testing between two implementation where one implementation would act as the client or the er. need to think about the parts that have enlarged the biggest amount of tastement is the query by example, the did authentication, the workflow and the interactions. So these are the thing we're going to need</p>
+<p id=24fa class="phone s02"><cite>Patrick_St-Louis:</cite> to spend the most time testing making sure that implementation can properly ingest interaction. respond to did authentication and query by example. so we'll make sure that for each of these things we'll need to make sure we have a recognize entity credentials somewhere in there because that made it in the spec. yeah so each specific thing that needs to happen in these workflow schema definition will be tested.</p>
+<p id=fe8b class="phone s02"><cite>Patrick_St-Louis:</cite> And then the last thing that will need to be tested will be actually conducting a workflow in between two implementations. the main goal of this first PR again is for the issuer verifier and status endpoint so that we can deprecate the other two issuer and verifier test suite. following this I'm going to work with Ben trying to see how we can plug this in the can IVC project so that things are reported over there but if the reporting here looks good there should be no problem to put it in IVC once we get these things going I am providing an implementation so I'll be</p>
+<p id=5b66 class="phone s02"><cite>Patrick_St-Louis:</cite> looking at digital bazaar to have a second implementation so we can start there. so maybe I can synchronize with Ben and Dave or anyone to try to see and populate some of these endpoints in the VC test suite implementations so once this PR going to be merged we're going to be able to start tagging endpoints and services so that they get picked up in this test suite. depending what we want we can either start right now right we have some tests that are running so we can start to ure implementation against this. I don't know if we want to wait until we finish for everything.</p>
+<p id=10000 class="phone s02"><cite>Patrick_St-Louis:</cite> I would say let's get started now. I'm going to be in the next few weeks my cat is making some funny noise. I'm going to be making sure that on a weekly basis I have more and more coverage here. it should be fairly straightforward to get most of these conformance section when it's just testing a request response to an point. the thing that will take more time I think is if we want to go through the completion of a whole workflow this might need a little bit more interactive testing but yeah I think for the most part there should be some good progress here. So that's what I wanted to show.</p>
+<p id=20a9 class="phone s02"><cite>Patrick_St-Louis:</cite> I will share the PR link on Slack or so on so someone can have a view. But …</p>
+<p id=41c2 class="phone s02"><cite>Patrick_St-Louis:</cite> I'm going to be closing merging these PRs. probably leave them open for about a week and then I'll be closing them. yeah, that's it.</p>
+<p id=0bd2 class="phone s01"><cite>Kayode_Ezike:</cite> I think awesome.</p>
+<p id=8ce2 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks so much. could you also show that link here too? chat.</p>
+<p id=acc9 class="phone s02"><cite>Patrick_St-Louis:</cite> I will share it. I made the mistake. I open the PR on my fork. I'll just reopen the PR on the WTC repo and share the so well…</p>
+<p id=3d49 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, got and then maybe this naive question but just to be sure this is a view for a single implementation right this whole page would be like what one implementation would</p>
+<p id=3be4 class="phone s02"><cite>Patrick_St-Louis:</cite> how it works is obviously I ran this locally so there's a way to run this locally but each implementation are going to be side by side here when we're going to run the cluster just like the test suite. I'm going to look at things like maybe hiding this description and putting just a test label because this looks a bit heavy. this is more of a reporter feature.</p>
+<p id=b6d8 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=e18d class="phone s02"><cite>Patrick_St-Louis:</cite> So I would like to have a test name label and when you highlight it shows the full statement that it covers with a link to this spec. yes.</p>
+</section>
+
+<section>
+<h3 id=9b46>Spec Rendering Issues Discussion</h3>
+<p id=2925 class="phone s01"><cite>Kayode_Ezike:</cite> This is great. Thanks a lot, Patrick. And we'll let you take a little bit of breather, but while you have the floor, I guess we might as well touch briefly on the spec rendering issue you mentioned.</p>
+<p id=e147 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, give me a second. Let me open the spec. I can again share my screen. so we can look at both the published version and the editor's draft. Let me put them side by side because they seem to both have some kind of I don't know. It just doesn't seem quite right. so so the publish one still has these render error issues. I think this is normal because I don't think we republished since we've put that fix in. for the other ones.</p>
+<p id=ca88 class="phone s02"><cite>Patrick_St-Louis:</cite> So when we look at the services clearly there's the end points they don't seem to render right this section if I go 3.2.2 too. I'm expecting to see it.</p>
+<p id=b13e class="phone s02"><cite>Patrick_St-Louis:</cite> So, yeah. I don't know. I'm not sure what's going on here. but what I wanted is just so can we agree that we should open an issue and get this fixed or Yeah. Okay.</p>
+<p id=6320 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. …</p>
+<p id=b830 class="phone s01"><cite>Kayode_Ezike:</cite> no sales here.</p>
+<p id=ccb4 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I'm happy to have a look at this. So I just wanted to bring it to the in group because we did had a few back and forth for this. There was some change with the respec new publish version that was supposed to fix some of these rendering error. because if I look in so what's this one 3.3.1 it just doesn't render it anymore. So I'm not too sure exactly what's happening. There's a respspec error here.</p>
+<p id=a251 class="phone s02"><cite>Patrick_St-Louis:</cite> So I'll have a look at this. I believe Eric, you worked on this fix. Do you have an idea…</p>
+<p id=f535 class="phone s02"><cite>Patrick_St-Louis:</cite> what could be going on? Don't want to put you on the spot. I'm just really wondering if this rings a bell.</p>
+<p id=b53e class="phone s04"><cite>Eric_Schuh:</cite> Yeah,…</p>
+<p id=80ce class="phone s04"><cite>Eric_Schuh:</cite> I believe this was part of the olive pattern that was being used. but …</p>
+<p id=59ce class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=536e class="phone s01"><cite>Kayode_Ezike:</cite> What's up?</p>
+<p id=dd3a class="phone s04"><cite>Eric_Schuh:</cite> I guess I can't say what's going on here without looking at it more detailed…</p>
+<p id=40d4 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay.</p>
+<p id=3077 class="phone s04"><cite>Eric_Schuh:</cite> because all the local rendered versions of the specs seem to be working that I have. So, it's Yeah.</p>
+<p id=a34c class="phone s02"><cite>Patrick_St-Louis:</cite> I'll create an issue, have a look try to render it locally. I just noticed this while working on the test suite because I remember we did merge something and did say if it breaks we'll just fix it afterwards. so maybe it's just a matter of something small that needs to get fixed.</p>
+<p id=48a2 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, thank you. that's all for me.</p>
+</section>
+
+<section>
+<h3 id=d147>Threat Model Draft Review</h3>
+<p id=28c6 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, great.</p>
+<p id=7d7c class="phone s01"><cite>Kayode_Ezike:</cite> Thank you, So, we can move on to reviews now. and the first of those that I wanted us to look at is the threat model draft note that Eric has prepared. So I guess the ball is not really on anyone's court here from my understanding.</p>
+<p id=0870 class="phone s01"><cite>Kayode_Ezike:</cite> It was quickly pretty sub topic but I think Eric you were able to respond to the concerns that Ivonne had there and I think we're just waiting on him to review again. Awesome.</p>
+<p id=abf9 class="phone s04"><cite>Eric_Schuh:</cite> Yep, that's great.</p>
+<p id=e7d3 class="phone s04"><cite>Eric_Schuh:</cite> I hopefully resolved all of the link errors that he had pointed out that missed the first time through and it's back in on his plate to I guess check again and let me know if there's anything else wrong</p>
+<p id=da89 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks transitions can be generous sometimes, but glad that we're pushing this forward and hopefully we can get it in by the date that they were pushing for. And that will be that.</p>
+</section>
+
+<section>
+<h3 id=ccf6>Credential Offer PR Review</h3>
+<p id=6514 class="phone s01"><cite>Kayode_Ezike:</cite> And then I also wanted to touch on this other PR of yours, Eric, which is the credential offer one. Go back to I'm not sure if there's been any updates since I think if I recall correctly, you created a new PR for this because the other one had the CRLF issues. I'm mistaken. I think that's what this is saying Yeah.</p>
+<p id=5ede class="phone s01"><cite>Kayode_Ezike:</cite> Is that correct? Yeah, I think we have enough. it seems like we have good agreement here. not hearing anything from anyone. Go ahead.</p>
+<p id=c616 class="phone s05"><cite>Dave_Longley:</cite> I think what we discussed last time was we were going to add a group to this. but we might not have done that yet.</p>
+<p id=1609 class="phone s01"><cite>Kayode_Ezike:</cite> I should do see that.</p>
+<p id=448e class="phone s05"><cite>Dave_Longley:</cite> Eric might not have had time to take a look at that.</p>
+<p id=fd6c class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead. No worries.</p>
+<p id=729a class="phone s04"><cite>Eric_Schuh:</cite> Yes,…</p>
+<p id=94b9 class="phone s04"><cite>Eric_Schuh:</cite> sorry I had to step away for just a moment, but I did not get to this week. I was dealing with a threat model publication most of the time and just didn't get here. So</p>
+<p id=c525 class="phone s01"><cite>Kayode_Ezike:</cite> That was Great back. And this brings me to my which has not been updated because been struggling with the local dev issue.</p>
+<p id=836a class="phone s01"><cite>Kayode_Ezike:</cite> Like I mentioned, the only thing I was supposed to do with this one was to do one more final verification that it's following the same pattern that it is using day time stamp like the VC data model is but I believe there was a belief that there's more that it does that the BC data model does with that field or with the date fields. I haven't got a chance to verify that yet. So, I will need to come back to this. I did not topic that, but that's okay. and Patrick, I'm assuming these three down here still works in progress,…</p>
+<p id=f77f class="phone s02"><cite>Patrick_St-Louis:</cite> Still work in progress. Yes.</p>
+<p id=9264 class="phone s01"><cite>Kayode_Ezike:</cite> No worries. Great. that gets us to the issue or the PRs. why don't we move towards the issues now?</p>
+<p id=58e7 class="phone s01"><cite>Kayode_Ezike:</cite> I know that Ted is going to try to give me the magic link while I type the topic, but the meantime, shoot. you don't have to,…</p>
+<p id=fa1a class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Which measure of luke am I giving you?</p>
+<p id=64bd class="phone s01"><cite>Kayode_Ezike:</cite> but I know there's a magic link for special ordering that you like to use for issues, but otherwise I'll just go through them in the order that decide to know that there was one that was added just a few minutes ago. Okay, that was you, Patrick. And then there was one from last week from Dave. And so in lie of that link, I'm just going to start with this one here, Dave, that you added recently. go ahead.</p>
+</section>
+
+<section>
+<h3 id=b7dd>VPR Group Processing Clarification</h3>
+<p id=c312 class="phone s05"><cite>Dave_Longley:</cite> I just put myself on the queue to talk about it. this came from somewhere. I don't remember who noticed it, but we have a statement in the spec that is a little confusing that says some what's quoted there. This is about how group groups are processed in verifiable presentation requests. And we're not clear that when you omit a group for a given query that you put in a VPR that puts it in the undefined group and that every query you put in there will go into the same undefined group. They don't each get a different group.</p>
+<p id=1dbf class="phone s05"><cite>Dave_Longley:</cite> And so what that means is everything that is in the undefined group will be processed as and operation. And that's important for both consistency and backwards compatibility. So we just need to change the language here to make it clearer that if you omit group your query will be put in your query will be grouped with all other queries that also omit group.</p>
+<p id=0b3c class="phone s05"><cite>Dave_Longley:</cite> There's only one undefined group.</p>
+<p id=f149 class="phone s01"><cite>Kayode_Ezike:</cite> Got shoot.</p>
+<p id=f782 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, and each of those are ants with each other or All right. I think this is ready for PR. Reself. I think it's an effort low and I think it is ready for PR. I can sign myself for now. It's Great. Thank you, Dave. so, the next one that we can go through just so we have a lot of these ones from the threat model, which we're leaving for now.</p>
+<p id=4528 class="phone s01"><cite>Kayode_Ezike:</cite> Are there any issues that folks instead of me just going through random ones particularly that folks are interested in covering. I know that there was one that Demetri put up a few weeks ago that had some discussion. I think is an open question there actually from Dimmitri towards you Dave if I recall correctly in that one. So we could look at that one. There's also one on Jason from Ben and a few from Ben go ahead whoever that was.</p>
+<p id=eed8 class="phone s02"><cite>Patrick_St-Louis:</cite> Maybe we can sort by the 1.0 tag and just make sure we're looking at these. No.</p>
+<p id=4490 class="phone s01"><cite>Kayode_Ezike:</cite> It's a good point. I think it's the label. Although I know that some of the ones that were added do not have the tags on them yet, but Yeah,…</p>
+<p id=f144 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I'm wondering we should be anything that did not have the 10 tag. It would probably be good for it to get a different tag so that we know so we can tell the difference between things that have been triaged as future that are not for 1.0 versus issues that have come in after that analysis has been done that might need to be tagged with 1.0.</p>
+<p id=b0b5 class="phone s02"><cite>Patrick_St-Louis:</cite> that 1.1</p>
+<p id=0837 class="phone s01"><cite>Kayode_Ezike:</cite> I was Yeah,…</p>
+<p id=8212 class="phone s05"><cite>Dave_Longley:</cite> Yeah, any kind of tag that would indicate that it's been triaged and…</p>
+<p id=5441 class="phone s01"><cite>Kayode_Ezike:</cite> I was Yeah,…</p>
+<p id=6207 class="phone s05"><cite>Dave_Longley:</cite> set for future would be</p>
+<p id=0f6d class="phone s01"><cite>Kayode_Ezike:</cite> I was thinking of this too.</p>
+</section>
+
+<section>
+<h3 id=8530>1.0 Issues Review</h3>
+<p id=6032 class="phone s01"><cite>Kayode_Ezike:</cite> Because otherwise it could be ambiguous what exactly was the decision that was made on it. and I guess is that something that we would just expect for people clearing the issues to do themselves or I guess I can on my own time do that. But yeah, it's something that we should probably do. But in the meantime, all of these one 1.0 ones are ones that we decided to tackle. We have 25 open ones which is lot smaller than I thought and some of these are just like us waiting for review from the various working groups for candidate recommendation horizontal review and a lot of these I think it's 13 or so at least last I checked were the threat model ones that we were getting through and</p>
+<p id=d475 class="phone s01"><cite>Kayode_Ezike:</cite> So, let me just take a quick look at some of these. Also, I saw some activity in chat. Make sure I'm missing anything.</p>
+<p id=742d class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> Just me giving you the magic link,…</p>
+<p id=be77 class="phone s01"><cite>Kayode_Ezike:</cite> Got right.</p>
+<p id=a277 class="phone s03"><cite>Ted_Thibodeau_Jr:</cite> which does not include the V1.0, but that's okay.</p>
+</section>
+
+<section>
+<h3 id=cbef>Protestification &amp; Collapsible Sections</h3>
+<p id=2d9e class="phone s01"><cite>Kayode_Ezike:</cite> I can add that we have this one from June. This is from Ben. Protestification would appear.</p>
+<p id=e5ec class="phone s02"><cite>Patrick_St-Louis:</cite> I feel like some of this has been addressed at least when it comes to credentials and verifiable credential. we did simplify the OAS definition here.</p>
+<p id=4fea class="phone s02"><cite>Patrick_St-Louis:</cite> I think what can you scroll down a little bit? yeah, so the collapse or fold is interesting.</p>
+<p id=ba26 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, I actually was working on that at a point and…</p>
+<p id=a58c class="phone s01"><cite>Kayode_Ezike:</cite> I just haven't had a chance to get back to it. but yeah, that's the only part of it that I think we haven't really deployed yet.</p>
+<p id=2c89 class="phone s02"><cite>Patrick_St-Louis:</cite> We definitely simplify the credentials,…</p>
+<p id=004a class="phone s02"><cite>Patrick_St-Louis:</cite> I think we just show the context and type now and the rest is just going to be provided as an example,…</p>
+<p id=599d class="phone s02"><cite>Patrick_St-Louis:</cite> but we don't have an description for the rest of the fields.</p>
+<p id=67e7 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, this one to me is not as far as collapsible part of it.</p>
+<p id=b6f8 class="phone s01"><cite>Kayode_Ezike:</cite> It's I think a lower priority than some of the other ones. but it would be nice the ability to be able to automatically have it be collapsed like this for example. so it's just one of those things on the back burner that it'll be cool if it ends up blending in 10, but it's not a critical per se. and maybe that makes it go into a different label like Dave was mentioning. but unless folks feel like we really should have that for readability because I know that the spec is complex and it does kind of take up a lot of space vertically.</p>
+</section>
+
+<section>
+<h3 id=e3d4>Multi-Step Workflow Example</h3>
+<p id=4e6f class="phone s01"><cite>Kayode_Ezike:</cite> With all that comment here, sure version. That's good enough for change steps. I believe thought we had a PR for this one. We do not. So this is longly you had one for adding a multi-step workflow example with branching steps generated from step templates. Let's go here that create. Okay. So,</p>
+<p id=8356 class="phone s01"><cite>Kayode_Ezike:</cite> I guess this needs to be addressed at some point. I know we had a lot of issues that were related to adding examples and this is just another one of them that could be useful for cuz we advertise this a lot like the ability to do branching steps. I think there's not much in the way of examples for it. So I think this is really just what we're trying to do here. and there was another issue I think that also touched on this in the past but yeah don't really I think this is just something that someone has to get to at some point. There's not much to say about it now.</p>
+<p id=077c class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=a46d class="phone s02"><cite>Patrick_St-Louis:</cite> I do have one of the task is to define some sort of algorithm to process workflow. seems to me like there's maybe some link to be done there. branching steps.</p>
+<p id=7fb8 class="phone s01"><cite>Kayode_Ezike:</cite> That's true. I wonder if I can make a note about that. quickly just</p>
+<p id=fe63 class="phone s02"><cite>Patrick_St-Louis:</cite> That would be the first question. I know do you feel like this is something that would need to be processed algorithmically, Dave? or…</p>
+<p id=586d class="phone s05"><cite>Dave_Longley:</cite> My understanding the non-normative algorithm text that we have I think already handles that branching.</p>
+<p id=42d9 class="phone s02"><cite>Patrick_St-Louis:</cite> what's the idea …</p>
+<p id=11b6 class="phone s05"><cite>Dave_Longley:</cite> So I think it's already built into that algorithm for that issue where working through that. So it should be covered and…</p>
+<p id=150a class="phone s02"><cite>Patrick_St-Louis:</cite> we're just missing examples.</p>
+<p id=c8d0 class="phone s05"><cite>Dave_Longley:</cite> once we have an example that would also help demonstrate that it is in fact covered.</p>
+<p id=d8d8 class="phone s01"><cite>Kayode_Ezike:</cite> Is there an assigne for this issue?</p>
+<p id=5396 class="phone s01"><cite>Kayode_Ezike:</cite> Of course, it's me. Okay. Oops. Patrick St-Louis:</p>
+<p id=b4c1 class="phone s02"><cite>Patrick_St-Louis:</cite> You can assign it to me. I mean while I look at the algorithm section I can take on to add relevant examples right for things that do have algorithmic coverage…</p>
+<p id=f7bf class="phone s01"><cite>Kayode_Ezike:</cite> Sorry. Sounds good.</p>
+<p id=07a3 class="phone s02"><cite>Patrick_St-Louis:</cite> but they don't have specific examples. So I'll have a look at that.</p>
+<p id=4a64 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you, Patrick.</p>
+</section>
+
+<section>
+<h3 id=dc9a>Error Handling In Workflows</h3>
+<p id=99db class="phone s01"><cite>Kayode_Ezike:</cite> I should probably be using subtopics too. Sorry guys. the next issue is expander handling to workflows. I recall when we actually did discuss this and we did have a tentative solution for this. So, we already have a last error property that was introduced a while back that could potentially cover this.</p>
+<p id=e3c2 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=b48e class="phone s01"><cite>Kayode_Ezike:</cite> And I think Patrick, you said you were going to look into to possibly using that and in one of those PRs that you're working on. So, we have a decision there as well. No.</p>
+</section>
+
+<section>
+<h3 id=0603>Index Allocator PR</h3>
+<p id=10001 class="phone s01"><cite>Kayode_Ezike:</cite> So we have discussed index allocator quite a bit in the past and I believe one of the PRs you have open also. So I guess there's a PR exist. So if the PR exists I guess there's not really much that needs to be said here. you just continue to work on that PR. It's outstanding for that. So help wanted something we can and needs discussion as All right. So this is issue 585.</p>
+</section>
+
+<section>
+<h3 id=46cf>Template Type Discussion</h3>
+<p id=b919 class="phone s01"><cite>Kayode_Ezike:</cite> All right. So, there was a course of action here that you went through. I think you tagged this as needing discussion. I believe that. So, we have a bunch of examples in the appendix. Now, I'm wondering if this is already covered or if we need to do more here.</p>
+<p id=c7c0 class="phone s01"><cite>Kayode_Ezike:</cite> I mean, I've got it assigned to myself. I'll take a deeper look into this on my own time. the moment assigned to me is CCG. Yeah.</p>
+<p id=2b94 class="phone s01"><cite>Kayode_Ezike:</cite> This was from me from 202 So, just wondering what are all the possible values. Yeah, this was when I was trying to understand if Jason Sonata was the only possible template type that we could have. And I think there was general discussion that we shouldn't necessarily be exhaustive about it and that folks can sort of use their own and we would just provide one example here.</p>
+<p id=717d class="phone s01"><cite>Kayode_Ezike:</cite> I did put up a PR for this in the past and I guess my last comment I said I included Jason let's see right so yes we did something for credential template so there's two examples of where templates are used credential template the other one is a step template when you want to kind of basically allow for variables to be passed into the actual creation of step and the only thing here is that it's just not consistent with themselves. And so I think I just need to update this sub template to match what we're doing for credential templates just as soon. Okay.</p>
+</section>
+
+<section>
+<h3 id=7ed9>JSON Reference Discussion</h3>
+<p id=cd27 class="phone s01"><cite>Kayode_Ezike:</cite> need to discuss there instead of just going down the list here. I want to see are there any issues that folks care to talk about specifically? cuz it could just go through all these, but I know that there were some that were created recently. I believe Ben, you had one or two that you've recently created.</p>
+<p id=657e class="phone s01"><cite>Kayode_Ezike:</cite> but maybe not unless I take out the guess. Yeah. So, these are the ones I was thinking about. So, since you're here, Ben, there's this first issue here about adding no reference to JSON. Okay, so this is something that's really cutting across a lot of different specs that we're dealing with and I don't know that we have a concrete decision W3C wide policy for including Jason yet although it seems that folks are becoming more and more comfortable with referencing it at yeah But</p>
+<p id=e055 class="phone s01"><cite>Kayode_Ezike:</cite> I see the latest comment here was from a week ago from Ibon. I don't know if we've seen this yet on the call, but system DC management, So I'm trying to think on what next steps would be like is it like do we have to escalate this to W3C management before we can feel comfortable using JSON and referencing it the way that we would like to or do we just take our chances. it would be unfortunate if we were to reference it in the way we thought was appropriate and have that be the reason why the spec is rejected.</p>
+<p id=fef9 class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=8328 class="phone s05"><cite>Dave_Longley:</cite> So we don't need to reference it normatively. It would be nice to be able to so we shouldn't be blocked if we reference it non-normatively and we should explore especially since other task forces for other BC WG specs are also looking at using JSON. we should in some way participate or elevate this to the BC working group to figure out what needs to be done to determine whether or not this it can be referenced normatively. So we both have this back stop of it not needing to be referenced normatively,…</p>
+<p id=97fe class="phone s05"><cite>Dave_Longley:</cite> but also it would be nice to be able to do so. And I think there are two or three maybe even more other specs that are exploring using the same thing.</p>
+<p id=eec6 class="phone s01"><cite>Kayode_Ezike:</cite> And just to be clear,…</p>
+<p id=d654 class="phone s01"><cite>Kayode_Ezike:</cite> I think you said we should bring this up in DCWG.</p>
+<p id=2323 class="phone s05"><cite>Dave_Longley:</cite> Yeah, at this point since different task forces are looking at using it then it is a question I think for the working group for management as Ivonne says. I'm not sure what other things need to be done to explore reasons that it can be considered a normative reference.</p>
+</section>
+
+<section>
+<h3 id=1aa4>Handling Unregistered Media Type</h3>
+<p id=3ac6 class="phone s01"><cite>Kayode_Ezike:</cite> It's good to me. any other opinions on that? I think that fairly sound. Right looking for some time. So this is another PR viewer. 712 handling unregistered application M do media type. We have Benjamin on the call.</p>
+<p id=39c8 class="phone s05"><cite>Dave_Longley:</cite> He is not on the call today.</p>
+<p id=4f35 class="phone s01"><cite>Kayode_Ezike:</cite> Lost him.</p>
+<p id=10002 class="phone s01"><cite>Kayode_Ezike:</cite> Okay, he was here earlier. Thought I saw him, but let's Notice there's an application. All So, we need to decide what to do with this media type. Any thoughts from folks on how we should handle this?</p>
+<p id=2926 class="phone s01"><cite>Kayode_Ezike:</cite> Cuz the registration might be pretty way lift, but it's an option. go ahead.</p>
+<p id=cb87 class="phone s05"><cite>Dave_Longley:</cite> Yeah, we should figure out…</p>
+<p id=8e1a class="phone s05"><cite>Dave_Longley:</cite> what we need to do. I think anything that uses this is also non-normative in the spec, though we don't necessarily need to do anything. But, we should explore, whether or not we want to just register that type. anyone can register a media type and we can say what it's for and why we needed it. we don't have to be the, ISO who put out the MDOC specification. we could use some different media type, but either way we're defining a media type.</p>
+<p id=794c class="phone s01"><cite>Kayode_Ezike:</cite> Was it a hand that I heard on the key? Okay.</p>
+<p id=cf62 class="phone s06"><cite>Nate_Otto:</cite> Yeah, this is the two locations in the current spec online that mention this are notes that are almost identical to one another about the existence of other possible media types and it's just used as an example of what could exist. for one, I think it could potentially just be removed because other example types are already included in the list. I would not recommend that this group try and take on the task of registering this media type. The times that you might encounter an MDOC as a file, I think it would require us to get a little bit more specific about what actually is happening. and I would rather just not bite off that problem if we could just avoid</p>
+<p id=10003 class="phone s01"><cite>Kayode_Ezike:</cite> That's good feedback. Thank you for verifying that for us, I'm okay with that personally. are there any objections to just updating that example to exclude that particular media type?</p>
+<p id=648c class="phone s02"><cite>Patrick_St-Louis:</cite> Just a question and probably my lack of deep knowledge of MDOT,…</p>
+<p id=e53c class="phone s02"><cite>Patrick_St-Louis:</cite> but is an MDO kind of layered All day. or something else like Seymour in the way that VC is kind of layered on top of JSON LD or JSON could just use application more I don't know does that make sense</p>
+<p id=7793 class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=10004 class="phone s05"><cite>Dave_Longley:</cite> If you were to just tag it as application core, you wouldn't know that it's an MDOC itself. I agree with Nate that this group does not need to take on this problem. There are implementers using VCOM that have to deal with this, but that doesn't mean that this group has to try and define a media type for MDOC. but yes, MDOC is as a seabore format. but I think using application seabore would probably be insufficient for being able to understand…</p>
+<p id=8045 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=9f65 class="phone s05"><cite>Dave_Longley:</cite> what it is because you would then just have to guess what seabore you're about to read. So it does need to be more specific than that for implementations that need to use this. But again this particular group doesn't have to take on the task of coming up what that media type</p>
+<p id=fe89 class="phone s02"><cite>Patrick_St-Louis:</cite> Are you suggesting we just remove this entirely from the example? and that putting something like application seboard would just be too confusing?</p>
+<p id=261a class="phone s05"><cite>Dave_Longley:</cite> Yeah, I wouldn't recommend putting something generic like application JSON or application core there. I think one of the other examples is actually application VCB. We should make sure that the VCB task force is going to register that media type. because we shouldn't have to do that either. and yes, it's an option to profile something, but someone would have to be defining what that profile is, too. So, I think either way, we would be taking on more than we need to…</p>
+<p id=64ec class="phone s05"><cite>Dave_Longley:</cite> if we're going to use an example that we're not willing to define or that we know that someone else has defined for us.</p>
+<p id=1163 class="phone s01"><cite>Kayode_Ezike:</cite> Really quickly on this VCB,…</p>
+<p id=5f9b class="phone s01"><cite>Kayode_Ezike:</cite> is that something that's already being referenced somewhere? Application VCB Yes,…</p>
+<p id=98e0 class="phone s05"><cite>Dave_Longley:</cite> I thought maybe in the VCOM spec we referenced application VCB and…</p>
+<p id=ec57 class="phone s05"><cite>Dave_Longley:</cite> maybe in the same note that we do for MDO that was just from memory. this is around talking about how you can have different enveloped verifiable credentials which will have their own media type. And so you could take a VCB and put that into an credential. VCB for Demetri and chat stands for verifiable credential barcode.</p>
+<p id=77de class="phone s01"><cite>Kayode_Ezike:</cite> I said I wasn't aware that we actually had an application type for I guess media type rather. But Okay.</p>
+<p id=5bbf class="phone s01"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=3d47 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I think there's one in use by implementations, but The VC barcodes group should be registering that media type so it can be</p>
+<p id=bc1e class="phone s01"><cite>Kayode_Ezike:</cite> So, I guess I'll tag Wes sent this comment then maybe to make sure that he's aware. Guess we also have a lane here too, don't we?</p>
+<p id=82ed class="phone s01"><cite>Kayode_Ezike:</cite> So, I think the decision we're making here as far as VCOM's concerned is that let me just make this clear. So, decision would be to remove I can really just copy this over here. There's no objections to that. purchasing for and then we can just say this is ready for</p>
+</section>
+
+<section>
+<h3 id=7849>Cross-Device Communication Use Case</h3>
+<p id=f017 class="phone s01"><cite>Kayode_Ezike:</cite> Thank you, Ben, for opening. it's not here, but thanks for the issue. I did notice when I went over to the chat that Deitri is here. I was wondering if we could return to your PR that's been hanging around for a little bit. regarding your PWS use case, it was this one. so where we're at with that at the moment, I think it was an outstanding question from you, Dimmitri, towards Dave. so maybe a quick refresher on what this issue is about and then where we're at with it. Go ahead, Demetry.</p>
+<p id=5c3e class="phone s07"><cite>Dmitri_Zagidulin:</cite> So issue it's so the overall problem that needs solving is crossdevice communication between a clienton JavaScript web app and CLI or web or other devices wallets. that's the overall context, right? How do you pair wallets together or request a credential from a web page, things like that? It's convenient to reuse the exchanges.</p>
+<p id=08c5 class="phone s07"><cite>Dmitri_Zagidulin:</cite> data model and API except for at the moment the VCOM API requires either Zcaps OOTH credentials which is only available if you're a confidential client in</p>
+<p id=b037 class="phone s07"><cite>Dmitri_Zagidulin:</cite> the oath sense if you can store secrets which a JavaScript only web app cannot and so the proposal here the ask is this notion of ephemeral exchanges…</p>
+<p id=c832 class="phone s01"><cite>Kayode_Ezike:</cite> All right.</p>
+<p id=2b65 class="phone s07"><cite>Dmitri_Zagidulin:</cite> where the exchange location is secured via a random unguessable URL and goes from Yeah.</p>
+<p id=1b42 class="phone s01"><cite>Kayode_Ezike:</cite> Yes. Thanks for that. And I think there's a good amount of discussion. And I believe there was a bit of a challenge to it from you Dave and a little bit from myself. But the latest question here was from you Dimmitri where you were wanting Dave to clarify something. is that something can do offline or she can do here? But basically just wants to see…</p>
+<p id=66f0 class="phone s01"><cite>Kayode_Ezike:</cite> if we can move this forward. It's been three weeks now.</p>
+<p id=bca6 class="phone s07"><cite>Dmitri_Zagidulin:</cite> It's one of those things…</p>
+<p id=3081 class="phone s07"><cite>Dmitri_Zagidulin:</cite> where the use case is not solvable by the VCOM spec as it is and I could just create a standalone ephemeral exchanges spec but that seems silly and so that I was wondering if it could be a sort of use case of this one.</p>
+<p id=de44 class="phone s05"><cite>Dave_Longley:</cite> So I had missed the most recent comment on there. but one thing that comes to mind is that there are existing implementations that have interaction endpoints that when you hit them, you are given a fresh new exchange. that exchange is created in the back end of whatever system you're talking to and the interaction endpoint is appropriately rate limited or gated in some way so that public access to it doesn't result in dosing or filling up someone's database. and that's already a possibility with the VCOM spec. So if you had an interaction URL at some location and when you hit it you are given a new exchange that solves part of the problem that's at least mentioned here. But I haven't had time to think through whether the reframe</p>
+<p id=60e9 class="phone s05"><cite>Dave_Longley:</cite> framing I think effectively in my last comment that I remember on here was I wanted a reframing of the problem without bringing in VCOM at all so we could analyze whether or not the primitives in the VCOM spec could meet the use case. but just on the fly responding to what I'm reading here on this comment talking about needing authorization standing to create an exchange that is not necessarily true if you put it an interaction URL for example.</p>
+<p id=afa9 class="phone s01"><cite>Kayode_Ezike:</cite> Go ahead.</p>
+<p id=6f7d class="phone s07"><cite>Dmitri_Zagidulin:</cite> not just creating…</p>
+<p id=3839 class="phone s07"><cite>Dmitri_Zagidulin:</cite> but it's both creating and then on the other hand on the other side using the exchange that one needs authorization too or at least vcom requires it but I see eight on the queue</p>
+<p id=8c0d class="phone s06"><cite>Nate_Otto:</cite> Yeah, I have not read this issue prior to today. but I have thought about the general case of starting an exchange against a workflow that theoretically allows anyone to participate against it without a coordinator doing the creation of the exchange step for that user. And I had come to the same conclusion that Dave mentioned which is that you could solve this problem using an interaction where there could be a longived interaction URL that the effect of it is that it does have a side effect where an exchange is started and then that the protocols are presented and if the wallet then continues to participate with one all of those protocols do not require authentication and they could go ahead</p>
+<p id=8245 class="phone s06"><cite>Nate_Otto:</cite> head and complete the exchange all the way through doing something like claiming a credential or presenting a credential or complex multi-step exchanges. if what you're talking about is the exchange status endpoint one of the endpoints that do often require authentication needs to be hit for your use case. I think that would be a potentially different thing. But I have enjoyed the idea of starting these exchanges like this using an interaction</p>
+<p id=88be class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, I guess the only thing I'd wonder is how you'd advertise that long lived interaction URL in advance. but outside of that, I think that makes sense. Go ahead, last person on the queue.</p>
+<p id=a40d class="phone s02"><cite>Patrick_St-Louis:</cite> Just to clear up, yeah, this reminds me a lot about something incom that's called multiuse invitation,…</p>
+<p id=02d9 class="phone s02"><cite>Patrick_St-Louis:</cite> meaning it's like a static didcom service advertise which can be advertised in a divid document or anything and it will allow many people to connect to it creating a new instance of a connection each time. I see we are on time. Sorry.</p>
+<p id=1565 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, no,…</p>
+<p id=98c9 class="phone s01"><cite>Kayode_Ezike:</cite> no worries. David</p>
+<p id=dfc7 class="phone s01"><cite>Kayode_Ezike:</cite> That gives a less confident look.</p>
+<p id=0853 class="phone s05"><cite>Dave_Longley:</cite> Yeah,…</p>
+<p id=86a3 class="phone s05"><cite>Dave_Longley:</cite> and just quickly I was throwing something into the chat there. again on the fly you could create two interaction URLs to maybe solve this problem or just a single interaction URL that one party uses it. It ends with a redirection URL that they hand to the other party for them to pick up what was submitted. All of that does not require any authorization.</p>
+<p id=e3d0 class="phone s01"><cite>Kayode_Ezike:</cite> Thanks a lot,…</p>
+<p id=743b class="phone s05"><cite>Dave_Longley:</cite> So this is an interesting problem but I think we need to get clarity exact on the exact problem and then dive into what possible solutions might</p>
+<p id=6159 class="phone s01"><cite>Kayode_Ezike:</cite> And at that, we are at time. Thanks everyone for the great contributions today, great discussions, and VR issue reviews. We look forward to seeing you next week and enjoy the rest of your week. Right. Cheers. Thank you. Meeting ended after 01:00:56 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

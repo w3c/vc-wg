@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 6 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>6 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Dmitri_Zagidulin's_Presentation, Ivan_Herman, Kayode_Ezike, Patrick_St-Louis, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#c15f">Welcome And Introductions</a></li>
+<li><a href="#4f33">PR 88 Rename Template Field</a></li>
+<li><a href="#9e1c">PR 89 Internationalization And Localization</a></li>
+<li><a href="#3b73">Privacy Considerations For Language Data</a></li>
+<li><a href="#1a98">Understanding Language Maps</a></li>
+<li><a href="#40ab">Documentation For Render Method Internationalization</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=c15f>Welcome And Introductions</h3>
+<p id=0696 class="phone s01"><cite>Patrick_St-Louis:</cite> Hey, Dimmitri made sure to clear my calendar to attend today.</p>
+<p id=3de7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Hey, Patrick. All right.</p>
+<p id=ad5e class="phone s01"><cite>Patrick_St-Louis:</cite> I've been following a bit the GitHub issues and what's happening as know, I'm very interested in this, but it's been a difficult time for me.</p>
+<p id=965b class="phone s02"><cite>Dmitri_Zagidulin:</cite> I bet it. Yeah. we're slowly converging on something useful. So hopefully we'll have something that addresses all our use cases.</p>
+<p id=4d80 class="phone s01"><cite>Patrick_St-Louis:</cite> That's good. Yeah. If you notice, I closed the OCA render screen.</p>
+<p id=9515 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah I was wondering. Yeah thank you. I appreciate that.</p>
+<p id=c740 class="phone s01"><cite>Patrick_St-Louis:</cite> And yeah, so I'll probably be interested in a while to …</p>
+<p id=e28d class="phone s01"><cite>Patrick_St-Louis:</cite> because what I'm doing right now is just comparing the OCA to the summary render suite to see…</p>
+<p id=04f0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Uh-huh. …</p>
+<p id=7ad1 class="phone s01"><cite>Patrick_St-Louis:</cite> if it kind of fits the feature that we're needed from OCA and we're kind of considering moving over to the summary right instead of OCA.</p>
+<p id=6666 class="phone s02"><cite>Dmitri_Zagidulin:</cite> okay. Okay. Yeah. In that case,…</p>
+<p id=aa12 class="phone s01"><cite>Patrick_St-Louis:</cite> So yeah so I'll do a in-depth comparison maybe present this next week or…</p>
+<p id=1a08 class="phone s02"><cite>Dmitri_Zagidulin:</cite> in that case, definitely let's merge the features from OCA, right? if anything's missing.</p>
+<p id=aa6a class="phone s01"><cite>Patrick_St-Louis:</cite> the week after and then …</p>
+<p id=6712 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wonderful.</p>
+<p id=5a2c class="phone s01"><cite>Patrick_St-Louis:</cite> if there's feature missing we can just discuss right are these needed Yep.</p>
+<p id=b563 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's even cooler than I hoped for.</p>
+<p id=ffff class="phone s02"><cite>Dmitri_Zagidulin:</cite> I was going to say that. So, for example, remember how we had mustache or handlebars based template suite, right? And after long discussion the consensus in the group was okay the HTML app rendered in an iframe.</p>
+<p id=e6a2 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, like the sandbox frame.</p>
+<p id=869a class="phone s02"><cite>Dmitri_Zagidulin:</cite> supers yeah supersedes that but as I pointed out to people there's still some use cases not covered by the HTML and JavaScript app you still need a template based or a mustachebased template method for things like rendering PDFs and…</p>
+<p id=b603 class="phone s02"><cite>Dmitri_Zagidulin:</cite> for that the group consensus was we can add it as a non-normative appendix right given that this thing is an extension point etc.</p>
+<p id=014e class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah,…</p>
+<p id=6402 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So what I was going to say is that if the OCA overlay folks decide that the summary is not sufficient to them, you could add it as a informative appendix, but it sounds like there's a way forward to sort of converge. So that's great. huh</p>
+<p id=63fa class="phone s01"><cite>Patrick_St-Louis:</cite> interested in discussing this once I'll have the comparison done. I think more discussion could be done. And I had a bit of a chat with Nate about this summary and…</p>
+<p id=1f6c class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Yes. Yeah.</p>
+<p id=937f class="phone s01"><cite>Patrick_St-Louis:</cite> I think I don't want to speak on his behalf but the kind of conclusion is that he felt like people are trying to start to want to do too much with the summary which was meant as a very basic the main reason why it works well is because it defines a sort of a rendering metadata file object that's outside of the credential, right? that's the number one thing. yeah. I can speak more a bit maybe during the meeting when we get there. I'll let you get started.</p>
+<p id=bed3 class="phone s01"><cite>Patrick_St-Louis:</cite> But yeah a couple thought I could change and…</p>
+<p id=cacc class="phone s01"><cite>Patrick_St-Louis:</cite> the biggest thing for us is the whole multil language section. it's been discussed many time.</p>
+<p id=c91a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=d6ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> Excellent.</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> Unless I'm wrong I don't feel like there's a really official agreed on way of doing it. awesome.</p>
+<p id=432d class="phone s02"><cite>Dmitri_Zagidulin:</cite> There is not. But I'm glad you bring it up because this is going to be one of the draft PRs that we're going to discuss today. All 4 minutes passed.</p>
+<p id=8485 class="phone s01"><cite>Patrick_St-Louis:</cite> Pop. Let you</p>
+<p id=a5b1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. let's get started.</p>
+<p id=3578 class="phone s02"><cite>Dmitri_Zagidulin:</cite> We may have a smaller than usual turnout today. but let's see what we can get through. hopefully others will join as the call goes on. If not, we can end early. All right. So welcome everyone to the weekly VC render method task force call of the verifiable credential working group. we are under W3C code of conduct and IP restrictions. but I see all familiar faces. these meetings are recorded and transcribed and the notes are stored somewhere. All right. So this call we're going to do the usual. We'll go through PRs and some interesting issues that need discussing. So let's go to PRs first.</p>
+</section>
+
+<section>
+<h3 id=4f33>PR 88 Rename Template Field</h3>
+<p id=a3d2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> There's a pending BC data model threat note public working draft dote that Ivonne asked to open. So Ivon and Manu left some comments on the PR which I address. So hopefully that meets Ivon's needs. If not, we'll continue. But nothing really controversial there. It's just a snapshot of the current render method run model document. A number 88 rename template field to payload. it's pretty simple.</p>
+<p id=4402 class="phone s02"><cite>Dmitri_Zagidulin:</cite> It's just literally renaming the template property to payload on all of the suites. And it's something the group came to consensus on last call. the idea being that it's more accurate to term for the thing that's currently termed template because in each case for the static suite, it It's rendered in the summary suite. It's also not a template. It's just a set of fields and their metadata. And even in the HTML suite, now that it doesn't use mustache or handlebars style actual template, it's a full-on HTML and JavaScript application. So, long story short, we're naming it to payload.</p>
+</section>
+
+<section>
+<h3 id=9e1c>PR 89 Internationalization And Localization</h3>
+<p id=5a03 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So please add your plus ones or objections on this more interesting for discussion is this draft poll request that I want early feedback on continuing the discussion on internationalization and localization specifically. So although the PR is short right now again it starts the discussion and bring and specifies the use case and introduces an optional field. What's the idea here? we know that the VC data model gives us a little bit of localization and internationalization tools.</p>
+<p id=84ba class="phone s02"><cite>Dmitri_Zagidulin:</cite> specifically it gives us the ability to do value level translation right so if I have a field called description and it's got some text in it the core VC data model allows us to provide different values for the description field based on the language so I can provide a value in English and I can provide a value in Spanish and standard JSOND mechanisms can sort of dispatch on that. In addition, core data model provides us with a language direction property.</p>
+<p id=9bb6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> What this section says is we have use cases that go beyond that. In addition to value level localization we also want to translate the field labels themselves. So, not the contents of the description, but if the render suite if whatever you're displaying on screen involves field labels, you want to be able to translate those.</p>
+<p id=444e class="phone s02"><cite>Dmitri_Zagidulin:</cite> And that's a capability that some of the I believe the OCA mechanism and the U VC jot and some of the other cardlike mechanisms have this ability to translate not just the value but the labels themselves. But we need to go beyond that. the goal that we have, the use case that this spec needs to address is we need to be able to select arbitrary layouts and styles or even fully rendered payloads based on language and local preference.</p>
+<p id=6d8b class="phone s02"><cite>Dmitri_Zagidulin:</cite> So for example in the education space a very real use case we had was tech de Montterrey university said we need to display our diploma but the diploma has a different layout and color and logo depending on whether it's in English or in Spanish and they prefer that a single verifiable credential has obviously the values but then a render method suite. Here's the PDF.</p>
+<p id=97dc class="phone s02"><cite>Dmitri_Zagidulin:</cite> in Spanish and here's PDF in English or here in addition to the layout one of our open issues is things like date and datetime formatting and so on. let's go to the queue Patrick and…</p>
+<p id=3c8c class="phone s01"><cite>Patrick_St-Louis:</cite> So I mean I'm hearing three different things in here.</p>
+<p id=a773 class="phone s02"><cite>Dmitri_Zagidulin:</cite> then Dave.</p>
+<p id=2ae3 class="phone s01"><cite>Patrick_St-Louis:</cite> So I'm reading one translating the values of the credential itself.</p>
+<p id=a0a4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Jack.</p>
+<p id=21a8 class="phone s01"><cite>Patrick_St-Louis:</cite> Two translating the values of the label of the keys, Which is kind of render method. And then the third one is associating a whole different rendered template based on the language.</p>
+<p id=1b39 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Correct.</p>
+<p id=dea0 class="phone s01"><cite>Patrick_St-Louis:</cite> Correct. …</p>
+<p id=3c04 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Correct. That's the idea.</p>
+<p id=9463 class="phone s01"><cite>Patrick_St-Louis:</cite> and would we want to approach each of these separately as their own individual things or do we want to kind of bundle them together as one feature? I know for myself at least in my use cases I only address number two…</p>
+<p id=b10f class="phone s01"><cite>Patrick_St-Louis:</cite> which is translating and OCA only address number two which is translating labels descriptions these kind of things. the values of the credential is different. we do not support that currently.</p>
+<p id=b577 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay. Absolutely.</p>
+<p id=f835 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So yeah, great question. the good news is that the core VC data model gives us the tool to do the first two, right? we essentially get those quote unquote for free. And I'll open up that section of the VC data model so that we can refresh our memory on what that looks like. I know we've got Dave on the queue. I don't want to so let's go to Dave and then Patrick, I'll come back to you. Go ahead Dave.</p>
+<p id=273c class="phone s03"><cite>Dave_Longley:</cite> So, I'm not sure exactly when to jump in …</p>
+<p id=ce17 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+</section>
+
+<section>
+<h3 id=3b73>Privacy Considerations For Language Data</h3>
+<p id=ab32 class="phone s03"><cite>Dave_Longley:</cite> because we haven't talked about the proposed way to do this with target language below, but I'll just throw in my comments here. I think it would be preferable for there to be for privacy purposes and potentially for scalability purposes for the language information to be part of the payload. So that you specify this once it's fetched once everyone is grouped together who asks for that same thing and then the language decisions are made on the client independently of having to announce that stuff when you're making a request and so on. I think that's preferable. it doesn't mean that we necessarily have to do it that way, but we're inventing this thing and it seems to me like it would be better to take that approach rather than asking issuers</p>
+<p id=5f9f class="phone s03"><cite>Dave_Longley:</cite> is to list in the common case, maybe there's 10 popular languages, but they're now going to be listing 10 different templates or 10 different render methods just to cover languages. that's going to preclude people who speak other languages. and if they want to cover those, maybe they'll be listing a thousand of these. the EU apparently has 27 popular languages. where again popular is are we talking about the world and how relative is this? And the people who are in smaller groups who speak or read languages that aren't as popular are going to leak more information about who they are if they're going to be requesting that type of information.</p>
+<p id=b734 class="phone s03"><cite>Dave_Longley:</cite> rather than just getting the whole payload and then they make the choice on the client. So those are things I would want us to keep in mind in our</p>
+<p id=ecf4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Absolutely. And so for those just joining us,…</p>
+<p id=6280 class="phone s02"><cite>Dmitri_Zagidulin:</cite> we're discussing draft PR89 that was just opened. that sort of kicks off the discussion on what are we going to do? And in the introduction it essentially talks about three different levels of local localization. we've got value level and field label level. So one and two and for both of those we have a mechanism provided by the core VC data model. And I'll get to what you were just saying Dave.</p>
+<p id=775a class="phone s02"><cite>Dmitri_Zagidulin:</cite> And then in addition it proposes that it would be useful to be able to select not just on the field level, not just on the label level, but also on payload and value level. before I hop on the queue to respond to Dave, back to Patrick.</p>
+<p id=c4f9 class="phone s01"><cite>Patrick_St-Louis:</cite> I'll let you respond to Dave, but I just</p>
+<p id=1a5c class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, Yeah, all really good points and the overall thing we need to remember is language super difficult to get right. Always has been. so The good news is that the web has a lot of really interesting mechanisms to this. So for example, in the internationalization what's it called?</p>
+<p id=66f7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> The best practice document for internationalization specifically has this mechanism called matching on language tags which allows we're not going to get into the difference between local and language. but just to partly address what Dave said, we have flexible group mechanisms by saying, okay, this random method payload applies to all the languages or to the German family of languages. here's the overall deal, right?</p>
+<p id=f3ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> So Dave, you're absolutely right that we should and that it's useful to be able to select on the value and label level. And just to refresh our memory, what's the base VC data model mechanism? it sort of reuses the JSON LD mechanism of value and language and direction tags. So what this looks like is you have a property, let's say a description or a title, and then instead of having it be a string, it can be an array of differently translated values and you select and which language direction, right to left or left to right. this particular applies.</p>
+<p id=e2d4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And so what Dave said, this gives us the ability to essentially use cases one and two value just directly Imagine this thing is a labels array which I believe is something that either the summary field supports right now or will support in the future. And so you could easily do the same thing. the property is labels and these are the individual labels and their translations into the languages that the displaying client can use. In addition though we want to be able to select different layouts and different logos and different colors and different rendered dates and things like that based on the local. But let's go to the queue.</p>
+<p id=cb4d class="phone s02"><cite>Dmitri_Zagidulin:</cite> You have to move on. Go ahead on.</p>
+</section>
+
+<section>
+<h3 id=1a98>Understanding Language Maps</h3>
+<p id=a249 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I just had to find a right button. What do you mean by property level or…</p>
+<p id=c450 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. No.</p>
+<p id=2240 class="phone s04"><cite>Ivan_Herman:</cite> I don't know</p>
+<p id=0b6b class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, yeah,…</p>
+<p id=b55b class="phone s04"><cite>Ivan_Herman:</cite> what you mean.</p>
+<p id=16c5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> great question. So, I believe let's see the summary has this notion of fields and labels. Yeah. So this is a way of saying for example the intent here is that we can list the highlight or the summary fields that we want to show on the screen and they're labeled fields. So it goes name colon</p>
+<p id=d16e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Ditri or description colon whatever and so the labels themselves just being regular fields can be translated and…</p>
+<p id=d4ca class="phone s02"><cite>Dmitri_Zagidulin:</cite> internationalized using this JSON mechanism. Does that make sense?</p>
+<p id=f1a1 class="phone s04"><cite>Ivan_Herman:</cite> It makes sense and…</p>
+<p id=aa71 class="phone s04"><cite>Ivan_Herman:</cite> on the other hand for me it's confusing because the mechanism you refer to in JSON LD is just a mechanism for any property which has a textual value and a possible value. Ivan Herman:</p>
+<p id=d66c class="phone s02"><cite>Dmitri_Zagidulin:</cite> So you're wondering.</p>
+<p id=198e class="phone s04"><cite>Ivan_Herman:</cite> So this differentiation for me is artificial</p>
+<p id=84f1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, you're You're right. You're wondering why am I highlighting labels specifically and not description or theme or anything like that. And it's because other VC template mechanisms have a separate mechanism specifically for labels, right?</p>
+<p id=db77 class="phone s02"><cite>Dmitri_Zagidulin:</cite> the VC jot and I believe mobile driver's license has a separate mechanism specifically for just translating the labels of the fields. That's why I'm highlighting to say yes, it's a recognized use case and mechanism, but we can handle using just the value regular thing.</p>
+<p id=423a class="phone s04"><cite>Ivan_Herman:</cite> Okay.</p>
+<p id=8052 class="phone s02"><cite>Dmitri_Zagidulin:</cite> There isn't a description. Go ahead, Pa Excellent.</p>
+<p id=5c1c class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, so I like this thing on this summary and again that's how OCA does it. So when you have an overlay for labels, you can specify is this overlay in French or in English. I wanted to bring a caveat. I don't think it's an issue. But when you said the VCDM model does support language, I think this would apply to C quote unquote native credential. one of the feature of VCDM2 is you could map from other format to VCDM 2.0.</p>
+<p id=d2ea class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=784f class="phone s01"><cite>Patrick_St-Louis:</cite> So in those case you might not always be able to benefit from that feature. if you're mapping from a format that doesn't support that you're not going to be able to display those values while preserving the security mechanism. however I do not think that's an issue because if it wasn't supported in the original format that's where the problem is right and it's kind of outside of the W3CVC spec.</p>
+<p id=50c3 class="phone s01"><cite>Patrick_St-Louis:</cite> But it's still just something to keep in mind.</p>
+<p id=50b5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, you're absolutely right.</p>
+<p id=da8f class="phone s02"><cite>Dmitri_Zagidulin:</cite> And this is where the general metadata nature of the summary object could come in useful. here's where you could do the internationalization of those things.</p>
+<p id=5917 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. And I think it's…</p>
+<p id=992f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. okay.</p>
+<p id=597e class="phone s01"><cite>Patrick_St-Louis:</cite> why it's important to keep those separate, the kind of metadata label description versus the values of the credential itself.</p>
+<p id=2b10 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=b638 class="phone s01"><cite>Patrick_St-Louis:</cite> because there's a difference that one is directly protected by the issuer signature being the values of the credential itself as these external field they're still kind of protected by a digest of the reference field…</p>
+<p id=19e6 class="phone s01"><cite>Patrick_St-Louis:</cite> but it's not like a direct relation. Yep.</p>
+<p id=659f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, agreed.</p>
+<p id=26b8 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think we had Benjamin and then Ivon. Benjamin, do you still have comment?</p>
+<p id=97cb class="phone s05"><cite>Benjamin_Young:</cite> No, Patrick said what I wanted,…</p>
+<p id=d386 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=d697 class="phone s05"><cite>Benjamin_Young:</cite> which was that other formats bring other problems. That even if we've solved they make your life worse…</p>
+<p id=fd15 class="phone s05"><cite>Benjamin_Young:</cite> if you bring them along</p>
+<p id=5f4e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, good,…</p>
+<p id=e60d class="phone s02"><cite>Dmitri_Zagidulin:</cite> good point, Ivan. Go ahead.</p>
+<p id=c823 class="phone s04"><cite>Ivan_Herman:</cite> So I have to make things more precise.</p>
+<p id=8b46 class="phone s04"><cite>Ivan_Herman:</cite> The VCDM doesn't invent anything whatsoever in terms of languages. This is not a This is a JSON LD feature that VCDM inherits.</p>
+<p id=2959 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I want to push back on that a little bit.</p>
+<p id=bce2 class="phone s04"><cite>Ivan_Herman:</cite> Which means that again that's a different thing.</p>
+<p id=372f class="phone s02"><cite>Dmitri_Zagidulin:</cite> I want to push back on that a little bit.</p>
+<p id=ac96 class="phone s02"><cite>Dmitri_Zagidulin:</cite> You're right, but the VCDM documents it and composes it a little better than the JSON LD.</p>
+<p id=e9c2 class="phone s04"><cite>Ivan_Herman:</cite> But what it means that if you have another vocabulary which is bound to BCDM application dependent and if that is in JSONLD which is usually the case then the language features are automatically usable in that vocabulary as well.</p>
+<p id=6ad9 class="phone s04"><cite>Ivan_Herman:</cite> So that has to be made very precise.</p>
+<p id=d4a4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=1b02 class="phone s04"><cite>Ivan_Herman:</cite> Maybe Dimmitri you are right that this is something that should make it clearer in the VCDM spec itself. we have to look at that but that's an editorial question specifically specification wise I'm sorry nothing is added to the VCDM in terms of language handling it's just inheriting Thanks.</p>
+<p id=e00f class="phone s02"><cite>Dmitri_Zagidulin:</cite> Absolutely agreed. and yeah, I think the base VCDM specifies that fairly explicitly that it inherits it from JSON LD, but yeah, we'll be sure to be precise about it, Patrick. Yeah.</p>
+<p id=d157 class="phone s01"><cite>Patrick_St-Louis:</cite> on this note so these are JSON LD primitive right the value language the same for context so I know in VCDM the ID and…</p>
+<p id=f529 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yes.</p>
+<p id=d2b2 class="phone s01"><cite>Patrick_St-Louis:</cite> the type they've been kind of aliased through probably alias is not the right term but they've been essentially alias as right in the context.</p>
+<p id=7351 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Straight up alias. Yeah. Yeah.</p>
+<p id=0588 class="phone s01"><cite>Patrick_St-Louis:</cite> Do we foresee something similar being possible here that you would use the language value as the key for the string? So, I would have title object and…</p>
+<p id=6f83 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, great question. Please.</p>
+<p id=10001 class="phone s01"><cite>Patrick_St-Louis:</cite> then the keys of that object would be like the language value we see followed by the text string.</p>
+<p id=8fac class="phone s01"><cite>Patrick_St-Louis:</cite> Would some kind of val like this be a possibility? Okay. Okay.</p>
+<p id=461a class="phone s04"><cite>Ivan_Herman:</cite> Alias's I'm sorry.</p>
+<p id=6c6b class="phone s04"><cite>Ivan_Herman:</cite> Can I By the way, Patrick, alias is the term. So, you are right. aliases can be used by any context…</p>
+<p id=efa9 class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you.</p>
+<p id=bdca class="phone s04"><cite>Ivan_Herman:</cite> but that doesn't make the original keyword syntax disappear. So it's in this respect a pretty open bar how you want to use it. There are people who love aliases because they hate the ad sign. I personally prefer using the sign because it makes it clear that this is a feature of the system as well. But that's a matter of taste. But the other application that comes in can define value to be whatever and…</p>
+<p id=909d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, go ahead, Benjamin.</p>
+<p id=cfc8 class="phone s04"><cite>Ivan_Herman:</cite> that's perfectly valid though probably a bit ugly. So there is no limitation here.</p>
+<p id=b792 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, aliases are a foot gun.</p>
+<p id=2773 class="phone s05"><cite>Benjamin_Young:</cite> You can use them and you'll shoot yourself every time. we just had to unpick a whole lot of problems that the Web of Things group caused for themselves by aliasing and they spent years getting it wrong. and they were just aliasing type. So, that's now being cleaned up. but one of the biggest things you lose looking at what you've got highlighted there is if you alias these things, you hide the magic, which is what Ivon was kind of saying.</p>
+<p id=f3b1 class="phone s05"><cite>Benjamin_Young:</cite> At symbols make it clear that this object is not like other objects and…</p>
+<p id=8248 class="phone s05"><cite>Benjamin_Young:</cite> you should treat it differently. So if you go back to the fields object Dimmitri that's currently proposed in the summary thing or whatever it is called now that's would not be just no up a bit where the field diffs are.</p>
+<p id=563d class="phone s04"><cite>Ivan_Herman:</cite> That's</p>
+<p id=fc04 class="phone s05"><cite>Benjamin_Young:</cite> No where it says fields sorry the actual word fields.</p>
+<p id=bcb3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=0eb3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=b03f class="phone s05"><cite>Benjamin_Young:</cite> So there's four properties under here and…</p>
+<p id=91d3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Right,…</p>
+<p id=3e0b class="phone s05"><cite>Benjamin_Young:</cite> it's tangled and confused already,…</p>
+<p id=b167 class="phone s02"><cite>Dmitri_Zagidulin:</cite> right, right, right.</p>
+<p id=4c80 class="phone s05"><cite>Benjamin_Young:</cite> it's using value in a new way. Language doesn't apply to anything. You have label and description as peers. If that were JSON LD and you had at signs, you would know at language and at value would be very specific things. at direction would have very specific meaning and the at label was in the wrong place and it would throw errors accordingly and you'd not cut yourself on sharp edges. So at signs, stick with LDOS's and are linked what Dave just said. It's reading his comment language value objects and</p>
+<p id=c195 class="phone s05"><cite>Benjamin_Young:</cite> most of the problems that we've just spent a while discussing go away and it's just like Jason LD solves this and the I8N group is increasingly promoting JasonLD's way of doing this as a repeatable pattern because it does make a special object that has special powers and if you alias that then suddenly people are like I'm going to stick a URL next to this string value or I'm going to label next to value, next to langu,…</p>
+<p id=d741 class="phone s05"><cite>Benjamin_Young:</cite> it just looks like a normal JSON object. not to mention the keyword conflicts that I mentioned about value and schema.org language already existing. So, it just hides things that don't need hiding for people's personal preferences. So, don't hide it.</p>
+<p id=c2bf class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, I wholeheartedly agree.</p>
+<p id=f879 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And just to add a historical note, so as you can probably imagine VC data model I think in the VCDM 1.0 group had a long discussion/argument exactly about this whether to alias language and value. so this came up and the conclusion was exactly for the reasons that Benjamin just brought up and specifically the overloading of schema.org's</p>
+<p id=72b9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> or 's value and language. it was specifically chosen not to alias but go ahead,…</p>
+<p id=6071 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Patrick. Where?</p>
+<p id=18bd class="phone s01"><cite>Patrick_St-Louis:</cite> In the example right below it's alias.</p>
+<p id=1abd class="phone s01"><cite>Patrick_St-Louis:</cite> Not sure if that stands.</p>
+<p id=0008 class="phone s02"><cite>Dmitri_Zagidulin:</cite> This. Great question. you're talking about this mechanism, right? Yeah.</p>
+<p id=7b8b class="phone s01"><cite>Patrick_St-Louis:</cite> This is exactly what I was trying to say earlier. Yeah. So, I see there's this multilingual context, which is kind of interesting. I like that. you make it very explicit that you're aliasing language in this context I was not part of those discussion but this is kind of what I was envisioning as a way to do because these credentials are very small some of the credentials that work for they're extremely large and they have many description fields and if you need to insert JSON LD</p>
+<p id=8fc2 class="phone s01"><cite>Patrick_St-Louis:</cite> the language objects and multiple per keys. you can triple, quadruple the size of a credential, which is already significantly large. So, that's one thing outside of cosmetic that I could say could have an impact.</p>
+<p id=d86e class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=2fa5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> And I have some thoughts on that,…</p>
+<p id=3466 class="phone s02"><cite>Dmitri_Zagidulin:</cite> but we have Ivon or no Benjamin in the queue. Go ahead.</p>
+<p id=a59c class="phone s05"><cite>Benjamin_Young:</cite> Yeah. …</p>
+<p id=2e37 class="phone s05"><cite>Benjamin_Young:</cite> just for those who aren't familiar with what we're looking at here, those aren't aliases. This is hold the language map and it's a special kind of container provided by JSONLDD. So in that example multilingual v2 context someone has defined that achievement name or name broadly I guess in this case is a language map which right now in JSONLD 1.1 gives you the ability to use key names for BCP 47 values. So en is the current highlight on the screen and that is the BCP 47 value. So if these were LVOS's that would be the value at language and then successful installation of the example application text would be the at value if these were loos.</p>
+<p id=2c2e class="phone s05"><cite>Benjamin_Young:</cite> And what JSONLDB 1.1 says is that when you use a language map, the lefthand side is as I said a BCP 47 and the right hand side must be a string. but we're working on addressing that in version 1.2 and I just pasted that issue so that you can also provide at direction. So you basically get a smaller LBO that just does the value and direction because you already have the language on hand just because you have a BCP 47 value doesn't mean you actually know the direction of the language because some can be birectional omniirectional or whatever.</p>
+<p id=5186 class="phone s05"><cite>Benjamin_Young:</cite> So there are cases where you might also want to mention add direction and JSON LB11 does not currently allow that. So we're trying to look into that next but hopefully that language container thing explains what you're seeing there. It's a different mechanism</p>
+<p id=aee6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's incredibly cool.</p>
+<p id=a563 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's so cool. Go ahead. I thought you're good.</p>
+<p id=6ae5 class="phone s01"><cite>Patrick_St-Louis:</cite> It does.</p>
+<p id=5d65 class="phone s01"><cite>Patrick_St-Louis:</cite> And is this something that you think is a good thing? based on the discussion that sorry I thought this was essentially an alias the same way that type and ID but what I understand is it's slightly different. and is this something you think is a good place forward in relation to your comment about foot guns and whatnot?</p>
+<p id=d84a class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I think it's fine to do it. I think you have to call it out when you create a context file. And I don't know that the VCDM itself calls out extensibility a whole lot. I think it does point to JSONLDLD and assume what's downstream follows JSON LD's extensibility patterns, in which case whoever publishes that multilingual context URL that we're looking at, achievement. example, whatever that thing The thing that is creating</p>
+<p id=10002 class="phone s05"><cite>Benjamin_Young:</cite> it's literally at container the value of which is at language and that's what's then allowing name to get these special features or narrative in another case. So I think it's great but I also think you have to specify it and…</p>
+<p id=afdb class="phone s01"><cite>Patrick_St-Louis:</cite> Shoot.</p>
+<p id=0906 class="phone s05"><cite>Benjamin_Young:</cite> point to it and make sure people know that it's there. So it's not an ali it's like a super alias. but it's literally called a language container. And I think in terms of JSON modeling to kind of answer your question, yeah, I think it's totally fine. And I'm trying to get it to be a little more fun by giving it a few more features. But go ahead.</p>
+<p id=37af class="phone s01"><cite>Patrick_St-Louis:</cite> Two more question which are essentially the same question. the one is so here clearly they're an example thing. Should there be the official VCDM2 multilanguage thing that you actually would need to check and if you see this context then be aware this is multi- language and…</p>
+<p id=38ea class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=2331 class="phone s01"><cite>Patrick_St-Louis:</cite> part two of that question could it be folded into the base VCDM context Thanks.</p>
+<p id=53f8 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, it could only show up in the BCDM context in places where the VCDM defines terms that can have strings right now.</p>
+<p id=e2fc class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=087c class="phone s05"><cite>Benjamin_Young:</cite> So that's name and description I think are the only two. there might be others but it's per term. So you can't just say…</p>
+<p id=62a8 class="phone s01"><cite>Patrick_St-Louis:</cite> And you can't exclude things in context with Jason and…</p>
+<p id=3ecd class="phone s05"><cite>Benjamin_Young:</cite> because otherwise you're valid from it's is like a language string which is false right it's a type date or whatever or ID can now be a language map which you would never do because it's not a thing so it has to be term specific that's dangerous on so many levels no itld leans pythonically like it wants you to be very specific and…</p>
+<p id=15d1 class="phone s01"><cite>Patrick_St-Louis:</cite> LB. can say everything except in front. Okay.</p>
+<p id=f5ba class="phone s05"><cite>Benjamin_Young:</cite> verbose and say what you mean and not let people guess. also when you switch to a language container you're picking a lane like I don't believe you can just mix stuff nilly and turn name into an array now because you've said it's a container so now the value of name must be an object. So you don't necessarily want to turn that on because at the VCDM level you don't want to turn that on. It's still capable to turn it on later as we're showing here. But if the VCDM says that then now if you have an Englishon credential name must be an object and must have the value of the language that you're using. So, you really only want to turn on the use of a language container when you expect a document to be multilingual and you want this object shape present.</p>
+<p id=ef4c class="phone s05"><cite>Benjamin_Young:</cite> things that used to be just string values.</p>
+<p id=8a42 class="phone s01"><cite>Patrick_St-Louis:</cite> But wouldn't this example here technically redefine name…</p>
+<p id=8abf class="phone s01"><cite>Patrick_St-Louis:</cite> which is like a nogo for because VCDM 2.0 defines name already. wouldn't in this scenario because I don't know what's in the second context URL, but isn't that redefining a protected value?</p>
+<p id=e2c6 class="phone s03"><cite>Dave_Longley:</cite> I can answer that quickly.</p>
+<p id=d9c6 class="phone s05"><cite>Benjamin_Young:</cite> Yeah. Yeah. Go for it, dude.</p>
+<p id=3068 class="phone s03"><cite>Dave_Longley:</cite> Redefinition is allowed as long as that you're doing so underneath another term like deeper in the tree and your context announces that. So for achievement, you can change the context provided that your context announces that you're doing it…</p>
+<p id=0c28 class="phone s03"><cite>Dave_Longley:</cite> which guarantees that anyone who understands all the terms that they're following down the tree will know that that redefinition has happened. And that's…</p>
+<p id=fadd class="phone s01"><cite>Patrick_St-Louis:</cite> So another way to look at this would be VCAM 2.0 defines a default protected name and…</p>
+<p id=3814 class="phone s03"><cite>Dave_Longley:</cite> what protected is all about. Making sure that you only read things for context that you understand. So you are guaranteed to get the values that you're looking</p>
+<p id=061d class="phone s01"><cite>Patrick_St-Louis:</cite> description, but you can override this per type if you type it properly in a subsequent context.</p>
+<p id=f7a2 class="phone s05"><cite>Benjamin_Young:</cite> per key would be a better thing to say.</p>
+<p id=29f4 class="phone s03"><cite>Dave_Longley:</cite> And so the VCDM v2 context defines the name term as protected in a certain way.</p>
+<p id=74b5 class="phone s05"><cite>Benjamin_Young:</cite> Not per type. Sorry. Go ahead.</p>
+<p id=0e23 class="phone s03"><cite>Dave_Longley:</cite> But if you carve out another area in the tree of the JSON, you can then change the definition because one reading no one…</p>
+<p id=70f8 class="phone s03"><cite>Dave_Longley:</cite> who only understands the default context for BCDM would travel down that tree unless they also understood the context that defined that subtree.</p>
+</section>
+
+<section>
+<h3 id=40ab>Documentation For Render Method Internationalization</h3>
+<p id=e0ba class="phone s02"><cite>Dmitri_Zagidulin:</cite> So one of the things that I think is becoming clear here is that we need to document this discussion probably in the VCDM spec…</p>
+<p id=d04f class="phone s02"><cite>Dmitri_Zagidulin:</cite> but more likely</p>
+<p id=3ee7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> in the render method specization section because you're absolutely right I don't think many people are aware that these two mechanisms one exist two are sort of exclusive you have to pick a lane you have to either use at value and…</p>
+<p id=3a13 class="phone s02"><cite>Dmitri_Zagidulin:</cite> at language which can be done generically for any field except people don't know that or you declare each field like name or description, a language map in which case you can use this cool shortcut. but we need to highlight it. explain what the best practices are. plus I have a question Ivonne and then Dave</p>
+<p id=4cf0 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I fundamentally agree with…</p>
+<p id=b2cd class="phone s04"><cite>Ivan_Herman:</cite> what you said Mitri except that I am not sure the place to put that is this pack. I think we were discussing to have some sort of a note of an implementation guide or…</p>
+<p id=335b class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think.</p>
+<p id=e413 class="phone s04"><cite>Ivan_Herman:</cite> usage guide or…</p>
+<p id=dc9b class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think Dave</p>
+<p id=abbf class="phone s04"><cite>Ivan_Herman:</cite> something like that. Then that's where it had to go because this is not dependent on render methods. This is for the usage of ECDM in a larger context.</p>
+<p id=fd7a class="phone s03"><cite>Dave_Longley:</cite> And I was also just going to say we're getting a little ahead of ourselves because we have to make some decisions about what the payload is for the summary render method which is really what we're talking about with these labels and fields. So we have to decide what we're actually doing there. is that entire thing that's being returned a JSONLDD payload or is it a JSON payload that inherits LVOS's? So, we have things to decide. so that just Dave Longley:</p>
+<p id=3ae9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's right.</p>
+<p id=7cff class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's So, we'll bring this back to the render method. But I do think that refreshing our memories on what the base VCDM mechanism is, what the primitives are that we're playing with is helpful. So keep in mind, one quick tooling question to Dave or Benjamin or whoever knows is there affordances in the JSON libraries to for example given how in JSONLDLD every value can be an array or a single string or an object and that's something developers when they're parsing it as JSON often get tripped and so the code is full of if type object then do</p>
+<p id=bf83 class="phone s02"><cite>Dmitri_Zagidulin:</cite> this and if string do this. There's lots of guards and the JSON libraries often have syntactic sugar that says for example get value and the get value part selects between array string and object and does the right thing.</p>
+<p id=85d9 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Is there a similar method to navigate these language maps? Can I say get value given English language? Go ahead.</p>
+<p id=7876 class="phone s05"><cite>Benjamin_Young:</cite> Yeah,…</p>
+<p id=10003 class="phone s05"><cite>Benjamin_Young:</cite> so most of the libraries don't just straight up support it out of the box. What you tend to end up doing is converting it to one of the graph shapes, whether that's full-on RDF quads or…</p>
+<p id=9abb class="phone s02"><cite>Dmitri_Zagidulin:</cite> I was just curious…</p>
+<p id=5c03 class="phone s05"><cite>Benjamin_Young:</cite> the expanded form, and then traverse that and change it. But there's no reason why you like it doesn't take a lot of JavaScript to do that with the expanded form because let me see if I can just show you.</p>
+<p id=e07c class="phone s02"><cite>Dmitri_Zagidulin:</cite> if it was already there.</p>
+<p id=7449 class="phone s05"><cite>Benjamin_Young:</cite> It should be. I don't know why It's just nobody's written it. But it's 10 minutes with quad to get it written. Do we have time for one quick demo that will show both things.</p>
+<p id=a46b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Right. Understood. Yeah, we like demos. Let's go.</p>
+<p id=3684 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, this should maybe answer a couple questions. So, Yeah,…</p>
+<p id=635a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Wait one sec. While you're pulling that up, Dave, I agree that we do need to get to some decisions, though it's just as well if we end up postponing the decisions to the next call because we do have a reduced attendance today.</p>
+<p id=5123 class="phone s03"><cite>Dave_Longley:</cite> Yeah. I didn't mean today necessarily.</p>
+<p id=018d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead.</p>
+<p id=14f2 class="phone s02"><cite>Dmitri_Zagidulin:</cite> In general, yeah, we do have some decisions. Go ahead.</p>
+<p id=3d8e class="phone s05"><cite>Benjamin_Young:</cite> I mean what this thing is at all is kind of the core decision. but in the meantime, here's some more JSON. so this is the example from example 40 and the VCDM but replacing that URL that was a fake non-existing context which doesn't help anybody learn. with something that actually explains what's happening here. so this is what Dave was talking about in terms of how you would extend it. So you would say within achievement there's a special context. You could also do a type based extension.</p>
+<p id=0b14 class="phone s05"><cite>Benjamin_Young:</cite> But at any rate, this is the thing that's line 8 that turns schema name into using language pattern. So down here in the quads, org name is still the predicate that's being used for these. but now they have, languages attached to them. So it's functionally equivalent to if I were to add the name here and use an LVO. then that's in here somewhere.</p>
+<p id=1abb class="phone s02"><cite>Dmitri_Zagidulin:</cite> Nice. All right.</p>
+<p id=10004 class="phone s05"><cite>Benjamin_Young:</cite> right here. So, it's the same thing. you didn't break your output quads, but you did change what's in it. what you're not able to do is because the BCDM doesn't define this as possible. you will not be able to do this and you will also relatedly and annoyingly and confusingly to folks I leave it off. I guess you're not going to be able to do that either. I can get my JSON typed right. because it is a protected term and it's protected is as just a string.</p>
+<p id=f026 class="phone s05"><cite>Benjamin_Young:</cite> So the danger is that when you extend the VCDM with a thing that says you can use language maps, that spec that downstream spec for VC whatever special type thing I just made up has to say you can and should use language maps like we're seeing down here in achievement, but only inside of achievement or only for credential subjects. with this type or whatever. they're scoped and anything that the VCDM defined as name and description, you can't do this.</p>
+<p id=9c63 class="phone s05"><cite>Benjamin_Young:</cite> you have to use LVOS, which is maybe the vote for even though it's fiddly and looks weird for sticking with LVOS's throughout the document, which is probably where I would still personally go if I were crafting a credential type. because as handy as language maps look and as sort of quick off-the-shelf, yay, I did multiple languages. it actually closes the door on other stuff you're probably going to need and want later. whereas the language value objects, as ugly as they are to some folks, does give you all the powers. It's like, Superman has superpowers because his underwear is on the wrong side of his pants.</p>
+<p id=b9bc class="phone s02"><cite>Dmitri_Zagidulin:</cite> Mhm. Right.</p>
+<p id=f2a5 class="phone s05"><cite>Benjamin_Young:</cite> So, at symbol, the shape of this object tells you it has superpowers. to your question though, Dimmitri, about how would I get out the multi- language strings once I've done them. If you were to write some JavaScript that handled expanded terms, basically once you're expanded, you have LVOS's throughout as you can see down here. no, where did achievement go? There it is. So, yeah.</p>
+<p id=10005 class="phone s05"><cite>Benjamin_Young:</cite> So now they all map to this same shape. So you would write some JavaScript that would descend through this fairly shallow tree. It's only three levels and a bunch of arrays and just keep anything that was in the language that you wanted and throw out everything else and then you can recompact that if you want into a shape that only has English values. there's ways to do it in lots of contexts depending on what you're wanting. If you're wanting the whole credential reconstituted but just in English, that's possible with JSONLDD plumbing. or you can just say, I'm really just looking for the achievement name in English. Then really, you're just parsing an array of however many of these and you're looking for that object. So again, it's trivial</p>
+<p id=c9fe class="phone s05"><cite>Benjamin_Young:</cite> starter grade JavaScript to get this back out with or…</p>
+<p id=43b5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. No problem.</p>
+<p id=d86c class="phone s05"><cite>Benjamin_Young:</cite> without knowing how the credential author decided to make their surface shape look. Once it's expanded, you have a consistent shape and then you can say I just want English. So I don't know why libraries haven't done it. They certainly could.</p>
+<p id=ce2a class="phone s02"><cite>Dmitri_Zagidulin:</cite> I think the whole community just hasn't done enough internationalization. Go ahead, Dave.</p>
+<p id=9f30 class="phone s03"><cite>Dave_Longley:</cite> Yeah, and…</p>
+<p id=10006 class="phone s03"><cite>Dave_Longley:</cite> I was just going to comment you can also have a simpler helper. If you make an assumption about the properties and inputs in your system, if you've already JSON schema things and what the shapes can be, you can make a helper that doesn't need to do expansion. It just knows there are multiple different ways the value could appear and it could normalize for you and return it. So it really depends on your application, how much your application knows, what you've assumed and…</p>
+<p id=8aee class="phone s03"><cite>Dave_Longley:</cite> there are simpler and…</p>
+<p id=0ddd class="phone s03"><cite>Dave_Longley:</cite> easier and more slash more comprehensive ways to write your helpers and so</p>
+<p id=6ebc class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, makes sense.</p>
+<p id=a83b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead, Benjamin.</p>
+<p id=5ed0 class="phone s05"><cite>Benjamin_Young:</cite> Yeah, what Dave's just describing moves the constraint up a surface to up here.</p>
+<p id=7434 class="phone s05"><cite>Benjamin_Young:</cite> So you would restrict like you probably meant your own media type or say that if you use a certain context URL you must also use a certain JSON schema and then that schema would enforce what's happening here and then because you've forced that consistency at the surface level then you don't have to expand it but then that also shuts the door on other types of extensibility which is why even though the VCDM M does have a JSON schema. It's not forced on anyone because if we did then this couldn't happen later. So it really just depends on…</p>
+<p id=f005 class="phone s05"><cite>Benjamin_Young:</cite> what you want and it's very tempting to overoptimize for the wrong constituent. So the VCDM made a good choice on extensibility I think generally.</p>
+<p id=2dd5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> By the way,…</p>
+<p id=4634 class="phone s05"><cite>Benjamin_Young:</cite> Go ahead Demetri.</p>
+<p id=dd5a class="phone s02"><cite>Dmitri_Zagidulin:</cite> that's a good point about the JSON schema. I think we should open an issue to extend the JSON schema to support these language objects.</p>
+<p id=ea7b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Go ahead. I don't think so,…</p>
+<p id=a3fb class="phone s05"><cite>Benjamin_Young:</cite> Yeah, I'd be curious to know…</p>
+<p id=c00c class="phone s05"><cite>Benjamin_Young:</cite> if it already does or doesn't. I mean, it's the void.</p>
+<p id=3c25 class="phone s02"><cite>Dmitri_Zagidulin:</cite> but yeah. Benjamin Young:</p>
+<p id=2300 class="phone s05"><cite>Benjamin_Young:</cite> I don't know. I hope any of us can run it and find out. But name would have to be I think it probably does…</p>
+<p id=3b07 class="phone s02"><cite>Dmitri_Zagidulin:</cite> We'll figure it out. Yeah. Right.</p>
+<p id=3fb4 class="phone s05"><cite>Benjamin_Young:</cite> because we have that multi- language section. But who knows</p>
+<p id=59a7 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So coming back to render method and thank you so much for this.</p>
+<p id=785d class="phone s02"><cite>Dmitri_Zagidulin:</cite> This is very educational.</p>
+<p id=7993 class="phone s04"><cite>Ivan_Herman:</cite> Good night.</p>
+<p id=5408 class="phone s02"><cite>Dmitri_Zagidulin:</cite> But back to render method. So we see the tools that we're working with. we see the primitives that JSON LD gives us that the BCDM inherits and so we inherit in random method in addition so in addition to these field level because we have this notion of labels we also get label level translation which again I'm only highlighting because other render method like specs have an explicit and separate mechanism for translating just the labels. We get that for free here.</p>
+<p id=118b class="phone s02"><cite>Dmitri_Zagidulin:</cite> But in addition as this PR argues and proposes we need a third mechanism which is optionally the ability to select the entire load the entire render methods suite based on your local. For example, this comes in useful for the static, right? If one image is rendered in English and the other is in French, we need to be able to select on it. A per internationalization is not going to help there. hence why the proposed target language or target local field and then we'll need to figure out how to put this all together into recommendations for developers.</p>
+<p id=b1ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> So Dave, does this make sense? why a target language field in addition to the value level JSON mechanism?</p>
+<p id=21b1 class="phone s03"><cite>Dave_Longley:</cite> I heard the use case just now, which is for the static case where you might have different images in different languages.</p>
+<p id=5411 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=1a5d class="phone s03"><cite>Dave_Longley:</cite> I still think that presents the same privacy considerations.</p>
+<p id=d4b7 class="phone s04"><cite>Ivan_Herman:</cite> All right.</p>
+<p id=de18 class="phone s03"><cite>Dave_Longley:</cite> So I don't know what we want to do about that case. and…</p>
+<p id=e9bc class="phone s02"><cite>Dmitri_Zagidulin:</cite> Hold on a sec.</p>
+<p id=ac89 class="phone s03"><cite>Dave_Longley:</cite> and it's not the exact equivalent…</p>
+<p id=fab6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Can you say more about that? Because it's the exact equivalent as the value level internationalization.</p>
+<p id=471a class="phone s03"><cite>Dave_Longley:</cite> because at the value level the language choice is made in private on the client…</p>
+<p id=78d1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Same with this the</p>
+<p id=60cd class="phone s03"><cite>Dave_Longley:</cite> if it is so to be clear if we did not use target language at all if it were not present then I'm talking about using lvos inside of field labels and so there's exactly one summary render method that you obtain and…</p>
+<p id=33db class="phone s03"><cite>Dave_Longley:</cite> everyone obtains the same one regardless of whether you speak Navajo or French. And then you resolve that on your side. so we're going to go somewhere and…</p>
+<p id=6ebd class="phone s02"><cite>Dmitri_Zagidulin:</cite> and I'm talking about the exact same thing.</p>
+<p id=93db class="phone s02"><cite>Dmitri_Zagidulin:</cite> The issuer just presents the menu of options just like with the value level.</p>
+<p id=5553 class="phone s03"><cite>Dave_Longley:</cite> fetch the payload and that will leave a trace that you asked for the Navajo one versus the French one and that is fundamentally different from I fetch the payload for all languages and…</p>
+<p id=111b class="phone s03"><cite>Dave_Longley:</cite> then yeah so we have to sort all that out And yeah,…</p>
+<p id=c844 class="phone s02"><cite>Dmitri_Zagidulin:</cite> No,…</p>
+<p id=507c class="phone s02"><cite>Dmitri_Zagidulin:</cite> no, no. so this is not I get what you're saying, but this is intended for embedded, not external.</p>
+<p id=c70d class="phone s02"><cite>Dmitri_Zagidulin:</cite> Absolutely. But that's part of our thread model discussion. We need to sort out fetching externally for all of these things that there's nothing special about the language. Go ahead Benjamin or… Dave Longley:</p>
+<p id=dbb3 class="phone s03"><cite>Dave_Longley:</cite> go ahead.</p>
+<p id=c441 class="phone s02"><cite>Dmitri_Zagidulin:</cite> sorry go ahead Dave finish your thought and…</p>
+<p id=4b0a class="phone s02"><cite>Dmitri_Zagidulin:</cite> then Benjamin.</p>
+<p id=b50e class="phone s05"><cite>Benjamin_Young:</cite> Yeah. Yeah,…</p>
+<p id=bc12 class="phone s03"><cite>Dave_Longley:</cite> Yeah, I'm saying my potential problem with this is in me conceptualizing it as something that you use to make a decision for…</p>
+<p id=00c5 class="phone s03"><cite>Dave_Longley:</cite> what you fetch externally as opposed to it being in the external data itself.</p>
+<p id=90a4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=2f6a class="phone s03"><cite>Dave_Longley:</cite> So you make that decision after you've made the fetch and you're not cutting up populationations and creating a privacy</p>
+<p id=45f4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see. Go ahead, Benjamin.</p>
+<p id=8438 class="phone s05"><cite>Benjamin_Young:</cite> that's the kind of architectural choices we need to fully express in the doc of this is why we're doing it this way. and probably not just the threat model but this is the expectation is that if all the data is in the credential then yes you can give it language values and say these are in English and navo and whatever else but if it's external thou shalt not and…</p>
+<p id=c582 class="phone s05"><cite>Benjamin_Young:</cite> explain Bye.</p>
+<p id=ef7e class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah.</p>
+<p id=4b13 class="phone s02"><cite>Dmitri_Zagidulin:</cite> So, we'll have to be very careful about explaining all of that. And I agree with your comment in chat that we should reuse schema.org in language instead of target language. I will change it to that. That's a very good point. fantastic discussion. we've got only a couple minutes till the next call,…</p>
+<p id=e0a1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> so this is a good place to stop. Before we adjourn, Ivonne, I just want to make sure, do you have everything you need from me on as far as the threat model dote? I addressed the changes that you requested, I fix the broken etc.</p>
+<p id=63a5 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, I am done.</p>
+<p id=9003 class="phone s04"><cite>Ivan_Herman:</cite> I sent out a small mail.</p>
+<p id=07c1 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, great.</p>
+<p id=5ee6 class="phone s04"><cite>Ivan_Herman:</cite> My morning so to say.</p>
+<p id=20c3 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Okay, got it.</p>
+<p id=b999 class="phone s04"><cite>Ivan_Herman:</cite> And you are done.</p>
+<p id=7131 class="phone s02"><cite>Dmitri_Zagidulin:</cite> What do we want to do with this thing?</p>
+<p id=c91b class="phone s02"><cite>Dmitri_Zagidulin:</cite> Should we merge it or close it with the PR? okay.</p>
+<p id=0e1e class="phone s04"><cite>Ivan_Herman:</cite> That doesn't even depend on me anymore.</p>
+<p id=d6ab class="phone s04"><cite>Ivan_Herman:</cite> Yes, we can merge it without too much problems.</p>
+<p id=78b6 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Let's do that.</p>
+<p id=e0c6 class="phone s04"><cite>Ivan_Herman:</cite> I have made a copy of the content and…</p>
+<p id=d77a class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah, got it.</p>
+<p id=5540 class="phone s04"><cite>Ivan_Herman:</cite> I process the copy. So that's really for archival in a way.</p>
+<p id=9427 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. this is Parado plus plus SPR also.</p>
+<p id=9085 class="phone s02"><cite>Dmitri_Zagidulin:</cite> fixes the short Yeah.</p>
+<p id=1f71 class="phone s04"><cite>Ivan_Herman:</cite> Yeah, that's true.</p>
+<p id=f4ac class="phone s04"><cite>Ivan_Herman:</cite> Think that Yeah.</p>
+<p id=9340 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Please folks, add your plus ones to this so we can merge it. All right. Thank you everyone. Talk to you next week for great discussion. Phil to your question in chat. wouldn't that be simpler in a separate PR?</p>
+<p id=a3f0 class="phone s02"><cite>Dmitri_Zagidulin:</cite> This is that separate PR essentially. This is a PR to select a template.</p>
+<p id=1537 class="phone s06"><cite>Phillip_Long:</cite> I thought that PR was selecting the template and the label and the Okay.</p>
+<p id=12ad class="phone s02"><cite>Dmitri_Zagidulin:</cite> No, no, no. Just that PR is just for the template.</p>
+<p id=cbb9 class="phone s06"><cite>Phillip_Long:</cite> I missed some when you were showing it before. It seemed like you were walking through the two levels with the language and the template language and the labels and at this and…</p>
+<p id=cca4 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=aedb class="phone s06"><cite>Phillip_Long:</cite> then also showing the choice of…</p>
+<p id=cca5 class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see.</p>
+<p id=aec5 class="phone s06"><cite>Phillip_Long:</cite> what template or…</p>
+<p id=448a class="phone s06"><cite>Phillip_Long:</cite> static framing this whole thing needs to I got it.</p>
+<p id=027e class="phone s02"><cite>Dmitri_Zagidulin:</cite> I see that the confusion makes perfect sense.</p>
+<p id=2981 class="phone s02"><cite>Dmitri_Zagidulin:</cite> What that was is you're referring to the introduction was just explaining why we want a separate template selection. Right. So yeah.</p>
+<p id=bdcc class="phone s06"><cite>Phillip_Long:</cite> I missed that.</p>
+<p id=3b89 class="phone s02"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. So So it's the introduction paragraph that says we have these things already, but we also need a template selection.</p>
+<p id=6097 class="phone s06"><cite>Phillip_Long:</cite> Okay.</p>
+<p id=d160 class="phone s02"><cite>Dmitri_Zagidulin:</cite> That's the overall deal.</p>
+<p id=0931 class="phone s06"><cite>Phillip_Long:</cite> Got it. Thank you. Yeah.</p>
+<p id=217b class="phone s02"><cite>Dmitri_Zagidulin:</cite> But your comment makes perfect sense. Thank you so much. Cheers. Meeting ended after 01:01:49 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
