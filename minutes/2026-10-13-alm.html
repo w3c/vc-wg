@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 13 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>13 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Eric_Schuh, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Patrick_St-Louis, Patrick_St-Louis's_Presentation, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#39de">Timeline And Candidate Recommendation</a></li>
+<li><a href="#d65c">CR Blocker Issues And Timeline</a></li>
+<li><a href="#b633">Feature Completeness For CR</a></li>
+<li><a href="#671d">VCOM Support For BBS Features</a></li>
+<li><a href="#c736">Ephemeral Exchange Use Cases</a></li>
+<li><a href="#3a9e">Holder Service Conformance Issues</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=7ba9 class="phone s01"><cite>Patrick_St-Louis:</cite> We'll get started in a minute.</p>
+<p id=dced class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, I'm going to get started with the call. Everyone, uh, before we start, you'll have to excuse me. I got a bit of a bug over the weekend, so I might sneeze a little bit. Apologies in advance. Um so welcome to the VCOM call. um the VC API for life cycle management. This is a call during which we we discuss um managing a credential over a an API u and managing the credential across their life cycle between uh different services. Today is 13 of October 2026.</p>
+<p id=aac8 class="phone s01"><cite>Patrick_St-Louis:</cite> This is a W3C call. So all W3C policies and IPR contribution are into effect. This call is recorded and transcribed. So please be aware of this uh for the agenda today. Uh so before we get into the agenda, I will leave a minute for anyone who would like to do an introduction, a reintroduction or share a relevant community update with the group.</p>
+<p id=c930 class="phone s01"><cite>Patrick_St-Louis:</cite> Very good. In that case, uh so the topics for today uh I would like to talk a little bit about uh the holder service and the spec. Um I put testuite here but it's more about uh what is required from the holder service in the specification. If we could discuss this part uh the v the verifiable presentation request behavior. Uh so there was a couple back and forth in one of the PR and I want to make sure we have alignment on what is expected to meet a presentation request. Um going to leave some time to share some progress on the threat model if there's anything to share. After this we can get into PR reviews and issue assignments.</p>
+<p id=3045 class="phone s01"><cite>Patrick_St-Louis:</cite> Is there any other topic that anyone would like to cover? Yes, Manu.</p>
+</section>
+
+<section>
+<h3 id=39de>Timeline And Candidate Recommendation</h3>
+<p id=dc06 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, just uh real quick, I want to kind of touch base again on the timeline uh that we think we're on. Uh I know that there's threat model work and there's you know horizontal review happening and I know that you know there's work on test suite. Um but maybe understanding from both you uh Patrick and uh Coyote how many issues we think are between us and uh candidate wreck like really going into candidate wreck um and just the type of timeline we're trying to trying to hit. That's it.</p>
+<p id=11f6 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, this sounds good. Um, why Sounds good. Um why don't we start with this uh and maybe this can shape the rest of the discussions. Um did you want to start or do you want me to Why don't you go ahead then?</p>
+<p id=e45d class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I I I think the the main concern is that we've got a couple of things that are dragging out. Like, you know, we're I'm looking at kind of the the PR velocity and it's slowed down quite a bit over the past couple of months. There's still some things going in. Um I think the goal, which was aggressive, we knew in in April, was to try and get into candidate wreck by TAC. TAC is basically a week and a half away. Uh we're not going to hit that. And in fact, many of the VCWG specs are just not going to be able to do that.</p>
+<p id=ffff class="phone s02"><cite>Manu_Sporny:</cite> Um but if we get the horizontal reviews, my hope is that we can go very quickly into candidate wreck. And so the question is, you know, could we get there by November and December if we got the horizontal reviews or we just say, hey, we waited on horizontal reviews but they didn't come in. Um could we move uh to candidate wreck by November? And if folks know of a reason why we could not like there is a feature we haven't gotten clarity on or there is a fundamental disagreement that um we need to get past um I think it would be good to kind of highlight those um especially if we haven't done so in the issue tracker. So my hope is that we get the horizontal reviews maybe it's a month of cleanup and we get to get go into candidate wreck.</p>
+<p id=a9da class="phone s02"><cite>Manu_Sporny:</cite> Does anyone see a reason why that wouldn't</p>
+<p id=d9ef class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Um, so the first thing in there is horizontal review. So I know a while back there were forms submitted for horizontal review. Is there anything we need to do more on that state? Okay, because I believe these are tracked with issues. Um</p>
+<p id=8205 class="phone s02"><cite>Manu_Sporny:</cite> No, we're just waiting, I think, um, for for us to get, um, feedback from the groups.</p>
+<p id=3302 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, we're mostly waiting, Patrick. Uh there's one PR that I'm that's on my Q-tip ad to respond to one of them,…</p>
+<p id=7bd5 class="phone s03"><cite>Kayode_Ezike:</cite> but that's the only the only one, my understanding.</p>
+<p id=2fa8 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. And once these are back,…</p>
+<p id=3472 class="phone s01"><cite>Patrick_St-Louis:</cite> do we expect work to be created out of this or it's too soon to know maybe?</p>
+<p id=0cff class="phone s02"><cite>Manu_Sporny:</cite> Yeah, almost certainly they they respond back with comments in parts of the spec that they want us to change or…</p>
+<p id=9fb3 class="phone s02"><cite>Manu_Sporny:</cite> parts of the threat model that they want us to change.</p>
+<p id=0f6b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So that's the first part.</p>
+<p id=927f class="phone s01"><cite>Patrick_St-Louis:</cite> So we're waiting for the horizontal review. Um is this something we can do a followup on or we just need to wait until it's waited out? It it has been some time. Is it something worth pursuing to get some comments faster or…</p>
+<p id=68c0 class="phone s01"><cite>Patrick_St-Louis:</cite> we want to wait a little bit more?</p>
+<p id=bc2e class="phone s02"><cite>Manu_Sporny:</cite> Um let's see.</p>
+<p id=2270 class="phone s02"><cite>Manu_Sporny:</cite> So when did we raise our horizontal review? Um yeah,…</p>
+<p id=1db0 class="phone s01"><cite>Patrick_St-Louis:</cite> I would roughly I would say probably about two months ago.</p>
+<p id=5483 class="phone s03"><cite>Kayode_Ezike:</cite> That looks awesome.</p>
+<p id=a525 class="phone s02"><cite>Manu_Sporny:</cite> so it's usually three months in that is when you would expect folks to get back to you. Um yeah, so the tag review was raised on September 1st. So yeah, two months ago. Um and…</p>
+<p id=4819 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. When this is merged closed,…</p>
+<p id=7a41 class="phone s02"><cite>Manu_Sporny:</cite> Jeffrey Asin and Heather assigned themselves Jeffrey assigned himself a week ago onto this one.</p>
+<p id=b53e class="phone s01"><cite>Patrick_St-Louis:</cite> does that mean that the design and the privacy has have been completed?</p>
+<p id=8f4b class="phone s01"><cite>Patrick_St-Louis:</cite> Good. Okay.</p>
+<p id=9239 class="phone s02"><cite>Manu_Sporny:</cite> Yes. Um well, hold on.</p>
+<p id=52a1 class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, this is separate.</p>
+<p id=a2bd class="phone s03"><cite>Kayode_Ezike:</cite> This was an an issue where I created the wrong template for the issue in the working group.</p>
+<p id=ade4 class="phone s03"><cite>Kayode_Ezike:</cite> But so the ones</p>
+<p id=fc8b class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So, these these are the ones here.</p>
+<p id=c992 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. So I guess this the tracking issue for horizontal review hasn't been updated.</p>
+<p id=9e32 class="phone s02"><cite>Manu_Sporny:</cite> So we need to update it with the actual links. Um, yeah.</p>
+<p id=bd0f class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Okay. So, this one was open August 14. So, we got two here that were open August 14. Someone got assigned. Yes. uh remove pending September 10. Okay. Um so that's one uh action item. We we'll need to update this uh thread so we get the upto-ate state of all these reviews.</p>
+<p id=f2d1 class="phone s01"><cite>Patrick_St-Louis:</cite> Um once the reviews are in we'll need to see the content and address what needs to be addressed uh for the other part. Yes mu Mhm.</p>
+</section>
+
+<section>
+<h3 id=d65c>CR Blocker Issues And Timeline</h3>
+<p id=10000 class="phone s02"><cite>Manu_Sporny:</cite> Well, yeah. And to be clear, we've got internationalization feedback and Coyote, I think you've created two PRs. Uh there's one that hasn't been I don't think that there's a PR for. So, like some of this is in process. My my biggest concern here is like we have 60 open issues and typically that's a signal that we are not you know ready for CR. Um I know um you went in and and some of them are like a whole bunch of them on threat model right so those don't have to be resolved before we go into CR. or no coyote. You</p>
+<p id=0d4e class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm.</p>
+<p id=7852 class="phone s02"><cite>Manu_Sporny:</cite> went through a number of these and marked things as CR blockers and of those we have about 10 and I think we have PRs for almost all of them. So I'm I'm kind of looking to you Kyota and and Patrick to like just do you see anything or does anybody else see anything that would block us that we really need to address? Um,</p>
+<p id=6a22 class="phone s03"><cite>Kayode_Ezike:</cite> You're right. So, for the CR blockers, I recall that we had a PR open for each of those. I remember Eric made a comment about that some like a few weeks ago. I I'll have to go back again just to to confirm because sometimes we don't maybe that's part of the process issue. we don't um close the issues as we close the PRs associated with them. So I I'll have to go back in and…</p>
+<p id=741b class="phone s03"><cite>Kayode_Ezike:</cite> and make sure that this is still an accurate set of um V10 blockers.</p>
+<p id=4109 class="phone s01"><cite>Patrick_St-Louis:</cite> There's three these three ones.</p>
+<p id=4bef class="phone s01"><cite>Patrick_St-Louis:</cite> I'm hoping we can close them today. So, I did review these PRs.</p>
+<p id=9940 class="phone s01"><cite>Patrick_St-Louis:</cite> So, there's PRs open for those. Uh</p>
+<p id=4087 class="phone s03"><cite>Kayode_Ezike:</cite> Right. Um,…</p>
+<p id=e098 class="phone s03"><cite>Kayode_Ezike:</cite> okay. So, yeah, I see just from this list you're showing here, uh, Patrick, that all of these have either PR exists or they're horizontal review related. Um, so I think that kind of answers the question that I just posed earlier. Go ahead, Mon.</p>
+<p id=7886 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, I mean it the link I just pasted in the chat channel has the all the filtering. Uh so anything that's a CR blocker that that does not have a PR. Uh yeah and the only thing is the uh adnormative algorithm for query by example matching uh issue.</p>
+<p id=355d class="phone s02"><cite>Manu_Sporny:</cite> I'm just wondering if we've had a whole bunch of new issues created and I don't know if well I don't know if you or either one of you have been able to triage these um there is okay so that so…</p>
+<p id=b299 class="phone s01"><cite>Patrick_St-Louis:</cite> I believe there's a PR open for this.</p>
+<p id=4701 class="phone s02"><cite>Manu_Sporny:</cite> then we should be in fairly good shape then to to switch into candidate w like we're feature complete then Is that is that let me assert we are feature complete. Nobody wants to add any more features to VCOM 10. Is that a true statement?</p>
+<p id=4dbb class="phone s03"><cite>Kayode_Ezike:</cite> It's something</p>
+<p id=dc5e class="phone s01"><cite>Patrick_St-Louis:</cite> So that's a good question for for my point.</p>
+<p id=b654 class="phone s01"><cite>Patrick_St-Louis:</cite> uh you know I don't have a production use case for VCOM right I'm more than happy to make implementation uh I have been implementing some of these features and other work that I'm doing and I've not seen at least for now any crucial feature that that are missing um at least that don't have an issue here the only one probably that I raised was the one about um error reporting which I believe we have found a solution which was the last error encountered and that's where I stand for</p>
+<p id=317c class="phone s03"><cite>Kayode_Ezike:</cite> Yeah, I I think I we generally have um Dave's on the queue. Go ahead, Dave. Um yeah,…</p>
+<p id=271d class="phone s04"><cite>Dave_Longley:</cite> Oh, go ahead, Cody.</p>
+<p id=10001 class="phone s03"><cite>Kayode_Ezike:</cite> I was just going to say I also believe we have most of what we need. there there have been a number of issues raised in the last few weeks um that we haven't fully decided on but I remember we made so I guess my thinking generally for u when we're ready for CR was that we can still add things even after we get to that point so I I was thinking that even if there are things like for example what Demetri mentioned which also came to mind um when you asked that question about ephemeral exchanges I My assumption was that we would still be able to add features if time allows. It's just like we wouldn't be totally heartbroken if it doesn't make it in was my operating assumption. So I guess like that was my question is is that accurate or does does CR mean that you know all pencil down it's more of like a a pen thing and then a pencil thing? So this that's my question.</p>
+<p id=27ba class="phone s04"><cite>Dave_Longley:</cite> So, uh, quickly, if we do add more features after the first CR, you got to do a second CR. Um, so it's you, it's more process and more things to do, but you can do it. Uh my comment was going to be uh I'd like us to sort of provisionally say we're feature complete knowing that we we might have missed something that needs to that we that that we would all then agree needs to go in. But uh I'm not confident enough to say definitively that we're feature complete. just that I think we are probably we either are or we're very close to</p>
+<p id=bf55 class="phone s01"><cite>Patrick_St-Louis:</cite> Richard.</p>
+</section>
+
+<section>
+<h3 id=b633>Feature Completeness For CR</h3>
+<p id=4ae0 class="phone s05"><cite>Dmitri_Zagidulin:</cite> I wanted to say uh uh I would like to see uh at least uh two more features. The important one being issue 664 which is uh a way for an exchange to decline or terminate. Uh and the other one of course being the ephemeral exchange uh…</p>
+<p id=3612 class="phone s05"><cite>Dmitri_Zagidulin:</cite> which I understand there's uh some push back from Dave but at least 664</p>
+<p id=d840 class="phone s01"><cite>Patrick_St-Louis:</cite> Um, as for 664,…</p>
+<p id=7ed3 class="phone s01"><cite>Patrick_St-Louis:</cite> uh, as mentioned, this kind of aligns with also what I was thinking for someone to report a reason why they would like to cancel. Um question for the ephemeral um exchange. Does the spec currently prevent this from being made? U what I mean is is it just a matter of needing more information to do it or…</p>
+<p id=4af9 class="phone s05"><cite>Dmitri_Zagidulin:</cite> Yes. Yes.</p>
+<p id=7fb2 class="phone s01"><cite>Patrick_St-Louis:</cite> is there some text in there that makes it impossible?</p>
+<p id=bc3a class="phone s05"><cite>Dmitri_Zagidulin:</cite> Currently, it's the the authentication requirement that makes it impossible authentication or…</p>
+<p id=9c32 class="phone s01"><cite>Patrick_St-Louis:</cite> The what? Sorry.</p>
+<p id=60a4 class="phone s05"><cite>Dmitri_Zagidulin:</cite> authorization requirement.</p>
+<p id=7423 class="phone s01"><cite>Patrick_St-Louis:</cite> Is this a requirement?</p>
+<p id=e320 class="phone s05"><cite>Dmitri_Zagidulin:</cite> Let me double</p>
+<p id=486c class="phone s01"><cite>Patrick_St-Louis:</cite> I thought that authentication. Okay.</p>
+<p id=f2f3 class="phone s04"><cite>Dave_Longley:</cite> We might be conf we might be confusing different issues, but for 664, I just wanted to say like I'm supportive of that. It's really easy. We just need to add a done field. I thought we had a PR for that. No, I guess we don't. We I'm happy for us to put a CR label on that. Um, this is like extremely lowhanging fruit and it's useful. So, I we should probably say block CR, but it's an extremely easy thing to do. The other issue is different which is around the um the thing that Demetri is talking about uh…</p>
+<p id=db80 class="phone s01"><cite>Patrick_St-Louis:</cite> I</p>
+<p id=abd9 class="phone s04"><cite>Dave_Longley:</cite> where he is asserting we need some kind of change and there's discussion as to whether or not we need that change to meet the use to meet the use This</p>
+<p id=c457 class="phone s02"><cite>Manu_Sporny:</cite> Um, yeah, to go back to, you know, what does it mean to enter CR? Um, Cody, your read is correct. We can still add features and modify things once we're in CR. And what Dave said is also true. It means that you have to go through another candidate wreck. One thing that we can also say is like, hey, these are features that we expect to add. Uh, as long as we've got a rough shape for it, um, we can always do another CR. So, so the CR is just kind of like a we're signaling to the outside world like hey implementers, experimental implementers, start implementing now like it's in good enough shape where you should be able to implement the vast majority of it and give us your feedback as you implement it. That's what CR is about.</p>
+<p id=f169 class="phone s02"><cite>Manu_Sporny:</cite> Um, and I'm I'm, you know, hesitant to hold it off for another six months because, you know, there are plenty of other people with way more unstable APIs that are going out there and saying that their APIs are super stable and people can use them, right? So, um, I think we're at least at that uh stage. Um, so so this is not, you know, it's I I think, you know, building on what Dave said, we are more or less feature complete. That's all we need to be before we go into CR. We don't need to be 100% sure that we're never going to add another feature. Uh we can always do it if it if it turns out to be like a a really important thing uh to add. And then Dimmitri for your thing, you know, we can add</p>
+<p id=3072 class="phone s02"><cite>Manu_Sporny:</cite> It's weird to add an at risk marker for a feature that doesn't exist, but we can add an at risk marker for the use case and say we may try to figure out how to get this use case working in CR. And that would mean that we could go into CR not having resolved, you know, the the issue um as as an example. So, I'm not I'm not seeing or hearing any reason why we wouldn't be able to do that except for, you know, all the issues that have been raised since August 25th. We don't know if it's a 10 or a CR blocker. Um, some of them are, some of them aren't. So, we may need a triage, a retriage uh Coyote and Patrick just to make sure we're not missing something.</p>
+<p id=3f20 class="phone s02"><cite>Manu_Sporny:</cite> And and…</p>
+<p id=a48e class="phone s02"><cite>Manu_Sporny:</cite> to be clear, the horizontal review issues are CR blockers. Like we can't go into CR with internationalization issues open on the issue tracker.</p>
+<p id=cc6a class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. And we would need to resolve whatever the outcome of these is.</p>
+<p id=77b9 class="phone s01"><cite>Patrick_St-Louis:</cite> Um, another thing I can add is, you know, just personal experience I've, you know, implemented across different whether that's the VC playground or the le test suite like I've been able to implement more than one wallet with these as conformity. So, uh, it's definitely sound, it definitely works.</p>
+<p id=0a42 class="phone s01"><cite>Patrick_St-Louis:</cite> I know these are very simple, you know, uh, use of VCOM, uh, but they do what it's designed to do. Um, you know, as for more advanced and complex workflows, um, I trust that they are supported up to a certain extent. Um the one the one thing I can see as problematic is the uh BBS discussion. Um I think that field needs a little bit more uh well it's not something that I have myself made work with the VCOM. Um I'm not sure if the state of that is ready.</p>
+<p id=d7cf class="phone s01"><cite>Patrick_St-Louis:</cite> Um yeah so that I will leave it at this and we can definitely go back and classify the latest issues. Uh coyote</p>
+<p id=b890 class="phone s03"><cite>Kayode_Ezike:</cite> Uh yeah, really quickly on that, I think the latest on that is that we uh well, Eric raised a PR that was emerged around um exchange data which can which is which would be used within a VP to deliver things like that. um things like that, things like Zcap responses and so on and so forth, which addresses not only BS but also I think there was even uh the Zcap request issue from way back that Demetri wanted that it should also be able to to support. The only thing is that we need um we have an open issue in in the VC data model spec to add that context in the V21 sorry to add that field to the V21 context as well.</p>
+<p id=a830 class="phone s03"><cite>Kayode_Ezike:</cite> But at least for credentials that don't use VC21, they can add the context that we added in that PR that um Eric Ray.</p>
+<p id=8774 class="phone s03"><cite>Kayode_Ezike:</cite> So that's yeah, it could help to review that to see if that would support the use case that you're you're talking about.</p>
+<p id=7887 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So I think one thing uh we should discuss.</p>
+</section>
+
+<section>
+<h3 id=671d>VCOM Support For BBS Features</h3>
+<p id=7c48 class="phone s01"><cite>Patrick_St-Louis:</cite> So um looking at this issue it's a CR blocker. Uh this is the one I was mentioning about. Uh maybe we need to have a discussion if 714 which has been merged um answers all of these question that there is here.</p>
+<p id=eeb9 class="phone s01"><cite>Patrick_St-Louis:</cite> Um because while exchange detail is one thing uh what I'm questioning is whether um the VPR can support BBS features or maybe it just supports enough BBS features and you know even if it doesn't support all the cryptographic feature it comes it's okay. Um so we can why don't we have a short discussion about this right now? Um what do we feel is the state of VCOM supporting advanced BBS features like pseudonyms? Um I don't know Eric if you can answer. Does BR713 enable the use of pseudonyms?</p>
+<p id=9521 class="phone s01"><cite>Patrick_St-Louis:</cite> That would be the first question. Uh, and yeah, hello. Go ahead. Mhm.</p>
+<p id=dcaa class="phone s06"><cite>Eric_Schuh:</cite> Um, sorry.</p>
+<p id=779e class="phone s06"><cite>Eric_Schuh:</cite> Yeah. Yeah. Okay. Um, I believe it should. I I will admit myself I'm not the most famili familiar with BBS. Uh but the intent of 714 and the exchange data uh field that it added um was to effectively allow for you know anyone that wanted to use uh features like BBS or Zcaps to have a place to put what they needed effectively. Um so far in VCOM right that exchange data field does not specify uh it's a very generic object right so it's uh I suppose more work could probably be done to make more explicit um what would be included for some of these other you know extension features uh but right now it's it's basically just providing a location that someone could use um to enable you know uh BB</p>
+<p id=ba41 class="phone s06"><cite>Eric_Schuh:</cite> PBS or Zcaps or other, you know, uh, payment rail, uh, data that needs to be sent. Um, so I guess I I'm not sure that I can, you know, I don't know if that's enough for what you're thinking, um, or if there's a particular BBS feature that might be evaluated with that. Uh, but maybe Dave could, uh, fill that in for us, too.</p>
+<p id=54d8 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Mhm.</p>
+<p id=6dcb class="phone s01"><cite>Patrick_St-Louis:</cite> Uh Dave</p>
+<p id=d095 class="phone s04"><cite>Dave_Longley:</cite> Yeah. So, uh adding the exchange data feature gives us a place to put this where we think it will work. However, it is definitely underspecified for a specific case. And the I think the ideal outcome is that we would specify how to do how to provide a BBS commitment with a for a pseudonym for using pseudonyms and show how that's done. um and get at least two independent implementations of that.</p>
+<p id=2a4e class="phone s04"><cite>Dave_Longley:</cite> And I think that would be uh a good bare minimum to show um use of BBS credentials.</p>
+<p id=37a8 class="phone s01"><cite>Patrick_St-Louis:</cite> So two question I have.</p>
+<p id=95ff class="phone s01"><cite>Patrick_St-Louis:</cite> So the first one so the way I understand it this new uh key that's been defined we can see it maybe as a reserve key for now uh you know a sort of bucket where different form of object will be able to go in depending on what we want to use it for.</p>
+<p id=2b88 class="phone s01"><cite>Patrick_St-Louis:</cite> Now this leads me to a question uh well first of all is this exchange data key enough or will it need other external information in order to be useful in the context of a workflow exchange and my second question would be since this is now being defined in potentially the VC data model 2.1 does the VCOM need to further define this field for it specific use case.</p>
+<p id=a10f class="phone s01"><cite>Patrick_St-Louis:</cite> Yes, Dave. Okay.</p>
+<p id=b81b class="phone s04"><cite>Dave_Longley:</cite> So I I I do think VCOM would define uh the specific sub field underneath this field that would be used for uh obtaining a a a BB a a uh credential that's protected using BBS. So yeah, so we need we need we need to say more to say…</p>
+<p id=f5d4 class="phone s04"><cite>Dave_Longley:</cite> how to do that. All we've done so far is carved out a spot that allows uh essentially any JSON data to be expressed in that field.</p>
+<p id=cb53 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=d94a class="phone s04"><cite>Dave_Longley:</cite> But we needed to find the sub fields and actual use for BBS.</p>
+<p id=a71e class="phone s01"><cite>Patrick_St-Louis:</cite> So, I see a few things. So, it sounds like the first thing we need to do is maybe make a short list of features. So, pseudonym is one. Maybe we can uh you know selective disclosure probably another one um and have examples for these with a defined model so we can mark this as closed. Yes, Dave.</p>
+<p id=d1ce class="phone s04"><cite>Dave_Longley:</cite> uh that's fine but I would think that selective disclosure is already covered via a different mechanism. So this is primarily about having a place for the holder to provide information prior to being issued this VC.</p>
+<p id=8be9 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yes.</p>
+<p id=e250 class="phone s04"><cite>Dave_Longley:</cite> That's what's fundamentally missing for protocols and cryptography like this. There has to be a place for the holder to provide some information. Um so the things can be constructed.</p>
+<p id=0098 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So discuss. So in order to close this issue uh a an example and</p>
+<p id=8a85 class="phone s01"><cite>Patrick_St-Louis:</cite> defined needs to be define as the what was the name of the exchange data to cover a list of expected features. Uh mainly the use of pseudonyms exchange. Um so how many exchange data object do we think we'll need to define here? We talking about one, two, three.</p>
+<p id=e445 class="phone s01"><cite>Patrick_St-Louis:</cite> Um, I'm assuming it's going to be probably two. One for credential offer and one for presentation request. Is that a fair assumption?</p>
+<p id=8822 class="phone s04"><cite>Dave_Longley:</cite> uh I don't know that we need either of those actually. I think the bare minimum that we need for to enable BBS is to define some field where the holder provides a cryptographic commitment during issuance. after that's happened and they're given the credential um I think we already have all the other primitives in place for someone to request a BBS credential. So uh when doing so that to construct a pseudonym all you need are the existing credential you is the existing credential you have the VPR with an appropriate query that says what the other party is looking for. We already have that for select disclosure and then you need to define what the context will be that you're going to bind your pseudonym to which is the domain field in a VPR or or for the minimum use case that's what it would be. So I I think we already have those other pieces.</p>
+<p id=81ac class="phone s04"><cite>Dave_Longley:</cite> And so the the main gap at least for BBS is being able having the holder be able to provide this initial cryptographic commitment…</p>
+<p id=97e9 class="phone s04"><cite>Dave_Longley:</cite> which is something that has to be used to construct the credential in the first place during issuance.</p>
+<p id=4a69 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Okay.</p>
+<p id=9efa class="phone s01"><cite>Patrick_St-Louis:</cite> So this is Yeah, this reminds me early on when I was trying to do an on credits with this like there was this step missing that the holder needs to give a little something back to the issuer so it can be baked in the signature. Okay, so we just need to figure out how to enable this step of the holder making this commitment during the offer.</p>
+<p id=6116 class="phone s01"><cite>Patrick_St-Louis:</cite> And this step will be done by putting this commitment and this exchange data. Correct? Okay.</p>
+<p id=09bd class="phone s04"><cite>Dave_Longley:</cite> Yes, that's right.</p>
+<p id=4c60 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. And if we solve this, meaning this is mostly about the issuance, the verification part gets carried mostly by the crypto suite text and how to handle the crypto suite. Uh this issuance part is where there's an actual exchange needed. So that's we need to define. Okay. Kyote.</p>
+<p id=1c6b class="phone s04"><cite>Dave_Longley:</cite> That's All right.</p>
+<p id=60f8 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Uhoh.</p>
+<p id=920c class="phone s03"><cite>Kayode_Ezike:</cite> Yeah. So I just recall that there were other use cases that were mentioned for this. I wonder if that's something that we would add later. For example, the ZCAP um use case and there was some other use cases where folks could ask for um different types of like addendum data for example something about payments and basically other types of data that can be requested. Do we just expect that it's something that generally is understood between the two parties or…</p>
+<p id=3eee class="phone s01"><cite>Patrick_St-Louis:</cite> Go ahead.</p>
+<p id=2928 class="phone s03"><cite>Kayode_Ezike:</cite> do we expect that we would actually have those be defined explicitly uh inside of exchange data?</p>
+<p id=b96f class="phone s04"><cite>Dave_Longley:</cite> So if if we had more time, I think we would define more things. But uh for things like Zcaps, for example, Zcaps are still making their way through the incubation spec process. So I don't think that we could even say anything in this iteration. However, the the way that it would work is a VPR would request information uh and the information that would be requested isn't necessarily for isn't necessarily uh a VC but other types of data. And so VPR, which is a verifiable presentation request, can request anything today. Um and we can add more types of queries and so on that could make it more explicit what you're asking for. This is future work.</p>
+<p id=7773 class="phone s04"><cite>Dave_Longley:</cite> And then in the response the exchange data can carry that information that is not a verifiable credential. So a verifiable presentation today um can carry verifiable credentials in the verifiable credential field and we the exchange data allows other arbitrary data to be included there. That's all still covered by any signature that might optionally be provided on the VP. So we're putting all the primitives in place to do these things. But I don't think for VCOM 1.0 know we would say anything about the query language for asking for Zcaps for example…</p>
+<p id=ea32 class="phone s04"><cite>Dave_Longley:</cite> but we would have the place for that to happen and it it would either be a VCOM 1.1 thing or or some external spec could uh you make use of the primitives that we have made available in 10 to specify those</p>
+<p id=7382 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So,…</p>
+<p id=649e class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. So, I think to close this, we need to add a an example. uh I guess we want to make it a normative example for a holder to make a commitment specifically for uh the published BBS crypto suites.</p>
+<p id=10002 class="phone s01"><cite>Patrick_St-Louis:</cite> Um and then you know we'll see what happen after maybe that model is going to be used for other things but for now at least as we can we can use VCOM to issue credential with the BBS signature um we'll be happy. Okay I will comment this and that should be the next logical step in order to close this issue. Um any other comments here? Okay. Um I want to touch on uh the ephemeral exchange uh that Zimmetry you think you would really like to see. I'd like to understand it a little bit more. Uh maybe I want to loop back in on what you mentioned about uh the requirement for authentication.</p>
+<p id=093f class="phone s01"><cite>Patrick_St-Louis:</cite> uh that is preventing this from happening at which stage it happens and uh a bit more of the use case if that's okay.</p>
+<p id=4a9a class="phone s05"><cite>Dmitri_Zagidulin:</cite> Sure. And uh I uh added a retraction in chat uh that uh no uh currently spec does not require um authentication or authorization on on the the uh endpoints in question.</p>
+<p id=e84f class="phone s05"><cite>Dmitri_Zagidulin:</cite> So the use case is this.</p>
+</section>
+
+<section>
+<h3 id=c736>Ephemeral Exchange Use Cases</h3>
+<p id=2c51 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, go ahead.</p>
+<p id=e332 class="phone s05"><cite>Dmitri_Zagidulin:</cite> How do single page JavaScript application client only ones that don't have a backend API? How do they request credentials from a wallet?</p>
+<p id=f186 class="phone s05"><cite>Dmitri_Zagidulin:</cite> That's the core use case.</p>
+<p id=f003 class="phone s01"><cite>Patrick_St-Louis:</cite> Well, uh,…</p>
+<p id=cce4 class="phone s01"><cite>Patrick_St-Louis:</cite> I I don't see why you couldn't have, and that's actually what I'm looking at for some of the tests, why we couldn't have a static presentation request, right, in document. um you know it's the same exchange that's being served over and…</p>
+<p id=760c class="phone s01"><cite>Patrick_St-Louis:</cite> over again. No different challenge or anything, right? Because that's the goal here or um Okay.</p>
+<p id=e715 class="phone s05"><cite>Dmitri_Zagidulin:</cite> Well, no, we would still we would still need a challenge. You would still need to uh you would still the credential would still need to be delivered to a particular web page,… Dmitri Zagidulin:</p>
+<p id=9d9e class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=2068 class="phone s01"><cite>Patrick_St-Louis:</cite> Mhm. Mhm.</p>
+<p id=5462 class="phone s05"><cite>Dmitri_Zagidulin:</cite> but there's no way for uh the wallet to be able to send it. For example, you you can do web page to web wallet, right? Via um via Chappie and the offen io mediator. You can do that, but you can't request from a uh a web page, a backendless web page. You can't request from a mobile wallet or a desktop wallet. And that's the that's the use case that I was trying to solve and have solved with this notion of an ephemeral exchange.</p>
+<p id=63c5 class="phone s05"><cite>Dmitri_Zagidulin:</cite> The idea being the web page creates a limited time self um uh self-expiring exchange at at a random URL right at an unguessable URL presents it in the VP request and then the the wallet or the the answering party posts the</p>
+<p id=54c0 class="phone s05"><cite>Dmitri_Zagidulin:</cite> again using the vcom exchange sort of protocol posts the answer to that to that exchange endpoint and…</p>
+<p id=0938 class="phone s05"><cite>Dmitri_Zagidulin:</cite> the web page pulls it periodically. So the way what it looks like and I have demos of this is you click request uh it shows a QR code and a little polling spinner and waits for your wallet to respond. Yes.</p>
+<p id=90ca class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. I'm not seeing…</p>
+<p id=2bf2 class="phone s01"><cite>Patrick_St-Louis:</cite> what how the spec prevents that. That sounds like just a lot of uh web app configuration side. Uh but it would still use just VCOM as defined in the spec like um I guess that's my question like do we absolutely need to add text in the spec to enable this?</p>
+<p id=2c7a class="phone s01"><cite>Patrick_St-Louis:</cite> Like I understand we could add text and examples on how to do it, but with looking at the spec right now, could you implement what you want? Um given that yes,…</p>
+<p id=3c70 class="phone s05"><cite>Dmitri_Zagidulin:</cite> Let me get back to you on that by next call.</p>
+<p id=10003 class="phone s01"><cite>Patrick_St-Louis:</cite> you will need to code a little application that does specific things. Um but does it need to like is the spec really preventing it? I guess is is my question. Okay. Okay. Yeah, because I'm interested. I I you know, I've read some of of the use case. Um, yeah. My my question is just like is there something we'll need to add that's going to break the spec to enable this or that's going to you know conflict with something in the spec</p>
+<p id=03d5 class="phone s01"><cite>Patrick_St-Louis:</cite> or uh like we said, is it like maybe just another example we could have of of a use case? Like is it is it just another use case of VCOM rather than a feature if I I yeah, I think that's that's how I would like to put it. Okay, so let's get back to discussing this on the next call. Um so we're running low on time. I was hoping we'd get to some uh PR review. I will hold this for the next time. Um well actually uh it's a very quick question. So in the conformance uh so it says that a holder service needs to provide these interface like get exchange protocols.</p>
+</section>
+
+<section>
+<h3 id=3a9e>Holder Service Conformance Issues</h3>
+<p id=0c91 class="phone s01"><cite>Patrick_St-Louis:</cite> Um I am unsure why the holder needs to provide these these interface because in in in this like the holder is calling the issuer verifier. So u maybe it's it's a phrasing concern. Uh Dave.</p>
+<p id=98e0 class="phone s04"><cite>Dave_Longley:</cite> It seems like we need a conformance class for exchange client. Like any one of these parties might be operating uh an exchange client talking to any coordinator. And so it seems like we're either we're missing that or…</p>
+<p id=aa97 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. But is it clear to say that the holder Yeah.</p>
+<p id=03ca class="phone s04"><cite>Dave_Longley:</cite> we've conflated it in some way with the holder</p>
+<p id=43cf class="phone s01"><cite>Patrick_St-Louis:</cite> needs to provide a service client implement like the holder is not expected to provide these interface like it's going to be interacting.</p>
+<p id=d53a class="phone s04"><cite>Dave_Longley:</cite> Yeah, I think I think we're con Yeah, I think we're confusing things…</p>
+<p id=f200 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yes.</p>
+<p id=9abf class="phone s04"><cite>Dave_Longley:</cite> because it it's very well, you know, it's likely to be someone playing the role of the holder, not the holder coordinator necessarily, but a holder who's talking to a verifier coordinator or a workflow service or whatever. But that's I think we're conflating things. We need to let's separate things out. So we have an exchange client which any of the parties playing any of the roles could in incorporate that software in into their system. And that's different from Yeah,…</p>
+<p id=9a0f class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. But can we just rephrase this to say a conforming holder service implementation must provide the client to the interface described</p>
+<p id=3fed class="phone s04"><cite>Dave_Longley:</cite> I think you get what I'm</p>
+<p id=42e7 class="phone s04"><cite>Dave_Longley:</cite> uh a holder service has to provide the services that are for holders. This is like the create presentation service and…</p>
+<p id=db4d class="phone s04"><cite>Dave_Longley:</cite> whatever, right? It doesn't have to do anything else. Is that incorrect?</p>
+<p id=796b class="phone s01"><cite>Patrick_St-Louis:</cite> I Well,…</p>
+<p id=6108 class="phone s01"><cite>Patrick_St-Louis:</cite> yeah, I'm I'm with you.</p>
+<p id=672d class="phone s01"><cite>Patrick_St-Louis:</cite> I'm 100% with you. Um, it's just like I'm looking at this trying to make a test case with this. Mhm.</p>
+<p id=dc41 class="phone s04"><cite>Dave_Longley:</cite> A holder service doesn't have to participate in an exchange. change at all. It's it's the thing that's providing the services, the routes for doing create, presentation. But a exchange client absolutely needs to be able to participate in an exchange. That's what it's for. So if really this should say a conforming exchange client must provide those interfaces. It has to be able to do those things. the holder service implementation must provide the uh creating a presentation like I think we have the two things mixed into one paragraph and…</p>
+<p id=2dc6 class="phone s04"><cite>Dave_Longley:</cite> we have one conformance class when it's really should be two different paragraphs and…</p>
+<p id=4561 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=db38 class="phone s04"><cite>Dave_Longley:</cite> a separate exchange client um and maybe that's what a service client implementation is at the end maybe it should be down there it's unclear to Yeah,…</p>
+<p id=1404 class="phone s01"><cite>Patrick_St-Louis:</cite> Yes. Yeah. This is uh you know seems to be just a general catch all at the end here. Um, okay.</p>
+<p id=a9cf class="phone s04"><cite>Dave_Longley:</cite> I mean that that's a conforming service service client implementation for a workflow service would be what an exchange client is. And so…</p>
+<p id=fcd2 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah, it it's just Yeah,…</p>
+<p id=1923 class="phone s04"><cite>Dave_Longley:</cite> if it's if that's the catchall, we just need to rework that paragraph about the holder service implementation because it's conflating</p>
+<p id=aa4e class="phone s01"><cite>Patrick_St-Louis:</cite> I think it's the holder because the other one they make 100% sense.</p>
+<p id=d979 class="phone s01"><cite>Patrick_St-Louis:</cite> uh the holder, you know, it just doesn't provide an interface like well unless we're talking about like a holder to holder like I don't know if that's the intent like a two wallet wanting to interact with each other.</p>
+<p id=bda5 class="phone s01"><cite>Patrick_St-Louis:</cite> Was that the intent here?</p>
+<p id=af0a class="phone s04"><cite>Dave_Longley:</cite> Yeah, but…</p>
+<p id=612e class="phone s04"><cite>Dave_Longley:</cite> if that happens, you're just one end is a service at least one end is a service client implementation.</p>
+<p id=b5d4 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Okay.</p>
+<p id=4988 class="phone s04"><cite>Dave_Longley:</cite> So there might be useful text in that paragraph that applies to uh service client implementations that are for a workflow service. So, I don't know…</p>
+<p id=726d class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, I'll think about it.</p>
+<p id=9447 class="phone s04"><cite>Dave_Longley:</cite> if we want to lose the text, but um</p>
+<p id=5b11 class="phone s01"><cite>Patrick_St-Louis:</cite> Any other comments for this? Uh, okay. Very good. Just wanted to make sure. Um, any discussion for threat model?</p>
+<p id=83a9 class="phone s01"><cite>Patrick_St-Louis:</cite> I would like to try to at least close one PR. We have 10 minutes left. Uh are we okay to defer threat model discussion to next week?</p>
+<p id=42d3 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Yep.</p>
+<p id=2186 class="phone s07"><cite>Joe_Andrieu:</cite> I I am happy to defer that.</p>
+<p id=eb91 class="phone s07"><cite>Joe_Andrieu:</cite> Um I was trying to get my mute off. Uh I just wanted to add to the service client conversation. Please let's not use that term in in the spec.</p>
+<p id=2225 class="phone s07"><cite>Joe_Andrieu:</cite> Uh because service client is going to cause whiplash just semantically.</p>
+<p id=956e class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Well,…</p>
+<p id=c777 class="phone s01"><cite>Patrick_St-Louis:</cite> we already have here um Okay.</p>
+<p id=fb26 class="phone s07"><cite>Joe_Andrieu:</cite> I think it's a workflow client.</p>
+<p id=6c5c class="phone s04"><cite>Dave_Longley:</cite> Well, there are clients for all of the other services as well. So, we'd have to figure it is true that there is a workflow client. So, should we enumerate them? Um, maybe that's what we want to do so that there's a client for each side. I don't know what we want to do. Uh, but we I I agree we need new language here to resolve both…</p>
+<p id=7593 class="phone s04"><cite>Dave_Longley:</cite> what Patrick brought up and ideally to avoid the service client confusion.</p>
+<p id=4692 class="phone s07"><cite>Joe_Andrieu:</cite> Cool. Yeah, we don't have to solve it today,…</p>
+<p id=9c26 class="phone s01"><cite>Patrick_St-Louis:</cite> Yeah. Yeah.</p>
+<p id=9831 class="phone s07"><cite>Joe_Andrieu:</cite> but we should noodle on it. It's a bike s******* problem.</p>
+<p id=5c18 class="phone s01"><cite>Patrick_St-Louis:</cite> And let's not make this a bigger issue than it needs to be. I think it's just a small wording thing. Um I think we all understand what the holder is expected to do. Uh okay. So, in that case, I'd like to have a look at some of the PRs. Yes, Coyote.</p>
+<p id=65ac class="phone s03"><cite>Kayode_Ezike:</cite> Yeah. I'm wondering if for the PRs if we can prioritize the one that just landed now. Uh hold on second. Uh this would be because this affects this is an issue that's been lingering with LF versus CRLF. Um this is seven issue rather PR 739. So the last few whenever I would have time to to do things I was always wrangling with a little bit of this issue still. Um so I just decided to just clone a new copy of the PR sorry of the repo and I found that the index html was still um automatically defaulting up to CRLF. And so I think it was just one of the ones that maybe we just forgot to reormalize or something. So I put that here and we can just merge this in.</p>
+<p id=02a1 class="phone s01"><cite>Patrick_St-Louis:</cite> No matter.</p>
+<p id=0482 class="phone s02"><cite>Manu_Sporny:</cite> Coyote on on the call as of 15 minutes ago, I think I fixed this on Maine. Um hopefully. So I don't know when you when you pull this, but it should be fixed on main now.</p>
+<p id=4ea4 class="phone s03"><cite>Kayode_Ezike:</cite> Okay. Well,…</p>
+<p id=a7be class="phone s02"><cite>Manu_Sporny:</cite> Maybe we've we've we have started seeing weird things like this happening in other repos where the normalization stuff is not sticking for whatever reason. I haven't figured out why yet, but GitHubs continues to play around with CRLF things. Um, that's it.</p>
+<p id=4ff2 class="phone s04"><cite>Dave_Longley:</cite> I was separately wondering if we have a some kind of default switched backwards where so my understanding is this keeps coming up because if a C cr C CRLF finds its which is a Windows end of line character finds its way into a file it then uh GitHub or or some something in the stack ends up uh trying to convert everything o over those end of lines or it accepts them or it some confusion there. Can is do we have some setting that's flipped that doesn't force it to go the other direction? So if it finds a mixed setting, it forces it to just go to line feed. We want it to go to line feed period everywhere all the time. And so if it's detecting these</p>
+<p id=789a class="phone s03"><cite>Kayode_Ezike:</cite> change. Okay.</p>
+<p id=5ada class="phone s04"><cite>Dave_Longley:</cite> mixed things or or someone has submitted a suggestion from a Windows machine through the GitHub editor. Can we make it make sure it's forcing everything to go to line feed? I don't think we ever generally I don't think we ever have any files that have to have Windows end of line endings that add the extra carriage return.</p>
+<p id=734a class="phone s01"><cite>Patrick_St-Louis:</cite> I know. Sorry.</p>
+<p id=d5cc class="phone s04"><cite>Dave_Longley:</cite> So, can we just force everything to line feed and does that help solve this</p>
+<p id=409b class="phone s02"><cite>Manu_Sporny:</cite> I will note that the git attributes in this repository are different from many of the other ones. Uh we do exactly what you say in the other repositories, Dave, but for whatever reason, this repo was not set up in that way. And I don't know why. Uh so so to be clear, right, this is the only thing that that thing in t chat is the only thing that is in the other repos for get attributes. Uh, for whatever reason, this get attributes has a whole bunch of like fancy stuff and text is set to auto, which might be the thing that's triggering this lonely. As you mentioned, it's not forcing line feeds for text.</p>
+<p id=726b class="phone s01"><cite>Patrick_St-Louis:</cite> Where is this setting located?</p>
+<p id=b33b class="phone s02"><cite>Manu_Sporny:</cite> Get attributes. It's well, let's see. So, who who who added this file?</p>
+<p id=d163 class="phone s01"><cite>Patrick_St-Louis:</cite> This one here.</p>
+<p id=5a2a class="phone s02"><cite>Manu_Sporny:</cite> Um, do you mind…</p>
+<p id=86b4 class="phone s03"><cite>Kayode_Ezike:</cite> So, yeah,…</p>
+<p id=69cb class="phone s03"><cite>Kayode_Ezike:</cite> this was me. So, this was added before we even had the unified uh recommendation from Ted that was posted. So, that's probably the reason why it's different. Um, but I believe Oh, the first file. You think that's the issue? Uh, yeah,…</p>
+<p id=de2a class="phone s02"><cite>Manu_Sporny:</cite> if I just overwrite it? Um, Coyote, because that I think this is the repo…</p>
+<p id=e784 class="phone s03"><cite>Kayode_Ezike:</cite> sure. Yeah. The reason… Manu Sporny:</p>
+<p id=7867 class="phone s02"><cite>Manu_Sporny:</cite> where it keeps happening. Um, and I'll just It was there a specific reason you had it broken out in the other ways that you did or was it just like example off the internet?</p>
+<p id=f2eb class="phone s03"><cite>Kayode_Ezike:</cite> why I laid out everything the way that I did here,…</p>
+<p id=45d7 class="phone s02"><cite>Manu_Sporny:</cite> Yeah. Well,…</p>
+<p id=b6a3 class="phone s03"><cite>Kayode_Ezike:</cite> um, it yeah, it was an example from the internet just to make sure. So, basically what I did, it wasn't just copied straight from the internet.</p>
+<p id=537d class="phone s03"><cite>Kayode_Ezike:</cite> was basically I went through all the files that we I know that we have all the extensions I know we have in our in this repo and I applied it for that. So that's why we have all the text and dison etc just to make sure that we we're covering all the ones that are relevant for for VCOM specifically. But if that's excessive then right Perfect.</p>
+<p id=e559 class="phone s02"><cite>Manu_Sporny:</cite> it's the auto that I think is doing a weird thing. So, I I went ahead and just flipped it to what's on the other repos because it seems to be working there. And if it continues to not work here, we can always go back to what was there before.</p>
+<p id=97e6 class="phone s03"><cite>Kayode_Ezike:</cite> Thank you.</p>
+<p id=55e9 class="phone s01"><cite>Patrick_St-Louis:</cite> Let's let's leave it.</p>
+<p id=71bf class="phone s03"><cite>Kayode_Ezike:</cite> So I guess we can close this PR then. Uh Patrick need anymore? Well uh I guess the index still might need to be Well, you fix the index already, right? Okay, great.</p>
+<p id=c9f6 class="phone s02"><cite>Manu_Sporny:</cite> Yeah, that's right. It's it's fixed on</p>
+<p id=da63 class="phone s01"><cite>Patrick_St-Louis:</cite> We'll see next week we can see if the issue is persisting. Okay. Um, Well, uh, yeah, I'd like to merge. There's four minutes left. Uh, I'd like to merge this one. Uh, if we're okay has been open for some time. It's some text about the index allocator. Um, I know I see that Dave has had a look and I know we were the ones kind of going back and forth on this.</p>
+<p id=c0c1 class="phone s01"><cite>Patrick_St-Louis:</cite> So I will take uh your word that this is uh sufficient. Um it's not something that I've used. I've seen it in a couple of acup plugin for status list. Um so I will trust that this uh informative text is sufficient. Is there any objection to merging this PR? Yes, there is. I will have to rebase this. So, I will rebase this and merge it. Um, unfortunately, I think we're just running out of time. We'll we'll leave these two for the next time. They kind of go together.</p>
+<p id=c2a0 class="phone s01"><cite>Patrick_St-Louis:</cite> Um one small thing I wanted to discuss with you Dave was um from my observation it seems like a oid4 client um only considers like if I have this as my VPR and the credential has this since it contains at least one of these option it will accept it. Uh I just want to confirm that the behavior is that if we include both they both need to be included.</p>
+<p id=b0ec class="phone s01"><cite>Patrick_St-Louis:</cite> Um okay I will investigate some more.</p>
+<p id=65cf class="phone s04"><cite>Dave_Longley:</cite> I understand the question…</p>
+<p id=bc76 class="phone s04"><cite>Dave_Longley:</cite> but don't have that uh in my active memory.</p>
+<p id=00fb class="phone s01"><cite>Patrick_St-Louis:</cite> We can discuss a little bit more on the next call.</p>
+<p id=d38c class="phone s01"><cite>Patrick_St-Louis:</cite> Um so I will have a look at the VBS um commitment issue. Uh I will look at the VBS spec and try to come up with a small uh exchange data that could uh enable this and then it would be great if we could have one demonstration of it. Does the VC playground have uh issuance with BBS over VCOM?</p>
+<p id=d85f class="phone s04"><cite>Dave_Longley:</cite> Yes, but not with pseudonyms. So, we don't have what we're looking for.</p>
+<p id=5449 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay. Okay. Because that's optional. Okay. Um Okay. So, I will look into this uh and next week we can keep going.</p>
+<p id=09a7 class="phone s01"><cite>Patrick_St-Louis:</cite> I think once we merge these two PR and we address the babys issue, we'll see a lot of the CR issues done. In the meantime, Kyote and I can go and look at the last month or two months of PR and uh label them and we can follow up on the epal exchange discussion next week to see if it's uh currently possible or not. Um on that note, I will finish a meeting. Uh thanks a lot for attending a lot of uh uh engaging discussions today and I'll see you next week. Thank you. Meeting ended after 01:00:44 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Teleconference &ndash; 14 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+VCWG Teleconference</h1>
+<h2>14 October 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20261014T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/10/14-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony, brent, Carolynn, dlongley, dmitriz, hsano, JennieM, JoeAndrieu, KevinDean, kezike, manu, michaelshea, pdl-ASU, TallTed, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>dlongley</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#a97f">TPAC Agenda</a></li>
+<li><a href="#b13a">Task Force Deeper Dive</a>
+<ol>
+<li><a href="#81bd">w3c/<wbr>vc-recognized-entities#140</a></li>
+<li><a href="#aacf">w3c/<wbr>vc-data-model#1649</a></li>
+<li><a href="#6d94">w3c/<wbr>vcalm#686</a></li>
+<li><a href="#e85a">w3c/<wbr>vc-data-model#1653 (VC Render Method TF)</a></li>
+<li><a href="#6bbc">Render Method</a></li>
+<li><a href="#5ba8">w3c/<wbr>vc-data-model#1653</a></li>
+<li><a href="#38b0">w3c/<wbr>vc-confidence-method#41</a></li>
+<li><a href="#0f7f">w3c/<wbr>vc-recognized-entities#138</a></li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=4c09 class="phone s01"><cite>brent:</cite> Welcome everybody, this is the VCWG, we are meeting under the patent policy and all the policies of the W3C. If you're not a member of the WG -- I don't see anyone I don't recognize though. If anyone wants to introduce themselves, please say hello.</p>
+<p id=5b67 class="phone s01"><cite>brent:</cite> We're going to move forward.</p>
+<p id=85dc class="phone s01"><cite>brent:</cite> Time change is upon us. Some of change the clocks biannually -- in order to attempt to alleviate the pain where the US and the Europe switch at different times and others around the world have already switched -- we will include a time and date link in the agenda.</p>
+<p id=7102 class="phone s01"><cite>brent:</cite> In theory, it should give you the time and date in your local timezone.</p>
+<p id=9a98 class=irc><cite>&lt;JoeAndrieu&gt;</cite> fwiw, the US changes time Nov 1</p>
+<p id=253f class="phone s01"><cite>brent:</cite> The official time for this meeting is set to the US Eastern Time, which will become Eastern Standard Time.</p>
+<p id=97cf class="phone s01"><cite>brent:</cite> The funkiest week for clocks will be at TPAC.</p>
+<p id=63ae class="phone s01"><cite>brent:</cite> FYI, things are going to be strange, we apologize.</p>
+<p id=8ad9 class="phone s02"><cite>JoeAndrieu:</cite> I think I might have started an unfortunate rumor with when the time switch happens. It's Nov 1 in the US.</p>
+<p id=e31f class="phone s01"><cite>brent:</cite> Yes, it's a week earlier in Europe though.</p>
+<p id=4b1e class=irc><cite>&lt;michaelshea&gt;</cite> depends on the time of year</p>
+<p id=51fb class="phone s02"><cite>JoeAndrieu:</cite> Ah, thank you.</p>
+</section>
+
+<section>
+<h3 id=a97f>TPAC Agenda</h3>
+<p id=0be2 class=irc><cite>&lt;brent&gt;</cite> <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/</a></p>
+<p id=05d1 class="phone s01"><cite>brent:</cite> We have a draft agenda being built for TPAC.</p>
+<p id=cb10 class="phone s01"><cite>brent:</cite> Let us know if you don't have access to it, you should.</p>
+<p id=8ff3 class="phone s01"><cite>brent:</cite> If your task force is slotted in this task force when no one from your task force can lead, let us know, that would be a problem. We think we have arranged things so it will work out for everyone but would love to hear for sure if not.</p>
+<p id=b678 class="phone s01"><cite>brent:</cite> At this point this is the plan; we're focusing as much time as possible on the task forces.</p>
+<p id=5b2a class="phone s01"><cite>brent:</cite> Giving the task forces the remit to arrange their given time however they see fit and the chairs will be there to support and run queue and run admin stuff.</p>
+<p id=19a3 class="phone s01"><cite>brent:</cite> The task force time slots are your time.</p>
+<p id=0bd3 class="phone s01"><cite>brent:</cite> Questions, comments, concerns?</p>
+<p id=2573 class="phone s01"><cite>brent:</cite> I do not anticipate anything drastically changing the agenda at this point. Minor adjustments can still be made up until we're literally in the meeting.</p>
+<p id=7c78 class=irc><cite>&lt;brent&gt;</cite> <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit?slide=id.h13f76a469fd9a353_0_5#slide=id.h13f76a469fd9a353_0_5">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/<wbr>edit?slide=id.h13f76a469fd9a353_0_5#slide=id.h13f76a469fd9a353_0_5</a></p>
+<p id=59a0 class="phone s01"><cite>brent:</cite> If you are unable to join us in person you should be able to join us remotely.</p>
+<p id=ec49 class="phone s01"><cite>brent:</cite> If you have any trouble getting on remotely, let us know. We will be in this IRC channel.</p>
+<p id=9d04 class="phone s01"><cite>brent:</cite> Feel free to join us here and let us know you can't join if you have trouble.</p>
+<p id=2370 class="phone s01"><cite>brent:</cite> I'm pretty sure it's not this same zoom channel, but a special one for TPAC.</p>
+<p id=0aad class="phone s01"><cite>brent:</cite> We would love to have you even if you can't be there in person.</p>
+<p id=99e2 class="phone s01"><cite>brent:</cite> It will be a good couple of days.</p>
+<p id=c664 class="phone s01"><cite>brent:</cite> The final topic for today -- we usually do a round table for task forces, but we want to do a deeper dive today.</p>
+<p id=9c91 class="phone s01"><cite>brent:</cite> Please jump on the queue or we can go in order if preferred, but what I'd like from each task force is not just a rough status of how things are going but give this group a PR or an issue to discuss. What should we know about?</p>
+<p id=bbcf class="phone s01"><cite>brent:</cite> What controversies are you facing, let's get a bit more deeply into it.</p>
+</section>
+
+<section>
+<h3 id=b13a>Task Force Deeper Dive</h3>
+<p id=77cc class="phone s01"><cite>brent:</cite> This is the topic for the rest of the meeting. Let's look at PRs and issues for the task forces -- because not everyone can go to every task force.</p>
+<p id=245f class="phone s03"><cite>Carolynn:</cite> So, we've run into a problem in the DPP vocab work. Because we're trying to create an example for the Recognized Entities recommendation and we're run into a problem -- but maybe that RE task force has discussed it.</p>
+<p id=6f57 class="phone s03"><cite>Carolynn:</cite> The question to them is -- how do you limit the scope of a Recognized Entity VC / Entity?</p>
+<p id=85cb class="phone s03"><cite>Carolynn:</cite> The spec doesn't say how to limit the scope it just says how to list recognized actions.</p>
+<p id=0f0e class="phone s03"><cite>Carolynn:</cite> Where is the scope defined? Is the scope defined in the credential itself or is it defined elsewhere? Can someone from the RE task force answer me, have I been clear?</p>
+<p id=6282 class="phone s04"><cite>manu:</cite> Yes, you have been very clear. We just so happen to have been talking about that issue over the past couple of weeks. There are 4-5 issues covering this item.</p>
+<p id=ec86 class="phone s01"><cite>brent:</cite> Whichever one would be most useful for this conversation to end up in.</p>
+<p id=3a20 class="phone s04"><cite>manu:</cite> All of them would enjoy that.</p>
+<h4 id=81bd><a href="https://github.com/w3c/vc-recognized-entities/issues/140">w3c/<wbr>vc-recognized-entities#140</a></h4>
+<p id=28b5 class="phone s04"><cite>manu:</cite> Here's issue 140 -- it's an existential question about what we're actually doing. Good news is that we made some good forward progress on this yesterday. We're getting more interest in the RE spec from different market verticals.</p>
+<p id=5928 class="phone s04"><cite>manu:</cite> Initially it was education and vital records and UNTP and supply chain stuff, GS1, brought in use cases. Now we also have DPP and people from Switzerland.</p>
+<p id=1990 class="phone s04"><cite>manu:</cite> Lots of great uses of this -- the group is struggling with how big the scope ought to be for the work and can we provide a minimum set of primitives for use across all these different verticals.</p>
+<p id=3ff8 class="phone s04"><cite>manu:</cite> So the question came up -- how does one say that you recognize a particular entity under a particular scope -- and say that it's limited to say, Australia or Japan or whatever.</p>
+<p id=a9fe class="phone s04"><cite>manu:</cite> We're going to raise PRs to try and answer that question over the next week or two and that we have a handle on the problem now too. It might be through a simple property like &quot;registration&quot; that talks about the regulation, scope, and those types of things -- without breaking existing use cases.</p>
+<p id=5dd8 class="phone s04"><cite>manu:</cite> We have consensus in the group to address this we think and the plan is to define a property for this and test against the use cases from groups that have raised this or asked about it.</p>
+<p id=0471 class="phone s04"><cite>manu:</cite> I think that's where we are right now and it's the last big issue in the spec before CR.</p>
+<p id=9401 class="phone s03"><cite>Carolynn:</cite> You aren't trying to model scope?</p>
+<p id=a385 class="phone s04"><cite>manu:</cite> We are trying to do that -- we will have a solution to your problem, we believe we will be able to express scope with some of the future PRs.</p>
+<p id=d680 class="phone s03"><cite>Carolynn:</cite> Ok, thank you.</p>
+<p id=620b class="phone s01"><cite>brent:</cite> Awesome, that was a fun little deep dive. Thank you, Carolynn for starting us off.</p>
+<p id=4da3 class="phone s01"><cite>brent:</cite> Kayode you're next on the queue.</p>
+<p id=e14f class="phone s05"><cite>kezike:</cite> Quick update first -- we've been going through outstanding issues these last few weeks. We have been making sure we have a handle on them and figuring out which we want to address before CR.</p>
+<p id=411f class="phone s05"><cite>kezike:</cite> One of them we've made good progress on but there's still an ask for this group that is around BBS support and another that is around enabling the holder in the three party flow -- to enable an exchange to be explicitly terminated by them rather than just abandonment.</p>
+<p id=252c class="phone s05"><cite>kezike:</cite> We filed an issue in the VC data model issue tracker for this.</p>
+<h4 id=aacf><a href="https://github.com/w3c/vc-data-model/issues/1649">w3c/<wbr>vc-data-model#1649</a></h4>
+<p id=d396 class="phone s05"><cite>kezike:</cite> The context here is that we wanted to start to have to have a mechanism to request for data that isn't a credential during an exchange. We use VPR (Verifiable Presentation Request) to request information but there isn't a way to return information that isn't a credential.</p>
+<p id=be95 class="phone s05"><cite>kezike:</cite> We want to be able to request zcaps or BBS data and we'd like to receive data about those things.</p>
+<p id=d23f class="phone s05"><cite>kezike:</cite> A PR landed a week or two ago in the VCALM spec where we added a property for this into a standalone context so it can be attached to 2.0, but we'd also like to add it to the 2.1 context so it would be included.</p>
+<p id=bed8 class="phone s05"><cite>kezike:</cite> We'd like to include the `exchangeData` plain JSON field to add this kind of data that needs to be transmitted during a particular exchange.</p>
+<p id=49e3 class="phone s05"><cite>kezike:</cite> We'd like to review this issue and see if we can get it into the 2.1 context.</p>
+<p id=9c3e class="phone s01"><cite>brent:</cite> Let's talk about this issue. If you have comments about this issue 1649, please jump on the queue.</p>
+<p id=ffff class="phone s04"><cite>manu:</cite> Kayode I may have missed if you said this, but one reason we need this feature is to support this feature is for BBS -- there are things you need to ask for that are modulations on the cryptography but not about the VC directly.</p>
+<p id=db03 class="phone s04"><cite>manu:</cite> There are potentially other use cases -- I want to see a VC and, if you have a PDF for this too, please send that. There are fringe use cases like this, but in some of these exchanges people want data that isn't really a VC but it would be disruptive to take them out of the wallet to do completely different flows, it's an extensible field.</p>
+<p id=0d73 class="phone s01"><cite>brent:</cite> I see the issue is labeled &quot;allowed class 4&quot;, can someone tell me the reasoning for that -- no challenge, just want it stated for the record.</p>
+<p id=bb2a class="phone s04"><cite>manu:</cite> The charter states that we can make class 4 changes to the data model if another spec asks for it and especially if it is for security purposes. BBS won't work without it, VCALM needs this for the response portion of an exchange.</p>
+<p id=8c8b class="phone s01"><cite>brent:</cite> Thank you.</p>
+<p id=eed9 class="phone s01"><cite>brent:</cite> Folks, please jump on 1649 if you have comments/opinions, it sounds like a reasonable idea.</p>
+<p id=721e class="phone s04"><cite>manu:</cite> Just to add to general VCALM -- we did do a review of how close to CR we think we are. It seems like we have only two issues left before the group feels like we can say we're feature frozen as far as we know. Of course, we haven't received the vast majority of horizontal reviews on our spec so there's blockage there.</p>
+<p id=4817 class="phone s04"><cite>manu:</cite> But we think by the end of the year we could make it into CR if we get the horizontal reviews in.</p>
+<p id=a5c6 class="phone s04"><cite>manu:</cite> In addition, the FedID working group, EMVCo, Conexxus, and some other groups have been asked to meet to talk about VCs, the DC API, and so on -- this is a heads up to the group that Wes Smith and Dave Longley have largely been putting together a slide deck that I'll be talking to.</p>
+<p id=71a0 class="phone s04"><cite>manu:</cite> About where VCs are being used in the ecosystem and where some parties have struggled with using credentials and the DC API and so on where the goal is to talk about some concrete changes we'd like to see to help with those challenges.</p>
+<p id=ae6d class="phone s04"><cite>manu:</cite> These will be raised by our company and customers. This will be at a separate meeting on Tuesday afternoon at TPAC.</p>
+<p id=843f class="phone s04"><cite>manu:</cite> I can circulate slides and talk about this more with folks.</p>
+<p id=4c88 class="phone s01"><cite>brent:</cite> Any comments, concerns, questions, on the things Manu has said?</p>
+<p id=4524 class="phone s01"><cite>brent:</cite> Kayode -- is there something else you wanted to cover?</p>
+<h4 id=6d94><a href="https://github.com/w3c/vcalm/issues/686">w3c/<wbr>vcalm#686</a></h4>
+<p id=6dee class="phone s05"><cite>kezike:</cite> This is an issue that's relevant to more than just our group. How do we reference jsonata? Other specs in the VCWG are also using it.</p>
+<p id=8901 class="phone s05"><cite>kezike:</cite> My understanding is that there is a conversation that needs to happen between the chairs and Ivan to give general guidance on how we should reference it. The general question is &quot;what's the final say on how we ought to be referencing it?&quot;</p>
+<p id=e8c8 class="phone s05"><cite>kezike:</cite> It's fine if it's not a normative reference, but we want to know how to refer to it and how the task forces should refer to it.</p>
+<p id=b8cd class=irc><cite>&lt;brent&gt;</cite> <a href="https://www.w3.org/guide/process/tilt/normative-references.html">https://<wbr>www.w3.org/<wbr>guide/<wbr>process/<wbr>tilt/<wbr>normative-references.html</a></p>
+<p id=4b36 class="phone s01"><cite>brent:</cite> There is a page in the W3C guide which talks about normative references.</p>
+<p id=d616 class="phone s01"><cite>brent:</cite> This is the guidance -- this page outlines the considerations that the team makes when looking at references.</p>
+<p id=c468 class="phone s01"><cite>brent:</cite> What it comes down to is that there needs to be some indication of stability, knowledge of who the external organization is, what the dependency, are there implementations -- no one thing either guarantees or forbids a reference from being normative but it's a high bar.</p>
+<p id=398c class="phone s01"><cite>brent:</cite> If an informative reference is possible for this one that's easy, you can do that for anything.</p>
+<p id=d348 class="phone s01"><cite>brent:</cite> In the issue it seems like you're talking about a normative reference.</p>
+<p id=d087 class="phone s04"><cite>manu:</cite> There is a heavy dependency in VCALM and it seems that the Recognized Entity specification will have it too -- I don't think that we can get around with a non-normative reference, we can play with spec language, but it's a pretty core feature to rely on.</p>
+<p id=1492 class="phone s04"><cite>manu:</cite> The jsonata tech does meet a number of bars: patent free, royalty free, multiple implementations. There are primarily two people in charge of the project, IBM/Red Hat/something. I doubt they plan on going to IETF with it, it's like JSON schema. It has a similar history to JSON schema which also isn't going to IETF or anything. We were able to reference JSON schema normatively.</p>
+<p id=015b class="phone s04"><cite>manu:</cite> We might reach out to them and ask them about it.</p>
+<p id=10000 class="phone s01"><cite>brent:</cite> To summarize the key factors: stability, licensing, and availability. It's freely available on the Web, that's covered. Stability -- how do we point to the exact version of this? And then triple ensure there are no patents or infringements in it.</p>
+<p id=567d class="phone s01"><cite>brent:</cite> Take that link to the guide and go forth and best of luck.</p>
+<p id=fa2e class="phone s01"><cite>brent:</cite> As an aside, I heard a European Commission person say how much they like VC JSON schema being done so as soon as there are implementations we could publish it as a REC.</p>
+<h4 id=e85a><a href="https://github.com/w3c/vc-data-model/issues/1653">w3c/<wbr>vc-data-model#1653</a> (VC Render Method TF)</h4>
+<p id=ffd7 class="phone s01"><cite>brent:</cite> Thank you! Dmitri you're up, other task forces prepare yourself.</p>
+<h4 id=6bbc>Render Method</h4>
+<p id=9d7a class="phone s06"><cite>dmitriz:</cite> Quick update on the VC render method and discuss issue 1653.</p>
+<h4 id=5ba8><a href="https://github.com/w3c/vc-data-model/issues/1653">w3c/<wbr>vc-data-model#1653</a></h4>
+<p id=28ac class="phone s06"><cite>dmitriz:</cite> This was opened on the VC data model as a result of a discussion in the render method task force.</p>
+<p id=4abc class="phone s06"><cite>dmitriz:</cite> VC render method task force has defined 3 main suites for rendering VCs for anything that will render VCs, a digital wallet, a website, whatever it is.</p>
+<p id=d1bd class="phone s06"><cite>dmitriz:</cite> We don't want every renderer to have to reimplement or customize rendering.</p>
+<p id=949f class="phone s06"><cite>dmitriz:</cite> To that end, we have a notion of a static render suite that is for an NFC payload, or a PDF, etc.</p>
+<p id=abba class="phone s06"><cite>dmitriz:</cite> This quite is fairly basic.</p>
+<p id=f740 class="phone s06"><cite>dmitriz:</cite> The second suite is codenamed &quot;Summary&quot; and is likely to change. The TF still has to finalize the name. It's a set of field labels and other metadata that helps with displaying the VC more generically.</p>
+<p id=b0f3 class="phone s06"><cite>dmitriz:</cite> The third suite is a full one JS and HTML and CSS application that can be embedded in a sandboxed iframe.</p>
+<p id=37a2 class="phone s06"><cite>dmitriz:</cite> You don't have to come up with your own view but just directly show what the issuer wants.</p>
+<p id=95f8 class="phone s06"><cite>dmitriz:</cite> Those are the three that have been finalized for a while and that you can expect in CR. Names might change, ideas are the same.</p>
+<p id=b160 class="phone s06"><cite>dmitriz:</cite> One of the main features we want to address before CR is i18n and multilanguage VCs.</p>
+<p id=34a3 class="phone s06"><cite>dmitriz:</cite> This is the case for VCs in general and why it touches on the core VC spec and it's especially relevant for displaying information in different languages.</p>
+<p id=3988 class="phone s06"><cite>dmitriz:</cite> So issue 1653 came out of the discussion from the last task force call. There are 3 levels of internationalization. One is value level, we have a VC that's a bag of claims, the values of the claims themselves can be translated.</p>
+<p id=4862 class="phone s06"><cite>dmitriz:</cite> We have that ability from the VC data model spec which comes from JSON-LD.</p>
+<p id=9997 class="phone s06"><cite>dmitriz:</cite> You can have a language map, you can have a default language for the whole VC, you can apply individual languages for different values, all inherited from JSON-LD.</p>
+<p id=cf98 class="phone s06"><cite>dmitriz:</cite> It doesn't apply to the field labels though.</p>
+<p id=6854 class="phone s06"><cite>dmitriz:</cite> I honestly haven't seen too wide of an implementation for these and the European wallet uses something else -- but values are handled.</p>
+<p id=49c8 class="phone s06"><cite>dmitriz:</cite> Level 2 is translating on a field label level. Picture a diploma -- that might have a field level for a title and description of a course.</p>
+<p id=8eef class="phone s06"><cite>dmitriz:</cite> In English and some other languages it's just &quot;Computer Science 101&quot;</p>
+<p id=d36c class="phone s06"><cite>dmitriz:</cite> The values here we get for free from JSON-LD.</p>
+<p id=f385 class="phone s06"><cite>dmitriz:</cite> The problem kicks in with a third level of localization.</p>
+<p id=b454 class="phone s06"><cite>dmitriz:</cite> That is that we need to able to translate not just the field labels, but the layout.</p>
+<p id=7a94 class="phone s06"><cite>dmitriz:</cite> This medical certificate looks different depending on the local, the layout and colors, date time, might all change.</p>
+<p id=5eed class="phone s06"><cite>dmitriz:</cite> Even though it's the same RFC date string under the hood, the display must be different.</p>
+<p id=f699 class="phone s06"><cite>dmitriz:</cite> That's where the argument came in -- one of the proposals was to add an &quot;inLanguage&quot; property.</p>
+<p id=8c35 class="phone s06"><cite>dmitriz:</cite> There's some current objection in the group for adding that.</p>
+<p id=2841 class="phone s06"><cite>dmitriz:</cite> The issue 1653, on the core data model was opened. What's that issue about? Hey can we use an HTTP mechanism the Accept-Language mechanism?</p>
+<p id=3959 class="phone s06"><cite>dmitriz:</cite> So we have this notion of external resources.</p>
+<p id=e247 class="phone s06"><cite>dmitriz:</cite> You can link and secure with digest multibase.</p>
+<p id=c60a class="phone s06"><cite>dmitriz:</cite> Some related resources such as the HTML app used to display a VC, is hosted externally.</p>
+<p id=b909 class="phone s06"><cite>dmitriz:</cite> When requesting that external resource, that display for the iframe, we can say &quot;I would like it in the English language or the French language, etc.&quot; and let the language negotiation take care of it.</p>
+<p id=10001 class="phone s06"><cite>dmitriz:</cite> There's division on the group on whether that's an appropriate mechanism and I wanted to bring that up here with the main group.</p>
+<p id=ffef class="phone s06"><cite>dmitriz:</cite> The are considerations, implementation requirements, the server side aspect, whether it fits the use cases, especially those in Europe, Canada, other multilanguage locals.</p>
+<p id=6e73 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to provide deep-dive issue to discuss wrt. Recognized Entities: <a href="https://github.com/w3c/vc-recognized-entities/pull/138">w3c/<wbr>vc-recognized-entities#138</a></p>
+<p id=1909 class="phone s07"><cite>michaelshea:</cite> Sharing something from the UNTP side. I know that there are interests in the UNTP folks being able to participate -- but the 2am time for key individuals -- is there any flexibility on the time for the call? Some of the sandboxing restrictions it's not usable by UNTP.</p>
+<p id=97fe class="phone s07"><cite>michaelshea:</cite> They'd like to participate in the call but the time is a real obstacle.</p>
+<p id=bf0e class="phone s06"><cite>dmitriz:</cite> Thank you for letting me know, let's get an Australia-friendly time for a call and invite them over.</p>
+<p id=35a8 class="phone s07"><cite>michaelshea:</cite> Thank you.</p>
+<p id=0c7c class="phone s01"><cite>brent:</cite> Go ahead Joe.</p>
+<p id=153c class="phone s02"><cite>JoeAndrieu:</cite> We need a solid review, we've got a threat model, we're looking to kick of horizontal review at TPAC.</p>
+<h4 id=38b0><a href="https://github.com/w3c/vc-confidence-method/issues/41">w3c/<wbr>vc-confidence-method#41</a></h4>
+<p id=1452 class="phone s02"><cite>JoeAndrieu:</cite> So, our topic: How do we want to treat constraints for biometrics?</p>
+<p id=b638 class="phone s02"><cite>JoeAndrieu:</cite> Some verifiers say you have to come into our company do it here. Others might say you can provide any biometric that satisfies any abstract requirements.</p>
+<p id=5568 class="phone s02"><cite>JoeAndrieu:</cite> On a real level we can't prevent verifiers to make the same requirements via some other means. It's hard for us to restrict the request language -- like saying you can't say the specific provider, because verifiers can go around it.</p>
+<p id=2bfe class="phone s02"><cite>JoeAndrieu:</cite> We want good ideas for what to put in the spec and what kinds of requests to support in the spec.</p>
+<p id=b23f class="phone s02"><cite>JoeAndrieu:</cite> And we may want to say things about potential privacy or security considerations. So we talk about what we know we like and then tag some others with risks.</p>
+<p id=d621 class="phone s02"><cite>JoeAndrieu:</cite> Many of us favor decentralization but we also need to enable very specific types of biometrics.</p>
+<p id=6ca0 class="phone s01"><cite>brent:</cite> Thank you, Joe, any comments or questions?</p>
+<p id=6364 class="phone s04"><cite>manu:</cite> Question for you, Joe. Where would you think this would be surfaced? Would this be surfaced in the query that comes into the digital wallet or where would these restrictions be placed or where would the language be built around?</p>
+<p id=58dc class="phone s02"><cite>JoeAndrieu:</cite> Good question. We do have some of the confidence method -- as currently defined relies on the VPR -- and that you're part of the loop there and that it would be in the VPR.</p>
+<p id=4232 class="phone s02"><cite>JoeAndrieu:</cite> A VPR is pretty flexible so you can ask for anything.</p>
+<p id=0982 class="phone s02"><cite>JoeAndrieu:</cite> If you're not in a VPR loop, we haven't talked about that, if you're doing a biometric challenge outside of a VPR loop then we'd have to figure that out, so the short answer is that it's in the VPR.</p>
+<p id=70c4 class="phone s01"><cite>brent:</cite> Any other questions or comments?</p>
+<p id=ea3e class="phone s01"><cite>brent:</cite> Then we will move to Manu.</p>
+<p id=35c3 class="phone s04"><cite>manu:</cite> Thanks, Brent. This is for Recognized Entities.</p>
+<h4 id=0f7f><a href="https://github.com/w3c/vc-recognized-entities/pull/138">w3c/<wbr>vc-recognized-entities#138</a></h4>
+<p id=4f31 class="phone s04"><cite>manu:</cite> Carolynn actually covered the main topic of discussion at the beginning of the call so I'll jump to a PR that we're unsure about. This came in from a security review on the specification.</p>
+<p id=2cab class="phone s04"><cite>manu:</cite> That review said that in the RE spec you have organizations that recognized other organizations to do certain things like issue a DL. However, the algorithm doesn't say -- if there are multiple hops in the chain, like a Global Authority that delegates to a National Authority and then to a Regional Authority, etc. -- you don't have anything in the spec that scopes that delegation down.</p>
+<p id=dc72 class="phone s04"><cite>manu:</cite> There's nothing to say that something at the end of the chain can't just issue something for another country or whatnot.</p>
+<p id=02c5 class="phone s04"><cite>manu:</cite> There's this question around -- &quot;what are you allowed to do&quot; per the RE spec. And that kicked off a fairly in depth discussion about that spec. Some people's mental model about the RE spec is that it says what an organization can and cannot do.</p>
+<p id=f1d3 class="phone s04"><cite>manu:</cite> And that is a bad mental model for what that spec is about. It's not about that at all.</p>
+<p id=65f7 class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 for redressing that mental model mistake</p>
+<p id=d437 class="phone s04"><cite>manu:</cite> VCs are about model world data models, anyone can say anything about anything.</p>
+<p id=b8d0 class="phone s04"><cite>manu:</cite> You can say that you recognize that something someone issues, but you can't restrict them.</p>
+<p id=ba7d class="phone s04"><cite>manu:</cite> What someone can do, a Recognized Entity Credential issuer can say they'd recognize certain VCs from a University, but they can't stop that University from issuing whatever they want.</p>
+<p id=7771 class="phone s04"><cite>manu:</cite> So we're figuring out the proper language to use to respond to the security review here to make it clear how to prevent certain types of scoping attacks, but that the technology is not capable of preventing orgs from issuing other types of credentials.</p>
+<p id=a63e class="phone s02"><cite>JoeAndrieu:</cite> +1 to everything you just said, I really appreciate the continuing efforts to shift away from the allowance language.</p>
+<p id=793a class="phone s02"><cite>JoeAndrieu:</cite> When I talked with Simone about this -- the language currently is about chain of authority and applies the legitimacy of transitive trust and that's a problem. I could choose to trust both AAMVA or AAA for some VCs.</p>
+<p id=bbcd class="phone s02"><cite>JoeAndrieu:</cite> That pattern -- &quot;I'm only trusting the list maker&quot; follows a coherent trust model, but if we're creating a certificate hierarchy then you have to independently evaluate what it implies.</p>
+<p id=2a39 class="phone s02"><cite>JoeAndrieu:</cite> The DNS architecture for TLS in particular, started out with an ambition about what it meant to get a green lock on a URL -- that turned out to be more burdensome than it was worth than to just secure the endpoint.</p>
+<p id=56ab class="phone s02"><cite>JoeAndrieu:</cite> Let's Encrypt just makes sure you can secure the traffic but no longer checks you as a company, etc.</p>
+<p id=956d class=irc><cite>&lt;manu&gt;</cite> Agree, Joe :)</p>
+<p id=3ecf class="phone s01"><cite>brent:</cite> Awesome, thank you, Joe, Manu, everybody. We're at time. If any task force has questions for the TAG, the TAG has made themselves available to join our VCWG meeting, so let us know if you'd like them to be there.</p>
+<p id=7527 class="phone s01"><cite>brent:</cite> Thanks everyone, Dave, thanks for scribing.</p>
+<p id=b292 class="phone s08"><cite>dlongley:</cite> You're welcome!</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 249 (Tue Sep 29 16:09:09 2026 UTC).</address>
+
+
+</body>
+</html>

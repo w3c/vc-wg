@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Recognized Entities &ndash; 13 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Recognized Entities</h1>
+<h2>13 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Elaine_Wooton, Kayode_Ezike, Kevin_Dean, Manu_Sporny, Paul_Dietrich, steve_capell, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#8320">Welcome And Agenda</a></li>
+<li><a href="#7afe">W3C Press Release On Barcodes</a></li>
+<li><a href="#0157">Pull Request Review</a></li>
+<li><a href="#6b4a">Consolidating Overlapping Issues</a></li>
+<li><a href="#9f5c">Discussion On Field Match Issue</a></li>
+<li><a href="#df26">Identifier For Recognized Entities</a></li>
+<li><a href="#4242">Registration Scope Discussion</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=8320>Welcome And Agenda</h3>
+<p id=adef class="phone s01"><cite>Manu_Sporny:</cite> All right. Uh let's go ahead and get started. Um welcome everyone to the recognized entities call. Uh this is October 13, 2026. Um we uh do have a rough agenda for today, which is a pretty typical agenda. Uh we're going to be looking at uh poll requests and then we're going to go into issue processing. Um and I think that's largely it. We're just going to keep processing issues um uh until we're uh feel we're ready for candidate wreck.</p>
+<p id=d3ca class="phone s01"><cite>Manu_Sporny:</cite> uh there is, you know, one one set of issues around recognition scope uh that I think we're going to spend a decent bit of time on today after we get through the the PRs and issues. Um uh so I think that's it for the agenda today. Um any other updates or changes to the agenda? All right. Um if not uh any uh announcements community news that uh is related to recognized entities. Um I'll mention that W3C TAC the technical plenary in Dublin is coming up uh in less than two weeks and I look forward to seeing a number of you there.</p>
+</section>
+
+<section>
+<h3 id=7afe>W3C Press Release On Barcodes</h3>
+<p id=2ccf class="phone s01"><cite>Manu_Sporny:</cite> Uh, and for those that can't make it, uh, I'm sad that we won't be able to see you, but, um, uh, we'll be, uh, meeting, uh, that week, uh, uh, and talking about recognized entities. Um, okay. So, any other news info? I think, oh, I forgot to mention W3C did, um, do a press release, uh, on barcodes. Um let's see you can actually first hit on Google. Good good search uh SEO uh W3C.</p>
+<p id=f708 class="phone s01"><cite>Manu_Sporny:</cite> So uh there is a press release that W3C released on some of the verifiable credential work around verifiable credential barcodes uh talking about this massive data breach that happened in the in North America uh where 160 million people's driver's licenses are now uh out there on the dark web uh full front and back photos of them high resolution uh and it talks about how uh you know uh W3C you see verifiable credentials barcodes work actually combats this type of um attack and kind of talks about bitstring status list and uh postquantum attacks and uh you know how this is deployed on the California uh back of the California driver's license um and invites people to come and uh join us and help us um create more privacy preserving uh secure technologies um on the web and in the physical world.</p>
+</section>
+
+<section>
+<h3 id=0157>Pull Request Review</h3>
+<p id=7739 class="phone s01"><cite>Manu_Sporny:</cite> So that's out there uh now. Okay. Uh last call. Any other uh news items that we should pay attention to? Okay. If not, let's go ahead and uh jump in. Uh let's start off uh with poll requests. We have uh quite a few of these. Um I think most of them are ready to go. Um, but I will try and run through all of them very quickly. Um, all right. So, the first one is this draft vocabulary definition that Avon put together. Thank you very much, Ivonne, for putting that</p>
+<p id=c1b3 class="phone s01"><cite>Manu_Sporny:</cite> together. Uh uh Dave Longley, you and I need to take a look at some of the specific things that Avon has asked us to look through. Uh I just need some review time to do that. Uh don't know when I'll be able to find that time, but uh this one's kind of hanging out until uh we merge it in. This is very important that we get it in. It's the vocabulary for the recognized entity spec and the context uh as well. Uh so that's 122. Um 133 uh is about uh using digest multibase. We just need another review on it. Um so I've written it. Dave Longley has reviewed it, but it's been kind of stuck there waiting for uh someone to do a review.</p>
+<p id=ed5b class="phone s01"><cite>Manu_Sporny:</cite> Um, this basically just talks about how you use digest multibase to mitigate a threat that allows somebody to like swap out a resource out from under you, an externally linked to resource out from under you. Uh, so that's what that uh pull request is about. Um, pull request 134 is uh also needing a review. Um, Dave Longley has taken a look at it. I've taken a look at it.</p>
+<p id=7bd5 class="phone s01"><cite>Manu_Sporny:</cite> But this one is about um enabling the algorithms to uh see if a recognized entity chain uh was valid at a certain point in time. So this lets you do historical like you know given this chain was this verifiable credential uh legitimately recognized you know at this point in time. Um so uh this one needs a review. It came up in our security review uh as well. So please take a look uh and plus one if you are good with this one going in. I think this one's a fairly it's a fairly involved one because it's not actually too long.</p>
+<p id=ffff class="phone s01"><cite>Manu_Sporny:</cite> uh 28 lines uh but it modifies the algorithm and the threat model. Um so it it specifies like how you do point in time checks in the threat model and then modifies the algorithm to take an evaluation date time as input to the algorithm. So that is pull request 134. Um pull request 136 is about ensuring that um you can't denial of service attack The</p>
+<p id=679c class="phone s01"><cite>Manu_Sporny:</cite> algorithms. So the way the algorithms were written um we uh limited like the chain depth that you could go down in the algorithm uh so that people can give you like infinitely deep uh uh recognition chains to to keep dreferencing, right? Um but uh we did not make it so that there was a time boundary on the entire operation. And so this one adds a max duration uh to provide a time boundary. Um and then Dave Longley, I think you mentioned that we use the word trust anchor here and we had said a very long time ago, we don't want to use the word trust and anchor together. Uh we want to use recognition anchor. That language has seeped into the spec. So I need to go and do an editorial change to update that later.</p>
+<p id=ae50 class="phone s01"><cite>Manu_Sporny:</cite> Um, so I'm not changing it here because I'm going to have to change it all over the spec uh later. Um, okay. So that's that one. Uh, it also adds an error section because we didn't have um an error section in the spec. Uh, and this came up in security review uh, as well, which is good. And again, only one review. Um, Dave, do you want to elaborate more on This uh actually I think I this is implemented. Never mind. It does throw. Yeah, it throws now. So that's uh that's fixed. Yep. And the timeout error is there now as well. That's why that got uh in there. Okay. So this one seems to be ready to go.</p>
+<p id=bb93 class="phone s01"><cite>Manu_Sporny:</cite> We just need somebody else to review uh this one as well. Denial service. Um this one is a server side request forgery. Um let me add this topic here. So this adds a serverside request forgery uh threat to the threat model and the mitigation against that. Um not a very big PR but again uh Dave's reviewed it. We need other people to take a look at it.</p>
+<p id=521c class="phone s01"><cite>Manu_Sporny:</cite> Um yeah and this basically is um you get in a verifiable credential that someone has issued to you and in that verifiable credential there's a resource um that only your you can reach on your for example let's say you're on your home network and the resource points to your router internally to flip a switch to allow attackbot traffic to enter your That's an example of this attack. Um uh and so we had to write it up um and then provide a mitigation uh for it by basically saying you should have a retrieval policy and that retrieval policy shouldn't let you hit things like private uh address blocks, loop back devices, link local addresses, local networks uh and stuff like that.</p>
+<p id=a4fb class="phone s01"><cite>Manu_Sporny:</cite> Um, so that's been added to the spec and again good good catch by security review to make sure we have that protection in place. Um, and then let's see next uh pull request is 138. Uh, this one I'm a bit unsure about.</p>
+<p id=4619 class="phone s01"><cite>Manu_Sporny:</cite> Um, I know Ted's gone through and reviewed it. I did not see this one, I don't think. Uh, that Steve raised and it's linked to here. And I'm totally forgetting what this one is about. Oh, right.</p>
+<p id=a577 class="phone s01"><cite>Manu_Sporny:</cite> It's it's um you in the middle of the chain somebody does something that you know you weren't expecting and either grants an authority or um basically it it adds to its list of actions that it can perform as an example like the first thing says this entity is allowed to issue um you know uh national ID cards and then the next hop in the chain says I'm also allowed to uh issue national ID cards for a country that's not mine. Um as an example, um go ahead Dave</p>
+<p id=5e8a class="phone s02"><cite>Dave_Longley:</cite> I got on the queue to harp on the language used there. We got to stop saying it. Uh none of the stuff we're modeling here is about what you're allowed to do. Uh that's never been a goal and not something that can be done. So all all of this language is around…</p>
+<p id=0ce5 class="phone s02"><cite>Dave_Longley:</cite> if you were to take this action, I would recognize you taking that action. Feel free to do it with that information, what you will, but that has nothing to do with me constraining your behavior in any way whatsoever.</p>
+<p id=4b95 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I I think it's a it's a you have a middle party that um self like well,…</p>
+<p id=a2df class="phone s01"><cite>Manu_Sporny:</cite> you know, what's what's the right way to say this?</p>
+<p id=f54e class="phone s02"><cite>Dave_Longley:</cite> We we might even need to fix the language that's that's here.</p>
+<p id=10000 class="phone s02"><cite>Dave_Longley:</cite> And if I reviewed this one, I overlooked it. But, you know, we have something in here that says being allowed to do this is not the same thing as allowing someone else. And that's not even the right language for this spec at all. So recognizing a party to do something is not the same thing as recognizing that uh a subsequent party to do something or…</p>
+<p id=41a3 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Yeah.</p>
+<p id=549e class="phone s02"><cite>Dave_Longley:</cite> whatever it is. But that's the right language.</p>
+<p id=9f62 class="phone s01"><cite>Manu_Sporny:</cite> So, go ahead.</p>
+<p id=7c3a class="phone s01"><cite>Manu_Sporny:</cite> if you could just take your review back on this one. Actually, yeah,… Dave Longley:</p>
+<p id=d91d class="phone s02"><cite>Dave_Longley:</cite> I I didn't review this one yet.</p>
+<p id=79ef class="phone s01"><cite>Manu_Sporny:</cite> you don't have this one.</p>
+<p id=33f5 class="phone s02"><cite>Dave_Longley:</cite> That's Yeah.</p>
+<p id=0b1c class="phone s01"><cite>Manu_Sporny:</cite> Yeah, and this one I I was a bit I was I was not very comfortable with the language here. So, we may want to let me let me just mark this as a we need to I'll I'll take a review uh of this to see if there's something else that we can do here. And if anybody else has some ideas, that would be awesome as well. Okay, so that's 138. And then 141 just came in, which is a super interesting PR. Um, Steve, I don't know if you were able to chat with I don't have you talked with these folks at all. There's a lot of kind of overlaps with what's been said.</p>
+<p id=a504 class="phone s01"><cite>Manu_Sporny:</cite> Um, but the most exciting thing about this PR is that they have SVG animations.</p>
+<p id=6acd class="phone s03"><cite>steve_capell:</cite> Is this the Swiss metrology group?</p>
+<p id=15d6 class="phone s01"><cite>Manu_Sporny:</cite> There are all kinds of SVG animations in this thing. Where where's the other one? The other one is like Yeah, look at this. Look at this one. It's got like uh Yeah. Well, uh I don't I don't know. I couldn't figure out who it's with, but look at this. All right. Look at all those little things moving. Um, it is NGWolf. Do you know who this person is? Oh, they're with Farity. Um, maybe they just happen to put this in at the same at the same time.</p>
+<p id=f0f2 class="phone s03"><cite>steve_capell:</cite> I don't know.</p>
+<p id=91cf class="phone s01"><cite>Manu_Sporny:</cite> Um, okay.</p>
+<p id=a97f class="phone s01"><cite>Manu_Sporny:</cite> Well, describing this animation uh for the accessibility folks is going to be a nightmare, but it looks cool. Um, I think it has to do with they they added an example here and our example section is now uh as big as the specification. I don't know if we want to try to move some things out into another document. Um, uh, but it's a parallel conformity assessment kind of use case. Um, I have not had a chance to look at it in detail, but just letting other folks kind of know. It's a battery passport use case. Uh, I think, but it's also got a business register mixed in there, uh, Steve, uh, along with the European Commission and some accredit European accredititation body. Um, anyway, interesting stuff. Um, seemed to make sense at a high level, uh, when I looked through it. Uh, but I</p>
+<p id=85d8 class="phone s01"><cite>Manu_Sporny:</cite> have not looked through it in detail and it has lots of like very detailed um examples throughout very much AI generated like you know but uh seem to have been cleaned up uh fairly uh well it also talks about assessment criteria and reference regulations and reference standards Steve that's why I thought maybe you had chatted with them because it's got hints of the stuff that you have um in in the DIA work. Um okay.</p>
+<p id=10001 class="phone s03"><cite>steve_capell:</cite> I'll have a look. I haven't chatted with them now, but uh I I'll definitely have a look at what they've proposed.</p>
+<p id=bd64 class="phone s01"><cite>Manu_Sporny:</cite> Okay. Um then it feels like there's quite a bit of overlap here and…</p>
+<p id=43de class="phone s03"><cite>steve_capell:</cite> Quite a</p>
+<p id=aa75 class="phone s01"><cite>Manu_Sporny:</cite> we'll just have to figure out how we align reconcile you know three different um you know things. Um okay. Uh I think that's it for the poll requests.</p>
+</section>
+
+<section>
+<h3 id=6b4a>Consolidating Overlapping Issues</h3>
+<p id=757e class="phone s01"><cite>Manu_Sporny:</cite> Um, any other comments on pull requests before we kind of move on to issue processing? All right. Um, if not, let's go ahead and jump into issues. Um, before jumping into the specific ones, I've got a meta question largely for you, Steve. We've got in in well let's see uh we've got multiple issues here. Back to basics. Revisit the data model. And there might have been another one um that seem to overlap. Steve, I don't know if they overlap or not.</p>
+<p id=10002 class="phone s01"><cite>Manu_Sporny:</cite> Um and we've got conversations happening in three different issues that are all kind of pointing to each other now. And so and and there therefore the conversations getting split among multiple issues. Um what do we want to do here? Uh typically you want to you know when you see this stuff starting to happen you want to refocus issues. Um Steve,…</p>
+<p id=a63f class="phone s01"><cite>Manu_Sporny:</cite> well the first question to you Steve is do you feel these are duplicates of each other in some way and if so in what way and should we merge them or do you feel like each one of them is um different enough where uh we should keep them separate.</p>
+<p id=2cb9 class="phone s03"><cite>steve_capell:</cite> I think there's definitely overlap And we should consolidate and separate, shouldn't we? So, uh um if there's there is more than one issue raised by me and I think there is sort of the same harping in several of them. So, that should be on me to say, oh, this one duplicates this one,…</p>
+<p id=b065 class="phone s03"><cite>steve_capell:</cite> so close that one and add this comment or something. So, uh that's a fair request. a belief. That's what You're asking</p>
+<p id=4672 class="phone s01"><cite>Manu_Sporny:</cite> I think so.</p>
+<p id=ad1a class="phone s01"><cite>Manu_Sporny:</cite> Yeah, it's largely I I think um it's issues 135, 139 and 140 P. Well, actually, sorry. No, it's 135 and 140 definitely. Right. So, these two feel like they overlap a bit. And then there is also some discussion happening in field match that overlaps as well.</p>
+<p id=4583 class="phone s03"><cite>steve_capell:</cite> Ah, yes. It's</p>
+<p id=3dfe class="phone s01"><cite>Manu_Sporny:</cite> Uh I think those are the three. Uh go ahead Dave Lonley.</p>
+<p id=04b7 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I was just going to say I think the other uh 121 which is the ad sport for field match spawned the conversations because it came out of a specific uh feature that was being talked about and those other issues were spawned from there. Um, but at this point I think all of those issues are talking about the same thing with the possible exception of 121 waiting on a specific solution to the</p>
+<p id=211a class="phone s01"><cite>Manu_Sporny:</cite> Okay. So, just for today, we'll just want to see where we want to anchor the discussion around these three issues. Um, and then Steve, we leave it to you to figure out how you want to consolidate or combine or rephrase or…</p>
+<p id=7ffe class="phone s03"><cite>steve_capell:</cite> Sure. A little a little disclaimer.</p>
+<p id=ee79 class="phone s01"><cite>Manu_Sporny:</cite> whatever. But that doesn't have Oh, go ahead.</p>
+<p id=de00 class="phone s03"><cite>steve_capell:</cite> The uh number 139, although it's got my name on it, isn't isn't mine. Uh the the author is the type that doesn't raise issues, but sends emails. And I said,…</p>
+<p id=10003 class="phone s03"><cite>steve_capell:</cite> &quot;You want me to post this for you?&quot; So, this is the this is the Swiss metrology guy, right? So, uh um anyway,…</p>
+<p id=6efd class="phone s01"><cite>Manu_Sporny:</cite> Yes. Yes.</p>
+<p id=830a class="phone s01"><cite>Manu_Sporny:</cite> Yeah. And and…</p>
+<p id=2dce class="phone s03"><cite>steve_capell:</cite> and for sure for sure there's overlap and Yeah.</p>
+<p id=71a7 class="phone s01"><cite>Manu_Sporny:</cite> so that that Yeah. Plus one to that and that's why I um took that out of the running to to because because it's it's going to track kind of their use case I think ultimately. But they are I mean you know there's a sub request in there that does overlap with these other items. it, you know, no matter like I'm just trying to point out, we will end up discussing all of these things um and they'll, you know, all be resolved in time. I just wanted to make sure that people didn't have to hop between four issues to get a complete picture of what's going on. Um, all right. So, so let's um let's discuss these items.</p>
+<p id=213b class="phone s01"><cite>Manu_Sporny:</cite> Uh what would be it feels like field match has the most succinct response from each person engaging. I think Dave you also responded in here as well. Uh, is that right? Phil responds.</p>
+<p id=ad84 class="phone s01"><cite>Manu_Sporny:</cite> All right, we're getting a mega thread here. Um, was this the one that you responded to point by point, Dave? It's a very long one.</p>
+<p id=8cad class="phone s02"><cite>Dave_Longley:</cite> I have responses in there.</p>
+<p id=630f class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Well, I'm going to just I'm just going to put it in here, right? Um, just for just to anchor the discussion on something. Um, I'm having second thoughts about doing that because this one is specific to the GS1 use case.</p>
+<p id=7b09 class="phone s02"><cite>Dave_Longley:</cite> The point by point that you might have been referring to that I wrote was in 135.</p>
+<p id=874d class="phone s01"><cite>Manu_Sporny:</cite> Let me Okay, let's do this one then.</p>
+</section>
+
+<section>
+<h3 id=9f5c>Discussion On Field Match Issue</h3>
+<p id=4b1f class="phone s01"><cite>Manu_Sporny:</cite> All right. Um, and everyone had a discussion last week on this, I think. Is that correct? I think there was a good good discussion last week. Okay. Um, does someone want to summarize where we got to there and kind of where where we needed to go after that?</p>
+<p id=8d8b class="phone s02"><cite>Dave_Longley:</cite> I don't know how well I can summarize it. Um, and subsequent conversations have maybe changed my opinion on what we got to. Um, so one of the things that was important in last week's call, uh, I think is acknowledgment of Steve Capel's point that all authoritative registers are unlikely, uh, perhaps ever to list uh, act actions that they would recognize. Instead, they would recognize parties as particular roles or having particular scopes.</p>
+<p id=10004 class="phone s02"><cite>Dave_Longley:</cite> uh and then any specific rules around what VCs would be accepted or what could be asked for or whatever would be application level rules or specified elsewhere in perhaps in documents that are not machine readable that don't allow for programmable uh verification uh engines and so forth. Uh certainly that might be the case today and Steve's point is it might be the case ever. It's not some legacy problem. It's that's all that they're designed to do and that's not a flaw in their design. So that was an important thing that we talked about. Um, another thing that we talked about that I thought was important was um, stating that uh, this specification is not just for authoritative uh, registers. It's meant to cover recognition. Uh, it's meant to allow parties to express their recognition of entities and actions those entities might take.</p>
+<p id=10005 class="phone s02"><cite>Dave_Longley:</cite> And that is meant to be a larger superset that includes authoritative registers but also other decentralized parties, non-authoritative registers, uh small communities and so forth that might uh find uh certain expressions more useful or useful at all that authoritative registers might not find useful. Um, and so we want to cover all of that, not limit this to uh author to solving for authoritative registers, but uh it's they they they too are an important class of user for this spec.</p>
+<p id=f8c3 class="phone s02"><cite>Dave_Longley:</cite> Um and so we have different concepts for which we don't know how we want to best either consolidate them or or express them differently around recognizing uh entities as roles or having certain scopes or uh stating that I would recognize uh a VC that matches this validation these validation rules uh if it were issued by this party which is sort of a programmable a machine readable programmable way for verifiers to onboard new rules for deciding they might recognize something because some other party also recognizes it.</p>
+<p id=46f3 class="phone s02"><cite>Dave_Longley:</cite> Um and then there's also sort of a open question around uh how much are we what what are the minimum set of primitives we can define to solve all of these use cases and we also don't want to overload uh or try to make the recognize entity credential solve more than it needs to solve because you can always make other VCs we already expect people to issue VCs like this is a student ID and then students themselves could issue VCs or this is a university uh credential and then that university can issue other things. We don't want to necessarily say the recognize entity credential is the credential to rule them all and put everything in a list and put everything in a in a validation schema. So we have to figure out where those lines are and make sure that we're solving a particular problem. Uh and maybe there's more than one problem we're solving, but we need to be clear about what the this spec is solving.</p>
+<p id=b0b7 class="phone s02"><cite>Dave_Longley:</cite> Um, and for my part, I I think that's related to figuring out what your root of recognition is and figuring out whether or not you it's machine programmable in any way or if that's all externalized, the you know, rules you have to pull together in your application. Uh, and that that might be answered differently for different users. Um, hopefully that's that was a long summary, so maybe I spoke too much, but that that was my takeaway.</p>
+<p id=c6e6 class="phone s01"><cite>Manu_Sporny:</cite> Great. Thank you uh for that,…</p>
+<p id=2b7b class="phone s01"><cite>Manu_Sporny:</cite> Dave. Um uh it makes sense to me. Uh go ahead, Steve.</p>
+<p id=7423 class="phone s03"><cite>steve_capell:</cite> Yes, I'll just echo that.</p>
+<p id=fbef class="phone s03"><cite>steve_capell:</cite> I It wasn't too long. I thought it was very well said. Um, so a good summary and I think it means we're we're quite close. I I I um do accept that this is not just for authoritative registers and there may be some use cases that are not common for us but common for others where you want to express some sort of recognized action. Um and I it's not for me to stand in the way and say you shouldn't have it. Uh as long as it's optional it's fine.</p>
+<p id=78a8 class="phone s03"><cite>steve_capell:</cite> I I think there are just two things that I would ask the group to consider data modelwise. One I think we've discussed already which is uh a placeholder for the identifier of the party as known to the register. Right? So the uh the the registered ID or whatever we call it we so that I think issue is accepted right and and I'm not sure who's going to raise a pull request whether should that be me or someone else. Um, the other sort of last thing I think to resolve and fully accepting what Dave said about not overloading the credential and a lot of these really complex validation rules are likely to be outside of any credential. They're they're actually assessed over a basket full of credential. Uh, so they're not expressed in the credential so much and that's fine too.</p>
+<p id=e8e6 class="phone s03"><cite>steve_capell:</cite> the the one thing that I I feel is missing in a normative way is some way to express a recognition scope which is not a recognized action. It's more like um really a URI and a name that says uh paredative business register says uh you know um you're recognized as a business and the scope is and often this scope is is really defined by the register so it's it's hard to uh sort of harmonize it across the world um but just in Australia there are about I think</p>
+<p id=1683 class="phone s03"><cite>steve_capell:</cite> 30 different kinds of business registrations, not for profofits, partnerships or etc., etc. So, uh, and this is often quite an important part of the, um, the recognition, right? You you are an Australian business and you are a not for-p profofit. Uh, so it's not a recognized action. It's a kind of it's a scope, right? Uh, and very similar with conformity, you you are a conformity assessment body and the scope is ISO 9,000, right? Uh, or or whatever. So this idea of a recognized scope that points to a uh some external meaning and probably has a name and an ID would cover a lot of uh these use cases.</p>
+<p id=e75e class="phone s03"><cite>steve_capell:</cite> And then that leads you to the question of uh does that mean we have we tweak the data model so that the the root is recognized scope and one of the types of scope is an action or do we have recognize two and recognition scope as separate themes or uh you know that's a data modeling question that uh I welcome your your insights on. Right. So that that's it.</p>
+<p id=fdff class="phone s03"><cite>steve_capell:</cite> Uh, I think we're very close. Oh, by the way, and I've understood Jason now, so thanks for the clarification.</p>
+<p id=6e74 class="phone s01"><cite>Manu_Sporny:</cite> Okay, excellent.</p>
+</section>
+
+<section>
+<h3 id=df26>Identifier For Recognized Entities</h3>
+<p id=24c3 class="phone s01"><cite>Manu_Sporny:</cite> Uh, you've definitely got one up on me there. I still have not had a chance to look at depth on uh on Jason yet. Um, okay. Uh, that's great. and is aligned with um what I had read uh in the various issues. So that's good. Uh and it sounds like there are two items left, Steve, that you feel like we should address uh and if we were able to address those two things, then hopefully we are uh far more closer to consensus on the spec um than we were a couple of weeks ago. Uh the So let's talk about those two items.</p>
+<p id=8446 class="phone s01"><cite>Manu_Sporny:</cite> Uh I did uh take a look. So this is the registered ID thing, registered scheme thing, right? Um uh yeah, plus one to that. I you know in the spec currently I think we have um things like name, legal name, image, URL, same as uh description for the entity. Um and it shouldn't be that difficult to add a registration ID or something like that and specify where it is. I will note that there are multiple ways to do that um existing in link data um and so it might be somewhat of a bike shedding exercise but you know there are things like schema.org's</p>
+<p id=38af class="phone s01"><cite>Manu_Sporny:</cite> or's identifier uh thing which provides a you use a property value for it where you specify the property so like ABN or u ISBN or G10 or something like that and then there's a value um the identifier can also be a URL so the the identifier can be a URL it can be a property value which is basically a key value pair um and uh this property value, you can point to a registry that defines the um the the the class of um uh properties in there. Um it is a flexible mechanism that I think would work for this task, but it's also kind of uh it's it's a bit awkward to use.</p>
+<p id=6df4 class="phone s01"><cite>Manu_Sporny:</cite> Um and and if you use property ID in this way, it's not guaranteed to be globally understood or unique. You can put a URL in there to to make it so. But like for example, if somebody were to put ABN in here, you know, how many how many three-letter acronyms in the world, you know, are registers of some kind that use the letters ABN, right? maybe there's at least two or three at which point it becomes a little harder to understand what type of identifier um you know have a globally unique identifier there.</p>
+<p id=10006 class="phone s01"><cite>Manu_Sporny:</cite> So, um, that's one of the things that popped up there. Steve, I don't know if you've been able to take a look at these different identifier schemes. I will note that in the poll request that uh raised, they had their own uh there as well. Um, let me try and find it. Um, and while I go looking for that, uh, go ahead uh Dave.</p>
+<p id=6375 class="phone s02"><cite>Dave_Longley:</cite> Yeah, one thing I was going to note is I would expect anyone using this field's going to have to come up with their own type that is a URL that is uh uh globally unambiguous. And given that, I wonder if it makes sense to tell people to come up with URN schemes for identifiers or if that's a bridge too far. Um, because you're going to have to come up with something either way. And maybe you come up with a single field that allows you to move your identifiers into URI space or you come up with a URI that's for a type and then, you know, place your identifier as a string in a separate field. I don't know how much extra value there is in doing it that way versus telling people uh use an use a URN scheme for</p>
+<p id=be0c class="phone s01"><cite>Manu_Sporny:</cite> And looking at this example, Steve, I think they s used the DIA stuff to do it. Um, does this look I mean this look this should hopefully look familiar to you. And you might be muted, Steve. Here,…</p>
+<p id=261e class="phone s03"><cite>steve_capell:</cite> I'm just zooming in on my phone. I'll have to pull out the laptop and have a look. Uh ID.</p>
+<p id=307c class="phone s01"><cite>Manu_Sporny:</cite> let me try zoom for you. Is that easier to</p>
+<p id=a1d1 class="phone s03"><cite>steve_capell:</cite> Yeah. Registration scope list. Registered ID register. Okay. Yeah. register type is okay. I see where they're going. Yeah. Well, we've just updated the DIA uh and we'll probably do so again when especially when your um vocabulary gets released.</p>
+<p id=6558 class="phone s01"><cite>Manu_Sporny:</cite> Okay. Is this is this stuff from DIA as well?</p>
+<p id=a0b5 class="phone s03"><cite>steve_capell:</cite> Um assess that's from um um product passport and…</p>
+<p id=7274 class="phone s01"><cite>Manu_Sporny:</cite> Reference regulation, reference standard assessment. Ah, okay.</p>
+<p id=7322 class="phone s03"><cite>steve_capell:</cite> and conformity credential.</p>
+<p id=39fb class="phone s01"><cite>Manu_Sporny:</cite> Okay. Okay.</p>
+<p id=dbc2 class="phone s03"><cite>steve_capell:</cite> So yeah, that that's clearly coming out of UNP. Uh I can say that for sure. So we would normally have an ID and a and a scheme. So a you know the ID is whatever the Australian business number is and…</p>
+<p id=34b0 class="phone s03"><cite>steve_capell:</cite> the scheme is abbr.au. Uh that's it.</p>
+<p id=ac99 class="phone s01"><cite>Manu_Sporny:</cite> Okay. Mhm.</p>
+<p id=5ce0 class="phone s03"><cite>steve_capell:</cite> So you can have a name of the scheme. So you know a short name so for display purposes. Um, that's a typical Perfect.</p>
+<p id=c8ac class="phone s01"><cite>Manu_Sporny:</cite> Well, I guess my question so I I think you know the the core ask which is you know can we have you know registered ID and the I think we just need to figure out the data modeling around it right I don't think unless is anyone objecting to us like adding a identifier field and then that specifying like the identifier scheme and other things of that nature. Go ahead, Dave.</p>
+<p id=c847 class="phone s02"><cite>Dave_Longley:</cite> Uh, no objection. Uh, that certainly doing it the way that's on the screen I don't think works because this is the registered type for the whole object. Uh so it does need to be it it either needs to be a single field that carries a URI or…</p>
+<p id=10007 class="phone s02"><cite>Dave_Longley:</cite> a nested field where the properties are about the object that is uh nested. So either of those would work be correct data modeling and then it's a question as to whi which of those is the actually the most useful and the least burdensome for anyone to to It's</p>
+<p id=f827 class="phone s03"><cite>steve_capell:</cite> I wouldn't propose we do it the way shown on the screen there either.</p>
+<p id=0389 class="phone s03"><cite>steve_capell:</cite> That's from a different credential. But um I think what you need to be able to say is what is the identifier and what is the identifier scheme. And the reason you need the scheme is because a and the scheme needs to be a URI, right? It needs to be globally unambiguous. Uh and the reason you need to say the scheme because you could argue well isn't isn't the the recognized entity credential issued by the scheme owner in the first place. So the issuer is the scheme.</p>
+<p id=4a5e class="phone s03"><cite>steve_capell:</cite> Uh the answer to that is some registers operate multiple schemes like the Spanish business register is a land register, asset register, business register etc. So they would say register.org is the issuer. Uh the recognized ID is perhaps this landlot and their scheme is this uh you know land register scheme, right? So yeah, I think it's a little object that has an ID and then a scheme as a URI that has to be globally unique, something like that, right?</p>
+<p id=734b class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I think so as well. I'm I'm looking at the thing that comes closest to that right now that's broadly deployed is the property value thing in scheme.org.</p>
+<p id=61eb class="phone s01"><cite>Manu_Sporny:</cite> Um property ID can be a text or a URL which is somewhat of problem. Um uh and uh the value can be you know a fairly complex</p>
+<p id=c6bc class="phone s03"><cite>steve_capell:</cite> There is a uh there is a W3C or…</p>
+<p id=d292 class="phone s03"><cite>steve_capell:</cite> comes out of that you know that large collection of stuff that came out of the semantic web people some organization uh I haven't looked at it um organization ontology or something Anyway, I I think…</p>
+<p id=166f class="phone s01"><cite>Manu_Sporny:</cite> Yes, I think so. Yeah.</p>
+<p id=be4b class="phone s03"><cite>steve_capell:</cite> if I hear right, we've agreed you need an identifier and you need a unique uh scheme ID. And now we're talking about…</p>
+<p id=9774 class="phone s03"><cite>steve_capell:</cite> which vocabulary to use, right? Yes.</p>
+<p id=fa2d class="phone s02"><cite>Dave_Longley:</cite> Yes, I agree with that.</p>
+<p id=fca3 class="phone s02"><cite>Dave_Longley:</cite> But I'd also like to point out that's what a UR URI is. It's a scheme and a scheme specific part more or less. Um and…</p>
+<p id=6440 class="phone s03"><cite>steve_capell:</cite> Agreed. So one way is just a URI the pausing right- when you Yeah.</p>
+<p id=7ae1 class="phone s02"><cite>Dave_Longley:</cite> and yeah, so yeah, we might tell people uh invent some URNs uh to put your identifiers on.</p>
+<p id=f97c class="phone s03"><cite>steve_capell:</cite> Because the the the thing you're going to match, right? So somewhere in some other document you've said um this invoice is issued by Australian business number XY Z.</p>
+<p id=217c class="phone s03"><cite>steve_capell:</cite> uh and then uh we're trying to match that to an ID in a DIA. And if that's a URI, now you've got to pass a string. You can do that, right? But um could give you a headache.</p>
+<p id=f1f2 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, my my concern with that, Dave, is we're we're dealing with registers that have existed for, you know, decades to potentially centuries, right? And so they have their own they they have their own kind of we may need multiple anchors into the identifier. We may need a URL plus a URN plus a human readable text string uh both short form and expanded um to to do the to to have a the ability to map to all these different types of expressing uh you know identifiers. Um, which I think is…</p>
+<p id=cd29 class="phone s01"><cite>Manu_Sporny:</cite> why property value got so complicated. Um, go ahead Dave.</p>
+<p id=9cff class="phone s02"><cite>Dave_Longley:</cite> All right.</p>
+<p id=ad5f class="phone s02"><cite>Dave_Longley:</cite> I hear what you're say what you're saying, but to me that all sounds like they're going to have to invent something. And so I was per it would be nice for them to invent one thing instead of uh potentially many. And either way,…</p>
+<p id=40d4 class="phone s03"><cite>steve_capell:</cite> Yes, I agree.</p>
+<p id=0123 class="phone s02"><cite>Dave_Longley:</cite> they're going to be inventing some kind of URI because they're going to need that for the type. Uh Steve's point is a good one. Uh you're going to have to do some parsing to get that identifier back out of the UR if you do that. But either way, you got you're going to need a URI. So the question is, uh do you need a URI and more, which uh or is it just a U? Yeah, I guess it's a URI and more no matter what. It's a URI plus some parsing rules or a URI plus some additional properties that you also have to</p>
+<p id=d5e3 class="phone s01"><cite>Manu_Sporny:</cite> How much do we care about um collisions? So I mean I think Dave what you're saying is like ur colon abn colon something right would be a a And…</p>
+<p id=efc1 class="phone s02"><cite>Dave_Longley:</cite> Yeah. And let them Yeah. Let let the individual uh groups def define that. We don't have to tell them what to do other than hey, make a URN and uh and define your parsing rules to get it back out.</p>
+<p id=0d01 class="phone s01"><cite>Manu_Sporny:</cite> then it just collapses down into just like identifier and…</p>
+<p id=89d9 class="phone s01"><cite>Manu_Sporny:</cite> and it's a it's a URI.</p>
+<p id=c34f class="phone s02"><cite>Dave_Longley:</cite> Yes, that's right. Yes.</p>
+<p id=fc5d class="phone s03"><cite>steve_capell:</cite> I I wouldn't demand a URN. Uh can't we just say a URI which yeah which can be a URN or a URL if you want. But um I agree with you David Dave that that that it is up to the register to define their unique ID globally. uh and that's in fact what the purpose of grid is right to say here's a list of uh authority registers because there's hundreds of others and we already have DNS as a way of sort of ensuring global uniqueness of some domain so that seems to be the obvious um</p>
+<p id=5fad class="phone s01"><cite>Manu_Sporny:</cite> If if we're going to do that then property value is a exact fit because you do identifier colon and…</p>
+<p id=b4e0 class="phone s03"><cite>steve_capell:</cite> assist.</p>
+<p id=8f49 class="phone s01"><cite>Manu_Sporny:</cite> then uh the property ID is a is a UR I mean they say URL but it's really a URI. and we just lock it to be that, right? Property ID is a URI. Um, and then, uh, you've got the I guess you have the value.</p>
+<p id=75b2 class="phone s02"><cite>Dave_Longley:</cite> it. There's already identifier in schema.org that takes a URI. Is that true?</p>
+<p id=b468 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I'm talking about the identify and it takes a property value. Um, it can do both…</p>
+<p id=1488 class="phone s02"><cite>Dave_Longley:</cite> I thought it also took a URL. So, you could put that there.</p>
+<p id=8548 class="phone s01"><cite>Manu_Sporny:</cite> because it's weird in schema.org. Let me let me try and find it.</p>
+<p id=4ca5 class="phone s01"><cite>Manu_Sporny:</cite> Um, identifier the the thing I'm a little Yeah. So, so identifier here, right? Um, can be a UR URL, but what they really mean is URI uh text or a property value. And I'm I am concerned that if we do not also support property value that at some point somebody is going to want to add some descriptive text around the identifier. Um and…</p>
+<p id=5f69 class="phone s02"><cite>Dave_Longley:</cite> So we could offer examples with both,…</p>
+<p id=3327 class="phone s01"><cite>Manu_Sporny:</cite> that is what like name you can do name and description uh with it.</p>
+<p id=0e2e class="phone s02"><cite>Dave_Longley:</cite> right? In theory, we could offer examples with both and let people use the simple path of just putting a URL under the identifier and then also put us for those who want to do more, they can do</p>
+<p id=759b class="phone s01"><cite>Manu_Sporny:</cite> Okay, that feels</p>
+<p id=54fd class="phone s03"><cite>steve_capell:</cite> property value on stema.org is all about measurement method and max value, min value and…</p>
+<p id=4c5a class="phone s03"><cite>steve_capell:</cite> unit code. It's it's not identifiers. It's it's how you measure things.</p>
+<p id=3e32 class="phone s01"><cite>Manu_Sporny:</cite> Uh that is it is a unfortunate side effect of schema.org that it just throws everything in a bucket.</p>
+<p id=b271 class="phone s01"><cite>Manu_Sporny:</cite> Uh we can limit I think the the usage um uh Steve right we can just say like no this isn't for like I mean you know they they again open world they can put whatever they want to in the object we can just say like this is not about measurement methods right it's about property ID and…</p>
+<p id=4de5 class="phone s03"><cite>steve_capell:</cite> That's I think it's fine.</p>
+<p id=cf1b class="phone s01"><cite>Manu_Sporny:</cite> value and then maybe name and description and that's pretty much</p>
+<p id=21f4 class="phone s01"><cite>Manu_Sporny:</cite> it. How about this? Do do we feel like I I I feel fairly confident that I could raise a PR for this that would I think meet the use case? Uh Steve, um Dave, I'm happy to take an action to do that and then we can talk about it once it's raised in the PR. Would that be an okay concrete next step?</p>
+<p id=908a class="phone s01"><cite>Manu_Sporny:</cite> Or do we feel like no, we need to we need to talk about this Okay.</p>
+<p id=4d47 class="phone s02"><cite>Dave_Longley:</cite> I think it's fine.</p>
+<p id=05d4 class="phone s02"><cite>Dave_Longley:</cite> for my part.</p>
+<p id=5042 class="phone s01"><cite>Manu_Sporny:</cite> right. So, I'll take an action to do that. Um, let's see. Um, is this where you Yeah. Um, well,…</p>
+<p id=b134 class="phone s03"><cite>steve_capell:</cite> All right.</p>
+<p id=a82e class="phone s01"><cite>Manu_Sporny:</cite> let's see. I'm going to put it in here.</p>
+<p id=982f class="phone s01"><cite>Manu_Sporny:</cite> Um, we discussed this issue on the call today and going to raise a poll request that reuses identifier.</p>
+<p id=15d2 class="phone s03"><cite>steve_capell:</cite> right. All right.</p>
+<p id=10008 class="phone s01"><cite>Manu_Sporny:</cite> um schema to express an identifier for the recognized entity as a URI. Uh we all know what to do there with that.</p>
+<p id=137c class="phone s01"><cite>Manu_Sporny:</cite> Um okay so let's jump to the next one.</p>
+</section>
+
+<section>
+<h3 id=4242>Registration Scope Discussion</h3>
+<p id=329a class="phone s03"><cite>steve_capell:</cite> Uh when I went broke up like Marvel was Mhm.</p>
+<p id=47fd class="phone s01"><cite>Manu_Sporny:</cite> The next thing I think uh Steve that you asked for got 10 minutes left is the it's not it's recognize scope right um and when I went to look at the digital identity anchor stuff um the data modeling threw me off a little bit. Let me try to find exactly where that happened. Right. Okay. Here. Um. Whoops. So, you've got this registered identity thing. The registered name, registered ID, registered date, public information. Um, in this some of this object is more about the registration than it is the the entity.</p>
+<p id=adbb class="phone s03"><cite>steve_capell:</cite> Um all the way.</p>
+<p id=c6fa class="phone s01"><cite>Manu_Sporny:</cite> So the way I was looking at this was I was like, well registered entity is a registered identity and…</p>
+<p id=79f3 class="phone s03"><cite>steve_capell:</cite> was like, &quot;Well, let's put that I'll show you.</p>
+<p id=3a4f class="phone s01"><cite>Manu_Sporny:</cite> some of these properties when you put them on an entity like a recognized entity um feels off like public information. What does the public information you know? Um, well, let me register type is the one that really uh jumped out, right? So, a recognized entity has a register type of X. That felt strange to me, right? Like a registration would have a register type. Um the same thing the recognition scope um being tied to you. It felt like these are properties that are associated with the registration,…</p>
+<p id=c794 class="phone s01"><cite>Manu_Sporny:</cite> not necessarily with</p>
+<p id=68ed class="phone s01"><cite>Manu_Sporny:</cite> the entity. And these sorts of things feel like they would naturally go under a property like registration or be direct properties of a recognized uh entity in the way that they were being used um with the spherity PR. So did this you know digital identity anchorbased PR and…</p>
+<p id=8751 class="phone s03"><cite>steve_capell:</cite> Don't worry.</p>
+<p id=907c class="phone s01"><cite>Manu_Sporny:</cite> they did you know this kind of stuff. I think we're going to change this to the ident identif identifier thing. And then when you get down here, um, reference standard, reference regulation, assessment criteria all feel like they're kind of associated with a registration. Not necessarily. Okay.</p>
+<p id=fdf0 class="phone s03"><cite>steve_capell:</cite> Yeah, that's those are nothing to do with DIA.</p>
+<p id=4189 class="phone s03"><cite>steve_capell:</cite> You're not looking at you're not looking at a DIA there. You're looking at a informity credential.</p>
+<p id=64bf class="phone s03"><cite>steve_capell:</cite> I think Yeah.</p>
+<p id=41f1 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. I guess that…</p>
+<p id=da71 class="phone s01"><cite>Manu_Sporny:</cite> what I'm trying to get at though, Steve, is like it feels like the recognition scope thing feels like it would I don't know. It feels like it it feels like there these should all be properties on this is all properties on recognized too. They should all be properties at this level which I think recognition scope is right.</p>
+<p id=91b2 class="phone s03"><cite>steve_capell:</cite> So what what I've heard you say is uh or highlight for me is this is that the mindset of recognized entity is you're recognizing an entity whereas I must admit you're right that the DIA mindset is this is a registration.</p>
+<p id=a906 class="phone s01"><cite>Manu_Sporny:</cite> That's right.</p>
+<p id=82cd class="phone s03"><cite>steve_capell:</cite> Uh a and so those are two slightly different things and it means that if we're going to put a registration in a recognized entity structure then what you're saying is those registration features or properties are belong under the recognized uh party right uh…</p>
+<p id=6ceb class="phone s03"><cite>steve_capell:</cite> if you like I don't know if I've said that right…</p>
+<p id=9b02 class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I think like…</p>
+<p id=034f class="phone s03"><cite>steve_capell:</cite> but Um,…</p>
+<p id=52b1 class="phone s01"><cite>Manu_Sporny:</cite> if we had a property in here that said registration and then we had all of the things, you know, the rec, you know, if we had a subset of this information, I think from a data modeling perspective, it would make more sense to me.</p>
+<p id=7ba6 class="phone s01"><cite>Manu_Sporny:</cite> Um, but I don't know…</p>
+<p id=7520 class="phone s03"><cite>steve_capell:</cite> okay. Well, okay. Um, I think it's The registar in in in our mind would always be the issuer.</p>
+<p id=f12f class="phone s01"><cite>Manu_Sporny:</cite> how much that messes up the the data model here, uh, Steve. Right. So if this was a registration and there's like registration name, registration ID, registration date, public information associated with the registration, the register type associated with the registration, the registar associated with the registration like all all that feels like it's clicking for me. I don't know if it is for you.</p>
+<p id=959d class="phone s03"><cite>steve_capell:</cite> of the recognized entity credential,…</p>
+<p id=7405 class="phone s01"><cite>Manu_Sporny:</cite> Right. Yep.</p>
+<p id=4584 class="phone s03"><cite>steve_capell:</cite> right? Um but the regist the issuer is a did, right? So we need to say and this is the human language version of the did.</p>
+<p id=da4a class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Which is fine like you can you can have a you know in the registration there can be a registar and…</p>
+<p id=4db2 class="phone s03"><cite>steve_capell:</cite> Um so yeah,…</p>
+<p id=56d5 class="phone s01"><cite>Manu_Sporny:</cite> it can point to the ID can be the data but then you can have a name and elaborate on you know that that entity.</p>
+<p id=44b2 class="phone s03"><cite>steve_capell:</cite> it it sounds like we just need first step um the high level not the properties…</p>
+<p id=516b class="phone s03"><cite>steve_capell:</cite> but the entity relationship clarity uh so that so that we know…</p>
+<p id=6c3d class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Right. Mhm.</p>
+<p id=3378 class="phone s03"><cite>steve_capell:</cite> where to put the properties uh that we additionally need. uh and in the couple couple of minutes left uh could probably carry on that conversation on a on a ticket or uh uh or if if you have a suggestion to say look a recognized entity concept is we're recognizing this entity we understand that um there's a registration associated with that and it we expect it would look like this some sort of really high level recog in your mind recognized entity er model…</p>
+<p id=3aa1 class="phone s03"><cite>steve_capell:</cite> if you like that…</p>
+<p id=f9d8 class="phone s01"><cite>Manu_Sporny:</cite> Mhm. Yeah,…</p>
+<p id=73ed class="phone s03"><cite>steve_capell:</cite> then we can Ah yeah, I see what man is thinking. That means our DIA we would need to put these properties in that box. Uh that would that would give us a way forward, wouldn't it? Okay.</p>
+<p id=2456 class="phone s01"><cite>Manu_Sporny:</cite> I think so. Go ahead, Dave.</p>
+<p id=3e49 class="phone s02"><cite>Dave_Longley:</cite> Yeah, I just want to say for my part I think it makes sense that to say uh here's a recognized entity and we recognize that they have a registration over here and here's all the information about that registration.</p>
+<p id=fdee class="phone s01"><cite>Manu_Sporny:</cite> Yep. Scope, identifier, you know, name of the the registar, all that kind of stuff. That that feels clean to me.</p>
+<p id=5645 class="phone s03"><cite>steve_capell:</cite> Uh, do you want to raise a PR on that already or clarify in a ticket and…</p>
+<p id=dd45 class="phone s01"><cite>Manu_Sporny:</cite> Yeah. Uh, the only thing I'm a bit I I will I will make an attempt and it will be wrong, Steve. Um, because I don't know DIA. I'll try to map all of these things and see how how it might look.</p>
+<p id=10ca class="phone s03"><cite>steve_capell:</cite> what do you want? Do you want me to try a PR?</p>
+<p id=b15a class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I happy.</p>
+<p id=eb14 class="phone s03"><cite>steve_capell:</cite> I might I might Yep.</p>
+<p id=027c class="phone s01"><cite>Manu_Sporny:</cite> Yeah, I'm happy for you to attempt one. I mean, basically just change it's the the relationship is registration, right? So, you've got a recognized entity.</p>
+<p id=394c class="phone s01"><cite>Manu_Sporny:</cite> there's a registration property and then you put all the DIA stuff in there or you know as much it makes sense.</p>
+<p id=40a4 class="phone s03"><cite>steve_capell:</cite> Okay. Let let me dwell on that and…</p>
+<p id=2647 class="phone s02"><cite>Dave_Longley:</cite> Yeah. One thing to keep in mind is um the type of that registration should probably just be a URL I guess so that you could uh other other people can put their own types of registrations in there something like that.</p>
+<p id=261b class="phone s03"><cite>steve_capell:</cite> and this I'm not feeling anything like oh no that's not right. So let let me have a think and I'll happy to raise a PR for you to we can criticize.</p>
+<p id=43f5 class="phone s01"><cite>Manu_Sporny:</cite> Awesome. Sounds great.</p>
+<p id=33a7 class="phone s03"><cite>steve_capell:</cite> Yeah, enums are dangerous. That that that comes from the grid where they they limit it to um you know it's a land register, asset register or business register. But I'm not sure we want to carry that into a more general DIA cuz you're right it could be a I don't know member association or social club or you know um yeah so we we'll avoid uh closed enumerations for those sort of things. Yeah.</p>
+<p id=10009 class="phone s01"><cite>Manu_Sporny:</cite> Okay. Yeah. Yeah. Yeah. Okay. All right. That that feels like we can make some um progress uh before the meeting uh next week…</p>
+<p id=7f5e class="phone s01"><cite>Manu_Sporny:</cite> if we take that direction. So, I'll take the Yeah. And you know what? The identifier might be better off in this registration as well. Um okay. In any case, you know, if I find some time, uh, Steve, I'll try to put some thinking into it and you do the same as well. I I feel like we've basically accepted that you both of these are legitimate use cases. We just need to figure out the data modeling at this point.</p>
+<p id=35e5 class="phone s03"><cite>steve_capell:</cite> Maybe. Mhm.</p>
+<p id=53ff class="phone s03"><cite>steve_capell:</cite> That sounds right.</p>
+<p id=35b5 class="phone s01"><cite>Manu_Sporny:</cite> Okay. All right. With that, uh, we've got about 45 seconds left. Uh, thank you everyone very much, um, uh, for the discussion today. Um, over to you Paul for the last word.</p>
+<p id=e33d class="phone s04"><cite>Paul_Dietrich:</cite> Yeah, I just want to check status on this field match.</p>
+<p id=e466 class="phone s04"><cite>Paul_Dietrich:</cite> You' opened it today and we discussed kind of a recap, but I don't think we have a resolution. Are we moving forward with that, do you think, Manu? I think so,…</p>
+<p id=6538 class="phone s01"><cite>Manu_Sporny:</cite> the the I think with the JSON audit thing feels like it makes sense like it sounds like you and…</p>
+<p id=7dc7 class="phone s01"><cite>Manu_Sporny:</cite> Dave agree that it works on a technical uh basis. Is that correct?</p>
+<p id=5a19 class="phone s04"><cite>Paul_Dietrich:</cite> Mono. Yeah, I think from the GS1 perspective that did satisfy the use case. I think there was some question around Jason. Um I don't know if that surfaced in the main work group or…</p>
+<p id=6896 class="phone s04"><cite>Paul_Dietrich:</cite> if it was here. Um but I wasn't sure again is are we trying to move to a PR on this or do you think we should wait and discuss longer?</p>
+<p id=49c4 class="phone s01"><cite>Manu_Sporny:</cite> Um, I think Phil has some legitimate concerns around Jon Snada,…</p>
+<p id=7ee1 class="phone s01"><cite>Manu_Sporny:</cite> but we as a working group are going to have to figure them out because we're using them in very critical ways in other specifications, right? So I think the you know we have to be able to reference Jason and it is up to Phil and Brent and the editors to figure out how we do that at W3C.</p>
+<p id=a7ee class="phone s04"><cite>Paul_Dietrich:</cite> Okay, thanks Mon. Then I think if you think that's ready for PR, I think the PR should probably go around redoing the GS1 examples. Um, I think that might make sense.</p>
+<p id=1000a class="phone s01"><cite>Manu_Sporny:</cite> Okay. Yeah. I' I'd suggest I mean if you if you want to I'd suggest you know if you you take that on and and move that forward with a presumption that we're going to figure out a way to reference and use JSON.</p>
+<p id=7431 class="phone s04"><cite>Paul_Dietrich:</cite> Okay, thank you.</p>
+<p id=d285 class="phone s01"><cite>Manu_Sporny:</cite> All right. Thank you. All right. Uh that's it for the call today. Thank you everyone. Uh have a wonderful rest of your week and we will chat again next week. Take care. Bye. Meeting ended after 01:03:35 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
