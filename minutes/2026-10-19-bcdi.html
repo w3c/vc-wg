@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Barcodes and Data Integrity &ndash; 19 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Barcodes and Data Integrity</h1>
+<h2>19 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Dave_Lehn, Dave_Longley, Elaine_Wooton, Greg_Bernstein, Manu_Sporny, Phil_Archer, Phillip_Long, Ted_Thibodeau_Jr, Wesley_Smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#fe8b">Daylight Saving Time Discussion</a></li>
+<li><a href="#4f65">New Contributor Joins Task Force</a></li>
+<li><a href="#19b3">TAC Session Planning</a></li>
+<li><a href="#ad71">VCOM and DC API Discussion</a></li>
+<li><a href="#926f">ISO Standards Interest in Forgery Defense</a></li>
+<li><a href="#f953">BBS Standard Updates and Selective Disclosure</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section></section>
+
+<section>
+<h3 id=fe8b>Daylight Saving Time Discussion</h3>
+<p id=3de7 class="phone s01"><cite>Wesley_Smith:</cite> Hey, Greg. Wes. Oh,…</p>
+<p id=d039 class="phone s02"><cite>Greg_Bernstein:</cite> Hey, Wes.</p>
+<p id=24cc class="phone s02"><cite>Greg_Bernstein:</cite> Sorry if I call you Wesley.</p>
+<p id=e25c class="phone s01"><cite>Wesley_Smith:</cite> that is okay. Wes. Wesley, whatever you got.</p>
+<p id=8d53 class="phone s02"><cite>Greg_Bernstein:</cite> Honey, I I I was just doing some experiments with some AI stuff and…</p>
+<p id=fd92 class="phone s01"><cite>Wesley_Smith:</cite> I get Wesley a lot in people from Europe. I guess that's a European. They call it say Wesley. British people and the like. That's rogue forbidden.</p>
+<p id=29a0 class="phone s02"><cite>Greg_Bernstein:</cite> they're recommending better terminals and there's a Wesley terminal with a Z though.</p>
+<p id=617f class="phone s02"><cite>Greg_Bernstein:</cite> But it's uh pretty nice because it does full customization. So I can get high contrast colors. There.</p>
+<p id=c230 class="phone s01"><cite>Wesley_Smith:</cite> Oh, nice, nice, nice, nice. Good afternoon, Phil. afternoon by two minutes.</p>
+<p id=5e4f class="phone s03"><cite>Phil_Archer:</cite> Good afternoon, Wes. Morning. I mean, it's so hard to keep track. Yes. It all changes because Europe's going on to uh we stop daylight saving time of the weekend. Yeah.</p>
+<p id=491e class="phone s01"><cite>Wesley_Smith:</cite> Yeah, that is just the absolute worst. No, the different places observing daylight savings time differently.</p>
+<p id=c3cc class="phone s01"><cite>Wesley_Smith:</cite> So, wonder how many man-h hours that's out of the global population efficiency wise. Uh, millions surely. Anyway, all right.</p>
+<p id=a5b7 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's just trying to train us to listen to the computers because they get it right more often than not.</p>
+<p id=cc92 class="phone s03"><cite>Phil_Archer:</cite> Here we go.</p>
+<p id=22d8 class="phone s01"><cite>Wesley_Smith:</cite> Right. Right. Central authority is the only one that knows the true answer. Yeah. I mean, in that case, I'm happy to defer to the the computers. I can't lie.</p>
+<p id=011f class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Cross your smartwatch.</p>
+<p id=8165 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I've I've uh banged my head against the keyboard trying to write localization code enough times that I trust the machines. Or maybe that means I shouldn't trust the machines actually. I don't know. All right. Um hi everyone. Welcome to the October 19th meeting of the barcodes data integrity status and forgery defense task force.</p>
+<p id=46f7 class="phone s01"><cite>Wesley_Smith:</cite> Um as of course folks know uh next week is TAC so we will not be having this meeting uh but as part of the verifiable credential working group uh schedule we will have some discussion uh about this task force um and I guess I'd like to use some of the time today to talk about what we should talk about uh as a task force uh so I can prepare materials accordingly. All right. So, agenda for today, uh, announcement, uh, process, introduction items as normal.</p>
+<p id=5c00 class="phone s01"><cite>Wesley_Smith:</cite> first uh then I want to talk a little bit about TAC. Then I want to talk a little bit about uh some of the material Manu shared on the mailing list related to VCOM and the DC API and…</p>
+<p id=a7c7 class="phone s01"><cite>Wesley_Smith:</cite> then I would like to oh and then it's issue processing and pull request uh request review as normal. So first things first announcement process introduction items. Anybody have anything? Greg Bernstein, go ahead.</p>
+<p id=f435 class="phone s02"><cite>Greg_Bernstein:</cite> I don't This is just a quick status thing.</p>
+</section>
+
+<section>
+<h3 id=4f65>New Contributor Joins Task Force</h3>
+<p id=ee10 class="phone s02"><cite>Greg_Bernstein:</cite> Um we've gotten some very good help um on a poll request on uh optimization. Um and so we've got a new guy that has joined doing significant uh work. The guy his name is Devin. He's out of Beijing with 10 cent. And uh I just saw emails this morning all the IPR stuff and proper representative stuff has gone through.</p>
+<p id=ffff class="phone s02"><cite>Greg_Bernstein:</cite> So, we have this uh nice new PR uh that optimizes one of our selective disclosure schemes and it reads really pretty good. So, uh nice to have him on board and helping. He's been very helpful. And um if people have any questions about that, what it is is just an optimization on what we've been doing, a very good optimization. So that's otherwise data integrity just a lot of work on um I've been doing a lot of work on BBS otherwise I want to hear all the stuff about what's happening with because I read those great slides from mono</p>
+<p id=cb91 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, those slides work great. Good job, Manu. Uh, all right, let's go ahead and move on to uh TAC then.</p>
+<p id=2ae0 class="phone s05"><cite>Manu_Sporny:</cite> Neat. Is that the deck you did,…</p>
+<p id=141b class="phone s02"><cite>Greg_Bernstein:</cite> Congratulations, Wes.</p>
+<p id=02c1 class="phone s05"><cite>Manu_Sporny:</cite> Wes? Yeah.</p>
+<p id=93d4 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I was joking.</p>
+<p id=aa3e class="phone s05"><cite>Manu_Sporny:</cite> Yeah, it's Wes's deck,…</p>
+<p id=2002 class="phone s01"><cite>Wesley_Smith:</cite> I made Thanks.</p>
+<p id=beeb class="phone s05"><cite>Manu_Sporny:</cite> not mine.</p>
+</section>
+
+<section>
+<h3 id=19b3>TAC Session Planning</h3>
+<p id=7a5f class="phone s01"><cite>Wesley_Smith:</cite> I'm just teasing. Um, all right. Let's talk briefly about TAC. So, we have our session uh for this group as part of the working group schedule. Um I expect I'll put together presentation material for that. Uh and I want to talk with you folks about what you want to be included. Um so the four specifications currently under our preview of course defense uh bing status list data integrity and barcodes. Um, which tech was that linkable? Uh, on the working group mailing list, uh, Mont showed some slides related to, uh, the work that VCOM, the VCOM group is doing and the DC API and all that sort of thing. All right. So, um, I guess what should we talk about at at TAC in person? What should we share with the larger group as a whole? Uh, go ahead.</p>
+<p id=10000 class="phone s05"><cite>Manu_Sporny:</cite> Um, It's typically a good idea because you've got plenty of people or you we will likely have people that are not a part of the working group sitting in and listening. So, it's usually good to spend at least five or 10 minutes giving everyone and a reminder about what the specs are about and where we are in the process. Um, for the because we have so many in this group, it might, you know, it might take a good 15 minutes to get through that content. Um and then typically you know what we do is spend the rest of the time trying to address really important issues or bringing really important issues to the attention of the group or making decisions that um we really need to make uh you know as a group uh put those in front of the group. Um I don't know if there's any well anyway.</p>
+<p id=5d45 class="phone s05"><cite>Manu_Sporny:</cite> So that that's what I I I would suggest you know we we structure it as um I do also want to kind of point out like the I don't we haven't started horizontal review on the quantum uh resistant crypto suites yet have we?</p>
+<p id=f6be class="phone s02"><cite>Greg_Bernstein:</cite> No, not quite yet.</p>
+<p id=10001 class="phone s05"><cite>Manu_Sporny:</cite> Yeah I think we we we probably we probably need to kick those off. Um that was an oversight not not doing it yet. Um uh so I mean clearly we won't are not going to have time to do that before TAC but as a group um we should probably put some time into uh doing you know kicking off horizontal review for the the quantum resistant crypto suite as well as you know the data integrity ones as well.</p>
+<p id=dba5 class="phone s05"><cite>Manu_Sporny:</cite> I think in the in the last three months of the year, we should kick off the horizontal reviews for all of our other kind of maintenance mode um documents uh…</p>
+<p id=b157 class="phone s05"><cite>Manu_Sporny:</cite> if we think they're uh you more or less uh feature complete uh at this point. Um uh well I think part of the TAC slot well sorry it's both uh one of them is we haven't kicked off horizontal review for uh quantum resistant and…</p>
+<p id=bc2c class="phone s01"><cite>Wesley_Smith:</cite> Sorry, I lost the thread there.</p>
+<p id=15a9 class="phone s01"><cite>Wesley_Smith:</cite> Manu, you're speaking just generally about what we need to do, not about the Tex lot, right?</p>
+<p id=f7c6 class="phone s05"><cite>Manu_Sporny:</cite> we need to do that. I don't know if we really need to let the group and the group needs to know that because they have to prove it right. Um so that is something that we might want the group to make a decision on while we're at TAC is that we want to do horizontal review on the postquantum stuff.</p>
+<p id=f786 class="phone s05"><cite>Manu_Sporny:</cite> Um and then as a general you know you know in and you know as a general thing uh take a subset of the uh other specs uh into horizontal review as well like the data integrity stuff uh and…</p>
+<p id=df3b class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> It's perfect.</p>
+<p id=5105 class="phone s05"><cite>Manu_Sporny:</cite> ECDSA and EDDDSA the you know the the uh uh maintenance that we're doing on them You know, we still have to go through the process which is horizontal review and and that sort of stuff.</p>
+<p id=8ad8 class="phone s02"><cite>Greg_Bernstein:</cite> Yeah, we've got the refactoring.</p>
+<p id=fe4e class="phone s01"><cite>Wesley_Smith:</cite> Okay. Yeah.</p>
+<p id=7df3 class="phone s02"><cite>Greg_Bernstein:</cite> So that Yeah. Wesley Smith:</p>
+<p id=2c5f class="phone s01"><cite>Wesley_Smith:</cite> I Oh, okay. Okay. We haven't we and currently I will need to brush up on the separation between the various data integrity specs after all the changes. Uh which crypto suites are supported in the core are there any cryptoes supported in the core data integrity document now or…</p>
+<p id=a938 class="phone s05"><cite>Manu_Sporny:</cite> No, no,…</p>
+<p id=ab60 class="phone s01"><cite>Wesley_Smith:</cite> are they all separated out?</p>
+<p id=dd2f class="phone s05"><cite>Manu_Sporny:</cite> they're all separated out and um that's you know part of it is we've got we would more than likely…</p>
+<p id=4064 class="phone s05"><cite>Manu_Sporny:</cite> if we ask for a horizontal review we're going to bundle multiple of them together like data integrity ECDSA and EDDDSA should be bundled together because they're just like maintenance mode stuff, right? Um, but quantum uh uh resistant probably needs a separate review just by itself, maybe. Or maybe we bundle it together with everything else. Um,</p>
+<p id=76bf class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Uh I I would argue probably that…</p>
+<p id=3b89 class="phone s01"><cite>Wesley_Smith:</cite> if we…</p>
+<p id=423b class="phone s02"><cite>Greg_Bernstein:</cite> integrity. Yeah.</p>
+<p id=10002 class="phone s01"><cite>Wesley_Smith:</cite> if we effectively extracted the commonality out of these crypto suites in the general thing, uh then we should be able to bundle basically all these things together because it they should be more or less uh you know crypto crypto not cryptosweet whatever agnostic protoc uh schemes. Sweet. Signature scheme agnostic. My goodness. All right. Um, so let's say we're going to try to bundle everything together. Uh, okay, that sounds good. I will make notes of that. Uh, and hopefully we can, you know, take a couple minutes to come to agreement there, uh, in person.</p>
+<p id=df6d class="phone s01"><cite>Wesley_Smith:</cite> That sounds good. Uh, Mr. Bernstein, do you want me to uh toss the speaking pillow over to you for a few minutes during that uh or do you want me to talk about data integrity? What would you prefer? Are you going to be at Tekk? Actually, I don't know.</p>
+<p id=4f57 class="phone s02"><cite>Greg_Bernstein:</cite> not in person.</p>
+<p id=3e19 class="phone s02"><cite>Greg_Bernstein:</cite> I I think uh Phil uh was u arranged it to be later in the afternoon so I could get up early and…</p>
+<p id=6f3b class="phone s02"><cite>Greg_Bernstein:</cite> be able to if I can remote in otherwise I will if I can't remote in then I will help get you prepared but Phil Yes I saw that</p>
+<p id=01c8 class="phone s03"><cite>Phil_Archer:</cite> Uh yes,…</p>
+<p id=0d88 class="phone s03"><cite>Phil_Archer:</cite> you can certainly take part remotely, Greg. And yes, as you say, I made it as late as it can be. Um, now the bad news is that it does mean that this topic is the last one of the two-day meeting.</p>
+<p id=4abc class="phone s02"><cite>Greg_Bernstein:</cite> Thank you very much.</p>
+<p id=e94f class="phone s03"><cite>Phil_Archer:</cite> Um, and it starts uh it's it's the last thing we get to half past 2 on the Friday. Um, and…</p>
+<p id=f7e9 class="phone s01"><cite>Wesley_Smith:</cite> Oh yeah. Phil Archer:</p>
+<p id=62b8 class="phone s03"><cite>Phil_Archer:</cite> there's only an hour for it. But it does that Greg can be there. That's why it's at that time.</p>
+<p id=7b92 class="phone s02"><cite>Greg_Bernstein:</cite> Yeah, I think the biggest thing is the way we refactored things with DI.</p>
+<p id=1e36 class="phone s01"><cite>Wesley_Smith:</cite> Well, last meeting on the last day.</p>
+<p id=f17c class="phone s01"><cite>Wesley_Smith:</cite> I don't need to worry about the slides because everyone's going to be sleeping.</p>
+<p id=ade2 class="phone s03"><cite>Phil_Archer:</cite> Well, there is a</p>
+<p id=a0d3 class="phone s01"><cite>Wesley_Smith:</cite> No paying any attention. Um, all right, that sounds good. So, Greg Bernstein, um, I will send some material over for you to review at some point with the idea being that you can, uh, take over for a couple slides remotely and talk about the work you've been doing. Does that sound good?</p>
+<p id=8822 class="phone s02"><cite>Greg_Bernstein:</cite> I is quite sustainable. We'll be able to add new suites and we have robust um efficient SD. I'm very happy with the how the Merkel optimization of uh the shared hash has gone. So um yeah, I think we got Reagan rights…</p>
+<p id=a433 class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=2642 class="phone s02"><cite>Greg_Bernstein:</cite> because we'll be crypto agile ready for the future.</p>
+</section>
+
+<section>
+<h3 id=ad71>VCOM and DC API Discussion</h3>
+<p id=d983 class="phone s01"><cite>Wesley_Smith:</cite> I'd recommend saying basically exactly what you just said at the meeting on Friday. Um, all right. Anything else about TAC? Any other topics folks would like to make sure that I cover? Anything along those lines? All right, sounds good. Next on the agenda is uh discussion of some of the other TAC related materials. Uh Manu, did you want to talk to this group at all about uh the DC API stuff?</p>
+<p id=bcec class="phone s05"><cite>Manu_Sporny:</cite> Um, I think we're going to cover it on Wednesday. Thank you very much, uh, Phil, for scheduling time on the call. So, I think maybe we can delay, uh, that, um, uh,…</p>
+<p id=ae2a class="phone s01"><cite>Wesley_Smith:</cite> All right.</p>
+<p id=4676 class="phone s05"><cite>Manu_Sporny:</cite> for then. Uh, I'm trying to think if there's anything specific uh, that applies to this group. I don't I don't think that there I don't think that there is. Um, yeah. Yeah. So, I'd say I'd say Wes, we can just cover it on on Wednesday.</p>
+<p id=e9d1 class="phone s01"><cite>Wesley_Smith:</cite> All right, that sounds good. Uh, so if that's the case, I think we can go to document specific PR and um issue processing. Bernstein. Oh, Elaine, go ahead.</p>
+</section>
+
+<section>
+<h3 id=926f>ISO Standards Interest in Forgery Defense</h3>
+<p id=fe28 class="phone s06"><cite>Elaine_Wooton:</cite> Yeah, sorry I missed the call for new interesting odd items at the beginning. So I have an odd interesting new item. Um I've just been on the uh ISO 18013 postquantum call. Um, and I made a point of mentioning our fabulous forgery defense and they're they're actually curious about what we're doing about quantum um, and are willing to not just willing inviting a presentation. Um, so there you go. That's what I have to say. Uh don't</p>
+<p id=0180 class="phone s06"><cite>Elaine_Wooton:</cite> know that they they're inviting they said can somebody and I said well I can but obviously I can't…</p>
+<p id=ffcb class="phone s06"><cite>Elaine_Wooton:</cite> because I'm not going to be able to explain anything. So anyway I'm putting it out there and um we can maybe continue this conversation.</p>
+<p id=59aa class="phone s01"><cite>Wesley_Smith:</cite> Uh yeah,…</p>
+<p id=7694 class="phone s01"><cite>Wesley_Smith:</cite> thank you as always. Uh that is very interesting. It's good to see that some of what we're working on has some interest in other spaces of the standards world. Um I expect maybe Oh, uh Mona, you have your hand up.</p>
+<p id=0fb5 class="phone s05"><cite>Manu_Sporny:</cite> I just a question for Elaine.</p>
+<p id=73e4 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I'm plus one. That's great that there's interest there. Um, uh, Elaine, was it you said it was the 1803 group. So, this is these are digital folks, not the, you know, physical, uh,…</p>
+<p id=cb31 class="phone s06"><cite>Elaine_Wooton:</cite> No, no,…</p>
+<p id=36d9 class="phone s05"><cite>Manu_Sporny:</cite> document folks, right? Mhm.</p>
+<p id=4884 class="phone s06"><cite>Elaine_Wooton:</cite> no. Because they're talking about printed QR codes. So, it is digital, but the the specific use case, I mean, I wouldn't have jumped in unless they were talking about QR codes or barcodes. And um so that's why I went ahead and um I think I mentioned to you that I had similar uh situation last week on the ISO 18013 uh call about revocation of physical documents where I brought up the same topic.</p>
+<p id=de1a class="phone s05"><cite>Manu_Sporny:</cite> Mhm. So,…</p>
+<p id=8f1c class="phone s06"><cite>Elaine_Wooton:</cite> So some of the same people today had heard me talk about it last week.</p>
+<p id=8122 class="phone s06"><cite>Elaine_Wooton:</cite> So, um but it's specifically um QR code and um yeah</p>
+<p id=e9aa class="phone s05"><cite>Manu_Sporny:</cite> okay. Okay.</p>
+<p id=9475 class="phone s05"><cite>Manu_Sporny:</cite> Yeah. I mean, that's that's good news. Um uh yeah, and we should certainly take the group up on their offer. Um,</p>
+<p id=2e89 class="phone s01"><cite>Wesley_Smith:</cite> Is this something that it would be worth discussing on the call with the larger working group?</p>
+<p id=08bc class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> That's</p>
+<p id=a5ed class="phone s01"><cite>Wesley_Smith:</cite> I don't know if there are process items. Mu, go ahead.</p>
+<p id=2a7c class="phone s05"><cite>Manu_Sporny:</cite> Well, I defer to Phil entirely, but I think it would be Yeah, we the VCWG needs to engage as the VCWG on a variety of these things, and it's not up to us as a task force to make that decision, uh, is my suggestion.</p>
+<p id=9d7e class="phone s03"><cite>Phil_Archer:</cite> Uh well, it's always a question of a capacity. Um the number of things we would like to do far exceeds the number of things we have the capacity to do. Um and obviously those groups you're talking about, Elaine, are very important to us and they'll be important, more important to some people than others. Um I mean, sorry I'm I'm taking it I'm stating the bleeding obvious here. I'm not making any useful contribution. If people have the capacity, great.</p>
+<p id=fd0b class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I think something to note is um working group support doesn't mean that people for example outside of this task force need to do a particular amount of additional work.</p>
+<p id=abf8 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> check.</p>
+<p id=603d class="phone s01"><cite>Wesley_Smith:</cite> Uh but you know that's sort of the that's the point of the task force. infrastructure, right, is that the individual task forces can focus on specific things, but as needed, the VCWG as a whole can support those work efforts and that sort of thing. And I think that's mostly what we're looking for here. Uh, similarly to, for example, the DC API stuff where the VCOM group is working on VCOM, which relates to some other protocol work. Uh, but it would be better…</p>
+<p id=577b class="phone s01"><cite>Wesley_Smith:</cite> if the VCWG as a whole could support that work rather than just individuals in the in the task forces uh doing that work. Uh Phil, you have your hand up. Ela, you can take your hand down. Uh unless you have Oh,…</p>
+<p id=aa91 class="phone s06"><cite>Elaine_Wooton:</cite> Yeah, I still Yeah,…</p>
+<p id=9cda class="phone s06"><cite>Elaine_Wooton:</cite> I still had something else to say. Let me just say this real quick.</p>
+<p id=55d1 class="phone s01"><cite>Wesley_Smith:</cite> my apologies.</p>
+<p id=968e class="phone s06"><cite>Elaine_Wooton:</cite> I think the idea of the going to the working group is just so it doesn't look like we've gone rogue. That's I think that's the main think about it. Yeah.</p>
+<p id=b5fe class="phone s01"><cite>Wesley_Smith:</cite> Exactly. Right. Remain connected to the main to the main group. Agreed. Phil, go ahead.</p>
+<p id=551d class="phone s03"><cite>Phil_Archer:</cite> Yeah. and…</p>
+<p id=11d0 class="phone s03"><cite>Phil_Archer:</cite> and it's simply in terms of the the as as I think we were we we achieved successfully in Brussels talking about your task force work in front of everybody else and especially as Madu said in front of we'll have all sorts of people in the room who who are not part of the working group or if they are we see them once a year um so this is a chance to really um engage with other people in the room who we barely know but they're part of something else oh that's really cool you've done that what you've already got this um postquantum things sorted. That's really cool. That's the kind of serendipity that comes out. At least you hope so. That's the whole point of making the effort to go to Dublin, which for some of you is a long way from me. It's not very far.</p>
+<p id=3fff class="phone s01"><cite>Wesley_Smith:</cite> absolutely. Uh Martin, did you have something to say?</p>
+<p id=70ce class="phone s05"><cite>Manu_Sporny:</cite> Uh, no. What Elaine uh said and Phil</p>
+<p id=dca2 class="phone s01"><cite>Wesley_Smith:</cite> All right, that sounds good.</p>
+<p id=b38b class="phone s01"><cite>Wesley_Smith:</cite> Uh all right, then. Um I would say let's make a note. Can we add this as a brief agenda item for the working group call tomorrow, Phil? No.</p>
+<p id=2510 class="phone s03"><cite>Phil_Archer:</cite> Um, another thing.</p>
+<p id=fdfb class="phone s03"><cite>Phil_Archer:</cite> Sorry. Let me just uh Yeah.</p>
+<p id=fb56 class="phone s01"><cite>Wesley_Smith:</cite> No. So, uh, noting the interest that some folks in ISO working groups have in forgery defense, I think that would be worth spending a couple minutes of of the working groups call time on uh,…</p>
+<p id=2ecd class="phone s01"><cite>Wesley_Smith:</cite> in case anybody in the larger group has perspective or, you know, anything along those lines.</p>
+<p id=af5e class="phone s03"><cite>Phil_Archer:</cite> Um always happy to obviously include whatever a task force wants to talk about.</p>
+<p id=6c4e class="phone s03"><cite>Phil_Archer:</cite> I the agenda currently um other than five minutes saying hi um this is the agenda today. This is the TAC agenda just to remind you. So all that's going to be I hope done in 5 minutes. Half an hour is spent or is currently allocated to the DC API issue. So those issues that have been raised in their GitHub repo and…</p>
+<p id=a1eb class="phone s03"><cite>Phil_Archer:</cite> the presentation that's been prepared to offer the joint group. I've set aside half an hour for all that. Um</p>
+<p id=3629 class="phone s01"><cite>Wesley_Smith:</cite> Right. Okay.</p>
+<p id=10fd class="phone s01"><cite>Wesley_Smith:</cite> So if if time is tight this week then I instead of that I propose that in the task force material for the TAC presentation I'll include some vague reference to the ISO interest in uh in forgery defense and…</p>
+<p id=b0ef class="phone s01"><cite>Wesley_Smith:</cite> we can talk with the group then about if anybody has perspective there. So thumbs up</p>
+<p id=0c36 class="phone s03"><cite>Phil_Archer:</cite> Yeah, I mean it's something that I I I think uh…</p>
+<p id=10003 class="phone s03"><cite>Phil_Archer:</cite> where I think thing to do there is to well you bring it up right at the very start because the other issues I want to cover tomorrow are bit string status list. There are a couple of open PRs on that that Kevin Dean has prepared and that's one of those documents that is for the whole group to do not just uh a task. I'm sorry I I'll I'll take the word just out of that. That's for the whole group to do. It isn't assigned to a particular task force and the same with BCDM 2.1. So those are the things that we sort of say so I've got 20 minutes assigned for that. Um so it's in other words it is going to be tight…</p>
+<p id=d999 class="phone s03"><cite>Phil_Archer:</cite> but I think what you're saying Wes is important and should be mentioned maybe not in detail but of course mention it because it's interesting and relevant.</p>
+<p id=2035 class="phone s01"><cite>Wesley_Smith:</cite> All right,…</p>
+<p id=7031 class="phone s01"><cite>Wesley_Smith:</cite> that sounds good. I I will note that I thought that the best reading status list work fell under the purview of this task force. Um, of course, I'm happy to do things like pull request review in in the larger call,…</p>
+<p id=8728 class="phone s01"><cite>Wesley_Smith:</cite> but um I'm an editor of 1.1 of that document. Uh and you know we've spent some time on this call in past weeks doing issue processing on the light for that document. Happy to happy to have it fall under this task force. Of course that that is about as harmless of a mistake as you can make um going forward. Sorry.</p>
+<p id=14a1 class="phone s03"><cite>Phil_Archer:</cite> Oh, have I made a mistake?</p>
+<p id=a049 class="phone s03"><cite>Phil_Archer:</cite> Okay. Um, I thought it was a all group thing. That's obviously my error. Well, okay then. Then then I'll I'll be quiet in 10 seconds. Um Kevin has prepared some stuff around bitstring status list.</p>
+<p id=b1cd class="phone s03"><cite>Phil_Archer:</cite> So maybe this group when you have the time which I realize is not today. Um please take a look.</p>
+<p id=b6e4 class="phone s01"><cite>Wesley_Smith:</cite> absolutely will do.</p>
+<p id=e99f class="phone s01"><cite>Wesley_Smith:</cite> Um, happy to talk about on the call tomorrow. Uh, Kevin, I believe, is either is going to be added as an editor or has already been added as an editor to that document. So, probably he should start joining these calls if he is able. Okay. Uh, going up the call stack. I think Elaine, your item is processed. I will talk about it uh in person at TAC next week. Um anybody else have anything to discuss today or can we move to issue and PR processing</p>
+<p id=95ce class="phone s03"><cite>Phil_Archer:</cite> Uh Wes, I will just say very briefly again, not taking this group's time, um because I know this will be several of you particularly on this call. I'll mention it again tomorrow, but we now have an ISO number um 27097. I think we can talk about this more than we have done before. Uh so this 27097 this is draft international standard. This is what um is now being discussed and will be voted on by um national standards bodies um around the world. Um of course certain people are very upset that we've had the timmerity to suggest that this work is also worth looking at for other people. Um but uh that's a number for us all to learn.</p>
+<p id=f763 class="phone s03"><cite>Phil_Archer:</cite> 27097. We may have to quote that at some point. But that doesn't please understand that does not mean it's a standard.</p>
+<p id=5843 class="phone s01"><cite>Wesley_Smith:</cite> Thank you very that is exciting stuff.</p>
+<p id=6548 class="phone s03"><cite>Phil_Archer:</cite> It means it's a draft. It's going through the process. But that will be the number if it makes it.</p>
+<p id=d3a7 class="phone s01"><cite>Wesley_Smith:</cite> Thank you for the update. All right. Uh Greg Bernstein, do you have specific items that you'd like to discuss for data integrity today?</p>
+</section>
+
+<section>
+<h3 id=f953>BBS Standard Updates and Selective Disclosure</h3>
+<p id=61e3 class="phone s02"><cite>Greg_Bernstein:</cite> Not particular. Uh there's just a lot of work. We're we Okay. Yes. Let me give a couple updates. Um we updated BBS at the IETF IRG CFRG. Um we picked up on that so we can finish our BBS standard. And so there's a bunch of work with there are three related specs over there. The core BBBS spec which was abandoned kind of and so they just put me on as a co-editor so I can help finish that process.</p>
+<p id=43b7 class="phone s02"><cite>Greg_Bernstein:</cite> We updated that, released uh version 13 and responded to the two-year-old crypto panel review. And I got a bunch of support from cryptographers at uh the Hasso Plateau Institute in Germany. That's on a layman's uh group of people. Um Blind BBS, we're updating right now. I'm going to be releasing that this week and then I'll update pseudonyms all those so we can get our BBS spec which provides select very efficient selective disclosure and on top of that unlinkability and because of some extensions from um um that were uh envisioned by Anna layman's</p>
+<p id=f4b1 class="phone s02"><cite>Greg_Bernstein:</cite> team um she's a big cryptographer very famous um we have a general mechanism for adding proofs so I described this in the updated data integrity document as um subclaim selective disclosure right now we take our JSON LD BC turn it into a set of canonical claims names with our canonical um RDFC canonicalization algorithm. Each one of those represents a statement. Okay? And we do our selective disclosure by either disclosing</p>
+<p id=ea8e class="phone s02"><cite>Greg_Bernstein:</cite> or not one of those statements. The approach that's being taken in extending blind BBS and we could use other places is instead of revealing or not really revealing a claim, what you do is what's known as a cryptographic commitment to a claim, which binds it but hides it so they can't see it. And then you do one of these ZKP zero knowledge proofs and you could like get so example you got a credential from your bank that testifies that you have x amount of dollars in your bank and you want to prove to somebody that you just have over $300 in your bank account. That would be an example of a subclaim type of thing that would use what we call a range proof.</p>
+<p id=6df9 class="phone s02"><cite>Greg_Bernstein:</cite> And so we have the general mechanism going in. So that's the only kind of piece that's somewhat left undecided is how to incorporate these extra options for the future. And like I said, this can apply to any of our selective disclosure schemes, um, not just unlinkable Wes.</p>
+<p id=3d69 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, just a question to make sure I understand what you're saying. You're saying that…</p>
+<p id=6dc5 class="phone s01"><cite>Wesley_Smith:</cite> what you have added is the structural mechanism within a data integrity proof to include uh support for things like predicate proofs and range proofs but not the mechanism for the range proof itself. Is that correct?</p>
+<p id=b484 class="phone s02"><cite>Greg_Bernstein:</cite> We we we first added this to over at in the BBS spec.</p>
+<p id=38b7 class="phone s02"><cite>Greg_Bernstein:</cite> The concept came in a paper um called vision something or other by Hannah and her team Anha layman and her team and the concept's very good and so I was asking them bouncing it around with them it's like hey you know BBS provides unlinkability but this general extension me mechanism of which we call committed disclosure seems like it would have applied nicely. And so this is the one unfinished piece to me to add to data our updated data integrity spec because we factored out all the SD stuff nicely into the spec.</p>
+<p id=7bc7 class="phone s02"><cite>Greg_Bernstein:</cite> we have general mechanisms for SD, but then there's this one piece that I kind of called the I put it under the BBS as an issue saying like how do we deal with additional options and meaning particularly aimed at this because there's going to be different proof techniques and things like that and we don't want to have it have to update this spec to incorporate them. So, it's nice and powerful. It's, you know, I'm trying to figure out the best way to do the hooks and we can take that offline and but everybody's been so busy.</p>
+<p id=10004 class="phone s02"><cite>Greg_Bernstein:</cite> Usually I look to Dave to how should we set up this hook for this thing and so I've been kind of thinking about we bounced around a couple ideas but it's very powerful and I want to free the data integrity spec to allow these extensions to happen without having to update or if we update it's at most a table or something like we've kind of what we've gotten at with um um postquantum, right? I mean, the postquantum spec has been fairly hollowed out to be a bunch of tables that tell you how to do things, but then point to the generic algorithm in data integrity. And so I'd like to do the same something like that for these extensions and</p>
+<p id=ed9f class="phone s01"><cite>Wesley_Smith:</cite> Right. So what I'm hearing is that you want to make sure that the extension points on data integrity are appropriately generic such that specific schemes can implement advanced features like range proofs and…</p>
+<p id=cc72 class="phone s01"><cite>Wesley_Smith:</cite> predicate proofs. But to be clear, you're not saying that you are currently adding a specific uh algorithmic Understood.</p>
+<p id=96de class="phone s02"><cite>Greg_Bernstein:</cite> No, not a specific scheme.</p>
+<p id=730b class="phone s02"><cite>Greg_Bernstein:</cite> Um there are two or three that are uh one just got accepted as a working group draft over at the I at the CFRG which is part of the uh IETF thing but nothing is mature enough yet but they are coming and it all fits in nicely with our selective disclosure because selective disclosure</p>
+<p id=10ff class="phone s02"><cite>Greg_Bernstein:</cite> exposure. We already have to package up a bunch of parameters and extra information. We use Seabboard for that. We pack it all up and we encode it nicely and it goes into the proof. Right? For non- selective disclosure,…</p>
+<p id=bf65 class="phone s02"><cite>Greg_Bernstein:</cite> we don't have room to do anything. But selective disclosure, we already have some of these things. So, uh, that's why I'll bounce some of these ideas around folks or remind folks, uh, once I can get back to it. Finishing up the shock stuff and getting the base, the stuff over at the IETF has got me fairly busy right this second.</p>
+<p id=5493 class="phone s01"><cite>Wesley_Smith:</cite> That sounds good.</p>
+<p id=2345 class="phone s01"><cite>Wesley_Smith:</cite> That sounds like valuable stuff. Um, thank you Greg. Anything else on data integrity?</p>
+<p id=e337 class="phone s02"><cite>Greg_Bernstein:</cite> Not right now, but it's looking good.</p>
+<p id=a929 class="phone s01"><cite>Wesley_Smith:</cite> That is good to hear. Okay. Um, I'm going to hop over to bitstring status list then. Uh, we won't look at the PRs because that is going to be discussed on the call tomorrow. Uh I will note there is a there was an issue raised about a week ago that I will link in the chat. Uh this is a bit of a wall of text of an issue appears to have been AI assisted. Um but you know I think that uh the person Karsten Stoer stalker um raises some useful points. uh without getting into some of the uh details and the technical material in the in the issue.</p>
+<p id=9541 class="phone s01"><cite>Wesley_Smith:</cite> Essentially um what this issue is requesting is uh clarification on um things like uh dummy uh bits in a bishing status list as well as guidance for implementations on how to handle you know how to handle allocation better and all of that sort of thing. So it's it's a lot of kind of it's mostly lower level is a request for lower level technical exposition on how implementations should manage some of the things that the current the specification currently treats as sort of a high level blackbox relating to um you know pseudo random index allocation and things to that effect. Um if anybody has anything they want to say about this issue at the moment we can discuss it.</p>
+<p id=136f class="phone s01"><cite>Wesley_Smith:</cite> uh otherwise it's a bit uh dense. So maybe take a look and we can discuss again sometime down the line. Manu go ahead Yeah,…</p>
+<p id=f327 class="phone s05"><cite>Manu_Sporny:</cite> Um yeah, this is really really long. Um I think Karsten is saying tell us how to do decoy values properly. I think I you know haven't read the page.</p>
+<p id=d767 class="phone s01"><cite>Wesley_Smith:</cite> that's one of the core So I I'll note that the decoy in quotes doesn't have a singular definition.</p>
+<p id=af2a class="phone s05"><cite>Manu_Sporny:</cite> Yeah. And I think we we as a group said don't do it. You will almost certainly get it wrong. and us writing anything in the spec on the right way to do it is highly likely to break down in a market vertical and I don't think we should do it. Um maybe we should I mean I'm looking at our decoy value section right now and uh</p>
+<p id=935b class="phone s01"><cite>Wesley_Smith:</cite> So what something that it is certainly very dangerous to do is to take bits in a bit string and sort of pretend they are bits that have been applied to things like credentials uh and…</p>
+<p id=724a class="phone s01"><cite>Wesley_Smith:</cite> you know twiddle them appropriately and…</p>
+<p id=a32f class="phone s05"><cite>Manu_Sporny:</cite> Okay. Mhm.</p>
+<p id=5150 class="phone s01"><cite>Wesley_Smith:</cite> that sort of thing. That is a separate a separate question uh from what he explicitly asks in requested outcome. Clarify the intended producer behavior for reserved never issued positions. That has separate considerations, right? So just basically padding a list uh is different than um trying to mimic the behavior of an allocated bit with an unallocated bit. And yeah, that's it. Just want to know that those things are meaningally different.</p>
+<p id=0d86 class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I'm I'm concerned that we could spend weeks to months discussing this and it could be an implementation thing.</p>
+<p id=83ce class="phone s05"><cite>Manu_Sporny:</cite> I mean we yeah I mean I sure once once we are able to read the reams of paper that have been generated uh maybe I'll have a different feeling about this but this feels like we have many other more important higher priority things that need to be done and discussing this is just going to result in lots and lots of discussion with I don't know that much of a change to…</p>
+<p id=b9d3 class="phone s05"><cite>Manu_Sporny:</cite> how the ecosystem is deploying or is implement mented. Um that's it. I mean that's first first blush on it. It looks like a fantastically complex discussion and we have other things that we need to do as a working group um before we get</p>
+<p id=94b9 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Yep.</p>
+<p id=f03d class="phone s01"><cite>Wesley_Smith:</cite> Uh I I agree generally. I will also note that what the despite its scope, what that issue appears to be requesting is just a little bit of clarifying text to add to the specification. Um I I think we are all in agreement that this group is against the use of decoy values, noting that they probably uh will do more harm than good and the solution the problem that you are trying to solve by adding in decoy values is probably better solved in a different way elsewhere. Um but that doesn't mean that we can't improve the clarity of the spec there. All right. Um, that was the recent issue from Bitstring status list that I thought is worth raising to the group. By the way, can somebody remind me I who Carson Stucker is, who he's affiliated with? Does anybody know? I feel like I've met him in person.</p>
+<p id=713a class="phone s01"><cite>Wesley_Smith:</cite> till I sh thanks for that info.</p>
+<p id=ff6c class="phone s03"><cite>Phil_Archer:</cite> Yeah, you have met him.</p>
+<p id=e493 class="phone s03"><cite>Phil_Archer:</cite> Um, so he was in Brussels. Um, he runs a company called Sparity. Um, and is um, the person leading the argument with the European Commission to include VCDM in the European business wallet. So he runs quite a successful um, company based on DDS and VCs. His big customer uh, is the German business registry. Oh, sorry.</p>
+<p id=83be class="phone s01"><cite>Wesley_Smith:</cite> Um it that is certainly uh evidence for this being a good faith a good faith issue that we should read and consider appropriately and all that sort of thing.</p>
+<p id=701e class="phone s03"><cite>Phil_Archer:</cite> Mistake. I'm sorry.</p>
+<p id=3c4c class="phone s01"><cite>Wesley_Smith:</cite> All good. Um all right. Thank you for that discussion. I</p>
+<p id=ef63 class="phone s01"><cite>Wesley_Smith:</cite> Let me check on the status of a couple of the other specifications. I don't think there's much that needs to be discussed for for defense or barcodes. So, I expect we can go into issue processing. Yeah. Okay. Uh let's do some issue processing. Uh let's go back to the biting status of the specification. A couple weeks ago, we did some issue processing there.</p>
+<p id=5394 class="phone s04"><cite>Ted_Thibodeau_Jr:</cite> Thank you.</p>
+<p id=13c8 class="phone s01"><cite>Wesley_Smith:</cite> Uh because we inherited it as an existing 1.0 recommendation, there are a fair amount of old issues there that were kind of deferred to future discussions such as the ones we are having now. Um let's let's keep it going. So I'm looking at the oldest issues on the bitst string styles repository.</p>
+<p id=91f7 class="phone s01"><cite>Wesley_Smith:</cite> We've looked at the oldest three recently. Um, let's look at number 206. Add privacy considerate. I'll link it. Add privacy considerations. Number 206. Linked in chat. Add privacy consideration regarding K&amp; degradation over time. Manu raised this a year ago. Um Kaden Hartthog sufficiently large credential set is established. The expiration period is vastly different per credential. This means that the anonymity set degrades over time. Right? Okay. So you have thousand credentials and 900 of them expire very quickly and the last 100 keep using that status list by themselves for however long.</p>
+<p id=b107 class="phone s01"><cite>Wesley_Smith:</cite> Um this would also occur for credentials with different status. This check needs beyond just expiration. K anonymity is maintained if status checks are relevant to our all particular credentials in the same way or it degrades the subset that's actually being checked. Right? So yeah, this is a this is I view this as quite a straightforward issue. Uh this is a good point that if you have long lived status lists uh the differences in the way that the credentials on that list are used uh over time means that the privacy uh value of the group privacy mechanism changes over time.</p>
+<p id=10005 class="phone s01"><cite>Wesley_Smith:</cite> I think adding a privacy consideration. Well, what's the current status of the strength status list? Uh threat model and security and privacy considerations. So, we still have security and privacy considerations and that we're intend for that to continue to be the structure because status list threat modeling will be accomplished by the VCDM threat model. Is that everyone's understanding? Okay. Yeah. So then I think this issue is essentially ready for PR. Uh I can make a note that we need to add a security a privacy consideration noting that implementers should be aware that if they uh mix or if they they assign a set of credentials to a single status list such that the way in which those credentials will vary by credential over time it will affect the privacy properties of that status list over time.</p>
+<p id=49cd class="phone s01"><cite>Wesley_Smith:</cite> Does anybody see a reason why that's not sufficient? Okay, I just talked for like three minutes straight and nobody said anything. So, I'm going to assume you're all like, &quot;Yeah, that sounds sure.</p>
+<p id=6cf7 class="phone s01"><cite>Wesley_Smith:</cite> Go ahead.</p>
+<p id=6987 class="phone s03"><cite>Phil_Archer:</cite> I'm going to say just quickly that kind of thought process is why I love doing this kind of work. that would never have occurred to me and it's such a brilliant bit of thought process that what you've what we've designed what what you've designed with this bitstream status list and that privacy becomes an issue over time… Phil Archer:</p>
+<p id=6cdd class="phone s03"><cite>Phil_Archer:</cite> because of that reason is just fantastic thinking and an example of this work at its absolute best. So thank you</p>
+<p id=3ce0 class="phone s01"><cite>Wesley_Smith:</cite> Yeah. Yeah.</p>
+<p id=a0f1 class="phone s01"><cite>Wesley_Smith:</cite> Well, appreciate it, Phil. And and much agreed. I I I very much value being able to spend time on calls with you all doing work like this. It's very interesting stuff. All right. I'm tagging this ready for PR. I will write a brief note. monitor. Go ahead.</p>
+<p id=21cf class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I'm uh looking at the threat model now for VC data model and it does have a bunch of status. It it has a couple of status things in there. So, um I couldn't remember if we had actually moved it over, but we did. Uh so, I'm wondering if we should migrate this issue to the VC data model.</p>
+<p id=be5f class="phone s01"><cite>Wesley_Smith:</cite> Um well I think it would be so because the because bing status will continue to have a standalone security and privacy considerations section. Uh I think it certainly makes sense to at least add that here. We we probably and maybe we can talk about this right now. We probably should figure out what the exact separation between the two is. So for example um this issue is sort of a implementation level issue. It's not really an issue with the status the core status mechanism rather with people with how people might use it.</p>
+<p id=818f class="phone s01"><cite>Wesley_Smith:</cite> Um, I wonder if it's possible to have the VCDM threat model include threats against the bit string status list conceptual form of status uh and and leave more kind of implement implementers concerns like this to the uh spec privacy and security considerations. Ma, go ahead.</p>
+<p id=56ae class="phone s05"><cite>Manu_Sporny:</cite> Yeah. Um, we could do that. I'm looking at the privacy and security consideration section in VC Biting status list right now. Um the way that we believe we collective verifiable credential working group we uh are going to integrate the thread model stuff in is to keep the privacy and security consideration sections as you said Wes and we can mix in uh VC data model specific things uh in things that only exist in the bitstring status list spec.</p>
+<p id=bae9 class="phone s05"><cite>Manu_Sporny:</cite> So I think that works uh what you said what you said uh works. Um I don't think we have normalized the privacy and security consideration section for bitstring status list with the VCDM uh threats.</p>
+<p id=792d class="phone s05"><cite>Manu_Sporny:</cite> I I don't think it's super important that we do it. And I think what you're saying less is like you're going to write this up in the bitstring status list spec.</p>
+<p id=809c class="phone s01"><cite>Wesley_Smith:</cite> Yeah, I think that's where it goes. Wesley Smith:</p>
+<p id=93b6 class="phone s05"><cite>Manu_Sporny:</cite> Just leave it there.</p>
+<p id=10006 class="phone s01"><cite>Wesley_Smith:</cite> And I think ideally if we're the if we need to add material related to bitstring status list to the VCDM threat model more than what's already there I think it would be a good idea to try to make that as um focused on the concept of group privacy bitstring lists fetched over the web and not about uh implementation concerns such as what if I issue two different kinds of credentials with different lifespans on a single bitstring status list and that sort of implementation concern should live in the bitstring status list security and privacy considerations not in the core VCDM uh threat model.</p>
+<p id=4d51 class="phone s05"><cite>Manu_Sporny:</cite> Okay, sounds good to me. Yep. Plus one.</p>
+<p id=d517 class="phone s01"><cite>Wesley_Smith:</cite> All right, let me write up this comment.</p>
+<p id=a52e class="phone s01"><cite>Wesley_Smith:</cite> All right, my mouse bro. All right. Next up, we have number 207. Link that. Last one for today. Manu add table for mitigations that increase privacy when using replication lists from 2025. We should add a table of the privacy considerations that list mitigations that increase privacy.</p>
+<p id=4366 class="phone s01"><cite>Wesley_Smith:</cite> KN and yeah, this is valuable stuff. Okay, so Manu notes that there are several things that you can do to increase privacy things like oblivious HTTP, putting status lists, putting a CDN in front of status lists, uh that sort of thing. Um I agree.</p>
+<p id=9735 class="phone s01"><cite>Wesley_Smith:</cite> I also think that one such mitigation that I don't think is covered in any of these that uh something similar to holder delivery verifier receives oh something that should be added to this table is the usage of a wallet</p>
+<p id=6f93 class="phone s01"><cite>Wesley_Smith:</cite> proxy style service to fetch uh bitstring status lists such that um individual holder devices do not make linkable HTTP requests to the issuer server. Uh I will make a note of that. I I like the idea of adding this material to the specification. I wonder</p>
+<p id=63aa class="phone s01"><cite>Wesley_Smith:</cite> The cost thing is throwing me a little. I know it's it's intended as high level and accessible um Spark Note, but I wonder if it would make sense to change how that's expressed. You want to go ahead</p>
+<p id=206a class="phone s05"><cite>Manu_Sporny:</cite> Yeah, I wouldn't take the the proposal as um I'm not wet to any of this. Um I think I was just I can't don't even remember raising this issue, but uh it can be any variation of this. I'm wondering um and fine to remove the cost thing. I'm wondering um there is a there is like a general desire in the VC data model to talk more about retrieving external resources and how you should do it. Um this thing is not just specific to bitstring status list. specific to like retrieving any resource linked to from a a VC.</p>
+<p id=c4c5 class="phone s05"><cite>Manu_Sporny:</cite> Um, and therefore I'm wondering if it should go in the core data model um uh as a as something in the split</p>
+<p id=6541 class="phone s01"><cite>Wesley_Smith:</cite> Yeah, long go ahead.</p>
+<p id=5ddc class="phone s07"><cite>Dave_Longley:</cite> I want to say that's mostly true. There might be a slight difference if the resource that's being retrieved is itself digitally signed is it, you know, is itself a credential as opposed to not being one.</p>
+<p id=0c19 class="phone s07"><cite>Dave_Longley:</cite> So there might be a a little difference. Um, but with that difference could also be covered in this general approach. it it's definitely not specific to bitstring status</p>
+<p id=4cbe class="phone s01"><cite>Wesley_Smith:</cite> Yeah, it seems that um generic to the BCDM there are two meaningful cases.</p>
+<p id=a77d class="phone s01"><cite>Wesley_Smith:</cite> One where you have, you know, authenticity and the like over what you're getting and the other where you don't. And even when you have authenticity and the like over you're getting, you still need to be concerned about linkable HTTP requests and and so on and so forth. So those seem somewhat orthogonal. Okay. So I noted the addition that we should add to the list here. I agree that it should probably be part of a larger discussion ideally in the BCDM. Let me write that up briefly.</p>
+<p id=6e1d class="phone s01"><cite>Wesley_Smith:</cite> So is the proposal then that um no no change made to the BSL spec uh and we punt this over to BCDM. Just need further discussion.</p>
+<p id=bbf2 class="phone s07"><cite>Dave_Longley:</cite> I would think the only thing that could that might need to happen in the bitstring status list spec would be a link to this over at the VCDM.</p>
+<p id=7a93 class="phone s01"><cite>Wesley_Smith:</cite> Dave Longley. Okay. Um</p>
+<p id=a47f class="phone s01"><cite>Wesley_Smith:</cite> Okay. Uh, and then should I make an issue? I'll make an issue over a BCDM that links to this. So, fully circular whatever. Um, all right. I think that is it for today. Um, if you are interested in sitting for a couple minutes and hearing me mumble while I type up that issue, stick around. Otherwise, I think we are good for today. Thank you all for the time. as always and…</p>
+<p id=ee6e class="phone s02"><cite>Greg_Bernstein:</cite> Bye.</p>
+<p id=31d0 class="phone s01"><cite>Wesley_Smith:</cite> I will see some of you in person next week and probably the rest of you on other calls. Meeting ended after 00:54:12 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

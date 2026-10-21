@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 20 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>20 October 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Eric_Schuh, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Parth_Bhatt, Patrick_St-Louis, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#e340">Threat Model Update</a></li>
+<li><a href="#3ea6">TAC Planning</a></li>
+<li><a href="#3c58">TAG Review Feedback</a></li>
+<li><a href="#193a">Scope and Architecture Diagrams</a></li>
+<li><a href="#5170">Wallet Selection and Delegation</a></li>
+<li><a href="#92dd">Complete Interface Definitions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=fc86 class="phone s01"><cite>Patrick_St-Louis:</cite> Okay, it's okay.</p>
+<p id=ffff class="phone s02"><cite>Kayode_Ezike:</cite> Hey guys, we'll just wait a few more minutes. A hoping for a few more people to join us today.</p>
+<p id=8411 class="phone s02"><cite>Kayode_Ezike:</cite> Not sure there's a community event today. Just wait one more minute. Get started at 550. screen now. Righty. Hello everyone and welcome.</p>
+<p id=f830 class="phone s02"><cite>Kayode_Ezike:</cite> Today is Tuesday, October 20th, and this is the weekly task force call for the verified branches API life cycle management specification. My name is Kaido Zikke, and I'll be guiding us through the call today. I have a few things I want to discuss today on the call. Um before we get into that, I wanted to remind everyone that all these calls are recorded been transcribed and that we accept substantive contributions from folks who are a member of the private credentials working group. And I wanted to start by opening up the floor for any community announcements or any reintroduction or reintroductions from the group or any additions to the agenda.</p>
+<p id=125c class="phone s02"><cite>Kayode_Ezike:</cite> It's going twice.</p>
+<p id=fa46 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, it's fine. I mean, go ahead, Eric. Okay,…</p>
+<p id=3d05 class="phone s03"><cite>Eric_Schuh:</cite> Uh yeah,…</p>
+</section>
+
+<section>
+<h3 id=e340>Threat Model Update</h3>
+<p id=e51e class="phone s03"><cite>Eric_Schuh:</cite> sorry. I did just want to give a quick update on threat model work. Um should less than a minute. Just want to let everyone know where it's at.</p>
+<p id=39be class="phone s02"><cite>Kayode_Ezike:</cite> great. Thank you. We'll get to that shortly. In fact, I think one of the items I have kind of relates to that.</p>
+</section>
+
+<section>
+<h3 id=3ea6>TAC Planning</h3>
+<p id=44a3 class="phone s02"><cite>Kayode_Ezike:</cite> So that sounds good to me. Uh great. So then let's do that. Before we get into that, I wanted to make a note of the fact that next week is uh TAC and uh so I wanted to just be sure that we have a good idea of what we wanted to discuss. I mean my understanding is that it's a good opportunity to tap the brains of the the uh the barter community around issues that we think would be pertinent to them. um or maybe issues that we've discussed in the past but that we you know would like more sort of eyes on so on and so forth. So I don't know if if it will look or should look anything like the um the one we had in the fall the what's it called the inerson I think that was just for VCWG but I just want to open the floor for folks who have experience with this and considering where we're at currently with the specification.</p>
+<p id=ab17 class="phone s02"><cite>Kayode_Ezike:</cite> Go that tree.</p>
+<p id=10000 class="phone s01"><cite>Patrick_St-Louis:</cite> So um I'm not going to tack and I don't have experience and I sort of unrelated question but kind of related. I guess this question is more for Manu. Uh you shared a slide deck on the W3C uh verifiable credential working group mailing list. Uh, can this slide deck be shared before TAC or it's preferable to wait after the fact before we share it?</p>
+<p id=5b23 class="phone s04"><cite>Manu_Sporny:</cite> Uh yes, it can be shared. It's just public. Um yeah, feel free to share with whomever you uh want.</p>
+<p id=2275 class="phone s01"><cite>Patrick_St-Louis:</cite> Perfect. I just wanted to make sure uh if if it was okay. Uh yeah.</p>
+<p id=2232 class="phone s04"><cite>Manu_Sporny:</cite> We also might want to um review it on the call today. I don't know. It's up to up to you. uh code um it's the DC API uh slide deck for the verifiable credential working group.</p>
+<p id=c2c6 class="phone s02"><cite>Kayode_Ezike:</cite> So, could you could you actually refresh my memory exactly…</p>
+<p id=4552 class="phone s02"><cite>Kayode_Ezike:</cite> what you're referring to? Oh, heat.</p>
+<p id=10001 class="phone s04"><cite>Manu_Sporny:</cite> We're going to talk about it at the main call on the main call tomorrow. Um, So maybe we should just say that we're going to talk about it on the main VCWG call tomorrow if folks want to learn more about it show up to that call. Um but it's basically saying like, &quot;Hey DC API, um could you please uh enable the use of VCOM?&quot; Um that's Yeah. And plus, there's some other things that you're doing that we think we do uh that we fixed in VCOM uh that that will lead to an actual competitive ecosystem rather than gatekeeping by wallet vendors, that sort of</p>
+<p id=ba04 class="phone s02"><cite>Kayode_Ezike:</cite> Gotcha. Yeah, I did see that back and forth, but I haven't gotten a chance to zero in on it. Okay. So, then I guess we'll have a discussion tomorrow then. Um, and if maybe if there's time, we can touch on it a little bit today. But first, I wanted to get to these other items. But, uh, thanks for that, Patrick.</p>
+<p id=b23e class="phone s02"><cite>Kayode_Ezike:</cite> So I mean if I So do we typically in these tack calls give an overview of the spec?</p>
+<p id=455d class="phone s02"><cite>Kayode_Ezike:</cite> Um okay. So Okay,…</p>
+<p id=f813 class="phone s04"><cite>Manu_Sporny:</cite> Yes. Yeah.</p>
+<p id=7dca class="phone s04"><cite>Manu_Sporny:</cite> Because you you're going to have a bunch of potentially this is we're going to be on the last day, last couple of hours, right? But potentially you have a number of new people that have never heard about the group or might be jumping in just to understand. Uh, and you want to give them like 10 minutes of like background on what the spec is and what we're trying to do and where we</p>
+<p id=add2 class="phone s02"><cite>Kayode_Ezike:</cite> great. And my understanding is we only have our own dedicated slot.</p>
+<p id=10002 class="phone s02"><cite>Kayode_Ezike:</cite> I know some other folks have additional slots uh for the broader group, but yeah, I'm I'm operating on that assumption that we just have that 1 hour slot and…</p>
+<p id=096e class="phone s02"><cite>Kayode_Ezike:</cite> use that to basically present and field questions and maybe like discuss use cases and things like that.</p>
+<p id=3b16 class="phone s04"><cite>Manu_Sporny:</cite> That's right.</p>
+<p id=4724 class="phone s02"><cite>Kayode_Ezike:</cite> I would Manu Sporny:</p>
+<p id=04f5 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. Yeah. Typically that hour is broken up into like the first 10 to 15 minutes is this is what the spec is and what it does and then you know the next 15 minutes is this is what we have been working on and where we are like we have done asked for horizontal review people have you know done that horizontal review that's we believe we're almost feature complete da da da da and then the last half hour is typically high like big issues or uh things that need everybody's attention to be resolved.</p>
+<p id=3bc4 class="phone s04"><cite>Manu_Sporny:</cite> Um and if you don't have any of those items, then it's just like PR and issue processing. But try yeah try to if there are any like big rocks we still need to um you know address uh move uh that's the best time to use that 30 minute block Four.</p>
+<p id=b157 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, great.</p>
+<p id=2055 class="phone s02"><cite>Kayode_Ezike:</cite> Great. Then that's that's good. I can work with that and I will do my best to prepare something for for that. And I also won't be there. I'll be remote. So hopefully that doesn't cause any issues as far as uh the presentation goes. But I think if the barometer um is the previous one we had in the fall, I think it should be fine. Great. So, let's dive into</p>
+<p id=cbda class="phone s02"><cite>Kayode_Ezike:</cite> more substantive stuff.</p>
+<p id=3cba class="phone s03"><cite>Eric_Schuh:</cite> Sure. Sounds good.</p>
+<p id=502a class="phone s02"><cite>Kayode_Ezike:</cite> So, uh, Eric, why don't you, uh, give us an update on the, um, threat model and then I'm going to piggy back off of that.</p>
+<p id=10003 class="phone s03"><cite>Eric_Schuh:</cite> Um, yeah. So, I I guess the latest update is I believe we did get a a note in for publication a couple of weeks ago. Um, at least I haven't heard anything different from Ivan, although I haven't seen any progress updates um in about a week now. Uh but in terms of the threat model work itself, um I have two PRs that I unfortunately didn't quite get in today. Um but one's a content PR and one's uh kind of an editorial uh cleanup PR um for the threat model that should get in by the end of the week um if not early next week.</p>
+<p id=bd71 class="phone s03"><cite>Eric_Schuh:</cite> Um so basically that should cover I think what I would consider um contentwise you know filling in any of the threats that currently don't have responses um maybe making some evaluations of whether or not threat should be removed because we don't have any good salient responses um as well as handling I think there were five or six issues um related to uh some of the content of some of the uh threats and responses um and then the editorial one it's mostly cleaning up the respect links that currently don't link anywhere and things of that nature. Um, so I broke it up into the two PRs. Um, just one felt a little bit too big, but also, you know, I didn't really want to spam the group with 15 individual small PRs. Um, just given the the rate of uh handling some of those threat model um issues and PRs.</p>
+<p id=8b5a class="phone s03"><cite>Eric_Schuh:</cite> Um, so I I could break it up if uh someone or if anyone thought that would be a a better way, but it felt like a good kind of delineation of having uh one kind of content focused PR and…</p>
+<p id=4274 class="phone s03"><cite>Eric_Schuh:</cite> one that's the editorial link fixes and handling all of the uh feedback from the publication cycle um to the note.</p>
+<p id=0b48 class="phone s02"><cite>Kayode_Ezike:</cite> Thank you,…</p>
+<p id=e6a2 class="phone s02"><cite>Kayode_Ezike:</cite> Eric. Yeah, I think that's it that sounds like a pretty good organization of it. Um, it's not too dissimilar from the one you had not long ago when you had multiple threads. You added it to the same PR that kind of seem to be a similar type of change. So, I'm personally fine with that. The thing that I wanted to ask them, maybe one of maybe the editorial PR is going to cover this, but I noticed that so we had a the last PR you had um with the threat model. I remember that we you converted information that was in the privacy and security um consideration sections into threats.</p>
+<p id=d6df class="phone s02"><cite>Kayode_Ezike:</cite> Um, and I think the the goal was to then remove those two sections, but I was doing a PR uh no long from now and I noticed that those two sections were were still there. I'm not sure if that was an oversight or if we in we like intended to leave those in. And also another thing is that I noticed also that it seems that security section sorry security one uh actually includes stuff that's not related to security as well. It includes like acknowledgements and everything basically everything beneath it. Um it includes within it as well which was an interesting thing as well.</p>
+<p id=9b8e class="phone s02"><cite>Kayode_Ezike:</cite> I'm not sure if this is something that was noticed, but I just wanted to call that out cuz I think that we were supposed to remove. Well, actually, these are different sections. Never mind. Maybe it's just the table of contents that's a little bit wonky with that.</p>
+<p id=2c25 class="phone s02"><cite>Kayode_Ezike:</cite> But either way, that those sections are still um are still there when I thought we were supposed to move them.</p>
+<p id=671a class="phone s03"><cite>Eric_Schuh:</cite> Um, yeah,…</p>
+<p id=c48f class="phone s03"><cite>Eric_Schuh:</cite> I'll have to take another look. I thought that they had been um maybe a couple PR stepped on each other at some point. Not sure. Um, I can take a look at that uh again in the live version. Um, but also Manu, I guess real quick, I know there was discussion at one point about wanting to leave the privacy consideration section in um based off of work in was it the data the VC that model group um I don't know if there's any updates or guidance</p>
+<p id=3219 class="phone s03"><cite>Eric_Schuh:</cite> There. Yeah.</p>
+<p id=ea34 class="phone s04"><cite>Manu_Sporny:</cite> Uh yeah, the um the general shape that I think we agreed to was um I'm trying to I'm trying to pull up the spec. uh is to leave both the security and privacy consideration sections in um and see so there this is the VC data model and it links to a threat model and there's security considerations and privacy considerations here in the security considerations um we you know have sub things with a with a paragraph if if there's something written in the threat model we use</p>
+<p id=374e class="phone s04"><cite>Manu_Sporny:</cite> the kind of short name for the thing in the threat model, quick sentence on what the threat is about and we ask the reader to go and read that specific threat in the threat model. Um, so when you click on it, you get taken to it in the in the threat model here. Um, and what that allows uh is that for example in the privacy considerations here, this thing is not in the threat model in the VC data model threat model. It's just something that, you know, didn't really fit in the threat model, but it is a privacy consideration. So, we list it here. Um, same thing for beer credentials. But if you go keep going down, it also has things that link to the threat model. I think this would end up working for all the horizontal reviews that we're getting from security and ping. And hopefully this makes all of them happy.</p>
+<p id=10004 class="phone s04"><cite>Manu_Sporny:</cite> and it allows you to figure out where you want to refer to the threat model and whether or not you want to write something very specific to the spec um in the document. Hopefully that was clear.</p>
+<p id=0dd2 class="phone s03"><cite>Eric_Schuh:</cite> Yes. Uh yeah. So I'll plan on probably a third PR to update the the main spec in that way for those two sections.</p>
+<p id=9a3a class="phone s02"><cite>Kayode_Ezike:</cite> Awesome. Um,…</p>
+<p id=44a4 class="phone s03"><cite>Eric_Schuh:</cite> Um but I'll just try to copy uh the current formatting in the VC data model um because that seems to be the best of class at the moment. So</p>
+<p id=c64b class="phone s02"><cite>Kayode_Ezike:</cite> did my screen stop sharing by the way?</p>
+<p id=384c class="phone s04"><cite>Manu_Sporny:</cite> It did. Sorry. When I started screen uh screen sharing, it stopped your screen share.</p>
+<p id=10005 class="phone s02"><cite>Kayode_Ezike:</cite> I think it's limitations of my device, so it's no no worries. Um, but yeah, thanks thanks for that Manu. Uh one thing that came up for me, one thing I've realized actually is that uh I'm realizing that actually what I had locally loading is different than what's here somehow. Um even though I have name because yeah the organization thing I was mentioning before where everything was under security considerations is not happening here which is good.</p>
+<p id=d152 class="phone s02"><cite>Kayode_Ezike:</cite> One thing that should note though that is still there is that we have duplicates of security and privacy, right? And these ones are not in the TLC which was intentional in the beginning. But Ammani, with your new recommendation, would we just get rid of these and…</p>
+<p id=ec0b class="phone s02"><cite>Kayode_Ezike:</cite> just put Okay,…</p>
+<p id=cf22 class="phone s04"><cite>Manu_Sporny:</cite> That's correct.</p>
+<p id=2780 class="phone s04"><cite>Manu_Sporny:</cite> Yep. Just delete those two things and put the security and privacy considerations back. And um Yep.</p>
+</section>
+
+<section>
+<h3 id=3c58>TAG Review Feedback</h3>
+<p id=3542 class="phone s02"><cite>Kayode_Ezike:</cite> okay, perfect. Um, great. Thanks, Manu. Thanks, Eric. I think we have good direction here. Great. So that takes us to the next topic. Let me topic this actually. So we did get a review from tag, a long awaited review from tag and so it came over I think uh sometime around the weekend or so. I actually have not had a chance to do a deep dive on it. I was able to like cursively review it.</p>
+<p id=c081 class="phone s02"><cite>Kayode_Ezike:</cite> But these are the results that we got. Um I don't know I think I can go over at a high level. I we I will have to like do a deeper dive and um I think I encourage all folks here to do the same but oh you okay great thanks thanks Mon. And this particular comment uh I guess is the one that we got back from HL Flanigan. So a number essentially the overarching concern is around interoperability. Um and there's questions here that I believe we have good answers to. I just haven't had a chance to sit down and and address them independently. So do would it be constructive for us to go through this at least for a bit on this call for like 10 minutes or is this something that we should maybe address offline?</p>
+<p id=5904 class="phone s02"><cite>Kayode_Ezike:</cite> Um a separate document. Go ahead.</p>
+<p id=6eec class="phone s04"><cite>Manu_Sporny:</cite> We should go over it on the call because they're basically saying they can't finish their review because of we haven't provided this kind of feedback. I I think um we should go through this. So we we have to respond to tag and so we have to address each one of these.</p>
+<p id=d3a7 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, sounds good. So this way to do this I'm going to create a new issue in the VCOM space maybe um I think it's going to be okay great so do issue here and just so that we have somewhere to put this</p>
+<p id=10006 class="phone s02"><cite>Kayode_Ezike:</cite> Hold on a second. See if I can have the formatting. Okay. So, let's do that then. Um, so the let's just go from the top. So things basically main concern is whether VCOM enables interoperability across independently developed systems or primarily within deployments that have decreed a particular set of technologies. We have several questions and requests. So the first concern is around interoperability and configuration. Um and they want to know what shared protocols, query languages, country formats free class. Um yeah go ahead.</p>
+<p id=be9c class="phone s04"><cite>Manu_Sporny:</cite> Um can we uh can you create this issue coyote and…</p>
+<p id=ca14 class="phone s02"><cite>Kayode_Ezike:</cite> Sure. This will work.</p>
+<p id=76c7 class="phone s04"><cite>Manu_Sporny:</cite> then we can topic it so that our discussion is recorded</p>
+<p id=c136 class="phone s02"><cite>Kayode_Ezike:</cite> I don't know if that'll work. Never mind. Just leave that there. Yeah, I wanted to get rid of that, but do that later. And this is issue 745.</p>
+<p id=be93 class="phone s02"><cite>Kayode_Ezike:</cite> All right. So the first concern is interoperability configuration and what share protocols languages formats picture for class. Go ahead.</p>
+<p id=f0f5 class="phone s05"><cite>Dave_Longley:</cite> It might be good for us to start with their uh their leadin actually rather than the first point uh…</p>
+<p id=570e class="phone s02"><cite>Kayode_Ezike:</cite> Right. This is</p>
+<p id=5775 class="phone s05"><cite>Dave_Longley:</cite> because they're asking you know they don't know whether VCOM enables interoperability across independently developed systems or primarily within deployments that have agreed agreed upon a particular set of technologies and the answer is both and we have internal boundary API calls that would refer to the second category here and that is most of the APIs for VCOM are about uh the this primarily within deployments that have agreed upon a particular set of technologies. So that's most of the APIs. This would be things like creating workflows or uh using the issuer API or the verifier API. Those things are all internal uh well or within the the security boundary where there it's agreed upon in a particular deployment what you're doing.</p>
+<p id=2ae1 class="phone s05"><cite>Dave_Longley:</cite> And then the only uh API that applies to interoperability across independently developed systems.</p>
+<p id=3f3b class="phone s05"><cite>Dave_Longley:</cite> There's kind of a caveat there, but the main API for that is the exchange API. And it's not just an API, it's also the uh VPR expression is expected to be understood by independently developed systems. the it's not just the API…</p>
+<p id=aaf4 class="phone s02"><cite>Kayode_Ezike:</cite> Uh, sorry.</p>
+<p id=e233 class="phone s02"><cite>Kayode_Ezike:</cite> Did you repeat the last one you said?</p>
+<p id=428e class="phone s05"><cite>Dave_Longley:</cite> but it's also things like VPR verifiable presentation request and the query language are expected to be understood by independently developed systems and that that slight caveat I mentioned there is an expectation that you could take off the shelf for example a system that created workflows and swap it out with an existing one that you might have. So it is there is an expectation that a coordinator system could be given a different work a different exchange creation endpoint from one they had been working with previously and if the workflow was configured the same they would get the same results.</p>
+<p id=2b7d class="phone s05"><cite>Dave_Longley:</cite> So that there's a little bit of that for the inside of the boundaries um consideration or area as well.</p>
+<p id=d568 class="phone s05"><cite>Dave_Longley:</cite> So there there are two main categories that we can break things down into. Uh but then there's a little bit there's a little bit of of overlap.</p>
+<p id=476e class="phone s02"><cite>Kayode_Ezike:</cite> Gotcha. Thanks,…</p>
+<p id=c7f2 class="phone s02"><cite>Kayode_Ezike:</cite> Dave. Um so that's addresses the topline concern which I think should at least allay their main concern. So then we would yeah then we can go through each of the five individual concerns independently.</p>
+<p id=e357 class="phone s02"><cite>Kayode_Ezike:</cite> So, Uh I'm sure I understand…</p>
+<p id=f217 class="phone s05"><cite>Dave_Longley:</cite> So that the first bullet point wants the answer based on conformance classes.</p>
+<p id=e387 class="phone s05"><cite>Dave_Longley:</cite> So um we might want to paste those in here. I I know we just discussed like last week modifying one of those conformance classes a little bit, the holder service one or the client or something, but um answering these this at least this first bullet point and it might make sense for some of the other ones in terms of conformance class uh might be most helpful to them.</p>
+<p id=f162 class="phone s02"><cite>Kayode_Ezike:</cite> what you're saying.</p>
+<p id=d2d2 class="phone s02"><cite>Kayode_Ezike:</cite> Oh, Okay,…</p>
+<p id=924a class="phone s05"><cite>Dave_Longley:</cite> If we go to the section in our spec on conformance classes, um there's like a workflow service conformance class and a verifier conformance class. There's something like that. So maybe a search for conformance or something. Yeah, if we go there, here are the conformance classes in bold italics. Um, and…</p>
+<p id=cc7d class="phone s02"><cite>Kayode_Ezike:</cite> I see. Um, you're referring to those. Uh, so</p>
+<p id=e410 class="phone s05"><cite>Dave_Longley:</cite> I'll just read off the in their first bullet point, it ends with uh what can effectively what can implementations rely on for each conformance class. So they want it broken down according to these. So if you were writing an issuer service, you were writing a conforming issuer service implementation,…</p>
+<p id=4cfe class="phone s05"><cite>Dave_Longley:</cite> what could you rely on in terms of protocols, query languages, credential formats, div methods and their whole list.</p>
+<p id=6b27 class="phone s02"><cite>Kayode_Ezike:</cite> Gotcha. Okay.</p>
+<p id=fd8e class="phone s02"><cite>Kayode_Ezike:</cite> Um so going through that comprehensively here would that be?</p>
+<p id=5c26 class="phone s05"><cite>Dave_Longley:</cite> Probably not a good use of our time here,…</p>
+<p id=a462 class="phone s02"><cite>Kayode_Ezike:</cite> Yeah. Okay.</p>
+<p id=62e8 class="phone s05"><cite>Dave_Longley:</cite> but I think we should note that that's what we should fill out.</p>
+<p id=e78f class="phone s02"><cite>Kayode_Ezike:</cite> Right. Okay,…</p>
+<p id=5681 class="phone s05"><cite>Dave_Longley:</cite> Or at least that's a start to it's one way to start approaching that</p>
+<p id=e672 class="phone s02"><cite>Kayode_Ezike:</cite> let me make a note of that.</p>
+<p id=15d0 class="phone s05"><cite>Dave_Longley:</cite> It's I'll let you type that and then have another comment.</p>
+<p id=3ab0 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. Perfect.</p>
+<p id=aa00 class="phone s05"><cite>Dave_Longley:</cite> Yeah, it it seems like they're framing this question as can you tell us what all the musts are? You know, you must implement did key, you must implement this, you must implement that or and or you must define a profile in your own space somewhere that says what you must implement. And that isn't quite that doesn't quite uh mesh with this. Well, we can find a way to talk about it that way uh to respond to them.</p>
+<p id=3ec1 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, sounds good. So, I will take an action to try to start this</p>
+<p id=6ec4 class="phone s05"><cite>Dave_Longley:</cite> Yeah, we're probably going to find that for a lot of the conformance classes, those things are not relevant. Like even making a issuer implementation, you probably don't need to even know or care about a DID method.</p>
+<p id=e21e class="phone s02"><cite>Kayode_Ezike:</cite> Let's put that thing.</p>
+<p id=5faa class="phone s05"><cite>Dave_Longley:</cite> Uh it you're working at a different layer from that. The DID method is a public expression of how to find key material. And there might be, you know, you're going to have to put a DID into a VC so into the issuer field, but um implementing the DID method is probably totally unnecessary for the implementation. So there's stuff like that that we would talk about for each uh uh conformance class and…</p>
+<p id=75e6 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. And it's classes.</p>
+<p id=13d0 class="phone s05"><cite>Dave_Longley:</cite> that'll be different for the verifier conformance class. And I guess it's probably worth saying that the all of those things um are almost certainly going to be internal decisions. And uh…</p>
+<p id=10007 class="phone s05"><cite>Dave_Longley:</cite> what is available or acceptable for a system is going to be surfaced at the exchange level through a VPR. That's where you say I will accept this type of DID method for DI for example.</p>
+<p id=df26 class="phone s02"><cite>Kayode_Ezike:</cite> It's all right.</p>
+</section>
+
+<section>
+<h3 id=193a>Scope and Architecture Diagrams</h3>
+<p id=eaae class="phone s02"><cite>Kayode_Ezike:</cite> Great. I think I have good direction there. Thank you Dave. Next one is around scope and architecture. So the object diagram is not</p>
+<p id=dd01 class="phone s02"><cite>Kayode_Ezike:</cite> Clear. Please mark which interfaces VCOM standardizes any diagram connect them to the performance classes.</p>
+<p id=6995 class="phone s02"><cite>Kayode_Ezike:</cite> Right. Uh resulting. So I want to know is Joe on the call? I wonder if I can foc on you.</p>
+<p id=fb33 class="phone s03"><cite>Eric_Schuh:</cite> No, Joe is busy right now.</p>
+<p id=5a7c class="phone s03"><cite>Eric_Schuh:</cite> He couldn't come.</p>
+<p id=63a1 class="phone s02"><cite>Kayode_Ezike:</cite> Gotcha. Only because I know that he was involved with um many of the earlier versions of that. Um, but I guess Eric, as he responded, you were also involved with this.</p>
+<p id=fc45 class="phone s02"><cite>Kayode_Ezike:</cite> I wonder if you have any opinions about this this comment.</p>
+<p id=b6a9 class="phone s03"><cite>Eric_Schuh:</cite> Um, I think I'd have to think about it more.</p>
+<p id=ffc6 class="phone s03"><cite>Eric_Schuh:</cite> I I honest I don't have much at the moment. Um,</p>
+<p id=1b60 class="phone s02"><cite>Kayode_Ezike:</cite> I know that.</p>
+<p id=15b8 class="phone s02"><cite>Kayode_Ezike:</cite> And there was a we had a lot of back and forth earlier about how much of the diagram should we um sort of annotate and and how much should we kind of leave out. That was a long discussion we had as we were approaching the threat model design which started off with the use case which also was accompanied by that uh large document that you all put together which is a useful one. I guess it's just a question of what's the best way to uh update it. Go ahead Dave.</p>
+<p id=f16e class="phone s05"><cite>Dave_Longley:</cite> Yeah. Uh coming up with the best way to connect the diagram or change the diagram so that it does connect with conformance classes is a to-do item. But at the very least, again, they're looking at this from the conformance perspective. And the conformance section could say or could probably at least with text for now say this conformance class is related to this coordinator or whatever. Um, and that would again they're looking for this to from the filter of conformance classes which makes sense from their perspective and we should try to better connect that conformance section with the other materials in the spec including that diagram so that if you were looking at that conformance section and you or at the at the diagram I don't know how to do it in reverse easily without changing the whole diagram around… but um You could say, I can be conformant with the spec if I implement this class.</p>
+<p id=558d class="phone s02"><cite>Kayode_Ezike:</cite> Okay, let me reiterate that last part.</p>
+<p id=8b4d class="phone s02"><cite>Kayode_Ezike:</cite> So, generally you're saying that we should just um make it clear which of the performance classes are associated with which components.</p>
+<p id=7fdf class="phone s05"><cite>Dave_Longley:</cite> Yes. And tie that to the diagram. So, um certainly if you looked at the conformance section and then you looked at the uh diagram uh you could figure out where the the conformance class was applicable in the diagram. That would that's probably the easiest thing to do with just textual changes and then it will be a little more challenging I would expect to update the picture the diagram in some way so that if you went to the diagram it uh was clear just from looking at the diagram what the conformance class was so you could go back to that section and read more about</p>
+<p id=c479 class="phone s02"><cite>Kayode_Ezike:</cite> Got you.</p>
+<p id=4ef6 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. Um, go ahead, Eric.</p>
+<p id=5e03 class="phone s03"><cite>Eric_Schuh:</cite> Yeah, sorry.</p>
+<p id=76c6 class="phone s03"><cite>Eric_Schuh:</cite> I just had to take a closer look at this diagram. It's been a long time, I think, since I went into it with any detail. Um, I do think this was mostly Joe's kind of brainchild in terms of creating it initially. So, I'll make sure that he is aware of this discussion. um and takes a look at the issue uh as we're writing it up. Um I think Dave's suggestions are good. I do worry just because I know the tool that Joe uses to create these um things will possibly feel more cluttered like it this might just be a complex enough diagram that we do need to consider uh maybe having a know more higher level architecture diagram with some sub diagrams that go into either different conformance classes or different aspects of the system in more detail.</p>
+<p id=a105 class="phone s03"><cite>Eric_Schuh:</cite> Um, I just I'm trying to think of different ways to color code or, you know, do different ways of formatting the lines to represent Dave, what you were just talking about. And I I do have some concerns. Um, but I'll bring them up with Joe and…</p>
+<p id=2d66 class="phone s03"><cite>Eric_Schuh:</cite> we'll make sure to discuss and hopefully come up with</p>
+<p id=f94a class="phone s05"><cite>Dave_Longley:</cite> Yeah, I would second that.</p>
+<p id=10008 class="phone s05"><cite>Dave_Longley:</cite> I think that diagram is already too busy. I think is cool that it tries to show everything all at once as a big overview, but um probably each conformance class should have its own diagram that you can somehow uh connect up with that big overview and that might be the way to help resolve this issue. And that diagram can say you know uh or…</p>
+<p id=4ea3 class="phone s05"><cite>Dave_Longley:</cite> text around that diagram can say you know look at these other diagrams for each conformance class to understand where it sits within the wider diagram.</p>
+<p id=063a class="phone s02"><cite>Kayode_Ezike:</cite> Great. Thank you.</p>
+<p id=0309 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. So, I think the path forward is for Joe and Eric to view the diagrams and attempt to consult it with the comp classes.</p>
+<p id=324e class="phone s02"><cite>Kayode_Ezike:</cite> necessary. But uh does that sound good,…</p>
+<p id=07c7 class="phone s02"><cite>Kayode_Ezike:</cite> Eric? Is for you and Joe to discuss this when when you have time.</p>
+<p id=385d class="phone s03"><cite>Eric_Schuh:</cite> Yeah, I guess just so the group knows,…</p>
+<p id=0d6c class="phone s03"><cite>Eric_Schuh:</cite> obviously Joe's going to be at TAC next week, so it'll probably be, you know, the week after that I get any time with him. Um but uh yeah,…</p>
+<p id=c692 class="phone s02"><cite>Kayode_Ezike:</cite> Got it.</p>
+<p id=6e09 class="phone s03"><cite>Eric_Schuh:</cite> just as a timeline.</p>
+<p id=ee48 class="phone s05"><cite>Dave_Longley:</cite> I was just also going to suggest I don't know…</p>
+<p id=936e class="phone s05"><cite>Dave_Longley:</cite> if you guys uh can easily coers Claude into producing sub diagrams so that you don't have to do it by hand. That might be nice,</p>
+<p id=41cd class="phone s03"><cite>Eric_Schuh:</cite> Yeah, that's certainly uh something I could take a look at as well.</p>
+<p id=df4e class="phone s02"><cite>Kayode_Ezike:</cite> Awesome. Great.</p>
+<p id=b860 class="phone s03"><cite>Eric_Schuh:</cite> Um I do wonder how it would play with inspiration and their file formats, but you know, if they can read it, they should be able to create it, right?</p>
+</section>
+
+<section>
+<h3 id=5170>Wallet Selection and Delegation</h3>
+<p id=c56e class="phone s02"><cite>Kayode_Ezike:</cite> Thanks, Dave. Thanks, Eric. Next concern, wallet selection and delegation. Just copy this all over. Okay. Web interaction. Which component discovers available wallets and lets user choose one? Okay. Well, a few ways to do that. Please clarify what browser platform integration is assumed when an interaction on one domain delegates exchange to another. Does the wallet authenticate? Does the user see? Okay. Um, go ahead Dave.</p>
+<p id=d02a class="phone s05"><cite>Dave_Longley:</cite> We could take these one by one if it's quick. Uh I haven't thought too far ahead. Maybe it's not. But uh I mean the first one is uh you know in in a web interaction…</p>
+<p id=e837 class="phone s02"><cite>Kayode_Ezike:</cite> Where's</p>
+<p id=571b class="phone s05"><cite>Dave_Longley:</cite> which component discovers available wallets and lets the user choose one. None of the components in this specification do that. it we defer to something else this that's out of scope for this spec. Um, we might mention that any user all user chosen wallet that supports interaction URLs can scan a QR code of of an interaction URL or um clicking on an interaction URL could result in some kind of chooser or passing an interaction URL through the DC API if the DC API would enable it is another way that that could happen.</p>
+<p id=bc79 class="phone s05"><cite>Dave_Longley:</cite> So, there are a variety of ways to get an interaction URL to a wallet,…</p>
+<p id=aa25 class="phone s05"><cite>Dave_Longley:</cite> and it's outside of the scope of this spec, but it's probably worth mentioning in our response some of the ways that it can happen.</p>
+<p id=ff9f class="phone s02"><cite>Kayode_Ezike:</cite> Right. So,…</p>
+<p id=c529 class="phone s02"><cite>Kayode_Ezike:</cite> okay. So, and meaning like for example API chappy things of that sort.</p>
+<p id=337b class="phone s05"><cite>Dave_Longley:</cite> Yep. Yep. Q scanning QR codes. uh DC API, Chappie are all examples of mechanisms to that can or are or or are intended to be able to get an interaction URL to a wallet. And then yeah this the next one is when an interaction on one domain.</p>
+<p id=b75a class="phone s02"><cite>Kayode_Ezike:</cite> probably linked to instruction. section.</p>
+<p id=8c22 class="phone s02"><cite>Kayode_Ezike:</cite> when I get the actual response. Okay, great. So, that's the first sign.</p>
+<p id=10009 class="phone s05"><cite>Dave_Longley:</cite> So this is effectively when a coordinator publishes an interaction URL and uh it says when it delegates an exchange to another. So that's it publishes an interaction URL and has protocol object that points somewhere else. Which identity does the wallet authenticate? And the answer to that is the interaction URL origin is the one it needs to authenticate.</p>
+<p id=5659 class="phone s02"><cite>Kayode_Ezike:</cite> Okay.</p>
+<p id=a221 class="phone s05"><cite>Dave_Longley:</cite> That is the same origin that the user sees. And then they ask the question what binds the presentation to its intended recipient. Um I I think the way we would answer that is because the origin has delegated to uh another domain, there is a trust relationship with that other domain.</p>
+<p id=77d8 class="phone s05"><cite>Dave_Longley:</cite> Um and an expectation that any any signed presentation will sign over a origin or domain value.</p>
+<p id=69f4 class="phone s02"><cite>Kayode_Ezike:</cite> Sorry, once interrupt I actually missed that third their question was…</p>
+<p id=c17b class="phone s02"><cite>Kayode_Ezike:</cite> what again? Uh which does does the user see? Is that the one you're answering now?</p>
+<p id=a343 class="phone s05"><cite>Dave_Longley:</cite> Uh which identity? Sorry, sorry…</p>
+<p id=fc62 class="phone s05"><cite>Dave_Longley:</cite> if I went too fast. I wasn't watching what you were typing. Um, what do we get so far?</p>
+<p id=856d class="phone s02"><cite>Kayode_Ezike:</cite> So, so okay.</p>
+<p id=5db2 class="phone s02"><cite>Kayode_Ezike:</cite> So, what I have so far is um you know that we defer the response or basically the wall selection to an external system and then mechanism and then the coordinator publishes an interaction URL. It needs to authenticate the origin of the server hosting object.</p>
+<p id=0f9b class="phone s05"><cite>Dave_Longley:</cite> Okay, hold on. So, let's let's look at that. Um, no, that's not quite right. So when a coordinator this is so I'm trying to let's trying to frame this for their questions. Uh it says their question uh don't type this their question says when an interaction on one domain delegates an exchange to another and so what that means is that's a coord you don't have to type this…</p>
+<p id=cb2b class="phone s02"><cite>Kayode_Ezike:</cite> Let's</p>
+<p id=a2a1 class="phone s05"><cite>Dave_Longley:</cite> but this is uh a coordinator is publishing an interaction URL. So let let's change the text here. So it says when a coordinator publishes an interaction URL um it uh explicitly um delegates processing to the protocol URLs it publishes there. Uh yeah, it serve let's say it serves from there.</p>
+<p id=9665 class="phone s05"><cite>Dave_Longley:</cite> The coordinator is expected to have a trusted partnership with any uh workflow processing systems. Yeah, I guess we'll just say that. And so that's describing the relationship. And then their question, this for another bullet point is which identity does the wallet authenticate?</p>
+<p id=8447 class="phone s05"><cite>Dave_Longley:</cite> So the answer is the wallet uh authenticates the coordinator's uh identity and I guess you could put origin in parenthesis and uh so uh we'll make it a second point so you can get rid of the and and then it can say the user so they want to know what what identity does the user see. the user sees that same identity, that same identity and then origin in parenthesis and then they want to know what binds the presentation to its intended recipient.</p>
+<p id=a34d class="phone s05"><cite>Dave_Longley:</cite> uh the a a presentation is bound to its intended recipient through the combination of TLS and optionally a digital signature over a verifiable presentation that includes the origin slashdomain of the coordinator and then you can put in parenthesis uh interaction the the interaction URL origin and…</p>
+<p id=e09f class="phone s05"><cite>Dave_Longley:</cite> I think that answers the question fully.</p>
+<p id=2bc3 class="phone s02"><cite>Kayode_Ezike:</cite> Great. Thank you,…</p>
+</section>
+
+<section>
+<h3 id=92dd>Complete Interface Definitions</h3>
+<p id=0b54 class="phone s02"><cite>Kayode_Ezike:</cite> Dave. Um, so just there's not really much of a to-do there. I just have to pretty much use that with some rewarding maybe. But, uh, thanks thanks for that. Next question. Uh, complete interface definitions. Oh, we did a good job of that, but hold on. So, several interfaces have independent implementations needing to infer behavior. Please specify callback payloads, response bodies, authorization, action mappings, URL resolution against instances base URL and error behavior for missing required fields or identifier collisions.</p>
+<p id=52b7 class="phone s02"><cite>Kayode_Ezike:</cite> Contential imposition objects should have explicit normative conformance requirements linked binary content and hashes likewise needed defined in mechanism. So,</p>
+<p id=abef class="phone s05"><cite>Dave_Longley:</cite> So, some of That's is uh we already link to VC and VP well to the VCDM and so on that's for credential and presentation objects um that piece is covered we introduce VPR that's in the spec and those things all all three of those things have explicit normative conformance requirements</p>
+<p id=1000a class="phone s05"><cite>Dave_Longley:</cite> um uh linked binary content and hashes likewise need a defined mechanism. The only place those things are being done would be like related we defer all of that to the VCDM as well. Um so the the last sentence we're going to have to figure out how to respond to that sentence, but it seems like we're already uh the spec already does that. Um, the spec is open in that it would accept other formats, but it does accept VCs. And maybe we maybe we need a need to say something in the spec that says you must support verifiable credentials and verifiable presentations. So there's a minimum bar.</p>
+<p id=19d0 class="phone s05"><cite>Dave_Longley:</cite> Maybe that's something that's missing. I don't know.</p>
+<p id=335a class="phone s02"><cite>Kayode_Ezike:</cite> Right. So I I think for some of these uh we absolutely do I mean we do have these already specified um off the so I'm wondering…</p>
+<p id=1225 class="phone s05"><cite>Dave_Longley:</cite> Yeah, we did.</p>
+<p id=d8a3 class="phone s02"><cite>Kayode_Ezike:</cite> if it's just like redirecting them to the sections where we're doing these things. Um, right. Okay.</p>
+<p id=e790 class="phone s05"><cite>Dave_Longley:</cite> Yeah, unfortunately it says several interfaces leave independent implementations needing to infer behavior, but we don't know which interfaces they're referring to. So maybe we take it offline to find any interfaces that are required in the conformance classes that do not make these things clear. But I think most of them do.</p>
+<p id=132e class="phone s02"><cite>Kayode_Ezike:</cite> So then the to-do is to ask them like in the response and we answer all these but this one will will be a combination of pointing to the areas that we're doing that and but also asking them which implementation configurations would have to infer behavior. existing APIs require</p>
+<p id=3cd8 class="phone s05"><cite>Dave_Longley:</cite> Yeah. And there might be an action item for us to sort of audit that or ask an AI to audit that for us. you know which of the implement which of the APIs that are required for the any of the conformance classes uh require inference instead of explicit details that are in this spec or linked to from this spec.</p>
+<p id=9804 class="phone s02"><cite>Kayode_Ezike:</cite> about you cave here right caps and…</p>
+<p id=1000b class="phone s05"><cite>Dave_Longley:</cite> instead of explicit details for request and response payloads uh and so on. I mean we we I was going about to say authorization action mappings I mean but we we have a section on that too.</p>
+<p id=fa99 class="phone s02"><cite>Kayode_Ezike:</cite> go off seems like Yeah. Okay. Well, I think a good amount of that it sounds like it's going to be just providing evidence that we do and and maybe like clarification question. But yeah, I think the to-do is to is for us to do this audit at least and see what we can find. Um, which leads us to the last question which is verification results.</p>
+<p id=a3f5 class="phone s02"><cite>Kayode_Ezike:</cite> Please clarify what verified true guarantees particularly when status or validity concerns are reported as warnings and which conceptance decisions remain the caller's responsibility.</p>
+<p id=0cfd class="phone s05"><cite>Dave_Longley:</cite> Yep, we should clarify that. And there I think that's currently depending on some algorithm in the VCDM or somewhere and</p>
+<p id=478a class="phone s02"><cite>Kayode_Ezike:</cite> Yeah, we do we do have that one like in inputs like there's like this uh specification for like what we're supposed to get back when we do the verification that includes the get the exact format but I just saw it earlier today too as a reminder it's like different things that you can put inside of there.</p>
+<p id=bdca class="phone s02"><cite>Kayode_Ezike:</cite> Um, so we should we clear</p>
+<p id=5e7d class="phone s02"><cite>Kayode_Ezike:</cite> Yeah. Okay.</p>
+<p id=41ef class="phone s05"><cite>Dave_Longley:</cite> So regarding their last uh their sort of summary at the end of the points says these clarifications would help us assess both the interoperability claims and the division of responsibility between BCOM its implementations and the surrounding web platform. I think in our response we can make each make each one of those a bullet point. So interoperability claims like high level bullet points interoperability claims and responsibilities. Um and uh we can list you know…</p>
+<p id=256d class="phone s05"><cite>Dave_Longley:</cite> what VCOM is what claims interoperability claims VCOM makes and what responsibilities VCOM takes on as opposed to What? it systems it defers responsibilities to yeah I would even have this as a high level like that's really…</p>
+<p id=7f51 class="phone s02"><cite>Kayode_Ezike:</cite> Okay. So,…</p>
+<p id=7780 class="phone s02"><cite>Kayode_Ezike:</cite> you should just then response that we should split each of these responses up into these different subsections.</p>
+<p id=1000c class="phone s05"><cite>Dave_Longley:</cite> what they're looking for that might even be the leadin um you know it's VCOM has these interoperability claims which is effectively it's part of that's the first answer uh you know we've got internal you in inside of a security boundary interoperability and…</p>
+<p id=a3e8 class="phone s05"><cite>Dave_Longley:</cite> outside of a security b boundary interoperability and then responsibilities for vcom we can list vcom's responsible for doing these things and then it uh is not responsible for things like wallet selection and we defer to DC API chappie you know whatever</p>
+<p id=96a3 class="phone s02"><cite>Kayode_Ezike:</cite> Okay, got it.</p>
+<p id=5034 class="phone s02"><cite>Kayode_Ezike:</cite> Um, okay. Yeah, this will be a fun one for sure. I Yeah, I'll take an action to begin to address this. Uh, don't know if Yeah, we'll see. I'll try to get it in before Tekk, but it might be ambitious. But, I mean, either way, we should review the response before I submit it anyway.</p>
+<p id=9a1f class="phone s02"><cite>Kayode_Ezike:</cite> So, I'll see what I can do between now and yeah, like early next week. Anything else? That pretty much took up the entirety of the co-op.</p>
+<p id=10df class="phone s05"><cite>Dave_Longley:</cite> I would just be make sure to hit that comment button because I think…</p>
+<p id=3812 class="phone s02"><cite>Kayode_Ezike:</cite> Yes. Yes.</p>
+<p id=7d2b class="phone s05"><cite>Dave_Longley:</cite> if the tab crashes you might lose</p>
+<p id=26d0 class="phone s02"><cite>Kayode_Ezike:</cite> Yes. This is this is a good point. Um, okay. Well, yeah. Thanks. Thanks a lot, Dave. Thanks, Eric. everyone everyone who contributed to discussion. Yeah, we'll do our best to get a quick turnar around. Uh we're not always afforded the same courtesy, but we'll do our best to to do what we can to respond to this. I don't know if we have five minutes. I know if it's worth what we have 10 PRs. Um not sure if Yeah.</p>
+<p id=13c4 class="phone s05"><cite>Dave_Longley:</cite> something to just drop into your brain. Um, when they talked about binding a presentation,…</p>
+<p id=e44e class="phone s05"><cite>Dave_Longley:</cite> some presentations will have credentials that themselves are bound to something like an MDOC presentation does that or a BBS presentation might do that. Um, and so just remember to mention that individual credentials themselves might be bound to a particular reader or origin and that's outside of the domain of BCOM to specify There was some place that said binding a presentation.</p>
+<p id=7d6b class="phone s02"><cite>Kayode_Ezike:</cite> Okay, let me see…</p>
+<p id=39ba class="phone s02"><cite>Kayode_Ezike:</cite> if I can get that here. This would be underneath. I think we had this somewhere here.</p>
+<p id=81dd class="phone s05"><cite>Dave_Longley:</cite> Yeah, the last bullet point in the middle there under wallet selection and delegation. less. Yeah. At the end of that you could say um some uh the presentation of some verifiable credentials includes binding such as MDOC device responses or BBS cryptographic leads or something like that. And and most importantly this is uh VCOM defers to those mechanisms you know defers the responsibility of that to those mechanisms.</p>
+<p id=1000d class="phone s02"><cite>Kayode_Ezike:</cite> which is useful because that addresses the top level division of division of responsibility concern. Great. Great. Uh only have three minutes left. I don't think it's worth it to squeeze in anything else but maybe just like a highle like review of the PRs that are up now just for folks to keep in mind. Uh this one is open. So I'll just quickly so this is actually related to our internationalization uh review and they wanted us to be clear about how we deal with language.</p>
+<p id=3367 class="phone s02"><cite>Kayode_Ezike:</cite> And so I had to go back to the notes to remind myself like where our decision around this was. And it was basically for us to add this section on internationalization considerations which was also what a Phillips wanted us to do anyway. And basically just explaining how we go about dealing with multiple uh languages by using the accept language header. And uh is that a question or a comment? It's probably comment. Um and so and and I'm hoping that this also addresses the concern around all the other fields as well. Um because that was I think the first comment that was made on that issue. So that's something that I want to get in soon cuz that's holding up that review.</p>
+<p id=1000e class="phone s02"><cite>Kayode_Ezike:</cite> And outside of that, there's I think I saw Patrick had a new PR on on crypto suite uh on exchange data. And I also did an update to the daytime properties one as well so that it's more closely sort of um bound to the VCDM spec. Basically, it defers much of the language to that. um just the first sentence is is ours and then everything else is referred to either VCDM or in the case of the created field it says refer to the PC the DI spec because it specifies that over there. Um so that's the main difference there. Uh, and then I think there's another one as well that Yes, I also added this one I think a few</p>
+<p id=b869 class="phone s02"><cite>Kayode_Ezike:</cite> days ago around or yesterday. This is Dimmitri's issue uh so that we can have the client of the server determine or signal to his counterpart that the exchange should be finished from this perspective which amounted to a new property called done. Um so if you're done you include it if you if you want to be explicit about it and um that's essentially it. That's all we need to support that. And I think that's pretty much what we have time to get through today. Um, so thanks everyone for the call. I will do my best to address the the issue that we just discussed. I know I also was supposed to uh classify the issues which I didn't have time for uh this past week. So I'll try to do that as well if there's time.</p>
+<p id=488a class="phone s02"><cite>Kayode_Ezike:</cite> But I will admit that it might not be time cuz I think the tag review is probably the most important thing to to tackle. So that's all for today. Thanks everyone. And we'll well I guess we not we won't meet next week for this call because of TAC. I assume they cancel calls for TAC. So I'll cancel that. And um we'll see you all at TAC. Cheers. All right.</p>
+<p id=26ee class="phone s01"><cite>Patrick_St-Louis:</cite> Thank you. Meeting ended after 01:01:25 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

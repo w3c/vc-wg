@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 21 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>Verifiable Credentials Working Group Telco</h1>
+<h2>21 October 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20261021T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/10/21-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Carolynn, dlongley, dmitriz, echsecutor, elaine, hsano, hxavier, ivan, JennieM, joe, KevinDean, kezike, manu, michaelshea, pdl-ASU, phila, TallTed, wes-smith, Wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>Carolynn</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#5f24">Issues in DC API</a></li>
+<li><a href="#aa94">Bitstring Status List</a>
+<ol>
+<li><a href="#7302">w3c/<wbr>vc-bitstring-status-list#220</a></li>
+<li><a href="#6143">w3c/<wbr>vc-bitstring-status-list#219</a></li>
+</ol>
+</li>
+<li><a href="#5418">VCDM vocabulary - ttps://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pull/<wbr>1652</a></li>
+<li><a href="#f92a">aob</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=6b2f class=irc><cite>&lt;KevinDean&gt;</cite> <a href="https://w3c.github.io/scribe2/scribedoc.html">https://<wbr>w3c.github.io/<wbr>scribe2/<wbr>scribedoc.html</a></p>
+<p id=882a class="phone s01"><cite>phila:</cite> In this call, we must cover a few topics which may take somem time. Wes raised issued on API. Manu's presentation in Dublin.</p>
+<p id=0539 class="phone s01"><cite>phila:</cite> The goal is to try to collaborate peacefully.</p>
+<p id=b005 class=irc><cite>&lt;phila&gt;</cite> TPAC agenda <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/<wbr>edit</a></p>
+<p id=a7f8 class="phone s01"><cite>phila:</cite> Kevin also has a issue to discuss. Does anyone have any issues for next week, slots are built around timezones.</p>
+<p id=6afd class="phone s01"><cite>phila:</cite> barcode and DI will be covered West coast timezeone. and other work focusing on Eastern timezones</p>
+</section>
+
+<section>
+<h3 id=5f24>Issues in DC API</h3>
+<p id=8fa8 class="phone s02"><cite>wes-smith:</cite> suggest manu goes first. issues related to slide deck which provides bigger picture.</p>
+<p id=ff18 class=irc><cite>&lt;manu&gt;</cite> DC API Interoperability Concerns wrt. W3C VCs: <a href="https://docs.google.com/presentation/d/1_tizY_xn_92NKSmojJEmj-BMMV5WRheKGx78fq8U9LI/edit?slide=id.p1#slide=id.p1">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>1_tizY_xn_92NKSmojJEmj-BMMV5WRheKGx78fq8U9LI/<wbr>edit?slide=id.p1#slide=id.p1</a></p>
+<p id=484b class="phone s03"><cite>manu:</cite> DC API interoperability concerns, shared in the chat channel.</p>
+<p id=a48d class="phone s03"><cite>manu:</cite> this is largely the work of Wes. Spoke to Dave and other VCWG participants, and industry trade groups. Convenience retail, also W3C member. Also been run by several California agencies that are deploying VC API. Digitar Bazar directly involved integrating this with several VC formats.</p>
+<p id=21e2 class="phone s03"><cite>manu:</cite> this will happen on Tuesday of TPAC in the web payments SIG. 2 day meeting. Joint meeting of several interest groups (FIDO Alliance, credit cards related orgs.) The presentation is intended to be high-level.</p>
+<p id=5922 class="phone s03"><cite>manu:</cite> Focus is on use cases. Current API makes it impossible to implement these use cases. Propose solutions that the VCWG has been working on if there is a will to do so.</p>
+<p id=a108 class="phone s03"><cite>manu:</cite> three main things that will be discussed. There are many other topics.</p>
+<p id=d883 class="phone s03"><cite>manu:</cite> This is coming from deployment experience in production, 50+ states in the US. Retail stores. have been deploying W3C VCs for years now. 152k stores. NACS : are in 45 countries. Other usecase is the California state, and California education system.</p>
+<p id=7cdb class="phone s03"><cite>manu:</cite> Manu is not representing these organisations. He is not speaking for them. In the retail sector, typical usecase where DC API doesn't work. Instead of using a physical wallet, you buy a product and at checkout your age needs to be proven, provide gas card, coupons and offers want to be provided by the store. How can this happen in a single</p>
+<p id=1454 class=summary>click ?</p>
+<p id=7e39 class="phone s03"><cite>manu:</cite> DC API can't do this as many back and forth for issuance and verification. 8-16 taps required. Bad user experience. This has been solved in VCALM which can do issuance and verification in one flow.</p>
+<p id=7524 class=irc><cite>&lt;phila&gt;</cite> [Manu is sharing his slides in the Zoom channel but they're linked in the minutes]</p>
+<p id=a689 class="phone s03"><cite>manu:</cite> second use case is picking up a credential online. Authentication using VC driver's licence (mDoc) and DMV issues a W3C VC. not supported because Apple because they block non mDOC requests.  Also refuses APIs that are not both Apple phones.</p>
+<p id=4665 class="phone s03"><cite>manu:</cite> This is very complicated and creates bad UX. Want platforms and browsers to not block requests that are not of the &quot;right&quot; VC format.</p>
+<p id=d6dc class="phone s03"><cite>manu:</cite> Consistency is required. Third usecase : verifiers must be registered with Apple or Google store. This means that a verifier has to do this for each wallet they want to support. This is difficult for a small retailer.</p>
+<p id=2585 class="phone s03"><cite>manu:</cite> the ask is to reuse website certificates to verify the verifier.</p>
+<p id=e6b8 class="phone s03"><cite>manu:</cite> Summary of the requested changes.</p>
+<p id=aef6 class="phone s03"><cite>manu:</cite> multi-credential flow. DC API consistency - all formats over all platforms to create a unified experience. Please don't set up a seperate PKI infrastructure for verifiers. Don't put platform vendors of who can issue and verify on the web.</p>
+<p id=77c8 class="phone s03"><cite>manu:</cite> these issues have been raised by Wes. Does the VCWG agree with these issues ?</p>
+<p id=01b8 class=irc><cite>&lt;wes-smith&gt;</cite> <a href="https://github.com/w3c-fedid/digital-credentials/issues/594">w3c-fedid/<wbr>digital-credentials#594</a></p>
+<p id=93cb class="phone s02"><cite>wes-smith:</cite> links to these issues in IRC.</p>
+<p id=d451 class=irc><cite>&lt;wes-smith&gt;</cite> <a href="https://github.com/w3c-fedid/digital-credentials/issues/593">w3c-fedid/<wbr>digital-credentials#593</a></p>
+<p id=8806 class="phone s02"><cite>wes-smith:</cite> thanks to manu for the high-level view. links to specific issues provided. Some issues cannot be raised as PRs.  Do VCWG members engage with such use cases ? Would be good if the group had a unified perspective on VC API versus VCALM.</p>
+<p id=546e class="phone s03"><cite>manu:</cite> +1 to wes. in the federated id WG when they rechartered to VC API, we were listed as a mandatory liaison. In theory, this group should have been engaged before candidate rec. Has there been a request for horizontal review ? But is it too late ? These issues have been pointed to for years and they have not been addressed. Raised &quot;surprise&quot; in the FIWG.</p>
+<p id=1105 class="phone s03"><cite>manu:</cite> The issues have been raising issues with real customers.</p>
+<p id=64a8 class="phone s01"><cite>phila:</cite> doesn't know which Android did it did way, linked to their business model. Are we challenging their business models ???</p>
+<p id=db4d class="phone s01"><cite>phila:</cite> pointing at process will not matter if this is the case.</p>
+<p id=c0db class="phone s01"><cite>phila:</cite> I'm playing devil's advocate here. How much does this resonate with others not from Digital Bazar.</p>
+<p id=2a1f class="phone s02"><cite>wes-smith:</cite> Concerning business models, absolutely not. Issue 594: what we are requesting gives individual companies agency about what they require, such as high-assurance flows. what we are asking is to make sure that in the list of supported protocols you include one that doesn't require high assurance.</p>
+<p id=c78b class=irc><cite>&lt;michaelshea&gt;</cite> +1 to Will's comment</p>
+<p id=b2cb class="phone s04"><cite>Wip:</cite> this is a great presentation.</p>
+<p id=0966 class="phone s05"><cite>dmitriz:</cite> +1 to everythng said before. These are important use cases. Want to add that this goes into anti-trust territory. Ability to support global standards is important from this perspective.</p>
+<p id=8620 class="phone s06"><cite>TallTed:</cite> strongly encourage everyone to join in FIWG, there is active participation by Chrome and Android Google folks. Some participation by Apple.</p>
+<p id=21f3 class="phone s06"><cite>TallTed:</cite> the arguments about UX will be the strongest Apple will hear. However the reason they do not support a technical thing are issues related to security and privacy. Sometimes what they see as a problem will take years to surface. The iPhone was a 20 year project.</p>
+<p id=2739 class="phone s06"><cite>TallTed:</cite> just stating problems will not get the desired effect.</p>
+<p id=dd26 class="phone s06"><cite>TallTed:</cite> the strongest argument will be UX which is their bread and butter.</p>
+<p id=035a class="phone s06"><cite>TallTed:</cite> Google just does AB testing on users. UX is not priority.</p>
+<p id=5342 class="phone s07"><cite>michaelshea:</cite> +1 to all that was said. UX is horrific. Is this presentation available ?</p>
+<p id=1080 class="phone s01"><cite>phila:</cite> the presentation is intended to be shared.</p>
+<p id=62e0 class=irc><cite>&lt;TallTed&gt;</cite> the deck is freely shareable -- <a href="https://docs.google.com/presentation/d/1_tizY_xn_92NKSmojJEmj-BMMV5WRheKGx78fq8U9LI/edit?usp=sharing">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>1_tizY_xn_92NKSmojJEmj-BMMV5WRheKGx78fq8U9LI/<wbr>edit?usp=sharing</a></p>
+<p id=e6dd class="phone s01"><cite>phila:</cite> The TPAC we are talking about can be joined remote.</p>
+<p id=2133 class=irc><cite>&lt;TallTed&gt;</cite> (it may be tweaked up to the actual TPAC session)</p>
+<p id=45e4 class=irc><cite>&lt;wes-smith&gt;</cite> +1 pdl-ASU, this is an extensibility concern</p>
+<p id=2e03 class=irc><cite>&lt;Zakim&gt;</cite> wes-smith, you wanted to add a note about user experience</p>
+<p id=346b class="phone s08"><cite>pdl-ASU:</cite> this is also about future-proofing.</p>
+<p id=f6d6 class="phone s02"><cite>wes-smith:</cite> UX is about things being unpleasant. But this will make some use cases impossible and will harm the ecosystem. Retail stores will not access flows that increases check out time.</p>
+<p id=0d9e class="phone s01"><cite>phila:</cite> confirm that checkout time is fundamental, even 1 second is too much.</p>
+<p id=033d class="phone s03"><cite>manu:</cite> thanks to wes. Does anyone in the group object to us presenting any of this content?</p>
+<p id=6d98 class="phone s09"><cite>ivan:</cite> does not object. so far, to understand the question, do you want this presentation to be made in the name of the VCWG ?</p>
+<p id=ebb8 class="phone s03"><cite>manu:</cite> It's too much to ask for this to be the WG's position. Experience from Digital Bazar. VCWG has taken to a look at it and doesn't object. But it is not an official position.</p>
+<p id=d402 class="phone s01"><cite>phila:</cite> the presentation was given to our WG and everyone on the call was fully supported. even the scribe who doesn't have time to speak!</p>
+</section>
+
+<section>
+<h3 id=aa94>Bitstring Status List</h3>
+<p id=2c4e class=irc><cite>&lt;phila&gt;</cite> Open PRs <a href="https://github.com/w3c/vc-bitstring-status-list/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>vc-bitstring-status-list/<wbr>pulls</a></p>
+<p id=2e41 class="phone s01"><cite>phila:</cite> Mea Culpa, I joined the DI and Barcode TF and learned the bitstring status was assigned to this group.</p>
+<h4 id=7302><a href="https://github.com/w3c/vc-bitstring-status-list/pull/220">w3c/<wbr>vc-bitstring-status-list#220</a></h4>
+<p id=56d0 class="phone s10"><cite>KevinDean:</cite> there are a couple of PRs, bitstring compression and encoding steps. result of issue 209 which wanted additional constraints on the gzip compression. Some things may have privacy implications (e.g. filename, comment, etc. )</p>
+<p id=ab08 class="phone s10"><cite>KevinDean:</cite> we have added some normative requirements stating that this is binary. no extra data. Should not have fname or fcomment and modification timestamp is zero. These will be SHOULD and not MUST.</p>
+<p id=ed32 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to support and ask if this has been checked against implementations yet? We should remember to label this as a class ?3? change?</p>
+<p id=2158 class="phone s10"><cite>KevinDean:</cite> minor changes to the text about the multi-base encoding and slight fix to decompression method. I have also expanded the terminology a bit, there was a single compressed bitstring composed in two parts. I have broken that out to detail the encoding steps.</p>
+<p id=f34f class="phone s03"><cite>manu:</cite> Thanks. Looks good. Have you checked against implementations? Test to the test suites ? reminder to label this a class change 1234 ? We are just clarifying the text.</p>
+<p id=2d84 class="phone s03"><cite>manu:</cite> make sure to track all changes to report easily.</p>
+<p id=b490 class="phone s10"><cite>KevinDean:</cite> will look into that. Only normative change that could affect an implementation are these two: details them. But this is very rare implementation as it refers to old OS only.</p>
+<p id=5437 class="phone s09"><cite>ivan:</cite> if there are privacy or secrutiy issued, we are authorized by our charter.</p>
+<h4 id=6143><a href="https://github.com/w3c/vc-bitstring-status-list/pull/219">w3c/<wbr>vc-bitstring-status-list#219</a></h4>
+<p id=3a6e class="phone s10"><cite>KevinDean:</cite> I don't have authority to add labels in this repo.</p>
+<p id=4a02 class="phone s10"><cite>KevinDean:</cite> expanded bitstring algorithm: This addresses an ambiguity in the spec about the bit ordering. and deficiency when a status has more than one bit assigned to it. Bit to byte ordering.</p>
+<p id=bb1d class=summary>KevinDean</p>
+<p id=93b2 class="phone s10"><cite>KevinDean:</cite> MSB first by Digital Bazar. Prevaling convention in the ecosystem.</p>
+<p id=ff24 class=irc><cite>&lt;TallTed&gt;</cite> MSB = Most Signficant Bit</p>
+<p id=15a2 class="phone s10"><cite>KevinDean:</cite> I have expanded the documentation to provide a normative alg. for MSB ordering. This is quite detailed. The net result is if you took the entirety of the bitstring, each status would appear in their position.</p>
+<p id=75c2 class="phone s10"><cite>KevinDean:</cite> this is the logical reason behind the MSB ordering</p>
+<p id=c0ea class="phone s10"><cite>KevinDean:</cite> this is a simple set of mathematical statements.</p>
+<p id=eebd class="phone s03"><cite>manu:</cite> looks good. Exactly what we wanted.</p>
+<p id=dc78 class=irc><cite>&lt;dlongley&gt;</cite> +1 looks good, just needs double checking with implementations/test suites.</p>
+<p id=e0ab class="phone s01"><cite>phila:</cite> Kevin to join the TF meeting next week.</p>
+<p id=0f57 class="phone s03"><cite>manu:</cite> labels being added to the repo.</p>
+<p id=eb8a class="phone s01"><cite>phila:</cite> ivan there is another PR</p>
+<p id=12b1 class="phone s09"><cite>ivan:</cite> that should be gone. Maybe Wes knows ?</p>
+<p id=3bae class="phone s09"><cite>ivan:</cite> prefer that someone looks over changes made in the github.</p>
+<p id=3a01 class="phone s03"><cite>manu:</cite> I'll look at it.</p>
+</section>
+
+<section>
+<h3 id=5418>VCDM vocabulary - <a href="ttps://github.com/w3c/vc-data-model/pull/1652">ttps://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pull/<wbr>1652</a></h3>
+<p id=a768 class="phone s09"><cite>ivan:</cite> lots of work done to make the new version of the vocab. Want to merge this knowing new versions are coming, from Kayode. But first step is merging what we have.</p>
+<p id=082f class="phone s01"><cite>phila:</cite> do you want to resolve to merge?</p>
+<p id=187e class="phone s09"><cite>ivan:</cite> anyone opposing it?</p>
+<p id=9477 class="phone s01"><cite>phila:</cite> Dimitri, Ted have looked at it. Dave?</p>
+</section>
+
+<section>
+<h3 id=f92a>aob</h3>
+<p id=eb6c class="phone s01"><cite>phila:</cite> a few things before we finish. If joining remotely, TPAC infrastructure is typically very good.</p>
+<p id=22d9 class="phone s01"><cite>phila:</cite> last week I was at a big GS1 event, lovely surprise about the construction industry. Presentation by Ecowise</p>
+<p id=5a50 class="phone s01"><cite>phila:</cite> She talked about digital signatures but</p>
+<p id=0849 class=summary>phila</p>
+<p id=eb18 class="phone s01"><cite>phila:</cite> it was about W3C VCs. was happy to see that !</p>
+<p id=b497 class=irc><cite>&lt;manu&gt;</cite> Carolynn: They are one of the CIRPASS pilots, so of course they used W3C technology :)</p>
+<p id=fb93 class=irc><cite>&lt;michaelshea&gt;</cite> OF course!</p>
+<p id=d0b5 class="phone s01"><cite>phila:</cite> brent will be with us next week.</p>
+<p id=f6d1 class=irc><cite>&lt;echsecutor&gt;</cite> we are in here <a href="https://www.construct-x.org/">https://<wbr>www.construct-x.org/</a> trying to make them more w3c VCs in that Dataspace ;)</p>
+<p id=aa09 class=irc><cite>&lt;pdl-ASU&gt;</cite> next meeting?</p>
+<p id=7335 class=irc><cite>&lt;echsecutor&gt;</cite> Sebastian Schmittner</p>
+<p id=d25b class="phone s05"><cite>dmitriz:</cite> on tuesday is did WG overlapping with VCWG meeting ?</p>
+<p id=3e1d class="phone s03"><cite>manu:</cite> there should not be an overlap</p>
+<p id=0a30 class=summary>phila</p>
+<p id=422b class=irc><cite>&lt;dmitriz&gt;</cite> the week after is IIW! :)</p>
+<p id=9c7b class="phone s01"><cite>phila:</cite> the week after TPAC there will be no TF meetings.</p>
+<p id=c3c8 class=irc><cite>&lt;michaelshea&gt;</cite> Thx Phil!</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
