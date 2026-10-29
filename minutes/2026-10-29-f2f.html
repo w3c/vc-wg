@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group F2F @ TPAC 2026, Dublin, 1st day &ndash; 29 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>&ndash; DRAFT &ndash;<br>
+Verifiable Credentials Working Group F2F @ TPAC 2026, Dublin, 1st day</h1>
+<h2>29 October 2026</h2>
+
+<nav id=links>
+<a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit?slide=id.p#slide=id.p"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/10/29-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd><details><summary>Antony,</summary> bigbluehat, brent, denkeni, dmitriz, elaine, George, ingo, ivan, ivo, IvoL, jennie, JennieM, joe, JoeAndrieu, kevin, KevinDean, kseufer, Lucy, manu, mrchrisadams, pchampin, phila, present, ReinaldoFerraz, swcurran, TallTed, wes-smith, wesley, Wip, yas</details></dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>phila, brent, wes-smith, manu-tpac, Wip</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#81ec">Welcome and intros</a></li>
+<li><a href="#6b24">progress Tracker</a></li>
+<li><a href="#2772">Group documents not covered by task forces</a>
+<ol>
+<li><a href="#aa5c">VCDM 2.1</a></li>
+<li><a href="#377d">Issue 1628 on Digest SRI - <a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></a></li>
+<li><a href="#6301">Test Suite, any open PRs and Issues</a></li>
+<li><a href="#e606">JOSE_COSE</a></li>
+<li><a href="#bc68">JOSE-COSE test suite</a></li>
+<li><a href="#3089">VC JSON schema</a></li>
+<li><a href="#1347">new use cases</a></li>
+</ol>
+</li>
+<li><a href="#d102">AB Discussion</a></li>
+<li><a href="#e9c7">Culture concerns</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id="94ff" class=irc><cite>&lt;ivan&gt;</cite> Date: 2026-10-29</p>
+</section>
+
+<section>
+<h3 id="81ec">Welcome and intros</h3>
+<p id="0fe0" class="phone s01"><cite>brent:</cite> Reads guidance on meeting etiquette and rules</p>
+<p id="1453" class=irc><cite>&lt;morimori&gt;</cite> morimori+</p>
+<p id="b782" class="phone s01"><cite>brent:</cite> Not recording the presentations etc.</p>
+<p id="5b3e" class="phone s01"><cite>brent:</cite> Kicks off Tour de Table</p>
+<p id="a739" class=irc><cite>&lt;Yas&gt;</cite> This is Yasushi Minoya @ Sony . My mic is something wrong. Sorry .</p>
+</section>
+
+<section>
+<h3 id="6b24">progress Tracker</h3>
+<p id="e054" class="phone s01"><cite>brent:</cite> goes through <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit?slide=id.h13f76a469fd9a353_0_0#slide=id.h13f76a469fd9a353_0_0">https:/<wbr>/<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/<wbr>edit?slide=id.h13f76a469fd9a353_0_0#slide=id.h13f76a469fd9a353_0_0</a></p>
+<p id="0480" class="phone s01"><cite>brent:</cite> Lots of green, but lots of yellow</p>
+<p id="e67f" class=summary>The progress tracker is at <a href="https://docs.google.com/spreadsheets/d/1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/edit?pli=1&amp;gid=67467047#gid=67467047">https:/<wbr>/<wbr>docs.google.com/<wbr>spreadsheets/<wbr>d/<wbr>1OM-UsLnOZKywcy1eSGZsi_laCHBIy5wmQFOer0a7kYI/<wbr>edit?pli=1&amp;gid=67467047#gid=67467047</a></p>
+<p id="f755" class="phone s01"><cite>brent:</cite> Hope was to have a lot of resolutions to go to CR at this meeting. Not going to happen but how are we doing?</p>
+<p id="a5f0" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to speak to the up to dateness</p>
+<p id="cc8c" class="phone s02"><cite>manu-tpac:</cite> That is a conservative view of where we are</p>
+<p id="0106" class="phone s02"><cite>manu-tpac:</cite> Things like feature freeze for render method is v close. Threat models missing for some but we do have a base TM for those but not yet integrated<br>
+<span id="998d">… So it looks worse than where I think we are. After only 6 months, we're doing OK. But we need to pick up hte pace on the PRs</span></p>
+<p id="7bd8" class="phone s02"><cite>manu-tpac:</cite> Horizontal reviews are slowing us down. It's been at least 3 months for some of them<br>
+<span id="0337">… In other cases, they're really quick (i18n)</span></p>
+<p id="aa2c" class="phone s01"><cite>brent:</cite> As we go through each TF, we can name names so we know who to go after</p>
+<p id="20e3" class="phone s02"><cite>manu-tpac:</cite> We have a summary of HR for each spec</p>
+<p id="7c3c" class="phone s02"><cite>manu-tpac:</cite> So the tracker looks worse than it actually is.</p>
+<p id="9c71" class="phone s03"><cite>wes-smith:</cite> A lot of the HRs are on new versions of existing docs with small deltas so we hoipe for progress</p>
+</section>
+
+<section>
+<h3 id="2772">Group documents not covered by task forces</h3>
+<h4 id="aa5c">VCDM 2.1</h4>
+<p id="1fe8" class="phone s04"><cite>Lucy:</cite> I have a comment on the tracker - would it be helpful for someone like me to understand this... could be helpful in discussions with other groups<br>
+<span id="4075">… Some sort of overview would be helpful</span></p>
+<p id="68fb" class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1 for implementation guide with new specs integrated</p>
+<p id="f599" class="phone s05"><cite>phila:</cite> Offers to have a meeting with Lucy to go through it</p>
+<p id="f79d" class="phone s06"><cite>JoeAndrieu:</cite> Has anyone updated the implementation guide?</p>
+<p id="5505" class="phone s07"><cite>ivan:</cite> Find a volunteer!</p>
+<h4 id="377d">Issue 1628 on Digest SRI - <a href="https://github.com/w3c/vc-data-model/issues/1628">w3c/<wbr>vc-data-model#1628</a></h4>
+<p id="2e68" class="phone s02"><cite>manu-tpac:</cite> Offers apology to Shigeya for some of the tone in some of his emails</p>
+<p id="1d7b" class="phone s02"><cite>manu-tpac:</cite> We have 2 ways pf specifying a hash for an external resource, DigestSRI and DigestMultibase<br>
+<span id="cbe6">… It is good to have one way rather than two</span><br>
+<span id="1d37">… Suggestion is to deprecate DigestSRI to leave DigestMultibase. Not remove, just deprecate.</span><br>
+<span id="3632">… could be removed in version 2.</span></p>
+<p id="cc71" class="phone s02"><cite>manu-tpac:</cite> Being used in Japan and we don't know where else<br>
+<span id="fdee">… Where we got to in the spec... DigestSRI uses the sub resource integrity, another W3C spec, to say this is how we're doing it. However the SRI property as defined in that spec includes a load of stuff that the browser does that we don't.</span><br>
+<span id="047e">… We're not using all those features in our work.</span></p>
+<p id="a97e" class="phone s02"><cite>manu-tpac:</cite> So the compromise might be to specify what DigestSRI means for VCs and state the rules that we're importing, not the whole thing.</p>
+<p id="baf1" class="phone s02"><cite>manu-tpac:</cite> If we don't deprecate, then DigestSRI can be used in any other VCDM-based spec. But those specs might also specify one or other</p>
+<p id="cf9f" class="phone s02"><cite>manu-tpac:</cite> Compromise is not deprecate, but state the version of DigestSRI we're using and then let the Task Forces make their own decisions</p>
+<p id="f3c9" class="phone s08"><cite>shigeya:</cite> I think Manu capture what we're trying to do<br>
+<span id="643a">… It's different from SRI in general. So that causes some confusion. So clarification is necessary and is a good compromise</span></p>
+<p id="25ba" class="phone s08"><cite>shigeya:</cite> If it eliminates part of the processing rule, that's good enough.</p>
+<p id="41c5" class="phone s08"><cite>shigeya:</cite> I'm not sure it's a good idea for a TF to select one or other. Especially... future discussion is closely related to the business wallet - relying on DigestSRI at the moment... Rec Ent spec [Hard to follow in detail, apologies to Shigeya]</p>
+<p id="3ee6" class="phone s08"><cite>shigeya:</cite> Limiting options in a spec is usually good but I don't see a need to do that here<br>
+<span id="1d50">… If there are reasons, OK, but I'm not sure</span></p>
+<p id="41f9" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to talk about allowed changes</p>
+<p id="7167" class="phone s01"><cite>brent:</cite> Allowed changes covers errata, but this sounds like a substantive change and we need to be careful within our charter.<br>
+<span id="fdb0">… So the question to the group is do you agree this compromise is within our charter</span></p>
+<p id="7ead" class="phone s07"><cite>ivan:</cite> I am also uncertain whether it's a good idea to allow TFs to make a restriction</p>
+<p id="eee7" class="phone s07"><cite>ivan:</cite> We are making a coherent family of specs<br>
+<span id="941d">… But we have already done that as we have talked about JWT as a key format in one spec and in contrast the crypto suites explicitly say they only use the multikey format, not JWT</span></p>
+<p id="7ecf" class="phone s07"><cite>ivan:</cite> So you can argue we've done it but I don't like it. I know we tend to keep away from JWT but spec-wise not allowing it is perhaps difficult.</p>
+<p id="c271" class="phone s03"><cite>wes-smith:</cite> I was going to say what Ivan just said. Creating branches in the docs is architecturally not ideal</p>
+<p id="38cc" class="phone s03"><cite>wes-smith:</cite> It hurst the accessibility of the doc as each one needs the same discussion each time</p>
+<p id="a5ac" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to speak to the &quot;restriction&quot;.</p>
+<p id="42a6" class="phone s02"><cite>manu-tpac:</cite> The &quot;restriction&quot; is that we will not create examples with DigestSRI, not make it unusable</p>
+<p id="ca0d" class=irc><cite>&lt;wes-smith&gt;</cite> +1 to enabling both without requiring granular restrictions</p>
+<p id="6909" class="phone s02"><cite>manu-tpac:</cite> If DigestSRI is in the VCDM, it can be used in any spec, we just won't have examples<br>
+<span id="edfd">… in all specs</span></p>
+<p id="aab0" class="phone s02"><cite>manu-tpac:</cite> If we start showing examples of every possible version, it gets complicated<br>
+<span id="f8fc">… It's confusing if people see that there are 5 different ways to do the same thing. It gives opponents a stick to beat us with as it looks as if we can't make a decision</span></p>
+<p id="95d5" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say perhaps recommend and may and to say all JWT is already supported, so it doesn't need to be in DI</p>
+<p id="2b49" class="phone s02"><cite>manu-tpac:</cite> SO it helps if we minimize the number of differences in the examples</p>
+<p id="3992" class="phone s01"><cite>brent:</cite> So it sounds as if we're close to a proposal</p>
+<p id="0a5a" class="phone s01"><cite>brent:</cite> Discusses a draft proposal</p>
+<p id="520a" class="phone s03"><cite>wes-smith:</cite> What does normatively prefer mean?</p>
+<p id="7c10" class="phone s01"><cite>brent:</cite> We won't say SHOULD/MUST</p>
+<p id="27f3" class="phone s08"><cite>shigeya:</cite> Does clarify mean what I proposed in the spec text?</p>
+<p id="498a" class="phone s01"><cite>brent:</cite> Yes<br>
+<span id="3529">… I'll clarify that in the proposal</span></p>
+<p id="8979" class=irc><cite>&lt;brent&gt;</cite> PROPOSAL: Moving forward, we will clarify the limitations on using DigestSRI (using the proposal Shigeya made) in the core data model spec. Other specifications may choose to only provide examples of one of the digest methods, but won't normatively prefer one over the other.</p>
+<p id="2991" class=irc><cite>&lt;manu-tpac&gt;</cite> +1</p>
+<p id="6991" class=irc><cite>&lt;brent&gt;</cite> +1</p>
+<p id="a991" class=irc><cite>&lt;ElaineX&gt;</cite> +1</p>
+<p id="e991" class=irc><cite>&lt;shigeya&gt;</cite> +1</p>
+<p id="e992" class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id="2992" class=irc><cite>&lt;JoeAndrieu&gt;</cite> +1</p>
+<p id="2993" class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id="2994" class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id="6992" class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id="6993" class=irc><cite>&lt;TallTed&gt;</cite> +1</p>
+<p id="e993" class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id="2995" class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id="e994" class=irc><cite>&lt;IvoL&gt;</cite> +1</p>
+<p id="2996" class=irc><cite>&lt;pchampin&gt;</cite> +1</p>
+<p id="4852" class="phone s01"><cite>brent:</cite> I'm not hearing any objections</p>
+<p id="6d68" class=resolution><strong>RESOLUTION:</strong> Moving forward, we will clarify the limitations on using DigestSRI (using the proposal Shigeya made) in the core data model spec. Other specifications may choose to only provide examples of one of the digest methods, but won't normatively prefer one over the other.</p>
+<h4 id="6301">Test Suite, any open PRs and Issues</h4>
+<p id="9ce0" class="phone s01"><cite>brent:</cite> We have 17 open issues on the test suite and want to get a sense of what this means for 2.1</p>
+<p id="62d4" class="phone s01"><cite>brent:</cite> IMO, the suite for 2.0 has served its purpose</p>
+<p id="bb84" class="phone s02"><cite>manu-tpac:</cite> To speak to the open issues. A number of them are nice to haves, some are important. Not expecting a trememdous change to the 2.1 test suite. The delta from 2.0 is very small</p>
+<p id="db46" class="phone s02"><cite>manu-tpac:</cite> Main issue is getting people to update their implementation of 2.0 and re-run the test suite. We know of a lot but it will take time.<br>
+<span id="06d4">… About 6 months of work. We have a new hire starting at DB who will be focused on this.</span></p>
+<p id="f648" class="phone s02"><cite>manu-tpac:</cite> It's going to take about 6 months to go through the whole process. We haven't asked for HR yet. It's work that needs to be done and we need to be on top of it.</p>
+<p id="b7ca" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about new specs and the test suite</p>
+<p id="9749" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about a true delta test suite</p>
+<p id="5174" class="phone s06"><cite>JoeAndrieu:</cite> What's the relationship between the test suite and the task forces? Will TFs update it?</p>
+<p id="4543" class="phone s01"><cite>brent:</cite> As far as the 2.1 is concerned, I think it would be OK just to test the delta<br>
+<span id="82ba">… W're maintining backwards compatibility</span></p>
+<p id="ebe0" class="phone s07"><cite>ivan:</cite> I wanted to say almost the same. We have the same thing in another group. WE can reuse the test results from the previous version. What was valid is still valid, we just need to loo at the delta. Don't forget what CR is for. It proves that the spec can be implemented - which we proved for 2.0</p>
+<p id="97f3" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to speak to test suites</p>
+<p id="3aee" class="phone s02"><cite>manu-tpac:</cite> A delta might be more work than switching out the context. We run the test suite every week (unlike others) so we know which endpoints are up. All we need to do is swap out the context and send that new one and see if they pass the test, we don't even need to contact them</p>
+<p id="c24f" class="phone s02"><cite>manu-tpac:</cite> But I notice is currently passing 100% of the tests</p>
+<p id="b0c3" class="phone s02"><cite>manu-tpac:</cite> We'll do a copy and paste and find out quickly the state of implemenations<br>
+<span id="13bd">… That's less work than a new delta-only test</span></p>
+<p id="0508" class="phone s02"><cite>manu-tpac:</cite> The confidence method will have its own test suite<br>
+<span id="66d6">… Each TF needs to prepare for that. RE isn't a VCDM test, we need to test the chain</span><br>
+<span id="625c">… For the confidence method... I don't think that TFs should assume that the core VCDM 2.1 is going to cover their work</span></p>
+<p id="dfa6" class="phone s06"><cite>JoeAndrieu:</cite> I would expect that if I got a context I didn't expect, it would fail.</p>
+<p id="c8ca" class="phone s02"><cite>manu-tpac:</cite> Some people do fetch the context every time (although we advised against it)</p>
+<p id="1771" class="phone s06"><cite>JoeAndrieu:</cite> You said you could hit the same endpoints with a new context and expect it to work</p>
+<p id="da1b" class="phone s02"><cite>manu-tpac:</cite> A small number - we need two, not all</p>
+<p id="bdd5" class="phone s09"><cite>bigbluehat:</cite> I'm trying to figure out what we're testing.</p>
+<p id="fe61" class="phone s02"><cite>manu-tpac:</cite> The URLs change, not different content at the same URL</p>
+<p id="588e" class="phone s09"><cite>bigbluehat:</cite> It's a fishing expedition (not phishing)</p>
+<p id="0da1" class="phone s01"><cite>brent:</cite> Much better to talk to people then to just change the test suite without talking to them - that sounds like a recipe for more work than a delta would create</p>
+<p id="af55" class="phone s01"><cite>brent:</cite> Notes that TFs are responsible for test suites for their work.</p>
+<h4 id="e606">JOSE_COSE</h4>
+<p id="bb4d" class="phone s01"><cite>brent:</cite> Only open issue is out of scope for maintenance</p>
+<p id="fb54" class="phone s07"><cite>ivan:</cite> I didn't want to touch the issue, we should label it somehow</p>
+<p id="6db8" class="phone s01"><cite>brent:</cite> It is labelled future</p>
+<h4 id="bc68">JOSE-COSE test suite</h4>
+<p id="9730" class="phone s01"><cite>brent:</cite> I don't think we even expect a 2.1 version of the spec so we're not going to touch the test suite</p>
+<h4 id="3089">VC JSON schema</h4>
+<p id="7bc5" class="phone s01"><cite>brent:</cite> When we last looked at this, we entered CR and we have never left. There are some open issues, two already labelled future<br>
+<span id="4840">… Do want to look at one we might cover in CR</span><br>
+<span id="b7d4">… Looking at <a href="https://github.com/w3c/vc-data-model/issues/248">#248</a></span><br>
+<span id="3d2b">… The don't call me Dom bot... these links are bad. We probably need to fix this.</span></p>
+<p id="d496" class="phone s02"><cite>manu-tpac:</cite> It's a simple editorial change</p>
+<p id="e378" class="phone s07"><cite>ivan:</cite> No need to refer to 2.0, just the versionless URL</p>
+<p id="db3a" class="phone s01"><cite>brent:</cite> It is in scope for us, it's editorial, but note that we're not in any pressure to make the change. We can make the change if we hear of a 2nd imp so we could move out of CR</p>
+<p id="f556" class="phone s02"><cite>manu-tpac:</cite> We have tooling to fetch the hash and calculate - shouldn't happen again (for SRI or multibase)</p>
+<p id="0b12" class="phone s01"><cite>brent:</cite> Discusses <a href="https://github.com/w3c/vc-json-schema/pull/246">w3c/<wbr>vc-json-schema#246</a> and agrees to merge</p>
+<p id="1e81" class="phone s01"><cite>brent:</cite> We can close <a href="https://github.com/w3c/vc-json-schema/pull/247">w3c/<wbr>vc-json-schema#247</a> as it has been overtaken by events</p>
+<p id="1a91" class="phone s07"><cite>ivan:</cite> There is no longer a Proposed Rec stage<br>
+<span id="0d55">… No open PRs for JSOn schema, issues triaged</span></p>
+<p id="bb2c" class="phone s07"><cite>ivan:</cite> If we want to do any work, do we need new editors?</p>
+<p id="e906" class="phone s01"><cite>brent:</cite> If we get another implementation that would help us get out of CR then we can get it done</p>
+<p id="e8da" class="phone s02"><cite>manu-tpac:</cite> Is there anyone in the group who is going to implement this.</p>
+<p id="01e7" class="phone s01"><cite>brent:</cite> There are specs kept at CR for years deliberately</p>
+<p id="ff9e" class="phone s02"><cite>manu-tpac:</cite> I thought we were better than that :-)</p>
+<p id="9d30" class="phone s01"><cite>brent:</cite> VC JSON schema is now fixed.</p>
+<p id="5e8f" class="phone s01"><cite>brent:</cite> Since this session in the agenda is for docs not in Task Forces, can we look at use cases</p>
+<p id="7755" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to ask if there is anyone that wants to implement this in the group? and to</p>
+<p id="b9d0" class="phone s02"><cite>manu-tpac:</cite> As we have new people here and remote, perhaps we can ask our guests about their use cases?</p>
+<p id="bfd2" class="phone s01"><cite>brent:</cite> That sounds like a better idea than jumping into the UCR doc</p>
+<p id="11dd" class="phone s06"><cite>JoeAndrieu:</cite> KevinDean and I have been just wrapping up the changes. We had hoped to get it done a while ago. More help always welcome</p>
+<h4 id="1347">new use cases</h4>
+<p id="a402" class="phone s10"><cite>mrchrisadams:</cite> I'm at the Green Web Foundation. We link domain names to owners who have purchased green energy to power their services. Google is a good example.<br>
+<span id="a778">… There is an existing cert scheme. We are interested in the VC tech. We need a way to establish a link from a domain to a cert.</span><br>
+<span id="455d">… Empowering Consumers in the Green Transition Directive (EU Reg) needs a regularized approach.</span><br>
+<span id="e4d6">… So we're interested in using a Web tech to do this, so I'm exploring</span></p>
+<p id="f4a3" class="phone s05"><cite>phila:</cite> certification is a key use case for us</p>
+<p id="7877" class="phone s10"><cite>mrchrisadams:</cite> there is a task force meeting tomorrow that tracks this<br>
+<span id="5780">… UKAS accredits things in the UK, GS1 uses a federated identifier to do this. The Metrology folks are also around. We think we've probably done what you're looking for.</span></p>
+<p id="ddd2" class="phone s10"><cite>mrchrisadams:</cite> We're based in NL. Want go through that accreditation process.</p>
+<p id="eccc" class="phone s11"><cite>TallTed:</cite> Several years ago we changed from verifiable claims tov credentials<br>
+<span id="04cd">… since nothing that we do tests the veracity of what we said</span><br>
+<span id="efb7">… we can prove that Joe Smith said these things, not that what he said is true</span></p>
+<p id="358b" class="phone s01"><cite>brent:</cite> Any other use cases folks would like to talk about?</p>
+<p id="b387" class="phone s06"><cite>JoeAndrieu:</cite> There is one major new use case which is the GS1 delegated hierarchy</p>
+<p id="3fa2" class="phone s12"><cite>KevinDean:</cite> (working at 04:16)</p>
+<p id="8027" class="phone s12"><cite>KevinDean:</cite> If you go to the GS1 use case in section 5.4</p>
+<p id="da0f" class="phone s12"><cite>KevinDean:</cite> I used to be with GS1. I was the primary author of the data model that GS1 developed for its VCs</p>
+<p id="2958" class="phone s12"><cite>KevinDean:</cite> Describes GS1. data model is at <a href="https://ref.gs1.org/gs1/vc/data-model/">https:/<wbr>/<wbr>ref.gs1.org/<wbr>gs1/<wbr>vc/<wbr>data-model/</a><br>
+<span id="c4af">… federated system. 754 and 755 are the prefixes for GS1 Canada. GS1 Canada then assigned a prefix beginning with that 75412345</span><br>
+<span id="b44b">… The chain of credentials starts with GS1 Global Office as the &quot;root of trust&quot;</span><br>
+<span id="7619">… What we liked about VCs when we investigated is that it is a self-assembling system</span></p>
+<p id="5e51" class="phone s05"><cite>phila:</cite> The DID for GS1 Global Office is did:web:vc.gs1.org</p>
+<p id="0af8" class="phone s12"><cite>KevinDean:</cite> Talks through the Healthy Tots use case in the VC UCR</p>
+<p id="fa5f" class="phone s12"><cite>KevinDean:</cite> Those in the RE TF will recognize this model</p>
+<p id="6a9e" class="phone s12"><cite>KevinDean:</cite> As I have the prefix from GS1 Utopia, I can create the actuals GS1 identifiers I need.<br>
+<span id="5f53">… We also have data associated with a product. I have to give you data about my product, not just the ID</span></p>
+<p id="2bdf" class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://www.w3.org/TR/vc-use-cases/#chain-of-gs1-credentials-to-identify-a-trade-item">https:/<wbr>/<wbr>www.w3.org/<wbr>TR/<wbr>vc-use-cases/<wbr>#chain-of-gs1-credentials-to-identify-a-trade-item</a></p>
+<p id="61bf" class="phone s12"><cite>KevinDean:</cite> There are more advanced concepts but the basic model is straightforward. Because I have this cred, I can issue this other cred<br>
+<span id="050b">… So given the cred for the ID for a product, you can trace it back to Global Office, similar to X509 with a root of trust</span></p>
+<p id="6b82" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to mention &quot;Amend&quot; action, and the GS1 motivation for it</p>
+<p id="ed0d" class="phone s01"><cite>brent:</cite> In my previous job, we did exactly this flow with the US Customs and Border Protection people. It worked well</p>
+<p id="699f" class="phone s06"><cite>JoeAndrieu:</cite> I'm not sure where we are with the edits</p>
+<p id="ef88" class=irc><cite>&lt;KevinDean&gt;</cite> <a href="https://ref.gs1.org/gs1/vc/">https:/<wbr>/<wbr>ref.gs1.org/<wbr>gs1/<wbr>vc/</a></p>
+<p id="a403" class="phone s06"><cite>JoeAndrieu:</cite> The tamper-evident signature means it can't be amended but there is a use case that might need that.</p>
+<p id="20a4" class="phone s06"><cite>JoeAndrieu:</cite> The problem of Mergers and Acquisitions is a big one as the brand is now owned by a different company</p>
+<p id="213c" class="phone s12"><cite>KevinDean:</cite> The nature of sigs means that amendment is not possible.<br>
+<span id="20ce">… But a recent text I wrote... there's a PR for it... I landed on amending a credential is really an indication is that there is an amendment</span><br>
+<span id="3b8f">… This one is no longer valid but there is a new one to replace it</span></p>
+<p id="058f" class="phone s12"><cite>KevinDean:</cite> Talks through more detail of the use case</p>
+<p id="9a14" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to draw analogy to Green Web Foundation use case and to ask about x509 as a solution? and to note &quot;update available&quot; in most recent bitstring status list specification</p>
+<p id="20aa" class="phone s02"><cite>manu-tpac:</cite> There's a diagram for the GS1 use case - might be directly relevant to mrchrisadams</p>
+<p id="84b2" class="phone s02"><cite>manu-tpac:</cite> This is the sort of thing we can do with VCs today</p>
+<p id="bbee" class=irc><cite>&lt;KevinDean&gt;</cite> <a href="https://www.youtube.com/watch?v=iDkANArgdKI">https:/<wbr>/<wbr>www.youtube.com/<wbr>watch?v=iDkANArgdKI</a></p>
+<p id="f323" class="phone s02"><cite>manu-tpac:</cite> We have added a &quot;refresh&quot; status purpose in the status list version 1.1. It saus the VC hasn't been revoked but there's a new version</p>
+<p id="31c2" class=summary>noting we're at time</p>
+<p id="036f" class="phone s02"><cite>manu-tpac:</cite> There are people saying &quot;that use case can be solved with X509, why use VCs?&quot;. In the digital cred API discussion 2 days ago - the verifier identity spec, why did you use X509. I asked why didn't you use a VC? Answer was that X509 does it. It would be nice to expand the GS1 use case to explain why you didn't use X509</p>
+<p id="759d" class="phone s07"><cite>ivan:</cite> Joe, you frightened me. Did you say there's a property called amend in the VCDM?</p>
+<p id="9c93" class="phone s06"><cite>JoeAndrieu:</cite> No, it's in the UCR, not the VCDM</p>
+<p id="232c" class="phone s01"><cite>brent:</cite> We're 2 minutes over.<br>
+<span id="2d91">… Break until 11:00 GMT</span></p>
+<p id="d659" class="phone s05"><cite>phila:</cite> Tomorrow our meeting will have a hard stop at the scheduled time. The rest of our time together will be spent going through the task forces.</p>
+<p id="0b43" class="phone s01"><cite>brent:</cite> This group splits our large number of deliverables into task forces, each of which has its own meetings, leadership, and work items.</p>
+<p id="d248" class=irc><cite>&lt;JoeAndrieu&gt;</cite> <a href="https://www.w3.org/TR/vc-confidence-method/">https:/<wbr>/<wbr>www.w3.org/<wbr>TR/<wbr>vc-confidence-method/</a></p>
+<p id="5596" class="phone s01"><cite>brent:</cite> The Confidence Method task force is led by JoeAndrieu and denkeni.</p>
+<p id="c13a" class="phone s06"><cite>JoeAndrieu:</cite> We are not quite in horizontal review, which was a goal we had for TPAC. We'll talk about where we are and discuss some aspects of the test suite with the group.<br>
+<span id="0682">… I will walk through some of the process that we have been going through with the threat model to give folks insight into process and challenges as well as give an update on how it's going.</span><br>
+<span id="34f7">… We have been tracking a checklist of items before horizontal review. We are working on threat model/security + privacy considerations.</span></p>
+<p id="faf2" class="phone s05"><cite>phila:</cite> Could you briefly summarize what Confidence Method is?</p>
+<p id="1497" class="phone s06"><cite>JoeAndrieu:</cite> Confidence method is a property an issuer can add such that a verifier can increase their confidence that a party is the party in the credential. This could be proving in real time that a party interacting with a website is the person a credential is about.<br>
+<span id="8b72">… It could also be comparing what is in a log to what is in a VC - such as with Confidence Method using DIDs.</span><br>
+<span id="35a7">… There are two other properties we would like for the future - a key based mechanism, which is either a reference to a DID, a reference to a key in a DID, or embedding the key in the VC. We will use the VM from the DID spec, so if you have the VC you don't have to dereference a DID.</span><br>
+<span id="9ab4">… There are also two biometric related confidence methods - a biometric template, where we have gone to a biometric template creator and created a template, then given that to an issuer who has embedded that in the VC.</span><br>
+<span id="466d">… When someone presents the VC a biometric confirmation can be performed with the template.</span><br>
+<span id="36b1">… This is designed to be open-ended and not bottlenecked - ideally the holder of the credential can use any biometric evaluator that is acceptable to them and the verifier.</span><br>
+<span id="957d">… Another is the biometric image confidence method, which does not do this templating, but just contains an image for a human or machine to match against.</span><br>
+<span id="1e9c">… This is not particularly robust, but it is a very common mechanism.</span><br>
+<span id="1032">… It allows a human to do the confidence without a machine, which is a use case we want to support.</span><br>
+<span id="186a">… In addition we have defined an assurance level property which can be applied to any credential subject - an attestation that, before issuance, the issuer achieved some assurance level according to some external standard.</span><br>
+<span id="8657">… The credential does not provide this evidence, but the issuer makes the assertion.</span></p>
+<p id="54c6" class="phone s07"><cite>ivan:</cite> practical question - now that I have started to do v2.1 of the vocabulary. For Confidence Method we agreed that the new terms would be folded into the base vocabulary. Is the current work stable enough to start this work?</p>
+<p id="b99e" class="phone s06"><cite>JoeAndrieu:</cite> You should wait, we have outstanding issues to work through.</p>
+<p id="5fec" class="phone s07"><cite>ivan:</cite> Also, please create a clear URL into your specification for each term you define.</p>
+<p id="0e83" class="phone s06"><cite>JoeAndrieu:</cite> The two confidence methods that we want to get in, but probably will be future are email and phone number as confidence methods.<br>
+<span id="7bde">… Another thing not in the spec but in an issue is that it is our intention to specify that confidence methods should be selectively disclosable.</span><br>
+<span id="3f83">… This should not be a MUST.</span><br>
+<span id="7a21">… There are some ways that we might do a test suite that would create PII problems, which suggests that we need to create synthetic data. We don't want to test the implementations or types of confidence methods - we don't want to be in the business of testing external companies' algorithms.</span><br>
+<span id="a3bb">… We need to figure out how to test supporting a feature without testing external companies' logic.</span></p>
+<p id="c88a" class="phone s02"><cite>manu-tpac:</cite> It's a good question. One way to approach this is that it's a data model - can you express the properties in the model. However, we could easily test the cryptographic key based confidence methods using a presentation or something like that.<br>
+<span id="ea95">… Maybe we punt on testing the image and biometric template stuff, that can happen out of bounds, and we don't want to test specific implementations.</span><br>
+<span id="57b6">… I'd suggest the test suite tests the data model at a minimum, and we could do a presentation with a countersignature.</span><br>
+<span id="a534">… We could just ask implementers for feedback on the biometric options.</span><br>
+<span id="1c81">… There are other companies that do this work that could test and contribute implementation reports - but we do not want to block on that and create delays.</span></p>
+<p id="650d" class="phone s07"><cite>ivan:</cite> It is fine IMO for some tests to describe what you should be able to do. The implementer can respond yes/no if that is the behavior they observe - where machines cannot replace human interactions.<br>
+<span id="1b8f">… We are not making a judgement on the implementation.</span></p>
+<p id="9a10" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to note that biometrics are meant to be privacy preserving.</p>
+<p id="365f" class="phone s07"><cite>ivan:</cite> Both for confidence method and render method there will be humans in the loop.</p>
+<p id="9137" class="phone s02"><cite>manu-tpac:</cite> General point to the group, we steered away from doing biometrics for a very long time, since it comes with privacy risks. What we are trying to do is create a mechanism for privacy-preserving biometrics. We are trying to get to where an individual has the template on their device, matching is done on the device, and a ZKP is expressed that the user used a legitimate template, issued by a trusted authority, and the match happened. That proof is the thing that's sent to the verifier.<br>
+<span id="ef70">… There are vendors that argue that the biometric data and/or match data needs to be sent to a central server, but we know of companies that believe this can be done in a privacy preserving way.</span><br>
+<span id="4133">… In the meantime, there will be a mechanism to send a video stream to a server - but selective disclosure makes this the individual's choice to share.</span></p>
+<p id="a4bc" class="phone s06"><cite>JoeAndrieu:</cite> I work on threat modeling efforts at W3C to help groups produce threat models. Threat modeling is different than risk analysis - it is about embodied systems. When you do a risk analysis, you may have concerns, say about weather - but you would mitigate different concerns differently. If you can identify risks clearly, you can address risks. But risks are not tied to embodied systems. In threat modeling, you start with a diagram, which represents the scope of the threat model.<br>
+<span id="7586">… The diagram I am sharing right now is a dataflow diagram without any flows - I am trying to get components that allow realization of our core three confidence methods.</span><br>
+<span id="f34d">… Walking through the components, we have an issuer with a device that is running a process that will generate a VC with a confidence method in it.</span><br>
+<span id="d4ec">… Ideally this document would be general across all confidence methods - but this is difficult to do, the language is hard to express in an appropriately general way.</span><br>
+<span id="de94">… The big blue boxes up top are where you get evaluation done for issuance, and separately there is evaluation done on verification. A biometric template will be evaluated before issuance - and then in near-real time a verifier must get an evaluation done, but those do not need to be done by the same entity.</span><br>
+<span id="07b2">… On the bottom of this diagram we have the holder's device and a verifier's device - and since DIDs are involved we have a resolver and a data registry.</span><br>
+<span id="83e1">… I started adding flows about how these systems would talk to each other so we can talk about the threats that those individual flows create. This gets noisy and confusing, and conflicted with the generic language concept. Now we have the holder and the issuer in a flow where the holder is going to biometric template creation that is being provided somehow. Once of the tricks of what I am trying to do in this diagram is have a single diagram that works in different deployment architectures.</span><br>
+<span id="ec80">… Right now we are exploring four different kinds of deployments. One is everything on-device, in apps or platform tools - not far from putting your fingerprint on your iOS device. People who want better guarantees can have data capture on the phone but evaluation in the cloud.</span><br>
+<span id="fd28">… It also could be where you have to go into a facility, either with or without a backend service.</span><br>
+<span id="10d9">… Looking at the biometric template creation, whoever runs that controls that service.</span><br>
+<span id="3a8a">… There are also security and trust boundaries at the phone application layer.</span><br>
+<span id="5f7d">… I want to enable all these variations to tease out what could go wrong. This is complicated, and I struggled with the flows, since all we have are data models but not flows.</span><br>
+<span id="a58b">… I first tried this in 2D layout, a sequence diagram to anchor or language in terms of core entities and interactions.</span><br>
+<span id="23b2">… The idea is that in the spec I want to add these diagrams as descriptions of particular methods.</span></p>
+<p id="e83e" class="phone s02"><cite>manu-tpac:</cite> Did you say you expect that this diagram would go in the spec and not the threat model?</p>
+<p id="2212" class="phone s06"><cite>JoeAndrieu:</cite> Yes, I am not using this to analyze threats, but better model the use cases that need to be threat modeled.</p>
+<p id="97fc" class="phone s02"><cite>manu-tpac:</cite> I'm wondering about ramifications for other specs - it feels to me like the threat model expects the specification to talk about flows.<br>
+<span id="29fd">… It also embeds some of the talk of flows in there - Simone's review of Recognized Entities requested flows. This seems like an additional requirement on specifications to not only describe data models but also flow, which is not always what working groups have signed up to do.</span><br>
+<span id="51d2">… I am somewhat uncomfortable with the request to move flows into the main spec - that's my concern.</span></p>
+<p id="7bbf" class="phone s05"><cite>phila:</cite> I think this should go in the specification.</p>
+<p id="447b" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to say &quot;is this normative&quot;?</p>
+<p id="1779" class="phone s01"><cite>brent:</cite> We are expanding beyond data models, I agree that this is a useful thing for the main document.</p>
+<p id="f08a" class="phone s02"><cite>manu-tpac:</cite> How normative is this?<br>
+<span id="62f8">… These considerations are important.</span></p>
+<p id="c5a0" class="phone s05"><cite>phila:</cite> My assumption is that there will be spec text that describe this, an illustration of the normative parts of the spec.</p>
+<p id="a061" class="phone s07"><cite>ivan:</cite> I believe we have a statement that figures are not normative.<br>
+<span id="12e7">… The description may be.</span></p>
+<p id="e5e7" class="phone s03"><cite>wes-smith:</cite> It sound near impossible to have these flows to be expressed normatively without being overly restrictive.</p>
+<p id="4023" class="phone s03"><cite>wes-smith:</cite> When we talked about testing and test suite, lots of these flows are happening out of band, some of which is proprietary logic/systems outside of scope of VC world. Strongly argues to note entities and relations in flows can't be normatively described.</p>
+<p id="91fb" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say just this flow</p>
+<p id="e525" class="phone s06"><cite>JoeAndrieu:</cite> I disagree but acknowledge ivan's point - figures are not normative, do we want to describe flows. In our community work we have avoided flows and focused on data models. I am hoping this particular flow is normatively specified and at the right level of abstraction if we express it correctly in words.</p>
+<p id="298a" class=irc><cite>&lt;denkeni&gt;</cite> +1 to brent</p>
+<p id="7d76" class="phone s01"><cite>brent:</cite> when I say flows are good, I am saying I like this particular flow in the confidence method specification. I don't think it needs to be normative - here is an example flow is a useful thing. I don't know that making it normative increases the usefulness of it.</p>
+<p id="4486" class="phone s13"><cite>mori:</cite> As far as I have been deploying biometrics, the biometric template can be created in different ways - some privacy models impose restrictions here. There are multiple camps, which are both functional. We prioritize privacy at the W3C. I don't care if the content is normative or not, but the position for what this idea/protocol can be applied to could be described.</p>
+<p id="3a88" class=irc><cite>&lt;brent&gt;</cite> +1 to sticking with the FIDO guidelines for biometrics (templates never leave the device)</p>
+<p id="e503" class="phone s06"><cite>JoeAndrieu:</cite> I think we should stick to the use cases listed, but lean into the more privacy preserving use cases, maybe using SHOULDs for the privacy perspective.</p>
+<p id="f0c7" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to note as long as we say that this is one way this can be done, but is not the only way, we're good</p>
+<p id="6027" class="phone s02"><cite>manu-tpac:</cite> Out of all of the things said, I align with what brent said, which is that this is an example - and the second we get into normative language I get concerned, primarily because we don't know what people are going to use this technology for.</p>
+<p id="d7f4" class="phone s03"><cite>wes-smith:</cite> This happens often. Putting the thought in someone's head to limit the technology is something to avoid.<br>
+<span id="0aaa">… Inclusion of flows should be illustrative examples on a spec-by-spec decision. Normative language for flows is risky.</span></p>
+<p id="64ec" class="phone s14"><cite>denkeni:</cite> +1 to what manu and brent are saying, the figure should not be normative, but is important to build up the threat model. People can use data models different than we expect - this is valuable communication material, but normative language can be restrictive.</p>
+<p id="24ad" class="phone s05"><cite>phila:</cite> Picking up on what manu was saying, a lot of the use cases/incentives for this work is the use case where an individual is proving their identity, so I share the slight concern - jars of jam do not have thumbprints, so a lot of use cases do not involve a mobile device.</p>
+<p id="f9df" class="phone s06"><cite>JoeAndrieu:</cite> One thing I am trying too hard to do is find a single diagram to put all flows in - there are legitimate confidence methods that can be used without wallets. I want this language to be in there, making it not normative is a way to accomplish that.<br>
+<span id="b8d8">… Trying to jump immediately to the big diagrams hurts accessibility - flow diagrams are useful intermediates.</span><br>
+<span id="839b">… Another point - one of the challenges with DFDs, which is a challenge for all data model specifications, is that the threat model needs to deal with an embodiment in the real world so we can point to the elements that might be the source of the compromise.</span></p>
+<p id="a12a" class=irc><cite>&lt;TallTed&gt;</cite> (RDF-star is no more. It long ago evolved into RDF 1.2.)</p>
+<p id="4a9e" class="phone s06"><cite>JoeAndrieu:</cite> In the RDF world, serialization is a point of compromise, even though the RDF work is largely abstract.<br>
+<span id="04bb">… The threat model is an embodiment, which should not be normative. Threat modeling makes a choice of what is the system under analysis.</span></p>
+<p id="2129" class="phone s15"><cite>Anthony:</cite> I was interested that mori suggested human vs nonhuman is a core decision point in these architectures - send to a server vs don't send to a server could be a normative decision point.</p>
+<p id="6a4d" class="phone s06"><cite>JoeAndrieu:</cite> I am a huge fan of figuring out the datagram and how it moves - see the IP protocol on which the web is built.<br>
+<span id="654a">… Constraints on other technologies made them die out in comparison to IP.</span></p>
+<p id="9e25" class="phone s14"><cite>denkeni:</cite> We are moving from physical ID to digital ID, our motivation is to migrate some of these use cases in the face of threats like ID photocopying.<br>
+<span id="cf4c">… It's our strategy to move forward in this way.</span><br>
+<span id="1441">… There are already images in passports, maybe fingerprints - it's everywhere. We are trying to build a model around that to make it privacy-preserving.</span></p>
+<p id="ae4f" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to speak to &quot;why server-side biometrics&quot;?</p>
+<p id="5bf3" class="phone s02"><cite>manu-tpac:</cite> Anthony, to the question of &quot;why are we not proposing the on-device biometrics only&quot;, you can't get on an airplane with a FIDO authenticator or cross a border. There are countries where video feeds are shared remotely as a non-optional verification step. We need to meet organizations where they are to get onto a set of technologies that move in the right direction.</p>
+<p id="b818" class="phone s03"><cite>wes-smith:</cite> Part of that strategy is naive, but it is our job to provide good options to less privacy-preserving options.<br>
+<span id="733f">… Our spec will say how we think you should do this - local computation, ZKPs, etc.</span></p>
+<p id="ea27" class="phone s16"><cite>ElaineX:</cite> I've been on the confidence method calls, I have been focused on people use cases, but was reminded that we need non-human use cases as well. In my forensic work I have exposure to security that relates to product, and there are methods for individualizing product that depict randomness that exists in the product or is injected into the product.</p>
+<p id="d583" class="phone s06"><cite>JoeAndrieu:</cite> I wanted to address Anthony's question - personal opinion, the W3C has gotten pressure from sovereign states to embed policy decisions in technologies. The best way to get interoperability is to enable policy flexibility. If you are aware that there might need to be policy flexibility, you can support it.</p>
+<p id="fd60" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask a chairy q</p>
+<p id="6756" class="phone s01"><cite>brent:</cite> Is there an issue tracking this conversation? What decisions are we making?</p>
+<p id="9b3b" class="phone s06"><cite>JoeAndrieu:</cite> It would be great to add issues to track - I'll reflect my takeaways as editor. One is that this diagram and its description will not be normative, but the language will go in to make the DFD more accessible. I also like the proposal to lean into a recommendation that you SHOULD use the privacy forward version of this.</p>
+<p id="86aa" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to talk about birth certificates for horses and tanks and how we should push that to v1.1</p>
+<p id="7a53" class="phone s03"><cite>wes-smith:</cite> Brief note about spec writing and accessibility -- spec should mention we want privacy and not weaken technology, idealogical reason for normative language.</p>
+<p id="2e99" class="phone s17"><cite>FYI:</cite> FIDO guidelines for biometrics usage intheir specs: <a href="https://fidoalliance.org/specs/biometric/requirements/Biometrics-Requirements-v4.0-fd-20240522.html">https:/<wbr>/<wbr>fidoalliance.org/<wbr>specs/<wbr>biometric/<wbr>requirements/<wbr>Biometrics-Requirements-v4.0-fd-20240522.html</a></p>
+<p id="7e3e" class="phone s02"><cite>manu-tpac:</cite> There are interesting uses of confidence method, but we need to draw a line to get to CR - we don't need to raise issues about use cases that relate to future work.</p>
+<p id="bb34" class="phone s06"><cite>JoeAndrieu:</cite> We are feature frozen, so I encourage folks to raise issues but new features will be tracked as future.</p>
+<p id="c7ec" class="phone s07"><cite>ivan:</cite> For me, feature frozen means properties are defined.</p>
+<p id="c0cb" class="phone s06"><cite>JoeAndrieu:</cite> I mean use case frozen.<br>
+<span id="09d7">… We are probably a month out of a fully fleshed out threat model, but we will get to horizontal review before the threat model is finalized.</span></p>
+<p id="30d2" class="phone s07"><cite>ivan:</cite> all that you said has not yet been seen by the accessibility people - they will probably have good questions.<br>
+<span id="723b">… i18n could be relevant as well.</span></p>
+<p id="b895" class="phone s05"><cite>phila:</cite> Closing the confidence method slot.</p>
+</section>
+
+<section>
+<h3 id="d102">AB Discussion</h3>
+<p id="aa76" class="phone s01"><cite>brent:</cite> we have synthesized feedback regarding W3C process into things we could change - but there is a process for change the process.</p>
+<p id="0617" class="phone s17"><cite>FYI:</cite> This is directed by the advisory board, and eventually the advisory committee.<br>
+<span id="ee9c">… That is heavy handed for trials/experiments - the first change we would like to see to process is to allow experiments.</span><br>
+<span id="e46d">… There is a process PR right now that outlines methodology used to run experiments.</span><br>
+<span id="4414">… I wanted to let folks know about this and would love to hear feedback on that idea - I will drop a link to the PR in IRC.</span></p>
+<p id="8104" class=irc><cite>&lt;manu-tpac&gt;</cite> Experimental AB Process proposal: <a href="https://github.com/w3c/process/pull/1189/changes">https:/<wbr>/<wbr>github.com/<wbr>w3c/<wbr>process/<wbr>pull/<wbr>1189/<wbr>changes</a></p>
+<p id="2636" class="phone s17"><cite>FYI:</cite> we have tried to be sensible about the approach - the point is to be able to iterated quickly and move on things without overburdening process with process.<br>
+<span id="200b">… There is language saying you cannot formally object to an experiment - but it cannot be fielded as an FO and deliberate for a year. This is antithetical to the goal of the experiment notion.</span><br>
+<span id="461a">… We also generally want to hear feedback on what WGs are struggling with.</span></p>
+<p id="ca88" class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to ask for an example of a process experiment</p>
+<p id="b1b4" class="phone s05"><cite>phila:</cite> Can you give an example of a process experiment?</p>
+<p id="3f30" class="phone s01"><cite>brent:</cite> The pain points we heard were horizontal review - for example, we could strictly limit the time in which horizontal review has to happen.</p>
+<p id="4609" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about alternatives v required</p>
+<p id="3a96" class=summary>Process Experiment PR: <a href="https://github.com/w3c/process/pull/1189">w3c/<wbr>process#1189</a></p>
+<p id="046f" class="phone s06"><cite>JoeAndrieu:</cite> I like the idea - how it maps for me is that you are talking about providing alternatives to the current process that are allowed, as opposed to experiments that are required. The threat modeling stuff has caused a reaction, in part because it was not approached as an alternative from the start.</p>
+<p id="df5b" class="phone s07"><cite>ivan:</cite> +1 to the concept, but I am confused on what happens if I do something not per process and then publish the recommendation. Can the recommendation be attacked for improper process?</p>
+<p id="7632" class="phone s01"><cite>brent:</cite> This is what the language attempts to address.<br>
+<span id="5687">… The AC needs to approve experiments and will not approve egregious process violations.</span></p>
+<p id="cbcc" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to ask if &quot;all WGs get a TAG Member&quot; has been discussed to help horizontal review?</p>
+<p id="3127" class="phone s02"><cite>manu-tpac:</cite> Has the AB considered drafting volunteers (voluntolds) from WGs to serve in horizontal review groups?</p>
+<p id="7c20" class="phone s03"><cite>wes-smith:</cite> There are two parts of horizontal review - reading the document and collecting thoughts around what the review should say, and there is getting agreement from groups on if they agree with the review. The blockages in HR are just in bandwidth to review a spec.<br>
+<span id="967e">… Splitting this out into two parts, review and &quot;review review&quot;, could be helpful. WGs could pick people to do reviews.</span></p>
+<p id="27b9" class="phone s05"><cite>phila:</cite> On that conscription point, if you see members of the TAG, they need people - everyone complains about horizontal review takes, but we need more people.</p>
+<p id="0f46" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to discuss BBS upload quid-pro-quo mechanism</p>
+<p id="4fdc" class="phone s06"><cite>JoeAndrieu:</cite> We are so oversubscribed with stuff, makes it hard to suggest reviewers. This reminds me of BBS exchange notions.</p>
+<p id="dc3a" class="phone s03"><cite>wes-smith:</cite> Yes, this is how academic review works, when you submit a paper, you are expected to do a review as well.</p>
+<p id="fc92" class="phone s03"><cite>wes-smith:</cite> That is how it works and that is what we're proposing here.</p>
+</section>
+
+<section>
+<h3 id="e9c7">Culture concerns</h3>
+<p id="ade5" class="phone s01"><cite>brent:</cite> The AB has some concerns about W3C culture - we want it to be as positive as possible. The question to the group is - has the code of conduct been useful in creating positive culture in this group? What can the AB do to promote positive culture?</p>
+<p id="dded" class="phone s06"><cite>JoeAndrieu:</cite> Both formal objections and code violations are blunt and are hard to wield with nuance, getting action feels like declaring way. Nudges would be great.</p>
+<p id="5e14" class="phone s09"><cite>bigbluehat:</cite> Both things mentioned are very similar - strong responses that people reach for. Nuance would be great.<br>
+<span id="98ba">… I wonder if the formal objection timeline could be changed to minimize eleventh hour problems.</span></p>
+<p id="a8ce" class="phone s05"><cite>phila:</cite> We trialed this by signaling our intent to resolve a dispute here at TPAC, so in the lead to TPAC the necessary discussions happened.</p>
+<p id="8837" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to speak to when this group didn't necessarily have a good culture... and figure out what happened there.</p>
+<p id="e7ca" class="phone s02"><cite>manu-tpac:</cite> This group has a good culture now - there was a point where this was not necessarily true. Past meetings have had philosophical divides that were hard to overcome.</p>
+<p id="8e08" class="phone s03"><cite>wes-smith:</cite> It's unclear if people leaving the group is a failure mode or an acceptable resolution - W3C tooling did not kick in there, the bifurcation was too extreme.<br>
+<span id="3167">… Maybe W3C should look at where groups have broken down, and did FOs help there?</span><br>
+<span id="99b4">… I will also mention that the code of conduct is useful as a reminder but not hugely useful when things are very problematic.</span><br>
+<span id="a1b2">… Examining cases where FOs and the code have failed could help us.</span></p>
+<p id="c1e3" class=summary>sorry to here that, hope you feel better</p>
+<p id="7396" class="phone s18"><cite>dmitriz:</cite> I added some slides to the agenda. Thanks to recognized entity group for template to copy</p>
+<p id="62af" class="phone s18"><cite>dmitriz:</cite> sharing screen<br>
+<span id="629d">… We will go over what the task force does, what the spec does, the current state of it</span><br>
+<span id="b7db">… Render method is an extension to the VCDM. It tells you how to display the VC</span><br>
+<span id="df8a">… Many examples of wallets and software that have come up with custom approaches to display VC data in there applications</span><br>
+<span id="73c7">… This spec is how the issuer can state in a standard way how they would like the VC to be rendered. Color, font, logo, etc</span><br>
+<span id="8913">… The issuer expresses their preferences for rendering</span><br>
+<span id="51a6">… Issuer cannot and should not control consumer software for how a VC is displayed</span><br>
+<span id="e4b7">… Should be overridable by consumer preferences</span><br>
+<span id="5192">… To do so this involved no issuer provided templates. But this is likely beyond this version of the spec</span><br>
+<span id="71ea">… 3 basic mechanisms have been proposed</span><br>
+<span id="3618">… The render method is dispatched off of specific render suites. Similar to how proof uses different cryptographic suites</span><br>
+<span id="037e">… The 3 main suite types in this spec are static, summary and html</span><br>
+<span id="c775">… Render method also supports community extensions</span><br>
+<span id="96cf">… Static render method is a way for the issuer to define a prerendered VC in the method. E.g. an image</span><br>
+<span id="d80c">… This is how open badges project handled this</span><br>
+<span id="84d1">… The issuer prerenders a payload and either embeds the payload statically into the VC itself. Or links to an externally hosted payload</span></p>
+<p id="28d2" class="phone s18"><cite>dmitriz:</cite> There is an ongoing debate as to whether anything should be prerendered by the issuer<br>
+<span id="aeaf">… A use case for this, has been from the VC over NFC. So that a tap to share VC flow can display some minimal representation</span><br>
+<span id="f41c">… A recurring theme is the trade offs between security and usability of these renderSuites</span></p>
+<p id="5642" class=irc><cite>&lt;Zakim&gt;</cite> manu-tpac, you wanted to note NFC use cases</p>
+<p id="d09e" class="phone s02"><cite>manu-tpac:</cite> I wanted to point out, you might have meant NFC rather than bluetooth.</p>
+<p id="d439" class="phone s18"><cite>dmitriz:</cite> Yep</p>
+<p id="539a" class="phone s02"><cite>manu-tpac:</cite> NFC usecases are important for us because of first responder use cases in emergency situations</p>
+<p id="322e" class="phone s03"><cite>wes-smith:</cite> The ability for first responders to tap to share VCs without relying on a network</p>
+<p id="4737" class="phone s18"><cite>dmitriz:</cite> Are you sending full credential or a subset</p>
+<p id="ce8c" class="phone s02"><cite>manu-tpac:</cite> A subset. Another example are metro transit cards, which would also send over a subset via NFC</p>
+<p id="c329" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask why delivery is in there</p>
+<p id="3217" class="phone s03"><cite>wes-smith:</cite> These are just some examples of where we are using VCs</p>
+<p id="554e" class="phone s06"><cite>JoeAndrieu:</cite> Could you unpack why the delivery mechanism, which feels protocolly, is in here?</p>
+<p id="0c84" class="phone s18"><cite>dmitriz:</cite> Naming is hard and historical. This is intended as a dispatch mechanism for the protocol. It signals that the consuming client has some protocol in mind and needs to be able to select which suite to use</p>
+<p id="6c3b" class="phone s18"><cite>dmitriz:</cite> NFC for example have no media type. We needed a separate field as a dispatch mechansim</p>
+<p id="6ebe" class="phone s06"><cite>JoeAndrieu:</cite> To echo back, this is an advertisement to wallet software to select how to render</p>
+<p id="32e9" class="phone s18"><cite>dmitriz:</cite> Diving into the main question with the static method<br>
+<span id="8e36">… How are we expected this to be implemented and what sort of payloads are we expecting</span></p>
+<p id="7cbc" class=irc><cite>&lt;swcurran&gt;</cite> Might want to add to &quot;limits&quot; -- unilingual</p>
+<p id="f083" class="phone s18"><cite>dmitriz:</cite> This will help us frame our threat model analysis etc</p>
+<p id="ed30" class=summary>First, lets look into how the other two render methods work<br>
+<span id="ec7e">… Next is summary</span></p>
+<p id="64e0" class=summary>This was initially named a card suite<br>
+<span id="8922">… This should be familiar to anyone that has used the current generation of VC wallets, or apple/google wallets etc</span><br>
+<span id="f1cc">… This is the representation of a VC as a virtual plastic card</span><br>
+<span id="f168">… If you look at the data model for how apple / google wallet represent credentials. It is a static set of fields including name, color, image and other metadat about the credential</span><br>
+<span id="59f0">… This suite is unique in that it serves multiple purposes. It defines a constrained set of known fields that consumers rendering this card style format can use</span><br>
+<span id="9cf7">… In addition, it serves as a general purpose bag of metadata about this displaying</span><br>
+<span id="e5a3">… This includes field labels and field types</span><br>
+<span id="cf35">… Internationalization and any other display metadata</span><br>
+<span id="811d">… The name itself is a tenuous compromise, we are not exactly satisfied</span><br>
+<span id="306e">… Finalizing the name of this suite is one of the remaining items</span></p>
+<p id="bdcf" class="phone s07"><cite>ivan:</cite> Looking at it with my vocabulary hat on<br>
+<span id="a59f">… I am a bit bothered that we have payload as a property, whose behaviour is very different from the static renderSuite</span><br>
+<span id="414a">… The static version of the payload, was a data URL</span></p>
+<p id="c067" class="phone s18"><cite>dmitriz:</cite> No, that was an artifact of the example<br>
+<span id="692f">… In the JSONLD format, it is either a single URL, or this value object with this media type</span></p>
+<p id="c00c" class="phone s07"><cite>ivan:</cite> I misunderstood what you said.</p>
+<p id="835f" class=irc><cite>&lt;Zakim&gt;</cite> JoeAndrieu, you wanted to ask about phone home</p>
+<p id="dafa" class="phone s18"><cite>dmitriz:</cite> I could be a data URL or an external. There is the phone home mitigation that needs to be discussed</p>
+<p id="626a" class="phone s06"><cite>JoeAndrieu:</cite> Seems like you are using the ID as a URL so it is expected that people would hit that URL</p>
+<p id="4183" class="phone s18"><cite>dmitriz:</cite> Yep, this is somethingg the group needs to advise developers on<br>
+<span id="2542">… All use the same pattern. And in all of them the phone home trade off comes into paly</span><br>
+<span id="9df6">… In many we can embed the data directly. No phone home. Works offline. However, in some cases these artifacts will be too large, so processors will not be able to load it in memory</span><br>
+<span id="457e">… Issuers sometimes want the ability to change/update the payload. Either the bit string status list, or how the credentialis displayed</span><br>
+<span id="7575">… This only works if it is externally hosted</span><br>
+<span id="5811">… Of course, this brings in phone home and all of the associated concerns</span><br>
+<span id="9c43">… For some render methods the trade offs work better than others</span><br>
+<span id="751c">… For the summary and HTML render method the payload is the same for everyone. However, with static the payload is unique to individual credentials</span></p>
+<p id="0b2e" class="phone s02"><cite>manu-tpac:</cite> I dont think there is anything new here going on that is any different from bit string status list</p>
+<p id="0b13" class=summary>except for the pre-rendered?</p>
+<p id="6228" class="phone s03"><cite>wes-smith:</cite> some things dmitriz made me think we need to give advice if there are unique strings<br>
+<span id="357e">… There are mitigations we can use here. E.g. use oblivious HTTP</span></p>
+<p id="38cb" class=irc><cite>&lt;dmitriz&gt;</cite> right, except for pre-rendered</p>
+<p id="f244" class="phone s03"><cite>wes-smith:</cite> The generic guidance is, if there is a unique URL that can identify the individual credential do no do it. Embed the data</p>
+<p id="d5f3" class="phone s06"><cite>JoeAndrieu:</cite> I would like to see bit string status list change. With bit string status list, you could have the holder get the status list</p>
+<p id="5dde" class="phone s02"><cite>manu-tpac:</cite> You can. There is a mechsnism being added to presentation that would allow you to do this</p>
+<p id="1b24" class="phone s06"><cite>JoeAndrieu:</cite> Utah may have an issue with this, this is a latent phone home capability. It assumes that the issuer will care<br>
+<span id="6f1a">… We should not give issuers the ability to have this capability</span></p>
+<p id="42a5" class="phone s18"><cite>dmitriz:</cite> This is not just a problem to render method. The entire WG has this issue. We need good answers and mitigations to the phone home problem</p>
+<p id="7ff9" class="phone s18"><cite>dmitriz:</cite> Continuing to the HTML iframe render suite<br>
+<span id="d546">… short name HTML</span><br>
+<span id="e9a3">… Other names considered are sandbox, sandbox iframe etc</span><br>
+<span id="305b">… At the moment we are sticking with html</span><br>
+<span id="2dce">… Similar pattern to the others. A suite id. A payload, that is either embedded or external</span><br>
+<span id="801b">… And a number of metadata that goes along with it</span><br>
+<span id="5134">… Key difference is that a consuming client retrieves the payload and opens it in a sandboxed iframe</span><br>
+<span id="494b">… This is sandboxed to turn off net access, JS, navigation etc</span><br>
+<span id="71af">… This has both advantages and disadvantages that we will get into</span><br>
+<span id="4b3c">… INcluding how you display linked credentials</span><br>
+<span id="4edd">… The summary render suite is great for displaying a bit long list of credentials, html suite is intended for displaying the detailed view of the VC</span><br>
+<span id="82d7">… It enables the issuer to flexibly define using HTML, CSS and JS in a sandboxed way how they want the VC to be rendered</span><br>
+<span id="8c8a">… One of the issues we still need to figure out is how to mitigate data exfiltration</span><br>
+<span id="34a7">… It is possible to exfiltrate data  using an image tag for example</span><br>
+<span id="3304">… As a baseline, this follows the overall VCDM data model. It is really the reputation of the issuer and the issuer is being trusted here</span><br>
+<span id="5ee6">… Data exfiltration and sandboxing is a key issue here</span><br>
+<span id="d884">… We want to lock it down, but also want the flexibility of html, CSS and JS. Need to figure out how to balance this tension</span><br>
+<span id="9223">… With the recognized entity taskforce, there is the notion that all credentials will be chained credentials. Where one VC links to others that then link to others</span><br>
+<span id="48a3">… how do we navigate what is essentially hypertext but in VC form</span><br>
+<span id="7d7a">… Another example is in these nested records e.g. in health or education</span><br>
+<span id="e206">… These have an overall top level VC where inside is embedded VCs with their own signatures</span><br>
+<span id="a4ea">… How does render method work for this complex thing?</span><br>
+<span id="8cca">… What if each embedded credential has its own render method</span></p>
+<p id="a10b" class="phone s01"><cite>brent:</cite> 30 min remaining</p>
+<p id="5945" class="phone s09"><cite>bigbluehat:</cite> For the chained stuff from UNTP, where there is just a link that someone is expected to click. Wouldnt the summary mechanism be better here</p>
+<p id="740e" class="phone s18"><cite>dmitriz:</cite> Yep, that is one of the mitigation methods that we need to decide as a group<br>
+<span id="a562">… Patrick proposed another render suite. There is the ability for the rendered iframe to talk to the parent application</span><br>
+<span id="093d">… E.g. for the user clicking to render a linked credential</span></p>
+<p id="274d" class="phone s19"><cite>Wip:</cite> I wondered when we think about rendering for paper, would that be HTML?</p>
+<p id="9700" class="phone s18"><cite>dmitriz:</cite> On of the founding usecases/painpoints for render method was paper and pdf<br>
+<span id="ea89">… Lots of government initiatives are very careful to state that these digital VCs will be equivalent to the physical ones. E.g. paper and card credentials. How do you translate</span><br>
+<span id="d943">… The HTML method is one of the possibilities</span><br>
+<span id="37cb">… There is a different renderSuite being explored that uses mustache and string substitution to fill in fields in a template.</span><br>
+<span id="523c">… If the issuer has provided a paper layout for the credential, you can load the template and fill in the attributes to generate a pdf</span><br>
+<span id="56e2">… Others have argued that it is possible to generate a PDF in the iframe and then pass this back to the parent for printing</span></p>
+<p id="2f39" class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say we need to pull a confidence method and just pick a small subset</p>
+<p id="1600" class="phone s18"><cite>dmitriz:</cite> Yes, we need to be able to print this to paper. HTML method is one of the approaches. The other is a template/mustache method. This did not make the cut for the three suites in 1.0. It will be in the appendix</p>
+<p id="0431" class="phone s01"><cite>brent:</cite> When the presentation started, I thought it was good that the group had picked three and settled<br>
+<span id="65b0">… Interested to hear what the plan is to fully constrain this, so everything is written that needs to be written so we can move it to CR</span><br>
+<span id="1372">… Lets constrain the scope, so this work item can progress</span></p>
+<p id="d5a1" class="phone s18"><cite>dmitriz:</cite> Completely understand. Lots of things we can do, constrained by charter and getting 1.0 out the door<br>
+<span id="3f2f">… We do think that between these three we can cover all the existing use cases</span></p>
+<p id="054c" class="phone s02"><cite>manu-tpac:</cite> The way this is being presented makes it seem like less is locked down than it is. We are going to have to cut features aggressively</p>
+<p id="eac9" class="phone s03"><cite>wes-smith:</cite> PDF is on the chopping board for 1.0, we can add it later<br>
+<span id="7c49">… static is locked down pretty well. HTML is locked down. What is not locked down right now is summary due to internationalization</span><br>
+<span id="6707">… We have picked. It is those three. We need to cut features if anything is going to drag on</span></p>
+<p id="1a98" class="phone s18"><cite>dmitriz:</cite> Agreed. We have a plan. Settled on three. A few issues to lock down. PDF will probably be on the chopping block</p>
+<p id="59e0" class=irc><cite>&lt;George&gt;</cite> PDF = Pretty Dead Format</p>
+<p id="4483" class="phone s05"><cite>phila:</cite> Sounds like a future version of this would have a lovely button to generate a PDF with barcode. Lets not do that this time</p>
+<p id="9ea9" class="phone s05"><cite>phila:</cite> What is the outputPreference access Mode option in the renderMethod object for html</p>
+<p id="a2ff" class="phone s01"><cite>brent:</cite> It is serving as a dispatch mechism for consuming client. When I want to reach for this HTML render suite</p>
+<p id="4549" class="phone s01"><cite>brent:</cite> You can have multiple render methods in the same VC</p>
+<p id="6d82" class="phone s18"><cite>dmitriz:</cite> Yes and that is important.<br>
+<span id="57a5">… You could have a HTML, summary and static. Or a different renderMethod per locale</span><br>
+<span id="fc57">… That is why the issuer needs to signal for consumers which ones they should choose</span></p>
+<p id="66ce" class="phone s09"><cite>bigbluehat:</cite> If its a HTML one, accesMode and outputPreferences could be a big list e.g. audio</p>
+<p id="e03c" class="phone s18"><cite>dmitriz:</cite> Same phone home considerations present. Embedded vs external. It is possible to embed html is one line data url, its just going to be large<br>
+<span id="344f">… All three have similarities</span></p>
+<p id="86a7" class="phone s18"><cite>dmitriz:</cite> Horizontal reviews. Internationalization in progress. Pro<br>
+<span id="fef0">… Privacy is complete. The rest we are waiting to hear back from. Apart from TAG review, this is not yet filed</span></p>
+<p id="352b" class="phone s18"><cite>dmitriz:</cite> I will file the TAG review this week<br>
+<span id="4f65">… The main topics are</span><br>
+<span id="210d">… Topic 0, phone home mitigation. Embedded vs linked. Offline vs online use cases. Group privacy. In the case of the static method how to avoid external links as a one to one correspondence with a person and there credential</span><br>
+<span id="49c8">… We need to finalize the names, the localization and the question of whethere we have time for community supplied render methods. likely no</span><br>
+<span id="eb68">… We also need to finalize whats in scope for 1.0</span><br>
+<span id="2d95">… A main consideration about the static method that we need to get a sense of from the implementers. What exactly are the desired use cases for it</span><br>
+<span id="d6f4">… manu brought up the NFC use case. Necessarily small. Great candidate for embedding</span><br>
+<span id="5f85">… If implementers have other use cases for larger static prerendered payloads, then we are going to have a problem. Either to embed, with size problems or link to issuer hosted with a phone home problem</span><br>
+<span id="afe7">… No mitigations from herd privacy. It is your credential hosted somewhere</span><br>
+<span id="d760">… The phone home threat could be mitigated if the user is hosting there own rendering of the VC</span><br>
+<span id="1977">… May not have time for this</span></p>
+<p id="d1cb" class="phone s04"><cite>Lucy:</cite> Seems like the MVP features have not been finalized yet. Would you like a real world use case</p>
+<p id="6766" class="phone s18"><cite>dmitriz:</cite> We would love to hear them.</p>
+<p id="dd94" class="phone s04"><cite>Lucy:</cite> Lets take it offline</p>
+<p id="54fc" class="phone s18"><cite>dmitriz:</cite> Usually caveats of late stage charter wg</p>
+<p id="a983" class="phone s02"><cite>manu-tpac:</cite> I suggest that we don't give guidance this time around and see what implementers do during CR</p>
+<p id="a23d" class="phone s03"><cite>wes-smith:</cite> I know to answer the question on the screen. We plan to implement static and only embed small payloads in there. We will not link to large external files</p>
+<p id="755c" class="phone s18"><cite>dmitriz:</cite> I agree with you. We probably dont have time to do other mitigations</p>
+<p id="a389" class="phone s18"><cite>dmitriz:</cite> Some issues need to be decided by the VCWG as a whole<br>
+<span id="e0fd">… How are we going to do localization and internationalization for the VCDM as a whole. But specifically for these render methods</span><br>
+<span id="930f">… Remaining discussion. We need to finalize the suite names. If no consensus reached, we will stick with static, summary and html. May be changes to summary or html, but only if we can reach consensus</span><br>
+<span id="6d48">… We are working to update the context and vocab</span><br>
+<span id="8b6b">… Some editorial cleanup also needed</span></p>
+<p id="4c59" class="phone s18"><cite>dmitriz:</cite> Overall plan is to address the PRs from internationalization reveiw<br>
+<span id="dbe5">… Also a big one, how do we test this thing</span><br>
+<span id="c89b">… Testing data model specifications is hard</span><br>
+<span id="8e1a">… render method has an extra challenge because its visual. How do you test visuals</span><br>
+<span id="20eb">… There is a body of work around this</span><br>
+<span id="5e4b">… and questions?</span></p>
+<p id="e2ba" class="phone s18"><cite>dmitriz:</cite> The main issue to figure out is what will issuers want to do with the static suite. Can the group get away with saying embedded only for static?<br>
+<span id="c692">… Question 2 is HTML apps have a rich history of internationalization and localization. How do we do this for static and summary</span><br>
+<span id="8002">… We have the inherited JSONLD and VCDM mechanisms. Including language tag and language direction</span><br>
+<span id="a081">… One of the debated issues is, do we use language content negotiation when fetching externally hosted resources or not</span><br>
+<span id="4cbe">… What about embedded resources</span><br>
+<span id="2b64">… What do we do about noting which languages are given render method addresses</span><br>
+<span id="8fd1">… There is some pushback that this may be duplicating the http accept language mechanism</span><br>
+<span id="fb97">… Internationalization flagged that accept language is not widely used. We may need to do something else</span></p>
+<p id="b49e" class="phone s05"><cite>phila:</cite> Perfectly happy that static only has embedded</p>
+<p id="2554" class="phone s01"><cite>brent:</cite> On the language side, I am struggling with the idea of fetching a set of localized set of strings.<br>
+<span id="220c">… The VCs that we have been caring about, have been small. While they can be big, lets start with what we are familiar with</span><br>
+<span id="8c1b">… There are multilingual countries. But in general they are one or two countries. Stick the localization data in the JSONLD</span><br>
+<span id="0c34">… That may be good enough. Dont have to support all languages in all VCs. VCs are likely to have a constrained set of languages to be handled</span></p>
+<p id="7bfd" class="phone s09"><cite>bigbluehat:</cite> As render method is coming from the issuer, in theory they already know which languages are relevant to the people they are issuing to. Ideally have multi-language information at issuance time<br>
+<span id="1720">… I dont think it makes sense to fetch it from the server</span></p>
+<p id="f8e5" class="phone s18"><cite>dmitriz:</cite> Thank you everyone. We will get this thing out the door. Please help with test suite</p>
+<p id="862b" class="phone s01"><cite>brent:</cite> Thanks everyone, see you tomorrow at 9:45</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#6d68">Moving forward, we will clarify the limitations on using DigestSRI (using the proposal Shigeya made) in the core data model spec. Other specifications may choose to only provide examples of one of the digest methods, but won't normatively prefer one over the other.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 1.0 (Python) (2025).</address>
+
+</body>
+</html>
