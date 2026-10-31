@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group F2F @ TPAC 2026, Dublin, 1st day &ndash; 30 October 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt=W3C border=0 height=48 width=72></a></p>
+
+<h1>Verifiable Credentials Working Group F2F @ TPAC 2026, Dublin, 1st day</h1>
+<h2>30 October 2026</h2>
+
+<nav id=links>
+<a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit?slide=id.p#slide=id.p"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/10/30-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd><details><summary>bigbluehat,</summary> brent, bumblefudge, David_Ezell, denkeni, dezell, dmitriz, elaine, ElaineX, George, GeorgeM, hadley, heatherf, hsano, hsxavier, ingo, ivan, ivo, JennieM, KevinDean, kezike, kseufer, lola, lucy, manu, markus_sabadello, pdl-asu, phila, shigeya, swcurran, TallTed, wes, wes-smith, Wip, xavier</details></dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent, phila</dd>
+<dt>Scribe</dt><dd>wes-smith, bigbluehat, IvoL, ElaineX, manu_</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#4c0a">Recognized Entities</a>
+<ol>
+<li><a href="#fddb">JSONata</a></li>
+</ol>
+</li>
+<li><a href="#74ce">DPP and Business Wallets</a></li>
+<li><a href="#2d6f">Future Plans</a></li>
+<li><a href="#a92f">VCALM</a></li>
+<li><a href="#d258">Barcodes and DI</a></li>
+<li><a href="#b63f">TAG review of render method</a></li>
+<li class=app><a href="#ResolutionSummary">Summary of resolutions</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=8f1f class=irc><cite>&lt;ivan&gt;</cite> Date: 2026-10-29</p>
+</section>
+
+<section>
+<h3 id=4c0a>Recognized Entities</h3>
+<p id=ffff class="phone s01"><cite>manu:</cite> this is about the recognized entities task force<br>
+<span id=b9b4>… we'll start with a quick overview</span><br>
+<span id=1129>… highlight remaining issues and talk about our plan for CR</span><br>
+<span id=4e37>… this can be interactive</span><br>
+<span id=cb1f>… so, what is this about</span><br>
+<span id=d5e6>… at some point you receive a VC</span><br>
+<span id=7184>… and it states who issued it</span><br>
+<span id=a9aa>… but now you need to decide if you trust the issuer</span><br>
+<span id=2e86>… that is what Recognized Entities provides</span><br>
+<span id=ce1c>… trusting the issuer because someone else trusts it</span><br>
+<span id=df40>… I am going to say &quot;trust&quot; more often than I mean to</span><br>
+<span id=41be>… we try to say &quot;recognized&quot; instead</span><br>
+<span id=8ad2>… because it is more correct</span><br>
+<span id=b57e>… accreditation body recognizes university, etc.</span><br>
+<span id=1c31>… but you could also use it among family members or friends</span><br>
+<span id=5324>… recognizing that you share a relative, etc.</span><br>
+<span id=3260>… so it is about recognition more that &quot;trust&quot;</span><br>
+<span id=4992>… so the RE spec tells a verifier that an issuer is recognized in a particular way</span><br>
+<span id=ec5d>… it's useful in education--recognizing graduate certificates, etc.</span><br>
+<span id=6059>… also use cases like vital records</span><br>
+<span id=dfed>… and when trying to hire someone, you may need to refer to an organization to validate the issuer behind the issuance in addition to the credential itself.</span></p>
+<p id=193b class="phone s02"><cite>swcurran:</cite> there can be a hierarchy there...and this allows for an expression of that also<br>
+<span id=a47e>… we may need a chat offline, but maybe you can clarify</span><br>
+<span id=d217>… does this bind the issuer identifier with other identifiers?</span><br>
+<span id=6e78>… such as an &quot;also known as&quot;?</span><br>
+<span id=22c2>… because that alone won't necessarily &quot;bind&quot; the identifiers</span></p>
+<p id=b864 class="phone s01"><cite>manu:</cite> as of 2 weeks ago, the answer is yes<br>
+<span id=cd5a>… this came from Steve Capell's work</span><br>
+<span id=4195>… you can add an arbitrary number of registrations that an org is known as</span><br>
+<span id=f228>… also the scope</span></p>
+<p id=e7f3 class="phone s02"><cite>swcurran:</cite> excellent. That binding is crucial</p>
+<p id=2a9f class="phone s03"><cite>phila:</cite> hadleybeeman has joined from the TAG</p>
+<p id=3488 class="phone s04"><cite>hsxavier:</cite> phila and I caught up a bit ago and I'm mainly here to see how they fit together<br>
+<span id=fcd4>… especially where JSONata comes in...because it feels very complicated</span></p>
+<p id=995a class="phone s04"><cite>hsxavier:</cite> does this work clarify what the verifier can ask for?</p>
+<p id=48fd class="phone s01"><cite>manu:</cite> it can be, yes<br>
+<span id=e721>… there are concerns about over complicating that process</span></p>
+<p id=b5d3 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask is this compatible with x509?</p>
+<p id=c2bc class="phone s01"><cite>manu:</cite> but yes Recognized Entities could be used for that</p>
+<p id=d65c class="phone s05"><cite>brent:</cite> as a Verifier and I have some X.509 certs, can I use RE to express that?</p>
+<p id=10000 class="phone s01"><cite>manu:</cite> yes, we have some things that could get close to that<br>
+<span id=9060>… but we don't yet have anyone driving that exploration</span><br>
+<span id=7543>… here's an example of how it works</span><br>
+<span id=bdea>… there's a list publisher</span><br>
+<span id=6944>… publishing a list of issuers they recognize</span><br>
+<span id=7ac1>… such as a list of universities in an accreditation body</span><br>
+<span id=4cc4>… they make the list and issue it as a VC</span><br>
+<span id=18fd>… out of band they tell Verifiers to use that list</span><br>
+<span id=92bb>… because this is a VC, the holder can deliver it as they would normally</span><br>
+<span id=e357>… which is intended to avoid &quot;phone home&quot; issues</span><br>
+<span id=e6bf>… essentially, this allows the holder to determine the delivery mechanism</span><br>
+<span id=87c2>… as was mentioned earlier, you could have an international accreditation body</span><br>
+<span id=8202>… and that list provider could point to other local/regional lists</span><br>
+<span id=063f>… creating a heirarchy</span><br>
+<span id=efba>… that's more common in trade orgs than education orgs, currently</span><br>
+<span id=7cf2>… or, you as a human could create a list of recognized entities and distribute your social network of trusted identities</span></p>
+<p id=79fb class="phone s06"><cite>ivan:</cite> the fact that you used DID is because it's nice? or because it is required?</p>
+<p id=517e class="phone s01"><cite>manu:</cite> you can use whatever identifier you want<br>
+<span id=74da>… but there are some algorithms out there that require them</span></p>
+<p id=7a57 class="phone s06"><cite>ivan:</cite> not this one?</p>
+<p id=f486 class="phone s01"><cite>manu:</cite> this one includes a lot of hand waving<br>
+<span id=6e3d>… there are situations where the Issuer states what list they're in</span><br>
+<span id=5cf6>… vs. the reverse where the Issuer is pointed at from the list</span></p>
+<p id=b340 class="phone s06"><cite>ivan:</cite> it's a fairly important point<br>
+<span id=d48c>… not to be derogatory, but we're adding a DID here because it looks good</span><br>
+<span id=a7ae>… but we need to make sure we call out where it shows up as a requirement</span></p>
+<p id=82f4 class="phone s01"><cite>manu:</cite> let me put it this way<br>
+<span id=1e75>… I'm trying to work through all the specs in my head...to confirm where this applies</span><br>
+<span id=c352>… all the use cases we have, GS1, UN, etc. all use DIDs</span><br>
+<span id=25bc>… we don't currently have anyone saying they want to use a CID or HTTP identifier</span><br>
+<span id=de5a>… it should be possible, but we don't have anyone doing that yet</span></p>
+<p id=6a52 class="phone s07"><cite>benoit:</cite> I understand the publishing of the list<br>
+<span id=08c5>… you have a Uni that's on the list, but later falls a fowl of the group and gets removed from the list</span><br>
+<span id=e219>… how do those VCs issued while they were trusted remain valid/useful?</span></p>
+<p id=932d class="phone s01"><cite>manu:</cite> it's possible to put date ranges on the entries</p>
+<p id=beb8 class="phone s07"><cite>benoit:</cite> you're trusting the list provider to not delist them entirely?</p>
+<p id=7b82 class="phone s01"><cite>manu:</cite> yes, essentially, a watchdog group or other can also publish their own list that runs in parallel that augments the &quot;authoritative-ness&quot; of the &quot;core&quot;/original list<br>
+<span id=75c3>… we've been trying to avoid the word &quot;trust&quot; because trust is a relative concept</span></p>
+<p id=5e71 class="phone s03"><cite>phila:</cite> if you're going to issue a list, then you sign yourself up for a large scale claim of authority<br>
+<span id=d7ef>… and you'd likely have to revoke the whole list...</span><br>
+<span id=3166>… we instead are planning to use smaller lists or even single VCs</span></p>
+<p id=0a69 class="phone s08"><cite>denkeni:</cite> we plan to use RE's for cross boarder use<br>
+<span id=3ebb>… Taiwan and Korea are issuing Driver's Licenses as W3C Verifiable Credentials</span><br>
+<span id=111d>… and we're using Recognized Entities to provide the lists of valid issuers across those borders</span></p>
+<p id=77a3 class="phone s09"><cite>KevinDean:</cite> each VC has a validity period<br>
+<span id=59f0>… and it's going to be hard to state a date range of &quot;recognition&quot;</span><br>
+<span id=2956>… often those get reviewed on a time scale--every 5 years</span><br>
+<span id=c434>… so it's not only revocation, it also may require &quot;re-recognition&quot;</span><br>
+<span id=daca>… as long as my recognition happened within the list's own validity period</span><br>
+<span id=cc5a>… my degree may still be valid because it happened while the university was on the list, but before the required expiration</span><br>
+<span id=bcd9>… many of these questions effect VCs as a whole</span></p>
+<p id=2b32 class="phone s10"><cite>wes-smith:</cite> lost of these use cases can encourage more involvement<br>
+<span id=ec7f>… does Entity A recognize Entity B?</span><br>
+<span id=77d3>… there's also the question of &quot;do I care?&quot; that A recognizes B</span><br>
+<span id=8f38>… but that is perhaps out of the bound for the tech</span></p>
+<p id=cdc5 class="phone s05"><cite>brent:</cite> let's talk to the TAG</p>
+<p id=10001 class="phone s01"><cite>manu:</cite> agreed. quick summary of who we've been working with on RE's<br>
+<span id=1474>… (shows list on slide deck)</span><br>
+<span id=12cd>… we have been talking to a lot of people about how they publish trust lists</span><br>
+<span id=5c1f>… we have asked for horizontal reviews</span><br>
+<span id=efc6>… internationalization is almost done, security is done</span><br>
+<span id=408a>… still waiting on a11y...so we're in &quot;ok&quot; shape</span><br>
+<span id=b206>… here are some issue and PR stats</span><br>
+<span id=0317>… we wanted to be in CR now, but we are indeed very close</span><br>
+<span id=db88>… k. TAG time</span><br>
+<span id=b6d6>… JSONata</span><br>
+<span id=ce65>… first is around the technology itself</span><br>
+<span id=7334>… the RE specification as it stands today, is similar to a certificate authority list</span><br>
+<span id=78fe>… certain entities within the list are recognized to do certain things</span><br>
+<span id=03a0>… so, when someone receives a credential, they need to confirm both that the Issuer had the correct authorization (per the list) to issue the credential</span><br>
+<span id=1cd5>… I can check the list, walk the chain, up to the list provider that I recognize</span><br>
+<span id=a0d4>… currently, we're using JSONata to do that tree walking and checking</span><br>
+<span id=6807>… we tried a few simpler things</span><br>
+<span id=e12d>… comparing identifiers--did low level match mid level, etc.</span><br>
+<span id=f2d5>… but the more complex the chain got the harder that got</span><br>
+<span id=fbfb>… we tried JSON Schema, but that lacks multi-level checking</span><br>
+<span id=4caa>… so you ended up with a massive schema attempting to check an impossibly large object to check the combined lists</span><br>
+<span id=1341>… and one had to generate that</span><br>
+<span id=edbd>… so, JSONata simplifies that greatly</span><br>
+<span id=d81a>… however, it's written by 2 people</span><br>
+<span id=f465>… it does have stable versioned documentation</span><br>
+<span id=6030>… so there are open questions around it</span><br>
+<span id=a57d>… is it going to be enough? op do we need a Turing complete language--Python, etc.</span><br>
+<span id=0fd7>… and does the spec itself need to provide that? or does it happen at the application layer only?</span><br>
+<span id=d0cc>… right now it _seems_ like JSONata does that</span></p>
+<h4 id=fddb>JSONata</h4>
+<p id=3f4a class="phone s11"><cite>hadleybeeman:</cite> quick intro, lola and Heather are here with me from the TAG<br>
+<span id=43f7>… we have been reviewing it...sorry it's been mostly invisible, but here we are</span><br>
+<span id=02cb>… we do have concerns about JSONata</span><br>
+<span id=10002>… I do hear you on the limitations of JSON Schema--it's clear that's insufficient for this use case</span><br>
+<span id=b6cc>… we do have many concerns about the JSONata community's stability, etc.</span><br>
+<span id=8c7f>… it may be good to look at using the RDF and JSON-LD capabilities you have on hand to do the same checking</span><br>
+<span id=5d2d>… I realize that's a different kind of complicated, but it is available to you</span><br>
+<span id=d728>… and I do wonder about &quot;why not&quot; Python, etc.</span></p>
+<p id=4665 class="phone s12"><cite>lola:</cite> so, why not let the implementers decide how the tree is walked, etc.?<br>
+<span id=23bf>… why does it have to happen within this specification?</span></p>
+<p id=ddc5 class="phone s01"><cite>manu:</cite> we've had a few participants ask to put it into the spec<br>
+<span id=1261>… so that there's interop</span><br>
+<span id=78bb>… because otherwise it's unspecified and they may do it &quot;however&quot; and we won't know how that is done</span></p>
+<p id=6f17 class="phone s03"><cite>phila:</cite> GS1 hat on</p>
+<p id=2449 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about tools for traversal</p>
+<p id=7660 class="phone s03"><cite>phila:</cite> my aim is that an industrial scanner, like a border control person would use<br>
+<span id=9c37>… not a point of sale one, but a border crossing one</span><br>
+<span id=06a0>… that VC is likely in a barcode</span><br>
+<span id=62b4>… and I want that scanner to be able to do the full verification</span><br>
+<span id=4c6c>… so I need that scanner equipment to do the whole stack</span><br>
+<span id=a3ba>… I need to ask them to put in certain code in their scanner</span><br>
+<span id=c37a>… vs. asking them to sort out what the thing is and how to figure it out themselves</span></p>
+<p id=dff5 class="phone s13"><cite>Heather:</cite> first, I want to share a bit more of our questions<br>
+<span id=7c68>… second, I do want to giggle at the fact that JSONata calls itself &quot;lightweight&quot;</span><br>
+<span id=c3c7>… maybe explore JQ Lang</span></p>
+<p id=800d class="phone s01"><cite>manu:</cite> mainly, the implementers already implemented JSONata<br>
+<span id=627d>… I don't think they looked at JQ Lang</span></p>
+<p id=e9c8 class="phone s13"><cite>Heather:</cite> yeah, if there's a way to avoid forking something that seems un maintained, that would be good</p>
+<p id=3b8e class="phone s06"><cite>ivan:</cite> we do have other specs that depend on JSONata<br>
+<span id=c0ce>… VCALM depends on it now</span><br>
+<span id=c8c6>… and I commented it earlier that it is not specifiable</span></p>
+<p id=b532 class="phone s01"><cite>manu:</cite> they're already shipping it in production, so...</p>
+<p id=7f19 class="phone s06"><cite>ivan:</cite> sure, but we're not sure we can specify it into the specs</p>
+<p id=8080 class="phone s01"><cite>manu:</cite> sure, we did start with JSON Schema, but it fell over pretty quickly for this use case</p>
+<p id=9e38 class=irc><cite>&lt;phila&gt;</cite> The metrology use case is complicated. See <a href="https://github.com/w3c/vc-recognized-entities/issues/139">w3c/<wbr>vc-recognized-entities#139</a> (too much to read through during the meeting but you'll get a sense that this ain't simple.</p>
+<p id=d2f6 class="phone s01"><cite>manu:</cite> and JSONata was far simpler--and avoided running arbitrary JavaScrpit on the chain<br>
+<span id=521a>… but that may still be where we end up ultimately</span><br>
+<span id=d266>… that's the backstory</span><br>
+<span id=0616>… we are using JSONata in VCALM to build matching templates</span><br>
+<span id=dc0a>… in the VC API/VCALM work</span><br>
+<span id=dd4c>… that one is much less likely to change</span><br>
+<span id=7793>… that's a different application, but similar need</span><br>
+<span id=a91f>… we are not using it in Render Method--that's a typo on the slides</span></p>
+<p id=ebe8 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about punting and GS1 just writing the code</p>
+<p id=f2a8 class="phone s10"><cite>wes-smith:</cite> I wonder if there's a way to point at JSONata as an option for folks profiling these specs<br>
+<span id=d335>… so they could use it if they want</span></p>
+<p id=9af6 class="phone s05"><cite>brent:</cite> could the spec just say &quot;what MUST happen&quot;<br>
+<span id=10ba>… and perhaps point to JSONata as an option for doing it</span><br>
+<span id=ebb1>… does this specification need to require JSONata?</span><br>
+<span id=5dcc>… or just state that &quot;implementers MUST do these things&quot;</span><br>
+<span id=8463>… even if JSONata need to be specified as a normative dependency?</span></p>
+<p id=539b class="phone s01"><cite>manu:</cite> i get what you're saying, make the behavior the normative statement<br>
+<span id=bc31>… we had the same dance with JSON Schema</span><br>
+<span id=7d5e>… it failed to get through the IETF multiple times</span><br>
+<span id=62ed>… but we're in a similar state</span><br>
+<span id=cb63>… JSONata is being used in multiple places</span><br>
+<span id=aaf4>… but it feels like W3C process is getting in the way...</span><br>
+<span id=6ee2>… all the implementers we know of are using it, because we can't say that because of process</span></p>
+<p id=1716 class="phone s14"><cite>bumblefudge:</cite> so, maybe test suites drive the choice?<br>
+<span id=9ae1>… as in, do the conformance requirements drive the fact that JSONata is the obvious choice?</span></p>
+<p id=a327 class="phone s01"><cite>manu:</cite> there has to be a constraints language<br>
+<span id=480a>… ideally expressed in the list, so it is also verifiable</span><br>
+<span id=6324>… it could be JSON Schema produced via JSONata</span><br>
+<span id=3eff>… or raw JavaScript</span><br>
+<span id=5ca9>… but it has to be in there</span></p>
+<p id=772d class="phone s12"><cite>lola:</cite> you mentioned a question around JavaScript as an option. What is preventing you from using that?</p>
+<p id=1521 class="phone s01"><cite>manu:</cite> people are concerned about keeping it safely runnable<br>
+<span id=0b7a>… because it could be possible to introduce new attack vectors</span><br>
+<span id=4c69>… and the fear of DOS attacks and similar arriving in the package</span></p>
+<p id=2a02 class="phone s11"><cite>hadleybeeman:</cite> 2 questions<br>
+<span id=a907>… why do you have to validate the entire chain at once?</span></p>
+<p id=d30b class="phone s01"><cite>manu:</cite> there are parts in the chain that point to each other<br>
+<span id=2ecf>… in the GS1 use case, the G10 points to a prefix in the chain above it</span><br>
+<span id=1a66>… and you have to keep walking up the tree</span></p>
+<p id=875a class="phone s11"><cite>hadleybeeman:</cite> yeah...at that point, you want some sort of touring complete language</p>
+<p id=2476 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to respond to Brent and to respond to Brent and Wes</p>
+<p id=e6f1 class="phone s03"><cite>phila:</cite> from our direct experience, we'd rather provide software than the 600+ page PDFs to the teams we work with<br>
+<span id=6a09>… some of these companies just use our OSS</span><br>
+<span id=a551>… other's say &quot;nice, thanks, I'll write my own based on this code&quot;</span><br>
+<span id=5dea>… someone proposed a non-normative note</span><br>
+<span id=3974>… the implementers generally could care less</span><br>
+<span id=75f8>… I don't want GS1 to have to write that Note</span></p>
+<p id=10003 class="phone s07"><cite>benoit:</cite> why does JSONata be specified exactly?<br>
+<span id=b218>… I may just ignore it and do my own code anyway</span><br>
+<span id=866f>… so maybe back to the MUSTs around how the list is validated/checked more options if we leave it out</span></p>
+<p id=c74a class="phone s13"><cite>heather:</cite> heard on the reasons why you wouldn't want to use JavaScript<br>
+<span id=31a9>… but you're also setting up a future where you're rebuilding somethin that's headed toward that complexity...</span><br>
+<span id=7f8c>… frequently something like this can trend that way</span></p>
+<p id=3f04 class="phone s06"><cite>ivan:</cite> circling back to &quot;what's the problem&quot;<br>
+<span id=6b66>… if we do this in JSONata, we may have a whole world of people who have no idea what it is...a bit like now</span><br>
+<span id=8040>… the reason W3C requires these things is so that we can prove to the world, long term, that the things we point to are stable and understandable</span><br>
+<span id=c9e6>… we don't have that with JSONata</span><br>
+<span id=cd80>… it's an individual project by a smart guy</span><br>
+<span id=a02c>… but there's not much more than that</span><br>
+<span id=89b5>… I have already had the experience of disappearing software</span><br>
+<span id=a423>… the latest for me is deno</span></p>
+<p id=3d4c class="phone s11"><cite>hadleybeeman:</cite> big +1 to bot Heather and ivan<br>
+<span id=6bde>… my concerns are 10+ years from now</span><br>
+<span id=92ec>… what happens when there's no WG</span><br>
+<span id=845f>… perhaps JSONata disappears or has major issues, and there's no group around to respecify</span><br>
+<span id=6745>… but using something already specifiable would be better</span><br>
+<span id=d523>… because it's more stable long term</span><br>
+<span id=fb87>… if JSONata ends up still being in the spec, please leave loads of notes for the future</span><br>
+<span id=8c17>… because it's own future is already a concern</span></p>
+<p id=752c class="phone s05"><cite>brent:</cite> so, TAG is recommending a known language?</p>
+<p id=c7c6 class="phone s01"><cite>manu:</cite> I don't think JavaScript will work for implementers</p>
+<p id=e0fa class="phone s11"><cite>hadleybeeman:</cite> you can ignore TAG advice</p>
+<p id=9407 class="phone s01"><cite>manu:</cite> I think it's good input<br>
+<span id=6a4b>… no one is requiring JSONata</span><br>
+<span id=f21f>… this has been good input</span><br>
+<span id=d53a>… maybe if we talk about going to CR that will clarify things?</span><br>
+<span id=e685>… we think we are largely feature complete</span><br>
+<span id=8cb3>… we've shown that we can do all the use cases we know of</span><br>
+<span id=5f33>… so, we could mark the JSONata stuff as &quot;at risk&quot;</span><br>
+<span id=8673>… and mention that a Turing complete language might be a replacement</span><br>
+<span id=1a37>… how does the group feel about that approach?</span><br>
+<span id=427c>… k. I think we'll just try that and then check in on the language again</span></p>
+<p id=8fa4 class="phone s11"><cite>hadleybeeman:</cite> we'll try to get you a response in the next two weeks</p>
+<p id=56e4 class="phone s05"><cite>brent:</cite> thanks all! break time. back in 30 minutes</p>
+</section>
+
+<section>
+<h3 id=74ce>DPP and Business Wallets</h3>
+<p id=d8d5 class="phone s05"><cite>brent:</cite> summary of the morning and moving to digital product passports and business wallets.</p>
+<p id=b830 class="phone s15"><cite>Ingo:</cite> introduction of recognized entities with CE marking<br>
+<span id=20c5>… explanation about who the group contains, Carolynn, Carsten are Facilitators</span><br>
+<span id=5e87>… This is the Verifiable Credentials working group Task Force vc-dbw</span><br>
+<span id=63ae>… Business wallets are a different style of wallets, for businesses</span></p>
+<p id=1462 class=irc><cite>&lt;phila&gt;</cite> phila: For those not familiar, Ingo is talking about the CE marking use case: <a href="https://europa.eu/youreurope/business/product-rules-compliance/general-product-compliance/ce-marking/index_en.htm">https://<wbr>europa.eu/<wbr>youreurope/<wbr>business/<wbr>product-rules-compliance/<wbr>general-product-compliance/<wbr>ce-marking/<wbr>index_en.htm</a></p>
+<p id=39ab class="phone s15"><cite>Ingo:</cite> The motivation is that there are no common vocabulary for product and organisational credentials. And to many overlapping standards and registries<br>
+<span id=e58d>… the goal: data fusion. One product or one legal entity described by several standards</span><br>
+<span id=fb81>… Guidance on mapping the EU DPP data model</span><br>
+<span id=21ea>… the deliverables: vocabulary for: DPP and Business wallets, use cases and requirements ....</span><br>
+<span id=d3d7>… explains about the use cases, for example the batteries</span><br>
+<span id=f328>… The DPP is as trustworthy as the issuer, but the manufacturer identy can come from a Business Wallet credential</span><br>
+<span id=ac1d>… The example sits where three VCWG work items meet, DPP vocabulary, Business Wallet vocabularies and Recognized Entities</span><br>
+<span id=7b89>… problem: Who vouches for a CE mark?</span><br>
+<span id=44f9>… example, a CAB is recognized twice, so a verifier may need both chains</span><br>
+<span id=5365>… the issuer POV is displayed on the slide</span><br>
+<span id=ee66>… the circle represents the issuer of the credential in the current slide: Isuance: credentials along the chain</span><br>
+<span id=03b2>… the conformity assesment body needs to be accredited, on a national level</span><br>
+<span id=acd0>… there is a bigger hierachy, there is also a european level but also a global level</span><br>
+<span id=7681>… on the bottom there is a third chain, the manufacturer of the battery.</span><br>
+<span id=c166>… The manufacturer is registered as business, that is also verified</span><br>
+<span id=a254>… current example: where register recognizes manufacturer</span><br>
+<span id=c82e>… the logistical register handles it for germany for example</span><br>
+<span id=25ec>… example: accreditation of the CAB, the CAB is also recognized,</span><br>
+<span id=ef01>… the action is also recognized to issue the CE mark</span><br>
+<span id=69a4>… we still have a discussion where to place it in the JSON</span><br>
+<span id=3f97>… the 2 chains meet at the CAB right now in this example</span><br>
+<span id=e41c>… the DID can be a subject, the notification but also the accreditation</span><br>
+<span id=7a4e>… recognizedBy shows the recognition, not the next in line for credential</span><br>
+<span id=b2dd>… ScopedRecognizedAction says what it can certify</span><br>
+<span id=7d6d>… offline verification diagram</span><br>
+<span id=2080>… this is the use case we have in scope</span><br>
+<span id=35fe>… They scan the DPP wich will go to trough the chain to manufacturer, the CAB, wich is recognised by the local CAB, the european CAB</span><br>
+<span id=5ee4>… There are also needs for who recognises the CAB</span><br>
+<span id=7161>… takeaways: one entitiy but with several roots we want to verify in the recognision chain</span><br>
+<span id=8e1e>… stapled chain that can be verified offline but both brnaches must be vlaidated</span><br>
+<span id=4b67>… We want to have the information in the credential</span></p>
+<p id=41b0 class="phone s05"><cite>brent:</cite> There is a queue</p>
+<p id=6c5d class="phone s15"><cite>Ingo:</cite> references are on the slide</p>
+<p id=42ad class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to ask about doc statuses</p>
+<p id=10004 class="phone s03"><cite>phila:</cite> Brent will talk about document statusses. you have presented string of characters, not automated chain of authority. Do you want it automated?</p>
+<p id=0451 class="phone s15"><cite>Ingo:</cite> The examples we currently have is a PR, that will make it more clear.</p>
+<p id=5a05 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask why notes</p>
+<p id=ef4f class="phone s05"><cite>Brent:</cite> Slide 13, like what i see, 3: there is a normative statement but why is everything a note insted of recomendation</p>
+<p id=ac24 class="phone s06"><cite>ivan:</cite> we did not discuss this so far yet we started out as notes but we have not decided yet. It is a description<br>
+<span id=eb19>… For that application specifically you need all 3. But it is not part of a recommendation.</span><br>
+<span id=86fc>… We are not decided yet</span><br>
+<span id=d02b>… The DPP has many different DPP's in the world, we are not sure where we would go. But for the time beeing we are still discovering</span></p>
+<p id=5262 class=irc><cite>&lt;Zakim&gt;</cite> denkeni, you wanted to comment on vocabulary governance and business register</p>
+<p id=172f class="phone s08"><cite>denkeni:</cite> We also working on DPP and we also look at Business identity<br>
+<span id=0783>… The dpp started with battery, but there a many other industries</span></p>
+<p id=831e class="phone s15"><cite>Ingo:</cite> We have github and a lot of vocabularies are mentioned, and Carolynn is in a research with many industries where she can advice</p>
+<p id=992c class="phone s08"><cite>denkeni:</cite> are there other organisations that will pick up?</p>
+<p id=b0f1 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to ask about how much could we change in the next six months wrt. how the system you presented could work?</p>
+<p id=e60c class="phone s08"><cite>denkeni:</cite> the ministry of economics issueing the did for web for the companies right?</p>
+<p id=87c6 class="phone s15"><cite>Ingo:</cite> Correct</p>
+<p id=7b43 class="phone s16"><cite>manu_:</cite> There is lots of flexibility, think the expectation that the vocabulary development will be elsewhere but our job is to stay in communication with those organisations,</p>
+<p id=27d2 class="phone s15"><cite>Ingo:</cite> Correct</p>
+<p id=f8f7 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about publication timelines</p>
+<p id=d72b class="phone s03"><cite>phila:</cite> everything is on Github but not on the working draft, advice: put it in a working draft.<br>
+<span id=4bb2>… acknowledge that the group does not have a lot of W3C experience and that he could not be at every meeting</span><br>
+<span id=6791>… but we should start with the W3C process</span></p>
+<p id=10005 class="phone s06"><cite>ivan:</cite> we hit the Action property, but our problem was, we need a richer set of terms there.<br>
+<span id=71fe>… that's the reason we came up with the ScopeRecognizedAction</span><br>
+<span id=cda2>… this is not the only application area where it will come up</span><br>
+<span id=ee91>… my feeling is: this taskforce will not produce recommendations, because we don't want to produce M+1 standards</span><br>
+<span id=1534>… This is an example we will put as a PR at the recognizedEntities</span><br>
+<span id=8c2b>… These examples are more then just for recognizedEntities, it is an example for VC as an whole as an example</span><br>
+<span id=0a33>… The example should be published as a separate note</span></p>
+<p id=fffb class="phone s16"><cite>manu_:</cite> &quot;action&quot; is just a text string<br>
+<span id=0c5c>… my hope is that let us know if we can fix it if it is an issue for you</span><br>
+<span id=237b>… This is another example that might not easily fit into the JSON schema</span><br>
+<span id=bdae>… Maybe it should be a multifield or something equivalent</span></p>
+<p id=f542 class="phone s05"><cite>brent:</cite> how can we be most productive help this group?</p>
+<p id=1b8a class="phone s02"><cite>swcurran:</cite> in the Did web EH we work on recognizedEntity, one of the this we talked is the verified history mechanism.<br>
+<span id=5ed6>… is this the place for that?</span></p>
+<p id=10006 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to ask what help would be useful from us? Playground examples? UNTP alignment?</p>
+<p id=383f class="phone s16"><cite>manu_:</cite> how can we help? we have a recognizedEntitiy example, but it would be nice to have the example in the VC playground.<br>
+<span id=ab19>… can we get some examples from the Business Wallets group? and is there alignment with the UNTP and can we help there?</span><br>
+<span id=9f49>… what can we do to help?</span></p>
+<p id=5c1d class="phone s15"><cite>Ingo:</cite> we can work out the example<br>
+<span id=62b3>… it would help promoting it and accessible for other parties</span></p>
+<p id=32d5 class="phone s16"><cite>manu_:</cite> half of the specs is examples now. But concerned about moving the examples (or all) out of the spec)<br>
+<span id=7124>… because people might lose the visualisation how to implement it.</span></p>
+<p id=3006 class="phone s06"><cite>ivan:</cite> We have diagrams for all of them</p>
+<p id=d4ff class=summary>manu_</p>
+<p id=159f class="phone s16"><cite>manu_:</cite> we can do that at the end of CR, look at the examples. and right before REC we split the examples from the doc</p>
+<p id=54ad class="phone s05"><cite>brent:</cite> some of what described in the flow is using recognizedEntities, are there other things that needs to be defined?</p>
+<p id=04e3 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to ask about concrete production deployments using this?</p>
+<p id=673f class="phone s05"><cite>brent:</cite> do we need additional specification on other credential types?</p>
+<p id=2cab class="phone s16"><cite>manu_:</cite> what are we trying to hit? And use that as a focus<br>
+<span id=0f8e>… I am concerned that we don't have the same timeline</span><br>
+<span id=fe68>… we would like to see how the conformity certificate will look like concrete</span><br>
+<span id=8d84>… recognizedEntity chain and see it deployed for example in Germany</span></p>
+<p id=6c60 class="phone s15"><cite>Ingo:</cite> timeline wise the European business wallet is beeing finished in 2028 and  timeline wise it fits very well</p>
+<p id=71cf class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about GS1's timeline</p>
+<p id=2a66 class="phone s03"><cite>phila:</cite> GS1 hat: We have a big event in Februari 2027 and hoping we can say: Here are GS1 credentials!<br>
+<span id=3115>… acknowledges the timeframe</span></p>
+<p id=e074 class="phone s05"><cite>brent:</cite> We can move forward with the agenda<br>
+<span id=9b71>… Next up are the chairs</span></p>
+</section>
+
+<section>
+<h3 id=2d6f>Future Plans</h3>
+<p id=cd87 class="phone s03"><cite>phila:</cite> Was hoping we have documents beeing finished</p>
+<p id=829a class="phone s03"><cite>phila:</cite> consious that TPAC next year is probably in december because of weather. we can't wait for the next TPAC meeting<br>
+<span id=355e>… proposal: April, a VC meeting F2F and does anyone want to create a F2F meeting?</span><br>
+<span id=e2d2>… We think this is helpfull for this group.</span></p>
+<p id=48af class="phone s05"><cite>brent:</cite> if it goes well and the F2F is fruitfull it is not concrete that we don't need another meeting F2F before december 2027<br>
+<span id=2566>… We need at least a meeting room, not much else</span><br>
+<span id=2eec>… Ubico has to small of a meeting room</span></p>
+<p id=a868 class=irc><cite>&lt;TallTed&gt;</cite> Lucy asks (in zoom): By when do you need to know? (Sorry having to type here as my flight is about to take off)</p>
+<p id=13c9 class="phone s17"><cite>shigeya:</cite> want to host but for university is impossible in april or may</p>
+<p id=b8c6 class="phone s05"><cite>brent:</cite> What time might work?</p>
+<p id=b8a7 class="phone s17"><cite>shigeya:</cite> June, not March</p>
+<p id=af16 class="phone s16"><cite>manu_:</cite> Digital Bazaar is happy to cover food, etc. But we need to look at work spaces. But also Lucy is looking at Montreal for a place</p>
+<p id=81e6 class="phone s16"><cite>manu_:</cite> +1 for April but maybe later in the year</p>
+<p id=555c class="phone s05"><cite>brent:</cite> possibility: got connections with the W3C folks in China, we can get a space maybe there</p>
+<p id=bc45 class="phone s03"><cite>phila:</cite> maybe to fast to reject Sao Paulo, but maybe we should think about it.</p>
+<p id=7354 class="phone s08"><cite>denkeni:</cite> I also have a meeting room but i have to check,<br>
+<span id=11f8>… It is in Taipei</span></p>
+<p id=7a1f class="phone s05"><cite>brent:</cite> In Halifax there is also a AC meeting in April, so maybe combine? But looking at options<br>
+<span id=5fae>… do we have a preference?</span></p>
+<p id=6f37 class="phone s06"><cite>ivan:</cite> if we take Panama and Sao Paulo, then for europeans, it is impossible because of distance and price, preference in europe.</p>
+<p id=ad25 class="phone s03"><cite>phila:</cite> We spoke to Carolynn, she has the space but traveling is a burden. 2 hour train at the airport<br>
+<span id=7936>… understands but Montreal is also far. But maybe not that far</span></p>
+<p id=f4e1 class="phone s03"><cite>phila:</cite> Aware of the work that happened and still needs to happen. We have to be at CR preferabel in April</p>
+<p id=6ef5 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to note that we do need to move with a bit more urgency with some specs</p>
+<p id=73d3 class="phone s16"><cite>manu_:</cite> We are doing fine from a charter perspective but we need to move with a bit more urgency perspective<br>
+<span id=c85a>… We are ok with recognizedEntities, renderMethod should have more velocity, dataIntegritySpecs, should also have more velocity but thanks to the people that picks it up</span><br>
+<span id=4147>… if you are an editor you should have a hard look at the issues</span><br>
+<span id=9ce1>… If we are not in CR with all the specs next year F2F, we should question about this</span><br>
+<span id=65c2>… The horizontal review is not a simple thing to deal with. it will need a couple of months to respond</span><br>
+<span id=a5b3>… raising that as a warning and we should raise the velocity</span></p>
+<p id=ba49 class=irc><cite>&lt;George&gt;</cite> To the Utah convo - I can say there are always possibilities...</p>
+<p id=0bad class="phone s05"><cite>brent:</cite> Is there a structure for the main hall that could accelerate things<br>
+<span id=554a>… Let us know what we can do to help</span></p>
+<p id=ee19 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to maybe ask them what is the date for CR? how many before-CR issues do you have left?</p>
+<p id=c33c class="phone s16"><cite>manu_:</cite> Ask more pointed questions to the leaders of the group, for example: What is the date for this CR?<br>
+<span id=0e0a>… Just ask: How many CR issues do you have and what is the closing rate? For example</span></p>
+<p id=66a9 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to note George's comment</p>
+<p id=2474 class="phone s03"><cite>phila:</cite> note: George made some comments<br>
+<span id=a962>… Some groups need more support</span></p>
+<p id=0253 class="phone s06"><cite>ivan:</cite> What we do not get on the course: We dont hear about fundamental issues taskforces have met.</p>
+<p id=5772 class=irc><cite>&lt;swcurran&gt;</cite> Manu -- turn your presentation data into a progress dashboard?</p>
+<p id=abcb class="phone s06"><cite>ivan:</cite> for example: JSONata, has never been mentioned in the general VC meeting</p>
+<p id=23c2 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to ask about project management</p>
+<p id=b2ae class="phone s06"><cite>ivan:</cite> There are other examples also in other taskforces</p>
+<p id=e383 class="phone s05"><cite>brent:</cite> Would it help to do more project management?<br>
+<span id=e98d>… the progress tracker is maybe not detailed enough</span></p>
+<p id=daf1 class="phone s16"><cite>manu_:</cite> +1 to that but lets not make it a progress management hellscape<br>
+<span id=4cdf>… maybe update the status tracker to see the PR's</span></p>
+<p id=1b2d class=irc><cite>&lt;Zakim&gt;</cite> bigbluehat, you wanted to propose &quot;managing by walking around&quot; via cross-task force participations</p>
+<p id=a978 class="phone s18"><cite>bigbluehat:</cite> would it help if people from other taskforces join different taskforces?<br>
+<span id=1e46>… if we show up in each others spaces, maybe we ask more questions instead at a presentation meeting</span></p>
+<p id=b601 class="phone s03"><cite>phila:</cite> nobody wants more meetings, but what if you make the meeting not every week 1 hour but every other week 2 hours? specifically the wednesday working group meeting</p>
+<p id=9c72 class="phone s16"><cite>manu_:</cite> not a fan of that idea</p>
+<p id=7163 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to note 2 hours is difficult, alternating... maybe shutting down groups as they are safely in CR?</p>
+<p id=28b0 class="phone s16"><cite>manu_:</cite> It is not a problem just yet, when taskforces are wrapping things up they could help other taskforces, but noticed that it is more work<br>
+<span id=8e5a>… for recognizedEntities, maybe stop meet weekly after the CR?</span></p>
+<p id=f25d class="phone s05"><cite>brent:</cite> Lunch is now, start at 13:30</p>
+<p id=a7b7 class=irc><cite>&lt;kezike&gt;</cite> present</p>
+<p id=10007 class=irc><cite>&lt;kezike&gt;</cite> Can’t hear anyone, but let me know when the group is ready for the VCALM presentation</p>
+<p id=2ca2 class=irc><cite>&lt;kezike&gt;</cite> This is the link to the VCALM presentation: <a href="https://docs.google.com/presentation/d/1-jXrkoqkdwEmaw-F4tHBzBiDtYMBkC6F3mBvMa5Rvo8/edit">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>1-jXrkoqkdwEmaw-F4tHBzBiDtYMBkC6F3mBvMa5Rvo8/<wbr>edit</a></p>
+</section>
+
+<section>
+<h3 id=a92f>VCALM</h3>
+<p id=10008 class="phone s19"><cite>kezike:</cite> Going to talk today about the VCALM spec and its path to CR.<br>
+<span id=04be>… Before VCALM was a concept we had the foundational VCDM specification, which specifies what a valid VC looks like, what properties are acceptable, and that existed in a vacuum.</span><br>
+<span id=a055>… We needed a way to be able to do something with this VC, both from the standpoint of the issuer as well as the holder and the verifier.</span><br>
+<span id=e6f2>… So we essentially needed a mechanism to enable exchanging and delivery/presentation of credentials.</span><br>
+<span id=ee8f>… Generally, we need to manage the lifecycle of a VC under the three party model</span><br>
+<span id=b386>… It would be great if we could do this in a modular and extensible way without binding clients to vendor solutions.</span><br>
+<span id=6d21>… VCALM stands for VC API for Lifecycle Management - it's a set of HTTP apis for the different roles in the 3 party model.</span><br>
+<span id=a21f>… This helps the roles to manage the VCs that relate to them and exchange these VCs with other parties.</span><br>
+<span id=eefc>… It supports issuance, verification, presentation, and status management.</span><br>
+<span id=191f>… It supports repeated actions in a single exchange - such as multiple credentials delivered to a holder.</span><br>
+<span id=ebe3>… It also supports verification steps before issuance steps, as a feature that is worth calling out.</span><br>
+<span id=2a04>… We have a notion of an administrator who is responsible for configuring the different services that will be used by the other parties</span><br>
+<span id=ac7a>… We are careful to not put too many restrictions on what admins can do or how they set up services.</span><br>
+<span id=5afd>… The important part is the output - this is a key part of the specification.</span><br>
+<span id=751c>… The issuer is able to leverage an issuance service that the admin sets up, whether to do issuance, deliver a credential, or respond to an exchange request.</span><br>
+<span id=708f>… The verifier is able to verify credentials that the holder presents.</span><br>
+<span id=0f26>… A coordinator is a component of a &quot;role&quot; that is responsible for business logic - preparing data that needs to go into a credential, for example.</span><br>
+<span id=286e>… It acts on behalf of the different parties in the three party model.</span></p>
+<p id=e526 class="phone s03"><cite>phila:</cite> overview of GS1 structure - there is a GS1 root key. No individual has access to this - but there are two sets of three people, and you need a representative of each set to access the root key.<br>
+<span id=0082>… This is similar to the presented VCALM notion of admin role.</span><br>
+<span id=4cb5>… The people behind the &quot;GS1&quot; entity are individuals - which is an implementation choice, but it is an example of how this is implementable.</span><br>
+<span id=bbb2>… It is also an example of the complexity you get when you put this into a real organization, with a notion of an &quot;organizational signature&quot;.</span></p>
+<p id=fea6 class=irc><cite>&lt;dmitriz&gt;</cite> @phila -- this is similar to the Verifiable Governance presentation we did at CCG: <a href="https://docs.google.com/presentation/d/1Ws_7Fl2WIokXlRfBDafiFGZHT-Zev1CbqW2AOG5beJY/">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>1Ws_7Fl2WIokXlRfBDafiFGZHT-Zev1CbqW2AOG5beJY/</a></p>
+<p id=b11b class="phone s03"><cite>phila:</cite> Anything signed by GS1 must be signed by someone who has the authority to sign contracts on the behalf of the organization - this is not something that would go into a spec, but gives you an idea of how &quot;who controls a signature&quot; maps to a real system.</p>
+<p id=65bb class=irc><cite>&lt;TallTed&gt;</cite> &quot;business logic&quot;</p>
+<p id=856c class="phone s03"><cite>phila:</cite> We want what we issue to have the same authority as a contract.</p>
+<p id=a001 class="phone s19"><cite>kezike:</cite> A good thing about VCALM is how its flexibility can map to various business logics - it seems like GS1 has a good handle on how to do this.</p>
+<p id=02b8 class="phone s16"><cite>manu_:</cite> +1, I think what Phil is highlighting is that that group is acting as administrators of the system - that maps cleanly to the VCALM notion of administrator. That is the administrative component of VCALM.</p>
+<p id=8aef class="phone s20"><cite>dmitriz:</cite> I think this is an important use case - it's similar to work we did in the CCG about verifiable governance. How do you sign as a group or a corporation? That touches on work we need to do in the DID WG.<br>
+<span id=05ec>… There is some dormant work in the WG related to this as well.</span><br>
+<span id=8292>… Tying it back to VCALM, I think at present VCALM is flexible enough as an API to support the kind of API you need for this use case.</span></p>
+<p id=634a class="phone s03"><cite>phila:</cite> This is largely an implementation choice.</p>
+<p id=fdb9 class="phone s19"><cite>kezike:</cite> I felt that it's important to nod to the Interaction URL/Protocol features of the spec - this is an entry point for different parties to engage in a credential exchange. We don't specify how a URL is sent to a party - but any party that supports VCALM should understand Interaction URLs, which is a way to advertise protocols that a component</p>
+<p id=a2d4 class=summary>supports for credential exchange.<br>
+<span id=2813>… VCALM uses exchange URLs for this, but we also support other protocols such as OID4*.</span><br>
+<span id=acd8>… Once this is advertised to a holder's wallet they can then decide what to do with it.</span><br>
+<span id=10009>… Then, messages exchange against that URL will abide by the protocol that they have selected.</span><br>
+<span id=704c>… VCALM responses are mostly VP/VPRs.</span><br>
+<span id=34be>… The latter of which is a way to query for credentials that are desired in an exchange.</span><br>
+<span id=e0ed>… Often times this can be presented as a QR code.</span></p>
+<p id=5dff class="phone s03"><cite>phila:</cite> Have you registered a .well-known for this?</p>
+<p id=c059 class="phone s16"><cite>manu_:</cite> We have registered a protocol scheme at IETF, if that's what you are asking.</p>
+<p id=a508 class="phone s03"><cite>phila:</cite> Noting that the domain name there has a particular behavior.</p>
+<p id=4403 class="phone s16"><cite>manu_:</cite> This is a protocol agnostic way of engaging with a digital wallet. It is the only such thing we know of that exists that doesn't try to tip the scales towards a particular protocol.<br>
+<span id=d8ea>… Whatever protocol you want to use, we are happy for you to use it - and the application gets to choose what protocol or set of protocols to use.</span><br>
+<span id=3c49>… This is critical to how VCALM bootstraps in various use cases.</span></p>
+<p id=9d43 class="phone s19"><cite>kezike:</cite> We have received feedback from i18n, they have given us a review with three open issues.<br>
+<span id=6119>… We have PRs that have been created to address them - some merged, some in flight.</span><br>
+<span id=7d15>… We heard back from TAG recently as well.</span><br>
+<span id=8f6e>… We will be processing accessibility's review soon, and have not heard back from PING/SING.</span><br>
+<span id=d5f1>… Most of the existing PRs are close to being resolved, and as far as issues go we need to do a pass to get a sense of which are v1 blockers.</span><br>
+<span id=3810>… Some of the issues are editorial things, some are nice-to-have features, we need to process them as such.</span><br>
+<span id=abd4>… Topics we are still processing include JSONata and how to reference it, test suite, a final normative statement review (related to some TAG confusion about normative boundaries).</span><br>
+<span id=2ad7>… We have made decisions editorially to trim things down, as repetition throughout the spec would cause clutter.</span><br>
+<span id=17a1>… We have made a lot of great progress on threat modeling - we need to process our NOTE and to refine some examples and diagrams.</span><br>
+<span id=5d02>… Any questions about the current state of the specification?</span><br>
+<span id=b1f6>… The current plan for moving to CR is to merge the open PRs that we have, refine the spec as I mentioned earlier as far as statements, examples, diagrams, close out reviews, and finalizing the test suite. Q1 2027 is the target.</span><br>
+<span id=de1e>… Nothing is super exigent, but we need more than the final quarter.</span><br>
+<span id=ab57>… I turn it over to the group to decide what is top of mind.</span></p>
+<p id=98b8 class="phone s10"><cite>wes-smith:</cite> manu briefed on use cases - explaining VC API may not be the best choice<br>
+<span id=9107>… Manu briefed web payments based on his experience / need to have working group members also share this kind of info during engagement with others</span></p>
+<p id=f6c1 class="phone s03"><cite>phila:</cite> It's good to be able to point to concrete things such as GitHub issues when we interact with other WGs. Manu's slides made clear that the obstacles to VCALM's inclusion in the DC API include not just the working group but other organizations.</p>
+<p id=a020 class=irc><cite>&lt;Zakim&gt;</cite> manu_, you wanted to note that VCWG is likely to be ignored if we do not engage as a WG.</p>
+<p id=4e2d class="phone s16"><cite>manu_:</cite> If we do not start conveying these things as a WG, we will be ignored. That is the default path that we are on. We have said these things multiple times over multiple years, and the response has been &quot;why didn't you raise an issue/bring it up&quot;? We should, and this is a request to the chairs, can we please coordinate the group's responses to</p>
+<p id=7aa6 class=summary>things. We have done this such as with a recent press release and group visibility on the fedId presentation.<br>
+<span id=e6b6>… The base assumption is that we may not get traction in other groups, and need to design paths forward that are not reliant on that.</span></p>
+<p id=3bf2 class="phone s03"><cite>phila:</cite> Devil's advocate, how easy will it be to prove the value of VCALM by implementing it in places we do control?</p>
+<p id=24ce class="phone s16"><cite>manu_:</cite> That is our current direction.</p>
+<p id=afdd class="phone s06"><cite>ivan:</cite> Having a PR raised with possible changes on their specification, if it is not an inordinate amount of work, would be good to have.<br>
+<span id=1f30>… This must be responded to explicitly.</span></p>
+<p id=af14 class=irc><cite>&lt;kezike&gt;</cite> To that point, we may need to be better about advertising/marketing the different deployment instances in the wild (re: engaging as a group).</p>
+<p id=01bb class="phone s03"><cite>phila:</cite> I may be optimistic, but there are good communications between the groups.</p>
+<p id=ffbc class="phone s03"><cite>phila:</cite> going back to JSONata for VCALM, VCALM requires JSONata, yes?</p>
+<p id=4f77 class="phone s19"><cite>kezike:</cite> It can work without it but is used for credential templating.</p>
+<p id=a2e7 class="phone s03"><cite>phila:</cite> Where we got to earlier was that it would be ok to say &quot;you have to be able to do this, and here is one way of doing it&quot;.</p>
+<p id=b850 class="phone s16"><cite>manu_:</cite> In this case, for VCALM's use of JSONata, it's easier. We make no normative references in VCALM. There are step templates for workflows (identify yourself, present other credentials, etc) and we use JSONata to dynamically configure those steps.<br>
+<span id=3744>… All of the examples are JSONata, but we can say &quot;use a templating language&quot;.</span><br>
+<span id=8936>… We can say JSONata is one way to do it. kezike, do you agree with that framing?</span></p>
+<p id=fc45 class="phone s19"><cite>kezike:</cite> I remember discussion about this in the past - originally there was no explicit reference to JSONata, and there was an unspecified template type. JSONata is supposed to be optional, and we can make that clear.<br>
+<span id=2991>… It's hard to express what we expect for most systems to be able to understand.</span><br>
+<span id=f27a>… Generally, +1 to manu_.</span><br>
+<span id=a08b>… My understanding is that approach requires no normative language, but only expresses options - that moves us back to the open world case, where there is no central authority for template types.</span><br>
+<span id=da7d>… Thank you for your attention!</span></p>
+<p id=3b4d class="phone s03"><cite>phila:</cite> We're glad to see the Q1 target - we are pursuing a F2F meeting in April, we aren't sure where it will be yet.<br>
+<span id=202f>… CR is the target for that meeting across specs.</span></p>
+<p id=1c6b class="phone s06"><cite>Ivan:</cite> Will the presentations be added to the agenda slide set?</p>
+<p id=8e4d class="phone s19"><cite>kezike:</cite> I will link to my slides in the chat.</p>
+<p id=20db class="phone s06"><cite>Ivan:</cite> We need URLs for previous slide decks.</p>
+<p id=cb53 class="phone s03"><cite>phila:</cite> We have render method and recognized entities.<br>
+<span id=84ab>… I don't think the ones that were just presented are there.</span></p>
+</section>
+
+<section>
+<h3 id=d258>Barcodes and DI</h3>
+<p id=1d09 class="phone s03"><cite>phila:</cite> wes is next - barcodes and more</p>
+<p id=1000a class="phone s10"><cite>wes-smith:</cite> one of the co-heads of barcodes, data integrity, forgery defence and bitstring status list specs<br>
+<span id=1000b>… will share overview, some info about what problems specs address and some issues</span></p>
+<p id=db81 class=irc><cite>&lt;kezike&gt;</cite> Just posted the VCALM slides at the end of the main VCWG TPAC deck: <a href="https://docs.google.com/presentation/d/19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/edit">https://<wbr>docs.google.com/<wbr>presentation/<wbr>d/<wbr>19vlKzO5nZjsVMVPmuI40jdSGW3kGUtAC1ngW-yQOC6g/<wbr>edit</a></p>
+<p id=3d8e class="phone s10"><cite>wes-smith:</cite> VC-&gt; data integrity-&gt; cbor-ld for compression -&gt; vc barcode for issuance<br>
+<span id=c841>… data integrity --&gt; bitstring status list --&gt; forgery defense / how all the specs fit together</span><br>
+<span id=38a8>… barcodes is about security physical document with VC</span><br>
+<span id=86d9>… press release was done a few weeks ago in response to leak of huge number of driver license images in the US (160 million) - threat is exactly what VC barcodes gives a defense</span><br>
+<span id=a8be>… image of PDF417 barcode with a VC - can achieve tamper-proof-ness for all of the data not just the VC</span><br>
+<span id=1f99>… road to CR - have heard back from security privacy accessibility i18n  - no feedback yet from TAG / some work needed on tech boundaries</span><br>
+<span id=0e17>… for example, cryptosuite was designated and this probably doesn't make sense / need to update test vectors - they are correct for spec but should be useful out of spec</span></p>
+<p id=4c52 class="phone s06"><cite>ivan:</cite> what about CBOR LD?</p>
+<p id=bf92 class="phone s10"><cite>wes-smith:</cite> yes there's a normative issue - so both are being worked on in parallel</p>
+<p id=41a9 class="phone s20"><cite>dmitriz:</cite> on behalf of Lucy - market research on use of VC barcode?</p>
+<p id=b347 class="phone s10"><cite>wes-smith:</cite> in production in California / what else is driving VC barcode? others have expressed an interest in adding VC Barcode which gives some security to an otherwise just printed piece of paper<br>
+<span id=294d>… add cryptographic security</span></p>
+<p id=8c86 class=summary>question by Lucy - followup question about verifier use of VC barcodes</p>
+<p id=0517 class="phone s10"><cite>wes-smith:</cite> in response to inclusion of biometric mentioned by Lucy - California has an implementation of instant ID which includes a biometric<br>
+<span id=4db8>… VC barcodes supports this and is in production</span></p>
+<p id=e87e class="phone s03"><cite>phila:</cite> no such thing as a verifiable barcode / you get a signal that there's a barcode - then use a routine to get the info</p>
+<p id=2794 class="phone s10"><cite>wes-smith:</cite> next is data integrity - this is the digital signing part of the VCs<br>
+<span id=a582>… transform / hash / prove is the model - relies on signatures / includes selective disclosure and unlinkability - present as a barcode  and use quantum resistant crypto</span><br>
+<span id=cebd>… recent work - how to deal with selective disclosure - there are cryptosuites that are better for this</span><br>
+<span id=c39e>… sign individual claims / sign a list of hashes (SHoC) / multi-claim signature (MCS) - see BBS</span><br>
+<span id=3981>… road to CR - next step is horizontal review</span></p>
+<p id=746d class="phone s06"><cite>ivan:</cite> Greg's refactorization - adding another cryptosuite became a &quot;piece of cake&quot; / will be a one pager to add another</p>
+<p id=2f02 class="phone s02"><cite>swcurran:</cite> where do we need to put them?  in W3C?</p>
+<p id=fa15 class="phone s06"><cite>ivan:</cite> anywhere</p>
+<p id=52d5 class="phone s10"><cite>wes-smith:</cite> next is forgery defense - started recently - response to quantum looming<br>
+<span id=5c0a>… the long description of forgery defense is &quot;secondary authenticity checks with randomized and anonymized hash witnesses&quot;</span><br>
+<span id=3d52>… the mechanism is not about quantum - it deals with key compromise - which can happen with Quantum compromise</span></p>
+<p id=1000c class=irc><cite>&lt;dmitriz&gt;</cite> @phila -- from Lucy: Thanks, Phil. I understood what you meant (And I should have used the full and correct term). While the barcode is standardized and can be processed by readers, if the readers can’t read VC data, the standard is not considered useful enough even if California is issuing it. It is the issue one government is facing getting their W3C-based mobile driver’s license verified in California even though it is not in a barcode</p>
+<p id=2662 class=irc><cite>&lt;dmitriz&gt;</cite>  format. At the end of the day, it is a W3C-VC adoption issue however you deliver it. I just wanted to point out and put myself on record that we are facing a lot of market challenges because most of the current readers don’t read W3C VCs and understanding where others are playing will help us better understand real adoption challenges.</p>
+<p id=edf5 class="phone s10"><cite>wes-smith:</cite> check signature using key - if key is compromised then that has limited value / forgery defense creates a separate credential - a witness list - which is signed with a quantum resistant algorithm<br>
+<span id=b785>… it's a secondary authenticity guarantee</span><br>
+<span id=4f16>… can piggyback on bitstring status list / can point to the witness list in the credential or standalone mode</span><br>
+<span id=ec22>… road to CR - address boundaries / no threat model - share with others in this group / review algorithm / haven't submitted for HR yet</span></p>
+<p id=d704 class="phone s03"><cite>phila:</cite> completion date - to CR - by end of Q1?</p>
+<p id=9a62 class="phone s10"><cite>wes-smith:</cite> yes<br>
+<span id=1000d>… next is Bitstring Status List - image is more of a block than a list - if you contact the issuer it's not privacy protecting - so what do we do?</span><br>
+<span id=599d>… anonymize and mix together lots of credentials / can't be massive - so make it reasonable size to process</span><br>
+<span id=71ee>… this is 1.1 version to update form 1.0 in order to align with the other related specs / resolving some past future issues that aren't substantive</span></p>
+<p id=fca5 class="phone s06"><cite>ivan:</cite> think we should reduce the work to do on this spec to a minimum / even for horizontal review remind them that they already reviewed most of it - focus on the changed part</p>
+<p id=4dab class="phone s10"><cite>wes-smith:</cite> whoever submits this for HR - should be clear to describe what has happened and ask for focus on the changed part<br>
+<span id=569c>… discussion of HR of the cryptosuites - propose to submit them bundled together</span></p>
+<p id=032f class="phone s06"><cite>ivan:</cite> similar issue with HR - there has been limited (editorial) change to the three (not quantum resistant) - don't ask for technical review for them / Quantum resistant will need technical review / also have to wait for BBS</p>
+<p id=abb1 class="phone s03"><cite>phila:</cite> since most content hasn't changed - let's write to the chairs for HR and ask them how to proceed<br>
+<span id=bad3>… crosstalk of everyone agreeing to that</span></p>
+<p id=96ac class="phone s10"><cite>wes-smith:</cite> this modifies the proposal from my slides</p>
+<p id=b17e class="phone s01"><cite>manu:</cite> working group still has to agree (do a formal resolution) to ask for horizontal review?  cross-talk results in &quot;yes&quot;</p>
+<p id=4353 class=summary>PROPOSAL: The VCWG requests horizontal review of Data Integrity v1.1, ECDSA v1.1, EDDSA v1.1, and Quantum-Resistant v1.0 cryptosuites.</p>
+<p id=b2ff class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=f2ff class=irc><cite>&lt;manu_&gt;</cite> +1</p>
+<p id=72ff class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=f300 class=irc><cite>&lt;ElaineX&gt;</cite> +1</p>
+<p id=7300 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=f301 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=7301 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=f302 class=irc><cite>&lt;shigeya&gt;</cite> +1</p>
+<p id=7302 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=7303 class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=11ac class=resolution><strong>RESOLUTION:</strong> The VCWG requests horizontal review of Data Integrity v1.1, ECDSA v1.1, EDDSA v1.1, and Quantum-Resistant v1.0 cryptosuites.</p>
+<p id=b3d6 class="phone s10"><cite>wes-smith:</cite> engagement with other standards groups</p>
+<p id=7385 class=irc><cite>&lt;pdl-asu&gt;</cite> +1</p>
+<p id=f8be class="phone s10"><cite>wes-smith:</cite> groups at ISO are interested in learning more bitstring status list and forgery defense</p>
+<p id=fd6c class="phone s06"><cite>ivan:</cite> can talk to them - anything more needs more discussion</p>
+<p id=111c class="phone s10"><cite>wes-smith:</cite> we need to represent the group not speak as individuals</p>
+<p id=dac6 class=summary>Proposal: The VCWG supports the VCB/DI task force's presentation of the VC Forgery Defense and Bitstring Status List technologies to ISO groups on behalf of the WG, coordinated if necessary by the chairs and staff through the group liaison.</p>
+<p id=b393 class=irc><cite>&lt;manu_&gt;</cite> +1</p>
+<p id=b394 class=irc><cite>&lt;wes-smith&gt;</cite> +1</p>
+<p id=f393 class=irc><cite>&lt;ElaineX&gt;</cite> +1</p>
+<p id=7393 class=irc><cite>&lt;kezike&gt;</cite> +1</p>
+<p id=7394 class=irc><cite>&lt;shigeya&gt;</cite> +1</p>
+<p id=b395 class=irc><cite>&lt;ivan&gt;</cite> +1</p>
+<p id=b396 class=irc><cite>&lt;denkeni&gt;</cite> +1</p>
+<p id=b397 class=irc><cite>&lt;JennieM&gt;</cite> +1</p>
+<p id=3393 class=irc><cite>&lt;Wip&gt;</cite> +1</p>
+<p id=7395 class=irc><cite>&lt;phila&gt;</cite> +1</p>
+<p id=7396 class=irc><cite>&lt;dmitriz&gt;</cite> +1</p>
+<p id=4e02 class=resolution><strong>RESOLUTION:</strong> The VCWG supports the VCB/DI task force's presentation of the VC Forgery Defense and Bitstring Status List technologies to ISO groups on behalf of the WG, coordinated if necessary by the chairs and staff through the group liaison.</p>
+<p id=b398 class=irc><cite>&lt;pdl-asu&gt;</cite> +1</p>
+<p id=9805 class="phone s21"><cite>ElaineX:</cite> In addition to being in W3C and ISO, I'm in the ISO spec. That group has created taskforce7, webinars, social media, to promote the standard. This group might consider something similar so people know what we're doing.</p>
+<p id=a090 class="phone s03"><cite>phila:</cite> Yes, W3C does not usually do that, but we should do this, it's important. If we're making material that we expect to publish that explains what we do, we might want to have the group review before we release it.</p>
+</section>
+
+<section>
+<h3 id=b63f>TAG review of render method</h3>
+<p id=824b class=irc><cite>&lt;ivan&gt;</cite> <a href="https://w3c.github.io/vc-wg/minutes/resolutions.html">list or resolutions</a></p>
+<p id=e119 class="phone s03"><cite>phila:</cite> anything else we want to say? if not, no VC WG meetings next week.  We restart the next week.</p>
+</section>
+</main>
+
+<div id=ResolutionSummary>
+<h2>Summary of resolutions</h2>
+<ol>
+<li><a href="#11ac">The VCWG requests horizontal review of Data Integrity v1.1, ECDSA v1.1, EDDSA v1.1, and Quantum-Resistant v1.0 cryptosuites.</a></li>
+<li><a href="#4e02">The VCWG supports the VCB/DI task force's presentation of the VC Forgery Defense and Bitstring Status List technologies to ISO groups on behalf of the WG, coordinated if necessary by the chairs and staff through the group liaison.</a></li>
+</ol>
+</div>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 244 (Thu Feb 27 01:23:09 2025 UTC).</address>
+
+</body>
+</html>
