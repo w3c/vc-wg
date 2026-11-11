@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 11 November 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>11 November 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20261111T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/11/11-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony, brent, dlongley, exe, hsano, ivan, JimR, KevinDean, kezike, manu, michaelshea, pdl-asu, phila, TallTed, wip</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>brent</dd>
+<dt>Scribe</dt><dd>KevinDean, pdl-asu, \</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ffff">Dublin recap &amp; timelines for all deliverables</a></li>
+<li><a href="#c185">Validation options, JSON schema CR, REs etc</a></li>
+<li><a href="#2630">F2F April</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=6e69 class=irc><cite>&lt;TallTed&gt;</cite> apologies to anyone awaiting a review by or other input from me. my laptop has been in the shop, awaiting parts. all hopes are for it to return by early next week, and reviews resume accordingly.</p>
+<p id=b30b class=irc><cite>&lt;ivan&gt;</cite> persent+ elaine</p>
+<p id=7222 class="phone s01"><cite>Brent:</cite> Any changes or additions to the agenda?</p>
+</section>
+
+<section>
+<h3 id=ffff>Dublin recap &amp; timelines for all deliverables</h3>
+<p id=f858 class="phone s01"><cite>Brent:</cite> We had two-ish days of great conversation. I think we made good progress.<br>
+<span id=9274>… One of the conversations was that we need a little bit more urging of the task forces to move things forward.</span><br>
+<span id=3e3b>… Any feedback from TPAC you'd like to share?</span><br>
+<span id=4c83>… We're also looking for task force leaders to share your timelines if you have them or talk through what you think they ought to be, but we need a date by which we're trying to get things done.</span></p>
+<p id=5358 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to SING and RE spec</p>
+<p id=152d class="phone s02"><cite>manu:</cite> Agree, I think the meetings went well. The work was spread out more evenly among the working group. I did want to talk about two things. One was a discussion with Simone re: the security review approach, and the other was where we are on the Recognized Entities spec.<br>
+<span id=10000>… On the RE spec, he and I came to an agreement that it seems like what we're doing to enter PR from a SING perspective is working. If the working group is OK with that, he would like to take the same approach with all the other threat models that are queued up.</span><br>
+<span id=dbca>… I support that, and I think that things have smoothed out about how things work and how they are updated. We propose using the same model for the others as we had in the RE spec, which will lead to a consistent engagement with SING on all the threat models.</span><br>
+<span id=6f04>… I don't know if anyone else had any hallways discussions about it. The horizontal reviews and responding to them are the biggest hurdle getting to PR.</span></p>
+<p id=8838 class="phone s03"><cite>Ivan:</cite> I am not sure what this means, what you refer to. Is it the format of the threat model document, or is there something else that you did that you discussed with Simone?</p>
+<p id=b39e class="phone s02"><cite>Manu:</cite> By this, I meant where content goes in the main spec or the threat model, how we link the two documents together (how we link security and privacy to the threat model). It has to do with exactly what is expected in each section of the threat model.<br>
+<span id=6486>… There's an expectation about linking back to sections of the spec where you have threat model responses. It's a long list of things that need to be done, and I'm hoping to help the other editors get things in line in a way that works.</span><br>
+<span id=0d23>… I think we have a repeatable process at this point and the goal is to repeat it for all the specs in the queue for a threat model.</span></p>
+<p id=f61c class="phone s04"><cite>PhilA:</cite> I was surprised and disappointed that this topic didn't come up anywhere else. Note to self: put AI into everything, e.g., AI threat modeling etc., to ensure that AI is properly discussed.</p>
+<p id=5309 class=irc><cite>&lt;ivan&gt;</cite> +1 to Phil</p>
+<p id=248d class=irc><cite>&lt;Zakim&gt;</cite> pdl-asu, you wanted to ask whether Simone speaks for the W3C as a whole on this or is he part of a group that needs to weigh in as well</p>
+<p id=e361 class="phone s05"><cite>pdl-asu:</cite> Does Simone speak for the web leadership as a whole?</p>
+<p id=49b0 class="phone s01"><cite>Brent:</cite> Simone is in charge of the Security Interest Group, so he leads the group that does the review of all specs at W3C. Our expectation is that the need for threat models is presented universally around W3C.</p>
+<p id=10001 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to explain &quot;the SING process&quot; wrt to what I understand and to speak to RE spec and status</p>
+<p id=10002 class="phone s02"><cite>Manu:</cite> Phil, there was one or two breakout sessions. I think Simone got yelled at by one or two groups due to the amount of work threat modelling has created. However, I see light at the end of the tunnel, and other groups will have a more concrete target to hit.<br>
+<span id=b02e>… I will note that the process resulting in SING identifying six security vulnerabilities that we as a task force didn't catch.</span><br>
+<span id=53a5>… These are things that we probably would have have caught until CR, or maybe not caught at all.</span><br>
+<span id=aa8f>… Simone has spent a lot of time building LLM skills to use in developing threat models.</span><br>
+<span id=8b62>… There is positive stuff that came out of it. It's way more than anything I have ever done on any IETF or W3C spec.</span></p>
+<p id=ff68 class="phone s04"><cite>PhilA:</cite> I think actually the threat modelling work is fantastic and a model for everyone.</p>
+<p id=6657 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to speak to RE spec and status</p>
+<p id=b4f2 class="phone s02"><cite>manu:</cite> We are pretty close to CR on Recognized Entities. We have had feedback from TAG and every group except accessibility. The most recent pull requests, once merged, should get us into CR in December.<br>
+<span id=5773>… I have notified all the open horizontal reviews to say that it has been more than four months, so please let us know if you plan on getting your review done by December.</span><br>
+<span id=987b>… We are still waiting on TAG to write stuff up, but I believe we've addressed their biggest concern, which is the JavaScript validator work.</span></p>
+<p id=c51b class="phone s06"><cite>kezike:</cite> This is for the VCON task force. The goal is to have everything we want in pull requests by the end of the year.<br>
+<span id=c4dd>… I think SING is one of the reviews that is outstanding. We're targeting Q1 for CR but not sure of the date yet.</span></p>
+<p id=0273 class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about the DPP/BW TF</p>
+<p id=b5f7 class="phone s04"><cite>PhilA:</cite> The main thing that the DPP group is doing is providing an extended example that makes use of the RE spec. The particular example is for CE marking.<br>
+<span id=e0af>… The other thing to mention, without going into detail, there is an urgent need for our work to go through a High Assurance Profile, which has been applied to other VC specs. It's required for our VC spec to be used in European contexts.</span><br>
+<span id=10003>… That may end up being a single web track working group to get things up and running.</span><br>
+<span id=71ee>… Some of it may be outside the charter, but we're not going to re-charter right now.</span></p>
+<p id=10004 class="phone s02"><cite>Manu:</cite> +1 if the EU needs it. I think that some of the High Assurance work has been misguided. The problem is that you end up things like &quot;ECDSA should be in the profile&quot; but there's no discussion of quantum algorithms.<br>
+<span id=abaa>… I understand that lawmakers in Europe feel like they were doing a good thing, but there are market complications with the setup.</span><br>
+<span id=b192>… I want the group to be aware of the dangers of the High Assurance Profiles in the market, but +1 if the EU needs the work done.</span><br>
+<span id=0d29>… There are people that I think are people in EU not working in the best interests of the VC working group.</span></p>
+<p id=4ce6 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to say this is interesting but is off topic</p>
+<p id=a6aa class=irc><cite>&lt;dlongley&gt;</cite> +1 to important market competition and user choice considerations and the danger of not being able to pivot to more secure cryptography when necessary</p>
+<p id=aee4 class="phone s01"><cite>Brent:</cite> This is interesting, but we really need timelines. Anyone from other task forces that want to give us timelines?</p>
+<p id=67cb class="phone s02"><cite>Manu:</cite> I don't see Dmitri here. I think we made a breakthrough yesterday on the last remaining item for the summary, but I don't want to state a timeline. I think Dmitri has one in his head, and I don't think it will be by the end of the year.<br>
+<span id=094d>… That was for Render Method. Last I heard from Wes, the barcode work may be ready to go into CR in the earlier part of Q1 2027.</span><br>
+<span id=be6e>… Same for forgery defence, but that's a very light spec.</span><br>
+<span id=9849>… We agreed at TPAC to kick off the horizontal reviews, so that will add three months.</span><br>
+<span id=13ed>… Kim from Connexus volunteered to be the person that chases people down. If the chairs would like some help, she would be willing to do that.</span></p>
+<p id=dd1d class="phone s01"><cite>Brent:</cite> She will need to join the group.</p>
+</section>
+
+<section>
+<h3 id=c185>Validation options, JSON schema CR, REs etc</h3>
+<p id=4312 class="phone s04"><cite>PhilA:</cite> I'm talking to David after this call, so will mention it.</p>
+<p id=68f6 class="phone s01"><cite>Brent:</cite> Why are we only talking about validation for Recognized Entities? Why not for VCs as a whole?</p>
+<p id=10005 class="phone s02"><cite>Manu:</cite> Would it help if I shared what we have right now and do a quick explanation?<br>
+<span id=4a65>… We talked about this on the RE call yesterday. TAG said that the RE task force wants to use JSONata to do validation. We're not sure about that, because it's a small project with only one or two people.</span><br>
+<span id=3b7b>… We replied saying that we had JSON schema, which does some of the work, and proposed that we could support a more generic, arbitrary JavaScript validation process against RE chain.</span><br>
+<span id=412f>… We confirmed that it could work for just about everyone. With a generic validator, we can do so without using JSONata specifically.</span><br>
+<span id=7843>… We would mark the JavaScript validator and JSONata validator as being at risk but JSON schema validator as not being at risk.</span><br>
+<span id=ba42>… We felt that this was something that could be applied to VCs more generically, but we could refactor later.</span></p>
+<p id=10006 class="phone s04"><cite>PhilA:</cite> When Ivan first proposed that this be moved to VCDM, my initial reaction was that yes, this makes sense, then I ready the very large pull request that Manu created for it.<br>
+<span id=733b>… I don't think that it makes sense for a single, standalone credential to be able to do this. If you have a single VC that already has a validation mechanism.</span><br>
+<span id=578d>… It becomes useful when there's an arbitrary chain of credentials, which can be arbitrarily complex.</span><br>
+<span id=9d36>… Metrology is an example, which has very complex rules. I think it makes sense there, but not for a single VC.</span></p>
+<p id=af25 class="phone s03"><cite>Ivan:</cite> I'm the one who created this mess. I understand that it's too late to do a complex surgery. What I proposed in the issue to do as an alternative is that we already have the notion in VCDM for extensions and vocabularies that are not part of VCDM itself. Eventually, the various vocabularies end up in VCDM. Render Method and Confidence Method</p>
+<p id=2a4f class=summary>are examples that do this.<br>
+<span id=f2cc>… I think we should do something like that for validators as well.</span><br>
+<span id=3c03>… Maybe in the future we do a cleaner approach, but this is doable for now.</span><br>
+<span id=c7c7>… I understand Phil's problems, but it is still true that RE is not the only place where this might be useful.</span><br>
+<span id=137e>… It can be in other applications that we can't think about right now.</span></p>
+<p id=ca31 class="phone s07"><cite>KevinDean:</cite> Position the idea of a validated state could be useful. A generic validator might not handle everything. A specific use case might have other requirements. However this is a significant change to VCDM.  It's fine to continue forward with it in reognized entities for now</p>
+<p id=10007 class=irc><cite>&lt;Zakim&gt;</cite> brent, you wanted to share my crazy idea about vc-json-schema</p>
+<p id=fc7d class=summary>Scribe=</p>
+<p id=f6be class="phone s01"><cite>Brent:</cite> I don't think we need an extension for this. We already have a specification for it. The schema extension mechanism does this already; we just need to use the one that's already there.<br>
+<span id=697a>… As PhilA pointed out, the interested thing is using this to validate more complex chains.</span><br>
+<span id=4a99>… It feels like the schema validation would be a natural home for this.</span></p>
+<p id=e691 class=irc><cite>&lt;Zakim&gt;</cite> manu, you wanted to point to where this /could/ go into vc-data-model</p>
+<p id=3727 class="phone s02"><cite>Manu:</cite> Brent said much of what I did. The only dispute is where we put the validation. We have schemas, which is already part of the specification. We can put the JavaScript validator there.<br>
+<span id=2bf2>… We have an entire section on validation in the spec, which is non-normative.</span><br>
+<span id=746c>… There was an expectation that we would talk about validation at some point in the future.</span><br>
+<span id=3f4d>… It has a JavaScript-specific statement that is defined in a PR in the algorithm section. Not all of it should go into the base specification.</span><br>
+<span id=c7ad>… That does not address PhilA's concern directly, but we can say that schemas can be provided by someone that is not the validator. That can be something that is checked for at runtime.</span></p>
+<p id=0927 class=irc><cite>&lt;Antony&gt;</cite> PhilA: Building on your point (much earlier on the call) about getting people to care about unglamorous essentials (like threat modeling) without slapping &quot;AI&quot; on it: I picked up from you in Dublin TPAC that simple, concrete examples work best. The EV-batteries-in-a-container example you shared (€1M/min dock delay, where shaving just seconds via</p>
+<p id=14aa class=irc><cite>&lt;Antony&gt;</cite> GS1 QR links saves fortunes) is a banger illustration. You may wish to replay that here—others can think of their own resonating examples for their own (unglamorous) agenda.</p>
+<p id=c0a0 class="phone s02"><cite>Manu:</cite> The RE spec is the one that clearly defines chain validation.<br>
+<span id=d8fb>… It is totally possible to do this. The question is around timing. I suggest we get it into RE, get some implementation experience, and then talk about generalizing it and moving it into the VCDM.</span></p>
+<p id=a1c6 class=irc><cite>&lt;brent&gt;</cite> +1 manu</p>
+<p id=acfd class="phone s02"><cite>Manu:</cite> I think it's covered in our charter.</p>
+<p id=0284 class="phone s08"><cite>michaelshea:</cite> I sort of agree with what PhilA was saying about the validation. But would it make more sense to leave it in the RE spec, but add a non-normative statement to VCDM to refer to the RE spec for more complex use cases?</p>
+<p id=b648 class="phone s02"><cite>manu:</cite> Yes, we could, but I think the question is how generic is this.<br>
+<span id=8a03>… This gives value to a third party validator by allowing it to do extended validation without including all rules for a given VC type. This is not applicable to every ecosystem, but it has value for chains of credentials if you as a verifier are accepting credentials but don't know enough to say whether a given VC is valid.</span><br>
+<span id=426f>… Validation is something that everyone has to do, and if we have a way of publishing validators in a generic way, it helps everyone.</span></p>
+<p id=1179 class="phone s03"><cite>Ivan:</cite> I am a little bit worried about the confusion of terms, property names, classes, etc., if we just merge this PR as is.<br>
+<span id=f31d>… The VCDM term that is used is different. We can take the discussion offline, but as the guardian of the vocabulary, I'm a little worried.</span><br>
+<span id=19cb>… If we do this with the VCDM spec as Manu suggests, there's another level of confusion possible with the JSON schema portion.</span></p>
+<p id=8a8b class=irc><cite>&lt;Zakim&gt;</cite> phila, you wanted to talk about 3rd party validators and TF timelines</p>
+<p id=bc0b class="phone s03"><cite>Ivan:</cite> The JSON schema spec hasn't gone through yet, so there's a risk that it will get lost.</p>
+<p id=f0db class="phone s04"><cite>PhilA:</cite> Is it possible that, if we link to a validator, is it possible to link to the DID of the validator to properly identify it?</p>
+<p id=2a3c class=irc><cite>&lt;manu&gt;</cite> phila, yes, this is possible... we might have to define the 3rd party validators as a VC -- clearly, we need more thinking around that.</p>
+<p id=b2a6 class=summary>KevinDean quick security issue a pointer to code is a security risk, because it's writing it's own rules.</p>
+<p id=61ff class="phone s01"><cite>Brent:</cite> I think the conversation can continue in the RE spec.</p>
+</section>
+
+<section>
+<h3 id=2630>F2F April</h3>
+<p id=322c class="phone s01"><cite>Brent:</cite> Still looking for a space, but aiming for April.</p>
+<p id=4b3b class=irc><cite>&lt;manu&gt;</cite> Montreal sounds awesome</p>
+<p id=b5a0 class=irc><cite>&lt;manu&gt;</cite> (or Halifax?)</p>
+<p id=a539 class=irc><cite>&lt;michaelshea&gt;</cite> April in Halifax will be very nice</p>
+<p id=0e9a class=irc><cite>&lt;manu&gt;</cite> yes, it would be very good to have it in Montreal because of ICAO</p>
+<p id=10008 class="phone s04"><cite>PhilA:</cite> On the topic of Montreal, we discussed that there wasn't enough space in Halifax. It's Lucy that is trying to arrange the space in Montreal, particularly where ICAO is based (passports and trade identity).</p>
+<p id=238e class=irc><cite>&lt;michaelshea&gt;</cite> Montreal is nice too, could be playoff time...</p>
+<p id=3c22 class="phone s01"><cite>Brent:</cite> We'll keep looking. Before we decide, we'll let people know.</p>
+<p id=cd55 class=irc><cite>&lt;phila&gt;</cite> <a href="https://www.w3.org/community/groups/proposed/">https://<wbr>www.w3.org/<wbr>community/<wbr>groups/<wbr>proposed/</a> is the HAIP Community Group</p>
+<p id=e086 class="phone s04"><cite>PhilA:</cite> Go to that link to sign up. We need at least four more.</p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 250 (Wed Oct 21 13:34:09 2026 UTC).</address>
+
+</body>
+</html>
