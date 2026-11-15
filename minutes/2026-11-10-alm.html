@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG VCALM &ndash; 10 November 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG VCALM</h1>
+<h2>10 November 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Eric_Schuh, James_Easter, Joe_Andrieu, John's_Notetaker, Kayode_Ezike, Manu_Sporny, Patrick_St-Louis, Phillip_Long, Rodrigo, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#dbd4">VCWG VCALM Call Introduction</a></li>
+<li><a href="#84ec">Outcomes From TAC And Candidate Rec Focus</a></li>
+<li><a href="#2f70">VCOM Test Suite Progress And Goals</a></li>
+<li><a href="#81e1">Horizontal Review Updates: TAG And Ally</a></li>
+<li><a href="#e5a0">PR Reviews And Merging Process</a></li>
+<li><a href="#4e6d">Threat Model Content Update</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=f4f5 class="phone s01"><cite>Kayode_Ezike:</cite> Hey, pretty good.</p>
+<p id=d243 class="phone s02"><cite>Patrick_St-Louis:</cite> Hey Hey,…</p>
+<p id=7fef class="phone s02"><cite>Patrick_St-Louis:</cite> how are you doing?</p>
+<p id=bae6 class="phone s01"><cite>Kayode_Ezike:</cite> How are you?</p>
+<p id=7fed class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, I'm doing well. I was uh did you go to Tac? Okay.</p>
+<p id=859e class="phone s01"><cite>Kayode_Ezike:</cite> Uh, not physically. I joined remotely for our for our segment and a few others.</p>
+<p id=ab3f class="phone s02"><cite>Patrick_St-Louis:</cite> How was it? Yeah.</p>
+<p id=39b9 class="phone s01"><cite>Kayode_Ezike:</cite> mostly just other stuff. Yeah. Yeah. Nothing too groundbreaking. Basically just gave an update on uh VCOM and for AD and kind of our plan for for candidate wreck. Um, so one thing I I mentioned at the end of it is that, you know, we're targeting Q1 of next year to basically be ready for that. Um, and so I what I do? Yeah, that's the thing. I think as a result of that, one thing I wanted to propose here and…</p>
+<p id=c700 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah.</p>
+<p id=a303 class="phone s01"><cite>Kayode_Ezike:</cite> discuss with you is that we basically aim to have to address all the issues and process them and put them into PRs by the end of the year possible that are outstanding. Um, and so that's kind of my current thinking at the moment. Um, there are a number of things out there like there's some things that are bothering me like some formatting issues that still aren't working that I think we should get that we should fix. um and you know some other things as well but I did a my own review of the issues over the weekend too and I saw that you also did like your own as well but it seems like there's nothing that's really in I think the language that monu used like is there anything that would cause like discussion or potentially like prevent us from moving forward. Nothing that I saw fits fits under that.</p>
+<p id=bf26 class="phone s01"><cite>Kayode_Ezike:</cite> So that's pretty um good. It's just like some something that I still think would be great to get into. So, I've just been doing my best to address as many as I can.</p>
+<p id=567a class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, that makes sense.</p>
+<p id=8ccd class="phone s02"><cite>Patrick_St-Louis:</cite> We'll get started. in uh in a minute.</p>
+</section>
+
+<section>
+<h3 id=dbd4>VCWG VCALM Call Introduction</h3>
+<p id=b0ea class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. So, let's get started with the call. Uh, if people come in a bit late, they'll be able to catch up. So, welcome everyone to the VCOM call for this week. Uh today is the 10th of November. Uh so this is the first call we have after two week of hiatus. Uh there's been a lot of in-person events over the last two weeks which maybe we'll get to cover in a first topic item. Uh so this is a W3C verifiable credential working group task force.</p>
+<p id=ffff class="phone s02"><cite>Patrick_St-Louis:</cite> Uh so all W3C policies are into effect. Uh this call is uh recorded and transcribed. So please be aware of this. Uh for the VCOM uh it's a call during which we discuss uh various API interactions that different parties can adhere to uh to conduct life cycle management of verifiable credentials. So this can cover anything from issuance to presentations to any other sort of interactions between parties. Uh before we get started, um we have a couple topics proposed today. Uh but as usual, uh we're going to let some time for anyone who would like to introduce or reintroduce themselves to the group.</p>
+<p id=7286 class="phone s02"><cite>Patrick_St-Louis:</cite> any community updates or any additional topics people would like to cover. Uh, Coyote</p>
+<p id=f88c class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, this is a more of an agenda plus. So there's a few updates uh regarding horizontal view. So there's uh yeah both for the uh tag review…</p>
+<p id=f094 class="phone s01"><cite>Kayode_Ezike:</cite> which responded to recently as well as the ally review which we got a response on that we should target um to to address. So those are the main things I wanted to touch at some point in this call.</p>
+<p id=6d19 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, that makes sense.</p>
+<p id=10000 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh, we'll add it to the topics definitely. Uh, does anyone else would have um anything to share with the group before we get started? Okay. Uh, in that case, let's get started. Um, I would like today to leave a considerable amount of time to go through PR reviews. We have quite a few PRs. Uh, so maybe I'll try to defer uh topics if they take too long, so we can at least process uh process a couple PRs.</p>
+<p id=6e0d class="phone s02"><cite>Patrick_St-Louis:</cite> Uh however, let's still go through the topics. Uh I wanted to open the floor if anyone would like to anyone that has attended uh TAC IW and there's some uh outcome that are relevant to this group that would affect our current procedures. Uh if anyone has anything to share, please do so now. Yes, man.</p>
+</section>
+
+<section>
+<h3 id=84ec>Outcomes From TAC And Candidate Rec Focus</h3>
+<p id=d171 class="phone s03"><cite>Manu_Sporny:</cite> Um I so just outcomes from TAC. I think things went you know fairly well. I think the main outcome was us needing to get to candidate wreck sooner than later. Um and so kind of making that our focus over the next couple of weeks I think would be uh really uh beneficial. Um, and then you know in that vein and I think Patrick you already kind of focused on it, right? Um, we have a lot of we have like 18 open PRs and we should really try as hard as we can to get that down to zero like get those merged because that's going to close a bunch of CR blockers. Um, I think we have 14 CR blockers uh right now.</p>
+<p id=1565 class="phone s03"><cite>Manu_Sporny:</cite> um in 64 issues, which is like really like it's that's pretty high um uh to to you know go into CR. So hopefully we'll be able to get it down to something manageable.</p>
+<p id=d174 class="phone s03"><cite>Manu_Sporny:</cite> Um that's it. I I think our you know our focus ideally is on just let's get to CR. We really need to get to CR. Um, that's it.</p>
+<p id=92ba class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. So,…</p>
+<p id=bd71 class="phone s02"><cite>Patrick_St-Louis:</cite> regarding the PR and this process, um, do we want to maybe revisit our current process? So currently we want to make sure we review all PRs with the and we give at least a week for it to be open. Uh given the time sensitivity, do we want to adopt a process that we can do a bit more uh ad hoc PR reviews and merging outside of the call if there's enough uh support on these PR reviews or do we want to keep a sort of a more rigid let's make sure we at least review it once in person and give it at least a week before we merge it?</p>
+<p id=39c0 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay,</p>
+<p id=4e19 class="phone s01"><cite>Kayode_Ezike:</cite> I guess I don't mind responding to that, but I was just going to say that just ahead of just ahead of the call. Um, a thought that I had as far as that as far as the processing goes is is yes, that we should aim to address as many of basically give ourselves a deadline till the end of the year um to open PRs for the outstanding issues that are there. Um, yeah, 63 is is a large number. There's however amongst those not any uh to the question you had last a few weeks ago man there's not any there that would lead to and from my perspective an issue at the candidate Rex stage. So it's really just like a lot of great things that that we could do and as time permits we we should do them and there are some things there too that we really should do.</p>
+<p id=1986 class="phone s01"><cite>Kayode_Ezike:</cite> for example, things aren't some things aren't rendering or formatted right like I think even though yeah I mean if something is not rendering properly that's for example like a part of the specification for requests or response and that's probably a problem right so things like that that I still think that should be done but as far as like the content um of the spec goes nothing there I think should raise any huge issues so that's the main comment on that and as far as your question on uh adopting an ad hoc uh PR review process. I was also thinking the same thing because yeah, realistically um you know I can add whatever 10 or whatever issues every weekend. If if we don't have enough people to review them um within the span of you know the week between…</p>
+<p id=b337 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Uh, Phillip</p>
+<p id=d3aa class="phone s01"><cite>Kayode_Ezike:</cite> what we presented and the next call then it just won't really matter. And so I want to plus one that recommendation. Patrick.</p>
+<p id=821f class="phone s04"><cite>Phillip_Long:</cite> Yes. Um I'm just curious uh I couldn't tell when I was sitting in the t the remote TAC meeting um whether the pitch manual that you made for attention to the lack of a smooth user interface because of the number of um credential or exchanges that have to be made and the lack of birectionality and and in the process impeding the way in which v the uh user experience uh is is um uh able to be treated at this point. Whether you got any sense from the group either after the pitch or in conversation anywhere else that there's likely going to be attention from the parties that need to be changing um uh their considerations to enable this to be possible.</p>
+<p id=e768 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh, did you want to respond though?</p>
+<p id=a9fe class="phone s03"><cite>Manu_Sporny:</cite> Yeah, I can take that one first and then I've got a response to Patrick and Coyote. Um, Phil, the short answer is no. I don't think anything's going to change. Right. So, uh, we did pitch VCOM as an additional, uh, protocol to be supported by, uh, you know, uh, on iOS and Android. Uh, we did not hear anyone directly engage on that. uh all private conversations I had kind of were in in the direction of we have open ID why do we need anything else um and uh there was not really an engagement on the whole back and forth thing so the in and interaction URLs was there wasn't there wasn't any traction on on that either as as uh you know it being implemented in fact some of the conversations I had with the browser manufacturers kind of demonstrated that they didn't really understand</p>
+<p id=aaf5 class="phone s03"><cite>Manu_Sporny:</cite> the pitch uh at at its most basic level. So, I don't expect anything to change. Um if you want a smoother experience, um I think largely it is going you're going to have to use an interaction URL and you're going to have to do it outside of the DC API. Um there were some positive things uh you know said meaning like W3CVC's are going to be broadly uh supported uh not for the back and forth thing uh Phil but um uh for like multi-presentation uh and issuance of W3CVC's over open ID um through DC API that that I think we got confirmation from um at least with two of the the biggest browser manufacturers that they they were planning on</p>
+<p id=7aac class="phone s03"><cite>Manu_Sporny:</cite> doing that. Um so you know mixed news it was it's good W3Cs are going to be supported as uh through open ID um in DC API and all the platforms or the major platforms. Uh but are they going to uh support interaction URLs or the interaction you know protocols or are they going to support VCOM? The answer right now is no. Uh I didn't get any indication that they were going to support that. Um so that's that item.</p>
+<p id=b0df class="phone s03"><cite>Manu_Sporny:</cite> Um the other uh thing Patrick Coyote the I hesitate to change our our um review mechanism because we have to get that cleared by the VCWG and then the question is going to be like well why exactly are you doing this and anything that changes you know at least two independent reviewers um is probably not going to fly and the whole like 7-day period is there so that people can object uh that weren't on the all um uh to the to the merge. So anything anything older than 7 days if we've got two reviewers reviews on it can be merged.</p>
+<p id=10001 class="phone s03"><cite>Manu_Sporny:</cite> Um I think what we have not been doing is uh making sure that people have multiple reviews on a particular uh PR. Uh maybe calling out reviewers like you need to review this. Um uh and we have let things have had like merge conflicts sit out there for weeks. Uh I think all of those things have have contributed to it. Like I mean we literally have like PRs like Patrick your index allocator PR like April 14th like you know we as a group should have should have um and this is not this is not on you Patrick like we as a group should have moved that forward and it didn't get uh you know moved forward. Same thing with a number of you know Eric and Coyote's things have just been sitting out there for too long and I don't think we've we've been uh as a group uh moving them forward at the pace they need to be.</p>
+<p id=c967 class="phone s03"><cite>Manu_Sporny:</cite> So um in in doing it out of band that creates a risk where someone says like I didn't get a chance to object to it. I didn't get a chance to review it or something gets pulled in where we're where we where we're like yeah that was wrong because it was rushed. So my suggestion is you know let's at least keep the 7-day review period because that has been broadly accepted across multiple working groups. Um, we need to open more PRs in parallel. More people need to be opening PRs and more people need to be reviewing PRs. And it may be that, you know, uh, Coyote Patrick, if all we do is sit on a call and and force people to review the PRs, that might be the best use of our time. Um, you know, at at this point. Um, but ideally, we get into the calls and it's clear that there there are multiple people reviewing.</p>
+<p id=ef18 class="phone s03"><cite>Manu_Sporny:</cite> We you don't have to we don't have to do the merge on a call. We just need seven days to have elapsed and two independent reviewers to have taken uh taken a look at um at HPR and…</p>
+<p id=2e9d class="phone s03"><cite>Manu_Sporny:</cite> then the editors can merge whenever they're they're ready. Um that's it. Just some thoughts. I'm not saying like you know we we absolutely can't do it. I'm just saying like changing the process at this point is I don't know if it's actually going to achieve what we want it to achieve.</p>
+<p id=d09a class="phone s02"><cite>Patrick_St-Louis:</cite> This sounds good.</p>
+<p id=3d88 class="phone s02"><cite>Patrick_St-Louis:</cite> And uh yeah, I mean I'll I'll take definitely some of the blame for this. Like I did have this kind of sitting for some time. I did update it. But uh you know I feel sometime we don't have enough time in the call to get to this. Um if we're not changing the way we do PR maybe we can change a bit uh add a bit more time boxing to these meetings. I'm thinking for example maybe limit sort of topic discussions to the first 30 minutes in the call and try to ensure we at least have 30 minutes for PR reviews.</p>
+<p id=25ca class="phone s02"><cite>Patrick_St-Louis:</cite> And if a PR review diverge into too many conversation, let's keep topic for the next call and try to be a bit more pragmatic when we do the PR reviews because because you know sometimes discussions can go a little bit sideways. Uh would that be a good uh sort of alternative? Uh try to maintain at least 30 minute of PR reviews per call and try to time box each review to uh I don't know like reviewing a PR on the call should be like five minute discussion. If it's more than five minutes, maybe we can just put a note and make sure to include this as a topic for the following week. Does that sound pretty good? So, a couple thumbs up. So, uh let's try this. All all I'm seeing is something needs to change a little bit if we're the results we're having now are we find they're a bit too slow.</p>
+<p id=f33a class="phone s02"><cite>Patrick_St-Louis:</cite> So I think a mix of keeping reviewers accountable and ensuring we have dedicated time for reviews uh could be a good attempt while maintaining our you know one week uh pacing making sure everybody has a chance to object. Okay. Uh so the last ones are the test suite. So there's some really good progress on there. Uh we have issuer verify your tests are merged in. Uh so there is the VCOM test suite. Uh I believe at this point if someone wants to try to um experiment with this test suite they can. There is something that you can run. Uh it will be able to do a report. I have a couple pull requests that I'm uh going through right now.</p>
+</section>
+
+<section>
+<h3 id=2f70>VCOM Test Suite Progress And Goals</h3>
+<p id=a271 class="phone s02"><cite>Patrick_St-Louis:</cite> Um we have two implementation I've tested this against. So there is a custom implementation I was working on based on the um ascar library which is a rustbased project and there's also an implementation based on the various and bedrock digital bizarre solution. I would be very interested. Uh, unfortunately Nate is not on the call today, but I'd like to take some time with Nate to see how we can connect this with his workflow le testing that he's done. Uh, and I think that would give three very strong implementations. If people on the call have some of their own implementation, I invite you to, you know, just give this a try. Uh, open issues, give feedback.</p>
+<p id=5389 class="phone s02"><cite>Patrick_St-Louis:</cite> Um right now it does issue a verifier. There is pull request for the workflow service related tests in there. Um and the next part will be the more specific uh query by example like verifable presentation request and of course the interaction URL normative statements. Um, I'm a question I have for the group. So I am kind of thinking this test suite should be limited to um endpoint conformance right data model and defer the kind of end to end testing to the le test suites that have been built.</p>
+<p id=2916 class="phone s02"><cite>Patrick_St-Louis:</cite> uh the le test suite they really focus on uh you have preconfigured workflows that you engage with uh with any of the different coordinators listed as this test suite here would be more focused on testing the underlying services. So they're both complimementaryary instead of repeating the same element and uh in the long term they would both kind of enable someone to have a report on can IVC. Uh so I don't know how we feel about this kind of distinction between both of these test suites.</p>
+<p id=a934 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, man. Yes.</p>
+<p id=0049 class="phone s03"><cite>Manu_Sporny:</cite> I mean I I plus one to making each test suite shine for…</p>
+<p id=749f class="phone s03"><cite>Manu_Sporny:</cite> what it was built for and not duplicating efforts. So very supportive of that. Um the test suite that we do uh the task for task force does has to at least um test the normative statements the most normative statements in the in the specification. So that that's like a bare minimum. We have to do that. Um uh the le test suite being placed into the can IVC I think is a great idea.</p>
+<p id=7ba8 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yes. Yeah.</p>
+<p id=ae0c class="phone s03"><cite>Manu_Sporny:</cite> It's uh and like totally supportive of it. I don't know where I mean we we in this task force W3C working group don't need to do that. Um, but I do think it would be a good thing, you know, for an ecosystem perspective to start having other test suites show up on CAVC. Um, so, so all that, you know, all that said, I think we should probably, let's try to just focus on the bare minimum to get us through candidate wreck here. Um, that's what our test sheet should do. And then it would be great to have Nate to come in and talk about his test suite. Like I don't know anything about it is you know I've heard about it but I didn't know how far it was done. I didn't know how much of VCOM Nate was going to use but I think you know it's super great that he's built it and we should figure out a way to work with him to integrate it.</p>
+<p id=5ff0 class="phone s02"><cite>Patrick_St-Louis:</cite> I've used it a lot and it's uh you know he did a lot of improvement even just recently I had some chat with him and you know it would definitely be an interesting to do and yes like this test suite will test every normative statement every normative statement will have at least one positive and one negative test uh but what I more mean here is it would test each component in isolation uh as opposed to testing a whole flow of requesting one credential and doing the sort of exchange at least.</p>
+<p id=10002 class="phone s02"><cite>Patrick_St-Louis:</cite> to start. Uh if this is really required, there's a normative testment that really requires you to run a sequence of action. Uh we'll just need to add it. Uh but most of the normative statements from what I've observed are about expecting behavior when you call an endpoint. Um so yeah. Okay. Uh yeah, that's what I wanted to to mention. Uh and yeah, this is ready to start being used. Currently, there's the issuer verifier components in there. Uh workflows, zip pull request. So, more to come with this. And this brings us to PR reviews. Any uh further comment before we move there? Yes, Coyote.</p>
+<p id=9019 class="phone s01"><cite>Kayode_Ezike:</cite> Uh before we jump to PR reviews, I wanted to give an update on horizontal reviews.</p>
+<p id=4cef class="phone s02"><cite>Patrick_St-Louis:</cite> Yes. Yes. Uh I'm sorry, Coyote. Absolutely. Uh please let us know.</p>
+</section>
+
+<section>
+<h3 id=81e1>Horizontal Review Updates: TAG And Ally</h3>
+<p id=e33d class="phone s01"><cite>Kayode_Ezike:</cite> No worries. Okay, I'm just going to topic this here. Um okay, so if you recall on our last call a few weeks ago, we discussed um a response that we got for our tag review. So, uh since then, I've put together a response. I'm going to link it here. um to the review and so and now we're just in a waiting pattern. So the and thank you for to David cuz or to Dave rather um for reviewing before I before I submitted but essentially uh we're just waiting for their response on that now and one output from that that we should keep in mind um is that there's an issue that was created as one of the responses to those uh I think it's in what section is it like the shortest yeah the in the middle but anyways there's an issue over there that was assigned to uh Eric uh and Joe as we discussed on the last call that has</p>
+<p id=4065 class="phone s01"><cite>Kayode_Ezike:</cite> do with the diagrams and and updating things according to their desire. So, um that's I think the only outstanding thing that we need to fully address this review. Uh go ahead, Eric.</p>
+<p id=b9ca class="phone s05"><cite>Eric_Schuh:</cite> Uh yeah.</p>
+<p id=3025 class="phone s05"><cite>Eric_Schuh:</cite> So Joe and I did have a discussion um after the last call which I think he missed um about this. Uh Joe, I don't know if you've had a chance to look at it. I know, you know, since that last call then then that the last two weeks have been TAC and IW. So I don't expect that Joe's had too much time to look at this. Um yeah.</p>
+<p id=c41a class="phone s06"><cite>Joe_Andrieu:</cite> I I have not uh with apologies.</p>
+<p id=2d6f class="phone s05"><cite>Eric_Schuh:</cite> Okay. Uh yeah,…</p>
+<p id=d758 class="phone s06"><cite>Joe_Andrieu:</cite> So, I guess uh Eric, you and I should take a look at it and then get back to folks.</p>
+<p id=130b class="phone s05"><cite>Eric_Schuh:</cite> we could we can have another discussion and I can try to you know load you up with the context of what was discussed.</p>
+<p id=f379 class="phone s06"><cite>Joe_Andrieu:</cite> Yeah, this this is long.</p>
+<p id=11f3 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. So,…</p>
+<p id=fc26 class="phone s01"><cite>Kayode_Ezike:</cite> they had a lot of different concerns just had to but this is just um yours are just one of these address points. There's like five or six different points that they um had questions around. they challenged us on. So, um yeah, that's the context there. And then the other thing is we also got a response. It was kind of strange how this happened because Ally, the accessibility group, they gave us a response, but it wasn't in the issue that I raised. It was like they added another issue that tracked that issue. So, I never got notified about it until recently. But any event, I found it um and I just posted in the chat and essentially it's two different folks that responded in this tracking issue. Um I reviewed it.</p>
+<p id=677b class="phone s01"><cite>Kayode_Ezike:</cite> It looks like the the upshot of the first comment is that they want an accessibility consideration section um added to the the spec and they had a bunch of different like recommendations for things that we need to to do to make accessibility or to basically like bolster our accessibility profile. Um, so the the second of these comments down here, this one is more I think editorial things like, oh, alt tags need to be updated, things like that, and maybe a few other things that are not that, but mostly just editorial. The first one, um, I think requires a little bit more.</p>
+<p id=d6a2 class="phone s01"><cite>Kayode_Ezike:</cite> Um, but I so I'm going to take a pass at this unless anyone else wants to, but I've I've already read through it, but just want to basically prepare a response to it. And uh, and the upshot of it too will also be not just responses, but I think there actually will need to be like PRs raised for this as well. So, so that's something I'll add to my queue as well to address. That's mostly it for hard reviews for today. Go ahead, mother.</p>
+<p id=591e class="phone s03"><cite>Manu_Sporny:</cite> Yeah, just a huge thank you to you uh Coyote for writing the response. I I I saw the tag review and I was like, &quot;Oh no, that's going to take like an enormous amount of work to respond to.&quot; So, thank you very much for putting that together and…</p>
+<p id=b336 class="phone s01"><cite>Kayode_Ezike:</cite> Yes, sir.</p>
+<p id=2e82 class="phone s03"><cite>Manu_Sporny:</cite> thank you for to Dave Longley and uh whoever else uh reviewed it. Um I one thing stuck out at me uh well I mean one I when I read it I felt like it was an impossible task. So great job like getting something back. It was it was good. good coherent response. One of the things that kind of jumped out though was they were like, &quot;We're having a hard time navigating the spec is is kind of sort of what they said. They said architecture diagrams not clear. Uh, you know, interfaces not clear.&quot; Some of that may have had to do with a rendering bug in the spec, but I think the rest of it, you know, has to do with the diagram that we have. Um, I I do think we need to spend a bit of time figuring out how to make the the spec more presentable because the spec today, you know, when you read it, it feels really complicated when at its core it's really not.</p>
+<p id=a504 class="phone s03"><cite>Manu_Sporny:</cite> Um, and so trying to convey that, you know, I I don't know how we do it, but you know, I I think we need to spend a at a time uh in CR, not necessarily before, right? Um the accessibility response was also really good because I was kind of like, oh yeah, we don't say anything about the QR code and how it should be displayed and all that kind of stuff. And we may want to ask and they I mean they spent a considerable amount of time looking at this. So we may want to ask them like, hey, do you have guidance for us? like what should we put in around QR codes and where they're displayed and how they should be communicated to people because that is it it is a core method of engagement and it is something that DC API also needs to do and I don't know if DC API has done that yet.</p>
+<p id=6217 class="phone s03"><cite>Manu_Sporny:</cite> So, um, in any case, these are all these they're they're really good review comments, and it I think it's going to take us a decent bit of time to work through them, which means we can't necessarily go into CR…</p>
+<p id=7c4d class="phone s03"><cite>Manu_Sporny:</cite> until they're addressed. Don't want to. Yeah, it is going to take a lot of work to get through these things, I think. Anyway, that's it.</p>
+<p id=4767 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, this is before ping and…</p>
+<p id=7797 class="phone s01"><cite>Kayode_Ezike:</cite> sing too who have not yet responded. But um but yeah, thanks uh for for that feedback. Uh yeah, that's feedback that we've gotten to even from the first face to face in Brussels was along the similar lines like this is kind of hard to consume. Um yeah, so that's going to be an ongoing thing and it is at least conferring to hear if I'm hearing it correctly sounds like we can tackle some of that beyond CR it sounds like and not necessarily before which is good news but yeah those are the current uh updates on hopstone Thanks for</p>
+<p id=7254 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Uh so good progress there. Uh sounds like we'll have some uh action items out of those reviews which will add a little bit to our backlog. Uh but nothing we cannot handle. Definitely. Uh okay. Uh any other comments before we start uh reviewing a couple PRs? Okay.</p>
+</section>
+
+<section>
+<h3 id=e5a0>PR Reviews And Merging Process</h3>
+<p id=0a4b class="phone s02"><cite>Patrick_St-Louis:</cite> Uh in that case uh we will start from the bottom up. Uh we will try to merge as many as we can or at least have some clear instructions for the next thing. Uh so the first one here is about the index allocator. Uh this has been open for quite some time. It's got approval. I just did a small rebase. Uh address some comment from Tall Ted. So, I would like to know where do we stand with this? Yes, Dave.</p>
+<p id=1395 class="phone s07"><cite>Dave_Longley:</cite> Uh, I'm good with this PR. I was just going to suggest something in this process to kind of speed it up which would be if the PR does not seem like uh you know if there's going to be any significant discussion on the PR in this first pass I think we should move to the next one and just try to get everything merged that to which there's no discussion.</p>
+<p id=ae30 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. So,…</p>
+<p id=433d class="phone s07"><cite>Dave_Longley:</cite> There's already approvals. Then we can then we can cycle back. Yeah.</p>
+<p id=8ce4 class="phone s02"><cite>Patrick_St-Louis:</cite> sort of go by PR complexity. Do a sort of a first round. Yeah, that's good. Uh, any objection to merging this PR which adds an index allocator for status update explanation. All right, this is merged finally. This was a long time coming. Okay. Uh, yes, Coyote.</p>
+<p id=977a class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. Uh should we also make sure that we immediately look at the uh issue that it closes so that we don't forget or is that something you want to do after I think there's actually a few that this one touches…</p>
+<p id=87ba class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, that's a good idea.</p>
+<p id=9e38 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh that's the index.</p>
+<p id=20da class="phone s01"><cite>Kayode_Ezike:</cite> if I'm not mistaken. But check What happened?</p>
+<p id=4f81 class="phone s02"><cite>Patrick_St-Louis:</cite> So there's two PRs. Okay. Uh so document and accelerocator needs more detail. Do we feel like this has been addressed? I think so. Close this with the comment. And now the other one was the finite accelerocator and the specification.</p>
+<p id=eeeb class="phone s02"><cite>Patrick_St-Louis:</cite> So I think uh any objection to closing this too. Yeah, good idea, Coyote. Thank you for this. So closed two issues, one PR. We're off to a good start. Okay. So I will just open these and we will browse them quickly to see which one uh would need. Okay. Uh query by example matching and addition pointer conversion. Uh so this one uh still waiting for review. So we will wait for this. Yes Dave.</p>
+<p id=4eb9 class="phone s07"><cite>Dave_Longley:</cite> No, I was going to suggest you do what you just did. So, we're still waiting for reviews.</p>
+<p id=4f41 class="phone s06"><cite>Joe_Andrieu:</cite> There we go.</p>
+<p id=20b8 class="phone s07"><cite>Dave_Longley:</cite> Let's just keep going.</p>
+<p id=6de9 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, exactly.</p>
+<p id=3c96 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh you know just part of the evaluation. Uh this one same thing. Uh ted add uh proposed some change. These has been addressed. Going to review but uh yes please provide your review for uh workflow step processing. Okay. Credential offer parameter. This looks really good. Good candidate. Uh 56 lines. Uh there was something. There are some failing tests here.</p>
+<p id=9a9a class="phone s02"><cite>Patrick_St-Louis:</cite> Uh yes, Dave.</p>
+<p id=39e1 class="phone s07"><cite>Dave_Longley:</cite> I think that was something that uh Eric said he was going to add to this one. Maybe Eric remembers. His hand is up. Dave Longley:</p>
+<p id=4c7f class="phone s05"><cite>Eric_Schuh:</cite> Yeah. Um,…</p>
+<p id=d521 class="phone s05"><cite>Eric_Schuh:</cite> so that was the uh group um parameter uh to match I forget which other feature um off the top of my head. Sorry. Um but I I did add the group parameter to the credential offer. So that task uh was completed. Um yeah that these build errors this uh PR was open when we were having the uh end of line issues.</p>
+<p id=ba55 class="phone s02"><cite>Patrick_St-Louis:</cite> Let's try to rerun the jobs. We'll see how it gives and we can come back to it. Uh, yes, man. Okay.</p>
+<p id=8c67 class="phone s03"><cite>Manu_Sporny:</cite> My suggestion is just merge it and the editors can fix whatever errors there are um on main. That's typically what I do. Like let's not let you know a weird script error keep us from merging.</p>
+<p id=10003 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Sounds good. We'll merge it. Uh, I'll let these test finish and I'll come and just merge it so we know and then we can Okay. Well, here we go. Okay. Uh any objection if we merge this and fix any uh error after the fact? Okay, let's go ahead and do we want to squash this? I don't think we want to squash this. Rebase and merge comments are fairly clean here. This is really good.</p>
+<p id=a739 class="phone s02"><cite>Patrick_St-Louis:</cite> Let's go see. This is closed. This is closed. This is closed.</p>
+<p id=bd83 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I believe</p>
+<p id=d623 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, perfect.</p>
+<p id=751b class="phone s07"><cite>Dave_Longley:</cite> There's a 689 on my first comment there. So, we might be able to close that one.</p>
+<p id=d7d6 class="phone s02"><cite>Patrick_St-Louis:</cite> Aha. Okay.</p>
+<p id=808a class="phone s07"><cite>Dave_Longley:</cite> And I would say this is probably done.</p>
+<p id=1380 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh closing is this first 28 and group. Okay, we'll go ahead and close this issue. Okay, let's carry on.</p>
+<p id=9902 class="phone s02"><cite>Patrick_St-Louis:</cite> So the next one was about uh proper formats uh for datetime properties. We got one approval. I know Taled has requested some small tweaks. Uh it's Seems like they are just editorial. Uh can I let you coyote just approve these uh and then we will merge this.</p>
+<p id=2bd4 class="phone s01"><cite>Kayode_Ezike:</cite> Uh, sure. Yeah. Uh, I'll revisit this. I fig I wasn't aware of this. Also, does anyone know just really quickly if the issue with accepting changes still introduces the carriage feed um issue or if not that's fine, I'll just figure it out.</p>
+<p id=ab18 class="phone s01"><cite>Kayode_Ezike:</cite> But just wondering, I know that we we at a point we were putting a moratorium on accepting um suggested changes because of that, but look for still doing that. the whole like the LF versus CRLF um issue that um we had there was a time…</p>
+<p id=f8cb class="phone s02"><cite>Patrick_St-Louis:</cite> Sorry, I'm not sure I understand the weather.</p>
+<p id=5487 class="phone s01"><cite>Kayode_Ezike:</cite> where we realized it was coming from accepting suggested changes. And so I'm wondering if that was still an issue. If I mean if no one knows it's fine now I'll just I'll just accept them and and fix them after the fact on main but to it. hours.</p>
+<p id=6929 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yeah. Just just uh Yeah, we can can see this. Uh okay. Uh thank you for bringing it up. Uh okay. So, I'll let you a couple second and then we'll do this. Okay. So, thread model snapshot to transitions. Uh let's come back to this one.</p>
+<p id=0747 class="phone s02"><cite>Patrick_St-Louis:</cite> feel uh uh did someone raise their hands?</p>
+<p id=2466 class="phone s05"><cite>Eric_Schuh:</cite> I was just going to comment on that PR,…</p>
+<p id=efae class="phone s05"><cite>Eric_Schuh:</cite> but if we're coming back to it,…</p>
+<p id=a8bf class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Do you think uh we should come back or…</p>
+<p id=676b class="phone s05"><cite>Eric_Schuh:</cite> no problem.</p>
+<p id=6261 class="phone s02"><cite>Patrick_St-Louis:</cite> do you think this will need some discussions?</p>
+<p id=4a7e class="phone s05"><cite>Eric_Schuh:</cite> I I don't think it needs discussion. Right. This was done for to get a snapshot published um for this note.</p>
+<p id=b2bd class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Okay.</p>
+<p id=4bdf class="phone s05"><cite>Eric_Schuh:</cite> So it just adds a new folder with the snapshot files.</p>
+<p id=f44c class="phone s06"><cite>Joe_Andrieu:</cite> What the f***?</p>
+<p id=abbf class="phone s05"><cite>Eric_Schuh:</cite> Um it shouldn't affect anything else in the spec. Um I haven't seen anything from Ivan of whether or not this was actually published or not. I I would have to dig through some emails. Um but yeah.</p>
+<p id=c30c class="phone s02"><cite>Patrick_St-Louis:</cite> The PNG.</p>
+<p id=08c5 class="phone s03"><cite>Manu_Sporny:</cite> It was it it was published.</p>
+<p id=d98b class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Yes.</p>
+<p id=8335 class="phone s03"><cite>Manu_Sporny:</cite> Um Yep.</p>
+<p id=b933 class="phone s05"><cite>Eric_Schuh:</cite> Okay. I thought I saw an email. It's just been a couple weeks since I looked.</p>
+<p id=5e9c class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Perfect.</p>
+<p id=6275 class="phone s02"><cite>Patrick_St-Louis:</cite> In that case, uh, I think this looks good to me. So, let me get an approval. My computer is a bit slow at the moment. Okay, can do it. Okay, so this looks good. Couple failing tests.</p>
+<p id=a7fa class="phone s02"><cite>Patrick_St-Louis:</cite> Uh, but same thing, we will just readress the fix these tests uh after a call.</p>
+<p id=48dc class="phone s02"><cite>Patrick_St-Louis:</cite> Uh any objection to merging this? We've got a good amount of approvals now.</p>
+<p id=5f2a class="phone s06"><cite>Joe_Andrieu:</cite> Thank you.</p>
+<p id=5fdb class="phone s06"><cite>Joe_Andrieu:</cite> Thank you.</p>
+<p id=486d class="phone s02"><cite>Patrick_St-Louis:</cite> Did I then? Okay.</p>
+</section>
+
+<section>
+<h3 id=4e6d>Threat Model Content Update</h3>
+<p id=a8a3 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, the the main thing that came out of this was there was a couple of issues that were created uh that will be cleaned up in the actual threat model source document uh during my editorial PR after content PR that we might get to today or…</p>
+<p id=8a6c class="phone s06"><cite>Joe_Andrieu:</cite> too much.</p>
+<p id=d9b8 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Perfect.</p>
+<p id=33c6 class="phone s05"><cite>Eric_Schuh:</cite> might not is resolved</p>
+<p id=70a1 class="phone s02"><cite>Patrick_St-Louis:</cite> Well, let's try to get to it. Okay. Was there an issue related to this? No, I think that was just the task. Perfect. Um let's see what's happening here. Okay, hold some time here. Okay, let's refresh this and let's keep going. So explicit. Let's move this before here.</p>
+<p id=82af class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, so had an explicit uh exchange terminal signal. Uh again, very small. Uh let's go to the issue real quick. Yes, I remember this very well. Couple uh tweets requested from uh Aled. Uh so same thing uh coyote can I just let you go here and uh approve the tales suggestion or the decline them if you bill okay and then we'll come back at the end as far as the PR it's just a done boolean on the response this looks pretty good to me so</p>
+<p id=77f1 class="phone s02"><cite>Patrick_St-Louis:</cite> prove this.</p>
+<p id=ad42 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, I'm already I I'm just like managing the topics and subtopics, which is why I haven't gotten to the other one,…</p>
+<p id=9eee class="phone s02"><cite>Patrick_St-Louis:</cite> Perfect. But it's not a problem.</p>
+<p id=86d5 class="phone s01"><cite>Kayode_Ezike:</cite> but um I I'll do it.</p>
+<p id=af37 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh yeah.</p>
+<p id=c3c5 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, maybe soon after we we're done. Yeah.</p>
+<p id=3007 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. Yeah. Yeah. And I think we can even merge the these outside of the call. Uh okay. So this is good. Uh okay. So this one uh I've got some address to the comments to do. Um I'll address this. We'll need some more pair of eyes on these. Uh so this was one of the big one. Uh add cryptosuit specific exchange data as a concept here.</p>
+<p id=acc8 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh we will review this uh once there's a bit more reviews in there. Uh yes, Coyote Okay.</p>
+<p id=2c69 class="phone s01"><cite>Kayode_Ezike:</cite> Just a quick comment.</p>
+<p id=bd6d class="phone s06"><cite>Joe_Andrieu:</cite> Thank you. Thanks.</p>
+<p id=b24c class="phone s01"><cite>Kayode_Ezike:</cite> I noticed that a PR came in today from Eric that seems to be doing something similar. I made a comment on that issue, but we may have to at some point when we discuss it, figure out how to reconcile those uh your PR and and the one that Eric are graced.</p>
+<p id=870a class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, Rick. Okay.</p>
+<p id=db32 class="phone s05"><cite>Eric_Schuh:</cite> Yeah, I was just going to say um I I had missed that you submitted this one um just in terms of tags.</p>
+<p id=a332 class="phone s05"><cite>Eric_Schuh:</cite> I think we hadn't updated with the PR exists. Uh so I do think the one that I put in is likely redundant if this gets accepted. Um though I might have included an example that would also work be worth including um in terms of uh how you might use this exchange data field uh as a response to the BBS commitment uh basically send back the data. Um, that would be the only thing that would be worth considering.</p>
+<p id=5cdd class="phone s02"><cite>Patrick_St-Louis:</cite> So, I will have a look at your PR,…</p>
+<p id=bbd6 class="phone s05"><cite>Eric_Schuh:</cite> I think Yep.</p>
+<p id=cfea class="phone s02"><cite>Patrick_St-Louis:</cite> look at this one, and next week we'll have a path forward. Is that good?</p>
+<p id=ac78 class="phone s05"><cite>Eric_Schuh:</cite> Sounds good.</p>
+<p id=cf34 class="phone s02"><cite>Patrick_St-Louis:</cite> Right. Awesome. I might ping you uh if I need something. Okay. Um, that's this internationalization. Our favorite topic.</p>
+<p id=6372 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, this is the final I think this is the final one that's outstanding for our international edition review. Um, so it's probably worth getting this in as soon as we can.</p>
+<p id=6d03 class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah, just some slight editorial change to make in there. Kayode Ezike:</p>
+<p id=d95d class="phone s01"><cite>Kayode_Ezike:</cite> Okay, let's see.</p>
+<p id=25b6 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh I will put all these together.</p>
+<p id=d232 class="phone s02"><cite>Patrick_St-Louis:</cite> So just some light comments. Um yeah being careful for lowercase normative words to avoid the section.</p>
+<p id=b492 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. And…</p>
+<p id=393b class="phone s01"><cite>Kayode_Ezike:</cite> what I suspect might happen is like…</p>
+<p id=a8ca class="phone s01"><cite>Kayode_Ezike:</cite> if we're if we get enough approvals on this call for these three that have um been standing out, then we can just merge them afterwards and close the issues for them like out out of bend. Yeah.</p>
+<p id=b2d6 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes, I I think so.</p>
+<p id=2921 class="phone s02"><cite>Patrick_St-Louis:</cite> Yes. Uh if we register the approvals here. Um this was open three weeks ago. So that's good. Okay.</p>
+<p id=21c0 class="phone s02"><cite>Patrick_St-Louis:</cite> So, I'll let you address the uh the comments and the suggestions and then we'll be able to merge this. I'm lost on my tabs.</p>
+<p id=fbb0 class="phone s07"><cite>Dave_Longley:</cite> One more to the right. Keep going.</p>
+<p id=d420 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. All right. This was an issue. Okay. Accepted encryption for VPRs for encrypted response. So this is adding yet another accepted field uh following the pattern that we are familiar with. Uh minor tweaks</p>
+<p id=94b9 class="phone s07"><cite>Dave_Longley:</cite> Yeah, there's minor tweaks And…</p>
+<p id=3a89 class="phone s07"><cite>Dave_Longley:</cite> then there's probably a discussion about media types. So we should go to the next.</p>
+<p id=dfd3 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Yeah.</p>
+<p id=510c class="phone s02"><cite>Patrick_St-Louis:</cite> Perfect. Yeah. Okay. I see we can uh Yeah. If we have time at the end of the call, we can come back to this one. So, I'll leave it open. Trick model content update. Okay. So, this is a big one. Uh well, big one. 33 lines. Uh Eric, do you want to take us through this?</p>
+<p id=d77e class="phone s05"><cite>Eric_Schuh:</cite> Um, sure. Uh, so for the most part, this was just handling any of the outstanding threat model issues that were related to content. So this was mostly filling in responses, filling in the taxonomies,…</p>
+<p id=a236 class="phone s02"><cite>Patrick_St-Louis:</cite> Mhm. This is a</p>
+<p id=10004 class="phone s05"><cite>Eric_Schuh:</cite> um, generally, uh, you know, making sure every threat has at least one response. um updating some elements here and there. Um rewarding some of the responses that people uh had issues with. Um and yeah, uh so basically this is kind of in terms of a version 1.0 with a threat model. This is kind of my last planned real content update um from at least my side of things. Um, you can see there's about 10 issues that this will close out. Um, and uh, once this is in, I'll have a follow-up that is editorial in nature, mostly, you know, fixing up any of the respec links that are currently broken, making sure the numbering is good across the board.</p>
+<p id=2f95 class="phone s05"><cite>Eric_Schuh:</cite> Um, and that's when I'll also put in a PR uh or the main spec to refactor the privacy and security consideration sections um to match the uh new pattern. Um I just didn't want to do that too prematurely in case we had more uh index and numbering changes that were um that came out of the content review.</p>
+<p id=10005 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay, very good. So, this one is going to be a big one to close. Uh, I'll leave it open. We'll let people put in some review. Uh, just read the text, make sure it's good. Uh, however, myself, I think, uh, it's going to be fine to put it in there. We just want to make sure it address these issues. Uh, so we'll make sure to address this first thing next week. Uh, or even if we have an agreement that there's no objection,…</p>
+<p id=08c2 class="phone s06"><cite>Joe_Andrieu:</cite> It's</p>
+<p id=6f07 class="phone s02"><cite>Patrick_St-Louis:</cite> uh, we can merge this once more people has approved it. Uh, very exciting PR. Uh, okay. So, where we at?</p>
+<p id=01fa class="phone s02"><cite>Patrick_St-Louis:</cite> Uh, so this one we said maybe we'll come back to it. This one will come back to it. All right, there's only about six 78 left. Uh, okay. What's the size of this one? Okay, this one is one line. um 36 minutes ago. Uh I feel this one we can probably discuss it really quick, Dave.</p>
+<p id=947c class="phone s02"><cite>Patrick_St-Louis:</cite> It seems like we can probably come to a conclusion here. Okay.</p>
+<p id=c487 class="phone s07"><cite>Dave_Longley:</cite> Yeah, that's yeah, that's fine. I wanted to note we've passed all the PRs that are over a week old, so we wouldn't be able to merge anymore.</p>
+<p id=75f1 class="phone s01"><cite>Kayode_Ezike:</cite> Uh so this is not exactly that I guess the the issue issue</p>
+<p id=7f32 class="phone s07"><cite>Dave_Longley:</cite> Anyway, um but uh for this one, uh my comment here is uh I think this PR erroneously makes it so that you can't delete a credential based on its credential ID meta property as opposed to its external credential do ID property. So, I don't think we should make that</p>
+<p id=d186 class="phone s01"><cite>Kayode_Ezike:</cite> that I discovered here is that um it seems that there's two ways in in the delete uh endpoint which could be confusing. Two ways to pass in the ID where the ID would have already been set at the time of issuance. Um and whatever the whatever the ID that was sent at the time of issuance should just be provided in the path instead of also enabling a way to pass in options credential ID at the the delete endpoint specifically.</p>
+<p id=63e3 class="phone s01"><cite>Kayode_Ezike:</cite> Um yeah, go ahead.</p>
+<p id=5961 class="phone s02"><cite>Patrick_St-Louis:</cite> Um so we had two ids that we define.</p>
+<p id=10006 class="phone s02"><cite>Patrick_St-Louis:</cite> We define the ID as the credential id that needs to be a URL value. uh and then we define this uh option past credential id uh which this is the ID value that we should use when we refer to it through an API.</p>
+<p id=8ac2 class="phone s01"><cite>Kayode_Ezike:</cite> Right. Right.</p>
+<p id=cbad class="phone s02"><cite>Patrick_St-Louis:</cite> So if you've passed this value as the options when you issued it, this should in a sense be what is in your URL endpoint because this credential ID is the value for the credential ID.</p>
+<p id=6885 class="phone s02"><cite>Patrick_St-Louis:</cite> This could become a UR URN. This could become an HTTPS. It might not even have something to do with this. Um, That's us. Kayode Ezike:</p>
+<p id=dd95 class="phone s01"><cite>Kayode_Ezike:</cite> So that I understand I guess what I'm saying. So the specification for the postcredentials issue endpoint says that the the basically the handler for that endpoint should first look at credential. ID and credential ID is missing then to use credential ID I believe it was and but but the point is that one of them survives as far as what's actually tracked in internally and that becomes the authoritative ID to use moving forward. That was my understanding at least.</p>
+<p id=8330 class="phone s01"><cite>Kayode_Ezike:</cite> And so what I was saying is that it doesn't make sense for us to have two ways to potentially pass in the credential ID that should be deleted in this endpoint, right? We either have it cuz we already have the credentials.</p>
+<p id=a905 class="phone s01"><cite>Kayode_Ezike:</cite> This is describing the credential ID endpoint, right? So if we have the ID already in this endpoint and that path, then why would we also need the options ID for this endpoint is what I'm saying. ID. It's it's it's redundant.</p>
+<p id=bc45 class="phone s02"><cite>Patrick_St-Louis:</cite> Um, Yeah.</p>
+<p id=ae6e class="phone s02"><cite>Patrick_St-Louis:</cite> Yeah. I would agree. Like I don't think this is needed. Uh Dave</p>
+<p id=10007 class="phone s07"><cite>Dave_Longley:</cite> Yeah, I think what we need to do is clarify what the ID value is and the using the word pass is confusing. So I agree there's only one way to do this. You pass it in the URL. You are directly referencing uh the identifier for the credential inside of the URL when you're calling delete. There's no post body for this or confusion. And so we should say that the summary is we can say deletes a credential or verifiable credential by ID. Then we should say the ID was set previously, you know,…</p>
+<p id=95e6 class="phone s01"><cite>Kayode_Ezike:</cite> Mhm. Right.</p>
+<p id=14a3 class="phone s07"><cite>Dave_Longley:</cite> for example, during issuance. um see that other thing for how that happens and…</p>
+<p id=9510 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah. That that Okay.</p>
+<p id=363b class="phone s07"><cite>Dave_Longley:</cite> then and then we'd be</p>
+<p id=70ab class="phone s01"><cite>Kayode_Ezike:</cite> Um, one more question here that I want to ask that was bugging me a little bit. So generally speaking, do I guess we would expect cuz cential ids in the VC data model is supposed to be you know URL like a URL or whatever https. So I guess we expect for implementers to like URL encode the ID before they pass it in in the in the URL.</p>
+<p id=971b class="phone s01"><cite>Kayode_Ezike:</cite> Is that the idea?</p>
+<p id=34d1 class="phone s07"><cite>Dave_Longley:</cite> We do expect that and…</p>
+<p id=24a0 class="phone s07"><cite>Dave_Longley:</cite> we should make that maybe we should make that explicit. Yep.</p>
+<p id=220d class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, I think so. cuz I think otherwise people probably just put the latter part like the value part of the Okay, cool. Good.</p>
+<p id=a1e2 class="phone s02"><cite>Patrick_St-Louis:</cite> Right. Right.</p>
+<p id=20f7 class="phone s02"><cite>Patrick_St-Louis:</cite> Right. Because this could be one or the other. It could be the full-on credential ID URL encoded or it could be just the ID portion of it.</p>
+<p id=694f class="phone s07"><cite>Dave_Longley:</cite> Yeah, in in we could probably just have a general statement in our spec that all path parameters are URI encoded… because they are and should be. So if we say that once, I think that would cover Dave Longley:</p>
+<p id=7dd4 class="phone s02"><cite>Patrick_St-Louis:</cite> Okay. Uh yeah,…</p>
+<p id=10008 class="phone s01"><cite>Kayode_Ezike:</cite> There's a few things to do here. Yeah.</p>
+<p id=238d class="phone s02"><cite>Patrick_St-Louis:</cite> it's just uh needs verifification of URL id use our URL encoded.</p>
+<p id=07d3 class="phone s02"><cite>Patrick_St-Louis:</cite> I don't know if this makes sense. This the way I wrote this seems a bit redundant. Uh you all your path yeah provided ID values encoded.</p>
+<p id=af75 class="phone s07"><cite>Dave_Longley:</cite> Path parameters.</p>
+<p id=39e9 class="phone s02"><cite>Patrick_St-Louis:</cite> Um between credential. ID.</p>
+<p id=1cf4 class="phone s01"><cite>Kayode_Ezike:</cite> And then the other one was that we should refer and…</p>
+<p id=3036 class="phone s01"><cite>Kayode_Ezike:</cite> we should refer them to the credentials the post credentials issue endpoint for determining how to uh set the credential ID and that's the that's the ID that should be used in the path here.</p>
+<p id=5dd8 class="phone s02"><cite>Patrick_St-Louis:</cite> and create that show. Yes.</p>
+<p id=f838 class="phone s07"><cite>Dave_Longley:</cite> Yeah. And I don't know uh we might want to clarify that when you don't provide options.credential ID. Oh well, we might want to clarify somewhere that the ID is the value of credential ID with no dot in it. That is the value when you're issuing. If you don't provide that value and the implementation stores the credential, it is an option to fill that value with credential ID. But the the the data model piece that we're always talking about when we're talking about this is what Patrick said. Uh when we're talking about referring to a credential by in VCOM, we're talking about credential ID camel case. That's what we're talking about.</p>
+<p id=20b6 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh but there was a case that if the credential doesn't have a credential ID or you don't provide the option it would still generate one right like yeah…</p>
+<p id=4cc4 class="phone s07"><cite>Dave_Longley:</cite> And I think we have some text that says you could make it generate one, you could omit it and the credential will not be stored. Like there's there are options that you can take in your implementation. But if if you are storing something and then you want to refer to it, it is the credential ID camelc case value. That's what you're always talking</p>
+<p id=59ec class="phone s02"><cite>Patrick_St-Louis:</cite> because because we do have the storage service, right? So that's kind of a something the storage service would u manage. Okay. Uh okay. So two points of clarification.</p>
+<p id=f15f class="phone s01"><cite>Kayode_Ezike:</cite> here. Yeah.</p>
+<p id=0279 class="phone s02"><cite>Patrick_St-Louis:</cite> I'm going to commend this and we'll have a look at next time. Uh just going to go through these very quickly.</p>
+<p id=bf74 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh this seems similar to the other the offer group we did.</p>
+<p id=66b5 class="phone s01"><cite>Kayode_Ezike:</cite> Yeah, this is for back course compatibility.</p>
+<p id=58c3 class="phone s02"><cite>Patrick_St-Louis:</cite> Uh okay,…</p>
+<p id=7dfd class="phone s01"><cite>Kayode_Ezike:</cite> um because at the moment there is no group um at the current version of respect and so if people didn't include it then we should group all of those under the same unde like you know hardcoded undefined group and and treat them as an end of of themselves as far as goes</p>
+<p id=1dbd class="phone s02"><cite>Patrick_St-Louis:</cite> that makes sense. We'll let people review and merge next time. Okay, so we got like quite a few small PRs we'll be able to address, close a few issues. Uh we'll be get give a little bit more time for people to review this and we should be in a good place to merge these next week because they are all fairly simple. This one I will uh have a look at this.</p>
+<p id=4449 class="phone s02"><cite>Patrick_St-Louis:</cite> Um so yeah as soon as these are merged uh I don't think there's any objection for us uh going ahead and…</p>
+<p id=7441 class="phone s02"><cite>Patrick_St-Louis:</cite> merging this uh I'll just wait for taled to give his thumbs up wait till this is done so and then we'll merge these uh out of band. So this goes for PR 729, 741, 743. Okay, on that note, uh we are at time. Thank you. Uh so let's keep this space going for the next meetings and we'll be done in no time. All right, bye.</p>
+<p id=bb5d class="phone s01"><cite>Kayode_Ezike:</cite> Hello. Sounds good.</p>
+<p id=b443 class="phone s01"><cite>Kayode_Ezike:</cite> Cheers everyone. Meeting ended after 01:02:37 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>

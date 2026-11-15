@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>VCWG Render Method &ndash; 10 November 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>VCWG Render Method</h1>
+<h2>10 November 2026</h2>
+
+<nav id=links>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Benjamin_Young, Dave_Longley, Dmitri_Zagidulin, Kayode_Ezike, Manu_Sporny, Nate_Otto, Parth_Bhatt, Patrick_St-Louis, Phillip_Long, Ted_Thibodeau_Jr</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>-</dd>
+<dt>Scribe</dt><dd>transcriber</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#b87b">Conference Reports And Commentary</a></li>
+<li><a href="#a9da">Validity Period For Render Methods</a></li>
+<li><a href="#4403">Name And Description Internationalization</a></li>
+<li><a href="#79b7">Embed Or Link Mitigation</a></li>
+<li><a href="#2c68">Static Suite Embedding Requirements</a></li>
+<li><a href="#3c5f">Phone Home And Anonymity Sets</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+<section><p id=2dec class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hello. Hello.</p>
+<p id=7bb8 class="phone s02"><cite>Benjamin_Young:</cite> We few.</p>
+<p id=e2db class="phone s02"><cite>Benjamin_Young:</cite> We happy few.</p>
+<p id=eb3a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Testing, testing audio. Excellent. Okay, I can hear that.</p>
+<p id=f329 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right, welcome everyone. Uh, we're going to give it another minute for folks to connect and we'll get started after three minutes past the hour.</p>
+<p id=8ce5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> All right. And it is 3 minutes past the hour. So, welcome everyone to the now weekly ver uh verifiable credentials working group render method task force call. Uh as always uh these calls are recorded. notes will be available uh uh by automated transcription afterwards. We are under W3C code of conduct and IP restriction agreements. Uh we are back after two weeks uh first week uh in TAC. So lots of good conversations there. And then this past previous week uh resting after TAC, but also several of us were at IIW in an identity workshop.</p>
+</section>
+
+<section>
+<h3 id=b87b>Conference Reports And Commentary</h3>
+<p id=ffff class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh so now it's uh time to dive back in uh with renewed vigor uh because we've got a lot of ground to cover before CR and TR much of it uh related to the topics that we're going to focus on today which is internationalization. So, first let's start with um actually let's let's start with does anybody have either reports out or commentary on uh the the conversations at the conferences before we dive into poll requests.</p>
+<p id=b5e9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Patrick, please. Yeah.</p>
+<p id=b62a class="phone s03"><cite>Patrick_St-Louis:</cite> Well, I was not at the conference,…</p>
+<p id=43dc class="phone s03"><cite>Patrick_St-Louis:</cite> but I'd be interested to know if there were any topics around render methods and any significant related updates.</p>
+<p id=8195 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So uh just just to say a few words about that, we did have a render method reserved section of the verifiable credential working group session, but it mostly was catching up the rest of the group with uh the render method uh progress and you know like what we're doing and why and how close we are to CR. So, uh, I don't think anything new to this group, uh, transpired, but please, uh, Benjamin or Phil or Mano, uh, or or whoever, uh, please jump in…</p>
+<p id=ac0f class="phone s01"><cite>Dmitri_Zagidulin:</cite> if I'm if I missed something or Dave rather. Yeah.</p>
+<p id=c33a class="phone s02"><cite>Benjamin_Young:</cite> Yeah. Are you wanting anything particular?</p>
+<p id=717f class="phone s02"><cite>Benjamin_Young:</cite> I mean, it was it was TAC.</p>
+<p id=d270 class="phone s01"><cite>Dmitri_Zagidulin:</cite> as in as in uh anything interesting that got decided or…</p>
+<p id=1043 class="phone s01"><cite>Dmitri_Zagidulin:</cite> new questions of interest to this group.</p>
+<p id=07e7 class="phone s02"><cite>Benjamin_Young:</cite> um not a round render method that I recall,…</p>
+<p id=3e1a class="phone s02"><cite>Benjamin_Young:</cite> but I am digging through my brain and I think I was not in that room long enough to know honestly. So I'd have to check the check the logs. I missed a large part of the render method part. Mono's here.</p>
+<p id=babe class="phone s01"><cite>Dmitri_Zagidulin:</cite> No worries. No worries.</p>
+<p id=948c class="phone s02"><cite>Benjamin_Young:</cite> I think it was there for the whole part.</p>
+<p id=7d3a class="phone s01"><cite>Dmitri_Zagidulin:</cite> that. Yeah,…</p>
+<p id=0304 class="phone s02"><cite>Benjamin_Young:</cite> I was in a link up with another group. Yeah.</p>
+<p id=37c4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> that that was my reite election as well. Okay. Oh, I see we we do have him on now.</p>
+<p id=3f77 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Um, do uh any uh anything else we're missing from I I I just u mentioned that during TAC it was mostly a refreshing people's memory on what render method is and where we are uh with the group uh and of course an encouragement from the chairs and everyone else to uh do as much as we can to the track for CR as the whole group as whole verify credential working group wants to uh finish its deliverable. in like Q1 uh this coming year etc. Go ahead.</p>
+<p id=0c78 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. Hey, sorry for being late. The call went over. Um, uh, yes, plus one to that. I think what we're trying to I mean, we need to finish off the summary thing, right? Like that's I think the main thing that's kind of keeping us from going into CR and all the internationalization issues around it,…</p>
+<p id=3c71 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. Yeah.</p>
+<p id=9ebf class="phone s04"><cite>Manu_Sporny:</cite> everything else kind of feels like, you know, fairly well-formed. Um uh so so I think you know if we can focus on that um until it's done uh that would be uh wonderful. The only other thought I had on the summary render method is ensuring that there's that we have done our due diligence looking at the way uh Apple's u uh mechanism works as well as Google Wallet because they do have their own like here's how you describe the credential uh bits in there to make sure that we're not missing uh any of the features uh there. That's a</p>
+</section>
+
+<section>
+<h3 id=a9da>Validity Period For Render Methods</h3>
+<p id=1a3f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Absolutely. Absolutely. Thanks, Mono. Yeah. So, we'll we'll be focusing on that uh on this call especially. All right. Uh yeah. So, let's let's take a look at the pull requests real quick. So uh we have um going from oldest to newest uh we have uh my draft uh which which we're going to come back to the in language property uh objections uh from uh from Manu and Dave. Uh so that that's draft we're going to put a pin in that.</p>
+<p id=5e33 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh we have three minor pull requests uh from me 100 101 and 102 to address um some vocabulary items that Ivonne brought up. Uh Ivonne I just wanted um so all all three of these requests stack on one another. So the route is um issue or rather pull request 100. Here it is in chat. And I wanted to uh address your comment. Uh you're saying uh proposal in this PR looks like it defines new properties whose value is identical. Uh I just wanted to say I left a comment that that that's just an artifact of the PR. What looks like redefinition is just the JSON schema entry.</p>
+<p id=2bc8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> uh it is we are directly referencing VC data model as opposed to redefining or copying it. Does that make sense? Oh, we don't have it on. Never mind. I thought I saw his name on them. Okay. Um, but add your uh add your plus ones to this one. It should be fairly uh uncontroversial. It just links to valid from invalid until which we already listed, but it just links to their definitions in uh VC data model 2.1. Okay. So, that's PRS 100 through 102. Yes. Go ahead.</p>
+<p id=e609 class="phone s05"><cite>Dave_Longley:</cite> um just we should do that PR.</p>
+<p id=0486 class="phone s05"><cite>Dave_Longley:</cite> I'm just and maybe this is not the right time to raise it, but does it even make any sense to have a separate validity period for do people think it makes uh sense to have a separate validity period for a render method from the VC?</p>
+<p id=6e1d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, that's a great question.</p>
+<p id=57a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I was I was going to ask the same thing. I can't think of a use case where uh the render method might last longer or shorter than the VC. I think it would be much simpler if we bound the the life cycle to the VC. So I I agree with you, man. Go ahead.</p>
+<p id=35f2 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I agree with that as well. I don't have any objection to the PR, but it may be that it's just doesn't make sense. Um, I thought we have put that in there thinking that there might be render methods like V render method VCs that lived outside of the uh outside of the VC itself. Um, but e if that were true, then that VC would have a valid from valid…</p>
+<p id=f8a1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah.</p>
+<p id=83f4 class="phone s04"><cite>Manu_Sporny:</cite> until which would argue against this.</p>
+<p id=8fc4 class="phone s05"><cite>Dave_Longley:</cite> That's what I was going to say. Yep. Netric has his hand up</p>
+<p id=4dd8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Absolutely. Okay. Excellent. Then I will uh Oh, Patrick, go ahead.</p>
+<p id=ae49 class="phone s03"><cite>Patrick_St-Louis:</cite> Uh yeah. So the the first thing that this made me comes to my mind is the whole anon creds and double electric credential um a model which in its calculation like does not have anything outside of the credential subject uh sign like signature protected. Uh however, I would argue that if a specific credential uh would need to show a sort of valid from valid until equivalent, they would just define it in their own properties and point to it and design the template to show it.</p>
+<p id=8cc0 class="phone s03"><cite>Patrick_St-Louis:</cite> Um I'm not sure what the value would be to redefine like an official valid from valid until in a render method. Uh because one way or another if that information is important to show it will be included in the credential one way or…</p>
+<p id=cfc4 class="phone s03"><cite>Patrick_St-Louis:</cite> another and you can just point to it and assign it a value or a path.</p>
+<p id=2998 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah, completely agree.</p>
+<p id=581a class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, it sounds like you're you're also agreeing uh with with mom and Dave. Although, I have a question for you about ans. So nonredits uh really doesn't define a standard valid for valid until outside the credential subject.</p>
+<p id=4797 class="phone s03"><cite>Patrick_St-Louis:</cite> Uh it's well at least in the current way it is it's a list of key value pair that you just put in your credential subject and the way that you calculate the signature is very specific about this. So you it did an income path like if you have a value you want to put in the valid from valid until you can map to it.</p>
+<p id=a3e2 class="phone s03"><cite>Patrick_St-Louis:</cite> It's really you have a list of attributes. The attributes they mean things and you just put them in your credential subject. You could have a date that represents the validity but it would be defined as its own credential subject property.</p>
+<p id=baa5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=5397 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, so that makes sense. Uh but but again I think we're all in agreement here that we should just get rid of that for from our VC render methods back uh and just rely on the parent envelope by fiber credentials etc. Okay. So I'll I'll change uh this PR to to reflect that.</p>
+</section>
+
+<section>
+<h3 id=4403>Name And Description Internationalization</h3>
+<p id=e055 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The other two PRs are uh Dix's 2 name and description and it they they just say that they can be strings or JSON style language value object. So it just says right so instead of string and it references the the DC data model as well. uh and and here names and descriptions uh again we're reusing essentially from VC data model. Okay. So uh 101 102 should be fairly uh fairly easy shoeins. Um go ahead mano</p>
+<p id=8694 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, except I've made it clear that I'm opposed to pulling in any JSON LD language into the language value object thing. I won't die on the hill. Um, so if the rest of the group feels this is the direction they want to take, um, but it's just going to open up the, uh, discussion around why is this not a JSON LD document if you're using JSLD, you know, things. And then,…</p>
+<p id=120a class="phone s04"><cite>Manu_Sporny:</cite> you know, we go deeper into that thing and all of a sudden the other people that we want to use this thing just end up not using it because it smells like JSON LD. Um, that's my concern. I think I've made it clear.</p>
+<p id=4a97 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Understood. Understood.</p>
+<p id=12cb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. So, let's yeah, let's bring let's focus on that because that question affects literally everything else that we do uh with with all the other render method suites. Uh so one I completely agree with you. So my my question to the group is are there any objections to going that route and the question to the group is strategically so how how do we want to handle it?</p>
+<p id=5d2e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Specifically what Mono is is saying is that currently VC render method the type the suites themselves uh the VC render method objects in the VC data model in the context they're defined as JSON blobs which I didn't quite uh understand for a while what that meant but it basically means that the moment you hit VC render method JSON stops and non-contexted quote unquote plain JSON begins.</p>
+<p id=ff15 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So a lot of the discussion, a lot of what you you'll be hearing us um debate over is now we're in plain JSON land. So we don't actually inherit the uh JSON all the internet internationalizations properties automatically. We still might want to use the same mechanisms but the strategic question is oh where do we define them? we add a section here in the BC render method spec that says uh these things are JSON we're using uh this this notion of a language object right so so man I'd love to hear your thoughts on it and I'd love to uh take questions from the group especially if anybody objects to us going down this route of JSON</p>
+<p id=97e4 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, the alternative is just use language value uh you know direction without the at symbol in front of it. Um because this thing is this own kind of bespoke JSON format. Um that's the alternative. Um looking at uh PR 102 though it looks like you know we're saying use language value objects uh but we're not associating them with like name and description and that kind of thing. So, we may want to think about that um as well, but that's it.</p>
+<p id=8c54 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Hold on. That may that may just be uh oh wait,…</p>
+<p id=0bcf class="phone s04"><cite>Manu_Sporny:</cite> It's down in the JSON schema, I think, is</p>
+<p id=85e4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> wait. So up in the in the spec itself, we are associated with name and description, right?</p>
+<p id=76fe class="phone s02"><cite>Benjamin_Young:</cite> Yeah. Are we are we discussing the at symbol again as like the only point of contention?</p>
+<p id=cdc2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's line 5 522. But but anyways, so that's uh let's pull back from uh PR 102 and and talk about the the approach in general. We've got Benjamin and then Dave on the queue. Go ahead, Benjamin. No, no, no. Uh we are discussing the uh</p>
+<p id=4edd class="phone s01"><cite>Dmitri_Zagidulin:</cite> Whether these remain JSON blobs or…</p>
+<p id=ba1c class="phone s01"><cite>Dmitri_Zagidulin:</cite> whether they are or or whether we refactor the spec and make to these JSON LD that's what we're discussing.</p>
+<p id=6370 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I don't I don't think those are exclusive paths,…</p>
+<p id=9add class="phone s02"><cite>Benjamin_Young:</cite> which is probably why I'm confused. But um and…</p>
+<p id=d37f class="phone s02"><cite>Benjamin_Young:</cite> by JSON blobs. You're just meaning in the outer VC.</p>
+<p id=338c class="phone s01"><cite>Dmitri_Zagidulin:</cite> container JSON containers.</p>
+<p id=58c3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So uh in no no hold on.</p>
+<p id=1ce5 class="phone s02"><cite>Benjamin_Young:</cite> So, a data URL like the original thing from Nate had or…</p>
+<p id=8af8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So currently in the VC context the VC render methods the container is of type JSON which means these are opaque JSON blobs. They are not parsed using JSON.</p>
+<p id=34c8 class="phone s02"><cite>Benjamin_Young:</cite> right. I got you.</p>
+<p id=35be class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Yeah. Benjamin Young:</p>
+<p id=2583 class="phone s02"><cite>Benjamin_Young:</cite> Yeah. No. Yeah.</p>
+<p id=47a1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So that's that's the status quo. That's the status quo. So what we're discussing is whether to keep that status quo or do a fairly dramatic refactor and turn them into JSON in which case we inherit uh the internationalization language automatically.</p>
+<p id=dded class="phone s01"><cite>Dmitri_Zagidulin:</cite> If we don't, if we continue with keeping them as Jason Bombs,…</p>
+<p id=0fe9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> which which I support wholeheartedly, then we will need to add a bit more language on the internationalization approach. That that's basically the deal. Uh, all right, Dave. Oh, no. Go ahead. Go ahead. Finish your thought. Correct. Correct. But they're not currently is is the important bit.</p>
+<p id=e5c9 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I said well real quick uh yeah point of point of clarity like the thing being an atjson valued object doesn't prohibit its contents from being JSON LD obviously I Um,…</p>
+<p id=c9f1 class="phone s02"><cite>Benjamin_Young:</cite> sure. So that's why I'm trying to clarify which thing we're discussing. Um, but Dave can go ahead.</p>
+<p id=9968 class="phone s05"><cite>Dave_Longley:</cite> Dimmitri, which term are you saying uses an JSON container?</p>
+<p id=9c66 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh I believe uh VC render method the suites themselves pull it up.</p>
+<p id=fc72 class="phone s05"><cite>Dave_Longley:</cite> No, there would have to be a term that was defined. I I'm…</p>
+<p id=24a8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yes,…</p>
+<p id=1151 class="phone s05"><cite>Dave_Longley:</cite> because uh that's not my understanding of what the status quo is. The status quo is payload is an um object of some kind and you can reference it externally and the payload for the summary is the externally referenced uh URL that you references to plain JSON which is different from what you were</p>
+<p id=a03b class="phone s01"><cite>Dmitri_Zagidulin:</cite> you you are correct. That is different and just to double check. Okay. Yes. So our right in which case in which case uh we then have a decision before us.</p>
+<p id=cc8f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh the thing that Manu went on previously did to say that do we do we add essentially the JSON container to for for the entire uh render method term and keep the render method suites uh or rather extend the JSON blob uh from just the summary suite to the The ES or uh do we strictly define?</p>
+<p id=066b class="phone s05"><cite>Dave_Longley:</cite> Yeah, I don't think we do any of those things. We we clearly decided that the payload is a separate document and we're not uh embedding it as a the in the existing document. Like I'm pretty sure we made that decision. Um and…</p>
+<p id=586a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. And and Mon just uh just face the the exact text spec in in the</p>
+<p id=10000 class="phone s05"><cite>Dave_Longley:</cite> that Yeah. So I would not want to go back. Yeah, I would not want to go back on that decision. I thought what we were discussing here or would be discussing for this item was whether or not we're going to reuse an existing specification just part of it which is its language object portion and pull that in and reuse that definition and everything that comes with it. Um and in my opinion I think everything that comes with it is significant. There was already lots of work that was put into designing those. Um and I would rather reuse that and refer to it than reinvent it here. that is m that is I don't think it I I don't I I don't think we should try and borrow any trouble from the future uh about you know somebody who might take issue with that but then would otherwise be using W3CVCs and so on. I think the number of people that would do that is extremely small.</p>
+<p id=d088 class="phone s05"><cite>Dave_Longley:</cite> Um I think it's a very tiny technical nit nitpick uh for someone to decide to use an entirely different stack on that basis and I think it already provides all the internationalization stuff that we need and we don't need in this group to take on having to repeat that work and by the way if any additional fixes or things are done in that other space we would get to inherit those in the future versus having to then duplicate that. Um that sort of reminds me of the um digest multibase versus um digest SRRI thing…</p>
+<p id=e16e class="phone s05"><cite>Dave_Longley:</cite> where we were looking at copying digest SRRI and trying to keep pace with it where it comes from a spec that it's not really designed to be uh exported from if people remember that particular issue. Um, so I I think I no I think that one was largely resolved at TAC recently and…</p>
+<p id=adca class="phone s01"><cite>Dmitri_Zagidulin:</cite> which still open and…</p>
+<p id=a2f6 class="phone s01"><cite>Dmitri_Zagidulin:</cite> still unfortunately in debate to go on.</p>
+<p id=bea7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ah, okay.</p>
+<p id=e723 class="phone s05"><cite>Dave_Longley:</cite> um and…</p>
+<p id=3ad2 class="phone s05"><cite>Dave_Longley:</cite> and and…</p>
+<p id=a9e0 class="phone s01"><cite>Dmitri_Zagidulin:</cite> That's good.</p>
+<p id=75cb class="phone s05"><cite>Dave_Longley:</cite> the the resolution was to essentially duplicate something in one time into VCDM for digest SRRI and decouple it. And I don't think we should have that I don't want to have that problem here. So, I'd rather us um pull in a feature that is is fully set up and does everything we need and not have to redo that</p>
+<p id=92f9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> understood. So, Manu, I I would invite you to hop on the queue and uh sort of clarify your position, but I do want to uh to correct something or to clarify something that you just said, Dave, which is uh we would essentially be catering to a very small group of those who would want to uh use VC. I'm not sure that's the case. I think that the render method mechanism is general enough that nonW3CVC users uh we have we have a chance for them to uh be tempted to use it as is regardless of the rest of the baggage of verifiable credential uh context etc.</p>
+<p id=0c16 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Oh, Benjamin gets on the</p>
+<p id=0e8f class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I don't think it's helpful to the ecosystem,…</p>
+<p id=10001 class="phone s02"><cite>Benjamin_Young:</cite> especially the people here who are actively supporting and expanding verifiable credentials to keep pointing at how it's built as flawed. I don't think that helps our case anywhere. Um, and certainly doesn't help our expansion front. Um and it will always hold us back. Uh JasonLD offers everything that Dave Longley said. It is widely used and widely deployed deployed especially are in and around credentials land and places that do credentials like governments and education and etc.</p>
+<p id=e882 class="phone s02"><cite>Benjamin_Young:</cite> Um, and it is right now the only JSON format that supports multi- language and has gone through the I18N ring of fire uh multiple times, etc. So, um, not building on it and borrowing trouble from imagined people not on this call um, is is holding us back and I' I'd prefer we move past it. Um the summary object document is not very big, has very few terms and would have the most minimal of contexts um if any. Right? You could just design it as it's already expressed and…</p>
+<p id=09c5 class="phone s02"><cite>Benjamin_Young:</cite> if somebody wants to use JSON LD parse it that way they can. If not they can if then the few keys that are currently defined but future cells Yeah.</p>
+<p id=3c37 class="phone s01"><cite>Dmitri_Zagidulin:</cite> And just to be clear,…</p>
+<p id=842a class="phone s01"><cite>Dmitri_Zagidulin:</cite> hang on. Just to be clear, we're not talking about just the summary object.</p>
+<p id=2398 class="phone s02"><cite>Benjamin_Young:</cite> Sure. Sure.</p>
+<p id=26e5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Talking about all of the render method suites that go on.</p>
+<p id=c878 class="phone s02"><cite>Benjamin_Young:</cite> And what JSONLDD will give you is extensibility and the ability to add new terms and new languages without without having to go update some static HTML spec people forgot about.</p>
+<p id=fcf9 class="phone s02"><cite>Benjamin_Young:</cite> So, um it is extensible JSON by definition. That's it.</p>
+<p id=caab class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you,…</p>
+<p id=1977 class="phone s01"><cite>Dmitri_Zagidulin:</cite> man. Next</p>
+<p id=7179 class="phone s04"><cite>Manu_Sporny:</cite> Um, if no one else feels this way, I'm happy to step down. Um, it sounds like that's the case. Um, I will clarify though that the there are other credential formats out there that do support that are JSON and do support language and direction. For example, SD.VC has a local and a direction. Um, I was hoping that we would align with them. Uh, this sounds like we are not going to align with them. Um, and I think that's gonna, you know, be reflected by people not using this more broadly. Um, but that's it. If I'm the only one here, I don't think we need to belabor the point. Um, I'm happy to step aside.</p>
+<p id=e94d class="phone s01"><cite>Dmitri_Zagidulin:</cite> I I am uh I do share your your view. I would also love to align with SJ internationalization approach uh and and make this render method suite broadly useful to other ecosystems.</p>
+<p id=c295 class="phone s01"><cite>Dmitri_Zagidulin:</cite> But I I agree with you. I'm also not going to die in this hill. Uh Benjamin, you're up next.</p>
+<p id=7b27 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I think they did it a unique brand new custom way like they've done everything else.</p>
+<p id=5537 class="phone s02"><cite>Benjamin_Young:</cite> I don't think that should drive us away from how we have done it for six plus years and that already has W3C buy in and etc etc. So um I think it's it would be the wrong pivot.</p>
+<p id=acbb class="phone s02"><cite>Benjamin_Young:</cite> So that's</p>
+<p id=4a8a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. So,…</p>
+<p id=0586 class="phone s01"><cite>Dmitri_Zagidulin:</cite> uh in that case, we need to bring a proposal to the rest of the the group. But let's you know let's start the proposal here. Uh oh, how do I turn off the captions? No live captions. Okay. All right.</p>
+<p id=31c2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, proposal uh or how do how does um how do we usually do uh task force proposals that then call for proposals in the group Agreed.</p>
+<p id=8d8b class="phone s04"><cite>Manu_Sporny:</cite> uh I hesitate to bring this up in the main group because they don't have a lot of the background that we've been discussing and if we make a decision in the task force and apply something to the spec, you know, I think the presumption is someone in the working group should read it in the future. I feel like we're, you know, this is this is going to get out of hands, Dimmitri, and I'd much rather just progress. It's clear that, you know, people here want to take a particular direction.</p>
+<p id=0eea class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. We do have understood.</p>
+<p id=d4c0 class="phone s04"><cite>Manu_Sporny:</cite> I disagree with it. Uh, but, uh, but that's, you know, that that's fine.</p>
+<p id=1fc9 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. And and…</p>
+<p id=2b58 class="phone s04"><cite>Manu_Sporny:</cite> So, so that,…</p>
+<p id=f408 class="phone s01"><cite>Dmitri_Zagidulin:</cite> as editor, I also disagree with it.</p>
+<p id=7926 class="phone s04"><cite>Manu_Sporny:</cite> so the default would be to merge both of those PRs.</p>
+<p id=61fe class="phone s04"><cite>Manu_Sporny:</cite> Um, and that's it.</p>
+<p id=5d6e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. But…</p>
+<p id=ac3e class="phone s01"><cite>Dmitri_Zagidulin:</cite> but so agreed. We won't bring it up uh uh immediately with to the rest of the group. Uh we're just going to use the the general uh existing mechanism. Uh we do have a spect. We don't want it to get out of hand, but we do need to make an explicit decision as a group here. Go ahead, M. Or you still have your hand up.</p>
+<p id=a192 class="phone s04"><cite>Manu_Sporny:</cite> I mean the alternative the alternative is to support the display property in the type metadata for SD.VC and allow people to uh include an externalized representation of it. I don't know what that would look like. I don't think we should spend our time doing it right now. But um maybe that is the the alternative is to say the there's a render method that will support the SD.VC stuff…</p>
+<p id=51e4 class="phone s04"><cite>Manu_Sporny:</cite> if you really want to use that. Um but I don't know how it would actually map to a W3CVC. I don't think you could easily just reuse it.</p>
+<p id=7c46 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=d431 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. So then subtle question is the group consensus that the summary suite continues to be a JSON blob but we reference the JSON subset of internationalization that we can say okay this is a JSON blob but we're using the same mechanism and the same at field names as JSLD internationalization</p>
+<p id=7782 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Or is the proposal wider? Is the proposal to make the summary payload to be JSON?</p>
+<p id=154b class="phone s04"><cite>Manu_Sporny:</cite> I would be opposed to the second one.</p>
+<p id=b458 class="phone s01"><cite>Dmitri_Zagidulin:</cite> The question for the group. Okay. Uh, got it. Uh, Benjamin, you're up next.</p>
+<p id=f97e class="phone s02"><cite>Benjamin_Young:</cite> I have no objection to the first one.</p>
+<p id=35e0 class="phone s02"><cite>Benjamin_Young:</cite> Um I think in in the same way that you can make a JSON document like VC not carry its own context. Um the decision to state it as being JSONLD is more about future expansion um and how you how you change this uh summary object format that we're creating in the future. Um it also as a remote object if it's going to have its own parsing. I'm assuming the current assumption is we're going to ship it as application/json which isn't going to really give it any distinctiveness. Um whereas if you ship it as LD plus JSON then it can certainly have multiple languages and things like that.</p>
+<p id=0d37 class="phone s02"><cite>Benjamin_Young:</cite> But it you know the the bridge between us is probably just shipping essentially what's defined there with the at symbols on the unique object that is a language value object and you know leave it at that and see if tag or otherwise is like oh hey this looks like JSON LD can I parse it as JSON LD and the truth would be yes you can. Um but we gave up on growth and expansion. Um,…</p>
+<p id=3867 class="phone s02"><cite>Benjamin_Young:</cite> but if if that's the that like I said is the bridge between us, let's do it that way.</p>
+<p id=83ea class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay, understood.</p>
+<p id=fd0f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Is there any objection from the from the rest of the group to us a continuing defining the summary payload and any any payload field as a JSON blob and b referencing the internationalization section of the JSON. All these stack as our internationalization mechanism.</p>
+<p id=4680 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Come on.</p>
+<p id=7e40 class="phone s04"><cite>Manu_Sporny:</cite> Uh, we have extra language in the VC data model. I don't know what we ref Benjamin are the are the language value object refs up to date and it's going to block us from going to CR and wreck. I I'm wondering…</p>
+<p id=d265 class="phone s02"><cite>Benjamin_Young:</cite> I'm looking.</p>
+<p id=10002 class="phone s04"><cite>Manu_Sporny:</cite> if we can just point to VCDM21 and and and that does ref I think some some JSON LD stuff. We wrote a lot about langu alternate language value objects in BCDM. I'm concerned about not refing that stuff as well. Yeah. I thought you said we're going to ref Jason LD instead.</p>
+<p id=14fb class="phone s01"><cite>Dmitri_Zagidulin:</cite> which just to be clear,…</p>
+<p id=2643 class="phone s01"><cite>Dmitri_Zagidulin:</cite> these PRs do exactly that what you're saying. Uh yes, yes, yes. Uh-huh.</p>
+<p id=5c35 class="phone s02"><cite>Benjamin_Young:</cite> I mean referencing the VCDM section is referencing Jason LB…</p>
+<p id=b87a class="phone s02"><cite>Benjamin_Young:</cite> which is why I don't want to keep eating our young here um because you're kicking the stilts out.</p>
+<p id=3e0a class="phone s02"><cite>Benjamin_Young:</cite> Like if we reference ECDM then it references JSON LD. So I don't I don't know why that's a surprise. Um okay.</p>
+<p id=1fc4 class="phone s04"><cite>Manu_Sporny:</cite> It says other things,…</p>
+<p id=6632 class="phone s04"><cite>Manu_Sporny:</cite> Benjamin. Like it it says things on top of what Jason LD says. That's the that's the reason that's the difference.</p>
+<p id=c513 class="phone s02"><cite>Benjamin_Young:</cite> Yeah. And that's that's fine in so far as they Yeah,…</p>
+<p id=44f7 class="phone s04"><cite>Manu_Sporny:</cite> Like there's a lot of like we we went in a lot of discussion with the internationalization group. They asked us to add quite a bit of language around it and we would be going back on that if we didn't ref VCTM.</p>
+<p id=1046 class="phone s02"><cite>Benjamin_Young:</cite> that's fine. I'm I'm calling out the point that it's JSON LD all the way down.</p>
+<p id=2684 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Right. Right.</p>
+<p id=10003 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, conceptually it's JSON all the way down. My question are about very specific PR language and and our sort of tactical approach. So, what I'm hearing so far is we we we keep the approach in these PRs and reference specifically the VCDM initialization section which in turn walks a fine line uh with referencing JSON etc. So any objections to this approach specifically?</p>
+<p id=6e88 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. So far, not hearing uh any objections. So, I think Mono, you you're okay with this. Dave, Benjamin.</p>
+<p id=ad48 class="phone s04"><cite>Manu_Sporny:</cite> Yep.</p>
+<p id=5adf class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. All right. I'm getting plus one from Mono. Dave. All right. And and Benjamin just earlier said that he's on board with this. Okay. So, this is good. This is good because this then sets the direction for the rest of uh rest of these conversations. Okay. So uh so far on this call uh we agreed to take out the valid until invalid from uh that the suites don't need their own expiration.</p>
+<p id=10004 class="phone s01"><cite>Dmitri_Zagidulin:</cite> they just inherit the life cycle from the parent container. Uh and we've gotten consensus about this approach for initialization. Specifically, we're going to refer to uh VCDM's initialization model which inherits it from JSON. Okay, so that's good. Uh so that's um that covers PRs 100 through 102. Uh, next I want to uh direct folks attention to Patrick St.</p>
+</section>
+
+<section>
+<h3 id=79b7>Embed Or Link Mitigation</h3>
+<p id=2c38 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Louis's excellent uh PR 103 which starts. So this is something that we've always uh needed to add uh specific embedding and phone home mitigation section and I think uh Patrick makes a great start uh towards this in PR 103. So please add your reviews to this uh link is in chat. Any any commentary on this PR before we move on? So it says exactly what uh you would expect. Uh should aggressively cache, should fetch at most once uh should use oblivious HTTP or similar relay.</p>
+<p id=10005 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh it mentions the trade-off between uh offline. Yeah, go ahead. Mano</p>
+<p id=998d class="phone s04"><cite>Manu_Sporny:</cite> Yeah, there's nothing wrong that I can see with the text. My concern here is we're repeating ourselves. I think the VC data model should probably talk about this because because it's it applies to anything that you link to, right? Um, and we have things in the threat model that speak to this. So, I'm wondering if we can move this language to VC data model and then link to it. Um the other issue of course is that when a link resource is used a digest multibbase value should be provided…</p>
+<p id=95d9 class="phone s04"><cite>Manu_Sporny:</cite> then that you know she is going to have a problem with that language. Um, but that's just it.</p>
+<p id=02ab class="phone s01"><cite>Dmitri_Zagidulin:</cite> right? So tactical question.</p>
+<p id=ddbc class="phone s01"><cite>Dmitri_Zagidulin:</cite> So I agree with you that in general everything else in with the C data model and working group uh has this consideration as well and the same mitigation. Uh the tactical question to you is uh do we just make sure that this mitigation strategy is in the threat model spec or…</p>
+<p id=156d class="phone s01"><cite>Dmitri_Zagidulin:</cite> in addition in the threat model and in the VCDM like are you are you picturing a section in</p>
+<p id=6a21 class="phone s04"><cite>Manu_Sporny:</cite> Th this has normative language in it and…</p>
+<p id=e7d5 class="phone s04"><cite>Manu_Sporny:</cite> I I suggest that we cut way down on the normative language. Like there they're like 5 6 7 8 9 10 12 12 normative statements. Um but most of them are kind of like shoulds. There's some must notss. Um, It need if it's got it's if it's going to keep normative language in there, it has to go in the core spec. I in the VCDM I would suggest we put it in the VCDM and like um scale back a bit on the normative statements um because a number of them you know are not necessarily testable. Uh we need to remove the preference for digest multibbase otherwise you know uh she is gonna object uh to it.</p>
+<p id=10006 class="phone s04"><cite>Manu_Sporny:</cite> Um there is a section there's a PR and a section that we can link to uh that talks about hashes like cryptographic hashes for external uh um resources that we can point to. And then um some of this uh language Patrick is is definitely duplicated in the in the BCDM. So you're going to want to make sure that we don't you know repeat ourselves multiple times. Um but plus one to a general linking versus embedding section uh in the core uh spec. Um I'll have to see if that is should be a normative section and then some of the stuff might transfer to the threat model. Um like phone home mitigations is a is a response to the phone home threat and so those should go in the uh uh in the uh in the threat model. That's it.</p>
+<p id=405c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. Uh Patrick,…</p>
+<p id=1045 class="phone s01"><cite>Dmitri_Zagidulin:</cite> this like you did a great job with this. Do you have the information you need to take this show to the main VCDM stack? Go ahead.</p>
+<p id=bbaa class="phone s03"><cite>Patrick_St-Louis:</cite> Uh so just to make sure I recap properly.</p>
+<p id=b5b9 class="phone s03"><cite>Patrick_St-Louis:</cite> So we want to keep the section uh remove text from that section and instead put that text in between the threat model and the VCDM specification and prefer to point outwards and also cut down on the normative statements. Did I get all the feedback here? And when we talk about the threat model, it could be where appropriate between the VC render method and the VCDM I would assume. Yeah. Okay.</p>
+<p id=c02f class="phone s04"><cite>Manu_Sporny:</cite> Yes, if there's anything specific to rendering, but this feels like it should all go in the VC data model because this is about referencing an external resource and using OTTP and and that sort of thing, I think.</p>
+<p id=7ab4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> which is general to uh not just random method but also to uh um embedded sorry um recognized entity to uh VC barcode to a whole bunch of things. So yes, so specifically add a section. So so move the section to VCDM, reduce the normative language from the moved section. And then we literally just want a sentence or two that says, &quot;Uh,</p>
+<p id=eb9d class="phone s01"><cite>Dmitri_Zagidulin:</cite> uh under thread models for the render method that we are subject to the same threat model as linking to any external resource. Go look here. Does that does that make sense, Patrick? Yes.</p>
+<p id=17cb class="phone s03"><cite>Patrick_St-Louis:</cite> I think so.</p>
+<p id=1dac class="phone s03"><cite>Patrick_St-Louis:</cite> Yes. Yes. Can you can you repeat just quickly one more time? picture. Yes.</p>
+<p id=e27e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Move move the text in the PR to parent VC data model. That's step one. uh reduce the normative language whenever possible. The shoulds basically see if we can have our u nor normative language as testable as possible. That's that's the focus.</p>
+<p id=489d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh and then step three add like a sentence or two to the GC render method linking to the section in BCDM. That's that's the ask as I heard it.</p>
+<p id=7e51 class="phone s03"><cite>Patrick_St-Louis:</cite> Yep, that makes sense.</p>
+<p id=aa19 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. All right. Excellent. Uh, good. Um, PR 104 is just a minor file renaming. Uh, not really not really worth uh discussing with this group. So, then uh we got 15 minutes. So, let's talk about um ah yeah, let's talk about let's talk about issue 98. No. Um issue the the one D long. Yeah, here we go. Uh issue 92 opened by Dave as as a result of the previous discussion. And the summary to this is basically for this iteration of the spec.</p>
+</section>
+
+<section>
+<h3 id=2c68>Static Suite Embedding Requirements</h3>
+<p id=128d class="phone s01"><cite>Dmitri_Zagidulin:</cite> Let's only allow embedded static not linked due to uh extreme privacy concerns which which I agree with. D would you say that's an accurate summary embedded only for static</p>
+<p id=f356 class="phone s05"><cite>Dave_Longley:</cite> Yes. And the way I would further summarize it is um and and this is related to a comment I had just put on the PR about embedding and linking. I don't think the decision is simply um you should embed if you want unlinkability or offline. I don't think that that that's where the main uh important difference is. It's what are you linking to? Are you linking to something that identifies you as or a VC in an in uh as an individual or is the resource you're linking to does it provide group privacy? That that seems to me to be the important distinction. So if you can link to resources that provide group privacy and then you can cache or fetch those in a way that provides group privacy that is better for efficiency. Um, it's better in a number of different ways and it and it provides you with privacy if</p>
+<p id=575f class="phone s05"><cite>Dave_Longley:</cite> you are uh if some if you're going to link to something that is uniquely identifying uh don't that's that's effectively um what I think you were just saying Demetri and I think that's the the summary of what I'm arguing for here um you should embed things that are going to uniquely identify you um that is not a good thing to link</p>
+<p id=c082 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Agreed. So I wanted to hop on the queue to say so yes I agree with you that the emphasis here is must not link to uniquely identifying uh artifacts. However, with an eye towards testability, I'm not sure it's possible in an automated unit test suite to determine whether something uniquely links somebody or not. Whereas much more clearer, we can say just if the sweet type is static must not use external reference, must embed. Does that make sense?</p>
+<p id=332f class="phone s01"><cite>Dmitri_Zagidulin:</cite> Like my concern is about testability of that statement.</p>
+<p id=1a02 class="phone s05"><cite>Dave_Longley:</cite> Yeah, testability might be challenging. Um, but I think uh for testability and this is why I talked about this in context of the static render method. The static render method all of the use cases we have are all uniquely identifying. So if that that one yeah that one makes it easy to say no you don't link that that one that one's always embedded and…</p>
+<p id=f670 class="phone s01"><cite>Dmitri_Zagidulin:</cite> necessarily. Yes. Yes. Yes.</p>
+<p id=0031 class="phone s05"><cite>Dave_Longley:</cite> if there's a if you have some static payload that's way too big to fit in a VC uh we need to talk about that because what is that use case maybe that's the wrong thing to do and it's currently not going to work with those rules.</p>
+<p id=30eb class="phone s01"><cite>Dmitri_Zagidulin:</cite> Though let's let's put size aside for a second.</p>
+<p id=67a7 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh we were just talking about uniquely identifiable monos.</p>
+<p id=10007 class="phone s04"><cite>Manu_Sporny:</cite> Uh yeah. Um uh so plus one Dmitri I think it is going to be very difficult for us to make a normative statement around how identifying the remote resource is. Uh and I agree with Dave Longley that we should uh we we can just restrict static to be it is it is it is embedded always you know must be must be embedded you know must not uh refer to an external resource. I think we just go you know start there for now. Um, uh, the end, right? The the other thing that I'm going back to the PR we just talked about, you know, 15 minutes ago, uh the uh you know, external resource language, Patrick, that you put together, that is where we might want to make some general statements about.</p>
+<p id=2434 class="phone s04"><cite>Manu_Sporny:</cite> about uh the phone home uh problem. I I think we we we we don't I don't think we say anything about phone home in the BC data model and we should start saying that and I don't think we need normative statements around it. Um uh I think we can say uh if your external resource contains uh you know uh unique uh individual identifying information uh fetching that resource is a phone home. No must should whatever we just state it as fact right.</p>
+<p id=c8d5 class="phone s01"><cite>Dmitri_Zagidulin:</cite> and cannot be mitigated.</p>
+<p id=44b9 class="phone s04"><cite>Manu_Sporny:</cite> Um, correct.</p>
+<p id=32b8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh with I would I would add a clarifying thing. Fetching a remote resource from a server controlled by the issuer is a phone home. I would I would posit that fetching the same resource from the holder's own controlled storage is is a different story.</p>
+<p id=507e class="phone s04"><cite>Manu_Sporny:</cite> Um, I want to not muddy the water,…</p>
+<p id=3e36 class="phone s05"><cite>Dave_Longley:</cite> That's just whose home it is.</p>
+<p id=4c9c class="phone s04"><cite>Manu_Sporny:</cite> but Um,</p>
+<p id=a3c8 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yeah. Yeah. Yeah. Yeah.</p>
+</section>
+
+<section>
+<h3 id=3c5f>Phone Home And Anonymity Sets</h3>
+<p id=d214 class="phone s01"><cite>Dmitri_Zagidulin:</cite> It is it is a very pedantic. Uh Go ahead, Patrick.</p>
+<p id=3ef9 class="phone s03"><cite>Patrick_St-Louis:</cite> Um yeah, I mean I don't want to get into too much of discussion of what exactly consists of phone home and where that line is. Uh but yeah, I would probably want to limit it to just fetching an external resource and not get down into the detail of who controls that resource and so on. uh and yeah I think that's a good idea because uh you know I'm thinking bit string status list and all sort of different specification have the same ramification and…</p>
+<p id=dcec class="phone s03"><cite>Patrick_St-Louis:</cite> like centralizing that statement into the VCDM kind of makes sense as a pattern. F.</p>
+<p id=8294 class="phone s04"><cite>Manu_Sporny:</cite> Yeah. Plus one to putting in in BCDM.</p>
+<p id=8101 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you.</p>
+<p id=da26 class="phone s04"><cite>Manu_Sporny:</cite> Sorry. Anyone else on the um uh the cons I I I'm I'm concerned about the exact language you just used,…</p>
+<p id=bf9c class="phone s01"><cite>Dmitri_Zagidulin:</cite> No, no, go ahead. Go ahead.</p>
+<p id=3fa1 class="phone s04"><cite>Manu_Sporny:</cite> Patrick, like fetching any resource from an external, you know, thing being phone home. I don't think that's true. the anonymity set matters. So fetching something where uh the like the issuer is holding like a status list and the anonymity set is like four million in size. That's not phone home, right? It is fetching a resource and it's putting you in a certain anonymity set. Uh but the the the real phone home concern is when you are uniquely identified or identified to a very high degree. Um that is the phone home I think uh concern. So you know I think we should raise a PR and we can debate you know the language but I'm I'm really concerned about saying like yeah fetching any external resources phone home. I don't think that's that's that's necessarily True.</p>
+<p id=10008 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Okay. So, just to summarize, so what what I'm hearing is consensus on though our focus is on uniquely identifiable that has testability challenges. So to start with we're just going to say static method uh static suite type embed only.</p>
+<p id=e292 class="phone s01"><cite>Dmitri_Zagidulin:</cite> In addition, in the main potential data model, we're we're going to say we're going to add to the language of uh threat mitigation that thread is flown home. The mitigation is aggressive caching and oblivious HTTP, but only for large anonymity sets. the moment you link to something that uniquely identifies that is an unmitigatable phone home. That way we uh we make the the must not implicit but avoid the testability requirement etc. Okay. Uh so that I'm seeing a plus one from Dave.</p>
+<p id=7c0c class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh, all right. Go ahead.</p>
+<p id=1b0f class="phone s04"><cite>Manu_Sporny:</cite> Hold on one second. We're we're not recording this and and so we we discussed 92 and…</p>
+<p id=e628 class="phone s01"><cite>Dmitri_Zagidulin:</cite> What? Whoops.</p>
+<p id=2a10 class="phone s04"><cite>Manu_Sporny:</cite> came to a conclusion. Um I'm fine to I'm fine to write it down,…</p>
+<p id=4c68 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Oh, no. Why aren't we recording?</p>
+<p id=123b class="phone s04"><cite>Manu_Sporny:</cite> but um I we're recording this meeting and it'll be in the transcript, but it won't be in the issue tracker.</p>
+<p id=c87e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Ah, got it. Got it. Got it.</p>
+<p id=af88 class="phone s04"><cite>Manu_Sporny:</cite> So when somebody goes to write the PR,…</p>
+<p id=a7fc class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it.</p>
+<p id=bafa class="phone s04"><cite>Manu_Sporny:</cite> they're not going to have any of the information or know that we talked about Yeah,…</p>
+<p id=f85b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Got it. Yes. Yes. Let's so somebody if you can uh please leave either a comment on the PR or comment on the on the issue uh issue 92 by Dave.</p>
+<p id=8295 class="phone s04"><cite>Manu_Sporny:</cite> I I'll I'll I'll add something to the issue.</p>
+<p id=8091 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. Yeah. So it's it's this one right here. So specifically Yeah. Okay. Excellent. All right.</p>
+<p id=687f class="phone s01"><cite>Dmitri_Zagidulin:</cite> So static met only uh everything else only link if the anonymity set is sufficiently large and the payload is too large to uh to embed. Yes.</p>
+<p id=251d class="phone s05"><cite>Dave_Longley:</cite> Yeah, all that's true. Um, but also something we should keep in mind is we should also try to adopt designs that make that true. So there are some questions that are coming up, you know, that we may or may not get to today that um we can make design choices to make those external resources uh be better preserve group privacy and we should head in that direction.</p>
+<p id=ffcf class="phone s05"><cite>Dave_Longley:</cite> Uh just as a general design principle uh because it means that you can have the efficiency of smaller credentials um and still maintain privacy.</p>
+<p id=caf1 class="phone s01"><cite>Dmitri_Zagidulin:</cite> So, I'm super curious.</p>
+<p id=085a class="phone s01"><cite>Dmitri_Zagidulin:</cite> Do you do you have any examples in mind?</p>
+<p id=e8f2 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Like what would that look Yes.</p>
+<p id=a53b class="phone s05"><cite>Dave_Longley:</cite> Uh just a one that quickly comes to mind is there's an internationalization issue that was asking that was on the when we first started the meeting it was up on your screen share and…</p>
+<p id=c412 class="phone s05"><cite>Dave_Longley:</cite> it was uh where do we put the language to select for for the template for the HTML template and what you could we could decide you don't do that you include the languages you need in the HTML template itself. So, uh, you only ever ask for one template. That means all clients that are ever asking, they get one template. They don't, uh, content negotiate for Navajo or,…</p>
+<p id=9e40 class="phone s05"><cite>Dave_Longley:</cite> you know, whatever or get a different link to Navajo because that's going to reduce their, uh, group privacy size. So those are choices we can</p>
+<p id=3a7e class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes, I'm glad you bring that up.</p>
+<p id=d536 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I was actually that was going to be literally the next uh issue I wanted to bring up. So is H97 what Dave just mentioned uh is uh feedback from our wonderful internationalization uh horizontal review by a Phillips uh who said basically let us not do HTML language negotiation uh for various reasons that that's the but this is not always desirable or practicable meaning do what instead what they've just said put</p>
+<p id=27cb class="phone s01"><cite>Dmitri_Zagidulin:</cite> the language negotiation logic for all supported languages in the HTML app itself. But uh this in my mind adds support for the in language property the draft for static and…</p>
+<p id=7def class="phone s01"><cite>Dmitri_Zagidulin:</cite> um and summary suites. Go ahead, Benjamin first. Go ahead.</p>
+<p id=096e class="phone s02"><cite>Benjamin_Young:</cite> Yeah, I don't Yeah,…</p>
+<p id=10009 class="phone s02"><cite>Benjamin_Young:</cite> I I think what what Addison is pointing to is that um you know the server may not be configured to respond to it, but the client may not always know or be the responsible party. Um regardless, the HTTP header plumbing would be the same. I think what you're pointing to Dimmitri is the putting it into the data in the form of in language or something similar is just a more explicit statement to allow an accept header or or a signal that this is the URL you should use. Um but it you know it does have all those privacy concerns still.</p>
+<p id=cdc1 class="phone s02"><cite>Benjamin_Young:</cite> Um, and I I think there is a shift happening around HTTP content negotiation as as agents get deployed more places…</p>
+<p id=2cba class="phone s02"><cite>Benjamin_Young:</cite> because as it turns out, this stuff is super useful for agents. That's it.</p>
+<p id=aeaf class="phone s01"><cite>Dmitri_Zagidulin:</cite> Thank you,…</p>
+<p id=7d04 class="phone s01"><cite>Dmitri_Zagidulin:</cite> man. Yes.</p>
+<p id=619b class="phone s04"><cite>Manu_Sporny:</cite> um going going to kind of what um Addison said, I I think he's saying you can't you can't count and accept language. So like be careful. Uh and I think he also said that in language is the wrong way to approach it. Uh as well um uh I can't remember which issue he said that in but I think he's he was against doing in language. Um, are we are we talking about the HTML or summary right now? I thought we were talking about HTML. And if we're talking about HTML, I thought where we landed was uh we say that the application does have a language that it's configured with.</p>
+<p id=3a8a class="phone s04"><cite>Manu_Sporny:</cite> And when it calls an HTML renderer, the application passes that language in uh to the HTML renderer so that the HTML renderer if it has any local information will use that to do the rendering. Um that way we don't trip over the accept language thing and…</p>
+<p id=0b58 class="phone s04"><cite>Manu_Sporny:</cite> we don't trip over the in language thing. uh but still we provide a very like flexible way of of doing multi- language support in depending entirely on HTML to do all the complex stuff uh related to you know language doesn't mean that sorry it doesn't mean that we can't also use like accept headers…</p>
+<p id=4e0f class="phone s01"><cite>Dmitri_Zagidulin:</cite> lost one bit.</p>
+<p id=a583 class="phone s04"><cite>Manu_Sporny:</cite> but like Madison's very clearing clearly telling us like that cannot be your only mechanism um that's</p>
+<p id=a52b class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes, plus one to everything you just said. I strongly agree. The the only the only thing that I would uh that I think we should discuss is what to call the field that lists the supported languages in in my proposal in language is that field lists the supported languages.</p>
+<p id=1158 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Uh but we could more explicitly call it literally supported languages or…</p>
+<p id=2d5a class="phone s01"><cite>Dmitri_Zagidulin:</cite> something else. Uh Benjamin and then Dave. And then we are at time. So really quickly.</p>
+<p id=e808 class="phone s02"><cite>Benjamin_Young:</cite> Yeah, we keep hitting the privacy thing.</p>
+<p id=6166 class="phone s02"><cite>Benjamin_Young:</cite> I don't know if Dave wants to voice it. Um, HTML, doing it in HTML is is doing it in JavaScript. Um, so that that has to be kept in mind.</p>
+<p id=5df4 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Yes. Jack. Yes. Yes.</p>
+<p id=a239 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Dave. How about supported languages?</p>
+<p id=b661 class="phone s05"><cite>Dave_Longley:</cite> Yeah, I'll just voice it quickly.</p>
+<p id=b303 class="phone s05"><cite>Dave_Longley:</cite> Let's not add an in language property because it will cause people to potentially list different templates with different languages and create the privacy problem. The languages are in are in the template.</p>
+<p id=6028 class="phone s01"><cite>Dmitri_Zagidulin:</cite> I'm about supported languages.</p>
+<p id=661a class="phone s05"><cite>Dave_Longley:</cite> We we we can explore that. Uh I think I think it all is probably going to lead to creating the privacy problems and it's probably better to keep it simple and not have that and say where the language is. It's in the template.</p>
+<p id=dc58 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. But then that doesn't address a Phillips's comment. Then if we don't If we keep it simple.</p>
+<p id=8d9f class="phone s05"><cite>Dave_Longley:</cite> I I Well,…</p>
+<p id=f056 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Go ahead. Mono.</p>
+<p id=1c3c class="phone s05"><cite>Dave_Longley:</cite> I think it does.</p>
+<p id=53ba class="phone s05"><cite>Dave_Longley:</cite> Go ahead.</p>
+<p id=8bd5 class="phone s04"><cite>Manu_Sporny:</cite> Yeah, I think it does and…</p>
+<p id=235a class="phone s04"><cite>Manu_Sporny:</cite> I agree with what Dave's saying. Um, let's not add that field because it creates privacy issues right off the bat and and it's not easily uh usable with the accept thing. You can't count on it. That's it.</p>
+<p id=e1a3 class="phone s01"><cite>Dmitri_Zagidulin:</cite> Okay. All right. Uh, and with that, we're at the top of the hour. Thank you so much, everyone. Uh, I will see you in poll requests. Cheers all. Meeting ended after 01:03:36 👋 This editable transcript was computer generated and might contain errors. People can also change the text after it was created.</p>
+</section>
+</main>
+
+
+<address>This transcription was generated by a large language model (LLM) and might contain errors. When in doubt, check the audio recording. This page was  formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 248 (Mon Oct 27 20:04:16 2025 UTC).</address>
+
+</body>
+</html>
