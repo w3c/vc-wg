@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Verifiable Credentials Working Group Telco &ndash; 18 November 2026</title>
+<meta name=viewport content="width=device-width">
+<link rel="stylesheet" type="text/css" title="2018" href="https://www.w3.org/StyleSheets/scribe2/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/base.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/StyleSheets/public.css">
+<link rel="alternate stylesheet" type="text/css" title="2004" href="https://www.w3.org/2004/02/minutes-style.css">
+<link rel="alternate stylesheet" type="text/css" title="Fancy" href="https://www.w3.org/StyleSheets/scribe2/fancy.css">
+<link rel="alternate stylesheet" type="text/css" title="Typewriter" href="https://www.w3.org/StyleSheets/scribe2/tt-member.css">
+</head>
+
+<body>
+<header>
+<p><a href="https://www.w3.org/"><img src="https://www.w3.org/assets/logos/w3c-2025/svg/w3c-white.svg" alt=W3C border=0 height=60 width=60></a></p>
+
+<h1>
+Verifiable Credentials Working Group Telco</h1>
+<h2>18 November 2026</h2>
+
+<nav id=links>
+<a href="https://www.w3.org/events/meetings/84c997c3-bd27-4e7e-8eac-54cd977a4b03/20261118T110000/"><img alt="Agenda." title="Agenda" src="https://www.w3.org/StyleSheets/scribe2/chronometer.png"></a>
+<a href="https://www.w3.org/2026/11/18-vcwg-irc"><img alt="IRC log." title="IRC log" src="https://www.w3.org/StyleSheets/scribe2/text-plain.png"></a>
+</nav>
+</header>
+
+<div id=prelims>
+<div id=attendees>
+<h2>Attendees</h2>
+<dl class=intro>
+<dt>Present</dt><dd>Antony, bigbluehat, dlongley, elaine, hsano, ivan, JennieM, JimR, JoeAndrieu, kevin, KevinDean, kezike, michaelshea, patryk, phila, Sebastian, TallTed, ted, wes-smith</dd>
+<dt>Regrets</dt><dd>-</dd>
+<dt>Chair</dt><dd>phila</dd>
+<dt>Scribe</dt><dd>JoeAndrieu</dd>
+</dl>
+</div>
+
+<nav id=toc>
+<h2>Contents</h2>
+<ol>
+<li><a href="#ffff">Accessibility (A11y) of Mermaid diagrams</a></li>
+<li><a href="#f731">VCDM 2.1 PRs https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pulls</a>
+<ol>
+<li><a href="#e4a8">PR 1663 w3c/<wbr>vc-data-model#1663</a></li>
+<li><a href="#810a">PR 1664 w3c/<wbr>vc-data-model#1664</a></li>
+<li><a href="#51f1">PR 1665 w3c/<wbr>vc-data-model#1665</a></li>
+<li><a href="#7893">Issue 1619 w3c/<wbr>vc-data-model#1619</a></li>
+</ol>
+</li>
+<li><a href="#486e">Meeting schedule</a></li>
+</ol>
+</nav>
+</div>
+
+<main id=meeting class=meeting>
+<h2>Meeting minutes</h2>
+
+
+<section>
+<h3 id=ffff>Accessibility (A11y) of Mermaid diagrams</h3>
+<p id=593d class="phone s02"><cite>ivan:</cite> it's not the mermaid, its the specification that we write that uses mermaid<br>
+<span id=e363>… what I'm worried about is problems because we don't have alt descriptions of those diagrams, which makes our documents inaccessible</span><br>
+<span id=b7c4>… So, how might we work on that? I don't have a solution. but it would be good to have a common approach</span><br>
+<span id=c1fe>… Yesterday, Mermaid has introduced title and desc that gets promoted into the image</span></p>
+<p id=2fca class=irc><cite>&lt;KevinDean&gt;</cite> <a href="https://mermaid.js.org/config/accessibility.html">https://<wbr>mermaid.js.org/<wbr>config/<wbr>accessibility.html</a></p>
+<p id=abbb class="phone s02"><cite>ivan:</cite> I raised an issue that we could use this info to put it in proper context</p>
+<p id=10000 class="phone s01"><cite>phila:</cite> do we know if Mermaid input documents are a list of instructions. Can that set of instruction be &quot;accessible&quot;</p>
+<p id=ae14 class="phone s02"><cite>ivan:</cite> I spoke with an expert yesterday and she said that would not be enough<br>
+<span id=349d>… it's not very readable by itself</span><br>
+<span id=1981>… but maybe putting a description tag into the diagram, that propagates upward</span></p>
+<p id=cdfd class=irc><cite>&lt;michaelshea&gt;</cite> JoeAndrieu: ... all Mermaid diagrams are their own bespoke language.  No semantics that are common.</p>
+<p id=bc9e class="phone s01"><cite>phila:</cite> clearly this is a real issue. it must be faced by others<br>
+<span id=d852>… where do we raise this?</span></p>
+<p id=e592 class="phone s02"><cite>ivan:</cite> maybe we first contact the group that does the reviews and bring up the issues ahead of time.<br>
+<span id=668d>… we aren't the only working group creating mermaid</span><br>
+<span id=3a1a>… This comes up more and more with AI producing mermaid code too</span></p>
+<p id=ce38 class=irc><cite>&lt;kezike&gt;</cite> Did we not use Mermaid in earlier versions of our specs?</p>
+</section>
+
+<section>
+<h3 id=f731>VCDM 2.1 PRs <a href="https://github.com/w3c/vc-data-model/pulls">https://<wbr>github.com/<wbr>w3c/<wbr>vc-data-model/<wbr>pulls</a></h3>
+<p id=6aab class="phone s01"><cite>phila:</cite> There are currently nine open PRs on VCDM<br>
+<span id=e8c0>… with Manu not here, I wonder how much progress we can make. But I'd like to take a look at some of these.</span><br>
+<span id=8f1d>… Does anyone know who Astro Gilder is?</span></p>
+<p id=271e class=summary>[crickets]<br>
+<span id=850b>… This might be a bot rather than a person</span><br>
+<span id=3b53>… Editors will take a look</span><br>
+<span id=cf02>… next is one from JinDX</span><br>
+<span id=2dab>… Anyone know this person? Were they at TPAC?</span></p>
+<h4 id=e4a8>PR 1663 <a href="https://github.com/w3c/vc-data-model/pull/1663">w3c/<wbr>vc-data-model#1663</a></h4>
+<h4 id=810a>PR 1664 <a href="https://github.com/w3c/vc-data-model/pull/1664">w3c/<wbr>vc-data-model#1664</a></h4>
+<p id=448b class="phone s02"><cite>ivan:</cite> He submitted over 100 PRs in the last few weeks in many WGs.<br>
+<span id=6399>… Turns out to be a real person, likely helped by AI, somewhere in China. And one of our W3C colleagues have talked to him</span></p>
+<p id=01e4 class=irc><cite>&lt;kezike&gt;</cite> Yeah, we’ve received a few PRs from JinDX as well.</p>
+<p id=7927 class="phone s02"><cite>ivan:</cite> He is experimenting with using AI to translate documents</p>
+<p id=7935 class=irc><cite>&lt;kezike&gt;</cite> in the VCALM spec</p>
+<p id=8ac2 class="phone s02"><cite>ivan:</cite> He's translating all the W3C specs into Japanese, Korean, and Chinese.<br>
+<span id=abe4>… During this translation, his machine finds a bunch of small editorial problems.</span><br>
+<span id=a457>… I have the dubious privilege of going through and making sure there are no IPR issues</span><br>
+<span id=9fdf>… They have generally been harmless, useful, and should be merged.</span><br>
+<span id=26d4>… I have asked him to batch edits together to help</span></p>
+<p id=d42e class="phone s01"><cite>phila:</cite> sounds like a good thing to me if there's a way to check if our text is easily translated</p>
+<p id=ad5c class="phone s03"><cite>wes-smith:</cite> +1 to robots helping us. During our task force meeting, is a normative change automatically not appropriate from an IPR perspective?</p>
+<p id=9393 class="phone s02"><cite>ivan:</cite> depends on the change<br>
+<span id=10001>… so far, it was mostly spelling mistakes and syntax mistakes in JSON, even if those changes are in normative sections, the question is whether or not the change itself creates IPR problems</span></p>
+<p id=1e63 class="phone s03"><cite>wes-smith:</cite> so a human makes a subjective call</p>
+<p id=7a21 class="phone s02"><cite>ivan:</cite> yes. I push the button at the end of the day</p>
+<h4 id=51f1>PR 1665 <a href="https://github.com/w3c/vc-data-model/pull/1665">w3c/<wbr>vc-data-model#1665</a></h4>
+<p id=7f26 class="phone s02"><cite>ivan:</cite> we put in a new version of the vocabulary for 1.1, that's already been merged. But that also means the github workflows have to be changes to generate things correctly.<br>
+<span id=7e69>… I spotted a problem in the last round of that. Some who understands the gitflow should take a look, please.</span></p>
+<p id=fd13 class="phone s01"><cite>phila:</cite> there are review requests</p>
+<p id=7da8 class="phone s02"><cite>ivan:</cite> that was just because of CODEOWNERS<br>
+<span id=1102>… but I'd like Manu and Dave Lehn to take a look.</span></p>
+<p id=a083 class="phone s01"><cite>phila:</cite> It's been there a few weeks, but let's get a look at it<br>
+<span id=8e25>… a couple others that need the editor to chime in</span></p>
+<p id=99a4 class="phone s01"><cite>phila:</cite> redirections for 2.1?</p>
+<p id=65b3 class="phone s02"><cite>ivan:</cite> same story as before. we need to set up redirects for context file and vocabulary.<br>
+<span id=227c>… I set up a proposal to do that. Manu gave feedback and I updated, but I need a review since I'm not confident enough in what I do.</span></p>
+<p id=37cd class="phone s01"><cite>phila:</cite> looking at the labels on outstanding issues (<a href="https://github.com/w3c/vc-data-model/issues/1619">#1619</a>)</p>
+<h4 id=7893>Issue 1619 <a href="https://github.com/w3c/vc-data-model/issues/1619">w3c/<wbr>vc-data-model#1619</a></h4>
+<p id=8d23 class="phone s01"><cite>phila:</cite> This looks like a stale issue that should be closed.<br>
+<span id=1a77>… It says &quot;PR Exists&quot;</span><br>
+<span id=e662>… Dmitri created a PR. So let's check in with Dmitri</span><br>
+<span id=60b8>… Can anyone take a quick look at PRs and see if there's anything of value today with our attendees?</span><br>
+<span id=1c24>… Only one more topic for today.</span></p>
+</section>
+
+<section>
+<h3 id=486e>Meeting schedule</h3>
+<p id=10002 class="phone s01"><cite>phila:</cite> The meeting schedule for the rest of the year.<br>
+<span id=aa31>… This time next week, America is on holiday.</span><br>
+<span id=7970>… Do we want a meeting this time next week?</span><br>
+<span id=a1ae>… I'm guessing people on the West of the Atlantic won't be keen.</span></p>
+<p id=5cd0 class=irc><cite>&lt;michaelshea&gt;</cite> they'll all be sitting in airports on Wed</p>
+<p id=db80 class=irc><cite>&lt;JimR&gt;</cite> I will be working</p>
+<p id=c29f class="phone s01"><cite>phila:</cite> seems like general support for cancelling<br>
+<span id=655e>… So, let's cancel.</span></p>
+<p id=e3d4 class=irc><cite>&lt;JimR&gt;</cite> I miss the UK</p>
+<p id=22d5 class="phone s01"><cite>phila:</cite> Last working day for me is 18th December<br>
+<span id=c84b>… so unless anyone objects, I'd like to cancel the Dec 23rd and Dec 30th meetings</span></p>
+<p id=8947 class=irc><cite>&lt;michaelshea&gt;</cite> +1 to cancel</p>
+<p id=cffd class="phone s01"><cite>phila:</cite> ok. Cancelled those two around year end<br>
+<span id=59e6>… nothing else queued up.</span><br>
+<span id=fca3>… Anything else to discuss?</span><br>
+<span id=e211>… Next time we do meet, Wed Dec 2nd</span><br>
+<span id=ff25>… Hopefully Brent can chair,  I will not be available</span><br>
+<span id=ec49>… Head of scribe queue is either Michael or Jennie, in two weeks time. Hopefully one of you will be here at the start to help out.</span><br>
+<span id=8bf4>… Thanks, all. Have a good Thursday next week!</span></p>
+</section>
+</main>
+
+
+<address>Minutes manually created (not a transcript), formatted by <a
+href="https://w3c.github.io/scribe2/scribedoc.html"
+>scribe.perl</a> version 250 (Wed Oct 21 13:34:09 2026 UTC).</address>
+
+</body>
+</html>
